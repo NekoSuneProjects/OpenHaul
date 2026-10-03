@@ -15,6 +15,7 @@ type Community = {
   logoUrl?: string | null;
   recruitmentOpen: boolean;
   memberCount: number;
+  members?: any[];
   balance?: number;
   currency?: string;
 };
@@ -129,6 +130,21 @@ export default function VtcProfilePage() {
         </>
       ) : null}
 
+      <div className="sectionTitle"><h2>VTC members</h2></div>
+      <section className="driverList" style={{ padding: 0 }}>
+        {(community?.members ?? []).map((member: any) => {
+          const user = member.User ?? member.user;
+          return (
+            <Link className="driver" href={"/driver/" + user?.steamId} key={member.id}>
+              <div><strong>{user?.displayName ?? "Driver"}</strong><small>{user?.steamId ?? ""}</small></div>
+              <div><span className="pill">{member.role}</span><small>{member.title || "Member"}</small></div>
+              <div><strong>{new Date(member.joinedAt).toLocaleDateString()}</strong><small>Joined</small></div>
+              <div><small>Open profile →</small></div>
+            </Link>
+          );
+        })}
+      </section>
+
       <div className="sectionTitle"><h2>Live drivers</h2></div>
       <section className="driverList" style={{ padding: 0 }}>
         {live.length === 0 && <div className="card"><p>No VTC drivers are live right now.</p></div>}
@@ -147,7 +163,7 @@ export default function VtcProfilePage() {
         {leaders.length === 0 && <div className="card"><p>No completed jobs have been logged yet.</p></div>}
         {leaders.slice(0, 20).map((driver, index) => (
           <article className="driver" key={driver.driverId}>
-            <div><strong>#{index + 1} · {driver.driverId}</strong></div>
+            <div><Link href={"/driver/" + driver.driverId}><strong>#{index + 1} · {driver.driverId}</strong></Link></div>
             <div><strong>{Math.round(Number(driver.distanceKm)).toLocaleString()} km</strong><small>Distance</small></div>
             <div><strong>{driver.jobs}</strong><small>Jobs</small></div>
             <div><strong>{Number(driver.income || 0).toLocaleString()}</strong><small>Income</small></div>
