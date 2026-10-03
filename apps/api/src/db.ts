@@ -150,6 +150,70 @@ ClientToken.init({
   revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
 }, { sequelize, modelName: "ClientToken", tableName: "client_tokens", underscored: true });
 
+export class UserApiKey extends Model {
+  declare id: number;
+  declare userId: number;
+  declare name: string;
+  declare prefix: string;
+  declare keyHash: string;
+  declare scopes: string[];
+  declare lastUsedAt: Date | null;
+  declare revokedAt: Date | null;
+}
+UserApiKey.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
+  name: { type: DataTypes.STRING(120), allowNull: false },
+  prefix: { type: DataTypes.STRING(24), allowNull: false },
+  keyHash: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "key_hash" },
+  scopes: { type: DataTypes.JSONB, allowNull: false, defaultValue: [] },
+  lastUsedAt: { type: DataTypes.DATE, allowNull: true, field: "last_used_at" },
+  revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
+}, { sequelize, modelName: "UserApiKey", tableName: "user_api_keys", underscored: true });
+
+export class TwitchAccount extends Model {
+  declare id: number;
+  declare userId: number;
+  declare twitchUserId: string;
+  declare login: string;
+  declare displayName: string;
+  declare profileImageUrl: string | null;
+  declare broadcasterType: string | null;
+  declare live: boolean;
+  declare gameId: string | null;
+  declare gameName: string | null;
+  declare streamTitle: string | null;
+  declare viewerCount: number | null;
+  declare streamStartedAt: Date | null;
+  declare thumbnailUrl: string | null;
+  declare lastCheckedAt: Date | null;
+}
+TwitchAccount.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  userId: { type: DataTypes.INTEGER, allowNull: false, unique: true, field: "user_id" },
+  twitchUserId: { type: DataTypes.STRING(32), allowNull: false, unique: true, field: "twitch_user_id" },
+  login: { type: DataTypes.STRING(64), allowNull: false },
+  displayName: { type: DataTypes.STRING(120), allowNull: false, field: "display_name" },
+  profileImageUrl: { type: DataTypes.TEXT, allowNull: true, field: "profile_image_url" },
+  broadcasterType: { type: DataTypes.STRING(32), allowNull: true, field: "broadcaster_type" },
+  live: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
+  gameId: { type: DataTypes.STRING(32), allowNull: true, field: "game_id" },
+  gameName: { type: DataTypes.STRING(160), allowNull: true, field: "game_name" },
+  streamTitle: { type: DataTypes.TEXT, allowNull: true, field: "stream_title" },
+  viewerCount: { type: DataTypes.INTEGER, allowNull: true, field: "viewer_count" },
+  streamStartedAt: { type: DataTypes.DATE, allowNull: true, field: "stream_started_at" },
+  thumbnailUrl: { type: DataTypes.TEXT, allowNull: true, field: "thumbnail_url" },
+  lastCheckedAt: { type: DataTypes.DATE, allowNull: true, field: "last_checked_at" },
+}, { sequelize, modelName: "TwitchAccount", tableName: "twitch_accounts", underscored: true });
+
+export class TwitchLinkState extends Model {}
+TwitchLinkState.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
+  stateHash: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "state_hash" },
+  expiresAt: { type: DataTypes.DATE, allowNull: false, field: "expires_at" },
+}, { sequelize, modelName: "TwitchLinkState", tableName: "twitch_link_states", underscored: true });
+
 export class VtcMember extends Model {}
 VtcMember.init({
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
@@ -182,6 +246,10 @@ VtcLedgerEntry.init({
 }, { sequelize, modelName: "VtcLedgerEntry", tableName: "vtc_ledger_entries", underscored: true });
 
 User.hasMany(ClientToken, { foreignKey: "userId" });
+User.hasMany(UserApiKey, { foreignKey: "userId" });
+UserApiKey.belongsTo(User, { foreignKey: "userId" });
+User.hasOne(TwitchAccount, { foreignKey: "userId" });
+TwitchAccount.belongsTo(User, { foreignKey: "userId" });
 ClientToken.belongsTo(User, { foreignKey: "userId" });
 User.hasMany(VtcMember, { foreignKey: "userId" });
 Vtc.hasMany(VtcMember, { foreignKey: "vtcId" });
