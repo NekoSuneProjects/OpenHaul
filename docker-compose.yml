@@ -56,6 +56,8 @@ services:
       OPENHAUL_STEAM_REALM: ${OPENHAUL_STEAM_REALM:-http://localhost:3001/}
       OPENHAUL_COOKIE_SECURE: ${OPENHAUL_COOKIE_SECURE:-false}
       APP_URL: ${APP_URL:-http://localhost:3000}
+      TWITCH_CLIENT_ID: ${TWITCH_CLIENT_ID:-}
+      TWITCH_CLIENT_SECRET: ${TWITCH_CLIENT_SECRET:-}
     volumes:
       - ./data-runtime:/data-runtime
     depends_on:
