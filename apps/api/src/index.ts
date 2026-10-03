@@ -29,6 +29,14 @@ const liveSchema = z.object({
   cargo: z.string().max(160).nullable().optional(),
   sourceCity: z.string().max(120).nullable().optional(),
   destinationCity: z.string().max(120).nullable().optional(),
+  sourceCompany: z.string().max(160).nullable().optional(),
+  destinationCompany: z.string().max(160).nullable().optional(),
+  rpm: z.number().nonnegative().nullable().optional(),
+  fuel: z.number().nonnegative().nullable().optional(),
+  odometerKm: z.number().nonnegative().nullable().optional(),
+  navigationDistanceM: z.number().nonnegative().nullable().optional(),
+  navigationTimeS: z.number().nonnegative().nullable().optional(),
+  speedLimitKph: z.number().nonnegative().max(300).nullable().optional(),
   server: z.string().max(120).nullable().optional(),
 });
 
