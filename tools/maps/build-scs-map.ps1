@@ -190,11 +190,15 @@ if (-not $TilesOnly) {
 
     if ($ParserProcess.ExitCode -ne 0) {
       Write-Host ""
-      Write-Host "----- TruckSim Maps parser error -----" -ForegroundColor Red
-      if (Test-Path -LiteralPath $ParserErrorLog) {
-        Get-Content -LiteralPath $ParserErrorLog | Select-Object -Last 80
+      Write-Host "----- TruckSim Maps parser stdout tail -----" -ForegroundColor Yellow
+      if (Test-Path -LiteralPath $ParserLog) {
+        Get-Content -LiteralPath $ParserLog | Select-Object -Last 120
       }
-      Write-Host "--------------------------------------" -ForegroundColor Red
+      Write-Host "----- TruckSim Maps parser stderr tail -----" -ForegroundColor Red
+      if (Test-Path -LiteralPath $ParserErrorLog) {
+        Get-Content -LiteralPath $ParserErrorLog | Select-Object -Last 120
+      }
+      Write-Host "---------------------------------------------" -ForegroundColor Red
       throw "TruckSim Maps parser failed with exit code $($ParserProcess.ExitCode). Full logs: $ParserLog and $ParserErrorLog"
     }
 
