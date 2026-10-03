@@ -378,3 +378,23 @@ GET /api/v1/public/streamers?game=ats
 ```
 
 OpenHaul batches linked Twitch user IDs through Helix and refreshes stream state on the server every 60 seconds. Public visitors only read the cached OpenHaul stream state; they cannot force Twitch API refreshes.
+
+
+## Live map modes
+
+The realtime map has three switchable base-map modes:
+
+- **Road** — normal street-map view with the OpenHaul SCS road network and live trucks overlaid.
+- **Satellite** — satellite/aerial imagery with the SCS road network, cities, ferries and live trucks overlaid.
+- **X-Ray** — no geographic basemap; only the dark OpenHaul canvas, locally generated SCS map vectors and live trucks.
+
+The user's selected mode is remembered in browser local storage.
+
+Self-hosters can replace either XYZ tile provider without modifying the application:
+
+```env
+NEXT_PUBLIC_MAP_ROAD_TILE_URL=https://tile.openstreetmap.org/{z}/{x}/{y}.png
+NEXT_PUBLIC_MAP_SATELLITE_TILE_URL=https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}
+```
+
+X-Ray mode does not require an external basemap provider. For the full road-only experience, generate/import the ETS2/ATS PMTiles assets described in the SCS map-data section.
