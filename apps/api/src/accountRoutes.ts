@@ -11,10 +11,19 @@ function apiUrl() {
   return (process.env.OPENHAUL_PUBLIC_API_URL ?? "http://localhost:3001").replace(/\/$/, "");
 }
 
+function safeReturnPath(value: unknown) {
+  if (typeof value !== "string" || !value.startsWith("/") || value.startsWith("//")) return null;
+  return value;
+}
+
 export async function registerAccountRoutes(app: FastifyInstance) {
-  app.get("/api/v1/auth/steam", async (_request, reply) => {
+  app.get("/api/v1/auth/steam", async (request, reply) => {
     const openid = new URL("https://steamcommunity.com/openid/login");
-    const returnTo = apiUrl() + "/api/v1/auth/steam/callback";
+    const query = request.query as Record<string, string | undefined>;
+    const returnPath = safeReturnPath(query.return);
+    const callback = new URL(apiUrl() + "/api/v1/auth/steam/callback");
+    if (returnPath) callback.searchParams.set("return", returnPath);
+    const returnTo = callback.toString();
 
     openid.searchParams.set("openid.ns", "http://specs.openid.net/auth/2.0");
     openid.searchParams.set("openid.mode", "checkid_setup");
@@ -83,7 +92,8 @@ export async function registerAccountRoutes(app: FastifyInstance) {
       expires: session.expiresAt,
     });
 
-    return reply.redirect(appUrl() + (created ? "/account?new=1" : "/account"));
+    const returnPath = safeReturnPath(query.return);
+    return reply.redirect(appUrl() + (returnPath ?? (created ? "/account?new=1" : "/account")));
   });
 
   app.post("/api/v1/auth/logout", async (request, reply) => {
