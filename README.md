@@ -21,6 +21,13 @@ OpenHaul is an open-source, self-hosted ETS2 and ATS trucking platform with live
 - MapLibre geographic ETS2/ATS live map with real game-coordinate projection
 - Optional real SCS road/prefab/city map overlay from locally generated PMTiles
 - Smoothed/interpolated live truck movement between telemetry updates
+- Steam OpenID account login and automatic account creation
+- Steam-visible ETS2/ATS ownership plus DLC detection
+- Public Steam-linked driver profiles
+- Community VTC creation, recruitment, roles and member management
+- Per-member VTC performance tracking
+- VTC finance ledger with balance/income/expense totals
+- Revocable per-account Windows client tokens
 - Steam OpenID account creation/login
 - Steam-visible ETS2/ATS ownership and DLC detection
 - Public Steam-linked driver profiles
@@ -245,3 +252,22 @@ OPENHAUL_VTC_ID=123
 ```
 
 When a client token is used, the API derives the driver SteamID and display name from the account and validates any requested VTC membership. Users can also track independent jobs/fines with no VTC configured.
+
+
+## Steam accounts
+
+OpenHaul supports Steam OpenID login. The first successful Steam login automatically creates the OpenHaul account and links the returned SteamID.
+
+Self-hosters should configure Steam Web API access, the public website URL, the public API URL, the Steam OpenID realm, and whether authentication cookies should require HTTPS.
+
+The account dashboard provides base-game ownership status, Steam-visible DLC detection, public driver-profile access, VTC memberships, Community VTC creation, and Windows client-token management.
+
+Steam library privacy is respected: if owned games are not visible, OpenHaul reports ownership as private/unknown rather than treating the games as unowned.
+
+## Community VTC accounts
+
+Steam-linked users can create and manage public Community VTCs. Current management features include company name/tag/description/logo, website and Discord links, recruitment state, join applications, owner/admin/staff/member roles, public member roster, per-driver performance totals, optional public balance, and an auditable finance ledger.
+
+## Account-linked telemetry
+
+Normal users can create a revocable client token from the Account page. When the Windows client authenticates with that token, OpenHaul derives the SteamID and display name server-side and validates VTC membership before accepting VTC-linked telemetry. Independent drivers can also log jobs and fines without belonging to a VTC.
