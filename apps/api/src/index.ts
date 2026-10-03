@@ -18,6 +18,7 @@ import { registerUserApiKeyRoutes } from "./userApiKeys.js";
 import { registerTwitchRoutes } from "./twitch.js";
 import { registerVtcApiKeyManagementRoutes } from "./vtcApiKeyManagement.js";
 import { registerClientTokenRoutes } from "./clientTokens.js";
+import { registerClientAuthRoutes } from "./clientAuth.js";
 import { requireTelemetryIdentity, resolveUserVtc } from "./telemetryAuth.js";
 
 const app = Fastify({ logger: true });
@@ -35,6 +36,7 @@ await registerUserApiKeyRoutes(app);
 await registerTwitchRoutes(app);
 await registerVtcApiKeyManagementRoutes(app);
 await registerClientTokenRoutes(app);
+await registerClientAuthRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
