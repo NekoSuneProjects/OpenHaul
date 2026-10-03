@@ -1,5 +1,5 @@
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-import { fn, col } from "sequelize";
+import { Op } from "sequelize";
 import { z } from "zod";
 import { User, Vtc, VtcApplication, VtcLedgerEntry, VtcMember } from "./db.js";
 import { requireUser } from "./accountSession.js";
@@ -60,24 +60,23 @@ async function requireOwnerOrAdmin(request: FastifyRequest, reply: FastifyReply)
 }
 
 async function ledgerSummary(vtcId: number) {
-  const entries = await VtcLedgerEntry.findAll({
-    where: { vtcId },
-    order: [["id", "DESC"]],
-    limit: 100,
-  });
+  const [entries, balanceRaw, incomeRaw, expenseRaw] = await Promise.all([
+    VtcLedgerEntry.findAll({
+      where: { vtcId },
+      order: [["id", "DESC"]],
+      limit: 100,
+    }),
+    VtcLedgerEntry.sum("amount", { where: { vtcId } }),
+    VtcLedgerEntry.sum("amount", { where: { vtcId, amount: { [Op.gte]: 0 } } }),
+    VtcLedgerEntry.sum("amount", { where: { vtcId, amount: { [Op.lt]: 0 } } }),
+  ]);
 
-  let balance = 0;
-  let income = 0;
-  let expenses = 0;
-
-  for (const entry of entries) {
-    const amount = Number(entry.getDataValue("amount") ?? 0);
-    balance += amount;
-    if (amount >= 0) income += amount;
-    else expenses += Math.abs(amount);
-  }
-
-  return { balance, income, expenses, entries };
+  return {
+    balance: Number(balanceRaw || 0),
+    income: Number(incomeRaw || 0),
+    expenses: Math.abs(Number(expenseRaw || 0)),
+    entries,
+  };
 }
 
 export async function registerCommunityVtcRoutes(app: FastifyInstance) {
