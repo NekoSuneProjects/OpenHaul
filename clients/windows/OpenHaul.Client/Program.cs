@@ -15,7 +15,7 @@ internal static class Program
         AppDomain.CurrentDomain.UnhandledException += (_, args) =>
         {
             var exception = args.ExceptionObject as Exception
-                ?? new Exception(String(args.ExceptionObject));
+                ?? new Exception(args.ExceptionObject?.ToString() ?? "Unknown unhandled exception");
             ReportCrash("Unhandled exception", exception);
         };
 
