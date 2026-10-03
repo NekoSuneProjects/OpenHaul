@@ -1,11 +1,28 @@
 import { createHash, randomBytes } from "node:crypto";
 import type { FastifyInstance } from "fastify";
+import type { Transaction } from "sequelize";
 import { z } from "zod";
 import { ClientToken } from "./db.js";
 import { requireUser } from "./accountSession.js";
 
 function hashToken(token: string) {
   return createHash("sha256").update(token).digest("hex");
+}
+
+export async function issueClientToken(userId: number, name = "Windows Client", transaction?: Transaction) {
+  const token = "oh_client_" + randomBytes(30).toString("base64url");
+  const prefix = token.slice(0, 20);
+
+  const record = await ClientToken.create({
+    userId,
+    name,
+    prefix,
+    tokenHash: hashToken(token),
+    lastUsedAt: null,
+    revokedAt: null,
+  }, { transaction });
+
+  return { token, record };
 }
 
 export async function registerClientTokenRoutes(app: FastifyInstance) {
@@ -22,17 +39,7 @@ export async function registerClientTokenRoutes(app: FastifyInstance) {
       name: z.string().min(1).max(120).default("Windows Client"),
     }).parse(request.body ?? {});
 
-    const token = "oh_client_" + randomBytes(30).toString("base64url");
-    const prefix = token.slice(0, 20);
-
-    const record = await ClientToken.create({
-      userId: request.openhaulUser!.id,
-      name,
-      prefix,
-      tokenHash: hashToken(token),
-      lastUsedAt: null,
-      revokedAt: null,
-    });
+    const { token, record } = await issueClientToken(request.openhaulUser!.id, name);
 
     return reply.code(201).send({
       token,
