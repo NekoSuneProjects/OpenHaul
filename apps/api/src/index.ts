@@ -95,6 +95,22 @@ app.get("/api/v1/public/live", async (request) => {
   return { count: drivers.length, drivers };
 });
 
+app.get("/api/v1/public/openhaul/status", async (_request, reply) => {
+  const drivers = await getLiveDrivers();
+  const ets2 = drivers.filter((driver) => driver.game === "ets2").length;
+  const ats = drivers.filter((driver) => driver.game === "ats").length;
+
+  reply.header("cache-control", "public, max-age=5");
+
+  return {
+    online: drivers.length,
+    ets2,
+    ats,
+    ttlSeconds: 45,
+    updatedAt: new Date().toISOString(),
+  };
+});
+
 app.get("/api/v1/public/live/ws", { websocket: true }, (socket, request) => {
   const query = z.object({ vtc: z.coerce.number().int().positive().optional() }).parse(request.query);
   addRealtimeClient(socket, query.vtc);
