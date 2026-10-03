@@ -121,7 +121,15 @@ User.init({
   ownedGamesSnapshot: { type: DataTypes.JSONB, allowNull: true, field: "owned_games_snapshot" },
 }, { sequelize, modelName: "User", tableName: "users", underscored: true });
 
-export class VtcMember extends Model {}
+
+export class AccountSession extends Model {}
+AccountSession.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
+  tokenHash: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "token_hash" },
+  expiresAt: { type: DataTypes.DATE, allowNull: false, field: "expires_at" },
+}, { sequelize, modelName: "AccountSession", tableName: "account_sessions", underscored: true });
+\nexport class VtcMember extends Model {}
 VtcMember.init({
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
   vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
