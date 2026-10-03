@@ -13,6 +13,7 @@ const apiUrl = process.env.OPENHAUL_API_URL ?? "http://localhost:3001";
 const apiKey = process.env.OPENHAUL_VTC_API_KEY?.trim();
 const fineChannelId = process.env.DISCORD_FINE_CHANNEL_ID?.trim();
 const jobChannelId = process.env.DISCORD_JOB_CHANNEL_ID?.trim();
+const driverChannelId = process.env.DISCORD_DRIVER_CHANNEL_ID?.trim();
 
 if (!token) {
   console.log("OpenHaul bot disabled: DISCORD_BOT_TOKEN is empty.");
@@ -26,6 +27,7 @@ if (!apiKey) {
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 let lastFineId: string | null = null;
 let lastJobId: string | null = null;
+let knownDrivers: Map<string, any> | null = null;
 
 async function apiGet(path: string) {
   const response = await fetch(`${apiUrl}${path}`, {
@@ -117,6 +119,50 @@ async function pollJobs() {
   lastJobId = newest;
 }
 
+async function pollPresence() {
+  if (!apiKey || !driverChannelId) return;
+
+  const data = await apiGet("/api/v1/vtc/live");
+  const drivers = Array.isArray(data.drivers) ? data.drivers : [];
+  const current = new Map<string, any>(drivers.map((driver: any) => [String(driver.driverId), driver]));
+
+  if (knownDrivers === null) {
+    knownDrivers = current;
+    return;
+  }
+
+  const channel = await textChannel(driverChannelId);
+
+  for (const [driverId, driver] of current) {
+    if (knownDrivers.has(driverId)) continue;
+
+    const embed = new EmbedBuilder()
+      .setTitle("🟢 Driver online")
+      .setDescription(`**${driver.username ?? driverId}** started driving in ${String(driver.game ?? "ETS2/ATS").toUpperCase()}.`)
+      .addFields(
+        { name: "Truck", value: String(driver.truck ?? "Unknown"), inline: true },
+        { name: "Server", value: String(driver.server ?? "Singleplayer / unknown"), inline: true },
+        { name: "Route", value: driver.sourceCity && driver.destinationCity ? `${driver.sourceCity} → ${driver.destinationCity}` : "No active route", inline: false },
+      )
+      .setTimestamp();
+
+    await channel?.send({ embeds: [embed] });
+  }
+
+  for (const [driverId, previous] of knownDrivers) {
+    if (current.has(driverId)) continue;
+
+    const embed = new EmbedBuilder()
+      .setTitle("⚫ Driver offline")
+      .setDescription(`**${previous.username ?? driverId}** stopped sending OpenHaul telemetry.`)
+      .setTimestamp();
+
+    await channel?.send({ embeds: [embed] });
+  }
+
+  knownDrivers = current;
+}
+
 async function registerCommands() {
   if (!client.user) return;
   const commands = [
@@ -133,6 +179,7 @@ client.once("ready", async () => {
 
   setInterval(() => pollFines().catch(console.error), 8000);
   setInterval(() => pollJobs().catch(console.error), 10000);
+  setInterval(() => pollPresence().catch(console.error), 12000);
 });
 
 client.on("interactionCreate", async (interaction) => {
