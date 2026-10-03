@@ -481,7 +481,17 @@ public sealed class MainForm : Form
         news.Controls.Add(newsHost);
         page.Controls.Add(news);
 
-        BeginInvoke(async () => await LoadNewsAsync(newsHost));
+        newsHost.HandleCreated += async (_, _) =>
+        {
+            try
+            {
+                await LoadNewsAsync(newsHost);
+            }
+            catch (Exception ex)
+            {
+                SetStatus("News load failed: " + ex.Message);
+            }
+        };
 
         RefreshSelectedGamePath();
         ApplyMandatoryUpdateState();
