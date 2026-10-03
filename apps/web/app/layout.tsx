@@ -18,6 +18,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div className="links">
               <Link href="/map">Live Map</Link>
               <Link href="/vtcs">VTCs</Link>
+              <Link href="/account">Account</Link>
               <Link href="/radio">Radio</Link>
               <Link href="/support">Support</Link>
               <Link href="/api-docs">API</Link>
