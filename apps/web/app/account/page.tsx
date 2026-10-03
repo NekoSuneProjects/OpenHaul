@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 type User = {
   id: number;
@@ -25,6 +26,8 @@ type Membership = {
 const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 
 export default function AccountPage() {
+  const searchParams = useSearchParams();
+  const bootstrappedDefaultKey = useRef(false);
   const [user, setUser] = useState<User | null>(null);
   const [memberships, setMemberships] = useState<Membership[]>([]);
   const [dlc, setDlc] = useState<any>(null);
@@ -32,6 +35,9 @@ export default function AccountPage() {
   const [creating, setCreating] = useState(false);
   const [clientTokens, setClientTokens] = useState<any[]>([]);
   const [newClientToken, setNewClientToken] = useState("");
+  const [apiKeys, setApiKeys] = useState<any[]>([]);
+  const [newApiKey, setNewApiKey] = useState("");
+  const [twitch, setTwitch] = useState<any>(null);
 
   const load = async () => {
     try {
@@ -61,6 +67,18 @@ export default function AccountPage() {
         setClientTokens(tokenData.tokens ?? []);
       }
 
+      const apiKeysResponse = await fetch(api + "/api/v1/account/api-keys", { credentials: "include", cache: "no-store" });
+      if (apiKeysResponse.ok) {
+        const keyData = await apiKeysResponse.json();
+        setApiKeys(keyData.keys ?? []);
+      }
+
+      const twitchResponse = await fetch(api + "/api/v1/account/twitch", { credentials: "include", cache: "no-store" });
+      if (twitchResponse.ok) {
+        const twitchData = await twitchResponse.json();
+        setTwitch(twitchData.twitch ?? null);
+      }
+
       setStatus("");
     } catch {
       setStatus("Unable to load your OpenHaul account.");
@@ -68,6 +86,23 @@ export default function AccountPage() {
   };
 
   useEffect(() => { void load(); }, []);
+
+  useEffect(() => {
+    if (!user || bootstrappedDefaultKey.current || searchParams.get("new") !== "1") return;
+    bootstrappedDefaultKey.current = true;
+
+    void fetch(api + "/api/v1/account/api-keys/default", {
+      method: "POST",
+      credentials: "include",
+    }).then(async (response) => {
+      if (!response.ok) return;
+      const data = await response.json();
+      if (data.created && data.apiKey) {
+        setNewApiKey(data.apiKey);
+        await load();
+      }
+    });
+  }, [user, searchParams]);
 
   const refreshOwnership = async () => {
     setStatus("Refreshing Steam library…");
@@ -82,6 +117,55 @@ export default function AccountPage() {
     } else {
       setStatus("Steam ownership refresh failed.");
     }
+  };
+
+  const createApiKey = async () => {
+    const response = await fetch(api + "/api/v1/account/api-keys", {
+      method: "POST",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        name: "Account API",
+        scopes: ["profile:read", "jobs:read", "fines:read", "vtcs:read", "stream:read"],
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      setNewApiKey(data.apiKey);
+      await load();
+    }
+  };
+
+  const revokeApiKey = async (id: number) => {
+    await fetch(api + "/api/v1/account/api-keys/" + id, {
+      method: "DELETE",
+      credentials: "include",
+    });
+    await load();
+  };
+
+  const connectTwitch = () => {
+    window.location.href = api + "/api/v1/account/twitch/connect";
+  };
+
+  const refreshTwitch = async () => {
+    const response = await fetch(api + "/api/v1/account/twitch/refresh", {
+      method: "POST",
+      credentials: "include",
+    });
+    if (response.ok) {
+      const data = await response.json();
+      setTwitch(data.twitch ?? null);
+    }
+  };
+
+  const disconnectTwitch = async () => {
+    await fetch(api + "/api/v1/account/twitch", {
+      method: "DELETE",
+      credentials: "include",
+    });
+    setTwitch(null);
   };
 
   const createClientToken = async () => {
@@ -240,6 +324,62 @@ export default function AccountPage() {
             ))}
           </div>
         </article>
+      </section>
+
+      <div className="sectionTitle"><h2>Personal API access</h2></div>
+      <section className="card" style={{ marginBottom: 18 }}>
+        <h3>Account API keys</h3>
+        <p className="muted">Use these keys in your own dashboards, bots, scripts or integrations. Keys can read only your scoped account data and VTCs you actually belong to.</p>
+        <div className="actions">
+          <button className="button primary" onClick={() => void createApiKey()}>Create API key</button>
+        </div>
+        {newApiKey ? (
+          <div style={{ marginTop: 16 }}>
+            <p><strong>Copy this API key now — it will not be shown again:</strong></p>
+            <code style={{ wordBreak: "break-all" }}>{newApiKey}</code>
+          </div>
+        ) : null}
+      </section>
+      <section className="driverList" style={{ padding: 0 }}>
+        {apiKeys.map((key: any) => (
+          <article className="driver" key={key.id}>
+            <div><strong>{key.name}</strong><small>{key.prefix}…</small></div>
+            <div><strong>{key.revokedAt ? "Revoked" : "Active"}</strong><small>{(key.scopes ?? []).join(", ")}</small></div>
+            <div><small>{key.lastUsedAt ? "Last used " + new Date(key.lastUsedAt).toLocaleString() : "Never used"}</small></div>
+            <div>{!key.revokedAt ? <button className="button" onClick={() => void revokeApiKey(key.id)}>Revoke</button> : null}</div>
+          </article>
+        ))}
+      </section>
+
+      <div className="sectionTitle"><h2>Twitch streamer link</h2></div>
+      <section className="card" style={{ marginBottom: 18 }}>
+        {twitch ? (
+          <>
+            <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
+              {twitch.profileImageUrl ? <img src={twitch.profileImageUrl} alt="" style={{ width: 64, height: 64, borderRadius: 14 }} /> : null}
+              <div>
+                <h3 style={{ margin: 0 }}>{twitch.displayName}</h3>
+                <p className="muted">twitch.tv/{twitch.login}</p>
+              </div>
+            </div>
+            <p style={{ marginTop: 14 }}>
+              {twitch.live
+                ? "🔴 Live · " + (twitch.gameName || "Unknown category") + " · " + Number(twitch.viewerCount || 0).toLocaleString() + " viewers"
+                : "Offline"}
+            </p>
+            <div className="actions">
+              <button className="button primary" onClick={() => void refreshTwitch()}>Refresh Twitch status</button>
+              <a className="button" href={"https://twitch.tv/" + twitch.login}>Open channel</a>
+              <button className="button" onClick={() => void disconnectTwitch()}>Disconnect</button>
+            </div>
+          </>
+        ) : (
+          <>
+            <h3>Link Twitch</h3>
+            <p className="muted">Link your Twitch broadcaster identity so OpenHaul can detect when your registered account is live in Euro Truck Simulator 2 or American Truck Simulator.</p>
+            <button className="button primary" onClick={connectTwitch}>Connect Twitch</button>
+          </>
+        )}
       </section>
 
       <div className="sectionTitle"><h2>OpenHaul Client access</h2></div>
