@@ -10,6 +10,22 @@ const publicEndpoints = [
   ["GET", "/api/v1/public/donation-goals", "Public DLC/community funding goals"],
   ["GET", "/api/v1/public/map/assets", "Available locally generated ETS2/ATS PMTiles"],
   ["GET", "/api/v1/public/map/:game.pmtiles", "Range-enabled ETS2/ATS vector map asset"],
+  ["GET", "/api/v1/public/drivers/:steamId", "Public Steam-linked driver profile"],
+  ["GET", "/api/v1/public/vtcs/:id/community", "Public VTC company/member/recruitment data"],
+];
+
+const accountEndpoints = [
+  ["GET", "/api/v1/auth/steam", "Start Steam OpenID login"],
+  ["GET", "/api/v1/account/me", "Current Steam-linked account"],
+  ["POST", "/api/v1/account/ownership/refresh", "Refresh Steam ownership"],
+  ["GET", "/api/v1/account/dlc", "ETS2/ATS DLC catalogue and detection"],
+  ["GET", "/api/v1/account/client-tokens", "List telemetry client tokens"],
+  ["POST", "/api/v1/account/client-tokens", "Create telemetry client token"],
+  ["GET", "/api/v1/account/vtcs", "List account VTC memberships"],
+  ["POST", "/api/v1/account/vtcs", "Create Community VTC"],
+  ["GET", "/api/v1/account/vtcs/:id/manage", "VTC management data"],
+  ["POST", "/api/v1/account/vtcs/:id/apply", "Apply to join a VTC"],
+  ["POST", "/api/v1/account/vtcs/:id/ledger", "Add VTC ledger entry"],
 ];
 
 const protectedEndpoints = [
@@ -64,6 +80,9 @@ export default function ApiDocsPage() {
       <div className="sectionTitle"><h2>Public API</h2></div>
       <EndpointTable rows={publicEndpoints} />
 
+      <div className="sectionTitle"><h2>Steam account API</h2></div>
+      <EndpointTable rows={accountEndpoints} />
+
       <div className="sectionTitle"><h2>VTC API key</h2></div>
       <div className="card" style={{ marginBottom: 14 }}>
         <p>Send <code>Authorization: Bearer oh_vtc_...</code> or <code>X-API-Key: oh_vtc_...</code>.</p>
@@ -77,7 +96,7 @@ export default function ApiDocsPage() {
 
       <div className="sectionTitle"><h2>Telemetry client API</h2></div>
       <div className="card" style={{ marginBottom: 14 }}>
-        <p>Current development clients use <code>X-Ingest-Key</code>. Per-driver client authentication is on the roadmap.</p>
+        <p>Public users use account client tokens. Instance administrators can still use the trusted ingest key for server-side testing.</p>
       </div>
       <EndpointTable rows={ingestEndpoints} />
       <div style={{ height: 50 }} />
