@@ -57,7 +57,15 @@ public sealed record LiveTelemetry(
     string? Cargo,
     string? SourceCity,
     string? DestinationCity,
-    string? Server);
+    string? Server,
+    double? Rpm = null,
+    double? Fuel = null,
+    double? OdometerKm = null,
+    double? NavigationDistanceM = null,
+    double? NavigationTimeS = null,
+    double? SpeedLimitKph = null,
+    string? SourceCompany = null,
+    string? DestinationCompany = null);
 
 public sealed record FineTelemetry(
     int VtcId,
