@@ -70,6 +70,13 @@ internal static class Program
             });
 
             Log(logPath, "Update completed successfully.");
+
+            if (options.TryGetValue("self", out var selfPath) &&
+                !string.IsNullOrWhiteSpace(selfPath))
+            {
+                ScheduleSelfDelete(Path.GetFullPath(selfPath), logPath);
+            }
+
             return 0;
         }
         catch (Exception ex)
