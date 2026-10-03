@@ -14,6 +14,8 @@ param(
 
   [string]$TippecanoeImage = "openhaul-tippecanoe:latest",
 
+  [switch]$UpdateTruckSimMaps,
+
   [Parameter(Mandatory = $true, ParameterSetName = "TilesOnly")]
   [switch]$TilesOnly
 )
@@ -31,6 +33,34 @@ if (-not $TilesOnly) {
     if (-not (Test-Path -LiteralPath (Join-Path $TruckSimMapsPath $RequiredFile) -PathType Leaf)) {
       throw "TruckSimMapsPath must point to a TruckSim Maps source checkout, not an empty game/output folder. Missing: $RequiredFile in $TruckSimMapsPath. Clone https://github.com/truckermudgeon/maps.git with --recurse-submodules, then pass the clone root as -TruckSimMapsPath. See README.md: Real SCS road map data."
     }
+
+if (-not $TilesOnly) {
+  $RequiredGameArchives = @(
+    "base.scs",
+    "base_map.scs",
+    "base_share.scs",
+    "core.scs",
+    "def.scs",
+    "locale.scs",
+    "version.scs"
+  )
+
+  $MissingGameArchives = @()
+  foreach ($Archive in $RequiredGameArchives) {
+    if (-not (Test-Path -LiteralPath (Join-Path $GamePath $Archive) -PathType Leaf)) {
+      $MissingGameArchives += $Archive
+    }
+  }
+
+  if ($MissingGameArchives.Count -gt 0) {
+    $GameName = if ($Game -eq "ats") { "American Truck Simulator" } else { "Euro Truck Simulator 2" }
+    throw "$GameName game root is invalid or incomplete. Expected the directory containing the .scs archives. Missing: $($MissingGameArchives -join ', '). Path received: $GamePath"
+  }
+
+  $ScsCount = @(Get-ChildItem -LiteralPath $GamePath -Filter "*.scs" -File).Count
+  Write-Host "Validated $Game installation: $ScsCount .scs archives found."
+}
+
   }
 }
 
@@ -101,6 +131,20 @@ Write-Host "Working directory: $ParserOut"
 if (-not $TilesOnly) {
   Push-Location $TruckSimMapsPath
   try {
+    if ($UpdateTruckSimMaps) {
+      if (-not (Test-Path -LiteralPath (Join-Path $TruckSimMapsPath ".git"))) {
+        throw "-UpdateTruckSimMaps requires TruckSimMapsPath to be a Git checkout."
+      }
+      Write-Host "Updating TruckSim Maps checkout..."
+      git pull --ff-only
+      if ($LASTEXITCODE -ne 0) { throw "Unable to update TruckSim Maps checkout. Commit/stash local changes or update it manually." }
+      git submodule update --init --recursive
+      if ($LASTEXITCODE -ne 0) { throw "Unable to update TruckSim Maps submodules." }
+    }
+
+    $TruckSimCommit = git rev-parse --short HEAD 2>$null
+    if ($LASTEXITCODE -eq 0) { Write-Host "TruckSim Maps commit: $TruckSimCommit" }
+
     $TsxCli = Join-Path $TruckSimMapsPath "node_modules/tsx/dist/cli.mjs"
     if (-not (Test-Path -LiteralPath $TsxCli -PathType Leaf)) {
       Write-Host "Installing TruckSim Maps dependencies..."
@@ -121,8 +165,41 @@ if (-not $TilesOnly) {
     # Use this checkout's TypeScript runner directly; never fetch generic CLI names
     # from the npm registry or depend on Unix-style parser symlinks on Windows.
     Write-Host "Parsing installed SCS game files..."
-    node "$TsxCli" "packages/clis/parser/index.ts" -i "$GamePath" -o "$ParserOut"
-    if ($LASTEXITCODE -ne 0) { throw "TruckSim Maps parser failed." }
+    $ParserLog = Join-Path $ParserOut "$Game-parser.log"
+    $ParserErrorLog = Join-Path $ParserOut "$Game-parser-error.log"
+    Remove-Item -LiteralPath $ParserLog, $ParserErrorLog -Force -ErrorAction SilentlyContinue
+
+    $ParserArgs = @(
+      "$TsxCli",
+      "packages/clis/parser/index.ts",
+      "-i",
+      "$GamePath",
+      "-o",
+      "$ParserOut"
+    )
+
+    $ParserProcess = Start-Process -FilePath "node" `
+      -ArgumentList $ParserArgs `
+      -WorkingDirectory $TruckSimMapsPath `
+      -RedirectStandardOutput $ParserLog `
+      -RedirectStandardError $ParserErrorLog `
+      -NoNewWindow `
+      -Wait `
+      -PassThru
+
+    if (Test-Path -LiteralPath $ParserLog) {
+      Get-Content -LiteralPath $ParserLog
+    }
+
+    if ($ParserProcess.ExitCode -ne 0) {
+      Write-Host ""
+      Write-Host "----- TruckSim Maps parser error -----" -ForegroundColor Red
+      if (Test-Path -LiteralPath $ParserErrorLog) {
+        Get-Content -LiteralPath $ParserErrorLog | Select-Object -Last 80
+      }
+      Write-Host "--------------------------------------" -ForegroundColor Red
+      throw "TruckSim Maps parser failed with exit code $($ParserProcess.ExitCode). Full logs: $ParserLog and $ParserErrorLog"
+    }
 
     Write-Host "Generating SCS road/prefab/city GeoJSON..."
     node "$TsxCli" "packages/clis/generator/index.ts" map -m $MapId -i "$ParserOut" -o "$GeneratorOut" -t geojson
