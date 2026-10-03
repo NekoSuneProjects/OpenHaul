@@ -20,23 +20,27 @@
 - [x] Named-pipe telemetry bridge contract
 - [x] Client simulator for map/API testing
 - [x] Windows GitHub Actions build
-- [ ] SCS Telemetry SDK native plugin
-- [ ] Automatic ETS2/ATS installation detection
-- [ ] Automatic telemetry plugin installer/updater
+- [x] SCS Telemetry SDK native plugin
+- [x] Automatic ETS2/ATS installation detection
+- [x] Automatic telemetry plugin installer
+- [ ] Automatic telemetry plugin updater
 - [ ] Per-driver authentication tokens
 - [ ] Offline telemetry queue
-- [ ] Job start/complete detection from real SCS events
-- [ ] Fine events: red light, speeding, wrong way and other penalties from real SCS events
+- [ ] Job start detection from real SCS events
+- [x] Job complete detection from real SCS events
+- [x] Fine events: red light, speeding, wrong way, collision and other SCS penalties
 - [ ] Collision and damage events
-- [ ] Full truck/trailer/cargo telemetry
+- [x] Core truck/job/cargo telemetry (position, speed, RPM, fuel, odometer, navigation, truck, cargo)
+- [ ] Trailer/wheel/advanced damage telemetry
 - [ ] TruckersMP process/server detection
 - [ ] Signed client releases from GitHub Actions
 
 ## Mapping
 - [ ] ETS2 map asset pipeline
 - [ ] ATS map asset pipeline
-- [ ] Game-coordinate to map-coordinate transforms
-- [ ] Smooth geographic truck markers
+- [x] ETS2/ATS game-coordinate to WGS84 transforms
+- [x] Geographic MapLibre truck markers and heading
+- [ ] Interpolated/tweened truck movement between telemetry frames
 - [x] Global live-data map view
 - [x] VTC query filter contract: /map?vtc=ID
 - [x] Realtime WebSocket updates
@@ -50,7 +54,7 @@
 - [ ] Drivers and fleets
 - [x] Job data storage/API foundation
 - [x] Fines/events data storage/API foundation
-- [ ] Statistics and leaderboards
+- [x] Statistics and leaderboards
 - [ ] Achievements
 - [ ] Convoy/events manager
 - [ ] Webhooks
@@ -60,14 +64,14 @@
 - [ ] Driver account linking
 - [x] Completed-job embeds
 - [x] Fine embeds
-- [ ] Online/offline events
+- [x] Online/offline events
 - [ ] Convoy announcements
 - [ ] Role synchronization
 - [ ] Per-VTC channel configuration UI
 
 ## Media and support
 - [x] TruckersFM API/player foundation
-- [ ] Full radio page with history, next track and DJ information
+- [x] Full radio page with history, next track and DJ information
 - [x] Donation goal storage/API
 - [x] DLC funding goal page
 - [x] Admin goal-management API
