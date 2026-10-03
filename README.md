@@ -406,3 +406,17 @@ NEXT_PUBLIC_MAP_SATELLITE_TILE_URL=https://services.arcgisonline.com/ArcGIS/rest
 ```
 
 X-Ray mode does not require an external basemap provider. For the full road-only experience, generate/import the ETS2/ATS PMTiles assets described in the SCS map-data section.
+
+
+## Ko-fi donations
+
+OpenHaul uses Ko-fi as the external donation destination while keeping funding-goal progress inside OpenHaul.
+
+Configure:
+
+```env
+DONATIONS_ENABLED=true
+KOFI_URL=https://ko-fi.com/yourname
+```
+
+The Support page displays the configured funding goals and a **Donate on Ko-fi** button. OpenHaul does not collect card/payment details itself.
