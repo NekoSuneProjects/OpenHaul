@@ -19,7 +19,7 @@ export async function registerAccountRoutes(app: FastifyInstance) {
     openid.searchParams.set("openid.ns", "http://specs.openid.net/auth/2.0");
     openid.searchParams.set("openid.mode", "checkid_setup");
     openid.searchParams.set("openid.return_to", returnTo);
-    openid.searchParams.set("openid.realm", appUrl());
+    openid.searchParams.set("openid.realm", process.env.OPENHAUL_STEAM_REALM ?? (new URL(apiUrl()).origin + "/"));
     openid.searchParams.set("openid.identity", "http://specs.openid.net/auth/2.0/identifier_select");
     openid.searchParams.set("openid.claimed_id", "http://specs.openid.net/auth/2.0/identifier_select");
 
@@ -78,7 +78,7 @@ export async function registerAccountRoutes(app: FastifyInstance) {
     reply.setCookie("openhaul_session", session.token, {
       httpOnly: true,
       sameSite: "lax",
-      secure: process.env.NODE_ENV === "production",
+      secure: process.env.OPENHAUL_COOKIE_SECURE === "true",
       path: "/",
       expires: session.expiresAt,
     });
