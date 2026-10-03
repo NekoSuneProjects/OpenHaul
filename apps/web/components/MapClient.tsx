@@ -160,9 +160,9 @@ function defaultMapStyle() {
         source: "openhaul-road-base",
         layout: { visibility: "visible" as const },
         paint: {
-          "raster-opacity": 0.92,
-          "raster-saturation": -0.25,
-          "raster-brightness-max": 0.82,
+          "raster-opacity": 0.74,
+          "raster-saturation": -0.32,
+          "raster-brightness-max": 0.76,
         },
       },
       {
@@ -171,9 +171,9 @@ function defaultMapStyle() {
         source: "openhaul-satellite-base",
         layout: { visibility: "none" as const },
         paint: {
-          "raster-opacity": 1,
-          "raster-saturation": -0.08,
-          "raster-contrast": 0.08,
+          "raster-opacity": 0.84,
+          "raster-saturation": -0.16,
+          "raster-contrast": 0.12,
         },
       },
     ],
@@ -267,22 +267,26 @@ function setScsMapTheme(map: any, game: "ets2" | "ats", mode: MapMode) {
   }
 
   if (map.getLayer(sourceId + "-road-case")) {
-    map.setPaintProperty(sourceId + "-road-case", "line-color", mode === "xray" ? "#00150a" : "#07110c");
-    map.setPaintProperty(sourceId + "-road-case", "line-opacity", mode === "satellite" ? 1 : 0.95);
+    map.setPaintProperty(
+      sourceId + "-road-case",
+      "line-color",
+      mode === "satellite" ? "#020604" : mode === "xray" ? "#00150a" : "#07110c",
+    );
+    map.setPaintProperty(sourceId + "-road-case", "line-opacity", 1);
   }
 
   if (map.getLayer(sourceId + "-roads")) {
     map.setPaintProperty(sourceId + "-roads", "line-color", [
       "match",
       ["get", "roadType"],
-      "freeway", mode === "xray" ? "#63ff9c" : "#54e08a",
-      "expressway", mode === "xray" ? "#87ffc0" : "#6bd995",
-      "local", mode === "xray" ? "#d8ffe7" : "#b5c7bd",
-      "no_vehicles", "#6f8076",
-      "unknown", "#87968e",
-      mode === "xray" ? "#f2fff7" : "#dce8e1",
+      "freeway", mode === "satellite" ? "#75ffb1" : mode === "xray" ? "#63ff9c" : "#54e08a",
+      "expressway", mode === "satellite" ? "#a4ffd0" : mode === "xray" ? "#87ffc0" : "#6bd995",
+      "local", mode === "satellite" ? "#f2fff7" : mode === "xray" ? "#d8ffe7" : "#d7eee1",
+      "no_vehicles", mode === "satellite" ? "#d0d8d3" : "#6f8076",
+      "unknown", mode === "satellite" ? "#dce8e1" : "#87968e",
+      mode === "xray" ? "#f2fff7" : "#e7f5ec",
     ]);
-    map.setPaintProperty(sourceId + "-roads", "line-opacity", mode === "satellite" ? 1 : 0.96);
+    map.setPaintProperty(sourceId + "-roads", "line-opacity", 1);
   }
 
   if (map.getLayer(sourceId + "-cities")) {
@@ -556,10 +560,26 @@ export function MapClient() {
         zoom: 3,
         minZoom: 1,
         maxZoom: 18,
+        dragPan: true,
+        scrollZoom: true,
+        boxZoom: true,
+        dragRotate: true,
+        touchZoomRotate: true,
+        keyboard: true,
       });
 
       map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
       map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
+
+      const takeManualCameraControl = () => {
+        fittedRef.current = true;
+        setSelectedDriverId("");
+        setCameraMode("map");
+      };
+
+      map.on("dragstart", takeManualCameraControl);
+      map.on("rotatestart", takeManualCameraControl);
+      map.getCanvas().addEventListener("wheel", takeManualCameraControl, { passive: true });
 
       map.on("load", () => {
         if (!map.getSource("openhaul-drivers")) {
