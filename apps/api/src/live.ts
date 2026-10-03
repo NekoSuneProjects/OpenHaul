@@ -1,4 +1,4 @@
-import Redis from "ioredis";
+import { Redis } from "ioredis";
 
 export type LiveDriver = {
   driverId: string;
@@ -43,14 +43,14 @@ export async function setLiveDriver(driver: LiveDriver) {
   await tx.exec();
 }
 
-export async function getLiveDrivers(vtcId?: number) {
+export async function getLiveDrivers(vtcId?: number): Promise<LiveDriver[]> {
   const now = Date.now();
   const index = vtcId ? `live:vtc:${vtcId}` : "live:all";
-  const ids = await redis.zrangebyscore(index, now - TTL_SECONDS * 1000, "+inf");
+  const ids: string[] = await redis.zrangebyscore(index, now - TTL_SECONDS * 1000, "+inf");
   if (!ids.length) return [];
 
-  const values = await redis.mget(ids.map((id) => `live:driver:${id}`));
+  const values: Array<string | null> = await redis.mget(ids.map((id: string) => `live:driver:${id}`));
   return values
-    .filter((value): value is string => Boolean(value))
-    .map((value) => JSON.parse(value) as LiveDriver);
+    .filter((value: string | null): value is string => Boolean(value))
+    .map((value: string) => JSON.parse(value) as LiveDriver);
 }
