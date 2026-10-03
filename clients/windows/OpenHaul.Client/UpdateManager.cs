@@ -166,123 +166,97 @@ public sealed class UpdateManager
         CancellationToken token)
     {
         await _telemetryUpdateLock.WaitAsync(token);
+        string? temporaryDll = null;
+
         try
         {
-            var telemetryDirectory = Path.Combine(ClientSettings.SettingsDirectory, "telemetry");
-            Directory.CreateDirectory(telemetryDirectory);
-
             var safeHash = manifest.Telemetry.Sha256.Trim().ToLowerInvariant();
             if (safeHash.Length < 12)
                 throw new InvalidOperationException("Telemetry update manifest checksum is invalid.");
 
-            var cachedDll = Path.Combine(
-                telemetryDirectory,
-                "OpenHaul.Telemetry-" + safeHash[..12] + ".dll");
+            var updateDirectory = Path.Combine(
+                ClientSettings.SettingsDirectory,
+                "updates",
+                "telemetry");
 
-            var currentHash = File.Exists(cachedDll)
-                ? await Sha256Async(cachedDll, token)
-                : "";
+            Directory.CreateDirectory(updateDirectory);
 
-            if (!currentHash.Equals(safeHash, StringComparison.OrdinalIgnoreCase))
+            temporaryDll = Path.Combine(
+                updateDirectory,
+                "OpenHaul.Telemetry-" + safeHash[..12] + "-" +
+                Guid.NewGuid().ToString("N") + ".dll");
+
+            Status?.Invoke("Downloading telemetry plugin update…");
+            await DownloadVerifiedAsync(
+                manifest.Telemetry.Url,
+                temporaryDll,
+                safeHash,
+                token);
+
+            var gameInstalls = GameLocator.FindInstalledGames();
+            var installed = new List<string>();
+            var failures = new List<string>();
+            var deferred = new List<string>();
+
+            foreach (var game in gameInstalls)
             {
-                Status?.Invoke("Downloading telemetry plugin update…");
-                await DownloadVerifiedAsync(
-                    manifest.Telemetry.Url,
-                    cachedDll,
-                    safeHash,
-                    token);
-            }
+                var pluginDirectory = Path.Combine(game.Path, "bin", "win_x64", "plugins");
+                var destination = Path.Combine(pluginDirectory, "OpenHaul.Telemetry.dll");
 
-        var gameInstalls = GameLocator.FindInstalledGames();
-        var installed = new List<string>();
-        var failures = new List<string>();
-        var deferred = new List<string>();
-
-        foreach (var game in gameInstalls)
-        {
-            var pluginDirectory = Path.Combine(game.Path, "bin", "win_x64", "plugins");
-            var destination = Path.Combine(pluginDirectory, "OpenHaul.Telemetry.dll");
-
-            try
-            {
-                Directory.CreateDirectory(pluginDirectory);
-
-                var destinationHash = File.Exists(destination)
-                    ? await Sha256Async(destination, token)
-                    : "";
-
-                if (!destinationHash.Equals(manifest.Telemetry.Sha256, StringComparison.OrdinalIgnoreCase))
+                try
                 {
+                    Directory.CreateDirectory(pluginDirectory);
+
+                    var destinationHash = File.Exists(destination)
+                        ? await Sha256Async(destination, token)
+                        : "";
+
+                    if (destinationHash.Equals(safeHash, StringComparison.OrdinalIgnoreCase))
+                        continue;
+
                     if (IsGameRunning(game.Game))
                     {
-                        deferred.Add(game.Game.ToUpperInvariant() + ": update will apply after the game closes");
+                        deferred.Add(game.Game.ToUpperInvariant() +
+                            ": update will apply after the game closes");
                         continue;
                     }
 
                     await InstallTelemetryAtomicallyAsync(
-                        cachedDll,
+                        temporaryDll,
                         destination,
                         safeHash,
                         token);
+
                     installed.Add(destination);
                 }
-            }
-            catch (IOException ex) when (IsSharingViolation(ex))
-            {
-                deferred.Add(game.Game.ToUpperInvariant() + ": plugin is in use and will update after the game closes");
-            }
-            catch (Exception ex)
-            {
-                failures.Add(game.Game.ToUpperInvariant() + ": " + ex.Message);
-            }
-        }
-
-        if (failures.Count > 0)
-        {
-            return new TelemetryUpdateResult(
-                false,
-                manifest.Telemetry.Version,
-                installed,
-                failures,
-                deferred,
-                cachedDll);
-        }
-
-        Status?.Invoke(
-            deferred.Count > 0
-                ? "Telemetry update deferred until the game closes."
-                : installed.Count > 0
-                    ? "Telemetry plugin updated."
-                    : "Telemetry plugin is up to date.");
-
-            // Best-effort cleanup of old content-addressed telemetry downloads.
-            // Never fail an update because an older DLL is still locked by Windows.
-            try
-            {
-                foreach (var oldFile in Directory.EnumerateFiles(
-                    telemetryDirectory,
-                    "OpenHaul.Telemetry-*.dll"))
+                catch (IOException ex) when (IsSharingViolation(ex))
                 {
-                    if (oldFile.Equals(cachedDll, StringComparison.OrdinalIgnoreCase))
-                        continue;
-
-                    try { File.Delete(oldFile); }
-                    catch (IOException) { }
-                    catch (UnauthorizedAccessException) { }
+                    deferred.Add(game.Game.ToUpperInvariant() +
+                        ": plugin is in use and will update after the game closes");
                 }
-
-                var legacyFile = Path.Combine(telemetryDirectory, "OpenHaul.Telemetry.dll");
-                if (File.Exists(legacyFile))
+                catch (Exception ex)
                 {
-                    try { File.Delete(legacyFile); }
-                    catch (IOException) { }
-                    catch (UnauthorizedAccessException) { }
+                    failures.Add(game.Game.ToUpperInvariant() + ": " + ex.Message);
                 }
             }
-            catch
+
+            if (failures.Count > 0)
             {
-                // Cleanup is optional; the active update has already succeeded.
+                return new TelemetryUpdateResult(
+                    false,
+                    manifest.Telemetry.Version,
+                    installed,
+                    failures,
+                    deferred,
+                    temporaryDll);
             }
+
+            Status?.Invoke(
+                deferred.Count > 0
+                    ? "Telemetry update deferred until the game closes."
+                    : installed.Count > 0
+                        ? "Telemetry plugin updated."
+                        : "Telemetry plugin is up to date.");
 
             return new TelemetryUpdateResult(
                 true,
@@ -290,45 +264,24 @@ public sealed class UpdateManager
                 installed,
                 failures,
                 deferred,
-                cachedDll);
+                temporaryDll);
         }
         finally
         {
+            if (!string.IsNullOrWhiteSpace(temporaryDll))
+            {
+                try
+                {
+                    if (File.Exists(temporaryDll))
+                        File.Delete(temporaryDll);
+                }
+                catch
+                {
+                    // Temporary cleanup must never make an update fail.
+                }
+            }
+
             _telemetryUpdateLock.Release();
-        }
-    }
-
-    private static async Task InstallTelemetryAtomicallyAsync(
-        string source,
-        string destination,
-        string expectedSha256,
-        CancellationToken token)
-    {
-        var temporary = destination + ".openhaul-update";
-        try
-        {
-            if (File.Exists(temporary))
-                File.Delete(temporary);
-
-            Directory.CreateDirectory(Path.GetDirectoryName(destination)!);
-            File.Copy(source, temporary, overwrite: true);
-
-            var stagedHash = await Sha256Async(temporary, token);
-            if (!stagedHash.Equals(expectedSha256, StringComparison.OrdinalIgnoreCase))
-                throw new InvalidOperationException("Staged telemetry plugin checksum mismatch.");
-
-            File.Move(temporary, destination, overwrite: true);
-        }
-        finally
-        {
-            try
-            {
-                if (File.Exists(temporary))
-                    File.Delete(temporary);
-            }
-            catch
-            {
-            }
         }
     }
 
