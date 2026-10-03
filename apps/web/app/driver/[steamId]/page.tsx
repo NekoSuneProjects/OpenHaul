@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 
-const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 export default function DriverProfilePage() {
   const params = useParams<{ steamId: string }>();
