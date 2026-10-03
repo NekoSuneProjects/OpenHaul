@@ -21,6 +21,7 @@ public sealed class MainForm : Form
     private readonly Label _updateLabel = new();
     private readonly ProgressBar _updateProgress = new();
     private readonly Button _updateButton = new();
+    private readonly Button _clientUpdatePageButton = new();
     private readonly Button _playButton = new();
     private readonly Button _telemetryButton = new();
     private readonly Button _signInButton = new();
@@ -359,8 +360,14 @@ public sealed class MainForm : Form
         _updateButton.Width = 150;
         _updateButton.Height = 42;
         _updateButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        _updateButton.Location = new Point(Width - 180, 16);
+        _updateButton.Location = new Point(Math.Max(20, panel.ClientSize.Width - 168), 16);
         StyleButton(_updateButton, true);
+        panel.Resize += (_, _) =>
+        {
+            _updateButton.Location = new Point(
+                Math.Max(20, panel.ClientSize.Width - _updateButton.Width - 18),
+                16);
+        };
         _updateButton.Click += async (_, _) =>
         {
             if (_manifest is not null && UpdateManager.IsClientUpdateAvailable(_manifest))
@@ -803,10 +810,16 @@ public sealed class MainForm : Form
         _latestVersion.ForeColor = C(150, 180, 163);
         client.Controls.Add(_latestVersion);
 
-        var check = new Button { Text = "Check now", Width = 130, Height = 38, Location = new Point(24, 132) };
-        StyleButton(check, false);
-        check.Click += async (_, _) => await CheckUpdatesAsync(updateTelemetry: false);
-        client.Controls.Add(check);
+        _clientUpdatePageButton.Text = "Check for Updates";
+        _clientUpdatePageButton.Width = 170;
+        _clientUpdatePageButton.Height = 40;
+        _clientUpdatePageButton.Location = new Point(24, 132);
+        StyleButton(_clientUpdatePageButton, true);
+        _clientUpdatePageButton.Click -= ClientUpdatePageButton_Click;
+        _clientUpdatePageButton.Click += ClientUpdatePageButton_Click;
+        client.Controls.Add(_clientUpdatePageButton);
+
+        RefreshClientUpdateButtons();
         page.Controls.Add(client);
 
         var telemetry = Card(456, 110, 428, 190);
@@ -1211,6 +1224,8 @@ public sealed class MainForm : Form
             {
                 _updateLabel.Text = "Update service unavailable";
                 _updateButton.Text = "Check Updates";
+                _clientUpdatePageButton.Text = "Retry Update Check";
+                _clientUpdatePageButton.Enabled = true;
                 return;
             }
 
@@ -1228,12 +1243,14 @@ public sealed class MainForm : Form
                     : "Launcher update available";
                 _updateButton.Text = "Download Update";
                 _updateProgress.Value = 0;
+                RefreshClientUpdateButtons();
             }
             else
             {
                 _updateLabel.Text = "Installation up to date";
                 _updateButton.Text = "Check Updates";
                 _updateProgress.Value = 100;
+                RefreshClientUpdateButtons();
 
                 if (updateTelemetry)
                     await UpdateTelemetryAsync();
@@ -1258,6 +1275,8 @@ public sealed class MainForm : Form
         {
             _updateButton.Enabled = false;
             _updateButton.Text = "Updating…";
+            _clientUpdatePageButton.Enabled = false;
+            _clientUpdatePageButton.Text = "Updating…";
             await StopTelemetryAsync();
             await _updater.DownloadAndInstallClientAsync(_manifest, _lifetime.Token);
         }
@@ -1266,6 +1285,8 @@ public sealed class MainForm : Form
             SetStatus("Launcher update failed: " + ex.Message);
             _updateButton.Enabled = true;
             _updateButton.Text = "Download Update";
+            _clientUpdatePageButton.Enabled = true;
+            _clientUpdatePageButton.Text = "Download Update";
         }
     }
 
