@@ -21,6 +21,13 @@ OpenHaul is an open-source, self-hosted ETS2 and ATS trucking platform with live
 - MapLibre geographic ETS2/ATS live map with real game-coordinate projection
 - Optional real SCS road/prefab/city map overlay from locally generated PMTiles
 - Smoothed/interpolated live truck movement between telemetry updates
+- Steam OpenID account creation/login
+- Steam-visible ETS2/ATS ownership and DLC detection
+- Public Steam-linked driver profiles
+- Community VTC creation, recruitment, member roles and management
+- Per-member VTC performance tracking
+- VTC finance ledger with balance/income/expense totals
+- Revocable per-account Windows client tokens
 
 ## Quick start
 
@@ -60,6 +67,8 @@ GET /api/v1/public/radio/truckersfm
 GET /api/v1/public/map/assets
 GET /api/v1/public/map/ets2.pmtiles
 GET /api/v1/public/map/ats.pmtiles
+GET /api/v1/public/drivers/:steamId
+GET /api/v1/public/vtcs/:id/community
 WS  /api/v1/public/live/ws
 ```
 
@@ -77,11 +86,13 @@ X-API-Key: oh_vtc_...
 
 The API key is resolved to a VTC server-side. Callers cannot choose another VTC ID to escape their scope.
 
-Telemetry ingestion currently uses a deployment-level `OPENHAUL_INGEST_KEY` while the desktop client authentication flow is being built:
+Telemetry can use either a per-account client token or the deployment-level instance ingest key. Public users should create an `oh_client_...` token from `/account`; the shared ingest key is intended for instance administration/testing:
 
 ```http
 POST   /api/v1/telemetry/live
 DELETE /api/v1/telemetry/live/:driverId
+Authorization: Bearer oh_client_...
+# or, for instance administration:
 X-Ingest-Key: your-secret
 ```
 
@@ -188,3 +199,49 @@ npm run map:import -- --game ats --file /path/to/ats.pmtiles
 ```
 
 The live map automatically detects available map assets through `GET /api/v1/public/map/assets`. PMTiles are served with HTTP byte-range support so MapLibre only requests the vector tiles it needs.
+
+
+## Steam accounts and Community VTCs
+
+OpenHaul can use Steam OpenID as the account system. A first Steam login automatically creates the OpenHaul account and links the returned SteamID.
+
+Configure:
+
+```env
+STEAM_WEB_API_KEY=
+APP_URL=https://openhaul.example.com
+OPENHAUL_PUBLIC_API_URL=https://api.openhaul.example.com
+OPENHAUL_STEAM_REALM=https://api.openhaul.example.com/
+OPENHAUL_COOKIE_SECURE=true
+```
+
+For local HTTP development, keep `OPENHAUL_COOKIE_SECURE=false`.
+
+The account dashboard includes:
+
+- ETS2 and ATS ownership state
+- Steam-visible ETS2/ATS DLC detection
+- revocable Windows client tokens
+- public driver-profile link
+- VTC memberships
+- Community VTC creation
+
+VTC owners/admins can manage company information, recruitment, applications, member roles, public balance visibility, member performance, and a transaction ledger. Active members are also shown on public VTC pages.
+
+### Steam ownership limitation
+
+OpenHaul only marks base-game ownership as verified when Steam returns the user's owned-games list. Private game details are shown as unknown/private rather than falsely reporting the game as unowned.
+
+DLC shown as **Detected** means its app ID appeared in the Steam-visible library snapshot. Missing DLC is shown as **Not confirmed** because exact DLC entitlement checks are publisher/client-side Steamworks capabilities.
+
+## Account client authentication
+
+Create a token from `/account`, then configure the Windows client:
+
+```env
+OPENHAUL_API_URL=https://api.openhaul.example.com
+OPENHAUL_CLIENT_TOKEN=oh_client_...
+OPENHAUL_VTC_ID=123
+```
+
+When a client token is used, the API derives the driver SteamID and display name from the account and validates any requested VTC membership. Users can also track independent jobs/fines with no VTC configured.
