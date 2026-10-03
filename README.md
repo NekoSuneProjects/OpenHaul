@@ -147,20 +147,26 @@ MIT
 
 ## Windows client
 
-Builds are produced by `.github/workflows/windows-client.yml`.
+Builds are produced by `.github/workflows/windows-client.yml` and published as a rolling GUI installer:
 
-Useful development commands:
-
-```powershell
-# Show detected Steam installations
-OpenHaul.Client.exe --detect-games
-
-# Install a built native telemetry DLL into detected ETS2/ATS installs
-OpenHaul.Client.exe --install-plugin .\OpenHaul.Telemetry.dll
-
-# Publish simulated ETS2 telemetry for testing the live map/API
-OpenHaul.Client.exe --simulate
+```text
+https://github.com/NekoSuneProjects/OpenHaul/releases/download/windows-client/OpenHaul-Setup.exe
 ```
+
+The Windows app defaults to `https://openhaul.nekosunevr.co.uk`, but self-hosters can enter their own OpenHaul server URL before signing in.
+
+Normal setup is entirely GUI-based:
+
+1. Install **OpenHaul Client**.
+2. Click **Sign in with Steam**.
+3. Approve the Windows Client in the browser.
+4. OpenHaul creates a revocable `oh_client_...` token for that account and sends it directly to the desktop app.
+5. The app saves the token under the user's local Windows profile; no environment variable or copy/paste is required.
+6. Click **Detect ETS2 / ATS**.
+7. Click **Install telemetry plugin** to install the bundled `OpenHaul.Telemetry.dll` into detected games.
+8. Click **Start telemetry** and launch ETS2 or ATS.
+
+Connected PCs appear as Windows Client tokens on the Account page and can be revoked there.
 
 The native SCS plugin writes newline-delimited telemetry events to `\\.\pipe\OpenHaulTelemetry`.
 
