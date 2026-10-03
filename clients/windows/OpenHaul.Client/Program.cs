@@ -104,9 +104,9 @@ static async Task RunPipeClient(OpenHaulApi api, ClientConfig config, Cancellati
                 PipeDirection.In,
                 PipeOptions.Asynchronous);
 
-            Console.WriteLine("Waiting for SCS telemetry bridge…");
+            Console.WriteLine("Waiting for OpenHaul SCS telemetry plugin…");
             await pipe.ConnectAsync(5000, token);
-            Console.WriteLine("Telemetry bridge connected.");
+            Console.WriteLine("SCS telemetry plugin connected.");
 
             using var reader = new StreamReader(pipe);
 
@@ -116,7 +116,7 @@ static async Task RunPipeClient(OpenHaulApi api, ClientConfig config, Cancellati
                 if (line is null) break;
                 if (string.IsNullOrWhiteSpace(line)) continue;
 
-                await HandleEnvelope(line, api, token);
+                await HandleEnvelope(line, api, config, token);
             }
         }
         catch (OperationCanceledException) when (token.IsCancellationRequested)
@@ -125,7 +125,7 @@ static async Task RunPipeClient(OpenHaulApi api, ClientConfig config, Cancellati
         }
         catch (TimeoutException)
         {
-            Console.WriteLine("Telemetry bridge not available yet. Retrying…");
+            Console.WriteLine("SCS telemetry plugin not available yet. Retrying…");
         }
         catch (Exception ex)
         {
@@ -137,7 +137,7 @@ static async Task RunPipeClient(OpenHaulApi api, ClientConfig config, Cancellati
     }
 }
 
-static async Task HandleEnvelope(string json, OpenHaulApi api, CancellationToken token)
+static async Task HandleEnvelope(string json, OpenHaulApi api, ClientConfig config, CancellationToken token)
 {
     using var document = JsonDocument.Parse(json);
     if (!document.RootElement.TryGetProperty("type", out var typeProperty) ||
@@ -145,18 +145,104 @@ static async Task HandleEnvelope(string json, OpenHaulApi api, CancellationToken
         return;
 
     var type = typeProperty.GetString();
+    HttpResponseMessage? response = null;
 
-    HttpResponseMessage? response = type switch
+    switch (type)
     {
-        "live" => await api.SendLiveAsync(data.Deserialize<LiveTelemetry>()!, token),
-        "fine" => await api.SendFineAsync(data.Deserialize<FineTelemetry>()!, token),
-        "job.completed" => await api.SendJobAsync(data.Deserialize<JobCompletedTelemetry>()!, token),
-        _ => null
-    };
+        case "live":
+        {
+            var plugin = data.Deserialize<PluginLiveTelemetry>();
+            if (plugin is null) return;
+
+            var live = new LiveTelemetry(
+                config.DriverId,
+                config.Username,
+                plugin.Game,
+                config.VtcId,
+                config.VtcName,
+                config.VtcTag,
+                plugin.X,
+                plugin.Y,
+                plugin.Z,
+                plugin.Heading,
+                plugin.SpeedKph,
+                plugin.Truck,
+                plugin.Cargo,
+                plugin.SourceCity,
+                plugin.DestinationCity,
+                null);
+
+            response = await api.SendLiveAsync(live, token);
+            break;
+        }
+
+        case "fine":
+        {
+            if (config.VtcId is null)
+            {
+                Console.WriteLine("Fine received, but OPENHAUL_VTC_ID is not configured; skipping VTC fine upload.");
+                return;
+            }
+
+            var plugin = data.Deserialize<PluginFineTelemetry>();
+            if (plugin is null) return;
+
+            var fine = new FineTelemetry(
+                config.VtcId.Value,
+                config.DriverId,
+                plugin.Game,
+                NormalizeFineType(plugin.Offence),
+                checked((int)Math.Clamp(plugin.Amount, 0, int.MaxValue)),
+                plugin.Game.Equals("ats", StringComparison.OrdinalIgnoreCase) ? "USD" : "EUR",
+                null,
+                DateTimeOffset.UtcNow);
+
+            response = await api.SendFineAsync(fine, token);
+            break;
+        }
+
+        case "job.completed":
+        {
+            if (config.VtcId is null)
+            {
+                Console.WriteLine("Completed job received, but OPENHAUL_VTC_ID is not configured; skipping VTC job upload.");
+                return;
+            }
+
+            var plugin = data.Deserialize<PluginJobCompletedTelemetry>();
+            if (plugin is null) return;
+
+            var job = new JobCompletedTelemetry(
+                config.VtcId.Value,
+                config.DriverId,
+                plugin.Game,
+                plugin.Cargo,
+                plugin.SourceCity,
+                plugin.DestinationCity,
+                plugin.DistanceKm,
+                plugin.Income,
+                DateTimeOffset.UtcNow);
+
+            response = await api.SendJobAsync(job, token);
+            break;
+        }
+    }
 
     if (response is not null && !response.IsSuccessStatusCode)
         Console.Error.WriteLine($"OpenHaul API rejected {type}: {(int)response.StatusCode} {response.ReasonPhrase}");
 }
+
+static string NormalizeFineType(string offence) => offence.ToLowerInvariant() switch
+{
+    "red_signal" => "red_light",
+    "speeding" or "speeding_camera" => "speeding",
+    "wrong_way" => "wrong_way",
+    "crash" => "collision",
+    "no_lights" or "avoid_sleeping" or "avoid_weighing" or "illegal_trailer" or
+    "avoid_inspection" or "illegal_border_crossing" or "hard_shoulder_violation" or
+    "damaged_vehicle_usage" or "generic" => "other",
+    _ => "other",
+};
 
 static async Task RunSimulator(OpenHaulApi api, ClientConfig config, CancellationToken token)
 {
