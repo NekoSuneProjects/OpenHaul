@@ -1,4 +1,3 @@
-import { timingSafeEqual } from "node:crypto";
 import cors from "@fastify/cors";
 import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
@@ -15,6 +14,8 @@ import { registerAccountRoutes } from "./accountRoutes.js";
 import { registerCommunityVtcRoutes } from "./communityVtc.js";
 import { registerSteamDlcRoutes } from "./steamDlc.js";
 import { registerPublicDriverRoutes } from "./publicDrivers.js";
+import { registerClientTokenRoutes } from "./clientTokens.js";
+import { requireTelemetryIdentity, resolveUserVtc } from "./telemetryAuth.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true, credentials: true });
@@ -27,6 +28,7 @@ await registerAccountRoutes(app);
 await registerCommunityVtcRoutes(app);
 await registerSteamDlcRoutes(app);
 await registerPublicDriverRoutes(app);
+await registerClientTokenRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
@@ -75,21 +77,6 @@ const jobSchema = z.object({
   completedAt: z.coerce.date().default(() => new Date()),
 });
 
-function safeSecretEquals(actual: string | undefined, expected: string | undefined) {
-  if (!actual || !expected) return false;
-  const a = Buffer.from(actual);
-  const b = Buffer.from(expected);
-  return a.length === b.length && timingSafeEqual(a, b);
-}
-
-function requireIngest(request: { headers: Record<string, unknown> }, reply: { code: (status: number) => any }) {
-  const header = request.headers["x-ingest-key"];
-  const actual = Array.isArray(header) ? String(header[0]) : typeof header === "string" ? header : undefined;
-  if (!safeSecretEquals(actual, process.env.OPENHAUL_INGEST_KEY)) {
-    return reply.code(401).send({ error: "invalid_ingest_key" });
-  }
-}
-
 app.get("/health", async () => ({ ok: true, service: "openhaul-api" }));
 
 app.get("/api/v1/public/live", async (request) => {
@@ -137,23 +124,42 @@ app.get("/api/v1/public/radio/truckersfm", async (_request, reply) => {
 });
 
 app.post("/api/v1/telemetry/live", async (request, reply) => {
-  const denied = requireIngest(request as any, reply as any);
-  if (denied) return denied;
+  const identity = await requireTelemetryIdentity(request, reply);
+  if (!identity) return;
 
   const body = liveSchema.parse(request.body);
-  const driver = { ...body, updatedAt: new Date().toISOString() };
+  let driver = { ...body, updatedAt: new Date().toISOString() };
+
+  if (identity.kind === "user") {
+    const membership = await resolveUserVtc(identity.user, body.vtcId);
+
+    if (body.vtcId && !membership) {
+      return reply.code(403).send({ error: "not_member_of_vtc" });
+    }
+
+    driver = {
+      ...driver,
+      driverId: identity.user.steamId,
+      username: identity.user.displayName,
+      vtcId: membership?.vtc.id ?? null,
+      vtcName: membership ? String(membership.vtc.getDataValue("name")) : null,
+      vtcTag: membership ? (membership.vtc.getDataValue("tag") as string | null) : null,
+    };
+  }
 
   await setLiveDriver(driver);
   broadcastDriver(driver);
 
-  return reply.code(202).send({ accepted: true });
+  return reply.code(202).send({ accepted: true, driverId: driver.driverId });
 });
 
 app.delete("/api/v1/telemetry/live/:driverId", async (request, reply) => {
-  const denied = requireIngest(request as any, reply as any);
-  if (denied) return denied;
+  const identity = await requireTelemetryIdentity(request, reply);
+  if (!identity) return;
 
-  const { driverId } = z.object({ driverId: z.string().min(1).max(80) }).parse(request.params);
+  const params = z.object({ driverId: z.string().min(1).max(80) }).parse(request.params);
+  const driverId = identity.kind === "user" ? identity.user.steamId : params.driverId;
+
   const driver = await removeLiveDriver(driverId);
   broadcastOffline(driverId, driver?.vtcId);
 
@@ -161,17 +167,45 @@ app.delete("/api/v1/telemetry/live/:driverId", async (request, reply) => {
 });
 
 app.post("/api/v1/telemetry/fines", async (request, reply) => {
-  const denied = requireIngest(request as any, reply as any);
-  if (denied) return denied;
+  const identity = await requireTelemetryIdentity(request, reply);
+  if (!identity) return;
+
   const body = fineSchema.parse(request.body);
+
+  if (identity.kind === "user") {
+    const membership = await resolveUserVtc(identity.user, body.vtcId);
+    if (!membership) return reply.code(403).send({ error: "not_member_of_vtc" });
+
+    const fine = await Fine.create({
+      ...body,
+      driverId: identity.user.steamId,
+      vtcId: membership.vtc.id,
+    });
+    return reply.code(201).send({ fine });
+  }
+
   const fine = await Fine.create(body);
   return reply.code(201).send({ fine });
 });
 
 app.post("/api/v1/telemetry/jobs/completed", async (request, reply) => {
-  const denied = requireIngest(request as any, reply as any);
-  if (denied) return denied;
+  const identity = await requireTelemetryIdentity(request, reply);
+  if (!identity) return;
+
   const body = jobSchema.parse(request.body);
+
+  if (identity.kind === "user") {
+    const membership = await resolveUserVtc(identity.user, body.vtcId);
+    if (!membership) return reply.code(403).send({ error: "not_member_of_vtc" });
+
+    const job = await Job.create({
+      ...body,
+      driverId: identity.user.steamId,
+      vtcId: membership.vtc.id,
+    });
+    return reply.code(201).send({ job });
+  }
+
   const job = await Job.create(body);
   return reply.code(201).send({ job });
 });
