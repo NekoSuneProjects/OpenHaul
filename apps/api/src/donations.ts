@@ -22,7 +22,7 @@ function sameSecret(actual?: string, expected?: string) {
   return a.length === b.length && timingSafeEqual(a, b);
 }
 
-function requireAdmin(request: FastifyRequest, reply: FastifyReply) {
+async function requireAdmin(request: FastifyRequest, reply: FastifyReply) {
   const header = request.headers["x-admin-key"];
   const actual = Array.isArray(header) ? header[0] : header;
   if (!sameSecret(actual, process.env.OPENHAUL_ADMIN_KEY)) {
@@ -39,19 +39,29 @@ export async function registerDonationRoutes(app: FastifyInstance) {
     }),
   }));
 
-  app.post("/api/v1/admin/donation-goals", { preHandler: [requireAdmin] }, async (request, reply) => {
-    const body = goalSchema.parse(request.body);
-    const goal = await DonationGoal.create(body);
-    return reply.code(201).send({ goal });
+  app.route({
+    method: "POST",
+    url: "/api/v1/admin/donation-goals",
+    preHandler: requireAdmin,
+    handler: async (request, reply) => {
+      const body = goalSchema.parse(request.body);
+      const goal = await DonationGoal.create(body);
+      return reply.code(201).send({ goal });
+    },
   });
 
-  app.patch("/api/v1/admin/donation-goals/:id", { preHandler: [requireAdmin] }, async (request, reply) => {
-    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
-    const body = updateSchema.parse(request.body);
-    const goal = await DonationGoal.findByPk(id);
-    if (!goal) return reply.code(404).send({ error: "goal_not_found" });
+  app.route({
+    method: "PATCH",
+    url: "/api/v1/admin/donation-goals/:id",
+    preHandler: requireAdmin,
+    handler: async (request, reply) => {
+      const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+      const body = updateSchema.parse(request.body);
+      const goal = await DonationGoal.findByPk(id);
+      if (!goal) return reply.code(404).send({ error: "goal_not_found" });
 
-    await goal.update(body);
-    return { goal };
+      await goal.update(body);
+      return { goal };
+    },
   });
 }
