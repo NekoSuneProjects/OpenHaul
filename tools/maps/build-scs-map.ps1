@@ -291,9 +291,11 @@ finally {
 }
 
 Write-Host ""
+$LiveMapFile = Join-Path $OpenHaulRoot "data-runtime/maps/$Game.pmtiles"
+
 Write-Host "Done."
 Write-Host "GeoJSON backup: $GeoJsonFile"
 Write-Host "PMTiles backup: $PmTilesFile"
-Write-Host "Live map: $(Join-Path $OpenHaulRoot "data-runtime/maps/$Game.pmtiles")"
+Write-Host "Live map: $LiveMapFile"
 Write-Host "OpenHaul API will serve: /api/v1/public/map/$Game.pmtiles"
 Write-Host "The web live map auto-detects the replaced asset."
