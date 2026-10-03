@@ -20,6 +20,14 @@ type Driver = {
   cargo?: string | null;
   sourceCity?: string | null;
   destinationCity?: string | null;
+  sourceCompany?: string | null;
+  destinationCompany?: string | null;
+  rpm?: number | null;
+  fuel?: number | null;
+  odometerKm?: number | null;
+  navigationDistanceM?: number | null;
+  navigationTimeS?: number | null;
+  speedLimitKph?: number | null;
   server?: string | null;
   updatedAt: string;
 };
@@ -86,6 +94,12 @@ function driverFeatureCollection(drivers: Driver[]) {
             ? driver.sourceCity + " → " + driver.destinationCity
             : "",
           server: driver.server ?? "",
+          rpm: driver.rpm ?? 0,
+          fuel: driver.fuel ?? 0,
+          odometerKm: driver.odometerKm ?? 0,
+          navigationDistanceM: driver.navigationDistanceM ?? 0,
+          navigationTimeS: driver.navigationTimeS ?? 0,
+          speedLimitKph: driver.speedLimitKph ?? 0,
           vtc: driver.vtcName ?? "Independent",
           vtcTag: driver.vtcTag ?? "",
         },
@@ -233,6 +247,8 @@ export function MapClient() {
             String(properties.game || "").toUpperCase() + " · " + Math.round(Number(properties.speedKph || 0)) + " km/h",
             String(properties.truck || "Unknown truck"),
             String(properties.cargo || "No cargo"),
+            Number(properties.rpm || 0) > 0 ? Math.round(Number(properties.rpm)) + " RPM · " + Math.round(Number(properties.fuel || 0)) + " L fuel" : "",
+            Number(properties.navigationDistanceM || 0) > 0 ? Math.round(Number(properties.navigationDistanceM) / 1000) + " km remaining · " + Math.round(Number(properties.speedLimitKph || 0)) + " km/h limit" : "",
             String(properties.route || properties.server || ""),
           ].filter(Boolean);
 
