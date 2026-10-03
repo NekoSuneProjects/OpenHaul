@@ -12,6 +12,7 @@ import { registerDonationRoutes } from "./donations.js";
 import { registerStatsRoutes } from "./stats.js";
 import { registerMapAssetRoutes } from "./mapAssets.js";
 import { registerAccountRoutes } from "./accountRoutes.js";
+import { registerCommunityVtcRoutes } from "./communityVtc.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true, credentials: true });
@@ -21,6 +22,7 @@ await registerDonationRoutes(app);
 await registerStatsRoutes(app);
 await registerMapAssetRoutes(app);
 await registerAccountRoutes(app);
+await registerCommunityVtcRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
