@@ -36,11 +36,11 @@
 - [ ] Signed client releases from GitHub Actions
 
 ## Mapping
-- [ ] ETS2 map asset pipeline
-- [ ] ATS map asset pipeline
+- [x] ETS2 PMTiles map asset pipeline
+- [x] ATS PMTiles map asset pipeline
 - [x] ETS2/ATS game-coordinate to WGS84 transforms
 - [x] Geographic MapLibre truck markers and heading
-- [ ] Interpolated/tweened truck movement between telemetry frames
+- [x] Interpolated/tweened truck movement between telemetry frames
 - [x] Global live-data map view
 - [x] VTC query filter contract: /map?vtc=ID
 - [x] Realtime WebSocket updates
