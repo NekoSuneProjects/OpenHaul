@@ -128,8 +128,11 @@ export default function AccountPage() {
       slug: String(form.get("slug") ?? "").toLowerCase().trim(),
       tag: String(form.get("tag") ?? ""),
       description: String(form.get("description") ?? ""),
+      website: String(form.get("website") ?? ""),
+      discordUrl: String(form.get("discordUrl") ?? ""),
+      logoUrl: String(form.get("logoUrl") ?? ""),
       currency: String(form.get("currency") ?? "GBP").toUpperCase(),
-      recruitmentOpen: true,
+      recruitmentOpen: form.get("recruitmentOpen") === "on",
       publicBalance: form.get("publicBalance") === "on",
     };
 
@@ -285,7 +288,11 @@ export default function AccountPage() {
         <input name="slug" required pattern="[a-z0-9-]+" placeholder="URL slug, e.g. neko-logistics" />
         <input name="tag" placeholder="Tag, e.g. NEKO" maxLength={32} />
         <textarea name="description" placeholder="Tell drivers about your VTC" rows={5} />
+        <input name="website" placeholder="Website URL" />
+        <input name="discordUrl" placeholder="Discord invite URL" />
+        <input name="logoUrl" placeholder="Logo URL" />
         <input name="currency" defaultValue="GBP" maxLength={8} placeholder="Currency" />
+        <label><input type="checkbox" name="recruitmentOpen" defaultChecked /> Recruitment open</label>
         <label><input type="checkbox" name="publicBalance" /> Show VTC balance publicly</label>
         <button className="button primary" disabled={creating}>{creating ? "Creating…" : "Create VTC"}</button>
       </form>
