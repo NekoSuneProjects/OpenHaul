@@ -18,8 +18,10 @@ body { padding-bottom: 88px; }
 .shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
 .nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px); background: rgba(7,17,13,.82); border-bottom: 1px solid var(--line); }
 .navInner { height: 68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
-.brand { font-weight: 900; letter-spacing: -.04em; font-size: 1.35rem; }
-.brand span { color: var(--accent); }
+.brand { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; font-weight: 900; letter-spacing: -.04em; font-size: 1.35rem; }
+.brandWordmark { color: var(--text); }
+.brandWordmark span { color: var(--accent); }
+.brand img { display: block; flex-shrink: 0; }
 .links { display:flex; gap:18px; color:var(--muted); font-size:.95rem; }
 .links a:hover { color:var(--text); }
 

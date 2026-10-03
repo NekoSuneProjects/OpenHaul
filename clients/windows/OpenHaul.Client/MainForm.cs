@@ -42,6 +42,10 @@ public sealed class MainForm : Form
 
     public MainForm()
     {
+        using var iconStream = typeof(MainForm).Assembly.GetManifestResourceStream("OpenHaul.Brand.Icon")
+            ?? throw new InvalidOperationException("OpenHaul icon resource is missing.");
+        Icon = new Icon(iconStream, new Size(48, 48));
+        Disposed += (_, _) => Icon?.Dispose();
         Text = "OpenHaul Launcher";
         Width = 1180;
         Height = 720;
@@ -63,6 +67,10 @@ public sealed class MainForm : Form
             }
             SetUpdateProgress(value);
         };
+
+        _playButton.Click += async (_, _) => await PlaySelectedGameAsync();
+        _telemetryButton.Click += async (_, _) => await ToggleTelemetryAsync();
+        _gameSelector.SelectedIndexChanged += (_, _) => RefreshSelectedGamePath();
 
         BuildShell();
         ShowPage("play");
@@ -123,7 +131,7 @@ public sealed class MainForm : Form
 
     private void ConfigureTray()
     {
-        _trayIcon.Icon = SystemIcons.Application;
+        _trayIcon.Icon = Icon;
         _trayIcon.Text = "OpenHaul Launcher";
         _trayIcon.Visible = false;
 
@@ -201,13 +209,25 @@ public sealed class MainForm : Form
         };
         top.MouseDown += BeginWindowDrag;
 
+        var brandIcon = new PictureBox
+        {
+            Image = Icon!.ToBitmap(),
+            SizeMode = PictureBoxSizeMode.Zoom,
+            Location = new Point(24, 16),
+            Size = new Size(40, 40),
+            Cursor = Cursors.SizeAll,
+        };
+        brandIcon.Disposed += (_, _) => brandIcon.Image?.Dispose();
+        brandIcon.MouseDown += BeginWindowDrag;
+        top.Controls.Add(brandIcon);
+
         var logo = new Label
         {
             Text = "OpenHaul",
             AutoSize = true,
             Font = new Font("Segoe UI Variable Display", 22F, FontStyle.Bold),
             ForeColor = C(70, 235, 141),
-            Location = new Point(24, 17),
+            Location = new Point(74, 17),
             Cursor = Cursors.SizeAll,
         };
         logo.MouseDown += BeginWindowDrag;
@@ -219,7 +239,7 @@ public sealed class MainForm : Form
             AutoSize = true,
             Font = new Font("Segoe UI", 8.5F, FontStyle.Bold),
             ForeColor = C(103, 147, 122),
-            Location = new Point(182, 30),
+            Location = new Point(232, 30),
             Cursor = Cursors.SizeAll,
         };
         subtitle.MouseDown += BeginWindowDrag;
@@ -254,10 +274,11 @@ public sealed class MainForm : Form
         };
 
         AddNav(sidebar, "play", "▶  Play", 20);
-        AddNav(sidebar, "servers", "▣  Server Status", 72);
-        AddNav(sidebar, "account", "●  Account", 124);
-        AddNav(sidebar, "updates", "⇩  Updates", 176);
-        AddNav(sidebar, "settings", "⚙  Settings", 228);
+        AddNav(sidebar, "news", "\u25A4  News", 72);
+        AddNav(sidebar, "servers", "▣  Server Status", 124);
+        AddNav(sidebar, "account", "●  Account", 176);
+        AddNav(sidebar, "updates", "⇩  Updates", 228);
+        AddNav(sidebar, "settings", "⚙  Settings", 280);
 
         var version = new Label
         {
@@ -397,6 +418,7 @@ public sealed class MainForm : Form
 
         Control next = page switch
         {
+            "news" => BuildNewsPage(),
             "servers" => BuildServersPage(),
             "account" => BuildAccountPage(),
             "updates" => BuildUpdatesPage(),
@@ -459,7 +481,6 @@ public sealed class MainForm : Form
         _gameSelector.Location = new Point(30, 118);
         _gameSelector.BackColor = C(9, 38, 25);
         _gameSelector.ForeColor = Color.White;
-        _gameSelector.SelectedIndexChanged += (_, _) => RefreshSelectedGamePath();
         hero.Controls.Add(_gameSelector);
 
         _gamePath.AutoSize = false;
@@ -474,7 +495,6 @@ public sealed class MainForm : Form
         _playButton.Location = new Point(640, 115);
         StyleButton(_playButton, true);
         _playButton.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-        _playButton.Click += async (_, _) => await PlaySelectedGameAsync();
         hero.Controls.Add(_playButton);
 
         _telemetryButton.Text = "Start Telemetry";
@@ -482,54 +502,76 @@ public sealed class MainForm : Form
         _telemetryButton.Height = 40;
         _telemetryButton.Location = new Point(640, 184);
         StyleButton(_telemetryButton, false);
-        _telemetryButton.Click += async (_, _) => await ToggleTelemetryAsync();
         hero.Controls.Add(_telemetryButton);
 
         page.Controls.Add(hero);
 
-        var news = Card(24, 374, 860, 176);
-        news.Controls.Add(new Label
+        RefreshSelectedGamePath();
+        ApplyMandatoryUpdateState();
+        return page;
+    }
+
+    private Control BuildNewsPage()
+    {
+        var page = PagePanel();
+        var title = PageTitle("OpenHaul News", "Latest launcher, telemetry and platform updates.");
+        page.Controls.Add(title);
+
+        var refresh = new Button
         {
-            Text = "OpenHaul News",
-            Font = new Font("Segoe UI Variable Display", 16F, FontStyle.Bold),
-            AutoSize = true,
-            Location = new Point(24, 18),
-        });
-        news.Controls.Add(new Label
-        {
-            Text = "Latest launcher, telemetry and platform updates",
-            AutoSize = true,
-            ForeColor = C(125, 159, 140),
-            Location = new Point(25, 50),
-        });
+            Text = "Refresh",
+            Size = new Size(120, 38),
+        };
+        StyleButton(refresh, false);
+        page.Controls.Add(refresh);
+        refresh.BringToFront();
 
         var newsHost = new FlowLayoutPanel
         {
-            Location = new Point(20, 78),
-            Size = new Size(818, 82),
-            AutoScroll = false,
-            FlowDirection = FlowDirection.LeftToRight,
+            AutoScroll = true,
+            FlowDirection = FlowDirection.TopDown,
             WrapContents = false,
             BackColor = Color.Transparent,
         };
-        news.Controls.Add(newsHost);
-        page.Controls.Add(news);
+        page.Controls.Add(newsHost);
 
-        newsHost.HandleCreated += async (_, _) =>
+        void LayoutNews()
         {
+            title.Width = Math.Max(300, page.ClientSize.Width - 192);
+            refresh.Location = new Point(Math.Max(24, page.ClientSize.Width - 144), 24);
+            newsHost.SetBounds(24, 104,
+                Math.Max(300, page.ClientSize.Width - 48),
+                Math.Max(150, page.ClientSize.Height - 128));
+            ResizeNewsCards(newsHost);
+        }
+
+        async Task RefreshNewsAsync()
+        {
+            refresh.Enabled = false;
             try
             {
                 await LoadNewsAsync(newsHost);
             }
-            catch (Exception ex)
+            finally
             {
-                SetStatus("News load failed: " + ex.Message);
+                if (!refresh.IsDisposed) refresh.Enabled = true;
             }
-        };
+        }
 
-        RefreshSelectedGamePath();
-        ApplyMandatoryUpdateState();
+        page.Resize += (_, _) => LayoutNews();
+        refresh.Click += async (_, _) => await RefreshNewsAsync();
+        newsHost.HandleCreated += async (_, _) => await RefreshNewsAsync();
+        LayoutNews();
         return page;
+    }
+
+    private static void ResizeNewsCards(FlowLayoutPanel host)
+    {
+        foreach (Control card in host.Controls)
+        {
+            if (card is RoundedPanel)
+                card.Width = Math.Max(260, host.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 12);
+        }
     }
 
     private Control BuildServersPage()
@@ -1001,12 +1043,12 @@ public sealed class MainForm : Form
                 return;
             }
 
-            foreach (var item in items.Take(2))
+            foreach (var item in items)
             {
                 var card = new RoundedPanel
                 {
-                    Width = 390,
-                    Height = 76,
+                    Width = Math.Max(260, host.ClientSize.Width - SystemInformation.VerticalScrollBarWidth - 12),
+                    Height = 104,
                     BackColor = C(5, 24, 16),
                     BorderColor = C(18, 63, 42),
                     Radius = 12,
@@ -1020,7 +1062,8 @@ public sealed class MainForm : Form
                     Font = new Font("Segoe UI", 10.5F, FontStyle.Bold),
                     ForeColor = Color.White,
                     Location = new Point(16, 12),
-                    Size = new Size(255, 24),
+                    Size = new Size(card.Width - 130, 48),
+                    Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
                 });
 
                 var date = item.PublishedAt?.LocalDateTime.ToString("dd MMM yyyy") ?? "OpenHaul";
@@ -1029,7 +1072,7 @@ public sealed class MainForm : Form
                     Text = string.IsNullOrWhiteSpace(item.Tag) ? date : item.Tag + "  ·  " + date,
                     AutoSize = true,
                     ForeColor = C(106, 149, 126),
-                    Location = new Point(16, 38),
+                    Location = new Point(16, 72),
                 });
 
                 var read = new Button
@@ -1037,7 +1080,8 @@ public sealed class MainForm : Form
                     Text = "Open",
                     Width = 82,
                     Height = 32,
-                    Location = new Point(288, 22),
+                    Location = new Point(card.Width - 98, 22),
+                    Anchor = AnchorStyles.Top | AnchorStyles.Right,
                 };
                 StyleButton(read, false);
                 read.Click += (_, _) => OpenUrl(item.Url);
@@ -1287,7 +1331,7 @@ public sealed class MainForm : Form
             }
             else
             {
-                _updateLabel.Text = "Installation up to date";
+                _updateLabel.Text = "Launcher up to date";
                 _updateButton.Text = "Check Updates";
                 _updateProgress.Value = 100;
                 RefreshClientUpdateButtons();

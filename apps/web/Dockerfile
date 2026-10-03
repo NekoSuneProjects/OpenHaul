@@ -23,6 +23,7 @@ ENV NODE_ENV=production
 ENV HOSTNAME=0.0.0.0
 COPY --from=build /app/apps/web/.next/standalone ./
 COPY --from=build /app/apps/web/.next/static ./.next/static
+COPY --from=build /app/apps/web/public ./public
 # npm workspaces hoist Next.js and its runtime dependencies to /app/node_modules.
 # The standalone server generated from apps/web resolves "next" from there.
 COPY --from=deps /app/node_modules ./node_modules

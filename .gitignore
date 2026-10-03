@@ -7,3 +7,8 @@ dist
 .DS_Store
 coverage
 data-runtime
+
+# Windows client build and publish output
+clients/windows/**/bin/
+clients/windows/**/obj/
+/artifacts/

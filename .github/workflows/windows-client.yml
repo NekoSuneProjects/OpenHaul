@@ -5,11 +5,13 @@ on:
     branches: [main]
     paths:
       - "clients/windows/**"
+      - "assets/branding/**"
       - ".github/workflows/windows-client.yml"
   pull_request:
     branches: [main]
     paths:
       - "clients/windows/**"
+      - "assets/branding/**"
   workflow_dispatch:
 
 permissions:

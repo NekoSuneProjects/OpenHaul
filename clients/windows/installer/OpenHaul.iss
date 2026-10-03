@@ -15,6 +15,8 @@ ArchitecturesInstallIn64BitMode=x64compatible
 PrivilegesRequired=admin
 WizardStyle=modern
 SetupLogging=yes
+SetupIconFile=..\..\..\assets\branding\openhaul-icon.ico
+UninstallDisplayIcon={app}\OpenHaul.Client.exe
 
 [Files]
 Source: "..\..\..\artifacts\OpenHaul.Client\OpenHaul.Client.exe"; DestDir: "{app}"; Flags: ignoreversion
