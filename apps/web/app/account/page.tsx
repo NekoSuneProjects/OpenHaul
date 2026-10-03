@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
 type User = {
   id: number;
@@ -26,8 +25,8 @@ type Membership = {
 const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 
 export default function AccountPage() {
-  const searchParams = useSearchParams();
   const bootstrappedDefaultKey = useRef(false);
+  const [newAccount, setNewAccount] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [memberships, setMemberships] = useState<Membership[]>([]);
   const [dlc, setDlc] = useState<any>(null);
@@ -85,10 +84,13 @@ export default function AccountPage() {
     }
   };
 
-  useEffect(() => { void load(); }, []);
+  useEffect(() => {
+    setNewAccount(new URLSearchParams(window.location.search).get("new") === "1");
+    void load();
+  }, []);
 
   useEffect(() => {
-    if (!user || bootstrappedDefaultKey.current || searchParams.get("new") !== "1") return;
+    if (!user || bootstrappedDefaultKey.current || !newAccount) return;
     bootstrappedDefaultKey.current = true;
 
     void fetch(api + "/api/v1/account/api-keys/default", {
@@ -102,7 +104,7 @@ export default function AccountPage() {
         await load();
       }
     });
-  }, [user, searchParams]);
+  }, [user, newAccount]);
 
   const refreshOwnership = async () => {
     setStatus("Refreshing Steam library…");
