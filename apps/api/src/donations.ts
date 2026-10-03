@@ -33,6 +33,8 @@ async function requireAdmin(request: FastifyRequest, reply: FastifyReply) {
 export async function registerDonationRoutes(app: FastifyInstance) {
   app.get("/api/v1/public/donation-goals", async () => ({
     enabled: process.env.DONATIONS_ENABLED === "true",
+    provider: "ko-fi",
+    donationUrl: process.env.KOFI_URL?.trim() || null,
     goals: await DonationGoal.findAll({
       where: { active: true },
       order: [["sortOrder", "ASC"], ["id", "ASC"]],
