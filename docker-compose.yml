@@ -50,6 +50,9 @@ services:
       OPENHAUL_BOOTSTRAP_VTC_API_KEY: ${OPENHAUL_BOOTSTRAP_VTC_API_KEY:-}
       OPENHAUL_BOOTSTRAP_VTC_API_SCOPES: ${OPENHAUL_BOOTSTRAP_VTC_API_SCOPES:-telemetry:read,jobs:read,fines:read}
       TRUCKERSFM_NOWPLAYING_URL: ${TRUCKERSFM_NOWPLAYING_URL:-https://azuracast.truckers.fm/api/nowplaying/1}
+      OPENHAUL_MAP_DATA_DIR: /data-runtime/maps
+    volumes:
+      - ./data-runtime:/data-runtime
     depends_on:
       postgres:
         condition: service_healthy
