@@ -22,6 +22,9 @@ public sealed class OpenHaulApi : IDisposable
     public Task<HttpResponseMessage> SendLiveAsync(LiveTelemetry telemetry, CancellationToken token) =>
         _http.PostAsJsonAsync("api/v1/telemetry/live", telemetry, _json, token);
 
+    public Task<HttpResponseMessage> SendOfflineAsync(string driverId, CancellationToken token) =>
+        _http.DeleteAsync($"api/v1/telemetry/live/{Uri.EscapeDataString(driverId)}", token);
+
     public Task<HttpResponseMessage> SendFineAsync(FineTelemetry fine, CancellationToken token) =>
         _http.PostAsJsonAsync("api/v1/telemetry/fines", fine, _json, token);
 
