@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { DataTypes, Model, Sequelize } from "sequelize";
 
 const databaseUrl = process.env.DATABASE_URL ?? "postgres://openhaul:change-me@localhost:5432/openhaul";
@@ -68,7 +69,29 @@ Fine.init({
 Vtc.hasMany(VtcApiKey, { foreignKey: "vtcId" });
 VtcApiKey.belongsTo(Vtc, { foreignKey: "vtcId" });
 
+async function bootstrapVtc() {
+  const name = process.env.OPENHAUL_BOOTSTRAP_VTC_NAME?.trim();
+  const slug = process.env.OPENHAUL_BOOTSTRAP_VTC_SLUG?.trim();
+  const rawKey = process.env.OPENHAUL_BOOTSTRAP_VTC_API_KEY?.trim();
+  if (!name || !slug || !rawKey) return;
+
+  const [vtc] = await Vtc.findOrCreate({
+    where: { slug },
+    defaults: { name, slug, tag: process.env.OPENHAUL_BOOTSTRAP_VTC_TAG?.trim() || null },
+  });
+
+  const keyHash = createHash("sha256").update(rawKey).digest("hex");
+  const scopes = (process.env.OPENHAUL_BOOTSTRAP_VTC_API_SCOPES ?? "telemetry:read,jobs:read,fines:read")
+    .split(",").map((scope) => scope.trim()).filter(Boolean);
+
+  await VtcApiKey.findOrCreate({
+    where: { keyHash },
+    defaults: { vtcId: vtc.id, name: "Bootstrap key", keyHash, scopes, revokedAt: null },
+  });
+}
+
 export async function initDatabase() {
   await sequelize.authenticate();
   await sequelize.sync();
+  await bootstrapVtc();
 }
