@@ -91,6 +91,7 @@ public sealed record JobCompletedTelemetry(
 public sealed record ClientConfig(
     string ApiUrl,
     string IngestKey,
+    string ClientToken,
     string DriverId,
     string Username,
     int? VtcId,
@@ -101,6 +102,7 @@ public sealed record ClientConfig(
     public static ClientConfig FromEnvironment() => new(
         Environment.GetEnvironmentVariable("OPENHAUL_API_URL") ?? "http://localhost:3001",
         Environment.GetEnvironmentVariable("OPENHAUL_INGEST_KEY") ?? "",
+        Environment.GetEnvironmentVariable("OPENHAUL_CLIENT_TOKEN") ?? "",
         Environment.GetEnvironmentVariable("OPENHAUL_DRIVER_ID") ?? Environment.UserName,
         Environment.GetEnvironmentVariable("OPENHAUL_USERNAME") ?? Environment.UserName,
         int.TryParse(Environment.GetEnvironmentVariable("OPENHAUL_VTC_ID"), out var vtcId) ? vtcId : null,
