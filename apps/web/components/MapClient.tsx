@@ -660,11 +660,25 @@ export function MapClient() {
     if (!mapReady || !map || !mapAssets) return;
 
     if (mapAssets.ets2.available) {
-      addScsMapLayers(map, "ets2", absoluteApiUrl(mapAssets.ets2.url));
+      const version = encodeURIComponent(
+        String(mapAssets.ets2.updatedAt ?? "") + "-" + String(mapAssets.ets2.size ?? 0),
+      );
+      addScsMapLayers(
+        map,
+        "ets2",
+        absoluteApiUrl(mapAssets.ets2.url) + "?v=" + version,
+      );
     }
 
     if (mapAssets.ats.available) {
-      addScsMapLayers(map, "ats", absoluteApiUrl(mapAssets.ats.url));
+      const version = encodeURIComponent(
+        String(mapAssets.ats.updatedAt ?? "") + "-" + String(mapAssets.ats.size ?? 0),
+      );
+      addScsMapLayers(
+        map,
+        "ats",
+        absoluteApiUrl(mapAssets.ats.url) + "?v=" + version,
+      );
     }
 
     setScsMapVisibility(map, "ets2", gameFilter === "all" || gameFilter === "ets2");
