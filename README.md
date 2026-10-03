@@ -203,9 +203,11 @@ For other input locations or a separate public map repository:
 npm run map:publish -- --ets2 "D:\maps\ets2.pmtiles" --ats "D:\maps\ats.pmtiles" --repo "OWNER/REPOSITORY"
 ```
 
-Both archives are required for each publication; to update one game, keep the other game's existing local archive. The command creates a dedicated `map-data` release, uploads content-addressed archives, and uploads `maps.json` last. Unchanged archives are not uploaded again. The map release is not marked as the latest application release. Use a public repository with mutable releases for this channel; if you choose another repository, set `OPENHAUL_MAP_MANIFEST_URL` to its `releases/download/map-data/maps.json` URL on installations.
+Both archives are required for each publication; to update one game, keep the other game's existing local archive. The command creates or updates the dedicated rolling `map-data` release, uploads the current content-addressed ETS2/ATS archives, and uploads `maps.json` last. Unchanged archives are not uploaded again. After the new manifest is live, stale `.pmtiles` assets from older publications are deleted automatically, so the release keeps only the currently referenced ETS2 map, ATS map and `maps.json`. The map release is not marked as the latest application release. Use a public repository with mutable releases for this channel; if you choose another repository, set `OPENHAUL_MAP_MANIFEST_URL` to its `releases/download/map-data/maps.json` URL on installations.
 
-GitHub release attachments must each be under 2 GiB ([GitHub limits](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)). Generated files stay outside Git history. Older archives remain attached so cached manifests continue to work; the publisher does not delete them. Run only one publisher at a time.
+OpenHaul installations with `OPENHAUL_MAP_AUTO_UPDATE=true` check the manifest on startup and then every `OPENHAUL_MAP_UPDATE_HOURS` hours (default 6). When a newly published map has a different size/SHA-256, the API downloads, validates and atomically replaces the cached local map. Failed downloads retain the last working local archive.
+
+GitHub release attachments must each be under 2 GiB ([GitHub limits](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)). Generated files stay outside Git history. Run only one publisher at a time.
 
 ### Building maps locally (maintainer or custom maps)
 
