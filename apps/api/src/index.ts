@@ -76,11 +76,16 @@ app.get("/api/v1/public/live", async (request) => {
   return { count: drivers.length, drivers };
 });
 
-app.get("/api/v1/public/live/ws", { websocket: true }, async (connection, request) => {
+app.get("/api/v1/public/live/ws", { websocket: true }, (socket, request) => {
   const query = z.object({ vtc: z.coerce.number().int().positive().optional() }).parse(request.query);
-  addRealtimeClient(connection.socket, query.vtc);
-  const drivers = await getLiveDrivers(query.vtc);
-  connection.socket.send(JSON.stringify({ type: "snapshot", drivers }));
+  addRealtimeClient(socket, query.vtc);
+
+  void getLiveDrivers(query.vtc)
+    .then((drivers) => socket.send(JSON.stringify({ type: "snapshot", drivers })))
+    .catch((error) => {
+      app.log.error(error);
+      socket.close(1011, "Unable to load live snapshot");
+    });
 });
 
 app.get("/api/v1/public/vtcs/:id/live", async (request) => {
