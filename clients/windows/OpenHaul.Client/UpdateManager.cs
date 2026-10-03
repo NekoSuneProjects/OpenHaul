@@ -285,6 +285,42 @@ public sealed class UpdateManager
         }
     }
 
+    private static async Task InstallTelemetryAtomicallyAsync(
+        string source,
+        string destination,
+        string expectedSha256,
+        CancellationToken token)
+    {
+        var temporary = destination + ".openhaul-update";
+
+        try
+        {
+            if (File.Exists(temporary))
+                File.Delete(temporary);
+
+            Directory.CreateDirectory(Path.GetDirectoryName(destination)!);
+            File.Copy(source, temporary, overwrite: true);
+
+            var stagedHash = await Sha256Async(temporary, token);
+            if (!stagedHash.Equals(expectedSha256, StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException("Staged telemetry plugin checksum mismatch.");
+
+            File.Move(temporary, destination, overwrite: true);
+        }
+        finally
+        {
+            try
+            {
+                if (File.Exists(temporary))
+                    File.Delete(temporary);
+            }
+            catch
+            {
+                // Cleanup must not turn a successful update into a failure.
+            }
+        }
+    }
+
     public static async Task<string> Sha256Async(string path, CancellationToken token = default)
     {
         await using var stream = File.OpenRead(path);
