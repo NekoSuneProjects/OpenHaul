@@ -12,7 +12,7 @@ param(
 
   [string]$WorkDir = ".\\data-runtime\\map-build",
 
-  [string]$TippecanoeImage = "ghcr.io/openwatersio/tippecanoe:latest",
+  [string]$TippecanoeImage = "openhaul-tippecanoe:latest",
 
   [Parameter(Mandatory = $true, ParameterSetName = "TilesOnly")]
   [switch]$TilesOnly
@@ -46,11 +46,51 @@ if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
   throw "Docker is required to build PMTiles with Tippecanoe."
 }
 
-# Check the engine and image before spending time parsing installed game files.
-docker info --format '{{.OSType}}'
-if ($LASTEXITCODE -ne 0) { throw "Docker is unavailable. Start Docker Desktop and retry." }
-docker run --rm $TippecanoeImage tippecanoe --version
-if ($LASTEXITCODE -ne 0) { throw "Cannot run Tippecanoe image '$TippecanoeImage'. See the Docker error above." }
+# Check Docker before spending time parsing installed game files.
+$DockerOs = docker info --format '{{.OSType}}'
+if ($LASTEXITCODE -ne 0) {
+  throw "Docker is unavailable. Start Docker Desktop and retry."
+}
+if ($DockerOs.Trim() -ne "linux") {
+  throw "OpenHaul map generation needs Docker Desktop in Linux containers mode. Current Docker OSType: $DockerOs"
+}
+
+function Ensure-TippecanoeImage {
+  param([string]$Image)
+
+  docker image inspect $Image *> $null
+  if ($LASTEXITCODE -eq 0) {
+    docker run --rm $Image tippecanoe --version
+    if ($LASTEXITCODE -eq 0) { return }
+  }
+
+  if ($Image -ne "openhaul-tippecanoe:latest") {
+    Write-Host "Trying custom Tippecanoe image: $Image"
+    docker run --rm $Image tippecanoe --version
+    if ($LASTEXITCODE -eq 0) { return }
+    Write-Warning "Custom Tippecanoe image failed. Falling back to OpenHaul local image."
+  }
+
+  $Dockerfile = Join-Path $PSScriptRoot "tippecanoe.Dockerfile"
+  if (-not (Test-Path -LiteralPath $Dockerfile -PathType Leaf)) {
+    throw "Missing OpenHaul Tippecanoe Dockerfile: $Dockerfile"
+  }
+
+  Write-Host "Building OpenHaul Tippecanoe image locally from the official Felt source..."
+  docker build --pull -f "$Dockerfile" -t "openhaul-tippecanoe:latest" "$PSScriptRoot"
+  if ($LASTEXITCODE -ne 0) {
+    throw "Unable to build the local OpenHaul Tippecanoe image. Check Docker Desktop networking and the build output above."
+  }
+
+  docker run --rm "openhaul-tippecanoe:latest" tippecanoe --version
+  if ($LASTEXITCODE -ne 0) {
+    throw "The locally built OpenHaul Tippecanoe image could not run."
+  }
+
+  $script:TippecanoeImage = "openhaul-tippecanoe:latest"
+}
+
+Ensure-TippecanoeImage -Image $TippecanoeImage
 
 Write-Host "OpenHaul SCS map builder"
 Write-Host "Game: $Game ($MapId)"
@@ -100,7 +140,7 @@ if (-not (Test-Path $GeoJsonFile)) {
   throw "Expected GeoJSON output was not found: $GeoJsonFile"
 }
 
-Write-Host "Generating PMTiles with Tippecanoe Docker image..."
+Write-Host "Generating PMTiles with Tippecanoe Docker image: $TippecanoeImage"
 docker run --rm `
   --mount "type=bind,source=${GeneratorOut},target=/data" `
   $TippecanoeImage `
