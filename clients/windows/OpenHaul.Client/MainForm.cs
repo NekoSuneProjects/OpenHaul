@@ -380,7 +380,7 @@ public sealed class MainForm : Form
         var page = PagePanel();
         page.Controls.Add(PageTitle("Drive with OpenHaul", "Start ETS2 or ATS with telemetry connected to your OpenHaul account."));
 
-        var hero = Card(24, 110, 860, 270);
+        var hero = Card(24, 104, 860, 248);
         var heroTitle = new Label
         {
             Text = "Ready to haul?",
@@ -398,6 +398,18 @@ public sealed class MainForm : Form
             Location = new Point(30, 74),
         };
         hero.Controls.Add(hint);
+
+        hero.Controls.Add(new Label
+        {
+            Text = string.IsNullOrWhiteSpace(_settings.ClientToken)
+                ? "●  Not signed in"
+                : "●  " + _settings.DisplayName,
+            AutoSize = true,
+            ForeColor = string.IsNullOrWhiteSpace(_settings.ClientToken)
+                ? C(190, 128, 103)
+                : C(82, 234, 142),
+            Location = new Point(30, 218),
+        });
 
         _gameSelector.DropDownStyle = ComboBoxStyle.DropDownList;
         _gameSelector.DrawMode = DrawMode.OwnerDrawFixed;
@@ -441,7 +453,7 @@ public sealed class MainForm : Form
 
         page.Controls.Add(hero);
 
-        var news = Card(24, 404, 860, 320);
+        var news = Card(24, 374, 860, 176);
         news.Controls.Add(new Label
         {
             Text = "OpenHaul News",
@@ -459,36 +471,15 @@ public sealed class MainForm : Form
 
         var newsHost = new FlowLayoutPanel
         {
-            Location = new Point(20, 82),
-            Size = new Size(818, 214),
-            AutoScroll = true,
-            FlowDirection = FlowDirection.TopDown,
+            Location = new Point(20, 78),
+            Size = new Size(818, 82),
+            AutoScroll = false,
+            FlowDirection = FlowDirection.LeftToRight,
             WrapContents = false,
             BackColor = Color.Transparent,
-            Padding = new Padding(0, 0, 8, 0),
         };
         news.Controls.Add(newsHost);
         page.Controls.Add(news);
-
-        var info = Card(24, 748, 860, 108);
-        info.Controls.Add(new Label
-        {
-            Text = "Driver account",
-            Font = new Font("Segoe UI", 11F, FontStyle.Bold),
-            AutoSize = true,
-            Location = new Point(24, 18),
-        });
-        var summary = new Label
-        {
-            Text = string.IsNullOrWhiteSpace(_settings.ClientToken)
-                ? "Not signed in — open Account and connect with Steam."
-                : $"{_settings.DisplayName} · {_settings.SteamId}",
-            AutoSize = true,
-            ForeColor = C(145, 178, 160),
-            Location = new Point(24, 50),
-        };
-        info.Controls.Add(summary);
-        page.Controls.Add(info);
 
         BeginInvoke(async () => await LoadNewsAsync(newsHost));
 
@@ -838,7 +829,7 @@ public sealed class MainForm : Form
     private static Panel PagePanel() => new()
     {
         BackColor = C(4, 15, 10),
-        AutoScroll = true,
+        AutoScroll = false,
     };
 
     private static Control PageTitle(string title, string subtitle)
@@ -960,12 +951,12 @@ public sealed class MainForm : Form
                 return;
             }
 
-            foreach (var item in items.Take(4))
+            foreach (var item in items.Take(2))
             {
                 var card = new RoundedPanel
                 {
-                    Width = 775,
-                    Height = 92,
+                    Width = 390,
+                    Height = 76,
                     BackColor = C(5, 24, 16),
                     BorderColor = C(18, 63, 42),
                     Radius = 12,
@@ -979,7 +970,7 @@ public sealed class MainForm : Form
                     Font = new Font("Segoe UI", 10.5F, FontStyle.Bold),
                     ForeColor = Color.White,
                     Location = new Point(16, 12),
-                    Size = new Size(565, 24),
+                    Size = new Size(255, 24),
                 });
 
                 var date = item.PublishedAt?.LocalDateTime.ToString("dd MMM yyyy") ?? "OpenHaul";
@@ -988,26 +979,15 @@ public sealed class MainForm : Form
                     Text = string.IsNullOrWhiteSpace(item.Tag) ? date : item.Tag + "  ·  " + date,
                     AutoSize = true,
                     ForeColor = C(106, 149, 126),
-                    Location = new Point(16, 40),
-                });
-
-                var excerpt = item.Body.Replace("\r", " ").Replace("\n", " ").Trim();
-                if (excerpt.Length > 105) excerpt = excerpt[..102] + "…";
-                card.Controls.Add(new Label
-                {
-                    Text = string.IsNullOrWhiteSpace(excerpt) ? "OpenHaul release update." : excerpt,
-                    AutoEllipsis = true,
-                    ForeColor = C(153, 181, 165),
-                    Location = new Point(16, 62),
-                    Size = new Size(570, 22),
+                    Location = new Point(16, 38),
                 });
 
                 var read = new Button
                 {
-                    Text = "Read more",
-                    Width = 120,
-                    Height = 34,
-                    Location = new Point(635, 28),
+                    Text = "Open",
+                    Width = 82,
+                    Height = 32,
+                    Location = new Point(288, 22),
                 };
                 StyleButton(read, false);
                 read.Click += (_, _) => OpenUrl(item.Url);
