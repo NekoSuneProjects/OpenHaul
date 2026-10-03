@@ -8,6 +8,8 @@ const publicEndpoints = [
   ["GET", "/api/v1/public/vtcs/:id/live", "Public live members for a VTC"],
   ["GET", "/api/v1/public/radio/truckersfm", "TruckersFM now-playing proxy"],
   ["GET", "/api/v1/public/donation-goals", "Public DLC/community funding goals"],
+  ["GET", "/api/v1/public/map/assets", "Available locally generated ETS2/ATS PMTiles"],
+  ["GET", "/api/v1/public/map/:game.pmtiles", "Range-enabled ETS2/ATS vector map asset"],
 ];
 
 const protectedEndpoints = [
@@ -24,6 +26,7 @@ const adminEndpoints = [
 
 const ingestEndpoints = [
   ["POST", "/api/v1/telemetry/live", "Live ETS2/ATS telemetry"],
+  ["DELETE", "/api/v1/telemetry/live/:driverId", "Explicit driver offline/disconnect"],
   ["POST", "/api/v1/telemetry/fines", "Fine/penalty events"],
   ["POST", "/api/v1/telemetry/jobs/completed", "Completed jobs"],
 ];
