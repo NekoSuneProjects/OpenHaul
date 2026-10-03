@@ -9,7 +9,7 @@ type NowPlaying = {
   now_playing?: { song?: { artist?: string; title?: string; art?: string } };
 };
 
-const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 export function RadioPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);
