@@ -15,7 +15,12 @@ public sealed class OpenHaulApi : IDisposable
             BaseAddress = new Uri(config.ApiUrl.TrimEnd('/') + "/"),
             Timeout = TimeSpan.FromSeconds(10)
         };
-        _http.DefaultRequestHeaders.Add("X-Ingest-Key", config.IngestKey);
+        if (!string.IsNullOrWhiteSpace(config.ClientToken))
+            _http.DefaultRequestHeaders.Authorization =
+                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", config.ClientToken);
+        else if (!string.IsNullOrWhiteSpace(config.IngestKey))
+            _http.DefaultRequestHeaders.Add("X-Ingest-Key", config.IngestKey);
+
         _http.DefaultRequestHeaders.UserAgent.ParseAdd("OpenHaul.Client/0.1");
     }
 
