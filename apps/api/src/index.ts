@@ -7,10 +7,12 @@ import { Fine, Job, Vtc, initDatabase } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver } from "./realtime.js";
+import { registerDonationRoutes } from "./donations.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true });
 await app.register(websocket);
+await registerDonationRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
