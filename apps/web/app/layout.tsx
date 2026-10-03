@@ -20,6 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Link href="/vtcs">VTCs</Link>
               <Link href="/account">Account</Link>
               <Link href="/radio">Radio</Link>
+              <Link href="/streamers">Streamers</Link>
               <Link href="/support">Support</Link>
               <Link href="/api-docs">API</Link>
               <a href="https://github.com/NekoSuneProjects/OpenHaul">GitHub</a>
