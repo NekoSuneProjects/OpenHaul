@@ -27,6 +27,7 @@ const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 export default function AccountPage() {
   const [user, setUser] = useState<User | null>(null);
   const [memberships, setMemberships] = useState<Membership[]>([]);
+  const [dlc, setDlc] = useState<any>(null);
   const [status, setStatus] = useState("Loading account…");
   const [creating, setCreating] = useState(false);
 
@@ -48,6 +49,9 @@ export default function AccountPage() {
         const list = await vtcs.json();
         setMemberships(list.memberships ?? []);
       }
+
+      const dlcResponse = await fetch(api + "/api/v1/account/dlc", { credentials: "include", cache: "no-store" });
+      if (dlcResponse.ok) setDlc(await dlcResponse.json());
 
       setStatus("");
     } catch {
@@ -157,6 +161,34 @@ export default function AccountPage() {
           <h3>Steam verification</h3>
           <p>{visibilityText}</p>
           <button className="button" onClick={refreshOwnership} style={{ marginTop: 12 }}>Refresh library</button>
+        </article>
+      </section>
+
+      <div className="sectionTitle"><h2>ETS2 / ATS DLC</h2></div>
+      <section className="grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))" }}>
+        <article className="card">
+          <h3>Euro Truck Simulator 2 DLC</h3>
+          <p>{dlc?.note ?? "Loading DLC catalogue…"}</p>
+          <div style={{ display: "grid", gap: 8, marginTop: 14 }}>
+            {(dlc?.ets2 ?? []).slice(0, 40).map((item: any) => (
+              <div key={item.appid} style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+                <span>{item.name.replace("Euro Truck Simulator 2 - ", "")}</span>
+                <strong>{item.status === "detected" ? "✅ Detected" : "⚪ Not confirmed"}</strong>
+              </div>
+            ))}
+          </div>
+        </article>
+        <article className="card">
+          <h3>American Truck Simulator DLC</h3>
+          <p>{dlc?.note ?? "Loading DLC catalogue…"}</p>
+          <div style={{ display: "grid", gap: 8, marginTop: 14 }}>
+            {(dlc?.ats ?? []).slice(0, 40).map((item: any) => (
+              <div key={item.appid} style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+                <span>{item.name.replace("American Truck Simulator - ", "")}</span>
+                <strong>{item.status === "detected" ? "✅ Detected" : "⚪ Not confirmed"}</strong>
+              </div>
+            ))}
+          </div>
         </article>
       </section>
 
