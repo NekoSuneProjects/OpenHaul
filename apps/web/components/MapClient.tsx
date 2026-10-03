@@ -39,13 +39,43 @@ type LiveMessage =
 
 type GameFilter = "all" | "ets2" | "ats";
 
+type MapAsset = {
+  available: boolean;
+  size: number;
+  updatedAt: string | null;
+  url: string;
+};
+
+type MapAssets = {
+  ets2: MapAsset;
+  ats: MapAsset;
+};
+
+type InterpolatedDriver = Driver & {
+  _fromX?: number;
+  _fromZ?: number;
+  _fromHeading?: number;
+  _toX?: number;
+  _toZ?: number;
+  _toHeading?: number;
+  _startedAt?: number;
+  _durationMs?: number;
+  _targetVersion?: string;
+};
+
 const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 const customStyle = process.env.NEXT_PUBLIC_MAP_STYLE_URL;
+const DEFAULT_INTERPOLATION_MS = 1000;
+const FRAME_INTERVAL_MS = 33;
 
 function toWsUrl(base: string) {
   if (base.startsWith("https://")) return "wss://" + base.slice(8);
   if (base.startsWith("http://")) return "ws://" + base.slice(7);
   return base;
+}
+
+function absoluteApiUrl(relative: string) {
+  return new URL(relative, api.endsWith("/") ? api : api + "/").toString();
 }
 
 function defaultMapStyle() {
@@ -64,9 +94,25 @@ function defaultMapStyle() {
         id: "osm",
         type: "raster" as const,
         source: "osm",
+        paint: {
+          "raster-opacity": 0.36,
+          "raster-saturation": -0.65,
+          "raster-brightness-max": 0.62,
+        },
       },
     ],
   };
+}
+
+function shortestHeading(from: number, to: number) {
+  let delta = ((to - from + 0.5) % 1) - 0.5;
+  if (delta < -0.5) delta += 1;
+  return from + delta;
+}
+
+function interpolate(from: number, to: number, t: number) {
+  const smooth = t * t * (3 - 2 * t);
+  return from + (to - from) * smooth;
 }
 
 function driverFeatureCollection(drivers: Driver[]) {
@@ -108,6 +154,155 @@ function driverFeatureCollection(drivers: Driver[]) {
   };
 }
 
+function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
+  const sourceId = "openhaul-" + game + "-map";
+  if (map.getSource(sourceId)) return;
+
+  map.addSource(sourceId, {
+    type: "vector",
+    url: "pmtiles://" + sourceUrl,
+    attribution: "Map data extracted locally from the user's installed SCS game files",
+  });
+
+  map.addLayer({
+    id: sourceId + "-prefabs",
+    type: "fill",
+    source: sourceId,
+    "source-layer": game,
+    filter: ["==", ["get", "type"], "prefab"],
+    paint: {
+      "fill-color": "#16261f",
+      "fill-opacity": 0.42,
+      "fill-outline-color": "#2e4c3d",
+    },
+  });
+
+  map.addLayer({
+    id: sourceId + "-road-case",
+    type: "line",
+    source: sourceId,
+    "source-layer": game,
+    filter: [
+      "all",
+      ["==", ["get", "type"], "road"],
+      ["!=", ["get", "roadType"], "train"],
+    ],
+    layout: {
+      "line-cap": "round",
+      "line-join": "round",
+    },
+    paint: {
+      "line-color": "#07110c",
+      "line-width": [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        3, 1.4,
+        7, 3,
+        11, 8,
+        15, 16,
+      ],
+      "line-opacity": 0.95,
+    },
+  });
+
+  map.addLayer({
+    id: sourceId + "-roads",
+    type: "line",
+    source: sourceId,
+    "source-layer": game,
+    filter: [
+      "all",
+      ["==", ["get", "type"], "road"],
+      ["!=", ["get", "roadType"], "train"],
+    ],
+    layout: {
+      "line-cap": "round",
+      "line-join": "round",
+    },
+    paint: {
+      "line-color": [
+        "match",
+        ["get", "roadType"],
+        "freeway", "#54e08a",
+        "expressway", "#6bd995",
+        "local", "#b5c7bd",
+        "no_vehicles", "#6f8076",
+        "unknown", "#87968e",
+        "#dce8e1",
+      ],
+      "line-width": [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        3, 0.7,
+        7, 1.7,
+        11, 5,
+        15, 12,
+      ],
+      "line-opacity": 0.96,
+    },
+  });
+
+  map.addLayer({
+    id: sourceId + "-rail",
+    type: "line",
+    source: sourceId,
+    "source-layer": game,
+    filter: [
+      "all",
+      ["==", ["get", "type"], "road"],
+      ["==", ["get", "roadType"], "train"],
+    ],
+    paint: {
+      "line-color": "#66706b",
+      "line-width": 1,
+      "line-dasharray": [3, 3],
+      "line-opacity": 0.7,
+    },
+  });
+
+  map.addLayer({
+    id: sourceId + "-ferry",
+    type: "line",
+    source: sourceId,
+    "source-layer": game,
+    filter: ["==", ["get", "type"], "ferry"],
+    paint: {
+      "line-color": "#57a6cf",
+      "line-width": 2,
+      "line-dasharray": [2, 2],
+      "line-opacity": 0.8,
+    },
+  });
+
+  map.addLayer({
+    id: sourceId + "-cities",
+    type: "symbol",
+    source: sourceId,
+    "source-layer": game,
+    filter: ["==", ["get", "type"], "city"],
+    minzoom: 4,
+    layout: {
+      "text-field": ["coalesce", ["get", "name"], ""],
+      "text-size": [
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+        4, 10,
+        8, 13,
+        12, 16,
+      ],
+      "text-allow-overlap": false,
+    },
+    paint: {
+      "text-color": "#e9f7ef",
+      "text-halo-color": "#07110c",
+      "text-halo-width": 2,
+    },
+  });
+}
+
 export function MapClient() {
   const params = useSearchParams();
   const initialVtc = params.get("vtc") ?? "";
@@ -116,16 +311,24 @@ export function MapClient() {
   const [status, setStatus] = useState("Connecting…");
   const [gameFilter, setGameFilter] = useState<GameFilter>("all");
   const [mapReady, setMapReady] = useState(false);
+  const [mapAssets, setMapAssets] = useState<MapAssets | null>(null);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
   const maplibreRef = useRef<any>(null);
+  const protocolRef = useRef<any>(null);
   const fittedRef = useRef(false);
+  const visibleDriversRef = useRef<Driver[]>([]);
+  const interpolatedRef = useRef<Map<string, InterpolatedDriver>>(new Map());
 
   const visibleDrivers = useMemo(
     () => gameFilter === "all" ? drivers : drivers.filter((driver) => driver.game === gameFilter),
     [drivers, gameFilter],
   );
+
+  useEffect(() => {
+    visibleDriversRef.current = visibleDrivers;
+  }, [visibleDrivers]);
 
   const restUrl = useMemo(() => {
     const qs = initialVtc ? "?vtc=" + encodeURIComponent(initialVtc) : "";
@@ -138,15 +341,32 @@ export function MapClient() {
   }, [initialVtc]);
 
   useEffect(() => {
+    fetch(api + "/api/v1/public/map/assets", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : null)
+      .then((data) => {
+        if (data) setMapAssets(data);
+      })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
     let disposed = false;
 
     async function createMap() {
       if (!containerRef.current || mapRef.current) return;
 
-      const maplibregl = await import("maplibre-gl");
+      const [maplibregl, pmtiles] = await Promise.all([
+        import("maplibre-gl"),
+        import("pmtiles"),
+      ]);
+
       if (disposed || !containerRef.current) return;
 
       maplibreRef.current = maplibregl;
+
+      const protocol = new pmtiles.Protocol();
+      protocolRef.current = protocol;
+      maplibregl.addProtocol("pmtiles", protocol.tile);
 
       const map = new maplibregl.Map({
         container: containerRef.current,
@@ -275,10 +495,29 @@ export function MapClient() {
       disposed = true;
       mapRef.current?.remove();
       mapRef.current = null;
+
+      if (protocolRef.current && maplibreRef.current) {
+        maplibreRef.current.removeProtocol("pmtiles");
+      }
+
+      protocolRef.current = null;
       maplibreRef.current = null;
       setMapReady(false);
     };
   }, []);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!mapReady || !map || !mapAssets) return;
+
+    if (mapAssets.ets2.available) {
+      addScsMapLayers(map, "ets2", absoluteApiUrl(mapAssets.ets2.url));
+    }
+
+    if (mapAssets.ats.available) {
+      addScsMapLayers(map, "ats", absoluteApiUrl(mapAssets.ats.url));
+    }
+  }, [mapReady, mapAssets]);
 
   useEffect(() => {
     let active = true;
@@ -362,42 +601,128 @@ export function MapClient() {
   }, [initialVtc, gameFilter]);
 
   useEffect(() => {
-    const map = mapRef.current;
-    const maplibregl = maplibreRef.current;
-    if (!map || !maplibregl || !map.isStyleLoaded()) return;
+    if (!mapReady) return;
 
-    const collection = driverFeatureCollection(visibleDrivers);
-    const source = map.getSource("openhaul-drivers") as any;
-    source?.setData(collection);
+    let frame = 0;
+    let lastFrameAt = 0;
 
-    if (!fittedRef.current && collection.features.length > 0) {
-      const bounds = new maplibregl.LngLatBounds();
-      for (const feature of collection.features) {
-        bounds.extend(feature.geometry.coordinates);
+    const tick = (now: number) => {
+      const map = mapRef.current;
+      if (!map || !map.isStyleLoaded()) {
+        frame = requestAnimationFrame(tick);
+        return;
       }
 
-      if (!bounds.isEmpty()) {
-        map.fitBounds(bounds, {
-          padding: 90,
-          maxZoom: 8,
-          duration: 700,
-        });
-        fittedRef.current = true;
+      if (now - lastFrameAt < FRAME_INTERVAL_MS) {
+        frame = requestAnimationFrame(tick);
+        return;
       }
-    }
-  }, [visibleDrivers, mapReady]);
+      lastFrameAt = now;
+
+      const visible = visibleDriversRef.current;
+      const visibleIds = new Set(visible.map((driver) => driver.driverId));
+      const rendered = interpolatedRef.current;
+
+      for (const driver of visible) {
+        let state = rendered.get(driver.driverId);
+
+        if (!state) {
+          state = {
+            ...driver,
+            _fromX: driver.x,
+            _fromZ: driver.z,
+            _fromHeading: driver.heading,
+            _toX: driver.x,
+            _toZ: driver.z,
+            _toHeading: driver.heading,
+            _startedAt: now,
+            _durationMs: DEFAULT_INTERPOLATION_MS,
+            _targetVersion: driver.updatedAt,
+          };
+          rendered.set(driver.driverId, state);
+        } else if (state._targetVersion !== driver.updatedAt) {
+          state = {
+            ...driver,
+            x: state.x,
+            z: state.z,
+            heading: state.heading,
+            _fromX: state.x,
+            _fromZ: state.z,
+            _fromHeading: state.heading,
+            _toX: driver.x,
+            _toZ: driver.z,
+            _toHeading: shortestHeading(state.heading, driver.heading),
+            _startedAt: now,
+            _durationMs: Math.max(250, Math.min(1500, DEFAULT_INTERPOLATION_MS)),
+            _targetVersion: driver.updatedAt,
+          };
+          rendered.set(driver.driverId, state);
+        }
+
+        const elapsed = Math.max(0, now - (state._startedAt ?? now));
+        const duration = Math.max(1, state._durationMs ?? DEFAULT_INTERPOLATION_MS);
+        const t = Math.min(1, elapsed / duration);
+
+        state.x = interpolate(state._fromX ?? state.x, state._toX ?? driver.x, t);
+        state.z = interpolate(state._fromZ ?? state.z, state._toZ ?? driver.z, t);
+        state.heading = ((interpolate(
+          state._fromHeading ?? state.heading,
+          state._toHeading ?? driver.heading,
+          t,
+        ) % 1) + 1) % 1;
+      }
+
+      for (const driverId of [...rendered.keys()]) {
+        if (!visibleIds.has(driverId)) rendered.delete(driverId);
+      }
+
+      const animatedDrivers = [...rendered.values()];
+      const collection = driverFeatureCollection(animatedDrivers);
+      const source = map.getSource("openhaul-drivers") as any;
+      source?.setData(collection);
+
+      if (!fittedRef.current && collection.features.length > 0) {
+        const maplibregl = maplibreRef.current;
+        const bounds = new maplibregl.LngLatBounds();
+
+        for (const feature of collection.features) {
+          bounds.extend(feature.geometry.coordinates);
+        }
+
+        if (!bounds.isEmpty()) {
+          map.fitBounds(bounds, {
+            padding: 90,
+            maxZoom: 8,
+            duration: 700,
+          });
+          fittedRef.current = true;
+        }
+      }
+
+      frame = requestAnimationFrame(tick);
+    };
+
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [mapReady]);
 
   const applyFilter = () => {
     const next = vtc.trim();
     window.location.href = next ? "/map?vtc=" + encodeURIComponent(next) : "/map";
   };
 
+  const installedMapCount = Number(Boolean(mapAssets?.ets2.available)) + Number(Boolean(mapAssets?.ats.available));
+
   return (
     <main className="shell">
       <div className="sectionTitle">
         <div>
           <h2>{initialVtc ? "VTC #" + initialVtc + " live map" : "Global live map"}</h2>
-          <div className="muted">{visibleDrivers.length} drivers · {status}</div>
+          <div className="muted">
+            {visibleDrivers.length} drivers · {status} · {installedMapCount
+              ? installedMapCount + " SCS map asset" + (installedMapCount === 1 ? "" : "s")
+              : "geographic fallback"}
+          </div>
         </div>
       </div>
 
