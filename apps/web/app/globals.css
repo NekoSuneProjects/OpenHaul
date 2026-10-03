@@ -134,3 +134,32 @@ h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.06
     padding: 10px 12px;
   }
 }
+
+
+.card input:not([type="checkbox"]),
+.card textarea,
+.card select {
+  width: 100%;
+  background: #06110c;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 11px 12px;
+  font: inherit;
+}
+
+.card textarea {
+  resize: vertical;
+  min-height: 92px;
+}
+
+.card input:focus,
+.card textarea:focus,
+.card select:focus {
+  outline: 2px solid rgba(84,224,138,.24);
+  border-color: var(--accent);
+}
+
+.card label {
+  color: var(--muted);
+}
