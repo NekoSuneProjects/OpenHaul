@@ -16,7 +16,9 @@ OpenHaul is an open-source, self-hosted ETS2 and ATS trucking platform with live
 - Docker Compose self-hosting
 - GitHub Actions builds for GHCR
 - Windows telemetry client with simulator, Steam ETS2/ATS detection and plugin installer
-- Named-pipe contract for the native SCS telemetry plugin
+- Native SCS Telemetry SDK plugin built against official SDK 1.15
+- Named-pipe bridge between the in-game DLL and Windows client
+- MapLibre geographic ETS2/ATS live map with real game-coordinate projection
 
 ## Quick start
 
@@ -87,6 +89,8 @@ X-Ingest-Key: your-secret
 
 The first shows every OpenHaul driver currently publishing telemetry. The second filters the same realtime source to one VTC.
 
+Raw ETS2/ATS world coordinates are converted to longitude/latitude and rendered with MapLibre. ETS2's legacy UK authored scale is handled separately. Set `NEXT_PUBLIC_MAP_STYLE_URL` to use your own MapLibre style; when unset, OpenHaul uses an OpenStreetMap raster fallback.
+
 ## TruckersFM
 
 OpenHaul proxies TruckersFM's AzuraCast now-playing feed from:
@@ -135,4 +139,10 @@ OpenHaul.Client.exe --install-plugin .\OpenHaul.Telemetry.dll
 OpenHaul.Client.exe --simulate
 ```
 
-The real SCS plugin will write newline-delimited telemetry events to `\\.\pipe\OpenHaulTelemetry`.
+The native SCS plugin writes newline-delimited telemetry events to `\\.\pipe\OpenHaulTelemetry`.
+
+## Native SCS plugin
+
+The plugin is built by `.github/workflows/scs-plugin.yml` against SCS Telemetry SDK 1.15 and produces `OpenHaul.Telemetry.dll`.
+
+It currently publishes world position, heading, speed, RPM, fuel, odometer, navigation data, truck/job configuration, player fines, and completed-job events.
