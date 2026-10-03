@@ -62,6 +62,11 @@ jobs:
         run: |
           dotnet publish clients/windows/OpenHaul.Client/OpenHaul.Client.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:Version=$env:OPENHAUL_CLIENT_VERSION -o artifacts/OpenHaul.Client
 
+      - name: Publish self-contained updater
+        shell: pwsh
+        run: |
+          dotnet publish clients/windows/OpenHaul.Updater/OpenHaul.Updater.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:Version=$env:OPENHAUL_CLIENT_VERSION -o artifacts/OpenHaul.Updater
+
       - name: Install Inno Setup
         shell: pwsh
         run: choco install innosetup --no-progress -y
