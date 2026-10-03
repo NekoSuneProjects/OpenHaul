@@ -1,0 +1,84 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-openhaul}
+      POSTGRES_USER: ${POSTGRES_USER:-openhaul}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-openhaul} -d ${POSTGRES_DB:-openhaul}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    image: ghcr.io/nekosuneprojects/openhaul-api:latest
+    restart: unless-stopped
+    environment:
+      API_PORT: 3001
+      DATABASE_URL: ${DATABASE_URL:-postgres://openhaul:change-me@postgres:5432/openhaul}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      OPENHAUL_INGEST_KEY: ${OPENHAUL_INGEST_KEY:-change-this-ingest-key}
+      TRUCKERSFM_NOWPLAYING_URL: ${TRUCKERSFM_NOWPLAYING_URL:-https://azuracast.truckers.fm/api/nowplaying/1}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "3001:3001"
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001}
+    image: ghcr.io/nekosuneprojects/openhaul-web:latest
+    restart: unless-stopped
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3001}
+      API_INTERNAL_URL: http://api:3001
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+
+  bot:
+    build:
+      context: .
+      dockerfile: apps/bot/Dockerfile
+    image: ghcr.io/nekosuneprojects/openhaul-bot:latest
+    restart: unless-stopped
+    environment:
+      DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN:-}
+      OPENHAUL_API_URL: http://api:3001
+      DISCORD_GUILD_ID: ${DISCORD_GUILD_ID:-}
+      DISCORD_FINE_CHANNEL_ID: ${DISCORD_FINE_CHANNEL_ID:-}
+      DISCORD_JOB_CHANNEL_ID: ${DISCORD_JOB_CHANNEL_ID:-}
+      DISCORD_DRIVER_CHANNEL_ID: ${DISCORD_DRIVER_CHANNEL_ID:-}
+    depends_on:
+      - api
+    profiles: ["bot"]
+
+volumes:
+  postgres-data:
+  redis-data:
