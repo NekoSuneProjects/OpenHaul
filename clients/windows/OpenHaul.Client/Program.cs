@@ -170,7 +170,15 @@ static async Task HandleEnvelope(string json, OpenHaulApi api, ClientConfig conf
                 plugin.Cargo,
                 plugin.SourceCity,
                 plugin.DestinationCity,
-                null);
+                null,
+                plugin.Rpm,
+                plugin.Fuel,
+                plugin.OdometerKm,
+                plugin.NavigationDistanceM,
+                plugin.NavigationTimeS,
+                plugin.SpeedLimitKph,
+                plugin.SourceCompany,
+                plugin.DestinationCompany);
 
             response = await api.SendLiveAsync(live, token);
             break;
