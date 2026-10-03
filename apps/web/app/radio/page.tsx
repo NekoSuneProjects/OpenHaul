@@ -49,7 +49,7 @@ type RadioData = {
   is_online?: boolean;
 };
 
-const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 function duration(value?: number) {
   if (!value || value < 0) return "0:00";
