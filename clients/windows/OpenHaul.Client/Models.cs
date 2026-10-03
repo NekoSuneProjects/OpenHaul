@@ -68,7 +68,7 @@ public sealed record LiveTelemetry(
     string? DestinationCompany = null);
 
 public sealed record FineTelemetry(
-    int VtcId,
+    int? VtcId,
     string DriverId,
     string Game,
     string Type,
@@ -78,7 +78,7 @@ public sealed record FineTelemetry(
     DateTimeOffset OccurredAt);
 
 public sealed record JobCompletedTelemetry(
-    int VtcId,
+    int? VtcId,
     string DriverId,
     string Game,
     string? Cargo,
