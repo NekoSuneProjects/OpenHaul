@@ -19,6 +19,12 @@ Vtc.init({
   name: { type: DataTypes.STRING(120), allowNull: false },
   slug: { type: DataTypes.STRING(120), allowNull: false, unique: true },
   tag: { type: DataTypes.STRING(32), allowNull: true },
+  description: { type: DataTypes.TEXT, allowNull: true },
+  website: { type: DataTypes.TEXT, allowNull: true },
+  discordUrl: { type: DataTypes.TEXT, allowNull: true, field: "discord_url" },
+  logoUrl: { type: DataTypes.TEXT, allowNull: true, field: "logo_url" },
+  ownerUserId: { type: DataTypes.INTEGER, allowNull: true, field: "owner_user_id" },
+  currency: { type: DataTypes.STRING(8), allowNull: false, defaultValue: "GBP" },
 }, { sequelize, modelName: "Vtc", tableName: "vtcs", underscored: true });
 
 export class VtcApiKey extends Model {
@@ -90,6 +96,66 @@ DonationGoal.init({
 
 Vtc.hasMany(VtcApiKey, { foreignKey: "vtcId" });
 VtcApiKey.belongsTo(Vtc, { foreignKey: "vtcId" });
+
+export class User extends Model {
+  declare id: number;
+  declare steamId: string;
+  declare displayName: string;
+  declare avatarUrl: string | null;
+  declare profileUrl: string | null;
+  declare ownsEts2: boolean | null;
+  declare ownsAts: boolean | null;
+  declare ownershipVisibility: string;
+  declare ownedGamesSnapshot: unknown;
+}
+
+User.init({
+  id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+  steamId: { type: DataTypes.STRING(32), allowNull: false, unique: true, field: "steam_id" },
+  displayName: { type: DataTypes.STRING(120), allowNull: false, field: "display_name" },
+  avatarUrl: { type: DataTypes.TEXT, allowNull: true, field: "avatar_url" },
+  profileUrl: { type: DataTypes.TEXT, allowNull: true, field: "profile_url" },
+  ownsEts2: { type: DataTypes.BOOLEAN, allowNull: true, field: "owns_ets2" },
+  ownsAts: { type: DataTypes.BOOLEAN, allowNull: true, field: "owns_ats" },
+  ownershipVisibility: { type: DataTypes.STRING(32), allowNull: false, defaultValue: "unknown", field: "ownership_visibility" },
+  ownedGamesSnapshot: { type: DataTypes.JSONB, allowNull: true, field: "owned_games_snapshot" },
+}, { sequelize, modelName: "User", tableName: "users", underscored: true });
+
+export class VtcMember extends Model {}
+VtcMember.init({
+  id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+  vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
+  userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
+  role: { type: DataTypes.STRING(32), allowNull: false, defaultValue: "member" },
+  title: { type: DataTypes.STRING(80), allowNull: true },
+  status: { type: DataTypes.STRING(32), allowNull: false, defaultValue: "active" },
+  joinedAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW, field: "joined_at" },
+}, { sequelize, modelName: "VtcMember", tableName: "vtc_members", underscored: true, indexes: [{ unique: true, fields: ["vtc_id", "user_id"] }] });
+
+export class VtcApplication extends Model {}
+VtcApplication.init({
+  id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+  vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
+  userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
+  message: { type: DataTypes.TEXT, allowNull: true },
+  status: { type: DataTypes.STRING(32), allowNull: false, defaultValue: "pending" },
+}, { sequelize, modelName: "VtcApplication", tableName: "vtc_applications", underscored: true });
+
+export class VtcLedgerEntry extends Model {}
+VtcLedgerEntry.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
+  createdByUserId: { type: DataTypes.INTEGER, allowNull: true, field: "created_by_user_id" },
+  type: { type: DataTypes.STRING(32), allowNull: false },
+  description: { type: DataTypes.STRING(255), allowNull: false },
+  amount: { type: DataTypes.DECIMAL(14, 2), allowNull: false },
+  currency: { type: DataTypes.STRING(8), allowNull: false, defaultValue: "GBP" },
+}, { sequelize, modelName: "VtcLedgerEntry", tableName: "vtc_ledger_entries", underscored: true });
+
+User.hasMany(VtcMember, { foreignKey: "userId" });
+Vtc.hasMany(VtcMember, { foreignKey: "vtcId" });
+VtcMember.belongsTo(User, { foreignKey: "userId" });
+VtcMember.belongsTo(Vtc, { foreignKey: "vtcId" });
 
 async function bootstrapVtc() {
   const name = process.env.OPENHAUL_BOOTSTRAP_VTC_NAME?.trim();
