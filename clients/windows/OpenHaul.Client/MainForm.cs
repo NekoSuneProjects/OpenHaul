@@ -1211,6 +1211,46 @@ public sealed class MainForm : Form
         }
     }
 
+    private async void ClientUpdatePageButton_Click(object? sender, EventArgs e)
+    {
+        if (_manifest is not null && UpdateManager.IsClientUpdateAvailable(_manifest))
+        {
+            await InstallLauncherUpdateAsync();
+            return;
+        }
+
+        await CheckUpdatesAsync(updateTelemetry: false);
+    }
+
+    private void RefreshClientUpdateButtons()
+    {
+        var updateAvailable =
+            _manifest is not null &&
+            UpdateManager.IsClientUpdateAvailable(_manifest);
+
+        if (updateAvailable)
+        {
+            var text = _mandatoryUpdatePending
+                ? "Download Required Update"
+                : "Download Update";
+
+            _updateButton.Text = "Download Update";
+            _updateButton.Enabled = true;
+
+            _clientUpdatePageButton.Text = text;
+            _clientUpdatePageButton.Enabled = true;
+            StyleButton(_clientUpdatePageButton, true);
+            return;
+        }
+
+        _updateButton.Text = "Check Updates";
+        _updateButton.Enabled = true;
+
+        _clientUpdatePageButton.Text = "Check for Updates";
+        _clientUpdatePageButton.Enabled = true;
+        StyleButton(_clientUpdatePageButton, false);
+    }
+
     private async Task CheckUpdatesAsync(bool updateTelemetry)
     {
         try
