@@ -1,5 +1,6 @@
 import { timingSafeEqual } from "node:crypto";
 import cors from "@fastify/cors";
+import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
 import Fastify from "fastify";
 import { z } from "zod";
@@ -10,13 +11,16 @@ import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime
 import { registerDonationRoutes } from "./donations.js";
 import { registerStatsRoutes } from "./stats.js";
 import { registerMapAssetRoutes } from "./mapAssets.js";
+import { registerAccountRoutes } from "./accountRoutes.js";
 
 const app = Fastify({ logger: true });
-await app.register(cors, { origin: true });
+await app.register(cors, { origin: true, credentials: true });
+await app.register(cookie);
 await app.register(websocket);
 await registerDonationRoutes(app);
 await registerStatsRoutes(app);
 await registerMapAssetRoutes(app);
+await registerAccountRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
