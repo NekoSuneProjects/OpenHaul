@@ -14,6 +14,7 @@ import { registerMapAssetRoutes } from "./mapAssets.js";
 import { registerAccountRoutes } from "./accountRoutes.js";
 import { registerCommunityVtcRoutes } from "./communityVtc.js";
 import { registerSteamDlcRoutes } from "./steamDlc.js";
+import { registerPublicDriverRoutes } from "./publicDrivers.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true, credentials: true });
@@ -25,6 +26,7 @@ await registerMapAssetRoutes(app);
 await registerAccountRoutes(app);
 await registerCommunityVtcRoutes(app);
 await registerSteamDlcRoutes(app);
+await registerPublicDriverRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
