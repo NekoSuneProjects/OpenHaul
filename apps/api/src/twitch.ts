@@ -286,10 +286,7 @@ export async function registerTwitchRoutes(app: FastifyInstance) {
   app.get("/api/v1/public/streamers", async (request) => {
     const query = z.object({
       game: z.enum(["ets2", "ats"]).optional(),
-      refresh: z.coerce.boolean().optional(),
     }).parse(request.query);
-
-    if (query.refresh) await refreshStreams();
 
     const gameName = query.game === "ets2"
       ? "Euro Truck Simulator 2"
