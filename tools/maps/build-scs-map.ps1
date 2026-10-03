@@ -234,7 +234,7 @@ docker run --rm `
   --mount "type=bind,source=${GeneratorOut},target=/data" `
   $TippecanoeImage `
   tippecanoe `
-  -Z4 -z13 -B4 -b10 --force `
+  -Z1 -z13 -B4 -b10 --force `
   -y type -y dlcGuard -y zIndex -y height -y hidden -y secret `
   -y poiType -y poiName -y sprite -y scaleRank -y capital -y roadType `
   -y color -y name `
