@@ -18,6 +18,7 @@ SetupLogging=yes
 
 [Files]
 Source: "..\..\..\artifacts\OpenHaul.Client\OpenHaul.Client.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\..\..\artifacts\OpenHaul.Updater\OpenHaul.Updater.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\..\artifacts\OpenHaul.Client\OpenHaul.Telemetry.dll"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
