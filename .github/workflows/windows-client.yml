@@ -17,6 +17,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: openhaul-windows-client-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: windows-latest
@@ -114,6 +118,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          $latestMain = gh api "repos/${{ github.repository }}/commits/main" --jq ".sha"
+          if ($latestMain -ne "${{ github.sha }}") {
+            Write-Host "Skipping rolling release publish because this build is stale."
+            Write-Host "Build SHA:  ${{ github.sha }}"
+            Write-Host "Latest main: $latestMain"
+            exit 0
+          }
+
           gh release view windows-client --repo "${{ github.repository }}" *> $null
           if ($LASTEXITCODE -ne 0) {
             gh release create windows-client --repo "${{ github.repository }}" --title "OpenHaul Windows Client" --notes "Rolling Windows GUI installer for OpenHaul Client." --latest=false
