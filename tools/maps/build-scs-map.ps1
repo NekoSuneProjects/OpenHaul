@@ -58,8 +58,8 @@ if ($DockerOs.Trim() -ne "linux") {
 function Ensure-TippecanoeImage {
   param([string]$Image)
 
-  docker image inspect $Image *> $null
-  if ($LASTEXITCODE -eq 0) {
+  $ImageExists = docker image ls --format "{{.Repository}}:{{.Tag}}" | Where-Object { $_ -eq $Image }
+  if ($ImageExists) {
     docker run --rm $Image tippecanoe --version
     if ($LASTEXITCODE -eq 0) { return }
   }
