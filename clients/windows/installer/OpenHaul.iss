@@ -1,7 +1,7 @@
 [Setup]
 AppId={{2D17E5C6-27B8-49B1-9F9A-1EE6A5A0E761}
 AppName=OpenHaul Client
-AppVersion=0.1.0
+AppVersion={#MyAppVersion}
 AppPublisher=OpenHaul
 DefaultDirName={autopf}\OpenHaul
 DefaultGroupName=OpenHaul
