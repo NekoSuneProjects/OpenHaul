@@ -379,34 +379,40 @@ public sealed class UpdateManager
         response.EnsureSuccessStatusCode();
 
         var total = response.Content.Headers.ContentLength;
-        await using var input = await response.Content.ReadAsStreamAsync(token);
-        await using var output = new FileStream(
+
+        // The download stream must be fully disposed before hashing or moving
+        // the temporary file. FileShare.None intentionally prevents any other
+        // process from touching a partial download, but that also means this
+        // process cannot re-open it until the writer is closed.
+        await using (var input = await response.Content.ReadAsStreamAsync(token))
+        await using (var output = new FileStream(
             temporary,
             FileMode.Create,
             FileAccess.Write,
             FileShare.None,
             1024 * 128,
-            useAsync: true);
-
-        var buffer = new byte[1024 * 128];
-        long written = 0;
-
-        while (true)
+            useAsync: true))
         {
-            var read = await input.ReadAsync(buffer, token);
-            if (read <= 0) break;
+            var buffer = new byte[1024 * 128];
+            long written = 0;
 
-            await output.WriteAsync(buffer.AsMemory(0, read), token);
-            written += read;
-
-            if (total is > 0)
+            while (true)
             {
-                var percent = (int)Math.Clamp(written * 100 / total.Value, 0, 100);
-                Progress?.Invoke(percent);
-            }
-        }
+                var read = await input.ReadAsync(buffer, token);
+                if (read <= 0) break;
 
-        await output.FlushAsync(token);
+                await output.WriteAsync(buffer.AsMemory(0, read), token);
+                written += read;
+
+                if (total is > 0)
+                {
+                    var percent = (int)Math.Clamp(written * 100 / total.Value, 0, 100);
+                    Progress?.Invoke(percent);
+                }
+            }
+
+            await output.FlushAsync(token);
+        }
 
         var actual = await Sha256Async(temporary, token);
         if (!actual.Equals(expectedSha256, StringComparison.OrdinalIgnoreCase))
