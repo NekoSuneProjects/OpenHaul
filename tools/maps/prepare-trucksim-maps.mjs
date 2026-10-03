@@ -58,3 +58,81 @@ if (archiveSource.includes(compatibilityMarker)) {
   await writeFile(archivePath, patchedArchive.replaceAll("\n", archiveNewline));
   console.log("Added TruckSim Maps BGRX/sRGB (format 93) compatibility.");
 }
+
+
+// ATS 1.61+ can contain country truck speed-limit arrays whose lengths no
+// longer exactly match lane_speed_class. Upstream currently asserts that all
+// four arrays are parallel, which aborts map extraction even though speed
+// limits are not required for OpenHaul's road rendering.
+//
+// Keep every lane class that has at least one usable numeric value and fill
+// missing max/urban values from the normal limit where possible.
+const defParserPath = path.join(root, "packages/clis/parser/game-files/def-parser.ts");
+const defOriginal = await readFile(defParserPath, "utf8");
+const defNewline = defOriginal.includes("\r\n") ? "\r\n" : "\n";
+const defSource = defOriginal.replaceAll("\r\n", "\n");
+const speedCompatibilityMarker =
+  "  // OpenHaul: tolerate newer SCS speed-limit arrays with uneven lengths.";
+
+if (defSource.includes(speedCompatibilityMarker)) {
+  console.log("TruckSim Maps ATS 1.61 speed-limit compatibility already present.");
+} else {
+  const oldBlock = `  // HACK: extra validation that isn't expressed in schema
+  assert(
+    [limit, maxLimit, urbanLimit].every(
+      array => array.length === laneSpeedClass.length,
+    ),
+  );
+
+  return laneSpeedClass.reduce((obj, className, index) => {
+    obj[toLaneSpeedClass(className)] = {
+      limit: limit[index],
+      maxLimit: maxLimit[index],
+      urbanLimit: urbanLimit[index],
+    };
+    return obj;
+  }, {} as SpeedLimits);`;
+
+  const newBlock = `  // OpenHaul: tolerate newer SCS speed-limit arrays with uneven lengths.
+  if (
+    ![limit, maxLimit, urbanLimit].every(
+      array => array.length === laneSpeedClass.length,
+    )
+  ) {
+    logger.warn(
+      \`speed-limit array mismatch: classes=\${laneSpeedClass.length}, limit=\${limit.length}, max=\${maxLimit.length}, urban=\${urbanLimit.length}; applying compatibility fallback\`,
+    );
+  }
+
+  return laneSpeedClass.reduce((obj, className, index) => {
+    const normal = limit[index];
+    const maximum = maxLimit[index];
+    const urban = urbanLimit[index];
+    const fallback = normal ?? maximum ?? urban;
+
+    if (fallback == null) {
+      logger.warn(
+        \`skipping speed class \${className} at index \${index}: no usable speed value\`,
+      );
+      return obj;
+    }
+
+    obj[toLaneSpeedClass(className)] = {
+      limit: normal ?? fallback,
+      maxLimit: maximum ?? normal ?? fallback,
+      urbanLimit: urban ?? normal ?? fallback,
+    };
+    return obj;
+  }, {} as SpeedLimits);`;
+
+  if (!defSource.includes(oldBlock)) {
+    throw new Error(
+      "TruckSim Maps speed-limit parser has changed. Review ATS 1.61 compatibility in " +
+        defParserPath,
+    );
+  }
+
+  const patchedDef = defSource.replace(oldBlock, newBlock);
+  await writeFile(defParserPath, patchedDef.replaceAll("\n", defNewline));
+  console.log("Added TruckSim Maps ATS 1.61 speed-limit compatibility.");
+}
