@@ -27,7 +27,7 @@ public static class GameLocator
         if (File.Exists(libraryFile))
         {
             var text = File.ReadAllText(libraryFile);
-            foreach (Match match in Regex.Matches(text, ""path"\s+"(?<path>[^"]+)"", RegexOptions.IgnoreCase))
+            foreach (Match match in Regex.Matches(text, @"""path""\s+""(?<path>[^""]+)""", RegexOptions.IgnoreCase))
             {
                 var value = match.Groups["path"].Value.Replace(@"\\", @"");
                 libraries.Add(Path.Combine(value, "steamapps"));
@@ -45,7 +45,7 @@ public static class GameLocator
 
                 var installDir = details.Folder;
                 var manifestText = File.ReadAllText(manifest);
-                var match = Regex.Match(manifestText, ""installdir"\s+"(?<dir>[^"]+)"", RegexOptions.IgnoreCase);
+                var match = Regex.Match(manifestText, @"""installdir""\s+""(?<dir>[^""]+)""", RegexOptions.IgnoreCase);
                 if (match.Success) installDir = match.Groups["dir"].Value;
 
                 var gamePath = Path.Combine(steamApps, "common", installDir);
