@@ -64,10 +64,33 @@ if (-not $TilesOnly) {
 $MapId = if ($Game -eq "ets2") { "europe" } else { "usa" }
 $ParserOut = Join-Path $OpenHaulRoot $WorkDir
 $GeneratorOut = Join-Path $ParserOut "generated"
+$GeoJsonOut = Join-Path $GeneratorOut "geojson"
+$PmTilesOut = Join-Path $GeneratorOut "pmtiles"
 
 New-Item -ItemType Directory -Force $ParserOut | Out-Null
 New-Item -ItemType Directory -Force $GeneratorOut | Out-Null
+New-Item -ItemType Directory -Force $GeoJsonOut | Out-Null
+New-Item -ItemType Directory -Force $PmTilesOut | Out-Null
+
 $GeneratorOut = (Resolve-Path -LiteralPath $GeneratorOut).Path
+$GeoJsonOut = (Resolve-Path -LiteralPath $GeoJsonOut).Path
+$PmTilesOut = (Resolve-Path -LiteralPath $PmTilesOut).Path
+
+# One-time migration from the old flat generated/ layout.
+$LegacyGeoJson = Join-Path $GeneratorOut "$Game.geojson"
+$LegacyPmTiles = Join-Path $GeneratorOut "$Game.pmtiles"
+$GeoJsonFile = Join-Path $GeoJsonOut "$Game.geojson"
+$PmTilesFile = Join-Path $PmTilesOut "$Game.pmtiles"
+
+if ((Test-Path -LiteralPath $LegacyGeoJson -PathType Leaf) -and -not (Test-Path -LiteralPath $GeoJsonFile -PathType Leaf)) {
+  Move-Item -LiteralPath $LegacyGeoJson -Destination $GeoJsonFile -Force
+  Write-Host "Migrated legacy GeoJSON backup to: $GeoJsonFile"
+}
+
+if ((Test-Path -LiteralPath $LegacyPmTiles -PathType Leaf) -and -not (Test-Path -LiteralPath $PmTilesFile -PathType Leaf)) {
+  Move-Item -LiteralPath $LegacyPmTiles -Destination $PmTilesFile -Force
+  Write-Host "Migrated legacy PMTiles backup to: $PmTilesFile"
+}
 
 if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
   throw "Docker is required to build PMTiles with Tippecanoe."
@@ -214,44 +237,52 @@ if (-not $TilesOnly) {
     }
 
     Write-Host "Generating SCS road/prefab/city GeoJSON..."
-    node "$TsxCli" "packages/clis/generator/index.ts" map -m $MapId -i "$ParserOut" -o "$GeneratorOut" -t geojson
+    node "$TsxCli" "packages/clis/generator/index.ts" map -m $MapId -i "$ParserOut" -o "$GeoJsonOut" -t geojson
     if ($LASTEXITCODE -ne 0) { throw "TruckSim Maps GeoJSON generator failed." }
+    Write-Host "GeoJSON backup: $GeoJsonFile"
   }
   finally {
     Pop-Location
   }
 }
 
-$GeoJsonFile = Join-Path $GeneratorOut "$Game.geojson"
-$PmTilesFile = Join-Path $GeneratorOut "$Game.pmtiles"
-
-if (-not (Test-Path $GeoJsonFile)) {
-  throw "Expected GeoJSON output was not found: $GeoJsonFile"
+if (-not (Test-Path -LiteralPath $GeoJsonFile -PathType Leaf)) {
+  throw "Expected GeoJSON backup was not found: $GeoJsonFile"
 }
+
+$PmTilesBuildingFile = Join-Path $PmTilesOut "$Game.building.pmtiles"
+Remove-Item -LiteralPath $PmTilesBuildingFile -Force -ErrorAction SilentlyContinue
 
 Write-Host "Generating PMTiles with Tippecanoe Docker image: $TippecanoeImage"
 docker run --rm `
-  --mount "type=bind,source=${GeneratorOut},target=/data" `
+  --mount "type=bind,source=${GeoJsonOut},target=/geojson,readonly" `
+  --mount "type=bind,source=${PmTilesOut},target=/pmtiles" `
   $TippecanoeImage `
   tippecanoe `
   -Z1 -z13 -B4 -b10 --force `
   -y type -y dlcGuard -y zIndex -y height -y hidden -y secret `
   -y poiType -y poiName -y sprite -y scaleRank -y capital -y roadType `
   -y color -y name `
-  -o "/data/$Game.pmtiles" `
-  "/data/$Game.geojson"
+  -o "/pmtiles/$Game.building.pmtiles" `
+  "/geojson/$Game.geojson"
 
 if ($LASTEXITCODE -ne 0) {
-  throw "Tippecanoe PMTiles generation failed (exit $LASTEXITCODE). See the Docker error above. Retry with -Game $Game -TilesOnly to reuse the GeoJSON."
+  Remove-Item -LiteralPath $PmTilesBuildingFile -Force -ErrorAction SilentlyContinue
+  throw "Tippecanoe PMTiles generation failed (exit $LASTEXITCODE). The previous PMTiles backup and live map were left untouched. Retry with -Game $Game -TilesOnly to reuse the GeoJSON."
 }
 
-if (-not (Test-Path $PmTilesFile)) {
-  throw "Expected PMTiles output was not found: $PmTilesFile"
+if (-not (Test-Path -LiteralPath $PmTilesBuildingFile -PathType Leaf)) {
+  throw "Expected completed PMTiles build was not found: $PmTilesBuildingFile"
 }
+
+# Replace the generated backup only after the new archive completed successfully.
+Remove-Item -LiteralPath $PmTilesFile -Force -ErrorAction SilentlyContinue
+Move-Item -LiteralPath $PmTilesBuildingFile -Destination $PmTilesFile -Force
+Write-Host "PMTiles backup updated: $PmTilesFile"
 
 Push-Location $OpenHaulRoot
 try {
-  Write-Host "Importing PMTiles into OpenHaul..."
+  Write-Host "Publishing completed PMTiles into OpenHaul live maps..."
   npm run map:import -- --game $Game --file "$PmTilesFile"
   if ($LASTEXITCODE -ne 0) { throw "OpenHaul PMTiles import failed." }
 }
@@ -261,5 +292,8 @@ finally {
 
 Write-Host ""
 Write-Host "Done."
+Write-Host "GeoJSON backup: $GeoJsonFile"
+Write-Host "PMTiles backup: $PmTilesFile"
+Write-Host "Live map: $(Join-Path $OpenHaulRoot "data-runtime/maps/$Game.pmtiles")"
 Write-Host "OpenHaul API will serve: /api/v1/public/map/$Game.pmtiles"
-Write-Host "The web live map auto-detects the imported asset."
+Write-Host "The web live map auto-detects the replaced asset."
