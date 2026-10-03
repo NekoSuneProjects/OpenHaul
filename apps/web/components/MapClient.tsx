@@ -75,10 +75,10 @@ const satelliteTileUrl =
 const DEFAULT_INTERPOLATION_MS = 1000;
 const FRAME_INTERVAL_MS = 33;
 
-const GAME_FOCUS = {
-  ets2: { center: [15, 50] as [number, number], zoom: 3.7 },
-  ats: { center: [-104, 39] as [number, number], zoom: 3.5 },
-  all: { center: [-26, 45] as [number, number], zoom: 2.1 },
+const GAME_FOCUS_BOUNDS = {
+  ets2: [[-16, 31], [45, 72]] as [[number, number], [number, number]],
+  ats: [[-130, 22], [-65, 56]] as [[number, number], [number, number]],
+  all: [[-135, 20], [45, 72]] as [[number, number], [number, number]],
 };
 
 function toWsUrl(base: string) {
@@ -815,7 +815,7 @@ export function MapClient() {
 
   useEffect(() => {
     fittedRef.current = false;
-  }, [initialVtc, gameFilter]);
+  }, [initialVtc]);
 
   useEffect(() => {
     if (!selectedDriverId) {
@@ -840,7 +840,6 @@ export function MapClient() {
         bearing: 0,
         duration: 450,
       });
-      fittedRef.current = false;
     }
   }, [cameraMode, mapReady]);
 
@@ -982,54 +981,24 @@ export function MapClient() {
 
   const focusGame = (game: GameFilter) => {
     setGameFilter(game);
+    setSelectedDriverId("");
     setCameraMode("map");
+
+    // The filter buttons own the next camera position. Prevent the animation
+    // loop from immediately auto-fitting live drivers over this movement.
     fittedRef.current = true;
 
     const map = mapRef.current;
-    const maplibregl = maplibreRef.current;
-    if (!mapReady || !map || !maplibregl) return;
+    if (!mapReady || !map) return;
 
+    map.stop();
     map.setPadding({ top: 0, right: 0, bottom: 0, left: 0 });
 
-    const matchingDrivers =
-      game === "all" ? drivers : drivers.filter((driver) => driver.game === game);
-
-    const positions = matchingDrivers
-      .map((driver) => gameCoordsToLonLat(driver.game, driver.x, driver.z))
-      .filter(isValidLonLat);
-
-    if (positions.length >= 2) {
-      const bounds = new maplibregl.LngLatBounds();
-      for (const position of positions) bounds.extend(position);
-
-      map.fitBounds(bounds, {
-        padding: 90,
-        maxZoom: game === "all" ? 5 : 7,
-        duration: 900,
-        pitch: 0,
-        bearing: 0,
-      });
-      return;
-    }
-
-    if (positions.length === 1) {
-      map.easeTo({
-        center: positions[0],
-        zoom: 7,
-        pitch: 0,
-        bearing: 0,
-        duration: 900,
-      });
-      return;
-    }
-
-    const target = GAME_FOCUS[game];
-    map.easeTo({
-      center: target.center,
-      zoom: target.zoom,
+    map.fitBounds(GAME_FOCUS_BOUNDS[game], {
+      padding: game === "all" ? 55 : 80,
+      duration: 850,
       pitch: 0,
       bearing: 0,
-      duration: 900,
     });
   };
 
