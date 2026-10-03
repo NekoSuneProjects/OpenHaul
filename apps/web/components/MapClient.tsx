@@ -101,6 +101,7 @@ export function MapClient() {
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [status, setStatus] = useState("Connecting…");
   const [gameFilter, setGameFilter] = useState<GameFilter>("all");
+  const [mapReady, setMapReady] = useState(false);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
@@ -248,6 +249,7 @@ export function MapClient() {
         });
 
         mapRef.current = map;
+        setMapReady(true);
       });
     }
 
@@ -258,6 +260,7 @@ export function MapClient() {
       mapRef.current?.remove();
       mapRef.current = null;
       maplibreRef.current = null;
+      setMapReady(false);
     };
   }, []);
 
@@ -366,7 +369,7 @@ export function MapClient() {
         fittedRef.current = true;
       }
     }
-  }, [visibleDrivers]);
+  }, [visibleDrivers, mapReady]);
 
   const applyFilter = () => {
     const next = vtc.trim();
