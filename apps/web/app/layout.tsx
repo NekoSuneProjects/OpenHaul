@@ -1,4 +1,5 @@
 import "./globals.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 import Link from "next/link";
 import { RadioPlayer } from "../components/RadioPlayer";
 
