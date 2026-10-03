@@ -66,6 +66,28 @@ Fine.init({
   occurredAt: { type: DataTypes.DATE, allowNull: false, field: "occurred_at" },
 }, { sequelize, modelName: "Fine", tableName: "fines", underscored: true });
 
+export class DonationGoal extends Model {
+  declare id: number;
+  declare title: string;
+  declare description: string | null;
+  declare currency: string;
+  declare targetAmount: number;
+  declare currentAmount: number;
+  declare active: boolean;
+  declare sortOrder: number;
+}
+
+DonationGoal.init({
+  id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+  title: { type: DataTypes.STRING(160), allowNull: false },
+  description: { type: DataTypes.TEXT, allowNull: true },
+  currency: { type: DataTypes.STRING(8), allowNull: false, defaultValue: "GBP" },
+  targetAmount: { type: DataTypes.DECIMAL(12, 2), allowNull: false, field: "target_amount" },
+  currentAmount: { type: DataTypes.DECIMAL(12, 2), allowNull: false, defaultValue: 0, field: "current_amount" },
+  active: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true },
+  sortOrder: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0, field: "sort_order" },
+}, { sequelize, modelName: "DonationGoal", tableName: "donation_goals", underscored: true });
+
 Vtc.hasMany(VtcApiKey, { foreignKey: "vtcId" });
 VtcApiKey.belongsTo(Vtc, { foreignKey: "vtcId" });
 
@@ -90,8 +112,28 @@ async function bootstrapVtc() {
   });
 }
 
+async function bootstrapDonationGoal() {
+  const title = process.env.OPENHAUL_BOOTSTRAP_GOAL_TITLE?.trim();
+  const target = Number(process.env.OPENHAUL_BOOTSTRAP_GOAL_TARGET ?? "");
+  if (!title || !Number.isFinite(target) || target <= 0) return;
+
+  await DonationGoal.findOrCreate({
+    where: { title },
+    defaults: {
+      title,
+      description: process.env.OPENHAUL_BOOTSTRAP_GOAL_DESCRIPTION?.trim() || null,
+      currency: process.env.OPENHAUL_BOOTSTRAP_GOAL_CURRENCY?.trim() || "GBP",
+      targetAmount: target,
+      currentAmount: Number(process.env.OPENHAUL_BOOTSTRAP_GOAL_CURRENT ?? "0") || 0,
+      active: true,
+      sortOrder: 0,
+    },
+  });
+}
+
 export async function initDatabase() {
   await sequelize.authenticate();
   await sequelize.sync();
   await bootstrapVtc();
+  await bootstrapDonationGoal();
 }
