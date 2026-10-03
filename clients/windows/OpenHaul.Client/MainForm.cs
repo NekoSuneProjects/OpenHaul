@@ -35,6 +35,8 @@ public sealed class MainForm : Form
 
     private readonly Dictionary<string, Button> _navButtons = new(StringComparer.OrdinalIgnoreCase);
     private readonly NotifyIcon _trayIcon = new();
+    private readonly System.Windows.Forms.Timer _telemetryRetryTimer = new();
+    private bool _telemetryRetryPending;
     private bool _allowExit;
 
     public MainForm()
@@ -67,10 +69,13 @@ public sealed class MainForm : Form
         DetectGames();
 
         ConfigureTray();
+        ConfigureTelemetryRetry();
         Shown += async (_, _) => await CheckUpdatesAsync(updateTelemetry: true);
         FormClosing += OnFormClosing;
         FormClosed += async (_, _) =>
         {
+            _telemetryRetryTimer.Stop();
+            _telemetryRetryTimer.Dispose();
             _trayIcon.Visible = false;
             _trayIcon.Dispose();
             _lifetime.Cancel();
@@ -1276,9 +1281,14 @@ public sealed class MainForm : Form
 
             if (result.Deferred.Count > 0)
             {
-                SetStatus("Telemetry update queued for after the game closes.");
+                _telemetryRetryPending = true;
+                _telemetryRetryTimer.Start();
+                SetStatus("Telemetry update queued and will apply automatically after the game closes.");
                 return;
             }
+
+            _telemetryRetryPending = false;
+            _telemetryRetryTimer.Stop();
 
             SetStatus(result.Installed.Count > 0
                 ? $"Telemetry updated in {result.Installed.Count} game installation(s)."
