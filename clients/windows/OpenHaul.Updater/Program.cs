@@ -124,6 +124,31 @@ internal static class Program
         return result;
     }
 
+    private static void ScheduleSelfDelete(string path, string logPath)
+    {
+        try
+        {
+            var escapedPath = path.Replace("\"", "\"\"");
+            var command =
+                "/c timeout /t 2 /nobreak >nul & del /f /q \"" +
+                escapedPath +
+                "\"";
+
+            Process.Start(new ProcessStartInfo("cmd.exe", command)
+            {
+                UseShellExecute = false,
+                CreateNoWindow = true,
+                WindowStyle = ProcessWindowStyle.Hidden,
+            });
+
+            Log(logPath, "Scheduled temporary updater cleanup: " + path);
+        }
+        catch (Exception ex)
+        {
+            Log(logPath, "Unable to schedule temporary updater cleanup: " + ex.Message);
+        }
+    }
+
     private static void WaitForProcessExit(int pid, string logPath)
     {
         try
