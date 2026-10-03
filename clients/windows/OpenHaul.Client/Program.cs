@@ -23,7 +23,7 @@ Console.CancelKeyPress += (_, eventArgs) =>
 Console.WriteLine("OpenHaul Client");
 Console.WriteLine($"API: {config.ApiUrl}");
 Console.WriteLine($"Driver: {config.Username} ({config.DriverId})");
-Console.WriteLine(simulate ? "Mode: simulator" : $"Mode: telemetry pipe \\.\pipe\{config.PipeName}");
+Console.WriteLine(simulate ? "Mode: simulator" : $@"Mode: telemetry pipe \\.\pipe\{config.PipeName}");
 
 try
 {
