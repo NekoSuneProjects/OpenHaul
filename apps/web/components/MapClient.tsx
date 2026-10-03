@@ -154,6 +154,18 @@ function driverFeatureCollection(drivers: Driver[]) {
   };
 }
 
+const SCS_LAYER_SUFFIXES = ["prefabs", "road-case", "roads", "rail", "ferry", "cities"] as const;
+
+function setScsMapVisibility(map: any, game: "ets2" | "ats", visible: boolean) {
+  const sourceId = "openhaul-" + game + "-map";
+  for (const suffix of SCS_LAYER_SUFFIXES) {
+    const layerId = sourceId + "-" + suffix;
+    if (map.getLayer(layerId)) {
+      map.setLayoutProperty(layerId, "visibility", visible ? "visible" : "none");
+    }
+  }
+}
+
 function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
   const sourceId = "openhaul-" + game + "-map";
   if (map.getSource(sourceId)) return;
@@ -517,7 +529,10 @@ export function MapClient() {
     if (mapAssets.ats.available) {
       addScsMapLayers(map, "ats", absoluteApiUrl(mapAssets.ats.url));
     }
-  }, [mapReady, mapAssets]);
+
+    setScsMapVisibility(map, "ets2", gameFilter === "all" || gameFilter === "ets2");
+    setScsMapVisibility(map, "ats", gameFilter === "all" || gameFilter === "ats");
+  }, [mapReady, mapAssets, gameFilter]);
 
   useEffect(() => {
     let active = true;
