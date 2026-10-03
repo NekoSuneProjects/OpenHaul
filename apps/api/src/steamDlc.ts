@@ -67,14 +67,14 @@ export async function registerSteamDlcRoutes(app: FastifyInstance) {
         ? "Detected means the DLC app ID appeared in Steam's library response. Missing DLC is not treated as definitively unowned."
         : "Steam game details are not visible, so DLC ownership cannot be detected from the public Web API.",
       ets2: catalogue
-        .filter((item) => item.name.startsWith("Euro Truck Simulator 2 - "))
-        .map((item) => ({
+        .filter((item: StoreApp) => item.name.startsWith("Euro Truck Simulator 2 - "))
+        .map((item: StoreApp) => ({
           ...item,
           status: detectedAppIds.has(item.appid) ? "detected" : "not_confirmed",
         })),
       ats: catalogue
-        .filter((item) => item.name.startsWith("American Truck Simulator - "))
-        .map((item) => ({
+        .filter((item: StoreApp) => item.name.startsWith("American Truck Simulator - "))
+        .map((item: StoreApp) => ({
           ...item,
           status: detectedAppIds.has(item.appid) ? "detected" : "not_confirmed",
         })),
