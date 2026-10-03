@@ -217,7 +217,7 @@ git clone --recurse-submodules https://github.com/truckermudgeon/maps.git C:\src
 
 `-TruckSimMapsPath` must be the source checkout root containing `package.json` and `packages/clis/parser`, not an empty `GameMap/ETS2` or `GameMap/ATS` directory. Both games can use the same checkout. For an existing clone, run `git -C C:\src\maps submodule update --init --recursive`.
 
-Install Node.js/npm, Docker, and the node-gyp prerequisites (Python and Visual Studio C++ Build Tools on Windows). The helper installs missing dependencies and builds the native parser addons before parsing.
+Install Node.js/npm, Docker, and the node-gyp prerequisites (Python and Visual Studio C++ Build Tools on Windows). The helper installs missing dependencies and builds the native parser addons before parsing. It also adds block-comment support to the TruckSim Maps SII lexer when missing, so definitions such as ETS2's `model.stable.sii` can be read. It also supports BGRX sRGB icon textures (DXGI format 93), with opaque alpha for BGRX data. These are local compatibility edits in the supplied TruckSim Maps checkout; installed game files are not modified.
 
 A helper is included. Run these commands from the OpenHaul repository root (from `GameMap`, use `..\tools\maps\build-scs-map.ps1`):
 
@@ -240,6 +240,13 @@ The helper uses a local checkout of TruckSim Maps to parse your installed SCS ma
 ```text
 data-runtime/maps/ets2.pmtiles
 data-runtime/maps/ats.pmtiles
+```
+
+The helper uses the published [`ghcr.io/openwatersio/tippecanoe`](https://github.com/openwatersio/tippecanoe) image and checks Docker before parsing. If GeoJSON generation succeeded but the Docker/PMTiles stage failed, resume that stage without parsing again:
+
+```powershell
+.\tools\maps\build-scs-map.ps1 -Game ets2 -TilesOnly
+# For ATS, use -Game ats. Supply the same -WorkDir if the original build used a custom one.
 ```
 
 For a manually managed installation, disable automatic updates and import an existing PMTiles file directly:
