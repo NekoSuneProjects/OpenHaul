@@ -65,7 +65,7 @@ type InterpolatedDriver = Driver & {
   _targetVersion?: string;
 };
 
-const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 const roadTileUrl =
   process.env.NEXT_PUBLIC_MAP_ROAD_TILE_URL ??
   "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
@@ -78,11 +78,23 @@ const FRAME_INTERVAL_MS = 33;
 function toWsUrl(base: string) {
   if (base.startsWith("https://")) return "wss://" + base.slice(8);
   if (base.startsWith("http://")) return "ws://" + base.slice(7);
-  return base;
+
+  if (typeof window !== "undefined") {
+    const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+    return protocol + "//" + window.location.host;
+  }
+
+  return "";
 }
 
 function absoluteApiUrl(relative: string) {
-  return new URL(relative, api.endsWith("/") ? api : api + "/").toString();
+  if (typeof window !== "undefined") {
+    const base = api ? new URL(api, window.location.origin).toString() : window.location.origin + "/";
+    return new URL(relative, base).toString();
+  }
+
+  const fallback = api || "http://localhost:3000";
+  return new URL(relative, fallback.endsWith("/") ? fallback : fallback + "/").toString();
 }
 
 function defaultMapStyle() {
