@@ -11,6 +11,9 @@ public sealed class UpdateManager
     public const string DefaultManifestUrl =
         "https://github.com/NekoSuneProjects/OpenHaul/releases/download/windows-client/client-manifest.json";
 
+    public const string DefaultTelemetryManifestUrl =
+        "https://github.com/NekoSuneProjects/OpenHaul/releases/download/scs-plugin/telemetry-manifest.json";
+
     private readonly HttpClient _http = new()
     {
         Timeout = TimeSpan.FromMinutes(10),
@@ -52,6 +55,37 @@ public sealed class UpdateManager
             {
                 Status?.Invoke("Update manifest is invalid.");
                 return null;
+            }
+
+            // Telemetry has its own release/update channel. A plugin-only build
+            // becomes visible to clients immediately without requiring a launcher build.
+            try
+            {
+                using var telemetryResponse = await _http.GetAsync(
+                    DefaultTelemetryManifestUrl + "?t=" + DateTimeOffset.UtcNow.ToUnixTimeSeconds(),
+                    HttpCompletionOption.ResponseHeadersRead,
+                    token);
+
+                if (telemetryResponse.IsSuccessStatusCode)
+                {
+                    var telemetryManifest =
+                        await telemetryResponse.Content.ReadFromJsonAsync<TelemetryUpdateManifest>(
+                            cancellationToken: token);
+
+                    if (telemetryManifest is { SchemaVersion: 1 } &&
+                        telemetryManifest.Telemetry is not null)
+                    {
+                        manifest = manifest with
+                        {
+                            Telemetry = telemetryManifest.Telemetry,
+                        };
+                    }
+                }
+            }
+            catch (Exception ex) when (ex is not OperationCanceledException)
+            {
+                // Fall back to the telemetry snapshot embedded in the client manifest.
+                Status?.Invoke("Telemetry update feed unavailable; using bundled version metadata.");
             }
 
             Status?.Invoke("Update check complete.");
