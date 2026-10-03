@@ -19,12 +19,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - name: api
-            dockerfile: apps/api/Dockerfile
-            image: ghcr.io/nekosuneprojects/openhaul-api
-          - name: web
-            dockerfile: apps/web/Dockerfile
-            image: ghcr.io/nekosuneprojects/openhaul-web
+          - name: openhaul
+            dockerfile: Dockerfile
+            image: ghcr.io/nekosuneprojects/openhaul
           - name: bot
             dockerfile: apps/bot/Dockerfile
             image: ghcr.io/nekosuneprojects/openhaul-bot
