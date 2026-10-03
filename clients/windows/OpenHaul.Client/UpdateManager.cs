@@ -97,6 +97,45 @@ public sealed class UpdateManager
         Application.Exit();
     }
 
+    private static bool IsGameRunning(string game) =>
+        game.Equals("ets2", StringComparison.OrdinalIgnoreCase)
+            ? Process.GetProcessesByName("eurotrucks2").Length > 0
+            : Process.GetProcessesByName("amtrucks").Length > 0;
+
+    private static bool IsSharingViolation(IOException ex)
+    {
+        const int SharingViolation = 32;
+        const int LockViolation = 33;
+        var code = ex.HResult & 0xFFFF;
+        return code is SharingViolation or LockViolation;
+    }
+
+    private static async Task ReplaceFileWithRetryAsync(
+        string source,
+        string destination,
+        CancellationToken token)
+    {
+        Exception? last = null;
+
+        for (var attempt = 0; attempt < 6; attempt++)
+        {
+            token.ThrowIfCancellationRequested();
+
+            try
+            {
+                File.Move(source, destination, overwrite: true);
+                return;
+            }
+            catch (IOException ex) when (IsSharingViolation(ex))
+            {
+                last = ex;
+                await Task.Delay(250 * (attempt + 1), token);
+            }
+        }
+
+        throw last ?? new IOException("Unable to replace update file.");
+    }
+
     public async Task<TelemetryUpdateResult> EnsureTelemetryAsync(
         ClientUpdateManifest manifest,
         CancellationToken token)
@@ -122,6 +161,7 @@ public sealed class UpdateManager
         var gameInstalls = GameLocator.FindInstalledGames();
         var installed = new List<string>();
         var failures = new List<string>();
+        var deferred = new List<string>();
 
         foreach (var game in gameInstalls)
         {
@@ -138,9 +178,19 @@ public sealed class UpdateManager
 
                 if (!destinationHash.Equals(manifest.Telemetry.Sha256, StringComparison.OrdinalIgnoreCase))
                 {
+                    if (IsGameRunning(game.Game))
+                    {
+                        deferred.Add(game.Game.ToUpperInvariant() + ": update will apply after the game closes");
+                        continue;
+                    }
+
                     File.Copy(cachedDll, destination, overwrite: true);
                     installed.Add(destination);
                 }
+            }
+            catch (IOException ex) when (IsSharingViolation(ex))
+            {
+                deferred.Add(game.Game.ToUpperInvariant() + ": plugin is in use and will update after the game closes");
             }
             catch (Exception ex)
             {
@@ -155,19 +205,23 @@ public sealed class UpdateManager
                 manifest.Telemetry.Version,
                 installed,
                 failures,
+                deferred,
                 cachedDll);
         }
 
         Status?.Invoke(
-            installed.Count > 0
-                ? "Telemetry plugin updated."
-                : "Telemetry plugin is up to date.");
+            deferred.Count > 0
+                ? "Telemetry update deferred until the game closes."
+                : installed.Count > 0
+                    ? "Telemetry plugin updated."
+                    : "Telemetry plugin is up to date.");
 
         return new TelemetryUpdateResult(
             true,
             manifest.Telemetry.Version,
             installed,
             failures,
+            deferred,
             cachedDll);
     }
 
@@ -185,8 +239,7 @@ public sealed class UpdateManager
         string expectedSha256,
         CancellationToken token)
     {
-        var temporary = destination + ".download";
-        if (File.Exists(temporary)) File.Delete(temporary);
+        var temporary = destination + "." + Guid.NewGuid().ToString("N") + ".download";
 
         using var response = await _http.GetAsync(
             url,
@@ -233,8 +286,7 @@ public sealed class UpdateManager
                 $"Downloaded update checksum mismatch. Expected {expectedSha256}, got {actual}.");
         }
 
-        if (File.Exists(destination)) File.Delete(destination);
-        File.Move(temporary, destination);
+        await ReplaceFileWithRetryAsync(temporary, destination, token);
         Progress?.Invoke(100);
     }
 }
@@ -244,6 +296,7 @@ public sealed record TelemetryUpdateResult(
     string Version,
     IReadOnlyList<string> Installed,
     IReadOnlyList<string> Failures,
+    IReadOnlyList<string> Deferred,
     string CachedDll);
 
 public sealed record ClientUpdateManifest(
