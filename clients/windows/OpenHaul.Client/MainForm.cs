@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Net.Http.Json;
+using System.Runtime.InteropServices;
 
 namespace OpenHaul.Client;
 
@@ -33,6 +34,8 @@ public sealed class MainForm : Form
     private Task? _telemetryTask;
 
     private readonly Dictionary<string, Button> _navButtons = new(StringComparer.OrdinalIgnoreCase);
+    private readonly NotifyIcon _trayIcon = new();
+    private bool _allowExit;
 
     public MainForm()
     {
@@ -63,12 +66,101 @@ public sealed class MainForm : Form
         RefreshProfile();
         DetectGames();
 
+        ConfigureTray();
         Shown += async (_, _) => await CheckUpdatesAsync(updateTelemetry: true);
-        FormClosing += (_, _) => _lifetime.Cancel();
-        FormClosed += async (_, _) => await StopTelemetryAsync();
+        FormClosing += OnFormClosing;
+        FormClosed += async (_, _) =>
+        {
+            _trayIcon.Visible = false;
+            _trayIcon.Dispose();
+            _lifetime.Cancel();
+            await StopTelemetryAsync();
+        };
     }
 
     private static Color C(int r, int g, int b) => Color.FromArgb(r, g, b);
+
+    [DllImport("user32.dll")]
+    private static extern bool ReleaseCapture();
+
+    [DllImport("user32.dll")]
+    private static extern IntPtr SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
+
+    private void BeginWindowDrag(object? sender, MouseEventArgs e)
+    {
+        if (e.Button != MouseButtons.Left) return;
+        ReleaseCapture();
+        SendMessage(Handle, 0xA1, 0x2, 0);
+    }
+
+    private void ConfigureTray()
+    {
+        _trayIcon.Icon = SystemIcons.Application;
+        _trayIcon.Text = "OpenHaul Launcher";
+        _trayIcon.Visible = false;
+
+        var menu = new ContextMenuStrip();
+        menu.BackColor = C(7, 28, 18);
+        menu.ForeColor = Color.White;
+        menu.Items.Add("Open OpenHaul", null, (_, _) => RestoreFromTray());
+        menu.Items.Add("Exit", null, (_, _) =>
+        {
+            _allowExit = true;
+            Close();
+        });
+
+        _trayIcon.ContextMenuStrip = menu;
+        _trayIcon.DoubleClick += (_, _) => RestoreFromTray();
+    }
+
+    private void RestoreFromTray()
+    {
+        Show();
+        WindowState = FormWindowState.Normal;
+        Activate();
+        _trayIcon.Visible = false;
+    }
+
+    private bool IsGameRunning() =>
+        Process.GetProcessesByName("eurotrucks2").Length > 0 ||
+        Process.GetProcessesByName("amtrucks").Length > 0;
+
+    private void HideToTray()
+    {
+        Hide();
+        _trayIcon.Visible = true;
+        _trayIcon.ShowBalloonTip(
+            1800,
+            "OpenHaul is still running",
+            "Telemetry will continue in the background while you drive.",
+            ToolTipIcon.Info);
+    }
+
+    private void RequestClose()
+    {
+        if (_telemetryCancellation is not null || IsGameRunning())
+        {
+            HideToTray();
+            return;
+        }
+
+        _allowExit = true;
+        Close();
+    }
+
+    private void OnFormClosing(object? sender, FormClosingEventArgs e)
+    {
+        if (_allowExit) return;
+
+        if (_telemetryCancellation is not null || IsGameRunning())
+        {
+            e.Cancel = true;
+            HideToTray();
+            return;
+        }
+
+        _allowExit = true;
+    }
 
     private void BuildShell()
     {
@@ -76,39 +168,54 @@ public sealed class MainForm : Form
         {
             Dock = DockStyle.Top,
             Height = 72,
-            BackColor = C(6, 25, 16),
+            BackColor = C(5, 24, 15),
+            Cursor = Cursors.SizeAll,
         };
+        top.MouseDown += BeginWindowDrag;
 
         var logo = new Label
         {
             Text = "OpenHaul",
             AutoSize = true,
-            Font = new Font("Segoe UI", 22F, FontStyle.Bold),
-            ForeColor = C(72, 222, 133),
-            Location = new Point(24, 18),
+            Font = new Font("Segoe UI Variable Display", 22F, FontStyle.Bold),
+            ForeColor = C(70, 235, 141),
+            Location = new Point(24, 17),
+            Cursor = Cursors.SizeAll,
         };
+        logo.MouseDown += BeginWindowDrag;
         top.Controls.Add(logo);
 
         var subtitle = new Label
         {
-            Text = "ETS2 / ATS Driver Launcher",
+            Text = "DRIVER HUB",
             AutoSize = true,
-            ForeColor = C(135, 166, 149),
-            Location = new Point(178, 29),
+            Font = new Font("Segoe UI", 8.5F, FontStyle.Bold),
+            ForeColor = C(103, 147, 122),
+            Location = new Point(182, 30),
+            Cursor = Cursors.SizeAll,
         };
+        subtitle.MouseDown += BeginWindowDrag;
         top.Controls.Add(subtitle);
 
+        var windowActions = new FlowLayoutPanel
+        {
+            Dock = DockStyle.Right,
+            Width = 104,
+            FlowDirection = FlowDirection.LeftToRight,
+            WrapContents = false,
+            Padding = new Padding(4, 15, 8, 0),
+            BackColor = Color.Transparent,
+        };
+
         var minimize = WindowButton("—");
-        minimize.Location = new Point(Width - 100, 16);
-        minimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         minimize.Click += (_, _) => WindowState = FormWindowState.Minimized;
-        top.Controls.Add(minimize);
+        windowActions.Controls.Add(minimize);
 
         var close = WindowButton("×");
-        close.Location = new Point(Width - 52, 16);
-        close.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        close.Click += (_, _) => Close();
-        top.Controls.Add(close);
+        close.Click += (_, _) => RequestClose();
+        windowActions.Controls.Add(close);
+
+        top.Controls.Add(windowActions);
 
         var sidebar = new Panel
         {
@@ -160,7 +267,10 @@ public sealed class MainForm : Form
             Cursor = Cursors.Hand,
             TabStop = false,
         };
+        button.UseVisualStyleBackColor = false;
         button.FlatAppearance.BorderSize = 0;
+        button.FlatAppearance.MouseOverBackColor = C(12, 52, 33);
+        button.FlatAppearance.MouseDownBackColor = C(18, 76, 47);
         return button;
     }
 
@@ -179,7 +289,10 @@ public sealed class MainForm : Form
             Font = new Font("Segoe UI", 10.5F, FontStyle.Bold),
             Cursor = Cursors.Hand,
         };
+        button.UseVisualStyleBackColor = false;
         button.FlatAppearance.BorderSize = 0;
+        button.FlatAppearance.MouseOverBackColor = C(9, 43, 28);
+        button.FlatAppearance.MouseDownBackColor = C(12, 58, 36);
         button.Click += (_, _) => ShowPage(key);
         sidebar.Controls.Add(button);
         _navButtons[key] = button;
@@ -713,12 +826,13 @@ public sealed class MainForm : Form
         return panel;
     }
 
-    private static Panel Card(int x, int y, int width, int height) => new()
+    private static Panel Card(int x, int y, int width, int height) => new RoundedPanel
     {
         Location = new Point(x, y),
         Size = new Size(width, height),
-        BackColor = C(7, 30, 19),
-        BorderStyle = BorderStyle.FixedSingle,
+        BackColor = C(7, 29, 19),
+        BorderColor = C(22, 75, 48),
+        Radius = 14,
     };
 
     private static Label CardTitle(string text) => new()
@@ -732,19 +846,25 @@ public sealed class MainForm : Form
     private static void StyleButton(Button button, bool primary)
     {
         button.FlatStyle = FlatStyle.Flat;
+        button.UseVisualStyleBackColor = false;
         button.FlatAppearance.BorderSize = 1;
         button.FlatAppearance.BorderColor = C(29, 96, 61);
         button.Cursor = Cursors.Hand;
+        button.TabStop = false;
 
         if (primary)
         {
             button.BackColor = C(72, 222, 133);
             button.ForeColor = C(3, 18, 11);
+            button.FlatAppearance.MouseOverBackColor = C(91, 238, 151);
+            button.FlatAppearance.MouseDownBackColor = C(55, 198, 115);
         }
         else
         {
             button.BackColor = C(8, 39, 25);
             button.ForeColor = Color.White;
+            button.FlatAppearance.MouseOverBackColor = C(12, 58, 36);
+            button.FlatAppearance.MouseDownBackColor = C(16, 72, 44);
         }
     }
 
@@ -817,6 +937,7 @@ public sealed class MainForm : Form
         var appId = SelectedGameCode() == "ats" ? 270880 : 227300;
         OpenUrl("steam://rungameid/" + appId);
         SetStatus("Launching " + (appId == 270880 ? "American Truck Simulator" : "Euro Truck Simulator 2") + "…");
+        WindowState = FormWindowState.Minimized;
     }
 
     private async Task SignInAsync()
@@ -997,6 +1118,12 @@ public sealed class MainForm : Form
             if (!result.Success)
             {
                 SetStatus("Telemetry update incomplete: " + string.Join(" | ", result.Failures));
+                return;
+            }
+
+            if (result.Deferred.Count > 0)
+            {
+                SetStatus("Telemetry update queued for after the game closes.");
                 return;
             }
 
