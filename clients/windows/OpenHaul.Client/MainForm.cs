@@ -400,6 +400,10 @@ public sealed class MainForm : Form
         hero.Controls.Add(hint);
 
         _gameSelector.DropDownStyle = ComboBoxStyle.DropDownList;
+        _gameSelector.DrawMode = DrawMode.OwnerDrawFixed;
+        _gameSelector.ItemHeight = 28;
+        _gameSelector.DrawItem -= DrawGameSelectorItem;
+        _gameSelector.DrawItem += DrawGameSelectorItem;
         _gameSelector.Items.Clear();
         _gameSelector.Items.Add("Euro Truck Simulator 2");
         _gameSelector.Items.Add("American Truck Simulator");
@@ -437,10 +441,39 @@ public sealed class MainForm : Form
 
         page.Controls.Add(hero);
 
-        var info = Card(24, 404, 860, 120);
+        var news = Card(24, 404, 860, 320);
+        news.Controls.Add(new Label
+        {
+            Text = "OpenHaul News",
+            Font = new Font("Segoe UI Variable Display", 16F, FontStyle.Bold),
+            AutoSize = true,
+            Location = new Point(24, 18),
+        });
+        news.Controls.Add(new Label
+        {
+            Text = "Latest launcher, telemetry and platform updates",
+            AutoSize = true,
+            ForeColor = C(125, 159, 140),
+            Location = new Point(25, 50),
+        });
+
+        var newsHost = new FlowLayoutPanel
+        {
+            Location = new Point(20, 82),
+            Size = new Size(818, 214),
+            AutoScroll = true,
+            FlowDirection = FlowDirection.TopDown,
+            WrapContents = false,
+            BackColor = Color.Transparent,
+            Padding = new Padding(0, 0, 8, 0),
+        };
+        news.Controls.Add(newsHost);
+        page.Controls.Add(news);
+
+        var info = Card(24, 748, 860, 108);
         info.Controls.Add(new Label
         {
-            Text = "Account",
+            Text = "Driver account",
             Font = new Font("Segoe UI", 11F, FontStyle.Bold),
             AutoSize = true,
             Location = new Point(24, 18),
@@ -452,10 +485,12 @@ public sealed class MainForm : Form
                 : $"{_settings.DisplayName} · {_settings.SteamId}",
             AutoSize = true,
             ForeColor = C(145, 178, 160),
-            Location = new Point(24, 48),
+            Location = new Point(24, 50),
         };
         info.Controls.Add(summary);
         page.Controls.Add(info);
+
+        BeginInvoke(async () => await LoadNewsAsync(newsHost));
 
         RefreshSelectedGamePath();
         ApplyMandatoryUpdateState();
@@ -865,6 +900,134 @@ public sealed class MainForm : Form
             button.ForeColor = Color.White;
             button.FlatAppearance.MouseOverBackColor = C(12, 58, 36);
             button.FlatAppearance.MouseDownBackColor = C(16, 72, 44);
+        }
+    }
+
+    private void DrawGameSelectorItem(object? sender, DrawItemEventArgs e)
+    {
+        if (e.Index < 0) return;
+
+        var selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+        using var background = new SolidBrush(selected ? C(14, 62, 39) : C(7, 31, 20));
+        using var foreground = new SolidBrush(selected ? C(97, 244, 156) : C(225, 240, 231));
+
+        e.Graphics.FillRectangle(background, e.Bounds);
+        e.Graphics.DrawString(
+            _gameSelector.Items[e.Index]?.ToString() ?? "",
+            Font,
+            foreground,
+            new RectangleF(e.Bounds.X + 10, e.Bounds.Y + 5, e.Bounds.Width - 12, e.Bounds.Height - 6));
+    }
+
+    private async Task LoadNewsAsync(FlowLayoutPanel host)
+    {
+        if (host.IsDisposed) return;
+
+        host.Controls.Clear();
+        host.Controls.Add(new Label
+        {
+            Text = "Loading latest news…",
+            AutoSize = true,
+            ForeColor = C(125, 159, 140),
+            Margin = new Padding(6, 8, 0, 8),
+        });
+
+        try
+        {
+            using var http = new HttpClient
+            {
+                BaseAddress = new Uri(ServerUrl() + "/"),
+                Timeout = TimeSpan.FromSeconds(15),
+            };
+
+            var response = await http.GetFromJsonAsync<NewsResponse>(
+                "api/v1/public/news",
+                _lifetime.Token);
+
+            if (host.IsDisposed) return;
+            host.Controls.Clear();
+
+            var items = response?.Items ?? [];
+            if (items.Count == 0)
+            {
+                host.Controls.Add(new Label
+                {
+                    Text = "No OpenHaul news has been published yet.",
+                    AutoSize = true,
+                    ForeColor = C(125, 159, 140),
+                    Margin = new Padding(6, 8, 0, 8),
+                });
+                return;
+            }
+
+            foreach (var item in items.Take(4))
+            {
+                var card = new RoundedPanel
+                {
+                    Width = 775,
+                    Height = 92,
+                    BackColor = C(5, 24, 16),
+                    BorderColor = C(18, 63, 42),
+                    Radius = 12,
+                    Margin = new Padding(4, 4, 4, 8),
+                };
+
+                card.Controls.Add(new Label
+                {
+                    Text = item.Title,
+                    AutoEllipsis = true,
+                    Font = new Font("Segoe UI", 10.5F, FontStyle.Bold),
+                    ForeColor = Color.White,
+                    Location = new Point(16, 12),
+                    Size = new Size(565, 24),
+                });
+
+                var date = item.PublishedAt?.LocalDateTime.ToString("dd MMM yyyy") ?? "OpenHaul";
+                card.Controls.Add(new Label
+                {
+                    Text = string.IsNullOrWhiteSpace(item.Tag) ? date : item.Tag + "  ·  " + date,
+                    AutoSize = true,
+                    ForeColor = C(106, 149, 126),
+                    Location = new Point(16, 40),
+                });
+
+                var excerpt = item.Body.Replace("\r", " ").Replace("\n", " ").Trim();
+                if (excerpt.Length > 105) excerpt = excerpt[..102] + "…";
+                card.Controls.Add(new Label
+                {
+                    Text = string.IsNullOrWhiteSpace(excerpt) ? "OpenHaul release update." : excerpt,
+                    AutoEllipsis = true,
+                    ForeColor = C(153, 181, 165),
+                    Location = new Point(16, 62),
+                    Size = new Size(570, 22),
+                });
+
+                var read = new Button
+                {
+                    Text = "Read more",
+                    Width = 120,
+                    Height = 34,
+                    Location = new Point(635, 28),
+                };
+                StyleButton(read, false);
+                read.Click += (_, _) => OpenUrl(item.Url);
+                card.Controls.Add(read);
+
+                host.Controls.Add(card);
+            }
+        }
+        catch (Exception ex)
+        {
+            if (host.IsDisposed) return;
+            host.Controls.Clear();
+            host.Controls.Add(new Label
+            {
+                Text = "News unavailable: " + ex.Message,
+                AutoSize = true,
+                MaximumSize = new Size(760, 0),
+                ForeColor = C(181, 112, 112),
+                Margin = new Padding(6, 8, 0, 8),
+            });
         }
     }
 
@@ -1291,6 +1454,19 @@ public sealed class MainForm : Form
     {
         Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
     }
+
+    private sealed record NewsResponse(
+        string Source,
+        DateTimeOffset FetchedAt,
+        IReadOnlyList<NewsItem> Items);
+
+    private sealed record NewsItem(
+        long Id,
+        string Title,
+        string Tag,
+        string Body,
+        DateTimeOffset? PublishedAt,
+        string Url);
 
     private sealed record OpenHaulStatusResponse(
         int Online,
