@@ -187,17 +187,11 @@ static async Task HandleEnvelope(string json, OpenHaulApi api, ClientConfig conf
 
         case "fine":
         {
-            if (config.VtcId is null)
-            {
-                Console.WriteLine("Fine received, but OPENHAUL_VTC_ID is not configured; skipping VTC fine upload.");
-                return;
-            }
-
             var plugin = data.Deserialize<PluginFineTelemetry>();
             if (plugin is null) return;
 
             var fine = new FineTelemetry(
-                config.VtcId.Value,
+                config.VtcId,
                 config.DriverId,
                 plugin.Game,
                 NormalizeFineType(plugin.Offence),
@@ -212,17 +206,11 @@ static async Task HandleEnvelope(string json, OpenHaulApi api, ClientConfig conf
 
         case "job.completed":
         {
-            if (config.VtcId is null)
-            {
-                Console.WriteLine("Completed job received, but OPENHAUL_VTC_ID is not configured; skipping VTC job upload.");
-                return;
-            }
-
             var plugin = data.Deserialize<PluginJobCompletedTelemetry>();
             if (plugin is null) return;
 
             var job = new JobCompletedTelemetry(
-                config.VtcId.Value,
+                config.VtcId,
                 config.DriverId,
                 plugin.Game,
                 plugin.Cargo,
