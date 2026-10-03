@@ -103,6 +103,32 @@ function absoluteApiUrl(relative: string) {
   return new URL(relative, fallback.endsWith("/") ? fallback : fallback + "/").toString();
 }
 
+async function detectPmtilesSourceLayer(
+  sourceUrl: string,
+  game: "ets2" | "ats",
+) {
+  try {
+    const pmtiles = await import("pmtiles");
+    const archive = new pmtiles.PMTiles(sourceUrl);
+    const metadata = await archive.getMetadata() as {
+      vector_layers?: Array<{ id?: string }>;
+    };
+
+    const ids = (metadata.vector_layers ?? [])
+      .map((layer) => String(layer.id ?? ""))
+      .filter(Boolean);
+
+    const preferred =
+      game === "ats"
+        ? ["ats", "usa"]
+        : ["ets2", "europe"];
+
+    return preferred.find((id) => ids.includes(id)) ?? ids[0] ?? game;
+  } catch {
+    return game;
+  }
+}
+
 function defaultMapStyle() {
   return {
     version: 8 as const,
@@ -275,17 +301,29 @@ function setScsMapVisibility(map: any, game: "ets2" | "ats", visible: boolean) {
   }
 }
 
-function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
+function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string, sourceLayer: string) {
   const sourceId = "openhaul-" + game + "-map";
+  const nextUrl = "pmtiles://" + sourceUrl;
   const source = map.getSource(sourceId);
+
   if (source) {
-    if (source.serialize().url !== "pmtiles://" + sourceUrl) source.setUrl("pmtiles://" + sourceUrl);
-    return;
+    const currentUrl = source.serialize().url;
+    const currentLayer = map.getLayer(sourceId + "-roads")?.["source-layer"];
+
+    if (currentUrl === nextUrl && currentLayer === sourceLayer) {
+      return;
+    }
+
+    for (const suffix of [...SCS_LAYER_SUFFIXES].reverse()) {
+      const layerId = sourceId + "-" + suffix;
+      if (map.getLayer(layerId)) map.removeLayer(layerId);
+    }
+    map.removeSource(sourceId);
   }
 
   map.addSource(sourceId, {
     type: "vector",
-    url: "pmtiles://" + sourceUrl,
+    url: nextUrl,
     attribution: "SCS Software · Map conversion by TruckSim Maps",
   });
 
@@ -296,7 +334,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     id: sourceId + "-prefabs",
     type: "fill",
     source: sourceId,
-    "source-layer": game,
+    "source-layer": sourceLayer,
     filter: ["==", ["get", "type"], "prefab"],
     paint: {
       "fill-color": "#16261f",
@@ -309,7 +347,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     id: sourceId + "-road-case",
     type: "line",
     source: sourceId,
-    "source-layer": game,
+    "source-layer": sourceLayer,
     filter: [
       "all",
       ["==", ["get", "type"], "road"],
@@ -338,7 +376,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     id: sourceId + "-roads",
     type: "line",
     source: sourceId,
-    "source-layer": game,
+    "source-layer": sourceLayer,
     filter: [
       "all",
       ["==", ["get", "type"], "road"],
@@ -376,7 +414,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     id: sourceId + "-rail",
     type: "line",
     source: sourceId,
-    "source-layer": game,
+    "source-layer": sourceLayer,
     filter: [
       "all",
       ["==", ["get", "type"], "road"],
@@ -394,7 +432,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     id: sourceId + "-ferry",
     type: "line",
     source: sourceId,
-    "source-layer": game,
+    "source-layer": sourceLayer,
     filter: ["==", ["get", "type"], "ferry"],
     paint: {
       "line-color": "#57a6cf",
@@ -408,7 +446,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     id: sourceId + "-cities",
     type: "symbol",
     source: sourceId,
-    "source-layer": game,
+    "source-layer": sourceLayer,
     filter: ["==", ["get", "type"], "city"],
     minzoom: 4,
     layout: {
@@ -659,32 +697,33 @@ export function MapClient() {
     const map = mapRef.current;
     if (!mapReady || !map || !mapAssets) return;
 
-    if (mapAssets.ets2.available) {
-      const version = encodeURIComponent(
-        String(mapAssets.ets2.updatedAt ?? "") + "-" + String(mapAssets.ets2.size ?? 0),
-      );
-      addScsMapLayers(
-        map,
-        "ets2",
-        absoluteApiUrl(mapAssets.ets2.url) + "?v=" + version,
-      );
-    }
+    let cancelled = false;
 
-    if (mapAssets.ats.available) {
-      const version = encodeURIComponent(
-        String(mapAssets.ats.updatedAt ?? "") + "-" + String(mapAssets.ats.size ?? 0),
-      );
-      addScsMapLayers(
-        map,
-        "ats",
-        absoluteApiUrl(mapAssets.ats.url) + "?v=" + version,
-      );
-    }
+    const install = async () => {
+      if (mapAssets.ets2.available) {
+        const sourceUrl = absoluteApiUrl(mapAssets.ets2.url);
+        const sourceLayer = await detectPmtilesSourceLayer(sourceUrl, "ets2");
+        if (!cancelled) addScsMapLayers(map, "ets2", sourceUrl, sourceLayer);
+      }
 
-    setScsMapVisibility(map, "ets2", gameFilter === "all" || gameFilter === "ets2");
-    setScsMapVisibility(map, "ats", gameFilter === "all" || gameFilter === "ats");
-    setScsMapTheme(map, "ets2", mapMode);
-    setScsMapTheme(map, "ats", mapMode);
+      if (mapAssets.ats.available) {
+        const sourceUrl = absoluteApiUrl(mapAssets.ats.url);
+        const sourceLayer = await detectPmtilesSourceLayer(sourceUrl, "ats");
+        if (!cancelled) addScsMapLayers(map, "ats", sourceUrl, sourceLayer);
+      }
+
+      if (cancelled) return;
+
+      setScsMapVisibility(map, "ets2", gameFilter === "all" || gameFilter === "ets2");
+      setScsMapVisibility(map, "ats", gameFilter === "all" || gameFilter === "ats");
+      setScsMapTheme(map, "ets2", mapMode);
+      setScsMapTheme(map, "ats", mapMode);
+    };
+
+    void install();
+    return () => {
+      cancelled = true;
+    };
   }, [mapReady, mapAssets, gameFilter, mapMode]);
 
   useEffect(() => {
