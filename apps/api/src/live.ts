@@ -16,6 +16,14 @@ export type LiveDriver = {
   cargo?: string | null;
   sourceCity?: string | null;
   destinationCity?: string | null;
+  sourceCompany?: string | null;
+  destinationCompany?: string | null;
+  rpm?: number | null;
+  fuel?: number | null;
+  odometerKm?: number | null;
+  navigationDistanceM?: number | null;
+  navigationTimeS?: number | null;
+  speedLimitKph?: number | null;
   server?: string | null;
   updatedAt: string;
 };
