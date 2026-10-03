@@ -2,13 +2,18 @@
   "name": "openhaul",
   "private": true,
   "version": "0.1.0",
-  "workspaces": ["apps/*"],
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
     "dev:api": "npm run dev -w @openhaul/api",
     "dev:web": "npm run dev -w @openhaul/web",
     "dev:bot": "npm run dev -w @openhaul/bot",
     "build": "npm run build -ws --if-present",
-    "typecheck": "npm run typecheck -ws --if-present"
+    "typecheck": "npm run typecheck -ws --if-present",
+    "map:import": "node tools/maps/import-pmtiles.mjs"
   },
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22"
+  }
 }
