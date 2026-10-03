@@ -1,4 +1,4 @@
-import { mkdir, open, copyFile, stat } from "node:fs/promises";
+import { mkdir, open, copyFile, rename, rm, stat } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 
@@ -37,7 +37,30 @@ try {
 }
 
 await mkdir(destinationDirectory, { recursive: true });
-await copyFile(sourcePath, destinationPath);
+
+const temporaryPath = destinationPath + ".updating";
+await rm(temporaryPath, { force: true });
+await copyFile(sourcePath, temporaryPath);
+
+const temporaryInfo = await stat(temporaryPath);
+if (!temporaryInfo.isFile() || temporaryInfo.size <= 7) {
+  await rm(temporaryPath, { force: true });
+  throw new Error("Copied PMTiles update is invalid.");
+}
+
+const temporaryHandle = await open(temporaryPath, "r");
+try {
+  const magic = Buffer.alloc(7);
+  const { bytesRead } = await temporaryHandle.read(magic, 0, magic.length, 0);
+  if (bytesRead !== 7 || magic.toString("ascii") !== "PMTiles") {
+    throw new Error("Copied PMTiles update failed validation.");
+  }
+} finally {
+  await temporaryHandle.close();
+}
+
+await rm(destinationPath, { force: true });
+await rename(temporaryPath, destinationPath);
 
 const info = await stat(destinationPath);
 console.log(`Imported ${game.toUpperCase()} map: ${destinationPath}`);
