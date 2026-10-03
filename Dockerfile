@@ -42,6 +42,7 @@ COPY --from=build /app/apps/api/dist ./apps/api/dist
 # Next.js standalone web runtime.
 COPY --from=build /app/apps/web/.next/standalone ./
 COPY --from=build /app/apps/web/.next/static ./.next/static
+COPY --from=build /app/apps/web/public ./public
 
 # Single-origin gateway and process launcher.
 COPY infra/nginx/openhaul-container.conf /etc/nginx/nginx.conf
