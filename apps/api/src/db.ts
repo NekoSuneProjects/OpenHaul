@@ -131,6 +131,27 @@ AccountSession.init({
   tokenHash: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "token_hash" },
   expiresAt: { type: DataTypes.DATE, allowNull: false, field: "expires_at" },
 }, { sequelize, modelName: "AccountSession", tableName: "account_sessions", underscored: true });
+export class ClientAuthRequest extends Model {
+  declare id: number;
+  declare requestId: string;
+  declare secretHash: string;
+  declare userId: number | null;
+  declare clientName: string;
+  declare approvedAt: Date | null;
+  declare consumedAt: Date | null;
+  declare expiresAt: Date;
+}
+ClientAuthRequest.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  requestId: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "request_id" },
+  secretHash: { type: DataTypes.STRING(64), allowNull: false, field: "secret_hash" },
+  userId: { type: DataTypes.INTEGER, allowNull: true, field: "user_id" },
+  clientName: { type: DataTypes.STRING(120), allowNull: false, defaultValue: "Windows Client", field: "client_name" },
+  approvedAt: { type: DataTypes.DATE, allowNull: true, field: "approved_at" },
+  consumedAt: { type: DataTypes.DATE, allowNull: true, field: "consumed_at" },
+  expiresAt: { type: DataTypes.DATE, allowNull: false, field: "expires_at" },
+}, { sequelize, modelName: "ClientAuthRequest", tableName: "client_auth_requests", underscored: true });
+
 export class ClientToken extends Model {
   declare id: number;
   declare userId: number;
@@ -246,6 +267,8 @@ VtcLedgerEntry.init({
 }, { sequelize, modelName: "VtcLedgerEntry", tableName: "vtc_ledger_entries", underscored: true });
 
 User.hasMany(ClientToken, { foreignKey: "userId" });
+User.hasMany(ClientAuthRequest, { foreignKey: "userId" });
+ClientAuthRequest.belongsTo(User, { foreignKey: "userId" });
 User.hasMany(UserApiKey, { foreignKey: "userId" });
 UserApiKey.belongsTo(User, { foreignKey: "userId" });
 User.hasOne(TwitchAccount, { foreignKey: "userId" });
