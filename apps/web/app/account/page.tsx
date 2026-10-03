@@ -107,6 +107,17 @@ export default function AccountPage() {
     await load();
   };
 
+  const logout = async () => {
+    await fetch(api + "/api/v1/auth/logout", {
+      method: "POST",
+      credentials: "include",
+    });
+    setUser(null);
+    setMemberships([]);
+    setDlc(null);
+    setClientTokens([]);
+  };
+
   const createVtc = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setCreating(true);
@@ -176,6 +187,11 @@ export default function AccountPage() {
             <h1 style={{ fontSize: "clamp(2.5rem,6vw,4.5rem)", margin: 0 }}>{user.displayName}</h1>
             <p className="muted">SteamID {user.steamId}</p>
           </div>
+        </div>
+        <div className="actions">
+          <Link className="button primary" href={"/driver/" + user.steamId}>View public driver profile</Link>
+          {user.profileUrl ? <a className="button" href={user.profileUrl}>Steam profile</a> : null}
+          <button className="button" onClick={() => void logout()}>Log out</button>
         </div>
       </section>
 
