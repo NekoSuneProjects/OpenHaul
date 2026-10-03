@@ -168,12 +168,16 @@ function setScsMapVisibility(map: any, game: "ets2" | "ats", visible: boolean) {
 
 function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
   const sourceId = "openhaul-" + game + "-map";
-  if (map.getSource(sourceId)) return;
+  const source = map.getSource(sourceId);
+  if (source) {
+    if (source.serialize().url !== "pmtiles://" + sourceUrl) source.setUrl("pmtiles://" + sourceUrl);
+    return;
+  }
 
   map.addSource(sourceId, {
     type: "vector",
     url: "pmtiles://" + sourceUrl,
-    attribution: "Map data extracted locally from the user's installed SCS game files",
+    attribution: "SCS Software · Map conversion by TruckSim Maps",
   });
 
   const beforeDriver = map.getLayer("openhaul-driver-dot") ? "openhaul-driver-dot" : undefined;
@@ -356,12 +360,18 @@ export function MapClient() {
   }, [initialVtc]);
 
   useEffect(() => {
-    fetch(api + "/api/v1/public/map/assets", { cache: "no-store" })
-      .then((response) => response.ok ? response.json() : null)
-      .then((data) => {
-        if (data) setMapAssets(data);
-      })
-      .catch(() => {});
+    const controller = new AbortController();
+    const refresh = () => {
+      fetch(api + "/api/v1/public/map/assets", { cache: "no-store", signal: controller.signal })
+        .then((response) => response.ok ? response.json() : null)
+        .then((data) => {
+          if (data && !controller.signal.aborted) setMapAssets(data);
+        })
+        .catch(() => {});
+    };
+    refresh();
+    const timer = setInterval(refresh, 60_000);
+    return () => { clearInterval(timer); controller.abort(); };
   }, []);
 
   useEffect(() => {

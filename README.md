@@ -173,7 +173,41 @@ It currently publishes world position, heading, speed, RPM, fuel, odometer, navi
 
 ## Real SCS road map data
 
-OpenHaul does not redistribute ETS2/ATS map assets. You generate them from your own installed game files, then OpenHaul serves the resulting PMTiles.
+OpenHaul automatically downloads maintainer-published ETS2/ATS PMTiles from the `map-data` GitHub Release on startup and checks for updates every six hours. Ordinary installations do not need game files, map-building tools, or `map:import`. The API downloads in the background, validates each archive's SHA-256 checksum, size and PMTiles v3 header, then replaces the cached map. Failed updates leave the previous map available. Before the first release is published (or while the initial download runs), the existing fallback map remains available.
+
+Docker persists downloaded maps in `./data-runtime/maps`. Native API runs default to the repository's `data-runtime/maps` directory. Configure these optional settings in the API environment (Docker Compose reads them from `.env`):
+
+```env
+OPENHAUL_MAP_AUTO_UPDATE=true
+OPENHAUL_MAP_MANIFEST_URL=https://github.com/NekoSuneProjects/OpenHaul/releases/download/map-data/maps.json
+OPENHAUL_MAP_UPDATE_HOURS=6
+```
+
+Set `OPENHAUL_MAP_AUTO_UPDATE=false` to use only manually imported maps. An interval from 1 to 168 hours is supported. Restarting the API triggers an immediate check. Clients download tiles from the OpenHaul API, which retains HTTP byte-range support; they do not access GitHub directly.
+
+### Maintaining and publishing maps
+
+Build both maps locally using the helper below. From the OpenHaul repository root, authenticate the GitHub CLI with an account that can publish releases, then run:
+
+```powershell
+# Validate and stage both archives without uploading anything.
+npm run map:publish -- --prepare-only
+
+# Publish the maps from data-runtime/maps to NekoSuneProjects/OpenHaul.
+npm run map:publish
+```
+
+For other input locations or a separate public map repository:
+
+```powershell
+npm run map:publish -- --ets2 "D:\maps\ets2.pmtiles" --ats "D:\maps\ats.pmtiles" --repo "OWNER/REPOSITORY"
+```
+
+Both archives are required for each publication; to update one game, keep the other game's existing local archive. The command creates a dedicated `map-data` release, uploads content-addressed archives, and uploads `maps.json` last. Unchanged archives are not uploaded again. The map release is not marked as the latest application release. Use a public repository with mutable releases for this channel; if you choose another repository, set `OPENHAUL_MAP_MANIFEST_URL` to its `releases/download/map-data/maps.json` URL on installations.
+
+GitHub release attachments must each be under 2 GiB ([GitHub limits](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)). Generated files stay outside Git history. Older archives remain attached so cached manifests continue to work; the publisher does not delete them. Run only one publisher at a time.
+
+### Building maps locally (maintainer or custom maps)
 
 First clone the [TruckSim Maps source repository](https://github.com/truckermudgeon/maps) including its submodules:
 
@@ -185,7 +219,7 @@ git clone --recurse-submodules https://github.com/truckermudgeon/maps.git C:\src
 
 Install Node.js/npm, Docker, and the node-gyp prerequisites (Python and Visual Studio C++ Build Tools on Windows). The helper installs missing dependencies and builds the native parser addons before parsing.
 
-A helper is included:
+A helper is included. Run these commands from the OpenHaul repository root (from `GameMap`, use `..\tools\maps\build-scs-map.ps1`):
 
 ```powershell
 # ETS2
@@ -208,7 +242,7 @@ data-runtime/maps/ets2.pmtiles
 data-runtime/maps/ats.pmtiles
 ```
 
-You can also import an existing PMTiles file directly:
+For a manually managed installation, disable automatic updates and import an existing PMTiles file directly:
 
 ```bash
 npm run map:import -- --game ets2 --file /path/to/ets2.pmtiles

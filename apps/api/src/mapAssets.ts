@@ -1,14 +1,10 @@
-import { createReadStream } from "node:fs";
-import { stat } from "node:fs/promises";
+import { open, stat } from "node:fs/promises";
 import path from "node:path";
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
+import { mapDirectory, startMapSync } from "./mapSync.js";
 
 const gameSchema = z.enum(["ets2", "ats"]);
-
-function mapDirectory() {
-  return path.resolve(process.env.OPENHAUL_MAP_DATA_DIR ?? "./data-runtime/maps");
-}
 
 function mapPath(game: "ets2" | "ats") {
   return path.join(mapDirectory(), `${game}.pmtiles`);
@@ -23,7 +19,7 @@ async function assetInfo(game: "ets2" | "ats") {
       available: true,
       size: file.size,
       updatedAt: file.mtime.toISOString(),
-      url: `/api/v1/public/map/${game}.pmtiles`,
+      url: `/api/v1/public/map/${game}.pmtiles?v=${file.mtimeMs}`,
     };
   } catch {
     return {
@@ -71,10 +67,11 @@ function parseRange(value: string | undefined, size: number) {
 }
 
 export async function registerMapAssetRoutes(app: FastifyInstance) {
-  app.get("/api/v1/public/map/assets", async () => ({
-    ets2: await assetInfo("ets2"),
-    ats: await assetInfo("ats"),
-  }));
+  startMapSync(app);
+  app.get("/api/v1/public/map/assets", async (_request, reply) => {
+    reply.header("cache-control", "no-store");
+    return { ets2: await assetInfo("ets2"), ats: await assetInfo("ats") };
+  });
 
   app.head("/api/v1/public/map/:game.pmtiles", async (request, reply) => {
     const { game } = z.object({ game: gameSchema }).parse(request.params);
@@ -86,9 +83,11 @@ export async function registerMapAssetRoutes(app: FastifyInstance) {
 
       reply.headers({
         "accept-ranges": "bytes",
+        "access-control-expose-headers": "ETag, Content-Range, Accept-Ranges",
         "content-length": file.size,
         "content-type": "application/vnd.pmtiles",
         "cache-control": "public, max-age=300",
+        etag: `"${file.size}-${file.mtimeMs}"`,
       });
 
       return reply.code(200).send();
@@ -102,10 +101,14 @@ export async function registerMapAssetRoutes(app: FastifyInstance) {
     const filePath = mapPath(game);
 
     let file;
+    let handle;
     try {
-      file = await stat(filePath);
+      // Keep this response on one archive even if an update replaces its path.
+      handle = await open(filePath, "r");
+      file = await handle.stat();
       if (!file.isFile()) throw new Error("not a file");
     } catch {
+      await handle?.close();
       return reply.code(404).send({ error: "map_asset_not_found", game });
     }
 
@@ -116,20 +119,23 @@ export async function registerMapAssetRoutes(app: FastifyInstance) {
     const range = parseRange(rangeHeader, file.size);
 
     if (rangeHeader && !range) {
+      await handle.close();
       reply.header("content-range", `bytes */${file.size}`);
       return reply.code(416).send();
     }
 
     const headers: Record<string, string | number> = {
       "accept-ranges": "bytes",
+      "access-control-expose-headers": "ETag, Content-Range, Accept-Ranges",
       "content-type": "application/vnd.pmtiles",
       "cache-control": "public, max-age=300",
+      etag: `"${file.size}-${file.mtimeMs}"`,
     };
 
     if (!range) {
       headers["content-length"] = file.size;
       reply.headers(headers);
-      return reply.send(createReadStream(filePath));
+      return reply.send(handle.createReadStream());
     }
 
     headers["content-length"] = range.end - range.start + 1;
@@ -137,7 +143,7 @@ export async function registerMapAssetRoutes(app: FastifyInstance) {
 
     reply.headers(headers);
     return reply.code(206).send(
-      createReadStream(filePath, {
+      handle.createReadStream({
         start: range.start,
         end: range.end,
       }),

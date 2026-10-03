@@ -51,6 +51,9 @@ services:
       OPENHAUL_BOOTSTRAP_VTC_API_SCOPES: ${OPENHAUL_BOOTSTRAP_VTC_API_SCOPES:-telemetry:read,jobs:read,fines:read}
       TRUCKERSFM_NOWPLAYING_URL: ${TRUCKERSFM_NOWPLAYING_URL:-https://azuracast.truckers.fm/api/nowplaying/1}
       OPENHAUL_MAP_DATA_DIR: /data-runtime/maps
+      OPENHAUL_MAP_AUTO_UPDATE: ${OPENHAUL_MAP_AUTO_UPDATE:-true}
+      OPENHAUL_MAP_MANIFEST_URL: ${OPENHAUL_MAP_MANIFEST_URL:-https://github.com/NekoSuneProjects/OpenHaul/releases/download/map-data/maps.json}
+      OPENHAUL_MAP_UPDATE_HOURS: ${OPENHAUL_MAP_UPDATE_HOURS:-6}
       STEAM_WEB_API_KEY: ${STEAM_WEB_API_KEY:-}
       OPENHAUL_PUBLIC_API_URL: ${OPENHAUL_PUBLIC_API_URL:-http://localhost:3001}
       OPENHAUL_STEAM_REALM: ${OPENHAUL_STEAM_REALM:-http://localhost:3001/}
