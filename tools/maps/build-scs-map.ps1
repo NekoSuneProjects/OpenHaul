@@ -177,10 +177,31 @@ if (-not $TilesOnly) {
         throw "-UpdateTruckSimMaps requires TruckSimMapsPath to be a Git checkout."
       }
       Write-Host "Updating TruckSim Maps checkout..."
-      git pull --ff-only
-      if ($LASTEXITCODE -ne 0) { throw "Unable to update TruckSim Maps checkout. Commit/stash local changes or update it manually." }
-      git submodule update --init --recursive
-      if ($LASTEXITCODE -ne 0) { throw "Unable to update TruckSim Maps submodules." }
+      $PreviousErrorActionPreference = $ErrorActionPreference
+      try {
+        $ErrorActionPreference = "Continue"
+        git pull --ff-only
+        $PullExitCode = $LASTEXITCODE
+
+        if ($PullExitCode -ne 0) {
+          Write-Warning "Unable to update TruckSim Maps from GitHub. Continuing with the existing local checkout. This is safe for temporary DNS/network failures as long as the checkout is already present."
+        }
+
+        git submodule update --init --recursive
+        $SubmoduleExitCode = $LASTEXITCODE
+
+        if ($SubmoduleExitCode -ne 0) {
+          Write-Warning "Unable to update TruckSim Maps submodules. Continuing with the existing local submodule state."
+        }
+      }
+      finally {
+        $ErrorActionPreference = $PreviousErrorActionPreference
+      }
+
+      $RequiredTruckSimFile = Join-Path $TruckSimMapsPath "packages/clis/parser/index.ts"
+      if (-not (Test-Path -LiteralPath $RequiredTruckSimFile -PathType Leaf)) {
+        throw "TruckSim Maps update failed and the existing checkout is incomplete: $RequiredTruckSimFile was not found."
+      }
     }
 
     $TruckSimCommit = git rev-parse --short HEAD 2>$null
