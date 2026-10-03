@@ -167,6 +167,8 @@ async function registerCommands() {
   if (!client.user) return;
   const commands = [
     new SlashCommandBuilder().setName("openhaul").setDescription("Show this server's OpenHaul VTC status"),
+    new SlashCommandBuilder().setName("leaderboard").setDescription("Show the VTC distance leaderboard"),
+    new SlashCommandBuilder().setName("drivers").setDescription("Show currently live VTC drivers"),
   ].map((command) => command.toJSON());
 
   const rest = new REST({ version: "10" }).setToken(token!);
@@ -183,19 +185,70 @@ client.once("ready", async () => {
 });
 
 client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isChatInputCommand() || interaction.commandName !== "openhaul") return;
-  await interaction.deferReply({ ephemeral: true });
+  if (!interaction.isChatInputCommand()) return;
+
+  await interaction.deferReply({ ephemeral: interaction.commandName === "openhaul" });
 
   try {
-    const data = await apiGet("/api/v1/vtc/me");
-    const vtc = data.vtc;
-    await interaction.editReply(
-      vtc
-        ? `OpenHaul connected to **${vtc.name}**${vtc.tag ? ` [${vtc.tag}]` : ""}. Scopes: ${(data.scopes ?? []).join(", ") || "none"}`
-        : "OpenHaul is connected, but no VTC record was returned."
-    );
+    if (interaction.commandName === "openhaul") {
+      const data = await apiGet("/api/v1/vtc/me");
+      const vtc = data.vtc;
+      await interaction.editReply(
+        vtc
+          ? `OpenHaul connected to **${vtc.name}**${vtc.tag ? ` [${vtc.tag}]` : ""}. Scopes: ${(data.scopes ?? []).join(", ") || "none"}`
+          : "OpenHaul is connected, but no VTC record was returned."
+      );
+      return;
+    }
+
+    if (interaction.commandName === "leaderboard") {
+      const data = await apiGet("/api/v1/vtc/leaderboard");
+      const drivers = Array.isArray(data.drivers) ? data.drivers.slice(0, 10) : [];
+
+      if (!drivers.length) {
+        await interaction.editReply("No completed jobs are available for this VTC yet.");
+        return;
+      }
+
+      const description = drivers
+        .map((driver: any, index: number) =>
+          `**${index + 1}.** ${driver.driverId} — ${Math.round(Number(driver.distanceKm ?? 0)).toLocaleString()} km · ${driver.jobs ?? 0} jobs`
+        )
+        .join("\n");
+
+      const embed = new EmbedBuilder()
+        .setTitle("🏆 VTC distance leaderboard")
+        .setDescription(description)
+        .setTimestamp();
+
+      await interaction.editReply({ embeds: [embed] });
+      return;
+    }
+
+    if (interaction.commandName === "drivers") {
+      const data = await apiGet("/api/v1/vtc/live");
+      const drivers = Array.isArray(data.drivers) ? data.drivers : [];
+
+      if (!drivers.length) {
+        await interaction.editReply("No VTC drivers are currently sending OpenHaul telemetry.");
+        return;
+      }
+
+      const description = drivers.slice(0, 20)
+        .map((driver: any) =>
+          `**${driver.username ?? driver.driverId}** · ${String(driver.game ?? "").toUpperCase()} · ${Math.round(Number(driver.speedKph ?? 0))} km/h\n${driver.sourceCity && driver.destinationCity ? `${driver.sourceCity} → ${driver.destinationCity}` : driver.truck ?? "No active route"}`
+        )
+        .join("\n\n");
+
+      const embed = new EmbedBuilder()
+        .setTitle(`🚛 Live VTC drivers (${drivers.length})`)
+        .setDescription(description)
+        .setTimestamp();
+
+      await interaction.editReply({ embeds: [embed] });
+    }
   } catch (error) {
-    await interaction.editReply("OpenHaul API connection failed. Check OPENHAUL_API_URL and OPENHAUL_VTC_API_KEY.");
+    await interaction.editReply("OpenHaul API connection failed or this API key is missing the required scope.");
   }
 });
 
