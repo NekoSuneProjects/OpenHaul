@@ -1,0 +1,67 @@
+:root {
+  color-scheme: dark;
+  --bg: #07110d;
+  --panel: #0c1b14;
+  --panel-2: #10261c;
+  --line: #1d4832;
+  --text: #edf8f1;
+  --muted: #93aa9c;
+  --accent: #54e08a;
+  --danger: #ff7676;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: radial-gradient(circle at top, #102a1d 0, var(--bg) 38%); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+a { color: inherit; text-decoration: none; }
+body { padding-bottom: 88px; }
+
+.shell { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+.nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px); background: rgba(7,17,13,.82); border-bottom: 1px solid var(--line); }
+.navInner { height: 68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+.brand { font-weight: 900; letter-spacing: -.04em; font-size: 1.35rem; }
+.brand span { color: var(--accent); }
+.links { display:flex; gap:18px; color:var(--muted); font-size:.95rem; }
+.links a:hover { color:var(--text); }
+
+.hero { padding: 78px 0 42px; }
+.eyebrow { display:inline-flex; border:1px solid var(--line); color:var(--accent); border-radius:999px; padding:7px 11px; font-size:.78rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.065em; margin:20px 0; max-width:880px; }
+.lede { color:var(--muted); font-size:1.1rem; line-height:1.7; max-width:760px; }
+.actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+.button { border:1px solid var(--line); background:var(--panel-2); border-radius:12px; padding:12px 16px; font-weight:800; }
+.button.primary { background:var(--accent); color:#05200f; border-color:var(--accent); }
+
+.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; padding:20px 0 56px; }
+.card { border:1px solid var(--line); background:linear-gradient(180deg,rgba(16,38,28,.94),rgba(9,24,17,.94)); border-radius:18px; padding:20px; }
+.card h3 { margin:0 0 8px; }
+.card p { margin:0; color:var(--muted); line-height:1.55; }
+
+.sectionTitle { display:flex; align-items:end; justify-content:space-between; gap:16px; padding:40px 0 18px; }
+.sectionTitle h2 { margin:0; font-size:2rem; letter-spacing:-.04em; }
+.muted { color:var(--muted); }
+
+.mapPanel { min-height:520px; border:1px solid var(--line); border-radius:20px; overflow:hidden; background:
+  linear-gradient(rgba(84,224,138,.055) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(84,224,138,.055) 1px, transparent 1px),
+  #08140e; background-size:32px 32px; }
+.mapToolbar { padding:14px; display:flex; gap:10px; border-bottom:1px solid var(--line); background:rgba(10,26,18,.9); }
+.mapToolbar input { flex:1; min-width:0; background:#06110c; color:var(--text); border:1px solid var(--line); border-radius:10px; padding:11px 12px; }
+.driverList { display:grid; gap:10px; padding:14px; }
+.driver { display:grid; grid-template-columns:1.3fr .8fr .8fr 1fr; gap:12px; align-items:center; border:1px solid rgba(29,72,50,.8); background:rgba(8,20,14,.86); border-radius:13px; padding:13px; }
+.driver strong { display:block; }
+.driver small { color:var(--muted); }
+.pill { width:max-content; border:1px solid var(--line); border-radius:999px; padding:5px 9px; color:var(--accent); font-size:.75rem; font-weight:800; }
+
+.radio { position:fixed; left:0; right:0; bottom:0; z-index:30; background:rgba(5,14,9,.95); backdrop-filter:blur(16px); border-top:1px solid var(--line); }
+.radioInner { min-height:72px; display:grid; grid-template-columns:auto 1fr auto; gap:13px; align-items:center; }
+.art { width:50px; height:50px; border-radius:10px; object-fit:cover; background:var(--panel); }
+.track { min-width:0; }
+.track strong,.track span { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block; }
+.track span { color:var(--muted); font-size:.84rem; margin-top:3px; }
+.play { width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:var(--panel-2); color:var(--text); cursor:pointer; font-size:1.05rem; }
+
+@media (max-width: 760px) {
+  .grid { grid-template-columns:1fr; }
+  .links { display:none; }
+  .driver { grid-template-columns:1fr 1fr; }
+}
