@@ -54,3 +54,18 @@ export async function getLiveDrivers(vtcId?: number): Promise<LiveDriver[]> {
     .filter((value: string | null): value is string => Boolean(value))
     .map((value: string) => JSON.parse(value) as LiveDriver);
 }
+
+
+export async function removeLiveDriver(driverId: string): Promise<LiveDriver | null> {
+  const key = `live:driver:${driverId}`;
+  const raw = await redis.get(key);
+  const driver = raw ? JSON.parse(raw) as LiveDriver : null;
+
+  const tx = redis.multi();
+  tx.del(key);
+  tx.zrem("live:all", driverId);
+  if (driver?.vtcId) tx.zrem(`live:vtc:${driver.vtcId}`, driverId);
+  await tx.exec();
+
+  return driver;
+}
