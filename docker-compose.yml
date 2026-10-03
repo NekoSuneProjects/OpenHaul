@@ -26,11 +26,15 @@ services:
       timeout: 3s
       retries: 10
 
-  api:
+  openhaul:
     build:
       context: .
-      dockerfile: apps/api/Dockerfile
-    image: ghcr.io/nekosuneprojects/openhaul-api:latest
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: "${NEXT_PUBLIC_API_URL:-}"
+        NEXT_PUBLIC_MAP_ROAD_TILE_URL: "${NEXT_PUBLIC_MAP_ROAD_TILE_URL:-https://tile.openstreetmap.org/{z}/{x}/{y}.png}"
+        NEXT_PUBLIC_MAP_SATELLITE_TILE_URL: "${NEXT_PUBLIC_MAP_SATELLITE_TILE_URL:-https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}}"
+    image: ghcr.io/nekosuneprojects/openhaul:latest
     restart: unless-stopped
     environment:
       API_PORT: 3001
@@ -68,37 +72,8 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
-    expose:
-      - "3001"
-
-  web:
-    build:
-      context: .
-      dockerfile: apps/web/Dockerfile
-      args:
-        NEXT_PUBLIC_API_URL: "${NEXT_PUBLIC_API_URL:-}"
-        NEXT_PUBLIC_MAP_ROAD_TILE_URL: "${NEXT_PUBLIC_MAP_ROAD_TILE_URL:-https://tile.openstreetmap.org/{z}/{x}/{y}.png}"
-        NEXT_PUBLIC_MAP_SATELLITE_TILE_URL: "${NEXT_PUBLIC_MAP_SATELLITE_TILE_URL:-https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}}"
-    image: ghcr.io/nekosuneprojects/openhaul-web:latest
-    restart: unless-stopped
-    environment:
-      NEXT_PUBLIC_API_URL: "${NEXT_PUBLIC_API_URL:-}"
-      API_INTERNAL_URL: http://api:3001
-    depends_on:
-      - api
-    expose:
-      - "3000"
-
-  gateway:
-    image: nginx:1.27-alpine
-    restart: unless-stopped
-    volumes:
-      - ./infra/nginx/openhaul.conf:/etc/nginx/nginx.conf:ro
-    depends_on:
-      - web
-      - api
     ports:
-      - "${OPENHAUL_PORT:-3000}:80"
+      - "${OPENHAUL_PORT:-3000}:3000"
 
   bot:
     build:
@@ -108,14 +83,14 @@ services:
     restart: unless-stopped
     environment:
       DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN:-}
-      OPENHAUL_API_URL: http://api:3001
+      OPENHAUL_API_URL: http://openhaul:3000
       OPENHAUL_VTC_API_KEY: ${OPENHAUL_VTC_API_KEY:-}
       DISCORD_GUILD_ID: ${DISCORD_GUILD_ID:-}
       DISCORD_FINE_CHANNEL_ID: ${DISCORD_FINE_CHANNEL_ID:-}
       DISCORD_JOB_CHANNEL_ID: ${DISCORD_JOB_CHANNEL_ID:-}
       DISCORD_DRIVER_CHANNEL_ID: ${DISCORD_DRIVER_CHANNEL_ID:-}
     depends_on:
-      - api
+      - openhaul
     profiles: ["bot"]
 
 volumes:
