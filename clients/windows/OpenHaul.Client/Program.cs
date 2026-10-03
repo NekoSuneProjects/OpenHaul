@@ -4,6 +4,47 @@ using OpenHaul.Client;
 
 var config = ClientConfig.FromEnvironment();
 var simulate = args.Contains("--simulate", StringComparer.OrdinalIgnoreCase);
+var detectGames = args.Contains("--detect-games", StringComparer.OrdinalIgnoreCase);
+var installPluginIndex = Array.FindIndex(args, value => value.Equals("--install-plugin", StringComparison.OrdinalIgnoreCase));
+
+if (detectGames)
+{
+    var games = GameLocator.FindInstalledGames();
+    if (games.Count == 0)
+        Console.WriteLine("No ETS2/ATS Steam installations detected.");
+    else
+        foreach (var game in games)
+            Console.WriteLine($"{game.Game.ToUpperInvariant()} ({game.AppId}): {game.Path}");
+    return 0;
+}
+
+if (installPluginIndex >= 0)
+{
+    if (installPluginIndex + 1 >= args.Length)
+    {
+        Console.Error.WriteLine("--install-plugin requires the path to OpenHaul.Telemetry.dll");
+        return 2;
+    }
+
+    try
+    {
+        var installed = GameLocator.InstallPlugin(args[installPluginIndex + 1]);
+        if (installed.Count == 0)
+        {
+            Console.Error.WriteLine("No ETS2/ATS installations were found.");
+            return 3;
+        }
+
+        foreach (var path in installed)
+            Console.WriteLine($"Installed telemetry plugin: {path}");
+        return 0;
+    }
+    catch (Exception ex)
+    {
+        Console.Error.WriteLine($"Plugin install failed: {ex.Message}");
+        return 4;
+    }
+}
 
 if (string.IsNullOrWhiteSpace(config.IngestKey))
 {
