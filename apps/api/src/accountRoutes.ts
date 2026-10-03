@@ -53,7 +53,7 @@ export async function registerAccountRoutes(app: FastifyInstance) {
     const steamId = match[1];
     const profile = await fetchSteamProfile(steamId);
 
-    const [user] = await User.findOrCreate({
+    const [user, created] = await User.findOrCreate({
       where: { steamId },
       defaults: {
         steamId,
@@ -83,7 +83,7 @@ export async function registerAccountRoutes(app: FastifyInstance) {
       expires: session.expiresAt,
     });
 
-    return reply.redirect(appUrl() + "/account");
+    return reply.redirect(appUrl() + (created ? "/account?new=1" : "/account"));
   });
 
   app.post("/api/v1/auth/logout", async (request, reply) => {
