@@ -1,13 +1,16 @@
 import { timingSafeEqual } from "node:crypto";
 import cors from "@fastify/cors";
+import websocket from "@fastify/websocket";
 import Fastify from "fastify";
 import { z } from "zod";
 import { Fine, Job, Vtc, initDatabase } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, setLiveDriver } from "./live.js";
+import { addRealtimeClient, broadcastDriver } from "./realtime.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true });
+await app.register(websocket);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
@@ -71,6 +74,13 @@ app.get("/api/v1/public/live", async (request) => {
   return { count: drivers.length, drivers };
 });
 
+app.get("/api/v1/public/live/ws", { websocket: true }, async (connection, request) => {
+  const query = z.object({ vtc: z.coerce.number().int().positive().optional() }).parse(request.query);
+  addRealtimeClient(connection.socket, query.vtc);
+  const drivers = await getLiveDrivers(query.vtc);
+  connection.socket.send(JSON.stringify({ type: "snapshot", drivers }));
+});
+
 app.get("/api/v1/public/vtcs/:id/live", async (request) => {
   const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
   const drivers = await getLiveDrivers(id);
@@ -93,8 +103,13 @@ app.get("/api/v1/public/radio/truckersfm", async (_request, reply) => {
 app.post("/api/v1/telemetry/live", async (request, reply) => {
   const denied = requireIngest(request as any, reply as any);
   if (denied) return denied;
+
   const body = liveSchema.parse(request.body);
-  await setLiveDriver({ ...body, updatedAt: new Date().toISOString() });
+  const driver = { ...body, updatedAt: new Date().toISOString() };
+
+  await setLiveDriver(driver);
+  broadcastDriver(driver);
+
   return reply.code(202).send({ accepted: true });
 });
 
