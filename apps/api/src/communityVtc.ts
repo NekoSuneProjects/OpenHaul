@@ -231,7 +231,16 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
     const vtc = await Vtc.findByPk(id);
     if (!vtc) return reply.code(404).send({ error: "vtc_not_found" });
 
-    const memberCount = await VtcMember.count({ where: { vtcId: id, status: "active" } });
+    const members = await VtcMember.findAll({
+      where: { vtcId: id, status: "active" },
+      attributes: ["id", "role", "title", "joinedAt"],
+      include: [{
+        model: User,
+        attributes: ["steamId", "displayName", "avatarUrl"],
+      }],
+      order: [["id", "ASC"]],
+    });
+    const memberCount = members.length;
     const result: any = {
       id: vtc.id,
       name: vtc.getDataValue("name"),
@@ -243,6 +252,7 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       logoUrl: vtc.getDataValue("logoUrl"),
       recruitmentOpen: Boolean(vtc.getDataValue("recruitmentOpen")),
       memberCount,
+      members,
     };
 
     if (Boolean(vtc.getDataValue("publicBalance"))) {
