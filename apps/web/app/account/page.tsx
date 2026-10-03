@@ -23,6 +23,8 @@ type Membership = {
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
+const windowsClientUrl =
+  "https://github.com/NekoSuneProjects/OpenHaul/releases/download/windows-client/OpenHaul-Setup.exe";
 
 export default function AccountPage() {
   const bootstrappedDefaultKey = useRef(false);
@@ -33,7 +35,6 @@ export default function AccountPage() {
   const [status, setStatus] = useState("Loading account…");
   const [creating, setCreating] = useState(false);
   const [clientTokens, setClientTokens] = useState<any[]>([]);
-  const [newClientToken, setNewClientToken] = useState("");
   const [apiKeys, setApiKeys] = useState<any[]>([]);
   const [newApiKey, setNewApiKey] = useState("");
   const [twitch, setTwitch] = useState<any>(null);
@@ -168,21 +169,6 @@ export default function AccountPage() {
       credentials: "include",
     });
     setTwitch(null);
-  };
-
-  const createClientToken = async () => {
-    const response = await fetch(api + "/api/v1/account/client-tokens", {
-      method: "POST",
-      credentials: "include",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ name: "Windows Client" }),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      setNewClientToken(data.token);
-      await load();
-    }
   };
 
   const revokeClientToken = async (id: number) => {
@@ -384,20 +370,17 @@ export default function AccountPage() {
         )}
       </section>
 
-      <div className="sectionTitle"><h2>OpenHaul Client access</h2></div>
+      <div className="sectionTitle"><h2>OpenHaul Windows Client</h2></div>
       <section className="card" style={{ marginBottom: 18 }}>
-        <h3>Connect your Windows telemetry client</h3>
-        <p className="muted">Client tokens tie telemetry directly to your Steam account. The full token is shown only once.</p>
+        <h3>Install the desktop app</h3>
+        <p className="muted">
+          The Windows app signs you in through Steam, creates its own revocable <code>oh_client_…</code> token,
+          saves it to your Windows profile automatically, detects ETS2/ATS and installs the bundled telemetry plugin.
+          You do not need to copy a token manually.
+        </p>
         <div className="actions">
-          <button className="button primary" onClick={() => void createClientToken()}>Create client token</button>
+          <a className="button primary" href={windowsClientUrl}>Download Windows App</a>
         </div>
-        {newClientToken ? (
-          <div style={{ marginTop: 16 }}>
-            <p><strong>Copy this token now:</strong></p>
-            <code style={{ wordBreak: "break-all" }}>{newClientToken}</code>
-            <p className="muted">Set it as <code>OPENHAUL_CLIENT_TOKEN</code> in the Windows client. When account auth is used, OpenHaul derives your SteamID and display name server-side.</p>
-          </div>
-        ) : null}
       </section>
       <section className="driverList" style={{ padding: 0 }}>
         {clientTokens.map((token: any) => (
