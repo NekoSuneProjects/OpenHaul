@@ -24,9 +24,7 @@ jobs:
       - name: Download official SCS Telemetry SDK 1.15
         shell: pwsh
         run: |
-          Invoke-WebRequest \`
-            -Uri "https://download.eurotrucksimulator2.com/scs_sdk_1_15.zip" \`
-            -OutFile "$env:RUNNER_TEMP\scs_sdk.zip"
+          Invoke-WebRequest -Uri "https://download.eurotrucksimulator2.com/scs_sdk_1_15.zip" -OutFile "$env:RUNNER_TEMP\scs_sdk.zip"
           Expand-Archive "$env:RUNNER_TEMP\scs_sdk.zip" "$env:RUNNER_TEMP\scs_sdk"
 
           $header = Get-ChildItem "$env:RUNNER_TEMP\scs_sdk" -Recurse -Filter "scssdk_telemetry.h" | Select-Object -First 1
