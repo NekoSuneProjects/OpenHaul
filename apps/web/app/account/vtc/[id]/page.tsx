@@ -28,6 +28,30 @@ export default function ManageVtcPage() {
 
   useEffect(() => { void load(); }, [id]);
 
+  const saveSettings = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id, {
+      method: "PATCH",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        name: String(form.get("name") ?? ""),
+        tag: String(form.get("tag") ?? ""),
+        description: String(form.get("description") ?? ""),
+        website: String(form.get("website") ?? ""),
+        discordUrl: String(form.get("discordUrl") ?? ""),
+        logoUrl: String(form.get("logoUrl") ?? ""),
+        currency: String(form.get("currency") ?? "GBP").toUpperCase(),
+        recruitmentOpen: form.get("recruitmentOpen") === "on",
+        publicBalance: form.get("publicBalance") === "on",
+      }),
+    });
+
+    if (response.ok) await load();
+  };
+
   const addLedger = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -97,6 +121,20 @@ export default function ManageVtcPage() {
         <article className="card"><h3>{Number(ledger?.expenses ?? 0).toLocaleString()} {vtc.currency}</h3><p>Total expenses</p></article>
       </section>
 
+      <div className="sectionTitle"><h2>Company settings</h2></div>
+      <form className="card" onSubmit={saveSettings} style={{ display: "grid", gap: 12 }}>
+        <input name="name" defaultValue={vtc.name || ""} required placeholder="VTC name" />
+        <input name="tag" defaultValue={vtc.tag || ""} placeholder="Tag" />
+        <textarea name="description" defaultValue={vtc.description || ""} rows={5} placeholder="VTC description" />
+        <input name="website" defaultValue={vtc.website || ""} placeholder="Website URL" />
+        <input name="discordUrl" defaultValue={vtc.discordUrl || ""} placeholder="Discord invite URL" />
+        <input name="logoUrl" defaultValue={vtc.logoUrl || ""} placeholder="Logo URL" />
+        <input name="currency" defaultValue={vtc.currency || "GBP"} maxLength={8} />
+        <label><input type="checkbox" name="recruitmentOpen" defaultChecked={Boolean(vtc.recruitmentOpen)} /> Recruitment open</label>
+        <label><input type="checkbox" name="publicBalance" defaultChecked={Boolean(vtc.publicBalance)} /> Show balance publicly</label>
+        <button className="button primary">Save company settings</button>
+      </form>
+
       <div className="sectionTitle"><h2>Members</h2></div>
       <section className="driverList" style={{ padding: 0 }}>
         {members.map((member: any) => {
@@ -105,7 +143,10 @@ export default function ManageVtcPage() {
             <article className="driver" key={member.id}>
               <div><strong>{user?.displayName ?? "Driver"}</strong><small>{user?.steamId ?? ""}</small></div>
               <div><span className="pill">{member.role}</span><small>{member.title || "VTC member"}</small></div>
-              <div><strong>{member.status}</strong><small>Joined {new Date(member.joinedAt).toLocaleDateString()}</small></div>
+              <div>
+                <strong>{Math.round(Number(member.stats?.distanceKm ?? 0)).toLocaleString()} km</strong>
+                <small>{member.stats?.jobs ?? 0} jobs · {member.stats?.fines ?? 0} fines</small>
+              </div>
               <div>
                 {member.role !== "owner" && (
                   <select value={member.role} onChange={(e) => void updateMember(member, e.target.value)}>
