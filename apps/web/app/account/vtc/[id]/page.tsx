@@ -10,6 +10,8 @@ export default function ManageVtcPage() {
   const id = useMemo(() => String(params.id), [params.id]);
   const [data, setData] = useState<any>(null);
   const [status, setStatus] = useState("Loading VTC…");
+  const [vtcApiKeys, setVtcApiKeys] = useState<any[]>([]);
+  const [newVtcApiKey, setNewVtcApiKey] = useState("");
 
   const load = async () => {
     const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/manage", {
@@ -23,10 +25,46 @@ export default function ManageVtcPage() {
     }
 
     setData(await response.json());
+
+    const keysResponse = await fetch(api + "/api/v1/account/vtcs/" + id + "/api-keys", {
+      credentials: "include",
+      cache: "no-store",
+    });
+    if (keysResponse.ok) {
+      const keyData = await keysResponse.json();
+      setVtcApiKeys(keyData.keys ?? []);
+    }
+
     setStatus("");
   };
 
   useEffect(() => { void load(); }, [id]);
+
+  const createVtcApiKey = async () => {
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/api-keys", {
+      method: "POST",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        name: "VTC integration",
+        scopes: ["telemetry:read", "jobs:read", "fines:read", "statistics:read", "members:read"],
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      setNewVtcApiKey(data.apiKey);
+      await load();
+    }
+  };
+
+  const revokeVtcApiKey = async (keyId: number) => {
+    await fetch(api + "/api/v1/account/vtcs/" + id + "/api-keys/" + keyId, {
+      method: "DELETE",
+      credentials: "include",
+    });
+    await load();
+  };
 
   const saveSettings = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -171,6 +209,31 @@ export default function ManageVtcPage() {
               <button className="button primary" onClick={() => void updateApplication(application.id, "approved")}>Approve</button>
               <button className="button" onClick={() => void updateApplication(application.id, "rejected")}>Reject</button>
             </div>
+          </article>
+        ))}
+      </section>
+
+      <div className="sectionTitle"><h2>VTC API keys</h2></div>
+      <section className="card" style={{ marginBottom: 16 }}>
+        <h3>Group integrations</h3>
+        <p className="muted">Create a VTC-scoped key for dashboards, bots and external tools. The server binds the key to this VTC, so changing an ID cannot expose another group.</p>
+        <div className="actions">
+          <button className="button primary" onClick={() => void createVtcApiKey()}>Create VTC API key</button>
+        </div>
+        {newVtcApiKey ? (
+          <div style={{ marginTop: 16 }}>
+            <p><strong>Copy this key now — it will not be shown again:</strong></p>
+            <code style={{ wordBreak: "break-all" }}>{newVtcApiKey}</code>
+          </div>
+        ) : null}
+      </section>
+      <section className="driverList" style={{ padding: 0 }}>
+        {vtcApiKeys.map((key: any) => (
+          <article className="driver" key={key.id}>
+            <div><strong>{key.name}</strong><small>VTC API key</small></div>
+            <div><strong>{key.revokedAt ? "Revoked" : "Active"}</strong><small>{(key.scopes ?? []).join(", ")}</small></div>
+            <div><small>Created {new Date(key.createdAt).toLocaleDateString()}</small></div>
+            <div>{!key.revokedAt ? <button className="button" onClick={() => void revokeVtcApiKey(key.id)}>Revoke</button> : null}</div>
           </article>
         ))}
       </section>
