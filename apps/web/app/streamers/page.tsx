@@ -10,10 +10,9 @@ export default function StreamersPage() {
   const [game, setGame] = useState<"all" | "ets2" | "ats">("all");
   const [status, setStatus] = useState("Loading linked streamers…");
 
-  const load = async (force = false) => {
+  const load = async () => {
     const query = new URLSearchParams();
     if (game !== "all") query.set("game", game);
-    if (force) query.set("refresh", "true");
 
     const response = await fetch(
       api + "/api/v1/public/streamers" + (query.size ? "?" + query.toString() : ""),
@@ -31,8 +30,8 @@ export default function StreamersPage() {
   };
 
   useEffect(() => {
-    void load(true);
-    const timer = setInterval(() => void load(false), 30_000);
+    void load();
+    const timer = setInterval(() => void load(), 30_000);
     return () => clearInterval(timer);
   }, [game]);
 
@@ -48,7 +47,7 @@ export default function StreamersPage() {
           <button className={"button " + (game === "all" ? "primary" : "")} onClick={() => setGame("all")}>All</button>
           <button className={"button " + (game === "ets2" ? "primary" : "")} onClick={() => setGame("ets2")}>ETS2</button>
           <button className={"button " + (game === "ats" ? "primary" : "")} onClick={() => setGame("ats")}>ATS</button>
-          <button className="button" onClick={() => void load(true)}>Refresh now</button>
+          <button className="button" onClick={() => void load()}>Refresh page</button>
         </div>
       </section>
 
