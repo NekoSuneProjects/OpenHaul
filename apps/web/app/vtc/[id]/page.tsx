@@ -8,6 +8,16 @@ type Vtc = { id: number; name: string; slug: string; tag?: string | null };
 type Stats = { liveDrivers: number; jobs: number; distanceKm: number; income: number; fines: number; fineAmount: number };
 type Driver = { driverId: string; username: string; game: string; speedKph: number; truck?: string | null; sourceCity?: string | null; destinationCity?: string | null };
 type Leader = { driverId: string; jobs: number; distanceKm: number; income: string | number };
+type Community = {
+  description?: string | null;
+  website?: string | null;
+  discordUrl?: string | null;
+  logoUrl?: string | null;
+  recruitmentOpen: boolean;
+  memberCount: number;
+  balance?: number;
+  currency?: string;
+};
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
 
@@ -19,6 +29,8 @@ export default function VtcProfilePage() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [live, setLive] = useState<Driver[]>([]);
   const [leaders, setLeaders] = useState<Leader[]>([]);
+  const [community, setCommunity] = useState<Community | null>(null);
+  const [applyMessage, setApplyMessage] = useState("");
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -26,20 +38,22 @@ export default function VtcProfilePage() {
 
     const load = async () => {
       try {
-        const [profileRes, statsRes, liveRes, leaderboardRes] = await Promise.all([
+        const [profileRes, statsRes, liveRes, leaderboardRes, communityRes] = await Promise.all([
           fetch(`${api}/api/v1/public/vtcs/${id}`, { cache: "no-store" }),
           fetch(`${api}/api/v1/public/vtcs/${id}/stats`, { cache: "no-store" }),
           fetch(`${api}/api/v1/public/vtcs/${id}/live`, { cache: "no-store" }),
           fetch(`${api}/api/v1/public/vtcs/${id}/leaderboard`, { cache: "no-store" }),
+          fetch(`${api}/api/v1/public/vtcs/${id}/community`, { cache: "no-store" }),
         ]);
 
         if (!profileRes.ok) throw new Error("VTC not found");
 
-        const [profile, statsData, liveData, leaderboard] = await Promise.all([
+        const [profile, statsData, liveData, leaderboard, communityData] = await Promise.all([
           profileRes.json(),
           statsRes.json(),
           liveRes.json(),
           leaderboardRes.json(),
+          communityRes.json(),
         ]);
 
         if (!active) return;
@@ -48,6 +62,7 @@ export default function VtcProfilePage() {
         setStats(statsData);
         setLive(liveData.drivers ?? []);
         setLeaders(leaderboard.drivers ?? []);
+        setCommunity(communityData);
         setError("");
       } catch {
         if (active) setError("Unable to load this VTC.");
@@ -62,6 +77,22 @@ export default function VtcProfilePage() {
     };
   }, [id]);
 
+  const apply = async () => {
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/apply", {
+      method: "POST",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ message: applyMessage }),
+    });
+
+    if (response.status === 401) {
+      window.location.href = "/account";
+      return;
+    }
+
+    setApplyMessage(response.ok ? "Application submitted." : "Unable to submit application.");
+  };
+
   if (error) return <main className="shell"><section className="hero"><h1>{error}</h1></section></main>;
   if (!vtc) return <main className="shell"><section className="hero"><h1>Loading VTC…</h1></section></main>;
 
@@ -69,9 +100,13 @@ export default function VtcProfilePage() {
     <main className="shell">
       <section className="hero" style={{ paddingBottom: 24 }}>
         <span className="eyebrow">{vtc.tag || "OpenHaul VTC"}</span>
+        {community?.logoUrl ? <img src={community.logoUrl} alt="" style={{ width: 96, height: 96, objectFit: "cover", borderRadius: 18, marginTop: 16 }} /> : null}
         <h1 style={{ fontSize: "clamp(2.8rem,7vw,5rem)" }}>{vtc.name}</h1>
+        <p className="lede">{community?.description || "OpenHaul community trucking company."}</p>
         <div className="actions">
           <Link className="button primary" href={`/map?vtc=${vtc.id}`}>Open VTC live map</Link>
+          {community?.website ? <a className="button" href={community.website}>Website</a> : null}
+          {community?.discordUrl ? <a className="button" href={community.discordUrl}>Discord</a> : null}
         </div>
       </section>
 
@@ -80,7 +115,19 @@ export default function VtcProfilePage() {
         <article className="card"><h3>{Number(stats?.jobs ?? 0).toLocaleString()}</h3><p>Completed jobs</p></article>
         <article className="card"><h3>{Math.round(Number(stats?.distanceKm ?? 0)).toLocaleString()} km</h3><p>Distance logged</p></article>
         <article className="card"><h3>{Number(stats?.fines ?? 0).toLocaleString()}</h3><p>Recorded fines</p></article>
+        <article className="card"><h3>{community?.memberCount ?? 0}</h3><p>Community members</p></article>
+        {community?.balance !== undefined ? <article className="card"><h3>{Number(community.balance).toLocaleString()} {community.currency}</h3><p>Public VTC balance</p></article> : null}
       </section>
+
+      {community?.recruitmentOpen ? (
+        <>
+          <div className="sectionTitle"><h2>Join this VTC</h2></div>
+          <section className="card">
+            <textarea value={applyMessage} onChange={(e) => setApplyMessage(e.target.value)} rows={4} placeholder="Tell the VTC why you want to join" />
+            <div className="actions"><button className="button primary" onClick={() => void apply()}>Apply with OpenHaul account</button></div>
+          </section>
+        </>
+      ) : null}
 
       <div className="sectionTitle"><h2>Live drivers</h2></div>
       <section className="driverList" style={{ padding: 0 }}>
