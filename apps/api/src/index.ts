@@ -5,8 +5,8 @@ import Fastify from "fastify";
 import { z } from "zod";
 import { Fine, Job, Vtc, initDatabase } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
-import { getLiveDrivers, setLiveDriver } from "./live.js";
-import { addRealtimeClient, broadcastDriver } from "./realtime.js";
+import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
+import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
 import { registerDonationRoutes } from "./donations.js";
 
 const app = Fastify({ logger: true });
@@ -118,6 +118,17 @@ app.post("/api/v1/telemetry/live", async (request, reply) => {
   broadcastDriver(driver);
 
   return reply.code(202).send({ accepted: true });
+});
+
+app.delete("/api/v1/telemetry/live/:driverId", async (request, reply) => {
+  const denied = requireIngest(request as any, reply as any);
+  if (denied) return denied;
+
+  const { driverId } = z.object({ driverId: z.string().min(1).max(80) }).parse(request.params);
+  const driver = await removeLiveDriver(driverId);
+  broadcastOffline(driverId, driver?.vtcId);
+
+  return { removed: Boolean(driver), driverId };
 });
 
 app.post("/api/v1/telemetry/fines", async (request, reply) => {
