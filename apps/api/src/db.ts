@@ -131,7 +131,15 @@ AccountSession.init({
   tokenHash: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "token_hash" },
   expiresAt: { type: DataTypes.DATE, allowNull: false, field: "expires_at" },
 }, { sequelize, modelName: "AccountSession", tableName: "account_sessions", underscored: true });
-export class ClientToken extends Model {}
+export class ClientToken extends Model {
+  declare id: number;
+  declare userId: number;
+  declare name: string;
+  declare prefix: string;
+  declare tokenHash: string;
+  declare lastUsedAt: Date | null;
+  declare revokedAt: Date | null;
+}
 ClientToken.init({
   id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
   userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
