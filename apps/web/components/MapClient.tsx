@@ -39,6 +39,7 @@ type LiveMessage =
 
 type GameFilter = "all" | "ets2" | "ats";
 type MapMode = "road" | "satellite" | "xray";
+type CameraMode = "map" | "third" | "first";
 
 type MapAsset = {
   available: boolean;
@@ -415,11 +416,14 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
 export function MapClient() {
   const params = useSearchParams();
   const initialVtc = params.get("vtc") ?? "";
+  const initialDriver = params.get("driver") ?? "";
   const [vtc, setVtc] = useState(initialVtc);
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [status, setStatus] = useState("Connecting…");
   const [gameFilter, setGameFilter] = useState<GameFilter>("all");
   const [mapMode, setMapMode] = useState<MapMode>("road");
+  const [cameraMode, setCameraMode] = useState<CameraMode>("map");
+  const [selectedDriverId, setSelectedDriverId] = useState(initialDriver);
   const [mapReady, setMapReady] = useState(false);
   const [mapAssets, setMapAssets] = useState<MapAssets | null>(null);
 
@@ -572,6 +576,9 @@ export function MapClient() {
         map.on("click", "openhaul-driver-dot", (event) => {
           const feature = event.features?.[0];
           if (!feature || feature.geometry.type !== "Point") return;
+
+          const clickedDriverId = String(feature.properties?.driverId ?? "");
+          if (clickedDriverId) setSelectedDriverId(clickedDriverId);
 
           const properties = feature.properties || {};
           const coordinates = feature.geometry.coordinates as [number, number];
@@ -740,6 +747,33 @@ export function MapClient() {
   }, [initialVtc, gameFilter]);
 
   useEffect(() => {
+    if (!selectedDriverId) {
+      if (cameraMode !== "map") setCameraMode("map");
+      return;
+    }
+
+    const stillVisible = visibleDrivers.some((driver) => driver.driverId === selectedDriverId);
+    if (!stillVisible) {
+      setSelectedDriverId("");
+      setCameraMode("map");
+    }
+  }, [visibleDrivers, selectedDriverId, cameraMode]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!mapReady || !map) return;
+
+    if (cameraMode === "map") {
+      map.easeTo({
+        pitch: 0,
+        bearing: 0,
+        duration: 450,
+      });
+      fittedRef.current = false;
+    }
+  }, [cameraMode, mapReady]);
+
+  useEffect(() => {
     if (!mapReady) return;
 
     let frame = 0;
@@ -820,21 +854,51 @@ export function MapClient() {
       const source = map.getSource("openhaul-drivers") as any;
       source?.setData(collection);
 
-      if (!fittedRef.current && collection.features.length > 0) {
-        const maplibregl = maplibreRef.current;
-        const bounds = new maplibregl.LngLatBounds();
+      const selected = selectedDriverId ? rendered.get(selectedDriverId) : undefined;
 
-        for (const feature of collection.features) {
-          bounds.extend(feature.geometry.coordinates);
+      if (selected && cameraMode !== "map") {
+        const center = gameCoordsToLonLat(selected.game, selected.x, selected.z);
+
+        if (isValidLonLat(center)) {
+          const bearing = ((-selected.heading * 360) % 360 + 360) % 360;
+
+          if (cameraMode === "third") {
+            map.jumpTo({
+              center,
+              zoom: Math.max(map.getZoom(), 15.2),
+              bearing,
+              pitch: 62,
+            });
+            map.setPadding({ top: 70, right: 0, bottom: 210, left: 0 });
+          } else {
+            map.jumpTo({
+              center,
+              zoom: Math.max(map.getZoom(), 17.3),
+              bearing,
+              pitch: 78,
+            });
+            map.setPadding({ top: 90, right: 0, bottom: 300, left: 0 });
+          }
         }
+      } else {
+        map.setPadding({ top: 0, right: 0, bottom: 0, left: 0 });
 
-        if (!bounds.isEmpty()) {
-          map.fitBounds(bounds, {
-            padding: 90,
-            maxZoom: 8,
-            duration: 700,
-          });
-          fittedRef.current = true;
+        if (!fittedRef.current && collection.features.length > 0) {
+          const maplibregl = maplibreRef.current;
+          const bounds = new maplibregl.LngLatBounds();
+
+          for (const feature of collection.features) {
+            bounds.extend(feature.geometry.coordinates);
+          }
+
+          if (!bounds.isEmpty()) {
+            map.fitBounds(bounds, {
+              padding: 90,
+              maxZoom: 8,
+              duration: 700,
+            });
+            fittedRef.current = true;
+          }
         }
       }
 
@@ -843,7 +907,7 @@ export function MapClient() {
 
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [mapReady]);
+  }, [mapReady, cameraMode, selectedDriverId]);
 
   const applyFilter = () => {
     const next = vtc.trim();
@@ -876,14 +940,32 @@ export function MapClient() {
           <button className={"button mapModeButton " + (mapMode === "road" ? "primary" : "")} onClick={() => setMapMode("road")}>🗺 Road</button>
           <button className={"button mapModeButton " + (mapMode === "satellite" ? "primary" : "")} onClick={() => setMapMode("satellite")}>🛰 Satellite</button>
           <button className={"button mapModeButton " + (mapMode === "xray" ? "primary" : "")} onClick={() => setMapMode("xray")}>◉ X-Ray</button>
+          <span className="mapToolbarDivider" aria-hidden="true" />
+          <button className={"button mapModeButton " + (cameraMode === "map" ? "primary" : "")} onClick={() => setCameraMode("map")}>⬆ Map View</button>
+          <button className={"button mapModeButton " + (cameraMode === "third" ? "primary" : "")} disabled={!selectedDriverId} onClick={() => setCameraMode("third")}>🚛 3rd Person</button>
+          <button className={"button mapModeButton " + (cameraMode === "first" ? "primary" : "")} disabled={!selectedDriverId} onClick={() => setCameraMode("first")}>👁 1st Person</button>
         </div>
 
+        <div className="mapCameraStatus">
+          {selectedDriverId
+            ? (() => {
+                const selected = visibleDrivers.find((driver) => driver.driverId === selectedDriverId);
+                return selected
+                  ? "Following " + selected.username + " · " + (cameraMode === "map" ? "selected" : cameraMode === "third" ? "3rd Person" : "1st Person")
+                  : "Selected driver unavailable";
+              })()
+            : "Select a truck marker or driver below to enable 1st/3rd person follow."}
+        </div>
         <div ref={containerRef} className="mapCanvas" />
       </section>
 
       <div className="driverList" style={{ padding: "14px 0 50px" }}>
         {visibleDrivers.map((driver) => (
-          <article className="driver" key={driver.driverId}>
+          <article
+            className={"driver mapDriverRow " + (selectedDriverId === driver.driverId ? "selectedDriver" : "")}
+            key={driver.driverId}
+            onClick={() => setSelectedDriverId(driver.driverId)}
+          >
             <div>
               <strong>{driver.username}</strong>
               <small>{driver.vtcTag ? "[" + driver.vtcTag + "] " : ""}{driver.vtcName ?? "Independent"}</small>
@@ -900,6 +982,16 @@ export function MapClient() {
               <strong>{driver.cargo ?? "No cargo"}</strong>
               <small>{driver.sourceCity && driver.destinationCity ? driver.sourceCity + " → " + driver.destinationCity : "Route unavailable"}</small>
             </div>
+            <button
+              className="button"
+              onClick={(event) => {
+                event.stopPropagation();
+                setSelectedDriverId(driver.driverId);
+                setCameraMode("third");
+              }}
+            >
+              Follow
+            </button>
           </article>
         ))}
       </div>
