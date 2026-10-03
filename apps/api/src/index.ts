@@ -20,6 +20,7 @@ import { registerVtcApiKeyManagementRoutes } from "./vtcApiKeyManagement.js";
 import { registerClientTokenRoutes } from "./clientTokens.js";
 import { registerClientAuthRoutes } from "./clientAuth.js";
 import { registerTruckersMpRoutes } from "./truckersMp.js";
+import { registerNewsRoutes } from "./news.js";
 import { requireTelemetryIdentity, resolveUserVtc } from "./telemetryAuth.js";
 
 const app = Fastify({ logger: true });
@@ -39,6 +40,7 @@ await registerVtcApiKeyManagementRoutes(app);
 await registerClientTokenRoutes(app);
 await registerClientAuthRoutes(app);
 await registerTruckersMpRoutes(app);
+await registerNewsRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
