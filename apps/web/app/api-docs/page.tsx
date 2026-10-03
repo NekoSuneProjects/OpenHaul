@@ -7,6 +7,7 @@ const publicEndpoints = [
   ["GET", "/api/v1/public/vtcs", "Public VTC directory"],
   ["GET", "/api/v1/public/vtcs/:id/live", "Public live members for a VTC"],
   ["GET", "/api/v1/public/radio/truckersfm", "TruckersFM now-playing proxy"],
+  ["GET", "/api/v1/public/donation-goals", "Public DLC/community funding goals"],
 ];
 
 const protectedEndpoints = [
@@ -14,6 +15,11 @@ const protectedEndpoints = [
   ["GET", "/api/v1/vtc/live", "VTC live telemetry"],
   ["GET", "/api/v1/vtc/jobs", "Recent VTC jobs"],
   ["GET", "/api/v1/vtc/fines", "Recent VTC fines"],
+];
+
+const adminEndpoints = [
+  ["POST", "/api/v1/admin/donation-goals", "Create a funding goal"],
+  ["PATCH", "/api/v1/admin/donation-goals/:id", "Update progress, target or visibility"],
 ];
 
 const ingestEndpoints = [
@@ -61,6 +67,10 @@ export default function ApiDocsPage() {
         <p className="muted">The API derives the VTC ID from the key itself; a caller cannot switch to another VTC by changing a URL parameter.</p>
       </div>
       <EndpointTable rows={protectedEndpoints} />
+
+      <div className="sectionTitle"><h2>Instance admin API</h2></div>
+      <div className="card" style={{ marginBottom: 14 }}><p>Admin routes use <code>X-Admin-Key</code> and are intended for instance management, not VTC integrations.</p></div>
+      <EndpointTable rows={adminEndpoints} />
 
       <div className="sectionTitle"><h2>Telemetry client API</h2></div>
       <div className="card" style={{ marginBottom: 14 }}>
