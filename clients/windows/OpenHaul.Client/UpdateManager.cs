@@ -88,11 +88,18 @@ public sealed class UpdateManager
             manifest.Client.Sha256,
             token);
 
-        var updater = Path.Combine(AppContext.BaseDirectory, "OpenHaul.Updater.exe");
-        if (!File.Exists(updater))
+        var installedUpdater = Path.Combine(AppContext.BaseDirectory, "OpenHaul.Updater.exe");
+        if (!File.Exists(installedUpdater))
             throw new FileNotFoundException(
                 "OpenHaul.Updater.exe is missing. Reinstall OpenHaul using the latest setup package.",
-                updater);
+                installedUpdater);
+
+        // Never execute the updater from the install directory. The installer
+        // must be free to replace OpenHaul.Updater.exe while the update is running.
+        var temporaryUpdater = Path.Combine(
+            updatesDirectory,
+            "OpenHaul.Updater-" + Guid.NewGuid().ToString("N") + ".exe");
+        File.Copy(installedUpdater, temporaryUpdater, overwrite: true);
 
         var launcher = Environment.ProcessPath
             ?? Path.Combine(AppContext.BaseDirectory, "OpenHaul.Client.exe");
@@ -102,13 +109,14 @@ public sealed class UpdateManager
         var arguments =
             "--pid " + Environment.ProcessId +
             " --installer \"" + installer + "\"" +
-            " --restart \"" + launcher + "\"";
+            " --restart \"" + launcher + "\"" +
+            " --self \"" + temporaryUpdater + "\"";
 
-        Process.Start(new ProcessStartInfo(updater)
+        Process.Start(new ProcessStartInfo(temporaryUpdater)
         {
             UseShellExecute = true,
             Arguments = arguments,
-            WorkingDirectory = AppContext.BaseDirectory,
+            WorkingDirectory = updatesDirectory,
         });
 
         Application.Exit();
