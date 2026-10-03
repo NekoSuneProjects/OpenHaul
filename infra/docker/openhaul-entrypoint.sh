@@ -4,15 +4,13 @@ set -eu
 shutdown() {
   trap - TERM INT EXIT
 
-  if [ -n "${API_PID:-}" ]; then
-    kill "$API_PID" 2>/dev/null || true
-  fi
+  for pid in "${NGINX_PID:-}" "${WEB_PID:-}" "${API_PID:-}"; do
+    if [ -n "$pid" ]; then
+      kill "$pid" 2>/dev/null || true
+    fi
+  done
 
-  if [ -n "${WEB_PID:-}" ]; then
-    kill "$WEB_PID" 2>/dev/null || true
-  fi
-
-  nginx -s quit 2>/dev/null || true
+  wait 2>/dev/null || true
 }
 
 trap shutdown TERM INT EXIT
@@ -26,7 +24,8 @@ PORT=3002 HOSTNAME=127.0.0.1 node /app/server.js &
 WEB_PID=$!
 
 echo "Starting OpenHaul gateway on :3000..."
-nginx
+nginx -g 'daemon off;' &
+NGINX_PID=$!
 
 while true; do
   if ! kill -0 "$API_PID" 2>/dev/null; then
@@ -41,7 +40,8 @@ while true; do
     exit 1
   fi
 
-  if ! pgrep nginx >/dev/null 2>&1; then
+  if ! kill -0 "$NGINX_PID" 2>/dev/null; then
+    wait "$NGINX_PID" || true
     echo "OpenHaul gateway exited; stopping container." >&2
     exit 1
   fi
