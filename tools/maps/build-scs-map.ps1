@@ -64,17 +64,23 @@ if (-not $TilesOnly) {
 $MapId = if ($Game -eq "ets2") { "europe" } else { "usa" }
 $ParserOut = Join-Path $OpenHaulRoot $WorkDir
 $LogsOut = Join-Path $ParserOut "logs"
+$ParsedRoot = Join-Path $ParserOut "parsed"
+$ParsedOut = Join-Path $ParsedRoot $Game
 $GeneratorOut = Join-Path $ParserOut "generated"
 $GeoJsonOut = Join-Path $GeneratorOut "geojson"
 $PmTilesOut = Join-Path $GeneratorOut "pmtiles"
 
 New-Item -ItemType Directory -Force $ParserOut | Out-Null
 New-Item -ItemType Directory -Force $LogsOut | Out-Null
+New-Item -ItemType Directory -Force $ParsedRoot | Out-Null
+New-Item -ItemType Directory -Force $ParsedOut | Out-Null
 New-Item -ItemType Directory -Force $GeneratorOut | Out-Null
 New-Item -ItemType Directory -Force $GeoJsonOut | Out-Null
 New-Item -ItemType Directory -Force $PmTilesOut | Out-Null
 
 $LogsOut = (Resolve-Path -LiteralPath $LogsOut).Path
+$ParsedRoot = (Resolve-Path -LiteralPath $ParsedRoot).Path
+$ParsedOut = (Resolve-Path -LiteralPath $ParsedOut).Path
 $GeneratorOut = (Resolve-Path -LiteralPath $GeneratorOut).Path
 $GeoJsonOut = (Resolve-Path -LiteralPath $GeoJsonOut).Path
 $PmTilesOut = (Resolve-Path -LiteralPath $PmTilesOut).Path
@@ -84,6 +90,16 @@ $LegacyGeoJson = Join-Path $GeneratorOut "$Game.geojson"
 $LegacyPmTiles = Join-Path $GeneratorOut "$Game.pmtiles"
 $GeoJsonFile = Join-Path $GeoJsonOut "$Game.geojson"
 $PmTilesFile = Join-Path $PmTilesOut "$Game.pmtiles"
+
+# One-time migration of TruckSim Maps parser JSONs from the old flat map-build root.
+$LegacyParsedPrefix = if ($Game -eq "ets2") { "europe-" } else { "usa-" }
+Get-ChildItem -LiteralPath $ParserOut -Filter "$LegacyParsedPrefix*.json" -File -ErrorAction SilentlyContinue | ForEach-Object {
+  $Destination = Join-Path $ParsedOut $_.Name
+  if (-not (Test-Path -LiteralPath $Destination -PathType Leaf)) {
+    Move-Item -LiteralPath $_.FullName -Destination $Destination -Force
+    Write-Host "Migrated parser JSON: $($_.Name) -> $ParsedOut"
+  }
+}
 
 if ((Test-Path -LiteralPath $LegacyGeoJson -PathType Leaf) -and -not (Test-Path -LiteralPath $GeoJsonFile -PathType Leaf)) {
   Move-Item -LiteralPath $LegacyGeoJson -Destination $GeoJsonFile -Force
@@ -206,11 +222,11 @@ if (-not $TilesOnly) {
       "-i",
       (Quote-NativeArgument $GamePath),
       "-o",
-      (Quote-NativeArgument $ParserOut)
+      (Quote-NativeArgument $ParsedOut)
     )
 
     Write-Host "Parser input path: $GamePath"
-    Write-Host "Parser output path: $ParserOut"
+    Write-Host "Parser output path: $ParsedOut"
 
     $ParserProcess = Start-Process -FilePath "node" `
       -ArgumentList $ParserArgs `
@@ -240,7 +256,7 @@ if (-not $TilesOnly) {
     }
 
     Write-Host "Generating SCS road/prefab/city GeoJSON..."
-    node "$TsxCli" "packages/clis/generator/index.ts" map -m $MapId -i "$ParserOut" -o "$GeoJsonOut" -t geojson
+    node "$TsxCli" "packages/clis/generator/index.ts" map -m $MapId -i "$ParsedOut" -o "$GeoJsonOut" -t geojson
     if ($LASTEXITCODE -ne 0) { throw "TruckSim Maps GeoJSON generator failed." }
     Write-Host "GeoJSON backup: $GeoJsonFile"
   }
