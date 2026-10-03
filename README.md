@@ -271,3 +271,59 @@ Steam-linked users can create and manage public Community VTCs. Current manageme
 ## Account-linked telemetry
 
 Normal users can create a revocable client token from the Account page. When the Windows client authenticates with that token, OpenHaul derives the SteamID and display name server-side and validates VTC membership before accepting VTC-linked telemetry. Independent drivers can also log jobs and fines without belonging to a VTC.
+
+
+## Personal API keys
+
+Every newly created Steam account is offered a default personal API key on first login. Additional keys can be created and revoked from the Account page.
+
+Personal keys start with `oh_user_` and support scoped account access:
+
+- `profile:read`
+- `jobs:read`
+- `fines:read`
+- `vtcs:read`
+- `stream:read`
+
+Examples:
+
+```text
+GET /api/v1/user/me
+GET /api/v1/user/jobs
+GET /api/v1/user/fines
+GET /api/v1/user/vtcs
+GET /api/v1/user/vtcs/:id/summary
+GET /api/v1/user/twitch
+```
+
+A personal key can only access VTC summaries for VTCs that account is an active member of.
+
+VTC owners/admins can separately create `oh_vtc_` keys from the VTC management dashboard. Those keys are permanently bound to that VTC server-side and can be scoped for telemetry, jobs, fines, statistics, members, convoys and events.
+
+## Twitch linking and streamer detection
+
+Registered OpenHaul users can link a Twitch account from the Account page. OpenHaul uses Twitch OAuth only to prove the broadcaster identity, then uses the server's Twitch app credentials for ongoing public stream-status detection.
+
+Configure:
+
+```env
+TWITCH_CLIENT_ID=
+TWITCH_CLIENT_SECRET=
+```
+
+Register this OAuth redirect URL in the Twitch Developer Console:
+
+```text
+<OPENHAUL_PUBLIC_API_URL>/api/v1/auth/twitch/callback
+```
+
+Linked accounts that Twitch reports live in **Euro Truck Simulator 2** or **American Truck Simulator** automatically appear on:
+
+```text
+/streamers
+GET /api/v1/public/streamers
+GET /api/v1/public/streamers?game=ets2
+GET /api/v1/public/streamers?game=ats
+```
+
+OpenHaul batches linked Twitch user IDs through Helix and refreshes stream state on the server every 60 seconds. Public visitors only read the cached OpenHaul stream state; they cannot force Twitch API refreshes.
