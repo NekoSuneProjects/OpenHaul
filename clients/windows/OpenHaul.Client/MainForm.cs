@@ -380,7 +380,7 @@ public sealed class MainForm : Form
 
             var loading = new Label
             {
-                Text = "Loading TruckersMP servers…",
+                Text = "Loading OpenHaul and TruckersMP status…",
                 AutoSize = true,
                 ForeColor = C(145, 178, 160),
                 Location = new Point(8, 8),
@@ -395,11 +395,55 @@ public sealed class MainForm : Form
                     Timeout = TimeSpan.FromSeconds(15),
                 };
 
-                var data = await http.GetFromJsonAsync<TruckersMpServerResponse>(
+                var openHaulTask = http.GetFromJsonAsync<OpenHaulStatusResponse>(
+                    "api/v1/public/openhaul/status",
+                    _lifetime.Token);
+
+                var truckersMpTask = http.GetFromJsonAsync<TruckersMpServerResponse>(
                     "api/v1/public/truckersmp/servers",
                     _lifetime.Token);
 
+                await Task.WhenAll(openHaulTask, truckersMpTask);
+
+                var openHaul = await openHaulTask;
+                var data = await truckersMpTask;
+
                 scroll.Controls.Clear();
+
+                var y = 0;
+
+                var openHaulCard = Card(6, y, 810, 108);
+                openHaulCard.Controls.Add(new Label
+                {
+                    Text = "OpenHaul Drivers Online",
+                    Font = new Font("Segoe UI", 13F, FontStyle.Bold),
+                    AutoSize = true,
+                    Location = new Point(18, 14),
+                    ForeColor = C(82, 234, 142),
+                });
+                openHaulCard.Controls.Add(new Label
+                {
+                    Text = $"Total: {openHaul?.Online ?? 0:n0}",
+                    Font = new Font("Segoe UI", 16F, FontStyle.Bold),
+                    AutoSize = true,
+                    Location = new Point(18, 48),
+                });
+                openHaulCard.Controls.Add(new Label
+                {
+                    Text = $"ETS2: {openHaul?.Ets2 ?? 0:n0}    ATS: {openHaul?.Ats ?? 0:n0}",
+                    AutoSize = true,
+                    Location = new Point(210, 54),
+                    ForeColor = C(170, 205, 185),
+                });
+                openHaulCard.Controls.Add(new Label
+                {
+                    Text = "Counts active OpenHaul telemetry users seen in the last 45 seconds.",
+                    AutoSize = true,
+                    Location = new Point(18, 80),
+                    ForeColor = C(120, 150, 135),
+                });
+                scroll.Controls.Add(openHaulCard);
+                y += 132;
 
                 var servers = data?.Servers ?? [];
                 var groups = new[]
@@ -407,8 +451,6 @@ public sealed class MainForm : Form
                     ("Euro Truck Simulator 2", servers.Where(s => s.Game.Contains("ets2", StringComparison.OrdinalIgnoreCase) || s.Game.Contains("euro", StringComparison.OrdinalIgnoreCase)).ToArray()),
                     ("American Truck Simulator", servers.Where(s => s.Game.Contains("ats", StringComparison.OrdinalIgnoreCase) || s.Game.Contains("american", StringComparison.OrdinalIgnoreCase)).ToArray()),
                 };
-
-                var y = 0;
 
                 foreach (var (title, group) in groups)
                 {
@@ -1122,6 +1164,13 @@ public sealed class MainForm : Form
     {
         Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
     }
+
+    private sealed record OpenHaulStatusResponse(
+        int Online,
+        int Ets2,
+        int Ats,
+        int TtlSeconds,
+        DateTimeOffset UpdatedAt);
 
     private sealed record TruckersMpServerResponse(
         string Source,
