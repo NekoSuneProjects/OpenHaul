@@ -48,3 +48,6 @@ Download SCS Telemetry SDK 1.15 and pass its `include` directory to CMake:
 cmake -S plugins/scs -B build/scs -A x64 -DSCS_SDK_INCLUDE="C:\path\to\scs_sdk\include"
 cmake --build build/scs --config Release
 ```
+
+
+<!-- build-trigger -->
