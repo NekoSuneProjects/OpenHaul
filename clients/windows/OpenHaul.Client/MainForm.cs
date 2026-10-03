@@ -98,6 +98,28 @@ public sealed class MainForm : Form
         SendMessage(Handle, 0xA1, 0x2, 0);
     }
 
+    private void ConfigureTelemetryRetry()
+    {
+        _telemetryRetryTimer.Interval = 15_000;
+        _telemetryRetryTimer.Tick += async (_, _) =>
+        {
+            if (!_telemetryRetryPending || IsGameRunning() || _mandatoryUpdatePending)
+                return;
+
+            _telemetryRetryTimer.Stop();
+
+            try
+            {
+                await UpdateTelemetryAsync();
+            }
+            finally
+            {
+                if (_telemetryRetryPending)
+                    _telemetryRetryTimer.Start();
+            }
+        };
+    }
+
     private void ConfigureTray()
     {
         _trayIcon.Icon = SystemIcons.Application;
