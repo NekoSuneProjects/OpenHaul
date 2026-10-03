@@ -166,14 +166,25 @@ if (-not $TilesOnly) {
     $ParserErrorLog = Join-Path $ParserOut "$Game-parser-error.log"
     Remove-Item -LiteralPath $ParserLog, $ParserErrorLog -Force -ErrorAction SilentlyContinue
 
+    # Start-Process joins -ArgumentList into a command line on Windows.
+    # Quote path arguments explicitly so game folders such as
+    # "American Truck Simulator" are passed as one argument.
+    function Quote-NativeArgument {
+      param([string]$Value)
+      return '"' + ($Value -replace '"', '\"') + '"'
+    }
+
     $ParserArgs = @(
-      "$TsxCli",
+      (Quote-NativeArgument $TsxCli),
       "packages/clis/parser/index.ts",
       "-i",
-      "$GamePath",
+      (Quote-NativeArgument $GamePath),
       "-o",
-      "$ParserOut"
+      (Quote-NativeArgument $ParserOut)
     )
+
+    Write-Host "Parser input path: $GamePath"
+    Write-Host "Parser output path: $ParserOut"
 
     $ParserProcess = Start-Process -FilePath "node" `
       -ArgumentList $ParserArgs `
