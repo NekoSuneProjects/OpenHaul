@@ -33,8 +33,8 @@ if (-not $TilesOnly) {
     if (-not (Test-Path -LiteralPath (Join-Path $TruckSimMapsPath $RequiredFile) -PathType Leaf)) {
       throw "TruckSimMapsPath must point to a TruckSim Maps source checkout, not an empty game/output folder. Missing: $RequiredFile in $TruckSimMapsPath. Clone https://github.com/truckermudgeon/maps.git with --recurse-submodules, then pass the clone root as -TruckSimMapsPath. See README.md: Real SCS road map data."
     }
+  }
 
-if (-not $TilesOnly) {
   $RequiredGameArchives = @(
     "base.scs",
     "base_map.scs",
@@ -59,9 +59,6 @@ if (-not $TilesOnly) {
 
   $ScsCount = @(Get-ChildItem -LiteralPath $GamePath -Filter "*.scs" -File).Count
   Write-Host "Validated $Game installation: $ScsCount .scs archives found."
-}
-
-  }
 }
 
 $MapId = if ($Game -eq "ets2") { "europe" } else { "usa" }
