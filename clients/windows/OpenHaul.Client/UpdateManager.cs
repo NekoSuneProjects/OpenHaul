@@ -88,12 +88,27 @@ public sealed class UpdateManager
             manifest.Client.Sha256,
             token);
 
-        Status?.Invoke("Starting OpenHaul updater…");
+        var updater = Path.Combine(AppContext.BaseDirectory, "OpenHaul.Updater.exe");
+        if (!File.Exists(updater))
+            throw new FileNotFoundException(
+                "OpenHaul.Updater.exe is missing. Reinstall OpenHaul using the latest setup package.",
+                updater);
 
-        Process.Start(new ProcessStartInfo(installer)
+        var launcher = Environment.ProcessPath
+            ?? Path.Combine(AppContext.BaseDirectory, "OpenHaul.Client.exe");
+
+        Status?.Invoke("Handing update to OpenHaul Updater…");
+
+        var arguments =
+            "--pid " + Environment.ProcessId +
+            " --installer \"" + installer + "\"" +
+            " --restart \"" + launcher + "\"";
+
+        Process.Start(new ProcessStartInfo(updater)
         {
             UseShellExecute = true,
-            Arguments = "/VERYSILENT /SUPPRESSMSGBOXES /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /SP-",
+            Arguments = arguments,
+            WorkingDirectory = AppContext.BaseDirectory,
         });
 
         Application.Exit();
@@ -196,7 +211,11 @@ public sealed class UpdateManager
                         continue;
                     }
 
-                    File.Copy(cachedDll, destination, overwrite: true);
+                    await InstallTelemetryAtomicallyAsync(
+                        cachedDll,
+                        destination,
+                        safeHash,
+                        token);
                     installed.Add(destination);
                 }
             }
@@ -268,6 +287,40 @@ public sealed class UpdateManager
         finally
         {
             _telemetryUpdateLock.Release();
+        }
+    }
+
+    private static async Task InstallTelemetryAtomicallyAsync(
+        string source,
+        string destination,
+        string expectedSha256,
+        CancellationToken token)
+    {
+        var temporary = destination + ".openhaul-update";
+        try
+        {
+            if (File.Exists(temporary))
+                File.Delete(temporary);
+
+            Directory.CreateDirectory(Path.GetDirectoryName(destination)!);
+            File.Copy(source, temporary, overwrite: true);
+
+            var stagedHash = await Sha256Async(temporary, token);
+            if (!stagedHash.Equals(expectedSha256, StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException("Staged telemetry plugin checksum mismatch.");
+
+            File.Move(temporary, destination, overwrite: true);
+        }
+        finally
+        {
+            try
+            {
+                if (File.Exists(temporary))
+                    File.Delete(temporary);
+            }
+            catch
+            {
+            }
         }
     }
 
