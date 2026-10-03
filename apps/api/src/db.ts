@@ -25,6 +25,8 @@ Vtc.init({
   logoUrl: { type: DataTypes.TEXT, allowNull: true, field: "logo_url" },
   ownerUserId: { type: DataTypes.INTEGER, allowNull: true, field: "owner_user_id" },
   currency: { type: DataTypes.STRING(8), allowNull: false, defaultValue: "GBP" },
+  recruitmentOpen: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true, field: "recruitment_open" },
+  publicBalance: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false, field: "public_balance" },
 }, { sequelize, modelName: "Vtc", tableName: "vtcs", underscored: true });
 
 export class VtcApiKey extends Model {
