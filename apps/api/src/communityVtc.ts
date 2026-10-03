@@ -1,7 +1,7 @@
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-import { Op } from "sequelize";
+import { Op, QueryTypes } from "sequelize";
 import { z } from "zod";
-import { User, Vtc, VtcApplication, VtcLedgerEntry, VtcMember } from "./db.js";
+import { Fine, Job, User, Vtc, VtcApplication, VtcLedgerEntry, VtcMember, sequelize } from "./db.js";
 import { requireUser } from "./accountSession.js";
 
 const createSchema = z.object({
@@ -121,14 +121,55 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
 
   app.get("/api/v1/account/vtcs/:id/manage", { preHandler: [requireManager] }, async (request) => {
     const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
-    const [vtc, members, applications, ledger] = await Promise.all([
+    const [vtc, members, applications, ledger, jobStats, fineStats] = await Promise.all([
       Vtc.findByPk(id),
       VtcMember.findAll({ where: { vtcId: id }, include: [{ model: User }] }),
       VtcApplication.findAll({ where: { vtcId: id }, order: [["id", "DESC"]] }),
       ledgerSummary(id),
+      sequelize.query(
+        `SELECT driver_id AS "driverId",
+                COUNT(*)::int AS "jobs",
+                COALESCE(SUM(distance_km), 0)::float AS "distanceKm",
+                COALESCE(SUM(income), 0)::bigint AS "income"
+         FROM jobs
+         WHERE vtc_id = :vtcId
+         GROUP BY driver_id`,
+        { replacements: { vtcId: id }, type: QueryTypes.SELECT },
+      ),
+      sequelize.query(
+        `SELECT driver_id AS "driverId",
+                COUNT(*)::int AS "fines",
+                COALESCE(SUM(amount), 0)::bigint AS "fineAmount"
+         FROM fines
+         WHERE vtc_id = :vtcId
+         GROUP BY driver_id`,
+        { replacements: { vtcId: id }, type: QueryTypes.SELECT },
+      ),
     ]);
 
-    return { vtc, members, applications, ledger };
+    const jobsByDriver = new Map((jobStats as any[]).map((row) => [String(row.driverId), row]));
+    const finesByDriver = new Map((fineStats as any[]).map((row) => [String(row.driverId), row]));
+
+    const membersWithStats = members.map((member: any) => {
+      const plain = member.toJSON();
+      const user = plain.User ?? plain.user;
+      const driverId = String(user?.steamId ?? "");
+      const jobs = jobsByDriver.get(driverId) as any;
+      const fines = finesByDriver.get(driverId) as any;
+
+      return {
+        ...plain,
+        stats: {
+          jobs: Number(jobs?.jobs ?? 0),
+          distanceKm: Number(jobs?.distanceKm ?? 0),
+          income: Number(jobs?.income ?? 0),
+          fines: Number(fines?.fines ?? 0),
+          fineAmount: Number(fines?.fineAmount ?? 0),
+        },
+      };
+    });
+
+    return { vtc, members: membersWithStats, applications, ledger };
   });
 
   app.patch("/api/v1/account/vtcs/:id", { preHandler: [requireOwnerOrAdmin] }, async (request, reply) => {
