@@ -11,7 +11,7 @@
 - [x] GitHub Actions container builds
 - [x] WebSocket live-position fan-out
 - [x] Human-readable API docs page
-- [ ] Account authentication and VTC administration UI
+- [x] Steam account authentication and VTC administration UI
 - [ ] API key creation/rotation UI with per-key scopes
 - [ ] Rate limiting and abuse controls for public API
 
@@ -24,7 +24,7 @@
 - [x] Automatic ETS2/ATS installation detection
 - [x] Automatic telemetry plugin installer
 - [ ] Automatic telemetry plugin updater
-- [ ] Per-driver authentication tokens
+- [x] Per-driver/account client authentication tokens
 - [ ] Offline telemetry queue
 - [ ] Job start detection from real SCS events
 - [x] Job complete detection from real SCS events
@@ -48,10 +48,11 @@
 - [ ] Optional TruckersMP-wide provider if an allowed live-position source is available
 
 ## VTC/community
-- [ ] VTC creation and profiles UI
-- [ ] Roles and permissions
-- [ ] Recruitment/applications
-- [ ] Drivers and fleets
+- [x] VTC creation and profiles UI
+- [x] Core owner/admin/staff/member roles and permissions
+- [x] Recruitment/applications
+- [x] Steam-linked driver profiles and VTC member tracking
+- [ ] Fleet/garage management
 - [x] Job data storage/API foundation
 - [x] Fines/events data storage/API foundation
 - [x] Statistics and leaderboards
@@ -61,7 +62,8 @@
 
 ## Discord
 - [x] Slash command foundation
-- [ ] Driver account linking
+- [x] Steam-linked OpenHaul driver accounts
+- [ ] Discord-to-driver account linking
 - [x] Completed-job embeds
 - [x] Fine embeds
 - [x] Online/offline events
