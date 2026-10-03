@@ -100,7 +100,7 @@ public sealed record ClientConfig(
     string PipeName = "OpenHaulTelemetry")
 {
     public static ClientConfig FromEnvironment() => new(
-        Environment.GetEnvironmentVariable("OPENHAUL_API_URL") ?? "http://localhost:3001",
+        Environment.GetEnvironmentVariable("OPENHAUL_API_URL") ?? ClientSettings.DefaultApiUrl,
         Environment.GetEnvironmentVariable("OPENHAUL_INGEST_KEY") ?? "",
         Environment.GetEnvironmentVariable("OPENHAUL_CLIENT_TOKEN") ?? "",
         Environment.GetEnvironmentVariable("OPENHAUL_DRIVER_ID") ?? Environment.UserName,
