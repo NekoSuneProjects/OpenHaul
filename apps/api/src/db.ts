@@ -50,7 +50,7 @@ VtcApiKey.init({
 export class Job extends Model {}
 Job.init({
   id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
-  vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
+  vtcId: { type: DataTypes.INTEGER, allowNull: true, field: "vtc_id" },
   driverId: { type: DataTypes.STRING(80), allowNull: false, field: "driver_id" },
   game: { type: DataTypes.ENUM("ets2", "ats"), allowNull: false },
   cargo: { type: DataTypes.STRING(160), allowNull: true },
@@ -64,7 +64,7 @@ Job.init({
 export class Fine extends Model {}
 Fine.init({
   id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
-  vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
+  vtcId: { type: DataTypes.INTEGER, allowNull: true, field: "vtc_id" },
   driverId: { type: DataTypes.STRING(80), allowNull: false, field: "driver_id" },
   game: { type: DataTypes.ENUM("ets2", "ats"), allowNull: false },
   type: { type: DataTypes.STRING(80), allowNull: false },
