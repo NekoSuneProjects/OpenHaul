@@ -16,6 +16,8 @@ public sealed class UpdateManager
         Timeout = TimeSpan.FromMinutes(10),
     };
 
+    private readonly SemaphoreSlim _telemetryUpdateLock = new(1, 1);
+
     public event Action<string>? Status;
     public event Action<int>? Progress;
 
@@ -140,23 +142,33 @@ public sealed class UpdateManager
         ClientUpdateManifest manifest,
         CancellationToken token)
     {
-        var telemetryDirectory = Path.Combine(ClientSettings.SettingsDirectory, "telemetry");
-        Directory.CreateDirectory(telemetryDirectory);
-
-        var cachedDll = Path.Combine(telemetryDirectory, "OpenHaul.Telemetry.dll");
-        var currentHash = File.Exists(cachedDll)
-            ? await Sha256Async(cachedDll, token)
-            : "";
-
-        if (!currentHash.Equals(manifest.Telemetry.Sha256, StringComparison.OrdinalIgnoreCase))
+        await _telemetryUpdateLock.WaitAsync(token);
+        try
         {
-            Status?.Invoke("Downloading telemetry plugin update…");
-            await DownloadVerifiedAsync(
-                manifest.Telemetry.Url,
-                cachedDll,
-                manifest.Telemetry.Sha256,
-                token);
-        }
+            var telemetryDirectory = Path.Combine(ClientSettings.SettingsDirectory, "telemetry");
+            Directory.CreateDirectory(telemetryDirectory);
+
+            var safeHash = manifest.Telemetry.Sha256.Trim().ToLowerInvariant();
+            if (safeHash.Length < 12)
+                throw new InvalidOperationException("Telemetry update manifest checksum is invalid.");
+
+            var cachedDll = Path.Combine(
+                telemetryDirectory,
+                "OpenHaul.Telemetry-" + safeHash[..12] + ".dll");
+
+            var currentHash = File.Exists(cachedDll)
+                ? await Sha256Async(cachedDll, token)
+                : "";
+
+            if (!currentHash.Equals(safeHash, StringComparison.OrdinalIgnoreCase))
+            {
+                Status?.Invoke("Downloading telemetry plugin update…");
+                await DownloadVerifiedAsync(
+                    manifest.Telemetry.Url,
+                    cachedDll,
+                    safeHash,
+                    token);
+            }
 
         var gameInstalls = GameLocator.FindInstalledGames();
         var installed = new List<string>();
@@ -216,13 +228,47 @@ public sealed class UpdateManager
                     ? "Telemetry plugin updated."
                     : "Telemetry plugin is up to date.");
 
-        return new TelemetryUpdateResult(
-            true,
-            manifest.Telemetry.Version,
-            installed,
-            failures,
-            deferred,
-            cachedDll);
+            // Best-effort cleanup of old content-addressed telemetry downloads.
+            // Never fail an update because an older DLL is still locked by Windows.
+            try
+            {
+                foreach (var oldFile in Directory.EnumerateFiles(
+                    telemetryDirectory,
+                    "OpenHaul.Telemetry-*.dll"))
+                {
+                    if (oldFile.Equals(cachedDll, StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    try { File.Delete(oldFile); }
+                    catch (IOException) { }
+                    catch (UnauthorizedAccessException) { }
+                }
+
+                var legacyFile = Path.Combine(telemetryDirectory, "OpenHaul.Telemetry.dll");
+                if (File.Exists(legacyFile))
+                {
+                    try { File.Delete(legacyFile); }
+                    catch (IOException) { }
+                    catch (UnauthorizedAccessException) { }
+                }
+            }
+            catch
+            {
+                // Cleanup is optional; the active update has already succeeded.
+            }
+
+            return new TelemetryUpdateResult(
+                true,
+                manifest.Telemetry.Version,
+                installed,
+                failures,
+                deferred,
+                cachedDll);
+        }
+        finally
+        {
+            _telemetryUpdateLock.Release();
+        }
     }
 
     public static async Task<string> Sha256Async(string path, CancellationToken token = default)
