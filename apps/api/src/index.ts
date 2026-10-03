@@ -9,12 +9,14 @@ import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
 import { registerDonationRoutes } from "./donations.js";
 import { registerStatsRoutes } from "./stats.js";
+import { registerMapAssetRoutes } from "./mapAssets.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true });
 await app.register(websocket);
 await registerDonationRoutes(app);
 await registerStatsRoutes(app);
+await registerMapAssetRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
