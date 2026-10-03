@@ -65,3 +65,72 @@ h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.06
   .links { display:none; }
   .driver { grid-template-columns:1fr 1fr; }
 }
+
+
+.realMapPanel {
+  min-height: 0;
+  background: var(--panel);
+}
+
+.realMapPanel .mapToolbar {
+  position: relative;
+  z-index: 3;
+  flex-wrap: wrap;
+}
+
+.mapCanvas {
+  width: 100%;
+  height: min(68vh, 760px);
+  min-height: 520px;
+  background: #07110d;
+}
+
+.maplibregl-map {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.maplibregl-popup-content {
+  background: #0c1b14;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 16px 42px rgba(0,0,0,.35);
+}
+
+.maplibregl-popup-tip {
+  border-top-color: #0c1b14 !important;
+  border-bottom-color: #0c1b14 !important;
+}
+
+.maplibregl-popup-close-button {
+  color: var(--text);
+  font-size: 18px;
+}
+
+.mapPopup {
+  display: grid;
+  gap: 4px;
+  min-width: 210px;
+}
+
+.mapPopup strong {
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+
+.mapPopup div {
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+@media (max-width: 760px) {
+  .mapCanvas {
+    min-height: 460px;
+    height: 62vh;
+  }
+
+  .realMapPanel .mapToolbar .button {
+    padding: 10px 12px;
+  }
+}
