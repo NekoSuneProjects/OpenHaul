@@ -131,7 +131,7 @@ AccountSession.init({
   tokenHash: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "token_hash" },
   expiresAt: { type: DataTypes.DATE, allowNull: false, field: "expires_at" },
 }, { sequelize, modelName: "AccountSession", tableName: "account_sessions", underscored: true });
-\nexport class VtcMember extends Model {}
+export class VtcMember extends Model {}
 VtcMember.init({
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
   vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
