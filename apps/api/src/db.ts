@@ -131,6 +131,17 @@ AccountSession.init({
   tokenHash: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "token_hash" },
   expiresAt: { type: DataTypes.DATE, allowNull: false, field: "expires_at" },
 }, { sequelize, modelName: "AccountSession", tableName: "account_sessions", underscored: true });
+export class ClientToken extends Model {}
+ClientToken.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
+  name: { type: DataTypes.STRING(120), allowNull: false },
+  prefix: { type: DataTypes.STRING(24), allowNull: false },
+  tokenHash: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "token_hash" },
+  lastUsedAt: { type: DataTypes.DATE, allowNull: true, field: "last_used_at" },
+  revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
+}, { sequelize, modelName: "ClientToken", tableName: "client_tokens", underscored: true });
+
 export class VtcMember extends Model {}
 VtcMember.init({
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
@@ -162,6 +173,8 @@ VtcLedgerEntry.init({
   currency: { type: DataTypes.STRING(8), allowNull: false, defaultValue: "GBP" },
 }, { sequelize, modelName: "VtcLedgerEntry", tableName: "vtc_ledger_entries", underscored: true });
 
+User.hasMany(ClientToken, { foreignKey: "userId" });
+ClientToken.belongsTo(User, { foreignKey: "userId" });
 User.hasMany(VtcMember, { foreignKey: "userId" });
 Vtc.hasMany(VtcMember, { foreignKey: "vtcId" });
 VtcMember.belongsTo(User, { foreignKey: "userId" });
