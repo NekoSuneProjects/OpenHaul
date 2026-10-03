@@ -29,7 +29,7 @@ public static class GameLocator
             var text = File.ReadAllText(libraryFile);
             foreach (Match match in Regex.Matches(text, @"""path""\s+""(?<path>[^""]+)""", RegexOptions.IgnoreCase))
             {
-                var value = match.Groups["path"].Value.Replace(@"\\", @"");
+                var value = match.Groups["path"].Value.Replace("\\\\", "\\");
                 libraries.Add(Path.Combine(value, "steamapps"));
             }
         }
