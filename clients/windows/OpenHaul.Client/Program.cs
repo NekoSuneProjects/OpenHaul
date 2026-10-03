@@ -46,9 +46,9 @@ if (installPluginIndex >= 0)
     }
 }
 
-if (string.IsNullOrWhiteSpace(config.IngestKey))
+if (string.IsNullOrWhiteSpace(config.IngestKey) && string.IsNullOrWhiteSpace(config.ClientToken))
 {
-    Console.Error.WriteLine("OPENHAUL_INGEST_KEY is required.");
+    Console.Error.WriteLine("OPENHAUL_CLIENT_TOKEN or OPENHAUL_INGEST_KEY is required.");
     return 2;
 }
 
@@ -64,6 +64,7 @@ Console.CancelKeyPress += (_, eventArgs) =>
 Console.WriteLine("OpenHaul Client");
 Console.WriteLine($"API: {config.ApiUrl}");
 Console.WriteLine($"Driver: {config.Username} ({config.DriverId})");
+Console.WriteLine(!string.IsNullOrWhiteSpace(config.ClientToken) ? "Auth: Steam account client token" : "Auth: instance ingest key");
 Console.WriteLine(simulate ? "Mode: simulator" : $@"Mode: telemetry pipe \\.\pipe\{config.PipeName}");
 
 try
