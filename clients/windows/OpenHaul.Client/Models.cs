@@ -6,6 +6,41 @@ public sealed record TelemetryEnvelope(
     [property: JsonPropertyName("type")] string Type,
     [property: JsonPropertyName("data")] object Data);
 
+public sealed record PluginLiveTelemetry(
+    string Game,
+    double X,
+    double? Y,
+    double Z,
+    double Heading,
+    double SpeedKph,
+    double? Rpm,
+    double? Fuel,
+    double? OdometerKm,
+    double? NavigationDistanceM,
+    double? NavigationTimeS,
+    double? SpeedLimitKph,
+    string? Truck,
+    string? Cargo,
+    string? SourceCity,
+    string? DestinationCity,
+    string? SourceCompany,
+    string? DestinationCompany);
+
+public sealed record PluginFineTelemetry(
+    string Game,
+    string Offence,
+    long Amount);
+
+public sealed record PluginJobCompletedTelemetry(
+    string Game,
+    string? Cargo,
+    string? SourceCity,
+    string? DestinationCity,
+    string? SourceCompany,
+    string? DestinationCompany,
+    double? DistanceKm,
+    long? Income);
+
 public sealed record LiveTelemetry(
     string DriverId,
     string Username,
