@@ -19,6 +19,8 @@ OpenHaul is an open-source, self-hosted ETS2 and ATS trucking platform with live
 - Native SCS Telemetry SDK plugin built against official SDK 1.15
 - Named-pipe bridge between the in-game DLL and Windows client
 - MapLibre geographic ETS2/ATS live map with real game-coordinate projection
+- Optional real SCS road/prefab/city map overlay from locally generated PMTiles
+- Smoothed/interpolated live truck movement between telemetry updates
 
 ## Quick start
 
@@ -55,6 +57,9 @@ GET /api/v1/public/vtcs/:id/stats
 GET /api/v1/public/vtcs/:id/leaderboard
 GET /api/v1/public/donation-goals
 GET /api/v1/public/radio/truckersfm
+GET /api/v1/public/map/assets
+GET /api/v1/public/map/ets2.pmtiles
+GET /api/v1/public/map/ats.pmtiles
 WS  /api/v1/public/live/ws
 ```
 
@@ -146,3 +151,40 @@ The native SCS plugin writes newline-delimited telemetry events to `\\.\pipe\Ope
 The plugin is built by `.github/workflows/scs-plugin.yml` against SCS Telemetry SDK 1.15 and produces `OpenHaul.Telemetry.dll`.
 
 It currently publishes world position, heading, speed, RPM, fuel, odometer, navigation data, truck/job configuration, player fines, and completed-job events.
+
+
+## Real SCS road map data
+
+OpenHaul does not redistribute ETS2/ATS map assets. You generate them from your own installed game files, then OpenHaul serves the resulting PMTiles.
+
+A helper is included:
+
+```powershell
+# ETS2
+.\tools\maps\build-scs-map.ps1 `
+  -Game ets2 `
+  -GamePath "C:\Program Files (x86)\Steam\steamapps\common\Euro Truck Simulator 2" `
+  -TruckSimMapsPath "C:\src\maps"
+
+# ATS
+.\tools\maps\build-scs-map.ps1 `
+  -Game ats `
+  -GamePath "C:\Program Files (x86)\Steam\steamapps\common\American Truck Simulator" `
+  -TruckSimMapsPath "C:\src\maps"
+```
+
+The helper uses a local checkout of TruckSim Maps to parse your installed SCS map/DLC files, asks it for GeoJSON, then runs Tippecanoe in Docker to create PMTiles. The result is imported to:
+
+```text
+data-runtime/maps/ets2.pmtiles
+data-runtime/maps/ats.pmtiles
+```
+
+You can also import an existing PMTiles file directly:
+
+```bash
+npm run map:import -- --game ets2 --file /path/to/ets2.pmtiles
+npm run map:import -- --game ats --file /path/to/ats.pmtiles
+```
+
+The live map automatically detects available map assets through `GET /api/v1/public/map/assets`. PMTiles are served with HTTP byte-range support so MapLibre only requests the vector tiles it needs.
