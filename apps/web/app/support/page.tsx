@@ -11,7 +11,7 @@ type Goal = {
   currentAmount: string | number;
 };
 
-const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 function money(currency: string, value: number) {
   try {
