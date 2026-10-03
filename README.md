@@ -45,15 +45,14 @@ cp .env.example .env
 docker compose up -d --build
 ```
 
-Then open `http://localhost:3000`. The API listens on `http://localhost:3001`.
+Then open `http://localhost:3000`. OpenHaul serves the website and API from the same origin: the site is `/` and the API is `/api/...`. Only port 3000 is published by the application container.
 
 ## Services
 
 | Service | Purpose |
 | --- | --- |
-| `web` | Next.js community site, global/VTC map and radio UI |
-| `api` | Fastify REST API, live presence, VTC API-key access |
-| `bot` | Discord bot for VTC events, jobs and fines |
+| `openhaul` | Single image containing the Nginx gateway, Next.js web UI and Fastify API; publishes port 3000 |
+| `bot` | Optional Discord bot for VTC events, jobs and fines |
 | `postgres` | Persistent application data |
 | `redis` | Realtime driver presence and future websocket fan-out |
 
@@ -129,10 +128,11 @@ and the web player uses the station's returned `listen_url`.
 The included GitHub Actions workflow builds:
 
 ```text
-ghcr.io/nekosuneprojects/openhaul-web
-ghcr.io/nekosuneprojects/openhaul-api
+ghcr.io/nekosuneprojects/openhaul
 ghcr.io/nekosuneprojects/openhaul-bot
 ```
+
+The main `openhaul` image combines the web app, API and reverse-proxy gateway. Internally the API uses port 3001 and Next.js uses port 3002, but only the gateway on port 3000 is exposed.
 
 Tags pushed to `main` publish `latest`; Git tags publish matching semantic-version tags.
 
@@ -242,7 +242,7 @@ data-runtime/maps/ets2.pmtiles
 data-runtime/maps/ats.pmtiles
 ```
 
-The helper uses the published [`ghcr.io/openwatersio/tippecanoe`](https://github.com/openwatersio/tippecanoe) image and checks Docker before parsing. If GeoJSON generation succeeded but the Docker/PMTiles stage failed, resume that stage without parsing again:
+The helper checks Docker and uses the local `openhaul-tippecanoe:latest` image. If that image is missing, OpenHaul builds it from the official Felt Tippecanoe source. If GeoJSON generation succeeded but the Docker/PMTiles stage failed, resume that stage without parsing again:
 
 ```powershell
 .\tools\maps\build-scs-map.ps1 -Game ets2 -TilesOnly
