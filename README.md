@@ -4,17 +4,19 @@ OpenHaul is an open-source, self-hosted ETS2 and ATS trucking platform with live
 
 ## Current foundation
 
-- Global live-driver API and `/map`
+- Global realtime live-driver API and `/map`
 - VTC-filtered live data with `?vtc=ID`
 - Redis-backed realtime presence
 - VTC-scoped API-key middleware
 - Jobs and fines data models
 - Discord bot foundation for VTC activity/fine feeds
-- TruckersFM now-playing proxy and persistent web player
+- TruckersFM now-playing proxy, persistent player and full radio page
+- Donation/DLC funding goals with admin management
 - PostgreSQL + Redis
 - Docker Compose self-hosting
 - GitHub Actions builds for GHCR
-- ETS2/ATS telemetry ingestion endpoint ready for the future desktop client/plugin
+- Windows telemetry client with simulator, Steam ETS2/ATS detection and plugin installer
+- Named-pipe contract for the native SCS telemetry plugin
 
 ## Quick start
 
@@ -45,8 +47,13 @@ Public, no key:
 GET /health
 GET /api/v1/public/live
 GET /api/v1/public/live?vtc=123
+GET /api/v1/public/vtcs/:id
 GET /api/v1/public/vtcs/:id/live
+GET /api/v1/public/vtcs/:id/stats
+GET /api/v1/public/vtcs/:id/leaderboard
+GET /api/v1/public/donation-goals
 GET /api/v1/public/radio/truckersfm
+WS  /api/v1/public/live/ws
 ```
 
 Protected VTC endpoints use either:
@@ -66,7 +73,8 @@ The API key is resolved to a VTC server-side. Callers cannot choose another VTC 
 Telemetry ingestion currently uses a deployment-level `OPENHAUL_INGEST_KEY` while the desktop client authentication flow is being built:
 
 ```http
-POST /api/v1/telemetry/live
+POST   /api/v1/telemetry/live
+DELETE /api/v1/telemetry/live/:driverId
 X-Ingest-Key: your-secret
 ```
 
@@ -108,3 +116,23 @@ See [TODO.md](TODO.md).
 ## License
 
 MIT
+
+
+## Windows client
+
+Builds are produced by `.github/workflows/windows-client.yml`.
+
+Useful development commands:
+
+```powershell
+# Show detected Steam installations
+OpenHaul.Client.exe --detect-games
+
+# Install a built native telemetry DLL into detected ETS2/ATS installs
+OpenHaul.Client.exe --install-plugin .\OpenHaul.Telemetry.dll
+
+# Publish simulated ETS2 telemetry for testing the live map/API
+OpenHaul.Client.exe --simulate
+```
+
+The real SCS plugin will write newline-delimited telemetry events to `\\.\pipe\OpenHaulTelemetry`.
