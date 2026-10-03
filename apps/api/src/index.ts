@@ -8,11 +8,13 @@ import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
 import { registerDonationRoutes } from "./donations.js";
+import { registerStatsRoutes } from "./stats.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true });
 await app.register(websocket);
 await registerDonationRoutes(app);
+await registerStatsRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
