@@ -63,15 +63,18 @@ if (-not $TilesOnly) {
 
 $MapId = if ($Game -eq "ets2") { "europe" } else { "usa" }
 $ParserOut = Join-Path $OpenHaulRoot $WorkDir
+$LogsOut = Join-Path $ParserOut "logs"
 $GeneratorOut = Join-Path $ParserOut "generated"
 $GeoJsonOut = Join-Path $GeneratorOut "geojson"
 $PmTilesOut = Join-Path $GeneratorOut "pmtiles"
 
 New-Item -ItemType Directory -Force $ParserOut | Out-Null
+New-Item -ItemType Directory -Force $LogsOut | Out-Null
 New-Item -ItemType Directory -Force $GeneratorOut | Out-Null
 New-Item -ItemType Directory -Force $GeoJsonOut | Out-Null
 New-Item -ItemType Directory -Force $PmTilesOut | Out-Null
 
+$LogsOut = (Resolve-Path -LiteralPath $LogsOut).Path
 $GeneratorOut = (Resolve-Path -LiteralPath $GeneratorOut).Path
 $GeoJsonOut = (Resolve-Path -LiteralPath $GeoJsonOut).Path
 $PmTilesOut = (Resolve-Path -LiteralPath $PmTilesOut).Path
@@ -185,8 +188,8 @@ if (-not $TilesOnly) {
     # Use this checkout's TypeScript runner directly; never fetch generic CLI names
     # from the npm registry or depend on Unix-style parser symlinks on Windows.
     Write-Host "Parsing installed SCS game files..."
-    $ParserLog = Join-Path $ParserOut "$Game-parser.log"
-    $ParserErrorLog = Join-Path $ParserOut "$Game-parser-error.log"
+    $ParserLog = Join-Path $LogsOut "$Game-parser.log"
+    $ParserErrorLog = Join-Path $LogsOut "$Game-parser-error.log"
     Remove-Item -LiteralPath $ParserLog, $ParserErrorLog -Force -ErrorAction SilentlyContinue
 
     # Start-Process joins -ArgumentList into a command line on Windows.
