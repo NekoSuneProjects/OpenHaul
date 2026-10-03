@@ -176,7 +176,10 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     attribution: "Map data extracted locally from the user's installed SCS game files",
   });
 
-  map.addLayer({
+  const beforeDriver = map.getLayer("openhaul-driver-dot") ? "openhaul-driver-dot" : undefined;
+  const addMapLayer = (layer: any) => map.addLayer(layer, beforeDriver);
+
+  addMapLayer({
     id: sourceId + "-prefabs",
     type: "fill",
     source: sourceId,
@@ -189,7 +192,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     },
   });
 
-  map.addLayer({
+  addMapLayer({
     id: sourceId + "-road-case",
     type: "line",
     source: sourceId,
@@ -218,7 +221,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     },
   });
 
-  map.addLayer({
+  addMapLayer({
     id: sourceId + "-roads",
     type: "line",
     source: sourceId,
@@ -256,7 +259,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     },
   });
 
-  map.addLayer({
+  addMapLayer({
     id: sourceId + "-rail",
     type: "line",
     source: sourceId,
@@ -274,7 +277,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     },
   });
 
-  map.addLayer({
+  addMapLayer({
     id: sourceId + "-ferry",
     type: "line",
     source: sourceId,
@@ -288,7 +291,7 @@ function addScsMapLayers(map: any, game: "ets2" | "ats", sourceUrl: string) {
     },
   });
 
-  map.addLayer({
+  addMapLayer({
     id: sourceId + "-cities",
     type: "symbol",
     source: sourceId,
