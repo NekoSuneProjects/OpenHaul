@@ -1,75 +1,50 @@
 # OpenHaul SCS Telemetry Plugin
 
-This directory is reserved for the native SCS Telemetry SDK plugin used by Euro Truck Simulator 2 and American Truck Simulator.
+OpenHaul includes a real native Windows telemetry plugin for Euro Truck Simulator 2 and American Truck Simulator.
 
-## Bridge contract
+It builds against the official **SCS Telemetry SDK 1.15**. The SDK itself is not vendored into this repository; GitHub Actions downloads the official archive from SCS Software during the build.
 
-The plugin will expose a Windows named pipe:
+## Build artifact
 
-```text
-\\.\pipe\OpenHaulTelemetry
+Workflow: `.github/workflows/scs-plugin.yml`
+
+Artifact: `OpenHaul-SCS-Telemetry-win-x64` containing `OpenHaul.Telemetry.dll`.
+
+## Installation
+
+The OpenHaul Windows client can install the DLL into all detected Steam copies of ETS2 and ATS:
+
+```powershell
+OpenHaul.Client.exe --install-plugin .\OpenHaul.Telemetry.dll
 ```
 
-and write one JSON object per line.
+The destination is `<game>\bin\win_x64\plugins\OpenHaul.Telemetry.dll`.
 
-### Live telemetry
+## Architecture
 
-```json
-{
-  "type": "live",
-  "data": {
-    "driverId": "123",
-    "username": "NekoSuneVR",
-    "game": "ets2",
-    "vtcId": 1,
-    "x": 10000.0,
-    "y": 35.0,
-    "z": -5000.0,
-    "heading": 0.42,
-    "speedKph": 82.0,
-    "truck": "Scania S",
-    "cargo": "Medical Vaccines",
-    "sourceCity": "Manchester",
-    "destinationCity": "Rotterdam"
-  }
-}
+The plugin runs inside ETS2/ATS and exposes `\\.\pipe\OpenHaulTelemetry`.
+
+The OpenHaul desktop client connects to that pipe. The DLL only sends game telemetry; it never stores the OpenHaul API key, VTC API key, or driver credentials.
+
+## Live data
+
+The plugin currently reads world X/Y/Z, heading, speed, engine RPM, fuel, odometer, navigation distance/time/speed limit, truck brand/model, cargo, source/destination city/company, configured job income and planned job distance.
+
+## Gameplay events
+
+### Player fined
+
+The native SCS `player.fined` event publishes the raw SCS offence and amount. The desktop client normalizes red signals, speeding, wrong-way and crash offences into OpenHaul fine categories.
+
+### Job delivered
+
+The native SCS `job.delivered` event publishes cargo, source/destination, delivered distance and revenue. The Windows client attaches the driver's OpenHaul identity and VTC before sending it to the server.
+
+## Local build
+
+Download SCS Telemetry SDK 1.15 and pass its `include` directory to CMake:
+
+```powershell
+cmake -S plugins/scs -B build/scs -A x64 -DSCS_SDK_INCLUDE="C:\path\to\scs_sdk\include"
+cmake --build build/scs --config Release
 ```
-
-### Fine
-
-```json
-{
-  "type": "fine",
-  "data": {
-    "vtcId": 1,
-    "driverId": "123",
-    "game": "ets2",
-    "type": "red_light",
-    "amount": 360,
-    "currency": "EUR",
-    "city": "Berlin",
-    "occurredAt": "2026-10-03T08:00:00Z"
-  }
-}
-```
-
-### Completed job
-
-```json
-{
-  "type": "job.completed",
-  "data": {
-    "vtcId": 1,
-    "driverId": "123",
-    "game": "ets2",
-    "cargo": "Medical Vaccines",
-    "sourceCity": "Manchester",
-    "destinationCity": "Rotterdam",
-    "distanceKm": 693,
-    "income": 42120,
-    "completedAt": "2026-10-03T09:00:00Z"
-  }
-}
-```
-
-The native plugin itself is not committed as a fake implementation: it will be built against the real SCS Telemetry SDK and will remain open source in this directory.
