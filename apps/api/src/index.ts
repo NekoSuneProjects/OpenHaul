@@ -16,11 +16,8 @@ const liveSchema = z.object({
   vtcId: z.number().int().positive().nullable().optional(),
   vtcName: z.string().max(120).nullable().optional(),
   vtcTag: z.string().max(32).nullable().optional(),
-  x: z.number(),
-  y: z.number().optional(),
-  z: z.number(),
-  heading: z.number(),
-  speedKph: z.number().min(0).max(300),
+  x: z.number(), y: z.number().optional(), z: z.number(),
+  heading: z.number(), speedKph: z.number().min(0).max(300),
   truck: z.string().max(160).nullable().optional(),
   cargo: z.string().max(160).nullable().optional(),
   sourceCity: z.string().max(120).nullable().optional(),
@@ -28,11 +25,42 @@ const liveSchema = z.object({
   server: z.string().max(120).nullable().optional(),
 });
 
+const fineSchema = z.object({
+  vtcId: z.number().int().positive(),
+  driverId: z.string().min(1).max(80),
+  game: z.enum(["ets2", "ats"]),
+  type: z.enum(["red_light", "speeding", "wrong_way", "collision", "parking", "toll", "other"]),
+  amount: z.number().int().nonnegative(),
+  currency: z.string().min(1).max(8).default("EUR"),
+  city: z.string().max(120).nullable().optional(),
+  occurredAt: z.coerce.date().default(() => new Date()),
+});
+
+const jobSchema = z.object({
+  vtcId: z.number().int().positive(),
+  driverId: z.string().min(1).max(80),
+  game: z.enum(["ets2", "ats"]),
+  cargo: z.string().max(160).nullable().optional(),
+  sourceCity: z.string().max(120).nullable().optional(),
+  destinationCity: z.string().max(120).nullable().optional(),
+  distanceKm: z.number().nonnegative().nullable().optional(),
+  income: z.number().int().nonnegative().nullable().optional(),
+  completedAt: z.coerce.date().default(() => new Date()),
+});
+
 function safeSecretEquals(actual: string | undefined, expected: string | undefined) {
   if (!actual || !expected) return false;
   const a = Buffer.from(actual);
   const b = Buffer.from(expected);
   return a.length === b.length && timingSafeEqual(a, b);
+}
+
+function requireIngest(request: { headers: Record<string, unknown> }, reply: { code: (status: number) => any }) {
+  const header = request.headers["x-ingest-key"];
+  const actual = Array.isArray(header) ? String(header[0]) : typeof header === "string" ? header : undefined;
+  if (!safeSecretEquals(actual, process.env.OPENHAUL_INGEST_KEY)) {
+    return reply.code(401).send({ error: "invalid_ingest_key" });
+  }
 }
 
 app.get("/health", async () => ({ ok: true, service: "openhaul-api" }));
@@ -63,16 +91,27 @@ app.get("/api/v1/public/radio/truckersfm", async (_request, reply) => {
 });
 
 app.post("/api/v1/telemetry/live", async (request, reply) => {
-  const ingestHeader = request.headers["x-ingest-key"];
-  const actual = Array.isArray(ingestHeader) ? ingestHeader[0] : ingestHeader;
-  if (!safeSecretEquals(actual, process.env.OPENHAUL_INGEST_KEY)) {
-    return reply.code(401).send({ error: "invalid_ingest_key" });
-  }
-
+  const denied = requireIngest(request as any, reply as any);
+  if (denied) return denied;
   const body = liveSchema.parse(request.body);
-  const driver = { ...body, updatedAt: new Date().toISOString() };
-  await setLiveDriver(driver);
+  await setLiveDriver({ ...body, updatedAt: new Date().toISOString() });
   return reply.code(202).send({ accepted: true });
+});
+
+app.post("/api/v1/telemetry/fines", async (request, reply) => {
+  const denied = requireIngest(request as any, reply as any);
+  if (denied) return denied;
+  const body = fineSchema.parse(request.body);
+  const fine = await Fine.create(body);
+  return reply.code(201).send({ fine });
+});
+
+app.post("/api/v1/telemetry/jobs/completed", async (request, reply) => {
+  const denied = requireIngest(request as any, reply as any);
+  if (denied) return denied;
+  const body = jobSchema.parse(request.body);
+  const job = await Job.create(body);
+  return reply.code(201).send({ job });
 });
 
 app.get("/api/v1/vtc/me", { preHandler: [requireVtcApiKey] }, async (request) => {
@@ -85,32 +124,19 @@ app.get("/api/v1/vtc/live", { preHandler: [requireVtcApiKey, requireScope("telem
   return { count: drivers.length, drivers };
 });
 
-app.get("/api/v1/vtc/jobs", { preHandler: [requireVtcApiKey, requireScope("jobs:read")] }, async (request) => {
-  const jobs = await Job.findAll({
-    where: { vtcId: request.openhaulVtc!.id },
-    order: [["id", "DESC"]],
-    limit: 100,
-  });
-  return { jobs };
-});
+app.get("/api/v1/vtc/jobs", { preHandler: [requireVtcApiKey, requireScope("jobs:read")] }, async (request) => ({
+  jobs: await Job.findAll({ where: { vtcId: request.openhaulVtc!.id }, order: [["id", "DESC"]], limit: 100 }),
+}));
 
-app.get("/api/v1/vtc/fines", { preHandler: [requireVtcApiKey, requireScope("fines:read")] }, async (request) => {
-  const fines = await Fine.findAll({
-    where: { vtcId: request.openhaulVtc!.id },
-    order: [["occurredAt", "DESC"]],
-    limit: 100,
-  });
-  return { fines };
-});
+app.get("/api/v1/vtc/fines", { preHandler: [requireVtcApiKey, requireScope("fines:read")] }, async (request) => ({
+  fines: await Fine.findAll({ where: { vtcId: request.openhaulVtc!.id }, order: [["occurredAt", "DESC"]], limit: 100 }),
+}));
 
 app.setErrorHandler((error, _request, reply) => {
-  if (error instanceof z.ZodError) {
-    return reply.code(400).send({ error: "validation_error", issues: error.issues });
-  }
+  if (error instanceof z.ZodError) return reply.code(400).send({ error: "validation_error", issues: error.issues });
   app.log.error(error);
   return reply.code(500).send({ error: "internal_error" });
 });
 
 await initDatabase();
-const port = Number(process.env.API_PORT ?? 3001);
-await app.listen({ host: "0.0.0.0", port });
+await app.listen({ host: "0.0.0.0", port: Number(process.env.API_PORT ?? 3001) });
