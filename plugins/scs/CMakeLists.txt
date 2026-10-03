@@ -16,7 +16,7 @@ add_library(OpenHaulTelemetry SHARED
 
 target_compile_features(OpenHaulTelemetry PRIVATE cxx_std_20)
 target_compile_definitions(OpenHaulTelemetry PRIVATE WIN32_LEAN_AND_MEAN NOMINMAX)
-target_include_directories(OpenHaulTelemetry PRIVATE "\${SCS_SDK_INCLUDE}")
+target_include_directories(OpenHaulTelemetry PRIVATE "${SCS_SDK_INCLUDE}")
 
 set_target_properties(OpenHaulTelemetry PROPERTIES
   OUTPUT_NAME "OpenHaul.Telemetry"
