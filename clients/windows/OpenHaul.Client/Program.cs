@@ -25,55 +25,76 @@ Console.WriteLine($"API: {config.ApiUrl}");
 Console.WriteLine($"Driver: {config.Username} ({config.DriverId})");
 Console.WriteLine(simulate ? "Mode: simulator" : $"Mode: telemetry pipe \\.\pipe\{config.PipeName}");
 
-if (simulate)
+try
 {
-    await RunSimulator(api, config, shutdown.Token);
-    return 0;
+    if (simulate)
+        await RunSimulator(api, config, shutdown.Token);
+    else
+        await RunPipeClient(api, config, shutdown.Token);
 }
-
-while (!shutdown.IsCancellationRequested)
+catch (OperationCanceledException) when (shutdown.IsCancellationRequested)
+{
+}
+finally
 {
     try
     {
-        await using var pipe = new NamedPipeClientStream(
-            ".",
-            config.PipeName,
-            PipeDirection.In,
-            PipeOptions.Asynchronous);
-
-        Console.WriteLine("Waiting for SCS telemetry bridge…");
-        await pipe.ConnectAsync(5000, shutdown.Token);
-        Console.WriteLine("Telemetry bridge connected.");
-
-        using var reader = new StreamReader(pipe);
-
-        while (!shutdown.IsCancellationRequested && pipe.IsConnected)
-        {
-            var line = await reader.ReadLineAsync(shutdown.Token);
-            if (line is null) break;
-            if (string.IsNullOrWhiteSpace(line)) continue;
-
-            await HandleEnvelope(line, api, shutdown.Token);
-        }
-    }
-    catch (OperationCanceledException) when (shutdown.IsCancellationRequested)
-    {
-        break;
-    }
-    catch (TimeoutException)
-    {
-        Console.WriteLine("Telemetry bridge not available yet. Retrying…");
+        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(3));
+        await api.SendOfflineAsync(config.DriverId, timeout.Token);
+        Console.WriteLine("Driver marked offline.");
     }
     catch (Exception ex)
     {
-        Console.Error.WriteLine($"Telemetry connection error: {ex.Message}");
+        Console.Error.WriteLine($"Unable to send offline state: {ex.Message}");
     }
-
-    if (!shutdown.IsCancellationRequested)
-        await Task.Delay(2000, shutdown.Token);
 }
 
 return 0;
+
+static async Task RunPipeClient(OpenHaulApi api, ClientConfig config, CancellationToken token)
+{
+    while (!token.IsCancellationRequested)
+    {
+        try
+        {
+            await using var pipe = new NamedPipeClientStream(
+                ".",
+                config.PipeName,
+                PipeDirection.In,
+                PipeOptions.Asynchronous);
+
+            Console.WriteLine("Waiting for SCS telemetry bridge…");
+            await pipe.ConnectAsync(5000, token);
+            Console.WriteLine("Telemetry bridge connected.");
+
+            using var reader = new StreamReader(pipe);
+
+            while (!token.IsCancellationRequested && pipe.IsConnected)
+            {
+                var line = await reader.ReadLineAsync(token);
+                if (line is null) break;
+                if (string.IsNullOrWhiteSpace(line)) continue;
+
+                await HandleEnvelope(line, api, token);
+            }
+        }
+        catch (OperationCanceledException) when (token.IsCancellationRequested)
+        {
+            return;
+        }
+        catch (TimeoutException)
+        {
+            Console.WriteLine("Telemetry bridge not available yet. Retrying…");
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Telemetry connection error: {ex.Message}");
+        }
+
+        if (!token.IsCancellationRequested)
+            await Task.Delay(2000, token);
+    }
+}
 
 static async Task HandleEnvelope(string json, OpenHaulApi api, CancellationToken token)
 {
