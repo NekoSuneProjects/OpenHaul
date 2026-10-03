@@ -54,6 +54,23 @@ export default function DriverProfilePage() {
         <article className="card"><h3>{user.ownsAts === true ? "✅" : user.ownsAts === false ? "❌" : "⚪"}</h3><p>ATS ownership</p></article>
       </section>
 
+      {data.twitch ? (
+        <>
+          <div className="sectionTitle"><h2>Twitch</h2></div>
+          <section className="card">
+            <h3>{data.twitch.displayName}</h3>
+            <p>{data.twitch.live ? "🔴 Live · " + (data.twitch.gameName || "Unknown category") : "Offline"}</p>
+            {data.twitch.streamTitle ? <p>{data.twitch.streamTitle}</p> : null}
+            <div className="actions">
+              <a className="button primary" href={"https://twitch.tv/" + data.twitch.login}>Open Twitch channel</a>
+              {data.twitch.live && (data.twitch.gameName === "Euro Truck Simulator 2" || data.twitch.gameName === "American Truck Simulator")
+                ? <span className="pill">Registered trucking streamer</span>
+                : null}
+            </div>
+          </section>
+        </>
+      ) : null}
+
       <div className="sectionTitle"><h2>VTC memberships</h2></div>
       <section className="grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))" }}>
         {(data.memberships ?? []).map((membership: any) => {
