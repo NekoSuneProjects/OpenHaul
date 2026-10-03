@@ -93,13 +93,15 @@ $PmTilesFile = Join-Path $PmTilesOut "$Game.pmtiles"
 
 # One-time migration of TruckSim Maps parser JSONs from the old flat map-build root.
 $LegacyParsedPrefix = if ($Game -eq "ets2") { "europe-" } else { "usa-" }
-Get-ChildItem -LiteralPath $ParserOut -Filter "$LegacyParsedPrefix*.json" -File -ErrorAction SilentlyContinue | ForEach-Object {
-  $Destination = Join-Path $ParsedOut $_.Name
-  if (-not (Test-Path -LiteralPath $Destination -PathType Leaf)) {
-    Move-Item -LiteralPath $_.FullName -Destination $Destination -Force
-    Write-Host "Migrated parser JSON: $($_.Name) -> $ParsedOut"
+Get-ChildItem -LiteralPath $ParserOut -Filter "$LegacyParsedPrefix*" -File -ErrorAction SilentlyContinue |
+  Where-Object { $_.Extension -in @(".json", ".txt") } |
+  ForEach-Object {
+    $Destination = Join-Path $ParsedOut $_.Name
+    if (-not (Test-Path -LiteralPath $Destination -PathType Leaf)) {
+      Move-Item -LiteralPath $_.FullName -Destination $Destination -Force
+      Write-Host "Migrated parser output: $($_.Name) -> $ParsedOut"
+    }
   }
-}
 
 if ((Test-Path -LiteralPath $LegacyGeoJson -PathType Leaf) -and -not (Test-Path -LiteralPath $GeoJsonFile -PathType Leaf)) {
   Move-Item -LiteralPath $LegacyGeoJson -Destination $GeoJsonFile -Force
