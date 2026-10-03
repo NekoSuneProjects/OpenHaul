@@ -119,9 +119,10 @@ public sealed class MainForm : Form
         };
 
         AddNav(sidebar, "play", "▶  Play", 20);
-        AddNav(sidebar, "account", "●  Account", 72);
-        AddNav(sidebar, "updates", "⇩  Updates", 124);
-        AddNav(sidebar, "settings", "⚙  Settings", 176);
+        AddNav(sidebar, "servers", "▣  Server Status", 72);
+        AddNav(sidebar, "account", "●  Account", 124);
+        AddNav(sidebar, "updates", "⇩  Updates", 176);
+        AddNav(sidebar, "settings", "⚙  Settings", 228);
 
         var version = new Label
         {
@@ -249,6 +250,7 @@ public sealed class MainForm : Form
 
         Control next = page switch
         {
+            "servers" => BuildServersPage(),
             "account" => BuildAccountPage(),
             "updates" => BuildUpdatesPage(),
             "settings" => BuildSettingsPage(),
@@ -344,6 +346,164 @@ public sealed class MainForm : Form
 
         RefreshSelectedGamePath();
         ApplyMandatoryUpdateState();
+        return page;
+    }
+
+    private Control BuildServersPage()
+    {
+        var page = PagePanel();
+        page.Controls.Add(PageTitle("Server Status", "Live TruckersMP player counts for ETS2 and ATS."));
+
+        var refresh = new Button
+        {
+            Text = "Refresh",
+            Width = 120,
+            Height = 38,
+            Location = new Point(764, 34),
+        };
+        StyleButton(refresh, false);
+        page.Controls.Add(refresh);
+
+        var scroll = new Panel
+        {
+            Location = new Point(24, 110),
+            Size = new Size(860, 420),
+            AutoScroll = true,
+            BackColor = C(4, 15, 10),
+        };
+        page.Controls.Add(scroll);
+
+        async Task LoadServersAsync()
+        {
+            refresh.Enabled = false;
+            scroll.Controls.Clear();
+
+            var loading = new Label
+            {
+                Text = "Loading TruckersMP servers…",
+                AutoSize = true,
+                ForeColor = C(145, 178, 160),
+                Location = new Point(8, 8),
+            };
+            scroll.Controls.Add(loading);
+
+            try
+            {
+                using var http = new HttpClient
+                {
+                    BaseAddress = new Uri(ServerUrl() + "/"),
+                    Timeout = TimeSpan.FromSeconds(15),
+                };
+
+                var data = await http.GetFromJsonAsync<TruckersMpServerResponse>(
+                    "api/v1/public/truckersmp/servers",
+                    _lifetime.Token);
+
+                scroll.Controls.Clear();
+
+                var servers = data?.Servers ?? [];
+                var groups = new[]
+                {
+                    ("Euro Truck Simulator 2", servers.Where(s => s.Game.Contains("ets2", StringComparison.OrdinalIgnoreCase) || s.Game.Contains("euro", StringComparison.OrdinalIgnoreCase)).ToArray()),
+                    ("American Truck Simulator", servers.Where(s => s.Game.Contains("ats", StringComparison.OrdinalIgnoreCase) || s.Game.Contains("american", StringComparison.OrdinalIgnoreCase)).ToArray()),
+                };
+
+                var y = 0;
+
+                foreach (var (title, group) in groups)
+                {
+                    var heading = new Label
+                    {
+                        Text = title,
+                        Font = new Font("Segoe UI", 15F, FontStyle.Bold),
+                        AutoSize = true,
+                        Location = new Point(6, y),
+                    };
+                    scroll.Controls.Add(heading);
+                    y += 38;
+
+                    if (group.Length == 0)
+                    {
+                        var empty = new Label
+                        {
+                            Text = "No servers reported.",
+                            AutoSize = true,
+                            ForeColor = C(130, 160, 144),
+                            Location = new Point(8, y),
+                        };
+                        scroll.Controls.Add(empty);
+                        y += 34;
+                        continue;
+                    }
+
+                    foreach (var server in group)
+                    {
+                        var card = Card(6, y, 810, 72);
+
+                        card.Controls.Add(new Label
+                        {
+                            Text = server.Name,
+                            Font = new Font("Segoe UI", 11F, FontStyle.Bold),
+                            AutoSize = true,
+                            Location = new Point(18, 12),
+                            ForeColor = server.Online ? Color.White : C(140, 140, 140),
+                        });
+
+                        card.Controls.Add(new Label
+                        {
+                            Text = server.Online ? "Online" : "Offline",
+                            AutoSize = true,
+                            Location = new Point(18, 39),
+                            ForeColor = server.Online ? C(72, 222, 133) : C(190, 90, 90),
+                        });
+
+                        card.Controls.Add(new Label
+                        {
+                            Text = $"{server.Players:n0} / {server.MaxPlayers:n0}",
+                            Font = new Font("Segoe UI", 12F, FontStyle.Bold),
+                            AutoSize = true,
+                            Location = new Point(600, 12),
+                        });
+
+                        card.Controls.Add(new Label
+                        {
+                            Text = server.Queue > 0 ? $"Queue: {server.Queue:n0}" : "No queue",
+                            AutoSize = true,
+                            Location = new Point(600, 39),
+                            ForeColor = C(145, 178, 160),
+                        });
+
+                        scroll.Controls.Add(card);
+                        y += 82;
+                    }
+
+                    y += 18;
+                }
+
+                if (data is not null)
+                    SetStatus($"TruckersMP server status updated · {data.Count} servers.");
+            }
+            catch (Exception ex)
+            {
+                scroll.Controls.Clear();
+                scroll.Controls.Add(new Label
+                {
+                    Text = "Unable to load TruckersMP server status: " + ex.Message,
+                    AutoSize = true,
+                    MaximumSize = new Size(800, 0),
+                    ForeColor = C(200, 120, 120),
+                    Location = new Point(8, 8),
+                });
+            }
+            finally
+            {
+                refresh.Enabled = true;
+            }
+        }
+
+        refresh.Click += async (_, _) => await LoadServersAsync();
+        BeginInvoke(async () => await LoadServersAsync());
+
         return page;
     }
 
@@ -962,6 +1122,21 @@ public sealed class MainForm : Form
     {
         Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
     }
+
+    private sealed record TruckersMpServerResponse(
+        string Source,
+        DateTimeOffset FetchedAt,
+        int Count,
+        IReadOnlyList<TruckersMpServer> Servers);
+
+    private sealed record TruckersMpServer(
+        int Id,
+        string Name,
+        string Game,
+        bool Online,
+        int Players,
+        int Queue,
+        int MaxPlayers);
 
     private sealed record ClientAuthStart(
         string RequestId,
