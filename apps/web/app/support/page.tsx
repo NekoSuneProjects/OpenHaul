@@ -24,6 +24,7 @@ function money(currency: string, value: number) {
 export default function SupportPage() {
   const [enabled, setEnabled] = useState(false);
   const [goals, setGoals] = useState<Goal[]>([]);
+  const [donationUrl, setDonationUrl] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`${api}/api/v1/public/donation-goals`, { cache: "no-store" })
@@ -31,6 +32,7 @@ export default function SupportPage() {
       .then((data) => {
         setEnabled(Boolean(data.enabled));
         setGoals(data.goals ?? []);
+        setDonationUrl(typeof data.donationUrl === "string" ? data.donationUrl : null);
       })
       .catch(() => {});
   }, []);
@@ -41,8 +43,8 @@ export default function SupportPage() {
         <span className="eyebrow">Community support</span>
         <h1 style={{ fontSize: "clamp(2.6rem,6vw,4.8rem)" }}>Help OpenHaul grow.</h1>
         <p className="lede">
-          Funding goals can be used by a self-hosted OpenHaul instance for DLC, convoy costs, hosting or community projects.
-          Payment providers are deliberately separate from the goal tracker.
+          Funding goals can be used for DLC, convoy costs, hosting or community projects.
+          Donations are handled through Ko-fi.
         </p>
       </section>
 
@@ -65,6 +67,22 @@ export default function SupportPage() {
                 <strong>{money(goal.currency, current)}</strong>
                 <span className="muted">of {money(goal.currency, target)}</span>
               </div>
+              {donationUrl ? (
+                <div className="actions" style={{ marginTop: 18 }}>
+                  <a
+                    className="button primary"
+                    href={donationUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Donate on Ko-fi
+                  </a>
+                </div>
+              ) : (
+                <p className="muted" style={{ marginTop: 16 }}>
+                  Ko-fi is not configured for this OpenHaul instance.
+                </p>
+              )}
             </article>
           );
         })}
