@@ -3,7 +3,7 @@ import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
 import Fastify from "fastify";
 import { z } from "zod";
-import { Fine, Job, Vtc, initDatabase } from "./db.js";
+import { Fine, Job, User, Vtc, VtcMember, initDatabase } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
@@ -233,6 +233,36 @@ app.get("/api/v1/vtc/jobs", { preHandler: [requireVtcApiKey, requireScope("jobs:
 app.get("/api/v1/vtc/fines", { preHandler: [requireVtcApiKey, requireScope("fines:read")] }, async (request) => ({
   fines: await Fine.findAll({ where: { vtcId: request.openhaulVtc!.id }, order: [["occurredAt", "DESC"]], limit: 100 }),
 }));
+
+app.get("/api/v1/vtc/members", { preHandler: [requireVtcApiKey, requireScope("members:read")] }, async (request) => ({
+  members: await VtcMember.findAll({
+    where: { vtcId: request.openhaulVtc!.id, status: "active" },
+    include: [{ model: User, attributes: ["steamId", "displayName", "avatarUrl"] }],
+    order: [["id", "ASC"]],
+  }),
+}));
+
+app.get("/api/v1/vtc/statistics", { preHandler: [requireVtcApiKey, requireScope("statistics:read")] }, async (request) => {
+  const vtcId = request.openhaulVtc!.id;
+  const [members, jobs, distanceKm, income, fines, fineAmount] = await Promise.all([
+    VtcMember.count({ where: { vtcId, status: "active" } }),
+    Job.count({ where: { vtcId } }),
+    Job.sum("distanceKm", { where: { vtcId } }),
+    Job.sum("income", { where: { vtcId } }),
+    Fine.count({ where: { vtcId } }),
+    Fine.sum("amount", { where: { vtcId } }),
+  ]);
+
+  return {
+    vtcId,
+    members,
+    jobs,
+    distanceKm: Number(distanceKm || 0),
+    income: Number(income || 0),
+    fines,
+    fineAmount: Number(fineAmount || 0),
+  };
+});
 
 app.setErrorHandler((error, _request, reply) => {
   if (error instanceof z.ZodError) return reply.code(400).send({ error: "validation_error", issues: error.issues });
