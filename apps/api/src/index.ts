@@ -16,6 +16,7 @@ import { registerSteamDlcRoutes } from "./steamDlc.js";
 import { registerPublicDriverRoutes } from "./publicDrivers.js";
 import { registerUserApiKeyRoutes } from "./userApiKeys.js";
 import { registerTwitchRoutes } from "./twitch.js";
+import { registerVtcApiKeyManagementRoutes } from "./vtcApiKeyManagement.js";
 import { registerClientTokenRoutes } from "./clientTokens.js";
 import { requireTelemetryIdentity, resolveUserVtc } from "./telemetryAuth.js";
 
@@ -32,6 +33,7 @@ await registerSteamDlcRoutes(app);
 await registerPublicDriverRoutes(app);
 await registerUserApiKeyRoutes(app);
 await registerTwitchRoutes(app);
+await registerVtcApiKeyManagementRoutes(app);
 await registerClientTokenRoutes(app);
 
 const liveSchema = z.object({
