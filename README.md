@@ -175,6 +175,16 @@ It currently publishes world position, heading, speed, RPM, fuel, odometer, navi
 
 OpenHaul does not redistribute ETS2/ATS map assets. You generate them from your own installed game files, then OpenHaul serves the resulting PMTiles.
 
+First clone the [TruckSim Maps source repository](https://github.com/truckermudgeon/maps) including its submodules:
+
+```powershell
+git clone --recurse-submodules https://github.com/truckermudgeon/maps.git C:\src\maps
+```
+
+`-TruckSimMapsPath` must be the source checkout root containing `package.json` and `packages/clis/parser`, not an empty `GameMap/ETS2` or `GameMap/ATS` directory. Both games can use the same checkout. For an existing clone, run `git -C C:\src\maps submodule update --init --recursive`.
+
+Install Node.js/npm, Docker, and the node-gyp prerequisites (Python and Visual Studio C++ Build Tools on Windows). The helper installs missing dependencies and builds the native parser addons before parsing.
+
 A helper is included:
 
 ```powershell

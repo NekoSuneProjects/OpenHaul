@@ -20,6 +20,14 @@ $OpenHaulRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\\..")).Path
 $GamePath = (Resolve-Path $GamePath).Path
 $TruckSimMapsPath = (Resolve-Path $TruckSimMapsPath).Path
 
+# npm searches parent directories when the selected directory has no package.json.
+# Validate before installing anything so an empty folder cannot select OpenHaul.
+foreach ($RequiredFile in @("package.json", "packages/clis/parser/package.json", "packages/clis/parser/index.ts", "packages/clis/generator/package.json", "packages/clis/generator/index.ts")) {
+  if (-not (Test-Path -LiteralPath (Join-Path $TruckSimMapsPath $RequiredFile) -PathType Leaf)) {
+    throw "TruckSimMapsPath must point to a TruckSim Maps source checkout, not an empty game/output folder. Missing: $RequiredFile in $TruckSimMapsPath. Clone https://github.com/truckermudgeon/maps.git with --recurse-submodules, then pass the clone root as -TruckSimMapsPath. See README.md: Real SCS road map data."
+  }
+}
+
 $MapId = if ($Game -eq "ets2") { "europe" } else { "usa" }
 $ParserOut = Join-Path $OpenHaulRoot $WorkDir
 $GeneratorOut = Join-Path $ParserOut "generated"
@@ -39,18 +47,29 @@ Write-Host "Working directory: $ParserOut"
 
 Push-Location $TruckSimMapsPath
 try {
-  if (-not (Test-Path "node_modules")) {
+  $TsxCli = Join-Path $TruckSimMapsPath "node_modules/tsx/dist/cli.mjs"
+  if (-not (Test-Path -LiteralPath $TsxCli -PathType Leaf)) {
     Write-Host "Installing TruckSim Maps dependencies..."
     npm install
     if ($LASTEXITCODE -ne 0) { throw "npm install failed." }
   }
 
+  if (-not (Test-Path -LiteralPath $TsxCli -PathType Leaf)) {
+    throw "TruckSim Maps dependencies are incomplete: $TsxCli is missing. Run npm install in $TruckSimMapsPath."
+  }
+
+  Write-Host "Building TruckSim Maps native parser addons..."
+  npm run build --workspace=packages/clis/parser
+  if ($LASTEXITCODE -ne 0) { throw "TruckSim Maps native parser build failed. Ensure submodules are initialized and node-gyp build prerequisites are installed (Python and Visual Studio C++ Build Tools on Windows)." }
+
+  # Use this checkout's TypeScript runner directly; never fetch generic CLI names
+  # from the npm registry or depend on Unix-style parser symlinks on Windows.
   Write-Host "Parsing installed SCS game files..."
-  npx parser -i "$GamePath" -o "$ParserOut"
+  node "$TsxCli" "packages/clis/parser/index.ts" -i "$GamePath" -o "$ParserOut"
   if ($LASTEXITCODE -ne 0) { throw "TruckSim Maps parser failed." }
 
   Write-Host "Generating SCS road/prefab/city GeoJSON..."
-  npx generator map -m $MapId -i "$ParserOut" -o "$GeneratorOut" -t geojson
+  node "$TsxCli" "packages/clis/generator/index.ts" map -m $MapId -i "$ParserOut" -o "$GeneratorOut" -t geojson
   if ($LASTEXITCODE -ne 0) { throw "TruckSim Maps GeoJSON generator failed." }
 }
 finally {
