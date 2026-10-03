@@ -64,6 +64,9 @@ jobs:
       - name: Build
         run: dotnet build clients/windows/OpenHaul.Client/OpenHaul.Client.csproj -c Release --no-restore -p:Version=${{ env.OPENHAUL_CLIENT_VERSION }}
 
+      - name: Check plugin telemetry forwarding
+        run: dotnet run --project clients/windows/OpenHaul.Client.Tests/OpenHaul.Client.Tests.csproj -c Release
+
       - name: Publish self-contained GUI client
         shell: pwsh
         run: |

@@ -5,6 +5,8 @@ namespace OpenHaul.Client;
 
 public sealed class TelemetryService : IAsyncDisposable
 {
+    private static readonly JsonSerializerOptions PluginJson = new(JsonSerializerDefaults.Web);
+    private bool _liveAccepted;
     private readonly ClientConfig _config;
     private readonly OpenHaulApi _api;
 
@@ -33,7 +35,8 @@ public sealed class TelemetryService : IAsyncDisposable
                         PipeOptions.Asynchronous);
 
                     await pipe.ConnectAsync(5000, token);
-                    Status?.Invoke("Telemetry connected.");
+                    _liveAccepted = false;
+                    Status?.Invoke("Plugin connected; waiting for driving telemetry.");
 
                     using var reader = new StreamReader(pipe);
                     while (!token.IsCancellationRequested && pipe.IsConnected)
@@ -92,7 +95,7 @@ public sealed class TelemetryService : IAsyncDisposable
         {
             case "live":
             {
-                var plugin = data.Deserialize<PluginLiveTelemetry>();
+                var plugin = data.Deserialize<PluginLiveTelemetry>(PluginJson);
                 if (plugin is null) return;
 
                 var live = new LiveTelemetry(
@@ -127,7 +130,7 @@ public sealed class TelemetryService : IAsyncDisposable
 
             case "fine":
             {
-                var plugin = data.Deserialize<PluginFineTelemetry>();
+                var plugin = data.Deserialize<PluginFineTelemetry>(PluginJson);
                 if (plugin is null) return;
 
                 var fine = new FineTelemetry(
@@ -146,7 +149,7 @@ public sealed class TelemetryService : IAsyncDisposable
 
             case "job.completed":
             {
-                var plugin = data.Deserialize<PluginJobCompletedTelemetry>();
+                var plugin = data.Deserialize<PluginJobCompletedTelemetry>(PluginJson);
                 if (plugin is null) return;
 
                 var job = new JobCompletedTelemetry(
@@ -165,8 +168,20 @@ public sealed class TelemetryService : IAsyncDisposable
             }
         }
 
-        if (response is not null && !response.IsSuccessStatusCode)
-            Status?.Invoke($"OpenHaul rejected {type}: {(int)response.StatusCode} {response.ReasonPhrase}");
+        if (response is null) return;
+        using (response)
+        {
+            if (!response.IsSuccessStatusCode)
+            {
+                if (type == "live") _liveAccepted = false;
+                Status?.Invoke($"OpenHaul rejected {type}: {(int)response.StatusCode} {response.ReasonPhrase}");
+            }
+            else if (type == "live" && !_liveAccepted)
+            {
+                _liveAccepted = true;
+                Status?.Invoke("Online: driving telemetry accepted by OpenHaul.");
+            }
+        }
     }
 
     private static string NormalizeFineType(string offence) => offence.ToLowerInvariant() switch
