@@ -20,4 +20,5 @@ jobs:
           node-version: 22
       - run: npm install
       - run: npm run typecheck
+      - run: npm run check:projection -w @openhaul/web
       - run: npm run build
