@@ -55,7 +55,7 @@ const liveSchema = z.object({
 });
 
 const fineSchema = z.object({
-  vtcId: z.number().int().positive(),
+  vtcId: z.number().int().positive().nullable().optional(),
   driverId: z.string().min(1).max(80),
   game: z.enum(["ets2", "ats"]),
   type: z.enum(["red_light", "speeding", "wrong_way", "collision", "parking", "toll", "other"]),
@@ -66,7 +66,7 @@ const fineSchema = z.object({
 });
 
 const jobSchema = z.object({
-  vtcId: z.number().int().positive(),
+  vtcId: z.number().int().positive().nullable().optional(),
   driverId: z.string().min(1).max(80),
   game: z.enum(["ets2", "ats"]),
   cargo: z.string().max(160).nullable().optional(),
@@ -174,12 +174,12 @@ app.post("/api/v1/telemetry/fines", async (request, reply) => {
 
   if (identity.kind === "user") {
     const membership = await resolveUserVtc(identity.user, body.vtcId);
-    if (!membership) return reply.code(403).send({ error: "not_member_of_vtc" });
+    if (body.vtcId && !membership) return reply.code(403).send({ error: "not_member_of_vtc" });
 
     const fine = await Fine.create({
       ...body,
       driverId: identity.user.steamId,
-      vtcId: membership.vtc.id,
+      vtcId: membership?.vtc.id ?? null,
     });
     return reply.code(201).send({ fine });
   }
@@ -196,12 +196,12 @@ app.post("/api/v1/telemetry/jobs/completed", async (request, reply) => {
 
   if (identity.kind === "user") {
     const membership = await resolveUserVtc(identity.user, body.vtcId);
-    if (!membership) return reply.code(403).send({ error: "not_member_of_vtc" });
+    if (body.vtcId && !membership) return reply.code(403).send({ error: "not_member_of_vtc" });
 
     const job = await Job.create({
       ...body,
       driverId: identity.user.steamId,
-      vtcId: membership.vtc.id,
+      vtcId: membership?.vtc.id ?? null,
     });
     return reply.code(201).send({ job });
   }
