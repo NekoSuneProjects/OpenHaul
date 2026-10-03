@@ -16,6 +16,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link className="brand" href="/">Open<span>Haul</span></Link>
             <div className="links">
               <Link href="/map">Live Map</Link>
+              <Link href="/radio">Radio</Link>
               <Link href="/support">Support</Link>
               <Link href="/api-docs">API</Link>
               <a href="https://github.com/NekoSuneProjects/OpenHaul">GitHub</a>
