@@ -90,6 +90,13 @@ app.get("/api/v1/public/live/ws", { websocket: true }, (socket, request) => {
     });
 });
 
+app.get("/api/v1/public/vtcs/:id", async (request, reply) => {
+  const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+  const vtc = await Vtc.findByPk(id, { attributes: ["id", "name", "slug", "tag"] });
+  if (!vtc) return reply.code(404).send({ error: "vtc_not_found" });
+  return { vtc };
+});
+
 app.get("/api/v1/public/vtcs/:id/live", async (request) => {
   const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
   const drivers = await getLiveDrivers(id);
