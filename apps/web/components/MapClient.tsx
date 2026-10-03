@@ -38,6 +38,7 @@ type LiveMessage =
   | { type: "driver.offline"; driverId: string };
 
 type GameFilter = "all" | "ets2" | "ats";
+type MapMode = "road" | "satellite" | "xray";
 
 type MapAsset = {
   available: boolean;
@@ -64,7 +65,12 @@ type InterpolatedDriver = Driver & {
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
-const customStyle = process.env.NEXT_PUBLIC_MAP_STYLE_URL;
+const roadTileUrl =
+  process.env.NEXT_PUBLIC_MAP_ROAD_TILE_URL ??
+  "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+const satelliteTileUrl =
+  process.env.NEXT_PUBLIC_MAP_SATELLITE_TILE_URL ??
+  "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
 const DEFAULT_INTERPOLATION_MS = 1000;
 const FRAME_INTERVAL_MS = 33;
 
@@ -82,26 +88,77 @@ function defaultMapStyle() {
   return {
     version: 8 as const,
     sources: {
-      osm: {
+      "openhaul-road-base": {
         type: "raster" as const,
-        tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+        tiles: [roadTileUrl],
         tileSize: 256,
         attribution: "© OpenStreetMap contributors",
+      },
+      "openhaul-satellite-base": {
+        type: "raster" as const,
+        tiles: [satelliteTileUrl],
+        tileSize: 256,
+        attribution: "Esri World Imagery",
       },
     },
     layers: [
       {
-        id: "osm",
-        type: "raster" as const,
-        source: "osm",
+        id: "openhaul-background",
+        type: "background" as const,
         paint: {
-          "raster-opacity": 0.36,
-          "raster-saturation": -0.65,
-          "raster-brightness-max": 0.62,
+          "background-color": "#06110c",
+        },
+      },
+      {
+        id: "openhaul-road-base",
+        type: "raster" as const,
+        source: "openhaul-road-base",
+        layout: { visibility: "visible" as const },
+        paint: {
+          "raster-opacity": 0.92,
+          "raster-saturation": -0.25,
+          "raster-brightness-max": 0.82,
+        },
+      },
+      {
+        id: "openhaul-satellite-base",
+        type: "raster" as const,
+        source: "openhaul-satellite-base",
+        layout: { visibility: "none" as const },
+        paint: {
+          "raster-opacity": 1,
+          "raster-saturation": -0.08,
+          "raster-contrast": 0.08,
         },
       },
     ],
   };
+}
+
+function setBaseMapMode(map: any, mode: MapMode) {
+  if (map.getLayer("openhaul-road-base")) {
+    map.setLayoutProperty(
+      "openhaul-road-base",
+      "visibility",
+      mode === "road" ? "visible" : "none",
+    );
+  }
+
+  if (map.getLayer("openhaul-satellite-base")) {
+    map.setLayoutProperty(
+      "openhaul-satellite-base",
+      "visibility",
+      mode === "satellite" ? "visible" : "none",
+    );
+  }
+
+  if (map.getLayer("openhaul-background")) {
+    map.setPaintProperty(
+      "openhaul-background",
+      "background-color",
+      mode === "xray" ? "#020805" : "#06110c",
+    );
+  }
 }
 
 function shortestHeading(from: number, to: number) {
@@ -155,6 +212,39 @@ function driverFeatureCollection(drivers: Driver[]) {
 }
 
 const SCS_LAYER_SUFFIXES = ["prefabs", "road-case", "roads", "rail", "ferry", "cities"] as const;
+
+function setScsMapTheme(map: any, game: "ets2" | "ats", mode: MapMode) {
+  const sourceId = "openhaul-" + game + "-map";
+
+  if (map.getLayer(sourceId + "-prefabs")) {
+    map.setPaintProperty(sourceId + "-prefabs", "fill-opacity", mode === "xray" ? 0.68 : 0.42);
+    map.setPaintProperty(sourceId + "-prefabs", "fill-color", mode === "satellite" ? "#1f3328" : "#16261f");
+  }
+
+  if (map.getLayer(sourceId + "-road-case")) {
+    map.setPaintProperty(sourceId + "-road-case", "line-color", mode === "xray" ? "#00150a" : "#07110c");
+    map.setPaintProperty(sourceId + "-road-case", "line-opacity", mode === "satellite" ? 1 : 0.95);
+  }
+
+  if (map.getLayer(sourceId + "-roads")) {
+    map.setPaintProperty(sourceId + "-roads", "line-color", [
+      "match",
+      ["get", "roadType"],
+      "freeway", mode === "xray" ? "#63ff9c" : "#54e08a",
+      "expressway", mode === "xray" ? "#87ffc0" : "#6bd995",
+      "local", mode === "xray" ? "#d8ffe7" : "#b5c7bd",
+      "no_vehicles", "#6f8076",
+      "unknown", "#87968e",
+      mode === "xray" ? "#f2fff7" : "#dce8e1",
+    ]);
+    map.setPaintProperty(sourceId + "-roads", "line-opacity", mode === "satellite" ? 1 : 0.96);
+  }
+
+  if (map.getLayer(sourceId + "-cities")) {
+    map.setPaintProperty(sourceId + "-cities", "text-color", mode === "satellite" ? "#ffffff" : "#e9f7ef");
+    map.setPaintProperty(sourceId + "-cities", "text-halo-color", mode === "xray" ? "#020805" : "#07110c");
+  }
+}
 
 function setScsMapVisibility(map: any, game: "ets2" | "ats", visible: boolean) {
   const sourceId = "openhaul-" + game + "-map";
@@ -329,6 +419,7 @@ export function MapClient() {
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [status, setStatus] = useState("Connecting…");
   const [gameFilter, setGameFilter] = useState<GameFilter>("all");
+  const [mapMode, setMapMode] = useState<MapMode>("road");
   const [mapReady, setMapReady] = useState(false);
   const [mapAssets, setMapAssets] = useState<MapAssets | null>(null);
 
@@ -393,9 +484,14 @@ export function MapClient() {
       protocolRef.current = protocol;
       maplibregl.addProtocol("pmtiles", protocol.tile);
 
+      const savedMode = window.localStorage.getItem("openhaul-map-mode") as MapMode | null;
+      if (savedMode === "road" || savedMode === "satellite" || savedMode === "xray") {
+        setMapMode(savedMode);
+      }
+
       const map = new maplibregl.Map({
         container: containerRef.current,
-        style: customStyle || defaultMapStyle(),
+        style: defaultMapStyle(),
         center: [5, 46],
         zoom: 3,
         minZoom: 1,
@@ -510,6 +606,9 @@ export function MapClient() {
         });
 
         mapRef.current = map;
+        const initialMode =
+          (window.localStorage.getItem("openhaul-map-mode") as MapMode | null) ?? "road";
+        setBaseMapMode(map, initialMode);
         setMapReady(true);
       });
     }
@@ -545,7 +644,19 @@ export function MapClient() {
 
     setScsMapVisibility(map, "ets2", gameFilter === "all" || gameFilter === "ets2");
     setScsMapVisibility(map, "ats", gameFilter === "all" || gameFilter === "ats");
-  }, [mapReady, mapAssets, gameFilter]);
+    setScsMapTheme(map, "ets2", mapMode);
+    setScsMapTheme(map, "ats", mapMode);
+  }, [mapReady, mapAssets, gameFilter, mapMode]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!mapReady || !map) return;
+
+    setBaseMapMode(map, mapMode);
+    setScsMapTheme(map, "ets2", mapMode);
+    setScsMapTheme(map, "ats", mapMode);
+    window.localStorage.setItem("openhaul-map-mode", mapMode);
+  }, [mapReady, mapMode]);
 
   useEffect(() => {
     let active = true;
@@ -761,6 +872,10 @@ export function MapClient() {
           <button className={"button " + (gameFilter === "all" ? "primary" : "")} onClick={() => setGameFilter("all")}>All</button>
           <button className={"button " + (gameFilter === "ets2" ? "primary" : "")} onClick={() => setGameFilter("ets2")}>ETS2</button>
           <button className={"button " + (gameFilter === "ats" ? "primary" : "")} onClick={() => setGameFilter("ats")}>ATS</button>
+          <span className="mapToolbarDivider" aria-hidden="true" />
+          <button className={"button mapModeButton " + (mapMode === "road" ? "primary" : "")} onClick={() => setMapMode("road")}>🗺 Road</button>
+          <button className={"button mapModeButton " + (mapMode === "satellite" ? "primary" : "")} onClick={() => setMapMode("satellite")}>🛰 Satellite</button>
+          <button className={"button mapModeButton " + (mapMode === "xray" ? "primary" : "")} onClick={() => setMapMode("xray")}>◉ X-Ray</button>
         </div>
 
         <div ref={containerRef} className="mapCanvas" />
