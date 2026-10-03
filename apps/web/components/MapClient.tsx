@@ -75,6 +75,12 @@ const satelliteTileUrl =
 const DEFAULT_INTERPOLATION_MS = 1000;
 const FRAME_INTERVAL_MS = 33;
 
+const GAME_FOCUS = {
+  ets2: { center: [15, 50] as [number, number], zoom: 3.7 },
+  ats: { center: [-104, 39] as [number, number], zoom: 3.5 },
+  all: { center: [-26, 45] as [number, number], zoom: 2.1 },
+};
+
 function toWsUrl(base: string) {
   if (base.startsWith("https://")) return "wss://" + base.slice(8);
   if (base.startsWith("http://")) return "ws://" + base.slice(7);
@@ -921,6 +927,59 @@ export function MapClient() {
     return () => cancelAnimationFrame(frame);
   }, [mapReady, cameraMode, selectedDriverId]);
 
+  const focusGame = (game: GameFilter) => {
+    setGameFilter(game);
+    setCameraMode("map");
+    fittedRef.current = true;
+
+    const map = mapRef.current;
+    const maplibregl = maplibreRef.current;
+    if (!mapReady || !map || !maplibregl) return;
+
+    map.setPadding({ top: 0, right: 0, bottom: 0, left: 0 });
+
+    const matchingDrivers =
+      game === "all" ? drivers : drivers.filter((driver) => driver.game === game);
+
+    const positions = matchingDrivers
+      .map((driver) => gameCoordsToLonLat(driver.game, driver.x, driver.z))
+      .filter(isValidLonLat);
+
+    if (positions.length >= 2) {
+      const bounds = new maplibregl.LngLatBounds();
+      for (const position of positions) bounds.extend(position);
+
+      map.fitBounds(bounds, {
+        padding: 90,
+        maxZoom: game === "all" ? 5 : 7,
+        duration: 900,
+        pitch: 0,
+        bearing: 0,
+      });
+      return;
+    }
+
+    if (positions.length === 1) {
+      map.easeTo({
+        center: positions[0],
+        zoom: 7,
+        pitch: 0,
+        bearing: 0,
+        duration: 900,
+      });
+      return;
+    }
+
+    const target = GAME_FOCUS[game];
+    map.easeTo({
+      center: target.center,
+      zoom: target.zoom,
+      pitch: 0,
+      bearing: 0,
+      duration: 900,
+    });
+  };
+
   const applyFilter = () => {
     const next = vtc.trim();
     window.location.href = next ? "/map?vtc=" + encodeURIComponent(next) : "/map";
@@ -945,9 +1004,9 @@ export function MapClient() {
         <div className="mapToolbar">
           <input value={vtc} onChange={(e) => setVtc(e.target.value)} placeholder="VTC ID (blank = global)" />
           <button className="button" onClick={applyFilter}>Apply</button>
-          <button className={"button " + (gameFilter === "all" ? "primary" : "")} onClick={() => setGameFilter("all")}>All</button>
-          <button className={"button " + (gameFilter === "ets2" ? "primary" : "")} onClick={() => setGameFilter("ets2")}>ETS2</button>
-          <button className={"button " + (gameFilter === "ats" ? "primary" : "")} onClick={() => setGameFilter("ats")}>ATS</button>
+          <button className={"button " + (gameFilter === "all" ? "primary" : "")} onClick={() => focusGame("all")}>All</button>
+          <button className={"button " + (gameFilter === "ets2" ? "primary" : "")} onClick={() => focusGame("ets2")}>ETS2</button>
+          <button className={"button " + (gameFilter === "ats" ? "primary" : "")} onClick={() => focusGame("ats")}>ATS</button>
           <span className="mapToolbarDivider" aria-hidden="true" />
           <button className={"button mapModeButton " + (mapMode === "road" ? "primary" : "")} onClick={() => setMapMode("road")}>🗺 Road</button>
           <button className={"button mapModeButton " + (mapMode === "satellite" ? "primary" : "")} onClick={() => setMapMode("satellite")}>🛰 Satellite</button>
