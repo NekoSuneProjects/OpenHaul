@@ -20,7 +20,7 @@ type Community = {
   currency?: string;
 };
 
-const api = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 export default function VtcProfilePage() {
   const params = useParams<{ id: string }>();
