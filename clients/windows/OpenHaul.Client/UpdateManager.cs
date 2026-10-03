@@ -441,6 +441,11 @@ public sealed record ClientRelease(
     [property: JsonPropertyName("installerUrl")] string InstallerUrl,
     [property: JsonPropertyName("sha256")] string Sha256);
 
+public sealed record TelemetryUpdateManifest(
+    [property: JsonPropertyName("schemaVersion")] int SchemaVersion,
+    [property: JsonPropertyName("publishedAt")] DateTimeOffset PublishedAt,
+    [property: JsonPropertyName("telemetry")] TelemetryRelease Telemetry);
+
 public sealed record TelemetryRelease(
     [property: JsonPropertyName("version")] string Version,
     [property: JsonPropertyName("url")] string Url,
