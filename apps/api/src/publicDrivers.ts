@@ -36,7 +36,7 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
       return reply.code(404).send({ error: "driver_profile_private" });
     }
 
-    const [memberships, jobs, fines, distanceKm, income, fineAmount, liveDrivers, twitch, moderation, nameChanges] = await Promise.all([
+    const [memberships, jobs, fines, distanceKm, income, fineAmount, longestJobKm, bestJobIncome, firstJob, liveDrivers, twitch, moderation, nameChanges] = await Promise.all([
       VtcMember.findAll({
         where: { userId: user.id, status: "active" },
         include: [{ model: Vtc, attributes: ["id", "name", "slug", "tag"] }],
@@ -54,6 +54,9 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
       Job.sum("distanceKm", { where: { driverId: steamId } }),
       Job.sum("income", { where: { driverId: steamId } }),
       Fine.sum("amount", { where: { driverId: steamId } }),
+      Job.max("distanceKm", { where: { driverId: steamId } }),
+      Job.max("income", { where: { driverId: steamId } }),
+      Job.findOne({ where: { driverId: steamId }, order: [["completedAt", "ASC"]] }),
       getLiveDrivers(),
       TwitchAccount.findOne({ where: { userId: user.id } }),
       user.getDataValue("moderationVisibility") === "public"
@@ -84,6 +87,12 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
         fineAmount: Number(fineAmount || 0),
         netIncome: Number(income || 0) - Number(fineAmount || 0),
         fines: await Fine.count({ where: { driverId: steamId } }),
+        longestJobKm: Number(longestJobKm || 0),
+        bestJobIncome: Number(bestJobIncome || 0),
+        averageIncomePerJob: (await Job.count({ where: { driverId: steamId } })) > 0
+          ? Number(income || 0) / (await Job.count({ where: { driverId: steamId } }))
+          : 0,
+        firstDeliveryAt: firstJob?.getDataValue("completedAt") ?? null,
       },
       live,
       twitch,
