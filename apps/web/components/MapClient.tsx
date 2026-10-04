@@ -719,6 +719,17 @@ export function MapClient() {
 
   useEffect(() => {
     let disposed = false;
+    let resizeObserver: ResizeObserver | null = null;
+    let resizeFrame = 0;
+
+    const queueMapResize = () => {
+      if (disposed) return;
+      if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
+      resizeFrame = window.requestAnimationFrame(() => {
+        resizeFrame = 0;
+        if (!disposed) mapRef.current?.resize();
+      });
+    };
 
     async function createMap() {
       if (!containerRef.current || mapRef.current) return;
@@ -756,6 +767,15 @@ export function MapClient() {
         keyboard: true,
       });
 
+      // Keep MapLibre's backing canvas in sync with the actual panel size.
+      // This matters especially inside the WebView overlay iframe, where the
+      // iframe can grow from its initial browser size after MapLibre starts.
+      mapRef.current = map;
+      resizeObserver = new ResizeObserver(queueMapResize);
+      resizeObserver.observe(containerRef.current);
+      window.addEventListener("resize", queueMapResize);
+      queueMapResize();
+
       map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
       map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
@@ -770,6 +790,10 @@ export function MapClient() {
       map.getCanvas().addEventListener("wheel", takeManualCameraControl, { passive: true });
 
       map.on("load", () => {
+        queueMapResize();
+        window.setTimeout(queueMapResize, 0);
+        window.setTimeout(queueMapResize, 150);
+
         if (!map.getSource("openhaul-drivers")) {
           map.addSource("openhaul-drivers", {
             type: "geojson",
@@ -1013,7 +1037,6 @@ export function MapClient() {
             .addTo(map);
         });
 
-        mapRef.current = map;
         const initialMode =
           (window.localStorage.getItem("openhaul-map-mode") as MapMode | null) ?? "road";
         setBaseMapMode(map, initialMode);
@@ -1025,6 +1048,9 @@ export function MapClient() {
 
     return () => {
       disposed = true;
+      if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
+      resizeObserver?.disconnect();
+      window.removeEventListener("resize", queueMapResize);
       mapRef.current?.remove();
       mapRef.current = null;
 
