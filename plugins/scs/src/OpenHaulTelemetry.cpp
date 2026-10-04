@@ -119,6 +119,7 @@ private:
 struct TelemetryState {
     std::string game = "unknown";
     bool driving = false;
+    bool paused = false;
     bool hasPlacement = false;
     double x = 0;
     double y = 0;
@@ -151,12 +152,61 @@ struct TelemetryState {
     float plannedDistanceKm = 0;
     bool specialJob = false;
     bool cargoLoaded = false;
+    bool jobActive = false;
+    bool jobFinishedNormally = false;
+    std::string jobSignature;
+    double jobSourceX = 0;
+    double jobSourceZ = 0;
+    float lastDamageEventPercent = 0;
 };
 
 PipeServer g_pipe;
 TelemetryState g_state;
 scs_log_t g_log = nullptr;
 auto g_lastLive = std::chrono::steady_clock::now();
+std::uint64_t g_eventCounter = 0;
+const auto g_sessionNonce = static_cast<std::uint64_t>(GetTickCount64());
+
+std::string next_event_id(const char* kind) {
+    std::ostringstream out;
+    out << g_sessionNonce << '-' << ++g_eventCounter << '-' << kind;
+    return out.str();
+}
+
+std::int64_t first_s64_attribute(const scs_named_value_t* attributes, std::initializer_list<const char*> names, std::int64_t fallback = 0) {
+    for (const auto* name : names) {
+        const auto value = s64_attribute(attributes, name, fallback);
+        if (value != fallback) return value;
+    }
+    return fallback;
+}
+
+void emit_generic_event(
+    const std::string& type,
+    const std::string& eventId,
+    std::int64_t amount = 0,
+    const std::string& currency = {},
+    float damagePercent = -1,
+    const std::string& detail = {}) {
+    std::ostringstream json;
+    json << std::fixed << std::setprecision(6)
+         << R"({"type":")" << escape_json(type) << R"(","data":{)"
+         << R"("game":")" << escape_json(g_state.game) << R"(",)"
+         << R"("eventType":")" << escape_json(type) << R"(",)"
+         << R"("eventId":")" << escape_json(eventId) << R"(",)"
+         << R"("x":)" << g_state.x << ','
+         << R"("y":)" << g_state.y << ','
+         << R"("z":)" << g_state.z << ','
+         << R"("cargo":")" << escape_json(g_state.cargo) << R"(",)"
+         << R"("sourceCity":")" << escape_json(g_state.sourceCity) << R"(",)"
+         << R"("destinationCity":")" << escape_json(g_state.destinationCity) << R"(",)"
+         << R"("detail":")" << escape_json(detail) << '"';
+    if (amount != 0) json << R"(,"amount":)" << amount;
+    if (!currency.empty()) json << R"(,"currency":")" << escape_json(currency) << '"';
+    if (damagePercent >= 0) json << R"(,"damagePercent":)" << damagePercent;
+    json << "}}";
+    g_pipe.push(json.str());
+}
 
 std::string escape_json(const std::string& value) {
     std::ostringstream out;
@@ -219,6 +269,8 @@ void emit_live() {
          << R"("cargoDamagePercent":)" << (g_state.cargoDamage * 100.0f) << ','
          << R"("specialJob":)" << (g_state.specialJob ? "true" : "false") << ','
          << R"("cargoLoaded":)" << (g_state.cargoLoaded ? "true" : "false") << ','
+         << R"("driving":)" << (g_state.driving ? "true" : "false") << ','
+         << R"("paused":)" << (g_state.paused ? "true" : "false") << ','
          << R"("truck":")" << escape_json(truck_display_name()) << R"(",)"
          << R"("cargo":")" << escape_json(g_state.cargo) << R"(",)"
          << R"("sourceCity":")" << escape_json(g_state.sourceCity) << R"(",)"
@@ -294,10 +346,36 @@ SCSAPI_VOID on_frame_end(const scs_event_t, const void* const, const scs_context
     // still valid telemetry. Emit whenever the game has supplied a truck
     // placement so free-roam drivers remain visible on the live map.
     if (g_state.hasPlacement) emit_live();
+
+    const float maxDamage = std::max({
+        g_state.wearEngine,
+        g_state.wearTransmission,
+        g_state.wearCabin,
+        g_state.wearChassis,
+        g_state.wearWheels,
+        g_state.trailerWearChassis,
+        g_state.cargoDamage,
+    }) * 100.0f;
+
+    if (maxDamage >= g_state.lastDamageEventPercent + 1.0f) {
+        g_state.lastDamageEventPercent = maxDamage;
+        emit_generic_event(
+            "damage.changed",
+            next_event_id("damage"),
+            0,
+            {},
+            maxDamage,
+            g_state.cargoLoaded ? "Cargo/trailer/truck damage increased" : "Truck damage increased");
+    }
 }
 
 SCSAPI_VOID on_driving_state(const scs_event_t event, const void* const, const scs_context_t) {
-    g_state.driving = event == SCS_TELEMETRY_EVENT_started;
+    if (event == SCS_TELEMETRY_EVENT_started) {
+        g_state.driving = true;
+        g_state.paused = false;
+    } else if (event == SCS_TELEMETRY_EVENT_paused) {
+        g_state.paused = true;
+    }
 }
 
 SCSAPI_VOID on_configuration(const scs_event_t, const void* const event_info, const scs_context_t) {
@@ -311,6 +389,9 @@ SCSAPI_VOID on_configuration(const scs_event_t, const void* const event_info, co
     }
 
     if (std::strcmp(config->id, SCS_TELEMETRY_CONFIG_job) == 0) {
+        const auto previousSignature = g_state.jobSignature;
+        const bool wasActive = g_state.jobActive;
+
         g_state.cargo = string_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_cargo);
         g_state.sourceCity = string_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_source_city);
         g_state.destinationCity = string_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_destination_city);
@@ -320,6 +401,35 @@ SCSAPI_VOID on_configuration(const scs_event_t, const void* const event_info, co
         g_state.plannedDistanceKm = float_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_planned_distance_km);
         g_state.specialJob = bool_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_special_job);
         g_state.cargoLoaded = bool_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_is_cargo_loaded);
+
+        g_state.jobSignature =
+            g_state.cargo + "|" + g_state.sourceCity + "|" + g_state.destinationCity + "|" +
+            g_state.sourceCompany + "|" + g_state.destinationCompany;
+        g_state.jobActive = !g_state.cargo.empty() || !g_state.destinationCity.empty();
+
+        if (g_state.jobActive && (!wasActive || g_state.jobSignature != previousSignature)) {
+            g_state.jobFinishedNormally = false;
+            g_state.jobSourceX = g_state.x;
+            g_state.jobSourceZ = g_state.z;
+            emit_generic_event(
+                "job.started",
+                next_event_id("job-start"),
+                0,
+                {},
+                -1,
+                g_state.sourceCity + " -> " + g_state.destinationCity);
+        } else if (!g_state.jobActive && wasActive) {
+            if (!g_state.jobFinishedNormally) {
+                emit_generic_event(
+                    "job.abandoned",
+                    next_event_id("job-abandoned"),
+                    0,
+                    {},
+                    -1,
+                    "Active job disappeared without a delivery/cancel event");
+            }
+            g_state.jobFinishedNormally = false;
+        }
     }
 }
 
@@ -335,13 +445,15 @@ SCSAPI_VOID on_gameplay(const scs_event_t, const void* const event_info, const s
         json << R"({"type":"fine","data":{)"
              << R"("game":")" << escape_json(g_state.game) << R"(",)"
              << R"("offence":")" << escape_json(offence) << R"(",)"
-             << R"("amount":)" << amount
+             << R"("amount":)" << amount << ','
+             << R"("eventId":")" << escape_json(next_event_id("fine")) << '"'
              << R"(}})";
         g_pipe.push(json.str());
         return;
     }
 
     if (std::strcmp(gameplay->id, SCS_TELEMETRY_GAMEPLAY_EVENT_job_delivered) == 0) {
+        g_state.jobFinishedNormally = true;
         const auto revenue = s64_attribute(
             gameplay->attributes,
             SCS_TELEMETRY_GAMEPLAY_EVENT_ATTRIBUTE_revenue,
@@ -361,10 +473,94 @@ SCSAPI_VOID on_gameplay(const scs_event_t, const void* const event_info, const s
              << R"("sourceCompany":")" << escape_json(g_state.sourceCompany) << R"(",)"
              << R"("destinationCompany":")" << escape_json(g_state.destinationCompany) << R"(",)"
              << R"("distanceKm":)" << distance << ','
-             << R"("income":)" << revenue
+             << R"("income":)" << revenue << ','
+             << R"("eventId":")" << escape_json(next_event_id("job-complete")) << R"(",)"
+             << R"("late":)" << (bool_attribute(gameplay->attributes, "late", false) ? "true" : "false") << ','
+             << R"("cargoDamagePercent":)" << (g_state.cargoDamage * 100.0f) << ','
+             << R"("truckDamagePercent":)" << (std::max({g_state.wearEngine, g_state.wearTransmission, g_state.wearCabin, g_state.wearChassis, g_state.wearWheels}) * 100.0f) << ','
+             << R"("trailerDamagePercent":)" << (g_state.trailerWearChassis * 100.0f) << ','
+             << R"("sourceX":)" << g_state.jobSourceX << ','
+             << R"("sourceZ":)" << g_state.jobSourceZ << ','
+             << R"("destinationX":)" << g_state.x << ','
+             << R"("destinationZ":)" << g_state.z
              << R"(}})";
+
         g_pipe.push(json.str());
+        return;
     }
+
+#ifdef SCS_TELEMETRY_GAMEPLAY_EVENT_job_cancelled
+    if (std::strcmp(gameplay->id, SCS_TELEMETRY_GAMEPLAY_EVENT_job_cancelled) == 0) {
+        g_state.jobFinishedNormally = true;
+        emit_generic_event(
+            "job.cancelled",
+            next_event_id("job-cancel"),
+            first_s64_attribute(gameplay->attributes, {"cancel_penalty", "penalty", "amount"}, 0),
+            g_state.game == "ats" ? "USD" : "EUR",
+            -1,
+            "Job cancelled");
+        return;
+    }
+#endif
+
+#ifdef SCS_TELEMETRY_GAMEPLAY_EVENT_refuel
+    if (std::strcmp(gameplay->id, SCS_TELEMETRY_GAMEPLAY_EVENT_refuel) == 0) {
+        emit_generic_event("refuel.started", next_event_id("refuel"), 0, {}, -1, "Refuel event");
+        return;
+    }
+#endif
+
+#ifdef SCS_TELEMETRY_GAMEPLAY_EVENT_refuel_paid
+    if (std::strcmp(gameplay->id, SCS_TELEMETRY_GAMEPLAY_EVENT_refuel_paid) == 0) {
+        const auto amount = first_s64_attribute(gameplay->attributes, {"pay_amount", "cost", "amount", "fuel_cost"}, 0);
+        emit_generic_event("expense.refuel", next_event_id("refuel-paid"), amount,
+            g_state.game == "ats" ? "USD" : "EUR", -1, "Fuel purchase");
+        return;
+    }
+#endif
+
+#ifdef SCS_TELEMETRY_GAMEPLAY_EVENT_tollgate
+    if (std::strcmp(gameplay->id, SCS_TELEMETRY_GAMEPLAY_EVENT_tollgate) == 0) {
+        const auto amount = first_s64_attribute(gameplay->attributes, {"pay_amount", "cost", "amount"}, 0);
+        emit_generic_event("expense.toll", next_event_id("toll"), amount,
+            g_state.game == "ats" ? "USD" : "EUR", -1, "Toll payment");
+        return;
+    }
+#endif
+
+#ifdef SCS_TELEMETRY_GAMEPLAY_EVENT_ferry
+    if (std::strcmp(gameplay->id, SCS_TELEMETRY_GAMEPLAY_EVENT_ferry) == 0) {
+        const auto amount = first_s64_attribute(gameplay->attributes, {"pay_amount", "cost", "amount"}, 0);
+        emit_generic_event("expense.ferry", next_event_id("ferry"), amount,
+            g_state.game == "ats" ? "USD" : "EUR", -1, "Ferry travel");
+        return;
+    }
+#endif
+
+#ifdef SCS_TELEMETRY_GAMEPLAY_EVENT_train
+    if (std::strcmp(gameplay->id, SCS_TELEMETRY_GAMEPLAY_EVENT_train) == 0) {
+        const auto amount = first_s64_attribute(gameplay->attributes, {"pay_amount", "cost", "amount"}, 0);
+        emit_generic_event("expense.train", next_event_id("train"), amount,
+            g_state.game == "ats" ? "USD" : "EUR", -1, "Train travel");
+        return;
+    }
+#endif
+
+#ifdef SCS_TELEMETRY_GAMEPLAY_EVENT_player_crash
+    if (std::strcmp(gameplay->id, SCS_TELEMETRY_GAMEPLAY_EVENT_player_crash) == 0) {
+        emit_generic_event("collision.detected", next_event_id("collision"), 0, {}, -1, "Collision/crash detected");
+        return;
+    }
+#endif
+
+#ifdef SCS_TELEMETRY_GAMEPLAY_EVENT_truck_repair
+    if (std::strcmp(gameplay->id, SCS_TELEMETRY_GAMEPLAY_EVENT_truck_repair) == 0) {
+        const auto amount = first_s64_attribute(gameplay->attributes, {"pay_amount", "cost", "amount"}, 0);
+        emit_generic_event("expense.repair", next_event_id("repair"), amount,
+            g_state.game == "ats" ? "USD" : "EUR", -1, "Truck repair/service");
+        return;
+    }
+#endif
 }
 
 bool register_channel(
