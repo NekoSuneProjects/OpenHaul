@@ -22,6 +22,8 @@ const createSchema = z.object({
   currency: z.string().min(3).max(8).default("GBP"),
   recruitmentOpen: z.boolean().default(true),
   recruitmentMode: z.enum(["open", "application", "invite"]).default("application"),
+  operatingMode: z.enum(["casual", "standard", "simulation"]).default("standard"),
+  manualJobPolicy: z.enum(["disabled", "approval", "full"]).default("approval"),
   publicBalance: z.boolean().default(false),
 });
 
@@ -116,6 +118,8 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       rules: body.rules || null,
       socials: body.socials ?? {},
       recruitmentMode: body.recruitmentMode,
+      operatingMode: body.operatingMode,
+      manualJobPolicy: body.manualJobPolicy,
       ownerUserId: user.id,
     });
 
@@ -656,6 +660,8 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       socials: vtc.getDataValue("socials"),
       recruitmentOpen: Boolean(vtc.getDataValue("recruitmentOpen")),
       recruitmentMode: String(vtc.getDataValue("recruitmentMode") ?? "application"),
+      operatingMode: String(vtc.getDataValue("operatingMode") ?? "standard"),
+      manualJobPolicy: String(vtc.getDataValue("manualJobPolicy") ?? "approval"),
       memberCount,
       members,
     };
