@@ -1569,3 +1569,45 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
     grid-template-columns: 1fr;
   }
 }
+
+
+.gameOverlayRadioSearch {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.gameOverlayRadioSearch input {
+  flex: 1;
+  width: auto !important;
+}
+
+.gameOverlayRadioSearch button {
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(84,224,138,.22);
+  border-radius: 10px;
+  color: #dff4e6;
+  background: rgba(84,224,138,.08);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.gameOverlayRadioSearch button:hover:not(:disabled) {
+  border-color: rgba(84,224,138,.46);
+  background: rgba(84,224,138,.14);
+}
+
+.gameOverlayRadioSearch button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+@media (max-width: 920px) {
+  .gameOverlayRadioSearch {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
