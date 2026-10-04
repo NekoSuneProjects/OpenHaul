@@ -482,7 +482,8 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
       reply.hijack();
       reply.raw.writeHead(200, {
         "content-type": format.contentType,
-        "cache-control": "no-store, no-cache, must-revalidate",
+        "cache-control": "no-store, no-cache, must-revalidate, no-transform",
+          "x-accel-buffering": "no",
         "icy-name": station.name,
         "icy-genre": station.genre ?? "Radio",
         "icy-br": String(station.bitrateKbps),
