@@ -97,7 +97,16 @@ async function truckersMpViewportDrivers(
   x2: number,
   y2: number,
 ): Promise<ExternalDriver[]> {
-  const rounded = [x1, y1, x2, y2].map((value) => Math.round(value / 250) * 250);
+  // tracker.ets2map.com expects the same rectangle orientation used by
+  // map.truckersmp.com: x1 = west/left, x2 = east/right, y1 = north/top,
+  // y2 = south/bottom. SCS Z grows in the opposite screen direction, so y1
+  // must be the larger value. Sending minY as y1 returns an empty area.
+  const left = Math.min(x1, x2);
+  const right = Math.max(x1, x2);
+  const top = Math.max(y1, y2);
+  const bottom = Math.min(y1, y2);
+
+  const rounded = [left, top, right, bottom].map((value) => Math.round(value / 250) * 250);
   const key = [game, ...rounded].join(":");
   const cached = trackerAreaCache.get(key);
   if (cached && cached.expiresAt > Date.now()) return cached.value;
@@ -111,10 +120,10 @@ async function truckersMpViewportDrivers(
 
   const areas = await Promise.allSettled(servers.map(async (server) => {
     const params = new URLSearchParams({
-      x1: String(Math.round(x1)),
-      y1: String(Math.round(y1)),
-      x2: String(Math.round(x2)),
-      y2: String(Math.round(y2)),
+      x1: String(Math.round(left)),
+      y1: String(Math.round(top)),
+      x2: String(Math.round(right)),
+      y2: String(Math.round(bottom)),
       server: String(server.map),
     });
     const response = await fetch("https://tracker.ets2map.com/v3/area?" + params.toString(), {
