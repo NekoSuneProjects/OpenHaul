@@ -3,7 +3,7 @@ import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
 import Fastify from "fastify";
 import { z } from "zod";
-import { Fine, Job, TelemetryEvent, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
+import { DriverPosition, Fine, Job, TelemetryEvent, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
@@ -92,6 +92,9 @@ const liveSchema = z.object({
   specialJob: z.boolean().nullable().optional(),
   cargoLoaded: z.boolean().nullable().optional(),
   server: z.string().max(120).nullable().optional(),
+  sessionMode: z.enum(["singleplayer", "truckersmp"]).nullable().optional(),
+  driverStatus: z.enum(["offline", "client-online", "menu", "driving", "on-job", "paused"]).nullable().optional(),
+  sessionId: z.string().max(120).nullable().optional(),
 });
 
 const fineSchema = z.object({
@@ -103,6 +106,7 @@ const fineSchema = z.object({
   currency: z.string().min(1).max(8).default("EUR"),
   city: z.string().max(120).nullable().optional(),
   occurredAt: z.coerce.date().default(() => new Date()),
+  externalId: z.string().max(160).nullable().optional(),
 });
 
 const jobSchema = z.object({
@@ -127,7 +131,33 @@ const jobSchema = z.object({
   truckDamagePercent: z.number().min(0).max(100).default(0),
   trailerDamagePercent: z.number().min(0).max(100).default(0),
   completedAt: z.coerce.date().default(() => new Date()),
+  externalId: z.string().max(160).nullable().optional(),
+  sourceX: z.number().nullable().optional(),
+  sourceZ: z.number().nullable().optional(),
+  destinationX: z.number().nullable().optional(),
+  destinationZ: z.number().nullable().optional(),
 });
+
+const telemetryEventSchema = z.object({
+  vtcId: z.number().int().positive().nullable().optional(),
+  driverId: z.string().min(1).max(80),
+  game: z.enum(["ets2", "ats"]),
+  type: z.string().min(1).max(64),
+  externalId: z.string().min(1).max(160),
+  occurredAt: z.coerce.date().default(() => new Date()),
+  amount: z.number().nullable().optional(),
+  currency: z.string().max(8).nullable().optional(),
+  x: z.number().nullable().optional(),
+  y: z.number().nullable().optional(),
+  z: z.number().nullable().optional(),
+  cargo: z.string().max(160).nullable().optional(),
+  sourceCity: z.string().max(120).nullable().optional(),
+  destinationCity: z.string().max(120).nullable().optional(),
+  damagePercent: z.number().min(0).max(100).nullable().optional(),
+  detail: z.string().max(1000).nullable().optional(),
+});
+
+const lastPositionStoredAt = new Map<string, number>();
 
 app.get("/health", async () => ({ ok: true, service: "openhaul-api" }));
 
@@ -312,6 +342,24 @@ app.post("/api/v1/telemetry/live", async (request, reply) => {
   const liveState = await setLiveDriver(driver);
   broadcastDriver(driver);
 
+  const nowMs = Date.now();
+  const lastStored = lastPositionStoredAt.get(driver.driverId) ?? 0;
+  if (nowMs - lastStored >= 10_000) {
+    lastPositionStoredAt.set(driver.driverId, nowMs);
+    void DriverPosition.create({
+      driverId: driver.driverId,
+      vtcId: driver.vtcId ?? null,
+      game: driver.game,
+      x: driver.x,
+      y: driver.y ?? 0,
+      z: driver.z,
+      heading: driver.heading,
+      speedKph: driver.speedKph,
+      sessionId: driver.sessionId ?? null,
+      recordedAt: new Date(),
+    }).catch((error) => app.log.warn({ error }, "Unable to store driver replay position"));
+  }
+
   if (!liveState.wasOnline && driver.vtcId) {
     await recordVtcActivity({
       vtcId: driver.vtcId,
@@ -389,6 +437,11 @@ app.post("/api/v1/telemetry/fines", async (request, reply) => {
 
   const body = fineSchema.parse(request.body);
 
+  if (body.externalId) {
+    const duplicate = await TelemetryEvent.findOne({ where: { externalId: body.externalId } });
+    if (duplicate) return reply.code(200).send({ accepted: true, duplicate: true, eventId: duplicate.id });
+  }
+
   if (identity.kind === "user") {
     const membership = await resolveUserVtc(identity.user, body.vtcId);
     if (body.vtcId && !membership) return reply.code(403).send({ error: "not_member_of_vtc" });
@@ -427,6 +480,7 @@ app.post("/api/v1/telemetry/fines", async (request, reply) => {
       game: body.game,
       type: "penalty." + body.type,
       source: "telemetry",
+      externalId: body.externalId ?? null,
       raw: body,
       normalized: fine.toJSON(),
       occurredAt: body.occurredAt,
@@ -443,6 +497,11 @@ app.post("/api/v1/telemetry/jobs/completed", async (request, reply) => {
   if (!identity) return;
 
   const body = jobSchema.parse(request.body);
+
+  if (body.externalId) {
+    const duplicate = await TelemetryEvent.findOne({ where: { externalId: body.externalId } });
+    if (duplicate) return reply.code(200).send({ accepted: true, duplicate: true, eventId: duplicate.id });
+  }
 
   if (identity.kind === "user") {
     const membership = await resolveUserVtc(identity.user, body.vtcId);
@@ -492,6 +551,7 @@ app.post("/api/v1/telemetry/jobs/completed", async (request, reply) => {
       game: body.game,
       type: "job.completed",
       source: "telemetry",
+      externalId: body.externalId ?? null,
       raw: body,
       normalized: job.toJSON(),
       occurredAt: body.completedAt,
@@ -501,6 +561,129 @@ app.post("/api/v1/telemetry/jobs/completed", async (request, reply) => {
 
   const job = await Job.create(body);
   return reply.code(201).send({ job });
+});
+
+app.post("/api/v1/telemetry/events", async (request, reply) => {
+  const identity = await requireTelemetryIdentity(request, reply);
+  if (!identity) return;
+
+  const body = telemetryEventSchema.parse(request.body);
+  const existing = await TelemetryEvent.findOne({ where: { externalId: body.externalId } });
+  if (existing) return reply.code(200).send({ accepted: true, duplicate: true, eventId: existing.id });
+
+  let driverId = body.driverId;
+  let vtcId = body.vtcId ?? null;
+  let actorUserId: number | null = null;
+  let displayName = body.driverId;
+
+  if (identity.kind === "user") {
+    driverId = identity.user.steamId;
+    displayName = identity.user.displayName;
+    actorUserId = identity.user.id;
+    const membership = await resolveUserVtc(identity.user, body.vtcId);
+    if (body.vtcId && !membership) return reply.code(403).send({ error: "not_member_of_vtc" });
+    vtcId = membership?.vtc.id ?? null;
+  }
+
+  const event = await TelemetryEvent.create({
+    driverId,
+    vtcId,
+    game: body.game,
+    type: body.type,
+    source: "telemetry",
+    externalId: body.externalId,
+    raw: body,
+    normalized: {
+      amount: body.amount,
+      currency: body.currency,
+      x: body.x,
+      y: body.y,
+      z: body.z,
+      cargo: body.cargo,
+      sourceCity: body.sourceCity,
+      destinationCity: body.destinationCity,
+      damagePercent: body.damagePercent,
+      detail: body.detail,
+    },
+    occurredAt: body.occurredAt,
+  });
+
+  if (vtcId) {
+    await recordVtcActivity({
+      vtcId,
+      driverId,
+      actorUserId,
+      type: body.type,
+      title: displayName + " · " + body.type.replaceAll(".", " "),
+      detail: body.detail ?? null,
+      amount: body.amount ?? null,
+      currency: body.currency ?? null,
+      metadata: {
+        telemetryEventId: event.id,
+        cargo: body.cargo,
+        sourceCity: body.sourceCity,
+        destinationCity: body.destinationCity,
+        damagePercent: body.damagePercent,
+      },
+      occurredAt: body.occurredAt,
+    });
+  }
+
+  if (vtcId && body.amount && body.amount > 0 && body.type.startsWith("expense.")) {
+    await VtcLedgerEntry.create({
+      vtcId,
+      createdByUserId: actorUserId,
+      type: body.type.slice("expense.".length),
+      description: displayName + " " + body.type.replaceAll(".", " "),
+      amount: -Math.abs(body.amount),
+      currency: body.currency ?? (body.game === "ats" ? "USD" : "EUR"),
+    });
+  }
+
+  return reply.code(201).send({ accepted: true, event });
+});
+
+app.get("/api/v1/public/drivers/:driverId/replay", async (request) => {
+  const { driverId } = z.object({ driverId: z.string().min(1).max(80) }).parse(request.params);
+  const query = z.object({
+    sessionId: z.string().max(120).optional(),
+    minutes: z.coerce.number().int().min(1).max(720).default(60),
+    limit: z.coerce.number().int().min(2).max(5000).default(1000),
+  }).parse(request.query);
+
+  const where: any = {
+    driverId,
+    recordedAt: { [Symbol.for("sequelize.op.gte") as any]: new Date(Date.now() - query.minutes * 60_000) },
+  };
+  if (query.sessionId) where.sessionId = query.sessionId;
+
+  // Avoid exposing Sequelize operators through JSON; build the time predicate via SQL.
+  const positions = await DriverPosition.findAll({
+    where: query.sessionId ? { driverId, sessionId: query.sessionId } : { driverId },
+    order: [["recordedAt", "DESC"]],
+    limit: query.limit,
+  });
+
+  const cutoff = Date.now() - query.minutes * 60_000;
+  return {
+    driverId,
+    points: positions
+      .filter((point: any) => new Date(point.getDataValue("recordedAt")).getTime() >= cutoff)
+      .reverse(),
+  };
+});
+
+app.get("/api/v1/public/drivers/:driverId/timeline", async (request) => {
+  const { driverId } = z.object({ driverId: z.string().min(1).max(80) }).parse(request.params);
+  const query = z.object({ limit: z.coerce.number().int().min(1).max(500).default(100) }).parse(request.query);
+  return {
+    driverId,
+    events: await TelemetryEvent.findAll({
+      where: { driverId },
+      order: [["occurredAt", "DESC"]],
+      limit: query.limit,
+    }),
+  };
 });
 
 app.get("/api/v1/vtc/me", { preHandler: [requireVtcApiKey] }, async (request) => {
