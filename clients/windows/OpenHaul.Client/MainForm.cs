@@ -207,12 +207,51 @@ public sealed class MainForm : Form
             return;
         }
 
-        if (!Enum.TryParse<Keys>(_settings.OverlayHotkey, true, out var key))
-            key = Keys.F8;
+        var (modifiers, key) = ParseOverlayHotkey(_settings.OverlayHotkey);
+        _overlayHotkeyRegistered = RegisterHotKey(Handle, OverlayHotkeyId, modifiers, (uint)key);
 
-        _overlayHotkeyRegistered = RegisterHotKey(Handle, OverlayHotkeyId, 0, (uint)key);
         if (!_overlayHotkeyRegistered)
             SetStatus($"Overlay hotkey {_settings.OverlayHotkey} could not be registered.");
+    }
+
+    private static (uint Modifiers, Keys Key) ParseOverlayHotkey(string? hotkey)
+    {
+        const uint modAlt = 0x0001;
+        const uint modControl = 0x0002;
+        const uint modShift = 0x0004;
+
+        var modifiers = 0u;
+        var key = Keys.I;
+        var parts = (hotkey ?? "Alt+I")
+            .Split('+', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+
+        foreach (var part in parts)
+        {
+            if (part.Equals("Alt", StringComparison.OrdinalIgnoreCase)) modifiers |= modAlt;
+            else if (part.Equals("Ctrl", StringComparison.OrdinalIgnoreCase) || part.Equals("Control", StringComparison.OrdinalIgnoreCase)) modifiers |= modControl;
+            else if (part.Equals("Shift", StringComparison.OrdinalIgnoreCase)) modifiers |= modShift;
+            else if (Enum.TryParse<Keys>(part, true, out var parsed)) key = parsed;
+        }
+
+        return (modifiers, key);
+    }
+
+    private static bool IsOverlayHotkeyPressed(int vkCode, string? hotkey)
+    {
+        var (modifiers, key) = ParseOverlayHotkey(hotkey);
+
+        var altRequired = (modifiers & 0x0001) != 0;
+        var ctrlRequired = (modifiers & 0x0002) != 0;
+        var shiftRequired = (modifiers & 0x0004) != 0;
+
+        var altDown = (Control.ModifierKeys & Keys.Alt) == Keys.Alt;
+        var ctrlDown = (Control.ModifierKeys & Keys.Control) == Keys.Control;
+        var shiftDown = (Control.ModifierKeys & Keys.Shift) == Keys.Shift;
+
+        return vkCode == (int)key
+            && (!altRequired || altDown)
+            && (!ctrlRequired || ctrlDown)
+            && (!shiftRequired || shiftDown);
     }
 
     private IntPtr OverlayKeyboardHook(int nCode, IntPtr wParam, IntPtr lParam)
@@ -222,10 +261,7 @@ public sealed class MainForm : Form
             var message = wParam.ToInt32();
             var vkCode = Marshal.ReadInt32(lParam);
 
-            if (!Enum.TryParse<Keys>(_settings.OverlayHotkey, true, out var configuredKey))
-                configuredKey = Keys.F8;
-
-            if (vkCode == (int)configuredKey)
+            if (IsOverlayHotkeyPressed(vkCode, _settings.OverlayHotkey))
             {
                 if (message is WmKeyDown or WmSysKeyDown)
                 {
@@ -236,10 +272,12 @@ public sealed class MainForm : Form
                             BeginInvoke(() => ToggleOverlay());
                     }
                 }
-                else if (message is WmKeyUp or WmSysKeyUp)
-                {
+            }
+            else if (message is WmKeyUp or WmSysKeyUp)
+            {
+                var (_, configuredKey) = ParseOverlayHotkey(_settings.OverlayHotkey);
+                if (vkCode == (int)configuredKey)
                     _overlayHotkeyDown = false;
-                }
             }
         }
 
@@ -1124,13 +1162,13 @@ public sealed class MainForm : Form
             BackColor = C(9, 38, 25),
             ForeColor = Color.White,
         };
-        overlayHotkey.Items.AddRange(new object[] { "F6", "F7", "F8", "F9", "F10", "F11", "F12" });
+        overlayHotkey.Items.AddRange(new object[] { "Alt+I", "Alt+O", "Ctrl+I", "Ctrl+O", "Shift+F8", "F8", "F9", "F10", "F11", "F12" });
         overlayHotkey.SelectedItem = overlayHotkey.Items.Contains(_settings.OverlayHotkey)
             ? _settings.OverlayHotkey
-            : "F8";
+            : "Alt+I";
         overlayHotkey.SelectedIndexChanged += (_, _) =>
         {
-            _settings.OverlayHotkey = overlayHotkey.SelectedItem?.ToString() ?? "F8";
+            _settings.OverlayHotkey = overlayHotkey.SelectedItem?.ToString() ?? "Alt+I";
             _settings.Save();
             ConfigureOverlayHotkey();
             SetStatus("Overlay hotkey changed to " + _settings.OverlayHotkey + ".");
