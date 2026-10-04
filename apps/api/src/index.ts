@@ -3,7 +3,7 @@ import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
 import Fastify from "fastify";
 import { z } from "zod";
-import { Fine, Job, User, Vtc, VtcLedgerEntry, VtcMember, initDatabase, sequelize } from "./db.js";
+import { Fine, Job, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
@@ -421,6 +421,23 @@ app.get("/api/v1/vtc/members", { preHandler: [requireVtcApiKey, requireScope("me
     where: { vtcId: request.openhaulVtc!.id, status: "active" },
     include: [{ model: User, attributes: ["steamId", "displayName", "avatarUrl"] }],
     order: [["id", "ASC"]],
+  }),
+}));
+
+app.get("/api/v1/vtc/events", { preHandler: [requireVtcApiKey, requireScope("events:read")] }, async (request) => ({
+  events: await VtcActivityEvent.findAll({
+    where: { vtcId: request.openhaulVtc!.id },
+    order: [["id", "DESC"]],
+    limit: 250,
+  }),
+}));
+
+app.get("/api/v1/vtc/moderation", { preHandler: [requireVtcApiKey, requireScope("moderation:read")] }, async (request) => ({
+  actions: await VtcModerationAction.findAll({
+    where: { vtcId: request.openhaulVtc!.id },
+    include: [{ model: User, attributes: ["steamId", "displayName", "avatarUrl"] }],
+    order: [["id", "DESC"]],
+    limit: 250,
   }),
 }));
 
