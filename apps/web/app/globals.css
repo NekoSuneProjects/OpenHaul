@@ -223,3 +223,38 @@ h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.06
     grid-template-columns: 1fr 1fr;
   }
 }
+
+
+.trendRow {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) 190px;
+  gap: 12px;
+  align-items: center;
+}
+
+.logbookFilters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.logbookFiltersWide {
+  grid-template-columns: minmax(220px, 1fr) 140px 160px 160px;
+}
+
+@media (max-width: 760px) {
+  .trendRow,
+  .logbookFilters,
+  .logbookFiltersWide {
+    grid-template-columns: 1fr;
+  }
+
+  .driver {
+    overflow-wrap: anywhere;
+  }
+
+  .card {
+    min-width: 0;
+  }
+}
