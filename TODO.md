@@ -108,6 +108,30 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [ ] Company/VTC list and searchable discovery/recruitment page
 - [ ] VTC API keys, webhooks and protected VTC data
 
+
+## P1 — Living VTC / shared company simulation
+- [ ] VTC operating mode: Casual / Standard / Simulation so companies can choose how strict the system is
+- [ ] Company depots/branches in ETS2/ATS cities with configurable home depot and expansion history
+- [ ] Shared VTC contracts that split large freight orders across multiple drivers and track collective completion
+- [ ] Live Dispatch Center showing available/on-job drivers and allowing authorized dispatchers to offer jobs
+- [ ] Driver dispatch accept/decline flow in the OpenHaul client with expiry, reassignment and audit history
+- [ ] Company economy where completed jobs add revenue and fuel, tolls, ferries, repairs, damage and fines reduce the balance
+- [ ] Shared virtual fleet with persistent truck/trailer identity, mileage, earnings, assigned drivers, condition and service history
+- [ ] Fleet maintenance/reliability model derived from telemetry, with repair/service costs and retire/replace workflows
+- [ ] Driver certifications/licences for ADR, fragile, refrigerated, heavy haul, oversized/special transport and long-distance work
+- [ ] VTC-defined training/certification requirements and automatic qualification from verified telemetry history
+- [ ] Driver shift system: start/end shift, driving time, jobs, distance, revenue, expenses, incidents and shift summary
+- [ ] Company operations feed for deliveries, promotions, penalties, milestones, fleet events and achievements
+- [ ] Cooperative VTC goals/contracts where members contribute cargo, tonnes, distance or clean deliveries toward one target
+- [ ] Seasonal VTC competitions and historical seasons without resetting permanent company/driver history
+- [ ] Multi-factor driver reputation based on safety, reliability, delivery quality, activity and VTC contribution instead of distance alone
+- [ ] Convoy Operations Center: route, meeting point, departure, DLC/mod requirements, slots, attendance, live participants and after-action stats
+- [ ] VTC recruitment matching by ETS2/ATS, language, timezone, Casual/Standard/Simulation, TruckersMP/Convoy, mileage and voice requirements
+- [ ] Alternative/manual job submission workflow for drivers who cannot install telemetry (for example cloud gaming), with screenshot/evidence and staff approval
+- [ ] VTC-configurable policy deciding whether manual jobs count toward economy, rankings, challenges and reputation
+- [ ] Company history/archive preserving completed contracts, seasons, awards, fleet milestones, leadership changes and major events
+- [ ] Dispatcher, Fleet Manager, Recruiter, Trainer and Driver role presets built on granular VTC permissions
+
 ## P1 — Discord bot per VTC
 - [x] Discord bot foundation and slash commands
 - [x] Steam-linked OpenHaul driver accounts
