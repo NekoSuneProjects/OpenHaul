@@ -53,6 +53,14 @@ public sealed class OpenHaulApi : IDisposable
             },
             token);
 
+    public Task<HttpResponseMessage> SendEventAsync(GenericTelemetryEvent telemetryEvent, CancellationToken token) =>
+        SendWithReconnectAsync(
+            () => new HttpRequestMessage(HttpMethod.Post, "api/v1/telemetry/events")
+            {
+                Content = JsonContent.Create(telemetryEvent, options: _json),
+            },
+            token);
+
     private async Task<HttpResponseMessage> SendWithReconnectAsync(
         Func<HttpRequestMessage> requestFactory,
         CancellationToken token)
