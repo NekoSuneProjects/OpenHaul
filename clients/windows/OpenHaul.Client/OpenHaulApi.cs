@@ -61,6 +61,27 @@ public sealed class OpenHaulApi : IDisposable
             },
             token);
 
+    public async Task<ClientDispatchList> GetDispatchesAsync(CancellationToken token)
+    {
+        using var response = await SendWithReconnectAsync(
+            () => new HttpRequestMessage(HttpMethod.Get, "api/v1/client/dispatch"),
+            token);
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<ClientDispatchList>(_json, token)
+            ?? new ClientDispatchList([]);
+    }
+
+    public async Task RespondDispatchAsync(long dispatchId, string decision, CancellationToken token)
+    {
+        using var response = await SendWithReconnectAsync(
+            () => new HttpRequestMessage(HttpMethod.Post, $"api/v1/client/dispatch/{dispatchId}/respond")
+            {
+                Content = JsonContent.Create(new { decision }, options: _json),
+            },
+            token);
+        response.EnsureSuccessStatusCode();
+    }
+
     private async Task<HttpResponseMessage> SendWithReconnectAsync(
         Func<HttpRequestMessage> requestFactory,
         CancellationToken token)
