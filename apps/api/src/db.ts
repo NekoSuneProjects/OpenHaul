@@ -27,6 +27,8 @@ Vtc.init({
   rules: { type: DataTypes.TEXT, allowNull: true },
   socials: { type: DataTypes.JSONB, allowNull: false, defaultValue: {} },
   recruitmentMode: { type: DataTypes.STRING(24), allowNull: false, defaultValue: "application", field: "recruitment_mode" },
+  operatingMode: { type: DataTypes.STRING(24), allowNull: false, defaultValue: "standard", field: "operating_mode" },
+  manualJobPolicy: { type: DataTypes.STRING(24), allowNull: false, defaultValue: "approval", field: "manual_job_policy" },
   ownerUserId: { type: DataTypes.INTEGER, allowNull: true, field: "owner_user_id" },
   currency: { type: DataTypes.STRING(8), allowNull: false, defaultValue: "GBP" },
   recruitmentOpen: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true, field: "recruitment_open" },
