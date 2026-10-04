@@ -491,9 +491,10 @@ async function fetchLautFmStations(query: string) {
         headers: { accept: "application/json", "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)" },
       });
       if (!response.ok) return [];
-      const rows = await response.json() as Array<any>;
+      const payload = await response.json() as any;
+      const rows = Array.isArray(payload) ? payload : Array.isArray(payload?.stations) ? payload.stations : [];
       return rows
-        .filter((row) => String(row?.name ?? "").toLowerCase().includes(query.toLowerCase()))
+        .filter((row: any) => String(row?.name ?? "").toLowerCase().includes(query.toLowerCase()))
         .slice(0, 25)
         .map((row, index) => {
           const name = String(row.name ?? "").trim();
