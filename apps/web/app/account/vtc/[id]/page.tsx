@@ -280,6 +280,21 @@ export default function ManageVtcPage() {
         applicationChannelId: value("applicationChannelId"),
         moderationChannelId: value("moderationChannelId"),
         driverChannelId: value("driverChannelId"),
+        achievementChannelId: value("achievementChannelId"),
+        convoyChannelId: value("convoyChannelId"),
+        welcomeChannelId: value("welcomeChannelId"),
+        featureToggles: {
+          jobs: form.get("toggleJobs") === "on",
+          fines: form.get("toggleFines") === "on",
+          applications: form.get("toggleApplications") === "on",
+          moderation: form.get("toggleModeration") === "on",
+          achievements: form.get("toggleAchievements") === "on",
+          convoys: form.get("toggleConvoys") === "on",
+          welcome: form.get("toggleWelcome") === "on",
+        },
+        embedConfig: {
+          footer: String(form.get("embedFooter") ?? "").trim(),
+        },
         enabled: form.get("enabled") === "on",
       }),
     });
@@ -315,6 +330,8 @@ export default function ManageVtcPage() {
       <div className="actions" style={{ marginBottom: 18 }}>
         <Link className="button primary" href={"/account/vtc/" + id + "/logbook"}>Open VTC logbook</Link>
         <Link className="button" href={"/account/vtc/" + id + "/operations"}>Operations Center</Link>
+        <Link className="button" href={"/account/vtc/" + id + "/simulation"}>Living VTC</Link>
+        <Link className="button" href={"/account/vtc/" + id + "/finance"}>Financial reports</Link>
       </div>
 
       <div className="sectionTitle"><h2>VTC dashboard</h2></div>
@@ -519,8 +536,22 @@ export default function ManageVtcPage() {
         <input name="applicationChannelId" defaultValue={discordConfig?.applicationChannelId ?? ""} placeholder="Applications channel ID" />
         <input name="moderationChannelId" defaultValue={discordConfig?.moderationChannelId ?? ""} placeholder="Warnings / bans / mutes channel ID" />
         <input name="driverChannelId" defaultValue={discordConfig?.driverChannelId ?? ""} placeholder="Driver online/offline channel ID" />
+        <input name="achievementChannelId" defaultValue={discordConfig?.achievementChannelId ?? ""} placeholder="Achievements / challenges channel ID" />
+        <input name="convoyChannelId" defaultValue={discordConfig?.convoyChannelId ?? ""} placeholder="Convoys / events channel ID" />
+        <input name="welcomeChannelId" defaultValue={discordConfig?.welcomeChannelId ?? ""} placeholder="Welcome / leave channel ID" />
+        <input name="embedFooter" defaultValue={discordConfig?.embedConfig?.footer ?? ""} placeholder="Optional embed footer" />
+        <div className="grid" style={{ padding: 0 }}>
+          <label><input type="checkbox" name="toggleJobs" defaultChecked={discordConfig?.featureToggles?.jobs !== false} /> Job notifications</label>
+          <label><input type="checkbox" name="toggleFines" defaultChecked={discordConfig?.featureToggles?.fines !== false} /> Fine notifications</label>
+          <label><input type="checkbox" name="toggleApplications" defaultChecked={discordConfig?.featureToggles?.applications !== false} /> Application notifications</label>
+          <label><input type="checkbox" name="toggleModeration" defaultChecked={discordConfig?.featureToggles?.moderation !== false} /> Moderation notifications</label>
+          <label><input type="checkbox" name="toggleAchievements" defaultChecked={discordConfig?.featureToggles?.achievements !== false} /> Achievement notifications</label>
+          <label><input type="checkbox" name="toggleConvoys" defaultChecked={discordConfig?.featureToggles?.convoys !== false} /> Convoy/event notifications</label>
+          <label><input type="checkbox" name="toggleWelcome" defaultChecked={discordConfig?.featureToggles?.welcome !== false} /> Welcome/leave messages</label>
+        </div>
+        <p className="muted">Guild binding: {discordConfig?.guildVerified ? "✅ Bot verified in configured server" : "⚠️ Waiting for bot verification"}</p>
         <button className="button primary">Save Discord setup</button>
-        <p className="muted">Bot commands: /openhaul, /drivers, /leaderboard and /apply.</p>
+        <p className="muted">Bot commands: /openhaul, /drivers, /leaderboard, /stats, /driver, /recentjob, /applications, /application and /apply.</p>
       </form>
 
       <div className="sectionTitle"><h2>VTC activity log</h2></div>
