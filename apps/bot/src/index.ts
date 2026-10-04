@@ -133,6 +133,10 @@ async function pollActivity() {
   if (!serviceKey || !configs.size) return;
   const data = await botGet("/api/v1/bot/events?after=" + lastEventId);
   const events = Array.isArray(data.events) ? data.events : [];
+  if (lastEventId === 0 && events.length) {
+    lastEventId = Number(events[events.length - 1].id ?? 0);
+    return;
+  }
   for (const event of events) {
     lastEventId = Math.max(lastEventId, Number(event.id ?? 0));
     const config = configs.get(Number(event.vtcId));
