@@ -1,0 +1,52 @@
+name: Refresh radio catalog
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update-radio-catalog.mjs"
+      - ".github/workflows/radio-catalog.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radio-catalog-refresh
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Refresh Radio Browser catalog
+        env:
+          RADIO_FETCH_CONCURRENCY: "6"
+          RADIO_REQUEST_TIMEOUT_MS: "20000"
+        run: node scripts/update-radio-catalog.mjs
+
+      - name: Commit updated catalog
+        shell: bash
+        run: |
+          if git diff --quiet -- apps/web/public/data/radio-stations.json; then
+            echo "Radio catalog is already current."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps/web/public/data/radio-stations.json
+          git commit -m "chore(radio): refresh public station catalog [skip ci]"
+          git push origin HEAD:main
