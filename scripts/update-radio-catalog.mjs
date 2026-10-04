@@ -158,16 +158,8 @@ async function main() {
     a.country.localeCompare(b.country) || a.type.localeCompare(b.type) || a.name.localeCompare(b.name)
   );
 
-  const payload = {
-    generatedAt: new Date().toISOString(),
-    mirrors,
-    countries,
-    count: stations.length,
-    stations,
-  };
-
   await mkdir(path.dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, JSON.stringify(payload, null, 2) + "\n", "utf8");
+  await writeFile(outputPath, JSON.stringify(stations, null, 2) + "\n", "utf8");
   console.log(`Wrote ${stations.length} stations to ${outputPath}`);
 }
 
