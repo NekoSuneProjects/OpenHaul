@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { Op } from "sequelize";
-import { getLiveDrivers } from "./live.js";
+import { getClientPresences, getLiveDrivers } from "./live.js";
 import { PlatformRecord, TelemetryEvent } from "./db.js";
 
 type ExternalStaff = { driverId: string; role?: string; source?: string };
@@ -15,7 +15,7 @@ type ExternalDriver = {
   heading?: number;
   speedKph?: number;
   server?: string | null;
-  source: "truckersmp-provider";
+  source: "truckersmp-provider" | "openhaul-client";
   mpId?: string;
   playerId?: string;
   vtcId?: number | null;
@@ -237,8 +237,9 @@ function trafficClusters(drivers: Array<{ driverId: string; game: "ets2" | "ats"
 
 export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
   app.get("/api/v1/public/map-intelligence", async (_request, reply) => {
-    const [drivers, staffRecords, tmpStaff, missions, tmpWideDrivers, convoyRecords, jobEvents] = await Promise.all([
+    const [drivers, clientPresences, staffRecords, tmpStaff, missions, tmpWideDriversRaw, convoyRecords, jobEvents] = await Promise.all([
       getLiveDrivers(),
+      getClientPresences(),
       PlatformRecord.findAll({
         where: { scopeType: "global", scopeId: "public", category: "staff", status: "active" },
         limit: 500,
@@ -333,6 +334,19 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       return result;
     });
 
+    const presenceByName = new Map(
+      clientPresences.map((presence) => [presence.displayName.trim().toLowerCase(), presence]),
+    );
+    const tmpWideDrivers = tmpWideDriversRaw.map((driver) => {
+      const presence = presenceByName.get(driver.username.trim().toLowerCase());
+      if (!presence) return driver;
+      return {
+        ...driver,
+        driverId: presence.steamId,
+        source: "openhaul-client" as const,
+      };
+    });
+
     const localNames = new Set(drivers.map((driver) => driver.username.trim().toLowerCase()));
     const externalOnly = tmpWideDrivers.filter((driver) => !localNames.has(driver.username.trim().toLowerCase()));
     const trafficInput = [
@@ -370,8 +384,9 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       })),
       externalDrivers: externalOnly,
       counts: {
-        openHaul: drivers.length,
-        truckersMp: tmpWideDrivers.length,
+        openHaul: clientPresences.length,
+        openHaulDriving: drivers.length,
+        truckersMp: tmpWideDriversRaw.length,
         combined: drivers.length + externalOnly.length,
       },
       convoys: convoyGroups,
