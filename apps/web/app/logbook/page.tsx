@@ -68,7 +68,7 @@ export default function LogbookPage() {
         </div>
       </section>
 
-      <section className="card" style={{ display: "grid", gap: 12, gridTemplateColumns: "minmax(220px,1fr) 140px 160px 160px", marginBottom: 18 }}>
+      <section className="card logbookFilters logbookFiltersWide">
         <input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="Job ID, city, company or cargo…" />
         <select value={game} onChange={(event) => { setGame(event.target.value); setPage(1); }}>
           <option value="all">All games</option>
