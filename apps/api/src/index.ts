@@ -140,10 +140,15 @@ app.get("/api/v1/public/vtcs/:id/live", async (request) => {
   return { vtcId: id, count: drivers.length, drivers };
 });
 
-app.get("/api/v1/public/vtcs", async () => {
+app.get("/api/v1/public/vtcs", async (request) => {
+  const query = z.object({
+    q: z.string().max(120).optional(),
+    recruitment: z.enum(["all", "open", "closed"]).default("all"),
+  }).parse(request.query);
+
   const vtcs = await Vtc.findAll({
     attributes: [
-      "id", "name", "slug", "tag",
+      "id", "name", "slug", "tag", "description", "logoUrl", "recruitmentOpen", "recruitmentMode",
       [sequelize.literal(`(
         SELECT COUNT(*)::int
         FROM vtc_members
@@ -153,8 +158,22 @@ app.get("/api/v1/public/vtcs", async () => {
     ],
     order: [["name", "ASC"]],
   });
+
+  const needle = query.q?.trim().toLowerCase();
   return {
-    vtcs: vtcs.filter((vtc) => Number(vtc.getDataValue("memberCount")) > 0),
+    vtcs: vtcs.filter((vtc) => {
+      if (Number(vtc.getDataValue("memberCount")) <= 0) return false;
+      const recruitmentOpen = Boolean(vtc.getDataValue("recruitmentOpen"));
+      if (query.recruitment === "open" && !recruitmentOpen) return false;
+      if (query.recruitment === "closed" && recruitmentOpen) return false;
+      if (!needle) return true;
+      return [
+        vtc.getDataValue("name"),
+        vtc.getDataValue("slug"),
+        vtc.getDataValue("tag"),
+        vtc.getDataValue("description"),
+      ].some((value) => String(value ?? "").toLowerCase().includes(needle));
+    }),
   };
 });
 
