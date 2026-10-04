@@ -26,7 +26,7 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
 
     if (!user) return reply.code(404).send({ error: "driver_not_found" });
 
-    const [memberships, jobs, fines, distanceKm, income, liveDrivers, twitch, moderation, nameChanges] = await Promise.all([
+    const [memberships, jobs, fines, distanceKm, income, fineAmount, liveDrivers, twitch, moderation, nameChanges] = await Promise.all([
       VtcMember.findAll({
         where: { userId: user.id, status: "active" },
         include: [{ model: Vtc, attributes: ["id", "name", "slug", "tag"] }],
@@ -43,6 +43,7 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
       }),
       Job.sum("distanceKm", { where: { driverId: steamId } }),
       Job.sum("income", { where: { driverId: steamId } }),
+      Fine.sum("amount", { where: { driverId: steamId } }),
       getLiveDrivers(),
       TwitchAccount.findOne({ where: { userId: user.id } }),
       VtcModerationAction.findAll({
@@ -68,6 +69,8 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
         jobs: await Job.count({ where: { driverId: steamId } }),
         distanceKm: Number(distanceKm || 0),
         income: Number(income || 0),
+        fineAmount: Number(fineAmount || 0),
+        netIncome: Number(income || 0) - Number(fineAmount || 0),
         fines: await Fine.count({ where: { driverId: steamId } }),
       },
       live,
