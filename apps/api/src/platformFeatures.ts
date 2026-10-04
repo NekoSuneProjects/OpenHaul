@@ -61,6 +61,7 @@ const vtcCategories = new Set([
   "reputation",
   "insurance",
   "webhooks",
+  "webhook-deliveries",
   "history",
   "policies",
   "recruitment",
@@ -276,6 +277,54 @@ export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
     if (!key) return reply.code(404).send({ error: "api_key_not_found" });
     await key.update({ revokedAt: new Date() });
     return reply.code(200).send({ rotated: true, message: "The old key is revoked. Create a replacement key from Account." });
+  });
+
+  app.post("/api/v1/account/vtcs/:id/webhook-deliveries/:recordId/retry", { preHandler: [requireVtcManager] }, async (request, reply) => {
+    if (reply.sent) return;
+    const params = z.object({
+      id: z.coerce.number().int().positive(),
+      recordId: z.coerce.number().int().positive(),
+    }).parse(request.params);
+    const delivery = await PlatformRecord.findOne({
+      where: {
+        id: params.recordId,
+        scopeType: "vtc",
+        scopeId: String(params.id),
+        category: "webhook-deliveries",
+      },
+    });
+    if (!delivery) return reply.code(404).send({ error: "delivery_not_found" });
+    const data = (delivery.getDataValue("data") ?? {}) as Record<string, unknown>;
+    const url = typeof data.url === "string" ? data.url : "";
+    if (!/^https?:\/\//i.test(url)) return reply.code(400).send({ error: "invalid_webhook_url" });
+
+    let status = "delivered";
+    let responseCode: number | null = null;
+    let error: string | null = null;
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "content-type": "application/json", "user-agent": "OpenHaul-Webhook/1.0" },
+        body: JSON.stringify({ retry: true, eventId: data.eventId, vtcId: params.id }),
+        signal: AbortSignal.timeout(8000),
+      });
+      responseCode = response.status;
+      if (!response.ok) status = "failed";
+    } catch (cause) {
+      status = "failed";
+      error = cause instanceof Error ? cause.message.slice(0, 500) : "delivery_failed";
+    }
+    await delivery.update({
+      status,
+      data: {
+        ...data,
+        responseCode,
+        error,
+        attempts: Number(data.attempts ?? 1) + 1,
+        lastRetriedAt: new Date().toISOString(),
+      },
+    });
+    return { delivery };
   });
 
   app.post("/api/v1/account/vtcs/:id/api-keys/:keyId/rotate", { preHandler: [requireVtcManager] }, async (request, reply) => {
