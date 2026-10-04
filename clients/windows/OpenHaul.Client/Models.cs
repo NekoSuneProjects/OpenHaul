@@ -1,3 +1,4 @@
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace OpenHaul.Client;
@@ -172,6 +173,15 @@ public sealed record GenericTelemetryEvent(
     string? DestinationCity = null,
     double? DamagePercent = null,
     string? Detail = null);
+
+public sealed record ClientDispatch(
+    long Id,
+    string Key,
+    string Status,
+    Dictionary<string, JsonElement> Data);
+
+public sealed record ClientDispatchList(
+    IReadOnlyList<ClientDispatch> Dispatches);
 
 public sealed record ClientConfig(
     string ApiUrl,
