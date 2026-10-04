@@ -142,6 +142,48 @@ export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
     return payload;
   });
 
+  app.get("/api/v1/public/vtc-matches", async (request) => {
+    const query = z.object({
+      game: z.enum(["ets2", "ats"]).optional(),
+      language: z.string().max(40).optional(),
+      timezone: z.string().max(80).optional(),
+      operatingMode: z.enum(["casual", "standard", "simulation"]).optional(),
+      truckersmp: z.coerce.boolean().optional(),
+      convoy: z.coerce.boolean().optional(),
+      voice: z.coerce.boolean().optional(),
+      mileageKm: z.coerce.number().nonnegative().optional(),
+    }).parse(request.query);
+
+    const profiles = await PlatformRecord.findAll({
+      where: { scopeType: "vtc", category: "recruitment", key: "profile", status: "active" },
+      order: [["updatedAt", "DESC"]],
+      limit: 500,
+    });
+
+    const matches: any[] = [];
+    for (const profile of profiles) {
+      const vtcId = Number(profile.getDataValue("scopeId"));
+      const vtc = await Vtc.findByPk(vtcId, { attributes: ["id", "name", "slug", "tag", "operatingMode", "recruitmentOpen"] });
+      if (!vtc || !Boolean(vtc.getDataValue("recruitmentOpen"))) continue;
+      const data = (profile.getDataValue("data") ?? {}) as any;
+      if (query.game && Array.isArray(data.games) && !data.games.includes(query.game)) continue;
+      if (query.language && Array.isArray(data.languages) && !data.languages.map((v: any) => String(v).toLowerCase()).includes(query.language.toLowerCase())) continue;
+      if (query.timezone && data.timezone && String(data.timezone).toLowerCase() !== query.timezone.toLowerCase()) continue;
+      if (query.operatingMode && String(vtc.getDataValue("operatingMode")) !== query.operatingMode) continue;
+      if (query.truckersmp === true && data.truckersmp !== true) continue;
+      if (query.convoy === true && data.convoy !== true) continue;
+      if (query.voice === true && data.voiceRequired !== true) continue;
+      if (query.mileageKm != null && Number(data.minimumMileageKm ?? 0) > query.mileageKm) continue;
+      let score = 0;
+      if (query.game && data.games?.includes(query.game)) score += 3;
+      if (query.language && data.languages?.some((v: any) => String(v).toLowerCase() === query.language!.toLowerCase())) score += 3;
+      if (query.timezone && String(data.timezone ?? "").toLowerCase() === query.timezone.toLowerCase()) score += 2;
+      if (query.operatingMode && String(vtc.getDataValue("operatingMode")) === query.operatingMode) score += 2;
+      matches.push({ vtc, profile, score });
+    }
+    return { matches: matches.sort((a, b) => b.score - a.score) };
+  });
+
   app.get("/api/v1/public/community/:category", async (request, reply) => {
     const { category } = z.object({ category: z.string().min(1).max(64) }).parse(request.params);
     if (!publicCategories.has(category)) return reply.code(404).send({ error: "category_not_public" });
@@ -260,6 +302,35 @@ export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
     return {
       attendance: records.filter((record: any) => (record.getDataValue("data") as any)?.eventKey === params.eventKey),
     };
+  });
+
+  app.put("/api/v1/account/vtcs/:id/recruitment-profile", { preHandler: [requireVtcManager] }, async (request, reply) => {
+    if (reply.sent) return;
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const body = z.object({
+      games: z.array(z.enum(["ets2", "ats"])).min(1),
+      languages: z.array(z.string().min(2).max(40)).min(1),
+      timezone: z.string().max(80).optional(),
+      truckersmp: z.boolean().default(false),
+      convoy: z.boolean().default(true),
+      minimumMileageKm: z.number().nonnegative().default(0),
+      voiceRequired: z.boolean().default(false),
+      description: z.string().max(2000).optional(),
+    }).parse(request.body);
+    const [record] = await PlatformRecord.findOrCreate({
+      where: { scopeType: "vtc", scopeId: String(id), category: "recruitment", key: "profile" },
+      defaults: {
+        scopeType: "vtc",
+        scopeId: String(id),
+        category: "recruitment",
+        key: "profile",
+        status: "active",
+        data: body,
+        createdByUserId: request.openhaulUser!.id,
+      },
+    });
+    await record.update({ status: "active", data: body });
+    return { profile: record };
   });
 
   app.post("/api/v1/account/vtcs/:id/role-presets", { preHandler: [requireVtcManager] }, async (request, reply) => {
