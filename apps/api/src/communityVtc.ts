@@ -255,6 +255,8 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
         profitMonth: Number(dashboard.incomeMonth ?? 0) - Number(monthFineAmount || 0),
       },
       trends: trendRows,
+      managerRole: String((request as any).openhaulVtcMember?.getDataValue("role") ?? ""),
+      managerUserId: request.openhaulUser!.id,
     };
   });
 
