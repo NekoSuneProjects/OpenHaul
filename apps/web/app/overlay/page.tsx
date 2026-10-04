@@ -49,8 +49,8 @@ type MusicSearchResult = {
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
-const radioCatalogUrl = process.env.NEXT_PUBLIC_RADIO_CATALOG_URL
-  ?? "https://raw.githubusercontent.com/NekoSuneProjects/OpenHaul/main/apps/web/public/data/radio-stations.json";
+const radioCatalogBaseUrl = (process.env.NEXT_PUBLIC_RADIO_CATALOG_URL
+  ?? "https://raw.githubusercontent.com/NekoSuneProjects/OpenHaul/radio-catalog").replace(/\/+$/, "");
 
 function OverlayContent() {
   const params = useSearchParams();
@@ -80,6 +80,7 @@ function OverlayContent() {
   const [onlineRadioStations, setOnlineRadioStations] = useState<RadioStation[]>([]);
   const [catalogRadioStations, setCatalogRadioStations] = useState<RadioStation[]>([]);
   const [catalogRadioLoading, setCatalogRadioLoading] = useState(true);
+  const [radioCatalogVersion, setRadioCatalogVersion] = useState("");
   const [onlineRadioLoading, setOnlineRadioLoading] = useState(false);
   const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
@@ -202,6 +203,7 @@ function OverlayContent() {
   useEffect(() => {
     let active = true;
     let timer: ReturnType<typeof setInterval> | undefined;
+    let loadedVersion = "";
 
     const mapJsonStation = (station: any, index: number): RadioStation | null => {
       const url = String(station?.url || "").trim();
@@ -225,111 +227,93 @@ function OverlayContent() {
         language: station?.language ? String(station.language) : undefined,
         codec: station?.codec ? String(station.codec) : undefined,
         bitrateKbps: Number.isFinite(Number(station?.bitrate)) ? Number(station.bitrate) : undefined,
-        source: "json-catalog",
+        source: "radio-catalog-branch",
       };
     };
 
-    const loadApiFallback = async () => {
-      const response = await fetch(api + "/api/v1/public/radio/catalog?limit=20000", {
-        cache: "no-store",
-      });
-      if (!response.ok) throw new Error("Fallback radio catalog returned HTTP " + response.status);
-
-      const data = await response.json() as {
-        stations?: Array<{
-          id?: string;
-          stationUuid?: string | null;
-          name?: string;
-          country?: string | null;
-          language?: string | null;
-          genre?: string | null;
-          codec?: string | null;
-          bitrateKbps?: number | null;
-          source?: string | null;
-          playback?: { direct?: string | null; browser?: string | null };
-        }>;
-      };
-
-      return (data.stations ?? []).flatMap((station, index): RadioStation[] => {
-        const url = station.playback?.direct || station.playback?.browser || "";
-        if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return [];
-        return [{
-          id: "catalog-" + (station.id || station.stationUuid || index),
-          name: station.name || "Unknown station",
-          url,
-          country: station.country || undefined,
-          language: station.language || undefined,
-          genre: station.genre || undefined,
-          type: station.genre || station.codec || "Other",
-          codec: station.codec || undefined,
-          bitrateKbps: station.bitrateKbps || undefined,
-          source: station.source || "radio-browser",
-        }];
-      });
+    const fetchJson = async (url: string) => {
+      const separator = url.includes("?") ? "&" : "?";
+      const response = await fetch(url + separator + "t=" + Date.now(), { cache: "no-store" });
+      if (!response.ok) throw new Error("Radio catalog returned HTTP " + response.status);
+      return response.json() as Promise<unknown>;
     };
 
-    const loadLargeRadioCatalog = async () => {
-      setCatalogRadioLoading(true);
-      try {
-        const catalogUrls = [
-          radioCatalogUrl,
-          "/data/radio-stations.json",
-        ];
+    const loadCountryBatch = async (
+      countries: Array<{ country: string; active: string; activeCount?: number }>,
+      concurrency = 8,
+    ) => {
+      const results: RadioStation[] = [];
+      let cursor = 0;
 
-        let data: unknown = null;
-        let lastError = "Radio JSON unavailable";
+      const worker = async () => {
+        while (true) {
+          const index = cursor++;
+          if (index >= countries.length) return;
 
-        for (const catalogUrl of catalogUrls) {
+          const item = countries[index];
           try {
-            const separator = catalogUrl.includes("?") ? "&" : "?";
-            const response = await fetch(catalogUrl + separator + "t=" + Date.now(), {
-              cache: "no-store",
-            });
-            if (!response.ok) {
-              lastError = "Radio JSON returned HTTP " + response.status;
-              continue;
-            }
+            const data = await fetchJson(radioCatalogBaseUrl + "/" + item.active.replace(/^\/+/, ""));
+            if (!Array.isArray(data)) continue;
 
-            const candidate = await response.json() as unknown;
-            if (!Array.isArray(candidate)) {
-              lastError = "Radio JSON must be an array";
-              continue;
+            for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
+              const station = mapJsonStation(data[rowIndex], rowIndex);
+              if (station) results.push(station);
             }
-
-            data = candidate;
-            break;
-          } catch (error) {
-            lastError = error instanceof Error ? error.message : String(error);
+          } catch {
+            // Keep loading other regions when one country file is unavailable.
           }
         }
+      };
 
-        if (!Array.isArray(data)) throw new Error(lastError);
+      await Promise.all(Array.from({ length: concurrency }, () => worker()));
+      return results;
+    };
 
-        const stations = data
-          .map(mapJsonStation)
-          .filter((station): station is RadioStation => Boolean(station));
+    const loadCatalog = async () => {
+      setCatalogRadioLoading(true);
 
+      try {
+        const manifestRaw = await fetchJson(radioCatalogBaseUrl + "/manifest.json");
+        const manifest = manifestRaw as {
+          version?: string;
+          countries?: Array<{
+            country?: string;
+            active?: string;
+            dead?: string;
+            activeCount?: number;
+            deadCount?: number;
+          }>;
+        };
+
+        const version = String(manifest?.version || "");
+        if (version && loadedVersion === version && catalogRadioStations.length) {
+          setRadioCatalogVersion(version);
+          return;
+        }
+
+        const countries = (manifest?.countries ?? [])
+          .filter((item) => /^[A-Z]{2}$/.test(String(item?.country || "")) && typeof item?.active === "string")
+          .map((item) => ({
+            country: String(item.country),
+            active: String(item.active),
+            activeCount: Number(item.activeCount || 0),
+          }));
+
+        const stations = await loadCountryBatch(countries, 8);
         if (!active) return;
 
-        if (stations.length) {
-          setCatalogRadioStations(stations);
-        } else {
-          setCatalogRadioStations(await loadApiFallback());
-        }
+        setCatalogRadioStations(stations);
+        loadedVersion = version;
+        setRadioCatalogVersion(version);
       } catch {
-        if (!active) return;
-        try {
-          setCatalogRadioStations(await loadApiFallback());
-        } catch {
-          setCatalogRadioStations([]);
-        }
+        if (active) setCatalogRadioStations([]);
       } finally {
         if (active) setCatalogRadioLoading(false);
       }
     };
 
-    void loadLargeRadioCatalog();
-    timer = setInterval(() => void loadLargeRadioCatalog(), 60_000);
+    void loadCatalog();
+    timer = setInterval(() => void loadCatalog(), 60_000);
 
     return () => {
       active = false;
@@ -1033,8 +1017,8 @@ function OverlayContent() {
             <section className="gameOverlayRadioLocal">
               <strong>Local PC playback</strong>
               <small>
-                The overlay loads its main worldwide catalog from /data/radio-stations.json and refreshes it every minute.
-                GitHub Actions rebuilds that JSON from Radio Browser mirrors by country, while playback still uses each station's original stream URL directly on your PC.
+                The overlay reads active stations from the dedicated radio-catalog branch and checks its manifest every minute.
+                Each country has its own active.json/dead.json pair, and playback still uses each active station's original stream URL directly on your PC.
               </small>
             </section>
 
@@ -1044,8 +1028,8 @@ function OverlayContent() {
                   <h2>Stations</h2>
                   <p>
                     {catalogRadioLoading
-                      ? "Loading worldwide JSON catalog…"
-                      : (radioStations.length + catalogRadioStations.length).toLocaleString() + " stations available"}
+                      ? "Loading worldwide active radio catalog…"
+                      : (radioStations.length + catalogRadioStations.length).toLocaleString() + " active stations available"}
                     {onlineRadioStations.length ? " · " + onlineRadioStations.length + " extra search results" : ""}
                   </p>
                 </div>
