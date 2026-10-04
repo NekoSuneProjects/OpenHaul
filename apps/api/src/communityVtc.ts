@@ -14,8 +14,12 @@ const createSchema = z.object({
   website: z.string().url().optional().or(z.literal("")),
   discordUrl: z.string().url().optional().or(z.literal("")),
   logoUrl: z.string().url().optional().or(z.literal("")),
+  bannerUrl: z.string().url().optional().or(z.literal("")),
+  rules: z.string().max(10000).optional(),
+  socials: z.record(z.string().max(500)).optional(),
   currency: z.string().min(3).max(8).default("GBP"),
   recruitmentOpen: z.boolean().default(true),
+  recruitmentMode: z.enum(["open", "application", "invite"]).default("application"),
   publicBalance: z.boolean().default(false),
 });
 
@@ -102,6 +106,10 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       website: body.website || null,
       discordUrl: body.discordUrl || null,
       logoUrl: body.logoUrl || null,
+      bannerUrl: body.bannerUrl || null,
+      rules: body.rules || null,
+      socials: body.socials ?? {},
+      recruitmentMode: body.recruitmentMode,
       ownerUserId: user.id,
     });
 
@@ -315,6 +323,9 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
     if (!Boolean(vtc.getDataValue("recruitmentOpen"))) {
       return reply.code(409).send({ error: "recruitment_closed" });
     }
+    if (String(vtc.getDataValue("recruitmentMode") ?? "application") !== "application") {
+      return reply.code(409).send({ error: "applications_not_enabled" });
+    }
 
     const existingMember = await membership(request.openhaulUser!.id, id);
     if (existingMember) return reply.code(409).send({ error: "already_member" });
@@ -414,6 +425,99 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
     return { member };
   });
 
+  app.post("/api/v1/account/vtcs/:id/join", { preHandler: [requireUser] }, async (request, reply) => {
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const vtc = await Vtc.findByPk(id);
+    if (!vtc) return reply.code(404).send({ error: "vtc_not_found" });
+    if (!Boolean(vtc.getDataValue("recruitmentOpen"))) {
+      return reply.code(409).send({ error: "recruitment_closed" });
+    }
+    if (String(vtc.getDataValue("recruitmentMode") ?? "application") !== "open") {
+      return reply.code(409).send({ error: "open_join_not_enabled" });
+    }
+
+    const existing = await membership(request.openhaulUser!.id, id);
+    if (existing?.getDataValue("status") === "active") {
+      return reply.code(409).send({ error: "already_member" });
+    }
+
+    if (existing) {
+      await existing.update({ status: "active", role: "member", joinedAt: new Date() });
+    } else {
+      await VtcMember.create({
+        vtcId: id,
+        userId: request.openhaulUser!.id,
+        role: "member",
+        status: "active",
+        joinedAt: new Date(),
+      });
+    }
+
+    await recordVtcActivity({
+      vtcId: id,
+      driverId: request.openhaulUser!.steamId,
+      actorUserId: request.openhaulUser!.id,
+      type: "member.joined",
+      title: request.openhaulUser!.displayName + " joined the VTC",
+    });
+
+    return { joined: true, vtcId: id };
+  });
+
+  app.delete("/api/v1/account/vtcs/:id/members/:memberId", { preHandler: [requireOwnerOrAdmin] }, async (request, reply) => {
+    const params = z.object({
+      id: z.coerce.number().int().positive(),
+      memberId: z.coerce.number().int().positive(),
+    }).parse(request.params);
+
+    const member = await VtcMember.findOne({ where: { id: params.memberId, vtcId: params.id } });
+    if (!member) return reply.code(404).send({ error: "member_not_found" });
+    if (member.getDataValue("role") === "owner") return reply.code(409).send({ error: "owner_role_locked" });
+
+    const target = await User.findByPk(member.getDataValue("userId"));
+    await member.destroy();
+    await recordVtcActivity({
+      vtcId: params.id,
+      driverId: target?.steamId ?? null,
+      actorUserId: request.openhaulUser!.id,
+      type: "member.kicked",
+      title: (target?.displayName ?? "Member") + " was removed from the VTC",
+    });
+    return reply.code(204).send();
+  });
+
+  app.post("/api/v1/account/vtcs/:id/transfer-ownership", { preHandler: [requireOwnerOrAdmin] }, async (request, reply) => {
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const actorMembership = await membership(request.openhaulUser!.id, id);
+    if (!actorMembership || actorMembership.getDataValue("role") !== "owner") {
+      return reply.code(403).send({ error: "vtc_owner_required" });
+    }
+
+    const body = z.object({ memberId: z.coerce.number().int().positive() }).parse(request.body);
+    const nextOwner = await VtcMember.findOne({ where: { id: body.memberId, vtcId: id, status: "active" } });
+    if (!nextOwner) return reply.code(404).send({ error: "member_not_found" });
+    if (nextOwner.getDataValue("userId") === request.openhaulUser!.id) {
+      return reply.code(409).send({ error: "already_owner" });
+    }
+
+    const target = await User.findByPk(nextOwner.getDataValue("userId"));
+    await sequelize.transaction(async (transaction) => {
+      await actorMembership.update({ role: "admin", title: "Former Owner" }, { transaction });
+      await nextOwner.update({ role: "owner", title: "Owner" }, { transaction });
+      await Vtc.update({ ownerUserId: nextOwner.getDataValue("userId") }, { where: { id }, transaction });
+    });
+
+    await recordVtcActivity({
+      vtcId: id,
+      driverId: target?.steamId ?? null,
+      actorUserId: request.openhaulUser!.id,
+      type: "member.ownership_transferred",
+      title: "Ownership transferred to " + (target?.displayName ?? "member"),
+    });
+
+    return { ok: true, ownerUserId: nextOwner.getDataValue("userId") };
+  });
+
   app.delete("/api/v1/account/vtcs/:id/membership", { preHandler: [requireUser] }, async (request, reply) => {
     const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
     const member = await membership(request.openhaulUser!.id, id);
@@ -477,7 +581,11 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       website: vtc.getDataValue("website"),
       discordUrl: vtc.getDataValue("discordUrl"),
       logoUrl: vtc.getDataValue("logoUrl"),
+      bannerUrl: vtc.getDataValue("bannerUrl"),
+      rules: vtc.getDataValue("rules"),
+      socials: vtc.getDataValue("socials"),
       recruitmentOpen: Boolean(vtc.getDataValue("recruitmentOpen")),
+      recruitmentMode: String(vtc.getDataValue("recruitmentMode") ?? "application"),
       memberCount,
       members,
     };
