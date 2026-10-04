@@ -2084,3 +2084,30 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
   width: 100%;
   accent-color: #54e08a;
 }
+
+
+.gameOverlayMusicRegion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 9px;
+  align-items: center;
+}
+
+.gameOverlayMusicRegion > span,
+.gameOverlayMusicRegion > small {
+  padding: 5px 8px;
+  border: 1px solid rgba(84,224,138,.12);
+  border-radius: 999px;
+  background: rgba(84,224,138,.055);
+  color: #8aa293;
+  font-size: .7rem;
+}
+
+.gameOverlayMusicRegion strong {
+  color: #9ff0ba;
+}
+
+.gameOverlayMusicRegion > small {
+  color: #607b69;
+}
