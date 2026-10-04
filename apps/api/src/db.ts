@@ -309,7 +309,7 @@ VtcLedgerEntry.init({
   currency: { type: DataTypes.STRING(8), allowNull: false, defaultValue: "GBP" },
 }, { sequelize, modelName: "VtcLedgerEntry", tableName: "vtc_ledger_entries", underscored: true });
 
-export class VtcActivityEvent extends Model {}
+export class VtcActivityEvent extends Model { declare id: number; }
 VtcActivityEvent.init({
   id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
   vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
