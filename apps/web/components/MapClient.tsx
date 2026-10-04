@@ -224,12 +224,17 @@ async function loadTrackerAreaDirect(
       : server.game === "ets2" || server.game === "promods")
   );
 
+  const left = Math.min(area.x1, area.x2);
+  const right = Math.max(area.x1, area.x2);
+  const top = Math.max(area.y1, area.y2);
+  const bottom = Math.min(area.y1, area.y2);
+
   const results = await Promise.allSettled(servers.map(async (server) => {
     const qs = new URLSearchParams({
-      x1: String(Math.round(area.x1)),
-      y1: String(Math.round(area.y1)),
-      x2: String(Math.round(area.x2)),
-      y2: String(Math.round(area.y2)),
+      x1: String(Math.round(left)),
+      y1: String(Math.round(top)),
+      x2: String(Math.round(right)),
+      y2: String(Math.round(bottom)),
       server: String(server.map),
     });
     const response = await fetch("https://tracker.ets2map.com/v3/area?" + qs.toString(), {
