@@ -12,6 +12,8 @@ public sealed class ClientSettings
     public string DisplayName { get; set; } = "";
     public string? AvatarUrl { get; set; }
     public string PipeName { get; set; } = "OpenHaulTelemetry";
+    public bool OverlayEnabled { get; set; } = true;
+    public string OverlayHotkey { get; set; } = "F8";
 
     public static string SettingsDirectory =>
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "OpenHaul");
