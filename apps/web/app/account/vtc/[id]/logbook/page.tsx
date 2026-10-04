@@ -62,7 +62,7 @@ export default function VtcLogbookPage() {
         </div>
       </section>
 
-      <section className="card" style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) 150px", gap: 12, marginBottom: 18 }}>
+      <section className="card logbookFilters">
         <input value={query} onChange={(event) => { setQuery(event.target.value); setPage(1); }} placeholder="Job ID, driver SteamID, city or cargo…" />
         <select value={game} onChange={(event) => { setGame(event.target.value); setPage(1); }}>
           <option value="all">All games</option>
