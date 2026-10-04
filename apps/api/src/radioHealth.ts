@@ -38,7 +38,12 @@ const geoRuleSchema = z.object({
 function inferredGeoCountry(url: string) {
   const lower = url.toLowerCase();
 
-  // Built-in known geo-sensitive station/provider rule.
+  // Built-in known geo-sensitive station/provider rules.
+  // Newcap/Stingray LeanStream hosts are used by Canadian stations such as
+  // the boom network. They can return a valid spoken geo-block message
+  // outside Canada, so treat the provider host itself as Canada-sensitive.
+  if (lower.includes("newcap.leanstream.co/")) return "CA";
+  if (lower.includes("stingray.leanstream.co/")) return "CA";
   if (lower.includes("leanstream") && lower.includes("/chslfm")) return "CA";
   if (lower.includes("musicradio.com/")) return "GB";
   if (lower.includes("globalplayer.com/")) return "GB";
@@ -479,16 +484,35 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
           .send();
       }
 
+      const inferredCountry = inferredGeoCountry(payload.url);
+
+      // Backward compatibility for previously generated repair tokens that
+      // incorrectly contained proxy:false for known geo-sensitive providers.
+      // Provider rules take precedence over the signed routing hint.
+      if (inferredCountry && !payload.proxy) {
+        payload = {
+          ...payload,
+          proxy: true,
+          country: inferredCountry,
+          networkType: "auto",
+        };
+      }
+
       let inputUrl = payload.url;
       let proxyProtocol = "";
+      let proxyCountry = "";
+      let actualRoute = payload.proxy ? "regional-proxy" : "direct-transcode";
       if (payload.proxy) {
         try {
           const session = await createRegionalSession(payload.url, payload.country, payload.networkType ?? "auto");
           inputUrl = session.inputUrl;
           proxyProtocol = session.node?.protocol ?? "";
+          proxyCountry = session.node?.country ?? payload.country ?? "";
+          actualRoute = session.networkType === "residential" ? "residential-proxy" : "hosting-proxy";
         } catch (error) {
           return reply.code(503).send({
             error: "radio_proxy_unavailable",
+            country: payload.country ?? inferredCountry ?? null,
             message: error instanceof Error ? error.message : String(error),
           });
         }
@@ -523,7 +547,8 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
           "cache-control": "no-store, no-cache, must-revalidate, no-transform",
           "x-accel-buffering": "no",
           "icy-br": "128",
-          "x-openhaul-radio-route": payload.proxy ? "residential-proxy" : "direct-transcode",
+          "x-openhaul-radio-route": actualRoute,
+          "x-openhaul-radio-proxy-country": proxyCountry,
           "x-openhaul-radio-proxy-protocol": proxyProtocol,
         });
         ffmpeg.stdout.pipe(reply.raw);
