@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChangeEvent, useMemo, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 
 type SiiStation = {
   id: string;
@@ -137,6 +137,38 @@ export default function RadioSiiEditorPage() {
   const [radioSearch, setRadioSearch] = useState("");
   const [directory, setDirectory] = useState<DirectoryStation[]>([]);
   const [directoryLoading, setDirectoryLoading] = useState(false);
+
+
+  useEffect(() => {
+    try {
+      const key = "openhaul-radio-sii-queue";
+      const queued = JSON.parse(window.localStorage.getItem(key) || "[]");
+      if (!Array.isArray(queued) || queued.length === 0) return;
+
+      const mapped: SiiStation[] = queued
+        .filter((item: any) => item?.url && item?.name)
+        .map((item: any) => ({
+          id: makeId(),
+          url: String(item.url),
+          name: String(item.name),
+          genre: String(item.genre || ""),
+          language: String(item.language || "EN"),
+          bitrate: String(item.bitrate || "128"),
+          favorite: Boolean(item.favorite),
+        }));
+
+      if (mapped.length) {
+        setStations((current) => {
+          const urls = new Set(current.map((station) => station.url));
+          return [...current, ...mapped.filter((station) => !urls.has(station.url))];
+        });
+        setMessage(`Loaded ${mapped.length} station${mapped.length === 1 ? "" : "s"} selected from the OpenHaul Radio page.`);
+      }
+      window.localStorage.removeItem(key);
+    } catch {
+      // Ignore a malformed browser queue and leave the editor usable.
+    }
+  }, []);
 
   const visibleStations = useMemo(() => {
     const q = filter.trim().toLowerCase();
