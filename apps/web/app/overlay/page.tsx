@@ -24,11 +24,6 @@ type RadioStation = {
   codec?: string | null;
   bitrateKbps?: number | null;
   favicon?: string | null;
-  routing?: {
-    mode?: string | null;
-    proxyRequired?: boolean;
-    provider?: string | null;
-  };
   playback?: {
     browser?: string | null;
     direct?: string | null;
@@ -168,7 +163,7 @@ function OverlayContent() {
 
   const playRadio = async (station: RadioStation) => {
     const audio = audioRef.current;
-    const stream = station.playback?.browser || station.playback?.direct;
+    const stream = station.playback?.direct;
     if (!audio || !stream) return;
 
     if (selectedRadioId === station.id && !audio.paused) {
@@ -349,11 +344,7 @@ function OverlayContent() {
                     .filter(Boolean)
                     .join(" · ") || "OpenHaul worldwide radio"}
                 </p>
-                {selectedRadio?.routing?.proxyRequired ? (
-                  <span className="gameOverlayRadioRoute">Geo route: {selectedRadio.routing.provider || "OpenHaul proxy"}</span>
-                ) : (
-                  <span className="gameOverlayRadioRoute">Direct source · MP3 game relay available</span>
-                )}
+                <span className="gameOverlayRadioRoute">Direct station stream · no OpenHaul proxy</span>
               </div>
               <div className="gameOverlayRadioControls">
                 <button
@@ -379,8 +370,8 @@ function OverlayContent() {
             <section className="gameOverlayRadioLocal">
               <strong>Local PC playback</strong>
               <small>
-                OpenHaul plays the station inside the Windows overlay, so ATS/ETS2 does not need to decode the station itself.
-                MP3 and AAC/AAC+ streams are handled by the overlay player on your PC.
+                OpenHaul plays the station's original stream URL directly inside the Windows overlay.
+                No OpenHaul radio proxy or NekoRoute relay is used for overlay playback.
               </small>
             </section>
 
