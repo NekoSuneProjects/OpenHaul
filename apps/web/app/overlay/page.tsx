@@ -661,13 +661,31 @@ function OverlayContent() {
     setMusicSearchLoading(true);
     setMusicSearchError("");
     try {
-      const response = await fetch(
+      const searchUrl =
         api + "/api/v1/public/music/search?q=" + encodeURIComponent(query) +
-          "&limit=16" +
-          (musicRegionCode && musicRegionCode !== "ZZ" ? "&country=" + encodeURIComponent(musicRegionCode) : ""),
-        { cache: "no-store" },
-      );
-      if (!response.ok) throw new Error("Music search returned HTTP " + response.status);
+        "&limit=16" +
+        (musicRegionCode && musicRegionCode !== "ZZ" ? "&country=" + encodeURIComponent(musicRegionCode) : "");
+
+      let response: Response | null = null;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        response = await fetch(searchUrl, { cache: "no-store" });
+        if (response.status !== 429) break;
+
+        const retryAfter = response.headers.get("retry-after");
+        const retrySeconds = retryAfter && /^\d+$/.test(retryAfter)
+          ? Math.max(1, Math.min(8, Number(retryAfter)))
+          : Math.min(2 ** attempt, 4);
+
+        await new Promise((resolve) => setTimeout(resolve, retrySeconds * 1000));
+      }
+
+      if (!response || !response.ok) {
+        throw new Error(
+          response?.status === 429
+            ? "Music search is temporarily rate-limited. Please retry in a few seconds."
+            : "Music search returned HTTP " + (response?.status ?? "unknown"),
+        );
+      }
 
       const data = await response.json() as {
         results?: MusicSearchResult[];
