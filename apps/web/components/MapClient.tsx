@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { gameCoordsToLonLat, isValidLonLat } from "../lib/gameProjection";
+import { gameCoordsToLonLat, isValidLonLat, lonLatToGameCoords } from "../lib/gameProjection";
 
 type Driver = {
   driverId: string;
@@ -618,6 +618,9 @@ export function MapClient() {
   const [mapAssets, setMapAssets] = useState<MapAssets | null>(null);
   const [vtcOptions, setVtcOptions] = useState<VtcOption[]>([]);
   const [mapIntel, setMapIntel] = useState<any>({ traffic: [], staff: [], specialCargo: [] });
+  const [trackerDrivers, setTrackerDrivers] = useState<Driver[]>([]);
+  const [trackerTraffic, setTrackerTraffic] = useState<any[]>([]);
+  const [trackerTotalOnline, setTrackerTotalOnline] = useState(0);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
@@ -630,9 +633,9 @@ export function MapClient() {
   const serverOptions = useMemo(
     () => Array.from(new Set([
       ...drivers.map((driver) => driver.server),
-      ...externalDriverList(mapIntel.externalDrivers ?? []).map((driver) => driver.server),
+      ...trackerDrivers.map((driver) => driver.server),
     ].filter((value): value is string => Boolean(value)))).sort(),
-    [drivers, mapIntel.externalDrivers],
+    [drivers, trackerDrivers],
   );
 
   const visibleDrivers = useMemo(() => {
@@ -701,6 +704,103 @@ export function MapClient() {
     const timer = setInterval(load, 5000);
     return () => { active = false; clearInterval(timer); };
   }, []);
+
+  useEffect(() => {
+    if (!mapReady) return;
+    let active = true;
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    let refreshTimer: ReturnType<typeof setInterval> | null = null;
+
+    const loadViewport = async () => {
+      const map = mapRef.current;
+      if (!active || !map) return;
+
+      const bounds = map.getBounds();
+      const corners = [
+        [bounds.getWest(), bounds.getSouth()],
+        [bounds.getWest(), bounds.getNorth()],
+        [bounds.getEast(), bounds.getSouth()],
+        [bounds.getEast(), bounds.getNorth()],
+      ] as Array<[number, number]>;
+
+      const games: Array<"ets2" | "ats"> =
+        gameFilter === "all" ? ["ets2", "ats"] : [gameFilter];
+
+      const requests = games.flatMap((game) => {
+        const gamePoints = corners.map(([lon, lat]) => lonLatToGameCoords(game, lon, lat));
+        const xs = gamePoints.map(([x]) => x);
+        const zs = gamePoints.map(([, z]) => z);
+        let x1 = Math.min(...xs);
+        let x2 = Math.max(...xs);
+        let y1 = Math.min(...zs);
+        let y2 = Math.max(...zs);
+
+        const padX = Math.max(500, (x2 - x1) * 0.12);
+        const padY = Math.max(500, (y2 - y1) * 0.12);
+        x1 -= padX;
+        x2 += padX;
+        y1 -= padY;
+        y2 += padY;
+
+        if (!Number.isFinite(x1 + x2 + y1 + y2)) return [];
+        if (Math.abs(x2 - x1) > 500_000 || Math.abs(y2 - y1) > 500_000) return [];
+
+        const params = new URLSearchParams({
+          game,
+          x1: String(Math.round(x1)),
+          y1: String(Math.round(y1)),
+          x2: String(Math.round(x2)),
+          y2: String(Math.round(y2)),
+        });
+        return [fetch(api + "/api/v1/public/truckersmp/area?" + params.toString(), { cache: "no-store" })
+          .then((response) => response.ok ? response.json() : null)
+          .catch(() => null)];
+      });
+
+      const results = await Promise.all(requests);
+      if (!active) return;
+
+      const nextDrivers = new Map<string, Driver>();
+      const nextTraffic: any[] = [];
+      let totalOnline = 0;
+
+      for (const result of results) {
+        if (!result) continue;
+        totalOnline += Number(result.totalOnline ?? 0);
+        for (const row of result.drivers ?? []) {
+          const driver = externalDriverList([row])[0];
+          if (!driver) continue;
+          const key = driver.driverId + ":" + (driver.server ?? "");
+          nextDrivers.set(key, driver);
+        }
+        nextTraffic.push(...(result.traffic ?? []));
+      }
+
+      setTrackerDrivers([...nextDrivers.values()]);
+      setTrackerTraffic(nextTraffic);
+      setTrackerTotalOnline(totalOnline);
+    };
+
+    const scheduleLoad = () => {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => void loadViewport(), 250);
+    };
+
+    const map = mapRef.current;
+    map?.on("moveend", scheduleLoad);
+    map?.on("zoomend", scheduleLoad);
+
+    void loadViewport();
+    refreshTimer = setInterval(() => void loadViewport(), 4000);
+
+    return () => {
+      active = false;
+      if (timer) clearTimeout(timer);
+      if (refreshTimer) clearInterval(refreshTimer);
+      map?.off("moveend", scheduleLoad);
+      map?.off("zoomend", scheduleLoad);
+    };
+  }, [mapReady, gameFilter]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -1067,10 +1167,12 @@ export function MapClient() {
   useEffect(() => {
     const map = mapRef.current;
     if (!mapReady || !map) return;
-    (map.getSource("openhaul-traffic") as any)?.setData(trafficFeatureCollection(mapIntel.traffic ?? []));
+    (map.getSource("openhaul-traffic") as any)?.setData(
+      trafficFeatureCollection([...(mapIntel.traffic ?? []), ...trackerTraffic])
+    );
     (map.getSource("openhaul-job-markers") as any)?.setData(jobMarkerFeatureCollection(mapIntel.jobMarkers ?? []));
     (map.getSource("openhaul-convoys") as any)?.setData(convoyFeatureCollection(mapIntel.convoys ?? []));
-  }, [mapReady, mapIntel.traffic, mapIntel.jobMarkers, mapIntel.convoys]);
+  }, [mapReady, mapIntel.traffic, trackerTraffic, mapIntel.jobMarkers, mapIntel.convoys]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -1204,12 +1306,12 @@ export function MapClient() {
 
     const stillVisible =
       visibleDrivers.some((driver) => driver.driverId === selectedDriverId) ||
-      externalDriverList(mapIntel.externalDrivers ?? []).some((driver) => driver.driverId === selectedDriverId);
+      trackerDrivers.some((driver) => driver.driverId === selectedDriverId);
     if (!stillVisible) {
       setSelectedDriverId("");
       setCameraMode("map");
     }
-  }, [visibleDrivers, selectedDriverId, cameraMode, mapIntel.externalDrivers]);
+  }, [visibleDrivers, selectedDriverId, cameraMode, trackerDrivers]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -1295,7 +1397,7 @@ export function MapClient() {
       }
       lastFrameAt = now;
 
-      const external = externalDriverList(mapIntel.externalDrivers ?? []).filter((driver) => {
+      const external = trackerDrivers.filter((driver) => {
         if (gameFilter !== "all" && driver.game !== gameFilter) return false;
         if (serverFilter !== "all" && (driver.server ?? "") !== serverFilter) return false;
         if (statusFilter === "driving" && Number(driver.speedKph ?? 0) <= 1) return false;
@@ -1427,7 +1529,7 @@ export function MapClient() {
 
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [mapReady, cameraMode, selectedDriverId, mapIntel.staff, mapIntel.externalDrivers, gameFilter, serverFilter, statusFilter, driverQuery]);
+  }, [mapReady, cameraMode, selectedDriverId, mapIntel.staff, trackerDrivers, gameFilter, serverFilter, statusFilter, driverQuery]);
 
   const focusGame = (game: GameFilter) => {
     setGameFilter(game);
@@ -1488,7 +1590,7 @@ export function MapClient() {
           <div className="muted">
             <span style={{ color: "#54e08a" }}>● {Number(mapIntel.counts?.openHaul ?? drivers.length)} OpenHaul</span>
             {" · "}
-            <span style={{ color: "#60a5fa" }}>● {Number(mapIntel.counts?.truckersMp ?? 0)} TruckersMP</span>
+            <span style={{ color: "#60a5fa" }}>● {trackerDrivers.length} visible TruckersMP / {trackerTotalOnline} online</span>
             {" · "}{status}{" · "}
             {installedMapCount
               ? installedMapCount + " SCS map asset" + (installedMapCount === 1 ? "" : "s")
@@ -1544,7 +1646,7 @@ export function MapClient() {
             ? (() => {
                 const selected =
                   visibleDrivers.find((driver) => driver.driverId === selectedDriverId) ??
-                  externalDriverList(mapIntel.externalDrivers ?? []).find((driver) => driver.driverId === selectedDriverId);
+                  trackerDrivers.find((driver) => driver.driverId === selectedDriverId);
                 return selected
                   ? "Following " + selected.username + " · " + (cameraMode === "map" ? "selected" : cameraMode === "third" ? "3rd Person" : "1st Person")
                   : "Selected driver unavailable";
