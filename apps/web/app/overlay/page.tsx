@@ -49,6 +49,8 @@ type MusicSearchResult = {
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
+const radioCatalogUrl = process.env.NEXT_PUBLIC_RADIO_CATALOG_URL
+  ?? "https://raw.githubusercontent.com/NekoSuneProjects/OpenHaul/main/apps/web/public/data/radio-stations.json";
 
 function OverlayContent() {
   const params = useSearchParams();
@@ -269,13 +271,39 @@ function OverlayContent() {
     const loadLargeRadioCatalog = async () => {
       setCatalogRadioLoading(true);
       try {
-        const response = await fetch("/data/radio-stations.json?t=" + Date.now(), {
-          cache: "no-store",
-        });
-        if (!response.ok) throw new Error("Radio JSON returned HTTP " + response.status);
+        const catalogUrls = [
+          radioCatalogUrl,
+          "/data/radio-stations.json",
+        ];
 
-        const data = await response.json() as unknown;
-        if (!Array.isArray(data)) throw new Error("Radio JSON must be an array");
+        let data: unknown = null;
+        let lastError = "Radio JSON unavailable";
+
+        for (const catalogUrl of catalogUrls) {
+          try {
+            const separator = catalogUrl.includes("?") ? "&" : "?";
+            const response = await fetch(catalogUrl + separator + "t=" + Date.now(), {
+              cache: "no-store",
+            });
+            if (!response.ok) {
+              lastError = "Radio JSON returned HTTP " + response.status;
+              continue;
+            }
+
+            const candidate = await response.json() as unknown;
+            if (!Array.isArray(candidate)) {
+              lastError = "Radio JSON must be an array";
+              continue;
+            }
+
+            data = candidate;
+            break;
+          } catch (error) {
+            lastError = error instanceof Error ? error.message : String(error);
+          }
+        }
+
+        if (!Array.isArray(data)) throw new Error(lastError);
 
         const stations = data
           .map(mapJsonStation)
@@ -362,13 +390,25 @@ function OverlayContent() {
 
   const allRadioSearchResults = useMemo(() => {
     const seen = new Set<string>();
+    const category = radioCategory.toLowerCase();
+
     return [...filteredRadioStations, ...onlineRadioStations].filter((station) => {
+      if (radioCategory !== "ALL") {
+        const categoryValues = [
+          station.type,
+          station.genre,
+          ...(station.tags || []),
+        ].filter(Boolean).map((value) => String(value).toLowerCase());
+
+        if (!categoryValues.includes(category)) return false;
+      }
+
       const key = (station.url + "|" + station.name).toLowerCase();
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
     });
-  }, [filteredRadioStations, onlineRadioStations]);
+  }, [filteredRadioStations, onlineRadioStations, radioCategory]);
 
   const allVisibleRadioStations = useMemo(
     () => allRadioSearchResults.slice(0, radioQuery.trim() ? 1000 : 500),
@@ -1004,7 +1044,7 @@ function OverlayContent() {
                   <h2>Stations</h2>
                   <p>
                     {catalogRadioLoading
-                      ? "Loading 20,000-station catalog…"
+                      ? "Loading worldwide JSON catalog…"
                       : (radioStations.length + catalogRadioStations.length).toLocaleString() + " stations available"}
                     {onlineRadioStations.length ? " · " + onlineRadioStations.length + " extra search results" : ""}
                   </p>
