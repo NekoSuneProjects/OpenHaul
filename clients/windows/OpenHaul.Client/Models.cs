@@ -24,6 +24,8 @@ public sealed record PluginLiveTelemetry(
     double? CargoDamagePercent,
     bool? SpecialJob,
     bool? CargoLoaded,
+    bool? Driving,
+    bool? Paused,
     string? Truck,
     string? Cargo,
     string? SourceCity,
