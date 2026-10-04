@@ -12,6 +12,7 @@ const scopes = [
   "members:read",
   "convoys:read",
   "events:read",
+  "moderation:read",
 ] as const;
 
 async function requireVtcAdmin(request: FastifyRequest, reply: FastifyReply) {
