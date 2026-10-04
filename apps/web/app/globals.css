@@ -308,3 +308,42 @@ h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.06
   }
   .operationsTabs .button { flex:0 0 auto; }
 }
+
+
+.realMapPanel:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  background: #07110d;
+}
+
+.realMapPanel:fullscreen .mapCanvas {
+  height: calc(100vh - 132px);
+  min-height: 0;
+}
+
+.profileTabs {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:18px 0;
+}
+
+.profileTabs a {
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px 12px;
+}
+
+@media (pointer: coarse) {
+  .mapToolbar .button,
+  .mapToolbar select,
+  .mapToolbar input {
+    min-height: 44px;
+  }
+
+  .maplibregl-ctrl button {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
