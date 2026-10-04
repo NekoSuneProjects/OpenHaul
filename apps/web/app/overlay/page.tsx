@@ -88,6 +88,7 @@ function OverlayContent() {
   const [musicProvider, setMusicProvider] = useState("");
   const [musicError, setMusicError] = useState("");
   const [musicPaused, setMusicPaused] = useState(false);
+  const [musicVolume, setMusicVolume] = useState(0.7);
   const [pausedMusicEmbedUrl, setPausedMusicEmbedUrl] = useState("");
   const [mediaQueue, setMediaQueue] = useState<MediaQueueItem[]>([]);
   const [queueIndex, setQueueIndex] = useState(-1);
@@ -656,6 +657,18 @@ function OverlayContent() {
     }
   };
 
+  const applyMusicVolume = (value: number) => {
+    const next = Math.max(0, Math.min(1, value));
+    setMusicVolume(next);
+
+    if (musicProvider === "YouTube") {
+      musicFrameRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "setVolume", args: [Math.round(next * 100)] }),
+        "*",
+      );
+    }
+  };
+
   const stopMusic = () => {
     setMusicEmbedUrl("");
     setPausedMusicEmbedUrl("");
@@ -1065,7 +1078,7 @@ function OverlayContent() {
             </section>
 
             <section className="gameOverlayMusicPlayer">
-              {musicEmbedUrl ? (
+              {(musicEmbedUrl || pausedMusicEmbedUrl) ? (
                 <>
                   <div className="gameOverlayMusicPlayerHead">
                     <div>
@@ -1077,6 +1090,16 @@ function OverlayContent() {
                         {musicPaused ? "▶ Resume" : "Ⅱ Pause"}
                       </button>
                       <button type="button" onClick={stopMusic}>■ Stop</button>
+                      <label className="gameOverlayMusicVolume">
+                        <span>Volume {Math.round(musicVolume * 100)}%</span>
+                        <input
+                          type="range"
+                          min="0"
+                          max="100"
+                          value={Math.round(musicVolume * 100)}
+                          onChange={(event) => applyMusicVolume(Number(event.target.value) / 100)}
+                        />
+                      </label>
                     </div>
                   </div>
                   <div className="gameOverlayMusicPlayerPlaceholder">
@@ -1099,6 +1122,11 @@ function OverlayContent() {
             <iframe
               ref={musicFrameRef}
               key={musicEmbedUrl}
+              onLoad={() => {
+                if (musicProvider === "YouTube") {
+                  setTimeout(() => applyMusicVolume(musicVolume), 250);
+                }
+              }}
               src={musicEmbedUrl}
               title={musicProvider + " background player"}
               allow="autoplay; encrypted-media; fullscreen; picture-in-picture; clipboard-write"
