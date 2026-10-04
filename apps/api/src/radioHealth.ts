@@ -55,6 +55,14 @@ function inferredGeoCountry(url: string) {
   }
 }
 
+const geoProbeSchema = z.object({
+  url: z.string().min(1).max(4096),
+  expectedCountry: z.string().length(2).transform((value) => value.toUpperCase()).optional(),
+  countries: z.array(
+    z.string().length(2).transform((value) => value.toUpperCase())
+  ).max(12).optional(),
+});
+
 const scanBodySchema = z.object({
   stations: z.array(z.object({
     id: z.string().min(1).max(160),
@@ -352,6 +360,74 @@ async function scanOne(request: any, row: z.infer<typeof scanBodySchema>["statio
 }
 
 export async function registerRadioHealthRoutes(app: FastifyInstance) {
+  app.post("/api/v1/public/radio/geo-probe", async (request, reply) => {
+    const body = geoProbeSchema.parse(request.body);
+    const url = await assertPublicRadioUrl(body.url);
+    const inferredCountry = body.expectedCountry ?? inferredGeoCountry(url);
+
+    let direct: { ok: boolean; codec?: string; error?: string };
+    try {
+      direct = { ok: true, codec: await probeCodec(url) };
+    } catch (error) {
+      direct = { ok: false, error: error instanceof Error ? error.message : String(error) };
+    }
+
+    const defaults = (process.env.RADIO_GEO_PROBE_COUNTRIES ?? "GB,CA,US,DE,FR,NL,AU,NZ")
+      .split(",")
+      .map((value) => value.trim().toUpperCase())
+      .filter((value) => /^[A-Z]{2}$/.test(value));
+
+    const countries = [...new Set([
+      ...(inferredCountry ? [inferredCountry] : []),
+      ...(body.countries?.length ? body.countries : defaults),
+    ])].slice(0, 12);
+
+    const results = [];
+    for (const country of countries) {
+      try {
+        const session = await createRegionalSession(url, country, "auto");
+        const codec = await probeCodec(session.inputUrl);
+        results.push({
+          country,
+          ok: true,
+          codec,
+          route: session.networkType === "residential" ? "residential-proxy" : "hosting-proxy",
+          proxy: {
+            country: session.node?.country ?? country,
+            city: session.node?.city ?? null,
+            protocol: session.node?.protocol ?? null,
+            networkType: session.networkType,
+          },
+        });
+      } catch (error) {
+        results.push({
+          country,
+          ok: false,
+          error: error instanceof Error ? error.message : String(error),
+        });
+      }
+    }
+
+    const homeResult = inferredCountry
+      ? results.find((row) => row.country === inferredCountry && row.ok)
+      : undefined;
+
+    let classification = "unknown";
+    if (inferredCountry && homeResult) classification = "geo-sensitive";
+    else if (!direct.ok && results.some((row) => row.ok)) classification = "geo-locked-or-route-sensitive";
+    else if (direct.ok && results.filter((row) => row.ok).length >= 2) classification = "likely-global";
+    else if (!direct.ok && !results.some((row) => row.ok)) classification = "unavailable";
+
+    return {
+      url,
+      inferredCountry: inferredCountry ?? null,
+      classification,
+      direct,
+      countries: results,
+      note: "A decodable direct stream can still be a spoken geo-block placeholder. Known provider rules and expectedCountry take priority over codec-only success.",
+    };
+  });
+
   app.post("/api/v1/public/radio/scan", async (request, reply) => {
     const body = scanBodySchema.parse(request.body);
     // The web editor sends small batches. Probe each small batch concurrently so
