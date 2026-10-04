@@ -170,13 +170,14 @@ export default function ManageVtcPage() {
     await load();
   };
 
-  const updateMember = async (member: any, role: string) => {
+  const updateMember = async (member: any, role: string, customRoleKey: string | null = member.customRoleKey ?? null) => {
     await fetch(api + "/api/v1/account/vtcs/" + id + "/members/" + member.id, {
       method: "PATCH",
       credentials: "include",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         role,
+        customRoleKey,
         title: member.title ?? null,
         status: member.status ?? "active",
       }),
@@ -461,6 +462,18 @@ export default function ManageVtcPage() {
                       <option value="member">Member</option>
                       <option value="staff">Staff</option>
                       <option value="admin">Admin</option>
+                    </select>
+                    <select
+                      value={member.customRoleKey ?? ""}
+                      onChange={(e) => void updateMember(member, member.role, e.target.value || null)}
+                    >
+                      <option value="">No custom role</option>
+                      {(data.customRoles ?? [])
+                        .slice()
+                        .sort((a: any, b: any) => Number(a.data?.order ?? 0) - Number(b.data?.order ?? 0))
+                        .map((role: any) => (
+                          <option key={role.id} value={role.key}>{role.data?.title || role.key}</option>
+                        ))}
                     </select>
                     <button className="button" onClick={() => void kickMember(member.id)}>Kick</button>
                     {data.managerRole === "owner" ? (
