@@ -101,8 +101,16 @@ export default function ManageVtcPage() {
         website: String(form.get("website") ?? ""),
         discordUrl: String(form.get("discordUrl") ?? ""),
         logoUrl: String(form.get("logoUrl") ?? ""),
+        bannerUrl: String(form.get("bannerUrl") ?? ""),
+        rules: String(form.get("rules") ?? ""),
+        socials: {
+          x: String(form.get("socialX") ?? ""),
+          youtube: String(form.get("socialYoutube") ?? ""),
+          twitch: String(form.get("socialTwitch") ?? ""),
+        },
         currency: String(form.get("currency") ?? "GBP").toUpperCase(),
         recruitmentOpen: form.get("recruitmentOpen") === "on",
+        recruitmentMode: String(form.get("recruitmentMode") ?? "application"),
         publicBalance: form.get("publicBalance") === "on",
       }),
     });
@@ -156,6 +164,26 @@ export default function ManageVtcPage() {
       }),
     });
     await load();
+  };
+
+  const kickMember = async (memberId: number) => {
+    if (!window.confirm("Remove this member from the VTC?")) return;
+    await fetch(api + "/api/v1/account/vtcs/" + id + "/members/" + memberId, {
+      method: "DELETE",
+      credentials: "include",
+    });
+    await load();
+  };
+
+  const transferOwnership = async (memberId: number) => {
+    if (!window.confirm("Transfer VTC ownership to this member? You will become an admin.")) return;
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/transfer-ownership", {
+      method: "POST",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ memberId }),
+    });
+    if (response.ok) await load();
   };
 
   const createInvite = async () => {
@@ -265,6 +293,30 @@ export default function ManageVtcPage() {
         <article className="card"><h3>{Number(ledger?.expenses ?? 0).toLocaleString()} {vtc.currency}</h3><p>Total expenses</p></article>
       </section>
 
+      <div className="sectionTitle"><h2>VTC dashboard</h2></div>
+      <section className="grid">
+        <article className="card"><h3>{data.dashboard?.members ?? 0}</h3><p>Members</p></article>
+        <article className="card"><h3>{data.dashboard?.online ?? 0}</h3><p>Online now</p></article>
+        <article className="card"><h3>{data.dashboard?.jobsToday ?? 0}</h3><p>Jobs today</p></article>
+        <article className="card"><h3>{data.dashboard?.jobsMonth ?? 0}</h3><p>Jobs this month</p></article>
+        <article className="card"><h3>{Math.round(Number(data.dashboard?.distanceMonth ?? 0)).toLocaleString()} km</h3><p>Distance this month</p></article>
+        <article className="card"><h3>{Number(data.dashboard?.incomeMonth ?? 0).toLocaleString()}</h3><p>Revenue this month</p></article>
+        <article className="card"><h3>{Number(data.dashboard?.fineAmountMonth ?? 0).toLocaleString()}</h3><p>Penalties this month</p></article>
+        <article className="card"><h3>{Number(data.dashboard?.profitMonth ?? 0).toLocaleString()}</h3><p>Profit this month</p></article>
+      </section>
+
+      <div className="sectionTitle"><h2>Monthly trends</h2></div>
+      <section className="driverList" style={{ padding: 0 }}>
+        {(data.trends ?? []).map((row: any) => (
+          <article className="driver" key={row.month}>
+            <div><strong>{row.month}</strong></div>
+            <div><strong>{row.jobs}</strong><small>Jobs</small></div>
+            <div><strong>{Math.round(Number(row.distanceKm ?? 0)).toLocaleString()} km</strong><small>Distance</small></div>
+            <div><strong>{Number(row.income ?? 0).toLocaleString()}</strong><small>Revenue</small></div>
+          </article>
+        ))}
+      </section>
+
       <div className="sectionTitle"><h2>Company settings</h2></div>
       <form className="card" onSubmit={saveSettings} style={{ display: "grid", gap: 12 }}>
         <input name="name" defaultValue={vtc.name || ""} required placeholder="VTC name" />
@@ -273,7 +325,20 @@ export default function ManageVtcPage() {
         <input name="website" defaultValue={vtc.website || ""} placeholder="Website URL" />
         <input name="discordUrl" defaultValue={vtc.discordUrl || ""} placeholder="Discord invite URL" />
         <input name="logoUrl" defaultValue={vtc.logoUrl || ""} placeholder="Logo URL" />
+        <input name="bannerUrl" defaultValue={vtc.bannerUrl || ""} placeholder="Banner URL" />
+        <textarea name="rules" defaultValue={vtc.rules || ""} rows={5} placeholder="VTC rules" />
+        <input name="socialX" defaultValue={vtc.socials?.x || ""} placeholder="X / Twitter URL" />
+        <input name="socialYoutube" defaultValue={vtc.socials?.youtube || ""} placeholder="YouTube URL" />
+        <input name="socialTwitch" defaultValue={vtc.socials?.twitch || ""} placeholder="Twitch URL" />
         <input name="currency" defaultValue={vtc.currency || "GBP"} maxLength={8} />
+        <label>
+          Recruitment mode
+          <select name="recruitmentMode" defaultValue={vtc.recruitmentMode || "application"}>
+            <option value="open">Open join</option>
+            <option value="application">Application required</option>
+            <option value="invite">Invite only</option>
+          </select>
+        </label>
         <label><input type="checkbox" name="recruitmentOpen" defaultChecked={Boolean(vtc.recruitmentOpen)} /> Recruitment open</label>
         <label><input type="checkbox" name="publicBalance" defaultChecked={Boolean(vtc.publicBalance)} /> Show balance publicly</label>
         <button className="button primary">Save company settings</button>
@@ -324,13 +389,19 @@ export default function ManageVtcPage() {
                 <small>{member.stats?.jobs ?? 0} jobs · {member.stats?.fines ?? 0} fines · net {(Number(member.stats?.income ?? 0) - Number(member.stats?.fineAmount ?? 0)).toLocaleString()}</small>
               </div>
               <div>
-                {member.role !== "owner" && (
-                  <select value={member.role} onChange={(e) => void updateMember(member, e.target.value)}>
-                    <option value="member">Member</option>
-                    <option value="staff">Staff</option>
-                    <option value="admin">Admin</option>
-                  </select>
-                )}
+                {member.role !== "owner" ? (
+                  <div style={{ display: "grid", gap: 6 }}>
+                    <select value={member.role} onChange={(e) => void updateMember(member, e.target.value)}>
+                      <option value="member">Member</option>
+                      <option value="staff">Staff</option>
+                      <option value="admin">Admin</option>
+                    </select>
+                    <button className="button" onClick={() => void kickMember(member.id)}>Kick</button>
+                    {data.managerRole === "owner" ? (
+                      <button className="button" onClick={() => void transferOwnership(member.id)}>Make owner</button>
+                    ) : null}
+                  </div>
+                ) : <span className="pill">Owner</span>}
               </div>
             </article>
           );
