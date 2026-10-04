@@ -37,6 +37,10 @@ public sealed class MainForm : Form
     private readonly Dictionary<string, Button> _navButtons = new(StringComparer.OrdinalIgnoreCase);
     private readonly NotifyIcon _trayIcon = new();
     private readonly System.Windows.Forms.Timer _telemetryRetryTimer = new();
+    private GameOverlayForm? _overlay;
+    private bool _overlayHotkeyRegistered;
+    private const int OverlayHotkeyId = 0x4F48;
+    private const int WmHotkey = 0x0312;
     private bool _telemetryRetryPending;
     private bool _allowExit;
 
@@ -77,6 +81,10 @@ public sealed class MainForm : Form
         RefreshProfile();
         DetectGames();
 
+        _overlay = new GameOverlayForm(_settings);
+        _overlay.Start();
+        ConfigureOverlayHotkey();
+
         ConfigureTray();
         ConfigureTelemetryRetry();
         Shown += async (_, _) =>
@@ -92,6 +100,14 @@ public sealed class MainForm : Form
             _telemetryRetryTimer.Dispose();
             _trayIcon.Visible = false;
             _trayIcon.Dispose();
+            if (_overlayHotkeyRegistered && IsHandleCreated)
+            {
+                UnregisterHotKey(Handle, OverlayHotkeyId);
+                _overlayHotkeyRegistered = false;
+            }
+            _overlay?.Close();
+            _overlay?.Dispose();
+            _overlay = null;
             _lifetime.Cancel();
             await StopTelemetryAsync();
         };
@@ -105,11 +121,60 @@ public sealed class MainForm : Form
     [DllImport("user32.dll")]
     private static extern IntPtr SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
 
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern bool RegisterHotKey(IntPtr hWnd, int id, uint fsModifiers, uint vk);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
     private void BeginWindowDrag(object? sender, MouseEventArgs e)
     {
         if (e.Button != MouseButtons.Left) return;
         ReleaseCapture();
         SendMessage(Handle, 0xA1, 0x2, 0);
+    }
+
+    protected override void WndProc(ref Message m)
+    {
+        if (m.Msg == WmHotkey && m.WParam.ToInt32() == OverlayHotkeyId)
+        {
+            ToggleOverlay();
+            return;
+        }
+
+        base.WndProc(ref m);
+    }
+
+    private void ConfigureOverlayHotkey()
+    {
+        if (!IsHandleCreated) CreateHandle();
+
+        if (_overlayHotkeyRegistered)
+        {
+            UnregisterHotKey(Handle, OverlayHotkeyId);
+            _overlayHotkeyRegistered = false;
+        }
+
+        if (!Enum.TryParse<Keys>(_settings.OverlayHotkey, true, out var key))
+            key = Keys.F8;
+
+        _overlayHotkeyRegistered = RegisterHotKey(Handle, OverlayHotkeyId, 0, (uint)key);
+        if (!_overlayHotkeyRegistered)
+            SetStatus($"Overlay hotkey {_settings.OverlayHotkey} is already in use by another application.");
+    }
+
+    private void ToggleOverlay()
+    {
+        if (_overlay is null) return;
+        _overlay.Toggle();
+        SetStatus(_settings.OverlayEnabled
+            ? $"Game overlay enabled ({_settings.OverlayHotkey} toggles it)."
+            : "Game overlay hidden.");
+    }
+
+    private void UpdateOverlayTelemetry(PluginLiveTelemetry telemetry)
+    {
+        _overlay?.UpdateTelemetry(telemetry);
     }
 
     private void ConfigureTelemetryRetry()
@@ -144,6 +209,7 @@ public sealed class MainForm : Form
         menu.BackColor = C(7, 28, 18);
         menu.ForeColor = Color.White;
         menu.Items.Add("Open OpenHaul", null, (_, _) => RestoreFromTray());
+        menu.Items.Add("Toggle Game Overlay (" + _settings.OverlayHotkey + ")", null, (_, _) => ToggleOverlay());
         menu.Items.Add("Exit", null, (_, _) =>
         {
             _allowExit = true;
@@ -891,7 +957,7 @@ public sealed class MainForm : Form
         var page = PagePanel();
         page.Controls.Add(PageTitle("Settings", "Detected games and telemetry installation."));
 
-        var card = Card(24, 110, 860, 360);
+        var card = Card(24, 110, 860, 500);
 
         var detect = new Button { Text = "Detect ETS2 / ATS", Width = 170, Height = 40, Location = new Point(24, 24) };
         StyleButton(detect, false);
@@ -917,6 +983,74 @@ public sealed class MainForm : Form
 
         paths.Name = "gamePaths";
         card.Controls.Add(paths);
+
+        var overlayEnabled = new CheckBox
+        {
+            Text = "Enable in-game OpenHaul overlay",
+            Checked = _settings.OverlayEnabled,
+            AutoSize = true,
+            ForeColor = Color.White,
+            Location = new Point(24, 332),
+        };
+        overlayEnabled.CheckedChanged += (_, _) =>
+        {
+            _settings.OverlayEnabled = overlayEnabled.Checked;
+            _settings.Save();
+            _overlay?.SetEnabled(_settings.OverlayEnabled);
+        };
+        card.Controls.Add(overlayEnabled);
+
+        var overlayHotkeyLabel = new Label
+        {
+            Text = "Overlay hotkey",
+            AutoSize = true,
+            ForeColor = C(150, 180, 163),
+            Location = new Point(24, 370),
+        };
+        card.Controls.Add(overlayHotkeyLabel);
+
+        var overlayHotkey = new ComboBox
+        {
+            DropDownStyle = ComboBoxStyle.DropDownList,
+            Location = new Point(130, 365),
+            Width = 110,
+            BackColor = C(9, 38, 25),
+            ForeColor = Color.White,
+        };
+        overlayHotkey.Items.AddRange(new object[] { "F6", "F7", "F8", "F9", "F10", "F11", "F12" });
+        overlayHotkey.SelectedItem = overlayHotkey.Items.Contains(_settings.OverlayHotkey)
+            ? _settings.OverlayHotkey
+            : "F8";
+        overlayHotkey.SelectedIndexChanged += (_, _) =>
+        {
+            _settings.OverlayHotkey = overlayHotkey.SelectedItem?.ToString() ?? "F8";
+            _settings.Save();
+            ConfigureOverlayHotkey();
+            SetStatus("Overlay hotkey changed to " + _settings.OverlayHotkey + ".");
+        };
+        card.Controls.Add(overlayHotkey);
+
+        var overlayNow = new Button
+        {
+            Text = "Toggle overlay now",
+            Width = 180,
+            Height = 40,
+            Location = new Point(260, 360),
+        };
+        StyleButton(overlayNow, false);
+        overlayNow.Click += (_, _) => ToggleOverlay();
+        card.Controls.Add(overlayNow);
+
+        var overlayHint = new Label
+        {
+            Text = "Overlay follows the ETS2/ATS game window and shows speed, limit, fuel, RPM, truck, cargo, route and ETA.\nFor best results use Windowed or Borderless Fullscreen; exclusive fullscreen may cover external overlays.",
+            AutoSize = true,
+            MaximumSize = new Size(780, 0),
+            ForeColor = C(140, 170, 153),
+            Location = new Point(24, 414),
+        };
+        card.Controls.Add(overlayHint);
+
         page.Controls.Add(card);
 
         BeginInvoke(() => RefreshSettingsPaths(paths));
@@ -1478,6 +1612,7 @@ public sealed class MainForm : Form
         _telemetryCancellation = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token);
         _telemetryService = new TelemetryService(_settings.ToConfig());
         _telemetryService.Status += SetStatus;
+        _telemetryService.LiveTelemetryReceived += UpdateOverlayTelemetry;
         _telemetryButton.Text = "Stop Telemetry";
 
         _telemetryTask = Task.Run(
@@ -1509,6 +1644,7 @@ public sealed class MainForm : Form
         if (service is not null)
         {
             service.Status -= SetStatus;
+            service.LiveTelemetryReceived -= UpdateOverlayTelemetry;
             await service.DisposeAsync();
         }
 
