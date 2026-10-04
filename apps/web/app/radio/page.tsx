@@ -2,187 +2,302 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-type Song = {
-  artist?: string;
-  title?: string;
-  album?: string;
-  genre?: string;
-  art?: string;
+type DirectoryStation = {
+  id: string;
+  stationUuid?: string | null;
+  name: string;
+  country?: string | null;
+  region?: string | null;
+  state?: string | null;
+  language?: string | null;
+  genre?: string | null;
+  codec?: string | null;
+  bitrateKbps?: number | null;
+  homepage?: string | null;
+  favicon?: string | null;
+  routing?: {
+    mode?: "direct" | "residential-proxy";
+    proxyRequired?: boolean;
+    country?: string | null;
+    region?: string | null;
+    networkType?: string | null;
+  };
+  playback?: {
+    browser?: string | null;
+    direct?: string | null;
+    gameMp3?: string | null;
+    ogg?: string | null;
+    aac?: string | null;
+  };
 };
 
-type HistoryItem = {
-  sh_id: number;
-  played_at: number;
-  duration: number;
-  song?: Song;
+type DirectoryResponse = {
+  country: string;
+  page: number;
+  pageSize: number;
+  hasNext: boolean;
+  stations: DirectoryStation[];
 };
 
-type RadioData = {
-  station?: {
-    name?: string;
-    description?: string;
-    listen_url?: string;
-  };
-  listeners?: {
-    current?: number;
-    unique?: number;
-  };
-  live?: {
-    is_live?: boolean;
-    streamer_name?: string;
-    broadcast_start?: number | null;
-    art?: string | null;
-  };
-  now_playing?: {
-    played_at?: number;
-    duration?: number;
-    elapsed?: number;
-    remaining?: number;
-    song?: Song;
-  };
-  playing_next?: {
-    played_at?: number;
-    duration?: number;
-    song?: Song;
-  };
-  song_history?: HistoryItem[];
-  is_online?: boolean;
+type Country = {
+  code: string;
+  count: number;
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
-function duration(value?: number) {
-  if (!value || value < 0) return "0:00";
-  const mins = Math.floor(value / 60);
-  const secs = Math.floor(value % 60).toString().padStart(2, "0");
-  return `${mins}:${secs}`;
+function countryName(code: string) {
+  try {
+    return new Intl.DisplayNames(["en"], { type: "region" }).of(code) || code;
+  } catch {
+    return code;
+  }
 }
 
-function trackText(song?: Song) {
-  if (!song) return "Unknown track";
-  return [song.artist, song.title].filter(Boolean).join(" — ") || "Unknown track";
+function badgeText(station: DirectoryStation) {
+  if (station.routing?.proxyRequired) {
+    return `Residential proxy · ${station.routing.country || station.routing.region || "regional"}`;
+  }
+  return "Direct · no proxy";
 }
 
 export default function RadioPage() {
-  const [data, setData] = useState<RadioData | null>(null);
-  const [playing, setPlaying] = useState(false);
-  const [clock, setClock] = useState(Date.now());
+  const [stations, setStations] = useState<DirectoryStation[]>([]);
+  const [countries, setCountries] = useState<Country[]>([]);
+  const [country, setCountry] = useState("CA");
+  const [query, setQuery] = useState("");
+  const [tag, setTag] = useState("");
+  const [codec, setCodec] = useState("");
+  const [page, setPage] = useState(1);
+  const [hasNext, setHasNext] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [playingId, setPlayingId] = useState<string | null>(null);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    let active = true;
-
-    const load = async () => {
-      try {
-        const response = await fetch(`${api}/api/v1/public/radio/truckersfm`, { cache: "no-store" });
-        if (!response.ok) throw new Error("radio unavailable");
-        const json = await response.json();
-        if (active) setData(json);
-      } catch {}
-    };
-
-    void load();
-    const timer = setInterval(load, 2000);
-    return () => {
-      active = false;
-      clearInterval(timer);
-    };
+    fetch(`${api}/api/v1/public/radio/countries`, { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : Promise.reject())
+      .then((data) => setCountries(data.countries ?? []))
+      .catch(() => setCountries([{ code: "CA", count: 0 }, { code: "US", count: 0 }, { code: "GB", count: 0 }]));
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => setClock(Date.now()), 1000);
-    return () => clearInterval(timer);
-  }, []);
+    let active = true;
+    const timer = window.setTimeout(async () => {
+      setLoading(true);
+      const params = new URLSearchParams({
+        country,
+        page: String(page),
+        pageSize: "60",
+      });
+      if (query.trim()) params.set("q", query.trim());
+      if (tag.trim()) params.set("tag", tag.trim());
+      if (codec) params.set("codec", codec);
 
-  const effectiveElapsed = useMemo(() => {
-    const sourceElapsed = data?.now_playing?.elapsed ?? 0;
-    const playedAt = data?.now_playing?.played_at ?? 0;
-    const fromTimestamp = playedAt > 0 ? Math.max(0, Math.floor(clock / 1000) - playedAt) : sourceElapsed;
-    const total = data?.now_playing?.duration ?? 0;
-    return total > 0 ? Math.min(total, Math.max(sourceElapsed, fromTimestamp)) : Math.max(sourceElapsed, fromTimestamp);
-  }, [data, clock]);
+      try {
+        const response = await fetch(`${api}/api/v1/public/radio/directory?${params.toString()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error("Radio directory unavailable");
+        const data = await response.json() as DirectoryResponse;
+        if (!active) return;
+        setStations(data.stations ?? []);
+        setHasNext(Boolean(data.hasNext));
+      } catch {
+        if (active) {
+          setStations([]);
+          setHasNext(false);
+        }
+      } finally {
+        if (active) setLoading(false);
+      }
+    }, 250);
 
-  const progress = useMemo(() => {
-    const total = data?.now_playing?.duration ?? 0;
-    return total > 0 ? Math.max(0, Math.min(100, (effectiveElapsed / total) * 100)) : 0;
-  }, [data, effectiveElapsed]);
+    return () => {
+      active = false;
+      window.clearTimeout(timer);
+    };
+  }, [country, query, tag, codec, page]);
 
-  const stream = "https://radio.truckers.fm";
-  const now = data?.now_playing?.song;
-  const dj = data?.live?.is_live && data.live.streamer_name ? data.live.streamer_name : "AutoDJ";
+  useEffect(() => setPage(1), [country, query, tag, codec]);
 
-  const toggle = async () => {
+  const sortedCountries = useMemo(() => {
+    const rows = [...countries];
+    rows.sort((a, b) => {
+      if (a.code === "CA") return -1;
+      if (b.code === "CA") return 1;
+      return countryName(a.code).localeCompare(countryName(b.code));
+    });
+    return rows;
+  }, [countries]);
+
+  const play = async (station: DirectoryStation) => {
     const audio = audioRef.current;
-    if (!audio) return;
+    const url = station.playback?.browser;
+    if (!audio || !url) return;
 
-    if (audio.paused) {
-      audio.src = stream;
-      await audio.play();
-      setPlaying(true);
-    } else {
+    if (playingId === station.id && !audio.paused) {
       audio.pause();
-      setPlaying(false);
+      setPlayingId(null);
+      return;
     }
+
+    audio.src = url;
+    try {
+      await audio.play();
+      setPlayingId(station.id);
+    } catch {
+      setPlayingId(null);
+    }
+  };
+
+  const copyGameUrl = async (station: DirectoryStation) => {
+    const url = station.playback?.gameMp3;
+    if (!url) return;
+    await navigator.clipboard.writeText(url);
+    setCopiedId(station.id);
+    window.setTimeout(() => setCopiedId((value) => value === station.id ? null : value), 1800);
   };
 
   return (
     <main className="shell">
-      <section className="hero" style={{ paddingBottom: 24 }}>
-        <span className="eyebrow">TruckersFM</span>
-        <h1 style={{ fontSize: "clamp(2.6rem,6vw,4.8rem)" }}>Your drive, your music.</h1>
-        <p className="lede">Live TruckersFM metadata and stream playback inside OpenHaul.</p>
+      <section className="hero" style={{ paddingBottom: 22 }}>
+        <span className="eyebrow">OpenHaul Radio</span>
+        <h1 style={{ fontSize: "clamp(2.5rem,6vw,4.8rem)" }}>Worldwide radio for the road.</h1>
+        <p className="lede">
+          Browse working internet radio by country. Public stations play directly; geo-restricted stations use a matching residential NekoRoute exit only when required.
+        </p>
       </section>
 
-      <section className="card" style={{ display: "grid", gridTemplateColumns: "minmax(0,180px) 1fr", gap: 24, alignItems: "center" }}>
-        {now?.art ? <img src={now.art} alt="" style={{ width: "100%", aspectRatio: "1", objectFit: "cover", borderRadius: 18 }} /> : <div className="art" style={{ width: "100%", height: "auto", aspectRatio: "1" }} />}
+      <section className="card" style={{ marginBottom: 22 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(170px,1fr))", gap: 12 }}>
+          <label>
+            <small className="muted">Country</small>
+            <select
+              value={country}
+              onChange={(event) => setCountry(event.target.value)}
+              style={{ width: "100%", marginTop: 6 }}
+            >
+              {sortedCountries.map((item) => (
+                <option value={item.code} key={item.code}>
+                  {countryName(item.code)} ({item.code}){item.count ? ` · ${item.count}` : ""}
+                </option>
+              ))}
+            </select>
+          </label>
 
-        <div>
-          <div className="pill">{data?.is_online === false ? "OFFLINE" : data?.live?.is_live ? "LIVE DJ" : "ON AIR"}</div>
-          <h2 style={{ margin: "14px 0 6px", fontSize: "2rem" }}>{trackText(now)}</h2>
-          <div className="muted">{dj} · {data?.listeners?.current ?? "—"} listeners</div>
+          <label>
+            <small className="muted">Station search</small>
+            <input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="CBC, rock, jazz..."
+              style={{ width: "100%", marginTop: 6 }}
+            />
+          </label>
 
-          <div style={{ marginTop: 20, height: 9, background: "#06110c", borderRadius: 99, overflow: "hidden" }}>
-            <div style={{ height: "100%", width: `${progress}%`, background: "var(--accent)" }} />
-          </div>
-          <div style={{ display: "flex", justifyContent: "space-between", marginTop: 7 }} className="muted">
-            <span>{duration(effectiveElapsed)}</span>
-            <span>{duration(data?.now_playing?.duration)}</span>
-          </div>
+          <label>
+            <small className="muted">Genre / tag</small>
+            <input
+              value={tag}
+              onChange={(event) => setTag(event.target.value)}
+              placeholder="rock, news, dance..."
+              style={{ width: "100%", marginTop: 6 }}
+            />
+          </label>
 
-          <div className="actions" style={{ marginTop: 18 }}>
-            <button className="button primary" onClick={toggle}>{playing ? "Pause stream" : "Play TruckersFM"}</button>
-          </div>
+          <label>
+            <small className="muted">Source codec</small>
+            <select value={codec} onChange={(event) => setCodec(event.target.value)} style={{ width: "100%", marginTop: 6 }}>
+              <option value="">Any codec</option>
+              <option value="MP3">MP3</option>
+              <option value="AAC">AAC</option>
+              <option value="AAC+">AAC+</option>
+              <option value="OGG">OGG</option>
+              <option value="FLAC">FLAC</option>
+            </select>
+          </label>
         </div>
       </section>
 
-      <div className="sectionTitle"><h2>Up next</h2></div>
-      <section className="card">
-        <h3 style={{ marginBottom: 6 }}>{trackText(data?.playing_next?.song)}</h3>
-        <p>{data?.playing_next?.song?.album || "TruckersFM rotation"} · {duration(data?.playing_next?.duration)}</p>
-      </section>
+      <div className="sectionTitle">
+        <div>
+          <h2>{countryName(country)} radio</h2>
+          <p className="muted" style={{ margin: 0 }}>
+            {loading ? "Loading stations…" : `${stations.length} stations on this page`}
+          </p>
+        </div>
+      </div>
 
-      <div className="sectionTitle"><h2>Recently played</h2></div>
-      <section className="driverList" style={{ padding: 0, paddingBottom: 50 }}>
-        {(data?.song_history ?? []).slice(0, 12).map((item) => (
-          <article className="driver" key={item.sh_id}>
-            <div>
-              <strong>{item.song?.artist ?? "Unknown artist"}</strong>
-              <small>{item.song?.title ?? "Unknown track"}</small>
+      <section className="driverList" style={{ padding: 0 }}>
+        {stations.map((station) => (
+          <article
+            className="driver"
+            key={station.id}
+            style={{ gridTemplateColumns: "minmax(240px,2fr) minmax(140px,1fr) minmax(180px,1fr) auto" }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}>
+              {station.favicon ? (
+                <img
+                  src={station.favicon}
+                  alt=""
+                  loading="lazy"
+                  style={{ width: 44, height: 44, objectFit: "cover", borderRadius: 10, flex: "0 0 auto" }}
+                  onError={(event) => { event.currentTarget.style.display = "none"; }}
+                />
+              ) : <div className="art" style={{ width: 44, height: 44, borderRadius: 10, flex: "0 0 auto" }} />}
+              <div style={{ minWidth: 0 }}>
+                <strong style={{ display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{station.name}</strong>
+                <small>{[station.state, station.country].filter(Boolean).join(" · ") || countryName(country)}</small>
+              </div>
             </div>
-            <div><span className="pill">{duration(item.duration)}</span></div>
+
             <div>
-              <strong>{item.song?.album || "—"}</strong>
-              <small>{item.song?.genre || "TruckersFM"}</small>
+              <strong>{station.genre || "Radio"}</strong>
+              <small>{station.language || "—"}</small>
             </div>
+
             <div>
-              <strong>{new Date(item.played_at * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</strong>
-              <small>Played</small>
+              <span className="pill">{badgeText(station)}</span>
+              <small style={{ display: "block", marginTop: 6 }}>
+                {station.codec || "Auto"}{station.bitrateKbps ? ` · ${station.bitrateKbps} kbps` : ""}
+              </small>
+            </div>
+
+            <div className="actions" style={{ justifyContent: "flex-end", flexWrap: "wrap" }}>
+              <button className="button" onClick={() => void play(station)}>
+                {playingId === station.id ? "Pause" : "Play"}
+              </button>
+              <button className="button primary" onClick={() => void copyGameUrl(station)}>
+                {copiedId === station.id ? "Copied" : "Copy ATS/ETS2 MP3"}
+              </button>
             </div>
           </article>
         ))}
+
+        {!loading && stations.length === 0 ? (
+          <section className="card">
+            <h3>No stations found</h3>
+            <p>Try another country, search term, genre or codec.</p>
+          </section>
+        ) : null}
       </section>
 
-      <audio ref={audioRef} preload="none" />
+      <div className="actions" style={{ justifyContent: "center", padding: "28px 0 50px" }}>
+        <button className="button" disabled={page <= 1 || loading} onClick={() => setPage((value) => Math.max(1, value - 1))}>
+          Previous
+        </button>
+        <span className="pill">Page {page}</span>
+        <button className="button" disabled={!hasNext || loading} onClick={() => setPage((value) => value + 1)}>
+          Next
+        </button>
+      </div>
+
+      <audio
+        ref={audioRef}
+        preload="none"
+        onEnded={() => setPlayingId(null)}
+        onError={() => setPlayingId(null)}
+      />
     </main>
   );
 }
