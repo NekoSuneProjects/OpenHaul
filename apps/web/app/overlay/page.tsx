@@ -30,7 +30,9 @@ export default function OverlayPage() {
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
+    document.body.classList.add("gameOverlayHost");
     window.chrome?.webview?.postMessage({ type: "overlay.ready" });
+    return () => document.body.classList.remove("gameOverlayHost");
   }, []);
 
   useEffect(() => {
