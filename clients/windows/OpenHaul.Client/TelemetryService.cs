@@ -12,6 +12,7 @@ public sealed class TelemetryService : IAsyncDisposable
     private bool _liveAccepted;
 
     public event Action<string>? Status;
+    public event Action<PluginLiveTelemetry>? LiveTelemetryReceived;
 
     public TelemetryService(ClientConfig config)
     {
@@ -105,6 +106,8 @@ public sealed class TelemetryService : IAsyncDisposable
             {
                 var plugin = data.Deserialize<PluginLiveTelemetry>(PluginJson);
                 if (plugin is null) return;
+
+                LiveTelemetryReceived?.Invoke(plugin);
 
                 var live = new LiveTelemetry(
                     _config.DriverId,
