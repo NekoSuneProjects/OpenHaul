@@ -171,7 +171,10 @@ public sealed class GameOverlayForm : Form
             root +
             "/overlay?driver=" + Uri.EscapeDataString(_settings.SteamId ?? "") +
             "&mode=" + Uri.EscapeDataString(_settings.OverlayMapType) +
-            "&size=" + Uri.EscapeDataString(_settings.OverlayMapSize);
+            "&size=" + Uri.EscapeDataString(_settings.OverlayMapSize) +
+            "&traffic=" + (_settings.OverlayTrafficAlerts ? "1" : "0") +
+            "&staff=" + (_settings.OverlayStaffAlerts ? "1" : "0") +
+            "&missions=" + (_settings.OverlayCargoMissions ? "1" : "0");
 
         _webView.CoreWebView2.Navigate(url);
     }
@@ -229,6 +232,28 @@ public sealed class GameOverlayForm : Form
                             _settings.OverlayMapSize = value;
                             _settings.Save();
                         }
+                    }
+                    break;
+
+                case "overlay.preference":
+                    if (root.TryGetProperty("key", out var prefKey) &&
+                        root.TryGetProperty("value", out var prefValue) &&
+                        prefValue.ValueKind is JsonValueKind.True or JsonValueKind.False)
+                    {
+                        var enabled = prefValue.GetBoolean();
+                        switch (prefKey.GetString())
+                        {
+                            case "traffic":
+                                _settings.OverlayTrafficAlerts = enabled;
+                                break;
+                            case "staff":
+                                _settings.OverlayStaffAlerts = enabled;
+                                break;
+                            case "missions":
+                                _settings.OverlayCargoMissions = enabled;
+                                break;
+                        }
+                        _settings.Save();
                     }
                     break;
             }
