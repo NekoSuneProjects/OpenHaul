@@ -4,6 +4,7 @@ import { Op } from "sequelize";
 import { z } from "zod";
 import {
   Job,
+  PlatformRecord,
   User,
   Vtc,
   VtcActivityEvent,
@@ -28,7 +29,7 @@ export type VtcActivityInput = {
 
 export async function recordVtcActivity(input: VtcActivityInput) {
   if (!input.vtcId) return null;
-  return VtcActivityEvent.create({
+  const event = await VtcActivityEvent.create({
     vtcId: input.vtcId,
     driverId: input.driverId ?? null,
     actorUserId: input.actorUserId ?? null,
@@ -40,6 +41,61 @@ export async function recordVtcActivity(input: VtcActivityInput) {
     metadata: input.metadata ?? {},
     occurredAt: input.occurredAt ?? new Date(),
   });
+
+  void (async () => {
+    const webhooks = await PlatformRecord.findAll({
+      where: {
+        scopeType: "vtc",
+        scopeId: String(input.vtcId),
+        category: "webhooks",
+        status: "active",
+      },
+      limit: 25,
+    });
+    for (const hook of webhooks) {
+      const data = (hook.getDataValue("data") ?? {}) as Record<string, unknown>;
+      const url = typeof data.url === "string" ? data.url : "";
+      if (!/^https?:\/\//i.test(url)) continue;
+      let deliveryStatus = "delivered";
+      let responseCode: number | null = null;
+      let error: string | null = null;
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: { "content-type": "application/json", "user-agent": "OpenHaul-Webhook/1.0" },
+          body: JSON.stringify({
+            id: event.id,
+            type: input.type,
+            vtcId: input.vtcId,
+            driverId: input.driverId ?? null,
+            title: input.title,
+            detail: input.detail ?? null,
+            amount: input.amount ?? null,
+            currency: input.currency ?? null,
+            metadata: input.metadata ?? {},
+            occurredAt: input.occurredAt ?? new Date(),
+          }),
+          signal: AbortSignal.timeout(8000),
+        });
+        responseCode = response.status;
+        if (!response.ok) deliveryStatus = "failed";
+      } catch (cause) {
+        deliveryStatus = "failed";
+        error = cause instanceof Error ? cause.message.slice(0, 500) : "delivery_failed";
+      }
+      await PlatformRecord.create({
+        scopeType: "vtc",
+        scopeId: String(input.vtcId),
+        category: "webhook-deliveries",
+        key: "event_" + event.id + "_hook_" + hook.id + "_" + Date.now(),
+        status: deliveryStatus,
+        data: { webhookId: hook.id, eventId: event.id, url, responseCode, error, attempts: 1 },
+        createdByUserId: input.actorUserId ?? null,
+      }).catch(() => {});
+    }
+  })().catch(() => {});
+
+  return event;
 }
 
 function secretEquals(actual: string | undefined, expected: string | undefined) {
