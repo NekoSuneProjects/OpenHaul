@@ -6,6 +6,10 @@ const DEFAULT_NEKOROUTE_URL = "https://proxyweb.nekosunevr.co.uk";
 const DEFAULT_RADIO_BROWSER_URL = "https://de1.api.radio-browser.info";
 const DEFAULT_CHSL_SOURCE_URL =
   "https://stingray.leanstream.co/CHSLFM?args=web_01&aw_0_req.gdpr=true&gdpr=true";
+const DEFAULT_INTERNET_RADIO_URL = "https://www.internet-radio.com";
+const DEFAULT_XIPH_DIRECTORY_URL = "https://dir.xiph.org";
+const DEFAULT_LAUTFM_API_URL = "https://api.laut.fm";
+const directoryCache = new Map<string, { expiresAt: number; value: RadioStation[] }>();
 
 type OutputFormat = {
   contentType: string;
@@ -28,7 +32,7 @@ type RadioStation = {
   homepage?: string;
   favicon?: string;
   codec?: string;
-  source: "builtin" | "configured" | "radio-browser";
+  source: "builtin" | "configured" | "official" | "radio-browser" | "internet-radio" | "xiph" | "lautfm" | "shoutcast";
   stationUuid?: string;
 };
 
@@ -214,25 +218,102 @@ function builtInStations(): RadioStation[] {
   }];
 }
 
+function officialProviderStations(): RadioStation[] {
+  return [
+    {
+      id: "capital-uk",
+      name: "Capital UK",
+      sourceUrl: "https://media-ssl.musicradio.com/CapitalUK",
+      country: "GB",
+      forceProxy: true,
+      networkType: "residential",
+      bitrateKbps: 48,
+      genre: "Pop, Contemporary Hits",
+      city: "London",
+      language: "EN",
+      homepage: "https://www.capitalfm.com/",
+      codec: "AAC",
+      source: "official",
+    },
+    {
+      id: "capital-dance",
+      name: "Capital Dance",
+      sourceUrl: "https://media-ssl.musicradio.com/CapitalDance",
+      country: "GB",
+      forceProxy: true,
+      networkType: "residential",
+      bitrateKbps: 48,
+      genre: "Dance",
+      city: "London",
+      language: "EN",
+      homepage: "https://www.capitaldance.com/",
+      codec: "AAC",
+      source: "official",
+    },
+  ];
+}
+
 function stationRegistry(app: FastifyInstance) {
   const byId = new Map<string, RadioStation>();
-  for (const station of [...builtInStations(), ...parseConfiguredStations(app)]) {
+  for (const station of [...builtInStations(), ...officialProviderStations(), ...parseConfiguredStations(app)]) {
     byId.set(station.id.toLowerCase(), station);
   }
   return byId;
 }
 
+async function getRadioBrowserServers() {
+  const configured = (process.env.RADIO_BROWSER_API_URLS ?? "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean)
+    .map(cleanBaseUrl);
+
+  if (configured.length) return configured;
+
+  const primary = cleanBaseUrl(process.env.RADIO_BROWSER_API_URL ?? DEFAULT_RADIO_BROWSER_URL);
+  try {
+    const response = await fetch("https://all.api.radio-browser.info/json/servers", {
+      signal: AbortSignal.timeout(5_000),
+      headers: { accept: "application/json", "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)" },
+    });
+    if (!response.ok) return [primary];
+
+    const rows = await response.json() as Array<{ name?: string }>;
+    const discovered = rows
+      .map((row) => String(row.name ?? "").trim())
+      .filter(Boolean)
+      .map((host) => `https://${host}`);
+    return [...new Set([primary, ...discovered])].slice(0, 8);
+  } catch {
+    return [primary];
+  }
+}
+
 async function fetchRadioBrowser(path: string, params: URLSearchParams, timeoutMs = 10_000) {
-  const url = `${getRadioBrowserBase()}${path}?${params.toString()}`;
-  const response = await fetch(url, {
-    signal: AbortSignal.timeout(timeoutMs),
-    headers: {
-      accept: "application/json",
-      "user-agent": "OpenHaul/1.1 (+https://github.com/NekoSuneProjects/OpenHaul)",
-    },
-  });
-  if (!response.ok) throw new Error(`Radio Browser returned HTTP ${response.status}`);
-  return response.json();
+  const servers = await getRadioBrowserServers();
+  let lastError: unknown = null;
+
+  for (const base of servers) {
+    try {
+      const url = `${base}${path}?${params.toString()}`;
+      const response = await fetch(url, {
+        signal: AbortSignal.timeout(timeoutMs),
+        headers: {
+          accept: "application/json",
+          "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)",
+        },
+      });
+      if (!response.ok) {
+        lastError = new Error(`Radio Browser ${base} returned HTTP ${response.status}`);
+        continue;
+      }
+      return response.json();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError instanceof Error ? lastError : new Error("All Radio Browser mirrors failed");
 }
 
 async function resolveRadioBrowserStation(stationUuid: string): Promise<RadioBrowserStation | null> {
@@ -272,6 +353,243 @@ function radioBrowserToStation(row: RadioBrowserStation, rules: GeoRule[]): Radi
     codec: row.codec ? String(row.codec).toUpperCase() : undefined,
     source: "radio-browser",
   };
+}
+
+function decodeHtml(value: string) {
+  return value
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&#(\d+);/g, (_match, value) => String.fromCharCode(Number(value)));
+}
+
+function stripHtml(value: string) {
+  return decodeHtml(value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim());
+}
+
+async function resolvePlaylistUrl(value: string) {
+  try {
+    const response = await fetch(value, {
+      signal: AbortSignal.timeout(7_000),
+      headers: { "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)" },
+    });
+    if (!response.ok) return null;
+    const text = await response.text();
+    const candidates = text
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .map((line) => line.match(/^File\d+=(https?:\/\/.*)$/i)?.[1] ?? line)
+      .filter((line) => /^https?:\/\//i.test(line));
+    return candidates[0] ?? null;
+  } catch {
+    return null;
+  }
+}
+
+async function withDirectoryCache(key: string, loader: () => Promise<RadioStation[]>) {
+  const now = Date.now();
+  const cached = directoryCache.get(key);
+  if (cached && cached.expiresAt > now) return cached.value;
+  const value = await loader();
+  directoryCache.set(key, { expiresAt: now + 5 * 60_000, value });
+  return value;
+}
+
+async function fetchInternetRadioStations(query: string, country: string) {
+  if (!query.trim()) return [];
+  const base = cleanBaseUrl(process.env.INTERNET_RADIO_DIRECTORY_URL ?? DEFAULT_INTERNET_RADIO_URL);
+  const cacheKey = `internet-radio:${country}:${query.toLowerCase()}`;
+
+  return withDirectoryCache(cacheKey, async () => {
+    const url = `${base}/search/?radio=${encodeURIComponent(query)}`;
+    const response = await fetch(url, {
+      signal: AbortSignal.timeout(10_000),
+      headers: {
+        accept: "text/html",
+        "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)",
+      },
+    });
+    if (!response.ok) return [];
+
+    const html = await response.text();
+    const blocks = [...html.matchAll(/<h4[^>]*>([\s\S]*?)<\/h4>([\s\S]*?)(?=<h4|$)/gi)].slice(0, 25);
+    const results: Array<RadioStation | null> = await Promise.all(blocks.map(async (match, index): Promise<RadioStation | null> => {
+      const name = stripHtml(match[1] ?? "");
+      const body = match[2] ?? "";
+      if (!name) return null;
+
+      const hrefs = [...body.matchAll(/href=["']([^"']+)["']/gi)].map((row) => decodeHtml(row[1] ?? ""));
+      const playlistHref = hrefs.find((href) => /(?:\.m3u|\.pls)(?:\?|$)/i.test(href) || /playlist/i.test(href));
+      if (!playlistHref) return null;
+
+      const playlistUrl = new URL(playlistHref, base).toString();
+      const streamUrl = await resolvePlaylistUrl(playlistUrl);
+      if (!streamUrl) return null;
+
+      const genreMatch = body.match(/Genres?:\s*([^<]+)/i);
+      return {
+        id: `internet-radio-${index}-${Buffer.from(streamUrl).toString("base64url").slice(0, 20)}`,
+        name,
+        sourceUrl: streamUrl,
+        country: country !== "ALL" ? country : undefined,
+        forceProxy: false,
+        bitrateKbps: 128,
+        genre: genreMatch ? stripHtml(genreMatch[1]) : undefined,
+        language: undefined,
+        source: "internet-radio" as const,
+      } satisfies RadioStation;
+    }));
+
+    return results.filter((station): station is RadioStation => station !== null);
+  });
+}
+
+async function fetchXiphStations(query: string) {
+  if (!query.trim()) return [];
+  const base = cleanBaseUrl(process.env.XIPH_DIRECTORY_URL ?? DEFAULT_XIPH_DIRECTORY_URL);
+  const cacheKey = `xiph:${query.toLowerCase()}`;
+
+  return withDirectoryCache(cacheKey, async () => {
+    const response = await fetch(`${base}/search?search=${encodeURIComponent(query)}`, {
+      signal: AbortSignal.timeout(10_000),
+      headers: { accept: "text/html", "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)" },
+    });
+    if (!response.ok) return [];
+
+    const html = await response.text();
+    const anchors = [...html.matchAll(/<a[^>]+href=["'](https?:\/\/[^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)];
+    const stations: RadioStation[] = [];
+    for (const [index, match] of anchors.entries()) {
+      const sourceUrl = decodeHtml(match[1] ?? "");
+      const name = stripHtml(match[2] ?? "");
+      if (!name || !sourceUrl || !name.toLowerCase().includes(query.toLowerCase())) continue;
+      stations.push({
+        id: `xiph-${index}-${Buffer.from(sourceUrl).toString("base64url").slice(0, 20)}`,
+        name,
+        sourceUrl,
+        forceProxy: false,
+        bitrateKbps: 128,
+        source: "xiph",
+      });
+      if (stations.length >= 25) break;
+    }
+    return stations;
+  });
+}
+
+async function fetchLautFmStations(query: string) {
+  if (!query.trim()) return [];
+  const base = cleanBaseUrl(process.env.LAUTFM_API_URL ?? DEFAULT_LAUTFM_API_URL);
+  const cacheKey = `lautfm:${query.toLowerCase()}`;
+
+  return withDirectoryCache(cacheKey, async () => {
+    try {
+      const response = await fetch(`${base}/stations`, {
+        signal: AbortSignal.timeout(10_000),
+        headers: { accept: "application/json", "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)" },
+      });
+      if (!response.ok) return [];
+      const payload = await response.json() as any;
+      const rows = Array.isArray(payload) ? payload : Array.isArray(payload?.stations) ? payload.stations : [];
+      const results: Array<RadioStation | null> = rows
+        .filter((row: any) => String(row?.name ?? "").toLowerCase().includes(query.toLowerCase()))
+        .slice(0, 25)
+        .map((row: any, index: number): RadioStation | null => {
+          const name = String(row.name ?? "").trim();
+          const streamUrl = String(row.stream_url ?? row.streamUrl ?? row.url ?? "").trim();
+          if (!name || !/^https?:\/\//i.test(streamUrl)) return null;
+          return {
+            id: `lautfm-${index}-${String(row.name).toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 40)}`,
+            name,
+            sourceUrl: streamUrl,
+            country: "DE",
+            forceProxy: false,
+            bitrateKbps: Number(row.bitrate ?? 128) || 128,
+            genre: Array.isArray(row.genres) ? row.genres.join(", ") : undefined,
+            homepage: row.website ? String(row.website) : undefined,
+            source: "lautfm" as const,
+          } satisfies RadioStation;
+        });
+      return results.filter((station): station is RadioStation => station !== null);
+    } catch {
+      return [];
+    }
+  });
+}
+
+async function fetchShoutcastStations(query: string) {
+  const apiKey = process.env.SHOUTCAST_API_KEY?.trim();
+  if (!apiKey || !query.trim()) return [];
+
+  const base = cleanBaseUrl(process.env.SHOUTCAST_API_URL ?? "https://api.shoutcast.com");
+  const cacheKey = `shoutcast:${query.toLowerCase()}`;
+
+  return withDirectoryCache(cacheKey, async () => {
+    try {
+      const params = new URLSearchParams({
+        k: apiKey,
+        search: query,
+        f: "json",
+      });
+
+      // SHOUTcast's official directory API requires a developer/partner key.
+      const response = await fetch(`${base}/station/advancedsearch?${params}`, {
+        signal: AbortSignal.timeout(10_000),
+        headers: {
+          accept: "application/json",
+          "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)",
+        },
+      });
+      if (!response.ok) return [];
+
+      const payload = await response.json() as any;
+      const rows = Array.isArray(payload?.response?.data?.stationlist?.station)
+        ? payload.response.data.stationlist.station
+        : Array.isArray(payload?.stationlist?.station)
+          ? payload.stationlist.station
+          : Array.isArray(payload?.station)
+            ? payload.station
+            : [];
+
+      const results: Array<RadioStation | null> = await Promise.all(rows.slice(0, 50).map(async (row: any, index: number): Promise<RadioStation | null> => {
+        const id = String(row?.id ?? "").trim();
+        const name = String(row?.name ?? "").trim();
+        if (!id || !name) return null;
+
+        const playlistUrl = `https://yp.shoutcast.com/sbin/tunein-station.pls?id=${encodeURIComponent(id)}`;
+        const sourceUrl = await resolvePlaylistUrl(playlistUrl);
+        if (!sourceUrl) return null;
+
+        const bitrate = Number(row?.br ?? row?.bitrate ?? 128);
+        return {
+          id: `shoutcast-${id || index}`,
+          name,
+          sourceUrl,
+          forceProxy: false,
+          bitrateKbps: Number.isFinite(bitrate) && bitrate > 0 ? Math.max(32, Math.min(320, bitrate)) : 128,
+          genre: String(row?.genre ?? "").trim() || undefined,
+          codec: String(row?.mt ?? row?.mime ?? "").toUpperCase() || undefined,
+          source: "shoutcast" as const,
+        } satisfies RadioStation;
+      }));
+
+      return results.filter((station): station is RadioStation => station !== null);
+    } catch {
+      return [];
+    }
+  });
+}
+
+function dedupeStations(stations: RadioStation[]) {
+  const seen = new Set<string>();
+  return stations.filter((station) => {
+    const key = `${station.sourceUrl.toLowerCase()}|${station.name.toLowerCase()}|${station.country ?? ""}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 async function createRegionalProxySession(station: RadioStation) {
@@ -362,6 +680,7 @@ function stationOutputBase(station: RadioStation) {
 function stationPublicJson(station: RadioStation) {
   const base = stationOutputBase(station);
   const directPlayable = !station.forceProxy;
+  const ephemeralDirectorySource = ["internet-radio", "xiph", "lautfm", "shoutcast"].includes(station.source);
   return {
     id: station.id,
     stationUuid: station.stationUuid ?? null,
@@ -389,7 +708,7 @@ function stationPublicJson(station: RadioStation) {
     playback: {
       browser: directPlayable ? station.sourceUrl : `${base}.mp3`,
       direct: directPlayable ? station.sourceUrl : null,
-      gameMp3: `${base}.mp3`,
+      gameMp3: ephemeralDirectorySource ? station.sourceUrl : `${base}.mp3`,
       ogg: `${base}.ogg`,
       aac: `${base}.aac`,
     },
@@ -534,6 +853,15 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
       .map((row) => radioBrowserToStation(row, geoRules))
       .filter((station): station is RadioStation => Boolean(station));
 
+    const extraSources = query.page === 1 && query.q
+      ? (await Promise.all([
+          fetchInternetRadioStations(query.q, query.country),
+          fetchXiphStations(query.q),
+          fetchLautFmStations(query.q),
+          fetchShoutcastStations(query.q),
+        ])).flat()
+      : [];
+
     const custom = query.page === 1
       ? [...stations.values()].filter((station) =>
           (query.country === "ALL" || station.country === query.country) &&
@@ -549,8 +877,16 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
       page: query.page,
       pageSize: query.pageSize,
       hasNext: rows.length === query.pageSize,
-      stations: [...custom, ...radioBrowserStations].map(stationPublicJson),
-      directory: "Radio Browser",
+      stations: dedupeStations([...custom, ...radioBrowserStations, ...extraSources]).map(stationPublicJson),
+      directory: "OpenHaul multi-source directory",
+      sources: [
+        "OpenHaul official/curated providers",
+        "Radio Browser",
+        "Internet-Radio.com",
+        "Xiph/Icecast",
+        "laut.fm",
+        ...(process.env.SHOUTCAST_API_KEY ? ["SHOUTcast Directory API"] : [])
+      ],
     };
   });
 
