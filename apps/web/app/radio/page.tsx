@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type DirectoryStation = {
@@ -73,6 +74,7 @@ export default function RadioPage() {
   const [loading, setLoading] = useState(true);
   const [playingId, setPlayingId] = useState<string | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [queuedId, setQueuedId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -147,6 +149,35 @@ export default function RadioPage() {
       setPlayingId(station.id);
     } catch {
       setPlayingId(null);
+    }
+  };
+
+
+  const addToSiiEditor = (station: DirectoryStation) => {
+    const url = station.playback?.gameMp3;
+    if (!url) return;
+
+    const item = {
+      id: station.id,
+      url,
+      name: station.name,
+      genre: station.genre || "",
+      language: (station.language || "EN").split(",")[0].trim().slice(0, 8),
+      bitrate: String(station.bitrateKbps || 128),
+      favorite: false,
+    };
+
+    try {
+      const key = "openhaul-radio-sii-queue";
+      const current = JSON.parse(window.localStorage.getItem(key) || "[]");
+      const next = Array.isArray(current)
+        ? [...current.filter((entry: any) => entry?.id !== item.id), item]
+        : [item];
+      window.localStorage.setItem(key, JSON.stringify(next));
+      setQueuedId(station.id);
+      window.setTimeout(() => setQueuedId((value) => value === station.id ? null : value), 1800);
+    } catch {
+      setQueuedId(null);
     }
   };
 
@@ -266,6 +297,9 @@ export default function RadioPage() {
             <div className="actions" style={{ justifyContent: "flex-end", flexWrap: "wrap" }}>
               <button className="button" onClick={() => void play(station)}>
                 {playingId === station.id ? "Pause" : "Play"}
+              </button>
+              <button className="button" onClick={() => addToSiiEditor(station)}>
+                {queuedId === station.id ? "Added to editor" : "Add to .sii Editor"}
               </button>
               <button className="button primary" onClick={() => void copyGameUrl(station)}>
                 {copiedId === station.id ? "Copied" : "Copy ATS/ETS2 MP3"}
