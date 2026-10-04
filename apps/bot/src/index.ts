@@ -22,7 +22,7 @@ if (!serviceKey) {
   console.warn("OPENHAUL_BOT_SERVICE_KEY is empty; multi-VTC Discord integration is disabled.");
 }
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers] });
 
 type BotConfig = {
   vtcId: number;
@@ -232,6 +232,57 @@ async function pollPresence() {
   await Promise.all([...configs.values()].map((config) => pollPresenceFor(config).catch(console.error)));
 }
 
+async function syncRolesFor(config: BotConfig) {
+  if (!config.guildId || !config.enabled) return;
+
+  const guild = await client.guilds.fetch(config.guildId).catch(() => null);
+  if (!guild) return;
+
+  const data = await botGet("/api/v1/bot/vtcs/" + config.vtcId + "/role-sync");
+  const roleMap = (data.roleMap ?? {}) as Record<string, string | string[]>;
+  const mappedRoleIds = new Set(
+    Object.values(roleMap)
+      .flatMap((value) => Array.isArray(value) ? value : [value])
+      .map(String)
+      .filter(Boolean),
+  );
+  if (!mappedRoleIds.size) return;
+
+  for (const member of data.members ?? []) {
+    if (!member.discordUserId) continue;
+
+    const discordMember = await guild.members.fetch(String(member.discordUserId)).catch(() => null);
+    if (!discordMember) continue;
+
+    const keys = [
+      String(member.role ?? ""),
+      member.customRoleKey ? String(member.customRoleKey) : "",
+    ].filter(Boolean);
+
+    const desired = new Set<string>();
+    for (const key of keys) {
+      const mapped = roleMap[key];
+      if (Array.isArray(mapped)) mapped.forEach((roleId) => desired.add(String(roleId)));
+      else if (mapped) desired.add(String(mapped));
+    }
+
+    for (const roleId of desired) {
+      if (!discordMember.roles.cache.has(roleId))
+        await discordMember.roles.add(roleId, "OpenHaul VTC role synchronization").catch(console.error);
+    }
+
+    for (const roleId of mappedRoleIds) {
+      if (desired.has(roleId)) continue;
+      if (discordMember.roles.cache.has(roleId))
+        await discordMember.roles.remove(roleId, "OpenHaul VTC role synchronization").catch(console.error);
+    }
+  }
+}
+
+async function syncRoles() {
+  await Promise.all([...configs.values()].map((config) => syncRolesFor(config).catch(console.error)));
+}
+
 async function registerCommands() {
   if (!client.user) return;
   const commands = [
@@ -263,6 +314,8 @@ client.once("ready", async () => {
   setInterval(() => refreshConfigs().catch(console.error), 60_000);
   setInterval(() => pollActivity().catch(console.error), 7_000);
   setInterval(() => pollPresence().catch(console.error), 12_000);
+  setInterval(() => syncRoles().catch(console.error), 60_000);
+  void syncRoles().catch(console.error);
 });
 
 client.on("interactionCreate", async (interaction) => {
