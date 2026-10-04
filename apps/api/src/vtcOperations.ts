@@ -8,6 +8,7 @@ import {
   User,
   Vtc,
   VtcActivityEvent,
+  VtcApplication,
   VtcDiscordConfig,
   VtcMember,
   VtcModerationAction,
@@ -378,6 +379,60 @@ export async function registerVtcOperationsRoutes(app: FastifyInstance) {
     }
     await config.update({ guildVerified: body.verified });
     return { config };
+  });
+
+  app.get("/api/v1/bot/vtcs/:id/applications", async (request, reply) => {
+    const raw = request.headers["x-bot-key"];
+    const key = Array.isArray(raw) ? raw[0] : raw;
+    if (!secretEquals(key, process.env.OPENHAUL_BOT_SERVICE_KEY)) {
+      return reply.code(401).send({ error: "invalid_bot_key" });
+    }
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    return {
+      applications: await VtcApplication.findAll({
+        where: { vtcId: id, status: "pending" },
+        include: [{ model: User, attributes: ["steamId", "displayName", "avatarUrl"] }],
+        order: [["id", "ASC"]],
+        limit: 100,
+      }),
+    };
+  });
+
+  app.patch("/api/v1/bot/vtcs/:id/applications/:applicationId", async (request, reply) => {
+    const raw = request.headers["x-bot-key"];
+    const key = Array.isArray(raw) ? raw[0] : raw;
+    if (!secretEquals(key, process.env.OPENHAUL_BOT_SERVICE_KEY)) {
+      return reply.code(401).send({ error: "invalid_bot_key" });
+    }
+    const params = z.object({
+      id: z.coerce.number().int().positive(),
+      applicationId: z.coerce.number().int().positive(),
+    }).parse(request.params);
+    const body = z.object({ status: z.enum(["approved", "rejected"]) }).parse(request.body);
+    const application = await VtcApplication.findOne({ where: { id: params.applicationId, vtcId: params.id } });
+    if (!application) return reply.code(404).send({ error: "application_not_found" });
+    if (application.getDataValue("status") !== "pending") return reply.code(409).send({ error: "application_already_reviewed" });
+
+    await application.update({ status: body.status });
+    const user = await User.findByPk(application.getDataValue("userId"));
+    if (body.status === "approved" && user) {
+      const [member] = await VtcMember.findOrCreate({
+        where: { vtcId: params.id, userId: user.id },
+        defaults: { vtcId: params.id, userId: user.id, role: "member", title: null, status: "active", joinedAt: new Date() },
+      });
+      if (member.getDataValue("status") !== "active") {
+        await member.update({ status: "active", role: "member", joinedAt: new Date() });
+      }
+    }
+
+    await recordVtcActivity({
+      vtcId: params.id,
+      driverId: user?.steamId ?? null,
+      type: "application." + body.status,
+      title: (user?.displayName ?? "Applicant") + " application " + body.status + " from Discord",
+      metadata: { applicationId: application.id, source: "discord" },
+    });
+    return { application };
   });
 
   app.get("/api/v1/bot/features", async (request, reply) => {
