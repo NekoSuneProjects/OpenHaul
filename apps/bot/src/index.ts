@@ -10,165 +10,197 @@ import {
 
 const token = process.env.DISCORD_BOT_TOKEN?.trim();
 const apiUrl = process.env.OPENHAUL_API_URL ?? "http://localhost:3001";
-const apiKey = process.env.OPENHAUL_VTC_API_KEY?.trim();
-const fineChannelId = process.env.DISCORD_FINE_CHANNEL_ID?.trim();
-const jobChannelId = process.env.DISCORD_JOB_CHANNEL_ID?.trim();
-const driverChannelId = process.env.DISCORD_DRIVER_CHANNEL_ID?.trim();
+const serviceKey = process.env.OPENHAUL_BOT_SERVICE_KEY?.trim();
+const appUrl = (process.env.OPENHAUL_APP_URL ?? apiUrl).replace(/\/$/, "");
 
 if (!token) {
   console.log("OpenHaul bot disabled: DISCORD_BOT_TOKEN is empty.");
   process.exit(0);
 }
 
-if (!apiKey) {
-  console.warn("OPENHAUL_VTC_API_KEY is empty; VTC polling will be disabled.");
+if (!serviceKey) {
+  console.warn("OPENHAUL_BOT_SERVICE_KEY is empty; multi-VTC Discord integration is disabled.");
 }
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-let lastFineId: string | null = null;
-let lastJobId: string | null = null;
-let knownDrivers: Map<string, any> | null = null;
 
-async function apiGet(path: string) {
-  const response = await fetch(`${apiUrl}${path}`, {
-    headers: apiKey ? { Authorization: `Bearer ${apiKey}` } : {},
+type BotConfig = {
+  vtcId: number;
+  guildId?: string | null;
+  logChannelId?: string | null;
+  jobChannelId?: string | null;
+  fineChannelId?: string | null;
+  applicationChannelId?: string | null;
+  moderationChannelId?: string | null;
+  driverChannelId?: string | null;
+  enabled: boolean;
+  Vtc?: {
+    id: number;
+    name: string;
+    tag?: string | null;
+    recruitmentOpen?: boolean;
+  };
+};
+
+let configs = new Map<number, BotConfig>();
+let configsByGuild = new Map<string, BotConfig>();
+let lastEventId = 0;
+const knownDrivers = new Map<number, Map<string, any>>();
+
+async function botGet(path: string) {
+  if (!serviceKey) throw new Error("OpenHaul bot service key is missing.");
+  const response = await fetch(apiUrl + path, {
+    headers: { "x-bot-key": serviceKey },
   });
+  if (!response.ok) throw new Error(`OpenHaul bot API ${response.status} for ${path}`);
+  return response.json();
+}
+
+async function publicGet(path: string) {
+  const response = await fetch(apiUrl + path);
   if (!response.ok) throw new Error(`OpenHaul API ${response.status} for ${path}`);
   return response.json();
 }
 
-async function textChannel(id?: string) {
+async function textChannel(id?: string | null) {
   if (!id) return null;
   const channel = await client.channels.fetch(id).catch(() => null);
   return channel?.isTextBased() ? channel as TextChannel : null;
 }
 
-function fineTitle(type: string) {
-  return ({
-    red_light: "Red light offence",
-    speeding: "Speeding fine",
-    wrong_way: "Wrong-way offence",
-    collision: "Collision penalty",
-    parking: "Parking offence",
-    toll: "Toll charge",
-    other: "Driver penalty",
-  } as Record<string,string>)[type] ?? type;
+function eventChannel(config: BotConfig, type: string) {
+  if (type === "fine") return config.fineChannelId || config.logChannelId;
+  if (type.startsWith("job.")) return config.jobChannelId || config.logChannelId;
+  if (type.startsWith("application.")) return config.applicationChannelId || config.logChannelId;
+  if (type.startsWith("moderation.")) return config.moderationChannelId || config.logChannelId;
+  return config.logChannelId;
 }
 
-async function pollFines() {
-  if (!apiKey || !fineChannelId) return;
-  const data = await apiGet("/api/v1/vtc/fines");
-  const fines = Array.isArray(data.fines) ? data.fines : [];
-  if (!fines.length) return;
+function eventEmbed(event: any) {
+  const type = String(event.type ?? "activity");
+  const title =
+    type === "fine" ? "🚨 Driver penalty" :
+    type.startsWith("job.") ? "✅ Delivery completed" :
+    type.startsWith("application.") ? "📨 Recruitment update" :
+    type.startsWith("moderation.") ? "🛡️ Moderation update" :
+    type === "profile.name_changed" ? "✏️ Driver name changed" :
+    type.startsWith("member.") ? "👥 VTC membership update" :
+    "📋 VTC activity";
 
-  const newest = String(fines[0].id);
-  if (lastFineId === null) {
-    lastFineId = newest;
-    return;
+  const embed = new EmbedBuilder()
+    .setTitle(title)
+    .setDescription(String(event.title ?? type))
+    .setTimestamp(new Date(event.occurredAt ?? Date.now()));
+
+  if (event.detail) embed.addFields({ name: "Details", value: String(event.detail).slice(0, 1024) });
+  if (event.driverId) embed.addFields({ name: "Driver", value: String(event.driverId), inline: true });
+  if (event.amount != null) {
+    embed.addFields({
+      name: type === "fine" ? "Penalty" : "Amount",
+      value: `${event.currency ?? ""} ${Number(event.amount).toLocaleString()}`.trim(),
+      inline: true,
+    });
   }
 
-  const fresh = fines.filter((f: any) => String(f.id) !== lastFineId);
-  if (!fresh.length) return;
-
-  const channel = await textChannel(fineChannelId);
-  for (const fine of fresh.reverse()) {
-    const embed = new EmbedBuilder()
-      .setTitle("🚨 VTC driver fine")
-      .addFields(
-        { name: "Driver", value: String(fine.driverId), inline: true },
-        { name: "Offence", value: fineTitle(String(fine.type)), inline: true },
-        { name: "Amount", value: `${fine.currency ?? "EUR"} ${fine.amount ?? 0}`, inline: true },
-        { name: "Game", value: String(fine.game ?? "unknown").toUpperCase(), inline: true },
-        { name: "Location", value: String(fine.city ?? "Unknown"), inline: true },
-      )
-      .setTimestamp(new Date(fine.occurredAt ?? Date.now()));
-    await channel?.send({ embeds: [embed] });
+  const meta = event.metadata ?? {};
+  if (type.startsWith("job.") && meta.cargo) {
+    embed.addFields(
+      { name: "Cargo", value: String(meta.cargo), inline: false },
+      {
+        name: "Route",
+        value: meta.sourceCity && meta.destinationCity
+          ? `${meta.sourceCity} → ${meta.destinationCity}`
+          : "Unknown",
+        inline: false,
+      },
+      { name: "Distance", value: meta.distanceKm == null ? "Unknown" : `${Math.round(Number(meta.distanceKm))} km`, inline: true },
+    );
   }
-  lastFineId = newest;
+  return embed;
 }
 
-async function pollJobs() {
-  if (!apiKey || !jobChannelId) return;
-  const data = await apiGet("/api/v1/vtc/jobs");
-  const jobs = Array.isArray(data.jobs) ? data.jobs : [];
-  if (!jobs.length) return;
-
-  const newest = String(jobs[0].id);
-  if (lastJobId === null) {
-    lastJobId = newest;
-    return;
-  }
-
-  const fresh = jobs.filter((j: any) => String(j.id) !== lastJobId);
-  if (!fresh.length) return;
-
-  const channel = await textChannel(jobChannelId);
-  for (const job of fresh.reverse()) {
-    const embed = new EmbedBuilder()
-      .setTitle("✅ Job completed")
-      .addFields(
-        { name: "Driver", value: String(job.driverId), inline: true },
-        { name: "Game", value: String(job.game ?? "unknown").toUpperCase(), inline: true },
-        { name: "Cargo", value: String(job.cargo ?? "Unknown"), inline: false },
-        { name: "Route", value: `${job.sourceCity ?? "Unknown"} → ${job.destinationCity ?? "Unknown"}`, inline: false },
-        { name: "Distance", value: job.distanceKm == null ? "Unknown" : `${Math.round(Number(job.distanceKm))} km`, inline: true },
-      )
-      .setTimestamp(new Date(job.completedAt ?? Date.now()));
-    await channel?.send({ embeds: [embed] });
-  }
-  lastJobId = newest;
+async function refreshConfigs() {
+  if (!serviceKey) return;
+  const data = await botGet("/api/v1/bot/vtcs");
+  const list = Array.isArray(data.configs) ? data.configs : [];
+  configs = new Map(list.map((item: BotConfig) => [Number(item.vtcId), item]));
+  configsByGuild = new Map(
+    list.filter((item: BotConfig) => item.guildId).map((item: BotConfig) => [String(item.guildId), item]),
+  );
 }
 
-async function pollPresence() {
-  if (!apiKey || !driverChannelId) return;
+async function pollActivity() {
+  if (!serviceKey || !configs.size) return;
+  const data = await botGet("/api/v1/bot/events?after=" + lastEventId);
+  const events = Array.isArray(data.events) ? data.events : [];
+  for (const event of events) {
+    lastEventId = Math.max(lastEventId, Number(event.id ?? 0));
+    const config = configs.get(Number(event.vtcId));
+    if (!config) continue;
+    const channel = await textChannel(eventChannel(config, String(event.type ?? "")));
+    if (!channel) continue;
+    await channel.send({ embeds: [eventEmbed(event)] }).catch(console.error);
+  }
+}
 
-  const data = await apiGet("/api/v1/vtc/live");
+async function pollPresenceFor(config: BotConfig) {
+  if (!config.driverChannelId) return;
+  const data = await publicGet(`/api/v1/public/vtcs/${config.vtcId}/live`);
   const drivers = Array.isArray(data.drivers) ? data.drivers : [];
   const current = new Map<string, any>(drivers.map((driver: any) => [String(driver.driverId), driver]));
+  const previous = knownDrivers.get(config.vtcId);
 
-  if (knownDrivers === null) {
-    knownDrivers = current;
+  if (!previous) {
+    knownDrivers.set(config.vtcId, current);
     return;
   }
 
-  const channel = await textChannel(driverChannelId);
+  const channel = await textChannel(config.driverChannelId);
+  if (!channel) return;
 
   for (const [driverId, driver] of current) {
-    if (knownDrivers.has(driverId)) continue;
-
+    if (previous.has(driverId)) continue;
     const embed = new EmbedBuilder()
       .setTitle("🟢 Driver online")
       .setDescription(`**${driver.username ?? driverId}** started driving in ${String(driver.game ?? "ETS2/ATS").toUpperCase()}.`)
       .addFields(
         { name: "Truck", value: String(driver.truck ?? "Unknown"), inline: true },
-        { name: "Server", value: String(driver.server ?? "Singleplayer / unknown"), inline: true },
-        { name: "Route", value: driver.sourceCity && driver.destinationCity ? `${driver.sourceCity} → ${driver.destinationCity}` : "No active route", inline: false },
+        { name: "Cargo", value: String(driver.cargo ?? "No cargo"), inline: true },
+        {
+          name: "Route",
+          value: driver.sourceCity && driver.destinationCity
+            ? `${driver.sourceCity} → ${driver.destinationCity}`
+            : "No active route",
+          inline: false,
+        },
       )
       .setTimestamp();
-
-    await channel?.send({ embeds: [embed] });
+    await channel.send({ embeds: [embed] }).catch(console.error);
   }
 
-  for (const [driverId, previous] of knownDrivers) {
+  for (const [driverId, previousDriver] of previous) {
     if (current.has(driverId)) continue;
-
     const embed = new EmbedBuilder()
       .setTitle("⚫ Driver offline")
-      .setDescription(`**${previous.username ?? driverId}** stopped sending OpenHaul telemetry.`)
+      .setDescription(`**${previousDriver.username ?? driverId}** stopped sending OpenHaul telemetry.`)
       .setTimestamp();
-
-    await channel?.send({ embeds: [embed] });
+    await channel.send({ embeds: [embed] }).catch(console.error);
   }
 
-  knownDrivers = current;
+  knownDrivers.set(config.vtcId, current);
+}
+
+async function pollPresence() {
+  await Promise.all([...configs.values()].map((config) => pollPresenceFor(config).catch(console.error)));
 }
 
 async function registerCommands() {
   if (!client.user) return;
   const commands = [
-    new SlashCommandBuilder().setName("openhaul").setDescription("Show this server's OpenHaul VTC status"),
-    new SlashCommandBuilder().setName("leaderboard").setDescription("Show the VTC distance leaderboard"),
+    new SlashCommandBuilder().setName("openhaul").setDescription("Show this Discord server's OpenHaul VTC"),
+    new SlashCommandBuilder().setName("leaderboard").setDescription("Show this VTC's distance leaderboard"),
     new SlashCommandBuilder().setName("drivers").setDescription("Show currently live VTC drivers"),
+    new SlashCommandBuilder().setName("apply").setDescription("Get the application link for this VTC"),
   ].map((command) => command.toJSON());
 
   const rest = new REST({ version: "10" }).setToken(token!);
@@ -178,77 +210,75 @@ async function registerCommands() {
 client.once("ready", async () => {
   console.log(`OpenHaul bot logged in as ${client.user?.tag}`);
   await registerCommands().catch(console.error);
+  await refreshConfigs().catch(console.error);
 
-  setInterval(() => pollFines().catch(console.error), 8000);
-  setInterval(() => pollJobs().catch(console.error), 10000);
-  setInterval(() => pollPresence().catch(console.error), 12000);
+  setInterval(() => refreshConfigs().catch(console.error), 60_000);
+  setInterval(() => pollActivity().catch(console.error), 7_000);
+  setInterval(() => pollPresence().catch(console.error), 12_000);
 });
 
 client.on("interactionCreate", async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
+  const config = interaction.guildId ? configsByGuild.get(interaction.guildId) : undefined;
 
-  await interaction.deferReply({ ephemeral: interaction.commandName === "openhaul" });
+  await interaction.deferReply({ ephemeral: interaction.commandName === "openhaul" || interaction.commandName === "apply" });
 
   try {
+    if (!config) {
+      await interaction.editReply("This Discord server is not linked to an OpenHaul VTC yet.");
+      return;
+    }
+
+    const vtc = config.Vtc;
     if (interaction.commandName === "openhaul") {
-      const data = await apiGet("/api/v1/vtc/me");
-      const vtc = data.vtc;
       await interaction.editReply(
-        vtc
-          ? `OpenHaul connected to **${vtc.name}**${vtc.tag ? ` [${vtc.tag}]` : ""}. Scopes: ${(data.scopes ?? []).join(", ") || "none"}`
-          : "OpenHaul is connected, but no VTC record was returned."
+        `OpenHaul is linked to **${vtc?.name ?? "VTC #" + config.vtcId}**${vtc?.tag ? ` [${vtc.tag}]` : ""}.`
       );
       return;
     }
 
-    if (interaction.commandName === "leaderboard") {
-      const data = await apiGet("/api/v1/vtc/leaderboard");
-      const drivers = Array.isArray(data.drivers) ? data.drivers.slice(0, 10) : [];
+    if (interaction.commandName === "apply") {
+      if (vtc?.recruitmentOpen === false) {
+        await interaction.editReply("Recruitment is currently closed for this VTC.");
+        return;
+      }
+      await interaction.editReply(`Apply here: ${appUrl}/vtc/${config.vtcId}`);
+      return;
+    }
 
+    if (interaction.commandName === "leaderboard") {
+      const data = await publicGet(`/api/v1/public/vtcs/${config.vtcId}/leaderboard`);
+      const drivers = Array.isArray(data.drivers) ? data.drivers.slice(0, 10) : [];
       if (!drivers.length) {
         await interaction.editReply("No completed jobs are available for this VTC yet.");
         return;
       }
-
-      const description = drivers
-        .map((driver: any, index: number) =>
-          `**${index + 1}.** ${driver.driverId} — ${Math.round(Number(driver.distanceKm ?? 0)).toLocaleString()} km · ${driver.jobs ?? 0} jobs`
-        )
-        .join("\n");
-
-      const embed = new EmbedBuilder()
-        .setTitle("🏆 VTC distance leaderboard")
-        .setDescription(description)
-        .setTimestamp();
-
-      await interaction.editReply({ embeds: [embed] });
+      const description = drivers.map((driver: any, index: number) =>
+        `**${index + 1}.** ${driver.driverId} — ${Math.round(Number(driver.distanceKm ?? 0)).toLocaleString()} km · ${driver.jobs ?? 0} jobs`
+      ).join("\n");
+      await interaction.editReply({
+        embeds: [new EmbedBuilder().setTitle("🏆 VTC distance leaderboard").setDescription(description).setTimestamp()],
+      });
       return;
     }
 
     if (interaction.commandName === "drivers") {
-      const data = await apiGet("/api/v1/vtc/live");
+      const data = await publicGet(`/api/v1/public/vtcs/${config.vtcId}/live`);
       const drivers = Array.isArray(data.drivers) ? data.drivers : [];
-
       if (!drivers.length) {
         await interaction.editReply("No VTC drivers are currently sending OpenHaul telemetry.");
         return;
       }
-
-      const description = drivers.slice(0, 20)
-        .map((driver: any) =>
-          `**${driver.username ?? driver.driverId}** · ${String(driver.game ?? "").toUpperCase()} · ${Math.round(Number(driver.speedKph ?? 0))} km/h\n${driver.sourceCity && driver.destinationCity ? `${driver.sourceCity} → ${driver.destinationCity}` : driver.truck ?? "No active route"}`
-        )
-        .join("\n\n");
-
-      const embed = new EmbedBuilder()
-        .setTitle(`🚛 Live VTC drivers (${drivers.length})`)
-        .setDescription(description)
-        .setTimestamp();
-
-      await interaction.editReply({ embeds: [embed] });
+      const description = drivers.slice(0, 20).map((driver: any) =>
+        `**${driver.username ?? driver.driverId}** · ${String(driver.game ?? "").toUpperCase()} · ${Math.round(Number(driver.speedKph ?? 0))} km/h\n${driver.sourceCity && driver.destinationCity ? `${driver.sourceCity} → ${driver.destinationCity}` : driver.truck ?? "No active route"}`
+      ).join("\n\n");
+      await interaction.editReply({
+        embeds: [new EmbedBuilder().setTitle(`🚛 Live VTC drivers (${drivers.length})`).setDescription(description).setTimestamp()],
+      });
     }
   } catch (error) {
-    await interaction.editReply("OpenHaul API connection failed or this API key is missing the required scope.");
+    console.error(error);
+    await interaction.editReply("OpenHaul could not complete that request.");
   }
 });
 
