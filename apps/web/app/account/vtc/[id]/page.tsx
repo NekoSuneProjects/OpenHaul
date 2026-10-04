@@ -328,6 +328,12 @@ export default function ManageVtcPage() {
         },
         embedConfig: {
           footer: String(form.get("embedFooter") ?? "").trim(),
+          roleMap: {
+            owner: value("discordRoleOwner"),
+            admin: value("discordRoleAdmin"),
+            staff: value("discordRoleStaff"),
+            member: value("discordRoleMember"),
+          },
         },
         enabled: form.get("enabled") === "on",
       }),
@@ -600,6 +606,13 @@ export default function ManageVtcPage() {
         <input name="convoyChannelId" defaultValue={discordConfig?.convoyChannelId ?? ""} placeholder="Convoys / events channel ID" />
         <input name="welcomeChannelId" defaultValue={discordConfig?.welcomeChannelId ?? ""} placeholder="Welcome / leave channel ID" />
         <input name="embedFooter" defaultValue={discordConfig?.embedConfig?.footer ?? ""} placeholder="Optional embed footer" />
+        <div className="grid" style={{ padding: 0 }}>
+          <input name="discordRoleOwner" defaultValue={discordConfig?.embedConfig?.roleMap?.owner ?? ""} placeholder="Discord role ID for OpenHaul owner" />
+          <input name="discordRoleAdmin" defaultValue={discordConfig?.embedConfig?.roleMap?.admin ?? ""} placeholder="Discord role ID for OpenHaul admin" />
+          <input name="discordRoleStaff" defaultValue={discordConfig?.embedConfig?.roleMap?.staff ?? ""} placeholder="Discord role ID for OpenHaul staff" />
+          <input name="discordRoleMember" defaultValue={discordConfig?.embedConfig?.roleMap?.member ?? ""} placeholder="Discord role ID for OpenHaul member" />
+        </div>
+        <p className="muted">Linked members can have these OpenHaul roles synchronized to Discord automatically.</p>
         <div className="grid" style={{ padding: 0 }}>
           <label><input type="checkbox" name="toggleJobs" defaultChecked={discordConfig?.featureToggles?.jobs !== false} /> Job notifications</label>
           <label><input type="checkbox" name="toggleFines" defaultChecked={discordConfig?.featureToggles?.fines !== false} /> Fine notifications</label>
