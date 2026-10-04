@@ -1,7 +1,7 @@
 import type { FastifyInstance } from "fastify";
 import { Op } from "sequelize";
 import { z } from "zod";
-import { Fine, Job, TwitchAccount, User, Vtc, VtcActivityEvent, VtcMember, VtcModerationAction } from "./db.js";
+import { Fine, Job, PlatformRecord, TwitchAccount, User, Vtc, VtcActivityEvent, VtcMember, VtcModerationAction } from "./db.js";
 import { getLiveDrivers } from "./live.js";
 
 export async function registerPublicDriverRoutes(app: FastifyInstance) {
@@ -36,7 +36,7 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
       return reply.code(404).send({ error: "driver_profile_private" });
     }
 
-    const [memberships, jobs, fines, distanceKm, income, fineAmount, longestJobKm, bestJobIncome, firstJob, liveDrivers, twitch, moderation, nameChanges] = await Promise.all([
+    const [memberships, jobs, fines, distanceKm, income, fineAmount, longestJobKm, bestJobIncome, firstJob, liveDrivers, twitch, moderation, nameChanges, achievements] = await Promise.all([
       VtcMember.findAll({
         where: { userId: user.id, status: "active" },
         include: [{ model: Vtc, attributes: ["id", "name", "slug", "tag"] }],
@@ -73,6 +73,16 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
         order: [["id", "DESC"]],
         limit: 50,
       }),
+      PlatformRecord.findAll({
+        where: {
+          scopeType: "user",
+          scopeId: String(user.id),
+          category: "achievements",
+          status: { [Op.ne]: "deleted" },
+        },
+        order: [["createdAt", "ASC"]],
+        limit: 100,
+      }),
     ]);
 
     const live = liveDrivers.find((driver) => driver.driverId === steamId) ?? null;
@@ -98,6 +108,7 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
       twitch,
       moderation,
       nameChanges,
+      achievements,
       recentJobs: jobs,
       recentFines: fines,
     };
