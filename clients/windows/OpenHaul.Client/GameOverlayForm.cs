@@ -19,6 +19,9 @@ public sealed class GameOverlayForm : Form
     private PluginLiveTelemetry? _telemetry;
     private DateTimeOffset _lastTelemetryAt;
     private IntPtr _gameWindow;
+    private bool _userVisible = true;
+
+    public bool IsUserVisible => _userVisible;
 
     public GameOverlayForm(ClientSettings settings)
     {
@@ -70,13 +73,15 @@ public sealed class GameOverlayForm : Form
     public void SetEnabled(bool enabled)
     {
         _settings.OverlayEnabled = enabled;
+        if (enabled) _userVisible = true;
         _settings.Save();
-        TrackGameWindow();
+        TrackGameWindow(forceShow: enabled);
     }
 
-    public void Toggle()
+    public void ToggleVisibility()
     {
-        SetEnabled(!_settings.OverlayEnabled);
+        _userVisible = !_userVisible;
+        TrackGameWindow(forceShow: _userVisible);
     }
 
     public void UpdateTelemetry(PluginLiveTelemetry telemetry)
@@ -95,11 +100,11 @@ public sealed class GameOverlayForm : Form
         TrackGameWindow();
     }
 
-    private void TrackGameWindow()
+    private void TrackGameWindow(bool forceShow = false)
     {
         if (IsDisposed) return;
 
-        if (!_settings.OverlayEnabled)
+        if (!_settings.OverlayEnabled || !_userVisible)
         {
             if (Visible) Hide();
             return;
@@ -114,6 +119,22 @@ public sealed class GameOverlayForm : Form
         }
 
         _gameWindow = game.MainWindowHandle;
+
+        // Only render while the truck simulator itself is the active foreground
+        // application. This keeps OpenHaul inside/on top of the game instead of
+        // floating over the desktop or other applications.
+        if (IsIconic(_gameWindow))
+        {
+            if (Visible) Hide();
+            return;
+        }
+
+        var foreground = GetForegroundWindow();
+        if (foreground != _gameWindow && !forceShow)
+        {
+            if (Visible) Hide();
+            return;
+        }
 
         if (!GetClientRect(_gameWindow, out var rect))
         {
@@ -131,8 +152,22 @@ public sealed class GameOverlayForm : Form
         var width = Math.Max(1, rect.Right - rect.Left);
         var height = Math.Max(1, rect.Bottom - rect.Top);
 
-        if (Bounds.X != origin.X || Bounds.Y != origin.Y || Width != width || Height != height)
-            Bounds = new Rectangle(origin.X, origin.Y, width, height);
+        if (!IsHandleCreated)
+        {
+            Show();
+            Hide();
+        }
+
+        // Place the transparent HUD exactly over the game's client area and
+        // force it above the game without activating/focusing the overlay.
+        SetWindowPos(
+            Handle,
+            HwndTopMost,
+            origin.X,
+            origin.Y,
+            width,
+            height,
+            SwpNoActivate | SwpShowWindow);
 
         if (!Visible) Show();
         Invalidate();
@@ -302,6 +337,28 @@ public sealed class GameOverlayForm : Form
     [DllImport("user32.dll")]
     private static extern bool GetClientRect(IntPtr hWnd, out NativeRect lpRect);
 
+    private static readonly IntPtr HwndTopMost = new(-1);
+    private const uint SwpNoActivate = 0x0010;
+    private const uint SwpShowWindow = 0x0040;
+
     [DllImport("user32.dll")]
     private static extern bool ClientToScreen(IntPtr hWnd, ref NativePoint lpPoint);
+
+    [DllImport("user32.dll")]
+    private static extern IntPtr GetForegroundWindow();
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool IsIconic(IntPtr hWnd);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool SetWindowPos(
+        IntPtr hWnd,
+        IntPtr hWndInsertAfter,
+        int X,
+        int Y,
+        int cx,
+        int cy,
+        uint uFlags);
 }
