@@ -17,6 +17,9 @@ type SiiStation = {
   detectedCodec?: string;
   originalUrl?: string;
   proxyCountry?: string;
+  detectedCountry?: string;
+  detectedBy?: string;
+  matchedStation?: string;
 };
 
 type DirectoryStation = {
@@ -240,7 +243,14 @@ export default function RadioSiiEditorPage() {
             healthRoute: String(row.route || ""),
             healthReason: String(row.reason || ""),
             detectedCodec: row.codec ? String(row.codec).toUpperCase() : "",
-            proxyCountry: row.proxy?.country ? String(row.proxy.country) : station.proxyCountry,
+            proxyCountry: row.proxy?.country
+              ? String(row.proxy.country)
+              : row.detectedCountry
+                ? String(row.detectedCountry)
+                : station.proxyCountry,
+            detectedCountry: row.detectedCountry ? String(row.detectedCountry) : station.detectedCountry,
+            detectedBy: row.detectedBy ? String(row.detectedBy) : station.detectedBy,
+            matchedStation: row.matchedStation ? String(row.matchedStation) : station.matchedStation,
           };
         }));
 
@@ -476,6 +486,13 @@ export default function RadioSiiEditorPage() {
                     <small title={station.healthReason || ""} style={{ display: "block", marginTop: 5 }}>
                       {[station.detectedCodec, station.healthRoute].filter(Boolean).join(" · ") || "—"}
                     </small>
+                    {station.detectedCountry ? (
+                      <small style={{ display: "block", marginTop: 5 }}>
+                        Country: {station.detectedCountry}
+                        {station.detectedBy ? ` · ${station.detectedBy}` : ""}
+                        {station.matchedStation ? ` · ${station.matchedStation}` : ""}
+                      </small>
+                    ) : null}
                   </td>
                   <td style={{ padding: 8 }}>
                     <input

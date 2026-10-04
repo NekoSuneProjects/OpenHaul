@@ -3,6 +3,7 @@ import { lookup } from "node:dns/promises";
 import { isIP } from "node:net";
 import { spawn } from "node:child_process";
 import type { FastifyInstance } from "fastify";
+import { lookupRadioCountryByUrl } from "./radioProxy.js";
 import { z } from "zod";
 
 const DEFAULT_NEKOROUTE_URL = "https://proxyweb.nekosunevr.co.uk";
@@ -38,7 +39,12 @@ const geoRuleSchema = z.object({
 function inferredGeoCountry(url: string) {
   const lower = url.toLowerCase();
 
-  // Built-in known geo-sensitive station/provider rule.
+  // Built-in known geo-sensitive station/provider rules.
+  // Newcap/Stingray LeanStream hosts are used by Canadian stations such as
+  // the boom network. They can return a valid spoken geo-block message
+  // outside Canada, so treat the provider host itself as Canada-sensitive.
+  if (lower.includes("newcap.leanstream.co/")) return "CA";
+  if (lower.includes("stingray.leanstream.co/")) return "CA";
   if (lower.includes("leanstream") && lower.includes("/chslfm")) return "CA";
   if (lower.includes("musicradio.com/")) return "GB";
   if (lower.includes("globalplayer.com/")) return "GB";
@@ -253,9 +259,13 @@ function relayUrl(request: any, payload: RelayPayload) {
   return `${base}/api/v1/public/radio/repair.mp3?token=${encodeURIComponent(signRelayPayload(payload))}`;
 }
 
-async function scanOne(request: any, row: z.infer<typeof scanBodySchema>["stations"][number]) {
+async function scanOne(app: FastifyInstance, request: any, row: z.infer<typeof scanBodySchema>["stations"][number]) {
   const url = await assertPublicRadioUrl(row.url);
-  const inferredCountry = row.preferredCountry ?? inferredGeoCountry(url);
+  const providerCountry = inferredGeoCountry(url);
+  const directoryMatch = row.preferredCountry || providerCountry
+    ? null
+    : await lookupRadioCountryByUrl(url, app);
+  const inferredCountry = row.preferredCountry ?? providerCountry ?? directoryMatch?.country;
 
   // Known geo-sensitive stations must be tested through their expected country.
   // A valid audio codec is not enough because some providers return a spoken
@@ -283,6 +293,9 @@ async function scanOne(request: any, row: z.infer<typeof scanBodySchema>["statio
           city: session.node?.city ?? null,
           networkType: session.networkType,
         },
+        detectedCountry: inferredCountry,
+        detectedBy: row.preferredCountry ? "user" : providerCountry ? "provider-rule" : directoryMatch?.source ?? "directory",
+        matchedStation: directoryMatch?.stationName ?? null,
         reason: `Geo-sensitive station tested through ${inferredCountry} instead of trusting direct placeholder audio.`,
       };
     } catch (geoError) {
@@ -363,7 +376,11 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
   app.post("/api/v1/public/radio/geo-probe", async (request, reply) => {
     const body = geoProbeSchema.parse(request.body);
     const url = await assertPublicRadioUrl(body.url);
-    const inferredCountry = body.expectedCountry ?? inferredGeoCountry(url);
+    const providerCountry = inferredGeoCountry(url);
+    const directoryMatch = body.expectedCountry || providerCountry
+      ? null
+      : await lookupRadioCountryByUrl(url, app);
+    const inferredCountry = body.expectedCountry ?? providerCountry ?? directoryMatch?.country;
 
     let direct: { ok: boolean; codec?: string; error?: string };
     try {
@@ -421,6 +438,8 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
     return {
       url,
       inferredCountry: inferredCountry ?? null,
+      detectedBy: body.expectedCountry ? "user" : providerCountry ? "provider-rule" : directoryMatch?.source ?? null,
+      matchedStation: directoryMatch?.stationName ?? null,
       classification,
       direct,
       countries: results,
@@ -435,7 +454,7 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
     // of ffprobe processes at once.
     const results = await Promise.all(body.stations.map(async (station) => {
       try {
-        return await scanOne(request, station);
+        return await scanOne(app, request, station);
       } catch (error) {
         return {
           id: station.id,
@@ -479,16 +498,39 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
           .send();
       }
 
+      const providerCountry = inferredGeoCountry(payload.url);
+      const directoryMatch = providerCountry || payload.country
+        ? null
+        : await lookupRadioCountryByUrl(payload.url, app);
+      const inferredCountry = payload.country ?? providerCountry ?? directoryMatch?.country;
+
+      // Backward compatibility for previously generated repair tokens that
+      // incorrectly contained proxy:false for known geo-sensitive providers.
+      // Provider rules take precedence over the signed routing hint.
+      if (inferredCountry && !payload.proxy) {
+        payload = {
+          ...payload,
+          proxy: true,
+          country: inferredCountry,
+          networkType: "auto",
+        };
+      }
+
       let inputUrl = payload.url;
       let proxyProtocol = "";
+      let proxyCountry = "";
+      let actualRoute = payload.proxy ? "regional-proxy" : "direct-transcode";
       if (payload.proxy) {
         try {
           const session = await createRegionalSession(payload.url, payload.country, payload.networkType ?? "auto");
           inputUrl = session.inputUrl;
           proxyProtocol = session.node?.protocol ?? "";
+          proxyCountry = session.node?.country ?? payload.country ?? "";
+          actualRoute = session.networkType === "residential" ? "residential-proxy" : "hosting-proxy";
         } catch (error) {
           return reply.code(503).send({
             error: "radio_proxy_unavailable",
+            country: payload.country ?? inferredCountry ?? null,
             message: error instanceof Error ? error.message : String(error),
           });
         }
@@ -523,7 +565,8 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
           "cache-control": "no-store, no-cache, must-revalidate, no-transform",
           "x-accel-buffering": "no",
           "icy-br": "128",
-          "x-openhaul-radio-route": payload.proxy ? "residential-proxy" : "direct-transcode",
+          "x-openhaul-radio-route": actualRoute,
+          "x-openhaul-radio-proxy-country": proxyCountry,
           "x-openhaul-radio-proxy-protocol": proxyProtocol,
         });
         ffmpeg.stdout.pipe(reply.raw);

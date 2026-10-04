@@ -136,6 +136,109 @@ function publicBase() {
   return cleanBaseUrl(process.env.OPENHAUL_PUBLIC_API_URL ?? "");
 }
 
+function forcedProxyCountries() {
+  const values = (process.env.RADIO_FORCE_PROXY_COUNTRIES ?? "*")
+    .split(",")
+    .map((value) => value.trim().toUpperCase())
+    .filter(Boolean);
+
+  return {
+    all: values.includes("*") || values.includes("ALL"),
+    countries: new Set(values.filter((value) => /^[A-Z]{2}$/.test(value))),
+  };
+}
+
+function shouldForceCountryProxy(country?: string) {
+  if (!country || !/^[A-Z]{2}$/i.test(country)) return false;
+  const policy = forcedProxyCountries();
+  return policy.all || policy.countries.has(country.toUpperCase());
+}
+
+function applyRegionalProxyPolicy(station: RadioStation): RadioStation {
+  if (!shouldForceCountryProxy(station.country)) return station;
+  return {
+    ...station,
+    forceProxy: true,
+    networkType: "residential",
+  };
+}
+
+function normalizedStreamKey(value: string) {
+  try {
+    const url = new URL(value);
+    const pathname = url.pathname.replace(/\/+$/, "").toLowerCase();
+    return `${url.hostname.toLowerCase()}${pathname}`;
+  } catch {
+    return value.trim().toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
+  }
+}
+
+export async function lookupRadioCountryByUrl(sourceUrl: string, app?: FastifyInstance) {
+  const key = normalizedStreamKey(sourceUrl);
+
+  // First use OpenHaul's known stations and any public-directory results that
+  // have already been loaded into the short-lived directory cache.
+  const known = [
+    ...builtInStations(),
+    ...officialProviderStations(),
+    ...(app ? parseConfiguredStations(app) : []),
+    ...[...directoryCache.values()].flatMap((entry) => entry.value),
+  ];
+
+  const cachedMatch = known.find((station) =>
+    station.country && normalizedStreamKey(station.sourceUrl) === key
+  );
+  if (cachedMatch?.country) {
+    return {
+      country: cachedMatch.country.toUpperCase(),
+      source: cachedMatch.source,
+      stationId: cachedMatch.id,
+      stationName: cachedMatch.name,
+    };
+  }
+
+  // Radio Browser supports reverse lookup by stream URL. Try both the complete
+  // imported URL and a query-free URL because .sii files often contain tracking
+  // parameters that public directories omit.
+  const candidates = new Set<string>([sourceUrl]);
+  try {
+    const parsed = new URL(sourceUrl);
+    parsed.search = "";
+    parsed.hash = "";
+    candidates.add(parsed.toString());
+  } catch {
+    // Invalid URLs are handled by the scanner's normal URL validation.
+  }
+
+  for (const candidate of candidates) {
+    try {
+      const rows = await fetchRadioBrowser(
+        "/json/stations/byurl",
+        new URLSearchParams({ url: candidate }),
+        7_000,
+      ) as RadioBrowserStation[];
+
+      const exact = rows.find((row) => {
+        const rowUrl = String(row.url_resolved || row.url || "").trim();
+        return Boolean(rowUrl) && normalizedStreamKey(rowUrl) === key;
+      }) ?? rows.find((row) => Boolean(row.countrycode));
+
+      if (exact?.countrycode) {
+        return {
+          country: String(exact.countrycode).toUpperCase(),
+          source: "radio-browser" as const,
+          stationId: exact.stationuuid ? `rb-${exact.stationuuid}` : null,
+          stationName: exact.name ? String(exact.name) : null,
+        };
+      }
+    } catch {
+      // Directory matching is best-effort; provider rules/geo probing still run.
+    }
+  }
+
+  return null;
+}
+
 function getRadioBrowserBase() {
   return cleanBaseUrl(process.env.RADIO_BROWSER_API_URL ?? DEFAULT_RADIO_BROWSER_URL);
 }
@@ -256,7 +359,8 @@ function officialProviderStations(): RadioStation[] {
 function stationRegistry(app: FastifyInstance) {
   const byId = new Map<string, RadioStation>();
   for (const station of [...builtInStations(), ...officialProviderStations(), ...parseConfiguredStations(app)]) {
-    byId.set(station.id.toLowerCase(), station);
+    const routed = applyRegionalProxyPolicy(station);
+    byId.set(routed.id.toLowerCase(), routed);
   }
   return byId;
 }
@@ -334,16 +438,18 @@ function radioBrowserToStation(row: RadioBrowserStation, rules: GeoRule[]): Radi
   if (!stationUuid || !/^https?:\/\//i.test(sourceUrl)) return null;
 
   const rule = geoRuleFor(stationUuid, rules);
+  const country = rule?.country ?? (row.countrycode ? String(row.countrycode).toUpperCase() : undefined);
+  const forceProxy = Boolean(rule) || shouldForceCountryProxy(country);
   const bitrate = Number(row.bitrate || 128);
   return {
     id: `rb-${stationUuid}`,
     stationUuid,
     name: String(row.name || "Unknown station").trim(),
     sourceUrl,
-    country: rule?.country ?? (row.countrycode ? String(row.countrycode).toUpperCase() : undefined),
+    country,
     region: rule?.region,
-    forceProxy: Boolean(rule),
-    networkType: rule ? "residential" : undefined,
+    forceProxy,
+    networkType: forceProxy ? "residential" : undefined,
     bitrateKbps: Number.isFinite(bitrate) && bitrate > 0 ? Math.max(64, Math.min(320, bitrate)) : 128,
     genre: String(row.tags || "").split(",").filter(Boolean).slice(0, 3).join(", ") || undefined,
     city: row.state ? String(row.state) : undefined,
@@ -434,7 +540,8 @@ async function fetchInternetRadioStations(query: string, country: string) {
         name,
         sourceUrl: streamUrl,
         country: country !== "ALL" ? country : undefined,
-        forceProxy: false,
+        forceProxy: country !== "ALL" && shouldForceCountryProxy(country),
+        networkType: country !== "ALL" && shouldForceCountryProxy(country) ? "residential" : undefined,
         bitrateKbps: 128,
         genre: genreMatch ? stripHtml(genreMatch[1]) : undefined,
         language: undefined,
