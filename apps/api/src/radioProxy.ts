@@ -137,16 +137,21 @@ function publicBase() {
 }
 
 function forcedProxyCountries() {
-  return new Set(
-    (process.env.RADIO_FORCE_PROXY_COUNTRIES ?? "CA,GB")
-      .split(",")
-      .map((value) => value.trim().toUpperCase())
-      .filter((value) => /^[A-Z]{2}$/.test(value)),
-  );
+  const values = (process.env.RADIO_FORCE_PROXY_COUNTRIES ?? "*")
+    .split(",")
+    .map((value) => value.trim().toUpperCase())
+    .filter(Boolean);
+
+  return {
+    all: values.includes("*") || values.includes("ALL"),
+    countries: new Set(values.filter((value) => /^[A-Z]{2}$/.test(value))),
+  };
 }
 
 function shouldForceCountryProxy(country?: string) {
-  return Boolean(country && forcedProxyCountries().has(country.toUpperCase()));
+  if (!country || !/^[A-Z]{2}$/i.test(country)) return false;
+  const policy = forcedProxyCountries();
+  return policy.all || policy.countries.has(country.toUpperCase());
 }
 
 function applyRegionalProxyPolicy(station: RadioStation): RadioStation {
