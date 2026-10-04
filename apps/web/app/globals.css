@@ -1229,3 +1229,62 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
   height: 100vh !important;
   min-height: 100vh !important;
 }
+
+
+.radioVolume {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 210px;
+}
+
+.volumeButton {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid rgba(84,224,138,.16);
+  border-radius: 10px;
+  background: rgba(84,224,138,.055);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.volumeButton:hover {
+  border-color: rgba(84,224,138,.34);
+  background: rgba(84,224,138,.10);
+}
+
+.volumeSlider {
+  width: 120px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.volumeValue {
+  min-width: 38px;
+  color: var(--muted);
+  font-size: .76rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .radioInner {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .radioVolume {
+    min-width: 0;
+    gap: 6px;
+  }
+
+  .volumeSlider {
+    width: 78px;
+  }
+
+  .volumeValue {
+    display: none;
+  }
+}
