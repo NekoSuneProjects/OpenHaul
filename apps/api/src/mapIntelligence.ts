@@ -1,9 +1,75 @@
 import type { FastifyInstance } from "fastify";
 import { Op } from "sequelize";
 import { getLiveDrivers } from "./live.js";
-import { PlatformRecord } from "./db.js";
+import { PlatformRecord, TelemetryEvent } from "./db.js";
 
 type ExternalStaff = { driverId: string; role?: string; source?: string };
+
+type ExternalDriver = {
+  driverId: string;
+  username: string;
+  game: "ets2" | "ats";
+  x: number;
+  y?: number;
+  z: number;
+  heading?: number;
+  speedKph?: number;
+  server?: string | null;
+  source: "truckersmp-provider";
+};
+
+let tmpLiveCache: { expiresAt: number; value: ExternalDriver[] } | null = null;
+
+async function truckersMpWideDrivers(): Promise<ExternalDriver[]> {
+  const url = process.env.TRUCKERSMP_LIVE_PROVIDER_URL?.trim();
+  if (!url) return [];
+  if (tmpLiveCache && tmpLiveCache.expiresAt > Date.now()) return tmpLiveCache.value;
+
+  try {
+    const response = await fetch(url, {
+      signal: AbortSignal.timeout(6000),
+      headers: { accept: "application/json", "user-agent": "OpenHaul/1.0" },
+      cache: "no-store",
+    });
+    if (!response.ok) return tmpLiveCache?.value ?? [];
+
+    const payload = await response.json() as any;
+    const rows = Array.isArray(payload)
+      ? payload
+      : Array.isArray(payload?.drivers)
+        ? payload.drivers
+        : Array.isArray(payload?.players)
+          ? payload.players
+          : [];
+
+    const value = rows.flatMap((row: any) => {
+      const game = String(row.game ?? row.gameId ?? "").toLowerCase();
+      const normalizedGame = game.includes("ats") ? "ats" : game.includes("ets") ? "ets2" : null;
+      const driverId = String(row.driverId ?? row.steamId ?? row.steamID64 ?? row.id ?? "");
+      const x = Number(row.x ?? row.position?.x);
+      const z = Number(row.z ?? row.position?.z);
+      if (!normalizedGame || !driverId || !Number.isFinite(x) || !Number.isFinite(z)) return [];
+      return [{
+        driverId,
+        username: String(row.username ?? row.name ?? driverId),
+        game: normalizedGame as "ets2" | "ats",
+        x,
+        y: Number(row.y ?? row.position?.y ?? 0),
+        z,
+        heading: Number(row.heading ?? row.position?.heading ?? 0),
+        speedKph: Number(row.speedKph ?? row.speed ?? 0),
+        server: row.server ? String(row.server) : null,
+        source: "truckersmp-provider" as const,
+      }];
+    });
+
+    tmpLiveCache = { value, expiresAt: Date.now() + 5000 };
+    return value;
+  } catch {
+    return tmpLiveCache?.value ?? [];
+  }
+}
+
 
 let tmpStaffCache: { expiresAt: number; value: ExternalStaff[] } | null = null;
 
@@ -63,7 +129,7 @@ function trafficClusters(drivers: Awaited<ReturnType<typeof getLiveDrivers>>) {
 
 export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
   app.get("/api/v1/public/map-intelligence", async (_request, reply) => {
-    const [drivers, staffRecords, tmpStaff, missions] = await Promise.all([
+    const [drivers, staffRecords, tmpStaff, missions, tmpWideDrivers, convoyRecords, jobEvents] = await Promise.all([
       getLiveDrivers(),
       PlatformRecord.findAll({
         where: { scopeType: "global", scopeId: "public", category: "staff", status: "active" },
@@ -75,6 +141,17 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
         order: [["updatedAt", "DESC"]],
         limit: 100,
       }),
+      truckersMpWideDrivers(),
+      PlatformRecord.findAll({
+        where: { scopeType: "vtc", category: "convoys", status: "active" },
+        order: [["updatedAt", "DESC"]],
+        limit: 200,
+      }),
+      TelemetryEvent.findAll({
+        where: { type: { [Op.in]: ["job.accepted", "job.started", "job.completed"] } },
+        order: [["occurredAt", "DESC"]],
+        limit: 300,
+      }),
     ]);
 
     const openHaulStaff = staffRecords.map((record: any) => ({
@@ -82,6 +159,71 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       role: String((record.getDataValue("data") as any)?.role ?? "OpenHaul Staff"),
       source: "openhaul",
     }));
+
+    const convoyGroups = convoyRecords.map((record: any) => {
+      const data = (record.getDataValue("data") ?? {}) as any;
+      const vtcId = Number(record.getDataValue("scopeId"));
+      const explicit = Array.isArray(data.driverIds) ? data.driverIds.map(String) : [];
+      const members = drivers.filter((driver) =>
+        explicit.length ? explicit.includes(driver.driverId) : driver.vtcId === vtcId
+      );
+      return {
+        id: record.id,
+        key: record.getDataValue("key"),
+        vtcId,
+        title: data.title ?? data.name ?? record.getDataValue("key"),
+        route: Array.isArray(data.route) ? data.route : Array.isArray(data.waypoints) ? data.waypoints : [],
+        members: members.map((driver) => ({
+          driverId: driver.driverId,
+          username: driver.username,
+          game: driver.game,
+          x: driver.x,
+          y: driver.y ?? 0,
+          z: driver.z,
+          heading: driver.heading,
+        })),
+      };
+    }).filter((convoy: any) => convoy.members.length > 0 || convoy.route.length > 0);
+
+    const jobMarkers = jobEvents.flatMap((event: any) => {
+      const raw = (event.getDataValue("raw") ?? {}) as any;
+      const normalized = (event.getDataValue("normalized") ?? {}) as any;
+      const game = String(event.getDataValue("game"));
+      const driverId = String(event.getDataValue("driverId"));
+      const type = String(event.getDataValue("type"));
+      const result: any[] = [];
+
+      if (Number.isFinite(Number(raw.sourceX)) && Number.isFinite(Number(raw.sourceZ))) {
+        result.push({
+          id: String(event.id) + "-origin",
+          driverId, game, type: "origin",
+          x: Number(raw.sourceX), z: Number(raw.sourceZ),
+          city: raw.sourceCity ?? normalized.sourceCity ?? null,
+          eventType: type,
+        });
+      } else if ((type === "job.accepted" || type === "job.started") &&
+                 Number.isFinite(Number(normalized.x)) && Number.isFinite(Number(normalized.z))) {
+        result.push({
+          id: String(event.id) + "-origin",
+          driverId, game, type: "origin",
+          x: Number(normalized.x), z: Number(normalized.z),
+          city: normalized.sourceCity ?? null,
+          eventType: type,
+        });
+      }
+
+      if (Number.isFinite(Number(raw.destinationX)) && Number.isFinite(Number(raw.destinationZ))) {
+        result.push({
+          id: String(event.id) + "-destination",
+          driverId, game, type: "destination",
+          x: Number(raw.destinationX), z: Number(raw.destinationZ),
+          city: raw.destinationCity ?? normalized.destinationCity ?? null,
+          eventType: type,
+        });
+      }
+
+      return result;
+    });
 
     reply.header("cache-control", "public, max-age=3");
     return {
@@ -94,7 +236,11 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
         status: record.getDataValue("status"),
         ...((record.getDataValue("data") ?? {}) as object),
       })),
+      externalDrivers: tmpWideDrivers,
+      convoys: convoyGroups,
+      jobMarkers,
       truckersMpStaffSourceConfigured: Boolean(process.env.TRUCKERSMP_STAFF_FEED_URL),
+      truckersMpWideProviderConfigured: Boolean(process.env.TRUCKERSMP_LIVE_PROVIDER_URL),
     };
   });
 }
