@@ -3,6 +3,7 @@ import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { Op } from "sequelize";
 import { z } from "zod";
 import {
+  Job,
   User,
   Vtc,
   VtcActivityEvent,
@@ -208,6 +209,82 @@ export async function registerVtcOperationsRoutes(app: FastifyInstance) {
       metadata: { guildId: body.guildId ?? config.getDataValue("guildId"), enabled: body.enabled ?? config.getDataValue("enabled") },
     });
     return { config, botInviteUrl: botInviteUrl() };
+  });
+
+  app.get("/api/v1/account/vtcs/:id/logbook", { preHandler: [requireManager] }, async (request) => {
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const query = z.object({
+      q: z.string().max(160).optional(),
+      game: z.enum(["all", "ets2", "ats"]).default("all"),
+      from: z.coerce.date().optional(),
+      to: z.coerce.date().optional(),
+      page: z.coerce.number().int().min(1).default(1),
+      pageSize: z.coerce.number().int().min(10).max(100).default(25),
+    }).parse(request.query);
+
+    const where: any = { vtcId: id };
+    if (query.game !== "all") where.game = query.game;
+    if (query.from || query.to) {
+      where.completedAt = {};
+      if (query.from) where.completedAt[Op.gte] = query.from;
+      if (query.to) where.completedAt[Op.lte] = query.to;
+    }
+    if (query.q?.trim()) {
+      const needle = "%" + query.q.trim() + "%";
+      const numeric = Number(query.q);
+      where[Op.or] = [
+        { cargo: { [Op.iLike]: needle } },
+        { sourceCity: { [Op.iLike]: needle } },
+        { destinationCity: { [Op.iLike]: needle } },
+        { driverId: { [Op.iLike]: needle } },
+        ...(Number.isFinite(numeric) ? [{ id: numeric }] : []),
+      ];
+    }
+
+    const { rows, count } = await Job.findAndCountAll({
+      where,
+      order: [["completedAt", "DESC"], ["id", "DESC"]],
+      limit: query.pageSize,
+      offset: (query.page - 1) * query.pageSize,
+    });
+
+    return {
+      jobs: rows,
+      pagination: {
+        page: query.page,
+        pageSize: query.pageSize,
+        total: count,
+        pages: Math.max(1, Math.ceil(count / query.pageSize)),
+      },
+    };
+  });
+
+  app.get("/api/v1/account/vtcs/:id/logbook/export", { preHandler: [requireManager] }, async (request, reply) => {
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const query = z.object({
+      format: z.enum(["json", "csv"]).default("json"),
+      game: z.enum(["all", "ets2", "ats"]).default("all"),
+    }).parse(request.query);
+
+    const where: any = { vtcId: id };
+    if (query.game !== "all") where.game = query.game;
+    const jobs = await Job.findAll({ where, order: [["completedAt", "DESC"]], limit: 20000 });
+
+    if (query.format === "json") {
+      reply.header("content-disposition", 'attachment; filename="openhaul-vtc-logbook.json"');
+      return { vtcId: id, exportedAt: new Date().toISOString(), jobs };
+    }
+
+    const keys = ["id", "driverId", "game", "cargo", "sourceCity", "destinationCity", "distanceKm", "income", "completedAt"];
+    const cell = (value: unknown) => '"' + String(value ?? "").replaceAll('"', '""') + '"';
+    const lines = [keys.join(",")];
+    for (const job of jobs) {
+      const plain = job.toJSON() as Record<string, unknown>;
+      lines.push(keys.map((key) => cell(plain[key])).join(","));
+    }
+    reply.type("text/csv; charset=utf-8");
+    reply.header("content-disposition", 'attachment; filename="openhaul-vtc-logbook.csv"');
+    return lines.join("\n");
   });
 
   app.get("/api/v1/bot/vtcs", async (request, reply) => {
