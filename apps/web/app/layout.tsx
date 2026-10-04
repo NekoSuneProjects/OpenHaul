@@ -54,6 +54,7 @@ const navSections = [
       ["/releases", "⇩", "Downloads"],
       ["/tickets", "◫", "Tickets"],
       ["/radio", "♫", "Radio"],
+      ["/radio/editor", "✎", "Radio .sii Editor"],
       ["/support", "♡", "Support"],
       ["/api-docs", "⌘", "API"],
       ["/account", "●", "Profile"],

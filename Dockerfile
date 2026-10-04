@@ -28,7 +28,7 @@ RUN npm run build -w @openhaul/web
 FROM node:22-alpine AS runtime
 WORKDIR /app
 
-RUN apk add --no-cache nginx
+RUN apk add --no-cache nginx ffmpeg
 
 ENV NODE_ENV=production
 ENV API_PORT=3001
