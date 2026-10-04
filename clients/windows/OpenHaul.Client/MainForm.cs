@@ -1166,6 +1166,19 @@ public sealed class MainForm : Form
                 ShowPage("settings");
                 return;
             }
+
+            var selectedGame = SelectedGameCode().ToUpperInvariant();
+            var selectedGameDeferred = plugin.Deferred.Any(item =>
+                item.StartsWith(selectedGame + ":", StringComparison.OrdinalIgnoreCase));
+
+            if (selectedGameDeferred)
+            {
+                _telemetryRetryPending = true;
+                _telemetryRetryTimer.Start();
+                SetStatus($"{selectedGame} is already running and its telemetry plugin needs an update. Close the game, wait for OpenHaul to update the plugin, then launch it again.");
+                ShowPage("settings");
+                return;
+            }
         }
 
         if (_telemetryCancellation is null)
@@ -1410,7 +1423,7 @@ public sealed class MainForm : Form
             {
                 _telemetryRetryPending = true;
                 _telemetryRetryTimer.Start();
-                SetStatus("Telemetry update queued and will apply automatically after the game closes.");
+                SetStatus("Telemetry update queued. Close ETS2/ATS completely; OpenHaul will install it automatically, and the game must be restarted before live tracking can work.");
                 return;
             }
 

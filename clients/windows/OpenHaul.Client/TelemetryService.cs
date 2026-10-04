@@ -1,4 +1,5 @@
 using System.IO.Pipes;
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace OpenHaul.Client;
@@ -7,6 +8,7 @@ public sealed class TelemetryService : IAsyncDisposable
 {
     private readonly ClientConfig _config;
     private readonly OpenHaulApi _api;
+    private bool _liveAccepted;
 
     public event Action<string>? Status;
 
@@ -33,7 +35,8 @@ public sealed class TelemetryService : IAsyncDisposable
                         PipeOptions.Asynchronous);
 
                     await pipe.ConnectAsync(5000, token);
-                    Status?.Invoke("Telemetry connected.");
+                    _liveAccepted = false;
+                    Status?.Invoke("Telemetry plugin connected; waiting for driving data…");
 
                     using var reader = new StreamReader(pipe);
                     while (!token.IsCancellationRequested && pipe.IsConnected)
@@ -45,6 +48,7 @@ public sealed class TelemetryService : IAsyncDisposable
                         await HandleEnvelope(line, token);
                     }
 
+                    _liveAccepted = false;
                     Status?.Invoke("Game closed or telemetry disconnected. Waiting…");
                 }
                 catch (OperationCanceledException) when (token.IsCancellationRequested)
@@ -53,7 +57,14 @@ public sealed class TelemetryService : IAsyncDisposable
                 }
                 catch (TimeoutException)
                 {
-                    Status?.Invoke("Waiting for ETS2/ATS to start…");
+                    if (IsSupportedGameRunning())
+                    {
+                        Status?.Invoke("ETS2/ATS is running, but the OpenHaul telemetry plugin did not connect. Close the game, verify/update the plugin, then restart the game.");
+                    }
+                    else
+                    {
+                        Status?.Invoke("Waiting for ETS2/ATS to start…");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -122,6 +133,11 @@ public sealed class TelemetryService : IAsyncDisposable
                     plugin.DestinationCompany);
 
                 response = await _api.SendLiveAsync(live, token);
+                if (response.IsSuccessStatusCode && !_liveAccepted)
+                {
+                    _liveAccepted = true;
+                    Status?.Invoke($"Online: {plugin.Game.ToUpperInvariant()} driving telemetry accepted by OpenHaul.");
+                }
                 break;
             }
 
@@ -180,6 +196,10 @@ public sealed class TelemetryService : IAsyncDisposable
         "damaged_vehicle_usage" or "generic" => "other",
         _ => "other",
     };
+
+    private static bool IsSupportedGameRunning() =>
+        Process.GetProcessesByName("eurotrucks2").Length > 0 ||
+        Process.GetProcessesByName("amtrucks").Length > 0;
 
     public ValueTask DisposeAsync()
     {
