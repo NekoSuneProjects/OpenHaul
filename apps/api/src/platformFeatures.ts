@@ -12,6 +12,7 @@ import {
   AccountSession,
 } from "./db.js";
 import { requireUser } from "./accountSession.js";
+import { resolveClientIp } from "./requestClient.js";
 
 const publicCategories = new Set([
   "announcements",
@@ -107,16 +108,31 @@ export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
 
   app.addHook("onRequest", async (request, reply) => {
     const now = Date.now();
-    const key = request.ip || "unknown";
+    const client = resolveClientIp(request).ip;
+    const path = request.url.split("?")[0];
+
+    const bucketType = path === "/api/v1/public/music/search"
+      ? "music-search"
+      : path.startsWith("/api/v1/public/")
+        ? "public"
+        : "private";
+
+    const limit = bucketType === "music-search" ? 60 : bucketType === "public" ? 240 : 600;
+    const key = bucketType + ":" + client;
     const bucket = buckets.get(key);
+
     if (!bucket || now - bucket.windowStart >= 60_000) {
       buckets.set(key, { windowStart: now, count: 1 });
     } else {
       bucket.count += 1;
-      const limit = request.url.startsWith("/api/v1/public/") ? 240 : 600;
       if (bucket.count > limit) {
-        reply.header("retry-after", "60");
-        return reply.code(429).send({ error: "rate_limited" });
+        const retryAfterSeconds = Math.max(1, Math.ceil((60_000 - (now - bucket.windowStart)) / 1000));
+        reply.header("retry-after", String(retryAfterSeconds));
+        return reply.code(429).send({
+          error: "rate_limited",
+          scope: bucketType,
+          retryAfterSeconds,
+        });
       }
     }
 
