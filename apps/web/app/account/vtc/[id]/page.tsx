@@ -296,6 +296,7 @@ export default function ManageVtcPage() {
 
       <div className="actions" style={{ marginBottom: 18 }}>
         <Link className="button primary" href={"/account/vtc/" + id + "/logbook"}>Open VTC logbook</Link>
+        <Link className="button" href={"/account/vtc/" + id + "/operations"}>Operations Center</Link>
       </div>
 
       <div className="sectionTitle"><h2>VTC dashboard</h2></div>
