@@ -45,6 +45,7 @@ export default function AccountPage() {
   const [newApiKey, setNewApiKey] = useState("");
   const [apiScopeSelection, setApiScopeSelection] = useState(["profile:read", "jobs:read", "fines:read", "vtcs:read", "stream:read"]);
   const [twitch, setTwitch] = useState<any>(null);
+  const [discord, setDiscord] = useState<any>(null);
 
   const load = async () => {
     try {
@@ -84,6 +85,11 @@ export default function AccountPage() {
       if (twitchResponse.ok) {
         const twitchData = await twitchResponse.json();
         setTwitch(twitchData.twitch ?? null);
+      }
+
+      const discordResponse = await fetch(api + "/api/v1/account/discord", { credentials: "include", cache: "no-store" });
+      if (discordResponse.ok) {
+        setDiscord(await discordResponse.json());
       }
 
       setStatus("");
@@ -161,6 +167,18 @@ export default function AccountPage() {
       credentials: "include",
     });
     await load();
+  };
+
+  const connectDiscord = () => {
+    window.location.href = api + "/api/v1/account/discord/link";
+  };
+
+  const disconnectDiscord = async () => {
+    await fetch(api + "/api/v1/account/discord", {
+      method: "DELETE",
+      credentials: "include",
+    });
+    setDiscord({ linked: false, account: null, configured: discord?.configured ?? false });
   };
 
   const connectTwitch = () => {
@@ -456,6 +474,35 @@ export default function AccountPage() {
             </div>
           </article>
         ))}
+      </section>
+
+      <div className="sectionTitle"><h2>Discord account link</h2></div>
+      <section className="card" style={{ marginBottom: 18 }}>
+        {discord?.linked ? (
+          <>
+            <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
+              {discord.account?.avatarUrl ? <img src={discord.account.avatarUrl} alt="" style={{ width: 64, height: 64, borderRadius: 14 }} /> : null}
+              <div>
+                <h3 style={{ margin: 0 }}>{discord.account?.globalName || discord.account?.username}</h3>
+                <p className="muted">@{discord.account?.username} · Discord ID {discord.account?.discordUserId}</p>
+              </div>
+            </div>
+            <p className="muted" style={{ marginTop: 14 }}>
+              Linked Discord identity can be used by VTC role synchronization and bot features.
+            </p>
+            <button className="button" onClick={() => void disconnectDiscord()}>Disconnect Discord</button>
+          </>
+        ) : (
+          <>
+            <h3>Link Discord</h3>
+            <p className="muted">
+              Link your Discord account so OpenHaul VTC roles can synchronize with your Discord server roles.
+            </p>
+            {discord?.configured === false
+              ? <p className="muted">Discord OAuth is not configured on this OpenHaul instance.</p>
+              : <button className="button primary" onClick={connectDiscord}>Connect Discord</button>}
+          </>
+        )}
       </section>
 
       <div className="sectionTitle"><h2>Twitch streamer link</h2></div>
