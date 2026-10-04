@@ -217,30 +217,51 @@ GitHub release attachments must each be under 2 GiB ([GitHub limits](https://doc
 
 ### Building maps locally (maintainer or custom maps)
 
-First clone the [TruckSim Maps source repository](https://github.com/truckermudgeon/maps) including its submodules:
+TruckSim Maps is included as the `GameMap/maps` Git submodule. Clone OpenHaul with submodules, or initialize them after cloning:
 
-```powershell
-git clone --recurse-submodules https://github.com/truckermudgeon/maps.git C:\src\maps
+```bash
+git clone --recurse-submodules https://github.com/NekoSuneProjects/OpenHaul.git
+# Existing checkout:
+git submodule update --init --recursive
 ```
 
-`-TruckSimMapsPath` must be the source checkout root containing `package.json` and `packages/clis/parser`, not an empty `GameMap/ETS2` or `GameMap/ATS` directory. Both games can use the same checkout. For an existing clone, run `git -C C:\src\maps submodule update --init --recursive`.
+Install Node.js/npm, Docker, Git, and the node-gyp prerequisites. Windows native parser builds require Python and Visual Studio C++ Build Tools. Linux requires the normal compiler/Python prerequisites for node-gyp. The helper installs missing npm dependencies and builds the native parser addons before parsing. It also applies OpenHaul's TruckSim Maps compatibility patches automatically while the parent repository stays pinned to the expected TruckSim Maps commit.
 
-Install Node.js/npm, Docker, and the node-gyp prerequisites (Python and Visual Studio C++ Build Tools on Windows). The helper installs missing dependencies and builds the native parser addons before parsing. It also adds block-comment support to the TruckSim Maps SII lexer when missing, so definitions such as ETS2's `model.stable.sii` can be read. It also supports BGRX sRGB icon textures (DXGI format 93), with opaque alpha for BGRX data. These are local compatibility edits in the supplied TruckSim Maps checkout; installed game files are not modified.
+For the normal maintainer workflow, use the one-command launcher. It builds ETS2, builds ATS, imports both into `data-runtime/maps`, then publishes the rolling `map-data` GitHub release:
 
-A helper is included. Run these commands from the OpenHaul repository root (from `GameMap`, use `..\tools\maps\build-scs-map.ps1`):
+```bat
+GameMap\build-maps.bat
+```
+
+The Windows launcher auto-detects Steam and every library listed in `steamapps/libraryfolders.vdf`, so paths such as `E:\SteamLibrary` do not need to be supplied manually. Use `GameMap\build-maps.bat --no-publish` to build/import without publishing, `--game ats` or `--game ets2` for one game, and `--repo OWNER/REPOSITORY` to publish somewhere else. The `OPENHAUL_SKIP_MAP_PUBLISH` and `OPENHAUL_MAP_REPO` environment variables are also supported.
+
+Linux has the equivalent native shell launcher:
+
+```bash
+chmod +x GameMap/build-maps.sh tools/maps/build-scs-map.sh
+./GameMap/build-maps.sh
+```
+
+The Linux launcher first checks the usual native/Flatpak Steam libraries. If ATS or ETS2 is missing, it downloads a local SteamCMD copy and installs the missing game under `data-runtime/steam-games/<game>`. ATS and ETS2 are paid Steam apps, so anonymous SteamCMD access may be refused. In that case use an account that owns the game:
+
+```bash
+STEAM_USER="your-steam-login" ./GameMap/build-maps.sh
+```
+
+If `STEAM_PASSWORD` is omitted, SteamCMD can request the password/Steam Guard interactively. For build-only operation use `./GameMap/build-maps.sh --no-publish`; use `--game ats` or `--game ets2` to rebuild only one game. Publishing still requires both current PMTiles archives.
+
+The low-level helpers also default to `GameMap/maps`. On Windows the PowerShell helper auto-detects the selected game, so manual paths are only needed for unusual installations:
 
 ```powershell
-# ETS2
-.\tools\maps\build-scs-map.ps1 `
-  -Game ets2 `
-  -GamePath "C:\Program Files (x86)\Steam\steamapps\common\Euro Truck Simulator 2" `
-  -TruckSimMapsPath "C:\src\maps"
+.\tools\maps\build-scs-map.ps1 -Game ets2
+.\tools\maps\build-scs-map.ps1 -Game ats
+```
 
-# ATS
-.\tools\maps\build-scs-map.ps1 `
-  -Game ats `
-  -GamePath "C:\Program Files (x86)\Steam\steamapps\common\American Truck Simulator" `
-  -TruckSimMapsPath "C:\src\maps"
+On Linux the low-level shell helper accepts an explicit game path:
+
+```bash
+./tools/maps/build-scs-map.sh --game ets2 --game-path "/path/to/Euro Truck Simulator 2"
+./tools/maps/build-scs-map.sh --game ats --game-path "/path/to/American Truck Simulator"
 ```
 
 The helper uses a local checkout of TruckSim Maps to parse your installed SCS map/DLC files, asks it for GeoJSON, then runs Tippecanoe in Docker to create PMTiles. The result is imported to:

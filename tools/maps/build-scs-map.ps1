@@ -4,10 +4,10 @@ param(
   [ValidateSet("ets2", "ats")]
   [string]$Game,
 
-  [Parameter(Mandatory = $true, ParameterSetName = "Build")]
+  [Parameter(ParameterSetName = "Build")]
   [string]$GamePath,
 
-  [Parameter(Mandatory = $true, ParameterSetName = "Build")]
+  [Parameter(ParameterSetName = "Build")]
   [string]$TruckSimMapsPath,
 
   [string]$WorkDir = ".\\data-runtime\\map-build",
@@ -23,7 +23,100 @@ param(
 $ErrorActionPreference = "Stop"
 
 $OpenHaulRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\\..")).Path
+
+function Get-SteamLibraryRoots {
+  $Candidates = New-Object System.Collections.Generic.List[string]
+  $Seen = New-Object 'System.Collections.Generic.HashSet[string]' ([System.StringComparer]::OrdinalIgnoreCase)
+
+  function Add-SteamRoot([string]$Path) {
+    if ([string]::IsNullOrWhiteSpace($Path)) { return }
+    try {
+      $FullPath = [System.IO.Path]::GetFullPath($Path)
+    }
+    catch {
+      return
+    }
+    if ((Test-Path -LiteralPath $FullPath -PathType Container) -and $Seen.Add($FullPath)) {
+      $Candidates.Add($FullPath)
+    }
+  }
+
+  if ($env:OS -eq "Windows_NT") {
+    foreach ($RegistryPath in @(
+      "HKCU:\\Software\\Valve\\Steam",
+      "HKLM:\\SOFTWARE\\WOW6432Node\\Valve\\Steam",
+      "HKLM:\\SOFTWARE\\Valve\\Steam"
+    )) {
+      try {
+        $Steam = Get-ItemProperty -LiteralPath $RegistryPath -ErrorAction Stop
+        Add-SteamRoot $Steam.SteamPath
+        Add-SteamRoot $Steam.InstallPath
+      }
+      catch {}
+    }
+
+    if (${env:ProgramFiles(x86)}) { Add-SteamRoot (Join-Path ${env:ProgramFiles(x86)} "Steam") }
+    if ($env:ProgramFiles) { Add-SteamRoot (Join-Path $env:ProgramFiles "Steam") }
+
+    foreach ($Drive in [System.IO.DriveInfo]::GetDrives()) {
+      if (-not $Drive.IsReady) { continue }
+      foreach ($Relative in @("SteamLibrary", "Steam", "Games\\Steam")) {
+        Add-SteamRoot (Join-Path $Drive.RootDirectory.FullName $Relative)
+      }
+    }
+  }
+  else {
+    Add-SteamRoot (Join-Path $HOME ".steam/steam")
+    Add-SteamRoot (Join-Path $HOME ".local/share/Steam")
+    Add-SteamRoot (Join-Path $HOME ".var/app/com.valvesoftware.Steam/.local/share/Steam")
+  }
+
+  # Modern Steam stores every additional library path in libraryfolders.vdf.
+  # Iterate over a snapshot because Add-SteamRoot can append new entries.
+  foreach ($SteamRoot in @($Candidates)) {
+    $LibraryFile = Join-Path $SteamRoot "steamapps/libraryfolders.vdf"
+    if (-not (Test-Path -LiteralPath $LibraryFile -PathType Leaf)) { continue }
+    $Vdf = Get-Content -LiteralPath $LibraryFile -Raw
+    foreach ($Match in [regex]::Matches($Vdf, '"path"\s+"([^"]+)"')) {
+      $LibraryPath = $Match.Groups[1].Value -replace '\\\\', '\'
+      Add-SteamRoot $LibraryPath
+    }
+  }
+
+  return @($Candidates)
+}
+
+function Find-SteamGamePath {
+  param([Parameter(Mandatory = $true)][string]$GameId)
+
+  $GameFolder = if ($GameId -eq "ats") { "American Truck Simulator" } else { "Euro Truck Simulator 2" }
+  foreach ($SteamRoot in Get-SteamLibraryRoots) {
+    $Candidate = Join-Path $SteamRoot "steamapps/common/$GameFolder"
+    if (Test-Path -LiteralPath $Candidate -PathType Container) {
+      return (Resolve-Path -LiteralPath $Candidate).Path
+    }
+  }
+  return $null
+}
+
 if (-not $TilesOnly) {
+  if ([string]::IsNullOrWhiteSpace($TruckSimMapsPath)) {
+    $TruckSimMapsPath = Join-Path $OpenHaulRoot "GameMap\\maps"
+  }
+
+  if ([string]::IsNullOrWhiteSpace($GamePath)) {
+    $GamePath = Find-SteamGamePath -GameId $Game
+    if ([string]::IsNullOrWhiteSpace($GamePath)) {
+      $GameName = if ($Game -eq "ats") { "American Truck Simulator" } else { "Euro Truck Simulator 2" }
+      throw "Could not auto-detect $GameName in any Steam library. Pass -GamePath explicitly, or on Linux use GameMap/build-maps.sh to download missing game files through SteamCMD."
+    }
+    Write-Host "Auto-detected $Game game files: $GamePath"
+  }
+
+  if (-not (Test-Path -LiteralPath $TruckSimMapsPath -PathType Container)) {
+    throw "TruckSim Maps submodule is missing at $TruckSimMapsPath. Run: git submodule update --init --recursive"
+  }
+
   $GamePath = (Resolve-Path $GamePath).Path
   $TruckSimMapsPath = (Resolve-Path $TruckSimMapsPath).Path
 
