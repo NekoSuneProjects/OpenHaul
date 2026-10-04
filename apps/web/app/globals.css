@@ -1936,3 +1936,79 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
     height: 169px;
   }
 }
+
+
+.gameOverlayMusicSearchResults {
+  display: grid;
+  gap: 7px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.gameOverlayMusicSearchResults > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 11px;
+  border: 1px solid rgba(84,224,138,.10);
+  border-radius: 10px;
+  background: rgba(4,16,10,.78);
+}
+
+.gameOverlayMusicSearchResults > div > span {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.gameOverlayMusicSearchResults strong,
+.gameOverlayMusicSearchResults small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gameOverlayMusicSearchResults small {
+  color: #789080;
+}
+
+.gameOverlayMusicSearchResults button {
+  min-height: 36px;
+  padding: 0 11px;
+  border: 1px solid rgba(84,224,138,.24);
+  border-radius: 9px;
+  background: rgba(84,224,138,.10);
+  color: #e9fff0;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.gameOverlayMusicDivider {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 24px;
+  color: #66806f;
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.gameOverlayMusicDivider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(84,224,138,.10);
+}
+
+.gameOverlayMusicDivider span {
+  position: relative;
+  padding: 0 9px;
+  background: rgba(5,18,12,.88);
+}
