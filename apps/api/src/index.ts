@@ -31,6 +31,7 @@ import { registerVersioningRoutes } from "./versioning.js";
 import { registerManualJobRoutes } from "./manualJobs.js";
 import { registerProgressionRoutes } from "./progression.js";
 import { registerEconomyRoutes } from "./economy.js";
+import { registerVtcSimulationRoutes } from "./vtcSimulation.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true, credentials: true });
@@ -58,6 +59,7 @@ await registerVersioningRoutes(app);
 await registerManualJobRoutes(app);
 await registerProgressionRoutes(app);
 await registerEconomyRoutes(app);
+await registerVtcSimulationRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
