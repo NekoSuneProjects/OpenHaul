@@ -416,6 +416,13 @@ SCSAPI_VOID on_configuration(const scs_event_t, const void* const event_info, co
             g_state.jobSourceX = g_state.x;
             g_state.jobSourceZ = g_state.z;
             emit_generic_event(
+                "job.accepted",
+                next_event_id("job-accepted"),
+                0,
+                {},
+                -1,
+                g_state.sourceCity + " -> " + g_state.destinationCity);
+            emit_generic_event(
                 "job.started",
                 next_event_id("job-start"),
                 0,
