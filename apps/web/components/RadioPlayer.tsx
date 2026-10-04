@@ -15,6 +15,27 @@ export function RadioPlayer() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [data, setData] = useState<NowPlaying | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.7);
+  const [previousVolume, setPreviousVolume] = useState(0.7);
+
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem("openhaul.radio.volume");
+      if (saved !== null) {
+        const parsed = Number(saved);
+        if (Number.isFinite(parsed)) {
+          const next = Math.min(1, Math.max(0, parsed));
+          setVolume(next);
+          setPreviousVolume(next > 0 ? next : 0.7);
+          if (audioRef.current) audioRef.current.volume = next;
+        }
+      } else if (audioRef.current) {
+        audioRef.current.volume = 0.7;
+      }
+    } catch {
+      if (audioRef.current) audioRef.current.volume = 0.7;
+    }
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -47,6 +68,28 @@ export function RadioPlayer() {
     }
   };
 
+  const updateVolume = (next: number) => {
+    const value = Math.min(1, Math.max(0, next));
+    setVolume(value);
+    if (value > 0) setPreviousVolume(value);
+
+    const audio = audioRef.current;
+    if (audio) audio.volume = value;
+
+    try {
+      window.localStorage.setItem("openhaul.radio.volume", String(value));
+    } catch {}
+  };
+
+  const toggleMute = () => {
+    if (volume > 0) {
+      setPreviousVolume(volume);
+      updateVolume(0);
+    } else {
+      updateVolume(previousVolume > 0 ? previousVolume : 0.7);
+    }
+  };
+
   return (
     <div className="radio">
       <div className="shell radioInner">
@@ -56,6 +99,27 @@ export function RadioPlayer() {
         <div className="track">
           <strong>{artist} — {title}</strong>
           <span>{presenter} · {data?.listeners?.current ?? "—"} listeners · TruckersFM</span>
+        </div>
+        <div className="radioVolume">
+          <button
+            className="volumeButton"
+            onClick={toggleMute}
+            aria-label={volume > 0 ? "Mute TruckersFM" : "Unmute TruckersFM"}
+            title={volume > 0 ? "Mute" : "Unmute"}
+          >
+            {volume === 0 ? "🔇" : volume < 0.45 ? "🔈" : volume < 0.8 ? "🔉" : "🔊"}
+          </button>
+          <input
+            className="volumeSlider"
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value={Math.round(volume * 100)}
+            onChange={(event) => updateVolume(Number(event.target.value) / 100)}
+            aria-label="TruckersFM volume"
+          />
+          <span className="volumeValue">{Math.round(volume * 100)}%</span>
         </div>
         <button className="play" onClick={toggle} aria-label={playing ? "Pause TruckersFM" : "Play TruckersFM"}>
           {playing ? "Ⅱ" : "▶"}
