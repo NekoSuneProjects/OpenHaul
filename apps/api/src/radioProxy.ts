@@ -163,6 +163,82 @@ function applyRegionalProxyPolicy(station: RadioStation): RadioStation {
   };
 }
 
+function normalizedStreamKey(value: string) {
+  try {
+    const url = new URL(value);
+    const pathname = url.pathname.replace(/\/+$/, "").toLowerCase();
+    return `${url.hostname.toLowerCase()}${pathname}`;
+  } catch {
+    return value.trim().toLowerCase().replace(/[?#].*$/, "").replace(/\/+$/, "");
+  }
+}
+
+export async function lookupRadioCountryByUrl(sourceUrl: string, app?: FastifyInstance) {
+  const key = normalizedStreamKey(sourceUrl);
+
+  // First use OpenHaul's known stations and any public-directory results that
+  // have already been loaded into the short-lived directory cache.
+  const known = [
+    ...builtInStations(),
+    ...officialProviderStations(),
+    ...(app ? parseConfiguredStations(app) : []),
+    ...[...directoryCache.values()].flatMap((entry) => entry.value),
+  ];
+
+  const cachedMatch = known.find((station) =>
+    station.country && normalizedStreamKey(station.sourceUrl) === key
+  );
+  if (cachedMatch?.country) {
+    return {
+      country: cachedMatch.country.toUpperCase(),
+      source: cachedMatch.source,
+      stationId: cachedMatch.id,
+      stationName: cachedMatch.name,
+    };
+  }
+
+  // Radio Browser supports reverse lookup by stream URL. Try both the complete
+  // imported URL and a query-free URL because .sii files often contain tracking
+  // parameters that public directories omit.
+  const candidates = new Set<string>([sourceUrl]);
+  try {
+    const parsed = new URL(sourceUrl);
+    parsed.search = "";
+    parsed.hash = "";
+    candidates.add(parsed.toString());
+  } catch {
+    // Invalid URLs are handled by the scanner's normal URL validation.
+  }
+
+  for (const candidate of candidates) {
+    try {
+      const rows = await fetchRadioBrowser(
+        "/json/stations/byurl",
+        new URLSearchParams({ url: candidate }),
+        7_000,
+      ) as RadioBrowserStation[];
+
+      const exact = rows.find((row) => {
+        const rowUrl = String(row.url_resolved || row.url || "").trim();
+        return Boolean(rowUrl) && normalizedStreamKey(rowUrl) === key;
+      }) ?? rows.find((row) => Boolean(row.countrycode));
+
+      if (exact?.countrycode) {
+        return {
+          country: String(exact.countrycode).toUpperCase(),
+          source: "radio-browser" as const,
+          stationId: exact.stationuuid ? `rb-${exact.stationuuid}` : null,
+          stationName: exact.name ? String(exact.name) : null,
+        };
+      }
+    } catch {
+      // Directory matching is best-effort; provider rules/geo probing still run.
+    }
+  }
+
+  return null;
+}
+
 function getRadioBrowserBase() {
   return cleanBaseUrl(process.env.RADIO_BROWSER_API_URL ?? DEFAULT_RADIO_BROWSER_URL);
 }
