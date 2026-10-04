@@ -29,7 +29,7 @@ export function RadioPlayer() {
     return () => { active = false; clearInterval(timer); };
   }, []);
 
-  const stream = data?.station?.listen_url ?? "https://azuracast.truckers.fm/listen/truckersfm/live";
+  const stream = "https://radio.truckers.fm";
   const artist = data?.now_playing?.song?.artist ?? "TruckersFM";
   const title = data?.now_playing?.song?.title ?? "Your drive, your music.";
   const presenter = data?.live?.is_live && data.live.streamer_name ? data.live.streamer_name : "AutoDJ";
