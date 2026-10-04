@@ -96,6 +96,40 @@ export default function DriverProfilePage() {
         </>
       ) : null}
 
+      <div className="sectionTitle"><h2>VTC moderation history</h2></div>
+      <section className="driverList" style={{ padding: 0 }}>
+        {(data.moderation ?? []).length === 0 ? <p className="muted">No VTC warnings, mutes or bans recorded.</p> : null}
+        {(data.moderation ?? []).map((action: any) => {
+          const vtc = action.Vtc ?? action.vtc;
+          const active = !action.revokedAt && (!action.expiresAt || new Date(action.expiresAt).getTime() > Date.now());
+          return (
+            <article className="driver" key={action.id}>
+              <div><strong>{String(action.type).replaceAll("_", " ")}</strong><small>{vtc?.name ?? "VTC"}</small></div>
+              <div><strong>{active ? "Active" : "Expired / revoked"}</strong><small>{action.reason || "No reason provided"}</small></div>
+              <div><small>{action.expiresAt ? "Until " + new Date(action.expiresAt).toLocaleString() : "No expiry"}</small></div>
+              <div><small>{new Date(action.createdAt).toLocaleString()}</small></div>
+            </article>
+          );
+        })}
+      </section>
+
+      <div className="sectionTitle"><h2>Name history</h2></div>
+      <section className="driverList" style={{ padding: 0 }}>
+        {(data.nameChanges ?? []).length === 0 ? <p className="muted">No recorded Steam display-name changes.</p> : null}
+        {(data.nameChanges ?? []).map((event: any) => {
+          const meta = event.metadata ?? {};
+          const vtc = event.Vtc ?? event.vtc;
+          return (
+            <article className="driver" key={event.id}>
+              <div><strong>{meta.previousName || "Unknown"} → {meta.nextName || "Unknown"}</strong><small>{vtc?.name ?? "VTC"}</small></div>
+              <div><small>{new Date(event.occurredAt).toLocaleString()}</small></div>
+              <div />
+              <div />
+            </article>
+          );
+        })}
+      </section>
+
       <div className="sectionTitle"><h2>Recent jobs</h2></div>
       <section className="driverList" style={{ padding: 0 }}>
         {(data.recentJobs ?? []).map((job: any) => (
