@@ -13,7 +13,7 @@ declare global {
   }
 }
 
-type Tab = "map" | "drive" | "settings";
+type Tab = "map" | "drive" | "missions" | "settings";
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
@@ -22,12 +22,19 @@ function OverlayContent() {
   const driver = params.get("driver") ?? "";
   const initialMode = params.get("mode") ?? "road";
   const initialSize = params.get("size") ?? "medium";
+  const initialTraffic = params.get("traffic") !== "0";
+  const initialStaff = params.get("staff") !== "0";
+  const initialMissions = params.get("missions") !== "0";
 
   const [tab, setTab] = useState<Tab>("map");
   const [mapMode, setMapMode] = useState(initialMode);
   const [mapSize, setMapSize] = useState(initialSize);
   const [driverData, setDriverData] = useState<any>(null);
   const [connected, setConnected] = useState(false);
+  const [intel, setIntel] = useState<any>({ traffic: [], staff: [], specialCargo: [] });
+  const [trafficAlerts, setTrafficAlerts] = useState(initialTraffic);
+  const [staffAlerts, setStaffAlerts] = useState(initialStaff);
+  const [cargoMissions, setCargoMissions] = useState(initialMissions);
 
   useEffect(() => {
     document.body.classList.add("gameOverlayHost");
@@ -63,6 +70,24 @@ function OverlayContent() {
       clearInterval(timer);
     };
   }, [driver]);
+
+  useEffect(() => {
+    let active = true;
+    const load = () => fetch(api + "/api/v1/public/map-intelligence", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : { traffic: [], staff: [], specialCargo: [] })
+      .then((data) => { if (active) setIntel(data); })
+      .catch(() => {});
+    void load();
+    const timer = setInterval(load, 5000);
+    return () => { active = false; clearInterval(timer); };
+  }, []);
+
+  const setPreference = (key: "traffic" | "staff" | "missions", value: boolean) => {
+    if (key === "traffic") setTrafficAlerts(value);
+    if (key === "staff") setStaffAlerts(value);
+    if (key === "missions") setCargoMissions(value);
+    window.chrome?.webview?.postMessage({ type: "overlay.preference", key, value });
+  };
 
   const mapUrl = useMemo(() => {
     const qs = new URLSearchParams({ embed: "1", mode: mapMode });
@@ -105,6 +130,9 @@ function OverlayContent() {
         <button className={tab === "drive" ? "active" : ""} onClick={() => setTab("drive")}>
           <span>▦</span><span>Drive</span>
         </button>
+        <button className={tab === "missions" ? "active" : ""} onClick={() => setTab("missions")}>
+          <span>★</span><span>Missions</span>
+        </button>
         <button className={tab === "settings" ? "active" : ""} onClick={() => setTab("settings")}>
           <span>⚙</span><span>Settings</span>
         </button>
@@ -121,7 +149,7 @@ function OverlayContent() {
       <section className="gameOverlayPanel">
         <header className="gameOverlayHeader">
           <div>
-            <strong>{tab === "map" ? "Live Map" : tab === "drive" ? "Drive Session" : "Overlay Settings"}</strong>
+            <strong>{tab === "map" ? "Live Map" : tab === "drive" ? "Drive Session" : tab === "missions" ? "OpenHaul Cargo Missions" : "Overlay Settings"}</strong>
             <small>{driver || "No OpenHaul driver linked"}</small>
           </div>
           <div className="gameOverlayStatus">
@@ -173,8 +201,35 @@ function OverlayContent() {
                 <span>{live?.navigationDistanceM ? Math.round(Number(live.navigationDistanceM) / 1000) + " km remaining" : "No navigation distance"}</span>
                 <span>{live?.truck || "Truck unknown"}</span>
                 <span>{String(live?.game || recentJob?.game || "").toUpperCase()}</span>
+                {live?.cargo ? <span>Cargo damage {Number(live?.cargoDamagePercent ?? 0).toFixed(1)}%</span> : <span>Truck damage {Number(live?.truckDamagePercent ?? 0).toFixed(1)}%</span>}
+                {live?.cargo ? <span>Trailer damage {Number(live?.trailerDamagePercent ?? 0).toFixed(1)}%</span> : null}
+                {live?.specialJob ? <span>⭐ SCS Special Transport</span> : null}
               </div>
             </article>
+          </div>
+        ) : null}
+
+        {tab === "missions" ? (
+          <div className="gameOverlaySettings">
+            <section>
+              <h2>Special cargo events</h2>
+              <p>OpenHaul missions are overlay challenges. They do not inject jobs into the SCS economy; you accept or match them while hauling the requested cargo/route.</p>
+              <div className="grid" style={{ padding: 0 }}>
+                {(cargoMissions ? intel.specialCargo ?? [] : []).map((mission: any) => (
+                  <article className="card" key={mission.id ?? mission.key}>
+                    <div className="pill">{mission.eventType || "SPECIAL CARGO"}</div>
+                    <h3>{mission.title || mission.cargo || mission.key}</h3>
+                    <p>{mission.description || [mission.sourceCity, mission.destinationCity].filter(Boolean).join(" → ") || "OpenHaul event mission"}</p>
+                    <small className="muted">
+                      {mission.cargo ? "Cargo: " + mission.cargo : ""}
+                      {mission.reward ? " · Reward: " + mission.reward : ""}
+                    </small>
+                  </article>
+                ))}
+                {cargoMissions && (intel.specialCargo ?? []).length === 0 ? <article className="card"><p>No OpenHaul special cargo missions are active.</p></article> : null}
+                {!cargoMissions ? <article className="card"><p>Cargo missions are disabled in overlay settings.</p></article> : null}
+              </div>
+            </section>
           </div>
         ) : null}
 
@@ -209,6 +264,25 @@ function OverlayContent() {
               <p>
                 When the overlay map opens it automatically follows your OpenHaul driver in real time.
                 The website live map now also starts following any player you click.
+              </p>
+            </section>
+
+            <section>
+              <h2>Detection & alerts</h2>
+              <div className="gameOverlayChoices">
+                <button className={trafficAlerts ? "active" : ""} onClick={() => setPreference("traffic", !trafficAlerts)}>
+                  Traffic jams {trafficAlerts ? "ON" : "OFF"}
+                </button>
+                <button className={staffAlerts ? "active" : ""} onClick={() => setPreference("staff", !staffAlerts)}>
+                  Staff markers {staffAlerts ? "ON" : "OFF"}
+                </button>
+                <button className={cargoMissions ? "active" : ""} onClick={() => setPreference("missions", !cargoMissions)}>
+                  Cargo missions {cargoMissions ? "ON" : "OFF"}
+                </button>
+              </div>
+              <p style={{ marginTop: 14 }}>
+                TruckersMP staff markers only appear when the server owner configures a trusted TruckersMP staff presence feed.
+                OpenHaul staff markers come from OpenHaul's own admin records.
               </p>
             </section>
           </div>
