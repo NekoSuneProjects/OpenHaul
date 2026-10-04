@@ -503,7 +503,8 @@ public sealed class MainForm : Form
         });
 
         AddNav(sidebar, "updates", "⇩   Updates", 338);
-        AddNav(sidebar, "settings", "⚙   Settings", 390);
+        AddNav(sidebar, "diagnostics", "✚   Diagnostics", 390);
+        AddNav(sidebar, "settings", "⚙   Settings", 442);
 
         var version = new Label
         {
@@ -648,6 +649,7 @@ public sealed class MainForm : Form
             "servers" => BuildServersPage(),
             "account" => BuildAccountPage(),
             "updates" => BuildUpdatesPage(),
+            "diagnostics" => BuildDiagnosticsPage(),
             "settings" => BuildSettingsPage(),
             _ => BuildPlayPage(),
         };
@@ -1256,6 +1258,74 @@ public sealed class MainForm : Form
         pluginUpdate.Click += async (_, _) => await UpdateTelemetryAsync();
         telemetry.Controls.Add(pluginUpdate);
         page.Controls.Add(telemetry);
+
+        return page;
+    }
+
+    private Control BuildDiagnosticsPage()
+    {
+        var page = PagePanel();
+        page.Controls.Add(PageTitle("Diagnostics", "Check OpenHaul, game, plugin, WebView2 and queued telemetry health."));
+
+        var run = new Button
+        {
+            Text = "Run diagnostics",
+            Width = 170,
+            Height = 40,
+            Location = new Point(24, 96),
+        };
+        StyleButton(run, true);
+        page.Controls.Add(run);
+
+        var output = new TextBox
+        {
+            Multiline = true,
+            ReadOnly = true,
+            ScrollBars = ScrollBars.Vertical,
+            BackColor = C(3, 16, 10),
+            ForeColor = C(210, 235, 220),
+            BorderStyle = BorderStyle.FixedSingle,
+            Font = new Font("Consolas", 10F),
+            Location = new Point(24, 152),
+        };
+        page.Controls.Add(output);
+
+        void LayoutDiagnostics()
+        {
+            output.Size = new Size(
+                Math.Max(520, page.ClientSize.Width - 48),
+                Math.Max(300, page.ClientSize.Height - 176));
+        }
+
+        async Task RunAsync()
+        {
+            run.Enabled = false;
+            run.Text = "Checking…";
+            output.Text = "Running OpenHaul diagnostics…" + Environment.NewLine;
+
+            try
+            {
+                var checks = await ClientDiagnostics.RunAsync(_settings, _lifetime.Token);
+                output.Text = string.Join(
+                    Environment.NewLine + Environment.NewLine,
+                    checks.Select(check =>
+                        $"[{check.Status}] {check.Name}{Environment.NewLine}{check.Detail}"));
+            }
+            catch (Exception ex)
+            {
+                output.Text += Environment.NewLine + "[ERROR] Diagnostics failed" + Environment.NewLine + ex;
+            }
+            finally
+            {
+                run.Enabled = true;
+                run.Text = "Run diagnostics";
+            }
+        }
+
+        page.Resize += (_, _) => LayoutDiagnostics();
+        run.Click += async (_, _) => await RunAsync();
+        page.HandleCreated += async (_, _) => await RunAsync();
+        LayoutDiagnostics();
 
         return page;
     }
