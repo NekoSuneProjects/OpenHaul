@@ -2,6 +2,7 @@
 
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { overlayRadioStations } from "../../lib/radioStations";
 
 declare global {
   interface Window {
@@ -17,20 +18,11 @@ type Tab = "map" | "drive" | "missions" | "radio" | "settings";
 
 type RadioStation = {
   id: string;
-  stationUuid?: string | null;
   name: string;
-  country?: string | null;
-  genre?: string | null;
-  codec?: string | null;
-  bitrateKbps?: number | null;
-  favicon?: string | null;
-  playback?: {
-    browser?: string | null;
-    direct?: string | null;
-    gameMp3?: string | null;
-    ogg?: string | null;
-    aac?: string | null;
-  };
+  url: string;
+  genre?: string;
+  language?: string;
+  bitrateKbps?: number;
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
@@ -55,10 +47,9 @@ function OverlayContent() {
   const [staffAlerts, setStaffAlerts] = useState(initialStaff);
   const [cargoMissions, setCargoMissions] = useState(initialMissions);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [radioStations, setRadioStations] = useState<RadioStation[]>([]);
-  const [selectedRadioId, setSelectedRadioId] = useState("");
+  const [radioStations] = useState<RadioStation[]>(overlayRadioStations);
+  const [selectedRadioId, setSelectedRadioId] = useState(overlayRadioStations[0]?.id || "");
   const [radioQuery, setRadioQuery] = useState("");
-  const [radioLoading, setRadioLoading] = useState(true);
   const [radioPlaying, setRadioPlaying] = useState(false);
   const [radioVolume, setRadioVolume] = useState(0.7);
 
@@ -109,31 +100,6 @@ function OverlayContent() {
   }, []);
 
   useEffect(() => {
-    let active = true;
-    const loadStations = async () => {
-      setRadioLoading(true);
-      try {
-        const response = await fetch(api + "/api/v1/public/radio/directory?page=1&pageSize=75&country=ALL", {
-          cache: "no-store",
-        });
-        if (!response.ok) throw new Error("radio directory unavailable");
-        const data = await response.json() as { stations?: RadioStation[] };
-        if (!active) return;
-        const stations = Array.isArray(data.stations) ? data.stations : [];
-        setRadioStations(stations);
-        setSelectedRadioId((current) => current || stations[0]?.id || "");
-      } catch {
-        if (active) setRadioStations([]);
-      } finally {
-        if (active) setRadioLoading(false);
-      }
-    };
-
-    void loadStations();
-    return () => { active = false; };
-  }, []);
-
-  useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
     audio.volume = radioVolume;
@@ -150,7 +116,7 @@ function OverlayContent() {
     const query = radioQuery.trim().toLowerCase();
     if (!query) return radioStations;
     return radioStations.filter((station) =>
-      [station.name, station.country, station.genre, station.codec]
+      [station.name, station.genre, station.language]
         .filter(Boolean)
         .some((value) => String(value).toLowerCase().includes(query))
     );
@@ -163,7 +129,7 @@ function OverlayContent() {
 
   const playRadio = async (station: RadioStation) => {
     const audio = audioRef.current;
-    const stream = station.playback?.direct;
+    const stream = station.url;
     if (!audio || !stream) return;
 
     if (selectedRadioId === station.id && !audio.paused) {
@@ -334,15 +300,15 @@ function OverlayContent() {
           <div className="gameOverlayRadio">
             <section className="gameOverlayRadioNow">
               <div className="gameOverlayRadioArt">
-                {selectedRadio?.favicon ? <img src={selectedRadio.favicon} alt="" /> : <span>♫</span>}
+                <span>♫</span>
               </div>
               <div className="gameOverlayRadioMeta">
                 <small>NOW TUNED</small>
                 <h2>{selectedRadio?.name || "Choose a station"}</h2>
                 <p>
-                  {[selectedRadio?.country, selectedRadio?.genre, selectedRadio?.codec?.toUpperCase(), selectedRadio?.bitrateKbps ? selectedRadio.bitrateKbps + " kbps" : null]
+                  {[selectedRadio?.genre, selectedRadio?.language, selectedRadio?.bitrateKbps ? selectedRadio.bitrateKbps + " kbps" : null]
                     .filter(Boolean)
-                    .join(" · ") || "OpenHaul worldwide radio"}
+                    .join(" · ") || "OpenHaul radio"}
                 </p>
                 <span className="gameOverlayRadioRoute">Direct station stream · no OpenHaul proxy</span>
               </div>
@@ -370,8 +336,8 @@ function OverlayContent() {
             <section className="gameOverlayRadioLocal">
               <strong>Local PC playback</strong>
               <small>
-                OpenHaul plays the station's original stream URL directly inside the Windows overlay.
-                No OpenHaul radio proxy or NekoRoute relay is used for overlay playback.
+                The station catalog is bundled directly with /overlay, and OpenHaul plays each station's original stream URL on your PC.
+                No radio-directory API, OpenHaul audio proxy, or NekoRoute relay is used for playback.
               </small>
             </section>
 
@@ -379,12 +345,12 @@ function OverlayContent() {
               <div className="gameOverlayRadioDirectoryHead">
                 <div>
                   <h2>Stations</h2>
-                  <p>{radioLoading ? "Loading worldwide radio…" : filteredRadioStations.length + " stations shown"}</p>
+                  <p>{filteredRadioStations.length + " stations shown · bundled with /overlay"}</p>
                 </div>
                 <input
                   value={radioQuery}
                   onChange={(event) => setRadioQuery(event.target.value)}
-                  placeholder="Search station, country, genre or codec"
+                  placeholder="Search station, genre or language"
                   aria-label="Search radio stations"
                 />
               </div>
@@ -398,13 +364,11 @@ function OverlayContent() {
                       className={active ? "active" : ""}
                       onClick={() => void playRadio(station)}
                     >
-                      <span className="gameOverlayRadioStationIcon">
-                        {station.favicon ? <img src={station.favicon} alt="" /> : "♫"}
-                      </span>
+                      <span className="gameOverlayRadioStationIcon">♫</span>
                       <span>
                         <strong>{station.name}</strong>
                         <small>
-                          {[station.country, station.genre, station.codec?.toUpperCase()]
+                          {[station.genre, station.language, station.bitrateKbps ? station.bitrateKbps + " kbps" : null]
                             .filter(Boolean)
                             .join(" · ") || "Internet radio"}
                         </small>
@@ -415,7 +379,7 @@ function OverlayContent() {
                     </button>
                   );
                 })}
-                {!radioLoading && filteredRadioStations.length === 0 ? (
+                {filteredRadioStations.length === 0 ? (
                   <div className="gameOverlayRadioEmpty">No stations match that search.</div>
                 ) : null}
               </div>
