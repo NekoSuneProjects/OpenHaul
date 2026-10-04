@@ -25,7 +25,7 @@ export function RadioPlayer() {
       } catch {}
     };
     load();
-    const timer = setInterval(load, 15000);
+    const timer = setInterval(load, 2000);
     return () => { active = false; clearInterval(timer); };
   }, []);
 
@@ -38,7 +38,7 @@ export function RadioPlayer() {
     const audio = audioRef.current;
     if (!audio) return;
     if (audio.paused) {
-      audio.src = stream;
+      audio.src = "https://radio.truckers.fm";
       await audio.play();
       setPlaying(true);
     } else {
