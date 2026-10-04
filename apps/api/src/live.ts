@@ -34,6 +34,7 @@ const TTL_SECONDS = 45;
 export async function setLiveDriver(driver: LiveDriver) {
   const now = Date.now();
   const key = `live:driver:${driver.driverId}`;
+  const wasOnline = Boolean(await redis.exists(key));
   const payload = JSON.stringify(driver);
 
   const tx = redis.multi();
@@ -49,6 +50,7 @@ export async function setLiveDriver(driver: LiveDriver) {
   }
 
   await tx.exec();
+  return { wasOnline };
 }
 
 export async function getLiveDrivers(vtcId?: number): Promise<LiveDriver[]> {
