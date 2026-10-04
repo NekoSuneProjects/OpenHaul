@@ -981,6 +981,9 @@ h1 {
 
 .gameOverlayPanel {
   min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
   display: grid;
   grid-template-rows: 74px minmax(0, 1fr);
   background:
@@ -1123,8 +1126,13 @@ h1 {
 }
 
 .gameOverlaySettings {
-  overflow: auto;
-  padding: 22px;
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding: 22px 22px 34px;
   display: grid;
   gap: 14px;
   align-content: start;
@@ -1582,6 +1590,22 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
   width: auto !important;
 }
 
+.gameOverlayRadioSearch select {
+  min-width: 150px;
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid rgba(84,224,138,.18);
+  border-radius: 10px;
+  outline: 0;
+  color: #eaf7ee;
+  background: #06140d;
+  font: inherit;
+}
+
+.gameOverlayRadioSearch select:focus {
+  border-color: rgba(84,224,138,.46);
+}
+
 .gameOverlayRadioSearch button {
   min-height: 38px;
   padding: 0 12px;
@@ -1610,16 +1634,25 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
     align-items: stretch;
     flex-direction: column;
   }
+
+  .gameOverlayRadioSearch select {
+    width: 100%;
+  }
 }
 
 
 .gameOverlayMusic {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: 16px;
+  min-height: 0;
   height: 100%;
-  padding: 18px;
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  gap: 16px;
+  align-content: start;
+  padding: 18px 18px 34px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
 }
 
 .gameOverlayMusicInput,
@@ -2083,4 +2116,70 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
 .gameOverlayMusicVolume input[type="range"] {
   width: 100%;
   accent-color: #54e08a;
+}
+
+
+.gameOverlayMusicRegion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 9px;
+  align-items: center;
+}
+
+.gameOverlayMusicRegion > span,
+.gameOverlayMusicRegion > small {
+  padding: 5px 8px;
+  border: 1px solid rgba(84,224,138,.12);
+  border-radius: 999px;
+  background: rgba(84,224,138,.055);
+  color: #8aa293;
+  font-size: .7rem;
+}
+
+.gameOverlayMusicRegion strong {
+  color: #9ff0ba;
+}
+
+.gameOverlayMusicRegion > small {
+  color: #607b69;
+}
+
+
+.gameOverlayMusic,
+.gameOverlaySettings,
+.gameOverlayDrive,
+.gameOverlayRadio {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(84,224,138,.34) rgba(3,11,7,.35);
+}
+
+.gameOverlayMusic::-webkit-scrollbar,
+.gameOverlaySettings::-webkit-scrollbar,
+.gameOverlayDrive::-webkit-scrollbar,
+.gameOverlayRadio::-webkit-scrollbar {
+  width: 10px;
+}
+
+.gameOverlayMusic::-webkit-scrollbar-track,
+.gameOverlaySettings::-webkit-scrollbar-track,
+.gameOverlayDrive::-webkit-scrollbar-track,
+.gameOverlayRadio::-webkit-scrollbar-track {
+  background: rgba(3,11,7,.35);
+}
+
+.gameOverlayMusic::-webkit-scrollbar-thumb,
+.gameOverlaySettings::-webkit-scrollbar-thumb,
+.gameOverlayDrive::-webkit-scrollbar-thumb,
+.gameOverlayRadio::-webkit-scrollbar-thumb {
+  border: 2px solid rgba(3,11,7,.35);
+  border-radius: 999px;
+  background: rgba(84,224,138,.34);
+}
+
+.gameOverlayMusic::-webkit-scrollbar-thumb:hover,
+.gameOverlaySettings::-webkit-scrollbar-thumb:hover,
+.gameOverlayDrive::-webkit-scrollbar-thumb:hover,
+.gameOverlayRadio::-webkit-scrollbar-thumb:hover {
+  background: rgba(84,224,138,.52);
 }

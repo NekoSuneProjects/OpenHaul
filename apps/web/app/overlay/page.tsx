@@ -21,6 +21,8 @@ type RadioStation = {
   name: string;
   url: string;
   genre?: string;
+  type?: string;
+  tags?: string[];
   language?: string;
   bitrateKbps?: number;
   country?: string;
@@ -47,6 +49,8 @@ type MusicSearchResult = {
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
+const radioCatalogBaseUrl = (process.env.NEXT_PUBLIC_RADIO_CATALOG_URL
+  ?? "https://raw.githubusercontent.com/NekoSuneProjects/OpenHaul/radio-catalog").replace(/\/+$/, "");
 
 function OverlayContent() {
   const params = useSearchParams();
@@ -72,13 +76,18 @@ function OverlayContent() {
   const [radioStations] = useState<RadioStation[]>(overlayRadioStations);
   const [selectedRadioId, setSelectedRadioId] = useState(overlayRadioStations[0]?.id || "");
   const [radioQuery, setRadioQuery] = useState("");
+  const [radioCategory, setRadioCategory] = useState("ALL");
   const [onlineRadioStations, setOnlineRadioStations] = useState<RadioStation[]>([]);
   const [catalogRadioStations, setCatalogRadioStations] = useState<RadioStation[]>([]);
   const [catalogRadioLoading, setCatalogRadioLoading] = useState(true);
+  const [radioCatalogVersion, setRadioCatalogVersion] = useState("");
   const [onlineRadioLoading, setOnlineRadioLoading] = useState(false);
   const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
   const [radioVolume, setRadioVolume] = useState(0.7);
+  const [musicRegionCode, setMusicRegionCode] = useState("ZZ");
+  const [musicRegionSource, setMusicRegionSource] = useState("");
+  const [musicProviderPriority, setMusicProviderPriority] = useState<string[]>([]);
   const [musicSearchQuery, setMusicSearchQuery] = useState("");
   const [musicSearchResults, setMusicSearchResults] = useState<MusicSearchResult[]>([]);
   const [musicSearchLoading, setMusicSearchLoading] = useState(false);
@@ -172,6 +181,20 @@ function OverlayContent() {
   }, []);
 
   useEffect(() => {
+    let active = true;
+    fetch(api + "/api/v1/public/region", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : null)
+      .then((data) => {
+        if (!active || !data) return;
+        setMusicRegionCode(typeof data.countryCode === "string" ? data.countryCode : "ZZ");
+        setMusicRegionSource(typeof data.source === "string" ? data.source : "");
+        setMusicProviderPriority(Array.isArray(data.musicProviderPriority) ? data.musicProviderPriority : []);
+      })
+      .catch(() => {});
+    return () => { active = false; };
+  }, []);
+
+  useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
     audio.volume = radioVolume;
@@ -179,49 +202,109 @@ function OverlayContent() {
 
   useEffect(() => {
     let active = true;
+    let timer: ReturnType<typeof setInterval> | undefined;
+    let loadedVersion = "";
 
-    const loadLargeRadioCatalog = async () => {
+    const mapJsonStation = (station: any, index: number): RadioStation | null => {
+      const url = String(station?.url || "").trim();
+      if (!url || !/^https?:\/\//i.test(url)) return null;
+      if (/^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return null;
+
+      const tags = Array.isArray(station?.tags)
+        ? station.tags.map((value: unknown) => String(value).trim()).filter(Boolean)
+        : [];
+
+      const type = String(station?.type || tags[0] || station?.genre || station?.codec || "Other").trim() || "Other";
+
+      return {
+        id: "json-" + String(station?.stationUuid || station?.stationuuid || url || index),
+        name: String(station?.name || "Unknown station"),
+        url,
+        country: station?.country ? String(station.country).toUpperCase() : undefined,
+        type,
+        tags,
+        genre: type,
+        language: station?.language ? String(station.language) : undefined,
+        codec: station?.codec ? String(station.codec) : undefined,
+        bitrateKbps: Number.isFinite(Number(station?.bitrate)) ? Number(station.bitrate) : undefined,
+        source: "radio-catalog-branch",
+      };
+    };
+
+    const fetchJson = async (url: string) => {
+      const separator = url.includes("?") ? "&" : "?";
+      const response = await fetch(url + separator + "t=" + Date.now(), { cache: "no-store" });
+      if (!response.ok) throw new Error("Radio catalog returned HTTP " + response.status);
+      return response.json() as Promise<unknown>;
+    };
+
+    const loadCountryBatch = async (
+      countries: Array<{ country: string; active: string; activeCount?: number }>,
+      concurrency = 8,
+    ) => {
+      const results: RadioStation[] = [];
+      let cursor = 0;
+
+      const worker = async () => {
+        while (true) {
+          const index = cursor++;
+          if (index >= countries.length) return;
+
+          const item = countries[index];
+          try {
+            const data = await fetchJson(radioCatalogBaseUrl + "/" + item.active.replace(/^\/+/, ""));
+            if (!Array.isArray(data)) continue;
+
+            for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
+              const station = mapJsonStation(data[rowIndex], rowIndex);
+              if (station) results.push(station);
+            }
+          } catch {
+            // Keep loading other regions when one country file is unavailable.
+          }
+        }
+      };
+
+      await Promise.all(Array.from({ length: concurrency }, () => worker()));
+      return results;
+    };
+
+    const loadCatalog = async () => {
       setCatalogRadioLoading(true);
-      try {
-        const response = await fetch(api + "/api/v1/public/radio/catalog?limit=20000", {
-          cache: "force-cache",
-        });
-        if (!response.ok) throw new Error("Large radio catalog returned HTTP " + response.status);
 
-        const data = await response.json() as {
-          stations?: Array<{
-            id?: string;
-            stationUuid?: string | null;
-            name?: string;
-            country?: string | null;
-            language?: string | null;
-            genre?: string | null;
-            codec?: string | null;
-            bitrateKbps?: number | null;
-            source?: string | null;
-            playback?: { direct?: string | null; browser?: string | null };
+      try {
+        const manifestRaw = await fetchJson(radioCatalogBaseUrl + "/manifest.json");
+        const manifest = manifestRaw as {
+          version?: string;
+          countries?: Array<{
+            country?: string;
+            active?: string;
+            dead?: string;
+            activeCount?: number;
+            deadCount?: number;
           }>;
         };
 
+        const version = String(manifest?.version || "");
+        if (version && loadedVersion === version) {
+          setRadioCatalogVersion(version);
+          return;
+        }
+
+        const countries = (manifest?.countries ?? [])
+          .filter((item) => /^[A-Z]{2}$/.test(String(item?.country || "")) && typeof item?.active === "string")
+          .map((item) => ({
+            country: String(item.country),
+            active: String(item.active),
+            activeCount: Number(item.activeCount || 0),
+          }));
+
+        const stations = await loadCountryBatch(countries, 8);
         if (!active) return;
 
-        const stations: RadioStation[] = (data.stations ?? []).flatMap((station, index): RadioStation[] => {
-          const url = station.playback?.direct || station.playback?.browser || "";
-          if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return [];
-          return [{
-            id: "catalog-" + (station.id || station.stationUuid || index),
-            name: station.name || "Unknown station",
-            url,
-            country: station.country || undefined,
-            language: station.language || undefined,
-            genre: station.genre || undefined,
-            codec: station.codec || undefined,
-            bitrateKbps: station.bitrateKbps || undefined,
-            source: station.source || "radio-browser",
-          }];
-        });
-
         setCatalogRadioStations(stations);
+        loadedVersion = version;
+        setRadioCatalogVersion(version);
       } catch {
         if (active) setCatalogRadioStations([]);
       } finally {
@@ -229,8 +312,13 @@ function OverlayContent() {
       }
     };
 
-    void loadLargeRadioCatalog();
-    return () => { active = false; };
+    void loadCatalog();
+    timer = setInterval(() => void loadCatalog(), 60_000);
+
+    return () => {
+      active = false;
+      if (timer) clearInterval(timer);
+    };
   }, []);
 
   const setPreference = (key: "traffic" | "staff" | "missions", value: boolean) => {
@@ -240,26 +328,71 @@ function OverlayContent() {
     window.chrome?.webview?.postMessage({ type: "overlay.preference", key, value });
   };
 
+  const radioCategories = useMemo(() => {
+    const values = new Set<string>();
+    for (const station of [...radioStations, ...catalogRadioStations, ...onlineRadioStations]) {
+      const type = String(station.type || station.genre || "").trim();
+      if (type) values.add(type);
+      for (const tag of station.tags || []) {
+        const clean = String(tag).trim();
+        if (clean) values.add(clean);
+      }
+    }
+    return [...values].sort((a, b) => a.localeCompare(b));
+  }, [radioStations, catalogRadioStations, onlineRadioStations]);
+
   const filteredRadioStations = useMemo(() => {
     const query = radioQuery.trim().toLowerCase();
     const combined = [...radioStations, ...catalogRadioStations];
-    if (!query) return combined;
-    return combined.filter((station) =>
-      [station.name, station.genre, station.language, station.country, station.codec]
+
+    return combined.filter((station) => {
+      const categoryValues = [
+        station.type,
+        station.genre,
+        ...(station.tags || []),
+      ].filter(Boolean).map((value) => String(value).toLowerCase());
+
+      if (radioCategory !== "ALL" && !categoryValues.includes(radioCategory.toLowerCase())) {
+        return false;
+      }
+
+      if (!query) return true;
+
+      return [
+        station.name,
+        station.type,
+        station.genre,
+        ...(station.tags || []),
+        station.language,
+        station.country,
+        station.codec,
+      ]
         .filter(Boolean)
-        .some((value) => String(value).toLowerCase().includes(query))
-    );
-  }, [radioQuery, radioStations, catalogRadioStations]);
+        .some((value) => String(value).toLowerCase().includes(query));
+    });
+  }, [radioQuery, radioCategory, radioStations, catalogRadioStations]);
 
   const allRadioSearchResults = useMemo(() => {
     const seen = new Set<string>();
+    const category = radioCategory.toLowerCase();
+
     return [...filteredRadioStations, ...onlineRadioStations].filter((station) => {
+      if (radioCategory !== "ALL") {
+        const categoryValues = [
+          station.type,
+          station.genre,
+          ...(station.tags || []),
+        ].filter(Boolean).map((value) => String(value).toLowerCase());
+
+        if (!categoryValues.includes(category)) return false;
+      }
+
       const key = (station.url + "|" + station.name).toLowerCase();
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
     });
-  }, [filteredRadioStations, onlineRadioStations]);
+  }, [filteredRadioStations, onlineRadioStations, radioCategory]);
 
   const allVisibleRadioStations = useMemo(
     () => allRadioSearchResults.slice(0, radioQuery.trim() ? 1000 : 500),
@@ -529,13 +662,23 @@ function OverlayContent() {
     setMusicSearchError("");
     try {
       const response = await fetch(
-        api + "/api/v1/public/music/search?q=" + encodeURIComponent(query) + "&limit=16",
+        api + "/api/v1/public/music/search?q=" + encodeURIComponent(query) +
+          "&limit=16" +
+          (musicRegionCode && musicRegionCode !== "ZZ" ? "&country=" + encodeURIComponent(musicRegionCode) : ""),
         { cache: "no-store" },
       );
       if (!response.ok) throw new Error("Music search returned HTTP " + response.status);
 
-      const data = await response.json() as { results?: MusicSearchResult[] };
+      const data = await response.json() as {
+        results?: MusicSearchResult[];
+        countryCode?: string;
+        regionSource?: string;
+        providerPriority?: string[];
+      };
       setMusicSearchResults(data.results ?? []);
+      if (data.countryCode) setMusicRegionCode(data.countryCode);
+      if (data.regionSource) setMusicRegionSource(data.regionSource);
+      if (Array.isArray(data.providerPriority)) setMusicProviderPriority(data.providerPriority);
     } catch (error) {
       setMusicSearchResults([]);
       setMusicSearchError(error instanceof Error ? error.message : String(error));
@@ -874,8 +1017,8 @@ function OverlayContent() {
             <section className="gameOverlayRadioLocal">
               <strong>Local PC playback</strong>
               <small>
-                The overlay keeps your bundled stations and loads up to 20,000 additional public stations for browsing and search.
-                OpenHaul is used only to fetch station metadata; playback always uses the selected station's original stream URL directly on your PC.
+                The overlay reads active stations from the dedicated radio-catalog branch and checks its manifest every minute.
+                Each country has its own active.json/dead.json pair, and playback still uses each active station's original stream URL directly on your PC.
               </small>
             </section>
 
@@ -885,12 +1028,25 @@ function OverlayContent() {
                   <h2>Stations</h2>
                   <p>
                     {catalogRadioLoading
-                      ? "Loading 20,000-station catalog…"
-                      : (radioStations.length + catalogRadioStations.length).toLocaleString() + " stations available"}
+                      ? "Loading worldwide active radio catalog…"
+                      : (radioStations.length + catalogRadioStations.length).toLocaleString() + " active stations available"}
                     {onlineRadioStations.length ? " · " + onlineRadioStations.length + " extra search results" : ""}
+                    {radioCatalogVersion && !Number.isNaN(Date.parse(radioCatalogVersion))
+                      ? " · catalog " + new Date(radioCatalogVersion).toLocaleString()
+                      : ""}
                   </p>
                 </div>
                 <div className="gameOverlayRadioSearch">
+                  <select
+                    value={radioCategory}
+                    onChange={(event) => setRadioCategory(event.target.value)}
+                    aria-label="Filter radio stations by category"
+                  >
+                    <option value="ALL">All categories</option>
+                    {radioCategories.map((category) => (
+                      <option key={category} value={category}>{category}</option>
+                    ))}
+                  </select>
                   <input
                     value={radioQuery}
                     onChange={(event) => {
@@ -901,7 +1057,7 @@ function OverlayContent() {
                     onKeyDown={(event) => {
                       if (event.key === "Enter") void searchOnlineRadio();
                     }}
-                    placeholder="Search station, country, genre, language or codec"
+                    placeholder="Search station, country, category, language or codec"
                     aria-label="Search radio stations"
                   />
                   <button
@@ -927,7 +1083,7 @@ function OverlayContent() {
                       <span>
                         <strong>{station.name}</strong>
                         <small>
-                          {[station.country, station.genre, station.language, station.codec?.toUpperCase(), station.bitrateKbps ? station.bitrateKbps + " kbps" : null]
+                          {[station.country, station.type || station.genre, station.language, station.codec?.toUpperCase(), station.bitrateKbps ? station.bitrateKbps + " kbps" : null]
                             .filter(Boolean)
                             .join(" · ") || "Internet radio"}
                         </small>
@@ -968,8 +1124,22 @@ function OverlayContent() {
                 <h2>Search music</h2>
                 <p>
                   Search by artist and title, for example <strong>Artist - Title</strong>.
-                  OpenHaul searches public YouTube, SoundCloud, Bilibili, and Yandex Music results, then you can add one directly to the Music playlist.
+                  OpenHaul ranks YouTube, SoundCloud, Bilibili, and Yandex Music based on the detected country, then keeps the others as fallbacks.
                 </p>
+                <div className="gameOverlayMusicRegion">
+                  <span>Region: <strong>{musicRegionCode === "ZZ" ? "Unknown" : musicRegionCode}</strong></span>
+                  {musicProviderPriority.length ? (
+                    <span>
+                      Priority: {musicProviderPriority.map((provider) =>
+                        provider === "youtube" ? "YouTube" :
+                        provider === "soundcloud" ? "SoundCloud" :
+                        provider === "bilibili" ? "Bilibili" :
+                        provider === "yandex" ? "Yandex Music" : provider
+                      ).join(" → ")}
+                    </span>
+                  ) : null}
+                  {musicRegionSource ? <small>{musicRegionSource}</small> : null}
+                </div>
               </div>
               <div className="gameOverlayMusicUrl">
                 <input
