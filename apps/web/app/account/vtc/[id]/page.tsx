@@ -19,6 +19,7 @@ export default function ManageVtcPage() {
   const [moderation, setModeration] = useState<any[]>([]);
   const [discordConfig, setDiscordConfig] = useState<any>(null);
   const [botInviteUrl, setBotInviteUrl] = useState("");
+  const [manualJobs, setManualJobs] = useState<any[]>([]);
   const [opsStatus, setOpsStatus] = useState("");
 
   const load = async () => {
@@ -43,10 +44,11 @@ export default function ManageVtcPage() {
       setVtcApiKeys(keyData.keys ?? []);
     }
 
-    const [activityResponse, moderationResponse, discordResponse] = await Promise.all([
+    const [activityResponse, moderationResponse, discordResponse, manualJobsResponse] = await Promise.all([
       fetch(api + "/api/v1/account/vtcs/" + id + "/activity", { credentials: "include", cache: "no-store" }),
       fetch(api + "/api/v1/account/vtcs/" + id + "/moderation", { credentials: "include", cache: "no-store" }),
       fetch(api + "/api/v1/account/vtcs/" + id + "/discord", { credentials: "include", cache: "no-store" }),
+      fetch(api + "/api/v1/account/vtcs/" + id + "/manual-jobs", { credentials: "include", cache: "no-store" }),
     ]);
     if (activityResponse.ok) setActivity((await activityResponse.json()).events ?? []);
     if (moderationResponse.ok) setModeration((await moderationResponse.json()).actions ?? []);
@@ -54,6 +56,10 @@ export default function ManageVtcPage() {
       const discordData = await discordResponse.json();
       setDiscordConfig(discordData.config ?? {});
       setBotInviteUrl(discordData.botInviteUrl ?? "");
+    }
+    if (manualJobsResponse.ok) {
+      const manualData = await manualJobsResponse.json();
+      setManualJobs(manualData.jobs ?? []);
     }
 
     setStatus("");
@@ -213,6 +219,16 @@ export default function ManageVtcPage() {
       credentials: "include",
     });
     await load();
+  };
+
+  const reviewManualJob = async (jobId: number, approvalStatus: "approved" | "rejected") => {
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/manual-jobs/" + jobId, {
+      method: "PATCH",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ approvalStatus }),
+    });
+    if (response.ok) await load();
   };
 
   const addModeration = async (event: FormEvent<HTMLFormElement>) => {
@@ -441,6 +457,23 @@ export default function ManageVtcPage() {
             <div className="actions">
               <button className="button primary" onClick={() => void updateApplication(application.id, "approved")}>Approve</button>
               <button className="button" onClick={() => void updateApplication(application.id, "rejected")}>Reject</button>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <div className="sectionTitle"><h2>Manual job approvals</h2></div>
+      <section className="driverList" style={{ padding: 0 }}>
+        {manualJobs.filter((job: any) => job.approvalStatus === "pending").length === 0 ? <div className="card"><p>No manual jobs waiting for review.</p></div> : null}
+        {manualJobs.filter((job: any) => job.approvalStatus === "pending").map((job: any) => (
+          <article className="driver" key={job.id}>
+            <div><strong>{job.cargo || "Unknown cargo"}</strong><small>{job.driverId} · {String(job.game).toUpperCase()}</small></div>
+            <div><strong>{job.sourceCity} → {job.destinationCity}</strong><small>{Math.round(Number(job.distanceKm || 0)).toLocaleString()} km</small></div>
+            <div><strong>{Number(job.income || 0).toLocaleString()}</strong><small>expenses {Number(job.expenses || 0).toLocaleString()}</small></div>
+            <div style={{ display: "grid", gap: 6 }}>
+              {job.evidenceUrl ? <a className="button" href={job.evidenceUrl}>Evidence</a> : null}
+              <button className="button primary" onClick={() => void reviewManualJob(job.id, "approved")}>Approve</button>
+              <button className="button" onClick={() => void reviewManualJob(job.id, "rejected")}>Reject</button>
             </div>
           </article>
         ))}
