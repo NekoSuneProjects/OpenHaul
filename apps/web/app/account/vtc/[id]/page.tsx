@@ -112,6 +112,8 @@ export default function ManageVtcPage() {
         currency: String(form.get("currency") ?? "GBP").toUpperCase(),
         recruitmentOpen: form.get("recruitmentOpen") === "on",
         recruitmentMode: String(form.get("recruitmentMode") ?? "application"),
+        operatingMode: String(form.get("operatingMode") ?? "standard"),
+        manualJobPolicy: String(form.get("manualJobPolicy") ?? "approval"),
         publicBalance: form.get("publicBalance") === "on",
       }),
     });
@@ -346,6 +348,22 @@ export default function ManageVtcPage() {
           </select>
         </label>
         <label><input type="checkbox" name="recruitmentOpen" defaultChecked={Boolean(vtc.recruitmentOpen)} /> Recruitment open</label>
+        <label>
+          Operating mode
+          <select name="operatingMode" defaultValue={vtc.operatingMode || "standard"}>
+            <option value="casual">Casual</option>
+            <option value="standard">Standard</option>
+            <option value="simulation">Simulation</option>
+          </select>
+        </label>
+        <label>
+          Manual job policy
+          <select name="manualJobPolicy" defaultValue={vtc.manualJobPolicy || "approval"}>
+            <option value="disabled">Disabled</option>
+            <option value="approval">Staff approval required</option>
+            <option value="full">Count automatically</option>
+          </select>
+        </label>
         <label><input type="checkbox" name="publicBalance" defaultChecked={Boolean(vtc.publicBalance)} /> Show balance publicly</label>
         <button className="button primary">Save company settings</button>
       </form>
