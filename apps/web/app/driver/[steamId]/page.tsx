@@ -56,6 +56,16 @@ export default function DriverProfilePage() {
         {user.country ? <p className="muted">{user.country}</p> : null}
       </section>
 
+      <nav className="card profileTabs" aria-label="Driver profile sections">
+        <a href="#about">About</a>
+        <a href="#logbook">Logbook</a>
+        <a href="#statistics">Statistics</a>
+        <a href="#reputation">Reputation</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#awards">Awards</a>
+      </nav>
+
+      <div id="statistics" />
       <section className="grid">
         <article className="card"><h3>{Number(stats.jobs ?? 0).toLocaleString()}</h3><p>Jobs completed</p></article>
         <article className="card"><h3>{Math.round(Number(stats.distanceKm ?? 0)).toLocaleString()} km</h3><p>Distance logged</p></article>
@@ -69,6 +79,8 @@ export default function DriverProfilePage() {
         <article className="card"><h3>{Number(stats.bestJobIncome ?? 0).toLocaleString()}</h3><p>Best job income</p></article>
         <article className="card"><h3>{Number(stats.averageIncomePerJob ?? 0).toLocaleString()}</h3><p>Average income / job</p></article>
       </section>
+
+      <div id="about" />
 
       {data.twitch ? (
         <>
@@ -92,7 +104,7 @@ export default function DriverProfilePage() {
         {(data.memberships ?? []).map((membership: any) => {
           const vtc = membership.Vtc ?? membership.vtc;
           return (
-            <Link href={"/vtc/" + vtc.id} className="card" key={membership.id}>
+            <Link href={"/vtc/" + (vtc.slug || vtc.id)} className="card" key={membership.id}>
               <div className="pill">{membership.role}</div>
               <h3 style={{ marginTop: 12 }}>{vtc.name}</h3>
               <p>{vtc.tag ? "[" + vtc.tag + "] " : ""}{membership.title || "VTC member"}</p>
@@ -112,6 +124,20 @@ export default function DriverProfilePage() {
         </>
       ) : null}
 
+      <div id="achievements" className="sectionTitle"><h2>Achievements & awards</h2></div>
+      <section className="grid">
+        {(data.achievements ?? []).length === 0 ? <article className="card"><p>No unlocked achievements yet.</p></article> : null}
+        {(data.achievements ?? []).map((record: any) => (
+          <article className="card" key={record.id}>
+            <div className="pill">Unlocked</div>
+            <h3 style={{ marginTop: 12 }}>{record.data?.title || record.key}</h3>
+            <p>{record.data?.unlockedAt ? "Unlocked " + new Date(record.data.unlockedAt).toLocaleDateString() : "OpenHaul achievement"}</p>
+          </article>
+        ))}
+      </section>
+      <div id="awards" />
+
+      <div id="reputation" />
       <div className="sectionTitle"><h2>VTC moderation history</h2></div>
       <section className="driverList" style={{ padding: 0 }}>
         {(data.moderation ?? []).length === 0 ? <p className="muted">No VTC warnings, mutes or bans recorded.</p> : null}
@@ -157,7 +183,7 @@ export default function DriverProfilePage() {
         </div>
       </section>
 
-      <div className="sectionTitle"><h2>Recent jobs</h2></div>
+      <div id="logbook" className="sectionTitle"><h2>Recent jobs</h2></div>
       <section className="driverList" style={{ padding: 0 }}>
         {(data.recentJobs ?? []).filter((job: any) => gameFilter === "all" || String(job.game).toLowerCase() === gameFilter).map((job: any) => (
           <article className="driver" key={job.id}>
