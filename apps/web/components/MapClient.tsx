@@ -515,6 +515,42 @@ function trafficFeatureCollection(traffic: any[]) {
   };
 }
 
+function buildTrafficPopupCard(properties: any) {
+  const card = document.createElement("div");
+  card.className = "mapPopup";
+
+  const title = document.createElement("strong");
+  title.textContent =
+    String(properties.serverTag || properties.game || "Traffic") +
+    " · Traffic";
+  card.appendChild(title);
+
+  const lines = [
+    properties.server
+      ? "Server: " + String(properties.server)
+      : "Server: OpenHaul / unknown",
+    properties.game
+      ? "Game: " + String(properties.game).toUpperCase()
+      : "",
+    "Players in traffic area: " + String(properties.drivers || 0),
+    Number(properties.averageSpeedKph || 0) > 0
+      ? "Average speed: " + Math.round(Number(properties.averageSpeedKph)) + " km/h"
+      : "Traffic source: player density",
+    "Severity: " + String(properties.severity || "low").toUpperCase(),
+    properties.source
+      ? "Source: " + (String(properties.source).includes("truckersmp") ? "TruckersMP" : "OpenHaul")
+      : "",
+  ].filter(Boolean);
+
+  for (const line of lines) {
+    const row = document.createElement("div");
+    row.textContent = line;
+    card.appendChild(row);
+  }
+
+  return card;
+}
+
 function externalDriverList(rows: any[]): Driver[] {
   return (rows ?? []).flatMap((row: any) => {
     if ((row.game !== "ets2" && row.game !== "ats") || !row.driverId) return [];
@@ -848,6 +884,8 @@ export function MapClient() {
   const selectedPopupRef = useRef<any>(null);
   const selectedPopupDriverIdRef = useRef<string>("");
   const selectedDriverLastSeenRef = useRef<number>(0);
+  const selectedTrafficPopupRef = useRef<any>(null);
+  const selectedTrafficIdRef = useRef<string>("");
   const trafficCacheRef = useRef<Map<string, { jam: any; expiresAt: number }>>(new Map());
 
   const serverOptions = useMemo(
@@ -1057,7 +1095,7 @@ export function MapClient() {
     map?.on("zoomend", scheduleLoad);
 
     void loadViewport();
-    refreshTimer = setInterval(() => void loadViewport(), 4000);
+    refreshTimer = setInterval(() => void loadViewport(), 2000);
 
     return () => {
       active = false;
@@ -1305,42 +1343,22 @@ export function MapClient() {
           const properties = feature.properties || {};
           const coordinates = feature.geometry.coordinates as [number, number];
 
-          const card = document.createElement("div");
-          card.className = "mapPopup";
+          selectedTrafficPopupRef.current?.remove?.();
 
-          const title = document.createElement("strong");
-          title.textContent =
-            String(properties.serverTag || properties.game || "Traffic") +
-            " · Traffic";
-          card.appendChild(title);
-
-          const lines = [
-            properties.server
-              ? "Server: " + String(properties.server)
-              : "Server: OpenHaul / unknown",
-            properties.game
-              ? "Game: " + String(properties.game).toUpperCase()
-              : "",
-            "Players in traffic area: " + String(properties.drivers || 0),
-            Number(properties.averageSpeedKph || 0) > 0
-              ? "Average speed: " + Math.round(Number(properties.averageSpeedKph)) + " km/h"
-              : "Traffic source: player density",
-            "Severity: " + String(properties.severity || "low").toUpperCase(),
-            properties.source
-              ? "Source: " + (String(properties.source).includes("truckersmp") ? "TruckersMP" : "OpenHaul")
-              : "",
-          ].filter(Boolean);
-
-          for (const line of lines) {
-            const row = document.createElement("div");
-            row.textContent = line;
-            card.appendChild(row);
-          }
-
-          new maplibregl.Popup({ offset: 16, closeOnMove: false })
+          const popup = new maplibregl.Popup({ offset: 16, closeOnMove: false })
             .setLngLat(coordinates)
-            .setDOMContent(card)
+            .setDOMContent(buildTrafficPopupCard(properties))
             .addTo(map);
+
+          selectedTrafficPopupRef.current = popup;
+          selectedTrafficIdRef.current = String(properties.id ?? "");
+
+          popup.on("close", () => {
+            if (selectedTrafficPopupRef.current === popup) {
+              selectedTrafficPopupRef.current = null;
+              selectedTrafficIdRef.current = "";
+            }
+          });
         });
 
         if (!map.hasImage("openhaul-driver-arrow")) {
@@ -1517,10 +1535,12 @@ export function MapClient() {
       if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
       resizeObserver?.disconnect();
       window.removeEventListener("resize", queueMapResize);
-      mapRef.current?.off("dragstart", takeManualCameraControl);
-      mapRef.current?.off("rotatestart", takeManualCameraControl);
-      mapRef.current?.off("pitchstart", takeManualCameraControl);
-      mapRef.current?.getCanvas().removeEventListener("wheel", takeWheelCameraControl);
+      // map.remove() tears down MapLibre listeners/canvas handlers registered
+      // inside createMap(). Keeping those local callbacks out of this outer
+      // cleanup also avoids them going out of TypeScript scope.
+      selectedTrafficPopupRef.current?.remove?.();
+      selectedTrafficPopupRef.current = null;
+      selectedTrafficIdRef.current = "";
       selectedPopupRef.current?.remove?.();
       selectedPopupRef.current = null;
       selectedPopupDriverIdRef.current = "";
@@ -1634,6 +1654,23 @@ export function MapClient() {
     (map.getSource("openhaul-job-markers") as any)?.setData(jobMarkerFeatureCollection(mapIntel.jobMarkers ?? []));
     (map.getSource("openhaul-convoys") as any)?.setData(convoyFeatureCollection(mapIntel.convoys ?? []));
   }, [mapReady, stableTraffic, mapIntel.jobMarkers, mapIntel.convoys]);
+
+  useEffect(() => {
+    const popup = selectedTrafficPopupRef.current;
+    const selectedId = selectedTrafficIdRef.current;
+    if (!popup || !selectedId) return;
+
+    const jam = stableTraffic.find((item: any) => String(item.id ?? "") === selectedId);
+    if (!jam) return;
+
+    const position = gameCoordsToLonLat(jam.game, Number(jam.x), Number(jam.z));
+    if (isValidLonLat(position)) popup.setLngLat(position);
+
+    popup.setDOMContent(buildTrafficPopupCard({
+      ...jam,
+      serverTag: trafficServerTag(String(jam.server ?? ""), String(jam.game ?? "")),
+    }));
+  }, [stableTraffic]);
 
   useEffect(() => {
     const map = mapRef.current;
