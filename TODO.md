@@ -70,12 +70,12 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [ ] Discord account linking
 - [x] Profile avatar/banner, country, bio and social links
 - [ ] Profile tabs: About, Logbook, Statistics, Road Trip, Reputation, Achievements, Challenges, Awards and Albums
-- [ ] Account level/XP and progression
+- [x] Account level/XP and progression
 - [ ] Driver status: offline, client online, menu, driving, on-job and paused
-- [ ] Recent movement/activity timeline
-- [ ] Career summary: deliveries, distance, longest job, total profit, average/job, best month and activity
+- [x] Recent movement/activity timeline
+- [x] Career summary: deliveries, distance, longest job, total profit, average/job, best month and activity
 - [x] Personal warnings, mutes, bans, kicks/disciplinary actions and name-change history with appropriate visibility
-- [ ] Driver game filters: All / ETS2 / ATS
+- [x] Driver game filters: All / ETS2 / ATS
 
 ## P0 — VTC/company system
 - [x] VTC creation and profile foundation
@@ -86,14 +86,14 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Fines/events data storage/API foundation
 - [x] Statistics and leaderboards
 - [x] Remove meaningless bootstrap/empty VTC IDs from normal user views
-- [ ] Create VTC with unique name/slug, logo/banner, description, rules, socials and recruitment state
+- [x] Create VTC with unique name/slug, logo/banner, description, rules, socials and recruitment state
 - [x] Invite members with expiring/one-use invite links
 - [x] Join, leave, kick and ownership-transfer flows with owner protection
 - [x] Public/open join, invite-only and application-required recruitment modes
 - [ ] Custom VTC roles, granular permissions and role ordering
 - [x] Member directory with status, role, join date and contribution stats
-- [ ] VTC dashboard: members online, jobs today/month, distance, revenue, expenses and profit/loss
-- [ ] VTC logbook with search, filters, pagination and export
+- [x] VTC dashboard: members online, jobs today/month, distance, revenue, expenses and profit/loss
+- [x] VTC logbook with search, filters, pagination and export
 - [x] VTC member action/audit log
 - [x] Log promotions/demotions, role changes, joins/leaves/kicks, warnings, mutes, bans and name changes
 - [ ] VTC disciplinary system: warnings, strikes/points, notes, temporary/permanent mutes and bans
@@ -101,7 +101,7 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [ ] Fleet/garage management: trucks, trailers, garages and assignments
 - [x] Company ledger/balance with job income, fines, fuel/repair/toll expenses and adjustments
 - [x] Per-member earnings/contribution and losses from penalties/red lights/damage
-- [ ] VTC statistics, rankings and monthly trends
+- [x] VTC statistics, rankings and monthly trends
 - [ ] VTC achievements, awards and challenges
 - [ ] VTC reputation system
 - [ ] Convoy/events manager with attendance
@@ -152,32 +152,32 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [ ] Per-VTC bot feature toggles and permissions
 
 ## P1 — Dashboard and VTLog-inspired statistics
-- [ ] Responsive mobile-first dashboard
-- [ ] Global platform totals: registered drivers, VTCs, kilometres/miles logged, completed deliveries and drivers online now
-- [ ] Getting Started checklist that automatically detects completed steps
+- [x] Responsive mobile-first dashboard
+- [x] Global platform totals: registered drivers, VTCs, kilometres/miles logged, completed deliveries and drivers online now
+- [x] Getting Started checklist that automatically detects completed steps
 - [ ] Checklist: account, Steam, Discord, client, plugin, game telemetry, first delivery and create/join VTC
-- [ ] Deliveries this month card
-- [ ] Earnings this month with income vs expenses/losses
-- [ ] Account level card
-- [ ] Recent movement with All / ETS2 / ATS filters
-- [ ] Company/VTC daily summary
+- [x] Deliveries this month card
+- [x] Earnings this month with income vs expenses/losses
+- [x] Account level card
+- [x] Recent movement with All / ETS2 / ATS filters
+- [x] Company/VTC daily summary
 - [ ] Optional virtual insurance system
 - [ ] Monthly trend charts for distance, profit, jobs, cargo and penalties
 - [ ] Boards/share-of-deliveries charts such as Arcade/Realistic/Masterclass where OpenHaul has equivalent modes
 - [ ] Where-you-drive statistics: ETS2/ATS, countries/cities and game/mode
-- [ ] Distance-driven-on-job totals
-- [ ] Career statistics and activity graphs
-- [ ] Exportable statistics and logbooks
+- [x] Distance-driven-on-job totals
+- [x] Career statistics and activity graphs
+- [x] Exportable statistics and logbooks
 
 ## P1 — Logbook and job details
-- [ ] Driver logbook with job ID/city/cargo search
+- [x] Driver logbook with job ID/city/cargo search
 - [ ] Month/date, ETS2/ATS, VTC, cargo, mode and status filters
-- [ ] Job detail page with complete telemetry-derived summary
+- [x] Job detail page with complete telemetry-derived summary
 - [ ] Job timeline: accepted, departed, penalties, refuels, damage, arrival and completion
 - [ ] Route map/replay where enough position history is retained
-- [ ] Income, expenses and net-profit breakdown
-- [ ] CSV/JSON export and VTC-authorized export
-- [ ] Pagination and large-history performance
+- [x] Income, expenses and net-profit breakdown
+- [x] CSV/JSON export and VTC-authorized export
+- [x] Pagination and large-history performance
 
 ## P1 — Challenges, achievements, reputation and awards
 - [ ] Challenge framework for driver and VTC challenges
@@ -196,8 +196,8 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [ ] Client release/update centre
 - [ ] Support/Ticket Center
 - [ ] Partner cards with logo, description, website and optional live-map link
-- [ ] Mobile card layouts for tables/logbooks
-- [ ] Theme/branding stays OpenHaul; use references for functionality rather than copying another site's branding/assets
+- [x] Mobile card layouts for tables/logbooks
+- [x] Theme/branding stays OpenHaul; use references for functionality rather than copying another site's branding/assets
 
 ## P2 — Cargo market and economy
 - [ ] Cargo market from collected/allowed telemetry data
