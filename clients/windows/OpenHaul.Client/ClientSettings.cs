@@ -17,6 +17,9 @@ public sealed class ClientSettings
     public bool OverlayMapEnabled { get; set; } = true;
     public string OverlayMapType { get; set; } = "road";
     public string OverlayMapSize { get; set; } = "medium";
+    public bool OverlayTrafficAlerts { get; set; } = true;
+    public bool OverlayStaffAlerts { get; set; } = true;
+    public bool OverlayCargoMissions { get; set; } = true;
 
     public static string SettingsDirectory =>
         Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "OpenHaul");
