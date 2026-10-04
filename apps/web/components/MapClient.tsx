@@ -543,6 +543,12 @@ export function MapClient() {
     visibleDriversRef.current = visibleDrivers;
   }, [visibleDrivers]);
 
+  useEffect(() => {
+    if (!embedded) return;
+    document.body.classList.add("mapEmbedMode");
+    return () => document.body.classList.remove("mapEmbedMode");
+  }, [embedded]);
+
   const restUrl = useMemo(() => {
     const qs = initialVtc ? "?vtc=" + encodeURIComponent(initialVtc) : "";
     return api + "/api/v1/public/live" + qs;
