@@ -251,6 +251,8 @@ export default function AccountPage() {
       currency: String(form.get("currency") ?? "GBP").toUpperCase(),
       recruitmentOpen: form.get("recruitmentOpen") === "on",
       recruitmentMode: String(form.get("recruitmentMode") ?? "application"),
+      operatingMode: String(form.get("operatingMode") ?? "standard"),
+      manualJobPolicy: String(form.get("manualJobPolicy") ?? "approval"),
       publicBalance: form.get("publicBalance") === "on",
     };
 
@@ -524,6 +526,22 @@ export default function AccountPage() {
           </select>
         </label>
         <label><input type="checkbox" name="recruitmentOpen" defaultChecked /> Recruitment open</label>
+        <label>
+          Operating mode
+          <select name="operatingMode" defaultValue="standard">
+            <option value="casual">Casual</option>
+            <option value="standard">Standard</option>
+            <option value="simulation">Simulation</option>
+          </select>
+        </label>
+        <label>
+          Manual job submissions
+          <select name="manualJobPolicy" defaultValue="approval">
+            <option value="disabled">Disabled</option>
+            <option value="approval">Staff approval required</option>
+            <option value="full">Count automatically</option>
+          </select>
+        </label>
         <label><input type="checkbox" name="publicBalance" /> Show VTC balance publicly</label>
         <button className="button primary" disabled={creating}>{creating ? "Creating…" : "Create VTC"}</button>
       </form>
