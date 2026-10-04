@@ -18,66 +18,120 @@ export const metadata = {
   },
 };
 
+const navSections = [
+  {
+    title: "Discover",
+    items: [
+      ["/", "⌂", "Home"],
+      ["/dashboard", "▦", "Dashboard"],
+      ["/map", "◎", "Live Map"],
+      ["/logbook", "≣", "Logbook"],
+    ],
+  },
+  {
+    title: "Driver",
+    items: [
+      ["/cargo-market", "◇", "Cargo Market"],
+      ["/fuel-station", "◉", "Fuel Station"],
+      ["/economy", "£", "Economy"],
+      ["/progression", "✦", "Progression"],
+      ["/manual-job", "＋", "Manual Job"],
+    ],
+  },
+  {
+    title: "VTC",
+    items: [
+      ["/vtcs", "◆", "Companies"],
+      ["/vtc-match", "⌕", "Find a VTC"],
+      ["/community", "◌", "Community"],
+      ["/streamers", "◉", "Streamers"],
+    ],
+  },
+  {
+    title: "OpenHaul",
+    items: [
+      ["/news", "▤", "News"],
+      ["/releases", "⇩", "Downloads"],
+      ["/tickets", "◫", "Tickets"],
+      ["/radio", "♫", "Radio"],
+      ["/support", "♡", "Support"],
+      ["/api-docs", "⌘", "API"],
+      ["/account", "●", "Profile"],
+    ],
+  },
+] as const;
+
+function SidebarLinks() {
+  return (
+    <>
+      {navSections.map((section) => (
+        <section className="sidebarSection" key={section.title}>
+          <div className="sidebarLabel">{section.title}</div>
+          <div className="sidebarLinks">
+            {section.items.map(([href, icon, label]) => (
+              <Link href={href} key={href}>
+                <span className="sidebarIcon">{icon}</span>
+                <span>{label}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ))}
+    </>
+  );
+}
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
-        <nav className="nav">
-          <div className="shell navInner">
-            <Link className="brand" href="/" aria-label="OpenHaul home">
-              <Image src="/branding/openhaul-icon-192.png" alt="" width={38} height={38} priority />
-              <span className="brandWordmark">Open<span>Haul</span></span>
-            </Link>
-            <ClientStatus />
-            <div className="links desktopLinks">
-              <Link href="/dashboard">Dashboard</Link>
-              <Link href="/map">Live Map</Link>
-              <Link href="/vtcs">VTCs</Link>
-              <Link href="/vtc-match">Find VTC</Link>
-              <Link href="/logbook">Logbook</Link>
-              <Link href="/cargo-market">Cargo</Link>
-              <Link href="/fuel-station">Fuel</Link>
-              <Link href="/economy">Economy</Link>
-              <Link href="/progression">Progression</Link>
-              <Link href="/community">Community</Link>
-              <Link href="/news">News</Link>
-              <Link href="/releases">Downloads</Link>
-              <Link href="/tickets">Tickets</Link>
-              <Link href="/account">Profile</Link>
-              <Link href="/radio">Radio</Link>
-              <Link href="/streamers">Streamers</Link>
-              <Link href="/support">Support</Link>
-              <Link href="/api-docs">API</Link>
-              <a href="https://github.com/NekoSuneProjects/OpenHaul">GitHub</a>
-            </div>
-            <details className="mobileNav">
-              <summary aria-label="Open navigation">☰</summary>
-              <div className="mobileNavMenu">
-                <Link href="/">Home</Link>
-                <Link href="/dashboard">Dashboard</Link>
-                <Link href="/map">Live Map</Link>
-                <Link href="/vtcs">VTC / Company</Link>
-                <Link href="/vtc-match">Find a VTC</Link>
-                <Link href="/logbook">Logbook</Link>
-                <Link href="/cargo-market">Cargo Market</Link>
-                <Link href="/fuel-station">Fuel Station</Link>
-                <Link href="/economy">Economy</Link>
-                <Link href="/progression">Rankings / Progression</Link>
-                <Link href="/community">Community / Members</Link>
-                <Link href="/news">News</Link>
-                <Link href="/releases">Download Client</Link>
-                <Link href="/tickets">Tickets</Link>
-                <Link href="/account">Profile / Account</Link>
-                <Link href="/radio">Radio</Link>
-                <Link href="/streamers">Streamers</Link>
-                <Link href="/support">Support</Link>
-                <Link href="/api-docs">API</Link>
-                <a href="https://github.com/NekoSuneProjects/OpenHaul">GitHub</a>
+        <div className="appShell">
+          <aside className="sidebar">
+            <Link className="sidebarBrand" href="/" aria-label="OpenHaul home">
+              <Image src="/branding/openhaul-icon-192.png" alt="" width={46} height={46} priority />
+              <div>
+                <strong>Open<span>Haul</span></strong>
+                <small>DRIVER NETWORK</small>
               </div>
-            </details>
+            </Link>
+
+            <div className="sidebarStatus">
+              <ClientStatus />
+              <span className="statusHint">ETS2 · ATS</span>
+            </div>
+
+            <nav className="sidebarNav">
+              <SidebarLinks />
+            </nav>
+
+            <div className="sidebarFooter">
+              <a href="https://github.com/NekoSuneProjects/OpenHaul">
+                <span className="sidebarIcon">⌘</span>
+                <span>GitHub</span>
+              </a>
+              <small>Open source · self hosted</small>
+            </div>
+          </aside>
+
+          <div className="appMain">
+            <header className="mobileTopbar">
+              <Link className="brand" href="/">
+                <Image src="/branding/openhaul-icon-192.png" alt="" width={36} height={36} />
+                <span className="brandWordmark">Open<span>Haul</span></span>
+              </Link>
+              <details className="mobileNav">
+                <summary aria-label="Open navigation">☰</summary>
+                <div className="mobileNavMenu">
+                  <SidebarLinks />
+                </div>
+              </details>
+            </header>
+
+            <div className="contentFrame">
+              {children}
+            </div>
           </div>
-        </nav>
-        {children}
+        </div>
         <RadioPlayer />
       </body>
     </html>
