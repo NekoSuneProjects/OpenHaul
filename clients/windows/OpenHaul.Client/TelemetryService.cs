@@ -28,6 +28,7 @@ public sealed class TelemetryService : IAsyncDisposable
     public async Task RunAsync(CancellationToken token)
     {
         Status?.Invoke("Waiting for ETS2/ATS telemetry plugin…");
+        var presenceTask = PresenceLoopAsync(token);
 
         try
         {
@@ -108,11 +109,35 @@ public sealed class TelemetryService : IAsyncDisposable
             {
                 using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(3));
                 await _api.SendOfflineAsync(_config.DriverId, timeout.Token);
+                await _api.SendPresenceOfflineAsync(timeout.Token);
             }
             catch
             {
                 // Best effort only during shutdown.
             }
+
+            try { await presenceTask; } catch (OperationCanceledException) {}
+        }
+    }
+
+    private async Task PresenceLoopAsync(CancellationToken token)
+    {
+        while (!token.IsCancellationRequested)
+        {
+            try
+            {
+                await _api.SendPresenceAsync(token);
+            }
+            catch (OperationCanceledException) when (token.IsCancellationRequested)
+            {
+                break;
+            }
+            catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException)
+            {
+                Debug.WriteLine("OpenHaul presence heartbeat failed: " + ex.Message);
+            }
+
+            await Task.Delay(TimeSpan.FromSeconds(15), token);
         }
     }
 
