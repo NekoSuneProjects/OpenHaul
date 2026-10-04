@@ -13,7 +13,11 @@ type Community = {
   website?: string | null;
   discordUrl?: string | null;
   logoUrl?: string | null;
+  bannerUrl?: string | null;
+  rules?: string | null;
+  socials?: Record<string, string>;
   recruitmentOpen: boolean;
+  recruitmentMode?: "open" | "application" | "invite";
   memberCount: number;
   members?: any[];
   balance?: number;
@@ -78,6 +82,18 @@ export default function VtcProfilePage() {
     };
   }, [id]);
 
+  const joinOpen = async () => {
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/join", {
+      method: "POST",
+      credentials: "include",
+    });
+    if (response.status === 401) {
+      window.location.href = "/account";
+      return;
+    }
+    setApplyMessage(response.ok ? "You joined this VTC." : "Unable to join this VTC.");
+  };
+
   const apply = async () => {
     const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/apply", {
       method: "POST",
@@ -99,7 +115,12 @@ export default function VtcProfilePage() {
 
   return (
     <main className="shell">
-      <section className="hero" style={{ paddingBottom: 24 }}>
+      <section className="hero" style={{
+        paddingBottom: 24,
+        backgroundImage: community?.bannerUrl ? `linear-gradient(rgba(4,15,10,.78),rgba(4,15,10,.92)),url(${community.bannerUrl})` : undefined,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}>
         <span className="eyebrow">{vtc.tag || "OpenHaul VTC"}</span>
         {community?.logoUrl ? <img src={community.logoUrl} alt="" style={{ width: 96, height: 96, objectFit: "cover", borderRadius: 18, marginTop: 16 }} /> : null}
         <h1 style={{ fontSize: "clamp(2.8rem,7vw,5rem)" }}>{vtc.name}</h1>
@@ -124,9 +145,25 @@ export default function VtcProfilePage() {
         <>
           <div className="sectionTitle"><h2>Join this VTC</h2></div>
           <section className="card">
-            <textarea value={applyMessage} onChange={(e) => setApplyMessage(e.target.value)} rows={4} placeholder="Tell the VTC why you want to join" />
-            <div className="actions"><button className="button primary" onClick={() => void apply()}>Apply with OpenHaul account</button></div>
+            {community.recruitmentMode === "open" ? (
+              <div className="actions"><button className="button primary" onClick={() => void joinOpen()}>Join VTC now</button></div>
+            ) : community.recruitmentMode === "invite" ? (
+              <p className="muted">This VTC is invite-only. Ask its staff for an OpenHaul invite link.</p>
+            ) : (
+              <>
+                <textarea value={applyMessage} onChange={(e) => setApplyMessage(e.target.value)} rows={4} placeholder="Tell the VTC why you want to join" />
+                <div className="actions"><button className="button primary" onClick={() => void apply()}>Apply with OpenHaul account</button></div>
+              </>
+            )}
+            {applyMessage ? <p className="muted">{applyMessage}</p> : null}
           </section>
+        </>
+      ) : null}
+
+      {community?.rules ? (
+        <>
+          <div className="sectionTitle"><h2>Rules</h2></div>
+          <section className="card"><p style={{ whiteSpace: "pre-wrap" }}>{community.rules}</p></section>
         </>
       ) : null}
 
