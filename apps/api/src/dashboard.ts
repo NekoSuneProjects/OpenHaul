@@ -201,7 +201,7 @@ export async function registerDashboardRoutes(app: FastifyInstance) {
         netIncome: Number(todayVtcIncome || 0) - Number(todayVtcFines || 0),
       } : null,
     };
-
+  });
 
   app.get("/api/v1/account/dashboard/export", { preHandler: [requireUser] }, async (request, reply) => {
     const query = z.object({ format: z.enum(["json", "csv"]).default("json") }).parse(request.query);
@@ -248,6 +248,5 @@ export async function registerDashboardRoutes(app: FastifyInstance) {
     reply.type("text/csv; charset=utf-8");
     reply.header("content-disposition", 'attachment; filename="openhaul-statistics.csv"');
     return rows.map((row) => row.map((value) => '"' + String(value).replaceAll('"', '""') + '"').join(",")).join("\n");
-  });
   });
 }
