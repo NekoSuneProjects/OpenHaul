@@ -55,6 +55,14 @@ services:
       OPENHAUL_BOOTSTRAP_VTC_API_KEY: ${OPENHAUL_BOOTSTRAP_VTC_API_KEY:-}
       OPENHAUL_BOOTSTRAP_VTC_API_SCOPES: ${OPENHAUL_BOOTSTRAP_VTC_API_SCOPES:-telemetry:read,jobs:read,fines:read}
       TRUCKERSFM_NOWPLAYING_URL: ${TRUCKERSFM_NOWPLAYING_URL:-https://azuracast.truckers.fm/api/nowplaying/1}
+      NEKOROUTE_API_URL: ${NEKOROUTE_API_URL:-https://proxyweb.nekosunevr.co.uk}
+      RADIO_CHSL_SOURCE_URL: ${RADIO_CHSL_SOURCE_URL:-https://stingray.leanstream.co/CHSLFM?args=web_01&aw_0_req.gdpr=true&gdpr=true}
+      RADIO_CHSL_BITRATE_KBPS: ${RADIO_CHSL_BITRATE_KBPS:-128}
+      RADIO_PROXY_ALLOW_DIRECT_FALLBACK: ${RADIO_PROXY_ALLOW_DIRECT_FALLBACK:-true}
+      RADIO_PROXY_STATIONS_JSON: "${RADIO_PROXY_STATIONS_JSON:-[]}"
+      RADIO_BROWSER_API_URL: ${RADIO_BROWSER_API_URL:-https://de1.api.radio-browser.info}
+      RADIO_GEO_RULES_JSON: "${RADIO_GEO_RULES_JSON:-[]}"
+      RADIO_RELAY_SIGNING_SECRET: ${RADIO_RELAY_SIGNING_SECRET:-}
       OPENHAUL_MAP_DATA_DIR: /data-runtime/maps
       OPENHAUL_MAP_AUTO_UPDATE: ${OPENHAUL_MAP_AUTO_UPDATE:-true}
       OPENHAUL_MAP_MANIFEST_URL: ${OPENHAUL_MAP_MANIFEST_URL:-https://github.com/NekoSuneProjects/OpenHaul/releases/download/map-data/maps.json}
