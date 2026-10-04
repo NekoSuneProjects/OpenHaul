@@ -12,7 +12,7 @@ type DashboardData = {
   progression?: { xp: number; level: number; currentLevelXp: number; nextLevelXp: number; progress: number };
   totals?: { jobs: number; distanceKm: number; income: number; fines: number; fineAmount: number; netIncome: number };
   month?: { jobs: number; distanceKm: number; income: number; fineAmount: number; netIncome: number };
-  career?: { firstDeliveryAt?: string | null; longestJobKm?: number; bestJobIncome?: number; averageIncomePerJob?: number };
+  career?: { firstDeliveryAt?: string | null; longestJobKm?: number; bestJobIncome?: number; averageIncomePerJob?: number; bestMonth?: { month?: string; jobs?: number; distanceKm?: number; income?: number | string } | null };
   checklist?: Record<string, boolean>;
   recentActivity?: any[];
   trends?: Array<{ month: string; jobs: number; distanceKm: number; income: number | string }>;
@@ -93,6 +93,8 @@ export default function DashboardPage() {
           <Link className="button primary" href="/map">Live map</Link>
           <Link className="button" href="/logbook">Open logbook</Link>
           <Link className="button" href="/account">Account settings</Link>
+          <a className="button" href={api + "/api/v1/account/dashboard/export?format=csv"}>Export stats CSV</a>
+          <a className="button" href={api + "/api/v1/account/dashboard/export?format=json"}>Export stats JSON</a>
         </div>
       </section>
 
@@ -127,6 +129,10 @@ export default function DashboardPage() {
         <article className="card"><h3>{Math.round(data.career?.longestJobKm ?? 0).toLocaleString()} km</h3><p>Longest delivery</p></article>
         <article className="card"><h3>{money(data.career?.averageIncomePerJob)}</h3><p>Average income / job</p></article>
         <article className="card"><h3>{money(data.totals?.netIncome)}</h3><p>Career net earnings</p></article>
+        <article className="card">
+          <h3>{data.career?.bestMonth?.month ?? "—"}</h3>
+          <p>Best month · {Math.round(Number(data.career?.bestMonth?.distanceKm ?? 0)).toLocaleString()} km</p>
+        </article>
       </section>
 
       <div className="sectionTitle"><h2>Monthly trends</h2></div>
@@ -135,7 +141,7 @@ export default function DashboardPage() {
           const maxDistance = Math.max(1, ...(data.trends ?? []).map((item) => Number(item.distanceKm ?? 0)));
           const width = Math.max(4, Math.round((Number(row.distanceKm ?? 0) / maxDistance) * 100));
           return (
-            <div key={row.month} style={{ display: "grid", gridTemplateColumns: "90px minmax(0,1fr) 190px", gap: 12, alignItems: "center" }}>
+            <div key={row.month} className="trendRow">
               <strong>{row.month}</strong>
               <div style={{ height: 10, borderRadius: 99, background: "#06110c", overflow: "hidden" }}>
                 <div style={{ height: "100%", width: String(width) + "%", background: "var(--accent)" }} />
