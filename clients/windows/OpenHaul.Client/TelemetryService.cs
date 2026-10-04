@@ -7,7 +7,6 @@ namespace OpenHaul.Client;
 public sealed class TelemetryService : IAsyncDisposable
 {
     private static readonly JsonSerializerOptions PluginJson = new(JsonSerializerDefaults.Web);
-    private bool _liveAccepted;
     private readonly ClientConfig _config;
     private readonly OpenHaulApi _api;
     private bool _liveAccepted;
