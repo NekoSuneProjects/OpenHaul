@@ -196,7 +196,7 @@ function getRadioBrowserBase() {
 }
 
 function parseConfiguredStations(app: FastifyInstance): RadioStation[] {
-  const raw = process.env.RADIO_PROXY_STATIONS_JSON?.trim();
+  const raw = process.env.RADIO_STATIONS_JSON?.trim();
   if (!raw || raw === "[]") return [];
   try {
     return z.array(configuredStationSchema).max(250).parse(JSON.parse(raw)).map((row) => ({
@@ -204,7 +204,7 @@ function parseConfiguredStations(app: FastifyInstance): RadioStation[] {
       source: "configured" as const,
     }));
   } catch (error) {
-    app.log.error({ error }, "RADIO_PROXY_STATIONS_JSON is invalid; custom stations were ignored");
+    app.log.error({ error }, "RADIO_STATIONS_JSON is invalid; custom stations were ignored");
     return [];
   }
 }
