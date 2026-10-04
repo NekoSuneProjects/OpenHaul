@@ -1031,7 +1031,9 @@ function OverlayContent() {
                       ? "Loading worldwide active radio catalog…"
                       : (radioStations.length + catalogRadioStations.length).toLocaleString() + " active stations available"}
                     {onlineRadioStations.length ? " · " + onlineRadioStations.length + " extra search results" : ""}
-                    {radioCatalogVersion ? " · catalog " + new Date(radioCatalogVersion).toLocaleString() : ""}
+                    {radioCatalogVersion && !Number.isNaN(Date.parse(radioCatalogVersion))
+                      ? " · catalog " + new Date(radioCatalogVersion).toLocaleString()
+                      : ""}
                   </p>
                 </div>
                 <div className="gameOverlayRadioSearch">
