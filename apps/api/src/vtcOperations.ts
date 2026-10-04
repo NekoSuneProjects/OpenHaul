@@ -137,6 +137,11 @@ const discordSchema = z.object({
   applicationChannelId: z.string().max(32).nullable().optional(),
   moderationChannelId: z.string().max(32).nullable().optional(),
   driverChannelId: z.string().max(32).nullable().optional(),
+  achievementChannelId: z.string().max(32).nullable().optional(),
+  convoyChannelId: z.string().max(32).nullable().optional(),
+  welcomeChannelId: z.string().max(32).nullable().optional(),
+  featureToggles: z.record(z.boolean()).optional(),
+  embedConfig: z.record(z.any()).optional(),
   enabled: z.boolean().optional(),
 });
 
@@ -356,6 +361,46 @@ export async function registerVtcOperationsRoutes(app: FastifyInstance) {
       order: [["vtcId", "ASC"]],
     });
     return { configs };
+  });
+
+  app.post("/api/v1/bot/vtcs/:id/verify-guild", async (request, reply) => {
+    const raw = request.headers["x-bot-key"];
+    const key = Array.isArray(raw) ? raw[0] : raw;
+    if (!secretEquals(key, process.env.OPENHAUL_BOT_SERVICE_KEY)) {
+      return reply.code(401).send({ error: "invalid_bot_key" });
+    }
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const body = z.object({ guildId: z.string().max(32), verified: z.boolean() }).parse(request.body);
+    const config = await VtcDiscordConfig.findOne({ where: { vtcId: id } });
+    if (!config) return reply.code(404).send({ error: "discord_config_not_found" });
+    if (String(config.getDataValue("guildId") ?? "") !== body.guildId) {
+      return reply.code(409).send({ error: "guild_id_mismatch" });
+    }
+    await config.update({ guildVerified: body.verified });
+    return { config };
+  });
+
+  app.get("/api/v1/bot/features", async (request, reply) => {
+    const raw = request.headers["x-bot-key"];
+    const key = Array.isArray(raw) ? raw[0] : raw;
+    if (!secretEquals(key, process.env.OPENHAUL_BOT_SERVICE_KEY)) {
+      return reply.code(401).send({ error: "invalid_bot_key" });
+    }
+    const query = z.object({
+      vtcId: z.coerce.number().int().positive(),
+      category: z.enum(["convoys", "events", "achievements"]),
+    }).parse(request.query);
+    const records = await PlatformRecord.findAll({
+      where: {
+        scopeType: "vtc",
+        scopeId: String(query.vtcId),
+        category: query.category,
+        status: { [Op.ne]: "deleted" },
+      },
+      order: [["updatedAt", "DESC"]],
+      limit: 100,
+    });
+    return { records };
   });
 
   app.get("/api/v1/bot/events", async (request, reply) => {
