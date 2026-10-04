@@ -1611,3 +1611,142 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
     flex-direction: column;
   }
 }
+
+
+.gameOverlayMusic {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 16px;
+  height: 100%;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.gameOverlayMusicInput,
+.gameOverlayMusicPlayer {
+  border: 1px solid rgba(84,224,138,.14);
+  border-radius: 16px;
+  background: rgba(5,18,12,.88);
+}
+
+.gameOverlayMusicInput {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.gameOverlayMusicInput h2 {
+  margin: 0 0 5px;
+  color: #f1fff5;
+}
+
+.gameOverlayMusicInput p {
+  margin: 0;
+  color: #8fa99a;
+  line-height: 1.45;
+}
+
+.gameOverlayMusicUrl {
+  display: flex;
+  gap: 8px;
+}
+
+.gameOverlayMusicUrl input {
+  flex: 1;
+  min-width: 0;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid rgba(84,224,138,.18);
+  border-radius: 10px;
+  background: rgba(3,14,9,.95);
+  color: #edf8f1;
+  font: inherit;
+}
+
+.gameOverlayMusicUrl button {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid rgba(84,224,138,.28);
+  border-radius: 10px;
+  background: rgba(84,224,138,.12);
+  color: #eafff0;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.gameOverlayMusicUrl button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+.gameOverlayMusicProviders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.gameOverlayMusicProviders span {
+  padding: 5px 9px;
+  border: 1px solid rgba(84,224,138,.14);
+  border-radius: 999px;
+  background: rgba(84,224,138,.06);
+  color: #9db7a7;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.gameOverlayMusicPlayer {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.gameOverlayMusicPlayerHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(84,224,138,.12);
+}
+
+.gameOverlayMusicPlayerHead strong {
+  color: #eafff0;
+}
+
+.gameOverlayMusicPlayerHead small {
+  color: #789082;
+}
+
+.gameOverlayMusicPlayer iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  border: 0;
+  background: #020704;
+}
+
+.gameOverlayMusicEmpty {
+  display: grid;
+  place-content: center;
+  gap: 6px;
+  min-height: 300px;
+  text-align: center;
+  color: #71887a;
+}
+
+.gameOverlayMusicEmpty strong {
+  color: #dff4e6;
+}
+
+@media (max-width: 920px) {
+  .gameOverlayMusicUrl {
+    flex-direction: column;
+  }
+
+  .gameOverlayMusicPlayerHead {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
