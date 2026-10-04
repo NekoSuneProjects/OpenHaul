@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify";
-import { Op } from "sequelize";
-import { Fine, Job, User, Vtc, VtcActivityEvent, VtcMember } from "./db.js";
+import { Op, QueryTypes } from "sequelize";
+import { Fine, Job, User, Vtc, VtcActivityEvent, VtcMember, sequelize } from "./db.js";
 import { requireUser } from "./accountSession.js";
 import { getLiveDrivers } from "./live.js";
 
@@ -115,9 +115,48 @@ export async function registerDashboardRoutes(app: FastifyInstance) {
       netIncome: Number(income || 0) - Number(fineAmount || 0),
     };
 
-    const firstJob = await Job.findOne({ where: { driverId: steamId }, order: [["completedAt", "ASC"]] });
-    const longestJob = await Job.max("distanceKm", { where: { driverId: steamId } });
-    const bestIncome = await Job.max("income", { where: { driverId: steamId } });
+    const [firstJob, longestJob, bestIncome, monthlyTrends, gameBreakdown, topDestinations] = await Promise.all([
+      Job.findOne({ where: { driverId: steamId }, order: [["completedAt", "ASC"]] }),
+      Job.max("distanceKm", { where: { driverId: steamId } }),
+      Job.max("income", { where: { driverId: steamId } }),
+      sequelize.query(
+        `SELECT
+           TO_CHAR(DATE_TRUNC('month', completed_at), 'YYYY-MM') AS month,
+           COUNT(*)::int AS jobs,
+           COALESCE(SUM(distance_km), 0)::float AS "distanceKm",
+           COALESCE(SUM(income), 0)::bigint AS income
+         FROM jobs
+         WHERE driver_id = :driverId
+           AND completed_at >= (CURRENT_DATE - INTERVAL '11 months')
+         GROUP BY DATE_TRUNC('month', completed_at)
+         ORDER BY DATE_TRUNC('month', completed_at) ASC`,
+        { replacements: { driverId: steamId }, type: QueryTypes.SELECT },
+      ),
+      sequelize.query(
+        `SELECT game,
+                COUNT(*)::int AS jobs,
+                COALESCE(SUM(distance_km), 0)::float AS "distanceKm",
+                COALESCE(SUM(income), 0)::bigint AS income
+         FROM jobs
+         WHERE driver_id = :driverId
+         GROUP BY game
+         ORDER BY game ASC`,
+        { replacements: { driverId: steamId }, type: QueryTypes.SELECT },
+      ),
+      sequelize.query(
+        `SELECT destination_city AS city,
+                COUNT(*)::int AS jobs,
+                COALESCE(SUM(distance_km), 0)::float AS "distanceKm"
+         FROM jobs
+         WHERE driver_id = :driverId
+           AND destination_city IS NOT NULL
+           AND destination_city <> ''
+         GROUP BY destination_city
+         ORDER BY jobs DESC, "distanceKm" DESC
+         LIMIT 10`,
+        { replacements: { driverId: steamId }, type: QueryTypes.SELECT },
+      ),
+    ]);
 
     return {
       user,
@@ -148,6 +187,10 @@ export async function registerDashboardRoutes(app: FastifyInstance) {
       },
       recentActivity,
       primaryVtc: primaryMembership ? (primaryMembership.get("Vtc") ?? primaryMembership.get("vtc")) : null,
+      trends: monthlyTrends,
+      gameBreakdown,
+      topDestinations,
+      distanceOnJobKm: totals.distanceKm,
       vtcToday: primaryVtcId ? {
         jobs: Number(todayVtcJobs || 0),
         distanceKm: Number(todayVtcDistance || 0),
