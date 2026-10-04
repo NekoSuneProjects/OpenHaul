@@ -190,8 +190,26 @@ app.post("/api/v1/telemetry/live", async (request, reply) => {
     };
   }
 
-  await setLiveDriver(driver);
+  const liveState = await setLiveDriver(driver);
   broadcastDriver(driver);
+
+  if (!liveState.wasOnline && driver.vtcId) {
+    await recordVtcActivity({
+      vtcId: driver.vtcId,
+      driverId: driver.driverId,
+      actorUserId: identity.kind === "user" ? identity.user.id : null,
+      type: "driver.online",
+      title: driver.username + " started driving",
+      detail: [driver.game.toUpperCase(), driver.truck, driver.cargo].filter(Boolean).join(" · "),
+      metadata: {
+        game: driver.game,
+        truck: driver.truck,
+        cargo: driver.cargo,
+        sourceCity: driver.sourceCity,
+        destinationCity: driver.destinationCity,
+      },
+    });
+  }
 
   return reply.code(202).send({ accepted: true, driverId: driver.driverId });
 });
@@ -205,6 +223,17 @@ app.delete("/api/v1/telemetry/live/:driverId", async (request, reply) => {
 
   const driver = await removeLiveDriver(driverId);
   broadcastOffline(driverId, driver?.vtcId);
+  if (driver?.vtcId) {
+    await recordVtcActivity({
+      vtcId: driver.vtcId,
+      driverId,
+      actorUserId: identity.kind === "user" ? identity.user.id : null,
+      type: "driver.offline",
+      title: (driver.username || driverId) + " stopped driving",
+      detail: driver.game.toUpperCase(),
+      metadata: { game: driver.game, truck: driver.truck, cargo: driver.cargo },
+    });
+  }
 
   return { removed: Boolean(driver), driverId };
 });
