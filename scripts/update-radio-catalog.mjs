@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const mirrors = [
@@ -7,11 +7,14 @@ const mirrors = [
   "https://nl1.api.radio-browser.info/",
 ];
 
-const outputPath = process.env.RADIO_OUTPUT
-  ?? path.resolve("apps/web/public/data/radio-stations.json");
+const outputDir = process.env.RADIO_OUTPUT_DIR
+  ? path.resolve(process.env.RADIO_OUTPUT_DIR)
+  : path.resolve("radio-catalog-data");
 
-const concurrency = Math.max(1, Math.min(12, Number(process.env.RADIO_FETCH_CONCURRENCY || 6)));
+const discoveryConcurrency = Math.max(1, Math.min(12, Number(process.env.RADIO_FETCH_CONCURRENCY || 6)));
+const probeConcurrency = Math.max(1, Math.min(64, Number(process.env.RADIO_PROBE_CONCURRENCY || 24)));
 const requestTimeoutMs = Math.max(5000, Math.min(60000, Number(process.env.RADIO_REQUEST_TIMEOUT_MS || 20000)));
+const probeTimeoutMs = Math.max(3000, Math.min(30000, Number(process.env.RADIO_PROBE_TIMEOUT_MS || 8000)));
 
 function queryPaths(country) {
   const upper = country.toUpperCase();
@@ -29,7 +32,7 @@ async function fetchJson(url) {
     signal: AbortSignal.timeout(requestTimeoutMs),
     headers: {
       accept: "application/json",
-      "user-agent": "OpenHaul-RadioCatalog/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
+      "user-agent": "OpenHaul-RadioCatalog/2.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
     },
   });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -67,8 +70,8 @@ async function fetchCountry(country) {
     for (const queryPath of paths) {
       try {
         const rows = await fetchJson(new URL(queryPath, mirror));
-        if (Array.isArray(rows) && rows.length) {
-          console.log(`[${country}] ${rows.length} stations via ${mirror}`);
+        if (Array.isArray(rows)) {
+          console.log(`[${country}] discovered ${rows.length} stations via ${mirror}`);
           return rows;
         }
       } catch (error) {
@@ -77,7 +80,7 @@ async function fetchCountry(country) {
     }
   }
 
-  console.warn(`[${country}] no stations found${errors.length ? " (" + errors.at(-1) + ")" : ""}`);
+  console.warn(`[${country}] discovery failed${errors.length ? " (" + errors.at(-1) + ")" : ""}`);
   return [];
 }
 
@@ -105,11 +108,13 @@ function cleanStation(row, fallbackCountry) {
     .map((value) => value.trim())
     .filter(Boolean);
 
-  const country = String(row?.countrycode || fallbackCountry || "")
+  const country = String(row?.countrycode || row?.country || fallbackCountry || "")
     .trim()
     .toUpperCase();
 
-  const type = tags[0] || String(row?.codec || "").trim() || "Other";
+  if (!/^[A-Z]{2}$/.test(country)) return null;
+
+  const type = String(row?.type || tags[0] || row?.codec || "Other").trim() || "Other";
 
   return {
     name: String(row?.name || "Unknown station").trim(),
@@ -122,45 +127,208 @@ function cleanStation(row, fallbackCountry) {
     language: String(row?.language || "").trim() || null,
     favicon: String(row?.favicon || "").trim() || null,
     homepage: String(row?.homepage || "").trim() || null,
-    stationUuid: String(row?.stationuuid || "").trim() || null,
+    stationUuid: String(row?.stationUuid || row?.stationuuid || "").trim() || null,
   };
 }
 
-async function main() {
-  const countries = await discoverCountries();
-  console.log(`Discovered ${countries.length} country codes`);
+async function readJsonArray(filePath) {
+  try {
+    const value = JSON.parse(await readFile(filePath, "utf8"));
+    return Array.isArray(value) ? value : [];
+  } catch {
+    return [];
+  }
+}
 
-  const rawByCountry = new Map();
+async function existingCountryStations(country) {
+  const dir = path.join(outputDir, country);
+  const [active, dead] = await Promise.all([
+    readJsonArray(path.join(dir, "active.json")),
+    readJsonArray(path.join(dir, "dead.json")),
+  ]);
+  return [...active, ...dead]
+    .map((row) => cleanStation(row, country))
+    .filter(Boolean);
+}
+
+function stationKey(station) {
+  return station.stationUuid || station.url.toLowerCase();
+}
+
+async function probeStation(station) {
+  const checkedAt = new Date().toISOString();
+
+  try {
+    const response = await fetch(station.url, {
+      method: "GET",
+      redirect: "follow",
+      signal: AbortSignal.timeout(probeTimeoutMs),
+      headers: {
+        accept: "audio/*,application/vnd.apple.mpegurl,application/x-mpegURL,*/*;q=0.5",
+        "icy-metadata": "1",
+        range: "bytes=0-2047",
+        "user-agent": "OpenHaul-RadioProbe/2.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
+      },
+    });
+
+    const status = response.status;
+    const contentType = response.headers.get("content-type") || null;
+    try {
+      await response.body?.cancel();
+    } catch {}
+
+    if (response.ok) {
+      return {
+        active: true,
+        station: {
+          ...station,
+          checkedAt,
+          lastActiveAt: checkedAt,
+          status,
+          contentType,
+        },
+      };
+    }
+
+    return {
+      active: false,
+      station: {
+        ...station,
+        checkedAt,
+        status,
+        contentType,
+        lastFailure: `HTTP ${status}`,
+      },
+    };
+  } catch (error) {
+    return {
+      active: false,
+      station: {
+        ...station,
+        checkedAt,
+        status: null,
+        contentType: null,
+        lastFailure: error instanceof Error ? error.message : String(error),
+      },
+    };
+  }
+}
+
+async function mapConcurrent(values, concurrency, fn) {
+  const results = new Array(values.length);
   let cursor = 0;
 
   async function worker() {
     while (true) {
       const index = cursor++;
-      if (index >= countries.length) return;
-      const country = countries[index];
-      rawByCountry.set(country, await fetchCountry(country));
+      if (index >= values.length) return;
+      results[index] = await fn(values[index], index);
     }
   }
 
   await Promise.all(Array.from({ length: concurrency }, () => worker()));
+  return results;
+}
 
-  const dedupe = new Map();
-  for (const country of countries) {
-    for (const row of rawByCountry.get(country) || []) {
-      const station = cleanStation(row, country);
-      if (!station) continue;
-      const key = station.stationUuid || station.url.toLowerCase();
-      if (!dedupe.has(key)) dedupe.set(key, station);
-    }
+async function existingCountryFolders() {
+  try {
+    const entries = await readdir(outputDir, { withFileTypes: true });
+    return entries
+      .filter((entry) => entry.isDirectory() && /^[A-Z]{2}$/.test(entry.name))
+      .map((entry) => entry.name);
+  } catch {
+    return [];
+  }
+}
+
+async function main() {
+  await mkdir(outputDir, { recursive: true });
+
+  const discoveredCountries = await discoverCountries();
+  const previousCountries = await existingCountryFolders();
+  const countries = [...new Set([...discoveredCountries, ...previousCountries])].sort();
+
+  console.log(`Scanning ${countries.length} countries`);
+
+  const manifestCountries = [];
+
+  for (let countryIndex = 0; countryIndex < countries.length; countryIndex += discoveryConcurrency) {
+    const batch = countries.slice(countryIndex, countryIndex + discoveryConcurrency);
+
+    await Promise.all(batch.map(async (country) => {
+      const [discoveredRows, previous] = await Promise.all([
+        fetchCountry(country),
+        existingCountryStations(country),
+      ]);
+
+      const merged = new Map();
+
+      for (const row of discoveredRows) {
+        const station = cleanStation(row, country);
+        if (station) merged.set(stationKey(station), station);
+      }
+
+      for (const station of previous) {
+        const key = stationKey(station);
+        if (!merged.has(key)) merged.set(key, station);
+      }
+
+      const stations = [...merged.values()].sort((a, b) =>
+        a.type.localeCompare(b.type) || a.name.localeCompare(b.name)
+      );
+
+      console.log(`[${country}] probing ${stations.length} unique stations`);
+      const probed = await mapConcurrent(stations, probeConcurrency, probeStation);
+
+      const active = [];
+      const dead = [];
+
+      for (const result of probed) {
+        if (result.active) active.push(result.station);
+        else dead.push(result.station);
+      }
+
+      const countryDir = path.join(outputDir, country);
+      await mkdir(countryDir, { recursive: true });
+      await Promise.all([
+        writeFile(path.join(countryDir, "active.json"), JSON.stringify(active, null, 2) + "\n", "utf8"),
+        writeFile(path.join(countryDir, "dead.json"), JSON.stringify(dead, null, 2) + "\n", "utf8"),
+      ]);
+
+      manifestCountries.push({
+        country,
+        active: `${country}/active.json`,
+        dead: `${country}/dead.json`,
+        activeCount: active.length,
+        deadCount: dead.length,
+        totalCount: active.length + dead.length,
+        updatedAt: new Date().toISOString(),
+      });
+
+      console.log(`[${country}] active=${active.length} dead=${dead.length}`);
+    }));
   }
 
-  const stations = [...dedupe.values()].sort((a, b) =>
-    a.country.localeCompare(b.country) || a.type.localeCompare(b.type) || a.name.localeCompare(b.name)
-  );
+  manifestCountries.sort((a, b) => a.country.localeCompare(b.country));
 
-  await mkdir(path.dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, JSON.stringify(stations, null, 2) + "\n", "utf8");
-  console.log(`Wrote ${stations.length} stations to ${outputPath}`);
+  const manifest = {
+    version: new Date().toISOString(),
+    generatedAt: new Date().toISOString(),
+    branch: "radio-catalog",
+    mirrors,
+    countries: manifestCountries,
+    totals: {
+      active: manifestCountries.reduce((sum, row) => sum + row.activeCount, 0),
+      dead: manifestCountries.reduce((sum, row) => sum + row.deadCount, 0),
+      all: manifestCountries.reduce((sum, row) => sum + row.totalCount, 0),
+    },
+  };
+
+  await writeFile(path.join(outputDir, "manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
+
+  console.log(
+    `Catalog complete: active=${manifest.totals.active} dead=${manifest.totals.dead} total=${manifest.totals.all}`
+  );
 }
 
 await main();
