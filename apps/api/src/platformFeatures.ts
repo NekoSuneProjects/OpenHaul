@@ -9,6 +9,7 @@ import {
   Vtc,
   VtcApiKey,
   VtcMember,
+  AccountSession,
 } from "./db.js";
 import { requireUser } from "./accountSession.js";
 
@@ -38,6 +39,7 @@ const userCategories = new Set([
   "reports",
   "appeals",
   "sessions",
+  "supporters",
 ]);
 
 const vtcCategories = new Set([
@@ -555,6 +557,22 @@ export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
     return { bootstrapComplete: true, record };
   });
 
+  app.get("/api/v1/account/sessions", { preHandler: [requireUser] }, async (request) => ({
+    sessions: await AccountSession.findAll({
+      where: { userId: request.openhaulUser!.id },
+      attributes: ["id", "expiresAt", "createdAt", "updatedAt"],
+      order: [["updatedAt", "DESC"]],
+    }),
+  }));
+
+  app.delete("/api/v1/account/sessions/:sessionId", { preHandler: [requireUser] }, async (request, reply) => {
+    const { sessionId } = z.object({ sessionId: z.coerce.number().int().positive() }).parse(request.params);
+    const session = await AccountSession.findOne({ where: { id: sessionId, userId: request.openhaulUser!.id } });
+    if (!session) return reply.code(404).send({ error: "session_not_found" });
+    await session.destroy();
+    return reply.code(204).send();
+  });
+
   app.get("/api/v1/admin/records", async (request, reply) => {
     if (!adminAuthorized(request)) return reply.code(401).send({ error: "admin_required" });
     const query = z.object({
@@ -566,6 +584,24 @@ export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
     if (query.category) where.category = query.category;
     if (query.scopeType) where.scopeType = query.scopeType;
     return { records: await PlatformRecord.findAll({ where, order: [["updatedAt", "DESC"]], limit: query.limit }) };
+  });
+
+  app.post("/api/v1/admin/records", async (request, reply) => {
+    if (!adminAuthorized(request)) return reply.code(401).send({ error: "admin_required" });
+    const body = z.object({
+      scopeType: z.enum(["global", "user", "vtc"]),
+      scopeId: z.string().min(1).max(80),
+      category: z.string().min(1).max(64),
+      key: z.string().min(1).max(120).optional(),
+      status: z.string().min(1).max(32).default("active"),
+      data: z.record(z.any()).default({}),
+    }).parse(request.body);
+    const record = await PlatformRecord.create({
+      ...body,
+      key: body.key || randomKey(body.category + "_"),
+      createdByUserId: null,
+    });
+    return reply.code(201).send({ record });
   });
 
   app.post("/api/v1/admin/community/:category", async (request, reply) => {
