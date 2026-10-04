@@ -100,30 +100,32 @@ export function RadioPlayer() {
           <strong>{artist} — {title}</strong>
           <span>{presenter} · {data?.listeners?.current ?? "—"} listeners · TruckersFM</span>
         </div>
-        <div className="radioVolume">
-          <button
-            className="volumeButton"
-            onClick={toggleMute}
-            aria-label={volume > 0 ? "Mute TruckersFM" : "Unmute TruckersFM"}
-            title={volume > 0 ? "Mute" : "Unmute"}
-          >
-            {volume === 0 ? "🔇" : volume < 0.45 ? "🔈" : volume < 0.8 ? "🔉" : "🔊"}
+        <div className="radioControls">
+          <button className="play" onClick={toggle} aria-label={playing ? "Pause TruckersFM" : "Play TruckersFM"}>
+            {playing ? "Ⅱ" : "▶"}
           </button>
-          <input
-            className="volumeSlider"
-            type="range"
-            min="0"
-            max="100"
-            step="1"
-            value={Math.round(volume * 100)}
-            onChange={(event) => updateVolume(Number(event.target.value) / 100)}
-            aria-label="TruckersFM volume"
-          />
-          <span className="volumeValue">{Math.round(volume * 100)}%</span>
+          <div className="radioVolume">
+            <button
+              className="volumeButton"
+              onClick={toggleMute}
+              aria-label={volume > 0 ? "Mute TruckersFM" : "Unmute TruckersFM"}
+              title={volume > 0 ? "Mute" : "Unmute"}
+            >
+              {volume === 0 ? "🔇" : volume < 0.45 ? "🔈" : volume < 0.8 ? "🔉" : "🔊"}
+            </button>
+            <input
+              className="volumeSlider"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value={Math.round(volume * 100)}
+              onChange={(event) => updateVolume(Number(event.target.value) / 100)}
+              aria-label="TruckersFM volume"
+            />
+            <span className="volumeValue">{Math.round(volume * 100)}%</span>
+          </div>
         </div>
-        <button className="play" onClick={toggle} aria-label={playing ? "Pause TruckersFM" : "Play TruckersFM"}>
-          {playing ? "Ⅱ" : "▶"}
-        </button>
         <audio ref={audioRef} preload="none" />
       </div>
     </div>
