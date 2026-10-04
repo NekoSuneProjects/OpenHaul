@@ -15,6 +15,10 @@ type DashboardData = {
   career?: { firstDeliveryAt?: string | null; longestJobKm?: number; bestJobIncome?: number; averageIncomePerJob?: number };
   checklist?: Record<string, boolean>;
   recentActivity?: any[];
+  trends?: Array<{ month: string; jobs: number; distanceKm: number; income: number | string }>;
+  gameBreakdown?: Array<{ game: string; jobs: number; distanceKm: number; income: number | string }>;
+  topDestinations?: Array<{ city: string; jobs: number; distanceKm: number }>;
+  distanceOnJobKm?: number;
   primaryVtc?: any;
   vtcToday?: { jobs: number; distanceKm: number; income: number; fineAmount: number; netIncome: number } | null;
 };
@@ -123,6 +127,50 @@ export default function DashboardPage() {
         <article className="card"><h3>{Math.round(data.career?.longestJobKm ?? 0).toLocaleString()} km</h3><p>Longest delivery</p></article>
         <article className="card"><h3>{money(data.career?.averageIncomePerJob)}</h3><p>Average income / job</p></article>
         <article className="card"><h3>{money(data.totals?.netIncome)}</h3><p>Career net earnings</p></article>
+      </section>
+
+      <div className="sectionTitle"><h2>Monthly trends</h2></div>
+      <section className="card" style={{ display: "grid", gap: 10 }}>
+        {(data.trends ?? []).map((row) => {
+          const maxDistance = Math.max(1, ...(data.trends ?? []).map((item) => Number(item.distanceKm ?? 0)));
+          const width = Math.max(4, Math.round((Number(row.distanceKm ?? 0) / maxDistance) * 100));
+          return (
+            <div key={row.month} style={{ display: "grid", gridTemplateColumns: "90px minmax(0,1fr) 190px", gap: 12, alignItems: "center" }}>
+              <strong>{row.month}</strong>
+              <div style={{ height: 10, borderRadius: 99, background: "#06110c", overflow: "hidden" }}>
+                <div style={{ height: "100%", width: String(width) + "%", background: "var(--accent)" }} />
+              </div>
+              <small>{row.jobs} jobs · {Math.round(Number(row.distanceKm ?? 0)).toLocaleString()} km · {money(row.income)}</small>
+            </div>
+          );
+        })}
+      </section>
+
+      <div className="sectionTitle"><h2>Where you drive</h2></div>
+      <section className="grid">
+        {(data.gameBreakdown ?? []).map((row) => (
+          <article className="card" key={row.game}>
+            <div className="pill">{String(row.game).toUpperCase()}</div>
+            <h3 style={{ marginTop: 12 }}>{Math.round(Number(row.distanceKm ?? 0)).toLocaleString()} km</h3>
+            <p>{row.jobs} deliveries · {money(row.income)} income</p>
+          </article>
+        ))}
+        <article className="card">
+          <h3>{Math.round(Number(data.distanceOnJobKm ?? 0)).toLocaleString()} km</h3>
+          <p>Distance driven on logged jobs</p>
+        </article>
+      </section>
+
+      <div className="sectionTitle"><h2>Top destinations</h2></div>
+      <section className="driverList" style={{ padding: 0 }}>
+        {(data.topDestinations ?? []).map((row, index) => (
+          <article className="driver" key={row.city}>
+            <div><strong>#{index + 1} · {row.city}</strong></div>
+            <div><strong>{row.jobs}</strong><small>Deliveries</small></div>
+            <div><strong>{Math.round(Number(row.distanceKm ?? 0)).toLocaleString()} km</strong><small>Distance</small></div>
+            <div />
+          </article>
+        ))}
       </section>
 
       <div className="sectionTitle"><h2>Getting started</h2></div>
