@@ -27,11 +27,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Image src="/branding/openhaul-icon-192.png" alt="" width={38} height={38} priority />
               <span className="brandWordmark">Open<span>Haul</span></span>
             </Link>
-            <div className="links">
+            <div className="links desktopLinks">
               <Link href="/dashboard">Dashboard</Link>
               <Link href="/map">Live Map</Link>
               <Link href="/vtcs">VTCs</Link>
               <Link href="/logbook">Logbook</Link>
+              <Link href="/community">Community</Link>
               <Link href="/account">Account</Link>
               <Link href="/radio">Radio</Link>
               <Link href="/streamers">Streamers</Link>
@@ -39,6 +40,23 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <Link href="/api-docs">API</Link>
               <a href="https://github.com/NekoSuneProjects/OpenHaul">GitHub</a>
             </div>
+            <details className="mobileNav">
+              <summary aria-label="Open navigation">☰</summary>
+              <div className="mobileNavMenu">
+                <Link href="/">Home</Link>
+                <Link href="/dashboard">Dashboard</Link>
+                <Link href="/map">Live Map</Link>
+                <Link href="/vtcs">VTCs</Link>
+                <Link href="/logbook">Logbook</Link>
+                <Link href="/community">Community</Link>
+                <Link href="/account">Profile / Account</Link>
+                <Link href="/radio">Radio</Link>
+                <Link href="/streamers">Streamers</Link>
+                <Link href="/support">Support / Tickets</Link>
+                <Link href="/api-docs">API</Link>
+                <a href="https://github.com/NekoSuneProjects/OpenHaul">GitHub</a>
+              </div>
+            </details>
           </div>
         </nav>
         {children}
