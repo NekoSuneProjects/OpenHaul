@@ -241,8 +241,16 @@ export default function AccountPage() {
       website: String(form.get("website") ?? ""),
       discordUrl: String(form.get("discordUrl") ?? ""),
       logoUrl: String(form.get("logoUrl") ?? ""),
+      bannerUrl: String(form.get("bannerUrl") ?? ""),
+      rules: String(form.get("rules") ?? ""),
+      socials: {
+        x: String(form.get("socialX") ?? ""),
+        youtube: String(form.get("socialYoutube") ?? ""),
+        twitch: String(form.get("socialTwitch") ?? ""),
+      },
       currency: String(form.get("currency") ?? "GBP").toUpperCase(),
       recruitmentOpen: form.get("recruitmentOpen") === "on",
+      recruitmentMode: String(form.get("recruitmentMode") ?? "application"),
       publicBalance: form.get("publicBalance") === "on",
     };
 
@@ -499,7 +507,20 @@ export default function AccountPage() {
         <input name="website" placeholder="Website URL" />
         <input name="discordUrl" placeholder="Discord invite URL" />
         <input name="logoUrl" placeholder="Logo URL" />
+        <input name="bannerUrl" placeholder="Banner URL" />
+        <textarea name="rules" rows={4} placeholder="VTC rules" />
+        <input name="socialX" placeholder="X / Twitter URL" />
+        <input name="socialYoutube" placeholder="YouTube URL" />
+        <input name="socialTwitch" placeholder="Twitch URL" />
         <input name="currency" defaultValue="GBP" maxLength={8} placeholder="Currency" />
+        <label>
+          Recruitment mode
+          <select name="recruitmentMode" defaultValue="application">
+            <option value="open">Open join</option>
+            <option value="application">Application required</option>
+            <option value="invite">Invite only</option>
+          </select>
+        </label>
         <label><input type="checkbox" name="recruitmentOpen" defaultChecked /> Recruitment open</label>
         <label><input type="checkbox" name="publicBalance" /> Show VTC balance publicly</label>
         <button className="button primary" disabled={creating}>{creating ? "Creating…" : "Create VTC"}</button>
