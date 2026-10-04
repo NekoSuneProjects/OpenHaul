@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Net.Http.Json;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 using Microsoft.Web.WebView2.WinForms;
 
 namespace OpenHaul.Client;
@@ -489,9 +490,10 @@ public sealed class MainForm : Form
 
         AddNav(sidebar, "play", "▶   Drive", 42);
         AddNav(sidebar, "minimap", "◎   Mini Map", 94);
-        AddNav(sidebar, "news", "▤   News", 146);
-        AddNav(sidebar, "servers", "◉   Server Status", 198);
-        AddNav(sidebar, "account", "●   Account", 250);
+        AddNav(sidebar, "dispatch", "↗   Dispatch", 146);
+        AddNav(sidebar, "news", "▤   News", 198);
+        AddNav(sidebar, "servers", "◉   Server Status", 250);
+        AddNav(sidebar, "account", "●   Account", 302);
 
         sidebar.Controls.Add(new Label
         {
@@ -499,12 +501,12 @@ public sealed class MainForm : Form
             AutoSize = true,
             ForeColor = C(72, 103, 84),
             Font = new Font("Segoe UI", 7.5F, FontStyle.Bold),
-            Location = new Point(18, 314),
+            Location = new Point(18, 366),
         });
 
-        AddNav(sidebar, "updates", "⇩   Updates", 338);
-        AddNav(sidebar, "diagnostics", "✚   Diagnostics", 390);
-        AddNav(sidebar, "settings", "⚙   Settings", 442);
+        AddNav(sidebar, "updates", "⇩   Updates", 390);
+        AddNav(sidebar, "diagnostics", "✚   Diagnostics", 442);
+        AddNav(sidebar, "settings", "⚙   Settings", 494);
 
         var version = new Label
         {
@@ -645,6 +647,7 @@ public sealed class MainForm : Form
         Control next = page switch
         {
             "minimap" => BuildMinimapPage(),
+            "dispatch" => BuildDispatchPage(),
             "news" => BuildNewsPage(),
             "servers" => BuildServersPage(),
             "account" => BuildAccountPage(),
@@ -889,6 +892,182 @@ public sealed class MainForm : Form
         };
 
         LayoutMiniMap();
+        return page;
+    }
+
+    private Control BuildDispatchPage()
+    {
+        var page = PagePanel();
+        page.Controls.Add(PageTitle(
+            "Dispatch",
+            "Accept or decline VTC assignments. Expired jobs and reassignment are handled by OpenHaul automatically."));
+
+        var refresh = new Button
+        {
+            Text = "Refresh dispatch",
+            Width = 170,
+            Height = 40,
+            Location = new Point(24, 96),
+        };
+        StyleButton(refresh, true);
+        page.Controls.Add(refresh);
+
+        var list = new FlowLayoutPanel
+        {
+            Location = new Point(24, 152),
+            FlowDirection = FlowDirection.TopDown,
+            WrapContents = false,
+            AutoScroll = true,
+            BackColor = Color.Transparent,
+        };
+        page.Controls.Add(list);
+
+        void LayoutDispatch()
+        {
+            list.Size = new Size(
+                Math.Max(540, page.ClientSize.Width - 48),
+                Math.Max(300, page.ClientSize.Height - 176));
+
+            foreach (Control control in list.Controls)
+                control.Width = Math.Max(500, list.ClientSize.Width - 24);
+        }
+
+        async Task LoadAsync()
+        {
+            refresh.Enabled = false;
+            list.Controls.Clear();
+
+            if (string.IsNullOrWhiteSpace(_settings.ClientToken))
+            {
+                list.Controls.Add(new Label
+                {
+                    Text = "Sign in with Steam first to receive dispatch assignments.",
+                    AutoSize = true,
+                    ForeColor = C(150, 180, 163),
+                });
+                refresh.Enabled = true;
+                return;
+            }
+
+            try
+            {
+                using var apiClient = new OpenHaulApi(_settings.ToConfig());
+                var result = await apiClient.GetDispatchesAsync(_lifetime.Token);
+
+                if (result.Dispatches.Count == 0)
+                {
+                    list.Controls.Add(new Label
+                    {
+                        Text = "No active dispatch assignments.",
+                        AutoSize = true,
+                        ForeColor = C(150, 180, 163),
+                    });
+                }
+
+                foreach (var dispatch in result.Dispatches)
+                {
+                    var data = dispatch.Data;
+                    string Value(string key, string fallback = "") =>
+                        data.TryGetValue(key, out var value) && value.ValueKind != JsonValueKind.Null
+                            ? value.ToString()
+                            : fallback;
+
+                    var card = new RoundedPanel
+                    {
+                        Height = 172,
+                        Width = Math.Max(500, list.ClientSize.Width - 24),
+                        BackColor = C(7, 24, 16),
+                        BorderColor = C(20, 63, 41),
+                        Radius = 14,
+                        Margin = new Padding(0, 0, 0, 12),
+                    };
+
+                    var title = new Label
+                    {
+                        Text = Value("title", dispatch.Key),
+                        AutoSize = true,
+                        Font = new Font("Segoe UI", 13F, FontStyle.Bold),
+                        ForeColor = Color.White,
+                        Location = new Point(18, 16),
+                    };
+                    card.Controls.Add(title);
+
+                    var route = Value("sourceCity");
+                    var destination = Value("destinationCity");
+                    var cargo = Value("cargo");
+                    var detail = new Label
+                    {
+                        Text = string.Join("  ·  ", new[]
+                        {
+                            cargo,
+                            !string.IsNullOrWhiteSpace(route) || !string.IsNullOrWhiteSpace(destination)
+                                ? route + " → " + destination
+                                : "",
+                            Value("expiresAt") is { Length: > 0 } expiry ? "Expires " + expiry : "",
+                        }.Where(value => !string.IsNullOrWhiteSpace(value))),
+                        AutoSize = true,
+                        MaximumSize = new Size(650, 0),
+                        ForeColor = C(145, 175, 158),
+                        Location = new Point(18, 52),
+                    };
+                    card.Controls.Add(detail);
+
+                    var statusLabel = new Label
+                    {
+                        Text = dispatch.Status.ToUpperInvariant(),
+                        AutoSize = true,
+                        ForeColor = dispatch.Status == "accepted" ? C(82, 234, 142) : C(240, 190, 95),
+                        Location = new Point(18, 92),
+                    };
+                    card.Controls.Add(statusLabel);
+
+                    if (dispatch.Status == "pending")
+                    {
+                        var accept = new Button { Text = "Accept", Width = 110, Height = 38, Location = new Point(18, 118) };
+                        StyleButton(accept, true);
+                        accept.Click += async (_, _) =>
+                        {
+                            using var client = new OpenHaulApi(_settings.ToConfig());
+                            await client.RespondDispatchAsync(dispatch.Id, "accepted", _lifetime.Token);
+                            await LoadAsync();
+                        };
+                        card.Controls.Add(accept);
+
+                        var decline = new Button { Text = "Decline", Width = 110, Height = 38, Location = new Point(140, 118) };
+                        StyleButton(decline, false);
+                        decline.Click += async (_, _) =>
+                        {
+                            using var client = new OpenHaulApi(_settings.ToConfig());
+                            await client.RespondDispatchAsync(dispatch.Id, "declined", _lifetime.Token);
+                            await LoadAsync();
+                        };
+                        card.Controls.Add(decline);
+                    }
+
+                    list.Controls.Add(card);
+                }
+            }
+            catch (Exception ex)
+            {
+                list.Controls.Add(new Label
+                {
+                    Text = "Unable to load dispatch: " + ex.Message,
+                    AutoSize = true,
+                    ForeColor = C(220, 130, 110),
+                });
+            }
+            finally
+            {
+                refresh.Enabled = true;
+                LayoutDispatch();
+            }
+        }
+
+        refresh.Click += async (_, _) => await LoadAsync();
+        page.HandleCreated += async (_, _) => await LoadAsync();
+        page.Resize += (_, _) => LayoutDispatch();
+        LayoutDispatch();
+
         return page;
     }
 
