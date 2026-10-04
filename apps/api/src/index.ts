@@ -6,7 +6,7 @@ import { Op } from "sequelize";
 import { z } from "zod";
 import { DriverPosition, Fine, Job, PlatformRecord, TelemetryEvent, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
-import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
+import { getLiveDrivers, removeLiveDriver, setLiveDriver, setClientPresence, removeClientPresence } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
 import { registerDonationRoutes } from "./donations.js";
 import { registerStatsRoutes } from "./stats.js";
@@ -169,6 +169,29 @@ const telemetryEventSchema = z.object({
 const lastPositionStoredAt = new Map<string, number>();
 
 app.get("/health", async () => ({ ok: true, service: "openhaul-api" }));
+
+app.post("/api/v1/client/presence", async (request, reply) => {
+  const identity = await requireTelemetryIdentity(request, reply);
+  if (!identity) return;
+  if (identity.kind !== "user") return reply.code(403).send({ error: "user_client_required" });
+
+  await setClientPresence({
+    steamId: identity.user.steamId,
+    displayName: identity.user.displayName,
+    updatedAt: new Date().toISOString(),
+  });
+
+  return reply.code(202).send({ accepted: true });
+});
+
+app.delete("/api/v1/client/presence", async (request, reply) => {
+  const identity = await requireTelemetryIdentity(request, reply);
+  if (!identity) return;
+  if (identity.kind !== "user") return reply.code(403).send({ error: "user_client_required" });
+
+  await removeClientPresence(identity.user.steamId);
+  return reply.code(204).send();
+});
 
 app.get("/api/v1/public/live", async (request) => {
   const query = z.object({ vtc: z.coerce.number().int().positive().optional() }).parse(request.query);
