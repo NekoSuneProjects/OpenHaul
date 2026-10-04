@@ -40,6 +40,21 @@ internal static class Program
 
             WaitForProcessExit(pid, logPath);
 
+            var installDirectory = Path.GetDirectoryName(restart)
+                ?? throw new InvalidOperationException("Unable to resolve OpenHaul install directory.");
+            var rollbackRoot = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                "OpenHaul",
+                "rollback");
+            Directory.CreateDirectory(rollbackRoot);
+            var rollbackDirectory = Path.Combine(
+                rollbackRoot,
+                DateTimeOffset.UtcNow.ToString("yyyyMMdd-HHmmss"));
+
+            Log(logPath, "Creating rollback snapshot: " + rollbackDirectory);
+            CopyDirectory(installDirectory, rollbackDirectory);
+            PruneRollbackSnapshots(rollbackRoot, keep: 3);
+
             Log(logPath, "Launching installer: " + installer);
 
             using var installerProcess = Process.Start(new ProcessStartInfo(installer)
@@ -53,13 +68,22 @@ internal static class Program
             Log(logPath, "Installer exit code: " + installerProcess.ExitCode);
 
             if (installerProcess.ExitCode != 0)
+            {
+                Log(logPath, "Installer failed; restoring rollback snapshot.");
+                RestoreDirectory(rollbackDirectory, installDirectory);
                 throw new InvalidOperationException(
-                    "OpenHaul installer failed with exit code " + installerProcess.ExitCode + ".");
+                    "OpenHaul installer failed with exit code " + installerProcess.ExitCode +
+                    ". The previous launcher files were restored automatically.");
+            }
 
             if (!File.Exists(restart))
+            {
+                Log(logPath, "Updated launcher missing; restoring rollback snapshot.");
+                RestoreDirectory(rollbackDirectory, installDirectory);
                 throw new FileNotFoundException(
-                    "Updated OpenHaul launcher was not found after installation.",
+                    "Updated OpenHaul launcher was not found after installation. The previous files were restored.",
                     restart);
+            }
 
             Log(logPath, "Restarting OpenHaul: " + restart);
 
@@ -122,6 +146,59 @@ internal static class Program
         }
 
         return result;
+    }
+
+    private static void CopyDirectory(string source, string destination)
+    {
+        Directory.CreateDirectory(destination);
+
+        foreach (var file in Directory.EnumerateFiles(source))
+        {
+            var name = Path.GetFileName(file);
+            File.Copy(file, Path.Combine(destination, name), overwrite: true);
+        }
+
+        foreach (var directory in Directory.EnumerateDirectories(source))
+        {
+            var name = Path.GetFileName(directory);
+            if (name.Equals("rollback", StringComparison.OrdinalIgnoreCase)) continue;
+            CopyDirectory(directory, Path.Combine(destination, name));
+        }
+    }
+
+    private static void RestoreDirectory(string snapshot, string destination)
+    {
+        if (!Directory.Exists(snapshot)) return;
+
+        Directory.CreateDirectory(destination);
+        foreach (var file in Directory.EnumerateFiles(snapshot))
+        {
+            File.Copy(file, Path.Combine(destination, Path.GetFileName(file)), overwrite: true);
+        }
+
+        foreach (var directory in Directory.EnumerateDirectories(snapshot))
+        {
+            RestoreDirectory(directory, Path.Combine(destination, Path.GetFileName(directory)));
+        }
+    }
+
+    private static void PruneRollbackSnapshots(string root, int keep)
+    {
+        try
+        {
+            var directories = new DirectoryInfo(root)
+                .EnumerateDirectories()
+                .OrderByDescending(directory => directory.CreationTimeUtc)
+                .Skip(Math.Max(1, keep))
+                .ToArray();
+
+            foreach (var directory in directories)
+                directory.Delete(recursive: true);
+        }
+        catch
+        {
+            // Rollback retention cleanup must not block an update.
+        }
     }
 
     private static void ScheduleSelfDelete(string path, string logPath)
