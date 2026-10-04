@@ -19,6 +19,11 @@ public sealed record PluginLiveTelemetry(
     double? NavigationDistanceM,
     double? NavigationTimeS,
     double? SpeedLimitKph,
+    double? TruckDamagePercent,
+    double? TrailerDamagePercent,
+    double? CargoDamagePercent,
+    bool? SpecialJob,
+    bool? CargoLoaded,
     string? Truck,
     string? Cargo,
     string? SourceCity,
@@ -64,6 +69,11 @@ public sealed record LiveTelemetry(
     double? NavigationDistanceM = null,
     double? NavigationTimeS = null,
     double? SpeedLimitKph = null,
+    double? TruckDamagePercent = null,
+    double? TrailerDamagePercent = null,
+    double? CargoDamagePercent = null,
+    bool? SpecialJob = null,
+    bool? CargoLoaded = null,
     string? SourceCompany = null,
     string? DestinationCompany = null);
 
