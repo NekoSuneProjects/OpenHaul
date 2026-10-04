@@ -1311,7 +1311,7 @@ export function MapClient() {
           <button className="button" onClick={() => void toggleFullscreen()}>{fullscreen ? "Exit fullscreen" : "Full screen"}</button>
         </div> : null}
 
-        <div className="mapCameraStatus">
+        {!embedded ? <div className="mapCameraStatus">
           {selectedDriverId
             ? (() => {
                 const selected = visibleDrivers.find((driver) => driver.driverId === selectedDriverId);
@@ -1320,11 +1320,11 @@ export function MapClient() {
                   : "Selected driver unavailable";
               })()
             : "Select a truck marker or driver below to enable 1st/3rd person follow."}
-        </div>
+        </div> : null}
         <div ref={containerRef} className="mapCanvas" />
       </section>
 
-      <div className="driverList" style={{ padding: "14px 0 50px" }}>
+      {!embedded ? <div className="driverList" style={{ padding: "14px 0 50px" }}>
         {visibleDrivers.map((driver) => (
           <article
             className={"driver mapDriverRow " + (selectedDriverId === driver.driverId ? "selectedDriver" : "")}
@@ -1359,7 +1359,7 @@ export function MapClient() {
             </button>
           </article>
         ))}
-      </div>
+      </div> : null
     </main>
   );
 }
