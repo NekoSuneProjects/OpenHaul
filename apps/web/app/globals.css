@@ -2012,3 +2012,61 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
   padding: 0 9px;
   background: rgba(5,18,12,.88);
 }
+
+
+.gameOverlayRadioButtonRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.gameOverlayRadioStop,
+.gameOverlayMusicTransport button {
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid rgba(84,224,138,.20);
+  border-radius: 10px;
+  color: #dff4e6;
+  background: rgba(84,224,138,.07);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.gameOverlayRadioStop:hover:not(:disabled),
+.gameOverlayMusicTransport button:hover {
+  border-color: rgba(84,224,138,.42);
+  background: rgba(84,224,138,.13);
+}
+
+.gameOverlayRadioStop:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+.gameOverlayMusicPlayerHead > div:first-child {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.gameOverlayMusicTransport {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gameOverlayMusicTransport button {
+  min-height: 34px;
+  font-size: .75rem;
+}
+
+@media (max-width: 920px) {
+  .gameOverlayRadioButtonRow {
+    grid-template-columns: 1fr;
+  }
+
+  .gameOverlayMusicTransport {
+    width: 100%;
+  }
+}
