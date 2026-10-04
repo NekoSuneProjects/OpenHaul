@@ -293,6 +293,7 @@ VtcMember.init({
   vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
   userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
   role: { type: DataTypes.STRING(32), allowNull: false, defaultValue: "member" },
+  customRoleKey: { type: DataTypes.STRING(120), allowNull: true, field: "custom_role_key" },
   title: { type: DataTypes.STRING(80), allowNull: true },
   status: { type: DataTypes.STRING(32), allowNull: false, defaultValue: "active" },
   joinedAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW, field: "joined_at" },
