@@ -37,6 +37,7 @@ import { registerVtcSimulationRoutes } from "./vtcSimulation.js";
 import { registerPaymentAdapterRoutes } from "./paymentAdapters.js";
 import { registerMapIntelligenceRoutes } from "./mapIntelligence.js";
 import { registerDiscordLinkRoutes } from "./discordLink.js";
+import { registerRadioProxyRoutes } from "./radioProxy.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true, credentials: true });
@@ -69,6 +70,7 @@ await registerVtcSimulationRoutes(app);
 await registerPaymentAdapterRoutes(app);
 await registerMapIntelligenceRoutes(app);
 await registerDiscordLinkRoutes(app);
+await registerRadioProxyRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
