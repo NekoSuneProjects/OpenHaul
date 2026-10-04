@@ -1359,7 +1359,7 @@ export function MapClient() {
             </button>
           </article>
         ))}
-      </div> : null
+      </div> : null}
     </main>
   );
 }
