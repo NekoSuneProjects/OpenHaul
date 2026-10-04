@@ -80,6 +80,41 @@ export async function getLiveDrivers(vtcId?: number): Promise<LiveDriver[]> {
 }
 
 
+export type ClientPresence = {
+  steamId: string;
+  displayName: string;
+  updatedAt: string;
+};
+
+export async function setClientPresence(presence: ClientPresence) {
+  const now = Date.now();
+  const key = `presence:client:${presence.steamId}`;
+
+  const tx = redis.multi();
+  tx.set(key, JSON.stringify(presence), "EX", TTL_SECONDS);
+  tx.zadd("presence:clients", now, presence.steamId);
+  tx.zremrangebyscore("presence:clients", 0, now - TTL_SECONDS * 1000);
+  await tx.exec();
+}
+
+export async function getClientPresences(): Promise<ClientPresence[]> {
+  const now = Date.now();
+  const ids: string[] = await redis.zrangebyscore("presence:clients", now - TTL_SECONDS * 1000, "+inf");
+  if (!ids.length) return [];
+
+  const values = await redis.mget(ids.map((id) => `presence:client:${id}`));
+  return values
+    .filter((value): value is string => Boolean(value))
+    .map((value) => JSON.parse(value) as ClientPresence);
+}
+
+export async function removeClientPresence(steamId: string) {
+  const tx = redis.multi();
+  tx.del(`presence:client:${steamId}`);
+  tx.zrem("presence:clients", steamId);
+  await tx.exec();
+}
+
 export async function removeLiveDriver(driverId: string): Promise<LiveDriver | null> {
   const key = `live:driver:${driverId}`;
   const raw = await redis.get(key);
