@@ -27,6 +27,7 @@ import { registerDashboardRoutes } from "./dashboard.js";
 import { registerLogbookRoutes } from "./logbook.js";
 import { registerPlatformFeatureRoutes } from "./platformFeatures.js";
 import { resolveVtcIdentifier } from "./vtcLookup.js";
+import { registerVersioningRoutes } from "./versioning.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true, credentials: true });
@@ -50,6 +51,7 @@ await registerVtcOperationsRoutes(app);
 await registerDashboardRoutes(app);
 await registerLogbookRoutes(app);
 await registerPlatformFeatureRoutes(app);
+await registerVersioningRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
