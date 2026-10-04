@@ -24,6 +24,7 @@ public sealed class GameOverlayForm : Form
     private bool _userVisible;
     private bool _webReady;
     private bool _webInitializing;
+    private Size _lastWebViewViewport;
 
     public bool IsUserVisible => _userVisible;
 
@@ -41,6 +42,9 @@ public sealed class GameOverlayForm : Form
 
         _webView.Dock = DockStyle.Fill;
         Controls.Add(_webView);
+
+        Resize += (_, _) => SyncWebViewViewport();
+        _webView.Resize += (_, _) => NotifyOverlayViewportChanged();
 
         _windowTimer.Interval = 150;
         _windowTimer.Tick += (_, _) => TrackGameWindow();
@@ -104,6 +108,7 @@ public sealed class GameOverlayForm : Form
         {
             _ = EnsureWebViewAsync();
             TrackGameWindow(forceShow: true);
+            BeginInvoke(new Action(() => SyncWebViewViewport(forceNotify: true)));
         }
         else
         {
@@ -183,6 +188,7 @@ public sealed class GameOverlayForm : Form
 
             _webReady = true;
             NavigateOverlay();
+            SyncWebViewViewport(forceNotify: true);
         }
         catch (Exception ex)
         {
@@ -207,6 +213,8 @@ public sealed class GameOverlayForm : Form
         if (e.IsSuccess)
         {
             _webReconnectTimer.Stop();
+            if (_userVisible)
+                BeginInvoke(new Action(() => SyncWebViewViewport(forceNotify: true)));
             return;
         }
 
@@ -265,6 +273,10 @@ public sealed class GameOverlayForm : Form
 
             switch (type)
             {
+                case "overlay.ready":
+                    SyncWebViewViewport(forceNotify: true);
+                    break;
+
                 case "overlay.hide":
                     HideOverlay();
                     break;
@@ -386,6 +398,7 @@ public sealed class GameOverlayForm : Form
             SwpShowWindow | SwpNoActivate);
 
         if (!Visible) Show();
+        SyncWebViewViewport();
 
         // Window tracking must not repeatedly steal focus from WebView controls
         // or other applications. Activate only when opening the overlay.
@@ -397,6 +410,58 @@ public sealed class GameOverlayForm : Form
                 ReleaseInteractiveCursor();
                 _webView.Focus();
             }
+
+            BeginInvoke(new Action(() => SyncWebViewViewport(forceNotify: true)));
+        }
+    }
+
+    private void SyncWebViewViewport(bool forceNotify = false)
+    {
+        if (IsDisposed || Disposing || ClientSize.Width <= 0 || ClientSize.Height <= 0)
+            return;
+
+        // SetWindowPos resizes the native overlay to the game client. Force the
+        // child WebView to the same client rectangle immediately instead of
+        // waiting for a later WinForms layout pass.
+        _webView.SetBounds(0, 0, ClientSize.Width, ClientSize.Height);
+        _webView.PerformLayout();
+
+        var viewport = _webView.ClientSize;
+        if (!forceNotify && viewport == _lastWebViewViewport)
+            return;
+
+        _lastWebViewViewport = viewport;
+        NotifyOverlayViewportChanged();
+    }
+
+    private void NotifyOverlayViewportChanged()
+    {
+        if (!_webReady || _webView.CoreWebView2 is null || !_userVisible)
+            return;
+
+        try
+        {
+            // The map lives in the overlay's same-origin iframe. Dispatching a
+            // resize there makes MapLibre rebuild its backing canvas to the
+            // real plugin viewport instead of keeping its small startup size.
+            _ = _webView.CoreWebView2.ExecuteScriptAsync("""
+                (() => {
+                  const notify = () => {
+                    window.dispatchEvent(new Event('resize'));
+                    const frame = document.querySelector('iframe.gameOverlayMap');
+                    frame?.contentWindow?.dispatchEvent(new Event('resize'));
+                  };
+                  notify();
+                  requestAnimationFrame(notify);
+                  setTimeout(notify, 100);
+                  setTimeout(notify, 300);
+                })();
+                """);
+        }
+        catch
+        {
+            // Navigation can replace the document between the readiness check
+            // and script execution. The next resize/navigation callback retries.
         }
     }
 
