@@ -219,7 +219,7 @@ export async function registerVtcOperationsRoutes(app: FastifyInstance) {
 
     const configs = await VtcDiscordConfig.findAll({
       where: { enabled: true },
-      include: [{ model: Vtc, attributes: ["id", "name", "tag"] }],
+      include: [{ model: Vtc, attributes: ["id", "name", "tag", "recruitmentOpen"] }],
       order: [["vtcId", "ASC"]],
     });
     return { configs };
