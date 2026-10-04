@@ -6,6 +6,7 @@ import { Fine, Job, User, Vtc, VtcApplication, VtcInvite, VtcLedgerEntry, VtcMem
 import { requireUser } from "./accountSession.js";
 import { getLiveDrivers } from "./live.js";
 import { recordVtcActivity } from "./vtcOperations.js";
+import { resolveVtcIdentifier } from "./vtcLookup.js";
 
 const createSchema = z.object({
   name: z.string().min(2).max(120),
@@ -627,12 +628,12 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
   });
 
   app.get("/api/v1/public/vtcs/:id/community", async (request, reply) => {
-    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
-    const vtc = await Vtc.findByPk(id);
+    const { id } = z.object({ id: z.string().min(1).max(120) }).parse(request.params);
+    const vtc = await resolveVtcIdentifier(id);
     if (!vtc) return reply.code(404).send({ error: "vtc_not_found" });
 
     const members = await VtcMember.findAll({
-      where: { vtcId: id, status: "active" },
+      where: { vtcId: vtc.id, status: "active" },
       attributes: ["id", "role", "title", "joinedAt"],
       include: [{
         model: User,
@@ -660,7 +661,7 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
     };
 
     if (Boolean(vtc.getDataValue("publicBalance"))) {
-      const ledger = await ledgerSummary(id);
+      const ledger = await ledgerSummary(vtc.id);
       result.balance = ledger.balance;
       result.currency = vtc.getDataValue("currency");
     }
