@@ -916,6 +916,7 @@ export function MapClient() {
         if (!Number.isFinite(x1 + x2 + y1 + y2)) return [];
         if (Math.abs(x2 - x1) > 500_000 || Math.abs(y2 - y1) > 500_000) return [];
 
+        const area = { x1, y1, x2, y2 };
         const params = new URLSearchParams({
           game,
           x1: String(Math.round(x1)),
@@ -923,9 +924,38 @@ export function MapClient() {
           x2: String(Math.round(x2)),
           y2: String(Math.round(y2)),
         });
-        return [fetch(api + "/api/v1/public/truckersmp/area?" + params.toString(), { cache: "no-store" })
-          .then((response) => response.ok ? response.json() : null)
-          .catch(() => null)];
+
+        return [(async () => {
+          let proxied: any = null;
+          try {
+            const response = await fetch(
+              api + "/api/v1/public/truckersmp/area?" + params.toString(),
+              { cache: "no-store" },
+            );
+            if (response.ok) proxied = await response.json();
+          } catch {}
+
+          // Docker hosts can occasionally fail outbound DNS/Cloudflare access
+          // to the public tracker even though a normal browser can reach it.
+          // Fall back to the exact browser-side calls used by map.truckersmp.com.
+          if (!proxied || ((proxied.drivers?.length ?? 0) === 0 && Number(proxied.totalOnline ?? 0) > 0)) {
+            try {
+              const direct = await loadTrackerAreaDirect(game, area);
+              if (direct.drivers.length > 0 || !proxied) {
+                return {
+                  ...(proxied ?? {}),
+                  game,
+                  drivers: direct.drivers,
+                  servers: direct.servers,
+                  totalOnline: direct.totalOnline,
+                  provider: "direct-browser",
+                };
+              }
+            } catch {}
+          }
+
+          return proxied;
+        })()];
       });
 
       const results = await Promise.all(requests);
