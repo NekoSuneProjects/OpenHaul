@@ -11,12 +11,12 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Automatic ETS2/ATS installation detection
 - [x] Automatic telemetry plugin installer
 - [ ] Fix/keep all Windows client, SCS plugin and Docker CI builds green
-- [ ] Build the SCS plugin whenever client/telemetry/shared contracts change
-- [ ] Publish client + matching SCS plugin from the same commit/release
+- [x] Build the SCS plugin whenever client/telemetry/shared contracts change
+- [x] Publish client + matching SCS plugin from the same commit/release
 - [ ] Version compatibility contract between website, client and telemetry plugin
-- [ ] Release manifest with version, download URL and SHA-256 checksum
-- [ ] Automatic client updater with update/download/install/restart flow
-- [ ] Automatic telemetry plugin updater
+- [x] Release manifest with version, download URL and SHA-256 checksum
+- [x] Automatic client updater with update/download/install/restart flow
+- [x] Automatic telemetry plugin updater
 - [ ] Website/client update status: latest version, installed version, plugin version, compatible/outdated
 - [ ] Stable/Beta release channels and release history/changelog
 - [ ] Signed client/plugin releases from GitHub Actions
@@ -52,7 +52,7 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Global live-data map
 - [x] VTC filter contract: /map?vtc=ID
 - [x] Realtime WebSocket updates
-- [ ] Player dot/truck arrow rotates to show exactly which direction the driver is facing
+- [x] Player dot/truck arrow rotates to show exactly which direction the driver is facing
 - [ ] Marker details: driver, VTC, truck, cargo, speed, destination, job state and server
 - [ ] Filters for ETS2/ATS, VTC, driver, online/driving/on-job and TruckersMP server
 - [ ] Driver/VTC shareable map links
@@ -64,17 +64,17 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 ## P0 — Accounts, profiles and Steam
 - [x] Steam account authentication
 - [x] Steam-linked driver profiles
-- [ ] Public/private profile controls
-- [ ] Verify ETS2/ATS ownership through Steam where available
-- [ ] Display owned ETS2/ATS DLC where Steam exposes it
+- [x] Public/private profile controls
+- [x] Verify ETS2/ATS ownership through Steam where available
+- [x] Display owned ETS2/ATS DLC where Steam exposes it
 - [ ] Discord account linking
-- [ ] Profile avatar/banner, country, bio and social links
+- [x] Profile avatar/banner, country, bio and social links
 - [ ] Profile tabs: About, Logbook, Statistics, Road Trip, Reputation, Achievements, Challenges, Awards and Albums
 - [ ] Account level/XP and progression
 - [ ] Driver status: offline, client online, menu, driving, on-job and paused
 - [ ] Recent movement/activity timeline
 - [ ] Career summary: deliveries, distance, longest job, total profit, average/job, best month and activity
-- [ ] Personal warnings, mutes, bans, kicks/disciplinary actions and name-change history with appropriate visibility
+- [x] Personal warnings, mutes, bans, kicks/disciplinary actions and name-change history with appropriate visibility
 - [ ] Driver game filters: All / ETS2 / ATS
 
 ## P0 — VTC/company system
@@ -85,27 +85,27 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Job data storage/API foundation
 - [x] Fines/events data storage/API foundation
 - [x] Statistics and leaderboards
-- [ ] Remove meaningless bootstrap/empty VTC IDs from normal user views
+- [x] Remove meaningless bootstrap/empty VTC IDs from normal user views
 - [ ] Create VTC with unique name/slug, logo/banner, description, rules, socials and recruitment state
-- [ ] Invite members with expiring/one-use invite links
-- [ ] Join, leave, kick and ownership-transfer flows with owner protection
-- [ ] Public/open join, invite-only and application-required recruitment modes
+- [x] Invite members with expiring/one-use invite links
+- [x] Join, leave, kick and ownership-transfer flows with owner protection
+- [x] Public/open join, invite-only and application-required recruitment modes
 - [ ] Custom VTC roles, granular permissions and role ordering
-- [ ] Member directory with status, role, join date and contribution stats
+- [x] Member directory with status, role, join date and contribution stats
 - [ ] VTC dashboard: members online, jobs today/month, distance, revenue, expenses and profit/loss
 - [ ] VTC logbook with search, filters, pagination and export
-- [ ] VTC member action/audit log
-- [ ] Log promotions/demotions, role changes, joins/leaves/kicks, warnings, mutes, bans and name changes
+- [x] VTC member action/audit log
+- [x] Log promotions/demotions, role changes, joins/leaves/kicks, warnings, mutes, bans and name changes
 - [ ] VTC disciplinary system: warnings, strikes/points, notes, temporary/permanent mutes and bans
 - [ ] Permission controls for who can see/add/edit disciplinary records
 - [ ] Fleet/garage management: trucks, trailers, garages and assignments
-- [ ] Company ledger/balance with job income, fines, fuel/repair/toll expenses and adjustments
-- [ ] Per-member earnings/contribution and losses from penalties/red lights/damage
+- [x] Company ledger/balance with job income, fines, fuel/repair/toll expenses and adjustments
+- [x] Per-member earnings/contribution and losses from penalties/red lights/damage
 - [ ] VTC statistics, rankings and monthly trends
 - [ ] VTC achievements, awards and challenges
 - [ ] VTC reputation system
 - [ ] Convoy/events manager with attendance
-- [ ] Company/VTC list and searchable discovery/recruitment page
+- [x] Company/VTC list and searchable discovery/recruitment page
 - [ ] VTC API keys, webhooks and protected VTC data
 
 
@@ -138,16 +138,16 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Completed-job embeds
 - [x] Fine embeds
 - [x] Online/offline events
-- [ ] Let a VTC add/install the OpenHaul bot from its VTC dashboard
+- [x] Let a VTC add/install the OpenHaul bot from its VTC dashboard
 - [ ] VTC Discord server binding and ownership/permission verification
-- [ ] Per-VTC Discord channel configuration UI
+- [x] Per-VTC Discord channel configuration UI
 - [ ] Notification channels for jobs, fines, joins/leaves, applications, moderation, achievements and convoys
 - [ ] Application system: submit/review/accept/deny from website and Discord
 - [ ] Role synchronization between OpenHaul VTC roles and Discord roles
 - [ ] Configurable job/fine/penalty embeds
 - [ ] Driver lookup, VTC stats, leaderboard, current-driver-status and recent-job commands
 - [ ] Convoy/event announcements and reminders
-- [ ] Audit/moderation notifications
+- [x] Audit/moderation notifications
 - [ ] Optional welcome/leave messages
 - [ ] Per-VTC bot feature toggles and permissions
 
@@ -221,10 +221,10 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [ ] Self-hosting setup wizard/admin bootstrap
 - [ ] Database migrations and upgrade-safe schema versioning
 - [ ] Backup/restore documentation and tooling
-- [ ] Docker health checks and dependency readiness
-- [ ] Environment-variable documentation and production examples
-- [ ] GitHub Container Registry images with versioned tags
-- [ ] Keep core OpenHaul features usable in self-hosted Docker deployments
+- [x] Docker health checks and dependency readiness
+- [x] Environment-variable documentation and production examples
+- [x] GitHub Container Registry images with versioned tags
+- [x] Keep core OpenHaul features usable in self-hosted Docker deployments
 
 ## P2 — Admin, moderation and security
 - [ ] Platform admin dashboard
@@ -252,9 +252,9 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 ## UX rules / implementation notes
 - [ ] Do not expose raw meaningless database IDs as the primary VTC identity
 - [ ] Prefer names/slugs and human-readable identifiers in UI/routes
-- [ ] Do not show empty/bootstrap VTCs as real companies
+- [x] Do not show empty/bootstrap VTCs as real companies
 - [ ] Make desktop tables usable as cards on mobile
 - [ ] Keep map interactions touch-friendly
-- [ ] Make job/penalty/moderation histories auditable with timestamps and actor/source
-- [ ] Automatically derive statistics from stored events instead of manually maintained counters
+- [x] Make job/penalty/moderation histories auditable with timestamps and actor/source
+- [x] Automatically derive statistics from stored events instead of manually maintained counters
 - [ ] Keep client/plugin/server protocol versions explicit and backwards-compatible where practical
