@@ -12,6 +12,7 @@ import {
   AccountSession,
 } from "./db.js";
 import { requireUser } from "./accountSession.js";
+import { resolveClientIp } from "./requestClient.js";
 
 const publicCategories = new Set([
   "announcements",
@@ -102,29 +103,12 @@ function randomKey(prefix: string) {
   return prefix + randomBytes(12).toString("base64url");
 }
 
-function rateLimitClientKey(request: FastifyRequest) {
-  const candidates = [
-    request.headers["cf-connecting-ip"],
-    request.headers["x-real-ip"],
-    request.headers["x-forwarded-for"],
-  ];
-
-  for (const value of candidates) {
-    const raw = Array.isArray(value) ? value[0] : value;
-    if (typeof raw !== "string" || !raw.trim()) continue;
-    const first = raw.split(",")[0].trim().replace(/^::ffff:/, "");
-    if (first) return first;
-  }
-
-  return String(request.ip || "unknown").replace(/^::ffff:/, "");
-}
-
 export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
   const buckets = new Map<string, { windowStart: number; count: number }>();
 
   app.addHook("onRequest", async (request, reply) => {
     const now = Date.now();
-    const client = rateLimitClientKey(request);
+    const client = resolveClientIp(request).ip;
     const path = request.url.split("?")[0];
 
     const bucketType = path === "/api/v1/public/music/search"
