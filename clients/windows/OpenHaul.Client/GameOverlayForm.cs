@@ -1,25 +1,28 @@
 using System.Diagnostics;
-using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
+using System.Text.Json;
+using Microsoft.Web.WebView2.Core;
+using Microsoft.Web.WebView2.WinForms;
 
 namespace OpenHaul.Client;
 
 /// <summary>
-/// External, click-through OpenHaul HUD for ETS2/ATS.
-/// It follows the game client window and never injects code into the game.
+/// Full OpenHaul in-game workspace for ETS2/ATS.
+/// F8 opens a real interactive overlay over the game with map, drive and settings pages.
+/// The overlay is hidden when the simulator is not the foreground app.
 /// </summary>
 public sealed class GameOverlayForm : Form
 {
-    private const int WsExTransparent = 0x00000020;
     private const int WsExToolWindow = 0x00000080;
     private const int WsExNoActivate = 0x08000000;
 
     private readonly ClientSettings _settings;
+    private readonly WebView2 _webView = new();
     private readonly System.Windows.Forms.Timer _windowTimer = new();
     private PluginLiveTelemetry? _telemetry;
-    private DateTimeOffset _lastTelemetryAt;
     private IntPtr _gameWindow;
-    private bool _userVisible = true;
+    private bool _userVisible;
+    private bool _webReady;
 
     public bool IsUserVisible => _userVisible;
 
@@ -31,19 +34,17 @@ public sealed class GameOverlayForm : Form
         FormBorderStyle = FormBorderStyle.None;
         ShowInTaskbar = false;
         TopMost = true;
-        BackColor = Color.Fuchsia;
-        TransparencyKey = Color.Fuchsia;
-        DoubleBuffered = true;
+        BackColor = Color.Black;
         StartPosition = FormStartPosition.Manual;
+        KeyPreview = true;
 
-        SetStyle(
-            ControlStyles.AllPaintingInWmPaint |
-            ControlStyles.UserPaint |
-            ControlStyles.OptimizedDoubleBuffer,
-            true);
+        _webView.Dock = DockStyle.Fill;
+        Controls.Add(_webView);
 
-        _windowTimer.Interval = 250;
+        _windowTimer.Interval = 150;
         _windowTimer.Tick += (_, _) => TrackGameWindow();
+
+        Shown += async (_, _) => await EnsureWebViewAsync();
     }
 
     protected override bool ShowWithoutActivation => true;
@@ -53,7 +54,7 @@ public sealed class GameOverlayForm : Form
         get
         {
             var cp = base.CreateParams;
-            cp.ExStyle |= WsExTransparent | WsExToolWindow | WsExNoActivate;
+            cp.ExStyle |= WsExToolWindow | WsExNoActivate;
             return cp;
         }
     }
@@ -66,6 +67,7 @@ public sealed class GameOverlayForm : Form
             Hide();
         }
 
+        _userVisible = false;
         _windowTimer.Start();
         TrackGameWindow();
     }
@@ -73,31 +75,169 @@ public sealed class GameOverlayForm : Form
     public void SetEnabled(bool enabled)
     {
         _settings.OverlayEnabled = enabled;
-        if (enabled) _userVisible = true;
         _settings.Save();
-        TrackGameWindow(forceShow: enabled);
+
+        if (!enabled)
+        {
+            _userVisible = false;
+            Hide();
+        }
     }
 
     public void ToggleVisibility()
     {
+        if (!_settings.OverlayEnabled)
+        {
+            _settings.OverlayEnabled = true;
+            _settings.Save();
+        }
+
         _userVisible = !_userVisible;
-        TrackGameWindow(forceShow: _userVisible);
+
+        if (_userVisible)
+        {
+            _ = EnsureWebViewAsync();
+            TrackGameWindow(forceShow: true);
+        }
+        else
+        {
+            Hide();
+        }
+    }
+
+    public void ReloadUi()
+    {
+        if (!_webReady) return;
+        NavigateOverlay();
     }
 
     public void UpdateTelemetry(PluginLiveTelemetry telemetry)
     {
-        if (IsDisposed) return;
-
-        if (InvokeRequired)
-        {
-            BeginInvoke(() => UpdateTelemetry(telemetry));
-            return;
-        }
-
         _telemetry = telemetry;
-        _lastTelemetryAt = DateTimeOffset.UtcNow;
-        Invalidate();
-        TrackGameWindow();
+
+        if (!_webReady || _webView.CoreWebView2 is null) return;
+
+        try
+        {
+            var payload = JsonSerializer.Serialize(new
+            {
+                type = "telemetry.local",
+                value = telemetry,
+            });
+            _webView.CoreWebView2.PostWebMessageAsJson(payload);
+        }
+        catch
+        {
+            // The web overlay also receives server-side realtime data,
+            // so local message failures must never interrupt telemetry.
+        }
+    }
+
+    private async Task EnsureWebViewAsync()
+    {
+        if (_webReady || IsDisposed) return;
+
+        try
+        {
+            await _webView.EnsureCoreWebView2Async();
+            if (_webView.CoreWebView2 is null) return;
+
+            _webView.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
+            _webView.CoreWebView2.Settings.AreDevToolsEnabled = false;
+            _webView.CoreWebView2.Settings.IsStatusBarEnabled = false;
+            _webView.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = false;
+            _webView.CoreWebView2.WebMessageReceived += OnWebMessageReceived;
+
+            _webReady = true;
+            NavigateOverlay();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(
+                "OpenHaul could not start the in-game overlay browser.\n\n" +
+                "Install/repair Microsoft Edge WebView2 Runtime and restart OpenHaul.\n\n" +
+                ex.Message,
+                "OpenHaul Overlay",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+        }
+    }
+
+    private void NavigateOverlay()
+    {
+        if (!_webReady || _webView.CoreWebView2 is null) return;
+
+        var root = ResolveWebRoot();
+        var url =
+            root +
+            "/overlay?driver=" + Uri.EscapeDataString(_settings.SteamId ?? "") +
+            "&mode=" + Uri.EscapeDataString(_settings.OverlayMapType) +
+            "&size=" + Uri.EscapeDataString(_settings.OverlayMapSize);
+
+        _webView.CoreWebView2.Navigate(url);
+    }
+
+    private string ResolveWebRoot()
+    {
+        var configured = (_settings.ApiUrl ?? "").Trim().TrimEnd('/');
+        if (string.IsNullOrWhiteSpace(configured))
+            return "https://openhaul.nekosunevr.co.uk";
+
+        if (configured.StartsWith("http://localhost:3001", StringComparison.OrdinalIgnoreCase))
+            return configured.Replace(":3001", ":3000", StringComparison.OrdinalIgnoreCase);
+
+        if (configured.StartsWith("http://127.0.0.1:3001", StringComparison.OrdinalIgnoreCase))
+            return configured.Replace(":3001", ":3000", StringComparison.OrdinalIgnoreCase);
+
+        return configured;
+    }
+
+    private void OnWebMessageReceived(object? sender, CoreWebView2WebMessageReceivedEventArgs e)
+    {
+        try
+        {
+            using var document = JsonDocument.Parse(e.WebMessageAsJson);
+            var root = document.RootElement;
+            var type = root.TryGetProperty("type", out var typeValue)
+                ? typeValue.GetString()
+                : null;
+
+            switch (type)
+            {
+                case "overlay.hide":
+                    _userVisible = false;
+                    Hide();
+                    break;
+
+                case "overlay.mapType":
+                    if (root.TryGetProperty("value", out var mapType))
+                    {
+                        var value = mapType.GetString();
+                        if (value is "road" or "satellite" or "xray")
+                        {
+                            _settings.OverlayMapType = value;
+                            _settings.Save();
+                        }
+                    }
+                    break;
+
+                case "overlay.mapSize":
+                    if (root.TryGetProperty("value", out var mapSize))
+                    {
+                        var value = mapSize.GetString();
+                        if (value is "compact" or "medium" or "large")
+                        {
+                            _settings.OverlayMapSize = value;
+                            _settings.Save();
+                        }
+                    }
+                    break;
+            }
+        }
+        catch
+        {
+            // Ignore malformed UI messages.
+        }
     }
 
     private void TrackGameWindow(bool forceShow = false)
@@ -120,9 +260,6 @@ public sealed class GameOverlayForm : Form
 
         _gameWindow = game.MainWindowHandle;
 
-        // Only render while the truck simulator itself is the active foreground
-        // application. This keeps OpenHaul inside/on top of the game instead of
-        // floating over the desktop or other applications.
         if (IsIconic(_gameWindow))
         {
             if (Visible) Hide();
@@ -130,7 +267,7 @@ public sealed class GameOverlayForm : Form
         }
 
         var foreground = GetForegroundWindow();
-        if (foreground != _gameWindow)
+        if (!forceShow && foreground != _gameWindow && foreground != Handle)
         {
             if (Visible) Hide();
             return;
@@ -152,14 +289,6 @@ public sealed class GameOverlayForm : Form
         var width = Math.Max(1, rect.Right - rect.Left);
         var height = Math.Max(1, rect.Bottom - rect.Top);
 
-        if (!IsHandleCreated)
-        {
-            Show();
-            Hide();
-        }
-
-        // Place the transparent HUD exactly over the game's client area and
-        // force it above the game without activating/focusing the overlay.
         SetWindowPos(
             Handle,
             HwndTopMost,
@@ -167,10 +296,12 @@ public sealed class GameOverlayForm : Form
             origin.Y,
             width,
             height,
-            SwpNoActivate | SwpShowWindow);
+            SwpShowWindow);
 
         if (!Visible) Show();
-        Invalidate();
+
+        BringToFront();
+        _webView.Focus();
     }
 
     private static Process? FindGameProcess()
@@ -182,141 +313,24 @@ public sealed class GameOverlayForm : Form
         return Find("eurotrucks2") ?? Find("amtrucks");
     }
 
-    protected override void OnPaint(PaintEventArgs e)
-    {
-        base.OnPaint(e);
-
-        e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-        e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-
-        var panel = new RectangleF(24, 24, 470, 205);
-        using var panelPath = Rounded(panel, 16);
-        using var panelBrush = new SolidBrush(Color.FromArgb(238, 5, 24, 15));
-        using var borderPen = new Pen(Color.FromArgb(220, 45, 160, 96), 1.4f);
-        e.Graphics.FillPath(panelBrush, panelPath);
-        e.Graphics.DrawPath(borderPen, panelPath);
-
-        using var brandFont = new Font("Segoe UI", 11F, FontStyle.Bold);
-        using var speedFont = new Font("Segoe UI Variable Display", 32F, FontStyle.Bold);
-        using var headingFont = new Font("Segoe UI", 10F, FontStyle.Bold);
-        using var bodyFont = new Font("Segoe UI", 9.5F, FontStyle.Regular);
-        using var smallFont = new Font("Segoe UI", 8.5F, FontStyle.Regular);
-
-        using var accent = new SolidBrush(Color.FromArgb(82, 234, 142));
-        using var white = new SolidBrush(Color.White);
-        using var muted = new SolidBrush(Color.FromArgb(155, 184, 166));
-        using var warning = new SolidBrush(Color.FromArgb(245, 190, 82));
-
-        e.Graphics.DrawString("OPENHAUL", brandFont, accent, 44, 39);
-        e.Graphics.DrawString("F8  SHOW / HIDE", smallFont, muted, 360, 42);
-
-        var telemetryFresh = _telemetry is not null &&
-                             DateTimeOffset.UtcNow - _lastTelemetryAt < TimeSpan.FromSeconds(8);
-
-        if (!telemetryFresh || _telemetry is null)
-        {
-            e.Graphics.DrawString("Waiting for ETS2 / ATS telemetry…", headingFont, white, 44, 88);
-            e.Graphics.DrawString(
-                "Start the OpenHaul launcher and telemetry plugin.",
-                bodyFont,
-                muted,
-                44,
-                116);
-            return;
-        }
-
-        var t = _telemetry;
-        var speed = Math.Max(0, Math.Round(t.SpeedKph));
-        var speedLimit = t.SpeedLimitKph is > 0 ? Math.Round(t.SpeedLimitKph.Value) : (double?)null;
-
-        e.Graphics.DrawString(speed.ToString("0"), speedFont, white, 42, 70);
-        e.Graphics.DrawString("km/h", bodyFont, muted, 125, 104);
-
-        if (speedLimit is not null)
-        {
-            var over = speed > speedLimit.Value + 1;
-            e.Graphics.DrawString(
-                "LIMIT " + speedLimit.Value.ToString("0"),
-                headingFont,
-                over ? warning : accent,
-                178,
-                82);
-        }
-
-        var fuel = t.Fuel is null ? "—" : Math.Max(0, t.Fuel.Value).ToString("0");
-        var rpm = t.Rpm is null ? "—" : Math.Max(0, t.Rpm.Value).ToString("0");
-        e.Graphics.DrawString("Fuel  " + fuel, bodyFont, white, 178, 111);
-        e.Graphics.DrawString("RPM  " + rpm, bodyFont, white, 285, 111);
-
-        var truck = string.IsNullOrWhiteSpace(t.Truck) ? "Truck" : t.Truck;
-        e.Graphics.DrawString(Trim(truck, 42), headingFont, white, 44, 142);
-
-        var route = RouteText(t);
-        e.Graphics.DrawString(Trim(route, 60), bodyFont, muted, 44, 168);
-
-        var nav = NavigationText(t);
-        if (!string.IsNullOrWhiteSpace(nav))
-            e.Graphics.DrawString(nav, smallFont, accent, 44, 194);
-    }
-
-    private static string RouteText(PluginLiveTelemetry t)
-    {
-        var source = string.IsNullOrWhiteSpace(t.SourceCity) ? "Unknown" : t.SourceCity;
-        var destination = string.IsNullOrWhiteSpace(t.DestinationCity) ? "Free drive" : t.DestinationCity;
-        var cargo = string.IsNullOrWhiteSpace(t.Cargo) ? "" : " · " + t.Cargo;
-
-        if (destination == "Free drive") return destination;
-        return source + " → " + destination + cargo;
-    }
-
-    private static string NavigationText(PluginLiveTelemetry t)
-    {
-        var parts = new List<string>();
-
-        if (t.NavigationDistanceM is > 0)
-        {
-            var km = t.NavigationDistanceM.Value / 1000d;
-            parts.Add(km >= 10 ? km.ToString("0") + " km remaining" : km.ToString("0.0") + " km remaining");
-        }
-
-        if (t.NavigationTimeS is > 0)
-        {
-            var eta = TimeSpan.FromSeconds(t.NavigationTimeS.Value);
-            parts.Add(eta.TotalHours >= 1
-                ? ((int)eta.TotalHours) + "h " + eta.Minutes + "m ETA"
-                : Math.Max(1, eta.Minutes) + "m ETA");
-        }
-
-        return string.Join(" · ", parts);
-    }
-
-    private static string Trim(string value, int length) =>
-        value.Length <= length ? value : value[..Math.Max(0, length - 1)] + "…";
-
-    private static GraphicsPath Rounded(RectangleF rect, float radius)
-    {
-        var path = new GraphicsPath();
-        var diameter = radius * 2f;
-
-        path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90);
-        path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90);
-        path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90);
-        path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90);
-        path.CloseFigure();
-
-        return path;
-    }
-
     protected override void Dispose(bool disposing)
     {
         if (disposing)
         {
             _windowTimer.Stop();
             _windowTimer.Dispose();
+
+            if (_webView.CoreWebView2 is not null)
+                _webView.CoreWebView2.WebMessageReceived -= OnWebMessageReceived;
+
+            _webView.Dispose();
         }
 
         base.Dispose(disposing);
     }
+
+    private static readonly IntPtr HwndTopMost = new(-1);
+    private const uint SwpShowWindow = 0x0040;
 
     [StructLayout(LayoutKind.Sequential)]
     private struct NativeRect
@@ -336,10 +350,6 @@ public sealed class GameOverlayForm : Form
 
     [DllImport("user32.dll")]
     private static extern bool GetClientRect(IntPtr hWnd, out NativeRect lpRect);
-
-    private static readonly IntPtr HwndTopMost = new(-1);
-    private const uint SwpNoActivate = 0x0010;
-    private const uint SwpShowWindow = 0x0040;
 
     [DllImport("user32.dll")]
     private static extern bool ClientToScreen(IntPtr hWnd, ref NativePoint lpPoint);
