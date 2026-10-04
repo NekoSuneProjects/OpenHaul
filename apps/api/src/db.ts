@@ -83,6 +83,30 @@ Job.init({
   completedAt: { type: DataTypes.DATE, allowNull: true, field: "completed_at" },
 }, { sequelize, modelName: "Job", tableName: "jobs", underscored: true });
 
+export class TelemetryEvent extends Model { declare id: number; }
+TelemetryEvent.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  driverId: { type: DataTypes.STRING(80), allowNull: false, field: "driver_id" },
+  vtcId: { type: DataTypes.INTEGER, allowNull: true, field: "vtc_id" },
+  game: { type: DataTypes.STRING(8), allowNull: false },
+  type: { type: DataTypes.STRING(64), allowNull: false },
+  source: { type: DataTypes.STRING(32), allowNull: false, defaultValue: "telemetry" },
+  externalId: { type: DataTypes.STRING(120), allowNull: true, field: "external_id" },
+  raw: { type: DataTypes.JSONB, allowNull: false, defaultValue: {} },
+  normalized: { type: DataTypes.JSONB, allowNull: false, defaultValue: {} },
+  occurredAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW, field: "occurred_at" },
+}, {
+  sequelize,
+  modelName: "TelemetryEvent",
+  tableName: "telemetry_events",
+  underscored: true,
+  indexes: [
+    { fields: ["driver_id", "occurred_at"] },
+    { fields: ["vtc_id", "occurred_at"] },
+    { fields: ["type"] },
+  ],
+});
+
 export class Fine extends Model { declare id: number; }
 Fine.init({
   id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
