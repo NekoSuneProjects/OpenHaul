@@ -10,6 +10,7 @@ public sealed class TelemetryService : IAsyncDisposable
     private readonly ClientConfig _config;
     private readonly OpenHaulApi _api;
     private bool _liveAccepted;
+    private bool _serverUnavailable;
 
     public event Action<string>? Status;
     public event Action<PluginLiveTelemetry>? LiveTelemetryReceived;
@@ -46,7 +47,25 @@ public sealed class TelemetryService : IAsyncDisposable
                         if (line is null) break;
                         if (string.IsNullOrWhiteSpace(line)) continue;
 
-                        await HandleEnvelope(line, token);
+                        try
+                        {
+                            await HandleEnvelope(line, token);
+                        }
+                        catch (OperationCanceledException) when (token.IsCancellationRequested)
+                        {
+                            throw;
+                        }
+                        catch (HttpRequestException ex)
+                        {
+                            _liveAccepted = false;
+                            MarkServerUnavailable("OpenHaul site/API is offline. Keeping telemetry connected and retrying automatically…");
+                            Debug.WriteLine("OpenHaul reconnect: " + ex.Message);
+                        }
+                        catch (TaskCanceledException) when (!token.IsCancellationRequested)
+                        {
+                            _liveAccepted = false;
+                            MarkServerUnavailable("OpenHaul site/API timed out. Retrying automatically…");
+                        }
                     }
 
                     _liveAccepted = false;
@@ -195,14 +214,38 @@ public sealed class TelemetryService : IAsyncDisposable
             if (!response.IsSuccessStatusCode)
             {
                 if (type == "live") _liveAccepted = false;
-                Status?.Invoke($"OpenHaul rejected {type}: {(int)response.StatusCode} {response.ReasonPhrase}");
+
+                if ((int)response.StatusCode is 408 or 425 or 429 or 500 or 502 or 503 or 504)
+                {
+                    MarkServerUnavailable($"OpenHaul server temporarily unavailable ({(int)response.StatusCode}). Reconnecting automatically…");
+                }
+                else
+                {
+                    Status?.Invoke($"OpenHaul rejected {type}: {(int)response.StatusCode} {response.ReasonPhrase}");
+                }
             }
-            else if (type == "live" && !_liveAccepted)
+            else
             {
-                _liveAccepted = true;
-                Status?.Invoke("Online: driving telemetry accepted by OpenHaul.");
+                if (_serverUnavailable)
+                {
+                    _serverUnavailable = false;
+                    Status?.Invoke("OpenHaul connection restored automatically.");
+                }
+
+                if (type == "live" && !_liveAccepted)
+                {
+                    _liveAccepted = true;
+                    Status?.Invoke("Online: driving telemetry accepted by OpenHaul.");
+                }
             }
         }
+    }
+
+    private void MarkServerUnavailable(string message)
+    {
+        if (_serverUnavailable) return;
+        _serverUnavailable = true;
+        Status?.Invoke(message);
     }
 
     private static string NormalizeFineType(string offence) => offence.ToLowerInvariant() switch
