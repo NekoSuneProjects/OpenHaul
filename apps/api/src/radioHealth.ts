@@ -27,7 +27,31 @@ type RelayPayload = {
   url: string;
   proxy: boolean;
   country?: string;
+  networkType?: "residential" | "hosting" | "auto";
 };
+
+const geoRuleSchema = z.object({
+  match: z.string().min(1).max(500),
+  country: z.string().length(2).transform((value) => value.toUpperCase()),
+});
+
+function inferredGeoCountry(url: string) {
+  const lower = url.toLowerCase();
+
+  // Built-in known geo-sensitive station/provider rule.
+  if (lower.includes("leanstream") && lower.includes("/chslfm")) return "CA";
+
+  const raw = process.env.RADIO_URL_GEO_RULES_JSON?.trim();
+  if (!raw || raw === "[]") return undefined;
+
+  try {
+    const rules = z.array(geoRuleSchema).max(500).parse(JSON.parse(raw));
+    const matched = rules.find((rule) => lower.includes(rule.match.toLowerCase()));
+    return matched?.country;
+  } catch {
+    return undefined;
+  }
+}
 
 const scanBodySchema = z.object({
   stations: z.array(z.object({
@@ -112,52 +136,73 @@ function verifyRelayPayload(token: string): RelayPayload {
     url: z.string().url(),
     proxy: z.boolean(),
     country: z.string().length(2).optional(),
+    networkType: z.enum(["residential", "hosting", "auto"]).optional(),
   }).parse(parsed);
 }
 
-async function createResidentialSession(sourceUrl: string, country?: string) {
+async function createRegionalSession(sourceUrl: string, country?: string, preferred: "residential" | "hosting" | "auto" = "auto") {
   const base = cleanBaseUrl(process.env.NEKOROUTE_API_URL ?? DEFAULT_NEKOROUTE_URL);
-  const response = await fetch(`${base}/api/v1/preview/session`, {
-    method: "POST",
-    signal: AbortSignal.timeout(12_000),
-    headers: {
-      accept: "application/json",
-      "content-type": "application/json",
-      "user-agent": "OpenHaul-RadioHealth/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
-    },
-    body: JSON.stringify({
-      url: sourceUrl,
-      networkType: "residential",
-      ...(country ? { country } : {}),
-    }),
-  });
 
-  if (!response.ok) {
-    throw new Error(`NekoRoute returned HTTP ${response.status}`);
-  }
+  const tryType = async (networkType: "residential" | "hosting") => {
+    const response = await fetch(`${base}/api/v1/preview/session`, {
+      method: "POST",
+      signal: AbortSignal.timeout(12_000),
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        "user-agent": "OpenHaul-RadioHealth/1.1 (+https://github.com/NekoSuneProjects/OpenHaul)",
+      },
+      body: JSON.stringify({
+        url: sourceUrl,
+        networkType,
+        ...(country ? { country } : {}),
+      }),
+    });
 
-  const data = await response.json() as {
-    sessionId?: string;
-    node?: {
-      country?: string;
-      protocol?: string;
-      city?: string | null;
-      network?: { isHomeResidential?: boolean | null };
+    if (!response.ok) throw new Error(`NekoRoute ${networkType} returned HTTP ${response.status}`);
+
+    const data = await response.json() as {
+      sessionId?: string;
+      node?: {
+        country?: string;
+        protocol?: string;
+        city?: string | null;
+        network?: {
+          connectionType?: string | null;
+          isHomeResidential?: boolean | null;
+          isHostingProvider?: boolean | null;
+        };
+      };
+    };
+
+    if (!data.sessionId) throw new Error("NekoRoute did not return a sessionId");
+    if (country && data.node?.country && data.node.country !== country) {
+      throw new Error(`NekoRoute returned ${data.node.country} instead of ${country}`);
+    }
+    if (networkType === "residential" && data.node?.network?.isHomeResidential !== true) {
+      throw new Error("NekoRoute route was not residential");
+    }
+    if (networkType === "hosting" &&
+        data.node?.network?.isHostingProvider !== true &&
+        data.node?.network?.connectionType !== "hosting") {
+      throw new Error("NekoRoute route was not hosting/VPS");
+    }
+
+    return {
+      inputUrl: `${base}/api/preview-runtime/${encodeURIComponent(data.sessionId)}?kind=media&url=${encodeURIComponent(sourceUrl)}`,
+      node: data.node ?? null,
+      networkType,
     };
   };
 
-  if (!data.sessionId) throw new Error("NekoRoute did not return a sessionId");
-  if (data.node?.network?.isHomeResidential !== true) {
-    throw new Error("NekoRoute route was not residential");
-  }
-  if (country && data.node?.country && data.node.country !== country) {
-    throw new Error(`NekoRoute returned ${data.node.country} instead of ${country}`);
-  }
+  if (preferred === "residential") return tryType("residential");
+  if (preferred === "hosting") return tryType("hosting");
 
-  return {
-    inputUrl: `${base}/api/preview-runtime/${encodeURIComponent(data.sessionId)}?kind=media&url=${encodeURIComponent(sourceUrl)}`,
-    node: data.node ?? null,
-  };
+  try {
+    return await tryType("residential");
+  } catch {
+    return await tryType("hosting");
+  }
 }
 
 async function probeCodec(inputUrl: string) {
@@ -200,6 +245,49 @@ function relayUrl(request: any, payload: RelayPayload) {
 
 async function scanOne(request: any, row: z.infer<typeof scanBodySchema>["stations"][number]) {
   const url = await assertPublicRadioUrl(row.url);
+  const inferredCountry = row.preferredCountry ?? inferredGeoCountry(url);
+
+  // Known geo-sensitive stations must be tested through their expected country.
+  // A valid audio codec is not enough because some providers return a spoken
+  // "not available in your region" placeholder as a perfectly valid audio stream.
+  if (inferredCountry) {
+    try {
+      const session = await createRegionalSession(url, inferredCountry, "auto");
+      const codec = await probeCodec(session.inputUrl);
+      return {
+        id: row.id,
+        status: "repaired",
+        route: session.networkType === "residential" ? "residential-proxy" : "hosting-proxy",
+        codec,
+        originalUrl: url,
+        replacementUrl: relayUrl(request, {
+          url,
+          proxy: true,
+          country: inferredCountry,
+          networkType: "auto",
+        }),
+        changed: true,
+        proxy: {
+          country: session.node?.country ?? inferredCountry,
+          protocol: session.node?.protocol ?? null,
+          city: session.node?.city ?? null,
+          networkType: session.networkType,
+        },
+        reason: `Geo-sensitive station tested through ${inferredCountry} instead of trusting direct placeholder audio.`,
+      };
+    } catch (geoError) {
+      return {
+        id: row.id,
+        status: "broken",
+        route: "none",
+        codec: null,
+        originalUrl: url,
+        replacementUrl: null,
+        changed: false,
+        reason: geoError instanceof Error ? geoError.message : String(geoError),
+      };
+    }
+  }
 
   try {
     const codec = await probeCodec(url);
@@ -227,22 +315,23 @@ async function scanOne(request: any, row: z.infer<typeof scanBodySchema>["statio
     };
   } catch (directError) {
     try {
-      const session = await createResidentialSession(url, row.preferredCountry);
+      const session = await createRegionalSession(url, undefined, "auto");
       const codec = await probeCodec(session.inputUrl);
       return {
         id: row.id,
         status: "repaired",
-        route: "residential-proxy",
+        route: session.networkType === "residential" ? "residential-proxy" : "hosting-proxy",
         codec,
         originalUrl: url,
-        replacementUrl: relayUrl(request, { url, proxy: true, country: row.preferredCountry }),
+        replacementUrl: relayUrl(request, { url, proxy: true, networkType: "auto" }),
         changed: true,
         proxy: {
-          country: session.node?.country ?? row.preferredCountry ?? null,
+          country: session.node?.country ?? null,
           protocol: session.node?.protocol ?? null,
           city: session.node?.city ?? null,
+          networkType: session.networkType,
         },
-        reason: "Direct stream failed, but it works through a residential NekoRoute exit.",
+        reason: "Direct stream failed, but it works through NekoRoute.",
       };
     } catch (proxyError) {
       return {
@@ -316,7 +405,7 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
       let proxyProtocol = "";
       if (payload.proxy) {
         try {
-          const session = await createResidentialSession(payload.url, payload.country);
+          const session = await createRegionalSession(payload.url, payload.country, payload.networkType ?? "auto");
           inputUrl = session.inputUrl;
           proxyProtocol = session.node?.protocol ?? "";
         } catch (error) {
