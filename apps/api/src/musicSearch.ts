@@ -11,6 +11,8 @@ type MusicSearchResult = {
 
 const cache = new Map<string, { expiresAt: number; value: MusicSearchResult[] }>();
 const regionCache = new Map<string, { expiresAt: number; countryCode: string }>();
+const inFlightSearches = new Map<string, Promise<MusicSearchResult[]>>();
+const providerCooldownUntil = new Map<MusicSearchResult["provider"], number>();
 
 const querySchema = z.object({
   q: z.string().min(2).max(160),
@@ -86,6 +88,33 @@ async function resolveCountryCode(request: any) {
   }
 }
 
+class ProviderRateLimitedError extends Error {
+  constructor(public provider: MusicSearchResult["provider"], public retryAfterMs: number) {
+    super(provider + " rate limited");
+  }
+}
+
+function retryAfterMs(response: Response) {
+  const value = response.headers.get("retry-after");
+  if (!value) return 5 * 60_000;
+  const seconds = Number(value);
+  if (Number.isFinite(seconds)) return Math.max(15_000, seconds * 1000);
+  const date = Date.parse(value);
+  return Number.isFinite(date) ? Math.max(15_000, date - Date.now()) : 5 * 60_000;
+}
+
+function noteProviderResponse(provider: MusicSearchResult["provider"], response: Response) {
+  if (response.status === 429) {
+    const until = Date.now() + retryAfterMs(response);
+    providerCooldownUntil.set(provider, until);
+    throw new ProviderRateLimitedError(provider, until - Date.now());
+  }
+}
+
+function providerCoolingDown(provider: MusicSearchResult["provider"]) {
+  return (providerCooldownUntil.get(provider) ?? 0) > Date.now();
+}
+
 function decodeHtml(value: string) {
   return value
     .replace(/&amp;/g, "&")
@@ -107,6 +136,7 @@ async function searchYouTube(query: string, limit: number): Promise<MusicSearchR
       "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131 Safari/537.36",
     },
   });
+  noteProviderResponse("youtube", response);
   if (!response.ok) return [];
 
   const html = await response.text();
@@ -148,6 +178,7 @@ async function searchSoundCloud(query: string, limit: number): Promise<MusicSear
       "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131 Safari/537.36",
     },
   });
+  noteProviderResponse("soundcloud", response);
   if (!response.ok) return [];
 
   const html = decodeHtml(await response.text());
@@ -208,6 +239,7 @@ async function searchBilibili(query: string, limit: number): Promise<MusicSearch
       "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131 Safari/537.36",
     },
   });
+  noteProviderResponse("bilibili", response);
   if (!response.ok) return [];
 
   const html = decodeHtml(await response.text());
@@ -246,6 +278,7 @@ async function searchYandexMusic(query: string, limit: number): Promise<MusicSea
       "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131 Safari/537.36",
     },
   });
+  noteProviderResponse("yandex", response);
   if (!response.ok) return [];
 
   const html = decodeHtml(await response.text());
@@ -300,25 +333,52 @@ export async function registerMusicSearchRoutes(app: FastifyInstance) {
       return { query: q, count: cached.value.length, results: cached.value };
     }
 
-    const perProvider = Math.max(3, Math.ceil(limit / 4));
-    const [youtube, soundcloud, bilibili, yandex] = await Promise.allSettled([
-      searchYouTube(q, perProvider),
-      searchSoundCloud(q, perProvider),
-      searchBilibili(q, perProvider),
-      searchYandexMusic(q, perProvider),
-    ]);
+    const priority = providerPriority(countryCode);
+    const perProvider = Math.max(4, Math.ceil(limit / 2));
 
-    const providerResults = {
-      youtube: youtube.status === "fulfilled" ? youtube.value : [],
-      soundcloud: soundcloud.status === "fulfilled" ? soundcloud.value : [],
-      bilibili: bilibili.status === "fulfilled" ? bilibili.value : [],
-      yandex: yandex.status === "fulfilled" ? yandex.value : [],
+    const runSearch = async () => {
+      const providerResults: Record<MusicSearchResult["provider"], MusicSearchResult[]> = {
+        youtube: [],
+        soundcloud: [],
+        bilibili: [],
+        yandex: [],
+      };
+
+      const searchers: Record<MusicSearchResult["provider"], () => Promise<MusicSearchResult[]>> = {
+        youtube: () => searchYouTube(q, perProvider),
+        soundcloud: () => searchSoundCloud(q, perProvider),
+        bilibili: () => searchBilibili(q, perProvider),
+        yandex: () => searchYandexMusic(q, perProvider),
+      };
+
+      // Search preferred providers first instead of hammering all four sites at once.
+      // Continue to fallbacks only when there are not enough results.
+      for (const provider of priority) {
+        if (providerCoolingDown(provider)) continue;
+
+        try {
+          providerResults[provider] = await searchers[provider]();
+        } catch (error) {
+          if (!(error instanceof ProviderRateLimitedError)) {
+            app.log.warn({ provider, error }, "Music search provider failed");
+          }
+        }
+
+        const total = priority.reduce((sum, name) => sum + providerResults[name].length, 0);
+        if (total >= limit) break;
+      }
+
+      return priority.flatMap((provider) => providerResults[provider]).slice(0, limit);
     };
 
-    const priority = providerPriority(countryCode);
-    const merged = priority.flatMap((provider) => providerResults[provider]).slice(0, limit);
+    let pending = inFlightSearches.get(key);
+    if (!pending) {
+      pending = runSearch().finally(() => inFlightSearches.delete(key));
+      inFlightSearches.set(key, pending);
+    }
 
-    cache.set(key, { expiresAt: Date.now() + 5 * 60_000, value: merged });
+    const merged = await pending;
+    cache.set(key, { expiresAt: Date.now() + 10 * 60_000, value: merged });
     reply.header("cache-control", "public, max-age=120, stale-if-error=600");
 
     return {
@@ -327,12 +387,12 @@ export async function registerMusicSearchRoutes(app: FastifyInstance) {
       regionSource: detected.source,
       providerPriority: priority,
       count: merged.length,
-      providers: {
-        youtube: youtube.status === "fulfilled",
-        soundcloud: soundcloud.status === "fulfilled",
-        bilibili: bilibili.status === "fulfilled",
-        yandex: yandex.status === "fulfilled",
-      },
+      providers: Object.fromEntries(
+        priority.map((provider) => [provider, {
+          available: !providerCoolingDown(provider),
+          cooldownUntil: providerCooldownUntil.get(provider) ?? null,
+        }]),
+      ),
       results: merged,
     };
   });
