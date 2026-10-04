@@ -806,6 +806,9 @@ export function MapClient() {
   const fittedRef = useRef(false);
   const visibleDriversRef = useRef<Driver[]>([]);
   const interpolatedRef = useRef<Map<string, InterpolatedDriver>>(new Map());
+  const selectedPopupRef = useRef<any>(null);
+  const selectedPopupDriverIdRef = useRef<string>("");
+  const selectedDriverLastSeenRef = useRef<number>(0);
 
   const serverOptions = useMemo(
     () => Array.from(new Set([
@@ -1368,10 +1371,25 @@ export function MapClient() {
             card.appendChild(row);
           }
 
-          new maplibregl.Popup({ offset: 16 })
+          selectedPopupRef.current?.remove?.();
+
+          const popup = new maplibregl.Popup({
+            offset: 16,
+            closeOnMove: false,
+          })
             .setLngLat(coordinates)
             .setDOMContent(card)
             .addTo(map);
+
+          selectedPopupRef.current = popup;
+          selectedPopupDriverIdRef.current = clickedDriverId;
+
+          popup.on("close", () => {
+            if (selectedPopupRef.current === popup) {
+              selectedPopupRef.current = null;
+              selectedPopupDriverIdRef.current = "";
+            }
+          });
         });
 
         const initialMode =
@@ -1388,6 +1406,9 @@ export function MapClient() {
       if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
       resizeObserver?.disconnect();
       window.removeEventListener("resize", queueMapResize);
+      selectedPopupRef.current?.remove?.();
+      selectedPopupRef.current = null;
+      selectedPopupDriverIdRef.current = "";
       mapRef.current?.remove();
       mapRef.current = null;
 
@@ -1537,6 +1558,10 @@ export function MapClient() {
 
   useEffect(() => {
     if (!selectedDriverId) {
+      selectedDriverLastSeenRef.current = 0;
+      selectedPopupDriverIdRef.current = "";
+      selectedPopupRef.current?.remove?.();
+      selectedPopupRef.current = null;
       if (cameraMode !== "map") setCameraMode("map");
       return;
     }
@@ -1544,10 +1569,22 @@ export function MapClient() {
     const stillVisible =
       visibleDrivers.some((driver) => driver.driverId === selectedDriverId) ||
       trackerDrivers.some((driver) => driver.driverId === selectedDriverId);
-    if (!stillVisible) {
-      setSelectedDriverId("");
-      setCameraMode("map");
+
+    if (stillVisible) {
+      selectedDriverLastSeenRef.current = Date.now();
+      return;
     }
+
+    // TruckersMP area responses are replaced in batches every few seconds.
+    // Do not drop follow mode during that short gap or the camera appears to
+    // stop following while the next area request is in flight.
+    if (
+      selectedDriverLastSeenRef.current > 0 &&
+      Date.now() - selectedDriverLastSeenRef.current < 20_000
+    ) return;
+
+    setSelectedDriverId("");
+    setCameraMode("map");
   }, [visibleDrivers, selectedDriverId, cameraMode, trackerDrivers]);
 
   useEffect(() => {
@@ -1714,6 +1751,19 @@ export function MapClient() {
       source?.setData(collection);
 
       const selected = selectedDriverId ? rendered.get(selectedDriverId) : undefined;
+
+      if (selected) {
+        selectedDriverLastSeenRef.current = Date.now();
+
+        const selectedPosition = gameCoordsToLonLat(selected.game, selected.x, selected.z);
+        if (
+          isValidLonLat(selectedPosition) &&
+          selectedPopupRef.current &&
+          selectedPopupDriverIdRef.current === selected.driverId
+        ) {
+          selectedPopupRef.current.setLngLat(selectedPosition);
+        }
+      }
 
       if (selected && cameraMode !== "map") {
         const center = gameCoordsToLonLat(selected.game, selected.x, selected.z);
