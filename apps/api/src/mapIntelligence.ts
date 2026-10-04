@@ -44,7 +44,7 @@ const FALLBACK_TRACKER_SERVERS: TrackerServer[] = [
   { id: 30, map: 15, name: "ETS2 - [US] Simulation", game: "ets2", status: true, players: 0 },
   { id: 31, map: 50, name: "ETS2 - ProMods", game: "promods", status: true, players: 0 },
   { id: 32, map: 51, name: "ETS2 - ProMods Arcade", game: "promods", status: true, players: 0 },
-  { id: 35, map: 30, name: "ETS2 - [Asia] Simulation", game: "ets2", status: true, players: 0 },
+  { id: 35, map: 30, name: "ETS2 - [SGP] Simulation", game: "ets2", status: true, players: 0 },
   { id: 38, map: 45, name: "ATS - [US] Arcade", game: "ats", status: true, players: 0 },
   { id: 41, map: 41, name: "ETS2 - Simulation 2", game: "ets2", status: true, players: 0 },
 ];
