@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 declare global {
@@ -13,7 +13,30 @@ declare global {
   }
 }
 
-type Tab = "map" | "drive" | "missions" | "settings";
+type Tab = "map" | "drive" | "missions" | "radio" | "settings";
+
+type RadioStation = {
+  id: string;
+  stationUuid?: string | null;
+  name: string;
+  country?: string | null;
+  genre?: string | null;
+  codec?: string | null;
+  bitrateKbps?: number | null;
+  favicon?: string | null;
+  routing?: {
+    mode?: string | null;
+    proxyRequired?: boolean;
+    provider?: string | null;
+  };
+  playback?: {
+    browser?: string | null;
+    direct?: string | null;
+    gameMp3?: string | null;
+    ogg?: string | null;
+    aac?: string | null;
+  };
+};
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
@@ -36,6 +59,13 @@ function OverlayContent() {
   const [trafficAlerts, setTrafficAlerts] = useState(initialTraffic);
   const [staffAlerts, setStaffAlerts] = useState(initialStaff);
   const [cargoMissions, setCargoMissions] = useState(initialMissions);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [radioStations, setRadioStations] = useState<RadioStation[]>([]);
+  const [selectedRadioId, setSelectedRadioId] = useState("");
+  const [radioQuery, setRadioQuery] = useState("");
+  const [radioLoading, setRadioLoading] = useState(true);
+  const [radioPlaying, setRadioPlaying] = useState(false);
+  const [radioVolume, setRadioVolume] = useState(0.7);
 
   useEffect(() => {
     document.body.classList.add("gameOverlayHost");
@@ -83,11 +113,79 @@ function OverlayContent() {
     return () => { active = false; clearInterval(timer); };
   }, []);
 
+  useEffect(() => {
+    let active = true;
+    const loadStations = async () => {
+      setRadioLoading(true);
+      try {
+        const response = await fetch(api + "/api/v1/public/radio/directory?page=1&pageSize=75&country=ALL", {
+          cache: "no-store",
+        });
+        if (!response.ok) throw new Error("radio directory unavailable");
+        const data = await response.json() as { stations?: RadioStation[] };
+        if (!active) return;
+        const stations = Array.isArray(data.stations) ? data.stations : [];
+        setRadioStations(stations);
+        setSelectedRadioId((current) => current || stations[0]?.id || "");
+      } catch {
+        if (active) setRadioStations([]);
+      } finally {
+        if (active) setRadioLoading(false);
+      }
+    };
+
+    void loadStations();
+    return () => { active = false; };
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = radioVolume;
+  }, [radioVolume]);
+
   const setPreference = (key: "traffic" | "staff" | "missions", value: boolean) => {
     if (key === "traffic") setTrafficAlerts(value);
     if (key === "staff") setStaffAlerts(value);
     if (key === "missions") setCargoMissions(value);
     window.chrome?.webview?.postMessage({ type: "overlay.preference", key, value });
+  };
+
+  const filteredRadioStations = useMemo(() => {
+    const query = radioQuery.trim().toLowerCase();
+    if (!query) return radioStations;
+    return radioStations.filter((station) =>
+      [station.name, station.country, station.genre, station.codec]
+        .filter(Boolean)
+        .some((value) => String(value).toLowerCase().includes(query))
+    );
+  }, [radioQuery, radioStations]);
+
+  const selectedRadio = useMemo(
+    () => radioStations.find((station) => station.id === selectedRadioId) ?? radioStations[0] ?? null,
+    [radioStations, selectedRadioId],
+  );
+
+  const playRadio = async (station: RadioStation) => {
+    const audio = audioRef.current;
+    const stream = station.playback?.browser || station.playback?.direct;
+    if (!audio || !stream) return;
+
+    if (selectedRadioId === station.id && !audio.paused) {
+      audio.pause();
+      setRadioPlaying(false);
+      return;
+    }
+
+    setSelectedRadioId(station.id);
+    if (audio.src !== stream) audio.src = stream;
+
+    try {
+      await audio.play();
+      setRadioPlaying(true);
+    } catch {
+      setRadioPlaying(false);
+    }
   };
 
   const mapUrl = useMemo(() => {
@@ -134,6 +232,9 @@ function OverlayContent() {
         <button className={tab === "missions" ? "active" : ""} onClick={() => setTab("missions")}>
           <span>★</span><span>Missions</span>
         </button>
+        <button className={tab === "radio" ? "active" : ""} onClick={() => setTab("radio")}>
+          <span>♫</span><span>Radio</span>
+        </button>
         <button className={tab === "settings" ? "active" : ""} onClick={() => setTab("settings")}>
           <span>⚙</span><span>Settings</span>
         </button>
@@ -150,7 +251,7 @@ function OverlayContent() {
       <section className="gameOverlayPanel">
         <header className="gameOverlayHeader">
           <div>
-            <strong>{tab === "map" ? "Live Map" : tab === "drive" ? "Drive Session" : tab === "missions" ? "OpenHaul Cargo Missions" : "Overlay Settings"}</strong>
+            <strong>{tab === "map" ? "Live Map" : tab === "drive" ? "Drive Session" : tab === "missions" ? "OpenHaul Cargo Missions" : tab === "radio" ? "Live Radio" : "Overlay Settings"}</strong>
             <small>{driver || "No OpenHaul driver linked"}</small>
           </div>
           <div className="gameOverlayStatus">
@@ -231,6 +332,110 @@ function OverlayContent() {
                 {!cargoMissions ? <article className="card"><p>Cargo missions are disabled in overlay settings.</p></article> : null}
               </div>
             </section>
+          </div>
+        ) : null}
+
+        {tab === "radio" ? (
+          <div className="gameOverlayRadio">
+            <section className="gameOverlayRadioNow">
+              <div className="gameOverlayRadioArt">
+                {selectedRadio?.favicon ? <img src={selectedRadio.favicon} alt="" /> : <span>♫</span>}
+              </div>
+              <div className="gameOverlayRadioMeta">
+                <small>NOW TUNED</small>
+                <h2>{selectedRadio?.name || "Choose a station"}</h2>
+                <p>
+                  {[selectedRadio?.country, selectedRadio?.genre, selectedRadio?.codec?.toUpperCase(), selectedRadio?.bitrateKbps ? selectedRadio.bitrateKbps + " kbps" : null]
+                    .filter(Boolean)
+                    .join(" · ") || "OpenHaul worldwide radio"}
+                </p>
+                {selectedRadio?.routing?.proxyRequired ? (
+                  <span className="gameOverlayRadioRoute">Geo route: {selectedRadio.routing.provider || "OpenHaul proxy"}</span>
+                ) : (
+                  <span className="gameOverlayRadioRoute">Direct source · MP3 game relay available</span>
+                )}
+              </div>
+              <div className="gameOverlayRadioControls">
+                <button
+                  className="gameOverlayRadioPlay"
+                  disabled={!selectedRadio}
+                  onClick={() => selectedRadio && void playRadio(selectedRadio)}
+                >
+                  {radioPlaying ? "Ⅱ Pause" : "▶ Play"}
+                </button>
+                <label>
+                  <span>Volume {Math.round(radioVolume * 100)}%</span>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={Math.round(radioVolume * 100)}
+                    onChange={(event) => setRadioVolume(Number(event.target.value) / 100)}
+                  />
+                </label>
+              </div>
+            </section>
+
+            <section className="gameOverlayRadioLocal">
+              <strong>Local PC playback</strong>
+              <small>
+                OpenHaul plays the station inside the Windows overlay, so ATS/ETS2 does not need to decode the station itself.
+                MP3 and AAC/AAC+ streams are handled by the overlay player on your PC.
+              </small>
+            </section>
+
+            <section className="gameOverlayRadioDirectory">
+              <div className="gameOverlayRadioDirectoryHead">
+                <div>
+                  <h2>Stations</h2>
+                  <p>{radioLoading ? "Loading worldwide radio…" : filteredRadioStations.length + " stations shown"}</p>
+                </div>
+                <input
+                  value={radioQuery}
+                  onChange={(event) => setRadioQuery(event.target.value)}
+                  placeholder="Search station, country, genre or codec"
+                  aria-label="Search radio stations"
+                />
+              </div>
+
+              <div className="gameOverlayRadioStations">
+                {filteredRadioStations.map((station) => {
+                  const active = selectedRadio?.id === station.id;
+                  return (
+                    <button
+                      key={station.id}
+                      className={active ? "active" : ""}
+                      onClick={() => void playRadio(station)}
+                    >
+                      <span className="gameOverlayRadioStationIcon">
+                        {station.favicon ? <img src={station.favicon} alt="" /> : "♫"}
+                      </span>
+                      <span>
+                        <strong>{station.name}</strong>
+                        <small>
+                          {[station.country, station.genre, station.codec?.toUpperCase()]
+                            .filter(Boolean)
+                            .join(" · ") || "Internet radio"}
+                        </small>
+                      </span>
+                      <span className="gameOverlayRadioStationAction">
+                        {active && radioPlaying ? "Ⅱ" : "▶"}
+                      </span>
+                    </button>
+                  );
+                })}
+                {!radioLoading && filteredRadioStations.length === 0 ? (
+                  <div className="gameOverlayRadioEmpty">No stations match that search.</div>
+                ) : null}
+              </div>
+            </section>
+            <audio
+              ref={audioRef}
+              preload="none"
+              onPlay={() => setRadioPlaying(true)}
+              onPause={() => setRadioPlaying(false)}
+              onEnded={() => setRadioPlaying(false)}
+            />
           </div>
         ) : null}
 

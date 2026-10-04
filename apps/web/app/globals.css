@@ -1306,3 +1306,266 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
     display: none;
   }
 }
+
+
+/* In-game live radio workspace */
+.gameOverlayRadio {
+  min-height: 0;
+  overflow: auto;
+  padding: 22px;
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.gameOverlayRadio > section {
+  border: 1px solid rgba(84,224,138,.13);
+  border-radius: 15px;
+  background: rgba(8,28,18,.72);
+}
+
+.gameOverlayRadioNow {
+  display: grid;
+  grid-template-columns: 76px minmax(0,1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+}
+
+.gameOverlayRadioArt {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(84,224,138,.2);
+  border-radius: 16px;
+  color: #8af3b4;
+  background: rgba(84,224,138,.07);
+  font-size: 1.7rem;
+}
+
+.gameOverlayRadioArt img,
+.gameOverlayRadioStationIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gameOverlayRadioMeta {
+  min-width: 0;
+}
+
+.gameOverlayRadioMeta > small {
+  color: #70e69b;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.gameOverlayRadioMeta h2 {
+  margin: 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gameOverlayRadioMeta p {
+  margin: 0 0 7px;
+  color: #8aa293;
+}
+
+.gameOverlayRadioRoute {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #9edfb5;
+  background: rgba(84,224,138,.08);
+  font-size: .72rem;
+}
+
+.gameOverlayRadioControls {
+  min-width: 180px;
+  display: grid;
+  gap: 10px;
+}
+
+.gameOverlayRadioControls label {
+  display: grid;
+  gap: 5px;
+  color: #8aa293;
+  font-size: .72rem;
+}
+
+.gameOverlayRadioControls input[type="range"] {
+  width: 100%;
+  accent-color: #54e08a;
+}
+
+.gameOverlayRadioPlay {
+  min-height: 40px;
+  border: 1px solid rgba(84,224,138,.28);
+  border-radius: 10px;
+  color: #06120b;
+  background: #54e08a;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.gameOverlayRadioPlay:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+.gameOverlayRadioLocal {
+  display: grid;
+  gap: 5px;
+  padding: 14px 17px;
+}
+
+.gameOverlayRadioLocal strong {
+  color: #dff4e6;
+}
+
+.gameOverlayRadioLocal small {
+  color: #7f9989;
+  line-height: 1.45;
+}
+
+.gameOverlayRadioDirectory {
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.gameOverlayRadioDirectoryHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 17px;
+  border-bottom: 1px solid rgba(84,224,138,.1);
+}
+
+.gameOverlayRadioDirectoryHead h2,
+.gameOverlayRadioDirectoryHead p {
+  margin: 0;
+}
+
+.gameOverlayRadioDirectoryHead p {
+  margin-top: 3px;
+  color: #7f9989;
+  font-size: .76rem;
+}
+
+.gameOverlayRadioDirectoryHead input {
+  width: min(360px, 48%);
+  min-height: 38px;
+  padding: 0 11px;
+  border: 1px solid rgba(84,224,138,.16);
+  border-radius: 10px;
+  outline: 0;
+  color: #eaf7ee;
+  background: #06140d;
+}
+
+.gameOverlayRadioDirectoryHead input:focus {
+  border-color: rgba(84,224,138,.46);
+}
+
+.gameOverlayRadioStations {
+  max-height: 320px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 8px;
+  padding: 12px;
+}
+
+.gameOverlayRadioStations > button {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 42px minmax(0,1fr) 28px;
+  gap: 10px;
+  align-items: center;
+  padding: 9px 10px;
+  border: 1px solid rgba(84,224,138,.1);
+  border-radius: 11px;
+  color: #dcebe1;
+  background: rgba(4,16,10,.82);
+  text-align: left;
+  cursor: pointer;
+}
+
+.gameOverlayRadioStations > button:hover,
+.gameOverlayRadioStations > button.active {
+  border-color: rgba(84,224,138,.36);
+  background: rgba(84,224,138,.08);
+}
+
+.gameOverlayRadioStationIcon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 9px;
+  color: #70e69b;
+  background: rgba(84,224,138,.07);
+}
+
+.gameOverlayRadioStations > button > span:nth-child(2) {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.gameOverlayRadioStations strong,
+.gameOverlayRadioStations small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gameOverlayRadioStations small {
+  color: #789080;
+}
+
+.gameOverlayRadioStationAction {
+  color: #70e69b;
+  text-align: center;
+}
+
+.gameOverlayRadioEmpty {
+  grid-column: 1 / -1;
+  padding: 26px;
+  color: #829a8a;
+  text-align: center;
+}
+
+@media (max-width: 920px) {
+  .gameOverlayRadioNow {
+    grid-template-columns: 1fr;
+  }
+
+  .gameOverlayRadioArt {
+    display: none;
+  }
+
+  .gameOverlayRadioControls {
+    min-width: 0;
+  }
+
+  .gameOverlayRadioDirectoryHead {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .gameOverlayRadioDirectoryHead input {
+    width: 100%;
+  }
+
+  .gameOverlayRadioStations {
+    grid-template-columns: 1fr;
+  }
+}
