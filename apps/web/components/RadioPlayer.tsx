@@ -25,7 +25,7 @@ export function RadioPlayer() {
       } catch {}
     };
     load();
-    const timer = setInterval(load, 2000);
+    const timer = setInterval(load, 15000);
     return () => { active = false; clearInterval(timer); };
   }, []);
 
