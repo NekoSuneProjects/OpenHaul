@@ -38,12 +38,7 @@ public sealed class TelemetryService : IAsyncDisposable
 
                     await pipe.ConnectAsync(5000, token);
                     _liveAccepted = false;
-<<<<<<< HEAD
                     Status?.Invoke("Telemetry plugin connected; waiting for driving data…");
-=======
-                    Status?.Invoke("Plugin connected; waiting for driving telemetry.");
->>>>>>> 2ca0da0395b38b7eb7f773448d02c9fde4e540ec
-
                     using var reader = new StreamReader(pipe);
                     while (!token.IsCancellationRequested && pipe.IsConnected)
                     {
