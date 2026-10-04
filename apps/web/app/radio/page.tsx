@@ -94,7 +94,7 @@ export default function RadioPage() {
     return total > 0 ? Math.max(0, Math.min(100, (elapsed / total) * 100)) : 0;
   }, [data]);
 
-  const stream = data?.station?.listen_url ?? "https://azuracast.truckers.fm/listen/truckersfm/live";
+  const stream = "https://radio.truckers.fm";
   const now = data?.now_playing?.song;
   const dj = data?.live?.is_live && data.live.streamer_name ? data.live.streamer_name : "AutoDJ";
 
