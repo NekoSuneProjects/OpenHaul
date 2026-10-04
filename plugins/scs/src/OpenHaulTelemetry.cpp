@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <atomic>
 #include <chrono>
+#include <cmath>
+#include <initializer_list>
 #include <condition_variable>
 #include <cstdint>
 #include <cstring>
