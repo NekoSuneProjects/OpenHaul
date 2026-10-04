@@ -5,6 +5,10 @@ namespace OpenHaul.Client;
 
 public static class SessionDetector
 {
+    private static readonly object CacheLock = new();
+    private static DateTimeOffset _serverCheckedAt = DateTimeOffset.MinValue;
+    private static string? _cachedServer;
+
     private static readonly string[] TruckersMpProcesses =
     [
         "TruckersMP",
@@ -25,6 +29,13 @@ public static class SessionDetector
     public static string? DetectTruckersMpServer()
     {
         if (!IsTruckersMpRunning()) return null;
+
+        lock (CacheLock)
+        {
+            if (DateTimeOffset.UtcNow - _serverCheckedAt < TimeSpan.FromSeconds(5))
+                return _cachedServer;
+            _serverCheckedAt = DateTimeOffset.UtcNow;
+        }
 
         var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         var candidates = new[]
@@ -68,7 +79,11 @@ public static class SessionDetector
                     var matches = Regex.Matches(text, pattern);
                     if (matches.Count == 0) continue;
                     var value = matches[^1].Groups["name"].Value.Trim();
-                    if (!string.IsNullOrWhiteSpace(value)) return value;
+                    if (!string.IsNullOrWhiteSpace(value))
+                    {
+                        lock (CacheLock) _cachedServer = value;
+                        return value;
+                    }
                 }
             }
             catch
@@ -78,7 +93,8 @@ public static class SessionDetector
             }
         }
 
-        return "TruckersMP";
+        lock (CacheLock) _cachedServer = "TruckersMP";
+        return _cachedServer;
     }
 
     public static string DriverStatus(PluginLiveTelemetry telemetry)
