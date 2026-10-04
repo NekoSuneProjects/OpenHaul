@@ -425,31 +425,54 @@ extern "C" SCSAPI_RESULT scs_telemetry_init(
         SCS_TELEMETRY_CHANNEL_FLAG_each_frame, on_world_placement, nullptr);
     ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_speed, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_each_frame, on_float_channel, &g_state.speedMps);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_engine_rpm, SCS_VALUE_TYPE_float,
+    // Everything below is optional telemetry. Some ETS2/ATS builds/DLC states
+    // do not expose every channel. Missing optional channels must never prevent
+    // the plugin/pipe from starting, otherwise the launcher reports the plugin
+    // as disconnected even though core position telemetry is available.
+    const auto optional_channel = [&](const char* name, const scs_value_type_t type,
+                                      const scs_u32_t flags,
+                                      const scs_telemetry_channel_callback_t callback,
+                                      const scs_context_t context) {
+        if (!register_channel(api, name, type, flags, callback, context)) {
+            log_message(SCS_LOG_TYPE_warning, std::string("OpenHaul: optional telemetry channel unavailable: ") + name);
+        }
+    };
+
+    const auto optional_indexed_channel = [&](const char* name, const scs_u32_t index,
+                                              const scs_value_type_t type,
+                                              const scs_u32_t flags,
+                                              const scs_telemetry_channel_callback_t callback,
+                                              const scs_context_t context) {
+        if (!register_indexed_channel(api, name, index, type, flags, callback, context)) {
+            log_message(SCS_LOG_TYPE_warning, std::string("OpenHaul: optional indexed telemetry channel unavailable: ") + name);
+        }
+    };
+
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_engine_rpm, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.rpm);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_fuel, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_fuel, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.fuel);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_odometer, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_odometer, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.odometerKm);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_navigation_distance, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_navigation_distance, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.navDistanceM);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_navigation_time, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_navigation_time, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.navTimeS);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_navigation_speed_limit, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_navigation_speed_limit, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.speedLimitMps);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_engine, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_wear_engine, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearEngine);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_transmission, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_wear_transmission, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearTransmission);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_cabin, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_wear_cabin, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearCabin);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_chassis, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_wear_chassis, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearChassis);
-    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_wheels, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_TRUCK_CHANNEL_wear_wheels, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearWheels);
-    ok &= register_channel(api, SCS_TELEMETRY_JOB_CHANNEL_cargo_damage, SCS_VALUE_TYPE_float,
+    optional_channel(SCS_TELEMETRY_JOB_CHANNEL_cargo_damage, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.cargoDamage);
-    ok &= register_indexed_channel(api, SCS_TELEMETRY_TRAILER_CHANNEL_wear_chassis, 0, SCS_VALUE_TYPE_float,
+    optional_indexed_channel(SCS_TELEMETRY_TRAILER_CHANNEL_wear_chassis, 0, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.trailerWearChassis);
 
     if (!ok) {
