@@ -24,6 +24,7 @@ import { registerNewsRoutes } from "./news.js";
 import { requireTelemetryIdentity, resolveUserVtc } from "./telemetryAuth.js";
 import { recordVtcActivity, registerVtcOperationsRoutes } from "./vtcOperations.js";
 import { registerDashboardRoutes } from "./dashboard.js";
+import { registerLogbookRoutes } from "./logbook.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true, credentials: true });
@@ -45,6 +46,7 @@ await registerTruckersMpRoutes(app);
 await registerNewsRoutes(app);
 await registerVtcOperationsRoutes(app);
 await registerDashboardRoutes(app);
+await registerLogbookRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
