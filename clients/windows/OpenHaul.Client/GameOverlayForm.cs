@@ -18,6 +18,7 @@ public sealed class GameOverlayForm : Form
     private readonly ClientSettings _settings;
     private readonly WebView2 _webView = new();
     private readonly System.Windows.Forms.Timer _windowTimer = new();
+    private readonly System.Windows.Forms.Timer _webReconnectTimer = new();
     private PluginLiveTelemetry? _telemetry;
     private IntPtr _gameWindow;
     private bool _userVisible;
@@ -42,6 +43,14 @@ public sealed class GameOverlayForm : Form
 
         _windowTimer.Interval = 150;
         _windowTimer.Tick += (_, _) => TrackGameWindow();
+
+        _webReconnectTimer.Interval = 5000;
+        _webReconnectTimer.Tick += (_, _) =>
+        {
+            if (!_webReady || _webView.CoreWebView2 is null || !_userVisible) return;
+            _webReconnectTimer.Stop();
+            NavigateOverlay();
+        };
 
         Shown += async (_, _) => await EnsureWebViewAsync();
     }
@@ -152,6 +161,8 @@ public sealed class GameOverlayForm : Form
             _webView.CoreWebView2.Settings.IsStatusBarEnabled = false;
             _webView.CoreWebView2.Settings.AreBrowserAcceleratorKeysEnabled = false;
             _webView.CoreWebView2.WebMessageReceived += OnWebMessageReceived;
+            _webView.CoreWebView2.NavigationCompleted += OnNavigationCompleted;
+            _webView.CoreWebView2.ProcessFailed += OnWebProcessFailed;
 
             _webReady = true;
             NavigateOverlay();
@@ -167,6 +178,24 @@ public sealed class GameOverlayForm : Form
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
         }
+    }
+
+    private void OnNavigationCompleted(object? sender, CoreWebView2NavigationCompletedEventArgs e)
+    {
+        if (e.IsSuccess)
+        {
+            _webReconnectTimer.Stop();
+            return;
+        }
+
+        if (_userVisible && !_webReconnectTimer.Enabled)
+            _webReconnectTimer.Start();
+    }
+
+    private void OnWebProcessFailed(object? sender, CoreWebView2ProcessFailedEventArgs e)
+    {
+        if (_userVisible && !_webReconnectTimer.Enabled)
+            _webReconnectTimer.Start();
     }
 
     private void NavigateOverlay()
@@ -350,9 +379,15 @@ public sealed class GameOverlayForm : Form
         {
             _windowTimer.Stop();
             _windowTimer.Dispose();
+            _webReconnectTimer.Stop();
+            _webReconnectTimer.Dispose();
 
             if (_webView.CoreWebView2 is not null)
+            {
                 _webView.CoreWebView2.WebMessageReceived -= OnWebMessageReceived;
+                _webView.CoreWebView2.NavigationCompleted -= OnNavigationCompleted;
+                _webView.CoreWebView2.ProcessFailed -= OnWebProcessFailed;
+            }
 
             _webView.Dispose();
         }
