@@ -115,6 +115,32 @@ TelemetryEvent.init({
     { fields: ["driver_id", "occurred_at"] },
     { fields: ["vtc_id", "occurred_at"] },
     { fields: ["type"] },
+    { unique: true, fields: ["external_id"] },
+  ],
+});
+
+export class DriverPosition extends Model { declare id: number; }
+DriverPosition.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  driverId: { type: DataTypes.STRING(80), allowNull: false, field: "driver_id" },
+  vtcId: { type: DataTypes.INTEGER, allowNull: true, field: "vtc_id" },
+  game: { type: DataTypes.STRING(8), allowNull: false },
+  x: { type: DataTypes.DOUBLE, allowNull: false },
+  y: { type: DataTypes.DOUBLE, allowNull: false, defaultValue: 0 },
+  z: { type: DataTypes.DOUBLE, allowNull: false },
+  heading: { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0 },
+  speedKph: { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0, field: "speed_kph" },
+  sessionId: { type: DataTypes.STRING(120), allowNull: true, field: "session_id" },
+  recordedAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW, field: "recorded_at" },
+}, {
+  sequelize,
+  modelName: "DriverPosition",
+  tableName: "driver_positions",
+  underscored: true,
+  indexes: [
+    { fields: ["driver_id", "recorded_at"] },
+    { fields: ["vtc_id", "recorded_at"] },
+    { fields: ["session_id", "recorded_at"] },
   ],
 });
 
@@ -254,6 +280,26 @@ UserApiKey.init({
   lastUsedAt: { type: DataTypes.DATE, allowNull: true, field: "last_used_at" },
   revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
 }, { sequelize, modelName: "UserApiKey", tableName: "user_api_keys", underscored: true });
+
+export class DiscordAccount extends Model {
+  declare id: number;
+  declare userId: number;
+  declare discordUserId: string;
+  declare username: string;
+  declare globalName: string | null;
+  declare avatarUrl: string | null;
+}
+DiscordAccount.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  userId: { type: DataTypes.INTEGER, allowNull: false, unique: true, field: "user_id" },
+  discordUserId: { type: DataTypes.STRING(32), allowNull: false, unique: true, field: "discord_user_id" },
+  username: { type: DataTypes.STRING(120), allowNull: false },
+  globalName: { type: DataTypes.STRING(120), allowNull: true, field: "global_name" },
+  avatarUrl: { type: DataTypes.TEXT, allowNull: true, field: "avatar_url" },
+  accessToken: { type: DataTypes.TEXT, allowNull: true, field: "access_token" },
+  refreshToken: { type: DataTypes.TEXT, allowNull: true, field: "refresh_token" },
+  tokenExpiresAt: { type: DataTypes.DATE, allowNull: true, field: "token_expires_at" },
+}, { sequelize, modelName: "DiscordAccount", tableName: "discord_accounts", underscored: true });
 
 export class TwitchAccount extends Model {
   declare id: number;
@@ -421,6 +467,8 @@ User.hasMany(UserApiKey, { foreignKey: "userId" });
 UserApiKey.belongsTo(User, { foreignKey: "userId" });
 User.hasOne(TwitchAccount, { foreignKey: "userId" });
 TwitchAccount.belongsTo(User, { foreignKey: "userId" });
+User.hasOne(DiscordAccount, { foreignKey: "userId" });
+DiscordAccount.belongsTo(User, { foreignKey: "userId" });
 ClientToken.belongsTo(User, { foreignKey: "userId" });
 User.hasMany(VtcMember, { foreignKey: "userId" });
 Vtc.hasMany(VtcMember, { foreignKey: "vtcId" });
