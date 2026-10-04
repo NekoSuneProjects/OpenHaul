@@ -1143,7 +1143,18 @@ export function MapClient() {
       map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
       map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
-      const takeManualCameraControl = () => {
+      const takeManualCameraControl = (event?: any) => {
+        // MapLibre also emits rotate/pitch lifecycle events for programmatic
+        // camera updates. Only cancel player-follow when a real user input
+        // started the gesture; otherwise our own follow camera clears itself.
+        if (event && "originalEvent" in event && !event.originalEvent) return;
+
+        fittedRef.current = true;
+        setSelectedDriverId("");
+        setCameraMode("map");
+      };
+
+      const takeWheelCameraControl = () => {
         fittedRef.current = true;
         setSelectedDriverId("");
         setCameraMode("map");
@@ -1151,7 +1162,8 @@ export function MapClient() {
 
       map.on("dragstart", takeManualCameraControl);
       map.on("rotatestart", takeManualCameraControl);
-      map.getCanvas().addEventListener("wheel", takeManualCameraControl, { passive: true });
+      map.on("pitchstart", takeManualCameraControl);
+      map.getCanvas().addEventListener("wheel", takeWheelCameraControl, { passive: true });
 
       map.on("load", () => {
         queueMapResize();
@@ -1503,6 +1515,10 @@ export function MapClient() {
       if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
       resizeObserver?.disconnect();
       window.removeEventListener("resize", queueMapResize);
+      mapRef.current?.off("dragstart", takeManualCameraControl);
+      mapRef.current?.off("rotatestart", takeManualCameraControl);
+      mapRef.current?.off("pitchstart", takeManualCameraControl);
+      mapRef.current?.getCanvas().removeEventListener("wheel", takeWheelCameraControl);
       selectedPopupRef.current?.remove?.();
       selectedPopupRef.current = null;
       selectedPopupDriverIdRef.current = "";
@@ -1689,7 +1705,7 @@ export function MapClient() {
     // stop following while the next area request is in flight.
     if (
       selectedDriverLastSeenRef.current > 0 &&
-      Date.now() - selectedDriverLastSeenRef.current < 20_000
+      Date.now() - selectedDriverLastSeenRef.current < 90_000
     ) return;
 
     setSelectedDriverId("");
@@ -1891,16 +1907,16 @@ export function MapClient() {
               zoom: Math.max(map.getZoom(), 15.2),
               bearing,
               pitch: 62,
+              padding: { top: 0, right: 0, bottom: 0, left: 0 },
             });
-            map.setPadding({ top: 70, right: 0, bottom: 210, left: 0 });
           } else {
             map.jumpTo({
               center,
               zoom: Math.max(map.getZoom(), 17.3),
               bearing,
               pitch: 78,
+              padding: { top: 0, right: 0, bottom: 0, left: 0 },
             });
-            map.setPadding({ top: 90, right: 0, bottom: 300, left: 0 });
           }
         }
       } else {
