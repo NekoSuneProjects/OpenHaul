@@ -39,8 +39,16 @@ public sealed class MainForm : Form
     private readonly System.Windows.Forms.Timer _telemetryRetryTimer = new();
     private GameOverlayForm? _overlay;
     private bool _overlayHotkeyRegistered;
+    private IntPtr _overlayKeyboardHook = IntPtr.Zero;
+    private LowLevelKeyboardProc? _overlayKeyboardProc;
+    private bool _overlayHotkeyDown;
     private const int OverlayHotkeyId = 0x4F48;
     private const int WmHotkey = 0x0312;
+    private const int WhKeyboardLl = 13;
+    private const int WmKeyDown = 0x0100;
+    private const int WmKeyUp = 0x0101;
+    private const int WmSysKeyDown = 0x0104;
+    private const int WmSysKeyUp = 0x0105;
     private bool _telemetryRetryPending;
     private bool _allowExit;
 
@@ -105,6 +113,11 @@ public sealed class MainForm : Form
                 UnregisterHotKey(Handle, OverlayHotkeyId);
                 _overlayHotkeyRegistered = false;
             }
+            if (_overlayKeyboardHook != IntPtr.Zero)
+            {
+                UnhookWindowsHookEx(_overlayKeyboardHook);
+                _overlayKeyboardHook = IntPtr.Zero;
+            }
             _overlay?.Close();
             _overlay?.Dispose();
             _overlay = null;
@@ -126,6 +139,20 @@ public sealed class MainForm : Form
 
     [DllImport("user32.dll", SetLastError = true)]
     private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
+    private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+    [DllImport("user32.dll")]
+    private static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
+
+    [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    private static extern IntPtr GetModuleHandle(string? lpModuleName);
 
     private void BeginWindowDrag(object? sender, MouseEventArgs e)
     {
@@ -155,12 +182,68 @@ public sealed class MainForm : Form
             _overlayHotkeyRegistered = false;
         }
 
+        if (_overlayKeyboardHook != IntPtr.Zero)
+        {
+            UnhookWindowsHookEx(_overlayKeyboardHook);
+            _overlayKeyboardHook = IntPtr.Zero;
+        }
+
+        _overlayHotkeyDown = false;
+        _overlayKeyboardProc ??= OverlayKeyboardHook;
+
+        using var currentProcess = Process.GetCurrentProcess();
+        using var currentModule = currentProcess.MainModule;
+        var moduleHandle = GetModuleHandle(currentModule?.ModuleName);
+
+        _overlayKeyboardHook = SetWindowsHookEx(
+            WhKeyboardLl,
+            _overlayKeyboardProc,
+            moduleHandle,
+            0);
+
+        if (_overlayKeyboardHook != IntPtr.Zero)
+        {
+            SetStatus($"Overlay hotkey {_settings.OverlayHotkey} ready.");
+            return;
+        }
+
         if (!Enum.TryParse<Keys>(_settings.OverlayHotkey, true, out var key))
             key = Keys.F8;
 
         _overlayHotkeyRegistered = RegisterHotKey(Handle, OverlayHotkeyId, 0, (uint)key);
         if (!_overlayHotkeyRegistered)
-            SetStatus($"Overlay hotkey {_settings.OverlayHotkey} is already in use by another application.");
+            SetStatus($"Overlay hotkey {_settings.OverlayHotkey} could not be registered.");
+    }
+
+    private IntPtr OverlayKeyboardHook(int nCode, IntPtr wParam, IntPtr lParam)
+    {
+        if (nCode >= 0)
+        {
+            var message = wParam.ToInt32();
+            var vkCode = Marshal.ReadInt32(lParam);
+
+            if (!Enum.TryParse<Keys>(_settings.OverlayHotkey, true, out var configuredKey))
+                configuredKey = Keys.F8;
+
+            if (vkCode == (int)configuredKey)
+            {
+                if (message is WmKeyDown or WmSysKeyDown)
+                {
+                    if (!_overlayHotkeyDown)
+                    {
+                        _overlayHotkeyDown = true;
+                        if (!IsDisposed && IsHandleCreated)
+                            BeginInvoke(() => ToggleOverlay());
+                    }
+                }
+                else if (message is WmKeyUp or WmSysKeyUp)
+                {
+                    _overlayHotkeyDown = false;
+                }
+            }
+        }
+
+        return CallNextHookEx(_overlayKeyboardHook, nCode, wParam, lParam);
     }
 
     private void ToggleOverlay()
