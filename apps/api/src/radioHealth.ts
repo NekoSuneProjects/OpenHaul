@@ -6,6 +6,22 @@ import type { FastifyInstance } from "fastify";
 import { z } from "zod";
 
 const DEFAULT_NEKOROUTE_URL = "https://proxyweb.nekosunevr.co.uk";
+const publicHostCache = new Map<string, number>();
+
+function envInt(name: string, fallback: number, min: number, max: number) {
+  const value = Number.parseInt(process.env[name] ?? String(fallback), 10);
+  return Number.isFinite(value) ? Math.max(min, Math.min(max, value)) : fallback;
+}
+
+function fastRadioInputArgs() {
+  return [
+    "-fflags", "nobuffer",
+    "-flags", "low_delay",
+    "-probesize", String(envInt("RADIO_FFMPEG_PROBESIZE", 65536, 32768, 1048576)),
+    "-analyzeduration", String(envInt("RADIO_FFMPEG_ANALYZEDURATION_US", 250000, 0, 5000000)),
+    "-rw_timeout", String(envInt("RADIO_FFMPEG_RW_TIMEOUT_US", 8000000, 1000000, 30000000)),
+  ];
+}
 
 type RelayPayload = {
   url: string;
@@ -63,9 +79,14 @@ async function assertPublicRadioUrl(value: string) {
     throw new Error("Local/private radio targets are not allowed");
   }
 
-  const addresses = await lookup(parsed.hostname, { all: true, verbatim: true });
-  if (!addresses.length || addresses.some((row) => isPrivateAddress(row.address))) {
-    throw new Error("Local/private radio targets are not allowed");
+  const now = Date.now();
+  const cachedUntil = publicHostCache.get(parsed.hostname);
+  if (!cachedUntil || cachedUntil <= now) {
+    const addresses = await lookup(parsed.hostname, { all: true, verbatim: true });
+    if (!addresses.length || addresses.some((row) => isPrivateAddress(row.address))) {
+      throw new Error("Local/private radio targets are not allowed");
+    }
+    publicHostCache.set(parsed.hostname, now + 5 * 60_000);
   }
   return parsed.toString();
 }
@@ -143,7 +164,7 @@ async function probeCodec(inputUrl: string) {
   return new Promise<string>((resolve, reject) => {
     const child = spawn("ffprobe", [
       "-v", "error",
-      "-rw_timeout", "8000000",
+      ...fastRadioInputArgs(),
       "-select_streams", "a:0",
       "-show_entries", "stream=codec_name",
       "-of", "default=noprint_wrappers=1:nokey=1",
@@ -312,11 +333,12 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
 
       const ffmpeg = spawn("ffmpeg", [
         "-hide_banner", "-loglevel", "warning", "-nostdin",
-        "-rw_timeout", "15000000",
-        "-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_delay_max", "5",
+        ...fastRadioInputArgs(),
+        "-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_at_eof", "1", "-reconnect_delay_max", "2",
         "-i", inputUrl,
         "-vn", "-ac", "2", "-ar", "44100",
-        "-c:a", "libmp3lame", "-b:a", "128k", "-f", "mp3",
+        "-c:a", "libmp3lame", "-compression_level", "0", "-b:a", "128k",
+        "-flush_packets", "1", "-write_xing", "0", "-f", "mp3",
         "pipe:1",
       ], { stdio: ["ignore", "pipe", "pipe"] });
 
