@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Net.Http.Json;
 using System.Runtime.InteropServices;
+using Microsoft.Web.WebView2.WinForms;
 
 namespace OpenHaul.Client;
 
@@ -480,9 +481,10 @@ public sealed class MainForm : Form
         });
 
         AddNav(sidebar, "play", "▶   Drive", 42);
-        AddNav(sidebar, "news", "▤   News", 94);
-        AddNav(sidebar, "servers", "◎   Server Status", 146);
-        AddNav(sidebar, "account", "●   Account", 198);
+        AddNav(sidebar, "minimap", "◎   Mini Map", 94);
+        AddNav(sidebar, "news", "▤   News", 146);
+        AddNav(sidebar, "servers", "◉   Server Status", 198);
+        AddNav(sidebar, "account", "●   Account", 250);
 
         sidebar.Controls.Add(new Label
         {
@@ -490,11 +492,11 @@ public sealed class MainForm : Form
             AutoSize = true,
             ForeColor = C(72, 103, 84),
             Font = new Font("Segoe UI", 7.5F, FontStyle.Bold),
-            Location = new Point(18, 262),
+            Location = new Point(18, 314),
         });
 
-        AddNav(sidebar, "updates", "⇩   Updates", 286);
-        AddNav(sidebar, "settings", "⚙   Settings", 338);
+        AddNav(sidebar, "updates", "⇩   Updates", 338);
+        AddNav(sidebar, "settings", "⚙   Settings", 390);
 
         var version = new Label
         {
@@ -634,6 +636,7 @@ public sealed class MainForm : Form
 
         Control next = page switch
         {
+            "minimap" => BuildMinimapPage(),
             "news" => BuildNewsPage(),
             "servers" => BuildServersPage(),
             "account" => BuildAccountPage(),
@@ -724,6 +727,153 @@ public sealed class MainForm : Form
 
         RefreshSelectedGamePath();
         ApplyMandatoryUpdateState();
+        return page;
+    }
+
+    private Control BuildMinimapPage()
+    {
+        var page = PagePanel();
+        page.Controls.Add(PageTitle(
+            "Mini Map",
+            "Live OpenHaul map inside the client with your truck and other online drivers."));
+
+        var toolbar = new RoundedPanel
+        {
+            Location = new Point(24, 96),
+            Height = 58,
+            BackColor = C(7, 24, 16),
+            BorderColor = C(20, 63, 41),
+            Radius = 14,
+        };
+        page.Controls.Add(toolbar);
+
+        var followMe = new CheckBox
+        {
+            Text = "Follow me",
+            Checked = true,
+            AutoSize = true,
+            ForeColor = Color.White,
+            Location = new Point(16, 19),
+        };
+        toolbar.Controls.Add(followMe);
+
+        var mapTypeLabel = new Label
+        {
+            Text = "Map",
+            AutoSize = true,
+            ForeColor = C(136, 164, 148),
+            Location = new Point(130, 20),
+        };
+        toolbar.Controls.Add(mapTypeLabel);
+
+        var mapType = new ComboBox
+        {
+            DropDownStyle = ComboBoxStyle.DropDownList,
+            Width = 130,
+            Location = new Point(172, 15),
+            BackColor = C(9, 38, 25),
+            ForeColor = Color.White,
+        };
+        mapType.Items.AddRange(new object[] { "road", "satellite", "xray" });
+        mapType.SelectedItem = mapType.Items.Contains(_settings.OverlayMapType)
+            ? _settings.OverlayMapType
+            : "road";
+        toolbar.Controls.Add(mapType);
+
+        var refresh = new Button
+        {
+            Text = "Refresh",
+            Width = 110,
+            Height = 34,
+            Location = new Point(320, 12),
+        };
+        StyleButton(refresh, false);
+        toolbar.Controls.Add(refresh);
+
+        var openWebsite = new Button
+        {
+            Text = "Open full map",
+            Width = 140,
+            Height = 34,
+            Location = new Point(442, 12),
+        };
+        StyleButton(openWebsite, false);
+        toolbar.Controls.Add(openWebsite);
+
+        var web = new WebView2
+        {
+            Location = new Point(24, 170),
+            BackColor = C(3, 9, 6),
+        };
+        page.Controls.Add(web);
+
+        string WebRoot()
+        {
+            var configured = (_settings.ApiUrl ?? "").Trim().TrimEnd('/');
+            if (string.IsNullOrWhiteSpace(configured))
+                return ClientSettings.DefaultApiUrl;
+            if (configured.StartsWith("http://localhost:3001", StringComparison.OrdinalIgnoreCase))
+                return configured.Replace(":3001", ":3000", StringComparison.OrdinalIgnoreCase);
+            if (configured.StartsWith("http://127.0.0.1:3001", StringComparison.OrdinalIgnoreCase))
+                return configured.Replace(":3001", ":3000", StringComparison.OrdinalIgnoreCase);
+            return configured;
+        }
+
+        async Task NavigateAsync()
+        {
+            try
+            {
+                await web.EnsureCoreWebView2Async();
+                if (web.CoreWebView2 is null) return;
+
+                web.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
+                web.CoreWebView2.Settings.AreDevToolsEnabled = false;
+                web.CoreWebView2.Settings.IsStatusBarEnabled = false;
+
+                var mode = mapType.SelectedItem?.ToString() ?? "road";
+                var url = WebRoot() + "/map?embed=1&mode=" + Uri.EscapeDataString(mode);
+
+                if (followMe.Checked && !string.IsNullOrWhiteSpace(_settings.SteamId))
+                    url += "&driver=" + Uri.EscapeDataString(_settings.SteamId);
+
+                web.CoreWebView2.Navigate(url);
+            }
+            catch (Exception ex)
+            {
+                SetStatus("Mini Map could not start: " + ex.Message);
+            }
+        }
+
+        void LayoutMiniMap()
+        {
+            toolbar.Width = Math.Max(520, page.ClientSize.Width - 48);
+            web.SetBounds(
+                24,
+                170,
+                Math.Max(520, page.ClientSize.Width - 48),
+                Math.Max(280, page.ClientSize.Height - 194));
+        }
+
+        page.Resize += (_, _) => LayoutMiniMap();
+        page.HandleCreated += async (_, _) => await NavigateAsync();
+        followMe.CheckedChanged += async (_, _) => await NavigateAsync();
+        mapType.SelectedIndexChanged += async (_, _) =>
+        {
+            _settings.OverlayMapType = mapType.SelectedItem?.ToString() ?? "road";
+            _settings.Save();
+            await NavigateAsync();
+        };
+        refresh.Click += async (_, _) => await NavigateAsync();
+        openWebsite.Click += (_, _) =>
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = WebRoot() + "/map",
+                UseShellExecute = true,
+            });
+        };
+
+        LayoutMiniMap();
         return page;
     }
 
