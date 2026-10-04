@@ -26,6 +26,7 @@ import { recordVtcActivity, registerVtcOperationsRoutes } from "./vtcOperations.
 import { registerDashboardRoutes } from "./dashboard.js";
 import { registerLogbookRoutes } from "./logbook.js";
 import { registerPlatformFeatureRoutes } from "./platformFeatures.js";
+import { resolveVtcIdentifier } from "./vtcLookup.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true, credentials: true });
@@ -134,16 +135,19 @@ app.get("/api/v1/public/live/ws", { websocket: true }, (socket, request) => {
 });
 
 app.get("/api/v1/public/vtcs/:id", async (request, reply) => {
-  const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
-  const vtc = await Vtc.findByPk(id, { attributes: ["id", "name", "slug", "tag"] });
-  if (!vtc) return reply.code(404).send({ error: "vtc_not_found" });
+  const { id } = z.object({ id: z.string().min(1).max(120) }).parse(request.params);
+  const resolved = await resolveVtcIdentifier(id);
+  if (!resolved) return reply.code(404).send({ error: "vtc_not_found" });
+  const vtc = await Vtc.findByPk(resolved.id, { attributes: ["id", "name", "slug", "tag"] });
   return { vtc };
 });
 
-app.get("/api/v1/public/vtcs/:id/live", async (request) => {
-  const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
-  const drivers = await getLiveDrivers(id);
-  return { vtcId: id, count: drivers.length, drivers };
+app.get("/api/v1/public/vtcs/:id/live", async (request, reply) => {
+  const { id } = z.object({ id: z.string().min(1).max(120) }).parse(request.params);
+  const vtc = await resolveVtcIdentifier(id);
+  if (!vtc) return reply.code(404).send({ error: "vtc_not_found" });
+  const drivers = await getLiveDrivers(vtc.id);
+  return { vtcId: vtc.id, slug: vtc.slug, count: drivers.length, drivers };
 });
 
 app.get("/api/v1/public/vtcs", async (request) => {
