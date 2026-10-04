@@ -2,6 +2,7 @@ import cors from "@fastify/cors";
 import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
 import Fastify from "fastify";
+import { Op } from "sequelize";
 import { z } from "zod";
 import { DriverPosition, Fine, Job, PlatformRecord, TelemetryEvent, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
@@ -709,9 +710,9 @@ app.get("/api/v1/client/dispatch", async (request, reply) => {
   const records = await PlatformRecord.findAll({
     where: {
       scopeType: "vtc",
-      scopeId: { [sequelize.Sequelize.Op.in]: vtcIds },
+      scopeId: { [Op.in]: vtcIds },
       category: "dispatch",
-      status: { [sequelize.Sequelize.Op.in]: ["pending", "accepted"] },
+      status: { [Op.in]: ["pending", "accepted"] },
     },
     order: [["updatedAt", "DESC"]],
     limit: 200,
