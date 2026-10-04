@@ -24,6 +24,11 @@ export type LiveDriver = {
   navigationDistanceM?: number | null;
   navigationTimeS?: number | null;
   speedLimitKph?: number | null;
+  truckDamagePercent?: number | null;
+  trailerDamagePercent?: number | null;
+  cargoDamagePercent?: number | null;
+  specialJob?: boolean | null;
+  cargoLoaded?: boolean | null;
   server?: string | null;
   updatedAt: string;
 };
