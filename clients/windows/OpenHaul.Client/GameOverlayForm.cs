@@ -130,7 +130,7 @@ public sealed class GameOverlayForm : Form
         }
 
         var foreground = GetForegroundWindow();
-        if (foreground != _gameWindow && !forceShow)
+        if (foreground != _gameWindow)
         {
             if (Visible) Hide();
             return;
