@@ -183,9 +183,18 @@ app.get("/api/v1/public/vtcs", async (request) => {
 
 app.get("/api/v1/public/radio/truckersfm", async (_request, reply) => {
   const url = process.env.TRUCKERSFM_NOWPLAYING_URL ?? "https://azuracast.truckers.fm/api/nowplaying/1";
-  const response = await fetch(url, { headers: { "user-agent": "OpenHaul/0.1 (+https://github.com/NekoSuneProjects/OpenHaul)" } });
+  const response = await fetch(url, {
+    cache: "no-store",
+    headers: {
+      "user-agent": "OpenHaul/0.1 (+https://github.com/NekoSuneProjects/OpenHaul)",
+      "cache-control": "no-cache",
+      "pragma": "no-cache",
+    },
+  });
   if (!response.ok) return reply.code(502).send({ error: "truckersfm_unavailable" });
-  reply.header("cache-control", "public, max-age=10");
+  reply.header("cache-control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+  reply.header("pragma", "no-cache");
+  reply.header("expires", "0");
   return response.json();
 });
 
