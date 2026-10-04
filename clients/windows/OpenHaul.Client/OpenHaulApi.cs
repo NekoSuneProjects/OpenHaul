@@ -25,16 +25,87 @@ public sealed class OpenHaulApi : IDisposable
     }
 
     public Task<HttpResponseMessage> SendLiveAsync(LiveTelemetry telemetry, CancellationToken token) =>
-        _http.PostAsJsonAsync("api/v1/telemetry/live", telemetry, _json, token);
+        SendWithReconnectAsync(
+            () => new HttpRequestMessage(HttpMethod.Post, "api/v1/telemetry/live")
+            {
+                Content = JsonContent.Create(telemetry, options: _json),
+            },
+            token);
 
     public Task<HttpResponseMessage> SendOfflineAsync(string driverId, CancellationToken token) =>
-        _http.DeleteAsync($"api/v1/telemetry/live/{Uri.EscapeDataString(driverId)}", token);
+        SendWithReconnectAsync(
+            () => new HttpRequestMessage(HttpMethod.Delete, $"api/v1/telemetry/live/{Uri.EscapeDataString(driverId)}"),
+            token);
 
     public Task<HttpResponseMessage> SendFineAsync(FineTelemetry fine, CancellationToken token) =>
-        _http.PostAsJsonAsync("api/v1/telemetry/fines", fine, _json, token);
+        SendWithReconnectAsync(
+            () => new HttpRequestMessage(HttpMethod.Post, "api/v1/telemetry/fines")
+            {
+                Content = JsonContent.Create(fine, options: _json),
+            },
+            token);
 
     public Task<HttpResponseMessage> SendJobAsync(JobCompletedTelemetry job, CancellationToken token) =>
-        _http.PostAsJsonAsync("api/v1/telemetry/jobs/completed", job, _json, token);
+        SendWithReconnectAsync(
+            () => new HttpRequestMessage(HttpMethod.Post, "api/v1/telemetry/jobs/completed")
+            {
+                Content = JsonContent.Create(job, options: _json),
+            },
+            token);
+
+    private async Task<HttpResponseMessage> SendWithReconnectAsync(
+        Func<HttpRequestMessage> requestFactory,
+        CancellationToken token)
+    {
+        var delays = new[]
+        {
+            TimeSpan.Zero,
+            TimeSpan.FromSeconds(1),
+            TimeSpan.FromSeconds(2),
+            TimeSpan.FromSeconds(5),
+        };
+
+        Exception? lastError = null;
+
+        for (var attempt = 0; attempt < delays.Length; attempt++)
+        {
+            if (delays[attempt] > TimeSpan.Zero)
+                await Task.Delay(delays[attempt], token);
+
+            using var request = requestFactory();
+
+            try
+            {
+                var response = await _http.SendAsync(request, token);
+
+                if (!IsTransient(response.StatusCode) || attempt == delays.Length - 1)
+                    return response;
+
+                response.Dispose();
+            }
+            catch (OperationCanceledException) when (token.IsCancellationRequested)
+            {
+                throw;
+            }
+            catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException)
+            {
+                lastError = ex;
+                if (attempt == delays.Length - 1)
+                    throw;
+            }
+        }
+
+        throw lastError ?? new HttpRequestException("OpenHaul request failed after reconnect attempts.");
+    }
+
+    private static bool IsTransient(System.Net.HttpStatusCode statusCode) =>
+        statusCode is
+            System.Net.HttpStatusCode.RequestTimeout or
+            System.Net.HttpStatusCode.TooManyRequests or
+            System.Net.HttpStatusCode.InternalServerError or
+            System.Net.HttpStatusCode.BadGateway or
+            System.Net.HttpStatusCode.ServiceUnavailable or
+            System.Net.HttpStatusCode.GatewayTimeout;
 
     public void Dispose() => _http.Dispose();
 }
