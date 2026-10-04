@@ -11,6 +11,12 @@ type SiiStation = {
   language: string;
   bitrate: string;
   favorite: boolean;
+  healthStatus?: "unchecked" | "scanning" | "working" | "repaired" | "broken";
+  healthRoute?: string;
+  healthReason?: string;
+  detectedCodec?: string;
+  originalUrl?: string;
+  proxyCountry?: string;
 };
 
 type DirectoryStation = {
@@ -68,6 +74,8 @@ function parseLiveStreams(text: string): SiiStation[] {
       language: parts[3]?.trim() ?? "",
       bitrate: parts[4]?.trim() || "128",
       favorite: (parts[5]?.trim() ?? "0") === "1",
+      healthStatus: "unchecked",
+      proxyCountry: "",
     });
   }
 
@@ -124,6 +132,8 @@ function blankStation(): SiiStation {
     language: "EN",
     bitrate: "128",
     favorite: false,
+    healthStatus: "unchecked",
+    proxyCountry: "",
   };
 }
 
@@ -137,6 +147,8 @@ export default function RadioSiiEditorPage() {
   const [radioSearch, setRadioSearch] = useState("");
   const [directory, setDirectory] = useState<DirectoryStation[]>([]);
   const [directoryLoading, setDirectoryLoading] = useState(false);
+  const [scanning, setScanning] = useState(false);
+  const [scanProgress, setScanProgress] = useState({ done: 0, total: 0 });
 
 
   useEffect(() => {
@@ -181,6 +193,72 @@ export default function RadioSiiEditorPage() {
       );
   }, [stations, filter]);
 
+  const runHealthScan = async (inputStations: SiiStation[] = stations) => {
+    if (!inputStations.length || scanning) return;
+
+    setScanning(true);
+    setScanProgress({ done: 0, total: inputStations.length });
+    setStations((current) => current.map((station) => ({
+      ...station,
+      healthStatus: inputStations.some((candidate) => candidate.id === station.id) ? "scanning" : station.healthStatus,
+    })));
+    setMessage(`Scanning ${inputStations.length} radio URLs. OpenHaul will try direct playback, MP3 repair, then a residential proxy fallback.`);
+
+    let done = 0;
+    const chunkSize = 8;
+
+    try {
+      for (let start = 0; start < inputStations.length; start += chunkSize) {
+        const chunk = inputStations.slice(start, start + chunkSize);
+        const response = await fetch(`${api}/api/v1/public/radio/scan`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            stations: chunk.map((station) => ({
+              id: station.id,
+              url: station.url,
+              ...(station.proxyCountry?.trim() ? { preferredCountry: station.proxyCountry.trim().toUpperCase() } : {}),
+            })),
+          }),
+        });
+
+        if (!response.ok) throw new Error(`Radio scanner returned HTTP ${response.status}`);
+        const data = await response.json();
+        const results = new Map<string, any>((data.results ?? []).map((row: any) => [String(row.id), row]));
+
+        setStations((current) => current.map((station) => {
+          const row = results.get(station.id);
+          if (!row) return station;
+
+          const replacement = row.replacementUrl ? String(row.replacementUrl) : null;
+          return {
+            ...station,
+            originalUrl: replacement && replacement !== station.url ? (station.originalUrl || station.url) : station.originalUrl,
+            url: replacement || station.url,
+            bitrate: replacement ? "128" : station.bitrate,
+            healthStatus: row.status === "working" ? "working" : row.status === "repaired" ? "repaired" : "broken",
+            healthRoute: String(row.route || ""),
+            healthReason: String(row.reason || ""),
+            detectedCodec: row.codec ? String(row.codec).toUpperCase() : "",
+            proxyCountry: row.proxy?.country ? String(row.proxy.country) : station.proxyCountry,
+          };
+        }));
+
+        done += chunk.length;
+        setScanProgress({ done, total: inputStations.length });
+      }
+
+      setMessage("Radio scan complete. Repaired URLs were applied automatically. Review broken stations before downloading the .sii file.");
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Radio health scan failed.");
+      setStations((current) => current.map((station) =>
+        station.healthStatus === "scanning" ? { ...station, healthStatus: "unchecked" } : station
+      ));
+    } finally {
+      setScanning(false);
+    }
+  };
+
   const importFile = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -189,7 +267,8 @@ export default function RadioSiiEditorPage() {
       const parsed = parseLiveStreams(await file.text());
       setStations(parsed);
       setFilename(file.name || "live_streams.sii");
-      setMessage(`Imported ${parsed.length} stations. Changes stay in your browser until you download the edited file.`);
+      setMessage(`Imported ${parsed.length} stations. Starting radio health scan…`);
+      window.setTimeout(() => void runHealthScan(parsed), 0);
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Unable to read this .sii file.");
     } finally {
@@ -241,6 +320,8 @@ export default function RadioSiiEditorPage() {
       language: (radio.language || "EN").split(",")[0].trim().slice(0, 8),
       bitrate: String(radio.bitrateKbps || 128),
       favorite: false,
+      healthStatus: "unchecked",
+      proxyCountry: radio.country || "",
     }]);
     setMessage(`Added ${radio.name} using its OpenHaul ATS/ETS2 MP3 URL.`);
   };
@@ -265,6 +346,17 @@ export default function RadioSiiEditorPage() {
         <div className="actions">
           <button className="button primary" onClick={() => fileRef.current?.click()}>Import .sii</button>
           <button className="button" onClick={() => setStations((current) => [...current, blankStation()])}>Add blank station</button>
+          <button className="button" disabled={scanning || !stations.length} onClick={() => void runHealthScan()}>
+            {scanning ? `Scanning ${scanProgress.done}/${scanProgress.total}` : "Scan & repair radios"}
+          </button>
+          <button className="button" onClick={() => {
+            const broken = stations.filter((station) => station.healthStatus === "broken").length;
+            if (!broken) return;
+            if (window.confirm(`Delete ${broken} broken radio station${broken === 1 ? "" : "s"}?`)) {
+              setStations((current) => current.filter((station) => station.healthStatus !== "broken"));
+              setMessage(`Deleted ${broken} broken radio station${broken === 1 ? "" : "s"}.`);
+            }
+          }}>Delete broken</button>
           <button className="button" onClick={exportFile}>Download edited .sii</button>
           <Link className="button" href="/radio">Back to Radio</Link>
           <input ref={fileRef} type="file" accept=".sii,text/plain" hidden onChange={importFile} />
@@ -276,6 +368,9 @@ export default function RadioSiiEditorPage() {
           <div><small className="muted">File</small><strong style={{ display: "block", marginTop: 5 }}>{filename}</strong></div>
           <div><small className="muted">Stations</small><strong style={{ display: "block", marginTop: 5 }}>{stations.length}</strong></div>
           <div><small className="muted">Favourite stations</small><strong style={{ display: "block", marginTop: 5 }}>{stations.filter((s) => s.favorite).length}</strong></div>
+          <div><small className="muted">Working</small><strong style={{ display: "block", marginTop: 5 }}>{stations.filter((s) => s.healthStatus === "working").length}</strong></div>
+          <div><small className="muted">Repaired</small><strong style={{ display: "block", marginTop: 5 }}>{stations.filter((s) => s.healthStatus === "repaired").length}</strong></div>
+          <div><small className="muted">Broken</small><strong style={{ display: "block", marginTop: 5, color: stations.some((s) => s.healthStatus === "broken") ? "var(--danger)" : undefined }}>{stations.filter((s) => s.healthStatus === "broken").length}</strong></div>
           <div><small className="muted">Status</small><span style={{ display: "block", marginTop: 5 }}>{message}</span></div>
         </div>
       </section>
@@ -344,7 +439,7 @@ export default function RadioSiiEditorPage() {
         </div>
 
         <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 1100 }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 1320 }}>
             <thead>
               <tr style={{ textAlign: "left" }}>
                 <th style={{ padding: 8 }}>#</th>
@@ -354,6 +449,8 @@ export default function RadioSiiEditorPage() {
                 <th style={{ padding: 8 }}>Lang</th>
                 <th style={{ padding: 8 }}>kbps</th>
                 <th style={{ padding: 8 }}>Fav</th>
+                <th style={{ padding: 8 }}>Health</th>
+                <th style={{ padding: 8 }}>Proxy country</th>
                 <th style={{ padding: 8 }}>Actions</th>
               </tr>
             </thead>
@@ -368,6 +465,27 @@ export default function RadioSiiEditorPage() {
                   <td style={{ padding: 8 }}><input value={station.bitrate} inputMode="numeric" onChange={(e) => patch(index, { bitrate: e.target.value.replace(/\D/g, "").slice(0, 4) })} style={{ width: 76 }} /></td>
                   <td style={{ padding: 8, textAlign: "center" }}>
                     <input type="checkbox" checked={station.favorite} onChange={(e) => patch(index, { favorite: e.target.checked })} />
+                  </td>
+                  <td style={{ padding: 8 }}>
+                    <span className="pill" style={{ color: station.healthStatus === "broken" ? "var(--danger)" : undefined }}>
+                      {station.healthStatus === "working" ? "Working" :
+                       station.healthStatus === "repaired" ? (station.healthRoute === "residential-proxy" ? "Repaired · proxy" : "Repaired · MP3") :
+                       station.healthStatus === "broken" ? "Broken" :
+                       station.healthStatus === "scanning" ? "Scanning…" : "Unchecked"}
+                    </span>
+                    <small title={station.healthReason || ""} style={{ display: "block", marginTop: 5 }}>
+                      {[station.detectedCodec, station.healthRoute].filter(Boolean).join(" · ") || "—"}
+                    </small>
+                  </td>
+                  <td style={{ padding: 8 }}>
+                    <input
+                      value={station.proxyCountry || ""}
+                      maxLength={2}
+                      placeholder="Auto"
+                      title="Optional 2-letter residential proxy country used if direct playback fails"
+                      onChange={(e) => patch(index, { proxyCountry: e.target.value.toUpperCase().replace(/[^A-Z]/g, "").slice(0, 2) })}
+                      style={{ width: 72 }}
+                    />
                   </td>
                   <td style={{ padding: 8 }}>
                     <div style={{ display: "flex", gap: 6 }}>
