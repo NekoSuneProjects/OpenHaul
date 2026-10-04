@@ -19,10 +19,10 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Automatic telemetry plugin updater
 - [x] Website/client update status: latest version, installed version, plugin version, compatible/outdated
 - [x] Stable/Beta release channels and release history/changelog
-- [ ] Signed client/plugin releases from GitHub Actions
-- [ ] Rollback/recovery when an update fails
-- [ ] Offline telemetry queue and reconnect/resend
-- [ ] Client health/status diagnostics and useful error reporting
+- [x] Signed client/plugin releases from GitHub Actions
+- [x] Rollback/recovery when an update fails
+- [x] Offline telemetry queue and reconnect/resend
+- [x] Client health/status diagnostics and useful error reporting
 
 ## P0 — Telemetry and job logging
 - [x] Named-pipe telemetry bridge contract
@@ -31,17 +31,17 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Core truck/job/cargo telemetry: position, heading, speed, RPM, fuel, odometer, navigation, truck and cargo
 - [x] Job complete detection from real SCS events
 - [x] Fine events: red light, speeding, wrong way, collision and other SCS penalties
-- [ ] Job start/accepted/cancelled/abandoned detection from real SCS events
-- [ ] Collision and damage events
-- [ ] Trailer/wheel/advanced damage telemetry
-- [ ] Fuel purchase/refuel events and cost
-- [ ] Toll/ferry/train/repair/service expenses where telemetry permits
+- [x] Job start/accepted/cancelled/abandoned detection from real SCS events
+- [x] Collision and damage events
+- [x] Trailer/wheel/advanced damage telemetry
+- [x] Fuel purchase/refuel events and cost
+- [x] Toll/ferry/train/repair/service expenses where telemetry permits
 - [x] Track cargo, source/destination company/city, mass, distance, income, expenses and final profit/loss
-- [ ] Track late delivery, cargo/truck/trailer damage and penalties
+- [x] Track late delivery, cargo/truck/trailer damage and penalties
 - [x] Persist raw/normalized event history for auditing and future statistics
-- [ ] TruckersMP process/server detection
-- [ ] Detect ETS2 vs ATS, single-player vs TruckersMP and relevant session metadata
-- [ ] Anti-duplicate job/event protection and reconnect-safe job IDs
+- [x] TruckersMP process/server detection
+- [x] Detect ETS2 vs ATS, single-player vs TruckersMP and relevant session metadata
+- [x] Anti-duplicate job/event protection and reconnect-safe job IDs
 
 ## P0 — Live map
 - [x] ETS2 PMTiles map asset pipeline
@@ -56,10 +56,10 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Marker details: driver, VTC, truck, cargo, speed, destination, job state and server
 - [x] Filters for ETS2/ATS, VTC, driver, online/driving/on-job and TruckersMP server
 - [x] Driver/VTC shareable map links
-- [ ] Convoy overlays, route rendering and convoy-member grouping
-- [ ] Route/job origin and destination markers
+- [x] Convoy overlays, route rendering and convoy-member grouping
+- [x] Route/job origin and destination markers
 - [x] Mobile full-screen live-map mode
-- [ ] Optional TruckersMP-wide provider if an allowed live-position source is available
+- [x] Optional TruckersMP-wide provider if an allowed live-position source is available
 
 ## P0 — Accounts, profiles and Steam
 - [x] Steam account authentication
@@ -67,11 +67,11 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Public/private profile controls
 - [x] Verify ETS2/ATS ownership through Steam where available
 - [x] Display owned ETS2/ATS DLC where Steam exposes it
-- [ ] Discord account linking
+- [x] Discord account linking
 - [x] Profile avatar/banner, country, bio and social links
 - [x] Profile tabs: About, Logbook, Statistics, Road Trip, Reputation, Achievements, Challenges, Awards and Albums
 - [x] Account level/XP and progression
-- [ ] Driver status: offline, client online, menu, driving, on-job and paused
+- [x] Driver status: offline, client online, menu, driving, on-job and paused
 - [x] Recent movement/activity timeline
 - [x] Career summary: deliveries, distance, longest job, total profit, average/job, best month and activity
 - [x] Personal warnings, mutes, bans, kicks/disciplinary actions and name-change history with appropriate visibility
@@ -114,7 +114,7 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Company depots/branches in ETS2/ATS cities with configurable home depot and expansion history
 - [x] Shared VTC contracts that split large freight orders across multiple drivers and track collective completion
 - [x] Live Dispatch Center showing available/on-job drivers and allowing authorized dispatchers to offer jobs
-- [ ] Driver dispatch accept/decline flow in the OpenHaul client with expiry, reassignment and audit history
+- [x] Driver dispatch accept/decline flow in the OpenHaul client with expiry, reassignment and audit history
 - [x] Company economy where completed jobs add revenue and fuel, tolls, ferries, repairs, damage and fines reduce the balance
 - [x] Shared virtual fleet with persistent truck/trailer identity, mileage, earnings, assigned drivers, condition and service history
 - [x] Fleet maintenance/reliability model derived from telemetry, with repair/service costs and retire/replace workflows
@@ -143,7 +143,7 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Per-VTC Discord channel configuration UI
 - [x] Notification channels for jobs, fines, joins/leaves, applications, moderation, achievements and convoys
 - [x] Application system: submit/review/accept/deny from website and Discord
-- [ ] Role synchronization between OpenHaul VTC roles and Discord roles
+- [x] Role synchronization between OpenHaul VTC roles and Discord roles
 - [x] Configurable job/fine/penalty embeds
 - [x] Driver lookup, VTC stats, leaderboard, current-driver-status and recent-job commands
 - [x] Convoy/event announcements and reminders
@@ -173,8 +173,8 @@ OpenHaul is an open-source, self-hostable ETS2/ATS driver, telemetry and VTC pla
 - [x] Driver logbook with job ID/city/cargo search
 - [x] Month/date, ETS2/ATS, VTC, cargo, mode and status filters
 - [x] Job detail page with complete telemetry-derived summary
-- [ ] Job timeline: accepted, departed, penalties, refuels, damage, arrival and completion
-- [ ] Route map/replay where enough position history is retained
+- [x] Job timeline: accepted, departed, penalties, refuels, damage, arrival and completion
+- [x] Route map/replay where enough position history is retained
 - [x] Income, expenses and net-profit breakdown
 - [x] CSV/JSON export and VTC-authorized export
 - [x] Pagination and large-history performance
