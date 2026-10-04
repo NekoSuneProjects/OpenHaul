@@ -1194,3 +1194,38 @@ body.gameOverlayHost .contentFrame {
   min-height: 100vh;
   padding: 0 !important;
 }
+
+
+body.mapEmbedMode {
+  overflow: hidden !important;
+  background: #031008 !important;
+}
+
+body.mapEmbedMode .sidebar,
+body.mapEmbedMode .mobileTopbar,
+body.mapEmbedMode .radio {
+  display: none !important;
+}
+
+body.mapEmbedMode .appMain {
+  margin-left: 0 !important;
+  min-height: 100vh !important;
+}
+
+body.mapEmbedMode .contentFrame {
+  min-height: 100vh !important;
+  padding: 0 !important;
+}
+
+body.mapEmbedMode .embeddedMapShell {
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: none !important;
+}
+
+body.mapEmbedMode .embeddedMapPanel,
+body.mapEmbedMode .embeddedMapPanel .mapCanvas {
+  width: 100vw !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+}
