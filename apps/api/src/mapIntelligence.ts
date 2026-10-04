@@ -1,5 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { Op } from "sequelize";
+import { z } from "zod";
 import { getClientPresences, getLiveDrivers } from "./live.js";
 import { PlatformRecord, TelemetryEvent } from "./db.js";
 
@@ -16,6 +17,8 @@ type ExternalDriver = {
   speedKph?: number;
   server?: string | null;
   source: "truckersmp-provider" | "openhaul-client";
+  trackerServerId?: number;
+  trackerMapId?: number;
   mpId?: string;
   playerId?: string;
   vtcId?: number | null;
@@ -23,6 +26,123 @@ type ExternalDriver = {
 };
 
 let tmpLiveCache: { expiresAt: number; value: ExternalDriver[] } | null = null;
+
+type TrackerServer = {
+  id: number;
+  map: number;
+  name: string;
+  game: string;
+  status: boolean;
+  players: number;
+};
+
+let trackerServerCache: { expiresAt: number; value: TrackerServer[] } | null = null;
+const trackerAreaCache = new Map<string, { expiresAt: number; value: ExternalDriver[] }>();
+
+async function truckersMpTrackerServers(): Promise<TrackerServer[]> {
+  if (trackerServerCache && trackerServerCache.expiresAt > Date.now()) return trackerServerCache.value;
+
+  try {
+    const response = await fetch("https://truckersmp.krashnz.com/servers", {
+      signal: AbortSignal.timeout(5000),
+      headers: {
+        accept: "application/json",
+        "user-agent": "OpenHaul/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
+      },
+      cache: "no-store",
+    });
+    if (!response.ok) throw new Error("TruckersMP server map HTTP " + response.status);
+
+    const payload = await response.json() as any;
+    const value = (Array.isArray(payload?.servers) ? payload.servers : []).flatMap((server: any) => {
+      const id = Number(server.id);
+      const map = Number(server.map);
+      if (!Number.isFinite(id) || !Number.isFinite(map)) return [];
+      return [{
+        id,
+        map,
+        name: String(server.name ?? "TruckersMP"),
+        game: String(server.game ?? "").toLowerCase(),
+        status: Boolean(server.status),
+        players: Number(server.players ?? 0),
+      }];
+    });
+
+    trackerServerCache = { value, expiresAt: Date.now() + 15_000 };
+    return value;
+  } catch {
+    return trackerServerCache?.value ?? [];
+  }
+}
+
+async function truckersMpViewportDrivers(
+  game: "ets2" | "ats",
+  x1: number,
+  y1: number,
+  x2: number,
+  y2: number,
+): Promise<ExternalDriver[]> {
+  const rounded = [x1, y1, x2, y2].map((value) => Math.round(value / 250) * 250);
+  const key = [game, ...rounded].join(":");
+  const cached = trackerAreaCache.get(key);
+  if (cached && cached.expiresAt > Date.now()) return cached.value;
+
+  const servers = (await truckersMpTrackerServers()).filter((server) =>
+    server.status &&
+    (game === "ats"
+      ? server.game === "ats"
+      : server.game === "ets2" || server.game === "promods")
+  );
+
+  const areas = await Promise.allSettled(servers.map(async (server) => {
+    const params = new URLSearchParams({
+      x1: String(Math.round(x1)),
+      y1: String(Math.round(y1)),
+      x2: String(Math.round(x2)),
+      y2: String(Math.round(y2)),
+      server: String(server.map),
+    });
+    const response = await fetch("https://tracker.ets2map.com/v3/area?" + params.toString(), {
+      signal: AbortSignal.timeout(6000),
+      headers: {
+        accept: "application/json",
+        "user-agent": "OpenHaul/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
+        referer: "https://map.truckersmp.com/",
+      },
+      cache: "no-store",
+    });
+    if (!response.ok) throw new Error("TruckersMP tracker HTTP " + response.status);
+
+    return parseTruckersMpRows(await response.json(), server.map).map((driver) => ({
+      ...driver,
+      game,
+      server: server.name,
+      trackerServerId: server.id,
+      trackerMapId: server.map,
+    }));
+  }));
+
+  const deduped = new Map<string, ExternalDriver>();
+  for (const result of areas) {
+    if (result.status !== "fulfilled") continue;
+    for (const driver of result.value) {
+      const key = driver.driverId + ":" + (driver.server ?? "");
+      deduped.set(key, driver);
+    }
+  }
+
+  const value = [...deduped.values()];
+  trackerAreaCache.set(key, { value, expiresAt: Date.now() + 3500 });
+
+  if (trackerAreaCache.size > 80) {
+    const oldest = [...trackerAreaCache.entries()]
+      .sort((a, b) => a[1].expiresAt - b[1].expiresAt)
+      .slice(0, trackerAreaCache.size - 60);
+    for (const [oldKey] of oldest) trackerAreaCache.delete(oldKey);
+  }
+
+  return value;
+}
 
 const DEFAULT_TMP_TRACKER_AREAS = [
   { x1: 6455, y1: 22710, x2: 8655, y2: 20510, server: 2 },
@@ -236,6 +356,56 @@ function trafficClusters(drivers: Array<{ driverId: string; game: "ets2" | "ats"
 }
 
 export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
+  app.get("/api/v1/public/truckersmp/area", async (request, reply) => {
+    const query = z.object({
+      game: z.enum(["ets2", "ats"]),
+      x1: z.coerce.number(),
+      y1: z.coerce.number(),
+      x2: z.coerce.number(),
+      y2: z.coerce.number(),
+    }).parse(request.query);
+
+    const width = Math.abs(query.x2 - query.x1);
+    const height = Math.abs(query.y2 - query.y1);
+    if (width > 180_000 || height > 180_000) {
+      return reply.code(400).send({ error: "area_too_large" });
+    }
+
+    const [rawDrivers, clientPresences, openHaulDrivers] = await Promise.all([
+      truckersMpViewportDrivers(query.game, query.x1, query.y1, query.x2, query.y2),
+      getClientPresences(),
+      getLiveDrivers(),
+    ]);
+
+    const presenceByName = new Map(
+      clientPresences.map((presence) => [presence.displayName.trim().toLowerCase(), presence]),
+    );
+    const liveNames = new Set(openHaulDrivers.map((driver) => driver.username.trim().toLowerCase()));
+
+    const drivers = rawDrivers
+      .filter((driver) => !liveNames.has(driver.username.trim().toLowerCase()))
+      .map((driver) => {
+        const presence = presenceByName.get(driver.username.trim().toLowerCase());
+        if (!presence) return driver;
+        return {
+          ...driver,
+          driverId: presence.steamId,
+          source: "openhaul-client" as const,
+        };
+      });
+
+    reply.header("cache-control", "public, max-age=2");
+    return {
+      generatedAt: new Date().toISOString(),
+      game: query.game,
+      count: drivers.length,
+      openHaulOnline: clientPresences.length,
+      drivers,
+      traffic: densityTrafficClusters(drivers),
+      servers: await truckersMpTrackerServers(),
+    };
+  });
+
   app.get("/api/v1/public/map-intelligence", async (_request, reply) => {
     const [drivers, clientPresences, staffRecords, tmpStaff, missions, tmpWideDriversRaw, convoyRecords, jobEvents] = await Promise.all([
       getLiveDrivers(),
