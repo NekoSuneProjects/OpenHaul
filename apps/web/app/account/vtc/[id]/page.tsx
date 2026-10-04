@@ -14,6 +14,11 @@ export default function ManageVtcPage() {
   const [newVtcApiKey, setNewVtcApiKey] = useState("");
   const [inviteUrl, setInviteUrl] = useState("");
   const [inviteStatus, setInviteStatus] = useState("");
+  const [activity, setActivity] = useState<any[]>([]);
+  const [moderation, setModeration] = useState<any[]>([]);
+  const [discordConfig, setDiscordConfig] = useState<any>(null);
+  const [botInviteUrl, setBotInviteUrl] = useState("");
+  const [opsStatus, setOpsStatus] = useState("");
 
   const load = async () => {
     const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/manage", {
@@ -35,6 +40,19 @@ export default function ManageVtcPage() {
     if (keysResponse.ok) {
       const keyData = await keysResponse.json();
       setVtcApiKeys(keyData.keys ?? []);
+    }
+
+    const [activityResponse, moderationResponse, discordResponse] = await Promise.all([
+      fetch(api + "/api/v1/account/vtcs/" + id + "/activity", { credentials: "include", cache: "no-store" }),
+      fetch(api + "/api/v1/account/vtcs/" + id + "/moderation", { credentials: "include", cache: "no-store" }),
+      fetch(api + "/api/v1/account/vtcs/" + id + "/discord", { credentials: "include", cache: "no-store" }),
+    ]);
+    if (activityResponse.ok) setActivity((await activityResponse.json()).events ?? []);
+    if (moderationResponse.ok) setModeration((await moderationResponse.json()).actions ?? []);
+    if (discordResponse.ok) {
+      const discordData = await discordResponse.json();
+      setDiscordConfig(discordData.config ?? {});
+      setBotInviteUrl(discordData.botInviteUrl ?? "");
     }
 
     setStatus("");
@@ -166,6 +184,66 @@ export default function ManageVtcPage() {
     await load();
   };
 
+  const addModeration = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setOpsStatus("Saving moderation action…");
+    const form = new FormData(event.currentTarget);
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/moderation", {
+      method: "POST",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        steamId: String(form.get("steamId") ?? ""),
+        type: String(form.get("type") ?? "warning"),
+        reason: String(form.get("reason") ?? ""),
+        expiresAt: String(form.get("expiresAt") ?? "") || null,
+      }),
+    });
+    if (response.ok) {
+      event.currentTarget.reset();
+      setOpsStatus("Moderation action recorded.");
+      await load();
+    } else {
+      setOpsStatus("Unable to record moderation action.");
+    }
+  };
+
+  const revokeModeration = async (actionId: number) => {
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/moderation/" + actionId, {
+      method: "DELETE",
+      credentials: "include",
+    });
+    if (response.ok) await load();
+  };
+
+  const saveDiscord = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setOpsStatus("Saving Discord settings…");
+    const form = new FormData(event.currentTarget);
+    const value = (name: string) => String(form.get(name) ?? "").trim() || null;
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/discord", {
+      method: "PATCH",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        guildId: value("guildId"),
+        logChannelId: value("logChannelId"),
+        jobChannelId: value("jobChannelId"),
+        fineChannelId: value("fineChannelId"),
+        applicationChannelId: value("applicationChannelId"),
+        moderationChannelId: value("moderationChannelId"),
+        driverChannelId: value("driverChannelId"),
+        enabled: form.get("enabled") === "on",
+      }),
+    });
+    if (response.ok) {
+      setOpsStatus("Discord settings saved.");
+      await load();
+    } else {
+      setOpsStatus("Unable to save Discord settings.");
+    }
+  };
+
   if (!data) {
     return <main className="shell"><section className="hero"><h1>{status}</h1></section></main>;
   }
@@ -272,6 +350,63 @@ export default function ManageVtcPage() {
           </article>
         ))}
       </section>
+
+      <div className="sectionTitle"><h2>Driver moderation</h2></div>
+      <form className="card" onSubmit={addModeration} style={{ display: "grid", gap: 12, marginBottom: 16 }}>
+        <p className="muted">Warnings, mutes, bans and staff notes are stored against the driver's VTC profile and included in the activity log.</p>
+        <input name="steamId" required pattern="\\d{15,20}" placeholder="Driver SteamID64" />
+        <select name="type" defaultValue="warning">
+          <option value="warning">Warning</option>
+          <option value="mute">Mute</option>
+          <option value="ban">Ban / suspend VTC membership</option>
+          <option value="note">Staff note</option>
+        </select>
+        <textarea name="reason" rows={3} placeholder="Reason / staff note" />
+        <label>Expires (optional)<input name="expiresAt" type="datetime-local" /></label>
+        <button className="button primary">Record action</button>
+      </form>
+      <section className="driverList" style={{ padding: 0 }}>
+        {moderation.map((action: any) => {
+          const target = action.User ?? action.user;
+          return (
+            <article className="driver" key={action.id}>
+              <div><strong>{target?.displayName ?? target?.steamId ?? "Driver"}</strong><small>{target?.steamId ?? ""}</small></div>
+              <div><span className="pill">{action.type}</span><small>{action.reason || "No reason"}</small></div>
+              <div><small>{action.expiresAt ? "Expires " + new Date(action.expiresAt).toLocaleString() : "No expiry"}</small></div>
+              <div>{!action.revokedAt ? <button className="button" onClick={() => void revokeModeration(action.id)}>Revoke</button> : <span className="muted">Revoked</span>}</div>
+            </article>
+          );
+        })}
+      </section>
+
+      <div className="sectionTitle"><h2>Discord bot</h2></div>
+      <form className="card" onSubmit={saveDiscord} style={{ display: "grid", gap: 12, marginBottom: 16 }}>
+        <p className="muted">Install the shared OpenHaul bot in your Discord, then paste the server and channel IDs below. Each VTC can have its own notification channels.</p>
+        {botInviteUrl ? <div className="actions"><a className="button primary" href={botInviteUrl}>Add OpenHaul Bot to Discord</a></div> : <p className="muted">Set DISCORD_CLIENT_ID on the OpenHaul server to enable the bot install button.</p>}
+        <label><input type="checkbox" name="enabled" defaultChecked={Boolean(discordConfig?.enabled)} /> Enable Discord integration</label>
+        <input name="guildId" defaultValue={discordConfig?.guildId ?? ""} placeholder="Discord server / Guild ID" />
+        <input name="logChannelId" defaultValue={discordConfig?.logChannelId ?? ""} placeholder="General activity channel ID" />
+        <input name="jobChannelId" defaultValue={discordConfig?.jobChannelId ?? ""} placeholder="Completed jobs channel ID" />
+        <input name="fineChannelId" defaultValue={discordConfig?.fineChannelId ?? ""} placeholder="Fines / penalties channel ID" />
+        <input name="applicationChannelId" defaultValue={discordConfig?.applicationChannelId ?? ""} placeholder="Applications channel ID" />
+        <input name="moderationChannelId" defaultValue={discordConfig?.moderationChannelId ?? ""} placeholder="Warnings / bans / mutes channel ID" />
+        <input name="driverChannelId" defaultValue={discordConfig?.driverChannelId ?? ""} placeholder="Driver online/offline channel ID" />
+        <button className="button primary">Save Discord setup</button>
+        <p className="muted">Bot commands: /openhaul, /drivers, /leaderboard and /apply.</p>
+      </form>
+
+      <div className="sectionTitle"><h2>VTC activity log</h2></div>
+      <section className="driverList" style={{ padding: "0 0 18px" }}>
+        {activity.map((event: any) => (
+          <article className="driver" key={event.id}>
+            <div><strong>{event.title}</strong><small>{String(event.type).replaceAll("_", " ")}</small></div>
+            <div><small>{event.detail || event.driverId || "VTC event"}</small></div>
+            <div><strong>{event.amount == null ? "" : Number(event.amount).toLocaleString() + " " + (event.currency || "")}</strong></div>
+            <div><small>{new Date(event.occurredAt).toLocaleString()}</small></div>
+          </article>
+        ))}
+      </section>
+      {opsStatus ? <p className="muted">{opsStatus}</p> : null}
 
       <div className="sectionTitle"><h2>VTC API keys</h2></div>
       <section className="card" style={{ marginBottom: 16 }}>
