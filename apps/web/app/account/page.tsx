@@ -326,6 +326,8 @@ export default function AccountPage() {
         </div>
         <div className="actions">
           <Link className="button primary" href={"/driver/" + user.steamId}>View public driver profile</Link>
+          <Link className="button" href="/account/features">Profile tools</Link>
+          <Link className="button" href="/tickets">Tickets</Link>
           {user.profileUrl ? <a className="button" href={user.profileUrl}>Steam profile</a> : null}
           <button className="button" onClick={() => void logout()}>Log out</button>
         </div>
