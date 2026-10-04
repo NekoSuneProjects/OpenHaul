@@ -6,7 +6,7 @@ import { Op } from "sequelize";
 import { z } from "zod";
 import { DriverPosition, Fine, Job, PlatformRecord, TelemetryEvent, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
-import { getLiveDrivers, removeLiveDriver, setLiveDriver, setClientPresence, removeClientPresence } from "./live.js";
+import { getClientPresences, getLiveDrivers, removeLiveDriver, setLiveDriver, setClientPresence, removeClientPresence } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
 import { registerDonationRoutes } from "./donations.js";
 import { registerStatsRoutes } from "./stats.js";
@@ -200,14 +200,23 @@ app.get("/api/v1/public/live", async (request) => {
 });
 
 app.get("/api/v1/public/openhaul/status", async (_request, reply) => {
-  const drivers = await getLiveDrivers();
+  const [drivers, clientPresences] = await Promise.all([
+    getLiveDrivers(),
+    getClientPresences(),
+  ]);
   const ets2 = drivers.filter((driver) => driver.game === "ets2").length;
   const ats = drivers.filter((driver) => driver.game === "ats").length;
+  const onlineIds = new Set([
+    ...clientPresences.map((presence) => presence.steamId),
+    ...drivers.map((driver) => driver.driverId),
+  ]);
 
   reply.header("cache-control", "public, max-age=5");
 
   return {
-    online: drivers.length,
+    online: onlineIds.size,
+    clients: clientPresences.length,
+    driving: drivers.length,
     ets2,
     ats,
     ttlSeconds: 45,
