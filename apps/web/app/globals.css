@@ -1590,6 +1590,22 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
   width: auto !important;
 }
 
+.gameOverlayRadioSearch select {
+  min-width: 150px;
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid rgba(84,224,138,.18);
+  border-radius: 10px;
+  outline: 0;
+  color: #eaf7ee;
+  background: #06140d;
+  font: inherit;
+}
+
+.gameOverlayRadioSearch select:focus {
+  border-color: rgba(84,224,138,.46);
+}
+
 .gameOverlayRadioSearch button {
   min-height: 38px;
   padding: 0 12px;
@@ -1617,6 +1633,10 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
   .gameOverlayRadioSearch {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .gameOverlayRadioSearch select {
+    width: 100%;
   }
 }
 
