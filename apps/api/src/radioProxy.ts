@@ -305,6 +305,8 @@ function stationPublicJson(station: RadioStation) {
       country: station.forceProxy ? station.country ?? null : null,
       region: station.forceProxy ? station.region ?? null : null,
       networkType: station.forceProxy ? "residential" : null,
+      protocol: station.forceProxy ? "auto" : null,
+      supportedProtocols: station.forceProxy ? ["http", "https", "socks4", "socks5"] : [],
     },
     playback: {
       browser: directPlayable ? station.sourceUrl : `${base}.mp3`,
