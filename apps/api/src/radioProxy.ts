@@ -415,7 +415,7 @@ async function fetchInternetRadioStations(query: string, country: string) {
 
     const html = await response.text();
     const blocks = [...html.matchAll(/<h4[^>]*>([\s\S]*?)<\/h4>([\s\S]*?)(?=<h4|$)/gi)].slice(0, 25);
-    const results = await Promise.all(blocks.map(async (match, index) => {
+    const results: Array<RadioStation | null> = await Promise.all(blocks.map(async (match, index): Promise<RadioStation | null> => {
       const name = stripHtml(match[1] ?? "");
       const body = match[2] ?? "";
       if (!name) return null;
@@ -442,7 +442,7 @@ async function fetchInternetRadioStations(query: string, country: string) {
       } satisfies RadioStation;
     }));
 
-    return results.filter((station): station is RadioStation => Boolean(station));
+    return results.filter((station): station is RadioStation => station !== null);
   });
 }
 
@@ -493,10 +493,10 @@ async function fetchLautFmStations(query: string) {
       if (!response.ok) return [];
       const payload = await response.json() as any;
       const rows = Array.isArray(payload) ? payload : Array.isArray(payload?.stations) ? payload.stations : [];
-      return rows
+      const results: Array<RadioStation | null> = rows
         .filter((row: any) => String(row?.name ?? "").toLowerCase().includes(query.toLowerCase()))
         .slice(0, 25)
-        .map((row, index) => {
+        .map((row: any, index: number): RadioStation | null => {
           const name = String(row.name ?? "").trim();
           const streamUrl = String(row.stream_url ?? row.streamUrl ?? row.url ?? "").trim();
           if (!name || !/^https?:\/\//i.test(streamUrl)) return null;
@@ -511,8 +511,8 @@ async function fetchLautFmStations(query: string) {
             homepage: row.website ? String(row.website) : undefined,
             source: "lautfm" as const,
           } satisfies RadioStation;
-        })
-        .filter((station): station is RadioStation => Boolean(station));
+        });
+      return results.filter((station): station is RadioStation => station !== null);
     } catch {
       return [];
     }
@@ -553,7 +553,7 @@ async function fetchShoutcastStations(query: string) {
             ? payload.station
             : [];
 
-      const results = await Promise.all(rows.slice(0, 50).map(async (row: any, index: number) => {
+      const results: Array<RadioStation | null> = await Promise.all(rows.slice(0, 50).map(async (row: any, index: number): Promise<RadioStation | null> => {
         const id = String(row?.id ?? "").trim();
         const name = String(row?.name ?? "").trim();
         if (!id || !name) return null;
@@ -575,7 +575,7 @@ async function fetchShoutcastStations(query: string) {
         } satisfies RadioStation;
       }));
 
-      return results.filter((station): station is RadioStation => Boolean(station));
+      return results.filter((station): station is RadioStation => station !== null);
     } catch {
       return [];
     }
