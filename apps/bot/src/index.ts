@@ -33,6 +33,12 @@ type BotConfig = {
   applicationChannelId?: string | null;
   moderationChannelId?: string | null;
   driverChannelId?: string | null;
+  achievementChannelId?: string | null;
+  convoyChannelId?: string | null;
+  welcomeChannelId?: string | null;
+  guildVerified?: boolean;
+  featureToggles?: Record<string, boolean>;
+  embedConfig?: Record<string, any>;
   enabled: boolean;
   Vtc?: {
     id: number;
@@ -56,6 +62,17 @@ async function botGet(path: string) {
   return response.json();
 }
 
+async function botRequest(path: string, method: "POST" | "PATCH", body: unknown) {
+  if (!serviceKey) throw new Error("OpenHaul bot service key is missing.");
+  const response = await fetch(apiUrl + path, {
+    method,
+    headers: { "x-bot-key": serviceKey, "content-type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!response.ok) throw new Error(`OpenHaul bot API ${response.status} for ${path}`);
+  return response.json();
+}
+
 async function publicGet(path: string) {
   const response = await fetch(apiUrl + path);
   if (!response.ok) throw new Error(`OpenHaul API ${response.status} for ${path}`);
@@ -73,10 +90,13 @@ function eventChannel(config: BotConfig, type: string) {
   if (type.startsWith("job.")) return config.jobChannelId || config.logChannelId;
   if (type.startsWith("application.")) return config.applicationChannelId || config.logChannelId;
   if (type.startsWith("moderation.")) return config.moderationChannelId || config.logChannelId;
+  if (type.startsWith("achievement.") || type.startsWith("challenge.")) return config.achievementChannelId || config.logChannelId;
+  if (type.startsWith("convoy.") || type.startsWith("event.")) return config.convoyChannelId || config.logChannelId;
+  if (type === "member.joined" || type === "member.left" || type === "member.kicked") return config.welcomeChannelId || config.logChannelId;
   return config.logChannelId;
 }
 
-function eventEmbed(event: any) {
+function eventEmbed(event: any, config?: BotConfig) {
   const type = String(event.type ?? "activity");
   const title =
     type === "fine" ? "🚨 Driver penalty" :
@@ -87,10 +107,12 @@ function eventEmbed(event: any) {
     type.startsWith("member.") ? "👥 VTC membership update" :
     "📋 VTC activity";
 
+  const customTitle = config?.embedConfig?.[type]?.title;
   const embed = new EmbedBuilder()
-    .setTitle(title)
+    .setTitle(String(customTitle || title))
     .setDescription(String(event.title ?? type))
     .setTimestamp(new Date(event.occurredAt ?? Date.now()));
+  if (config?.embedConfig?.footer) embed.setFooter({ text: String(config.embedConfig.footer).slice(0, 2048) });
 
   if (event.detail) embed.addFields({ name: "Details", value: String(event.detail).slice(0, 1024) });
   if (event.driverId) embed.addFields({ name: "Driver", value: String(event.driverId), inline: true });
@@ -127,6 +149,18 @@ async function refreshConfigs() {
   configsByGuild = new Map(
     list.filter((item: BotConfig) => item.guildId).map((item: BotConfig) => [String(item.guildId), item]),
   );
+
+  for (const config of list) {
+    if (!config.guildId) continue;
+    const verified = client.guilds.cache.has(config.guildId);
+    if (verified !== Boolean(config.guildVerified)) {
+      await botRequest("/api/v1/bot/vtcs/" + config.vtcId + "/verify-guild", "POST", {
+        guildId: config.guildId,
+        verified,
+      }).catch(() => {});
+      config.guildVerified = verified;
+    }
+  }
 }
 
 async function pollActivity() {
@@ -143,7 +177,7 @@ async function pollActivity() {
     if (!config) continue;
     const channel = await textChannel(eventChannel(config, String(event.type ?? "")));
     if (!channel) continue;
-    await channel.send({ embeds: [eventEmbed(event)] }).catch(console.error);
+    await channel.send({ embeds: [eventEmbed(event, config)] }).catch(console.error);
   }
 }
 
@@ -204,6 +238,16 @@ async function registerCommands() {
     new SlashCommandBuilder().setName("openhaul").setDescription("Show this Discord server's OpenHaul VTC"),
     new SlashCommandBuilder().setName("leaderboard").setDescription("Show this VTC's distance leaderboard"),
     new SlashCommandBuilder().setName("drivers").setDescription("Show currently live VTC drivers"),
+    new SlashCommandBuilder().setName("stats").setDescription("Show this VTC's OpenHaul statistics"),
+    new SlashCommandBuilder().setName("driver").setDescription("Look up an OpenHaul driver")
+      .addStringOption((option) => option.setName("steamid").setDescription("SteamID64").setRequired(true)),
+    new SlashCommandBuilder().setName("recentjob").setDescription("Show a driver's most recent job")
+      .addStringOption((option) => option.setName("steamid").setDescription("SteamID64").setRequired(true)),
+    new SlashCommandBuilder().setName("applications").setDescription("List pending VTC applications"),
+    new SlashCommandBuilder().setName("application").setDescription("Approve or reject a VTC application")
+      .addIntegerOption((option) => option.setName("id").setDescription("Application ID").setRequired(true))
+      .addStringOption((option) => option.setName("decision").setDescription("Decision").setRequired(true)
+        .addChoices({ name: "Approve", value: "approved" }, { name: "Reject", value: "rejected" })),
     new SlashCommandBuilder().setName("apply").setDescription("Get the application link for this VTC"),
   ].map((command) => command.toJSON());
 
@@ -238,6 +282,79 @@ client.on("interactionCreate", async (interaction) => {
       await interaction.editReply(
         `OpenHaul is linked to **${vtc?.name ?? "VTC #" + config.vtcId}**${vtc?.tag ? ` [${vtc.tag}]` : ""}.`
       );
+      return;
+    }
+
+    if (interaction.commandName === "stats") {
+      const stats = await publicGet(`/api/v1/public/vtcs/${config.vtcId}/stats`);
+      await interaction.editReply({
+        embeds: [new EmbedBuilder()
+          .setTitle("📊 VTC statistics")
+          .addFields(
+            { name: "Live drivers", value: String(stats.liveDrivers ?? 0), inline: true },
+            { name: "Jobs", value: Number(stats.jobs ?? 0).toLocaleString(), inline: true },
+            { name: "Distance", value: Math.round(Number(stats.distanceKm ?? 0)).toLocaleString() + " km", inline: true },
+            { name: "Income", value: Number(stats.income ?? 0).toLocaleString(), inline: true },
+            { name: "Fines", value: Number(stats.fines ?? 0).toLocaleString(), inline: true },
+          ).setTimestamp()],
+      });
+      return;
+    }
+
+    if (interaction.commandName === "driver" || interaction.commandName === "recentjob") {
+      const steamId = interaction.options.getString("steamid", true);
+      const driver = await publicGet("/api/v1/public/drivers/" + encodeURIComponent(steamId));
+      if (interaction.commandName === "driver") {
+        await interaction.editReply({
+          embeds: [new EmbedBuilder()
+            .setTitle("🚛 " + String(driver.user?.displayName ?? steamId))
+            .setDescription("SteamID " + steamId)
+            .addFields(
+              { name: "Jobs", value: Number(driver.stats?.jobs ?? 0).toLocaleString(), inline: true },
+              { name: "Distance", value: Math.round(Number(driver.stats?.distanceKm ?? 0)).toLocaleString() + " km", inline: true },
+              { name: "Net", value: Number(driver.stats?.netIncome ?? 0).toLocaleString(), inline: true },
+              { name: "Status", value: driver.live ? "Online / driving" : "Offline", inline: true },
+            ).setTimestamp()],
+        });
+      } else {
+        const job = driver.recentJobs?.[0];
+        await interaction.editReply(job ? {
+          embeds: [new EmbedBuilder()
+            .setTitle("📦 Recent delivery")
+            .setDescription(String(job.cargo ?? "Unknown cargo"))
+            .addFields(
+              { name: "Route", value: String(job.sourceCity ?? "Unknown") + " → " + String(job.destinationCity ?? "Unknown") },
+              { name: "Distance", value: Math.round(Number(job.distanceKm ?? 0)).toLocaleString() + " km", inline: true },
+              { name: "Income", value: Number(job.income ?? 0).toLocaleString(), inline: true },
+            ).setTimestamp(new Date(job.completedAt ?? Date.now()))],
+        } : "No completed jobs were found for that driver.");
+      }
+      return;
+    }
+
+    if (interaction.commandName === "applications") {
+      const data = await botGet("/api/v1/bot/vtcs/" + config.vtcId + "/applications");
+      const applications = Array.isArray(data.applications) ? data.applications : [];
+      if (!applications.length) {
+        await interaction.editReply("No pending VTC applications.");
+        return;
+      }
+      await interaction.editReply({
+        embeds: [new EmbedBuilder().setTitle("📨 Pending VTC applications").setDescription(
+          applications.slice(0, 20).map((application: any) => {
+            const user = application.User ?? application.user;
+            return "#" + application.id + " · **" + (user?.displayName ?? user?.steamId ?? "Applicant") + "**\n" + (application.message || "No message");
+          }).join("\n\n")
+        ).setTimestamp()],
+      });
+      return;
+    }
+
+    if (interaction.commandName === "application") {
+      const applicationId = interaction.options.getInteger("id", true);
+      const decision = interaction.options.getString("decision", true);
+      await botRequest("/api/v1/bot/vtcs/" + config.vtcId + "/applications/" + applicationId, "PATCH", { status: decision });
+      await interaction.editReply("Application #" + applicationId + " " + decision + ".");
       return;
     }
 
