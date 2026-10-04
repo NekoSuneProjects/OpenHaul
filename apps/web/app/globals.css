@@ -347,3 +347,20 @@ h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.06
     height: 44px !important;
   }
 }
+
+
+.clientStatus {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+.clientStatus.online { color: var(--accent); }
+.clientStatus.offline { color: var(--muted); }
+.desktopLinks {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
