@@ -484,57 +484,61 @@ async function addColumnIfMissing(table: string, column: string, definition: any
   const queryInterface = sequelize.getQueryInterface();
   const description = await queryInterface.describeTable(table);
   if (!description[column]) {
+    console.log("[db:migrate] adding missing column " + table + "." + column);
     await queryInterface.addColumn(table, column, definition);
   }
 }
 
-async function ensureUpgradeColumns() {
-  const columns: Array<[string, string, any]> = [
-    ["vtcs", "banner_url", { type: DataTypes.TEXT, allowNull: true }],
-    ["vtcs", "rules", { type: DataTypes.TEXT, allowNull: true }],
-    ["vtcs", "socials", { type: DataTypes.JSONB, allowNull: false, defaultValue: {} }],
-    ["vtcs", "recruitment_mode", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "application" }],
-    ["vtcs", "operating_mode", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "standard" }],
-    ["vtcs", "manual_job_policy", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "approval" }],
+async function ensureModelColumns() {
+  const queryInterface = sequelize.getQueryInterface();
 
-    ["users", "banner_url", { type: DataTypes.TEXT, allowNull: true }],
-    ["users", "bio", { type: DataTypes.TEXT, allowNull: true }],
-    ["users", "country", { type: DataTypes.STRING(80), allowNull: true }],
-    ["users", "socials", { type: DataTypes.JSONB, allowNull: false, defaultValue: {} }],
-    ["users", "profile_public", { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true }],
-    ["users", "moderation_visibility", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "public" }],
+  for (const model of Object.values(sequelize.models)) {
+    const rawTable = model.getTableName() as any;
+    const tableName = typeof rawTable === "string" ? rawTable : rawTable.tableName;
 
-    ["jobs", "mode", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "standard" }],
-    ["jobs", "status", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "completed" }],
-    ["jobs", "submission_type", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "telemetry" }],
-    ["jobs", "approval_status", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "approved" }],
-    ["jobs", "evidence_url", { type: DataTypes.TEXT, allowNull: true }],
-    ["jobs", "cargo_mass_kg", { type: DataTypes.FLOAT, allowNull: true }],
-    ["jobs", "source_company", { type: DataTypes.STRING(160), allowNull: true }],
-    ["jobs", "source_country", { type: DataTypes.STRING(120), allowNull: true }],
-    ["jobs", "destination_company", { type: DataTypes.STRING(160), allowNull: true }],
-    ["jobs", "destination_country", { type: DataTypes.STRING(120), allowNull: true }],
-    ["jobs", "expenses", { type: DataTypes.BIGINT, allowNull: false, defaultValue: 0 }],
-    ["jobs", "profit", { type: DataTypes.BIGINT, allowNull: true }],
-    ["jobs", "late", { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false }],
-    ["jobs", "cargo_damage_percent", { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0 }],
-    ["jobs", "truck_damage_percent", { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0 }],
-    ["jobs", "trailer_damage_percent", { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0 }],
+    let description: Record<string, unknown>;
+    try {
+      description = await queryInterface.describeTable(rawTable);
+    } catch (cause) {
+      // sequelize.sync() should have created the table. If it did not, let the
+      // normal startup failure surface with useful context.
+      console.error("[db:migrate] unable to describe table", tableName, cause);
+      throw cause;
+    }
 
-    ["vtc_members", "custom_role_key", { type: DataTypes.STRING(120), allowNull: true }],
-    ["vtc_moderation_actions", "points", { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 }],
+    for (const attribute of Object.values((model as any).rawAttributes) as any[]) {
+      const column = String(attribute.field || attribute.fieldName || "");
+      if (!column || description[column]) continue;
 
-    ["vtc_discord_configs", "achievement_channel_id", { type: DataTypes.STRING(32), allowNull: true }],
-    ["vtc_discord_configs", "convoy_channel_id", { type: DataTypes.STRING(32), allowNull: true }],
-    ["vtc_discord_configs", "welcome_channel_id", { type: DataTypes.STRING(32), allowNull: true }],
-    ["vtc_discord_configs", "guild_verified", { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false }],
-    ["vtc_discord_configs", "feature_toggles", { type: DataTypes.JSONB, allowNull: false, defaultValue: {} }],
-    ["vtc_discord_configs", "embed_config", { type: DataTypes.JSONB, allowNull: false, defaultValue: {} }],
-  ];
+      console.log("[db:migrate] repairing schema: " + tableName + "." + column);
+      await queryInterface.addColumn(rawTable, column, {
+        type: attribute.type,
+        allowNull: attribute.allowNull,
+        defaultValue: attribute.defaultValue,
+        unique: attribute.unique,
+        primaryKey: attribute.primaryKey,
+        autoIncrement: attribute.autoIncrement,
+        references: attribute.references,
+        onUpdate: attribute.onUpdate,
+        onDelete: attribute.onDelete,
+        comment: attribute.comment,
+      });
 
-  for (const [table, column, definition] of columns) {
-    await addColumnIfMissing(table, column, definition);
+      // Keep our local description current so duplicated mapped fields are not
+      // attempted twice in the same boot.
+      description[column] = true;
+    }
   }
+}
+
+async function ensureUpgradeColumns() {
+  // Repair every Sequelize model, not just a hand-maintained list. This makes
+  // upgrades safe when new model fields are added in future releases.
+  await ensureModelColumns();
+
+  // Explicit guards remain for data migrations which depend on these fields.
+  await addColumnIfMissing("jobs", "expenses", { type: DataTypes.BIGINT, allowNull: false, defaultValue: 0 });
+  await addColumnIfMissing("jobs", "profit", { type: DataTypes.BIGINT, allowNull: true });
 }
 
 const migrations: Array<{ version: number; name: string; run: () => Promise<void> }> = [
@@ -576,24 +580,39 @@ async function runMigrations() {
 
   for (const migration of migrations.sort((a, b) => a.version - b.version)) {
     if (applied.has(migration.version)) continue;
-    await sequelize.transaction(async (transaction) => {
-      // Migration functions should use idempotent SQL or schema operations.
+
+    console.log("[db:migrate] running v" + migration.version + " " + migration.name);
+    try {
       await migration.run();
-      await SchemaVersion.create({
-        version: migration.version,
-        name: migration.name,
-      }, { transaction });
-    });
+      await SchemaVersion.findOrCreate({
+        where: { version: migration.version },
+        defaults: {
+          version: migration.version,
+          name: migration.name,
+        },
+      });
+      console.log("[db:migrate] completed v" + migration.version);
+    } catch (cause) {
+      console.error("[db:migrate] failed v" + migration.version + " " + migration.name, cause);
+      throw cause;
+    }
   }
 }
 
 export async function initDatabase() {
   await sequelize.authenticate();
+
+  // First create any tables that are entirely new in this release.
   await sequelize.sync();
-  // Existing installations need explicit ALTERs because sequelize.sync()
-  // creates missing tables but does not add new columns by default.
+
+  // Then repair existing tables BEFORE any migration or bootstrap query can
+  // reference fields introduced by a newer OpenHaul image.
   await ensureUpgradeColumns();
+
+  // Data migrations are idempotent/versioned and only run after the schema is
+  // guaranteed to contain every current model column.
   await runMigrations();
+
   await bootstrapVtc();
   await bootstrapDonationGoal();
 }
