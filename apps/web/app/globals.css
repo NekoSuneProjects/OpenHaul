@@ -1402,8 +1402,7 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
   accent-color: #54e08a;
 }
 
-.gameOverlayRadioPlay,
-.gameOverlayRadioGameUrl button {
+.gameOverlayRadioPlay {
   min-height: 40px;
   border: 1px solid rgba(84,224,138,.28);
   border-radius: 10px;
@@ -1414,44 +1413,24 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
   cursor: pointer;
 }
 
-.gameOverlayRadioPlay:disabled,
-.gameOverlayRadioGameUrl button:disabled {
+.gameOverlayRadioPlay:disabled {
   cursor: not-allowed;
   opacity: .45;
 }
 
-.gameOverlayRadioGameUrl {
+.gameOverlayRadioLocal {
   display: grid;
-  grid-template-columns: minmax(180px,.8fr) minmax(0,1.4fr) auto;
-  gap: 12px;
-  align-items: center;
-  padding: 15px 17px;
+  gap: 5px;
+  padding: 14px 17px;
 }
 
-.gameOverlayRadioGameUrl div {
-  display: grid;
-  gap: 4px;
+.gameOverlayRadioLocal strong {
+  color: #dff4e6;
 }
 
-.gameOverlayRadioGameUrl small {
+.gameOverlayRadioLocal small {
   color: #7f9989;
-  line-height: 1.35;
-}
-
-.gameOverlayRadioGameUrl code {
-  min-width: 0;
-  overflow: hidden;
-  padding: 9px 10px;
-  border: 1px solid rgba(84,224,138,.12);
-  border-radius: 9px;
-  color: #a5e7bb;
-  background: #04100a;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.gameOverlayRadioGameUrl button {
-  padding: 0 14px;
+  line-height: 1.45;
 }
 
 .gameOverlayRadioDirectory {
@@ -1565,8 +1544,7 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
 }
 
 @media (max-width: 920px) {
-  .gameOverlayRadioNow,
-  .gameOverlayRadioGameUrl {
+  .gameOverlayRadioNow {
     grid-template-columns: 1fr;
   }
 
