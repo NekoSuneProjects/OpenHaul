@@ -368,6 +368,12 @@ VtcDiscordConfig.init({
   applicationChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "application_channel_id" },
   moderationChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "moderation_channel_id" },
   driverChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "driver_channel_id" },
+  achievementChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "achievement_channel_id" },
+  convoyChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "convoy_channel_id" },
+  welcomeChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "welcome_channel_id" },
+  guildVerified: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false, field: "guild_verified" },
+  featureToggles: { type: DataTypes.JSONB, allowNull: false, defaultValue: {}, field: "feature_toggles" },
+  embedConfig: { type: DataTypes.JSONB, allowNull: false, defaultValue: {}, field: "embed_config" },
   enabled: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
 }, { sequelize, modelName: "VtcDiscordConfig", tableName: "vtc_discord_configs", underscored: true });
 
