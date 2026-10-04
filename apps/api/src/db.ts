@@ -47,7 +47,7 @@ VtcApiKey.init({
   revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
 }, { sequelize, modelName: "VtcApiKey", tableName: "vtc_api_keys", underscored: true });
 
-export class Job extends Model {}
+export class Job extends Model { declare id: number; }
 Job.init({
   id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
   vtcId: { type: DataTypes.INTEGER, allowNull: true, field: "vtc_id" },
@@ -61,7 +61,7 @@ Job.init({
   completedAt: { type: DataTypes.DATE, allowNull: true, field: "completed_at" },
 }, { sequelize, modelName: "Job", tableName: "jobs", underscored: true });
 
-export class Fine extends Model {}
+export class Fine extends Model { declare id: number; }
 Fine.init({
   id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
   vtcId: { type: DataTypes.INTEGER, allowNull: true, field: "vtc_id" },
@@ -246,7 +246,7 @@ VtcMember.init({
   joinedAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW, field: "joined_at" },
 }, { sequelize, modelName: "VtcMember", tableName: "vtc_members", underscored: true, indexes: [{ unique: true, fields: ["vtc_id", "user_id"] }] });
 
-export class VtcApplication extends Model {}
+export class VtcApplication extends Model { declare id: number; }
 VtcApplication.init({
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
   vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
@@ -296,7 +296,7 @@ VtcActivityEvent.init({
   occurredAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW, field: "occurred_at" },
 }, { sequelize, modelName: "VtcActivityEvent", tableName: "vtc_activity_events", underscored: true });
 
-export class VtcModerationAction extends Model {}
+export class VtcModerationAction extends Model { declare id: number; }
 VtcModerationAction.init({
   id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
   vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
