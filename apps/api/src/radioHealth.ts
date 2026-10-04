@@ -357,7 +357,8 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
         reply.hijack();
         reply.raw.writeHead(200, {
           "content-type": "audio/mpeg",
-          "cache-control": "no-store, no-cache, must-revalidate",
+          "cache-control": "no-store, no-cache, must-revalidate, no-transform",
+          "x-accel-buffering": "no",
           "icy-br": "128",
           "x-openhaul-radio-route": payload.proxy ? "residential-proxy" : "direct-transcode",
           "x-openhaul-radio-proxy-protocol": proxyProtocol,
