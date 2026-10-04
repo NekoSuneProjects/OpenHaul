@@ -484,6 +484,8 @@ export function MapClient() {
   const params = useSearchParams();
   const initialVtc = params.get("vtc") ?? "";
   const initialDriver = params.get("driver") ?? "";
+  const embedded = params.get("embed") === "1";
+  const initialMode = (params.get("mode") as MapMode | null) ?? null;
   const [vtc, setVtc] = useState(initialVtc);
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [status, setStatus] = useState("Connecting…");
@@ -722,7 +724,14 @@ export function MapClient() {
           if (!feature || feature.geometry.type !== "Point") return;
 
           const clickedDriverId = String(feature.properties?.driverId ?? "");
-          if (clickedDriverId) setSelectedDriverId(clickedDriverId);
+          if (clickedDriverId) {
+            setSelectedDriverId(clickedDriverId);
+            setCameraMode("third");
+            fittedRef.current = true;
+            const url = new URL(window.location.href);
+            url.searchParams.set("driver", clickedDriverId);
+            window.history.replaceState({}, "", url);
+          }
 
           const properties = feature.properties || {};
           const coordinates = feature.geometry.coordinates as [number, number];
@@ -932,6 +941,20 @@ export function MapClient() {
   }, [cameraMode, mapReady]);
 
   useEffect(() => {
+    if (!initialDriver) return;
+    setSelectedDriverId(initialDriver);
+    setCameraMode("third");
+    fittedRef.current = true;
+  }, [initialDriver]);
+
+  useEffect(() => {
+    if (!initialMode) return;
+    setMapMode(initialMode);
+    const map = mapRef.current;
+    if (mapReady && map) setBaseMapMode(map, initialMode);
+  }, [initialMode, mapReady]);
+
+  useEffect(() => {
     if (!mapReady) return;
 
     let frame = 0;
@@ -1119,8 +1142,8 @@ export function MapClient() {
   const selectedVtc = vtcOptions.find((option) => String(option.id) === initialVtc);
 
   return (
-    <main className="shell">
-      <div className="sectionTitle">
+    <main className={embedded ? "shell embeddedMapShell" : "shell"}>
+      {!embedded ? <div className="sectionTitle">
         <div>
           <h2>{initialVtc ? (selectedVtc?.name ?? "VTC #" + initialVtc) + " live map" : "Global live map"}</h2>
           <div className="muted">
@@ -1129,10 +1152,10 @@ export function MapClient() {
               : "geographic fallback"}
           </div>
         </div>
-      </div>
+      </div> : null}
 
-      <section className="mapPanel realMapPanel">
-        <div className="mapToolbar">
+      <section className={"mapPanel realMapPanel" + (embedded ? " embeddedMapPanel" : "")}>
+        {!embedded ? <div className="mapToolbar">
           <input value={driverQuery} onChange={(e) => setDriverQuery(e.target.value)} placeholder="Search driver, truck, cargo, server…" aria-label="Search live drivers" />
           <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value as typeof statusFilter)} aria-label="Driver status filter">
             <option value="all">All online</option>
@@ -1171,7 +1194,7 @@ export function MapClient() {
           <span className="mapToolbarDivider" aria-hidden="true" />
           <button className="button" onClick={() => void shareMap()}>{selectedDriverId ? "🔗 Share driver" : "🔗 Share map"}</button>
           <button className="button" onClick={() => void toggleFullscreen()}>{fullscreen ? "Exit fullscreen" : "Full screen"}</button>
-        </div>
+        </div> : null}
 
         <div className="mapCameraStatus">
           {selectedDriverId
