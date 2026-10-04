@@ -1,6 +1,2427 @@
 {
-  "version": "bootstrap",
-  "generatedAt": null,
+  "version": "2026-10-04T23:27:15.216Z",
+  "generatedAt": "2026-10-04T23:27:15.216Z",
   "branch": "radio-catalog",
-  "countries": []
+  "mirrors": [
+    "https://de1.api.radio-browser.info/",
+    "https://de2.api.radio-browser.info/",
+    "https://nl1.api.radio-browser.info/"
+  ],
+  "countries": [
+    {
+      "country": "AD",
+      "active": "AD/active.json",
+      "dead": "AD/dead.json",
+      "activeCount": 11,
+      "deadCount": 1,
+      "totalCount": 12,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:08:56.417Z"
+    },
+    {
+      "country": "AE",
+      "active": "AE/active.json",
+      "dead": "AE/dead.json",
+      "activeCount": 794,
+      "deadCount": 7,
+      "totalCount": 801,
+      "referenceCount": 794,
+      "updatedAt": "2026-10-04T22:09:09.328Z"
+    },
+    {
+      "country": "AF",
+      "active": "AF/active.json",
+      "dead": "AF/dead.json",
+      "activeCount": 103,
+      "deadCount": 22,
+      "totalCount": 125,
+      "referenceCount": 106,
+      "updatedAt": "2026-10-04T22:09:12.023Z"
+    },
+    {
+      "country": "AG",
+      "active": "AG/active.json",
+      "dead": "AG/dead.json",
+      "activeCount": 6,
+      "deadCount": 0,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:09:13.675Z"
+    },
+    {
+      "country": "AI",
+      "active": "AI/active.json",
+      "dead": "AI/dead.json",
+      "activeCount": 6,
+      "deadCount": 0,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:09:12.830Z"
+    },
+    {
+      "country": "AL",
+      "active": "AL/active.json",
+      "dead": "AL/dead.json",
+      "activeCount": 49,
+      "deadCount": 3,
+      "totalCount": 52,
+      "referenceCount": 49,
+      "updatedAt": "2026-10-04T22:09:18.984Z"
+    },
+    {
+      "country": "AM",
+      "active": "AM/active.json",
+      "dead": "AM/dead.json",
+      "activeCount": 14,
+      "deadCount": 5,
+      "totalCount": 19,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:09:27.842Z"
+    },
+    {
+      "country": "AO",
+      "active": "AO/active.json",
+      "dead": "AO/dead.json",
+      "activeCount": 13,
+      "deadCount": 7,
+      "totalCount": 20,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:09:20.887Z"
+    },
+    {
+      "country": "AQ",
+      "active": "AQ/active.json",
+      "dead": "AQ/dead.json",
+      "activeCount": 8,
+      "deadCount": 3,
+      "totalCount": 11,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:09:20.262Z"
+    },
+    {
+      "country": "AR",
+      "active": "AR/active.json",
+      "dead": "AR/dead.json",
+      "activeCount": 1114,
+      "deadCount": 148,
+      "totalCount": 1262,
+      "referenceCount": 1131,
+      "updatedAt": "2026-10-04T22:11:21.647Z"
+    },
+    {
+      "country": "AS",
+      "active": "AS/active.json",
+      "dead": "AS/dead.json",
+      "activeCount": 16,
+      "deadCount": 0,
+      "totalCount": 16,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:09:31.168Z"
+    },
+    {
+      "country": "AT",
+      "active": "AT/active.json",
+      "dead": "AT/dead.json",
+      "activeCount": 347,
+      "deadCount": 29,
+      "totalCount": 376,
+      "referenceCount": 350,
+      "updatedAt": "2026-10-04T22:09:55.424Z"
+    },
+    {
+      "country": "AU",
+      "active": "AU/active.json",
+      "dead": "AU/dead.json",
+      "activeCount": 1734,
+      "deadCount": 390,
+      "totalCount": 2124,
+      "referenceCount": 1758,
+      "updatedAt": "2026-10-04T22:15:14.665Z"
+    },
+    {
+      "country": "AW",
+      "active": "AW/active.json",
+      "dead": "AW/dead.json",
+      "activeCount": 8,
+      "deadCount": 2,
+      "totalCount": 10,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:11:24.232Z"
+    },
+    {
+      "country": "AX",
+      "active": "AX/active.json",
+      "dead": "AX/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:11:23.773Z"
+    },
+    {
+      "country": "AZ",
+      "active": "AZ/active.json",
+      "dead": "AZ/dead.json",
+      "activeCount": 49,
+      "deadCount": 13,
+      "totalCount": 62,
+      "referenceCount": 44,
+      "updatedAt": "2026-10-04T22:15:24.963Z"
+    },
+    {
+      "country": "BA",
+      "active": "BA/active.json",
+      "dead": "BA/dead.json",
+      "activeCount": 140,
+      "deadCount": 25,
+      "totalCount": 165,
+      "referenceCount": 153,
+      "updatedAt": "2026-10-04T22:15:20.070Z"
+    },
+    {
+      "country": "BB",
+      "active": "BB/active.json",
+      "dead": "BB/dead.json",
+      "activeCount": 22,
+      "deadCount": 0,
+      "totalCount": 22,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:15:17.410Z"
+    },
+    {
+      "country": "BD",
+      "active": "BD/active.json",
+      "dead": "BD/dead.json",
+      "activeCount": 22,
+      "deadCount": 4,
+      "totalCount": 26,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:15:27.584Z"
+    },
+    {
+      "country": "BE",
+      "active": "BE/active.json",
+      "dead": "BE/dead.json",
+      "activeCount": 535,
+      "deadCount": 77,
+      "totalCount": 612,
+      "referenceCount": 571,
+      "updatedAt": "2026-10-04T22:16:04.104Z"
+    },
+    {
+      "country": "BF",
+      "active": "BF/active.json",
+      "dead": "BF/dead.json",
+      "activeCount": 8,
+      "deadCount": 1,
+      "totalCount": 9,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:15:26.587Z"
+    },
+    {
+      "country": "BG",
+      "active": "BG/active.json",
+      "dead": "BG/dead.json",
+      "activeCount": 362,
+      "deadCount": 60,
+      "totalCount": 422,
+      "referenceCount": 383,
+      "updatedAt": "2026-10-04T22:16:31.681Z"
+    },
+    {
+      "country": "BH",
+      "active": "BH/active.json",
+      "dead": "BH/dead.json",
+      "activeCount": 22,
+      "deadCount": 1,
+      "totalCount": 23,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:16:07.110Z"
+    },
+    {
+      "country": "BI",
+      "active": "BI/active.json",
+      "dead": "BI/dead.json",
+      "activeCount": 4,
+      "deadCount": 0,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:16:05.256Z"
+    },
+    {
+      "country": "BJ",
+      "active": "BJ/active.json",
+      "dead": "BJ/dead.json",
+      "activeCount": 4,
+      "deadCount": 1,
+      "totalCount": 5,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:16:34.580Z"
+    },
+    {
+      "country": "BM",
+      "active": "BM/active.json",
+      "dead": "BM/dead.json",
+      "activeCount": 7,
+      "deadCount": 4,
+      "totalCount": 11,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:16:32.645Z"
+    },
+    {
+      "country": "BN",
+      "active": "BN/active.json",
+      "dead": "BN/dead.json",
+      "activeCount": 5,
+      "deadCount": 0,
+      "totalCount": 5,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:16:33.357Z"
+    },
+    {
+      "country": "BO",
+      "active": "BO/active.json",
+      "dead": "BO/dead.json",
+      "activeCount": 75,
+      "deadCount": 14,
+      "totalCount": 89,
+      "referenceCount": 76,
+      "updatedAt": "2026-10-04T22:16:40.732Z"
+    },
+    {
+      "country": "BQ",
+      "active": "BQ/active.json",
+      "dead": "BQ/dead.json",
+      "activeCount": 12,
+      "deadCount": 5,
+      "totalCount": 17,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:16:42.809Z"
+    },
+    {
+      "country": "BR",
+      "active": "BR/active.json",
+      "dead": "BR/dead.json",
+      "activeCount": 1507,
+      "deadCount": 273,
+      "totalCount": 1780,
+      "referenceCount": 1513,
+      "updatedAt": "2026-10-04T22:19:57.458Z"
+    },
+    {
+      "country": "BS",
+      "active": "BS/active.json",
+      "dead": "BS/dead.json",
+      "activeCount": 11,
+      "deadCount": 0,
+      "totalCount": 11,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:19:58.817Z"
+    },
+    {
+      "country": "BT",
+      "active": "BT/active.json",
+      "dead": "BT/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:19:57.873Z"
+    },
+    {
+      "country": "BW",
+      "active": "BW/active.json",
+      "dead": "BW/dead.json",
+      "activeCount": 4,
+      "deadCount": 2,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:19:58.232Z"
+    },
+    {
+      "country": "BY",
+      "active": "BY/active.json",
+      "dead": "BY/dead.json",
+      "activeCount": 74,
+      "deadCount": 38,
+      "totalCount": 112,
+      "referenceCount": 77,
+      "updatedAt": "2026-10-04T22:20:19.676Z"
+    },
+    {
+      "country": "BZ",
+      "active": "BZ/active.json",
+      "dead": "BZ/dead.json",
+      "activeCount": 4,
+      "deadCount": 0,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:19:59.720Z"
+    },
+    {
+      "country": "CA",
+      "active": "CA/active.json",
+      "dead": "CA/dead.json",
+      "activeCount": 1465,
+      "deadCount": 142,
+      "totalCount": 1607,
+      "referenceCount": 1473,
+      "updatedAt": "2026-10-04T22:22:45.342Z"
+    },
+    {
+      "country": "CC",
+      "active": "CC/active.json",
+      "dead": "CC/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:22:46.344Z"
+    },
+    {
+      "country": "CD",
+      "active": "CD/active.json",
+      "dead": "CD/dead.json",
+      "activeCount": 19,
+      "deadCount": 1,
+      "totalCount": 20,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:22:46.709Z"
+    },
+    {
+      "country": "CF",
+      "active": "CF/active.json",
+      "dead": "CF/dead.json",
+      "activeCount": 4,
+      "deadCount": 0,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:22:45.823Z"
+    },
+    {
+      "country": "CG",
+      "active": "CG/active.json",
+      "dead": "CG/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:22:46.901Z"
+    },
+    {
+      "country": "CH",
+      "active": "CH/active.json",
+      "dead": "CH/dead.json",
+      "activeCount": 648,
+      "deadCount": 43,
+      "totalCount": 691,
+      "referenceCount": 639,
+      "updatedAt": "2026-10-04T22:23:32.815Z"
+    },
+    {
+      "country": "CI",
+      "active": "CI/active.json",
+      "dead": "CI/dead.json",
+      "activeCount": 12,
+      "deadCount": 0,
+      "totalCount": 12,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:22:47.826Z"
+    },
+    {
+      "country": "CK",
+      "active": "CK/active.json",
+      "dead": "CK/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:23:33.336Z"
+    },
+    {
+      "country": "CL",
+      "active": "CL/active.json",
+      "dead": "CL/dead.json",
+      "activeCount": 574,
+      "deadCount": 56,
+      "totalCount": 630,
+      "referenceCount": 566,
+      "updatedAt": "2026-10-04T22:24:25.539Z"
+    },
+    {
+      "country": "CM",
+      "active": "CM/active.json",
+      "dead": "CM/dead.json",
+      "activeCount": 4,
+      "deadCount": 2,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:23:33.720Z"
+    },
+    {
+      "country": "CN",
+      "active": "CN/active.json",
+      "dead": "CN/dead.json",
+      "activeCount": 2020,
+      "deadCount": 314,
+      "totalCount": 2334,
+      "referenceCount": 2052,
+      "updatedAt": "2026-10-04T22:29:33.428Z"
+    },
+    {
+      "country": "CO",
+      "active": "CO/active.json",
+      "dead": "CO/dead.json",
+      "activeCount": 684,
+      "deadCount": 79,
+      "totalCount": 763,
+      "referenceCount": 669,
+      "updatedAt": "2026-10-04T22:25:36.193Z"
+    },
+    {
+      "country": "CR",
+      "active": "CR/active.json",
+      "dead": "CR/dead.json",
+      "activeCount": 61,
+      "deadCount": 4,
+      "totalCount": 65,
+      "referenceCount": 59,
+      "updatedAt": "2026-10-04T22:24:30.542Z"
+    },
+    {
+      "country": "CU",
+      "active": "CU/active.json",
+      "dead": "CU/dead.json",
+      "activeCount": 22,
+      "deadCount": 7,
+      "totalCount": 29,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:29:43.401Z"
+    },
+    {
+      "country": "CV",
+      "active": "CV/active.json",
+      "dead": "CV/dead.json",
+      "activeCount": 20,
+      "deadCount": 2,
+      "totalCount": 22,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:29:37.475Z"
+    },
+    {
+      "country": "CW",
+      "active": "CW/active.json",
+      "dead": "CW/dead.json",
+      "activeCount": 23,
+      "deadCount": 2,
+      "totalCount": 25,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:29:42.807Z"
+    },
+    {
+      "country": "CX",
+      "active": "CX/active.json",
+      "dead": "CX/dead.json",
+      "activeCount": 5,
+      "deadCount": 0,
+      "totalCount": 5,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:29:44.411Z"
+    },
+    {
+      "country": "CY",
+      "active": "CY/active.json",
+      "dead": "CY/dead.json",
+      "activeCount": 52,
+      "deadCount": 7,
+      "totalCount": 59,
+      "referenceCount": 56,
+      "updatedAt": "2026-10-04T22:29:46.236Z"
+    },
+    {
+      "country": "CZ",
+      "active": "CZ/active.json",
+      "dead": "CZ/dead.json",
+      "activeCount": 285,
+      "deadCount": 34,
+      "totalCount": 319,
+      "referenceCount": 297,
+      "updatedAt": "2026-10-04T22:30:02.418Z"
+    },
+    {
+      "country": "DE",
+      "active": "DE/active.json",
+      "dead": "DE/dead.json",
+      "activeCount": 6133,
+      "deadCount": 341,
+      "totalCount": 6474,
+      "referenceCount": 6191,
+      "updatedAt": "2026-10-04T22:35:15.984Z"
+    },
+    {
+      "country": "DJ",
+      "active": "DJ/active.json",
+      "dead": "DJ/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:30:03.418Z"
+    },
+    {
+      "country": "DK",
+      "active": "DK/active.json",
+      "dead": "DK/dead.json",
+      "activeCount": 242,
+      "deadCount": 27,
+      "totalCount": 269,
+      "referenceCount": 244,
+      "updatedAt": "2026-10-04T22:30:29.571Z"
+    },
+    {
+      "country": "DM",
+      "active": "DM/active.json",
+      "dead": "DM/dead.json",
+      "activeCount": 7,
+      "deadCount": 1,
+      "totalCount": 8,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:35:16.808Z"
+    },
+    {
+      "country": "DO",
+      "active": "DO/active.json",
+      "dead": "DO/dead.json",
+      "activeCount": 109,
+      "deadCount": 14,
+      "totalCount": 123,
+      "referenceCount": 110,
+      "updatedAt": "2026-10-04T22:35:32.130Z"
+    },
+    {
+      "country": "DZ",
+      "active": "DZ/active.json",
+      "dead": "DZ/dead.json",
+      "activeCount": 83,
+      "deadCount": 49,
+      "totalCount": 132,
+      "referenceCount": 125,
+      "updatedAt": "2026-10-04T22:35:24.797Z"
+    },
+    {
+      "country": "EC",
+      "active": "EC/active.json",
+      "dead": "EC/dead.json",
+      "activeCount": 151,
+      "deadCount": 25,
+      "totalCount": 176,
+      "referenceCount": 154,
+      "updatedAt": "2026-10-04T22:35:42.702Z"
+    },
+    {
+      "country": "EE",
+      "active": "EE/active.json",
+      "dead": "EE/dead.json",
+      "activeCount": 116,
+      "deadCount": 13,
+      "totalCount": 129,
+      "referenceCount": 116,
+      "updatedAt": "2026-10-04T22:35:36.096Z"
+    },
+    {
+      "country": "EG",
+      "active": "EG/active.json",
+      "dead": "EG/dead.json",
+      "activeCount": 163,
+      "deadCount": 6,
+      "totalCount": 169,
+      "referenceCount": 156,
+      "updatedAt": "2026-10-04T22:35:52.051Z"
+    },
+    {
+      "country": "ER",
+      "active": "ER/active.json",
+      "dead": "ER/dead.json",
+      "activeCount": 5,
+      "deadCount": 0,
+      "totalCount": 5,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:35:52.794Z"
+    },
+    {
+      "country": "ES",
+      "active": "ES/active.json",
+      "dead": "ES/dead.json",
+      "activeCount": 1302,
+      "deadCount": 166,
+      "totalCount": 1468,
+      "referenceCount": 1355,
+      "updatedAt": "2026-10-04T22:37:39.936Z"
+    },
+    {
+      "country": "ET",
+      "active": "ET/active.json",
+      "dead": "ET/dead.json",
+      "activeCount": 33,
+      "deadCount": 4,
+      "totalCount": 37,
+      "referenceCount": 33,
+      "updatedAt": "2026-10-04T22:36:01.098Z"
+    },
+    {
+      "country": "FI",
+      "active": "FI/active.json",
+      "dead": "FI/dead.json",
+      "activeCount": 143,
+      "deadCount": 42,
+      "totalCount": 185,
+      "referenceCount": 144,
+      "updatedAt": "2026-10-04T22:37:50.418Z"
+    },
+    {
+      "country": "FJ",
+      "active": "FJ/active.json",
+      "dead": "FJ/dead.json",
+      "activeCount": 1,
+      "deadCount": 5,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:37:40.640Z"
+    },
+    {
+      "country": "FK",
+      "active": "FK/active.json",
+      "dead": "FK/dead.json",
+      "activeCount": 5,
+      "deadCount": 0,
+      "totalCount": 5,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:37:40.980Z"
+    },
+    {
+      "country": "FM",
+      "active": "FM/active.json",
+      "dead": "FM/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:37:51.075Z"
+    },
+    {
+      "country": "FO",
+      "active": "FO/active.json",
+      "dead": "FO/dead.json",
+      "activeCount": 14,
+      "deadCount": 0,
+      "totalCount": 14,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:37:52.362Z"
+    },
+    {
+      "country": "FR",
+      "active": "FR/active.json",
+      "dead": "FR/dead.json",
+      "activeCount": 3634,
+      "deadCount": 241,
+      "totalCount": 3875,
+      "referenceCount": 3655,
+      "updatedAt": "2026-10-04T22:41:20.870Z"
+    },
+    {
+      "country": "GA",
+      "active": "GA/active.json",
+      "dead": "GA/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:41:21.529Z"
+    },
+    {
+      "country": "GB",
+      "active": "GB/active.json",
+      "dead": "GB/dead.json",
+      "activeCount": 2206,
+      "deadCount": 302,
+      "totalCount": 2508,
+      "referenceCount": 2242,
+      "updatedAt": "2026-10-04T22:43:41.235Z"
+    },
+    {
+      "country": "GD",
+      "active": "GD/active.json",
+      "dead": "GD/dead.json",
+      "activeCount": 8,
+      "deadCount": 1,
+      "totalCount": 9,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:41:22.245Z"
+    },
+    {
+      "country": "GE",
+      "active": "GE/active.json",
+      "dead": "GE/dead.json",
+      "activeCount": 33,
+      "deadCount": 5,
+      "totalCount": 38,
+      "referenceCount": 33,
+      "updatedAt": "2026-10-04T22:43:44.110Z"
+    },
+    {
+      "country": "GF",
+      "active": "GF/active.json",
+      "dead": "GF/dead.json",
+      "activeCount": 6,
+      "deadCount": 3,
+      "totalCount": 9,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:43:42.331Z"
+    },
+    {
+      "country": "GG",
+      "active": "GG/active.json",
+      "dead": "GG/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:43:42.720Z"
+    },
+    {
+      "country": "GH",
+      "active": "GH/active.json",
+      "dead": "GH/dead.json",
+      "activeCount": 97,
+      "deadCount": 16,
+      "totalCount": 113,
+      "referenceCount": 101,
+      "updatedAt": "2026-10-04T22:44:01.377Z"
+    },
+    {
+      "country": "GI",
+      "active": "GI/active.json",
+      "dead": "GI/dead.json",
+      "activeCount": 8,
+      "deadCount": 0,
+      "totalCount": 8,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:43:45.133Z"
+    },
+    {
+      "country": "GL",
+      "active": "GL/active.json",
+      "dead": "GL/dead.json",
+      "activeCount": 5,
+      "deadCount": 2,
+      "totalCount": 7,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:43:44.956Z"
+    },
+    {
+      "country": "GM",
+      "active": "GM/active.json",
+      "dead": "GM/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:44:01.925Z"
+    },
+    {
+      "country": "GN",
+      "active": "GN/active.json",
+      "dead": "GN/dead.json",
+      "activeCount": 5,
+      "deadCount": 1,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:44:02.678Z"
+    },
+    {
+      "country": "GP",
+      "active": "GP/active.json",
+      "dead": "GP/dead.json",
+      "activeCount": 17,
+      "deadCount": 0,
+      "totalCount": 17,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:44:03.658Z"
+    },
+    {
+      "country": "GQ",
+      "active": "GQ/active.json",
+      "dead": "GQ/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:44:05.378Z"
+    },
+    {
+      "country": "GR",
+      "active": "GR/active.json",
+      "dead": "GR/dead.json",
+      "activeCount": 2116,
+      "deadCount": 186,
+      "totalCount": 2302,
+      "referenceCount": 2134,
+      "updatedAt": "2026-10-04T22:45:55.164Z"
+    },
+    {
+      "country": "GT",
+      "active": "GT/active.json",
+      "dead": "GT/dead.json",
+      "activeCount": 72,
+      "deadCount": 7,
+      "totalCount": 79,
+      "referenceCount": 74,
+      "updatedAt": "2026-10-04T22:44:10.594Z"
+    },
+    {
+      "country": "GU",
+      "active": "GU/active.json",
+      "dead": "GU/dead.json",
+      "activeCount": 6,
+      "deadCount": 0,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:45:57.643Z"
+    },
+    {
+      "country": "GW",
+      "active": "GW/active.json",
+      "dead": "GW/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:45:56.189Z"
+    },
+    {
+      "country": "GY",
+      "active": "GY/active.json",
+      "dead": "GY/dead.json",
+      "activeCount": 12,
+      "deadCount": 0,
+      "totalCount": 12,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:45:56.277Z"
+    },
+    {
+      "country": "HK",
+      "active": "HK/active.json",
+      "dead": "HK/dead.json",
+      "activeCount": 90,
+      "deadCount": 7,
+      "totalCount": 97,
+      "referenceCount": 89,
+      "updatedAt": "2026-10-04T22:46:08.177Z"
+    },
+    {
+      "country": "HN",
+      "active": "HN/active.json",
+      "dead": "HN/dead.json",
+      "activeCount": 46,
+      "deadCount": 13,
+      "totalCount": 59,
+      "referenceCount": 45,
+      "updatedAt": "2026-10-04T22:46:03.341Z"
+    },
+    {
+      "country": "HR",
+      "active": "HR/active.json",
+      "dead": "HR/dead.json",
+      "activeCount": 290,
+      "deadCount": 30,
+      "totalCount": 320,
+      "referenceCount": 293,
+      "updatedAt": "2026-10-04T22:46:26.845Z"
+    },
+    {
+      "country": "HT",
+      "active": "HT/active.json",
+      "dead": "HT/dead.json",
+      "activeCount": 31,
+      "deadCount": 6,
+      "totalCount": 37,
+      "referenceCount": 33,
+      "updatedAt": "2026-10-04T22:46:29.973Z"
+    },
+    {
+      "country": "HU",
+      "active": "HU/active.json",
+      "dead": "HU/dead.json",
+      "activeCount": 363,
+      "deadCount": 33,
+      "totalCount": 396,
+      "referenceCount": 375,
+      "updatedAt": "2026-10-04T22:46:47.097Z"
+    },
+    {
+      "country": "ID",
+      "active": "ID/active.json",
+      "dead": "ID/dead.json",
+      "activeCount": 576,
+      "deadCount": 126,
+      "totalCount": 702,
+      "referenceCount": 601,
+      "updatedAt": "2026-10-04T22:47:35.075Z"
+    },
+    {
+      "country": "IE",
+      "active": "IE/active.json",
+      "dead": "IE/dead.json",
+      "activeCount": 224,
+      "deadCount": 72,
+      "totalCount": 296,
+      "referenceCount": 223,
+      "updatedAt": "2026-10-04T22:47:59.554Z"
+    },
+    {
+      "country": "IL",
+      "active": "IL/active.json",
+      "dead": "IL/dead.json",
+      "activeCount": 148,
+      "deadCount": 32,
+      "totalCount": 180,
+      "referenceCount": 152,
+      "updatedAt": "2026-10-04T22:47:48.860Z"
+    },
+    {
+      "country": "IM",
+      "active": "IM/active.json",
+      "dead": "IM/dead.json",
+      "activeCount": 8,
+      "deadCount": 0,
+      "totalCount": 8,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:47:36.154Z"
+    },
+    {
+      "country": "IN",
+      "active": "IN/active.json",
+      "dead": "IN/dead.json",
+      "activeCount": 991,
+      "deadCount": 256,
+      "totalCount": 1247,
+      "referenceCount": 1004,
+      "updatedAt": "2026-10-04T22:50:12.689Z"
+    },
+    {
+      "country": "IO",
+      "active": "IO/active.json",
+      "dead": "IO/dead.json",
+      "activeCount": 7,
+      "deadCount": 0,
+      "totalCount": 7,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:48:01.468Z"
+    },
+    {
+      "country": "IQ",
+      "active": "IQ/active.json",
+      "dead": "IQ/dead.json",
+      "activeCount": 29,
+      "deadCount": 3,
+      "totalCount": 32,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:48:08.816Z"
+    },
+    {
+      "country": "IR",
+      "active": "IR/active.json",
+      "dead": "IR/dead.json",
+      "activeCount": 35,
+      "deadCount": 4,
+      "totalCount": 39,
+      "referenceCount": 33,
+      "updatedAt": "2026-10-04T22:50:21.925Z"
+    },
+    {
+      "country": "IS",
+      "active": "IS/active.json",
+      "dead": "IS/dead.json",
+      "activeCount": 30,
+      "deadCount": 1,
+      "totalCount": 31,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:50:14.867Z"
+    },
+    {
+      "country": "IT",
+      "active": "IT/active.json",
+      "dead": "IT/dead.json",
+      "activeCount": 1761,
+      "deadCount": 104,
+      "totalCount": 1865,
+      "referenceCount": 1764,
+      "updatedAt": "2026-10-04T22:51:31.969Z"
+    },
+    {
+      "country": "JE",
+      "active": "JE/active.json",
+      "dead": "JE/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:51:32.422Z"
+    },
+    {
+      "country": "JM",
+      "active": "JM/active.json",
+      "dead": "JM/dead.json",
+      "activeCount": 50,
+      "deadCount": 4,
+      "totalCount": 54,
+      "referenceCount": 50,
+      "updatedAt": "2026-10-04T22:51:35.933Z"
+    },
+    {
+      "country": "JO",
+      "active": "JO/active.json",
+      "dead": "JO/dead.json",
+      "activeCount": 26,
+      "deadCount": 4,
+      "totalCount": 30,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:51:33.744Z"
+    },
+    {
+      "country": "JP",
+      "active": "JP/active.json",
+      "dead": "JP/dead.json",
+      "activeCount": 132,
+      "deadCount": 92,
+      "totalCount": 224,
+      "referenceCount": 134,
+      "updatedAt": "2026-10-04T22:51:52.321Z"
+    },
+    {
+      "country": "KE",
+      "active": "KE/active.json",
+      "dead": "KE/dead.json",
+      "activeCount": 64,
+      "deadCount": 19,
+      "totalCount": 83,
+      "referenceCount": 77,
+      "updatedAt": "2026-10-04T22:51:51.505Z"
+    },
+    {
+      "country": "KG",
+      "active": "KG/active.json",
+      "dead": "KG/dead.json",
+      "activeCount": 8,
+      "deadCount": 0,
+      "totalCount": 8,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:51:37.218Z"
+    },
+    {
+      "country": "KH",
+      "active": "KH/active.json",
+      "dead": "KH/dead.json",
+      "activeCount": 9,
+      "deadCount": 3,
+      "totalCount": 12,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:00.514Z"
+    },
+    {
+      "country": "KI",
+      "active": "KI/active.json",
+      "dead": "KI/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:51:53.558Z"
+    },
+    {
+      "country": "KM",
+      "active": "KM/active.json",
+      "dead": "KM/dead.json",
+      "activeCount": 7,
+      "deadCount": 0,
+      "totalCount": 7,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:51:52.930Z"
+    },
+    {
+      "country": "KN",
+      "active": "KN/active.json",
+      "dead": "KN/dead.json",
+      "activeCount": 5,
+      "deadCount": 0,
+      "totalCount": 5,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:02.726Z"
+    },
+    {
+      "country": "KP",
+      "active": "KP/active.json",
+      "dead": "KP/dead.json",
+      "activeCount": 11,
+      "deadCount": 6,
+      "totalCount": 17,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:02.727Z"
+    },
+    {
+      "country": "KR",
+      "active": "KR/active.json",
+      "dead": "KR/dead.json",
+      "activeCount": 74,
+      "deadCount": 42,
+      "totalCount": 116,
+      "referenceCount": 112,
+      "updatedAt": "2026-10-04T22:52:15.738Z"
+    },
+    {
+      "country": "KW",
+      "active": "KW/active.json",
+      "dead": "KW/dead.json",
+      "activeCount": 17,
+      "deadCount": 0,
+      "totalCount": 17,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:19.477Z"
+    },
+    {
+      "country": "KY",
+      "active": "KY/active.json",
+      "dead": "KY/dead.json",
+      "activeCount": 11,
+      "deadCount": 0,
+      "totalCount": 11,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:20.254Z"
+    },
+    {
+      "country": "KZ",
+      "active": "KZ/active.json",
+      "dead": "KZ/dead.json",
+      "activeCount": 44,
+      "deadCount": 4,
+      "totalCount": 48,
+      "referenceCount": 45,
+      "updatedAt": "2026-10-04T22:52:20.926Z"
+    },
+    {
+      "country": "LA",
+      "active": "LA/active.json",
+      "dead": "LA/dead.json",
+      "activeCount": 4,
+      "deadCount": 0,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:23.451Z"
+    },
+    {
+      "country": "LB",
+      "active": "LB/active.json",
+      "dead": "LB/dead.json",
+      "activeCount": 71,
+      "deadCount": 6,
+      "totalCount": 77,
+      "referenceCount": 73,
+      "updatedAt": "2026-10-04T22:52:33.920Z"
+    },
+    {
+      "country": "LC",
+      "active": "LC/active.json",
+      "dead": "LC/dead.json",
+      "activeCount": 21,
+      "deadCount": 2,
+      "totalCount": 23,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:23.755Z"
+    },
+    {
+      "country": "LI",
+      "active": "LI/active.json",
+      "dead": "LI/dead.json",
+      "activeCount": 2,
+      "deadCount": 2,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:34.440Z"
+    },
+    {
+      "country": "LK",
+      "active": "LK/active.json",
+      "dead": "LK/dead.json",
+      "activeCount": 80,
+      "deadCount": 11,
+      "totalCount": 91,
+      "referenceCount": 77,
+      "updatedAt": "2026-10-04T22:52:37.817Z"
+    },
+    {
+      "country": "LR",
+      "active": "LR/active.json",
+      "dead": "LR/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:34.190Z"
+    },
+    {
+      "country": "LS",
+      "active": "LS/active.json",
+      "dead": "LS/dead.json",
+      "activeCount": 1,
+      "deadCount": 1,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:38.132Z"
+    },
+    {
+      "country": "LT",
+      "active": "LT/active.json",
+      "dead": "LT/dead.json",
+      "activeCount": 99,
+      "deadCount": 21,
+      "totalCount": 120,
+      "referenceCount": 100,
+      "updatedAt": "2026-10-04T22:52:52.070Z"
+    },
+    {
+      "country": "LU",
+      "active": "LU/active.json",
+      "dead": "LU/dead.json",
+      "activeCount": 33,
+      "deadCount": 4,
+      "totalCount": 37,
+      "referenceCount": 34,
+      "updatedAt": "2026-10-04T22:52:40.539Z"
+    },
+    {
+      "country": "LV",
+      "active": "LV/active.json",
+      "dead": "LV/dead.json",
+      "activeCount": 113,
+      "deadCount": 15,
+      "totalCount": 128,
+      "referenceCount": 120,
+      "updatedAt": "2026-10-04T22:53:07.187Z"
+    },
+    {
+      "country": "LY",
+      "active": "LY/active.json",
+      "dead": "LY/dead.json",
+      "activeCount": 11,
+      "deadCount": 2,
+      "totalCount": 13,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:52:53.247Z"
+    },
+    {
+      "country": "MA",
+      "active": "MA/active.json",
+      "dead": "MA/dead.json",
+      "activeCount": 69,
+      "deadCount": 11,
+      "totalCount": 80,
+      "referenceCount": 71,
+      "updatedAt": "2026-10-04T22:52:56.482Z"
+    },
+    {
+      "country": "MC",
+      "active": "MC/active.json",
+      "dead": "MC/dead.json",
+      "activeCount": 10,
+      "deadCount": 1,
+      "totalCount": 11,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:08.588Z"
+    },
+    {
+      "country": "MD",
+      "active": "MD/active.json",
+      "dead": "MD/dead.json",
+      "activeCount": 81,
+      "deadCount": 6,
+      "totalCount": 87,
+      "referenceCount": 82,
+      "updatedAt": "2026-10-04T22:53:16.118Z"
+    },
+    {
+      "country": "ME",
+      "active": "ME/active.json",
+      "dead": "ME/dead.json",
+      "activeCount": 46,
+      "deadCount": 7,
+      "totalCount": 53,
+      "referenceCount": 47,
+      "updatedAt": "2026-10-04T22:53:09.518Z"
+    },
+    {
+      "country": "MF",
+      "active": "MF/active.json",
+      "dead": "MF/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:17.509Z"
+    },
+    {
+      "country": "MG",
+      "active": "MG/active.json",
+      "dead": "MG/dead.json",
+      "activeCount": 17,
+      "deadCount": 5,
+      "totalCount": 22,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:18.548Z"
+    },
+    {
+      "country": "MH",
+      "active": "MH/active.json",
+      "dead": "MH/dead.json",
+      "activeCount": 3,
+      "deadCount": 0,
+      "totalCount": 3,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:17.629Z"
+    },
+    {
+      "country": "MK",
+      "active": "MK/active.json",
+      "dead": "MK/dead.json",
+      "activeCount": 53,
+      "deadCount": 11,
+      "totalCount": 64,
+      "referenceCount": 53,
+      "updatedAt": "2026-10-04T22:53:21.398Z"
+    },
+    {
+      "country": "ML",
+      "active": "ML/active.json",
+      "dead": "ML/dead.json",
+      "activeCount": 13,
+      "deadCount": 1,
+      "totalCount": 14,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:20.864Z"
+    },
+    {
+      "country": "MM",
+      "active": "MM/active.json",
+      "dead": "MM/dead.json",
+      "activeCount": 6,
+      "deadCount": 0,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:19.437Z"
+    },
+    {
+      "country": "MN",
+      "active": "MN/active.json",
+      "dead": "MN/dead.json",
+      "activeCount": 8,
+      "deadCount": 1,
+      "totalCount": 9,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:29.501Z"
+    },
+    {
+      "country": "MO",
+      "active": "MO/active.json",
+      "dead": "MO/dead.json",
+      "activeCount": 26,
+      "deadCount": 7,
+      "totalCount": 33,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:31.215Z"
+    },
+    {
+      "country": "MQ",
+      "active": "MQ/active.json",
+      "dead": "MQ/dead.json",
+      "activeCount": 11,
+      "deadCount": 1,
+      "totalCount": 12,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:22.840Z"
+    },
+    {
+      "country": "MR",
+      "active": "MR/active.json",
+      "dead": "MR/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:31.558Z"
+    },
+    {
+      "country": "MS",
+      "active": "MS/active.json",
+      "dead": "MS/dead.json",
+      "activeCount": 3,
+      "deadCount": 0,
+      "totalCount": 3,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:31.767Z"
+    },
+    {
+      "country": "MT",
+      "active": "MT/active.json",
+      "dead": "MT/dead.json",
+      "activeCount": 15,
+      "deadCount": 0,
+      "totalCount": 15,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:32.813Z"
+    },
+    {
+      "country": "MU",
+      "active": "MU/active.json",
+      "dead": "MU/dead.json",
+      "activeCount": 13,
+      "deadCount": 4,
+      "totalCount": 17,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:41.147Z"
+    },
+    {
+      "country": "MV",
+      "active": "MV/active.json",
+      "dead": "MV/dead.json",
+      "activeCount": 8,
+      "deadCount": 0,
+      "totalCount": 8,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:34.083Z"
+    },
+    {
+      "country": "MW",
+      "active": "MW/active.json",
+      "dead": "MW/dead.json",
+      "activeCount": 9,
+      "deadCount": 1,
+      "totalCount": 10,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:34.806Z"
+    },
+    {
+      "country": "MX",
+      "active": "MX/active.json",
+      "dead": "MX/dead.json",
+      "activeCount": 2753,
+      "deadCount": 238,
+      "totalCount": 2991,
+      "referenceCount": 2744,
+      "updatedAt": "2026-10-04T22:59:05.253Z"
+    },
+    {
+      "country": "MY",
+      "active": "MY/active.json",
+      "dead": "MY/dead.json",
+      "activeCount": 85,
+      "deadCount": 12,
+      "totalCount": 97,
+      "referenceCount": 85,
+      "updatedAt": "2026-10-04T22:53:49.323Z"
+    },
+    {
+      "country": "MZ",
+      "active": "MZ/active.json",
+      "dead": "MZ/dead.json",
+      "activeCount": 6,
+      "deadCount": 2,
+      "totalCount": 8,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:53:42.559Z"
+    },
+    {
+      "country": "NA",
+      "active": "NA/active.json",
+      "dead": "NA/dead.json",
+      "activeCount": 15,
+      "deadCount": 2,
+      "totalCount": 17,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:59:06.874Z"
+    },
+    {
+      "country": "NC",
+      "active": "NC/active.json",
+      "dead": "NC/dead.json",
+      "activeCount": 9,
+      "deadCount": 0,
+      "totalCount": 9,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:59:06.743Z"
+    },
+    {
+      "country": "NE",
+      "active": "NE/active.json",
+      "dead": "NE/dead.json",
+      "activeCount": 3,
+      "deadCount": 1,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:59:06.069Z"
+    },
+    {
+      "country": "NG",
+      "active": "NG/active.json",
+      "dead": "NG/dead.json",
+      "activeCount": 71,
+      "deadCount": 29,
+      "totalCount": 100,
+      "referenceCount": 75,
+      "updatedAt": "2026-10-04T22:59:14.717Z"
+    },
+    {
+      "country": "NI",
+      "active": "NI/active.json",
+      "dead": "NI/dead.json",
+      "activeCount": 26,
+      "deadCount": 5,
+      "totalCount": 31,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T22:59:09.815Z"
+    },
+    {
+      "country": "NL",
+      "active": "NL/active.json",
+      "dead": "NL/dead.json",
+      "activeCount": 1364,
+      "deadCount": 192,
+      "totalCount": 1556,
+      "referenceCount": 1383,
+      "updatedAt": "2026-10-04T23:00:43.259Z"
+    },
+    {
+      "country": "NO",
+      "active": "NO/active.json",
+      "dead": "NO/dead.json",
+      "activeCount": 129,
+      "deadCount": 13,
+      "totalCount": 142,
+      "referenceCount": 131,
+      "updatedAt": "2026-10-04T23:00:56.915Z"
+    },
+    {
+      "country": "NP",
+      "active": "NP/active.json",
+      "dead": "NP/dead.json",
+      "activeCount": 148,
+      "deadCount": 15,
+      "totalCount": 163,
+      "referenceCount": 151,
+      "updatedAt": "2026-10-04T23:00:56.776Z"
+    },
+    {
+      "country": "NR",
+      "active": "NR/active.json",
+      "dead": "NR/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:00:43.716Z"
+    },
+    {
+      "country": "NU",
+      "active": "NU/active.json",
+      "dead": "NU/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:00:57.172Z"
+    },
+    {
+      "country": "NZ",
+      "active": "NZ/active.json",
+      "dead": "NZ/dead.json",
+      "activeCount": 219,
+      "deadCount": 32,
+      "totalCount": 251,
+      "referenceCount": 224,
+      "updatedAt": "2026-10-04T23:01:31.528Z"
+    },
+    {
+      "country": "OM",
+      "active": "OM/active.json",
+      "dead": "OM/dead.json",
+      "activeCount": 11,
+      "deadCount": 0,
+      "totalCount": 11,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:00:57.527Z"
+    },
+    {
+      "country": "PA",
+      "active": "PA/active.json",
+      "dead": "PA/dead.json",
+      "activeCount": 30,
+      "deadCount": 3,
+      "totalCount": 33,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:01:36.772Z"
+    },
+    {
+      "country": "PE",
+      "active": "PE/active.json",
+      "dead": "PE/dead.json",
+      "activeCount": 327,
+      "deadCount": 51,
+      "totalCount": 378,
+      "referenceCount": 343,
+      "updatedAt": "2026-10-04T23:02:08.524Z"
+    },
+    {
+      "country": "PF",
+      "active": "PF/active.json",
+      "dead": "PF/dead.json",
+      "activeCount": 12,
+      "deadCount": 1,
+      "totalCount": 13,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:01:33.633Z"
+    },
+    {
+      "country": "PG",
+      "active": "PG/active.json",
+      "dead": "PG/dead.json",
+      "activeCount": 1,
+      "deadCount": 5,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:02:09.141Z"
+    },
+    {
+      "country": "PH",
+      "active": "PH/active.json",
+      "dead": "PH/dead.json",
+      "activeCount": 846,
+      "deadCount": 257,
+      "totalCount": 1103,
+      "referenceCount": 833,
+      "updatedAt": "2026-10-04T23:03:50.410Z"
+    },
+    {
+      "country": "PK",
+      "active": "PK/active.json",
+      "dead": "PK/dead.json",
+      "activeCount": 63,
+      "deadCount": 11,
+      "totalCount": 74,
+      "referenceCount": 66,
+      "updatedAt": "2026-10-04T23:02:14.049Z"
+    },
+    {
+      "country": "PL",
+      "active": "PL/active.json",
+      "dead": "PL/dead.json",
+      "activeCount": 984,
+      "deadCount": 237,
+      "totalCount": 1221,
+      "referenceCount": 1042,
+      "updatedAt": "2026-10-04T23:05:16.896Z"
+    },
+    {
+      "country": "PM",
+      "active": "PM/active.json",
+      "dead": "PM/dead.json",
+      "activeCount": 3,
+      "deadCount": 0,
+      "totalCount": 3,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:03:51.868Z"
+    },
+    {
+      "country": "PR",
+      "active": "PR/active.json",
+      "dead": "PR/dead.json",
+      "activeCount": 57,
+      "deadCount": 5,
+      "totalCount": 62,
+      "referenceCount": 57,
+      "updatedAt": "2026-10-04T23:03:56.157Z"
+    },
+    {
+      "country": "PS",
+      "active": "PS/active.json",
+      "dead": "PS/dead.json",
+      "activeCount": 13,
+      "deadCount": 1,
+      "totalCount": 14,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:05:18.373Z"
+    },
+    {
+      "country": "PT",
+      "active": "PT/active.json",
+      "dead": "PT/dead.json",
+      "activeCount": 359,
+      "deadCount": 41,
+      "totalCount": 400,
+      "referenceCount": 359,
+      "updatedAt": "2026-10-04T23:05:40.521Z"
+    },
+    {
+      "country": "PW",
+      "active": "PW/active.json",
+      "dead": "PW/dead.json",
+      "activeCount": 4,
+      "deadCount": 0,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:05:17.833Z"
+    },
+    {
+      "country": "PY",
+      "active": "PY/active.json",
+      "dead": "PY/dead.json",
+      "activeCount": 68,
+      "deadCount": 3,
+      "totalCount": 71,
+      "referenceCount": 67,
+      "updatedAt": "2026-10-04T23:05:47.325Z"
+    },
+    {
+      "country": "QA",
+      "active": "QA/active.json",
+      "dead": "QA/dead.json",
+      "activeCount": 24,
+      "deadCount": 3,
+      "totalCount": 27,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:05:49.843Z"
+    },
+    {
+      "country": "RE",
+      "active": "RE/active.json",
+      "dead": "RE/dead.json",
+      "activeCount": 45,
+      "deadCount": 4,
+      "totalCount": 49,
+      "referenceCount": 46,
+      "updatedAt": "2026-10-04T23:05:49.176Z"
+    },
+    {
+      "country": "RO",
+      "active": "RO/active.json",
+      "dead": "RO/dead.json",
+      "activeCount": 887,
+      "deadCount": 255,
+      "totalCount": 1142,
+      "referenceCount": 1014,
+      "updatedAt": "2026-10-04T23:07:40.357Z"
+    },
+    {
+      "country": "RS",
+      "active": "RS/active.json",
+      "dead": "RS/dead.json",
+      "activeCount": 377,
+      "deadCount": 58,
+      "totalCount": 435,
+      "referenceCount": 395,
+      "updatedAt": "2026-10-04T23:06:21.252Z"
+    },
+    {
+      "country": "RU",
+      "active": "RU/active.json",
+      "dead": "RU/dead.json",
+      "activeCount": 2751,
+      "deadCount": 502,
+      "totalCount": 3253,
+      "referenceCount": 2845,
+      "updatedAt": "2026-10-04T23:09:01.495Z"
+    },
+    {
+      "country": "RW",
+      "active": "RW/active.json",
+      "dead": "RW/dead.json",
+      "activeCount": 10,
+      "deadCount": 5,
+      "totalCount": 15,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:03.543Z"
+    },
+    {
+      "country": "SA",
+      "active": "SA/active.json",
+      "dead": "SA/dead.json",
+      "activeCount": 114,
+      "deadCount": 23,
+      "totalCount": 137,
+      "referenceCount": 115,
+      "updatedAt": "2026-10-04T23:09:15.965Z"
+    },
+    {
+      "country": "SB",
+      "active": "SB/active.json",
+      "dead": "SB/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:02.493Z"
+    },
+    {
+      "country": "SC",
+      "active": "SC/active.json",
+      "dead": "SC/dead.json",
+      "activeCount": 5,
+      "deadCount": 0,
+      "totalCount": 5,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:16.745Z"
+    },
+    {
+      "country": "SD",
+      "active": "SD/active.json",
+      "dead": "SD/dead.json",
+      "activeCount": 6,
+      "deadCount": 0,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:17.017Z"
+    },
+    {
+      "country": "SE",
+      "active": "SE/active.json",
+      "dead": "SE/dead.json",
+      "activeCount": 248,
+      "deadCount": 58,
+      "totalCount": 306,
+      "referenceCount": 251,
+      "updatedAt": "2026-10-04T23:09:37.341Z"
+    },
+    {
+      "country": "SG",
+      "active": "SG/active.json",
+      "dead": "SG/dead.json",
+      "activeCount": 66,
+      "deadCount": 2,
+      "totalCount": 68,
+      "referenceCount": 65,
+      "updatedAt": "2026-10-04T23:09:48.761Z"
+    },
+    {
+      "country": "SH",
+      "active": "SH/active.json",
+      "dead": "SH/dead.json",
+      "activeCount": 3,
+      "deadCount": 0,
+      "totalCount": 3,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:38.522Z"
+    },
+    {
+      "country": "SI",
+      "active": "SI/active.json",
+      "dead": "SI/dead.json",
+      "activeCount": 136,
+      "deadCount": 9,
+      "totalCount": 145,
+      "referenceCount": 138,
+      "updatedAt": "2026-10-04T23:09:48.632Z"
+    },
+    {
+      "country": "SJ",
+      "active": "SJ/active.json",
+      "dead": "SJ/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:49.015Z"
+    },
+    {
+      "country": "SK",
+      "active": "SK/active.json",
+      "dead": "SK/dead.json",
+      "activeCount": 161,
+      "deadCount": 24,
+      "totalCount": 185,
+      "referenceCount": 177,
+      "updatedAt": "2026-10-04T23:09:57.295Z"
+    },
+    {
+      "country": "SL",
+      "active": "SL/active.json",
+      "dead": "SL/dead.json",
+      "activeCount": 4,
+      "deadCount": 0,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:49.249Z"
+    },
+    {
+      "country": "SM",
+      "active": "SM/active.json",
+      "dead": "SM/dead.json",
+      "activeCount": 7,
+      "deadCount": 0,
+      "totalCount": 7,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:57.527Z"
+    },
+    {
+      "country": "SN",
+      "active": "SN/active.json",
+      "dead": "SN/dead.json",
+      "activeCount": 32,
+      "deadCount": 3,
+      "totalCount": 35,
+      "referenceCount": 34,
+      "updatedAt": "2026-10-04T23:09:59.273Z"
+    },
+    {
+      "country": "SO",
+      "active": "SO/active.json",
+      "dead": "SO/dead.json",
+      "activeCount": 4,
+      "deadCount": 0,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:58.930Z"
+    },
+    {
+      "country": "SR",
+      "active": "SR/active.json",
+      "dead": "SR/dead.json",
+      "activeCount": 10,
+      "deadCount": 5,
+      "totalCount": 15,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:00.628Z"
+    },
+    {
+      "country": "SS",
+      "active": "SS/active.json",
+      "dead": "SS/dead.json",
+      "activeCount": 3,
+      "deadCount": 0,
+      "totalCount": 3,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:00.540Z"
+    },
+    {
+      "country": "ST",
+      "active": "ST/active.json",
+      "dead": "ST/dead.json",
+      "activeCount": 3,
+      "deadCount": 0,
+      "totalCount": 3,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:09:59.782Z"
+    },
+    {
+      "country": "SV",
+      "active": "SV/active.json",
+      "dead": "SV/dead.json",
+      "activeCount": 66,
+      "deadCount": 1,
+      "totalCount": 67,
+      "referenceCount": 63,
+      "updatedAt": "2026-10-04T23:10:07.561Z"
+    },
+    {
+      "country": "SX",
+      "active": "SX/active.json",
+      "dead": "SX/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:01.046Z"
+    },
+    {
+      "country": "SY",
+      "active": "SY/active.json",
+      "dead": "SY/dead.json",
+      "activeCount": 31,
+      "deadCount": 5,
+      "totalCount": 36,
+      "referenceCount": 33,
+      "updatedAt": "2026-10-04T23:10:05.266Z"
+    },
+    {
+      "country": "SZ",
+      "active": "SZ/active.json",
+      "dead": "SZ/dead.json",
+      "activeCount": 1,
+      "deadCount": 1,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:15.771Z"
+    },
+    {
+      "country": "TC",
+      "active": "TC/active.json",
+      "dead": "TC/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:07.791Z"
+    },
+    {
+      "country": "TD",
+      "active": "TD/active.json",
+      "dead": "TD/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:07.952Z"
+    },
+    {
+      "country": "TF",
+      "active": "TF/active.json",
+      "dead": "TF/dead.json",
+      "activeCount": 3,
+      "deadCount": 0,
+      "totalCount": 3,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:16.821Z"
+    },
+    {
+      "country": "TG",
+      "active": "TG/active.json",
+      "dead": "TG/dead.json",
+      "activeCount": 7,
+      "deadCount": 1,
+      "totalCount": 8,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:16.695Z"
+    },
+    {
+      "country": "TH",
+      "active": "TH/active.json",
+      "dead": "TH/dead.json",
+      "activeCount": 109,
+      "deadCount": 26,
+      "totalCount": 135,
+      "referenceCount": 114,
+      "updatedAt": "2026-10-04T23:10:30.234Z"
+    },
+    {
+      "country": "TJ",
+      "active": "TJ/active.json",
+      "dead": "TJ/dead.json",
+      "activeCount": 3,
+      "deadCount": 0,
+      "totalCount": 3,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:31.483Z"
+    },
+    {
+      "country": "TL",
+      "active": "TL/active.json",
+      "dead": "TL/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:30.670Z"
+    },
+    {
+      "country": "TM",
+      "active": "TM/active.json",
+      "dead": "TM/dead.json",
+      "activeCount": 6,
+      "deadCount": 0,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:30.978Z"
+    },
+    {
+      "country": "TN",
+      "active": "TN/active.json",
+      "dead": "TN/dead.json",
+      "activeCount": 77,
+      "deadCount": 3,
+      "totalCount": 80,
+      "referenceCount": 73,
+      "updatedAt": "2026-10-04T23:10:35.338Z"
+    },
+    {
+      "country": "TO",
+      "active": "TO/active.json",
+      "dead": "TO/dead.json",
+      "activeCount": 4,
+      "deadCount": 0,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:10:32.362Z"
+    },
+    {
+      "country": "TR",
+      "active": "TR/active.json",
+      "dead": "TR/dead.json",
+      "activeCount": 785,
+      "deadCount": 80,
+      "totalCount": 865,
+      "referenceCount": 794,
+      "updatedAt": "2026-10-04T23:11:28.531Z"
+    },
+    {
+      "country": "TT",
+      "active": "TT/active.json",
+      "dead": "TT/dead.json",
+      "activeCount": 28,
+      "deadCount": 2,
+      "totalCount": 30,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:11:31.817Z"
+    },
+    {
+      "country": "TV",
+      "active": "TV/active.json",
+      "dead": "TV/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:11:28.870Z"
+    },
+    {
+      "country": "TW",
+      "active": "TW/active.json",
+      "dead": "TW/dead.json",
+      "activeCount": 188,
+      "deadCount": 26,
+      "totalCount": 214,
+      "referenceCount": 189,
+      "updatedAt": "2026-10-04T23:11:52.892Z"
+    },
+    {
+      "country": "TZ",
+      "active": "TZ/active.json",
+      "dead": "TZ/dead.json",
+      "activeCount": 23,
+      "deadCount": 2,
+      "totalCount": 25,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:11:54.400Z"
+    },
+    {
+      "country": "UA",
+      "active": "UA/active.json",
+      "dead": "UA/dead.json",
+      "activeCount": 319,
+      "deadCount": 62,
+      "totalCount": 381,
+      "referenceCount": 320,
+      "updatedAt": "2026-10-04T23:12:42.064Z"
+    },
+    {
+      "country": "UG",
+      "active": "UG/active.json",
+      "dead": "UG/dead.json",
+      "activeCount": 321,
+      "deadCount": 54,
+      "totalCount": 375,
+      "referenceCount": 317,
+      "updatedAt": "2026-10-04T23:12:18.014Z"
+    },
+    {
+      "country": "UM",
+      "active": "UM/active.json",
+      "dead": "UM/dead.json",
+      "activeCount": 32,
+      "deadCount": 8,
+      "totalCount": 40,
+      "referenceCount": 32,
+      "updatedAt": "2026-10-04T23:12:54.664Z"
+    },
+    {
+      "country": "US",
+      "active": "US/active.json",
+      "dead": "US/dead.json",
+      "activeCount": 7041,
+      "deadCount": 1326,
+      "totalCount": 8367,
+      "referenceCount": 7161,
+      "updatedAt": "2026-10-04T23:26:27.441Z"
+    },
+    {
+      "country": "UY",
+      "active": "UY/active.json",
+      "dead": "UY/dead.json",
+      "activeCount": 150,
+      "deadCount": 34,
+      "totalCount": 184,
+      "referenceCount": 151,
+      "updatedAt": "2026-10-04T23:13:10.320Z"
+    },
+    {
+      "country": "UZ",
+      "active": "UZ/active.json",
+      "dead": "UZ/dead.json",
+      "activeCount": 13,
+      "deadCount": 1,
+      "totalCount": 14,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:29.925Z"
+    },
+    {
+      "country": "VA",
+      "active": "VA/active.json",
+      "dead": "VA/dead.json",
+      "activeCount": 15,
+      "deadCount": 0,
+      "totalCount": 15,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:28.463Z"
+    },
+    {
+      "country": "VC",
+      "active": "VC/active.json",
+      "dead": "VC/dead.json",
+      "activeCount": 13,
+      "deadCount": 0,
+      "totalCount": 13,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:29.013Z"
+    },
+    {
+      "country": "VE",
+      "active": "VE/active.json",
+      "dead": "VE/dead.json",
+      "activeCount": 168,
+      "deadCount": 35,
+      "totalCount": 203,
+      "referenceCount": 162,
+      "updatedAt": "2026-10-04T23:26:45.768Z"
+    },
+    {
+      "country": "VG",
+      "active": "VG/active.json",
+      "dead": "VG/dead.json",
+      "activeCount": 3,
+      "deadCount": 1,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:31.440Z"
+    },
+    {
+      "country": "VI",
+      "active": "VI/active.json",
+      "dead": "VI/dead.json",
+      "activeCount": 10,
+      "deadCount": 0,
+      "totalCount": 10,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:31.786Z"
+    },
+    {
+      "country": "VN",
+      "active": "VN/active.json",
+      "dead": "VN/dead.json",
+      "activeCount": 33,
+      "deadCount": 15,
+      "totalCount": 48,
+      "referenceCount": 32,
+      "updatedAt": "2026-10-04T23:26:55.273Z"
+    },
+    {
+      "country": "VU",
+      "active": "VU/active.json",
+      "dead": "VU/dead.json",
+      "activeCount": 6,
+      "deadCount": 0,
+      "totalCount": 6,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:47.524Z"
+    },
+    {
+      "country": "WF",
+      "active": "WF/active.json",
+      "dead": "WF/dead.json",
+      "activeCount": 2,
+      "deadCount": 0,
+      "totalCount": 2,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:46.811Z"
+    },
+    {
+      "country": "XK",
+      "active": "XK/active.json",
+      "dead": "XK/dead.json",
+      "activeCount": 17,
+      "deadCount": 1,
+      "totalCount": 18,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:56.235Z"
+    },
+    {
+      "country": "XX",
+      "active": "XX/active.json",
+      "dead": "XX/dead.json",
+      "activeCount": 1,
+      "deadCount": 0,
+      "totalCount": 1,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:55.459Z"
+    },
+    {
+      "country": "YE",
+      "active": "YE/active.json",
+      "dead": "YE/dead.json",
+      "activeCount": 14,
+      "deadCount": 3,
+      "totalCount": 17,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:56.478Z"
+    },
+    {
+      "country": "YT",
+      "active": "YT/active.json",
+      "dead": "YT/dead.json",
+      "activeCount": 4,
+      "deadCount": 0,
+      "totalCount": 4,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:57.305Z"
+    },
+    {
+      "country": "ZA",
+      "active": "ZA/active.json",
+      "dead": "ZA/dead.json",
+      "activeCount": 237,
+      "deadCount": 22,
+      "totalCount": 259,
+      "referenceCount": 233,
+      "updatedAt": "2026-10-04T23:27:12.965Z"
+    },
+    {
+      "country": "ZM",
+      "active": "ZM/active.json",
+      "dead": "ZM/dead.json",
+      "activeCount": 7,
+      "deadCount": 0,
+      "totalCount": 7,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:26:57.174Z"
+    },
+    {
+      "country": "ZW",
+      "active": "ZW/active.json",
+      "dead": "ZW/dead.json",
+      "activeCount": 6,
+      "deadCount": 2,
+      "totalCount": 8,
+      "referenceCount": null,
+      "updatedAt": "2026-10-04T23:27:15.214Z"
+    }
+  ],
+  "totals": {
+    "active": 57914,
+    "dead": 8084,
+    "all": 65998
+  }
 }

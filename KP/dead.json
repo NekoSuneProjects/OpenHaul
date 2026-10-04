@@ -1,0 +1,117 @@
+[
+  {
+    "name": "조선중앙방송",
+    "url": "https://radio.intchoson.com/kcbs/index.m3u8",
+    "country": "KP",
+    "type": "full service",
+    "tags": [
+      "full service"
+    ],
+    "codec": "AAC",
+    "bitrate": 186,
+    "language": "korean",
+    "favicon": "http://www.kcna.kp/assets/img/home/mark.png",
+    "homepage": "http://www.kcna.kp/kp",
+    "stationUuid": "87978669-6d37-4a17-8333-fc43d5c2fc08",
+    "checkedAt": "2026-10-04T22:52:00.720Z",
+    "status": 530,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 530"
+  },
+  {
+    "name": "KCBS 조선중앙방송",
+    "url": "https://stream.intchoson.com/kcbs/main_stream.m3u8",
+    "country": "KP",
+    "type": "information",
+    "tags": [
+      "information"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "korean",
+    "favicon": "https://bkimg.cdn.bcebos.com/pic/7acb0a46f21fbe096b637856f5311b338744ebf8076d?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20",
+    "homepage": "http://www.kcna.kp/en",
+    "stationUuid": "8d95cf64-8fce-4b71-b9e6-8e1e2d2fc00d",
+    "checkedAt": "2026-10-04T22:52:00.721Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Korean Central Broadcasting Station",
+    "url": "https://radio.intchoson.com/kcbs/index.m3u8",
+    "country": "KP",
+    "type": "music",
+    "tags": [
+      "music",
+      "news",
+      "talk"
+    ],
+    "codec": "AAC",
+    "bitrate": 183,
+    "language": "korean",
+    "favicon": null,
+    "homepage": "http://www.gnu.rep.kp/",
+    "stationUuid": "dd8772a9-0f3e-4903-a138-0da1af91c4bf",
+    "checkedAt": "2026-10-04T22:52:01.068Z",
+    "status": 530,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 530"
+  },
+  {
+    "name": "Voice of Korea",
+    "url": "https://radio.intchoson.com/vok/index.m3u8",
+    "country": "KP",
+    "type": "music",
+    "tags": [
+      "music",
+      "news"
+    ],
+    "codec": "AAC",
+    "bitrate": 195,
+    "language": "arabic,chinese,english,espaňol,german,japanese,korean,russian,spanish",
+    "favicon": "https://vok.rep.kp/resources/img/logo_k.png",
+    "homepage": "https://vok.rep.kp/",
+    "stationUuid": "4248dc89-1aad-4f6a-a17f-07e82be242c6",
+    "checkedAt": "2026-10-04T22:52:01.562Z",
+    "status": 530,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 530"
+  },
+  {
+    "name": "조선의 소리",
+    "url": "https://radio.intchoson.com/vok/index.m3u8",
+    "country": "KP",
+    "type": "news",
+    "tags": [
+      "news"
+    ],
+    "codec": "AAC",
+    "bitrate": 185,
+    "language": "korean",
+    "favicon": "https://www.vok.rep.kp/resources/img/logo_k.png",
+    "homepage": "https://www.vok.rep.kp/index.php/home/main/ch",
+    "stationUuid": "feb8130a-faf9-419f-9027-777a480bef7b",
+    "checkedAt": "2026-10-04T22:52:01.567Z",
+    "status": 530,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 530"
+  },
+  {
+    "name": "Korean Central Broadcasting System (KCBS)",
+    "url": "https://kctv.koryofront.org/stream/kcradio1/index.m3u8",
+    "country": "KP",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/Korean_Central_Television_2005.svg/1280px-Korean_Central_Television_2005.svg.png",
+    "homepage": "http://vok.rep.kp/",
+    "stationUuid": "5eff646d-3027-45f0-a4a3-2ff90b789339",
+    "checkedAt": "2026-10-04T22:52:01.654Z",
+    "status": 404,
+    "contentType": null,
+    "lastFailure": "HTTP 404"
+  }
+]

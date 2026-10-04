@@ -1,0 +1,74 @@
+[
+  {
+    "name": "رادیو میثانیا",
+    "url": "https://stream.zeno.fm/axjxyv1tn84uv",
+    "country": "IR",
+    "type": "adult contemporary",
+    "tags": [
+      "adult contemporary"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "iran",
+    "favicon": null,
+    "homepage": "https://zeno.fm/player/radio-misaniya",
+    "stationUuid": "d92ed16b-538b-41c5-b22c-4adc548524d6",
+    "checkedAt": "2026-10-04T22:50:12.926Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio-Quran",
+    "url": "http://s4.cdn3.iranseda.ir:1935/liveedge/radio-quran/index.m3u8",
+    "country": "IR",
+    "type": "islamic، classical",
+    "tags": [
+      "islamic، classical"
+    ],
+    "codec": "AAC",
+    "bitrate": 42,
+    "language": "iranian,turkish",
+    "favicon": "https://radio.iranseda.ir/ImagesDynamic?c=radio-quran&s=c&cp=14041216",
+    "homepage": "https://radio.iranseda.ir/",
+    "stationUuid": "b1a5dd76-aa50-4f57-bfe4-8375018a3ac5",
+    "checkedAt": "2026-10-04T22:50:13.770Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Door Radio",
+    "url": "https://radio.barbarianhrre.xyz/dooradio.mp3",
+    "country": "IR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://barbarianhrre.xyz/",
+    "stationUuid": "afb7f00d-d149-47f5-b18e-bf4235462324",
+    "checkedAt": "2026-10-04T22:50:13.853Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Harrooz",
+    "url": "https://streams.radio.co/s163d89567/listen",
+    "country": "IR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "persian",
+    "favicon": null,
+    "homepage": "https://shows.acast.com/sobhe-harrooz",
+    "stationUuid": "6cc83df6-0607-422f-8b53-7a215cc80525",
+    "checkedAt": "2026-10-04T22:50:14.015Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  }
+]

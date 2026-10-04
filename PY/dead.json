@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Cuevas FM 91.7",
+    "url": "https://radio.host.com.py:7020/;",
+    "country": "PY",
+    "type": "entretenimiento",
+    "tags": [
+      "entretenimiento",
+      "grupera",
+      "latin pop",
+      "musica romantica",
+      "música variada"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "spanish",
+    "favicon": "https://paraguayonline.net/wp-content/uploads/2019/03/cuevas.png",
+    "homepage": "https://paraguayonline.net/cuevasfm/",
+    "stationUuid": "88f74a2d-b52e-4fcf-9469-5fc5e2e6a2e5",
+    "checkedAt": "2026-10-04T23:05:44.033Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Radio RQP 94.3 FM",
+    "url": "http://dx85eyfuo1x2i.cloudfront.net/index.m3u8",
+    "country": "PY",
+    "type": "music",
+    "tags": [
+      "music",
+      "pop",
+      "rock",
+      "soft",
+      "top40"
+    ],
+    "codec": "AAC",
+    "bitrate": 1842,
+    "language": "asunción",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20250110_213941532.jpg?alt=media&token=e07edbc2-8494-41bf-82ab-6f114efdf664",
+    "homepage": "http://www.rqp.com.py/",
+    "stationUuid": "db29a363-60b4-4273-99b6-9fee973a7c1e",
+    "checkedAt": "2026-10-04T23:05:45.851Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Capital 101.7 FM",
+    "url": "http://ic2489.c1788.fastserv.com/stream",
+    "country": "PY",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "soca",
+      "talk",
+      "varios"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "coronel oviedo",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20241105_204252387.jpg?alt=media&token=da81a455-548b-4df2-8a82-0ea75530bd00",
+    "homepage": "https://m.desdeparaguay.com/capital",
+    "stationUuid": "5c7542d9-99d4-43a4-a17a-bcce485bcc50",
+    "checkedAt": "2026-10-04T23:05:46.115Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  }
+]

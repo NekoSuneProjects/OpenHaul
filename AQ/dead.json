@@ -1,0 +1,66 @@
+[
+  {
+    "name": "FunkyUncleFm",
+    "url": "http://funkyunclefm.net:8000/fufm",
+    "country": "AQ",
+    "type": "bombrushcyberfunk",
+    "tags": [
+      "bombrushcyberfunk",
+      "funk",
+      "game",
+      "house",
+      "jetset",
+      "online",
+      "playstation",
+      "sega"
+    ],
+    "codec": "MP3",
+    "bitrate": 256,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://funkyunclefm.net:8443/",
+    "stationUuid": "74f00739-fa45-4744-88c9-47b93959b36d",
+    "checkedAt": "2026-10-04T22:09:19.172Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "kbs",
+    "url": "https://1fm.gscdn.kbs.co.kr/1fm_192_2.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly8xZm0uZ3NjZG4ua2JzLmNvLmtyLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTEwMzQ3OTB9fX1dfQ__&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA&Signature=nS-mEXeYJqGDFlXIuND3d6dl68gtIq9z4Q0erOK-nHCSJu392lYaeNHT~NblbZMy1BToC0I35R2VP9bS-l1pJmQbD-7QJh-3bHbBy3-xYxbPO68kGRyibFKlgfF0d4Nm8pU8I25~7TM4YzPyNa5jpHIF-2exQYfKLtOGpAi~7B8mKc-OMNEB6u2DxlhD1h~dJxPfzfajqBjYCBFq0Vbz66~yUQ2K26XttNRThI4uQYMn7UBhLut~oGhJRTcbgYUlNDIrndRpX~Rrqj171tDtZy2gtj3-XmC2FJcS0AabBpC~pmPVnoU5TsAFBmVMMO2Cdp6sbkPt~WEnipK5-E-~SA__",
+    "country": "AQ",
+    "type": "kbs",
+    "tags": [
+      "kbs"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "korean",
+    "favicon": null,
+    "homepage": "http://serpent0.duckdns.org:8088/kbs1fm.pls",
+    "stationUuid": "b46ca30c-c28d-4cb9-89a8-d207440d1b78",
+    "checkedAt": "2026-10-04T22:09:19.179Z",
+    "status": 403,
+    "contentType": "text/xml",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Radio X",
+    "url": "https://stream.radiox.sk:8443/mood.mp3",
+    "country": "AQ",
+    "type": "mood",
+    "tags": [
+      "mood"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "american english,english",
+    "favicon": "https://uiuiui.in/uploads/posts/2022-11/783436035-7a890000a5f2bd305a992d50ffc480b3.webp",
+    "homepage": "https://www.radiox.sk/",
+    "stationUuid": "6f7d90ee-8ff0-4a80-8129-10c8eadf187a",
+    "checkedAt": "2026-10-04T22:09:19.320Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  }
+]

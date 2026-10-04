@@ -1,0 +1,85 @@
+[
+  {
+    "name": "Tamarindo Radio",
+    "url": "http://s1.voscast.com:11392/stream",
+    "country": "CR",
+    "type": "80s rock",
+    "tags": [
+      "80s rock",
+      "classic rock",
+      "oldies"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://tamarindoradio.com/",
+    "stationUuid": "d87d2461-7ff5-44fb-9d44-adc4b926b34f",
+    "checkedAt": "2026-10-04T22:24:25.949Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "959 Conexion",
+    "url": "https://29308.live.streamtheworld.com/CRC_959AAC.aac?_=",
+    "country": "CR",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "alternative rock",
+      "hits",
+      "indie",
+      "pop",
+      "rock"
+    ],
+    "codec": "AAC+",
+    "bitrate": 96,
+    "language": "spanish",
+    "favicon": "https://mmo.aiircdn.com/943/63f52a962ce60.png",
+    "homepage": "https://www.crc.cr/crc959/player/",
+    "stationUuid": "ff2cf568-3b03-4166-b536-4283667affe1",
+    "checkedAt": "2026-10-04T22:24:26.641Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Dabar Radio",
+    "url": "https://a1.asurahosting.com:8720/radio.mp3/;",
+    "country": "CR",
+    "type": "cristiana",
+    "tags": [
+      "cristiana",
+      "gospel",
+      "religious"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "spanish",
+    "favicon": "https://dabarradio.org/wp-content/uploads/2017/12/cropped-favicon-90x90.png",
+    "homepage": "https://dabarradio.org/",
+    "stationUuid": "d0016192-6508-43a1-bf77-b87ab77ce7e8",
+    "checkedAt": "2026-10-04T22:24:27.418Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Dabar",
+    "url": "https://a1.asurahosting.com:8720/radio.mp3",
+    "country": "CR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://dabarradio.org/",
+    "stationUuid": "77cf1175-eced-444a-8c07-70294c9b6d97",
+    "checkedAt": "2026-10-04T22:24:28.428Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  }
+]
