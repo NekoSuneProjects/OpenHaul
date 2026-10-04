@@ -3,6 +3,7 @@ import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { Op } from "sequelize";
 import { z } from "zod";
 import {
+  DiscordAccount,
   Job,
   PlatformRecord,
   User,
@@ -392,6 +393,53 @@ export async function registerVtcOperationsRoutes(app: FastifyInstance) {
     }
     await config.update({ guildVerified: body.verified });
     return { config };
+  });
+
+  app.get("/api/v1/bot/vtcs/:id/role-sync", async (request, reply) => {
+    const raw = request.headers["x-bot-key"];
+    const key = Array.isArray(raw) ? raw[0] : raw;
+    if (!secretEquals(key, process.env.OPENHAUL_BOT_SERVICE_KEY)) {
+      return reply.code(401).send({ error: "invalid_bot_key" });
+    }
+
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const config = await VtcDiscordConfig.findOne({ where: { vtcId: id } });
+    if (!config) return reply.code(404).send({ error: "discord_config_not_found" });
+
+    const members = await VtcMember.findAll({
+      where: { vtcId: id, status: "active" },
+      include: [{ model: User, attributes: ["id", "steamId", "displayName"] }],
+      order: [["id", "ASC"]],
+      limit: 1000,
+    });
+
+    const userIds = members.map((member: any) => Number(member.getDataValue("userId")));
+    const discordAccounts = userIds.length
+      ? await DiscordAccount.findAll({ where: { userId: { [Op.in]: userIds } } })
+      : [];
+    const discordByUser = new Map(discordAccounts.map((account: any) => [
+      Number(account.getDataValue("userId")),
+      account,
+    ]));
+
+    const embedConfig = (config.getDataValue("embedConfig") ?? {}) as any;
+    return {
+      guildId: config.getDataValue("guildId"),
+      roleMap: embedConfig.roleMap ?? {},
+      members: members.map((member: any) => {
+        const account = discordByUser.get(Number(member.getDataValue("userId")));
+        const user = member.get("User") as any;
+        return {
+          memberId: member.id,
+          userId: member.getDataValue("userId"),
+          steamId: user?.steamId ?? null,
+          displayName: user?.displayName ?? null,
+          role: member.getDataValue("role"),
+          customRoleKey: member.getDataValue("customRoleKey"),
+          discordUserId: account?.getDataValue("discordUserId") ?? null,
+        };
+      }),
+    };
   });
 
   app.get("/api/v1/bot/vtcs/:id/applications", async (request, reply) => {
