@@ -60,9 +60,12 @@ export default function DriverProfilePage() {
         <a href="#about">About</a>
         <a href="#logbook">Logbook</a>
         <a href="#statistics">Statistics</a>
+        <a href="#road-trip">Road Trip</a>
         <a href="#reputation">Reputation</a>
         <a href="#achievements">Achievements</a>
+        <a href="#challenges">Challenges</a>
         <a href="#awards">Awards</a>
+        <a href="#albums">Albums</a>
       </nav>
 
       <div id="statistics" />
@@ -98,6 +101,20 @@ export default function DriverProfilePage() {
           </section>
         </>
       ) : null}
+
+      <div id="road-trip" className="sectionTitle"><h2>Road Trip</h2></div>
+      <section className="grid">
+        <article className="card"><h3>{Math.round(Number(stats.distanceKm ?? 0)).toLocaleString()} km</h3><p>Career distance</p></article>
+        <article className="card"><h3>{Math.round(Number(stats.longestJobKm ?? 0)).toLocaleString()} km</h3><p>Longest single trip</p></article>
+        <article className="card"><h3>{stats.firstDeliveryAt ? new Date(stats.firstDeliveryAt).toLocaleDateString() : "—"}</h3><p>First recorded delivery</p></article>
+      </section>
+
+      <div id="reputation" className="sectionTitle"><h2>Reputation</h2></div>
+      <section className="grid">
+        <article className="card"><h3>{data.reputation?.safety ?? 0}</h3><p>Safety</p></article>
+        <article className="card"><h3>{data.reputation?.activity ?? 0}</h3><p>Activity</p></article>
+        <article className="card"><h3>{data.reputation?.contribution ?? 0}</h3><p>VTC contribution</p></article>
+      </section>
 
       <div className="sectionTitle"><h2>VTC memberships</h2></div>
       <section className="grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))" }}>
@@ -135,9 +152,26 @@ export default function DriverProfilePage() {
           </article>
         ))}
       </section>
+      <div id="challenges" />
       <div id="awards" />
+      <div id="albums" className="sectionTitle"><h2>Albums & screenshots</h2></div>
+      <section className="grid">
+        {[...(data.albums ?? []), ...(data.screenshots ?? [])].length === 0 ? <article className="card"><p>No public media records yet.</p></article> : null}
+        {[...(data.albums ?? []), ...(data.screenshots ?? [])].map((record: any) => (
+          <article className="card" key={record.id}>
+            {record.data?.value || record.data?.url ? (
+              <img
+                src={record.data?.value || record.data?.url}
+                alt={record.data?.title || "Driver screenshot"}
+                style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", borderRadius: 12, marginBottom: 12 }}
+              />
+            ) : null}
+            <h3>{record.data?.title || "OpenHaul media"}</h3>
+            <p>{record.data?.description || ""}</p>
+          </article>
+        ))}
+      </section>
 
-      <div id="reputation" />
       <div className="sectionTitle"><h2>VTC moderation history</h2></div>
       <section className="driverList" style={{ padding: 0 }}>
         {(data.moderation ?? []).length === 0 ? <p className="muted">No VTC warnings, mutes or bans recorded.</p> : null}
