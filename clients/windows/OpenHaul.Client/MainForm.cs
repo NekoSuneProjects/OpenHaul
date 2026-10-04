@@ -981,7 +981,7 @@ public sealed class MainForm : Form
         var page = PagePanel();
         page.Controls.Add(PageTitle("Settings", "Detected games and telemetry installation."));
 
-        var card = Card(24, 110, 860, 500);
+        var card = Card(24, 110, 860, 545);
 
         var detect = new Button { Text = "Detect ETS2 / ATS", Width = 170, Height = 40, Location = new Point(24, 24) };
         StyleButton(detect, false);
@@ -1065,13 +1065,67 @@ public sealed class MainForm : Form
         overlayNow.Click += (_, _) => ToggleOverlay();
         card.Controls.Add(overlayNow);
 
+        var mapTypeLabel = new Label
+        {
+            Text = "Overlay map type",
+            AutoSize = true,
+            ForeColor = C(150, 180, 163),
+            Location = new Point(24, 414),
+        };
+        card.Controls.Add(mapTypeLabel);
+
+        var mapType = new ComboBox
+        {
+            DropDownStyle = ComboBoxStyle.DropDownList,
+            Location = new Point(150, 409),
+            Width = 140,
+            BackColor = C(9, 38, 25),
+            ForeColor = Color.White,
+        };
+        mapType.Items.AddRange(new object[] { "road", "satellite", "xray" });
+        mapType.SelectedItem = mapType.Items.Contains(_settings.OverlayMapType) ? _settings.OverlayMapType : "road";
+        mapType.SelectedIndexChanged += (_, _) =>
+        {
+            _settings.OverlayMapType = mapType.SelectedItem?.ToString() ?? "road";
+            _settings.Save();
+            _overlay?.ReloadUi();
+        };
+        card.Controls.Add(mapType);
+
+        var mapSizeLabel = new Label
+        {
+            Text = "Overlay size",
+            AutoSize = true,
+            ForeColor = C(150, 180, 163),
+            Location = new Point(320, 414),
+        };
+        card.Controls.Add(mapSizeLabel);
+
+        var mapSize = new ComboBox
+        {
+            DropDownStyle = ComboBoxStyle.DropDownList,
+            Location = new Point(410, 409),
+            Width = 130,
+            BackColor = C(9, 38, 25),
+            ForeColor = Color.White,
+        };
+        mapSize.Items.AddRange(new object[] { "compact", "medium", "large" });
+        mapSize.SelectedItem = mapSize.Items.Contains(_settings.OverlayMapSize) ? _settings.OverlayMapSize : "medium";
+        mapSize.SelectedIndexChanged += (_, _) =>
+        {
+            _settings.OverlayMapSize = mapSize.SelectedItem?.ToString() ?? "medium";
+            _settings.Save();
+            _overlay?.ReloadUi();
+        };
+        card.Controls.Add(mapSize);
+
         var overlayHint = new Label
         {
-            Text = "Overlay follows the ETS2/ATS game window and shows speed, limit, fuel, RPM, truck, cargo, route and ETA.\nFor best results use Windowed or Borderless Fullscreen; exclusive fullscreen may cover external overlays.",
+            Text = "F8 opens the full OpenHaul in-game workspace over ETS2/ATS with Live Map, Drive and Settings pages.\nWhen it is open, the overlay is interactive; press F8 again to return control to the game.",
             AutoSize = true,
             MaximumSize = new Size(780, 0),
             ForeColor = C(140, 170, 153),
-            Location = new Point(24, 414),
+            Location = new Point(24, 452),
         };
         card.Controls.Add(overlayHint);
 
