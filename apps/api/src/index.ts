@@ -39,6 +39,7 @@ import { registerMapIntelligenceRoutes } from "./mapIntelligence.js";
 import { registerDiscordLinkRoutes } from "./discordLink.js";
 import { registerRadioProxyRoutes } from "./radioProxy.js";
 import { registerRadioHealthRoutes } from "./radioHealth.js";
+import { registerMusicSearchRoutes } from "./musicSearch.js";
 
 const app = Fastify({ logger: true, maxParamLength: 8192 });
 await app.register(cors, { origin: true, credentials: true });
@@ -73,6 +74,7 @@ await registerMapIntelligenceRoutes(app);
 await registerDiscordLinkRoutes(app);
 await registerRadioProxyRoutes(app);
 await registerRadioHealthRoutes(app);
+await registerMusicSearchRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),

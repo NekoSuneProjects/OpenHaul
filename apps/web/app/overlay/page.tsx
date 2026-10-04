@@ -33,10 +33,17 @@ type RepeatMode = "off" | "one" | "all";
 type MediaQueueItem = {
   id: string;
   title: string;
-  kind: "radio" | "embed";
   provider: string;
   sourceUrl: string;
-  embedUrl?: string;
+  embedUrl: string;
+};
+
+type MusicSearchResult = {
+  id: string;
+  provider: "youtube" | "soundcloud" | "bilibili" | "yandex";
+  title: string;
+  artist?: string;
+  url: string;
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
@@ -61,6 +68,7 @@ function OverlayContent() {
   const [staffAlerts, setStaffAlerts] = useState(initialStaff);
   const [cargoMissions, setCargoMissions] = useState(initialMissions);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const musicFrameRef = useRef<HTMLIFrameElement>(null);
   const [radioStations] = useState<RadioStation[]>(overlayRadioStations);
   const [selectedRadioId, setSelectedRadioId] = useState(overlayRadioStations[0]?.id || "");
   const [radioQuery, setRadioQuery] = useState("");
@@ -71,10 +79,17 @@ function OverlayContent() {
   const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
   const [radioVolume, setRadioVolume] = useState(0.7);
+  const [musicSearchQuery, setMusicSearchQuery] = useState("");
+  const [musicSearchResults, setMusicSearchResults] = useState<MusicSearchResult[]>([]);
+  const [musicSearchLoading, setMusicSearchLoading] = useState(false);
+  const [musicSearchError, setMusicSearchError] = useState("");
   const [musicUrl, setMusicUrl] = useState("");
   const [musicEmbedUrl, setMusicEmbedUrl] = useState("");
   const [musicProvider, setMusicProvider] = useState("");
   const [musicError, setMusicError] = useState("");
+  const [musicPaused, setMusicPaused] = useState(false);
+  const [musicVolume, setMusicVolume] = useState(0.7);
+  const [pausedMusicEmbedUrl, setPausedMusicEmbedUrl] = useState("");
   const [mediaQueue, setMediaQueue] = useState<MediaQueueItem[]>([]);
   const [queueIndex, setQueueIndex] = useState(-1);
   const [repeatMode, setRepeatMode] = useState<RepeatMode>("off");
@@ -89,7 +104,11 @@ function OverlayContent() {
       const savedRepeat = localStorage.getItem("openhaul.overlay.repeatMode");
       if (savedQueue) {
         const parsed = JSON.parse(savedQueue);
-        if (Array.isArray(parsed)) setMediaQueue(parsed);
+        if (Array.isArray(parsed)) {
+          setMediaQueue(parsed.filter((item: any) =>
+            item && item.kind !== "radio" && typeof item.embedUrl === "string" && item.embedUrl
+          ));
+        }
       }
       if (savedRepeat === "off" || savedRepeat === "one" || savedRepeat === "all") {
         setRepeatMode(savedRepeat);
@@ -341,7 +360,7 @@ function OverlayContent() {
       }
 
       if (videoId) {
-        const params = new URLSearchParams({ autoplay: "1", playsinline: "1" });
+        const params = new URLSearchParams({ autoplay: "1", playsinline: "1", enablejsapi: "1", origin: window.location.origin });
         if (playlistId) params.set("list", playlistId);
         return {
           provider: "YouTube",
@@ -395,6 +414,27 @@ function OverlayContent() {
       };
     }
 
+    if (host === "music.yandex.ru" || host === "music.yandex.com") {
+      const trackMatch = parsed.pathname.match(/\/album\/(\d+)\/track\/(\d+)/);
+      if (trackMatch) {
+        return {
+          provider: "Yandex Music",
+          url: "https://music.yandex.ru/iframe/#track/" + encodeURIComponent(trackMatch[2]) + "/" + encodeURIComponent(trackMatch[1]),
+        };
+      }
+      throw new Error("Paste a Yandex Music track URL such as /album/ALBUM_ID/track/TRACK_ID.");
+    }
+
+    if (host === "bilibili.com" || host === "www.bilibili.com" || host === "m.bilibili.com" || host === "b23.tv") {
+      const match = parsed.pathname.match(/\/(?:video\/)?(BV[A-Za-z0-9]+)/i);
+      const bvid = match?.[1] || parsed.searchParams.get("bvid") || "";
+      if (!bvid) throw new Error("Paste a Bilibili video URL containing a BV id.");
+      return {
+        provider: "Bilibili",
+        url: "https://player.bilibili.com/player.html?bvid=" + encodeURIComponent(bvid) + "&autoplay=1",
+      };
+    }
+
     if (host === "twitch.tv" || host === "m.twitch.tv") {
       const parts = parsed.pathname.split("/").filter(Boolean);
       const channel = parts[0] || "";
@@ -409,75 +449,33 @@ function OverlayContent() {
       };
     }
 
-    throw new Error("Supported without an API key: YouTube, SoundCloud, Spotify, Mixcloud, Apple Music, and Twitch.");
+    throw new Error("Supported without an API key: YouTube, SoundCloud, Spotify, Mixcloud, Apple Music, Twitch, Yandex Music, and Bilibili.");
   };
 
   const playQueueItem = async (index: number) => {
     const item = mediaQueue[index];
     if (!item) return;
-
     setQueueIndex(index);
-
-    if (item.kind === "radio") {
-      setMusicEmbedUrl("");
-      setMusicProvider("");
-      const audio = audioRef.current;
-      if (!audio) return;
-      if (audio.src !== item.sourceUrl) audio.src = item.sourceUrl;
-      try {
-        await audio.play();
-        setRadioPlaying(true);
-      } catch {
-        setRadioPlaying(false);
-      }
-      return;
-    }
-
-    const audio = audioRef.current;
-    if (audio && !audio.paused) audio.pause();
-    setRadioPlaying(false);
     setMusicProvider(item.provider);
-    setMusicEmbedUrl(item.embedUrl || "");
+    setMusicPaused(false);
+    setPausedMusicEmbedUrl("");
+    setMusicEmbedUrl(item.embedUrl);
   };
 
   const addQueueItem = (item: MediaQueueItem, playNow = true) => {
     setMediaQueue((current) => {
-      const existing = current.findIndex((entry) =>
-        entry.kind === item.kind && entry.sourceUrl === item.sourceUrl
-      );
+      const existing = current.findIndex((entry) => entry.sourceUrl === item.sourceUrl);
       const next = existing >= 0 ? current : [...current, item];
       const index = existing >= 0 ? existing : next.length - 1;
-      if (playNow) setTimeout(() => void playQueueItemFrom(next, index), 0);
+      if (playNow) {
+        setQueueIndex(index);
+        setMusicProvider(next[index].provider);
+        setMusicPaused(false);
+        setPausedMusicEmbedUrl("");
+        setMusicEmbedUrl(next[index].embedUrl);
+      }
       return next;
     });
-  };
-
-  const playQueueItemFrom = async (queue: MediaQueueItem[], index: number) => {
-    const item = queue[index];
-    if (!item) return;
-
-    setQueueIndex(index);
-
-    if (item.kind === "radio") {
-      setMusicEmbedUrl("");
-      setMusicProvider("");
-      const audio = audioRef.current;
-      if (!audio) return;
-      if (audio.src !== item.sourceUrl) audio.src = item.sourceUrl;
-      try {
-        await audio.play();
-        setRadioPlaying(true);
-      } catch {
-        setRadioPlaying(false);
-      }
-      return;
-    }
-
-    const audio = audioRef.current;
-    if (audio && !audio.paused) audio.pause();
-    setRadioPlaying(false);
-    setMusicProvider(item.provider);
-    setMusicEmbedUrl(item.embedUrl || "");
   };
 
   const nextQueueItem = async () => {
@@ -504,9 +502,6 @@ function OverlayContent() {
   const removeQueueItem = (index: number) => {
     setMediaQueue((current) => current.filter((_, itemIndex) => itemIndex !== index));
     if (index === queueIndex) {
-      const audio = audioRef.current;
-      if (audio && !audio.paused) audio.pause();
-      setRadioPlaying(false);
       setMusicEmbedUrl("");
       setMusicProvider("");
       setQueueIndex(-1);
@@ -516,11 +511,8 @@ function OverlayContent() {
   };
 
   const clearQueue = () => {
-    const audio = audioRef.current;
-    if (audio && !audio.paused) audio.pause();
     setMediaQueue([]);
     setQueueIndex(-1);
-    setRadioPlaying(false);
     setMusicEmbedUrl("");
     setMusicProvider("");
   };
@@ -529,13 +521,52 @@ function OverlayContent() {
     setRepeatMode((current) => current === "off" ? "all" : current === "all" ? "one" : "off");
   };
 
+  const searchMusic = async () => {
+    const query = musicSearchQuery.trim();
+    if (!query) return;
+
+    setMusicSearchLoading(true);
+    setMusicSearchError("");
+    try {
+      const response = await fetch(
+        api + "/api/v1/public/music/search?q=" + encodeURIComponent(query) + "&limit=16",
+        { cache: "no-store" },
+      );
+      if (!response.ok) throw new Error("Music search returned HTTP " + response.status);
+
+      const data = await response.json() as { results?: MusicSearchResult[] };
+      setMusicSearchResults(data.results ?? []);
+    } catch (error) {
+      setMusicSearchResults([]);
+      setMusicSearchError(error instanceof Error ? error.message : String(error));
+    } finally {
+      setMusicSearchLoading(false);
+    }
+  };
+
+  const addMusicSearchResult = (result: MusicSearchResult) => {
+    try {
+      const embed = buildMusicEmbed(result.url);
+      const item: MediaQueueItem = {
+        id: result.id,
+        title: [result.artist, result.title].filter(Boolean).join(" - "),
+        provider: embed.provider,
+        sourceUrl: result.url,
+        embedUrl: embed.url,
+      };
+      addQueueItem(item, true);
+      setMusicError("");
+    } catch (error) {
+      setMusicError(error instanceof Error ? error.message : String(error));
+    }
+  };
+
   const loadMusicUrl = () => {
     try {
       const embed = buildMusicEmbed(musicUrl);
       const item: MediaQueueItem = {
         id: "media-" + Date.now(),
         title: musicUrl,
-        kind: "embed",
         provider: embed.provider,
         sourceUrl: musicUrl.trim(),
         embedUrl: embed.url,
@@ -550,15 +581,98 @@ function OverlayContent() {
   };
 
   const playRadio = async (station: RadioStation) => {
+    const audio = audioRef.current;
+    if (!audio || !station.url) return;
+
     setSelectedRadioId(station.id);
-    const item: MediaQueueItem = {
-      id: "radio-" + station.id,
-      title: station.name,
-      kind: "radio",
-      provider: "Radio",
-      sourceUrl: station.url,
-    };
-    addQueueItem(item, true);
+    if (audio.src !== station.url) audio.src = station.url;
+
+    try {
+      await audio.play();
+      setRadioPlaying(true);
+    } catch {
+      setRadioPlaying(false);
+    }
+  };
+
+  const toggleRadioPlayback = async () => {
+    const audio = audioRef.current;
+    if (!audio || !selectedRadio) return;
+
+    if (!audio.paused) {
+      audio.pause();
+      setRadioPlaying(false);
+      return;
+    }
+
+    if (!audio.src) audio.src = selectedRadio.url;
+    try {
+      await audio.play();
+      setRadioPlaying(true);
+    } catch {
+      setRadioPlaying(false);
+    }
+  };
+
+  const stopRadio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
+    setRadioPlaying(false);
+  };
+
+  const pauseMusic = () => {
+    if (!musicEmbedUrl) return;
+
+    if (musicProvider === "YouTube") {
+      musicFrameRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "pauseVideo", args: [] }),
+        "*",
+      );
+      setMusicPaused(true);
+      return;
+    }
+
+    setPausedMusicEmbedUrl(musicEmbedUrl);
+    setMusicEmbedUrl("");
+    setMusicPaused(true);
+  };
+
+  const resumeMusic = () => {
+    if (musicProvider === "YouTube" && musicFrameRef.current) {
+      musicFrameRef.current.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "playVideo", args: [] }),
+        "*",
+      );
+      setMusicPaused(false);
+      return;
+    }
+
+    if (pausedMusicEmbedUrl) {
+      setMusicEmbedUrl(pausedMusicEmbedUrl);
+      setPausedMusicEmbedUrl("");
+      setMusicPaused(false);
+    }
+  };
+
+  const applyMusicVolume = (value: number) => {
+    const next = Math.max(0, Math.min(1, value));
+    setMusicVolume(next);
+
+    if (musicProvider === "YouTube") {
+      musicFrameRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "setVolume", args: [Math.round(next * 100)] }),
+        "*",
+      );
+    }
+  };
+
+  const stopMusic = () => {
+    setMusicEmbedUrl("");
+    setPausedMusicEmbedUrl("");
+    setMusicPaused(false);
   };
 
   const mapUrl = useMemo(() => {
@@ -728,13 +842,22 @@ function OverlayContent() {
                 <span className="gameOverlayRadioRoute">Direct station stream · no OpenHaul proxy</span>
               </div>
               <div className="gameOverlayRadioControls">
-                <button
-                  className="gameOverlayRadioPlay"
-                  disabled={!selectedRadio}
-                  onClick={() => selectedRadio && void playRadio(selectedRadio)}
-                >
-                  {radioPlaying ? "Ⅱ Pause" : "▶ Play"}
-                </button>
+                <div className="gameOverlayRadioButtonRow">
+                  <button
+                    className="gameOverlayRadioPlay"
+                    disabled={!selectedRadio}
+                    onClick={() => void toggleRadioPlayback()}
+                  >
+                    {radioPlaying ? "Ⅱ Pause" : "▶ Play"}
+                  </button>
+                  <button
+                    className="gameOverlayRadioStop"
+                    disabled={!selectedRadio}
+                    onClick={stopRadio}
+                  >
+                    ■ Stop
+                  </button>
+                </div>
                 <label>
                   <span>Volume {Math.round(radioVolume * 100)}%</span>
                   <input
@@ -833,10 +956,7 @@ function OverlayContent() {
               preload="none"
               onPlay={() => setRadioPlaying(true)}
               onPause={() => setRadioPlaying(false)}
-              onEnded={() => {
-                setRadioPlaying(false);
-                void nextQueueItem();
-              }}
+              onEnded={() => setRadioPlaying(false)}
             />
           </div>
         ) : null}
@@ -845,10 +965,59 @@ function OverlayContent() {
           <div className="gameOverlayMusic">
             <section className="gameOverlayMusicInput">
               <div>
+                <h2>Search music</h2>
+                <p>
+                  Search by artist and title, for example <strong>Artist - Title</strong>.
+                  OpenHaul searches public YouTube, SoundCloud, Bilibili, and Yandex Music results, then you can add one directly to the Music playlist.
+                </p>
+              </div>
+              <div className="gameOverlayMusicUrl">
+                <input
+                  value={musicSearchQuery}
+                  onChange={(event) => {
+                    setMusicSearchQuery(event.target.value);
+                    setMusicSearchError("");
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") void searchMusic();
+                  }}
+                  placeholder="Artist - Title"
+                  aria-label="Search music by artist and title"
+                />
+                <button type="button" disabled={!musicSearchQuery.trim() || musicSearchLoading} onClick={() => void searchMusic()}>
+                  {musicSearchLoading ? "Searching…" : "Search"}
+                </button>
+              </div>
+
+              {musicSearchError ? <div className="gameOverlayRadioEmpty">{musicSearchError}</div> : null}
+
+              {musicSearchResults.length ? (
+                <div className="gameOverlayMusicSearchResults">
+                  {musicSearchResults.map((result) => (
+                    <div key={result.id}>
+                      <span>
+                        <strong>{result.title}</strong>
+                        <small>
+                          {[result.artist,
+                            result.provider === "youtube" ? "YouTube" :
+                            result.provider === "soundcloud" ? "SoundCloud" :
+                            result.provider === "bilibili" ? "Bilibili" : "Yandex Music"
+                          ].filter(Boolean).join(" · ")}
+                        </small>
+                      </span>
+                      <button type="button" onClick={() => addMusicSearchResult(result)}>Add & play</button>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              <div className="gameOverlayMusicDivider"><span>or paste a URL</span></div>
+
+              <div>
                 <h2>Play music from a link</h2>
                 <p>
-                  Paste a public link from YouTube (including Live), SoundCloud, Spotify, Mixcloud, Apple Music, or Twitch.
-                  Links are added to the OpenHaul playlist and use each platform's official player.
+                  Paste a public link from YouTube (including Live), SoundCloud, Spotify, Mixcloud, Apple Music, Twitch, Yandex Music, or Bilibili.
+                  Links are added to the Music playlist and use each platform's official player. Radio stays separate and is never added to this playlist.
                 </p>
               </div>
               <div className="gameOverlayMusicUrl">
@@ -861,7 +1030,7 @@ function OverlayContent() {
                   onKeyDown={(event) => {
                     if (event.key === "Enter") loadMusicUrl();
                   }}
-                  placeholder="YouTube / YouTube Live / SoundCloud / Spotify / Mixcloud / Apple Music / Twitch URL"
+                  placeholder="YouTube / SoundCloud / Spotify / Mixcloud / Apple Music / Twitch / Yandex / Bilibili URL"
                   aria-label="Music URL"
                 />
                 <button type="button" disabled={!musicUrl.trim()} onClick={loadMusicUrl}>
@@ -876,6 +1045,8 @@ function OverlayContent() {
                 <span>Mixcloud</span>
                 <span>Apple Music</span>
                 <span>Twitch</span>
+                <span>Yandex Music</span>
+                <span>Bilibili</span>
               </div>
               {musicError ? <div className="gameOverlayRadioEmpty">{musicError}</div> : null}
             </section>
@@ -906,16 +1077,34 @@ function OverlayContent() {
                     <button type="button" className="gameOverlayPlaylistRemove" onClick={() => removeQueueItem(index)}>×</button>
                   </div>
                 ))}
-                {!mediaQueue.length ? <div className="gameOverlayMusicEmpty"><span>Add radio stations or music links to build a playlist.</span></div> : null}
+                {!mediaQueue.length ? <div className="gameOverlayMusicEmpty"><span>Add music, video, or livestream links to build your Music playlist.</span></div> : null}
               </div>
             </section>
 
             <section className="gameOverlayMusicPlayer">
-              {musicEmbedUrl ? (
+              {(musicEmbedUrl || pausedMusicEmbedUrl) ? (
                 <>
                   <div className="gameOverlayMusicPlayerHead">
-                    <strong>{musicProvider}</strong>
-                    <small>Official embedded player · no OpenHaul media proxy</small>
+                    <div>
+                      <strong>{musicProvider}</strong>
+                      <small>Official embedded player · no OpenHaul media proxy</small>
+                    </div>
+                    <div className="gameOverlayMusicTransport">
+                      <button type="button" onClick={musicPaused ? resumeMusic : pauseMusic}>
+                        {musicPaused ? "▶ Resume" : "Ⅱ Pause"}
+                      </button>
+                      <button type="button" onClick={stopMusic}>■ Stop</button>
+                      <label className="gameOverlayMusicVolume">
+                        <span>Volume {Math.round(musicVolume * 100)}%</span>
+                        <input
+                          type="range"
+                          min="0"
+                          max="100"
+                          value={Math.round(musicVolume * 100)}
+                          onChange={(event) => applyMusicVolume(Number(event.target.value) / 100)}
+                        />
+                      </label>
+                    </div>
                   </div>
                   <div className="gameOverlayMusicPlayerPlaceholder">
                     <strong>{musicProvider} is playing</strong>
@@ -935,7 +1124,13 @@ function OverlayContent() {
         {musicEmbedUrl ? (
           <div className={"gameOverlayPersistentMedia " + (tab === "music" ? "visible" : "background")}>
             <iframe
+              ref={musicFrameRef}
               key={musicEmbedUrl}
+              onLoad={() => {
+                if (musicProvider === "YouTube") {
+                  setTimeout(() => applyMusicVolume(musicVolume), 250);
+                }
+              }}
               src={musicEmbedUrl}
               title={musicProvider + " background player"}
               allow="autoplay; encrypted-media; fullscreen; picture-in-picture; clipboard-write"
