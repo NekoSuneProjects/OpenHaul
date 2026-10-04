@@ -195,7 +195,7 @@ async function probeCodec(inputUrl: string) {
 function relayUrl(request: any, payload: RelayPayload) {
   const explicit = cleanBaseUrl(process.env.OPENHAUL_PUBLIC_API_URL ?? "");
   const base = explicit || `${request.protocol}://${request.headers.host}`;
-  return `${base}/api/v1/public/radio/repair/${signRelayPayload(payload)}.mp3`;
+  return `${base}/api/v1/public/radio/repair.mp3?token=${encodeURIComponent(signRelayPayload(payload))}`;
 }
 
 async function scanOne(request: any, row: z.infer<typeof scanBodySchema>["stations"][number]) {
@@ -292,10 +292,7 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
     };
   });
 
-  app.route({
-    method: ["GET", "HEAD"],
-    url: "/api/v1/public/radio/repair/:token.mp3",
-    handler: async (request, reply) => {
+  async function handleRepairStream(request: any, reply: any, token: string) {
       const { token } = z.object({ token: z.string().min(20).max(8192) }).parse(request.params);
       let payload: RelayPayload;
       try {
@@ -381,6 +378,25 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
       });
 
       return reply;
+
+  }
+
+  app.route({
+    method: ["GET", "HEAD"],
+    url: "/api/v1/public/radio/repair.mp3",
+    handler: async (request, reply) => {
+      const { token } = z.object({ token: z.string().min(20).max(8192) }).parse(request.query);
+      return handleRepairStream(request, reply, token);
+    },
+  });
+
+  // Backward compatibility for repair URLs generated before query-token URLs.
+  app.route({
+    method: ["GET", "HEAD"],
+    url: "/api/v1/public/radio/repair/:token.mp3",
+    handler: async (request, reply) => {
+      const { token } = z.object({ token: z.string().min(20).max(8192) }).parse(request.params);
+      return handleRepairStream(request, reply, token);
     },
   });
 }
