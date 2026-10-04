@@ -26,6 +26,7 @@ const publicCategories = new Set([
 ]);
 
 const userCategories = new Set([
+  "tickets",
   "albums",
   "screenshots",
   "preferences",
@@ -98,6 +99,38 @@ function randomKey(prefix: string) {
 }
 
 export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
+  const buckets = new Map<string, { windowStart: number; count: number }>();
+
+  app.addHook("onRequest", async (request, reply) => {
+    const now = Date.now();
+    const key = request.ip || "unknown";
+    const bucket = buckets.get(key);
+    if (!bucket || now - bucket.windowStart >= 60_000) {
+      buckets.set(key, { windowStart: now, count: 1 });
+    } else {
+      bucket.count += 1;
+      const limit = request.url.startsWith("/api/v1/public/") ? 240 : 600;
+      if (bucket.count > limit) {
+        reply.header("retry-after", "60");
+        return reply.code(429).send({ error: "rate_limited" });
+      }
+    }
+
+    if (["POST", "PUT", "PATCH", "DELETE"].includes(request.method) && request.url.startsWith("/api/v1/account/")) {
+      const expected = process.env.APP_URL?.trim();
+      const origin = request.headers.origin;
+      if (expected && origin) {
+        try {
+          if (new URL(origin).origin !== new URL(expected).origin) {
+            return reply.code(403).send({ error: "origin_not_allowed" });
+          }
+        } catch {
+          return reply.code(403).send({ error: "origin_not_allowed" });
+        }
+      }
+    }
+  });
+
   app.addHook("onSend", async (_request, reply, payload) => {
     reply.header("x-content-type-options", "nosniff");
     reply.header("x-frame-options", "DENY");
