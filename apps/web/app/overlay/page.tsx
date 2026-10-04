@@ -33,10 +33,9 @@ type RepeatMode = "off" | "one" | "all";
 type MediaQueueItem = {
   id: string;
   title: string;
-  kind: "radio" | "embed";
   provider: string;
   sourceUrl: string;
-  embedUrl?: string;
+  embedUrl: string;
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
@@ -89,7 +88,11 @@ function OverlayContent() {
       const savedRepeat = localStorage.getItem("openhaul.overlay.repeatMode");
       if (savedQueue) {
         const parsed = JSON.parse(savedQueue);
-        if (Array.isArray(parsed)) setMediaQueue(parsed);
+        if (Array.isArray(parsed)) {
+          setMediaQueue(parsed.filter((item: any) =>
+            item && item.kind !== "radio" && typeof item.embedUrl === "string" && item.embedUrl
+          ));
+        }
       }
       if (savedRepeat === "off" || savedRepeat === "one" || savedRepeat === "all") {
         setRepeatMode(savedRepeat);
@@ -415,69 +418,23 @@ function OverlayContent() {
   const playQueueItem = async (index: number) => {
     const item = mediaQueue[index];
     if (!item) return;
-
     setQueueIndex(index);
-
-    if (item.kind === "radio") {
-      setMusicEmbedUrl("");
-      setMusicProvider("");
-      const audio = audioRef.current;
-      if (!audio) return;
-      if (audio.src !== item.sourceUrl) audio.src = item.sourceUrl;
-      try {
-        await audio.play();
-        setRadioPlaying(true);
-      } catch {
-        setRadioPlaying(false);
-      }
-      return;
-    }
-
-    const audio = audioRef.current;
-    if (audio && !audio.paused) audio.pause();
-    setRadioPlaying(false);
     setMusicProvider(item.provider);
-    setMusicEmbedUrl(item.embedUrl || "");
+    setMusicEmbedUrl(item.embedUrl);
   };
 
   const addQueueItem = (item: MediaQueueItem, playNow = true) => {
     setMediaQueue((current) => {
-      const existing = current.findIndex((entry) =>
-        entry.kind === item.kind && entry.sourceUrl === item.sourceUrl
-      );
+      const existing = current.findIndex((entry) => entry.sourceUrl === item.sourceUrl);
       const next = existing >= 0 ? current : [...current, item];
       const index = existing >= 0 ? existing : next.length - 1;
-      if (playNow) setTimeout(() => void playQueueItemFrom(next, index), 0);
+      if (playNow) {
+        setQueueIndex(index);
+        setMusicProvider(next[index].provider);
+        setMusicEmbedUrl(next[index].embedUrl);
+      }
       return next;
     });
-  };
-
-  const playQueueItemFrom = async (queue: MediaQueueItem[], index: number) => {
-    const item = queue[index];
-    if (!item) return;
-
-    setQueueIndex(index);
-
-    if (item.kind === "radio") {
-      setMusicEmbedUrl("");
-      setMusicProvider("");
-      const audio = audioRef.current;
-      if (!audio) return;
-      if (audio.src !== item.sourceUrl) audio.src = item.sourceUrl;
-      try {
-        await audio.play();
-        setRadioPlaying(true);
-      } catch {
-        setRadioPlaying(false);
-      }
-      return;
-    }
-
-    const audio = audioRef.current;
-    if (audio && !audio.paused) audio.pause();
-    setRadioPlaying(false);
-    setMusicProvider(item.provider);
-    setMusicEmbedUrl(item.embedUrl || "");
   };
 
   const nextQueueItem = async () => {
@@ -504,9 +461,6 @@ function OverlayContent() {
   const removeQueueItem = (index: number) => {
     setMediaQueue((current) => current.filter((_, itemIndex) => itemIndex !== index));
     if (index === queueIndex) {
-      const audio = audioRef.current;
-      if (audio && !audio.paused) audio.pause();
-      setRadioPlaying(false);
       setMusicEmbedUrl("");
       setMusicProvider("");
       setQueueIndex(-1);
@@ -516,11 +470,8 @@ function OverlayContent() {
   };
 
   const clearQueue = () => {
-    const audio = audioRef.current;
-    if (audio && !audio.paused) audio.pause();
     setMediaQueue([]);
     setQueueIndex(-1);
-    setRadioPlaying(false);
     setMusicEmbedUrl("");
     setMusicProvider("");
   };
@@ -535,7 +486,6 @@ function OverlayContent() {
       const item: MediaQueueItem = {
         id: "media-" + Date.now(),
         title: musicUrl,
-        kind: "embed",
         provider: embed.provider,
         sourceUrl: musicUrl.trim(),
         embedUrl: embed.url,
@@ -550,15 +500,24 @@ function OverlayContent() {
   };
 
   const playRadio = async (station: RadioStation) => {
+    const audio = audioRef.current;
+    if (!audio || !station.url) return;
+
+    if (selectedRadioId === station.id && !audio.paused) {
+      audio.pause();
+      setRadioPlaying(false);
+      return;
+    }
+
     setSelectedRadioId(station.id);
-    const item: MediaQueueItem = {
-      id: "radio-" + station.id,
-      title: station.name,
-      kind: "radio",
-      provider: "Radio",
-      sourceUrl: station.url,
-    };
-    addQueueItem(item, true);
+    if (audio.src !== station.url) audio.src = station.url;
+
+    try {
+      await audio.play();
+      setRadioPlaying(true);
+    } catch {
+      setRadioPlaying(false);
+    }
   };
 
   const mapUrl = useMemo(() => {
@@ -833,10 +792,7 @@ function OverlayContent() {
               preload="none"
               onPlay={() => setRadioPlaying(true)}
               onPause={() => setRadioPlaying(false)}
-              onEnded={() => {
-                setRadioPlaying(false);
-                void nextQueueItem();
-              }}
+              onEnded={() => setRadioPlaying(false)}
             />
           </div>
         ) : null}
@@ -848,7 +804,7 @@ function OverlayContent() {
                 <h2>Play music from a link</h2>
                 <p>
                   Paste a public link from YouTube (including Live), SoundCloud, Spotify, Mixcloud, Apple Music, or Twitch.
-                  Links are added to the OpenHaul playlist and use each platform's official player.
+                  Links are added to the Music playlist and use each platform's official player. Radio stays separate and is never added to this playlist.
                 </p>
               </div>
               <div className="gameOverlayMusicUrl">
@@ -906,7 +862,7 @@ function OverlayContent() {
                     <button type="button" className="gameOverlayPlaylistRemove" onClick={() => removeQueueItem(index)}>×</button>
                   </div>
                 ))}
-                {!mediaQueue.length ? <div className="gameOverlayMusicEmpty"><span>Add radio stations or music links to build a playlist.</span></div> : null}
+                {!mediaQueue.length ? <div className="gameOverlayMusicEmpty"><span>Add music, video, or livestream links to build your Music playlist.</span></div> : null}
               </div>
             </section>
 
