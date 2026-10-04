@@ -3,10 +3,8 @@ import { lookup } from "node:dns/promises";
 import { isIP } from "node:net";
 import { spawn } from "node:child_process";
 import type { FastifyInstance } from "fastify";
-import { lookupRadioCountryByUrl } from "./radioProxy.js";
 import { z } from "zod";
 
-const DEFAULT_NEKOROUTE_URL = "https://proxyweb.nekosunevr.co.uk";
 const publicHostCache = new Map<string, number>();
 
 function envInt(name: string, fallback: number, min: number, max: number) {
@@ -26,54 +24,16 @@ function fastRadioInputArgs() {
 
 type RelayPayload = {
   url: string;
-  proxy: boolean;
-  country?: string;
-  networkType?: "residential" | "hosting" | "auto";
 };
-
-const geoRuleSchema = z.object({
-  match: z.string().min(1).max(500),
-  country: z.string().length(2).transform((value) => value.toUpperCase()),
-});
-
-function inferredGeoCountry(url: string) {
-  const lower = url.toLowerCase();
-
-  // Built-in known geo-sensitive station/provider rules.
-  // Newcap/Stingray LeanStream hosts are used by Canadian stations such as
-  // the boom network. They can return a valid spoken geo-block message
-  // outside Canada, so treat the provider host itself as Canada-sensitive.
-  if (lower.includes("newcap.leanstream.co/")) return "CA";
-  if (lower.includes("stingray.leanstream.co/")) return "CA";
-  if (lower.includes("leanstream") && lower.includes("/chslfm")) return "CA";
-  if (lower.includes("musicradio.com/")) return "GB";
-  if (lower.includes("globalplayer.com/")) return "GB";
-
-  const raw = process.env.RADIO_URL_GEO_RULES_JSON?.trim();
-  if (!raw || raw === "[]") return undefined;
-
-  try {
-    const rules = z.array(geoRuleSchema).max(500).parse(JSON.parse(raw));
-    const matched = rules.find((rule) => lower.includes(rule.match.toLowerCase()));
-    return matched?.country;
-  } catch {
-    return undefined;
-  }
-}
 
 const geoProbeSchema = z.object({
   url: z.string().min(1).max(4096),
-  expectedCountry: z.string().length(2).transform((value) => value.toUpperCase()).optional(),
-  countries: z.array(
-    z.string().length(2).transform((value) => value.toUpperCase())
-  ).max(12).optional(),
 });
 
 const scanBodySchema = z.object({
   stations: z.array(z.object({
     id: z.string().min(1).max(160),
     url: z.string().min(1).max(4096),
-    preferredCountry: z.string().length(2).transform((value) => value.toUpperCase()).optional(),
   })).min(1).max(250),
 });
 
@@ -148,77 +108,7 @@ function verifyRelayPayload(token: string): RelayPayload {
   }
 
   const parsed = JSON.parse(Buffer.from(data, "base64url").toString("utf8"));
-  return z.object({
-    url: z.string().url(),
-    proxy: z.boolean(),
-    country: z.string().length(2).optional(),
-    networkType: z.enum(["residential", "hosting", "auto"]).optional(),
-  }).parse(parsed);
-}
-
-async function createRegionalSession(sourceUrl: string, country?: string, preferred: "residential" | "hosting" | "auto" = "auto") {
-  const base = cleanBaseUrl(process.env.NEKOROUTE_API_URL ?? DEFAULT_NEKOROUTE_URL);
-
-  const tryType = async (networkType: "residential" | "hosting") => {
-    const response = await fetch(`${base}/api/v1/preview/session`, {
-      method: "POST",
-      signal: AbortSignal.timeout(12_000),
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-        "user-agent": "OpenHaul-RadioHealth/1.1 (+https://github.com/NekoSuneProjects/OpenHaul)",
-      },
-      body: JSON.stringify({
-        url: sourceUrl,
-        networkType,
-        ...(country ? { country } : {}),
-      }),
-    });
-
-    if (!response.ok) throw new Error(`NekoRoute ${networkType} returned HTTP ${response.status}`);
-
-    const data = await response.json() as {
-      sessionId?: string;
-      node?: {
-        country?: string;
-        protocol?: string;
-        city?: string | null;
-        network?: {
-          connectionType?: string | null;
-          isHomeResidential?: boolean | null;
-          isHostingProvider?: boolean | null;
-        };
-      };
-    };
-
-    if (!data.sessionId) throw new Error("NekoRoute did not return a sessionId");
-    if (country && data.node?.country && data.node.country !== country) {
-      throw new Error(`NekoRoute returned ${data.node.country} instead of ${country}`);
-    }
-    if (networkType === "residential" && data.node?.network?.isHomeResidential !== true) {
-      throw new Error("NekoRoute route was not residential");
-    }
-    if (networkType === "hosting" &&
-        data.node?.network?.isHostingProvider !== true &&
-        data.node?.network?.connectionType !== "hosting") {
-      throw new Error("NekoRoute route was not hosting/VPS");
-    }
-
-    return {
-      inputUrl: `${base}/api/preview-runtime/${encodeURIComponent(data.sessionId)}?kind=media&url=${encodeURIComponent(sourceUrl)}`,
-      node: data.node ?? null,
-      networkType,
-    };
-  };
-
-  if (preferred === "residential") return tryType("residential");
-  if (preferred === "hosting") return tryType("hosting");
-
-  try {
-    return await tryType("residential");
-  } catch {
-    return await tryType("hosting");
-  }
+  return z.object({ url: z.string().url() }).parse(parsed);
 }
 
 async function probeCodec(inputUrl: string) {
@@ -259,58 +149,8 @@ function relayUrl(request: any, payload: RelayPayload) {
   return `${base}/api/v1/public/radio/repair.mp3?token=${encodeURIComponent(signRelayPayload(payload))}`;
 }
 
-async function scanOne(app: FastifyInstance, request: any, row: z.infer<typeof scanBodySchema>["stations"][number]) {
+async function scanOne(request: any, row: z.infer<typeof scanBodySchema>["stations"][number]) {
   const url = await assertPublicRadioUrl(row.url);
-  const providerCountry = inferredGeoCountry(url);
-  const directoryMatch = row.preferredCountry || providerCountry
-    ? null
-    : await lookupRadioCountryByUrl(url, app);
-  const inferredCountry = row.preferredCountry ?? providerCountry ?? directoryMatch?.country;
-
-  // Known geo-sensitive stations must be tested through their expected country.
-  // A valid audio codec is not enough because some providers return a spoken
-  // "not available in your region" placeholder as a perfectly valid audio stream.
-  if (inferredCountry) {
-    try {
-      const session = await createRegionalSession(url, inferredCountry, "auto");
-      const codec = await probeCodec(session.inputUrl);
-      return {
-        id: row.id,
-        status: "repaired",
-        route: session.networkType === "residential" ? "residential-proxy" : "hosting-proxy",
-        codec,
-        originalUrl: url,
-        replacementUrl: relayUrl(request, {
-          url,
-          proxy: true,
-          country: inferredCountry,
-          networkType: "auto",
-        }),
-        changed: true,
-        proxy: {
-          country: session.node?.country ?? inferredCountry,
-          protocol: session.node?.protocol ?? null,
-          city: session.node?.city ?? null,
-          networkType: session.networkType,
-        },
-        detectedCountry: inferredCountry,
-        detectedBy: row.preferredCountry ? "user" : providerCountry ? "provider-rule" : directoryMatch?.source ?? "directory",
-        matchedStation: directoryMatch?.stationName ?? null,
-        reason: `Geo-sensitive station tested through ${inferredCountry} instead of trusting direct placeholder audio.`,
-      };
-    } catch (geoError) {
-      return {
-        id: row.id,
-        status: "broken",
-        route: "none",
-        codec: null,
-        originalUrl: url,
-        replacementUrl: null,
-        changed: false,
-        reason: geoError instanceof Error ? geoError.message : String(geoError),
-      };
-    }
-  }
 
   try {
     const codec = await probeCodec(url);
@@ -332,129 +172,54 @@ async function scanOne(app: FastifyInstance, request: any, row: z.infer<typeof s
       route: "direct-transcode",
       codec,
       originalUrl: url,
-      replacementUrl: relayUrl(request, { url, proxy: false }),
+      replacementUrl: relayUrl(request, { url }),
       changed: true,
-      reason: `Direct stream works but codec is ${codec}; OpenHaul MP3 relay recommended for ETS2/ATS.`,
+      reason: `Direct stream works but codec is ${codec}; optional MP3 transcode available for legacy SCS radio imports.`,
     };
-  } catch (directError) {
-    try {
-      const session = await createRegionalSession(url, undefined, "auto");
-      const codec = await probeCodec(session.inputUrl);
-      return {
-        id: row.id,
-        status: "repaired",
-        route: session.networkType === "residential" ? "residential-proxy" : "hosting-proxy",
-        codec,
-        originalUrl: url,
-        replacementUrl: relayUrl(request, { url, proxy: true, networkType: "auto" }),
-        changed: true,
-        proxy: {
-          country: session.node?.country ?? null,
-          protocol: session.node?.protocol ?? null,
-          city: session.node?.city ?? null,
-          networkType: session.networkType,
-        },
-        reason: "Direct stream failed, but it works through NekoRoute.",
-      };
-    } catch (proxyError) {
-      return {
-        id: row.id,
-        status: "broken",
-        route: "none",
-        codec: null,
-        originalUrl: url,
-        replacementUrl: null,
-        changed: false,
-        reason: proxyError instanceof Error ? proxyError.message : String(proxyError),
-        directError: directError instanceof Error ? directError.message : String(directError),
-      };
-    }
+  } catch (error) {
+    return {
+      id: row.id,
+      status: "broken",
+      route: "none",
+      codec: null,
+      originalUrl: url,
+      replacementUrl: null,
+      changed: false,
+      reason: error instanceof Error ? error.message : String(error),
+    };
   }
 }
 
 export async function registerRadioHealthRoutes(app: FastifyInstance) {
-  app.post("/api/v1/public/radio/geo-probe", async (request, reply) => {
+  app.post("/api/v1/public/radio/geo-probe", async (request) => {
     const body = geoProbeSchema.parse(request.body);
     const url = await assertPublicRadioUrl(body.url);
-    const providerCountry = inferredGeoCountry(url);
-    const directoryMatch = body.expectedCountry || providerCountry
-      ? null
-      : await lookupRadioCountryByUrl(url, app);
-    const inferredCountry = body.expectedCountry ?? providerCountry ?? directoryMatch?.country;
 
-    let direct: { ok: boolean; codec?: string; error?: string };
     try {
-      direct = { ok: true, codec: await probeCodec(url) };
+      const codec = await probeCodec(url);
+      return {
+        url,
+        classification: "direct",
+        direct: { ok: true, codec },
+        countries: [],
+        note: "Regional proxy probing has been removed. OpenHaul tests the original station URL directly.",
+      };
     } catch (error) {
-      direct = { ok: false, error: error instanceof Error ? error.message : String(error) };
+      return {
+        url,
+        classification: "unavailable",
+        direct: { ok: false, error: error instanceof Error ? error.message : String(error) },
+        countries: [],
+        note: "Regional proxy probing has been removed. OpenHaul tests the original station URL directly.",
+      };
     }
-
-    const defaults = (process.env.RADIO_GEO_PROBE_COUNTRIES ?? "GB,CA,US,DE,FR,NL,AU,NZ")
-      .split(",")
-      .map((value) => value.trim().toUpperCase())
-      .filter((value) => /^[A-Z]{2}$/.test(value));
-
-    const countries = [...new Set([
-      ...(inferredCountry ? [inferredCountry] : []),
-      ...(body.countries?.length ? body.countries : defaults),
-    ])].slice(0, 12);
-
-    const results = [];
-    for (const country of countries) {
-      try {
-        const session = await createRegionalSession(url, country, "auto");
-        const codec = await probeCodec(session.inputUrl);
-        results.push({
-          country,
-          ok: true,
-          codec,
-          route: session.networkType === "residential" ? "residential-proxy" : "hosting-proxy",
-          proxy: {
-            country: session.node?.country ?? country,
-            city: session.node?.city ?? null,
-            protocol: session.node?.protocol ?? null,
-            networkType: session.networkType,
-          },
-        });
-      } catch (error) {
-        results.push({
-          country,
-          ok: false,
-          error: error instanceof Error ? error.message : String(error),
-        });
-      }
-    }
-
-    const homeResult = inferredCountry
-      ? results.find((row) => row.country === inferredCountry && row.ok)
-      : undefined;
-
-    let classification = "unknown";
-    if (inferredCountry && homeResult) classification = "geo-sensitive";
-    else if (!direct.ok && results.some((row) => row.ok)) classification = "geo-locked-or-route-sensitive";
-    else if (direct.ok && results.filter((row) => row.ok).length >= 2) classification = "likely-global";
-    else if (!direct.ok && !results.some((row) => row.ok)) classification = "unavailable";
-
-    return {
-      url,
-      inferredCountry: inferredCountry ?? null,
-      detectedBy: body.expectedCountry ? "user" : providerCountry ? "provider-rule" : directoryMatch?.source ?? null,
-      matchedStation: directoryMatch?.stationName ?? null,
-      classification,
-      direct,
-      countries: results,
-      note: "A decodable direct stream can still be a spoken geo-block placeholder. Known provider rules and expectedCountry take priority over codec-only success.",
-    };
   });
 
-  app.post("/api/v1/public/radio/scan", async (request, reply) => {
+  app.post("/api/v1/public/radio/scan", async (request) => {
     const body = scanBodySchema.parse(request.body);
-    // The web editor sends small batches. Probe each small batch concurrently so
-    // a large live_streams.sii scan stays practical without spawning hundreds
-    // of ffprobe processes at once.
     const results = await Promise.all(body.stations.map(async (station) => {
       try {
-        return await scanOne(app, request, station);
+        return await scanOne(request, station);
       } catch (error) {
         return {
           id: station.id,
@@ -479,115 +244,74 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
   });
 
   async function handleRepairStream(request: any, reply: any, token: string) {
-      let payload: RelayPayload;
-      try {
-        payload = verifyRelayPayload(token);
-        payload.url = await assertPublicRadioUrl(payload.url);
-      } catch (error) {
-        return reply.code(400).send({
-          error: "invalid_radio_relay",
-          message: error instanceof Error ? error.message : String(error),
-        });
-      }
-
-      if (request.method === "HEAD") {
-        return reply
-          .header("content-type", "audio/mpeg")
-          .header("cache-control", "no-store")
-          .code(200)
-          .send();
-      }
-
-      const providerCountry = inferredGeoCountry(payload.url);
-      const directoryMatch = providerCountry || payload.country
-        ? null
-        : await lookupRadioCountryByUrl(payload.url, app);
-      const inferredCountry = payload.country ?? providerCountry ?? directoryMatch?.country;
-
-      // Backward compatibility for previously generated repair tokens that
-      // incorrectly contained proxy:false for known geo-sensitive providers.
-      // Provider rules take precedence over the signed routing hint.
-      if (inferredCountry && !payload.proxy) {
-        payload = {
-          ...payload,
-          proxy: true,
-          country: inferredCountry,
-          networkType: "auto",
-        };
-      }
-
-      let inputUrl = payload.url;
-      let proxyProtocol = "";
-      let proxyCountry = "";
-      let actualRoute = payload.proxy ? "regional-proxy" : "direct-transcode";
-      if (payload.proxy) {
-        try {
-          const session = await createRegionalSession(payload.url, payload.country, payload.networkType ?? "auto");
-          inputUrl = session.inputUrl;
-          proxyProtocol = session.node?.protocol ?? "";
-          proxyCountry = session.node?.country ?? payload.country ?? "";
-          actualRoute = session.networkType === "residential" ? "residential-proxy" : "hosting-proxy";
-        } catch (error) {
-          return reply.code(503).send({
-            error: "radio_proxy_unavailable",
-            country: payload.country ?? inferredCountry ?? null,
-            message: error instanceof Error ? error.message : String(error),
-          });
-        }
-      }
-
-      const ffmpeg = spawn("ffmpeg", [
-        "-hide_banner", "-loglevel", "warning", "-nostdin",
-        ...fastRadioInputArgs(),
-        "-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_at_eof", "1", "-reconnect_delay_max", "2",
-        "-i", inputUrl,
-        "-vn", "-ac", "2", "-ar", "44100",
-        "-c:a", "libmp3lame", "-compression_level", "0", "-b:a", "128k",
-        "-flush_packets", "1", "-write_xing", "0", "-f", "mp3",
-        "pipe:1",
-      ], { stdio: ["ignore", "pipe", "pipe"] });
-
-      let closed = false;
-      const stop = () => {
-        if (closed) return;
-        closed = true;
-        if (!ffmpeg.killed) ffmpeg.kill("SIGKILL");
-      };
-      request.raw.once("aborted", stop);
-      request.raw.once("close", stop);
-      reply.raw.once("close", stop);
-
-      ffmpeg.once("spawn", () => {
-        if (closed || reply.raw.destroyed) return stop();
-        reply.hijack();
-        reply.raw.writeHead(200, {
-          "content-type": "audio/mpeg",
-          "cache-control": "no-store, no-cache, must-revalidate, no-transform",
-          "x-accel-buffering": "no",
-          "icy-br": "128",
-          "x-openhaul-radio-route": actualRoute,
-          "x-openhaul-radio-proxy-country": proxyCountry,
-          "x-openhaul-radio-proxy-protocol": proxyProtocol,
-        });
-        ffmpeg.stdout.pipe(reply.raw);
+    let payload: RelayPayload;
+    try {
+      payload = verifyRelayPayload(token);
+      payload.url = await assertPublicRadioUrl(payload.url);
+    } catch (error) {
+      return reply.code(400).send({
+        error: "invalid_radio_relay",
+        message: error instanceof Error ? error.message : String(error),
       });
+    }
 
-      ffmpeg.once("error", (error) => {
-        if (!reply.raw.headersSent) {
-          reply.raw.writeHead(500, { "content-type": "application/json" });
-          reply.raw.end(JSON.stringify({ error: "ffmpeg_unavailable" }));
-        } else if (!reply.raw.destroyed) {
-          reply.raw.destroy(error);
-        }
+    if (request.method === "HEAD") {
+      return reply
+        .header("content-type", "audio/mpeg")
+        .header("cache-control", "no-store")
+        .code(200)
+        .send();
+    }
+
+    const ffmpeg = spawn("ffmpeg", [
+      "-hide_banner", "-loglevel", "warning", "-nostdin",
+      ...fastRadioInputArgs(),
+      "-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_at_eof", "1", "-reconnect_delay_max", "2",
+      "-i", payload.url,
+      "-vn", "-ac", "2", "-ar", "44100",
+      "-c:a", "libmp3lame", "-compression_level", "0", "-b:a", "128k",
+      "-flush_packets", "1", "-write_xing", "0", "-f", "mp3",
+      "pipe:1",
+    ], { stdio: ["ignore", "pipe", "pipe"] });
+
+    let closed = false;
+    const stop = () => {
+      if (closed) return;
+      closed = true;
+      if (!ffmpeg.killed) ffmpeg.kill("SIGKILL");
+    };
+    request.raw.once("aborted", stop);
+    request.raw.once("close", stop);
+    reply.raw.once("close", stop);
+
+    ffmpeg.once("spawn", () => {
+      if (closed || reply.raw.destroyed) return stop();
+      reply.hijack();
+      reply.raw.writeHead(200, {
+        "content-type": "audio/mpeg",
+        "cache-control": "no-store, no-cache, must-revalidate, no-transform",
+        "x-accel-buffering": "no",
+        "icy-br": "128",
+        "x-openhaul-radio-route": "direct-transcode",
       });
+      ffmpeg.stdout.pipe(reply.raw);
+    });
 
-      ffmpeg.once("exit", () => {
-        if (!reply.raw.destroyed && !reply.raw.writableEnded) reply.raw.end();
-        closed = true;
-      });
+    ffmpeg.once("error", (error) => {
+      if (!reply.raw.headersSent) {
+        reply.raw.writeHead(500, { "content-type": "application/json" });
+        reply.raw.end(JSON.stringify({ error: "ffmpeg_unavailable" }));
+      } else if (!reply.raw.destroyed) {
+        reply.raw.destroy(error);
+      }
+    });
 
-      return reply;
+    ffmpeg.once("exit", () => {
+      if (!reply.raw.destroyed && !reply.raw.writableEnded) reply.raw.end();
+      closed = true;
+    });
 
+    return reply;
   }
 
   app.route({
@@ -599,7 +323,6 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
     },
   });
 
-  // Backward compatibility for repair URLs generated before query-token URLs.
   app.route({
     method: ["GET", "HEAD"],
     url: "/api/v1/public/radio/repair/:token.mp3",
