@@ -83,7 +83,7 @@ const geoRuleSchema = z.object({
 });
 
 const directoryQuerySchema = z.object({
-  country: z.string().length(2).transform((value) => value.toUpperCase()).default("CA"),
+  country: z.string().transform((value) => value.toUpperCase()).refine((value) => value === "ALL" || /^[A-Z]{2}$/.test(value), "Country must be a 2-letter code or ALL").default("CA"),
   q: z.string().max(120).optional(),
   tag: z.string().max(80).optional(),
   codec: z.string().max(40).optional(),
@@ -259,53 +259,81 @@ function radioBrowserToStation(row: RadioBrowserStation, rules: GeoRule[]): Radi
   };
 }
 
-async function createResidentialSession(station: RadioStation) {
+async function createRegionalProxySession(station: RadioStation) {
   if (!station.country && !station.region) throw new Error("Geo-routed station has no country or region");
   const base = cleanBaseUrl(process.env.NEKOROUTE_API_URL ?? DEFAULT_NEKOROUTE_URL);
-  const selector = station.country
-    ? { country: station.country, networkType: "residential" }
-    : { region: station.region, networkType: "residential" };
 
-  const response = await fetch(`${base}/api/v1/preview/session`, {
-    method: "POST",
-    signal: AbortSignal.timeout(12_000),
-    headers: {
-      accept: "application/json",
-      "content-type": "application/json",
-      "user-agent": "OpenHaul-RadioProxy/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)",
-    },
-    body: JSON.stringify({ url: station.sourceUrl, ...selector }),
-  });
+  const requestSession = async (networkType: "residential" | "hosting") => {
+    const selector = station.country
+      ? { country: station.country, networkType }
+      : { region: station.region, networkType };
 
-  if (!response.ok) {
-    const text = await response.text().catch(() => "");
-    throw new Error(`NekoRoute session failed with HTTP ${response.status}${text ? `: ${text.slice(0, 240)}` : ""}`);
-  }
+    const response = await fetch(`${base}/api/v1/preview/session`, {
+      method: "POST",
+      signal: AbortSignal.timeout(12_000),
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        "user-agent": "OpenHaul-RadioProxy/1.3 (+https://github.com/NekoSuneProjects/OpenHaul)",
+      },
+      body: JSON.stringify({ url: station.sourceUrl, ...selector }),
+    });
 
-  const data = await response.json() as {
-    sessionId?: string;
-    node?: {
-      country?: string;
-      countryName?: string;
-      region?: string;
-      protocol?: string;
-      city?: string | null;
-      network?: { isHomeResidential?: boolean | null };
+    if (!response.ok) {
+      const text = await response.text().catch(() => "");
+      throw new Error(`NekoRoute ${networkType} session failed with HTTP ${response.status}${text ? `: ${text.slice(0, 240)}` : ""}`);
+    }
+
+    const data = await response.json() as {
+      sessionId?: string;
+      node?: {
+        country?: string;
+        countryName?: string;
+        region?: string;
+        protocol?: string;
+        city?: string | null;
+        network?: {
+          connectionType?: string | null;
+          isHomeResidential?: boolean | null;
+          isHostingProvider?: boolean | null;
+        };
+      };
+    };
+
+    if (!data.sessionId) throw new Error("NekoRoute did not return a sessionId");
+    if (station.country && data.node?.country && data.node.country !== station.country) {
+      throw new Error(`NekoRoute returned ${data.node.country} instead of requested ${station.country}`);
+    }
+    if (station.region && data.node?.region && data.node.region !== station.region) {
+      throw new Error(`NekoRoute returned region ${data.node.region} instead of requested ${station.region}`);
+    }
+    if (networkType === "residential" && data.node?.network?.isHomeResidential !== true) {
+      throw new Error("NekoRoute returned a route that is not classified as home/residential");
+    }
+    if (networkType === "hosting" && data.node?.network?.isHostingProvider !== true && data.node?.network?.connectionType !== "hosting") {
+      throw new Error("NekoRoute returned a route that is not classified as hosting/VPS");
+    }
+
+    return {
+      base,
+      sessionId: data.sessionId,
+      node: data.node ?? null,
+      routeMode: networkType === "residential" ? "residential-proxy" : "hosting-proxy",
     };
   };
 
-  if (!data.sessionId) throw new Error("NekoRoute did not return a sessionId");
-  if (station.country && data.node?.country && data.node.country !== station.country) {
-    throw new Error(`NekoRoute returned ${data.node.country} instead of requested ${station.country}`);
+  try {
+    return await requestSession("residential");
+  } catch (residentialError) {
+    try {
+      return await requestSession("hosting");
+    } catch (hostingError) {
+      throw new Error(
+        `No usable regional NekoRoute proxy. Residential: ${residentialError instanceof Error ? residentialError.message : String(residentialError)}; ` +
+        `Hosting/VPS: ${hostingError instanceof Error ? hostingError.message : String(hostingError)}`,
+      );
+    }
   }
-  if (station.region && data.node?.region && data.node.region !== station.region) {
-    throw new Error(`NekoRoute returned region ${data.node.region} instead of requested ${station.region}`);
-  }
-  if (data.node?.network?.isHomeResidential !== true) {
-    throw new Error("NekoRoute returned a route that is not classified as home/residential");
-  }
-
-  return { base, sessionId: data.sessionId, node: data.node ?? null };
 }
 
 function stationOutputBase(station: RadioStation) {
@@ -334,12 +362,12 @@ function stationPublicJson(station: RadioStation) {
     favicon: station.favicon ?? null,
     source: station.source,
     routing: {
-      mode: station.forceProxy ? "residential-proxy" : "direct",
+      mode: station.forceProxy ? "residential-then-hosting-proxy" : "direct",
       proxyRequired: Boolean(station.forceProxy),
       provider: station.forceProxy ? "NekoRoute" : null,
       country: station.forceProxy ? station.country ?? null : null,
       region: station.forceProxy ? station.region ?? null : null,
-      networkType: station.forceProxy ? "residential" : null,
+      networkType: station.forceProxy ? "residential-preferred-hosting-fallback" : null,
       protocol: station.forceProxy ? "auto" : null,
       supportedProtocols: station.forceProxy ? ["http", "https", "socks4", "socks5"] : [],
     },
@@ -367,18 +395,19 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
     }
 
     let inputUrl = station.sourceUrl;
-    let proxyNode: Awaited<ReturnType<typeof createResidentialSession>>["node"] | null = null;
+    let proxyNode: Awaited<ReturnType<typeof createRegionalProxySession>>["node"] | null = null;
     let actualRoute = station.forceProxy ? "residential-proxy" : "direct";
 
     if (station.forceProxy) {
       try {
-        const session = await createResidentialSession(station);
+        const session = await createRegionalProxySession(station);
         proxyNode = session.node;
         inputUrl =
           `${session.base}/api/preview-runtime/${encodeURIComponent(session.sessionId)}` +
           `?kind=media&url=${encodeURIComponent(station.sourceUrl)}`;
+        actualRoute = session.routeMode;
       } catch (error) {
-        app.log.warn({ error, stationId: station.id }, "Unable to create residential radio route");
+        app.log.warn({ error, stationId: station.id }, "Unable to create residential or hosting radio route");
 
         if (!allowDirectProxyFallback() || !(await canReadAudioDirectly(station.sourceUrl))) {
           return reply.code(503).send({
@@ -393,7 +422,7 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
         inputUrl = station.sourceUrl;
         app.log.warn(
           { stationId: station.id },
-          "No healthy residential proxy matched; direct radio fallback is working and will be used",
+          "No healthy residential or hosting proxy matched; direct radio fallback is working and will be used",
         );
       }
     }
@@ -440,7 +469,7 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
         "icy-name": station.name,
         "icy-genre": station.genre ?? "Radio",
         "icy-br": String(station.bitrateKbps),
-        "x-openhaul-radio-route": station.forceProxy ? "residential-proxy" : "direct",
+        "x-openhaul-radio-route": actualRoute,
         "x-openhaul-radio-country": station.country ?? "",
         "x-openhaul-radio-region": station.region ?? "",
         "x-openhaul-radio-proxy-country": proxyNode?.country ?? "",
@@ -471,13 +500,13 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
     const offset = (query.page - 1) * query.pageSize;
 
     const params = new URLSearchParams({
-      countrycode: query.country,
       hidebroken: "true",
       order: "votes",
       reverse: "true",
       offset: String(offset),
       limit: String(query.pageSize),
     });
+    if (query.country !== "ALL") params.set("countrycode", query.country);
     if (query.q) params.set("name", query.q);
     if (query.tag) params.set("tag", query.tag);
     if (query.codec) params.set("codec", query.codec);
@@ -489,7 +518,7 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
 
     const custom = query.page === 1
       ? [...stations.values()].filter((station) =>
-          station.country === query.country &&
+          (query.country === "ALL" || station.country === query.country) &&
           (!query.q || station.name.toLowerCase().includes(query.q.toLowerCase())) &&
           (!query.tag || (station.genre ?? "").toLowerCase().includes(query.tag.toLowerCase())) &&
           (!query.codec || (station.codec ?? "").toLowerCase().includes(query.codec.toLowerCase()))
