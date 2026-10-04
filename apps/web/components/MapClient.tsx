@@ -488,6 +488,10 @@ export function MapClient() {
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [status, setStatus] = useState("Connecting…");
   const [gameFilter, setGameFilter] = useState<GameFilter>("all");
+  const [driverQuery, setDriverQuery] = useState("");
+  const [statusFilter, setStatusFilter] = useState<"all" | "driving" | "stopped" | "on-job" | "free">("all");
+  const [serverFilter, setServerFilter] = useState("all");
+  const [fullscreen, setFullscreen] = useState(false);
   const [mapMode, setMapMode] = useState<MapMode>("road");
   const [cameraMode, setCameraMode] = useState<CameraMode>("map");
   const [selectedDriverId, setSelectedDriverId] = useState(initialDriver);
@@ -503,10 +507,35 @@ export function MapClient() {
   const visibleDriversRef = useRef<Driver[]>([]);
   const interpolatedRef = useRef<Map<string, InterpolatedDriver>>(new Map());
 
-  const visibleDrivers = useMemo(
-    () => gameFilter === "all" ? drivers : drivers.filter((driver) => driver.game === gameFilter),
-    [drivers, gameFilter],
+  const serverOptions = useMemo(
+    () => Array.from(new Set(drivers.map((driver) => driver.server).filter((value): value is string => Boolean(value)))).sort(),
+    [drivers],
   );
+
+  const visibleDrivers = useMemo(() => {
+    const needle = driverQuery.trim().toLowerCase();
+    return drivers.filter((driver) => {
+      if (gameFilter !== "all" && driver.game !== gameFilter) return false;
+      if (serverFilter !== "all" && (driver.server ?? "") !== serverFilter) return false;
+      if (statusFilter === "driving" && Number(driver.speedKph ?? 0) <= 1) return false;
+      if (statusFilter === "stopped" && Number(driver.speedKph ?? 0) > 1) return false;
+      const onJob = Boolean(driver.cargo || driver.destinationCity || driver.sourceCity);
+      if (statusFilter === "on-job" && !onJob) return false;
+      if (statusFilter === "free" && onJob) return false;
+      if (needle && ![
+        driver.username,
+        driver.driverId,
+        driver.vtcName,
+        driver.vtcTag,
+        driver.truck,
+        driver.cargo,
+        driver.sourceCity,
+        driver.destinationCity,
+        driver.server,
+      ].some((value) => String(value ?? "").toLowerCase().includes(needle))) return false;
+      return true;
+    });
+  }, [drivers, gameFilter, serverFilter, statusFilter, driverQuery]);
 
   useEffect(() => {
     visibleDriversRef.current = visibleDrivers;
@@ -1066,6 +1095,26 @@ export function MapClient() {
     window.location.href = next ? "/map?vtc=" + encodeURIComponent(next) : "/map";
   };
 
+  const shareMap = async () => {
+    const url = new URL(window.location.href);
+    if (selectedDriverId) url.searchParams.set("driver", selectedDriverId);
+    else url.searchParams.delete("driver");
+    await navigator.clipboard?.writeText(url.toString()).catch(() => {});
+    setStatus("Share link copied");
+  };
+
+  const toggleFullscreen = async () => {
+    const panel = containerRef.current?.closest(".realMapPanel") as HTMLElement | null;
+    if (!panel) return;
+    if (!document.fullscreenElement) {
+      await panel.requestFullscreen().catch(() => {});
+      setFullscreen(true);
+    } else {
+      await document.exitFullscreen().catch(() => {});
+      setFullscreen(false);
+    }
+  };
+
   const installedMapCount = Number(Boolean(mapAssets?.ets2.available)) + Number(Boolean(mapAssets?.ats.available));
   const selectedVtc = vtcOptions.find((option) => String(option.id) === initialVtc);
 
@@ -1084,6 +1133,18 @@ export function MapClient() {
 
       <section className="mapPanel realMapPanel">
         <div className="mapToolbar">
+          <input value={driverQuery} onChange={(e) => setDriverQuery(e.target.value)} placeholder="Search driver, truck, cargo, server…" aria-label="Search live drivers" />
+          <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value as typeof statusFilter)} aria-label="Driver status filter">
+            <option value="all">All online</option>
+            <option value="driving">Driving</option>
+            <option value="stopped">Stopped</option>
+            <option value="on-job">On job</option>
+            <option value="free">No active job</option>
+          </select>
+          <select value={serverFilter} onChange={(e) => setServerFilter(e.target.value)} aria-label="Server filter">
+            <option value="all">All servers</option>
+            {serverOptions.map((server) => <option key={server} value={server}>{server}</option>)}
+          </select>
           <select value={vtc} onChange={(e) => setVtc(e.target.value)} aria-label="Choose VTC live map">
             <option value="">All drivers (global map)</option>
             {vtcOptions.map((option) => (
@@ -1107,6 +1168,9 @@ export function MapClient() {
           <button className={"button mapModeButton " + (cameraMode === "map" ? "primary" : "")} onClick={() => setCameraMode("map")}>⬆ Map View</button>
           <button className={"button mapModeButton " + (cameraMode === "third" ? "primary" : "")} disabled={!selectedDriverId} onClick={() => setCameraMode("third")}>🚛 3rd Person</button>
           <button className={"button mapModeButton " + (cameraMode === "first" ? "primary" : "")} disabled={!selectedDriverId} onClick={() => setCameraMode("first")}>👁 1st Person</button>
+          <span className="mapToolbarDivider" aria-hidden="true" />
+          <button className="button" onClick={() => void shareMap()}>{selectedDriverId ? "🔗 Share driver" : "🔗 Share map"}</button>
+          <button className="button" onClick={() => void toggleFullscreen()}>{fullscreen ? "Exit fullscreen" : "Full screen"}</button>
         </div>
 
         <div className="mapCameraStatus">
