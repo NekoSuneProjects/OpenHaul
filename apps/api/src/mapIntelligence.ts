@@ -367,7 +367,7 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
 
     const width = Math.abs(query.x2 - query.x1);
     const height = Math.abs(query.y2 - query.y1);
-    if (width > 180_000 || height > 180_000) {
+    if (width > 500_000 || height > 500_000) {
       return reply.code(400).send({ error: "area_too_large" });
     }
 
