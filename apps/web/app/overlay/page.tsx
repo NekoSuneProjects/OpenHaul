@@ -851,7 +851,7 @@ function OverlayContent() {
               <div>
                 <h2>Play music from a link</h2>
                 <p>
-                  Paste a public link from YouTube, SoundCloud, Spotify, Mixcloud, Apple Music, or Twitch.
+                  Paste a public link from YouTube (including Live), SoundCloud, Spotify, Mixcloud, Apple Music, or Twitch.
                   Links are added to the OpenHaul playlist and use each platform's official player.
                 </p>
               </div>
@@ -865,7 +865,7 @@ function OverlayContent() {
                   onKeyDown={(event) => {
                     if (event.key === "Enter") loadMusicUrl();
                   }}
-                  placeholder="YouTube / SoundCloud / Spotify / Mixcloud / Apple Music / Twitch URL"
+                  placeholder="YouTube / YouTube Live / SoundCloud / Spotify / Mixcloud / Apple Music / Twitch URL"
                   aria-label="Music URL"
                 />
                 <button type="button" disabled={!musicUrl.trim()} onClick={loadMusicUrl}>
@@ -874,6 +874,7 @@ function OverlayContent() {
               </div>
               <div className="gameOverlayMusicProviders">
                 <span>YouTube</span>
+                <span>YouTube Live</span>
                 <span>SoundCloud</span>
                 <span>Spotify</span>
                 <span>Mixcloud</span>
