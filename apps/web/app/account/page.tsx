@@ -12,6 +12,12 @@ type User = {
   ownsEts2?: boolean | null;
   ownsAts?: boolean | null;
   ownershipVisibility: "verified" | "private" | "unknown";
+  bannerUrl?: string | null;
+  bio?: string | null;
+  country?: string | null;
+  socials?: Record<string, string>;
+  profilePublic?: boolean;
+  moderationVisibility?: "public" | "members" | "private";
   ownedGamesSnapshot?: Array<{ appid: number; name: string; playtimeForever: number }> | null;
 };
 
@@ -190,6 +196,38 @@ export default function AccountPage() {
     setClientTokens([]);
   };
 
+  const saveProfile = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus("Saving profile…");
+    const form = new FormData(event.currentTarget);
+    const socials = {
+      discord: String(form.get("socialDiscord") ?? "").trim(),
+      youtube: String(form.get("socialYoutube") ?? "").trim(),
+      twitch: String(form.get("socialTwitch") ?? "").trim(),
+      website: String(form.get("socialWebsite") ?? "").trim(),
+    };
+    const response = await fetch(api + "/api/v1/account/profile", {
+      method: "PATCH",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        bio: String(form.get("bio") ?? "").trim() || null,
+        country: String(form.get("country") ?? "").trim() || null,
+        bannerUrl: String(form.get("bannerUrl") ?? "").trim() || null,
+        socials,
+        profilePublic: form.get("profilePublic") === "on",
+        moderationVisibility: String(form.get("moderationVisibility") ?? "public"),
+      }),
+    });
+    if (response.ok) {
+      const data = await response.json();
+      setUser(data.user);
+      setStatus("Profile saved.");
+    } else {
+      setStatus("Unable to save profile.");
+    }
+  };
+
   const createVtc = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setCreating(true);
@@ -300,6 +338,27 @@ export default function AccountPage() {
           <button className="button" onClick={refreshOwnership} style={{ marginTop: 12 }}>Refresh library</button>
         </article>
       </section>
+
+      <div className="sectionTitle"><h2>Profile & privacy</h2></div>
+      <form className="card" onSubmit={saveProfile} style={{ display: "grid", gap: 12, marginBottom: 18 }}>
+        <textarea name="bio" rows={4} defaultValue={user.bio ?? ""} placeholder="Driver bio" />
+        <input name="country" defaultValue={user.country ?? ""} placeholder="Country / region" />
+        <input name="bannerUrl" defaultValue={user.bannerUrl ?? ""} placeholder="Profile banner image URL" />
+        <input name="socialDiscord" defaultValue={user.socials?.discord ?? ""} placeholder="Discord profile/server URL" />
+        <input name="socialYoutube" defaultValue={user.socials?.youtube ?? ""} placeholder="YouTube URL" />
+        <input name="socialTwitch" defaultValue={user.socials?.twitch ?? ""} placeholder="Twitch URL" />
+        <input name="socialWebsite" defaultValue={user.socials?.website ?? ""} placeholder="Website URL" />
+        <label><input type="checkbox" name="profilePublic" defaultChecked={user.profilePublic !== false} /> Public driver profile</label>
+        <label>
+          Moderation history visibility
+          <select name="moderationVisibility" defaultValue={user.moderationVisibility ?? "public"}>
+            <option value="public">Public</option>
+            <option value="members">VTC members only</option>
+            <option value="private">Private</option>
+          </select>
+        </label>
+        <button className="button primary">Save profile</button>
+      </form>
 
       <div className="sectionTitle"><h2>ETS2 / ATS DLC</h2></div>
       <section className="grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))" }}>
