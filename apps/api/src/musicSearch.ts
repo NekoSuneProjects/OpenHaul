@@ -10,11 +10,81 @@ type MusicSearchResult = {
 };
 
 const cache = new Map<string, { expiresAt: number; value: MusicSearchResult[] }>();
+const regionCache = new Map<string, { expiresAt: number; countryCode: string }>();
 
 const querySchema = z.object({
   q: z.string().min(2).max(160),
   limit: z.coerce.number().int().min(1).max(30).default(12),
+  country: z.string().length(2).transform((value) => value.toUpperCase()).optional(),
 });
+
+const CIS_COUNTRIES = new Set(["RU", "BY", "KZ", "KG", "AM", "AZ", "UZ", "TJ", "MD"]);
+
+function providerPriority(countryCode: string) {
+  if (countryCode === "CN") return ["bilibili", "yandex", "youtube", "soundcloud"] as const;
+  if (CIS_COUNTRIES.has(countryCode)) return ["yandex", "youtube", "soundcloud", "bilibili"] as const;
+  return ["youtube", "soundcloud", "yandex", "bilibili"] as const;
+}
+
+function headerCountry(request: any) {
+  const candidates = [
+    request.headers["cf-ipcountry"],
+    request.headers["x-vercel-ip-country"],
+    request.headers["x-country-code"],
+    request.headers["x-geo-country"],
+  ];
+  for (const value of candidates) {
+    const code = Array.isArray(value) ? value[0] : value;
+    if (typeof code === "string" && /^[A-Za-z]{2}$/.test(code)) return code.toUpperCase();
+  }
+  return "";
+}
+
+function clientIp(request: any) {
+  const forwarded = request.headers["cf-connecting-ip"]
+    ?? request.headers["x-real-ip"]
+    ?? request.headers["x-forwarded-for"];
+  const raw = Array.isArray(forwarded) ? forwarded[0] : forwarded;
+  const first = typeof raw === "string" ? raw.split(",")[0].trim() : request.ip;
+  return String(first ?? "").replace(/^::ffff:/, "");
+}
+
+function isPublicIpCandidate(value: string) {
+  if (!value || value === "::1" || value === "127.0.0.1") return false;
+  if (/^10\./.test(value) || /^192\.168\./.test(value) || /^169\.254\./.test(value)) return false;
+  const match172 = value.match(/^172\.(\d+)\./);
+  if (match172 && Number(match172[1]) >= 16 && Number(match172[1]) <= 31) return false;
+  return true;
+}
+
+async function resolveCountryCode(request: any) {
+  const fromHeader = headerCountry(request);
+  if (fromHeader) return { countryCode: fromHeader, source: "edge-header" as const };
+
+  const ip = clientIp(request);
+  if (!isPublicIpCandidate(ip)) return { countryCode: "ZZ", source: "unknown" as const };
+
+  const cached = regionCache.get(ip);
+  if (cached && cached.expiresAt > Date.now()) {
+    return { countryCode: cached.countryCode, source: "ip-cache" as const };
+  }
+
+  try {
+    const response = await fetch(
+      "https://ipwho.is/" + encodeURIComponent(ip) + "?fields=success,country_code",
+      { signal: AbortSignal.timeout(3500), headers: { accept: "application/json" } },
+    );
+    if (!response.ok) throw new Error("region lookup failed");
+    const data = await response.json() as { success?: boolean; country_code?: string };
+    const code = typeof data.country_code === "string" && /^[A-Za-z]{2}$/.test(data.country_code)
+      ? data.country_code.toUpperCase()
+      : "ZZ";
+    regionCache.set(ip, { countryCode: code, expiresAt: Date.now() + 60 * 60_000 });
+    return { countryCode: code, source: "ip-country" as const };
+  } catch {
+    return { countryCode: "ZZ", source: "unknown" as const };
+  }
+}
 
 function decodeHtml(value: string) {
   return value
@@ -208,9 +278,22 @@ async function searchYandexMusic(query: string, limit: number): Promise<MusicSea
 }
 
 export async function registerMusicSearchRoutes(app: FastifyInstance) {
+  app.get("/api/v1/public/region", async (request, reply) => {
+    const region = await resolveCountryCode(request);
+    const priority = providerPriority(region.countryCode);
+
+    reply.header("cache-control", "private, max-age=300");
+    return {
+      countryCode: region.countryCode,
+      source: region.source,
+      musicProviderPriority: priority,
+    };
+  });
   app.get("/api/v1/public/music/search", async (request, reply) => {
-    const { q, limit } = querySchema.parse(request.query);
-    const key = q.trim().toLowerCase() + ":" + limit;
+    const { q, limit, country } = querySchema.parse(request.query);
+    const detected = country ? { countryCode: country, source: "query" as const } : await resolveCountryCode(request);
+    const countryCode = detected.countryCode;
+    const key = q.trim().toLowerCase() + ":" + limit + ":" + countryCode;
     const cached = cache.get(key);
     if (cached && cached.expiresAt > Date.now()) {
       reply.header("cache-control", "public, max-age=120");
@@ -225,18 +308,24 @@ export async function registerMusicSearchRoutes(app: FastifyInstance) {
       searchYandexMusic(q, perProvider),
     ]);
 
-    const merged = [
-      ...(youtube.status === "fulfilled" ? youtube.value : []),
-      ...(soundcloud.status === "fulfilled" ? soundcloud.value : []),
-      ...(bilibili.status === "fulfilled" ? bilibili.value : []),
-      ...(yandex.status === "fulfilled" ? yandex.value : []),
-    ].slice(0, limit);
+    const providerResults = {
+      youtube: youtube.status === "fulfilled" ? youtube.value : [],
+      soundcloud: soundcloud.status === "fulfilled" ? soundcloud.value : [],
+      bilibili: bilibili.status === "fulfilled" ? bilibili.value : [],
+      yandex: yandex.status === "fulfilled" ? yandex.value : [],
+    };
+
+    const priority = providerPriority(countryCode);
+    const merged = priority.flatMap((provider) => providerResults[provider]).slice(0, limit);
 
     cache.set(key, { expiresAt: Date.now() + 5 * 60_000, value: merged });
     reply.header("cache-control", "public, max-age=120, stale-if-error=600");
 
     return {
       query: q,
+      countryCode,
+      regionSource: detected.source,
+      providerPriority: priority,
       count: merged.length,
       providers: {
         youtube: youtube.status === "fulfilled",
