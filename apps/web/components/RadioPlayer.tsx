@@ -38,7 +38,7 @@ export function RadioPlayer() {
     const audio = audioRef.current;
     if (!audio) return;
     if (audio.paused) {
-      audio.src = "https://radio.truckers.fm";
+      audio.src = stream;
       await audio.play();
       setPlaying(true);
     } else {
