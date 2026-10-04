@@ -3,7 +3,7 @@ import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
 import Fastify from "fastify";
 import { z } from "zod";
-import { Fine, Job, User, Vtc, VtcMember, initDatabase, sequelize } from "./db.js";
+import { Fine, Job, User, Vtc, VtcLedgerEntry, VtcMember, initDatabase, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
@@ -92,11 +92,23 @@ const jobSchema = z.object({
   vtcId: z.number().int().positive().nullable().optional(),
   driverId: z.string().min(1).max(80),
   game: z.enum(["ets2", "ats"]),
+  mode: z.enum(["casual", "standard", "simulation"]).default("standard"),
+  status: z.enum(["accepted", "in_progress", "completed", "cancelled", "abandoned"]).default("completed"),
   cargo: z.string().max(160).nullable().optional(),
+  cargoMassKg: z.number().nonnegative().nullable().optional(),
   sourceCity: z.string().max(120).nullable().optional(),
+  sourceCompany: z.string().max(160).nullable().optional(),
+  sourceCountry: z.string().max(120).nullable().optional(),
   destinationCity: z.string().max(120).nullable().optional(),
+  destinationCompany: z.string().max(160).nullable().optional(),
+  destinationCountry: z.string().max(120).nullable().optional(),
   distanceKm: z.number().nonnegative().nullable().optional(),
   income: z.number().int().nonnegative().nullable().optional(),
+  expenses: z.number().int().nonnegative().default(0),
+  late: z.boolean().default(false),
+  cargoDamagePercent: z.number().min(0).max(100).default(0),
+  truckDamagePercent: z.number().min(0).max(100).default(0),
+  trailerDamagePercent: z.number().min(0).max(100).default(0),
   completedAt: z.coerce.date().default(() => new Date()),
 });
 
@@ -293,6 +305,16 @@ app.post("/api/v1/telemetry/fines", async (request, reply) => {
       driverId: identity.user.steamId,
       vtcId: membership?.vtc.id ?? null,
     });
+    if (membership && body.amount > 0) {
+      await VtcLedgerEntry.create({
+        vtcId: membership.vtc.id,
+        createdByUserId: identity.user.id,
+        type: "penalty",
+        description: identity.user.displayName + " penalty: " + body.type.replaceAll("_", " "),
+        amount: -Math.abs(body.amount),
+        currency: body.currency,
+      });
+    }
     if (membership) {
       await recordVtcActivity({
         vtcId: membership.vtc.id,
@@ -327,7 +349,20 @@ app.post("/api/v1/telemetry/jobs/completed", async (request, reply) => {
       ...body,
       driverId: identity.user.steamId,
       vtcId: membership?.vtc.id ?? null,
+      submissionType: "telemetry",
+      approvalStatus: "approved",
+      profit: Number(body.income ?? 0) - Number(body.expenses ?? 0),
     });
+    if (membership && body.income) {
+      await VtcLedgerEntry.create({
+        vtcId: membership.vtc.id,
+        createdByUserId: identity.user.id,
+        type: "job_income",
+        description: identity.user.displayName + " delivery income",
+        amount: Number(body.income) - Number(body.expenses ?? 0),
+        currency: body.game === "ats" ? "USD" : "EUR",
+      });
+    }
     if (membership) {
       await recordVtcActivity({
         vtcId: membership.vtc.id,
