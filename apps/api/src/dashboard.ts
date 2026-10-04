@@ -1,5 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { Op, QueryTypes } from "sequelize";
+import { z } from "zod";
 import { Fine, Job, User, Vtc, VtcActivityEvent, VtcMember, sequelize } from "./db.js";
 import { requireUser } from "./accountSession.js";
 import { getLiveDrivers } from "./live.js";
