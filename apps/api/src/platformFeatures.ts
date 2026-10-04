@@ -102,21 +102,53 @@ function randomKey(prefix: string) {
   return prefix + randomBytes(12).toString("base64url");
 }
 
+function rateLimitClientKey(request: FastifyRequest) {
+  const candidates = [
+    request.headers["cf-connecting-ip"],
+    request.headers["x-real-ip"],
+    request.headers["x-forwarded-for"],
+  ];
+
+  for (const value of candidates) {
+    const raw = Array.isArray(value) ? value[0] : value;
+    if (typeof raw !== "string" || !raw.trim()) continue;
+    const first = raw.split(",")[0].trim().replace(/^::ffff:/, "");
+    if (first) return first;
+  }
+
+  return String(request.ip || "unknown").replace(/^::ffff:/, "");
+}
+
 export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
   const buckets = new Map<string, { windowStart: number; count: number }>();
 
   app.addHook("onRequest", async (request, reply) => {
     const now = Date.now();
-    const key = request.ip || "unknown";
+    const client = rateLimitClientKey(request);
+    const path = request.url.split("?")[0];
+
+    const bucketType = path === "/api/v1/public/music/search"
+      ? "music-search"
+      : path.startsWith("/api/v1/public/")
+        ? "public"
+        : "private";
+
+    const limit = bucketType === "music-search" ? 60 : bucketType === "public" ? 240 : 600;
+    const key = bucketType + ":" + client;
     const bucket = buckets.get(key);
+
     if (!bucket || now - bucket.windowStart >= 60_000) {
       buckets.set(key, { windowStart: now, count: 1 });
     } else {
       bucket.count += 1;
-      const limit = request.url.startsWith("/api/v1/public/") ? 240 : 600;
       if (bucket.count > limit) {
-        reply.header("retry-after", "60");
-        return reply.code(429).send({ error: "rate_limited" });
+        const retryAfterSeconds = Math.max(1, Math.ceil((60_000 - (now - bucket.windowStart)) / 1000));
+        reply.header("retry-after", String(retryAfterSeconds));
+        return reply.code(429).send({
+          error: "rate_limited",
+          scope: bucketType,
+          retryAfterSeconds,
+        });
       }
     }
 
