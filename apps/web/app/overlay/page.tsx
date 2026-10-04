@@ -38,6 +38,14 @@ type MediaQueueItem = {
   embedUrl: string;
 };
 
+type MusicSearchResult = {
+  id: string;
+  provider: "youtube" | "soundcloud";
+  title: string;
+  artist?: string;
+  url: string;
+};
+
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 function OverlayContent() {
@@ -70,6 +78,10 @@ function OverlayContent() {
   const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
   const [radioVolume, setRadioVolume] = useState(0.7);
+  const [musicSearchQuery, setMusicSearchQuery] = useState("");
+  const [musicSearchResults, setMusicSearchResults] = useState<MusicSearchResult[]>([]);
+  const [musicSearchLoading, setMusicSearchLoading] = useState(false);
+  const [musicSearchError, setMusicSearchError] = useState("");
   const [musicUrl, setMusicUrl] = useState("");
   const [musicEmbedUrl, setMusicEmbedUrl] = useState("");
   const [musicProvider, setMusicProvider] = useState("");
@@ -480,6 +492,46 @@ function OverlayContent() {
     setRepeatMode((current) => current === "off" ? "all" : current === "all" ? "one" : "off");
   };
 
+  const searchMusic = async () => {
+    const query = musicSearchQuery.trim();
+    if (!query) return;
+
+    setMusicSearchLoading(true);
+    setMusicSearchError("");
+    try {
+      const response = await fetch(
+        api + "/api/v1/public/music/search?q=" + encodeURIComponent(query) + "&limit=16",
+        { cache: "no-store" },
+      );
+      if (!response.ok) throw new Error("Music search returned HTTP " + response.status);
+
+      const data = await response.json() as { results?: MusicSearchResult[] };
+      setMusicSearchResults(data.results ?? []);
+    } catch (error) {
+      setMusicSearchResults([]);
+      setMusicSearchError(error instanceof Error ? error.message : String(error));
+    } finally {
+      setMusicSearchLoading(false);
+    }
+  };
+
+  const addMusicSearchResult = (result: MusicSearchResult) => {
+    try {
+      const embed = buildMusicEmbed(result.url);
+      const item: MediaQueueItem = {
+        id: result.id,
+        title: [result.artist, result.title].filter(Boolean).join(" - "),
+        provider: embed.provider,
+        sourceUrl: result.url,
+        embedUrl: embed.url,
+      };
+      addQueueItem(item, true);
+      setMusicError("");
+    } catch (error) {
+      setMusicError(error instanceof Error ? error.message : String(error));
+    }
+  };
+
   const loadMusicUrl = () => {
     try {
       const embed = buildMusicEmbed(musicUrl);
@@ -800,6 +852,51 @@ function OverlayContent() {
         {tab === "music" ? (
           <div className="gameOverlayMusic">
             <section className="gameOverlayMusicInput">
+              <div>
+                <h2>Search music</h2>
+                <p>
+                  Search by artist and title, for example <strong>Artist - Title</strong>.
+                  OpenHaul searches public YouTube and SoundCloud results, then you can add one directly to the Music playlist.
+                </p>
+              </div>
+              <div className="gameOverlayMusicUrl">
+                <input
+                  value={musicSearchQuery}
+                  onChange={(event) => {
+                    setMusicSearchQuery(event.target.value);
+                    setMusicSearchError("");
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") void searchMusic();
+                  }}
+                  placeholder="Artist - Title"
+                  aria-label="Search music by artist and title"
+                />
+                <button type="button" disabled={!musicSearchQuery.trim() || musicSearchLoading} onClick={() => void searchMusic()}>
+                  {musicSearchLoading ? "Searching…" : "Search"}
+                </button>
+              </div>
+
+              {musicSearchError ? <div className="gameOverlayRadioEmpty">{musicSearchError}</div> : null}
+
+              {musicSearchResults.length ? (
+                <div className="gameOverlayMusicSearchResults">
+                  {musicSearchResults.map((result) => (
+                    <div key={result.id}>
+                      <span>
+                        <strong>{result.title}</strong>
+                        <small>
+                          {[result.artist, result.provider === "youtube" ? "YouTube" : "SoundCloud"].filter(Boolean).join(" · ")}
+                        </small>
+                      </span>
+                      <button type="button" onClick={() => addMusicSearchResult(result)}>Add & play</button>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              <div className="gameOverlayMusicDivider"><span>or paste a URL</span></div>
+
               <div>
                 <h2>Play music from a link</h2>
                 <p>
