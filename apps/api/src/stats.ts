@@ -4,6 +4,7 @@ import { z } from "zod";
 import { Fine, Job, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers } from "./live.js";
+import { resolveVtcIdentifier } from "./vtcLookup.js";
 
 async function buildStats(vtcId: number) {
   const [jobs, distanceKm, income, fines, fineAmount, live] = await Promise.all([
@@ -47,14 +48,18 @@ async function buildLeaderboard(vtcId: number) {
 }
 
 export async function registerStatsRoutes(app: FastifyInstance) {
-  app.get("/api/v1/public/vtcs/:id/stats", async (request) => {
-    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
-    return buildStats(id);
+  app.get("/api/v1/public/vtcs/:id/stats", async (request, reply) => {
+    const { id } = z.object({ id: z.string().min(1).max(120) }).parse(request.params);
+    const vtc = await resolveVtcIdentifier(id);
+    if (!vtc) return reply.code(404).send({ error: "vtc_not_found" });
+    return buildStats(vtc.id);
   });
 
-  app.get("/api/v1/public/vtcs/:id/leaderboard", async (request) => {
-    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
-    return { vtcId: id, drivers: await buildLeaderboard(id) };
+  app.get("/api/v1/public/vtcs/:id/leaderboard", async (request, reply) => {
+    const { id } = z.object({ id: z.string().min(1).max(120) }).parse(request.params);
+    const vtc = await resolveVtcIdentifier(id);
+    if (!vtc) return reply.code(404).send({ error: "vtc_not_found" });
+    return { vtcId: vtc.id, slug: vtc.slug, drivers: await buildLeaderboard(vtc.id) };
   });
 
   app.get(
