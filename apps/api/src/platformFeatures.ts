@@ -55,6 +55,7 @@ const vtcCategories = new Set([
   "seasons",
   "convoys",
   "events",
+  "event-attendance",
   "achievements",
   "awards",
   "challenges",
@@ -201,6 +202,64 @@ export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
     if (!record) return reply.code(404).send({ error: "record_not_found" });
     await record.update({ status: "deleted" });
     return reply.code(204).send();
+  });
+
+  app.post("/api/v1/account/vtcs/:id/events/:eventKey/attendance", { preHandler: [requireUser] }, async (request, reply) => {
+    const params = z.object({
+      id: z.coerce.number().int().positive(),
+      eventKey: z.string().min(1).max(120),
+    }).parse(request.params);
+    const membership = await VtcMember.findOne({
+      where: { vtcId: params.id, userId: request.openhaulUser!.id, status: "active" },
+    });
+    if (!membership) return reply.code(403).send({ error: "not_member_of_vtc" });
+    const body = z.object({ status: z.enum(["attending", "maybe", "declined"]), slot: z.string().max(80).optional() }).parse(request.body);
+    const key = params.eventKey + "_" + request.openhaulUser!.steamId;
+    const [record] = await PlatformRecord.findOrCreate({
+      where: { scopeType: "vtc", scopeId: String(params.id), category: "event-attendance", key },
+      defaults: {
+        scopeType: "vtc",
+        scopeId: String(params.id),
+        category: "event-attendance",
+        key,
+        status: body.status,
+        data: {
+          eventKey: params.eventKey,
+          steamId: request.openhaulUser!.steamId,
+          displayName: request.openhaulUser!.displayName,
+          slot: body.slot ?? null,
+        },
+        createdByUserId: request.openhaulUser!.id,
+      },
+    });
+    await record.update({
+      status: body.status,
+      data: {
+        ...(record.getDataValue("data") as any),
+        slot: body.slot ?? null,
+        updatedAt: new Date().toISOString(),
+      },
+    });
+    return { attendance: record };
+  });
+
+  app.get("/api/v1/account/vtcs/:id/events/:eventKey/attendance", { preHandler: [requireVtcManager] }, async (request, reply) => {
+    if (reply.sent) return;
+    const params = z.object({
+      id: z.coerce.number().int().positive(),
+      eventKey: z.string().min(1).max(120),
+    }).parse(request.params);
+    const records = await PlatformRecord.findAll({
+      where: {
+        scopeType: "vtc",
+        scopeId: String(params.id),
+        category: "event-attendance",
+      },
+      order: [["updatedAt", "ASC"]],
+    });
+    return {
+      attendance: records.filter((record: any) => (record.getDataValue("data") as any)?.eventKey === params.eventKey),
+    };
   });
 
   app.post("/api/v1/account/vtcs/:id/role-presets", { preHandler: [requireVtcManager] }, async (request, reply) => {
