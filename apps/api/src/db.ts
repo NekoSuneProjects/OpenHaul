@@ -318,6 +318,27 @@ VtcModerationAction.init({
   revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
 }, { sequelize, modelName: "VtcModerationAction", tableName: "vtc_moderation_actions", underscored: true });
 
+export class PlatformRecord extends Model { declare id: number; }
+PlatformRecord.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  scopeType: { type: DataTypes.STRING(16), allowNull: false, field: "scope_type" },
+  scopeId: { type: DataTypes.STRING(80), allowNull: false, field: "scope_id" },
+  category: { type: DataTypes.STRING(64), allowNull: false },
+  key: { type: DataTypes.STRING(120), allowNull: false },
+  status: { type: DataTypes.STRING(32), allowNull: false, defaultValue: "active" },
+  data: { type: DataTypes.JSONB, allowNull: false, defaultValue: {} },
+  createdByUserId: { type: DataTypes.INTEGER, allowNull: true, field: "created_by_user_id" },
+}, {
+  sequelize,
+  modelName: "PlatformRecord",
+  tableName: "platform_records",
+  underscored: true,
+  indexes: [
+    { fields: ["scope_type", "scope_id", "category"] },
+    { unique: true, fields: ["scope_type", "scope_id", "category", "key"] },
+  ],
+});
+
 export class VtcDiscordConfig extends Model {}
 VtcDiscordConfig.init({
   id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
