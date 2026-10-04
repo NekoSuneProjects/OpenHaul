@@ -22,6 +22,7 @@ import { registerClientAuthRoutes } from "./clientAuth.js";
 import { registerTruckersMpRoutes } from "./truckersMp.js";
 import { registerNewsRoutes } from "./news.js";
 import { requireTelemetryIdentity, resolveUserVtc } from "./telemetryAuth.js";
+import { recordVtcActivity, registerVtcOperationsRoutes } from "./vtcOperations.js";
 
 const app = Fastify({ logger: true });
 await app.register(cors, { origin: true, credentials: true });
@@ -41,6 +42,7 @@ await registerClientTokenRoutes(app);
 await registerClientAuthRoutes(app);
 await registerTruckersMpRoutes(app);
 await registerNewsRoutes(app);
+await registerVtcOperationsRoutes(app);
 
 const liveSchema = z.object({
   driverId: z.string().min(1).max(80),
@@ -222,6 +224,19 @@ app.post("/api/v1/telemetry/fines", async (request, reply) => {
       driverId: identity.user.steamId,
       vtcId: membership?.vtc.id ?? null,
     });
+    if (membership) {
+      await recordVtcActivity({
+        vtcId: membership.vtc.id,
+        driverId: identity.user.steamId,
+        type: "fine",
+        title: identity.user.displayName + " received " + body.type.replaceAll("_", " "),
+        detail: body.city ? "Location: " + body.city : null,
+        amount: body.amount,
+        currency: body.currency,
+        metadata: { fineId: fine.id, game: body.game, offence: body.type },
+        occurredAt: body.occurredAt,
+      });
+    }
     return reply.code(201).send({ fine });
   }
 
@@ -244,6 +259,26 @@ app.post("/api/v1/telemetry/jobs/completed", async (request, reply) => {
       driverId: identity.user.steamId,
       vtcId: membership?.vtc.id ?? null,
     });
+    if (membership) {
+      await recordVtcActivity({
+        vtcId: membership.vtc.id,
+        driverId: identity.user.steamId,
+        type: "job.completed",
+        title: identity.user.displayName + " completed a delivery",
+        detail: [body.cargo, body.sourceCity && body.destinationCity ? body.sourceCity + " → " + body.destinationCity : null].filter(Boolean).join(" · "),
+        amount: body.income ?? null,
+        currency: body.game === "ats" ? "USD" : "EUR",
+        metadata: {
+          jobId: job.id,
+          game: body.game,
+          cargo: body.cargo,
+          sourceCity: body.sourceCity,
+          destinationCity: body.destinationCity,
+          distanceKm: body.distanceKm,
+        },
+        occurredAt: body.completedAt,
+      });
+    }
     return reply.code(201).send({ job });
   }
 
