@@ -21,6 +21,8 @@ type RadioStation = {
   name: string;
   url: string;
   genre?: string;
+  type?: string;
+  tags?: string[];
   language?: string;
   bitrateKbps?: number;
   country?: string;
@@ -72,6 +74,7 @@ function OverlayContent() {
   const [radioStations] = useState<RadioStation[]>(overlayRadioStations);
   const [selectedRadioId, setSelectedRadioId] = useState(overlayRadioStations[0]?.id || "");
   const [radioQuery, setRadioQuery] = useState("");
+  const [radioCategory, setRadioCategory] = useState("ALL");
   const [onlineRadioStations, setOnlineRadioStations] = useState<RadioStation[]>([]);
   const [catalogRadioStations, setCatalogRadioStations] = useState<RadioStation[]>([]);
   const [catalogRadioLoading, setCatalogRadioLoading] = useState(true);
@@ -196,58 +199,114 @@ function OverlayContent() {
 
   useEffect(() => {
     let active = true;
+    let timer: ReturnType<typeof setInterval> | undefined;
+
+    const mapJsonStation = (station: any, index: number): RadioStation | null => {
+      const url = String(station?.url || "").trim();
+      if (!url || !/^https?:\/\//i.test(url)) return null;
+      if (/^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return null;
+
+      const tags = Array.isArray(station?.tags)
+        ? station.tags.map((value: unknown) => String(value).trim()).filter(Boolean)
+        : [];
+
+      const type = String(station?.type || tags[0] || station?.genre || station?.codec || "Other").trim() || "Other";
+
+      return {
+        id: "json-" + String(station?.stationUuid || station?.stationuuid || url || index),
+        name: String(station?.name || "Unknown station"),
+        url,
+        country: station?.country ? String(station.country).toUpperCase() : undefined,
+        type,
+        tags,
+        genre: type,
+        language: station?.language ? String(station.language) : undefined,
+        codec: station?.codec ? String(station.codec) : undefined,
+        bitrateKbps: Number.isFinite(Number(station?.bitrate)) ? Number(station.bitrate) : undefined,
+        source: "json-catalog",
+      };
+    };
+
+    const loadApiFallback = async () => {
+      const response = await fetch(api + "/api/v1/public/radio/catalog?limit=20000", {
+        cache: "no-store",
+      });
+      if (!response.ok) throw new Error("Fallback radio catalog returned HTTP " + response.status);
+
+      const data = await response.json() as {
+        stations?: Array<{
+          id?: string;
+          stationUuid?: string | null;
+          name?: string;
+          country?: string | null;
+          language?: string | null;
+          genre?: string | null;
+          codec?: string | null;
+          bitrateKbps?: number | null;
+          source?: string | null;
+          playback?: { direct?: string | null; browser?: string | null };
+        }>;
+      };
+
+      return (data.stations ?? []).flatMap((station, index): RadioStation[] => {
+        const url = station.playback?.direct || station.playback?.browser || "";
+        if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return [];
+        return [{
+          id: "catalog-" + (station.id || station.stationUuid || index),
+          name: station.name || "Unknown station",
+          url,
+          country: station.country || undefined,
+          language: station.language || undefined,
+          genre: station.genre || undefined,
+          type: station.genre || station.codec || "Other",
+          codec: station.codec || undefined,
+          bitrateKbps: station.bitrateKbps || undefined,
+          source: station.source || "radio-browser",
+        }];
+      });
+    };
 
     const loadLargeRadioCatalog = async () => {
       setCatalogRadioLoading(true);
       try {
-        const response = await fetch(api + "/api/v1/public/radio/catalog?limit=20000", {
-          cache: "force-cache",
+        const response = await fetch("/data/radio-stations.json?t=" + Date.now(), {
+          cache: "no-store",
         });
-        if (!response.ok) throw new Error("Large radio catalog returned HTTP " + response.status);
+        if (!response.ok) throw new Error("Radio JSON returned HTTP " + response.status);
 
-        const data = await response.json() as {
-          stations?: Array<{
-            id?: string;
-            stationUuid?: string | null;
-            name?: string;
-            country?: string | null;
-            language?: string | null;
-            genre?: string | null;
-            codec?: string | null;
-            bitrateKbps?: number | null;
-            source?: string | null;
-            playback?: { direct?: string | null; browser?: string | null };
-          }>;
-        };
+        const data = await response.json() as unknown;
+        if (!Array.isArray(data)) throw new Error("Radio JSON must be an array");
+
+        const stations = data
+          .map(mapJsonStation)
+          .filter((station): station is RadioStation => Boolean(station));
 
         if (!active) return;
 
-        const stations: RadioStation[] = (data.stations ?? []).flatMap((station, index): RadioStation[] => {
-          const url = station.playback?.direct || station.playback?.browser || "";
-          if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return [];
-          return [{
-            id: "catalog-" + (station.id || station.stationUuid || index),
-            name: station.name || "Unknown station",
-            url,
-            country: station.country || undefined,
-            language: station.language || undefined,
-            genre: station.genre || undefined,
-            codec: station.codec || undefined,
-            bitrateKbps: station.bitrateKbps || undefined,
-            source: station.source || "radio-browser",
-          }];
-        });
-
-        setCatalogRadioStations(stations);
+        if (stations.length) {
+          setCatalogRadioStations(stations);
+        } else {
+          setCatalogRadioStations(await loadApiFallback());
+        }
       } catch {
-        if (active) setCatalogRadioStations([]);
+        if (!active) return;
+        try {
+          setCatalogRadioStations(await loadApiFallback());
+        } catch {
+          setCatalogRadioStations([]);
+        }
       } finally {
         if (active) setCatalogRadioLoading(false);
       }
     };
 
     void loadLargeRadioCatalog();
-    return () => { active = false; };
+    timer = setInterval(() => void loadLargeRadioCatalog(), 60_000);
+
+    return () => {
+      active = false;
+      if (timer) clearInterval(timer);
+    };
   }, []);
 
   const setPreference = (key: "traffic" | "staff" | "missions", value: boolean) => {
@@ -257,16 +316,49 @@ function OverlayContent() {
     window.chrome?.webview?.postMessage({ type: "overlay.preference", key, value });
   };
 
+  const radioCategories = useMemo(() => {
+    const values = new Set<string>();
+    for (const station of [...radioStations, ...catalogRadioStations, ...onlineRadioStations]) {
+      const type = String(station.type || station.genre || "").trim();
+      if (type) values.add(type);
+      for (const tag of station.tags || []) {
+        const clean = String(tag).trim();
+        if (clean) values.add(clean);
+      }
+    }
+    return [...values].sort((a, b) => a.localeCompare(b));
+  }, [radioStations, catalogRadioStations, onlineRadioStations]);
+
   const filteredRadioStations = useMemo(() => {
     const query = radioQuery.trim().toLowerCase();
     const combined = [...radioStations, ...catalogRadioStations];
-    if (!query) return combined;
-    return combined.filter((station) =>
-      [station.name, station.genre, station.language, station.country, station.codec]
+
+    return combined.filter((station) => {
+      const categoryValues = [
+        station.type,
+        station.genre,
+        ...(station.tags || []),
+      ].filter(Boolean).map((value) => String(value).toLowerCase());
+
+      if (radioCategory !== "ALL" && !categoryValues.includes(radioCategory.toLowerCase())) {
+        return false;
+      }
+
+      if (!query) return true;
+
+      return [
+        station.name,
+        station.type,
+        station.genre,
+        ...(station.tags || []),
+        station.language,
+        station.country,
+        station.codec,
+      ]
         .filter(Boolean)
-        .some((value) => String(value).toLowerCase().includes(query))
-    );
-  }, [radioQuery, radioStations, catalogRadioStations]);
+        .some((value) => String(value).toLowerCase().includes(query));
+    });
+  }, [radioQuery, radioCategory, radioStations, catalogRadioStations]);
 
   const allRadioSearchResults = useMemo(() => {
     const seen = new Set<string>();
@@ -901,8 +993,8 @@ function OverlayContent() {
             <section className="gameOverlayRadioLocal">
               <strong>Local PC playback</strong>
               <small>
-                The overlay keeps your bundled stations and loads up to 20,000 additional public stations for browsing and search.
-                OpenHaul is used only to fetch station metadata; playback always uses the selected station's original stream URL directly on your PC.
+                The overlay loads its main worldwide catalog from /data/radio-stations.json and refreshes it every minute.
+                GitHub Actions rebuilds that JSON from Radio Browser mirrors by country, while playback still uses each station's original stream URL directly on your PC.
               </small>
             </section>
 
@@ -918,6 +1010,16 @@ function OverlayContent() {
                   </p>
                 </div>
                 <div className="gameOverlayRadioSearch">
+                  <select
+                    value={radioCategory}
+                    onChange={(event) => setRadioCategory(event.target.value)}
+                    aria-label="Filter radio stations by category"
+                  >
+                    <option value="ALL">All categories</option>
+                    {radioCategories.map((category) => (
+                      <option key={category} value={category}>{category}</option>
+                    ))}
+                  </select>
                   <input
                     value={radioQuery}
                     onChange={(event) => {
@@ -928,7 +1030,7 @@ function OverlayContent() {
                     onKeyDown={(event) => {
                       if (event.key === "Enter") void searchOnlineRadio();
                     }}
-                    placeholder="Search station, country, genre, language or codec"
+                    placeholder="Search station, country, category, language or codec"
                     aria-label="Search radio stations"
                   />
                   <button
@@ -954,7 +1056,7 @@ function OverlayContent() {
                       <span>
                         <strong>{station.name}</strong>
                         <small>
-                          {[station.country, station.genre, station.language, station.codec?.toUpperCase(), station.bitrateKbps ? station.bitrateKbps + " kbps" : null]
+                          {[station.country, station.type || station.genre, station.language, station.codec?.toUpperCase(), station.bitrateKbps ? station.bitrateKbps + " kbps" : null]
                             .filter(Boolean)
                             .join(" · ") || "Internet radio"}
                         </small>
