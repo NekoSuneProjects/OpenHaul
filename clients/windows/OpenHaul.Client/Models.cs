@@ -36,7 +36,8 @@ public sealed record PluginLiveTelemetry(
 public sealed record PluginFineTelemetry(
     string Game,
     string Offence,
-    long Amount);
+    long Amount,
+    string? EventId = null);
 
 public sealed record PluginJobCompletedTelemetry(
     string Game,
