@@ -467,12 +467,36 @@ function driverFeatureCollection(drivers: Driver[], staff: Array<{ driverId: str
   };
 }
 
+function trafficServerTag(server: string, game: string) {
+  const value = server.trim();
+  if (!value) return game === "ats" ? "ATS" : "ETS2";
+
+  const normalized = value
+    .replace(/^ETS2\s*-\s*/i, "")
+    .replace(/^ATS\s*-\s*/i, "")
+    .replace(/\[US\]/gi, "US")
+    .replace(/\[SGP\]/gi, "SGP")
+    .trim();
+
+  return normalized
+    .replace(/Simulation\s*1/i, "SIM 1")
+    .replace(/Simulation\s*2/i, "SIM 2")
+    .replace(/Simulation/i, "SIM")
+    .replace(/Arcade/i, "ARCADE")
+    .replace(/ProMods/i, "PROMODS")
+    .toUpperCase();
+}
+
 function trafficFeatureCollection(traffic: any[]) {
   return {
     type: "FeatureCollection" as const,
     features: (traffic ?? []).flatMap((jam: any) => {
       const position = gameCoordsToLonLat(jam.game, Number(jam.x), Number(jam.z));
       if (!isValidLonLat(position)) return [];
+
+      const server = String(jam.server ?? "");
+      const game = String(jam.game ?? "").toLowerCase();
+
       return [{
         type: "Feature" as const,
         geometry: { type: "Point" as const, coordinates: position },
@@ -481,7 +505,10 @@ function trafficFeatureCollection(traffic: any[]) {
           severity: String(jam.severity ?? "low"),
           drivers: Number(jam.drivers ?? 0),
           averageSpeedKph: Number(jam.averageSpeedKph ?? 0),
-          server: String(jam.server ?? ""),
+          server,
+          serverTag: trafficServerTag(server, game),
+          game,
+          source: String(jam.source ?? (server ? "truckersmp" : "openhaul")),
         },
       }];
     }),
@@ -1232,15 +1259,74 @@ export function MapClient() {
           type: "symbol",
           source: "openhaul-traffic",
           layout: {
-            "text-field": ["concat", "TRAFFIC ", ["to-string", ["get", "drivers"]]],
+            "text-field": [
+              "concat",
+              ["get", "serverTag"],
+              "\nTRAFFIC ",
+              ["to-string", ["get", "drivers"]],
+            ],
             "text-size": 11,
             "text-offset": [0, 1.7],
+            "text-allow-overlap": true,
           },
           paint: {
             "text-color": "#fff7e6",
             "text-halo-color": "#3a1200",
             "text-halo-width": 2,
           },
+        });
+
+        map.on("mouseenter", "openhaul-traffic-jams", () => {
+          map.getCanvas().style.cursor = "pointer";
+        });
+
+        map.on("mouseleave", "openhaul-traffic-jams", () => {
+          map.getCanvas().style.cursor = "";
+        });
+
+        map.on("click", "openhaul-traffic-jams", (event) => {
+          const feature = event.features?.[0];
+          if (!feature || feature.geometry.type !== "Point") return;
+
+          const properties = feature.properties || {};
+          const coordinates = feature.geometry.coordinates as [number, number];
+
+          const card = document.createElement("div");
+          card.className = "mapPopup";
+
+          const title = document.createElement("strong");
+          title.textContent =
+            String(properties.serverTag || properties.game || "Traffic") +
+            " · Traffic";
+          card.appendChild(title);
+
+          const lines = [
+            properties.server
+              ? "Server: " + String(properties.server)
+              : "Server: OpenHaul / unknown",
+            properties.game
+              ? "Game: " + String(properties.game).toUpperCase()
+              : "",
+            "Players in traffic area: " + String(properties.drivers || 0),
+            Number(properties.averageSpeedKph || 0) > 0
+              ? "Average speed: " + Math.round(Number(properties.averageSpeedKph)) + " km/h"
+              : "Traffic source: player density",
+            "Severity: " + String(properties.severity || "low").toUpperCase(),
+            properties.source
+              ? "Source: " + (String(properties.source).includes("truckersmp") ? "TruckersMP" : "OpenHaul")
+              : "",
+          ].filter(Boolean);
+
+          for (const line of lines) {
+            const row = document.createElement("div");
+            row.textContent = line;
+            card.appendChild(row);
+          }
+
+          new maplibregl.Popup({ offset: 16, closeOnMove: false })
+            .setLngLat(coordinates)
+            .setDOMContent(card)
+            .addTo(map);
         });
 
         if (!map.hasImage("openhaul-driver-arrow")) {
