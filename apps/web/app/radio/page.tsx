@@ -66,6 +66,7 @@ function trackText(song?: Song) {
 export default function RadioPage() {
   const [data, setData] = useState<RadioData | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [clock, setClock] = useState(Date.now());
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -81,18 +82,30 @@ export default function RadioPage() {
     };
 
     void load();
-    const timer = setInterval(load, 12000);
+    const timer = setInterval(load, 2000);
     return () => {
       active = false;
       clearInterval(timer);
     };
   }, []);
 
-  const progress = useMemo(() => {
-    const elapsed = data?.now_playing?.elapsed ?? 0;
+  useEffect(() => {
+    const timer = setInterval(() => setClock(Date.now()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const effectiveElapsed = useMemo(() => {
+    const sourceElapsed = data?.now_playing?.elapsed ?? 0;
+    const playedAt = data?.now_playing?.played_at ?? 0;
+    const fromTimestamp = playedAt > 0 ? Math.max(0, Math.floor(clock / 1000) - playedAt) : sourceElapsed;
     const total = data?.now_playing?.duration ?? 0;
-    return total > 0 ? Math.max(0, Math.min(100, (elapsed / total) * 100)) : 0;
-  }, [data]);
+    return total > 0 ? Math.min(total, Math.max(sourceElapsed, fromTimestamp)) : Math.max(sourceElapsed, fromTimestamp);
+  }, [data, clock]);
+
+  const progress = useMemo(() => {
+    const total = data?.now_playing?.duration ?? 0;
+    return total > 0 ? Math.max(0, Math.min(100, (effectiveElapsed / total) * 100)) : 0;
+  }, [data, effectiveElapsed]);
 
   const stream = "https://radio.truckers.fm";
   const now = data?.now_playing?.song;
@@ -103,7 +116,7 @@ export default function RadioPage() {
     if (!audio) return;
 
     if (audio.paused) {
-      audio.src = stream;
+      audio.src = "https://radio.truckers.fm";
       await audio.play();
       setPlaying(true);
     } else {
@@ -132,7 +145,7 @@ export default function RadioPage() {
             <div style={{ height: "100%", width: `${progress}%`, background: "var(--accent)" }} />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: 7 }} className="muted">
-            <span>{duration(data?.now_playing?.elapsed)}</span>
+            <span>{duration(effectiveElapsed)}</span>
             <span>{duration(data?.now_playing?.duration)}</span>
           </div>
 
