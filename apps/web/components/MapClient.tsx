@@ -1705,7 +1705,7 @@ export function MapClient() {
             _toZ: driver.z,
             _toHeading: driver.heading,
             _startedAt: now,
-            _durationMs: DEFAULT_INTERPOLATION_MS,
+            _durationMs: driver.network === "truckersmp" ? 3800 : DEFAULT_INTERPOLATION_MS,
             _targetVersion: driver.updatedAt,
           };
           rendered.set(driver.driverId, state);
@@ -1722,7 +1722,12 @@ export function MapClient() {
             _toZ: driver.z,
             _toHeading: shortestHeading(state.heading, driver.heading),
             _startedAt: now,
-            _durationMs: Math.max(250, Math.min(1500, DEFAULT_INTERPOLATION_MS)),
+            // TruckersMP area data refreshes every ~4 seconds. Interpolate
+            // almost the entire interval so the marker, name label, popup and
+            // follow camera keep moving instead of jumping once then freezing.
+            _durationMs: driver.network === "truckersmp"
+              ? 3800
+              : Math.max(250, Math.min(1500, DEFAULT_INTERPOLATION_MS)),
             _targetVersion: driver.updatedAt,
           };
           rendered.set(driver.driverId, state);
