@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-type Tab = "map" | "drive" | "missions" | "radio" | "settings";
+type Tab = "map" | "drive" | "missions" | "radio" | "music" | "settings";
 
 type RadioStation = {
   id: string;
@@ -60,6 +60,10 @@ function OverlayContent() {
   const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
   const [radioVolume, setRadioVolume] = useState(0.7);
+  const [musicUrl, setMusicUrl] = useState("");
+  const [musicEmbedUrl, setMusicEmbedUrl] = useState("");
+  const [musicProvider, setMusicProvider] = useState("");
+  const [musicError, setMusicError] = useState("");
 
   useEffect(() => {
     document.body.classList.add("gameOverlayHost");
@@ -273,6 +277,103 @@ function OverlayContent() {
     }
   };
 
+  const buildMusicEmbed = (value: string) => {
+    const raw = value.trim();
+    if (!raw) throw new Error("Paste a music link first.");
+
+    let parsed: URL;
+    try {
+      parsed = new URL(raw);
+    } catch {
+      throw new Error("That is not a valid URL.");
+    }
+
+    const host = parsed.hostname.toLowerCase().replace(/^www\./, "");
+
+    if (host === "youtube.com" || host === "m.youtube.com" || host === "music.youtube.com" || host === "youtu.be") {
+      let videoId = "";
+      let playlistId = parsed.searchParams.get("list") || "";
+
+      if (host === "youtu.be") {
+        videoId = parsed.pathname.split("/").filter(Boolean)[0] || "";
+      } else if (parsed.pathname === "/watch") {
+        videoId = parsed.searchParams.get("v") || "";
+      } else {
+        const parts = parsed.pathname.split("/").filter(Boolean);
+        if (["shorts", "embed", "live"].includes(parts[0] || "")) videoId = parts[1] || "";
+      }
+
+      if (videoId) {
+        const params = new URLSearchParams({ autoplay: "1", playsinline: "1" });
+        if (playlistId) params.set("list", playlistId);
+        return {
+          provider: "YouTube",
+          url: `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?${params.toString()}`,
+        };
+      }
+
+      if (playlistId) {
+        return {
+          provider: "YouTube",
+          url: `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(playlistId)}&autoplay=1`,
+        };
+      }
+
+      throw new Error("Could not find a YouTube video or playlist ID in that link.");
+    }
+
+    if (host === "soundcloud.com" || host.endsWith(".soundcloud.com")) {
+      return {
+        provider: "SoundCloud",
+        url: "https://w.soundcloud.com/player/?url=" + encodeURIComponent(raw) + "&auto_play=true&show_artwork=true&visual=true",
+      };
+    }
+
+    if (host === "open.spotify.com") {
+      const parts = parsed.pathname.split("/").filter(Boolean);
+      const type = parts[0];
+      const id = parts[1];
+      if (!type || !id || !["track", "album", "playlist", "artist", "episode", "show"].includes(type)) {
+        throw new Error("Paste a Spotify track, album, playlist, artist, episode, or show URL.");
+      }
+      return {
+        provider: "Spotify",
+        url: `https://open.spotify.com/embed/${type}/${encodeURIComponent(id)}?utm_source=openhaul`,
+      };
+    }
+
+    if (host === "mixcloud.com") {
+      const feed = parsed.pathname.endsWith("/") ? parsed.pathname : parsed.pathname + "/";
+      if (feed === "/") throw new Error("Paste a Mixcloud show, track, playlist, or profile URL.");
+      return {
+        provider: "Mixcloud",
+        url: "https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=0&autoplay=1&feed=" + encodeURIComponent(feed),
+      };
+    }
+
+    if (host === "music.apple.com") {
+      return {
+        provider: "Apple Music",
+        url: "https://embed.music.apple.com" + parsed.pathname + parsed.search,
+      };
+    }
+
+    throw new Error("Supported without an API key: YouTube, SoundCloud, Spotify, Mixcloud, and Apple Music.");
+  };
+
+  const loadMusicUrl = () => {
+    try {
+      const embed = buildMusicEmbed(musicUrl);
+      setMusicProvider(embed.provider);
+      setMusicEmbedUrl(embed.url);
+      setMusicError("");
+    } catch (error) {
+      setMusicProvider("");
+      setMusicEmbedUrl("");
+      setMusicError(error instanceof Error ? error.message : String(error));
+    }
+  };
+
   const playRadio = async (station: RadioStation) => {
     const audio = audioRef.current;
     const stream = station.url;
@@ -342,6 +443,9 @@ function OverlayContent() {
         <button className={tab === "radio" ? "active" : ""} onClick={() => setTab("radio")}>
           <span>♫</span><span>Radio</span>
         </button>
+        <button className={tab === "music" ? "active" : ""} onClick={() => setTab("music")}>
+          <span>▶</span><span>Music</span>
+        </button>
         <button className={tab === "settings" ? "active" : ""} onClick={() => setTab("settings")}>
           <span>⚙</span><span>Settings</span>
         </button>
@@ -358,7 +462,7 @@ function OverlayContent() {
       <section className="gameOverlayPanel">
         <header className="gameOverlayHeader">
           <div>
-            <strong>{tab === "map" ? "Live Map" : tab === "drive" ? "Drive Session" : tab === "missions" ? "OpenHaul Cargo Missions" : tab === "radio" ? "Live Radio" : "Overlay Settings"}</strong>
+            <strong>{tab === "map" ? "Live Map" : tab === "drive" ? "Drive Session" : tab === "missions" ? "OpenHaul Cargo Missions" : tab === "radio" ? "Live Radio" : tab === "music" ? "Music Player" : "Overlay Settings"}</strong>
             <small>{driver || "No OpenHaul driver linked"}</small>
           </div>
           <div className="gameOverlayStatus">
@@ -566,6 +670,69 @@ function OverlayContent() {
               onPause={() => setRadioPlaying(false)}
               onEnded={() => setRadioPlaying(false)}
             />
+          </div>
+        ) : null}
+
+        {tab === "music" ? (
+          <div className="gameOverlayMusic">
+            <section className="gameOverlayMusicInput">
+              <div>
+                <h2>Play music from a link</h2>
+                <p>
+                  Paste a public link from YouTube, SoundCloud, Spotify, Mixcloud, or Apple Music.
+                  OpenHaul uses the platform's official embedded player and does not download or proxy the media.
+                </p>
+              </div>
+              <div className="gameOverlayMusicUrl">
+                <input
+                  value={musicUrl}
+                  onChange={(event) => {
+                    setMusicUrl(event.target.value);
+                    setMusicError("");
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") loadMusicUrl();
+                  }}
+                  placeholder="https://youtube.com/watch?v=... or SoundCloud / Spotify / Mixcloud / Apple Music"
+                  aria-label="Music URL"
+                />
+                <button type="button" disabled={!musicUrl.trim()} onClick={loadMusicUrl}>
+                  Load player
+                </button>
+              </div>
+              <div className="gameOverlayMusicProviders">
+                <span>YouTube</span>
+                <span>SoundCloud</span>
+                <span>Spotify</span>
+                <span>Mixcloud</span>
+                <span>Apple Music</span>
+              </div>
+              {musicError ? <div className="gameOverlayRadioEmpty">{musicError}</div> : null}
+            </section>
+
+            <section className="gameOverlayMusicPlayer">
+              {musicEmbedUrl ? (
+                <>
+                  <div className="gameOverlayMusicPlayerHead">
+                    <strong>{musicProvider}</strong>
+                    <small>Official embedded player · no OpenHaul media proxy</small>
+                  </div>
+                  <iframe
+                    key={musicEmbedUrl}
+                    src={musicEmbedUrl}
+                    title={musicProvider + " player"}
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture; clipboard-write"
+                    allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                </>
+              ) : (
+                <div className="gameOverlayMusicEmpty">
+                  <strong>No music loaded</strong>
+                  <span>Paste a supported public link above to open its player.</span>
+                </div>
+              )}
+            </section>
           </div>
         ) : null}
 
