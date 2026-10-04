@@ -121,6 +121,41 @@ function getRadioBrowserBase() {
   return cleanBaseUrl(process.env.RADIO_BROWSER_API_URL ?? DEFAULT_RADIO_BROWSER_URL);
 }
 
+async function canReadAudioDirectly(sourceUrl: string) {
+  return new Promise<boolean>((resolve) => {
+    const child = spawn("ffprobe", [
+      "-v", "error",
+      "-rw_timeout", "8000000",
+      "-select_streams", "a:0",
+      "-show_entries", "stream=codec_name",
+      "-of", "default=noprint_wrappers=1:nokey=1",
+      sourceUrl,
+    ], { stdio: ["ignore", "pipe", "ignore"] });
+
+    let stdout = "";
+    const timer = setTimeout(() => {
+      child.kill("SIGKILL");
+      resolve(false);
+    }, 10_000);
+
+    child.stdout.on("data", (chunk) => { stdout += String(chunk); });
+    child.once("error", () => {
+      clearTimeout(timer);
+      resolve(false);
+    });
+    child.once("exit", (code) => {
+      clearTimeout(timer);
+      resolve(code === 0 && Boolean(stdout.trim()));
+    });
+  });
+}
+
+function allowDirectProxyFallback() {
+  return !["0", "false", "no", "off"].includes(
+    String(process.env.RADIO_PROXY_ALLOW_DIRECT_FALLBACK ?? "true").trim().toLowerCase(),
+  );
+}
+
 function parseConfiguredStations(app: FastifyInstance): RadioStation[] {
   const raw = process.env.RADIO_PROXY_STATIONS_JSON?.trim();
   if (!raw || raw === "[]") return [];
@@ -333,6 +368,7 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
 
     let inputUrl = station.sourceUrl;
     let proxyNode: Awaited<ReturnType<typeof createResidentialSession>>["node"] | null = null;
+    let actualRoute = station.forceProxy ? "residential-proxy" : "direct";
 
     if (station.forceProxy) {
       try {
@@ -343,11 +379,22 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
           `?kind=media&url=${encodeURIComponent(station.sourceUrl)}`;
       } catch (error) {
         app.log.warn({ error, stationId: station.id }, "Unable to create residential radio route");
-        return reply.code(503).send({
-          error: "radio_proxy_unavailable",
-          stationId: station.id,
-          message: error instanceof Error ? error.message : String(error),
-        });
+
+        if (!allowDirectProxyFallback() || !(await canReadAudioDirectly(station.sourceUrl))) {
+          return reply.code(503).send({
+            error: "radio_proxy_unavailable",
+            stationId: station.id,
+            message: error instanceof Error ? error.message : String(error),
+            fallback: "Direct source was unavailable or direct fallback is disabled.",
+          });
+        }
+
+        actualRoute = "direct-fallback";
+        inputUrl = station.sourceUrl;
+        app.log.warn(
+          { stationId: station.id },
+          "No healthy residential proxy matched; direct radio fallback is working and will be used",
+        );
       }
     }
 
