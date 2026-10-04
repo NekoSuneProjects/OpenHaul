@@ -154,6 +154,8 @@ struct TelemetryState {
     bool cargoLoaded = false;
     bool jobActive = false;
     bool jobFinishedNormally = false;
+    bool jobDeparted = false;
+    bool jobArrivalDetected = false;
     std::string jobSignature;
     double jobSourceX = 0;
     double jobSourceZ = 0;
@@ -377,6 +379,33 @@ SCSAPI_VOID on_frame_end(const scs_event_t, const void* const, const scs_context
             maxDamage,
             g_state.cargoLoaded ? "Cargo/trailer/truck damage increased" : "Truck damage increased");
     }
+
+    if (g_state.jobActive && !g_state.jobDeparted && std::abs(g_state.speedMps) > 1.5f) {
+        const double moved = std::hypot(g_state.x - g_state.jobSourceX, g_state.z - g_state.jobSourceZ);
+        if (moved > 20.0) {
+            g_state.jobDeparted = true;
+            emit_generic_event(
+                "job.departed",
+                next_event_id("job-departed"),
+                0,
+                {},
+                -1,
+                "Departed " + g_state.sourceCity + " for " + g_state.destinationCity);
+        }
+    }
+
+    if (g_state.jobActive && g_state.jobDeparted && !g_state.jobArrivalDetected &&
+        g_state.navDistanceM > 0 && g_state.navDistanceM <= 250.0f &&
+        std::abs(g_state.speedMps) < 2.0f) {
+        g_state.jobArrivalDetected = true;
+        emit_generic_event(
+            "job.arrived",
+            next_event_id("job-arrived"),
+            0,
+            {},
+            -1,
+            "Arrived near " + g_state.destinationCity);
+    }
 }
 
 SCSAPI_VOID on_driving_state(const scs_event_t event, const void* const, const scs_context_t) {
@@ -419,6 +448,8 @@ SCSAPI_VOID on_configuration(const scs_event_t, const void* const event_info, co
 
         if (g_state.jobActive && (!wasActive || g_state.jobSignature != previousSignature)) {
             g_state.jobFinishedNormally = false;
+            g_state.jobDeparted = false;
+            g_state.jobArrivalDetected = false;
             g_state.jobSourceX = g_state.x;
             g_state.jobSourceZ = g_state.z;
             emit_generic_event(
