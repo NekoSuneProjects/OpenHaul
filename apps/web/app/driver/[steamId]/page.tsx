@@ -49,6 +49,8 @@ export default function DriverProfilePage() {
         <article className="card"><h3>{Number(stats.jobs ?? 0).toLocaleString()}</h3><p>Jobs completed</p></article>
         <article className="card"><h3>{Math.round(Number(stats.distanceKm ?? 0)).toLocaleString()} km</h3><p>Distance logged</p></article>
         <article className="card"><h3>{Number(stats.income ?? 0).toLocaleString()}</h3><p>Job income</p></article>
+        <article className="card"><h3>{Number(stats.fineAmount ?? 0).toLocaleString()}</h3><p>Penalty losses</p></article>
+        <article className="card"><h3>{Number(stats.netIncome ?? 0).toLocaleString()}</h3><p>Net after fines</p></article>
         <article className="card"><h3>{Number(stats.fines ?? 0).toLocaleString()}</h3><p>Recorded fines</p></article>
         <article className="card"><h3>{user.ownsEts2 === true ? "✅" : user.ownsEts2 === false ? "❌" : "⚪"}</h3><p>ETS2 ownership</p></article>
         <article className="card"><h3>{user.ownsAts === true ? "✅" : user.ownsAts === false ? "❌" : "⚪"}</h3><p>ATS ownership</p></article>
