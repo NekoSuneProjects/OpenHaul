@@ -23,6 +23,9 @@ type RadioStation = {
   genre?: string;
   language?: string;
   bitrateKbps?: number;
+  country?: string;
+  codec?: string;
+  source?: string;
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
@@ -50,6 +53,9 @@ function OverlayContent() {
   const [radioStations] = useState<RadioStation[]>(overlayRadioStations);
   const [selectedRadioId, setSelectedRadioId] = useState(overlayRadioStations[0]?.id || "");
   const [radioQuery, setRadioQuery] = useState("");
+  const [onlineRadioStations, setOnlineRadioStations] = useState<RadioStation[]>([]);
+  const [onlineRadioLoading, setOnlineRadioLoading] = useState(false);
+  const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
   const [radioVolume, setRadioVolume] = useState(0.7);
 
@@ -116,16 +122,89 @@ function OverlayContent() {
     const query = radioQuery.trim().toLowerCase();
     if (!query) return radioStations;
     return radioStations.filter((station) =>
-      [station.name, station.genre, station.language]
+      [station.name, station.genre, station.language, station.country, station.codec]
         .filter(Boolean)
         .some((value) => String(value).toLowerCase().includes(query))
     );
   }, [radioQuery, radioStations]);
 
+  const allVisibleRadioStations = useMemo(() => {
+    const seen = new Set<string>();
+    return [...filteredRadioStations, ...onlineRadioStations].filter((station) => {
+      const key = (station.url + "|" + station.name).toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }, [filteredRadioStations, onlineRadioStations]);
+
   const selectedRadio = useMemo(
-    () => radioStations.find((station) => station.id === selectedRadioId) ?? radioStations[0] ?? null,
-    [radioStations, selectedRadioId],
+    () => [...radioStations, ...onlineRadioStations].find((station) => station.id === selectedRadioId)
+      ?? radioStations[0]
+      ?? onlineRadioStations[0]
+      ?? null,
+    [radioStations, onlineRadioStations, selectedRadioId],
   );
+
+  const searchOnlineRadio = async () => {
+    const query = radioQuery.trim();
+    if (!query) return;
+
+    setOnlineRadioLoading(true);
+    setOnlineRadioError("");
+    try {
+      const params = new URLSearchParams({
+        page: "1",
+        pageSize: "100",
+        country: "ALL",
+        q: query,
+      });
+      const response = await fetch(api + "/api/v1/public/radio/directory?" + params.toString(), {
+        cache: "no-store",
+      });
+      if (!response.ok) throw new Error("Public radio search returned HTTP " + response.status);
+
+      const data = await response.json() as {
+        stations?: Array<{
+          id?: string;
+          stationUuid?: string | null;
+          name?: string;
+          country?: string | null;
+          language?: string | null;
+          genre?: string | null;
+          codec?: string | null;
+          bitrateKbps?: number | null;
+          source?: string | null;
+          playback?: { direct?: string | null; browser?: string | null };
+        }>;
+      };
+
+      const stations: RadioStation[] = (data.stations ?? [])
+        .map((station, index) => {
+          const url = station.playback?.direct || station.playback?.browser || "";
+          if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return null;
+          return {
+            id: "online-" + (station.id || station.stationUuid || index),
+            name: station.name || "Unknown station",
+            url,
+            country: station.country || undefined,
+            language: station.language || undefined,
+            genre: station.genre || undefined,
+            codec: station.codec || undefined,
+            bitrateKbps: station.bitrateKbps || undefined,
+            source: station.source || "public-directory",
+          } satisfies RadioStation;
+        })
+        .filter((station): station is RadioStation => station !== null);
+
+      setOnlineRadioStations(stations);
+    } catch (error) {
+      setOnlineRadioStations([]);
+      setOnlineRadioError(error instanceof Error ? error.message : String(error));
+    } finally {
+      setOnlineRadioLoading(false);
+    }
+  };
 
   const playRadio = async (station: RadioStation) => {
     const audio = audioRef.current;
@@ -336,8 +415,8 @@ function OverlayContent() {
             <section className="gameOverlayRadioLocal">
               <strong>Local PC playback</strong>
               <small>
-                The station catalog is bundled directly with /overlay, and OpenHaul plays each station's original stream URL on your PC.
-                No radio-directory API, OpenHaul audio proxy, or NekoRoute relay is used for playback.
+                The built-in station catalog is bundled directly with /overlay. You can also search public radio directories for more stations.
+                Search uses OpenHaul only for discovery; playback always uses the selected station's original stream URL directly on your PC.
               </small>
             </section>
 
@@ -345,18 +424,37 @@ function OverlayContent() {
               <div className="gameOverlayRadioDirectoryHead">
                 <div>
                   <h2>Stations</h2>
-                  <p>{filteredRadioStations.length + " stations shown · bundled with /overlay"}</p>
+                  <p>
+                    {filteredRadioStations.length + " bundled"}
+                    {onlineRadioStations.length ? " · " + onlineRadioStations.length + " online" : ""}
+                  </p>
                 </div>
-                <input
-                  value={radioQuery}
-                  onChange={(event) => setRadioQuery(event.target.value)}
-                  placeholder="Search station, genre or language"
-                  aria-label="Search radio stations"
-                />
+                <div className="gameOverlayRadioSearch">
+                  <input
+                    value={radioQuery}
+                    onChange={(event) => {
+                      setRadioQuery(event.target.value);
+                      setOnlineRadioStations([]);
+                      setOnlineRadioError("");
+                    }}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") void searchOnlineRadio();
+                    }}
+                    placeholder="Search station, country, genre, language or codec"
+                    aria-label="Search radio stations"
+                  />
+                  <button
+                    type="button"
+                    disabled={!radioQuery.trim() || onlineRadioLoading}
+                    onClick={() => void searchOnlineRadio()}
+                  >
+                    {onlineRadioLoading ? "Searching…" : "Search online"}
+                  </button>
+                </div>
               </div>
 
               <div className="gameOverlayRadioStations">
-                {filteredRadioStations.map((station) => {
+                {allVisibleRadioStations.map((station) => {
                   const active = selectedRadio?.id === station.id;
                   return (
                     <button
@@ -368,7 +466,7 @@ function OverlayContent() {
                       <span>
                         <strong>{station.name}</strong>
                         <small>
-                          {[station.genre, station.language, station.bitrateKbps ? station.bitrateKbps + " kbps" : null]
+                          {[station.country, station.genre, station.language, station.codec?.toUpperCase(), station.bitrateKbps ? station.bitrateKbps + " kbps" : null]
                             .filter(Boolean)
                             .join(" · ") || "Internet radio"}
                         </small>
@@ -379,8 +477,11 @@ function OverlayContent() {
                     </button>
                   );
                 })}
-                {filteredRadioStations.length === 0 ? (
+                {allVisibleRadioStations.length === 0 ? (
                   <div className="gameOverlayRadioEmpty">No stations match that search.</div>
+                ) : null}
+                {onlineRadioError ? (
+                  <div className="gameOverlayRadioEmpty">Online search failed: {onlineRadioError}</div>
                 ) : null}
               </div>
             </section>
