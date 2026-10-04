@@ -1172,3 +1172,25 @@ h1 {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+
+body.gameOverlayHost {
+  overflow: hidden;
+  background: transparent !important;
+}
+
+body.gameOverlayHost .sidebar,
+body.gameOverlayHost .mobileTopbar,
+body.gameOverlayHost .radio {
+  display: none !important;
+}
+
+body.gameOverlayHost .appMain {
+  margin-left: 0 !important;
+  min-height: 100vh;
+}
+
+body.gameOverlayHost .contentFrame {
+  min-height: 100vh;
+  padding: 0 !important;
+}
