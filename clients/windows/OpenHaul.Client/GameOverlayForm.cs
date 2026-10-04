@@ -138,7 +138,13 @@ public sealed class GameOverlayForm : Form
 
         try
         {
-            await _webView.EnsureCoreWebView2Async();
+            var webViewData = Path.Combine(ClientSettings.SettingsDirectory, "WebView2", "Overlay");
+            Directory.CreateDirectory(webViewData);
+            var environment = await CoreWebView2Environment.CreateAsync(
+                browserExecutableFolder: null,
+                userDataFolder: webViewData);
+
+            await _webView.EnsureCoreWebView2Async(environment);
             if (_webView.CoreWebView2 is null) return;
 
             _webView.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
@@ -154,7 +160,8 @@ public sealed class GameOverlayForm : Form
         {
             MessageBox.Show(
                 "OpenHaul could not start the in-game overlay browser.\n\n" +
-                "Install/repair Microsoft Edge WebView2 Runtime and restart OpenHaul.\n\n" +
+                "OpenHaul now stores WebView2 data under your LocalAppData folder so installs under Program Files do not need write access.\n\n" +
+                "If this still fails, repair Microsoft Edge WebView2 Runtime and restart OpenHaul.\n\n" +
                 ex.Message,
                 "OpenHaul Overlay",
                 MessageBoxButtons.OK,
