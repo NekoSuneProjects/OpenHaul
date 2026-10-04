@@ -203,6 +203,36 @@ export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
     return reply.code(204).send();
   });
 
+  app.post("/api/v1/account/vtcs/:id/role-presets", { preHandler: [requireVtcManager] }, async (request, reply) => {
+    if (reply.sent) return;
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const presets = [
+      { key: "dispatcher", title: "Dispatcher", baseRole: "staff", order: 20, permissions: ["dispatch:read", "dispatch:write", "live:read"] },
+      { key: "fleet-manager", title: "Fleet Manager", baseRole: "staff", order: 30, permissions: ["fleet:read", "fleet:write", "maintenance:write"] },
+      { key: "recruiter", title: "Recruiter", baseRole: "staff", order: 40, permissions: ["applications:read", "applications:write", "members:invite"] },
+      { key: "trainer", title: "Trainer", baseRole: "staff", order: 50, permissions: ["training:read", "training:write", "certifications:write"] },
+      { key: "driver", title: "Driver", baseRole: "member", order: 100, permissions: ["jobs:read", "events:read", "live:read"] },
+    ];
+    for (const preset of presets) {
+      await PlatformRecord.findOrCreate({
+        where: { scopeType: "vtc", scopeId: String(id), category: "roles", key: preset.key },
+        defaults: {
+          scopeType: "vtc",
+          scopeId: String(id),
+          category: "roles",
+          key: preset.key,
+          status: "active",
+          data: preset,
+          createdByUserId: request.openhaulUser!.id,
+        },
+      });
+    }
+    return { presets: await PlatformRecord.findAll({
+      where: { scopeType: "vtc", scopeId: String(id), category: "roles", status: { [Op.ne]: "deleted" } },
+      order: [["createdAt", "ASC"]],
+    }) };
+  });
+
   app.get("/api/v1/account/vtcs/:id/features/:category", { preHandler: [requireVtcManager] }, async (request, reply) => {
     if (reply.sent) return;
     const params = z.object({ id: z.coerce.number().int().positive(), category: z.string().min(1).max(64) }).parse(request.params);
