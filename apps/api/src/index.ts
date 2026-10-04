@@ -3,7 +3,7 @@ import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
 import Fastify from "fastify";
 import { z } from "zod";
-import { DriverPosition, Fine, Job, TelemetryEvent, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
+import { DriverPosition, Fine, Job, PlatformRecord, TelemetryEvent, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
@@ -692,6 +692,129 @@ app.get("/api/v1/public/drivers/:driverId/timeline", async (request) => {
       limit: query.limit,
     }),
   };
+});
+
+app.get("/api/v1/client/dispatch", async (request, reply) => {
+  const identity = await requireTelemetryIdentity(request, reply);
+  if (!identity) return;
+  if (identity.kind !== "user") return reply.code(403).send({ error: "user_client_required" });
+
+  const memberships = await VtcMember.findAll({
+    where: { userId: identity.user.id, status: "active" },
+    attributes: ["vtcId"],
+  });
+  const vtcIds = memberships.map((membership: any) => String(membership.getDataValue("vtcId")));
+  if (!vtcIds.length) return { dispatches: [] };
+
+  const records = await PlatformRecord.findAll({
+    where: {
+      scopeType: "vtc",
+      scopeId: { [sequelize.Sequelize.Op.in]: vtcIds },
+      category: "dispatch",
+      status: { [sequelize.Sequelize.Op.in]: ["pending", "accepted"] },
+    },
+    order: [["updatedAt", "DESC"]],
+    limit: 200,
+  });
+
+  const now = Date.now();
+  const visible = [];
+  for (const record of records as any[]) {
+    const data = (record.getDataValue("data") ?? {}) as any;
+    const assigned = String(data.driverSteamId ?? "");
+    const candidates = Array.isArray(data.candidateDriverIds) ? data.candidateDriverIds.map(String) : [];
+    const expiresAt = data.expiresAt ? new Date(String(data.expiresAt)).getTime() : null;
+
+    if (expiresAt && Number.isFinite(expiresAt) && expiresAt < now && record.getDataValue("status") === "pending") {
+      await record.update({ status: "expired", data: { ...data, expiredAt: new Date().toISOString() } });
+      continue;
+    }
+
+    if (assigned !== identity.user.steamId && !candidates.includes(identity.user.steamId)) continue;
+    visible.push(record);
+  }
+
+  return { dispatches: visible };
+});
+
+app.post("/api/v1/client/dispatch/:dispatchId/respond", async (request, reply) => {
+  const identity = await requireTelemetryIdentity(request, reply);
+  if (!identity) return;
+  if (identity.kind !== "user") return reply.code(403).send({ error: "user_client_required" });
+
+  const { dispatchId } = z.object({ dispatchId: z.coerce.number().int().positive() }).parse(request.params);
+  const body = z.object({ decision: z.enum(["accepted", "declined"]) }).parse(request.body);
+
+  const record = await PlatformRecord.findByPk(dispatchId);
+  if (!record || record.getDataValue("category") !== "dispatch") {
+    return reply.code(404).send({ error: "dispatch_not_found" });
+  }
+
+  const membership = await VtcMember.findOne({
+    where: {
+      vtcId: Number(record.getDataValue("scopeId")),
+      userId: identity.user.id,
+      status: "active",
+    },
+  });
+  if (!membership) return reply.code(403).send({ error: "not_member_of_vtc" });
+
+  const data = (record.getDataValue("data") ?? {}) as any;
+  const assigned = String(data.driverSteamId ?? "");
+  const candidates = Array.isArray(data.candidateDriverIds) ? data.candidateDriverIds.map(String) : [];
+  if (assigned !== identity.user.steamId && !candidates.includes(identity.user.steamId)) {
+    return reply.code(403).send({ error: "dispatch_not_assigned" });
+  }
+
+  const expiresAt = data.expiresAt ? new Date(String(data.expiresAt)).getTime() : null;
+  if (expiresAt && Number.isFinite(expiresAt) && expiresAt < Date.now()) {
+    await record.update({ status: "expired", data: { ...data, expiredAt: new Date().toISOString() } });
+    return reply.code(409).send({ error: "dispatch_expired" });
+  }
+
+  const audit = Array.isArray(data.audit) ? data.audit : [];
+  audit.push({
+    at: new Date().toISOString(),
+    driverSteamId: identity.user.steamId,
+    decision: body.decision,
+  });
+
+  if (body.decision === "accepted") {
+    await record.update({
+      status: "accepted",
+      data: {
+        ...data,
+        driverSteamId: identity.user.steamId,
+        acceptedAt: new Date().toISOString(),
+        audit,
+      },
+    });
+  } else {
+    const remaining = candidates.filter((candidate: string) => candidate !== identity.user.steamId);
+    const nextDriver = data.allowReassign !== false ? remaining[0] : null;
+    await record.update({
+      status: nextDriver ? "pending" : "declined",
+      data: {
+        ...data,
+        driverSteamId: nextDriver ?? identity.user.steamId,
+        candidateDriverIds: remaining,
+        declinedAt: new Date().toISOString(),
+        reassignedAt: nextDriver ? new Date().toISOString() : null,
+        audit,
+      },
+    });
+  }
+
+  await recordVtcActivity({
+    vtcId: Number(record.getDataValue("scopeId")),
+    driverId: identity.user.steamId,
+    actorUserId: identity.user.id,
+    type: "dispatch." + body.decision,
+    title: identity.user.displayName + " " + body.decision + " dispatch " + String(record.getDataValue("key")),
+    metadata: { dispatchId: record.id },
+  });
+
+  return { dispatch: record };
 });
 
 app.get("/api/v1/vtc/me", { preHandler: [requireVtcApiKey] }, async (request) => {
