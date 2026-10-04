@@ -1,4 +1,5 @@
 import type { FastifyInstance } from "fastify";
+import { z } from "zod";
 import { User } from "./db.js";
 import { createAccountSession, deleteAccountSession, requireUser } from "./accountSession.js";
 import { fetchSteamProfile, refreshSteamOwnership } from "./steam.js";
@@ -124,6 +125,25 @@ export async function registerAccountRoutes(app: FastifyInstance) {
   app.get("/api/v1/account/me", { preHandler: [requireUser] }, async (request) => ({
     user: request.openhaulUser,
   }));
+
+  app.patch("/api/v1/account/profile", { preHandler: [requireUser] }, async (request) => {
+    const body = z.object({
+      bio: z.string().max(4000).nullable().optional(),
+      country: z.string().max(80).nullable().optional(),
+      bannerUrl: z.string().url().nullable().optional().or(z.literal("")),
+      socials: z.record(z.string().max(500)).optional(),
+      profilePublic: z.boolean().optional(),
+      moderationVisibility: z.enum(["public", "members", "private"]).optional(),
+    }).parse(request.body ?? {});
+
+    const user = request.openhaulUser!;
+    await user.update({
+      ...body,
+      bannerUrl: body.bannerUrl === "" ? null : body.bannerUrl,
+    });
+
+    return { user };
+  });
 
   app.post("/api/v1/account/ownership/refresh", { preHandler: [requireUser] }, async (request) => ({
     user: await refreshSteamOwnership(request.openhaulUser!),
