@@ -660,13 +660,7 @@ app.get("/api/v1/public/drivers/:driverId/replay", async (request) => {
     limit: z.coerce.number().int().min(2).max(5000).default(1000),
   }).parse(request.query);
 
-  const where: any = {
-    driverId,
-    recordedAt: { [Symbol.for("sequelize.op.gte") as any]: new Date(Date.now() - query.minutes * 60_000) },
-  };
-  if (query.sessionId) where.sessionId = query.sessionId;
-
-  // Avoid exposing Sequelize operators through JSON; build the time predicate via SQL.
+  // Keep the replay query bounded, then apply the requested rolling time window.
   const positions = await DriverPosition.findAll({
     where: query.sessionId ? { driverId, sessionId: query.sessionId } : { driverId },
     order: [["recordedAt", "DESC"]],
