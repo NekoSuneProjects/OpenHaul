@@ -981,6 +981,9 @@ h1 {
 
 .gameOverlayPanel {
   min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
   display: grid;
   grid-template-rows: 74px minmax(0, 1fr);
   background:
@@ -1123,8 +1126,13 @@ h1 {
 }
 
 .gameOverlaySettings {
-  overflow: auto;
-  padding: 22px;
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding: 22px 22px 34px;
   display: grid;
   gap: 14px;
   align-content: start;
@@ -1935,4 +1943,28 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
     width: 300px;
     height: 169px;
   }
+}
+
+
+.gameOverlaySettings {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(84,224,138,.34) rgba(3,11,7,.35);
+}
+
+.gameOverlaySettings::-webkit-scrollbar {
+  width: 10px;
+}
+
+.gameOverlaySettings::-webkit-scrollbar-track {
+  background: rgba(3,11,7,.35);
+}
+
+.gameOverlaySettings::-webkit-scrollbar-thumb {
+  border: 2px solid rgba(3,11,7,.35);
+  border-radius: 999px;
+  background: rgba(84,224,138,.34);
+}
+
+.gameOverlaySettings::-webkit-scrollbar-thumb:hover {
+  background: rgba(84,224,138,.5);
 }
