@@ -29,7 +29,13 @@ type Driver = {
   navigationTimeS?: number | null;
   speedLimitKph?: number | null;
   truckDamagePercent?: number | null;
+  engineDamagePercent?: number | null;
+  transmissionDamagePercent?: number | null;
+  cabinDamagePercent?: number | null;
+  chassisDamagePercent?: number | null;
+  wheelDamagePercent?: number | null;
   trailerDamagePercent?: number | null;
+  trailerChassisDamagePercent?: number | null;
   cargoDamagePercent?: number | null;
   specialJob?: boolean | null;
   cargoLoaded?: boolean | null;
@@ -297,6 +303,79 @@ function trafficFeatureCollection(traffic: any[]) {
     }),
   };
 }
+
+function externalDriverList(rows: any[]): Driver[] {
+  return (rows ?? []).flatMap((row: any) => {
+    if ((row.game !== "ets2" && row.game !== "ats") || !row.driverId) return [];
+    return [{
+      driverId: String(row.driverId),
+      username: String(row.username ?? row.driverId),
+      game: row.game,
+      x: Number(row.x),
+      y: Number(row.y ?? 0),
+      z: Number(row.z),
+      heading: Number(row.heading ?? 0),
+      speedKph: Number(row.speedKph ?? 0),
+      server: row.server ? String(row.server) : "TruckersMP",
+      truck: "TruckersMP",
+      updatedAt: String(row.updatedAt ?? Date.now()),
+    }];
+  });
+}
+
+function jobMarkerFeatureCollection(markers: any[]) {
+  return {
+    type: "FeatureCollection" as const,
+    features: (markers ?? []).flatMap((marker: any) => {
+      const position = gameCoordsToLonLat(marker.game, Number(marker.x), Number(marker.z));
+      if (!isValidLonLat(position)) return [];
+      return [{
+        type: "Feature" as const,
+        geometry: { type: "Point" as const, coordinates: position },
+        properties: {
+          id: String(marker.id ?? ""),
+          driverId: String(marker.driverId ?? ""),
+          markerType: String(marker.type ?? ""),
+          city: String(marker.city ?? ""),
+        },
+      }];
+    }),
+  };
+}
+
+function convoyFeatureCollection(convoys: any[]) {
+  return {
+    type: "FeatureCollection" as const,
+    features: (convoys ?? []).flatMap((convoy: any) => {
+      const points: [number, number][] = [];
+
+      for (const waypoint of convoy.route ?? []) {
+        const game = waypoint.game ?? convoy.members?.[0]?.game;
+        const position = gameCoordsToLonLat(game, Number(waypoint.x), Number(waypoint.z));
+        if (isValidLonLat(position)) points.push(position);
+      }
+
+      if (points.length < 2) {
+        for (const member of convoy.members ?? []) {
+          const position = gameCoordsToLonLat(member.game, Number(member.x), Number(member.z));
+          if (isValidLonLat(position)) points.push(position);
+        }
+      }
+
+      if (points.length < 2) return [];
+      return [{
+        type: "Feature" as const,
+        geometry: { type: "LineString" as const, coordinates: points },
+        properties: {
+          id: String(convoy.id ?? convoy.key ?? ""),
+          title: String(convoy.title ?? "Convoy"),
+          members: Number(convoy.members?.length ?? 0),
+        },
+      }];
+    }),
+  };
+}
+
 
 const SCS_LAYER_SUFFIXES = ["prefabs", "road-case", "roads", "rail", "ferry", "cities"] as const;
 
@@ -699,6 +778,65 @@ export function MapClient() {
           });
         }
 
+        for (const sourceId of ["openhaul-job-markers", "openhaul-convoys", "openhaul-replay"]) {
+          if (!map.getSource(sourceId)) {
+            map.addSource(sourceId, {
+              type: "geojson",
+              data: { type: "FeatureCollection", features: [] },
+            });
+          }
+        }
+
+        map.addLayer({
+          id: "openhaul-convoy-routes",
+          type: "line",
+          source: "openhaul-convoys",
+          paint: {
+            "line-color": "#b86cff",
+            "line-width": 4,
+            "line-opacity": 0.8,
+          },
+        });
+
+        map.addLayer({
+          id: "openhaul-replay-route",
+          type: "line",
+          source: "openhaul-replay",
+          paint: {
+            "line-color": "#35d8ff",
+            "line-width": 4,
+            "line-opacity": 0.88,
+          },
+        });
+
+        map.addLayer({
+          id: "openhaul-job-points",
+          type: "circle",
+          source: "openhaul-job-markers",
+          paint: {
+            "circle-radius": 7,
+            "circle-color": ["match", ["get", "markerType"], "origin", "#54e08a", "#ff7a7a"],
+            "circle-stroke-color": "#ffffff",
+            "circle-stroke-width": 2,
+          },
+        });
+
+        map.addLayer({
+          id: "openhaul-job-labels",
+          type: "symbol",
+          source: "openhaul-job-markers",
+          layout: {
+            "text-field": ["coalesce", ["get", "city"], ["get", "markerType"]],
+            "text-size": 11,
+            "text-offset": [0, 1.3],
+          },
+          paint: {
+            "text-color": "#ffffff",
+            "text-halo-color": "#04100a",
+            "text-halo-width": 2,
+          },
+        });
+
         map.addLayer({
           id: "openhaul-traffic-jams",
           type: "circle",
@@ -901,9 +1039,10 @@ export function MapClient() {
   useEffect(() => {
     const map = mapRef.current;
     if (!mapReady || !map) return;
-    const source = map.getSource("openhaul-traffic") as any;
-    source?.setData(trafficFeatureCollection(mapIntel.traffic ?? []));
-  }, [mapReady, mapIntel.traffic]);
+    (map.getSource("openhaul-traffic") as any)?.setData(trafficFeatureCollection(mapIntel.traffic ?? []));
+    (map.getSource("openhaul-job-markers") as any)?.setData(jobMarkerFeatureCollection(mapIntel.jobMarkers ?? []));
+    (map.getSource("openhaul-convoys") as any)?.setData(convoyFeatureCollection(mapIntel.convoys ?? []));
+  }, [mapReady, mapIntel.traffic, mapIntel.jobMarkers, mapIntel.convoys]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -1035,12 +1174,14 @@ export function MapClient() {
       return;
     }
 
-    const stillVisible = visibleDrivers.some((driver) => driver.driverId === selectedDriverId);
+    const stillVisible =
+      visibleDrivers.some((driver) => driver.driverId === selectedDriverId) ||
+      externalDriverList(mapIntel.externalDrivers ?? []).some((driver) => driver.driverId === selectedDriverId);
     if (!stillVisible) {
       setSelectedDriverId("");
       setCameraMode("map");
     }
-  }, [visibleDrivers, selectedDriverId, cameraMode]);
+  }, [visibleDrivers, selectedDriverId, cameraMode, mapIntel.externalDrivers]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -1070,6 +1211,44 @@ export function MapClient() {
   }, [initialMode, mapReady]);
 
   useEffect(() => {
+    const map = mapRef.current;
+    if (!mapReady || !map) return;
+
+    if (!selectedDriverId) {
+      (map.getSource("openhaul-replay") as any)?.setData({ type: "FeatureCollection", features: [] });
+      return;
+    }
+
+    let active = true;
+    const load = () => fetch(
+      api + "/api/v1/public/drivers/" + encodeURIComponent(selectedDriverId) + "/replay?minutes=120&limit=1000",
+      { cache: "no-store" },
+    )
+      .then((response) => response.ok ? response.json() : { points: [] })
+      .then((data) => {
+        if (!active) return;
+        const coordinates = (data.points ?? []).flatMap((point: any) => {
+          const position = gameCoordsToLonLat(point.game, Number(point.x), Number(point.z));
+          return isValidLonLat(position) ? [position] : [];
+        });
+        const collection = {
+          type: "FeatureCollection",
+          features: coordinates.length >= 2 ? [{
+            type: "Feature",
+            geometry: { type: "LineString", coordinates },
+            properties: { driverId: selectedDriverId },
+          }] : [],
+        };
+        (map.getSource("openhaul-replay") as any)?.setData(collection);
+      })
+      .catch(() => {});
+
+    void load();
+    const timer = setInterval(load, 10_000);
+    return () => { active = false; clearInterval(timer); };
+  }, [mapReady, selectedDriverId]);
+
+  useEffect(() => {
     if (!mapReady) return;
 
     let frame = 0;
@@ -1088,7 +1267,14 @@ export function MapClient() {
       }
       lastFrameAt = now;
 
-      const visible = visibleDriversRef.current;
+      const external = externalDriverList(mapIntel.externalDrivers ?? []).filter((driver) => {
+        if (gameFilter !== "all" && driver.game !== gameFilter) return false;
+        if (serverFilter !== "all" && (driver.server ?? "") !== serverFilter) return false;
+        return true;
+      });
+      const visible = [...visibleDriversRef.current, ...external.filter((driver) =>
+        !visibleDriversRef.current.some((local) => local.driverId === driver.driverId)
+      )];
       const visibleIds = new Set(visible.map((driver) => driver.driverId));
       const rendered = interpolatedRef.current;
 
@@ -1203,7 +1389,7 @@ export function MapClient() {
 
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [mapReady, cameraMode, selectedDriverId, mapIntel.staff]);
+  }, [mapReady, cameraMode, selectedDriverId, mapIntel.staff, mapIntel.externalDrivers, gameFilter, serverFilter]);
 
   const focusGame = (game: GameFilter) => {
     setGameFilter(game);
