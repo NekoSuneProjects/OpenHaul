@@ -119,6 +119,7 @@ private:
 struct TelemetryState {
     std::string game = "unknown";
     bool driving = false;
+    bool hasPlacement = false;
     double x = 0;
     double y = 0;
     double z = 0;
@@ -274,6 +275,7 @@ SCSAPI_VOID on_world_placement(
     g_state.y = value->value_dplacement.position.y;
     g_state.z = value->value_dplacement.position.z;
     g_state.heading = value->value_dplacement.orientation.heading;
+    g_state.hasPlacement = true;
 }
 
 SCSAPI_VOID on_float_channel(
@@ -288,7 +290,10 @@ SCSAPI_VOID on_float_channel(
 }
 
 SCSAPI_VOID on_frame_end(const scs_event_t, const void* const, const scs_context_t) {
-    if (g_state.driving) emit_live();
+    // Free-roam has no active cargo/job configuration, but world placement is
+    // still valid telemetry. Emit whenever the game has supplied a truck
+    // placement so free-roam drivers remain visible on the live map.
+    if (g_state.hasPlacement) emit_live();
 }
 
 SCSAPI_VOID on_driving_state(const scs_event_t event, const void* const, const scs_context_t) {
