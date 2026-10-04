@@ -293,7 +293,6 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
   });
 
   async function handleRepairStream(request: any, reply: any, token: string) {
-      const { token } = z.object({ token: z.string().min(20).max(8192) }).parse(request.params);
       let payload: RelayPayload;
       try {
         payload = verifyRelayPayload(token);
