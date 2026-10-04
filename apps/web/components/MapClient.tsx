@@ -53,6 +53,13 @@ type MapAssets = {
   ats: MapAsset;
 };
 
+type VtcOption = {
+  id: number;
+  name: string;
+  tag?: string | null;
+  memberCount?: number;
+};
+
 type InterpolatedDriver = Driver & {
   _fromX?: number;
   _fromZ?: number;
@@ -486,6 +493,7 @@ export function MapClient() {
   const [selectedDriverId, setSelectedDriverId] = useState(initialDriver);
   const [mapReady, setMapReady] = useState(false);
   const [mapAssets, setMapAssets] = useState<MapAssets | null>(null);
+  const [vtcOptions, setVtcOptions] = useState<VtcOption[]>([]);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
@@ -513,6 +521,17 @@ export function MapClient() {
     const qs = initialVtc ? "?vtc=" + encodeURIComponent(initialVtc) : "";
     return toWsUrl(api) + "/api/v1/public/live/ws" + qs;
   }, [initialVtc]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetch(api + "/api/v1/public/vtcs", { cache: "no-store", signal: controller.signal })
+      .then((response) => response.ok ? response.json() : { vtcs: [] })
+      .then((data) => {
+        if (!controller.signal.aborted) setVtcOptions(data.vtcs ?? []);
+      })
+      .catch(() => {});
+    return () => controller.abort();
+  }, []);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -589,13 +608,41 @@ export function MapClient() {
           });
         }
 
+        if (!map.hasImage("openhaul-driver-arrow")) {
+          const canvas = document.createElement("canvas");
+          canvas.width = 64;
+          canvas.height = 64;
+          const context = canvas.getContext("2d");
+          if (context) {
+            context.clearRect(0, 0, 64, 64);
+            context.beginPath();
+            context.moveTo(32, 5);
+            context.lineTo(51, 49);
+            context.lineTo(32, 40);
+            context.lineTo(13, 49);
+            context.closePath();
+            context.fillStyle = "#06110c";
+            context.fill();
+            context.lineWidth = 5;
+            context.strokeStyle = "#ffffff";
+            context.stroke();
+            map.addImage("openhaul-driver-arrow", context.getImageData(0, 0, 64, 64), { pixelRatio: 2 });
+          }
+        }
+
         map.addLayer({
           id: "openhaul-driver-dot",
           type: "circle",
           source: "openhaul-drivers",
           paint: {
-            "circle-radius": 10,
-            "circle-color": "#3b82f6",
+            "circle-radius": 12,
+            "circle-color": [
+              "match",
+              ["get", "game"],
+              "ets2", "#54e08a",
+              "ats", "#f0b35a",
+              "#3b82f6",
+            ],
             "circle-stroke-color": "#ffffff",
             "circle-stroke-width": 3,
           },
@@ -606,14 +653,12 @@ export function MapClient() {
           type: "symbol",
           source: "openhaul-drivers",
           layout: {
-            "text-field": "▲",
-            "text-size": 16,
-            "text-rotate": ["get", "rotation"],
-            "text-rotation-alignment": "map",
-            "text-allow-overlap": true,
-          },
-          paint: {
-            "text-color": "#ffffff",
+            "icon-image": "openhaul-driver-arrow",
+            "icon-size": 1,
+            "icon-rotate": ["get", "rotation"],
+            "icon-rotation-alignment": "map",
+            "icon-allow-overlap": true,
+            "icon-ignore-placement": true,
           },
         });
 
@@ -1022,12 +1067,13 @@ export function MapClient() {
   };
 
   const installedMapCount = Number(Boolean(mapAssets?.ets2.available)) + Number(Boolean(mapAssets?.ats.available));
+  const selectedVtc = vtcOptions.find((option) => String(option.id) === initialVtc);
 
   return (
     <main className="shell">
       <div className="sectionTitle">
         <div>
-          <h2>{initialVtc ? "VTC #" + initialVtc + " live map" : "Global live map"}</h2>
+          <h2>{initialVtc ? (selectedVtc?.name ?? "VTC #" + initialVtc) + " live map" : "Global live map"}</h2>
           <div className="muted">
             {visibleDrivers.length} drivers · {status} · {installedMapCount
               ? installedMapCount + " SCS map asset" + (installedMapCount === 1 ? "" : "s")
@@ -1038,7 +1084,17 @@ export function MapClient() {
 
       <section className="mapPanel realMapPanel">
         <div className="mapToolbar">
-          <input value={vtc} onChange={(e) => setVtc(e.target.value)} placeholder="VTC ID (blank = global)" />
+          <select value={vtc} onChange={(e) => setVtc(e.target.value)} aria-label="Choose VTC live map">
+            <option value="">All drivers (global map)</option>
+            {vtcOptions.map((option) => (
+              <option value={option.id} key={option.id}>
+                {option.tag ? "[" + option.tag + "] " : ""}{option.name} ({option.memberCount ?? 0} members)
+              </option>
+            ))}
+            {initialVtc && !vtcOptions.some((option) => String(option.id) === initialVtc) ? (
+              <option value={initialVtc}>VTC #{initialVtc}</option>
+            ) : null}
+          </select>
           <button className="button" onClick={applyFilter}>Apply</button>
           <button className={"button " + (gameFilter === "all" ? "primary" : "")} onClick={() => focusGame("all")}>All</button>
           <button className={"button " + (gameFilter === "ets2" ? "primary" : "")} onClick={() => focusGame("ets2")}>ETS2</button>

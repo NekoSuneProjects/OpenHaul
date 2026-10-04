@@ -255,6 +255,21 @@ VtcApplication.init({
   status: { type: DataTypes.STRING(32), allowNull: false, defaultValue: "pending" },
 }, { sequelize, modelName: "VtcApplication", tableName: "vtc_applications", underscored: true });
 
+export class VtcInvite extends Model {
+  declare id: number;
+  declare vtcId: number;
+}
+VtcInvite.init({
+  id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+  vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
+  createdByUserId: { type: DataTypes.INTEGER, allowNull: false, field: "created_by_user_id" },
+  tokenHash: { type: DataTypes.STRING(64), allowNull: false, unique: true, field: "token_hash" },
+  expiresAt: { type: DataTypes.DATE, allowNull: false, field: "expires_at" },
+  usedByUserId: { type: DataTypes.INTEGER, allowNull: true, field: "used_by_user_id" },
+  usedAt: { type: DataTypes.DATE, allowNull: true, field: "used_at" },
+  revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
+}, { sequelize, modelName: "VtcInvite", tableName: "vtc_invites", underscored: true });
+
 export class VtcLedgerEntry extends Model {}
 VtcLedgerEntry.init({
   id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
@@ -278,6 +293,10 @@ User.hasMany(VtcMember, { foreignKey: "userId" });
 Vtc.hasMany(VtcMember, { foreignKey: "vtcId" });
 VtcMember.belongsTo(User, { foreignKey: "userId" });
 VtcMember.belongsTo(Vtc, { foreignKey: "vtcId" });
+VtcApplication.belongsTo(User, { foreignKey: "userId" });
+VtcApplication.belongsTo(Vtc, { foreignKey: "vtcId" });
+Vtc.hasMany(VtcInvite, { foreignKey: "vtcId" });
+VtcInvite.belongsTo(Vtc, { foreignKey: "vtcId" });
 
 async function bootstrapVtc() {
   const name = process.env.OPENHAUL_BOOTSTRAP_VTC_NAME?.trim();

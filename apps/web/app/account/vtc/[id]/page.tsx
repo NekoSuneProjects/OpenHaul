@@ -12,6 +12,8 @@ export default function ManageVtcPage() {
   const [status, setStatus] = useState("Loading VTC…");
   const [vtcApiKeys, setVtcApiKeys] = useState<any[]>([]);
   const [newVtcApiKey, setNewVtcApiKey] = useState("");
+  const [inviteUrl, setInviteUrl] = useState("");
+  const [inviteStatus, setInviteStatus] = useState("");
 
   const load = async () => {
     const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/manage", {
@@ -138,11 +140,37 @@ export default function ManageVtcPage() {
     await load();
   };
 
+  const createInvite = async () => {
+    setInviteStatus("Creating invite…");
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/invites", {
+      method: "POST",
+      credentials: "include",
+    });
+    if (!response.ok) {
+      setInviteStatus("Unable to create an invite.");
+      return;
+    }
+    const result = await response.json();
+    const url = new URL(result.path, window.location.origin).toString();
+    setInviteUrl(url);
+    setInviteStatus("One-person invite created. It expires in 7 days.");
+    await navigator.clipboard?.writeText(url).catch(() => {});
+    await load();
+  };
+
+  const revokeInvite = async (inviteId: number) => {
+    await fetch(api + "/api/v1/account/vtcs/" + id + "/invites/" + inviteId, {
+      method: "DELETE",
+      credentials: "include",
+    });
+    await load();
+  };
+
   if (!data) {
     return <main className="shell"><section className="hero"><h1>{status}</h1></section></main>;
   }
 
-  const { vtc, members = [], applications = [], ledger } = data;
+  const { vtc, members = [], applications = [], invites = [], ledger } = data;
 
   return (
     <main className="shell">
@@ -172,6 +200,38 @@ export default function ManageVtcPage() {
         <label><input type="checkbox" name="publicBalance" defaultChecked={Boolean(vtc.publicBalance)} /> Show balance publicly</label>
         <button className="button primary">Save company settings</button>
       </form>
+
+      <div className="sectionTitle"><h2>Invite drivers</h2></div>
+      <section className="card">
+        <h3>Create a private join link</h3>
+        <p className="muted">Each link can be used by one OpenHaul account and expires after 7 days.</p>
+        <div className="actions">
+          <button className="button primary" onClick={() => void createInvite()}>Create invite link</button>
+        </div>
+        {inviteUrl ? (
+          <div style={{ marginTop: 16 }}>
+            <input value={inviteUrl} readOnly onFocus={(event) => event.currentTarget.select()} aria-label="New VTC invite link" />
+            <div className="actions">
+              <button className="button" onClick={() => void navigator.clipboard?.writeText(inviteUrl)}>Copy link</button>
+            </div>
+          </div>
+        ) : null}
+        {inviteStatus ? <p className="muted">{inviteStatus}</p> : null}
+      </section>
+      <section className="driverList" style={{ padding: 0 }}>
+        {invites.map((invite: any) => {
+          const expired = new Date(invite.expiresAt).getTime() <= Date.now();
+          const state = invite.usedAt ? "Used" : invite.revokedAt ? "Revoked" : expired ? "Expired" : "Active";
+          return (
+            <article className="driver" key={invite.id}>
+              <div><strong>Invite #{invite.id}</strong><small>Created {new Date(invite.createdAt).toLocaleString()}</small></div>
+              <div><span className="pill">{state}</span><small>Expires {new Date(invite.expiresAt).toLocaleString()}</small></div>
+              <div />
+              <div>{state === "Active" ? <button className="button" onClick={() => void revokeInvite(invite.id)}>Revoke</button> : null}</div>
+            </article>
+          );
+        })}
+      </section>
 
       <div className="sectionTitle"><h2>Members</h2></div>
       <section className="driverList" style={{ padding: 0 }}>
@@ -203,7 +263,7 @@ export default function ManageVtcPage() {
       <section className="driverList" style={{ padding: 0 }}>
         {applications.filter((item: any) => item.status === "pending").map((application: any) => (
           <article className="card" key={application.id}>
-            <h3>User #{application.userId}</h3>
+            <h3>{(application.User ?? application.user)?.displayName ?? "User #" + application.userId}</h3>
             <p>{application.message || "No application message."}</p>
             <div className="actions">
               <button className="button primary" onClick={() => void updateApplication(application.id, "approved")}>Approve</button>

@@ -226,6 +226,21 @@ export default function AccountPage() {
     }
   };
 
+  const leaveVtc = async (vtcId: number) => {
+    const response = await fetch(api + "/api/v1/account/vtcs/" + vtcId + "/membership", {
+      method: "DELETE",
+      credentials: "include",
+    });
+    if (response.ok) {
+      await load();
+    } else {
+      const result = await response.json().catch(() => null);
+      setStatus(result?.error === "owner_must_transfer_or_close_vtc"
+        ? "A VTC owner must transfer ownership before leaving."
+        : "Unable to leave that VTC.");
+    }
+  };
+
   if (status && !user) {
     return <main className="shell"><section className="hero"><h1>{status}</h1></section></main>;
   }
@@ -397,12 +412,21 @@ export default function AccountPage() {
       <section className="grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))" }}>
         {memberships.map((membership: any) => {
           const vtc = membership.Vtc ?? membership.VTC ?? membership.vtc;
+          const canManage = ["owner", "admin", "staff"].includes(membership.role);
           return (
-            <Link className="card" href={"/account/vtc/" + vtc?.id} key={membership.id}>
+            <article className="card" key={membership.id}>
               <div className="pill">{membership.role}</div>
               <h3 style={{ marginTop: 12 }}>{vtc?.name ?? "VTC"}</h3>
               <p>{membership.status}</p>
-            </Link>
+              <div className="actions">
+                <Link className="button primary" href={canManage ? "/account/vtc/" + vtc?.id : "/vtc/" + vtc?.id}>
+                  {canManage ? "Manage VTC" : "Open VTC"}
+                </Link>
+                {membership.role !== "owner" ? (
+                  <button className="button" onClick={() => void leaveVtc(vtc.id)}>Leave VTC</button>
+                ) : null}
+              </div>
+            </article>
           );
         })}
       </section>

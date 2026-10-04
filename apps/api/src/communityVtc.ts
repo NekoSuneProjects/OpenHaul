@@ -1,7 +1,8 @@
+import { createHash, randomBytes } from "node:crypto";
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { Op, QueryTypes } from "sequelize";
 import { z } from "zod";
-import { Fine, Job, User, Vtc, VtcApplication, VtcLedgerEntry, VtcMember, sequelize } from "./db.js";
+import { Fine, Job, User, Vtc, VtcApplication, VtcInvite, VtcLedgerEntry, VtcMember, sequelize } from "./db.js";
 import { requireUser } from "./accountSession.js";
 
 const createSchema = z.object({
@@ -30,6 +31,12 @@ const roleSchema = z.object({
   title: z.string().max(80).nullable().optional(),
   status: z.enum(["active", "inactive", "suspended"]).default("active"),
 });
+
+const INVITE_LIFETIME_MS = 1000 * 60 * 60 * 24 * 7;
+
+function hashInviteToken(token: string) {
+  return createHash("sha256").update(token).digest("hex");
+}
 
 async function membership(userId: number, vtcId: number) {
   return VtcMember.findOne({ where: { userId, vtcId } });
@@ -111,7 +118,7 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
 
   app.get("/api/v1/account/vtcs", { preHandler: [requireUser] }, async (request) => {
     const memberships = await VtcMember.findAll({
-      where: { userId: request.openhaulUser!.id },
+      where: { userId: request.openhaulUser!.id, status: "active" },
       include: [{ model: Vtc }],
       order: [["id", "ASC"]],
     });
@@ -121,10 +128,20 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
 
   app.get("/api/v1/account/vtcs/:id/manage", { preHandler: [requireManager] }, async (request) => {
     const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
-    const [vtc, members, applications, ledger, jobStats, fineStats] = await Promise.all([
+    const [vtc, members, applications, invites, ledger, jobStats, fineStats] = await Promise.all([
       Vtc.findByPk(id),
       VtcMember.findAll({ where: { vtcId: id }, include: [{ model: User }] }),
-      VtcApplication.findAll({ where: { vtcId: id }, order: [["id", "DESC"]] }),
+      VtcApplication.findAll({
+        where: { vtcId: id },
+        include: [{ model: User, attributes: ["steamId", "displayName", "avatarUrl"] }],
+        order: [["id", "DESC"]],
+      }),
+      VtcInvite.findAll({
+        where: { vtcId: id },
+        attributes: ["id", "expiresAt", "usedAt", "revokedAt", "createdAt"],
+        order: [["id", "DESC"]],
+        limit: 25,
+      }),
       ledgerSummary(id),
       sequelize.query(
         `SELECT driver_id AS "driverId",
@@ -169,7 +186,103 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       };
     });
 
-    return { vtc, members: membersWithStats, applications, ledger };
+    return { vtc, members: membersWithStats, applications, invites, ledger };
+  });
+
+  app.post("/api/v1/account/vtcs/:id/invites", { preHandler: [requireManager] }, async (request, reply) => {
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const rawToken = randomBytes(32).toString("base64url");
+    const expiresAt = new Date(Date.now() + INVITE_LIFETIME_MS);
+    const invite = await VtcInvite.create({
+      vtcId: id,
+      createdByUserId: request.openhaulUser!.id,
+      tokenHash: hashInviteToken(rawToken),
+      expiresAt,
+    });
+
+    return reply.code(201).send({
+      invite: { id: invite.id, expiresAt },
+      token: rawToken,
+      path: `/join/${rawToken}`,
+      warning: "This one-person invite link is only shown once and expires in 7 days.",
+    });
+  });
+
+  app.delete("/api/v1/account/vtcs/:id/invites/:inviteId", { preHandler: [requireManager] }, async (request, reply) => {
+    const params = z.object({
+      id: z.coerce.number().int().positive(),
+      inviteId: z.coerce.number().int().positive(),
+    }).parse(request.params);
+    const invite = await VtcInvite.findOne({ where: { id: params.inviteId, vtcId: params.id } });
+    if (!invite) return reply.code(404).send({ error: "invite_not_found" });
+    if (!invite.getDataValue("usedAt") && !invite.getDataValue("revokedAt")) {
+      await invite.update({ revokedAt: new Date() });
+    }
+    return reply.code(204).send();
+  });
+
+  app.get("/api/v1/public/vtc-invites/:token", async (request, reply) => {
+    const { token } = z.object({ token: z.string().min(32).max(128) }).parse(request.params);
+    const invite = await VtcInvite.findOne({
+      where: { tokenHash: hashInviteToken(token) },
+      include: [{ model: Vtc, attributes: ["id", "name", "slug", "tag"] }],
+    });
+    if (!invite) return reply.code(404).send({ error: "invite_not_found" });
+    if (invite.getDataValue("revokedAt")) return reply.code(410).send({ error: "invite_revoked" });
+    if (invite.getDataValue("usedAt")) return reply.code(410).send({ error: "invite_used" });
+    if (new Date(invite.getDataValue("expiresAt")).getTime() <= Date.now()) {
+      return reply.code(410).send({ error: "invite_expired" });
+    }
+    return {
+      vtc: invite.get("Vtc") ?? invite.get("vtc"),
+      expiresAt: invite.getDataValue("expiresAt"),
+    };
+  });
+
+  app.post("/api/v1/account/vtc-invites/:token/accept", { preHandler: [requireUser] }, async (request, reply) => {
+    const { token } = z.object({ token: z.string().min(32).max(128) }).parse(request.params);
+    const result = await sequelize.transaction(async (transaction) => {
+      const invite = await VtcInvite.findOne({
+        where: { tokenHash: hashInviteToken(token) },
+        transaction,
+        lock: transaction.LOCK.UPDATE,
+      });
+      if (!invite) return { error: "invite_not_found", status: 404 } as const;
+      if (invite.getDataValue("revokedAt")) return { error: "invite_revoked", status: 410 } as const;
+      if (invite.getDataValue("usedAt")) return { error: "invite_used", status: 410 } as const;
+      if (new Date(invite.getDataValue("expiresAt")).getTime() <= Date.now()) {
+        return { error: "invite_expired", status: 410 } as const;
+      }
+
+      const vtcId = Number(invite.getDataValue("vtcId"));
+      const existing = await VtcMember.findOne({
+        where: { vtcId, userId: request.openhaulUser!.id },
+        transaction,
+      });
+      if (existing?.getDataValue("status") === "active") {
+        return { error: "already_member", status: 409 } as const;
+      }
+      if (existing) {
+        await existing.update({ role: "member", status: "active", joinedAt: new Date() }, { transaction });
+      } else {
+        await VtcMember.create({
+          vtcId,
+          userId: request.openhaulUser!.id,
+          role: "member",
+          status: "active",
+          joinedAt: new Date(),
+        }, { transaction });
+      }
+      await invite.update({ usedByUserId: request.openhaulUser!.id, usedAt: new Date() }, { transaction });
+      await VtcApplication.update(
+        { status: "approved" },
+        { where: { vtcId, userId: request.openhaulUser!.id, status: "pending" }, transaction },
+      );
+      return { vtcId } as const;
+    });
+
+    if ("error" in result) return reply.code(result.status!).send({ error: result.error });
+    return { joined: true, vtcId: result.vtcId };
   });
 
   app.patch("/api/v1/account/vtcs/:id", { preHandler: [requireOwnerOrAdmin] }, async (request, reply) => {
@@ -246,6 +359,19 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
 
     await member.update(roleSchema.parse(request.body));
     return { member };
+  });
+
+  app.delete("/api/v1/account/vtcs/:id/membership", { preHandler: [requireUser] }, async (request, reply) => {
+    const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
+    const member = await membership(request.openhaulUser!.id, id);
+    if (!member || member.getDataValue("status") !== "active") {
+      return reply.code(404).send({ error: "membership_not_found" });
+    }
+    if (member.getDataValue("role") === "owner") {
+      return reply.code(409).send({ error: "owner_must_transfer_or_close_vtc" });
+    }
+    await member.destroy();
+    return reply.code(204).send();
   });
 
   app.post("/api/v1/account/vtcs/:id/ledger", { preHandler: [requireOwnerOrAdmin] }, async (request, reply) => {

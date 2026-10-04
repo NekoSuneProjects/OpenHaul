@@ -3,7 +3,7 @@ import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
 import Fastify from "fastify";
 import { z } from "zod";
-import { Fine, Job, User, Vtc, VtcMember, initDatabase } from "./db.js";
+import { Fine, Job, User, Vtc, VtcMember, initDatabase, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
@@ -139,8 +139,21 @@ app.get("/api/v1/public/vtcs/:id/live", async (request) => {
 });
 
 app.get("/api/v1/public/vtcs", async () => {
-  const vtcs = await Vtc.findAll({ attributes: ["id", "name", "slug", "tag"], order: [["name", "ASC"]] });
-  return { vtcs };
+  const vtcs = await Vtc.findAll({
+    attributes: [
+      "id", "name", "slug", "tag",
+      [sequelize.literal(`(
+        SELECT COUNT(*)::int
+        FROM vtc_members
+        WHERE vtc_members.vtc_id = "Vtc"."id"
+          AND vtc_members.status = 'active'
+      )`), "memberCount"],
+    ],
+    order: [["name", "ASC"]],
+  });
+  return {
+    vtcs: vtcs.filter((vtc) => Number(vtc.getDataValue("memberCount")) > 0),
+  };
 });
 
 app.get("/api/v1/public/radio/truckersfm", async (_request, reply) => {
