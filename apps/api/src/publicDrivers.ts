@@ -1,4 +1,5 @@
 import type { FastifyInstance } from "fastify";
+import { Op } from "sequelize";
 import { z } from "zod";
 import { Fine, Job, TwitchAccount, User, Vtc, VtcActivityEvent, VtcMember, VtcModerationAction } from "./db.js";
 import { getLiveDrivers } from "./live.js";
@@ -47,7 +48,7 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
       getLiveDrivers(),
       TwitchAccount.findOne({ where: { userId: user.id } }),
       VtcModerationAction.findAll({
-        where: { userId: user.id },
+        where: { userId: user.id, type: { [Op.ne]: "note" } },
         include: [{ model: Vtc, attributes: ["id", "name", "tag"] }],
         order: [["id", "DESC"]],
         limit: 100,
