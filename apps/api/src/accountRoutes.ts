@@ -2,6 +2,8 @@ import type { FastifyInstance } from "fastify";
 import { User } from "./db.js";
 import { createAccountSession, deleteAccountSession, requireUser } from "./accountSession.js";
 import { fetchSteamProfile, refreshSteamOwnership } from "./steam.js";
+import { VtcMember } from "./db.js";
+import { recordVtcActivity } from "./vtcOperations.js";
 
 function appUrl() {
   return (process.env.APP_URL ?? "http://localhost:3000").replace(/\/$/, "");
@@ -74,11 +76,28 @@ export async function registerAccountRoutes(app: FastifyInstance) {
     });
 
     if (profile) {
+      const previousName = user.displayName;
+      const nextName = profile.personaname ?? user.displayName;
       await user.update({
-        displayName: profile.personaname ?? user.displayName,
+        displayName: nextName,
         avatarUrl: profile.avatarfull ?? user.avatarUrl,
         profileUrl: profile.profileurl ?? user.profileUrl,
       });
+
+      if (!created && nextName && previousName !== nextName) {
+        const memberships = await VtcMember.findAll({
+          where: { userId: user.id, status: "active" },
+          attributes: ["vtcId"],
+        });
+        await Promise.all(memberships.map((membership) => recordVtcActivity({
+          vtcId: Number(membership.getDataValue("vtcId")),
+          driverId: steamId,
+          actorUserId: user.id,
+          type: "profile.name_changed",
+          title: previousName + " changed name to " + nextName,
+          metadata: { previousName, nextName },
+        })));
+      }
     }
 
     await refreshSteamOwnership(user);
