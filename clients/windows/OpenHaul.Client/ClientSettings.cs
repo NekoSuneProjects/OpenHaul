@@ -13,7 +13,7 @@ public sealed class ClientSettings
     public string? AvatarUrl { get; set; }
     public string PipeName { get; set; } = "OpenHaulTelemetry";
     public bool OverlayEnabled { get; set; } = true;
-    public string OverlayHotkey { get; set; } = "F8";
+    public string OverlayHotkey { get; set; } = "Alt+I";
     public bool OverlayMapEnabled { get; set; } = true;
     public string OverlayMapType { get; set; } = "road";
     public string OverlayMapSize { get; set; } = "medium";
