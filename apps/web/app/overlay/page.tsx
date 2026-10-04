@@ -40,7 +40,7 @@ type MediaQueueItem = {
 
 type MusicSearchResult = {
   id: string;
-  provider: "youtube" | "soundcloud";
+  provider: "youtube" | "soundcloud" | "bilibili" | "yandex";
   title: string;
   artist?: string;
   url: string;
@@ -968,7 +968,7 @@ function OverlayContent() {
                 <h2>Search music</h2>
                 <p>
                   Search by artist and title, for example <strong>Artist - Title</strong>.
-                  OpenHaul searches public YouTube and SoundCloud results, then you can add one directly to the Music playlist.
+                  OpenHaul searches public YouTube, SoundCloud, Bilibili, and Yandex Music results, then you can add one directly to the Music playlist.
                 </p>
               </div>
               <div className="gameOverlayMusicUrl">
@@ -998,7 +998,11 @@ function OverlayContent() {
                       <span>
                         <strong>{result.title}</strong>
                         <small>
-                          {[result.artist, result.provider === "youtube" ? "YouTube" : "SoundCloud"].filter(Boolean).join(" · ")}
+                          {[result.artist,
+                            result.provider === "youtube" ? "YouTube" :
+                            result.provider === "soundcloud" ? "SoundCloud" :
+                            result.provider === "bilibili" ? "Bilibili" : "Yandex Music"
+                          ].filter(Boolean).join(" · ")}
                         </small>
                       </span>
                       <button type="button" onClick={() => addMusicSearchResult(result)}>Add & play</button>
