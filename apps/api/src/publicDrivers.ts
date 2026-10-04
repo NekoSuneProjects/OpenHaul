@@ -1,6 +1,6 @@
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
-import { Fine, Job, TwitchAccount, User, Vtc, VtcMember } from "./db.js";
+import { Fine, Job, TwitchAccount, User, Vtc, VtcActivityEvent, VtcMember, VtcModerationAction } from "./db.js";
 import { getLiveDrivers } from "./live.js";
 
 export async function registerPublicDriverRoutes(app: FastifyInstance) {
@@ -26,7 +26,7 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
 
     if (!user) return reply.code(404).send({ error: "driver_not_found" });
 
-    const [memberships, jobs, fines, distanceKm, income, liveDrivers, twitch] = await Promise.all([
+    const [memberships, jobs, fines, distanceKm, income, liveDrivers, twitch, moderation, nameChanges] = await Promise.all([
       VtcMember.findAll({
         where: { userId: user.id, status: "active" },
         include: [{ model: Vtc, attributes: ["id", "name", "slug", "tag"] }],
@@ -45,6 +45,18 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
       Job.sum("income", { where: { driverId: steamId } }),
       getLiveDrivers(),
       TwitchAccount.findOne({ where: { userId: user.id } }),
+      VtcModerationAction.findAll({
+        where: { userId: user.id },
+        include: [{ model: Vtc, attributes: ["id", "name", "tag"] }],
+        order: [["id", "DESC"]],
+        limit: 100,
+      }),
+      VtcActivityEvent.findAll({
+        where: { driverId: steamId, type: "profile.name_changed" },
+        include: [{ model: Vtc, attributes: ["id", "name", "tag"] }],
+        order: [["id", "DESC"]],
+        limit: 50,
+      }),
     ]);
 
     const live = liveDrivers.find((driver) => driver.driverId === steamId) ?? null;
@@ -60,6 +72,8 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
       },
       live,
       twitch,
+      moderation,
+      nameChanges,
       recentJobs: jobs,
       recentFines: fines,
     };
