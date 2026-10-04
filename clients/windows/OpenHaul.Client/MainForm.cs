@@ -165,11 +165,16 @@ public sealed class MainForm : Form
 
     private void ToggleOverlay()
     {
-        if (_overlay is null) return;
-        _overlay.Toggle();
-        SetStatus(_settings.OverlayEnabled
-            ? $"Game overlay enabled ({_settings.OverlayHotkey} toggles it)."
-            : "Game overlay hidden.");
+        if (_overlay is null || _overlay.IsDisposed)
+        {
+            _overlay = new GameOverlayForm(_settings);
+            _overlay.Start();
+        }
+
+        _overlay.ToggleVisibility();
+        SetStatus(_overlay.IsUserVisible
+            ? $"Game overlay shown ({_settings.OverlayHotkey} toggles it)."
+            : $"Game overlay hidden ({_settings.OverlayHotkey} shows it again).");
     }
 
     private void UpdateOverlayTelemetry(PluginLiveTelemetry telemetry)
