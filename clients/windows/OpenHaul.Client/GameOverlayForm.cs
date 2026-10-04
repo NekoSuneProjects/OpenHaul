@@ -118,6 +118,11 @@ public sealed class GameOverlayForm : Form
     {
         var restoreGame = IsOverlayForeground(GetForegroundWindow());
         _userVisible = false;
+
+        // WebView2 can own mouse capture while it is being interacted with.
+        // Release it before hiding so the simulator receives mouse input again
+        // as soon as we restore its foreground window.
+        ReleaseCapture();
         Hide();
         if (restoreGame && _gameWindow != IntPtr.Zero && IsWindow(_gameWindow) && !IsIconic(_gameWindow))
             SetForegroundWindow(_gameWindow);
@@ -347,6 +352,13 @@ public sealed class GameOverlayForm : Form
             return;
         }
 
+        // ETS2/ATS can keep the system cursor clipped to the game client after
+        // the overlay is opened. That makes the overlay look interactive while
+        // the pointer remains locked in-game. Keep it unclipped for the whole
+        // time the interactive overlay is active; the simulator will establish
+        // its own cursor state again when it regains foreground focus.
+        ReleaseInteractiveCursor();
+
         if (!GetClientRect(_gameWindow, out var rect))
         {
             if (Visible) Hide();
@@ -381,8 +393,17 @@ public sealed class GameOverlayForm : Form
         {
             SetForegroundWindow(Handle);
             if (IsOverlayForeground(GetForegroundWindow()))
+            {
+                ReleaseInteractiveCursor();
                 _webView.Focus();
+            }
         }
+    }
+
+    private static void ReleaseInteractiveCursor()
+    {
+        ReleaseCapture();
+        ClipCursor(IntPtr.Zero);
     }
 
     private static IntPtr FindGameWindow(IntPtr foreground, IntPtr previous)
@@ -462,6 +483,14 @@ public sealed class GameOverlayForm : Form
 
     [DllImport("user32.dll")]
     private static extern IntPtr GetForegroundWindow();
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool ReleaseCapture();
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool ClipCursor(IntPtr lpRect);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
