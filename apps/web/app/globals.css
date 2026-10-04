@@ -861,3 +861,314 @@ h1 {
 .embeddedMapPanel .maplibregl-ctrl-bottom-right {
   display: none;
 }
+
+
+/* Integrated OpenHaul game overlay workspace */
+.gameOverlay {
+  width: min(1180px, calc(100vw - 56px));
+  height: min(760px, calc(100vh - 56px));
+  margin: 28px auto;
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid rgba(84,224,138,.22);
+  border-radius: 22px;
+  background: rgba(3, 12, 8, .94);
+  box-shadow: 0 30px 90px rgba(0,0,0,.48);
+  backdrop-filter: blur(18px);
+}
+
+.gameOverlay-compact {
+  width: min(860px, calc(100vw - 56px));
+  height: min(590px, calc(100vh - 56px));
+}
+
+.gameOverlay-large {
+  width: calc(100vw - 32px);
+  height: calc(100vh - 32px);
+  margin: 16px auto;
+}
+
+.gameOverlayRail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 10px;
+  border-right: 1px solid rgba(84,224,138,.12);
+  background: linear-gradient(180deg, rgba(7,26,16,.98), rgba(3,11,7,.98));
+}
+
+.gameOverlayBrand {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  padding: 4px 0 14px;
+  text-align: center;
+}
+
+.gameOverlayBrand > div {
+  display: none;
+}
+
+.gameOverlayMark {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(84,224,138,.28);
+  border-radius: 14px;
+  color: #06120b;
+  background: linear-gradient(135deg, #54e08a, #8af3b4);
+  font-size: .88rem;
+  font-weight: 950;
+}
+
+.gameOverlayRail button {
+  min-height: 58px;
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  color: #86a393;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.gameOverlayRail button span:first-child {
+  font-size: 1.18rem;
+  color: #70e69b;
+}
+
+.gameOverlayRail button span:last-child {
+  font-size: .68rem;
+  font-weight: 800;
+}
+
+.gameOverlayRail button:hover,
+.gameOverlayRail button.active {
+  border-color: rgba(84,224,138,.22);
+  color: #f4fbf6;
+  background: rgba(84,224,138,.09);
+}
+
+.gameOverlayRailSpacer {
+  flex: 1;
+}
+
+.gameOverlayConnection {
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  padding: 8px 0;
+  color: #738b7c;
+  font-size: .6rem;
+  font-weight: 900;
+}
+
+.gameOverlayConnection > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7c887f;
+}
+
+.gameOverlayConnection.online > span {
+  background: #54e08a;
+  box-shadow: 0 0 13px rgba(84,224,138,.85);
+}
+
+.gameOverlayPanel {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: 74px minmax(0, 1fr);
+  background:
+    radial-gradient(circle at 75% 0%, rgba(84,224,138,.07), transparent 35%),
+    rgba(4, 14, 9, .97);
+}
+
+.gameOverlayHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 22px;
+  border-bottom: 1px solid rgba(84,224,138,.12);
+}
+
+.gameOverlayHeader strong {
+  display: block;
+  font-size: 1.03rem;
+}
+
+.gameOverlayHeader small {
+  display: block;
+  margin-top: 4px;
+  color: #71907d;
+}
+
+.gameOverlayStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #71897a;
+  font-size: .72rem;
+}
+
+.gameOverlayKey {
+  border: 1px solid rgba(84,224,138,.25);
+  border-radius: 7px;
+  padding: 4px 7px;
+  color: #91f1b2;
+  background: rgba(84,224,138,.07);
+  font-weight: 900;
+}
+
+.gameOverlayMapWrap {
+  position: relative;
+  min-height: 0;
+}
+
+.gameOverlayMap {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #04100a;
+}
+
+.gameOverlayMapBadge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  display: grid;
+  gap: 4px;
+  min-width: 210px;
+  padding: 12px 14px;
+  border: 1px solid rgba(84,224,138,.2);
+  border-radius: 12px;
+  background: rgba(3, 13, 8, .88);
+  backdrop-filter: blur(12px);
+}
+
+.gameOverlayMapBadge span {
+  color: #8aa293;
+  font-size: .78rem;
+}
+
+.gameOverlayDrive {
+  overflow: auto;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 14px;
+  align-content: start;
+}
+
+.gameOverlayMetric,
+.gameOverlayJob,
+.gameOverlaySettings section {
+  border: 1px solid rgba(84,224,138,.13);
+  border-radius: 15px;
+  background: rgba(8, 28, 18, .72);
+}
+
+.gameOverlayMetric {
+  padding: 17px;
+}
+
+.gameOverlayMetric small,
+.gameOverlayMetric span {
+  display: block;
+  color: #75907f;
+}
+
+.gameOverlayMetric strong {
+  display: block;
+  margin: 6px 0 1px;
+  font-size: 1.7rem;
+}
+
+.gameOverlayJob {
+  grid-column: 1 / -1;
+  padding: 22px;
+}
+
+.gameOverlayJob h2 {
+  margin: 12px 0 6px;
+}
+
+.gameOverlayJob p {
+  color: #91a99a;
+}
+
+.gameOverlayJobStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.gameOverlayJobStats span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #98b1a1;
+  background: rgba(84,224,138,.06);
+}
+
+.gameOverlaySettings {
+  overflow: auto;
+  padding: 22px;
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.gameOverlaySettings section {
+  padding: 20px;
+}
+
+.gameOverlaySettings h2 {
+  margin: 0 0 5px;
+}
+
+.gameOverlaySettings p {
+  margin: 0 0 16px;
+  color: #87a091;
+}
+
+.gameOverlayChoices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gameOverlayChoices button {
+  min-width: 120px;
+  min-height: 42px;
+  border: 1px solid rgba(84,224,138,.15);
+  border-radius: 10px;
+  color: #cfe0d5;
+  background: #081b12;
+  cursor: pointer;
+}
+
+.gameOverlayChoices button.active,
+.gameOverlayChoices button:hover {
+  border-color: rgba(84,224,138,.42);
+  color: #07140c;
+  background: #54e08a;
+}
+
+@media (max-width: 820px) {
+  .gameOverlay {
+    grid-template-columns: 72px minmax(0,1fr);
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+    margin: 10px auto;
+  }
+
+  .gameOverlayDrive {
+    grid-template-columns: 1fr 1fr;
+  }
+}
