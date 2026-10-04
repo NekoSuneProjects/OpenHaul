@@ -11,6 +11,7 @@ export default function DriverProfilePage() {
   const steamId = useMemo(() => String(params.steamId), [params.steamId]);
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState("");
+  const [gameFilter, setGameFilter] = useState<"all" | "ets2" | "ats">("all");
 
   useEffect(() => {
     fetch(api + "/api/v1/public/drivers/" + encodeURIComponent(steamId), { cache: "no-store" })
@@ -30,7 +31,12 @@ export default function DriverProfilePage() {
 
   return (
     <main className="shell">
-      <section className="hero" style={{ paddingBottom: 20 }}>
+      <section className="hero" style={{
+        paddingBottom: 20,
+        backgroundImage: user.bannerUrl ? "linear-gradient(rgba(4,15,10,.75),rgba(4,15,10,.92)),url(" + user.bannerUrl + ")" : undefined,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}>
         <span className="eyebrow">OpenHaul driver</span>
         <div style={{ display: "flex", gap: 20, alignItems: "center", marginTop: 20 }}>
           {user.avatarUrl ? <img src={user.avatarUrl} alt="" style={{ width: 96, height: 96, borderRadius: 18 }} /> : null}
@@ -42,7 +48,12 @@ export default function DriverProfilePage() {
         <div className="actions">
           {user.profileUrl ? <a className="button" href={user.profileUrl}>Steam profile</a> : null}
           {data.live ? <Link className="button primary" href="/map">Live now</Link> : null}
+          {user.socials?.website ? <a className="button" href={user.socials.website}>Website</a> : null}
+          {user.socials?.youtube ? <a className="button" href={user.socials.youtube}>YouTube</a> : null}
+          {user.socials?.twitch ? <a className="button" href={user.socials.twitch}>Twitch</a> : null}
         </div>
+        {user.bio ? <p className="lede" style={{ marginTop: 18, whiteSpace: "pre-wrap" }}>{user.bio}</p> : null}
+        {user.country ? <p className="muted">{user.country}</p> : null}
       </section>
 
       <section className="grid">
@@ -54,6 +65,9 @@ export default function DriverProfilePage() {
         <article className="card"><h3>{Number(stats.fines ?? 0).toLocaleString()}</h3><p>Recorded fines</p></article>
         <article className="card"><h3>{user.ownsEts2 === true ? "✅" : user.ownsEts2 === false ? "❌" : "⚪"}</h3><p>ETS2 ownership</p></article>
         <article className="card"><h3>{user.ownsAts === true ? "✅" : user.ownsAts === false ? "❌" : "⚪"}</h3><p>ATS ownership</p></article>
+        <article className="card"><h3>{Math.round(Number(stats.longestJobKm ?? 0)).toLocaleString()} km</h3><p>Longest delivery</p></article>
+        <article className="card"><h3>{Number(stats.bestJobIncome ?? 0).toLocaleString()}</h3><p>Best job income</p></article>
+        <article className="card"><h3>{Number(stats.averageIncomePerJob ?? 0).toLocaleString()}</h3><p>Average income / job</p></article>
       </section>
 
       {data.twitch ? (
@@ -132,9 +146,20 @@ export default function DriverProfilePage() {
         })}
       </section>
 
+      <div className="sectionTitle"><h2>Driver activity</h2></div>
+      <section className="card" style={{ marginBottom: 12 }}>
+        <div className="actions">
+          {(["all", "ets2", "ats"] as const).map((value) => (
+            <button key={value} className={gameFilter === value ? "button primary" : "button"} onClick={() => setGameFilter(value)}>
+              {value === "all" ? "All" : value.toUpperCase()}
+            </button>
+          ))}
+        </div>
+      </section>
+
       <div className="sectionTitle"><h2>Recent jobs</h2></div>
       <section className="driverList" style={{ padding: 0 }}>
-        {(data.recentJobs ?? []).map((job: any) => (
+        {(data.recentJobs ?? []).filter((job: any) => gameFilter === "all" || String(job.game).toLowerCase() === gameFilter).map((job: any) => (
           <article className="driver" key={job.id}>
             <div><strong>{job.cargo || "Unknown cargo"}</strong><small>{String(job.game).toUpperCase()}</small></div>
             <div><strong>{job.sourceCity || "Unknown"} → {job.destinationCity || "Unknown"}</strong></div>
@@ -146,7 +171,7 @@ export default function DriverProfilePage() {
 
       <div className="sectionTitle"><h2>Recent fines</h2></div>
       <section className="driverList" style={{ padding: "0 0 60px" }}>
-        {(data.recentFines ?? []).map((fine: any) => (
+        {(data.recentFines ?? []).filter((fine: any) => gameFilter === "all" || String(fine.game).toLowerCase() === gameFilter).map((fine: any) => (
           <article className="driver" key={fine.id}>
             <div><strong>{String(fine.type).replaceAll("_", " ")}</strong><small>{String(fine.game).toUpperCase()}</small></div>
             <div><strong>{fine.amount} {fine.currency}</strong><small>Penalty</small></div>
