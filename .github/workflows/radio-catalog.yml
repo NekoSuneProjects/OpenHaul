@@ -49,8 +49,8 @@ jobs:
         env:
           RADIO_OUTPUT_DIR: ${{ github.workspace }}/radio-catalog-data
           RADIO_COUNTRIES: ${{ github.event.inputs.countries || '' }}
-          RADIO_FETCH_CONCURRENCY: "6"
-          RADIO_PROBE_CONCURRENCY: "24"
+          RADIO_FETCH_CONCURRENCY: "3"
+          RADIO_PROBE_CONCURRENCY: "8"
           RADIO_REQUEST_TIMEOUT_MS: "20000"
           RADIO_PROBE_TIMEOUT_MS: "8000"
         run: node scripts/update-radio-catalog.mjs
@@ -59,7 +59,7 @@ jobs:
         working-directory: radio-catalog-data
         shell: bash
         run: |
-          if git diff --quiet -- .; then
+          if [ -z "$(git status --porcelain)" ]; then
             echo "Radio catalog is already current."
             exit 0
           fi
