@@ -28,8 +28,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <span className="brandWordmark">Open<span>Haul</span></span>
             </Link>
             <div className="links">
+              <Link href="/dashboard">Dashboard</Link>
               <Link href="/map">Live Map</Link>
               <Link href="/vtcs">VTCs</Link>
+              <Link href="/logbook">Logbook</Link>
               <Link href="/account">Account</Link>
               <Link href="/radio">Radio</Link>
               <Link href="/streamers">Streamers</Link>
