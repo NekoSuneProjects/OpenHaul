@@ -211,21 +211,71 @@ app.get("/api/v1/public/vtcs", async (request) => {
   };
 });
 
+let truckersFmCache: { value: any; expiresAt: number; fetchedAt: string } | null = null;
+
 app.get("/api/v1/public/radio/truckersfm", async (_request, reply) => {
   const url = process.env.TRUCKERSFM_NOWPLAYING_URL ?? "https://azuracast.truckers.fm/api/nowplaying/1";
-  const response = await fetch(url, {
-    cache: "no-store",
-    headers: {
-      "user-agent": "OpenHaul/0.1 (+https://github.com/NekoSuneProjects/OpenHaul)",
-      "cache-control": "no-cache",
-      "pragma": "no-cache",
-    },
-  });
-  if (!response.ok) return reply.code(502).send({ error: "truckersfm_unavailable" });
-  reply.header("cache-control", "no-store, no-cache, must-revalidate, proxy-revalidate");
-  reply.header("pragma", "no-cache");
-  reply.header("expires", "0");
-  return response.json();
+
+  if (truckersFmCache && truckersFmCache.expiresAt > Date.now()) {
+    reply.header("cache-control", "public, max-age=10, stale-if-error=120");
+    reply.header("x-openhaul-radio-cache", "fresh");
+    return truckersFmCache.value;
+  }
+
+  try {
+    const response = await fetch(url, {
+      cache: "no-store",
+      signal: AbortSignal.timeout(5000),
+      headers: {
+        "accept": "application/json",
+        "user-agent": "OpenHaul/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
+        "cache-control": "no-cache",
+        "pragma": "no-cache",
+      },
+    });
+
+    if (!response.ok) throw new Error("TruckersFM upstream returned HTTP " + response.status);
+
+    const value = await response.json();
+    truckersFmCache = {
+      value,
+      expiresAt: Date.now() + 15_000,
+      fetchedAt: new Date().toISOString(),
+    };
+
+    reply.header("cache-control", "public, max-age=10, stale-if-error=120");
+    reply.header("x-openhaul-radio-cache", "miss");
+    return value;
+  } catch (cause) {
+    if (truckersFmCache) {
+      reply.header("cache-control", "public, max-age=5, stale-if-error=300");
+      reply.header("x-openhaul-radio-cache", "stale");
+      reply.header("x-openhaul-radio-upstream", "degraded");
+      return truckersFmCache.value;
+    }
+
+    reply.header("cache-control", "public, max-age=5");
+    reply.header("x-openhaul-radio-upstream", "degraded");
+    return {
+      station: {
+        name: "TruckersFM",
+        listen_url: "https://radio.truckers.fm",
+      },
+      listeners: { current: null },
+      live: { is_live: false, streamer_name: null },
+      now_playing: {
+        song: {
+          artist: "TruckersFM",
+          title: "Now playing temporarily unavailable",
+          art: null,
+        },
+      },
+      openhaul: {
+        degraded: true,
+        reason: cause instanceof Error ? cause.message : "upstream_unavailable",
+      },
+    };
+  }
 });
 
 app.post("/api/v1/telemetry/live", async (request, reply) => {
