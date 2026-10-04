@@ -2,7 +2,7 @@ import type { FastifyInstance } from "fastify";
 import { Op } from "sequelize";
 import { z } from "zod";
 import { getClientPresences, getLiveDrivers } from "./live.js";
-import { PlatformRecord, TelemetryEvent } from "./db.js";
+import { PlatformRecord, TelemetryEvent, TruckersMpAccount } from "./db.js";
 
 type ExternalStaff = { driverId: string; role?: string; source?: string };
 
@@ -395,20 +395,48 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       return reply.code(400).send({ error: "area_too_large" });
     }
 
-    const [rawDrivers, clientPresences, openHaulDrivers] = await Promise.all([
+    const [rawDrivers, clientPresences, openHaulDrivers, linkedAccounts] = await Promise.all([
       truckersMpViewportDrivers(query.game, query.x1, query.y1, query.x2, query.y2),
       getClientPresences(),
       getLiveDrivers(),
+      TruckersMpAccount.findAll(),
     ]);
 
+    const presenceBySteam = new Map(
+      clientPresences.map((presence) => [presence.steamId, presence]),
+    );
     const presenceByName = new Map(
       clientPresences.map((presence) => [presence.displayName.trim().toLowerCase(), presence]),
     );
+    const linkedByTruckersMpId = new Map(
+      linkedAccounts.map((account: any) => [
+        String(account.getDataValue("truckersMpId")),
+        {
+          steamId: String(account.getDataValue("steamId")),
+          userId: Number(account.getDataValue("userId")),
+        },
+      ]),
+    );
+    const liveSteamIds = new Set(openHaulDrivers.map((driver) => driver.driverId));
     const liveNames = new Set(openHaulDrivers.map((driver) => driver.username.trim().toLowerCase()));
 
     const drivers = rawDrivers
-      .filter((driver) => !liveNames.has(driver.username.trim().toLowerCase()))
+      .filter((driver) => {
+        const linked = driver.mpId ? linkedByTruckersMpId.get(String(driver.mpId)) : null;
+        if (linked && liveSteamIds.has(linked.steamId)) return false;
+        return !liveNames.has(driver.username.trim().toLowerCase());
+      })
       .map((driver) => {
+        const linked = driver.mpId ? linkedByTruckersMpId.get(String(driver.mpId)) : null;
+        if (linked && presenceBySteam.has(linked.steamId)) {
+          return {
+            ...driver,
+            driverId: linked.steamId,
+            source: "openhaul-client" as const,
+          };
+        }
+
+        // Legacy fallback for accounts not linked to TruckersMP yet.
         const presence = presenceByName.get(driver.username.trim().toLowerCase());
         if (!presence) return driver;
         return {
@@ -537,10 +565,22 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       return result;
     });
 
+    const [linkedAccountsForWide] = await Promise.all([TruckersMpAccount.findAll()]);
+    const linkedWideByTmpId = new Map(
+      linkedAccountsForWide.map((account: any) => [
+        String(account.getDataValue("truckersMpId")),
+        String(account.getDataValue("steamId")),
+      ]),
+    );
+    const presenceBySteamWide = new Map(clientPresences.map((presence) => [presence.steamId, presence]));
     const presenceByName = new Map(
       clientPresences.map((presence) => [presence.displayName.trim().toLowerCase(), presence]),
     );
     const tmpWideDrivers = tmpWideDriversRaw.map((driver) => {
+      const linkedSteamId = driver.mpId ? linkedWideByTmpId.get(String(driver.mpId)) : null;
+      if (linkedSteamId && presenceBySteamWide.has(linkedSteamId)) {
+        return { ...driver, driverId: linkedSteamId, source: "openhaul-client" as const };
+      }
       const presence = presenceByName.get(driver.username.trim().toLowerCase());
       if (!presence) return driver;
       return {
