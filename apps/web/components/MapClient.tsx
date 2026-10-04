@@ -229,13 +229,15 @@ function interpolate(from: number, to: number, t: number) {
   return from + (to - from) * smooth;
 }
 
-function driverFeatureCollection(drivers: Driver[]) {
+function driverFeatureCollection(drivers: Driver[], staff: Array<{ driverId: string; role?: string; source?: string }> = []) {
+  const staffMap = new Map(staff.map((item) => [String(item.driverId), item]));
   return {
     type: "FeatureCollection" as const,
     features: drivers.flatMap((driver) => {
       const position = gameCoordsToLonLat(driver.game, driver.x, driver.z);
       if (!isValidLonLat(position)) return [];
 
+      const staffEntry = staffMap.get(driver.driverId);
       return [{
         type: "Feature" as const,
         geometry: {
@@ -267,6 +269,29 @@ function driverFeatureCollection(drivers: Driver[]) {
           cargoLoaded: driver.cargoLoaded ? 1 : 0,
           vtc: driver.vtcName ?? "Independent",
           vtcTag: driver.vtcTag ?? "",
+          staffSource: staffEntry?.source ?? "",
+          staffRole: staffEntry?.role ?? "",
+        },
+      }];
+    }),
+  };
+}
+
+function trafficFeatureCollection(traffic: any[]) {
+  return {
+    type: "FeatureCollection" as const,
+    features: (traffic ?? []).flatMap((jam: any) => {
+      const position = gameCoordsToLonLat(jam.game, Number(jam.x), Number(jam.z));
+      if (!isValidLonLat(position)) return [];
+      return [{
+        type: "Feature" as const,
+        geometry: { type: "Point" as const, coordinates: position },
+        properties: {
+          id: String(jam.id ?? ""),
+          severity: String(jam.severity ?? "low"),
+          drivers: Number(jam.drivers ?? 0),
+          averageSpeedKph: Number(jam.averageSpeedKph ?? 0),
+          server: String(jam.server ?? ""),
         },
       }];
     }),
@@ -875,6 +900,13 @@ export function MapClient() {
 
   useEffect(() => {
     const map = mapRef.current;
+    if (!mapReady || !map) return;
+    const source = map.getSource("openhaul-traffic") as any;
+    source?.setData(trafficFeatureCollection(mapIntel.traffic ?? []));
+  }, [mapReady, mapIntel.traffic]);
+
+  useEffect(() => {
+    const map = mapRef.current;
     if (!mapReady || !map || !mapAssets) return;
 
     let cancelled = false;
@@ -1114,7 +1146,7 @@ export function MapClient() {
       }
 
       const animatedDrivers = [...rendered.values()];
-      const collection = driverFeatureCollection(animatedDrivers);
+      const collection = driverFeatureCollection(animatedDrivers, mapIntel.staff ?? []);
       const source = map.getSource("openhaul-drivers") as any;
       source?.setData(collection);
 
@@ -1171,7 +1203,7 @@ export function MapClient() {
 
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [mapReady, cameraMode, selectedDriverId]);
+  }, [mapReady, cameraMode, selectedDriverId, mapIntel.staff]);
 
   const focusGame = (game: GameFilter) => {
     setGameFilter(game);
