@@ -4,6 +4,7 @@ import { Op, QueryTypes } from "sequelize";
 import { z } from "zod";
 import { Fine, Job, User, Vtc, VtcApplication, VtcInvite, VtcLedgerEntry, VtcMember, sequelize } from "./db.js";
 import { requireUser } from "./accountSession.js";
+import { getLiveDrivers } from "./live.js";
 import { recordVtcActivity } from "./vtcOperations.js";
 
 const createSchema = z.object({
@@ -144,7 +145,7 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
 
   app.get("/api/v1/account/vtcs/:id/manage", { preHandler: [requireManager] }, async (request) => {
     const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
-    const [vtc, members, applications, invites, ledger, jobStats, fineStats] = await Promise.all([
+    const [vtc, members, applications, invites, ledger, jobStats, fineStats, dashboardRows, trendRows] = await Promise.all([
       Vtc.findByPk(id),
       VtcMember.findAll({ where: { vtcId: id }, include: [{ model: User }] }),
       VtcApplication.findAll({
@@ -178,6 +179,30 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
          GROUP BY driver_id`,
         { replacements: { vtcId: id }, type: QueryTypes.SELECT },
       ),
+      sequelize.query(
+        `SELECT
+           COUNT(*) FILTER (WHERE completed_at >= CURRENT_DATE)::int AS "jobsToday",
+           COUNT(*) FILTER (WHERE completed_at >= DATE_TRUNC('month', CURRENT_DATE))::int AS "jobsMonth",
+           COALESCE(SUM(distance_km) FILTER (WHERE completed_at >= CURRENT_DATE), 0)::float AS "distanceToday",
+           COALESCE(SUM(distance_km) FILTER (WHERE completed_at >= DATE_TRUNC('month', CURRENT_DATE)), 0)::float AS "distanceMonth",
+           COALESCE(SUM(income) FILTER (WHERE completed_at >= CURRENT_DATE), 0)::bigint AS "incomeToday",
+           COALESCE(SUM(income) FILTER (WHERE completed_at >= DATE_TRUNC('month', CURRENT_DATE)), 0)::bigint AS "incomeMonth"
+         FROM jobs
+         WHERE vtc_id = :vtcId`,
+        { replacements: { vtcId: id }, type: QueryTypes.SELECT },
+      ),
+      sequelize.query(
+        `SELECT TO_CHAR(DATE_TRUNC('month', completed_at), 'YYYY-MM') AS month,
+                COUNT(*)::int AS jobs,
+                COALESCE(SUM(distance_km), 0)::float AS "distanceKm",
+                COALESCE(SUM(income), 0)::bigint AS income
+         FROM jobs
+         WHERE vtc_id = :vtcId
+           AND completed_at >= (CURRENT_DATE - INTERVAL '11 months')
+         GROUP BY DATE_TRUNC('month', completed_at)
+         ORDER BY DATE_TRUNC('month', completed_at)`,
+        { replacements: { vtcId: id }, type: QueryTypes.SELECT },
+      ),
     ]);
 
     const jobsByDriver = new Map((jobStats as any[]).map((row) => [String(row.driverId), row]));
@@ -202,7 +227,35 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       };
     });
 
-    return { vtc, members: membersWithStats, applications, invites, ledger };
+    const dashboard = (dashboardRows as any[])[0] ?? {};
+    const [todayFineAmount, monthFineAmount, liveDrivers] = await Promise.all([
+      Fine.sum("amount", { where: { vtcId: id, occurredAt: { [Op.gte]: new Date(new Date().setUTCHours(0, 0, 0, 0)) } } }),
+      Fine.sum("amount", { where: { vtcId: id, occurredAt: { [Op.gte]: new Date(Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), 1)) } } }),
+      getLiveDrivers(id),
+    ]);
+
+    return {
+      vtc,
+      members: membersWithStats,
+      applications,
+      invites,
+      ledger,
+      dashboard: {
+        members: membersWithStats.length,
+        online: liveDrivers.length,
+        jobsToday: Number(dashboard.jobsToday ?? 0),
+        jobsMonth: Number(dashboard.jobsMonth ?? 0),
+        distanceToday: Number(dashboard.distanceToday ?? 0),
+        distanceMonth: Number(dashboard.distanceMonth ?? 0),
+        incomeToday: Number(dashboard.incomeToday ?? 0),
+        incomeMonth: Number(dashboard.incomeMonth ?? 0),
+        fineAmountToday: Number(todayFineAmount || 0),
+        fineAmountMonth: Number(monthFineAmount || 0),
+        profitToday: Number(dashboard.incomeToday ?? 0) - Number(todayFineAmount || 0),
+        profitMonth: Number(dashboard.incomeMonth ?? 0) - Number(monthFineAmount || 0),
+      },
+      trends: trendRows,
+    };
   });
 
   app.post("/api/v1/account/vtcs/:id/invites", { preHandler: [requireManager] }, async (request, reply) => {
