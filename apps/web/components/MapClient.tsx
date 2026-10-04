@@ -40,6 +40,7 @@ type Driver = {
   specialJob?: boolean | null;
   cargoLoaded?: boolean | null;
   server?: string | null;
+  network?: "openhaul" | "truckersmp";
   updatedAt: string;
 };
 
@@ -277,6 +278,7 @@ function driverFeatureCollection(drivers: Driver[], staff: Array<{ driverId: str
           vtcTag: driver.vtcTag ?? "",
           staffSource: staffEntry?.source ?? "",
           staffRole: staffEntry?.role ?? "",
+          network: driver.network ?? "openhaul",
         },
       }];
     }),
@@ -317,7 +319,8 @@ function externalDriverList(rows: any[]): Driver[] {
       heading: Number(row.heading ?? 0),
       speedKph: Number(row.speedKph ?? 0),
       server: row.server ? String(row.server) : "TruckersMP",
-      truck: "TruckersMP",
+      truck: row.source === "openhaul-client" ? "OpenHaul client · TruckersMP position" : "TruckersMP",
+      network: row.source === "openhaul-client" ? "openhaul" : "truckersmp",
       updatedAt: String(row.updatedAt ?? Date.now()),
     }];
   });
@@ -625,8 +628,11 @@ export function MapClient() {
   const interpolatedRef = useRef<Map<string, InterpolatedDriver>>(new Map());
 
   const serverOptions = useMemo(
-    () => Array.from(new Set(drivers.map((driver) => driver.server).filter((value): value is string => Boolean(value)))).sort(),
-    [drivers],
+    () => Array.from(new Set([
+      ...drivers.map((driver) => driver.server),
+      ...externalDriverList(mapIntel.externalDrivers ?? []).map((driver) => driver.server),
+    ].filter((value): value is string => Boolean(value)))).sort(),
+    [drivers, mapIntel.externalDrivers],
   );
 
   const visibleDrivers = useMemo(() => {
@@ -908,12 +914,8 @@ export function MapClient() {
               "case",
               ["==", ["get", "staffSource"], "truckersmp"], "#ff4d4f",
               ["==", ["get", "staffSource"], "openhaul"], "#a855f7",
-              ["match",
-                ["get", "game"],
-                "ets2", "#54e08a",
-                "ats", "#f0b35a",
-                "#3b82f6"
-              ],
+              ["==", ["get", "network"], "truckersmp"], "#3b82f6",
+              "#54e08a",
             ],
             "circle-stroke-color": "#ffffff",
             "circle-stroke-width": 3,
@@ -986,7 +988,7 @@ export function MapClient() {
 
           const lines = [
             String(properties.vtcTag ? "[" + properties.vtcTag + "] " : "") + String(properties.vtc || "Independent"),
-            String(properties.game || "").toUpperCase() + " · " + Math.round(Number(properties.speedKph || 0)) + " km/h",
+            (properties.network === "truckersmp" ? "TruckersMP" : "OpenHaul") + " · " + String(properties.game || "").toUpperCase() + " · " + Math.round(Number(properties.speedKph || 0)) + " km/h",
             String(properties.truck || "Unknown truck"),
             properties.staffRole ? "🛡 " + String(properties.staffRole) : "",
             String(properties.cargo || "No cargo"),
@@ -1270,6 +1272,16 @@ export function MapClient() {
       const external = externalDriverList(mapIntel.externalDrivers ?? []).filter((driver) => {
         if (gameFilter !== "all" && driver.game !== gameFilter) return false;
         if (serverFilter !== "all" && (driver.server ?? "") !== serverFilter) return false;
+        if (statusFilter === "driving" && Number(driver.speedKph ?? 0) <= 1) return false;
+        if (statusFilter === "stopped" && Number(driver.speedKph ?? 0) > 1) return false;
+        if (statusFilter === "on-job") return false;
+        const needle = driverQuery.trim().toLowerCase();
+        if (needle && ![
+          driver.username,
+          driver.driverId,
+          driver.server,
+          driver.truck,
+        ].some((value) => String(value ?? "").toLowerCase().includes(needle))) return false;
         return true;
       });
       const visible = [...visibleDriversRef.current, ...external.filter((driver) =>
@@ -1389,7 +1401,7 @@ export function MapClient() {
 
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [mapReady, cameraMode, selectedDriverId, mapIntel.staff, mapIntel.externalDrivers, gameFilter, serverFilter]);
+  }, [mapReady, cameraMode, selectedDriverId, mapIntel.staff, mapIntel.externalDrivers, gameFilter, serverFilter, statusFilter, driverQuery]);
 
   const focusGame = (game: GameFilter) => {
     setGameFilter(game);
@@ -1448,7 +1460,11 @@ export function MapClient() {
         <div>
           <h2>{initialVtc ? (selectedVtc?.name ?? "VTC #" + initialVtc) + " live map" : "Global live map"}</h2>
           <div className="muted">
-            {visibleDrivers.length} drivers · {status} · {installedMapCount
+            <span style={{ color: "#54e08a" }}>● {Number(mapIntel.counts?.openHaul ?? drivers.length)} OpenHaul</span>
+            {" · "}
+            <span style={{ color: "#60a5fa" }}>● {Number(mapIntel.counts?.truckersMp ?? 0)} TruckersMP</span>
+            {" · "}{status}{" · "}
+            {installedMapCount
               ? installedMapCount + " SCS map asset" + (installedMapCount === 1 ? "" : "s")
               : "geographic fallback"}
           </div>
@@ -1500,7 +1516,9 @@ export function MapClient() {
         {!embedded ? <div className="mapCameraStatus">
           {selectedDriverId
             ? (() => {
-                const selected = visibleDrivers.find((driver) => driver.driverId === selectedDriverId);
+                const selected =
+                  visibleDrivers.find((driver) => driver.driverId === selectedDriverId) ??
+                  externalDriverList(mapIntel.externalDrivers ?? []).find((driver) => driver.driverId === selectedDriverId);
                 return selected
                   ? "Following " + selected.username + " · " + (cameraMode === "map" ? "selected" : cameraMode === "third" ? "3rd Person" : "1st Person")
                   : "Selected driver unavailable";
