@@ -36,6 +36,19 @@ type TrackerServer = {
   players: number;
 };
 
+const FALLBACK_TRACKER_SERVERS: TrackerServer[] = [
+  { id: 4, map: 2, name: "ETS2 - Simulation 1", game: "ets2", status: true, players: 0 },
+  { id: 8, map: 7, name: "ETS2 - Arcade", game: "ets2", status: true, players: 0 },
+  { id: 9, map: 8, name: "ATS - Simulation", game: "ats", status: true, players: 0 },
+  { id: 11, map: 10, name: "ATS - [US] Simulation", game: "ats", status: true, players: 0 },
+  { id: 30, map: 15, name: "ETS2 - [US] Simulation", game: "ets2", status: true, players: 0 },
+  { id: 31, map: 50, name: "ETS2 - ProMods", game: "promods", status: true, players: 0 },
+  { id: 32, map: 51, name: "ETS2 - ProMods Arcade", game: "promods", status: true, players: 0 },
+  { id: 35, map: 30, name: "ETS2 - [Asia] Simulation", game: "ets2", status: true, players: 0 },
+  { id: 38, map: 45, name: "ATS - [US] Arcade", game: "ats", status: true, players: 0 },
+  { id: 41, map: 41, name: "ETS2 - Simulation 2", game: "ets2", status: true, players: 0 },
+];
+
 let trackerServerCache: { expiresAt: number; value: TrackerServer[] } | null = null;
 const trackerAreaCache = new Map<string, { expiresAt: number; value: ExternalDriver[] }>();
 
@@ -71,7 +84,9 @@ async function truckersMpTrackerServers(): Promise<TrackerServer[]> {
     trackerServerCache = { value, expiresAt: Date.now() + 15_000 };
     return value;
   } catch {
-    return trackerServerCache?.value ?? [];
+    return trackerServerCache?.value?.length
+      ? trackerServerCache.value
+      : FALLBACK_TRACKER_SERVERS;
   }
 }
 
@@ -156,62 +171,62 @@ function normalizeTrackerHeading(value: number) {
 }
 
 function parseTruckersMpRows(payload: any, server: number): ExternalDriver[] {
-  const rows = Array.isArray(payload?.Data)
-    ? payload.Data
-    : Array.isArray(payload)
-      ? payload
-      : Array.isArray(payload?.drivers)
-        ? payload.drivers
-        : Array.isArray(payload?.players)
-          ? payload.players
-          : [];
+  const rows =
+    Array.isArray(payload) ? payload :
+    Array.isArray(payload?.Data) ? payload.Data :
+    Array.isArray(payload?.data) ? payload.data :
+    Array.isArray(payload?.Players) ? payload.Players :
+    Array.isArray(payload?.players) ? payload.players :
+    Array.isArray(payload?.Drivers) ? payload.Drivers :
+    Array.isArray(payload?.drivers) ? payload.drivers :
+    Array.isArray(payload?.Results) ? payload.Results :
+    Array.isArray(payload?.results) ? payload.results :
+    [];
+
+  const value = (row: any, ...keys: string[]) => {
+    for (const key of keys) {
+      const next = row?.[key];
+      if (next !== undefined && next !== null) return next;
+    }
+    return undefined;
+  };
 
   return rows.flatMap((row: any) => {
-    // tracker.ets2map.com uses X/Y where Y is the SCS map Z axis.
-    if (row?.Name !== undefined && row?.X !== undefined && row?.Y !== undefined) {
-      const x = Number(row.X);
-      const z = Number(row.Y);
-      const mpId = String(row.MpId ?? "");
-      const playerId = String(row.PlayerId ?? "");
-      if (!Number.isFinite(x) || !Number.isFinite(z) || (!mpId && !playerId)) return [];
+    const x = Number(value(row, "X", "x", "PosX", "posX") ?? row?.position?.x);
+    const z = Number(value(row, "Y", "y", "Z", "z", "PosY", "posY", "PosZ", "posZ") ?? row?.position?.z);
+    if (!Number.isFinite(x) || !Number.isFinite(z)) return [];
 
-      return [{
-        driverId: "tmp:" + (mpId || playerId),
-        username: String(row.Name ?? mpId ?? playerId),
-        game: "ets2" as const,
-        x,
-        y: 0,
-        z,
-        heading: normalizeTrackerHeading(Number(row.Heading ?? 0)),
-        speedKph: Number(row.Speed ?? row.SpeedKph ?? 0),
-        server: "TruckersMP #" + String(row.ServerId ?? server),
-        source: "truckersmp-provider" as const,
-        mpId: mpId || undefined,
-        playerId: playerId || undefined,
-        vtcId: Number.isFinite(Number(row.VtcId)) ? Number(row.VtcId) : null,
-        updatedAt: row.Time ? new Date(Number(row.Time) * 1000).toISOString() : new Date().toISOString(),
-      }];
-    }
-
-    const game = String(row.game ?? row.gameId ?? "ets2").toLowerCase();
+    const mpId = String(value(row, "MpId", "mpId", "TMPId", "tmpId", "Id", "id") ?? "");
+    const playerId = String(value(row, "PlayerId", "playerId", "SteamId", "steamId", "steamID64") ?? "");
+    const username = String(value(row, "Name", "name", "Username", "username") ?? mpId ?? playerId ?? "TruckersMP player");
+    const unique = mpId || playerId || username + ":" + Math.round(x) + ":" + Math.round(z);
+    const game = String(value(row, "Game", "game", "gameId") ?? "ets2").toLowerCase();
     const normalizedGame = game.includes("ats") ? "ats" : "ets2";
-    const driverId = String(row.driverId ?? row.steamId ?? row.steamID64 ?? row.id ?? "");
-    const x = Number(row.x ?? row.position?.x);
-    const z = Number(row.z ?? row.position?.z);
-    if (!driverId || !Number.isFinite(x) || !Number.isFinite(z)) return [];
+    const headingRaw = Number(value(row, "Heading", "heading", "Rotation", "rotation") ?? 0);
+    const heading =
+      Math.abs(headingRaw) <= Math.PI * 2 + 0.01
+        ? normalizeTrackerHeading(headingRaw)
+        : Math.abs(headingRaw) <= 1.01
+          ? ((headingRaw % 1) + 1) % 1
+          : (((headingRaw / 360) % 1) + 1) % 1;
 
     return [{
-      driverId,
-      username: String(row.username ?? row.name ?? driverId),
+      driverId: "tmp:" + server + ":" + unique,
+      username,
       game: normalizedGame as "ets2" | "ats",
       x,
-      y: Number(row.y ?? row.position?.y ?? 0),
+      y: Number(value(row, "WorldY", "worldY", "Elevation", "elevation") ?? 0),
       z,
-      heading: Number(row.heading ?? row.position?.heading ?? 0),
-      speedKph: Number(row.speedKph ?? row.speed ?? 0),
-      server: row.server ? String(row.server) : "TruckersMP",
+      heading,
+      speedKph: Number(value(row, "Speed", "speed", "SpeedKph", "speedKph") ?? 0),
+      server: "TruckersMP #" + String(value(row, "ServerId", "serverId") ?? server),
       source: "truckersmp-provider" as const,
-      updatedAt: new Date().toISOString(),
+      mpId: mpId || undefined,
+      playerId: playerId || undefined,
+      vtcId: Number.isFinite(Number(value(row, "VtcId", "vtcId"))) ? Number(value(row, "VtcId", "vtcId")) : null,
+      updatedAt: value(row, "Time", "time", "updatedAt")
+        ? new Date(Number(value(row, "Time", "time")) * (Number(value(row, "Time", "time")) < 1e12 ? 1000 : 1)).toISOString()
+        : new Date().toISOString(),
     }];
   });
 }
