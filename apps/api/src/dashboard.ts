@@ -116,7 +116,7 @@ export async function registerDashboardRoutes(app: FastifyInstance) {
       netIncome: Number(income || 0) - Number(fineAmount || 0),
     };
 
-    const [firstJob, longestJob, bestIncome, monthlyTrends, gameBreakdown, topDestinations] = await Promise.all([
+    const [firstJob, longestJob, bestIncome, monthlyTrends, gameBreakdown, topDestinations, cargoBreakdown, modeBreakdown, countryBreakdown, monthlyPenalties] = await Promise.all([
       Job.findOne({ where: { driverId: steamId }, order: [["completedAt", "ASC"]] }),
       Job.max("distanceKm", { where: { driverId: steamId } }),
       Job.max("income", { where: { driverId: steamId } }),
@@ -157,6 +157,36 @@ export async function registerDashboardRoutes(app: FastifyInstance) {
          LIMIT 10`,
         { replacements: { driverId: steamId }, type: QueryTypes.SELECT },
       ),
+      sequelize.query(
+        `SELECT cargo, COUNT(*)::int AS jobs, COALESCE(SUM(distance_km),0)::float AS "distanceKm"
+         FROM jobs WHERE driver_id = :driverId AND cargo IS NOT NULL
+         GROUP BY cargo ORDER BY jobs DESC LIMIT 12`,
+        { replacements: { driverId: steamId }, type: QueryTypes.SELECT },
+      ),
+      sequelize.query(
+        `SELECT mode, COUNT(*)::int AS jobs, COALESCE(SUM(distance_km),0)::float AS "distanceKm"
+         FROM jobs WHERE driver_id = :driverId
+         GROUP BY mode ORDER BY jobs DESC`,
+        { replacements: { driverId: steamId }, type: QueryTypes.SELECT },
+      ),
+      sequelize.query(
+        `SELECT country, COUNT(*)::int AS jobs, COALESCE(SUM(distance_km),0)::float AS "distanceKm"
+         FROM (
+           SELECT destination_country AS country, distance_km FROM jobs WHERE driver_id = :driverId AND destination_country IS NOT NULL
+         ) x
+         GROUP BY country ORDER BY jobs DESC LIMIT 20`,
+        { replacements: { driverId: steamId }, type: QueryTypes.SELECT },
+      ),
+      sequelize.query(
+        `SELECT TO_CHAR(DATE_TRUNC('month', occurred_at), 'YYYY-MM') AS month,
+                COUNT(*)::int AS penalties,
+                COALESCE(SUM(amount),0)::bigint AS amount
+         FROM fines
+         WHERE driver_id = :driverId AND occurred_at >= (CURRENT_DATE - INTERVAL '11 months')
+         GROUP BY DATE_TRUNC('month', occurred_at)
+         ORDER BY DATE_TRUNC('month', occurred_at)`,
+        { replacements: { driverId: steamId }, type: QueryTypes.SELECT },
+      ),
     ]);
 
     return {
@@ -193,6 +223,10 @@ export async function registerDashboardRoutes(app: FastifyInstance) {
       trends: monthlyTrends,
       gameBreakdown,
       topDestinations,
+      cargoBreakdown,
+      modeBreakdown,
+      countryBreakdown,
+      monthlyPenalties,
       distanceOnJobKm: totals.distanceKm,
       vtcToday: primaryVtcId ? {
         jobs: Number(todayVtcJobs || 0),
