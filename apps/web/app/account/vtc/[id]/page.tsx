@@ -13,6 +13,7 @@ export default function ManageVtcPage() {
   const [status, setStatus] = useState("Loading VTC…");
   const [vtcApiKeys, setVtcApiKeys] = useState<any[]>([]);
   const [newVtcApiKey, setNewVtcApiKey] = useState("");
+  const [vtcApiScopes, setVtcApiScopes] = useState(["telemetry:read", "jobs:read", "fines:read", "statistics:read", "members:read", "events:read", "moderation:read"]);
   const [inviteUrl, setInviteUrl] = useState("");
   const [inviteStatus, setInviteStatus] = useState("");
   const [activity, setActivity] = useState<any[]>([]);
@@ -74,7 +75,7 @@ export default function ManageVtcPage() {
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         name: "VTC integration",
-        scopes: ["telemetry:read", "jobs:read", "fines:read", "statistics:read", "members:read"],
+        scopes: vtcApiScopes,
       }),
     });
 
@@ -88,6 +89,14 @@ export default function ManageVtcPage() {
   const revokeVtcApiKey = async (keyId: number) => {
     await fetch(api + "/api/v1/account/vtcs/" + id + "/api-keys/" + keyId, {
       method: "DELETE",
+      credentials: "include",
+    });
+    await load();
+  };
+
+  const rotateVtcApiKey = async (keyId: number) => {
+    await fetch(api + "/api/v1/account/vtcs/" + id + "/api-keys/" + keyId + "/rotate", {
+      method: "POST",
       credentials: "include",
     });
     await load();
@@ -571,8 +580,21 @@ export default function ManageVtcPage() {
       <section className="card" style={{ marginBottom: 16 }}>
         <h3>Group integrations</h3>
         <p className="muted">Create a VTC-scoped key for dashboards, bots and external tools. The server binds the key to this VTC, so changing an ID cannot expose another group.</p>
+        <div className="grid" style={{ padding: "12px 0 0" }}>
+          {["telemetry:read", "jobs:read", "fines:read", "statistics:read", "members:read", "events:read", "moderation:read", "convoys:read"].map((scope) => (
+            <label key={scope}>
+              <input
+                type="checkbox"
+                checked={vtcApiScopes.includes(scope)}
+                onChange={(event) => setVtcApiScopes((current) => event.target.checked
+                  ? Array.from(new Set([...current, scope]))
+                  : current.filter((item) => item !== scope))}
+              /> {scope}
+            </label>
+          ))}
+        </div>
         <div className="actions">
-          <button className="button primary" onClick={() => void createVtcApiKey()}>Create VTC API key</button>
+          <button className="button primary" disabled={vtcApiScopes.length === 0} onClick={() => void createVtcApiKey()}>Create VTC API key</button>
         </div>
         {newVtcApiKey ? (
           <div style={{ marginTop: 16 }}>
@@ -587,7 +609,10 @@ export default function ManageVtcPage() {
             <div><strong>{key.name}</strong><small>VTC API key</small></div>
             <div><strong>{key.revokedAt ? "Revoked" : "Active"}</strong><small>{(key.scopes ?? []).join(", ")}</small></div>
             <div><small>Created {new Date(key.createdAt).toLocaleDateString()}</small></div>
-            <div>{!key.revokedAt ? <button className="button" onClick={() => void revokeVtcApiKey(key.id)}>Revoke</button> : null}</div>
+            <div style={{ display: "grid", gap: 6 }}>
+              {!key.revokedAt ? <button className="button" onClick={() => void rotateVtcApiKey(key.id)}>Rotate</button> : null}
+              {!key.revokedAt ? <button className="button" onClick={() => void revokeVtcApiKey(key.id)}>Revoke</button> : null}
+            </div>
           </article>
         ))}
       </section>
