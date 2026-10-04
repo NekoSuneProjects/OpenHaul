@@ -68,6 +68,7 @@ function OverlayContent() {
   const [staffAlerts, setStaffAlerts] = useState(initialStaff);
   const [cargoMissions, setCargoMissions] = useState(initialMissions);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const musicFrameRef = useRef<HTMLIFrameElement>(null);
   const [radioStations] = useState<RadioStation[]>(overlayRadioStations);
   const [selectedRadioId, setSelectedRadioId] = useState(overlayRadioStations[0]?.id || "");
   const [radioQuery, setRadioQuery] = useState("");
@@ -86,6 +87,8 @@ function OverlayContent() {
   const [musicEmbedUrl, setMusicEmbedUrl] = useState("");
   const [musicProvider, setMusicProvider] = useState("");
   const [musicError, setMusicError] = useState("");
+  const [musicPaused, setMusicPaused] = useState(false);
+  const [pausedMusicEmbedUrl, setPausedMusicEmbedUrl] = useState("");
   const [mediaQueue, setMediaQueue] = useState<MediaQueueItem[]>([]);
   const [queueIndex, setQueueIndex] = useState(-1);
   const [repeatMode, setRepeatMode] = useState<RepeatMode>("off");
@@ -356,7 +359,7 @@ function OverlayContent() {
       }
 
       if (videoId) {
-        const params = new URLSearchParams({ autoplay: "1", playsinline: "1" });
+        const params = new URLSearchParams({ autoplay: "1", playsinline: "1", enablejsapi: "1", origin: window.location.origin });
         if (playlistId) params.set("list", playlistId);
         return {
           provider: "YouTube",
@@ -410,6 +413,27 @@ function OverlayContent() {
       };
     }
 
+    if (host === "music.yandex.ru" || host === "music.yandex.com") {
+      const trackMatch = parsed.pathname.match(/\/album\/(\d+)\/track\/(\d+)/);
+      if (trackMatch) {
+        return {
+          provider: "Yandex Music",
+          url: "https://music.yandex.ru/iframe/#track/" + encodeURIComponent(trackMatch[2]) + "/" + encodeURIComponent(trackMatch[1]),
+        };
+      }
+      throw new Error("Paste a Yandex Music track URL such as /album/ALBUM_ID/track/TRACK_ID.");
+    }
+
+    if (host === "bilibili.com" || host === "www.bilibili.com" || host === "m.bilibili.com" || host === "b23.tv") {
+      const match = parsed.pathname.match(/\/(?:video\/)?(BV[A-Za-z0-9]+)/i);
+      const bvid = match?.[1] || parsed.searchParams.get("bvid") || "";
+      if (!bvid) throw new Error("Paste a Bilibili video URL containing a BV id.");
+      return {
+        provider: "Bilibili",
+        url: "https://player.bilibili.com/player.html?bvid=" + encodeURIComponent(bvid) + "&autoplay=1",
+      };
+    }
+
     if (host === "twitch.tv" || host === "m.twitch.tv") {
       const parts = parsed.pathname.split("/").filter(Boolean);
       const channel = parts[0] || "";
@@ -424,7 +448,7 @@ function OverlayContent() {
       };
     }
 
-    throw new Error("Supported without an API key: YouTube, SoundCloud, Spotify, Mixcloud, Apple Music, and Twitch.");
+    throw new Error("Supported without an API key: YouTube, SoundCloud, Spotify, Mixcloud, Apple Music, Twitch, Yandex Music, and Bilibili.");
   };
 
   const playQueueItem = async (index: number) => {
@@ -432,6 +456,8 @@ function OverlayContent() {
     if (!item) return;
     setQueueIndex(index);
     setMusicProvider(item.provider);
+    setMusicPaused(false);
+    setPausedMusicEmbedUrl("");
     setMusicEmbedUrl(item.embedUrl);
   };
 
@@ -443,6 +469,8 @@ function OverlayContent() {
       if (playNow) {
         setQueueIndex(index);
         setMusicProvider(next[index].provider);
+        setMusicPaused(false);
+        setPausedMusicEmbedUrl("");
         setMusicEmbedUrl(next[index].embedUrl);
       }
       return next;
@@ -555,12 +583,6 @@ function OverlayContent() {
     const audio = audioRef.current;
     if (!audio || !station.url) return;
 
-    if (selectedRadioId === station.id && !audio.paused) {
-      audio.pause();
-      setRadioPlaying(false);
-      return;
-    }
-
     setSelectedRadioId(station.id);
     if (audio.src !== station.url) audio.src = station.url;
 
@@ -570,6 +592,74 @@ function OverlayContent() {
     } catch {
       setRadioPlaying(false);
     }
+  };
+
+  const toggleRadioPlayback = async () => {
+    const audio = audioRef.current;
+    if (!audio || !selectedRadio) return;
+
+    if (!audio.paused) {
+      audio.pause();
+      setRadioPlaying(false);
+      return;
+    }
+
+    if (!audio.src) audio.src = selectedRadio.url;
+    try {
+      await audio.play();
+      setRadioPlaying(true);
+    } catch {
+      setRadioPlaying(false);
+    }
+  };
+
+  const stopRadio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
+    setRadioPlaying(false);
+  };
+
+  const pauseMusic = () => {
+    if (!musicEmbedUrl) return;
+
+    if (musicProvider === "YouTube") {
+      musicFrameRef.current?.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "pauseVideo", args: [] }),
+        "*",
+      );
+      setMusicPaused(true);
+      return;
+    }
+
+    setPausedMusicEmbedUrl(musicEmbedUrl);
+    setMusicEmbedUrl("");
+    setMusicPaused(true);
+  };
+
+  const resumeMusic = () => {
+    if (musicProvider === "YouTube" && musicFrameRef.current) {
+      musicFrameRef.current.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "playVideo", args: [] }),
+        "*",
+      );
+      setMusicPaused(false);
+      return;
+    }
+
+    if (pausedMusicEmbedUrl) {
+      setMusicEmbedUrl(pausedMusicEmbedUrl);
+      setPausedMusicEmbedUrl("");
+      setMusicPaused(false);
+    }
+  };
+
+  const stopMusic = () => {
+    setMusicEmbedUrl("");
+    setPausedMusicEmbedUrl("");
+    setMusicPaused(false);
   };
 
   const mapUrl = useMemo(() => {
@@ -739,13 +829,22 @@ function OverlayContent() {
                 <span className="gameOverlayRadioRoute">Direct station stream · no OpenHaul proxy</span>
               </div>
               <div className="gameOverlayRadioControls">
-                <button
-                  className="gameOverlayRadioPlay"
-                  disabled={!selectedRadio}
-                  onClick={() => selectedRadio && void playRadio(selectedRadio)}
-                >
-                  {radioPlaying ? "Ⅱ Pause" : "▶ Play"}
-                </button>
+                <div className="gameOverlayRadioButtonRow">
+                  <button
+                    className="gameOverlayRadioPlay"
+                    disabled={!selectedRadio}
+                    onClick={() => void toggleRadioPlayback()}
+                  >
+                    {radioPlaying ? "Ⅱ Pause" : "▶ Play"}
+                  </button>
+                  <button
+                    className="gameOverlayRadioStop"
+                    disabled={!selectedRadio}
+                    onClick={stopRadio}
+                  >
+                    ■ Stop
+                  </button>
+                </div>
                 <label>
                   <span>Volume {Math.round(radioVolume * 100)}%</span>
                   <input
@@ -900,7 +999,7 @@ function OverlayContent() {
               <div>
                 <h2>Play music from a link</h2>
                 <p>
-                  Paste a public link from YouTube (including Live), SoundCloud, Spotify, Mixcloud, Apple Music, or Twitch.
+                  Paste a public link from YouTube (including Live), SoundCloud, Spotify, Mixcloud, Apple Music, Twitch, Yandex Music, or Bilibili.
                   Links are added to the Music playlist and use each platform's official player. Radio stays separate and is never added to this playlist.
                 </p>
               </div>
@@ -914,7 +1013,7 @@ function OverlayContent() {
                   onKeyDown={(event) => {
                     if (event.key === "Enter") loadMusicUrl();
                   }}
-                  placeholder="YouTube / YouTube Live / SoundCloud / Spotify / Mixcloud / Apple Music / Twitch URL"
+                  placeholder="YouTube / SoundCloud / Spotify / Mixcloud / Apple Music / Twitch / Yandex / Bilibili URL"
                   aria-label="Music URL"
                 />
                 <button type="button" disabled={!musicUrl.trim()} onClick={loadMusicUrl}>
@@ -929,6 +1028,8 @@ function OverlayContent() {
                 <span>Mixcloud</span>
                 <span>Apple Music</span>
                 <span>Twitch</span>
+                <span>Yandex Music</span>
+                <span>Bilibili</span>
               </div>
               {musicError ? <div className="gameOverlayRadioEmpty">{musicError}</div> : null}
             </section>
@@ -967,8 +1068,16 @@ function OverlayContent() {
               {musicEmbedUrl ? (
                 <>
                   <div className="gameOverlayMusicPlayerHead">
-                    <strong>{musicProvider}</strong>
-                    <small>Official embedded player · no OpenHaul media proxy</small>
+                    <div>
+                      <strong>{musicProvider}</strong>
+                      <small>Official embedded player · no OpenHaul media proxy</small>
+                    </div>
+                    <div className="gameOverlayMusicTransport">
+                      <button type="button" onClick={musicPaused ? resumeMusic : pauseMusic}>
+                        {musicPaused ? "▶ Resume" : "Ⅱ Pause"}
+                      </button>
+                      <button type="button" onClick={stopMusic}>■ Stop</button>
+                    </div>
                   </div>
                   <div className="gameOverlayMusicPlayerPlaceholder">
                     <strong>{musicProvider} is playing</strong>
@@ -988,6 +1097,7 @@ function OverlayContent() {
         {musicEmbedUrl ? (
           <div className={"gameOverlayPersistentMedia " + (tab === "music" ? "visible" : "background")}>
             <iframe
+              ref={musicFrameRef}
               key={musicEmbedUrl}
               src={musicEmbedUrl}
               title={musicProvider + " background player"}
