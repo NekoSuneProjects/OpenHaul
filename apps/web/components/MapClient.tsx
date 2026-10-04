@@ -792,6 +792,7 @@ export function MapClient() {
   const [trackerDrivers, setTrackerDrivers] = useState<Driver[]>([]);
   const [trackerTraffic, setTrackerTraffic] = useState<any[]>([]);
   const [trackerTotalOnline, setTrackerTotalOnline] = useState(0);
+  const [trackerServers, setTrackerServers] = useState<TrackerServer[]>([]);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
@@ -805,8 +806,9 @@ export function MapClient() {
     () => Array.from(new Set([
       ...drivers.map((driver) => driver.server),
       ...trackerDrivers.map((driver) => driver.server),
+      ...trackerServers.filter((server) => server.status).map((server) => server.name),
     ].filter((value): value is string => Boolean(value)))).sort(),
-    [drivers, trackerDrivers],
+    [drivers, trackerDrivers, trackerServers],
   );
 
   const visibleDrivers = useMemo(() => {
@@ -963,11 +965,25 @@ export function MapClient() {
 
       const nextDrivers = new Map<string, Driver>();
       const nextTraffic: any[] = [];
+      const nextServers = new Map<number, TrackerServer>();
       let totalOnline = 0;
 
       for (const result of results) {
         if (!result) continue;
         totalOnline += Number(result.totalOnline ?? 0);
+        for (const server of result.servers ?? []) {
+          const id = Number(server.id);
+          const mapId = Number(server.map);
+          if (!Number.isFinite(id) || !Number.isFinite(mapId)) continue;
+          nextServers.set(id, {
+            id,
+            map: mapId,
+            name: String(server.name ?? "TruckersMP"),
+            game: String(server.game ?? ""),
+            status: server.status !== false,
+            players: Number(server.players ?? 0),
+          });
+        }
         for (const row of result.drivers ?? []) {
           const driver = externalDriverList([row])[0];
           if (!driver) continue;
@@ -979,6 +995,7 @@ export function MapClient() {
 
       setTrackerDrivers([...nextDrivers.values()]);
       setTrackerTraffic(nextTraffic);
+      setTrackerServers([...nextServers.values()].sort((a, b) => a.name.localeCompare(b.name)));
       setTrackerTotalOnline(totalOnline);
     };
 
@@ -1311,22 +1328,36 @@ export function MapClient() {
           title.textContent = String(properties.username || properties.driverId || "Driver");
           card.appendChild(title);
 
-          const lines = [
-            String(properties.vtcTag ? "[" + properties.vtcTag + "] " : "") + String(properties.vtc || "Independent"),
-            (properties.network === "truckersmp" ? "TruckersMP" : "OpenHaul") + " · " + String(properties.game || "").toUpperCase() + " · " + Math.round(Number(properties.speedKph || 0)) + " km/h",
-            String(properties.truck || "Unknown truck"),
-            properties.staffRole ? "🛡 " + String(properties.staffRole) : "",
-            String(properties.cargo || "No cargo"),
-            Number(properties.specialJob || 0) ? "⭐ Special cargo / transport job" : "",
-            Number(properties.cargoLoaded || 0)
-              ? "Cargo damage " + Number(properties.cargoDamagePercent || 0).toFixed(1) + "% · Trailer " + Number(properties.trailerDamagePercent || 0).toFixed(1) + "%"
-              : "Truck damage " + Number(properties.truckDamagePercent || 0).toFixed(1) + "%",
-            Number(properties.rpm || 0) > 0 ? Math.round(Number(properties.rpm)) + " RPM · " + Math.round(Number(properties.fuel || 0)) + " L fuel" : "",
-            Number(properties.navigationDistanceM || 0) > 0 ? Math.round(Number(properties.navigationDistanceM) / 1000) + " km remaining · " + Math.round(Number(properties.speedLimitKph || 0)) + " km/h limit" : "",
-            String(properties.route || properties.server || ""),
-          ].filter(Boolean);
+          const isTruckersMpOnly = properties.network === "truckersmp";
+          const lines = isTruckersMpOnly
+            ? [
+                "TruckersMP · " + String(properties.game || "").toUpperCase(),
+                properties.server ? "Server: " + String(properties.server) : "Server: unknown",
+                Number(properties.speedKph || 0) > 0 ? Math.round(Number(properties.speedKph)) + " km/h" : "",
+                properties.truckersMpId ? "TruckersMP ID: " + String(properties.truckersMpId) : "",
+                properties.truckersMpPlayerId ? "Player ID: " + String(properties.truckersMpPlayerId) : "",
+                Number(properties.truckersMpVtcId || 0) > 0 ? "TruckersMP VTC ID: " + String(properties.truckersMpVtcId) : "",
+                Number(properties.trackerServerId || 0) > 0 ? "Server ID: " + String(properties.trackerServerId) + " · map " + String(properties.trackerMapId || "") : "",
+                "TruckersMP-only player · extra truck/cargo/damage data appears when they use OpenHaul",
+              ]
+            : [
+                String(properties.vtcTag ? "[" + properties.vtcTag + "] " : "") + String(properties.vtc || "Independent"),
+                "OpenHaul · " + String(properties.game || "").toUpperCase() + " · " + Math.round(Number(properties.speedKph || 0)) + " km/h",
+                properties.server ? "Server: " + String(properties.server) : "",
+                String(properties.truck || "Unknown truck"),
+                properties.staffRole ? "🛡 " + String(properties.staffRole) : "",
+                String(properties.cargo || "No cargo"),
+                Number(properties.specialJob || 0) ? "⭐ Special cargo / transport job" : "",
+                Number(properties.cargoLoaded || 0)
+                  ? "Cargo damage " + Number(properties.cargoDamagePercent || 0).toFixed(1) + "% · Trailer " + Number(properties.trailerDamagePercent || 0).toFixed(1) + "%"
+                  : "Truck damage " + Number(properties.truckDamagePercent || 0).toFixed(1) + "%",
+                Number(properties.rpm || 0) > 0 ? Math.round(Number(properties.rpm)) + " RPM · " + Math.round(Number(properties.fuel || 0)) + " L fuel" : "",
+                Number(properties.navigationDistanceM || 0) > 0 ? Math.round(Number(properties.navigationDistanceM) / 1000) + " km remaining · " + Math.round(Number(properties.speedLimitKph || 0)) + " km/h limit" : "",
+                String(properties.route || ""),
+              ];
+          const visibleLines = lines.filter(Boolean);
 
-          for (const line of lines) {
+          for (const line of visibleLines) {
             const row = document.createElement("div");
             row.textContent = line;
             card.appendChild(row);
