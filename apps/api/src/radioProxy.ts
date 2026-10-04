@@ -787,6 +787,7 @@ function stationOutputBase(station: RadioStation) {
 function stationPublicJson(station: RadioStation) {
   const base = stationOutputBase(station);
   const directPlayable = !station.forceProxy;
+  const ephemeralDirectorySource = ["internet-radio", "xiph", "lautfm", "shoutcast"].includes(station.source);
   return {
     id: station.id,
     stationUuid: station.stationUuid ?? null,
@@ -814,10 +815,7 @@ function stationPublicJson(station: RadioStation) {
     playback: {
       browser: directPlayable ? station.sourceUrl : `${base}.mp3`,
       direct: directPlayable ? station.sourceUrl : null,
-      // ATS/ETS2 radio playback is most reliable with MP3. Always expose the
-      // OpenHaul transcoding relay here, even when the directory source itself
-      // is AAC/AAC+, OGG, HLS, or another browser-playable format.
-      gameMp3: `${base}.mp3`,
+      gameMp3: ephemeralDirectorySource ? station.sourceUrl : `${base}.mp3`,
       ogg: `${base}.ogg`,
       aac: `${base}.aac`,
     },
