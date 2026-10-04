@@ -288,30 +288,41 @@ function absoluteApiUrl(relative: string) {
   return new URL(relative, fallback.endsWith("/") ? fallback : fallback + "/").toString();
 }
 
+const pmtilesSourceLayerCache = new Map<string, Promise<string>>();
+
 async function detectPmtilesSourceLayer(
   sourceUrl: string,
   game: "ets2" | "ats",
 ) {
-  try {
-    const pmtiles = await import("pmtiles");
-    const archive = new pmtiles.PMTiles(sourceUrl);
-    const metadata = await archive.getMetadata() as {
-      vector_layers?: Array<{ id?: string }>;
-    };
+  const cacheKey = game + ":" + sourceUrl;
+  const cached = pmtilesSourceLayerCache.get(cacheKey);
+  if (cached) return cached;
 
-    const ids = (metadata.vector_layers ?? [])
-      .map((layer) => String(layer.id ?? ""))
-      .filter(Boolean);
+  const request = (async () => {
+    try {
+      const pmtiles = await import("pmtiles");
+      const archive = new pmtiles.PMTiles(sourceUrl);
+      const metadata = await archive.getMetadata() as {
+        vector_layers?: Array<{ id?: string }>;
+      };
 
-    const preferred =
-      game === "ats"
-        ? ["ats", "usa"]
-        : ["ets2", "europe"];
+      const ids = (metadata.vector_layers ?? [])
+        .map((layer) => String(layer.id ?? ""))
+        .filter(Boolean);
 
-    return preferred.find((id) => ids.includes(id)) ?? ids[0] ?? game;
-  } catch {
-    return game;
-  }
+      const preferred =
+        game === "ats"
+          ? ["ats", "usa"]
+          : ["ets2", "europe"];
+
+      return preferred.find((id) => ids.includes(id)) ?? ids[0] ?? game;
+    } catch {
+      return game;
+    }
+  })();
+
+  pmtilesSourceLayerCache.set(cacheKey, request);
+  return request;
 }
 
 function defaultMapStyle() {
@@ -1439,17 +1450,29 @@ export function MapClient() {
     let cancelled = false;
 
     const install = async () => {
+      const installs: Array<Promise<void>> = [];
+
       if (mapAssets.ets2.available) {
         const sourceUrl = absoluteApiUrl(mapAssets.ets2.url);
-        const sourceLayer = await detectPmtilesSourceLayer(sourceUrl, "ets2");
-        if (!cancelled) addScsMapLayers(map, "ets2", sourceUrl, sourceLayer);
+        installs.push(
+          detectPmtilesSourceLayer(sourceUrl, "ets2").then((sourceLayer) => {
+            if (!cancelled) addScsMapLayers(map, "ets2", sourceUrl, sourceLayer);
+          }),
+        );
       }
 
       if (mapAssets.ats.available) {
         const sourceUrl = absoluteApiUrl(mapAssets.ats.url);
-        const sourceLayer = await detectPmtilesSourceLayer(sourceUrl, "ats");
-        if (!cancelled) addScsMapLayers(map, "ats", sourceUrl, sourceLayer);
+        installs.push(
+          detectPmtilesSourceLayer(sourceUrl, "ats").then((sourceLayer) => {
+            if (!cancelled) addScsMapLayers(map, "ats", sourceUrl, sourceLayer);
+          }),
+        );
       }
+
+      // ETS2 and ATS archives are independent. Load metadata and register both
+      // vector sources in parallel instead of making ATS wait for ETS2.
+      await Promise.allSettled(installs);
 
       if (cancelled) return;
 
