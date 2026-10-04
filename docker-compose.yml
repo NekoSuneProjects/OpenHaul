@@ -66,6 +66,8 @@ services:
       APP_URL: ${APP_URL:-http://localhost:3000}
       TWITCH_CLIENT_ID: ${TWITCH_CLIENT_ID:-}
       TWITCH_CLIENT_SECRET: ${TWITCH_CLIENT_SECRET:-}
+      DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID:-}
+      OPENHAUL_BOT_SERVICE_KEY: ${OPENHAUL_BOT_SERVICE_KEY:-}
     volumes:
       - ./data-runtime:/data-runtime
     depends_on:
@@ -84,7 +86,10 @@ services:
     restart: unless-stopped
     environment:
       DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN:-}
+      DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID:-}
       OPENHAUL_API_URL: http://openhaul:3000
+      OPENHAUL_APP_URL: ${APP_URL:-http://localhost:3000}
+      OPENHAUL_BOT_SERVICE_KEY: ${OPENHAUL_BOT_SERVICE_KEY:-}
       OPENHAUL_VTC_API_KEY: ${OPENHAUL_VTC_API_KEY:-}
       DISCORD_GUILD_ID: ${DISCORD_GUILD_ID:-}
       DISCORD_FINE_CHANNEL_ID: ${DISCORD_FINE_CHANNEL_ID:-}
