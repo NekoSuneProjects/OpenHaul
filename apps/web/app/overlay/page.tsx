@@ -79,6 +79,9 @@ function OverlayContent() {
   const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
   const [radioVolume, setRadioVolume] = useState(0.7);
+  const [musicRegionCode, setMusicRegionCode] = useState("ZZ");
+  const [musicRegionSource, setMusicRegionSource] = useState("");
+  const [musicProviderPriority, setMusicProviderPriority] = useState<string[]>([]);
   const [musicSearchQuery, setMusicSearchQuery] = useState("");
   const [musicSearchResults, setMusicSearchResults] = useState<MusicSearchResult[]>([]);
   const [musicSearchLoading, setMusicSearchLoading] = useState(false);
@@ -169,6 +172,20 @@ function OverlayContent() {
     void load();
     const timer = setInterval(load, 5000);
     return () => { active = false; clearInterval(timer); };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    fetch(api + "/api/v1/public/region", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : null)
+      .then((data) => {
+        if (!active || !data) return;
+        setMusicRegionCode(typeof data.countryCode === "string" ? data.countryCode : "ZZ");
+        setMusicRegionSource(typeof data.source === "string" ? data.source : "");
+        setMusicProviderPriority(Array.isArray(data.musicProviderPriority) ? data.musicProviderPriority : []);
+      })
+      .catch(() => {});
+    return () => { active = false; };
   }, []);
 
   useEffect(() => {
@@ -529,13 +546,23 @@ function OverlayContent() {
     setMusicSearchError("");
     try {
       const response = await fetch(
-        api + "/api/v1/public/music/search?q=" + encodeURIComponent(query) + "&limit=16",
+        api + "/api/v1/public/music/search?q=" + encodeURIComponent(query) +
+          "&limit=16" +
+          (musicRegionCode && musicRegionCode !== "ZZ" ? "&country=" + encodeURIComponent(musicRegionCode) : ""),
         { cache: "no-store" },
       );
       if (!response.ok) throw new Error("Music search returned HTTP " + response.status);
 
-      const data = await response.json() as { results?: MusicSearchResult[] };
+      const data = await response.json() as {
+        results?: MusicSearchResult[];
+        countryCode?: string;
+        regionSource?: string;
+        providerPriority?: string[];
+      };
       setMusicSearchResults(data.results ?? []);
+      if (data.countryCode) setMusicRegionCode(data.countryCode);
+      if (data.regionSource) setMusicRegionSource(data.regionSource);
+      if (Array.isArray(data.providerPriority)) setMusicProviderPriority(data.providerPriority);
     } catch (error) {
       setMusicSearchResults([]);
       setMusicSearchError(error instanceof Error ? error.message : String(error));
@@ -968,8 +995,22 @@ function OverlayContent() {
                 <h2>Search music</h2>
                 <p>
                   Search by artist and title, for example <strong>Artist - Title</strong>.
-                  OpenHaul searches public YouTube, SoundCloud, Bilibili, and Yandex Music results, then you can add one directly to the Music playlist.
+                  OpenHaul ranks YouTube, SoundCloud, Bilibili, and Yandex Music based on the detected country, then keeps the others as fallbacks.
                 </p>
+                <div className="gameOverlayMusicRegion">
+                  <span>Region: <strong>{musicRegionCode === "ZZ" ? "Unknown" : musicRegionCode}</strong></span>
+                  {musicProviderPriority.length ? (
+                    <span>
+                      Priority: {musicProviderPriority.map((provider) =>
+                        provider === "youtube" ? "YouTube" :
+                        provider === "soundcloud" ? "SoundCloud" :
+                        provider === "bilibili" ? "Bilibili" :
+                        provider === "yandex" ? "Yandex Music" : provider
+                      ).join(" → ")}
+                    </span>
+                  ) : null}
+                  {musicRegionSource ? <small>{musicRegionSource}</small> : null}
+                </div>
               </div>
               <div className="gameOverlayMusicUrl">
                 <input
