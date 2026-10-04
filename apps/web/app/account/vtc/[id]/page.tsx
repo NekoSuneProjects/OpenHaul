@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
+import Link from "next/link";
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
@@ -292,6 +293,10 @@ export default function ManageVtcPage() {
         <article className="card"><h3>{Number(ledger?.income ?? 0).toLocaleString()} {vtc.currency}</h3><p>Total incoming</p></article>
         <article className="card"><h3>{Number(ledger?.expenses ?? 0).toLocaleString()} {vtc.currency}</h3><p>Total expenses</p></article>
       </section>
+
+      <div className="actions" style={{ marginBottom: 18 }}>
+        <Link className="button primary" href={"/account/vtc/" + id + "/logbook"}>Open VTC logbook</Link>
+      </div>
 
       <div className="sectionTitle"><h2>VTC dashboard</h2></div>
       <section className="grid">
