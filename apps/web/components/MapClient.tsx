@@ -41,6 +41,11 @@ type Driver = {
   cargoLoaded?: boolean | null;
   server?: string | null;
   network?: "openhaul" | "truckersmp";
+  truckersMpId?: string | null;
+  truckersMpPlayerId?: string | null;
+  truckersMpVtcId?: number | null;
+  trackerServerId?: number | null;
+  trackerMapId?: number | null;
   updatedAt: string;
 };
 
@@ -93,6 +98,162 @@ const satelliteTileUrl =
   "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}";
 const DEFAULT_INTERPOLATION_MS = 1000;
 const FRAME_INTERVAL_MS = 33;
+
+type TrackerServer = {
+  id: number;
+  map: number;
+  name: string;
+  game: string;
+  status: boolean;
+  players: number;
+};
+
+const FALLBACK_TRACKER_SERVERS: TrackerServer[] = [
+  { id: 4, map: 2, name: "ETS2 - Simulation 1", game: "ets2", status: true, players: 0 },
+  { id: 8, map: 7, name: "ETS2 - Arcade", game: "ets2", status: true, players: 0 },
+  { id: 9, map: 8, name: "ATS - Simulation", game: "ats", status: true, players: 0 },
+  { id: 11, map: 10, name: "ATS - [US] Simulation", game: "ats", status: true, players: 0 },
+  { id: 30, map: 15, name: "ETS2 - [US] Simulation", game: "ets2", status: true, players: 0 },
+  { id: 31, map: 50, name: "ETS2 - ProMods", game: "promods", status: true, players: 0 },
+  { id: 32, map: 51, name: "ETS2 - ProMods Arcade", game: "promods", status: true, players: 0 },
+  { id: 35, map: 30, name: "ETS2 - [Asia] Simulation", game: "ets2", status: true, players: 0 },
+  { id: 38, map: 45, name: "ATS - [US] Arcade", game: "ats", status: true, players: 0 },
+  { id: 41, map: 41, name: "ETS2 - Simulation 2", game: "ets2", status: true, players: 0 },
+];
+
+function trackerRows(payload: any): any[] {
+  if (Array.isArray(payload)) return payload;
+  for (const key of ["Data", "data", "Players", "players", "Drivers", "drivers", "Results", "results"]) {
+    if (Array.isArray(payload?.[key])) return payload[key];
+  }
+  return [];
+}
+
+function trackerValue(row: any, ...keys: string[]) {
+  for (const key of keys) {
+    const value = row?.[key];
+    if (value !== undefined && value !== null) return value;
+  }
+  return undefined;
+}
+
+function normalizeTrackerHeadingClient(value: number) {
+  if (!Number.isFinite(value)) return 0;
+  if (Math.abs(value) <= Math.PI * 2 + 0.01) {
+    const turns = value / (Math.PI * 2);
+    return ((turns % 1) + 1) % 1;
+  }
+  if (Math.abs(value) <= 1.01) return ((value % 1) + 1) % 1;
+  const turns = value / 360;
+  return ((turns % 1) + 1) % 1;
+}
+
+function parseTrackerRowsClient(payload: any, server: TrackerServer, game: "ets2" | "ats"): Driver[] {
+  return trackerRows(payload).flatMap((row: any) => {
+    const x = Number(trackerValue(row, "X", "x", "PosX", "posX"));
+    const z = Number(trackerValue(row, "Y", "y", "Z", "z", "PosY", "posY", "PosZ", "posZ"));
+    if (!Number.isFinite(x) || !Number.isFinite(z)) return [];
+
+    const mpId = String(trackerValue(row, "MpId", "mpId", "TMPId", "tmpId", "Id", "id") ?? "");
+    const playerId = String(trackerValue(row, "PlayerId", "playerId", "SteamId", "steamId") ?? "");
+    const name = String(trackerValue(row, "Name", "name", "Username", "username") ?? mpId ?? playerId ?? "TruckersMP player");
+    const unique = mpId || playerId || name + ":" + Math.round(x) + ":" + Math.round(z);
+
+    return [{
+      driverId: "tmp:" + server.map + ":" + unique,
+      username: name,
+      game,
+      x,
+      y: 0,
+      z,
+      heading: normalizeTrackerHeadingClient(Number(trackerValue(row, "Heading", "heading", "Rotation", "rotation") ?? 0)),
+      speedKph: Number(trackerValue(row, "Speed", "speed", "SpeedKph", "speedKph") ?? 0),
+      server: server.name,
+      truck: "TruckersMP",
+      network: "truckersmp" as const,
+      truckersMpId: mpId || null,
+      truckersMpPlayerId: playerId || null,
+      truckersMpVtcId: Number.isFinite(Number(trackerValue(row, "VtcId", "vtcId"))) ? Number(trackerValue(row, "VtcId", "vtcId")) : null,
+      trackerServerId: server.id,
+      trackerMapId: server.map,
+      updatedAt: new Date().toISOString(),
+    }];
+  });
+}
+
+async function loadTrackerServersDirect(): Promise<TrackerServer[]> {
+  try {
+    const response = await fetch("https://truckersmp.krashnz.com/servers", {
+      cache: "no-store",
+      mode: "cors",
+      credentials: "omit",
+    });
+    if (!response.ok) throw new Error("server list HTTP " + response.status);
+    const payload = await response.json();
+    const rows = [
+      ...(Array.isArray(payload?.servers) ? payload.servers : []),
+      ...(Array.isArray(payload?.events) ? payload.events : []),
+    ];
+    const servers = rows.flatMap((server: any) => {
+      const id = Number(server.id);
+      const map = Number(server.map);
+      if (!Number.isFinite(id) || !Number.isFinite(map)) return [];
+      return [{
+        id,
+        map,
+        name: String(server.name ?? "TruckersMP"),
+        game: String(server.game ?? "").toLowerCase(),
+        status: server.status !== false,
+        players: Number(server.players ?? 0),
+      }];
+    });
+    return servers.length ? servers : FALLBACK_TRACKER_SERVERS;
+  } catch {
+    return FALLBACK_TRACKER_SERVERS;
+  }
+}
+
+async function loadTrackerAreaDirect(
+  game: "ets2" | "ats",
+  area: { x1: number; y1: number; x2: number; y2: number },
+) {
+  const servers = (await loadTrackerServersDirect()).filter((server) =>
+    server.status &&
+    (game === "ats"
+      ? server.game === "ats"
+      : server.game === "ets2" || server.game === "promods")
+  );
+
+  const results = await Promise.allSettled(servers.map(async (server) => {
+    const qs = new URLSearchParams({
+      x1: String(Math.round(area.x1)),
+      y1: String(Math.round(area.y1)),
+      x2: String(Math.round(area.x2)),
+      y2: String(Math.round(area.y2)),
+      server: String(server.map),
+    });
+    const response = await fetch("https://tracker.ets2map.com/v3/area?" + qs.toString(), {
+      cache: "no-store",
+      mode: "cors",
+      credentials: "omit",
+      headers: { Accept: "*/*" },
+      referrer: "https://map.truckersmp.com/",
+    });
+    if (!response.ok) throw new Error(server.name + " HTTP " + response.status);
+    return parseTrackerRowsClient(await response.json(), server, game);
+  }));
+
+  const drivers: Driver[] = [];
+  for (const result of results) {
+    if (result.status === "fulfilled") drivers.push(...result.value);
+  }
+
+  return {
+    drivers,
+    servers,
+    totalOnline: servers.reduce((sum, server) => sum + server.players, 0),
+  };
+}
 
 const GAME_FOCUS_BOUNDS = {
   ets2: [[-16, 31], [45, 72]] as [[number, number], [number, number]],
@@ -279,6 +440,11 @@ function driverFeatureCollection(drivers: Driver[], staff: Array<{ driverId: str
           staffSource: staffEntry?.source ?? "",
           staffRole: staffEntry?.role ?? "",
           network: driver.network ?? "openhaul",
+          truckersMpId: driver.truckersMpId ?? "",
+          truckersMpPlayerId: driver.truckersMpPlayerId ?? "",
+          truckersMpVtcId: driver.truckersMpVtcId ?? 0,
+          trackerServerId: driver.trackerServerId ?? 0,
+          trackerMapId: driver.trackerMapId ?? 0,
         },
       }];
     }),
@@ -321,6 +487,11 @@ function externalDriverList(rows: any[]): Driver[] {
       server: row.server ? String(row.server) : "TruckersMP",
       truck: row.source === "openhaul-client" ? "OpenHaul client · TruckersMP position" : "TruckersMP",
       network: row.source === "openhaul-client" ? "openhaul" : "truckersmp",
+      truckersMpId: row.mpId ? String(row.mpId) : null,
+      truckersMpPlayerId: row.playerId ? String(row.playerId) : null,
+      truckersMpVtcId: Number.isFinite(Number(row.vtcId)) ? Number(row.vtcId) : null,
+      trackerServerId: Number.isFinite(Number(row.trackerServerId)) ? Number(row.trackerServerId) : null,
+      trackerMapId: Number.isFinite(Number(row.trackerMapId)) ? Number(row.trackerMapId) : null,
       updatedAt: String(row.updatedAt ?? Date.now()),
     }];
   });
