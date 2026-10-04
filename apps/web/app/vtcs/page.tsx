@@ -65,7 +65,7 @@ export default function VtcDirectoryPage() {
 
       <section className="grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(260px,1fr))" }}>
         {vtcs.map((vtc) => (
-          <Link href={`/vtc/${vtc.id}`} className="card" key={vtc.id}>
+          <Link href={`/vtc/${vtc.slug}`} className="card" key={vtc.id}>
             {vtc.logoUrl ? <img src={vtc.logoUrl} alt="" style={{ width: 56, height: 56, borderRadius: 12, objectFit: "cover" }} /> : null}
             <div className="pill">{vtc.tag || "VTC"}</div>
             <h3 style={{ marginTop: 14 }}>{vtc.name}</h3>
