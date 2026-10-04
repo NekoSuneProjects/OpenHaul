@@ -15,6 +15,8 @@
 #include "scssdk_telemetry.h"
 #include "common/scssdk_telemetry_common_channels.h"
 #include "common/scssdk_telemetry_truck_common_channels.h"
+#include "common/scssdk_telemetry_job_common_channels.h"
+#include "common/scssdk_telemetry_trailer_common_channels.h"
 #include "common/scssdk_telemetry_common_configs.h"
 #include "common/scssdk_telemetry_common_gameplay_events.h"
 #include "eurotrucks2/scssdk_eut2.h"
@@ -127,6 +129,13 @@ struct TelemetryState {
     float navDistanceM = 0;
     float navTimeS = 0;
     float speedLimitMps = 0;
+    float wearEngine = 0;
+    float wearTransmission = 0;
+    float wearCabin = 0;
+    float wearChassis = 0;
+    float wearWheels = 0;
+    float trailerWearChassis = 0;
+    float cargoDamage = 0;
 
     std::string truckBrand;
     std::string truckName;
@@ -138,6 +147,8 @@ struct TelemetryState {
     std::string destinationCompany;
     std::int64_t configuredIncome = 0;
     float plannedDistanceKm = 0;
+    bool specialJob = false;
+    bool cargoLoaded = false;
 };
 
 PipeServer g_pipe;
@@ -201,6 +212,11 @@ void emit_live() {
          << R"("navigationDistanceM":)" << g_state.navDistanceM << ','
          << R"("navigationTimeS":)" << g_state.navTimeS << ','
          << R"("speedLimitKph":)" << (static_cast<double>(g_state.speedLimitMps) * 3.6) << ','
+         << R"("truckDamagePercent":)" << (std::max({g_state.wearEngine, g_state.wearTransmission, g_state.wearCabin, g_state.wearChassis, g_state.wearWheels}) * 100.0f) << ','
+         << R"("trailerDamagePercent":)" << (g_state.trailerWearChassis * 100.0f) << ','
+         << R"("cargoDamagePercent":)" << (g_state.cargoDamage * 100.0f) << ','
+         << R"("specialJob":)" << (g_state.specialJob ? "true" : "false") << ','
+         << R"("cargoLoaded":)" << (g_state.cargoLoaded ? "true" : "false") << ','
          << R"("truck":")" << escape_json(truck_display_name()) << R"(",)"
          << R"("cargo":")" << escape_json(g_state.cargo) << R"(",)"
          << R"("sourceCity":")" << escape_json(g_state.sourceCity) << R"(",)"
@@ -239,6 +255,12 @@ float float_attribute(const scs_named_value_t* attributes, const char* name, flo
     if (attr->value.type == SCS_VALUE_TYPE_float) return attr->value.value_float.value;
     if (attr->value.type == SCS_VALUE_TYPE_double) return static_cast<float>(attr->value.value_double.value);
     return fallback;
+}
+
+bool bool_attribute(const scs_named_value_t* attributes, const char* name, bool fallback = false) {
+    const auto* attr = find_attribute(attributes, name);
+    if (!attr || attr->value.type != SCS_VALUE_TYPE_bool) return fallback;
+    return attr->value.value_bool.value != 0;
 }
 
 SCSAPI_VOID on_world_placement(
@@ -290,6 +312,8 @@ SCSAPI_VOID on_configuration(const scs_event_t, const void* const event_info, co
         g_state.destinationCompany = string_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_destination_company);
         g_state.configuredIncome = s64_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_income);
         g_state.plannedDistanceKm = float_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_planned_distance_km);
+        g_state.specialJob = bool_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_special_job);
+        g_state.cargoLoaded = bool_attribute(config->attributes, SCS_TELEMETRY_CONFIG_ATTRIBUTE_is_cargo_loaded);
     }
 }
 
@@ -347,6 +371,17 @@ bool register_channel(
     return api->register_for_channel(name, SCS_U32_NIL, type, flags, callback, context) == SCS_RESULT_ok;
 }
 
+bool register_indexed_channel(
+    const scs_telemetry_init_params_v100_t* api,
+    const char* name,
+    const scs_u32_t index,
+    const scs_value_type_t type,
+    const scs_u32_t flags,
+    const scs_telemetry_channel_callback_t callback,
+    const scs_context_t context) {
+    return api->register_for_channel(name, index, type, flags, callback, context) == SCS_RESULT_ok;
+}
+
 } // namespace
 
 extern "C" SCSAPI_RESULT scs_telemetry_init(
@@ -396,6 +431,20 @@ extern "C" SCSAPI_RESULT scs_telemetry_init(
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.navTimeS);
     ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_navigation_speed_limit, SCS_VALUE_TYPE_float,
         SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.speedLimitMps);
+    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_engine, SCS_VALUE_TYPE_float,
+        SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearEngine);
+    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_transmission, SCS_VALUE_TYPE_float,
+        SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearTransmission);
+    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_cabin, SCS_VALUE_TYPE_float,
+        SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearCabin);
+    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_chassis, SCS_VALUE_TYPE_float,
+        SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearChassis);
+    ok &= register_channel(api, SCS_TELEMETRY_TRUCK_CHANNEL_wear_wheels, SCS_VALUE_TYPE_float,
+        SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.wearWheels);
+    ok &= register_channel(api, SCS_TELEMETRY_JOB_CHANNEL_cargo_damage, SCS_VALUE_TYPE_float,
+        SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.cargoDamage);
+    ok &= register_indexed_channel(api, SCS_TELEMETRY_TRAILER_CHANNEL_wear_chassis, 0, SCS_VALUE_TYPE_float,
+        SCS_TELEMETRY_CHANNEL_FLAG_none, on_float_channel, &g_state.trailerWearChassis);
 
     if (!ok) {
         log_message(SCS_LOG_TYPE_error, "OpenHaul: failed to register one or more telemetry callbacks.");
