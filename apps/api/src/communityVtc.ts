@@ -4,6 +4,7 @@ import { Op, QueryTypes } from "sequelize";
 import { z } from "zod";
 import { Fine, Job, User, Vtc, VtcApplication, VtcInvite, VtcLedgerEntry, VtcMember, sequelize } from "./db.js";
 import { requireUser } from "./accountSession.js";
+import { recordVtcActivity } from "./vtcOperations.js";
 
 const createSchema = z.object({
   name: z.string().min(2).max(120),
@@ -111,6 +112,13 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       title: "Owner",
       status: "active",
       joinedAt: new Date(),
+    });
+    await recordVtcActivity({
+      vtcId: vtc.id,
+      driverId: user.steamId,
+      actorUserId: user.id,
+      type: "vtc.created",
+      title: user.displayName + " created the VTC",
     });
 
     return reply.code(201).send({ vtc });
@@ -282,6 +290,13 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
     });
 
     if ("error" in result) return reply.code(result.status!).send({ error: result.error });
+    await recordVtcActivity({
+      vtcId: result.vtcId,
+      driverId: request.openhaulUser!.steamId,
+      actorUserId: request.openhaulUser!.id,
+      type: "member.joined",
+      title: request.openhaulUser!.displayName + " joined by invite",
+    });
     return { joined: true, vtcId: result.vtcId };
   });
 
@@ -315,6 +330,15 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       },
     });
 
+    await recordVtcActivity({
+      vtcId: id,
+      driverId: request.openhaulUser!.steamId,
+      actorUserId: request.openhaulUser!.id,
+      type: "application.created",
+      title: request.openhaulUser!.displayName + " applied to join",
+      detail: body.message || null,
+      metadata: { applicationId: application.id },
+    });
     return reply.code(201).send({ application });
   });
 
@@ -331,6 +355,7 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
     if (!application) return reply.code(404).send({ error: "application_not_found" });
 
     await application.update({ status: body.status });
+    const applicant = await User.findByPk(application.getDataValue("userId"));
 
     if (body.status === "approved") {
       await VtcMember.findOrCreate({
@@ -345,6 +370,23 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       });
     }
 
+    await recordVtcActivity({
+      vtcId: params.id,
+      driverId: applicant?.steamId ?? null,
+      actorUserId: request.openhaulUser!.id,
+      type: "application." + body.status,
+      title: (applicant?.displayName ?? "Applicant") + " application " + body.status,
+      metadata: { applicationId: application.id },
+    });
+    if (body.status === "approved" && applicant) {
+      await recordVtcActivity({
+        vtcId: params.id,
+        driverId: applicant.steamId,
+        actorUserId: request.openhaulUser!.id,
+        type: "member.joined",
+        title: applicant.displayName + " joined after approval",
+      });
+    }
     return { application };
   });
 
@@ -357,7 +399,18 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
     if (!member) return reply.code(404).send({ error: "member_not_found" });
     if (member.getDataValue("role") === "owner") return reply.code(409).send({ error: "owner_role_locked" });
 
-    await member.update(roleSchema.parse(request.body));
+    const previousRole = String(member.getDataValue("role"));
+    const targetUser = await User.findByPk(member.getDataValue("userId"));
+    const next = roleSchema.parse(request.body);
+    await member.update(next);
+    await recordVtcActivity({
+      vtcId: params.id,
+      driverId: targetUser?.steamId ?? null,
+      actorUserId: request.openhaulUser!.id,
+      type: "member.role_changed",
+      title: (targetUser?.displayName ?? "Member") + " role changed from " + previousRole + " to " + next.role,
+      metadata: { previousRole, nextRole: next.role, status: next.status },
+    });
     return { member };
   });
 
@@ -371,6 +424,13 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       return reply.code(409).send({ error: "owner_must_transfer_or_close_vtc" });
     }
     await member.destroy();
+    await recordVtcActivity({
+      vtcId: id,
+      driverId: request.openhaulUser!.steamId,
+      actorUserId: request.openhaulUser!.id,
+      type: "member.left",
+      title: request.openhaulUser!.displayName + " left the VTC",
+    });
     return reply.code(204).send();
   });
 
