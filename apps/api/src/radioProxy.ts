@@ -32,7 +32,7 @@ type RadioStation = {
   homepage?: string;
   favicon?: string;
   codec?: string;
-  source: "builtin" | "configured" | "official" | "radio-browser" | "internet-radio" | "xiph" | "lautfm";
+  source: "builtin" | "configured" | "official" | "radio-browser" | "internet-radio" | "xiph" | "lautfm" | "shoutcast";
   stationUuid?: string;
 };
 
@@ -519,6 +519,69 @@ async function fetchLautFmStations(query: string) {
   });
 }
 
+async function fetchShoutcastStations(query: string) {
+  const apiKey = process.env.SHOUTCAST_API_KEY?.trim();
+  if (!apiKey || !query.trim()) return [];
+
+  const base = cleanBaseUrl(process.env.SHOUTCAST_API_URL ?? "https://api.shoutcast.com");
+  const cacheKey = `shoutcast:${query.toLowerCase()}`;
+
+  return withDirectoryCache(cacheKey, async () => {
+    try {
+      const params = new URLSearchParams({
+        k: apiKey,
+        search: query,
+        f: "json",
+      });
+
+      // SHOUTcast's official directory API requires a developer/partner key.
+      const response = await fetch(`${base}/station/advancedsearch?${params}`, {
+        signal: AbortSignal.timeout(10_000),
+        headers: {
+          accept: "application/json",
+          "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)",
+        },
+      });
+      if (!response.ok) return [];
+
+      const payload = await response.json() as any;
+      const rows = Array.isArray(payload?.response?.data?.stationlist?.station)
+        ? payload.response.data.stationlist.station
+        : Array.isArray(payload?.stationlist?.station)
+          ? payload.stationlist.station
+          : Array.isArray(payload?.station)
+            ? payload.station
+            : [];
+
+      const results = await Promise.all(rows.slice(0, 50).map(async (row: any, index: number) => {
+        const id = String(row?.id ?? "").trim();
+        const name = String(row?.name ?? "").trim();
+        if (!id || !name) return null;
+
+        const playlistUrl = `https://yp.shoutcast.com/sbin/tunein-station.pls?id=${encodeURIComponent(id)}`;
+        const sourceUrl = await resolvePlaylistUrl(playlistUrl);
+        if (!sourceUrl) return null;
+
+        const bitrate = Number(row?.br ?? row?.bitrate ?? 128);
+        return {
+          id: `shoutcast-${id || index}`,
+          name,
+          sourceUrl,
+          forceProxy: false,
+          bitrateKbps: Number.isFinite(bitrate) && bitrate > 0 ? Math.max(32, Math.min(320, bitrate)) : 128,
+          genre: String(row?.genre ?? "").trim() || undefined,
+          codec: String(row?.mt ?? row?.mime ?? "").toUpperCase() || undefined,
+          source: "shoutcast" as const,
+        } satisfies RadioStation;
+      }));
+
+      return results.filter((station): station is RadioStation => Boolean(station));
+    } catch {
+      return [];
+    }
+  });
+}
+
 function dedupeStations(stations: RadioStation[]) {
   const seen = new Set<string>();
   return stations.filter((station) => {
@@ -794,6 +857,7 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
           fetchInternetRadioStations(query.q, query.country),
           fetchXiphStations(query.q),
           fetchLautFmStations(query.q),
+          fetchShoutcastStations(query.q),
         ])).flat()
       : [];
 
@@ -819,7 +883,8 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
         "Radio Browser",
         "Internet-Radio.com",
         "Xiph/Icecast",
-        "laut.fm"
+        "laut.fm",
+        ...(process.env.SHOUTCAST_API_KEY ? ["SHOUTcast Directory API"] : [])
       ],
     };
   });
