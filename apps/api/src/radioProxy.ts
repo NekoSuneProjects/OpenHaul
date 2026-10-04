@@ -115,18 +115,6 @@ function publicBase() {
   return cleanBaseUrl(process.env.OPENHAUL_PUBLIC_API_URL ?? "");
 }
 
-function forcedProxyCountries() {
-  const values = (process.env.RADIO_FORCE_PROXY_COUNTRIES ?? "*")
-    .split(",")
-    .map((value) => value.trim().toUpperCase())
-    .filter(Boolean);
-
-  return {
-    all: values.includes("*") || values.includes("ALL"),
-    countries: new Set(values.filter((value) => /^[A-Z]{2}$/.test(value))),
-  };
-}
-
 function normalizedStreamKey(value: string) {
   try {
     const url = new URL(value);
@@ -351,7 +339,6 @@ function radioBrowserToStation(row: RadioBrowserStation): RadioStation | null {
     name: String(row.name || "Unknown station").trim(),
     sourceUrl,
     country,
-    forceProxy,
     bitrateKbps: Number.isFinite(bitrate) && bitrate > 0 ? Math.max(64, Math.min(320, bitrate)) : 128,
     genre: String(row.tags || "").split(",").filter(Boolean).slice(0, 3).join(", ") || undefined,
     city: row.state ? String(row.state) : undefined,
