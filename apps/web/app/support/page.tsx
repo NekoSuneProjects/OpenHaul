@@ -25,6 +25,7 @@ export default function SupportPage() {
   const [enabled, setEnabled] = useState(false);
   const [goals, setGoals] = useState<Goal[]>([]);
   const [donationUrl, setDonationUrl] = useState<string | null>(null);
+  const [providers, setProviders] = useState<any[]>([]);
 
   useEffect(() => {
     fetch(`${api}/api/v1/public/donation-goals`, { cache: "no-store" })
@@ -35,6 +36,11 @@ export default function SupportPage() {
         setDonationUrl(typeof data.donationUrl === "string" ? data.donationUrl : null);
       })
       .catch(() => {});
+
+    fetch(`${api}/api/v1/public/payment-providers`, { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : { providers: [] })
+      .then((data) => setProviders(data.providers ?? []))
+      .catch(() => {});
   }, []);
 
   return (
@@ -44,7 +50,7 @@ export default function SupportPage() {
         <h1 style={{ fontSize: "clamp(2.6rem,6vw,4.8rem)" }}>Help OpenHaul grow.</h1>
         <p className="lede">
           Funding goals can be used for DLC, convoy costs, hosting or community projects.
-          Donations are handled through Ko-fi.
+          Donations use external provider links; OpenHaul never handles card details.
         </p>
       </section>
 
@@ -86,6 +92,18 @@ export default function SupportPage() {
             </article>
           );
         })}
+      </section>
+
+      <div className="sectionTitle"><h2>Payment providers</h2></div>
+      <section className="grid" style={{ paddingBottom: 60 }}>
+        {providers.map((provider) => (
+          <article className="card" key={provider.id}>
+            <div className="pill">External payment</div>
+            <h3 style={{ marginTop: 12 }}>{provider.name}</h3>
+            <p>Payments are completed directly with {provider.name}; OpenHaul does not receive payment-card data.</p>
+            {provider.url ? <div className="actions"><a className="button primary" href={provider.url} target="_blank" rel="noreferrer">Open {provider.name}</a></div> : null}
+          </article>
+        ))}
       </section>
     </main>
   );
