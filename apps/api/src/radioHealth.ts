@@ -40,6 +40,8 @@ function inferredGeoCountry(url: string) {
 
   // Built-in known geo-sensitive station/provider rule.
   if (lower.includes("leanstream") && lower.includes("/chslfm")) return "CA";
+  if (lower.includes("musicradio.com/")) return "GB";
+  if (lower.includes("globalplayer.com/")) return "GB";
 
   const raw = process.env.RADIO_URL_GEO_RULES_JSON?.trim();
   if (!raw || raw === "[]") return undefined;
