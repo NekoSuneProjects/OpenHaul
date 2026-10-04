@@ -242,15 +242,14 @@ async function scanOne(request: any, row: z.infer<typeof scanBodySchema>["statio
 export async function registerRadioHealthRoutes(app: FastifyInstance) {
   app.post("/api/v1/public/radio/scan", async (request, reply) => {
     const body = scanBodySchema.parse(request.body);
-    const results = [] as any[];
-
-    // Keep this deliberately sequential to avoid 200+ simultaneous ffprobe/proxy
-    // sessions when a user uploads a large live_streams.sii file.
-    for (const station of body.stations) {
+    // The web editor sends small batches. Probe each small batch concurrently so
+    // a large live_streams.sii scan stays practical without spawning hundreds
+    // of ffprobe processes at once.
+    const results = await Promise.all(body.stations.map(async (station) => {
       try {
-        results.push(await scanOne(request, station));
+        return await scanOne(request, station);
       } catch (error) {
-        results.push({
+        return {
           id: station.id,
           status: "broken",
           route: "none",
@@ -259,9 +258,9 @@ export async function registerRadioHealthRoutes(app: FastifyInstance) {
           replacementUrl: null,
           changed: false,
           reason: error instanceof Error ? error.message : String(error),
-        });
+        };
       }
-    }
+    }));
 
     return {
       total: results.length,
