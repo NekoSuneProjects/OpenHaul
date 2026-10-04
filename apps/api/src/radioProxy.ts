@@ -332,7 +332,7 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
     }
 
     let inputUrl = station.sourceUrl;
-    let proxyNode: Awaited<ReturnType<typeof createResidentialSession>>["node"] = null;
+    let proxyNode: Awaited<ReturnType<typeof createResidentialSession>>["node"] | null = null;
 
     if (station.forceProxy) {
       try {
