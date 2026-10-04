@@ -113,6 +113,21 @@ function cleanBaseUrl(value: string) {
   return value.replace(/\/+$/, "");
 }
 
+function envInt(name: string, fallback: number, min: number, max: number) {
+  const value = Number.parseInt(process.env[name] ?? String(fallback), 10);
+  return Number.isFinite(value) ? Math.max(min, Math.min(max, value)) : fallback;
+}
+
+function fastRadioInputArgs() {
+  return [
+    "-fflags", "nobuffer",
+    "-flags", "low_delay",
+    "-probesize", String(envInt("RADIO_FFMPEG_PROBESIZE", 65536, 32768, 1048576)),
+    "-analyzeduration", String(envInt("RADIO_FFMPEG_ANALYZEDURATION_US", 250000, 0, 5000000)),
+    "-rw_timeout", String(envInt("RADIO_FFMPEG_RW_TIMEOUT_US", 8000000, 1000000, 30000000)),
+  ];
+}
+
 function publicBase() {
   return cleanBaseUrl(process.env.OPENHAUL_PUBLIC_API_URL ?? "");
 }
@@ -125,7 +140,7 @@ async function canReadAudioDirectly(sourceUrl: string) {
   return new Promise<boolean>((resolve) => {
     const child = spawn("ffprobe", [
       "-v", "error",
-      "-rw_timeout", "8000000",
+      ...fastRadioInputArgs(),
       "-select_streams", "a:0",
       "-show_entries", "stream=codec_name",
       "-of", "default=noprint_wrappers=1:nokey=1",
@@ -429,10 +444,12 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
 
     const ffmpeg = spawn("ffmpeg", [
       "-hide_banner", "-loglevel", "warning", "-nostdin",
-      "-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_delay_max", "5",
+      ...fastRadioInputArgs(),
+      "-reconnect", "1", "-reconnect_streamed", "1", "-reconnect_at_eof", "1", "-reconnect_delay_max", "2",
       "-i", inputUrl,
       "-vn", "-ac", "2", "-ar", "44100",
       ...format.ffmpegArgs(station.bitrateKbps),
+      "-flush_packets", "1",
       "pipe:1",
     ], { stdio: ["ignore", "pipe", "pipe"] });
 
@@ -465,7 +482,8 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
       reply.hijack();
       reply.raw.writeHead(200, {
         "content-type": format.contentType,
-        "cache-control": "no-store, no-cache, must-revalidate",
+        "cache-control": "no-store, no-cache, must-revalidate, no-transform",
+          "x-accel-buffering": "no",
         "icy-name": station.name,
         "icy-genre": station.genre ?? "Radio",
         "icy-br": String(station.bitrateKbps),
