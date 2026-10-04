@@ -148,7 +148,8 @@ const discordSchema = z.object({
 
 const moderationSchema = z.object({
   steamId: z.string().regex(/^\d{15,20}$/),
-  type: z.enum(["warning", "mute", "ban", "note"]),
+  type: z.enum(["warning", "strike", "mute", "kick", "ban", "note"]),
+  points: z.number().int().min(0).max(100).default(0),
   reason: z.string().max(4000).optional(),
   expiresAt: z.coerce.date().nullable().optional(),
 });
@@ -191,6 +192,13 @@ export async function registerVtcOperationsRoutes(app: FastifyInstance) {
   app.post("/api/v1/account/vtcs/:id/moderation", { preHandler: [requireManager] }, async (request, reply) => {
     const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
     const body = moderationSchema.parse(request.body);
+    const actorMembership = await VtcMember.findOne({
+      where: { vtcId: id, userId: request.openhaulUser!.id, status: "active" },
+    });
+    const actorRole = String(actorMembership?.getDataValue("role") ?? "");
+    if (["ban", "kick"].includes(body.type) && !["owner", "admin"].includes(actorRole)) {
+      return reply.code(403).send({ error: "vtc_owner_or_admin_required" });
+    }
     const user = await User.findOne({ where: { steamId: body.steamId } });
     if (!user) return reply.code(404).send({ error: "driver_not_found" });
 
@@ -199,6 +207,7 @@ export async function registerVtcOperationsRoutes(app: FastifyInstance) {
       userId: user.id,
       actorUserId: request.openhaulUser!.id,
       type: body.type,
+      points: body.type === "strike" ? Math.max(1, body.points || 1) : body.points,
       reason: body.reason ?? null,
       expiresAt: body.expiresAt ?? null,
       revokedAt: null,
@@ -210,6 +219,10 @@ export async function registerVtcOperationsRoutes(app: FastifyInstance) {
         await member.update({ status: "suspended" });
       }
     }
+    if (body.type === "kick") {
+      const member = await VtcMember.findOne({ where: { vtcId: id, userId: user.id } });
+      if (member && member.getDataValue("role") !== "owner") await member.destroy();
+    }
 
     await recordVtcActivity({
       vtcId: id,
@@ -218,7 +231,7 @@ export async function registerVtcOperationsRoutes(app: FastifyInstance) {
       type: "moderation." + body.type,
       title: body.type[0].toUpperCase() + body.type.slice(1) + " issued to " + user.displayName,
       detail: body.reason ?? null,
-      metadata: { moderationActionId: action.id, expiresAt: body.expiresAt?.toISOString() ?? null },
+      metadata: { moderationActionId: action.id, expiresAt: body.expiresAt?.toISOString() ?? null, points: action.getDataValue("points") },
     });
 
     return reply.code(201).send({ action });
