@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 
 declare global {
@@ -17,7 +17,7 @@ type Tab = "map" | "drive" | "settings";
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 
-export default function OverlayPage() {
+function OverlayContent() {
   const params = useSearchParams();
   const driver = params.get("driver") ?? "";
   const initialMode = params.get("mode") ?? "road";
@@ -215,5 +215,14 @@ export default function OverlayPage() {
         ) : null}
       </section>
     </main>
+  );
+}
+
+
+export default function OverlayPage() {
+  return (
+    <Suspense fallback={<main className="gameOverlay"><section className="gameOverlayPanel"><div className="gameOverlayHeader"><strong>Loading OpenHaul overlay…</strong></div></section></main>}>
+      <OverlayContent />
+    </Suspense>
   );
 }
