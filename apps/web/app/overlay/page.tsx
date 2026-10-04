@@ -66,7 +66,6 @@ function OverlayContent() {
   const [radioLoading, setRadioLoading] = useState(true);
   const [radioPlaying, setRadioPlaying] = useState(false);
   const [radioVolume, setRadioVolume] = useState(0.7);
-  const [radioCopied, setRadioCopied] = useState(false);
 
   useEffect(() => {
     document.body.classList.add("gameOverlayHost");
@@ -169,7 +168,7 @@ function OverlayContent() {
 
   const playRadio = async (station: RadioStation) => {
     const audio = audioRef.current;
-    const stream = station.playback?.gameMp3 || station.playback?.browser || station.playback?.direct;
+    const stream = station.playback?.browser || station.playback?.direct;
     if (!audio || !stream) return;
 
     if (selectedRadioId === station.id && !audio.paused) {
@@ -179,7 +178,6 @@ function OverlayContent() {
     }
 
     setSelectedRadioId(station.id);
-    setRadioCopied(false);
     if (audio.src !== stream) audio.src = stream;
 
     try {
@@ -187,18 +185,6 @@ function OverlayContent() {
       setRadioPlaying(true);
     } catch {
       setRadioPlaying(false);
-    }
-  };
-
-  const copyGameRadioUrl = async () => {
-    const url = selectedRadio?.playback?.gameMp3;
-    if (!url) return;
-    try {
-      await navigator.clipboard.writeText(url);
-      setRadioCopied(true);
-      window.setTimeout(() => setRadioCopied(false), 1800);
-    } catch {
-      setRadioCopied(false);
     }
   };
 
@@ -390,15 +376,12 @@ function OverlayContent() {
               </div>
             </section>
 
-            <section className="gameOverlayRadioGameUrl">
-              <div>
-                <strong>ATS / ETS2 MP3 relay</strong>
-                <small>AAC/AAC+ and other source formats are transcoded by OpenHaul to MP3 for the in-game radio.</small>
-              </div>
-              <code>{selectedRadio?.playback?.gameMp3 || "No station selected"}</code>
-              <button disabled={!selectedRadio?.playback?.gameMp3} onClick={() => void copyGameRadioUrl()}>
-                {radioCopied ? "Copied!" : "Copy MP3 URL"}
-              </button>
+            <section className="gameOverlayRadioLocal">
+              <strong>Local PC playback</strong>
+              <small>
+                OpenHaul plays the station inside the Windows overlay, so ATS/ETS2 does not need to decode the station itself.
+                MP3 and AAC/AAC+ streams are handled by the overlay player on your PC.
+              </small>
             </section>
 
             <section className="gameOverlayRadioDirectory">
