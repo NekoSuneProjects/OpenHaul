@@ -46,6 +46,8 @@ export default function AccountPage() {
   const [apiScopeSelection, setApiScopeSelection] = useState(["profile:read", "jobs:read", "fines:read", "vtcs:read", "stream:read"]);
   const [twitch, setTwitch] = useState<any>(null);
   const [discord, setDiscord] = useState<any>(null);
+  const [truckersMp, setTruckersMp] = useState<any>(null);
+  const [truckersMpId, setTruckersMpId] = useState("");
 
   const load = async () => {
     try {
@@ -90,6 +92,11 @@ export default function AccountPage() {
       const discordResponse = await fetch(api + "/api/v1/account/discord", { credentials: "include", cache: "no-store" });
       if (discordResponse.ok) {
         setDiscord(await discordResponse.json());
+      }
+
+      const truckersMpResponse = await fetch(api + "/api/v1/account/truckersmp", { credentials: "include", cache: "no-store" });
+      if (truckersMpResponse.ok) {
+        setTruckersMp(await truckersMpResponse.json());
       }
 
       setStatus("");
@@ -179,6 +186,58 @@ export default function AccountPage() {
       credentials: "include",
     });
     setDiscord({ linked: false, account: null, configured: discord?.configured ?? false });
+  };
+
+  const linkTruckersMp = async () => {
+    const value = truckersMpId.trim();
+    if (!value) return;
+    setStatus("Verifying TruckersMP account…");
+
+    const response = await fetch(api + "/api/v1/account/truckersmp", {
+      method: "POST",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ truckersMpId: value }),
+    });
+
+    if (response.ok) {
+      setTruckersMp(await response.json());
+      setTruckersMpId("");
+      setStatus("TruckersMP account linked.");
+    } else {
+      const error = await response.json().catch(() => null);
+      setStatus(
+        error?.error === "truckersmp_steam_mismatch"
+          ? "That TruckersMP account is linked to a different Steam account."
+          : error?.error === "truckersmp_already_linked"
+            ? "That TruckersMP account is already linked to another OpenHaul account."
+            : error?.error === "truckersmp_player_not_found"
+              ? "TruckersMP account not found."
+              : "Unable to verify TruckersMP account."
+      );
+    }
+  };
+
+  const refreshTruckersMp = async () => {
+    const response = await fetch(api + "/api/v1/account/truckersmp/refresh", {
+      method: "POST",
+      credentials: "include",
+    });
+    if (response.ok) {
+      setTruckersMp(await response.json());
+      setStatus("TruckersMP account refreshed.");
+    } else {
+      setStatus("Unable to refresh TruckersMP account.");
+    }
+  };
+
+  const disconnectTruckersMp = async () => {
+    await fetch(api + "/api/v1/account/truckersmp", {
+      method: "DELETE",
+      credentials: "include",
+    });
+    setTruckersMp({ linked: false, account: null, detection: truckersMp?.detection ?? null });
+    setStatus("TruckersMP account disconnected.");
   };
 
   const connectTwitch = () => {
@@ -474,6 +533,56 @@ export default function AccountPage() {
             </div>
           </article>
         ))}
+      </section>
+
+      <div className="sectionTitle"><h2>TruckersMP account link</h2></div>
+      <section className="card" style={{ marginBottom: 18 }}>
+        {truckersMp?.linked ? (
+          <>
+            <div style={{ display: "flex", gap: 14, alignItems: "center" }}>
+              {truckersMp.account?.avatarUrl ? <img src={truckersMp.account.avatarUrl} alt="" style={{ width: 64, height: 64, borderRadius: 14 }} /> : null}
+              <div>
+                <h3 style={{ margin: 0 }}>{truckersMp.account?.name}</h3>
+                <p className="muted">
+                  TruckersMP ID {truckersMp.account?.truckersMpId}
+                  {truckersMp.account?.vtcName ? " · " + truckersMp.account.vtcName : ""}
+                </p>
+              </div>
+            </div>
+            <p style={{ marginTop: 14 }}>
+              {truckersMp.detection?.sessionMode === "truckersmp"
+                ? "🟢 TruckersMP detected" + (truckersMp.detection?.server ? " · " + truckersMp.detection.server : "")
+                : truckersMp.detection?.sessionMode === "singleplayer"
+                  ? "🟢 Single player detected"
+                  : truckersMp.detection?.clientOnline
+                    ? "🟡 OpenHaul client online · waiting for game telemetry"
+                    : "⚫ OpenHaul client offline"}
+            </p>
+            <p className="muted">
+              Linking by TruckersMP ID lets OpenHaul match your map marker exactly instead of guessing from your display name.
+            </p>
+            <div className="actions">
+              <button className="button primary" onClick={() => void refreshTruckersMp()}>Refresh TruckersMP</button>
+              <button className="button" onClick={() => void disconnectTruckersMp()}>Disconnect</button>
+            </div>
+          </>
+        ) : (
+          <>
+            <h3>Link TruckersMP</h3>
+            <p className="muted">
+              Enter your TruckersMP ID. OpenHaul verifies that the TruckersMP profile belongs to the same Steam account you use here.
+            </p>
+            <div className="actions">
+              <input
+                value={truckersMpId}
+                onChange={(event) => setTruckersMpId(event.target.value.replace(/\D/g, ""))}
+                placeholder="TruckersMP ID, e.g. 5298520"
+                inputMode="numeric"
+              />
+              <button className="button primary" onClick={() => void linkTruckersMp()}>Verify & link</button>
+            </div>
+          </>
+        )}
       </section>
 
       <div className="sectionTitle"><h2>Discord account link</h2></div>
