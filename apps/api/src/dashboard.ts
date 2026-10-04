@@ -176,6 +176,8 @@ export async function registerDashboardRoutes(app: FastifyInstance) {
         longestJobKm: Number(longestJob || 0),
         bestJobIncome: Number(bestIncome || 0),
         averageIncomePerJob: totals.jobs > 0 ? totals.income / totals.jobs : 0,
+        bestMonth: (monthlyTrends as any[]).reduce((best: any, row: any) =>
+          !best || Number(row.distanceKm || 0) > Number(best.distanceKm || 0) ? row : best, null),
       },
       checklist: {
         account: true,
@@ -199,5 +201,53 @@ export async function registerDashboardRoutes(app: FastifyInstance) {
         netIncome: Number(todayVtcIncome || 0) - Number(todayVtcFines || 0),
       } : null,
     };
+
+
+  app.get("/api/v1/account/dashboard/export", { preHandler: [requireUser] }, async (request, reply) => {
+    const query = z.object({ format: z.enum(["json", "csv"]).default("json") }).parse(request.query);
+    const user = request.openhaulUser!;
+    const jobs = await Job.findAll({
+      where: { driverId: user.steamId },
+      order: [["completedAt", "DESC"]],
+      limit: 10000,
+    });
+    const fines = await Fine.findAll({
+      where: { driverId: user.steamId },
+      order: [["occurredAt", "DESC"]],
+      limit: 10000,
+    });
+
+    const summary = {
+      exportedAt: new Date().toISOString(),
+      driver: { steamId: user.steamId, displayName: user.displayName },
+      totals: {
+        jobs: jobs.length,
+        distanceKm: jobs.reduce((sum, job) => sum + Number(job.getDataValue("distanceKm") || 0), 0),
+        income: jobs.reduce((sum, job) => sum + Number(job.getDataValue("income") || 0), 0),
+        fines: fines.length,
+        fineAmount: fines.reduce((sum, fine) => sum + Number(fine.getDataValue("amount") || 0), 0),
+      },
+      jobs,
+      fines,
+    };
+
+    if (query.format === "json") {
+      reply.header("content-disposition", 'attachment; filename="openhaul-statistics.json"');
+      return summary;
+    }
+
+    const rows = [
+      ["metric", "value"],
+      ["jobs", summary.totals.jobs],
+      ["distanceKm", summary.totals.distanceKm],
+      ["income", summary.totals.income],
+      ["fines", summary.totals.fines],
+      ["fineAmount", summary.totals.fineAmount],
+      ["netIncome", summary.totals.income - summary.totals.fineAmount],
+    ];
+    reply.type("text/csv; charset=utf-8");
+    reply.header("content-disposition", 'attachment; filename="openhaul-statistics.csv"');
+    return rows.map((row) => row.map((value) => '"' + String(value).replaceAll('"', '""') + '"').join(",")).join("\n");
+  });
   });
 }
