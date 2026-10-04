@@ -394,15 +394,24 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
         };
       });
 
+    const servers = await truckersMpTrackerServers();
+    const relevantServers = servers.filter((server) =>
+      server.status &&
+      (query.game === "ats"
+        ? server.game === "ats"
+        : server.game === "ets2" || server.game === "promods")
+    );
+
     reply.header("cache-control", "public, max-age=2");
     return {
       generatedAt: new Date().toISOString(),
       game: query.game,
       count: drivers.length,
+      totalOnline: relevantServers.reduce((sum, server) => sum + server.players, 0),
       openHaulOnline: clientPresences.length,
       drivers,
       traffic: densityTrafficClusters(drivers),
-      servers: await truckersMpTrackerServers(),
+      servers: relevantServers,
     };
   });
 
