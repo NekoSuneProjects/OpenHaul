@@ -107,7 +107,7 @@ jobs:
             }
             telemetry = @{
               version = $env:OPENHAUL_TELEMETRY_VERSION
-              url = "https://github.com/${{ github.repository }}/releases/download/scs-plugin/OpenHaul.Telemetry.dll"
+              url = "https://github.com/${{ github.repository }}/releases/download/windows-client/OpenHaul.Telemetry.dll"
               sha256 = $env:OPENHAUL_TELEMETRY_SHA256
             }
           }
@@ -118,6 +118,7 @@ jobs:
           name: OpenHaul-Setup-win-x64
           path: |
             artifacts/installer/OpenHaul-Setup.exe
+            artifacts/OpenHaul.Client/OpenHaul.Telemetry.dll
             artifacts/client-manifest.json
 
       - name: Publish rolling Windows installer release
@@ -138,5 +139,5 @@ jobs:
           if ($LASTEXITCODE -ne 0) {
             gh release create windows-client --repo "${{ github.repository }}" --title "OpenHaul Windows Client" --notes "Rolling Windows GUI installer for OpenHaul Client." --latest=false
           }
-          gh release upload windows-client artifacts/installer/OpenHaul-Setup.exe artifacts/client-manifest.json --repo "${{ github.repository }}" --clobber
+          gh release upload windows-client artifacts/installer/OpenHaul-Setup.exe artifacts/OpenHaul.Client/OpenHaul.Telemetry.dll artifacts/client-manifest.json --repo "${{ github.repository }}" --clobber
           gh release edit windows-client --repo "${{ github.repository }}" --draft=false --latest=false
