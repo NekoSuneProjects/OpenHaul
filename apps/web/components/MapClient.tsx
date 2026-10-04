@@ -834,6 +834,7 @@ export function MapClient() {
   const [mapIntel, setMapIntel] = useState<any>({ traffic: [], staff: [], specialCargo: [] });
   const [trackerDrivers, setTrackerDrivers] = useState<Driver[]>([]);
   const [trackerTraffic, setTrackerTraffic] = useState<any[]>([]);
+  const [stableTraffic, setStableTraffic] = useState<any[]>([]);
   const [trackerTotalOnline, setTrackerTotalOnline] = useState(0);
   const [trackerServers, setTrackerServers] = useState<TrackerServer[]>([]);
 
@@ -847,6 +848,7 @@ export function MapClient() {
   const selectedPopupRef = useRef<any>(null);
   const selectedPopupDriverIdRef = useRef<string>("");
   const selectedDriverLastSeenRef = useRef<number>(0);
+  const trafficCacheRef = useRef<Map<string, { jam: any; expiresAt: number }>>(new Map());
 
   const serverOptions = useMemo(
     () => Array.from(new Set([
@@ -1536,14 +1538,102 @@ export function MapClient() {
   }, []);
 
   useEffect(() => {
+    const now = Date.now();
+    const ttlMs = 5 * 60_000;
+    const cache = trafficCacheRef.current;
+    const incoming = [...(mapIntel.traffic ?? []), ...trackerTraffic];
+
+    const sameTrafficArea = (a: any, b: any) => {
+      if (String(a.game ?? "") !== String(b.game ?? "")) return false;
+      if (String(a.server ?? "") !== String(b.server ?? "")) return false;
+      if (String(a.source ?? "") !== String(b.source ?? "")) return false;
+
+      const ax = Number(a.x);
+      const az = Number(a.z);
+      const bx = Number(b.x);
+      const bz = Number(b.z);
+      if (![ax, az, bx, bz].every(Number.isFinite)) return false;
+
+      // TruckersMP density clusters move slightly as players enter/leave the
+      // group. Treat nearby refreshed clusters as the same traffic marker so
+      // it updates instead of disappearing and being recreated.
+      return Math.hypot(ax - bx, az - bz) <= 1800;
+    };
+
+    for (const jam of incoming) {
+      let key = String(jam.id ?? "");
+      let existingKey: string | null = null;
+
+      if (key && cache.has(key)) {
+        existingKey = key;
+      } else {
+        for (const [candidateKey, entry] of cache) {
+          if (sameTrafficArea(entry.jam, jam)) {
+            existingKey = candidateKey;
+            break;
+          }
+        }
+      }
+
+      if (!existingKey) {
+        const game = String(jam.game ?? "unknown");
+        const server = String(jam.server ?? "unknown");
+        const source = String(jam.source ?? "traffic");
+        const bucketX = Math.round(Number(jam.x ?? 0) / 1000);
+        const bucketZ = Math.round(Number(jam.z ?? 0) / 1000);
+        existingKey = key || [source, game, server, bucketX, bucketZ].join(":");
+      }
+
+      const previous = cache.get(existingKey)?.jam ?? {};
+      cache.set(existingKey, {
+        jam: {
+          ...previous,
+          ...jam,
+          // Keep the stable cache key even when the provider generates a new
+          // position-based id for the same traffic cluster.
+          id: existingKey,
+        },
+        expiresAt: now + ttlMs,
+      });
+    }
+
+    for (const [key, entry] of cache) {
+      if (entry.expiresAt <= now) cache.delete(key);
+    }
+
+    setStableTraffic([...cache.values()].map((entry) => entry.jam));
+  }, [mapIntel.traffic, trackerTraffic]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = Date.now();
+      const cache = trafficCacheRef.current;
+      let changed = false;
+
+      for (const [key, entry] of cache) {
+        if (entry.expiresAt <= now) {
+          cache.delete(key);
+          changed = true;
+        }
+      }
+
+      if (changed) {
+        setStableTraffic([...cache.values()].map((entry) => entry.jam));
+      }
+    }, 30_000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
     const map = mapRef.current;
     if (!mapReady || !map) return;
     (map.getSource("openhaul-traffic") as any)?.setData(
-      trafficFeatureCollection([...(mapIntel.traffic ?? []), ...trackerTraffic])
+      trafficFeatureCollection(stableTraffic)
     );
     (map.getSource("openhaul-job-markers") as any)?.setData(jobMarkerFeatureCollection(mapIntel.jobMarkers ?? []));
     (map.getSource("openhaul-convoys") as any)?.setData(convoyFeatureCollection(mapIntel.convoys ?? []));
-  }, [mapReady, mapIntel.traffic, trackerTraffic, mapIntel.jobMarkers, mapIntel.convoys]);
+  }, [mapReady, stableTraffic, mapIntel.jobMarkers, mapIntel.convoys]);
 
   useEffect(() => {
     const map = mapRef.current;
