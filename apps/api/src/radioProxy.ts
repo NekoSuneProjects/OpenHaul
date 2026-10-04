@@ -261,17 +261,59 @@ function stationRegistry(app: FastifyInstance) {
   return byId;
 }
 
+async function getRadioBrowserServers() {
+  const configured = (process.env.RADIO_BROWSER_API_URLS ?? "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean)
+    .map(cleanBaseUrl);
+
+  if (configured.length) return configured;
+
+  const primary = cleanBaseUrl(process.env.RADIO_BROWSER_API_URL ?? DEFAULT_RADIO_BROWSER_URL);
+  try {
+    const response = await fetch("https://all.api.radio-browser.info/json/servers", {
+      signal: AbortSignal.timeout(5_000),
+      headers: { accept: "application/json", "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)" },
+    });
+    if (!response.ok) return [primary];
+
+    const rows = await response.json() as Array<{ name?: string }>;
+    const discovered = rows
+      .map((row) => String(row.name ?? "").trim())
+      .filter(Boolean)
+      .map((host) => `https://${host}`);
+    return [...new Set([primary, ...discovered])].slice(0, 8);
+  } catch {
+    return [primary];
+  }
+}
+
 async function fetchRadioBrowser(path: string, params: URLSearchParams, timeoutMs = 10_000) {
-  const url = `${getRadioBrowserBase()}${path}?${params.toString()}`;
-  const response = await fetch(url, {
-    signal: AbortSignal.timeout(timeoutMs),
-    headers: {
-      accept: "application/json",
-      "user-agent": "OpenHaul/1.1 (+https://github.com/NekoSuneProjects/OpenHaul)",
-    },
-  });
-  if (!response.ok) throw new Error(`Radio Browser returned HTTP ${response.status}`);
-  return response.json();
+  const servers = await getRadioBrowserServers();
+  let lastError: unknown = null;
+
+  for (const base of servers) {
+    try {
+      const url = `${base}${path}?${params.toString()}`;
+      const response = await fetch(url, {
+        signal: AbortSignal.timeout(timeoutMs),
+        headers: {
+          accept: "application/json",
+          "user-agent": "OpenHaul/1.2 (+https://github.com/NekoSuneProjects/OpenHaul)",
+        },
+      });
+      if (!response.ok) {
+        lastError = new Error(`Radio Browser ${base} returned HTTP ${response.status}`);
+        continue;
+      }
+      return response.json();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError instanceof Error ? lastError : new Error("All Radio Browser mirrors failed");
 }
 
 async function resolveRadioBrowserStation(stationUuid: string): Promise<RadioBrowserStation | null> {
