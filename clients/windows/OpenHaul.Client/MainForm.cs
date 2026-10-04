@@ -43,7 +43,8 @@ public sealed class MainForm : Form
     private bool _overlayHotkeyRegistered;
     private IntPtr _overlayKeyboardHook = IntPtr.Zero;
     private LowLevelKeyboardProc? _overlayKeyboardProc;
-    private bool _overlayHotkeyDown;
+    private OverlayHotkeyState _overlayHotkeyState = new("Alt+I");
+    private readonly System.Windows.Forms.Timer _overlayHotkeyTimer = new() { Interval = 25 };
     private const int OverlayHotkeyId = 0x4F48;
     private const int WmHotkey = 0x0312;
     private const int WhKeyboardLl = 13;
@@ -93,6 +94,7 @@ public sealed class MainForm : Form
 
         _overlay = new GameOverlayForm(_settings);
         _overlay.Start();
+        _overlayHotkeyTimer.Tick += (_, _) => PollOverlayHotkey();
         ConfigureOverlayHotkey();
 
         ConfigureTray();
@@ -110,6 +112,8 @@ public sealed class MainForm : Form
             _telemetryRetryTimer.Dispose();
             _trayIcon.Visible = false;
             _trayIcon.Dispose();
+            _overlayHotkeyTimer.Stop();
+            _overlayHotkeyTimer.Dispose();
             if (_overlayHotkeyRegistered && IsHandleCreated)
             {
                 UnregisterHotKey(Handle, OverlayHotkeyId);
@@ -142,6 +146,9 @@ public sealed class MainForm : Form
     [DllImport("user32.dll", SetLastError = true)]
     private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
+    [DllImport("user32.dll")]
+    private static extern short GetAsyncKeyState(int vKey);
+
     private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
 
     [DllImport("user32.dll", SetLastError = true)]
@@ -167,7 +174,7 @@ public sealed class MainForm : Form
     {
         if (m.Msg == WmHotkey && m.WParam.ToInt32() == OverlayHotkeyId)
         {
-            ToggleOverlay();
+            _overlayHotkeyState.RequestToggle();
             return;
         }
 
@@ -190,7 +197,8 @@ public sealed class MainForm : Form
             _overlayKeyboardHook = IntPtr.Zero;
         }
 
-        _overlayHotkeyDown = false;
+        _overlayHotkeyTimer.Stop();
+        _overlayHotkeyState = new OverlayHotkeyState(_settings.OverlayHotkey);
         _overlayKeyboardProc ??= OverlayKeyboardHook;
 
         using var currentProcess = Process.GetCurrentProcess();
@@ -203,57 +211,42 @@ public sealed class MainForm : Form
             moduleHandle,
             0);
 
+        _overlayHotkeyTimer.Start();
+
         if (_overlayKeyboardHook != IntPtr.Zero)
         {
             SetStatus($"Overlay hotkey {_settings.OverlayHotkey} ready.");
             return;
         }
 
-        var (modifiers, key) = ParseOverlayHotkey(_settings.OverlayHotkey);
-        _overlayHotkeyRegistered = RegisterHotKey(Handle, OverlayHotkeyId, modifiers, (uint)key);
+        const uint modNoRepeat = 0x4000;
+        _overlayHotkeyRegistered = RegisterHotKey(Handle, OverlayHotkeyId,
+            _overlayHotkeyState.Modifiers | modNoRepeat, (uint)_overlayHotkeyState.Key);
 
-        if (!_overlayHotkeyRegistered)
-            SetStatus($"Overlay hotkey {_settings.OverlayHotkey} could not be registered.");
+        SetStatus(_overlayHotkeyRegistered
+            ? $"Overlay hotkey {_settings.OverlayHotkey} ready."
+            : $"Overlay hotkey {_settings.OverlayHotkey} uses keyboard polling (global registration unavailable).");
     }
 
-    private static (uint Modifiers, Keys Key) ParseOverlayHotkey(string? hotkey)
-    {
-        const uint modAlt = 0x0001;
-        const uint modControl = 0x0002;
-        const uint modShift = 0x0004;
+    private static bool IsKeyDown(Keys key) => (GetAsyncKeyState((int)key) & 0x8000) != 0;
 
+    private static uint ReadOverlayModifiers()
+    {
         var modifiers = 0u;
-        var key = Keys.I;
-        var parts = (hotkey ?? "Alt+I")
-            .Split('+', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-
-        foreach (var part in parts)
-        {
-            if (part.Equals("Alt", StringComparison.OrdinalIgnoreCase)) modifiers |= modAlt;
-            else if (part.Equals("Ctrl", StringComparison.OrdinalIgnoreCase) || part.Equals("Control", StringComparison.OrdinalIgnoreCase)) modifiers |= modControl;
-            else if (part.Equals("Shift", StringComparison.OrdinalIgnoreCase)) modifiers |= modShift;
-            else if (Enum.TryParse<Keys>(part, true, out var parsed)) key = parsed;
-        }
-
-        return (modifiers, key);
+        if (IsKeyDown(Keys.LMenu) || IsKeyDown(Keys.RMenu)) modifiers |= 0x0001;
+        if (IsKeyDown(Keys.LControlKey) || IsKeyDown(Keys.RControlKey)) modifiers |= 0x0002;
+        if (IsKeyDown(Keys.LShiftKey) || IsKeyDown(Keys.RShiftKey)) modifiers |= 0x0004;
+        if (IsKeyDown(Keys.LWin) || IsKeyDown(Keys.RWin)) modifiers |= 0x0008;
+        return modifiers;
     }
 
-    private static bool IsOverlayHotkeyPressed(int vkCode, string? hotkey)
+    private void PollOverlayHotkey()
     {
-        var (modifiers, key) = ParseOverlayHotkey(hotkey);
-
-        var altRequired = (modifiers & 0x0001) != 0;
-        var ctrlRequired = (modifiers & 0x0002) != 0;
-        var shiftRequired = (modifiers & 0x0004) != 0;
-
-        var altDown = (Control.ModifierKeys & Keys.Alt) == Keys.Alt;
-        var ctrlDown = (Control.ModifierKeys & Keys.Control) == Keys.Control;
-        var shiftDown = (Control.ModifierKeys & Keys.Shift) == Keys.Shift;
-
-        return vkCode == (int)key
-            && (!altRequired || altDown)
-            && (!ctrlRequired || ctrlDown)
-            && (!shiftRequired || shiftDown);
+        if (IsDisposed || Disposing) return;
+        var modifiers = ReadOverlayModifiers();
+        _overlayHotkeyState.Update(IsKeyDown(_overlayHotkeyState.Key), modifiers);
+        if (_overlayHotkeyState.TryTakeToggle(modifiers))
+            ToggleOverlay();
     }
 
     private IntPtr OverlayKeyboardHook(int nCode, IntPtr wParam, IntPtr lParam)
@@ -263,23 +256,14 @@ public sealed class MainForm : Form
             var message = wParam.ToInt32();
             var vkCode = Marshal.ReadInt32(lParam);
 
-            if (IsOverlayHotkeyPressed(vkCode, _settings.OverlayHotkey))
+            if (vkCode == (int)_overlayHotkeyState.Key)
             {
+                // The current key's async state is not updated until this hook
+                // returns. Use the event for it and sample only the modifiers.
                 if (message is WmKeyDown or WmSysKeyDown)
-                {
-                    if (!_overlayHotkeyDown)
-                    {
-                        _overlayHotkeyDown = true;
-                        if (!IsDisposed && IsHandleCreated)
-                            BeginInvoke(() => ToggleOverlay());
-                    }
-                }
-            }
-            else if (message is WmKeyUp or WmSysKeyUp)
-            {
-                var (_, configuredKey) = ParseOverlayHotkey(_settings.OverlayHotkey);
-                if (vkCode == (int)configuredKey)
-                    _overlayHotkeyDown = false;
+                    _overlayHotkeyState.Update(true, ReadOverlayModifiers());
+                else if (message is WmKeyUp or WmSysKeyUp)
+                    _overlayHotkeyState.Update(false, 0);
             }
         }
 
@@ -1583,7 +1567,9 @@ public sealed class MainForm : Form
             _settings.OverlayHotkey = overlayHotkey.SelectedItem?.ToString() ?? "Alt+I";
             _settings.Save();
             ConfigureOverlayHotkey();
-            SetStatus("Overlay hotkey changed to " + _settings.OverlayHotkey + ".");
+            _overlay?.ReloadUi();
+            if (_trayIcon.ContextMenuStrip is { } trayMenu)
+                trayMenu.Items[1].Text = "Toggle Game Overlay (" + _settings.OverlayHotkey + ")";
         };
         card.Controls.Add(overlayHotkey);
 
@@ -1654,7 +1640,7 @@ public sealed class MainForm : Form
 
         var overlayHint = new Label
         {
-            Text = "F8 opens the full OpenHaul in-game workspace over ETS2/ATS with Live Map, Drive and Settings pages.\nWhen it is open, the overlay is interactive; press F8 again to return control to the game.",
+            Text = "Press and release the selected hotkey to open the OpenHaul workspace over ETS2/ATS.\nThe overlay is interactive; use the same hotkey again to return control to the game.",
             AutoSize = true,
             MaximumSize = new Size(780, 0),
             ForeColor = C(140, 170, 153),

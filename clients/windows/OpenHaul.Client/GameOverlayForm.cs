@@ -8,7 +8,7 @@ namespace OpenHaul.Client;
 
 /// <summary>
 /// Full OpenHaul in-game workspace for ETS2/ATS.
-/// F8 opens a real interactive overlay over the game with map, drive and settings pages.
+/// The configured hotkey opens an interactive overlay with map, drive and settings pages.
 /// The overlay is hidden when the simulator is not the foreground app.
 /// </summary>
 public sealed class GameOverlayForm : Form
@@ -23,6 +23,7 @@ public sealed class GameOverlayForm : Form
     private IntPtr _gameWindow;
     private bool _userVisible;
     private bool _webReady;
+    private bool _webInitializing;
 
     public bool IsUserVisible => _userVisible;
 
@@ -86,10 +87,7 @@ public sealed class GameOverlayForm : Form
         _settings.Save();
 
         if (!enabled)
-        {
-            _userVisible = false;
-            Hide();
-        }
+            HideOverlay();
     }
 
     public void ToggleVisibility()
@@ -109,8 +107,20 @@ public sealed class GameOverlayForm : Form
         }
         else
         {
-            Hide();
+            HideOverlay();
         }
+    }
+
+    private bool IsOverlayForeground(IntPtr foreground) =>
+        IsHandleCreated && (foreground == Handle || IsChild(Handle, foreground));
+
+    private void HideOverlay()
+    {
+        var restoreGame = IsOverlayForeground(GetForegroundWindow());
+        _userVisible = false;
+        Hide();
+        if (restoreGame && _gameWindow != IntPtr.Zero && IsWindow(_gameWindow) && !IsIconic(_gameWindow))
+            SetForegroundWindow(_gameWindow);
     }
 
     public void ReloadUi()
@@ -143,7 +153,8 @@ public sealed class GameOverlayForm : Form
 
     private async Task EnsureWebViewAsync()
     {
-        if (_webReady || IsDisposed) return;
+        if (_webReady || _webInitializing || IsDisposed) return;
+        _webInitializing = true;
 
         try
         {
@@ -153,8 +164,9 @@ public sealed class GameOverlayForm : Form
                 browserExecutableFolder: null,
                 userDataFolder: webViewData);
 
+            if (IsDisposed) return;
             await _webView.EnsureCoreWebView2Async(environment);
-            if (_webView.CoreWebView2 is null) return;
+            if (IsDisposed || _webView.CoreWebView2 is null) return;
 
             _webView.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
             _webView.CoreWebView2.Settings.AreDevToolsEnabled = false;
@@ -169,6 +181,7 @@ public sealed class GameOverlayForm : Form
         }
         catch (Exception ex)
         {
+            if (IsDisposed) return;
             MessageBox.Show(
                 "OpenHaul could not start the in-game overlay browser.\n\n" +
                 "OpenHaul now stores WebView2 data under your LocalAppData folder so installs under Program Files do not need write access.\n\n" +
@@ -177,6 +190,10 @@ public sealed class GameOverlayForm : Form
                 "OpenHaul Overlay",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
+        }
+        finally
+        {
+            _webInitializing = false;
         }
     }
 
@@ -206,6 +223,7 @@ public sealed class GameOverlayForm : Form
         var url =
             root +
             "/overlay?driver=" + Uri.EscapeDataString(_settings.SteamId ?? "") +
+            "&hotkey=" + Uri.EscapeDataString(_settings.OverlayHotkey) +
             "&mode=" + Uri.EscapeDataString(_settings.OverlayMapType) +
             "&size=" + Uri.EscapeDataString(_settings.OverlayMapSize) +
             "&traffic=" + (_settings.OverlayTrafficAlerts ? "1" : "0") +
@@ -243,8 +261,7 @@ public sealed class GameOverlayForm : Form
             switch (type)
             {
                 case "overlay.hide":
-                    _userVisible = false;
-                    Hide();
+                    HideOverlay();
                     break;
 
                 case "overlay.mapType":
@@ -310,15 +327,13 @@ public sealed class GameOverlayForm : Form
             return;
         }
 
-        var game = FindGameProcess();
-        if (game is null || game.MainWindowHandle == IntPtr.Zero)
+        var foreground = GetForegroundWindow();
+        _gameWindow = FindGameWindow(foreground, _gameWindow);
+        if (_gameWindow == IntPtr.Zero)
         {
-            _gameWindow = IntPtr.Zero;
             if (Visible) Hide();
             return;
         }
-
-        _gameWindow = game.MainWindowHandle;
 
         if (IsIconic(_gameWindow))
         {
@@ -326,8 +341,7 @@ public sealed class GameOverlayForm : Form
             return;
         }
 
-        var foreground = GetForegroundWindow();
-        if (!forceShow && foreground != _gameWindow && foreground != Handle)
+        if (!forceShow && foreground != _gameWindow && !IsOverlayForeground(foreground))
         {
             if (Visible) Hide();
             return;
@@ -349,6 +363,7 @@ public sealed class GameOverlayForm : Form
         var width = Math.Max(1, rect.Right - rect.Left);
         var height = Math.Max(1, rect.Bottom - rect.Top);
 
+        var wasVisible = Visible;
         SetWindowPos(
             Handle,
             HwndTopMost,
@@ -356,21 +371,45 @@ public sealed class GameOverlayForm : Form
             origin.Y,
             width,
             height,
-            SwpShowWindow);
+            SwpShowWindow | SwpNoActivate);
 
         if (!Visible) Show();
 
-        BringToFront();
-        _webView.Focus();
+        // Window tracking must not repeatedly steal focus from WebView controls
+        // or other applications. Activate only when opening the overlay.
+        if (forceShow || !wasVisible)
+        {
+            SetForegroundWindow(Handle);
+            if (IsOverlayForeground(GetForegroundWindow()))
+                _webView.Focus();
+        }
     }
 
-    private static Process? FindGameProcess()
+    private static IntPtr FindGameWindow(IntPtr foreground, IntPtr previous)
     {
-        static Process? Find(string name) =>
-            Process.GetProcessesByName(name)
-                .FirstOrDefault(process => process.MainWindowHandle != IntPtr.Zero);
+        var windows = new List<IntPtr>();
+        foreach (var name in new[] { "eurotrucks2", "amtrucks" })
+        {
+            foreach (var process in Process.GetProcessesByName(name))
+            {
+                using (process)
+                {
+                    try
+                    {
+                        var window = process.MainWindowHandle;
+                        if (window != IntPtr.Zero) windows.Add(window);
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        // The simulator may exit while its window is being read.
+                    }
+                }
+            }
+        }
 
-        return Find("eurotrucks2") ?? Find("amtrucks");
+        if (windows.Contains(foreground)) return foreground;
+        if (windows.Contains(previous)) return previous;
+        return windows.FirstOrDefault();
     }
 
     protected override void Dispose(bool disposing)
@@ -397,6 +436,7 @@ public sealed class GameOverlayForm : Form
 
     private static readonly IntPtr HwndTopMost = new(-1);
     private const uint SwpShowWindow = 0x0040;
+    private const uint SwpNoActivate = 0x0010;
 
     [StructLayout(LayoutKind.Sequential)]
     private struct NativeRect
@@ -422,6 +462,18 @@ public sealed class GameOverlayForm : Form
 
     [DllImport("user32.dll")]
     private static extern IntPtr GetForegroundWindow();
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool SetForegroundWindow(IntPtr hWnd);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool IsWindow(IntPtr hWnd);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool IsChild(IntPtr hWndParent, IntPtr hWnd);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]

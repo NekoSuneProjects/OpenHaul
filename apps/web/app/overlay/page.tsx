@@ -20,6 +20,7 @@ const api = process.env.NEXT_PUBLIC_API_URL ?? "";
 function OverlayContent() {
   const params = useSearchParams();
   const driver = params.get("driver") ?? "";
+  const hotkey = params.get("hotkey") || "Alt+I";
   const initialMode = params.get("mode") ?? "road";
   const initialSize = params.get("size") ?? "medium";
   const initialTraffic = params.get("traffic") !== "0";
@@ -153,7 +154,7 @@ function OverlayContent() {
             <small>{driver || "No OpenHaul driver linked"}</small>
           </div>
           <div className="gameOverlayStatus">
-            <span className="gameOverlayKey">F8</span>
+            <span className="gameOverlayKey">{hotkey}</span>
             <span>show / hide</span>
           </div>
         </header>

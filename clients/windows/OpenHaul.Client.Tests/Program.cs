@@ -3,6 +3,12 @@ using System.Reflection;
 using System.Text.Json;
 using OpenHaul.Client;
 
+OverlayHotkeyTests.Run((condition, message) =>
+{
+    if (!condition) throw new Exception(message);
+    Console.WriteLine("PASS " + message);
+});
+
 const BindingFlags fields = BindingFlags.Instance | BindingFlags.NonPublic;
 var config = new ClientConfig("https://fixture.invalid", "", "", "test-driver", "Test Driver", null, null, null);
 await using var service = new TelemetryService(config);
