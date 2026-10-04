@@ -14,7 +14,6 @@ namespace OpenHaul.Client;
 public sealed class GameOverlayForm : Form
 {
     private const int WsExToolWindow = 0x00000080;
-    private const int WsExNoActivate = 0x08000000;
 
     private readonly ClientSettings _settings;
     private readonly WebView2 _webView = new();
@@ -54,7 +53,7 @@ public sealed class GameOverlayForm : Form
         get
         {
             var cp = base.CreateParams;
-            cp.ExStyle |= WsExToolWindow | WsExNoActivate;
+            cp.ExStyle |= WsExToolWindow;
             return cp;
         }
     }
