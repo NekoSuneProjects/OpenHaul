@@ -116,7 +116,7 @@ export default function RadioPage() {
     if (!audio) return;
 
     if (audio.paused) {
-      audio.src = "https://radio.truckers.fm";
+      audio.src = stream;
       await audio.play();
       setPlaying(true);
     } else {
