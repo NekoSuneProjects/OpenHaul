@@ -51,9 +51,9 @@ public sealed class MainForm : Form
         Icon = new Icon(iconStream, new Size(48, 48));
         Disposed += (_, _) => Icon?.Dispose();
         Text = "OpenHaul Launcher";
-        Width = 1180;
-        Height = 720;
-        MinimumSize = new Size(980, 620);
+        Width = 1280;
+        Height = 780;
+        MinimumSize = new Size(1060, 680);
         StartPosition = FormStartPosition.CenterScreen;
         BackColor = C(4, 15, 10);
         ForeColor = Color.White;
@@ -274,8 +274,8 @@ public sealed class MainForm : Form
         var top = new Panel
         {
             Dock = DockStyle.Top,
-            Height = 72,
-            BackColor = C(5, 24, 15),
+            Height = 76,
+            BackColor = C(4, 16, 10),
             Cursor = Cursors.SizeAll,
         };
         top.MouseDown += BeginWindowDrag;
@@ -284,8 +284,8 @@ public sealed class MainForm : Form
         {
             Image = Icon!.ToBitmap(),
             SizeMode = PictureBoxSizeMode.Zoom,
-            Location = new Point(24, 16),
-            Size = new Size(40, 40),
+            Location = new Point(22, 15),
+            Size = new Size(44, 44),
             Cursor = Cursors.SizeAll,
         };
         brandIcon.Disposed += (_, _) => brandIcon.Image?.Dispose();
@@ -296,9 +296,9 @@ public sealed class MainForm : Form
         {
             Text = "OpenHaul",
             AutoSize = true,
-            Font = new Font("Segoe UI Variable Display", 22F, FontStyle.Bold),
-            ForeColor = C(70, 235, 141),
-            Location = new Point(74, 17),
+            Font = new Font("Segoe UI Variable Display", 23F, FontStyle.Bold),
+            ForeColor = Color.White,
+            Location = new Point(78, 17),
             Cursor = Cursors.SizeAll,
         };
         logo.MouseDown += BeginWindowDrag;
@@ -306,11 +306,11 @@ public sealed class MainForm : Form
 
         var subtitle = new Label
         {
-            Text = "DRIVER HUB",
+            Text = "OPEN SOURCE DRIVER NETWORK",
             AutoSize = true,
-            Font = new Font("Segoe UI", 8.5F, FontStyle.Bold),
-            ForeColor = C(103, 147, 122),
-            Location = new Point(232, 30),
+            Font = new Font("Segoe UI", 8F, FontStyle.Bold),
+            ForeColor = C(79, 132, 98),
+            Location = new Point(220, 31),
             Cursor = Cursors.SizeAll,
         };
         subtitle.MouseDown += BeginWindowDrag;
@@ -339,31 +339,50 @@ public sealed class MainForm : Form
         var sidebar = new Panel
         {
             Dock = DockStyle.Left,
-            Width = 190,
-            BackColor = C(5, 21, 14),
-            Padding = new Padding(14, 20, 14, 20),
+            Width = 220,
+            BackColor = C(3, 12, 8),
+            Padding = new Padding(14, 18, 14, 20),
         };
 
-        AddNav(sidebar, "play", "▶  Play", 20);
-        AddNav(sidebar, "news", "\u25A4  News", 72);
-        AddNav(sidebar, "servers", "▣  Server Status", 124);
-        AddNav(sidebar, "account", "●  Account", 176);
-        AddNav(sidebar, "updates", "⇩  Updates", 228);
-        AddNav(sidebar, "settings", "⚙  Settings", 280);
+        sidebar.Controls.Add(new Label
+        {
+            Text = "DRIVER",
+            AutoSize = true,
+            ForeColor = C(72, 103, 84),
+            Font = new Font("Segoe UI", 7.5F, FontStyle.Bold),
+            Location = new Point(18, 18),
+        });
+
+        AddNav(sidebar, "play", "▶   Drive", 42);
+        AddNav(sidebar, "news", "▤   News", 94);
+        AddNav(sidebar, "servers", "◎   Server Status", 146);
+        AddNav(sidebar, "account", "●   Account", 198);
+
+        sidebar.Controls.Add(new Label
+        {
+            Text = "SYSTEM",
+            AutoSize = true,
+            ForeColor = C(72, 103, 84),
+            Font = new Font("Segoe UI", 7.5F, FontStyle.Bold),
+            Location = new Point(18, 262),
+        });
+
+        AddNav(sidebar, "updates", "⇩   Updates", 286);
+        AddNav(sidebar, "settings", "⚙   Settings", 338);
 
         var version = new Label
         {
             Text = "v" + UpdateManager.CurrentVersion,
             ForeColor = C(90, 120, 104),
             AutoSize = true,
-            Location = new Point(18, 560),
+            Location = new Point(18, 620),
             Anchor = AnchorStyles.Left | AnchorStyles.Bottom,
         };
         sidebar.Controls.Add(version);
 
         _content.Dock = DockStyle.Fill;
-        _content.BackColor = C(4, 15, 10);
-        _content.Padding = new Padding(30);
+        _content.BackColor = C(3, 9, 6);
+        _content.Padding = new Padding(34);
 
         var bottom = BuildUpdateBar();
 
@@ -400,19 +419,19 @@ public sealed class MainForm : Form
         {
             Text = text,
             TextAlign = ContentAlignment.MiddleLeft,
-            Width = 160,
-            Height = 42,
+            Width = 190,
+            Height = 44,
             Location = new Point(14, y),
             FlatStyle = FlatStyle.Flat,
             BackColor = Color.Transparent,
-            ForeColor = C(220, 240, 229),
-            Font = new Font("Segoe UI", 10.5F, FontStyle.Bold),
+            ForeColor = C(167, 191, 177),
+            Font = new Font("Segoe UI", 10F, FontStyle.Bold),
             Cursor = Cursors.Hand,
         };
         button.UseVisualStyleBackColor = false;
         button.FlatAppearance.BorderSize = 0;
-        button.FlatAppearance.MouseOverBackColor = C(9, 43, 28);
-        button.FlatAppearance.MouseDownBackColor = C(12, 58, 36);
+        button.FlatAppearance.MouseOverBackColor = C(8, 35, 22);
+        button.FlatAppearance.MouseDownBackColor = C(10, 49, 30);
         button.Click += (_, _) => ShowPage(key);
         sidebar.Controls.Add(button);
         _navButtons[key] = button;
@@ -1059,7 +1078,7 @@ public sealed class MainForm : Form
 
     private static Panel PagePanel() => new()
     {
-        BackColor = C(4, 15, 10),
+        BackColor = C(3, 9, 6),
         AutoScroll = false,
     };
 
@@ -1087,9 +1106,9 @@ public sealed class MainForm : Form
     {
         Location = new Point(x, y),
         Size = new Size(width, height),
-        BackColor = C(7, 29, 19),
-        BorderColor = C(22, 75, 48),
-        Radius = 14,
+        BackColor = C(7, 24, 16),
+        BorderColor = C(20, 63, 41),
+        Radius = 18,
     };
 
     private static Label CardTitle(string text) => new()
@@ -1111,17 +1130,17 @@ public sealed class MainForm : Form
 
         if (primary)
         {
-            button.BackColor = C(72, 222, 133);
+            button.BackColor = C(84, 224, 138);
             button.ForeColor = C(3, 18, 11);
-            button.FlatAppearance.MouseOverBackColor = C(91, 238, 151);
-            button.FlatAppearance.MouseDownBackColor = C(55, 198, 115);
+            button.FlatAppearance.MouseOverBackColor = C(118, 241, 164);
+            button.FlatAppearance.MouseDownBackColor = C(57, 197, 115);
         }
         else
         {
-            button.BackColor = C(8, 39, 25);
-            button.ForeColor = Color.White;
-            button.FlatAppearance.MouseOverBackColor = C(12, 58, 36);
-            button.FlatAppearance.MouseDownBackColor = C(16, 72, 44);
+            button.BackColor = C(7, 26, 17);
+            button.ForeColor = C(226, 240, 231);
+            button.FlatAppearance.MouseOverBackColor = C(11, 43, 27);
+            button.FlatAppearance.MouseDownBackColor = C(14, 58, 35);
         }
     }
 
