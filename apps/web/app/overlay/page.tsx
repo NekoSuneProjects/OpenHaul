@@ -54,6 +54,8 @@ function OverlayContent() {
   const [selectedRadioId, setSelectedRadioId] = useState(overlayRadioStations[0]?.id || "");
   const [radioQuery, setRadioQuery] = useState("");
   const [onlineRadioStations, setOnlineRadioStations] = useState<RadioStation[]>([]);
+  const [catalogRadioStations, setCatalogRadioStations] = useState<RadioStation[]>([]);
+  const [catalogRadioLoading, setCatalogRadioLoading] = useState(true);
   const [onlineRadioLoading, setOnlineRadioLoading] = useState(false);
   const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
@@ -111,6 +113,64 @@ function OverlayContent() {
     audio.volume = radioVolume;
   }, [radioVolume]);
 
+  useEffect(() => {
+    let active = true;
+
+    const loadLargeRadioCatalog = async () => {
+      setCatalogRadioLoading(true);
+      try {
+        const response = await fetch(api + "/api/v1/public/radio/catalog?limit=20000", {
+          cache: "force-cache",
+        });
+        if (!response.ok) throw new Error("Large radio catalog returned HTTP " + response.status);
+
+        const data = await response.json() as {
+          stations?: Array<{
+            id?: string;
+            stationUuid?: string | null;
+            name?: string;
+            country?: string | null;
+            language?: string | null;
+            genre?: string | null;
+            codec?: string | null;
+            bitrateKbps?: number | null;
+            source?: string | null;
+            playback?: { direct?: string | null; browser?: string | null };
+          }>;
+        };
+
+        if (!active) return;
+
+        const stations: RadioStation[] = (data.stations ?? [])
+          .map((station, index) => {
+            const url = station.playback?.direct || station.playback?.browser || "";
+            if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return null;
+            return {
+              id: "catalog-" + (station.id || station.stationUuid || index),
+              name: station.name || "Unknown station",
+              url,
+              country: station.country || undefined,
+              language: station.language || undefined,
+              genre: station.genre || undefined,
+              codec: station.codec || undefined,
+              bitrateKbps: station.bitrateKbps || undefined,
+              source: station.source || "radio-browser",
+            } satisfies RadioStation;
+          })
+          .filter((station): station is RadioStation => station !== null);
+
+        setCatalogRadioStations(stations);
+      } catch {
+        if (active) setCatalogRadioStations([]);
+      } finally {
+        if (active) setCatalogRadioLoading(false);
+      }
+    };
+
+    void loadLargeRadioCatalog();
+    return () => { active = false; };
+  }, []);
+
   const setPreference = (key: "traffic" | "staff" | "missions", value: boolean) => {
     if (key === "traffic") setTrafficAlerts(value);
     if (key === "staff") setStaffAlerts(value);
@@ -120,15 +180,16 @@ function OverlayContent() {
 
   const filteredRadioStations = useMemo(() => {
     const query = radioQuery.trim().toLowerCase();
-    if (!query) return radioStations;
-    return radioStations.filter((station) =>
+    const combined = [...radioStations, ...catalogRadioStations];
+    if (!query) return combined;
+    return combined.filter((station) =>
       [station.name, station.genre, station.language, station.country, station.codec]
         .filter(Boolean)
         .some((value) => String(value).toLowerCase().includes(query))
     );
-  }, [radioQuery, radioStations]);
+  }, [radioQuery, radioStations, catalogRadioStations]);
 
-  const allVisibleRadioStations = useMemo(() => {
+  const allRadioSearchResults = useMemo(() => {
     const seen = new Set<string>();
     return [...filteredRadioStations, ...onlineRadioStations].filter((station) => {
       const key = (station.url + "|" + station.name).toLowerCase();
@@ -138,12 +199,18 @@ function OverlayContent() {
     });
   }, [filteredRadioStations, onlineRadioStations]);
 
+  const allVisibleRadioStations = useMemo(
+    () => allRadioSearchResults.slice(0, radioQuery.trim() ? 1000 : 500),
+    [allRadioSearchResults, radioQuery],
+  );
+
   const selectedRadio = useMemo(
-    () => [...radioStations, ...onlineRadioStations].find((station) => station.id === selectedRadioId)
+    () => [...radioStations, ...catalogRadioStations, ...onlineRadioStations].find((station) => station.id === selectedRadioId)
       ?? radioStations[0]
+      ?? catalogRadioStations[0]
       ?? onlineRadioStations[0]
       ?? null,
-    [radioStations, onlineRadioStations, selectedRadioId],
+    [radioStations, catalogRadioStations, onlineRadioStations, selectedRadioId],
   );
 
   const searchOnlineRadio = async () => {
@@ -415,8 +482,8 @@ function OverlayContent() {
             <section className="gameOverlayRadioLocal">
               <strong>Local PC playback</strong>
               <small>
-                The built-in station catalog is bundled directly with /overlay. You can also search public radio directories for more stations.
-                Search uses OpenHaul only for discovery; playback always uses the selected station's original stream URL directly on your PC.
+                The overlay keeps your bundled stations and loads up to 20,000 additional public stations for browsing and search.
+                OpenHaul is used only to fetch station metadata; playback always uses the selected station's original stream URL directly on your PC.
               </small>
             </section>
 
@@ -425,8 +492,10 @@ function OverlayContent() {
                 <div>
                   <h2>Stations</h2>
                   <p>
-                    {filteredRadioStations.length + " bundled"}
-                    {onlineRadioStations.length ? " · " + onlineRadioStations.length + " online" : ""}
+                    {catalogRadioLoading
+                      ? "Loading 20,000-station catalog…"
+                      : (radioStations.length + catalogRadioStations.length).toLocaleString() + " stations available"}
+                    {onlineRadioStations.length ? " · " + onlineRadioStations.length + " extra search results" : ""}
                   </p>
                 </div>
                 <div className="gameOverlayRadioSearch">
@@ -479,6 +548,11 @@ function OverlayContent() {
                 })}
                 {allVisibleRadioStations.length === 0 ? (
                   <div className="gameOverlayRadioEmpty">No stations match that search.</div>
+                ) : null}
+                {allRadioSearchResults.length > allVisibleRadioStations.length ? (
+                  <div className="gameOverlayRadioEmpty">
+                    Showing {allVisibleRadioStations.length.toLocaleString()} of {allRadioSearchResults.length.toLocaleString()} matches. Search to narrow the list.
+                  </div>
                 ) : null}
                 {onlineRadioError ? (
                   <div className="gameOverlayRadioEmpty">Online search failed: {onlineRadioError}</div>
