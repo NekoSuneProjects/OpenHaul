@@ -321,7 +321,7 @@ export default function ManageVtcPage() {
               <div><span className="pill">{member.role}</span><small>{member.title || "VTC member"}</small></div>
               <div>
                 <strong>{Math.round(Number(member.stats?.distanceKm ?? 0)).toLocaleString()} km</strong>
-                <small>{member.stats?.jobs ?? 0} jobs · {member.stats?.fines ?? 0} fines</small>
+                <small>{member.stats?.jobs ?? 0} jobs · {member.stats?.fines ?? 0} fines · net {(Number(member.stats?.income ?? 0) - Number(member.stats?.fineAmount ?? 0)).toLocaleString()}</small>
               </div>
               <div>
                 {member.role !== "owner" && (
