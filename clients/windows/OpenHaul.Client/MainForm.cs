@@ -79,7 +79,12 @@ public sealed class MainForm : Form
 
         ConfigureTray();
         ConfigureTelemetryRetry();
-        Shown += async (_, _) => await CheckUpdatesAsync(updateTelemetry: true);
+        Shown += async (_, _) =>
+        {
+            await CheckUpdatesAsync(updateTelemetry: true);
+            if (!_lifetime.IsCancellationRequested && !string.IsNullOrWhiteSpace(_settings.ClientToken))
+                await StartTelemetryAsync();
+        };
         FormClosing += OnFormClosing;
         FormClosed += async (_, _) =>
         {
@@ -1250,6 +1255,8 @@ public sealed class MainForm : Form
 
                 RefreshProfile();
                 SetStatus("Account connected. Client token saved automatically.");
+                await StopTelemetryAsync();
+                await StartTelemetryAsync();
                 return;
             }
 
@@ -1453,6 +1460,8 @@ public sealed class MainForm : Form
 
     private async Task StartTelemetryAsync()
     {
+        if (_telemetryCancellation is not null || _lifetime.IsCancellationRequested) return;
+
         if (_mandatoryUpdatePending)
         {
             SetStatus("Install the required launcher update first.");

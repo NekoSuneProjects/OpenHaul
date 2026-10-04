@@ -595,14 +595,8 @@ export function MapClient() {
           source: "openhaul-drivers",
           paint: {
             "circle-radius": 10,
-            "circle-color": [
-              "match",
-              ["get", "game"],
-              "ets2", "#54e08a",
-              "ats", "#f0b35a",
-              "#ffffff",
-            ],
-            "circle-stroke-color": "#06110c",
+            "circle-color": "#3b82f6",
+            "circle-stroke-color": "#ffffff",
             "circle-stroke-width": 3,
           },
         });
@@ -619,7 +613,7 @@ export function MapClient() {
             "text-allow-overlap": true,
           },
           paint: {
-            "text-color": "#06110c",
+            "text-color": "#ffffff",
           },
         });
 
