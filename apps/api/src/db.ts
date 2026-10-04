@@ -331,6 +331,7 @@ VtcModerationAction.init({
   userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
   actorUserId: { type: DataTypes.INTEGER, allowNull: true, field: "actor_user_id" },
   type: { type: DataTypes.STRING(32), allowNull: false },
+  points: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
   reason: { type: DataTypes.TEXT, allowNull: true },
   expiresAt: { type: DataTypes.DATE, allowNull: true, field: "expires_at" },
   revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
