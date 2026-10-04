@@ -86,6 +86,11 @@ const liveSchema = z.object({
   navigationDistanceM: z.number().nonnegative().nullable().optional(),
   navigationTimeS: z.number().nonnegative().nullable().optional(),
   speedLimitKph: z.number().nonnegative().max(300).nullable().optional(),
+  truckDamagePercent: z.number().min(0).max(100).nullable().optional(),
+  trailerDamagePercent: z.number().min(0).max(100).nullable().optional(),
+  cargoDamagePercent: z.number().min(0).max(100).nullable().optional(),
+  specialJob: z.boolean().nullable().optional(),
+  cargoLoaded: z.boolean().nullable().optional(),
   server: z.string().max(120).nullable().optional(),
 });
 
