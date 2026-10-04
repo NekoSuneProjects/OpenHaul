@@ -281,6 +281,47 @@ VtcLedgerEntry.init({
   currency: { type: DataTypes.STRING(8), allowNull: false, defaultValue: "GBP" },
 }, { sequelize, modelName: "VtcLedgerEntry", tableName: "vtc_ledger_entries", underscored: true });
 
+export class VtcActivityEvent extends Model {}
+VtcActivityEvent.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
+  driverId: { type: DataTypes.STRING(80), allowNull: true, field: "driver_id" },
+  actorUserId: { type: DataTypes.INTEGER, allowNull: true, field: "actor_user_id" },
+  type: { type: DataTypes.STRING(64), allowNull: false },
+  title: { type: DataTypes.STRING(180), allowNull: false },
+  detail: { type: DataTypes.TEXT, allowNull: true },
+  amount: { type: DataTypes.DECIMAL(14, 2), allowNull: true },
+  currency: { type: DataTypes.STRING(8), allowNull: true },
+  metadata: { type: DataTypes.JSONB, allowNull: false, defaultValue: {} },
+  occurredAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW, field: "occurred_at" },
+}, { sequelize, modelName: "VtcActivityEvent", tableName: "vtc_activity_events", underscored: true });
+
+export class VtcModerationAction extends Model {}
+VtcModerationAction.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  vtcId: { type: DataTypes.INTEGER, allowNull: false, field: "vtc_id" },
+  userId: { type: DataTypes.INTEGER, allowNull: false, field: "user_id" },
+  actorUserId: { type: DataTypes.INTEGER, allowNull: true, field: "actor_user_id" },
+  type: { type: DataTypes.STRING(32), allowNull: false },
+  reason: { type: DataTypes.TEXT, allowNull: true },
+  expiresAt: { type: DataTypes.DATE, allowNull: true, field: "expires_at" },
+  revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
+}, { sequelize, modelName: "VtcModerationAction", tableName: "vtc_moderation_actions", underscored: true });
+
+export class VtcDiscordConfig extends Model {}
+VtcDiscordConfig.init({
+  id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+  vtcId: { type: DataTypes.INTEGER, allowNull: false, unique: true, field: "vtc_id" },
+  guildId: { type: DataTypes.STRING(32), allowNull: true, field: "guild_id" },
+  logChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "log_channel_id" },
+  jobChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "job_channel_id" },
+  fineChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "fine_channel_id" },
+  applicationChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "application_channel_id" },
+  moderationChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "moderation_channel_id" },
+  driverChannelId: { type: DataTypes.STRING(32), allowNull: true, field: "driver_channel_id" },
+  enabled: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
+}, { sequelize, modelName: "VtcDiscordConfig", tableName: "vtc_discord_configs", underscored: true });
+
 User.hasMany(ClientToken, { foreignKey: "userId" });
 User.hasMany(ClientAuthRequest, { foreignKey: "userId" });
 ClientAuthRequest.belongsTo(User, { foreignKey: "userId" });
@@ -297,6 +338,15 @@ VtcApplication.belongsTo(User, { foreignKey: "userId" });
 VtcApplication.belongsTo(Vtc, { foreignKey: "vtcId" });
 Vtc.hasMany(VtcInvite, { foreignKey: "vtcId" });
 VtcInvite.belongsTo(Vtc, { foreignKey: "vtcId" });
+
+Vtc.hasMany(VtcActivityEvent, { foreignKey: "vtcId" });
+VtcActivityEvent.belongsTo(Vtc, { foreignKey: "vtcId" });
+Vtc.hasMany(VtcModerationAction, { foreignKey: "vtcId" });
+VtcModerationAction.belongsTo(Vtc, { foreignKey: "vtcId" });
+User.hasMany(VtcModerationAction, { foreignKey: "userId" });
+VtcModerationAction.belongsTo(User, { foreignKey: "userId" });
+Vtc.hasOne(VtcDiscordConfig, { foreignKey: "vtcId" });
+VtcDiscordConfig.belongsTo(Vtc, { foreignKey: "vtcId" });
 
 async function bootstrapVtc() {
   const name = process.env.OPENHAUL_BOOTSTRAP_VTC_NAME?.trim();
