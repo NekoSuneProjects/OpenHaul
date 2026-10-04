@@ -281,6 +281,31 @@ UserApiKey.init({
   revokedAt: { type: DataTypes.DATE, allowNull: true, field: "revoked_at" },
 }, { sequelize, modelName: "UserApiKey", tableName: "user_api_keys", underscored: true });
 
+export class TruckersMpAccount extends Model {
+  declare id: number;
+  declare userId: number;
+  declare truckersMpId: string;
+  declare steamId: string;
+  declare name: string;
+  declare avatarUrl: string | null;
+  declare vtcId: string | null;
+  declare vtcName: string | null;
+  declare linkedAt: Date;
+  declare lastVerifiedAt: Date;
+}
+TruckersMpAccount.init({
+  id: { type: DataTypes.BIGINT, autoIncrement: true, primaryKey: true },
+  userId: { type: DataTypes.INTEGER, allowNull: false, unique: true, field: "user_id" },
+  truckersMpId: { type: DataTypes.STRING(32), allowNull: false, unique: true, field: "truckersmp_id" },
+  steamId: { type: DataTypes.STRING(32), allowNull: false, unique: true, field: "steam_id" },
+  name: { type: DataTypes.STRING(120), allowNull: false },
+  avatarUrl: { type: DataTypes.TEXT, allowNull: true, field: "avatar_url" },
+  vtcId: { type: DataTypes.STRING(32), allowNull: true, field: "vtc_id" },
+  vtcName: { type: DataTypes.STRING(160), allowNull: true, field: "vtc_name" },
+  linkedAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW, field: "linked_at" },
+  lastVerifiedAt: { type: DataTypes.DATE, allowNull: false, defaultValue: DataTypes.NOW, field: "last_verified_at" },
+}, { sequelize, modelName: "TruckersMpAccount", tableName: "truckersmp_accounts", underscored: true });
+
 export class DiscordAccount extends Model {
   declare id: number;
   declare userId: number;
@@ -467,6 +492,8 @@ User.hasMany(UserApiKey, { foreignKey: "userId" });
 UserApiKey.belongsTo(User, { foreignKey: "userId" });
 User.hasOne(TwitchAccount, { foreignKey: "userId" });
 TwitchAccount.belongsTo(User, { foreignKey: "userId" });
+User.hasOne(TruckersMpAccount, { foreignKey: "userId" });
+TruckersMpAccount.belongsTo(User, { foreignKey: "userId" });
 User.hasOne(DiscordAccount, { foreignKey: "userId" });
 DiscordAccount.belongsTo(User, { foreignKey: "userId" });
 ClientToken.belongsTo(User, { foreignKey: "userId" });
