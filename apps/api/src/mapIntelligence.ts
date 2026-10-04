@@ -174,6 +174,38 @@ async function truckersMpStaff(): Promise<ExternalStaff[]> {
   }
 }
 
+function densityTrafficClusters(drivers: ExternalDriver[]) {
+  const used = new Set<string>();
+  const clusters: any[] = [];
+  const radius = Number(process.env.OPENHAUL_TMP_TRAFFIC_RADIUS ?? 650);
+
+  for (const driver of drivers) {
+    if (used.has(driver.driverId)) continue;
+    const group = drivers.filter((other) =>
+      other.game === driver.game &&
+      other.server === driver.server &&
+      Math.hypot(other.x - driver.x, other.z - driver.z) <= radius
+    );
+
+    if (group.length < 6) continue;
+    group.forEach((item) => used.add(item.driverId));
+
+    clusters.push({
+      id: "tmp-" + driver.game + "-" + Math.round(driver.x) + "-" + Math.round(driver.z),
+      game: driver.game,
+      x: group.reduce((sum, item) => sum + item.x, 0) / group.length,
+      z: group.reduce((sum, item) => sum + item.z, 0) / group.length,
+      drivers: group.length,
+      averageSpeedKph: null,
+      severity: group.length >= 20 ? "high" : group.length >= 10 ? "medium" : "low",
+      server: driver.server ?? "TruckersMP",
+      source: "truckersmp-density",
+    });
+  }
+
+  return clusters.sort((a, b) => b.drivers - a.drivers);
+}
+
 function trafficClusters(drivers: Array<{ driverId: string; game: "ets2" | "ats"; x: number; z: number; speedKph: number; server?: string | null }>) {
   const slow = drivers.filter((d) => d.speedKph <= 25);
   const used = new Set<string>();
@@ -325,7 +357,10 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
     reply.header("cache-control", "public, max-age=3");
     return {
       generatedAt: new Date().toISOString(),
-      traffic: trafficClusters(trafficInput),
+      traffic: [
+        ...trafficClusters(trafficInput.filter((driver) => !driver.driverId.startsWith("tmp:"))),
+        ...densityTrafficClusters(externalOnly),
+      ],
       staff: [...openHaulStaff, ...tmpStaff],
       specialCargo: missions.map((record: any) => ({
         id: record.id,
@@ -343,7 +378,7 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       jobMarkers,
       truckersMpStaffSourceConfigured: Boolean(process.env.TRUCKERSMP_STAFF_FEED_URL),
       truckersMpWideProviderConfigured: true,
-      truckersMpWideProvider: customUrl ? "custom" : "tracker.ets2map.com",
+      truckersMpWideProvider: process.env.TRUCKERSMP_LIVE_PROVIDER_URL?.trim() ? "custom" : "tracker.ets2map.com",
     };
   });
 }
