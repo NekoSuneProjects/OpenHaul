@@ -286,7 +286,7 @@ function OverlayContent() {
         };
 
         const version = String(manifest?.version || "");
-        if (version && loadedVersion === version && catalogRadioStations.length) {
+        if (version && loadedVersion === version) {
           setRadioCatalogVersion(version);
           return;
         }
@@ -1031,6 +1031,7 @@ function OverlayContent() {
                       ? "Loading worldwide active radio catalog…"
                       : (radioStations.length + catalogRadioStations.length).toLocaleString() + " active stations available"}
                     {onlineRadioStations.length ? " · " + onlineRadioStations.length + " extra search results" : ""}
+                    {radioCatalogVersion ? " · catalog " + new Date(radioCatalogVersion).toLocaleString() : ""}
                   </p>
                 </div>
                 <div className="gameOverlayRadioSearch">
