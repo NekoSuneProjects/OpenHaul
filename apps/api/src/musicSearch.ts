@@ -29,6 +29,66 @@ function providerPriority(countryCode: string) {
   return ["youtube", "soundcloud", "yandex", "bilibili"] as const;
 }
 
+function isPublicIpCandidate(value: string) {
+  if (!value || value === "::1" || value === "127.0.0.1" || value === "unknown") return false;
+  if (/^10\./.test(value) || /^192\.168\./.test(value) || /^169\.254\./.test(value)) return false;
+  const match172 = value.match(/^172\.(\d+)\./);
+  if (match172 && Number(match172[1]) >= 16 && Number(match172[1]) <= 31) return false;
+  if (/^(?:fc|fd)[0-9a-f]{2}:/i.test(value) || /^fe80:/i.test(value)) return false;
+  return true;
+}
+
+async function resolveCountryCode(request: any) {
+  const edgeCountry = trustedEdgeCountry(request);
+  if (edgeCountry) {
+    return { countryCode: edgeCountry, source: "edge-country" as const };
+  }
+
+  const resolvedClient = resolveClientIp(request);
+  const ip = resolvedClient.ip;
+
+  if (isPublicIpCandidate(ip)) {
+    const cached = regionCache.get(ip);
+    if (cached && cached.expiresAt > Date.now()) {
+      return {
+        countryCode: cached.countryCode,
+        source: resolvedClient.source === "socket" ? "socket-ip-cache" as const : "forwarded-ip-cache" as const,
+      };
+    }
+
+    try {
+      const response = await fetch(
+        "https://ipwho.is/" + encodeURIComponent(ip) + "?fields=success,country_code",
+        { signal: AbortSignal.timeout(3500), headers: { accept: "application/json" } },
+      );
+      if (!response.ok) throw new Error("region lookup failed");
+
+      const data = await response.json() as { success?: boolean; country_code?: string };
+      const code = typeof data.country_code === "string" && /^[A-Za-z]{2}$/.test(data.country_code)
+        ? data.country_code.toUpperCase()
+        : "ZZ";
+
+      regionCache.set(ip, { countryCode: code, expiresAt: Date.now() + 60 * 60_000 });
+
+      if (code !== "ZZ") {
+        return {
+          countryCode: code,
+          source: resolvedClient.source === "socket" ? "socket-ip" as const : "forwarded-ip" as const,
+        };
+      }
+    } catch {
+      // Fall through to a proxy country header if IP geolocation is unavailable.
+    }
+  }
+
+  const proxyCountry = genericProxyCountry(request);
+  if (proxyCountry) {
+    return { countryCode: proxyCountry, source: "proxy-country" as const };
+  }
+
+  return { countryCode: "ZZ", source: "unknown" as const };
+}
+
 class ProviderRateLimitedError extends Error {
   constructor(public provider: MusicSearchResult["provider"], public retryAfterMs: number) {
     super(provider + " rate limited");
