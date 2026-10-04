@@ -480,6 +480,63 @@ async function bootstrapDonationGoal() {
   });
 }
 
+async function addColumnIfMissing(table: string, column: string, definition: any) {
+  const queryInterface = sequelize.getQueryInterface();
+  const description = await queryInterface.describeTable(table);
+  if (!description[column]) {
+    await queryInterface.addColumn(table, column, definition);
+  }
+}
+
+async function ensureUpgradeColumns() {
+  const columns: Array<[string, string, any]> = [
+    ["vtcs", "banner_url", { type: DataTypes.TEXT, allowNull: true }],
+    ["vtcs", "rules", { type: DataTypes.TEXT, allowNull: true }],
+    ["vtcs", "socials", { type: DataTypes.JSONB, allowNull: false, defaultValue: {} }],
+    ["vtcs", "recruitment_mode", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "application" }],
+    ["vtcs", "operating_mode", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "standard" }],
+    ["vtcs", "manual_job_policy", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "approval" }],
+
+    ["users", "banner_url", { type: DataTypes.TEXT, allowNull: true }],
+    ["users", "bio", { type: DataTypes.TEXT, allowNull: true }],
+    ["users", "country", { type: DataTypes.STRING(80), allowNull: true }],
+    ["users", "socials", { type: DataTypes.JSONB, allowNull: false, defaultValue: {} }],
+    ["users", "profile_public", { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true }],
+    ["users", "moderation_visibility", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "public" }],
+
+    ["jobs", "mode", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "standard" }],
+    ["jobs", "status", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "completed" }],
+    ["jobs", "submission_type", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "telemetry" }],
+    ["jobs", "approval_status", { type: DataTypes.STRING(24), allowNull: false, defaultValue: "approved" }],
+    ["jobs", "evidence_url", { type: DataTypes.TEXT, allowNull: true }],
+    ["jobs", "cargo_mass_kg", { type: DataTypes.FLOAT, allowNull: true }],
+    ["jobs", "source_company", { type: DataTypes.STRING(160), allowNull: true }],
+    ["jobs", "source_country", { type: DataTypes.STRING(120), allowNull: true }],
+    ["jobs", "destination_company", { type: DataTypes.STRING(160), allowNull: true }],
+    ["jobs", "destination_country", { type: DataTypes.STRING(120), allowNull: true }],
+    ["jobs", "expenses", { type: DataTypes.BIGINT, allowNull: false, defaultValue: 0 }],
+    ["jobs", "profit", { type: DataTypes.BIGINT, allowNull: true }],
+    ["jobs", "late", { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false }],
+    ["jobs", "cargo_damage_percent", { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0 }],
+    ["jobs", "truck_damage_percent", { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0 }],
+    ["jobs", "trailer_damage_percent", { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0 }],
+
+    ["vtc_members", "custom_role_key", { type: DataTypes.STRING(120), allowNull: true }],
+    ["vtc_moderation_actions", "points", { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 }],
+
+    ["vtc_discord_configs", "achievement_channel_id", { type: DataTypes.STRING(32), allowNull: true }],
+    ["vtc_discord_configs", "convoy_channel_id", { type: DataTypes.STRING(32), allowNull: true }],
+    ["vtc_discord_configs", "welcome_channel_id", { type: DataTypes.STRING(32), allowNull: true }],
+    ["vtc_discord_configs", "guild_verified", { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false }],
+    ["vtc_discord_configs", "feature_toggles", { type: DataTypes.JSONB, allowNull: false, defaultValue: {} }],
+    ["vtc_discord_configs", "embed_config", { type: DataTypes.JSONB, allowNull: false, defaultValue: {} }],
+  ];
+
+  for (const [table, column, definition] of columns) {
+    await addColumnIfMissing(table, column, definition);
+  }
+}
+
 const migrations: Array<{ version: number; name: string; run: () => Promise<void> }> = [
   {
     version: 1,
@@ -493,11 +550,20 @@ const migrations: Array<{ version: number; name: string; run: () => Promise<void
     version: 2,
     name: "normalize-job-profit",
     run: async () => {
+      await addColumnIfMissing("jobs", "expenses", { type: DataTypes.BIGINT, allowNull: false, defaultValue: 0 });
+      await addColumnIfMissing("jobs", "profit", { type: DataTypes.BIGINT, allowNull: true });
       await sequelize.query(
         `UPDATE jobs
          SET profit = COALESCE(income, 0) - COALESCE(expenses, 0)
          WHERE profit IS NULL`,
       );
+    },
+  },
+  {
+    version: 3,
+    name: "backfill-columns-added-to-existing-installations",
+    run: async () => {
+      await ensureUpgradeColumns();
     },
   },
 ];
@@ -524,6 +590,9 @@ async function runMigrations() {
 export async function initDatabase() {
   await sequelize.authenticate();
   await sequelize.sync();
+  // Existing installations need explicit ALTERs because sequelize.sync()
+  // creates missing tables but does not add new columns by default.
+  await ensureUpgradeColumns();
   await runMigrations();
   await bootstrapVtc();
   await bootstrapDonationGoal();
