@@ -97,8 +97,12 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
     const body = createSchema.parse(request.body);
     const user = request.openhaulUser!;
 
-    const existing = await Vtc.findOne({ where: { slug: body.slug } });
+    const [existing, existingName] = await Promise.all([
+      Vtc.findOne({ where: { slug: body.slug } }),
+      Vtc.findOne({ where: { name: { [Op.iLike]: body.name.trim() } } }),
+    ]);
     if (existing) return reply.code(409).send({ error: "vtc_slug_taken" });
+    if (existingName) return reply.code(409).send({ error: "vtc_name_taken" });
 
     const vtc = await Vtc.create({
       ...body,
@@ -367,7 +371,17 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
     const { id } = z.object({ id: z.coerce.number().int().positive() }).parse(request.params);
     const vtc = await Vtc.findByPk(id);
     if (!vtc) return reply.code(404).send({ error: "vtc_not_found" });
-    await vtc.update(updateSchema.parse(request.body));
+    const body = updateSchema.parse(request.body);
+    if (body.name) {
+      const duplicateName = await Vtc.findOne({
+        where: {
+          id: { [Op.ne]: id },
+          name: { [Op.iLike]: body.name.trim() },
+        },
+      });
+      if (duplicateName) return reply.code(409).send({ error: "vtc_name_taken" });
+    }
+    await vtc.update(body);
     return { vtc };
   });
 
