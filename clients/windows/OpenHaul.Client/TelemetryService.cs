@@ -132,6 +132,11 @@ public sealed class TelemetryService : IAsyncDisposable
                     plugin.NavigationDistanceM,
                     plugin.NavigationTimeS,
                     plugin.SpeedLimitKph,
+                    plugin.TruckDamagePercent,
+                    plugin.TrailerDamagePercent,
+                    plugin.CargoDamagePercent,
+                    plugin.SpecialJob,
+                    plugin.CargoLoaded,
                     plugin.SourceCompany,
                     plugin.DestinationCompany);
 
