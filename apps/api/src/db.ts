@@ -7,6 +7,17 @@ export const sequelize = new Sequelize(databaseUrl, {
   logging: process.env.NODE_ENV === "development" ? console.log : false,
 });
 
+export class SchemaVersion extends Model {
+  declare id: number;
+  declare version: number;
+  declare name: string;
+}
+SchemaVersion.init({
+  id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+  version: { type: DataTypes.INTEGER, allowNull: false, unique: true },
+  name: { type: DataTypes.STRING(160), allowNull: false },
+}, { sequelize, modelName: "SchemaVersion", tableName: "schema_versions", underscored: true });
+
 export class Vtc extends Model {
   declare id: number;
   declare name: string;
@@ -469,9 +480,51 @@ async function bootstrapDonationGoal() {
   });
 }
 
+const migrations: Array<{ version: number; name: string; run: () => Promise<void> }> = [
+  {
+    version: 1,
+    name: "baseline-schema-versioning",
+    run: async () => {
+      // Baseline migration: sequelize.sync() creates the current schema.
+      // Future migrations are appended here and run once in version order.
+    },
+  },
+  {
+    version: 2,
+    name: "normalize-job-profit",
+    run: async () => {
+      await sequelize.query(
+        `UPDATE jobs
+         SET profit = COALESCE(income, 0) - COALESCE(expenses, 0)
+         WHERE profit IS NULL`,
+      );
+    },
+  },
+];
+
+async function runMigrations() {
+  const applied = new Set(
+    (await SchemaVersion.findAll({ attributes: ["version"] }))
+      .map((row) => Number(row.getDataValue("version"))),
+  );
+
+  for (const migration of migrations.sort((a, b) => a.version - b.version)) {
+    if (applied.has(migration.version)) continue;
+    await sequelize.transaction(async (transaction) => {
+      // Migration functions should use idempotent SQL or schema operations.
+      await migration.run();
+      await SchemaVersion.create({
+        version: migration.version,
+        name: migration.name,
+      }, { transaction });
+    });
+  }
+}
+
 export async function initDatabase() {
   await sequelize.authenticate();
   await sequelize.sync();
+  await runMigrations();
   await bootstrapVtc();
   await bootstrapDonationGoal();
 }
