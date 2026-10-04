@@ -136,6 +136,28 @@ function publicBase() {
   return cleanBaseUrl(process.env.OPENHAUL_PUBLIC_API_URL ?? "");
 }
 
+function forcedProxyCountries() {
+  return new Set(
+    (process.env.RADIO_FORCE_PROXY_COUNTRIES ?? "CA,GB")
+      .split(",")
+      .map((value) => value.trim().toUpperCase())
+      .filter((value) => /^[A-Z]{2}$/.test(value)),
+  );
+}
+
+function shouldForceCountryProxy(country?: string) {
+  return Boolean(country && forcedProxyCountries().has(country.toUpperCase()));
+}
+
+function applyRegionalProxyPolicy(station: RadioStation): RadioStation {
+  if (!shouldForceCountryProxy(station.country)) return station;
+  return {
+    ...station,
+    forceProxy: true,
+    networkType: "residential",
+  };
+}
+
 function getRadioBrowserBase() {
   return cleanBaseUrl(process.env.RADIO_BROWSER_API_URL ?? DEFAULT_RADIO_BROWSER_URL);
 }
@@ -256,7 +278,8 @@ function officialProviderStations(): RadioStation[] {
 function stationRegistry(app: FastifyInstance) {
   const byId = new Map<string, RadioStation>();
   for (const station of [...builtInStations(), ...officialProviderStations(), ...parseConfiguredStations(app)]) {
-    byId.set(station.id.toLowerCase(), station);
+    const routed = applyRegionalProxyPolicy(station);
+    byId.set(routed.id.toLowerCase(), routed);
   }
   return byId;
 }
@@ -334,16 +357,18 @@ function radioBrowserToStation(row: RadioBrowserStation, rules: GeoRule[]): Radi
   if (!stationUuid || !/^https?:\/\//i.test(sourceUrl)) return null;
 
   const rule = geoRuleFor(stationUuid, rules);
+  const country = rule?.country ?? (row.countrycode ? String(row.countrycode).toUpperCase() : undefined);
+  const forceProxy = Boolean(rule) || shouldForceCountryProxy(country);
   const bitrate = Number(row.bitrate || 128);
   return {
     id: `rb-${stationUuid}`,
     stationUuid,
     name: String(row.name || "Unknown station").trim(),
     sourceUrl,
-    country: rule?.country ?? (row.countrycode ? String(row.countrycode).toUpperCase() : undefined),
+    country,
     region: rule?.region,
-    forceProxy: Boolean(rule),
-    networkType: rule ? "residential" : undefined,
+    forceProxy,
+    networkType: forceProxy ? "residential" : undefined,
     bitrateKbps: Number.isFinite(bitrate) && bitrate > 0 ? Math.max(64, Math.min(320, bitrate)) : 128,
     genre: String(row.tags || "").split(",").filter(Boolean).slice(0, 3).join(", ") || undefined,
     city: row.state ? String(row.state) : undefined,
@@ -434,7 +459,8 @@ async function fetchInternetRadioStations(query: string, country: string) {
         name,
         sourceUrl: streamUrl,
         country: country !== "ALL" ? country : undefined,
-        forceProxy: false,
+        forceProxy: country !== "ALL" && shouldForceCountryProxy(country),
+        networkType: country !== "ALL" && shouldForceCountryProxy(country) ? "residential" : undefined,
         bitrateKbps: 128,
         genre: genreMatch ? stripHtml(genreMatch[1]) : undefined,
         language: undefined,
