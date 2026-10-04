@@ -2,7 +2,6 @@ import { spawn } from "node:child_process";
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
 
-const DEFAULT_NEKOROUTE_URL = "https://proxyweb.nekosunevr.co.uk";
 const DEFAULT_RADIO_BROWSER_URL = "https://de1.api.radio-browser.info";
 const DEFAULT_CHSL_SOURCE_URL =
   "https://stingray.leanstream.co/CHSLFM?args=web_01&aw_0_req.gdpr=true&gdpr=true";
@@ -23,8 +22,6 @@ type RadioStation = {
   sourceUrl: string;
   country?: string;
   region?: string;
-  networkType?: "residential";
-  forceProxy?: boolean;
   bitrateKbps: number;
   genre?: string;
   city?: string;
@@ -54,36 +51,18 @@ type RadioBrowserStation = {
   lastcheckok?: number | boolean;
 };
 
-type GeoRule = {
-  stationUuid?: string;
-  country?: string;
-  region?: string;
-};
-
 const configuredStationSchema = z.object({
   id: z.string().regex(/^[a-z0-9][a-z0-9_-]{0,63}$/i),
   name: z.string().min(1).max(120),
   sourceUrl: z.string().url().refine((value) => /^https?:\/\//i.test(value), "HTTP(S) URL required"),
   country: z.string().length(2).transform((value) => value.toUpperCase()).optional(),
   region: z.string().min(1).max(80).optional(),
-  forceProxy: z.boolean().default(false),
-  networkType: z.literal("residential").optional(),
   bitrateKbps: z.coerce.number().int().min(64).max(320).default(128),
   genre: z.string().max(120).optional(),
   city: z.string().max(120).optional(),
   language: z.string().max(80).optional(),
   homepage: z.string().url().optional(),
   favicon: z.string().url().optional(),
-}).refine((station) => !station.forceProxy || Boolean(station.country || station.region), {
-  message: "Proxy-enabled stations need a country or region",
-});
-
-const geoRuleSchema = z.object({
-  stationUuid: z.string().min(1).max(120),
-  country: z.string().length(2).transform((value) => value.toUpperCase()).optional(),
-  region: z.string().min(1).max(80).optional(),
-}).refine((rule) => Boolean(rule.country || rule.region), {
-  message: "Geo rules need a target country or region",
 });
 
 const directoryQuerySchema = z.object({
@@ -93,6 +72,10 @@ const directoryQuerySchema = z.object({
   codec: z.string().max(40).optional(),
   page: z.coerce.number().int().min(1).max(10000).default(1),
   pageSize: z.coerce.number().int().min(10).max(200).default(50),
+});
+
+const catalogQuerySchema = z.object({
+  limit: z.coerce.number().int().min(1000).max(25000).default(20000),
 });
 
 const formats: Record<string, OutputFormat> = {
@@ -134,33 +117,6 @@ function fastRadioInputArgs() {
 
 function publicBase() {
   return cleanBaseUrl(process.env.OPENHAUL_PUBLIC_API_URL ?? "");
-}
-
-function forcedProxyCountries() {
-  const values = (process.env.RADIO_FORCE_PROXY_COUNTRIES ?? "*")
-    .split(",")
-    .map((value) => value.trim().toUpperCase())
-    .filter(Boolean);
-
-  return {
-    all: values.includes("*") || values.includes("ALL"),
-    countries: new Set(values.filter((value) => /^[A-Z]{2}$/.test(value))),
-  };
-}
-
-function shouldForceCountryProxy(country?: string) {
-  if (!country || !/^[A-Z]{2}$/i.test(country)) return false;
-  const policy = forcedProxyCountries();
-  return policy.all || policy.countries.has(country.toUpperCase());
-}
-
-function applyRegionalProxyPolicy(station: RadioStation): RadioStation {
-  if (!shouldForceCountryProxy(station.country)) return station;
-  return {
-    ...station,
-    forceProxy: true,
-    networkType: "residential",
-  };
 }
 
 function normalizedStreamKey(value: string) {
@@ -243,63 +199,16 @@ function getRadioBrowserBase() {
   return cleanBaseUrl(process.env.RADIO_BROWSER_API_URL ?? DEFAULT_RADIO_BROWSER_URL);
 }
 
-async function canReadAudioDirectly(sourceUrl: string) {
-  return new Promise<boolean>((resolve) => {
-    const child = spawn("ffprobe", [
-      "-v", "error",
-      ...fastRadioInputArgs(),
-      "-select_streams", "a:0",
-      "-show_entries", "stream=codec_name",
-      "-of", "default=noprint_wrappers=1:nokey=1",
-      sourceUrl,
-    ], { stdio: ["ignore", "pipe", "ignore"] });
-
-    let stdout = "";
-    const timer = setTimeout(() => {
-      child.kill("SIGKILL");
-      resolve(false);
-    }, 10_000);
-
-    child.stdout.on("data", (chunk) => { stdout += String(chunk); });
-    child.once("error", () => {
-      clearTimeout(timer);
-      resolve(false);
-    });
-    child.once("exit", (code) => {
-      clearTimeout(timer);
-      resolve(code === 0 && Boolean(stdout.trim()));
-    });
-  });
-}
-
-function allowDirectProxyFallback() {
-  return !["0", "false", "no", "off"].includes(
-    String(process.env.RADIO_PROXY_ALLOW_DIRECT_FALLBACK ?? "true").trim().toLowerCase(),
-  );
-}
-
 function parseConfiguredStations(app: FastifyInstance): RadioStation[] {
-  const raw = process.env.RADIO_PROXY_STATIONS_JSON?.trim();
+  const raw = process.env.RADIO_STATIONS_JSON?.trim();
   if (!raw || raw === "[]") return [];
   try {
     return z.array(configuredStationSchema).max(250).parse(JSON.parse(raw)).map((row) => ({
       ...row,
-      networkType: row.forceProxy ? "residential" : undefined,
       source: "configured" as const,
     }));
   } catch (error) {
-    app.log.error({ error }, "RADIO_PROXY_STATIONS_JSON is invalid; custom stations were ignored");
-    return [];
-  }
-}
-
-function parseGeoRules(app: FastifyInstance): GeoRule[] {
-  const raw = process.env.RADIO_GEO_RULES_JSON?.trim();
-  if (!raw || raw === "[]") return [];
-  try {
-    return z.array(geoRuleSchema).max(500).parse(JSON.parse(raw));
-  } catch (error) {
-    app.log.error({ error }, "RADIO_GEO_RULES_JSON is invalid; geo rules were ignored");
+    app.log.error({ error }, "RADIO_STATIONS_JSON is invalid; custom stations were ignored");
     return [];
   }
 }
@@ -311,8 +220,6 @@ function builtInStations(): RadioStation[] {
     name: "Boom 92.7 (CHSL-FM)",
     sourceUrl: process.env.RADIO_CHSL_SOURCE_URL ?? DEFAULT_CHSL_SOURCE_URL,
     country: "CA",
-    forceProxy: true,
-    networkType: "residential",
     bitrateKbps: Number.isFinite(bitrate) ? Math.max(64, Math.min(320, bitrate)) : 128,
     genre: "Classic Hits",
     city: "Slave Lake, Alberta",
@@ -328,8 +235,6 @@ function officialProviderStations(): RadioStation[] {
       name: "Capital UK",
       sourceUrl: "https://media-ssl.musicradio.com/CapitalUK",
       country: "GB",
-      forceProxy: true,
-      networkType: "residential",
       bitrateKbps: 48,
       genre: "Pop, Contemporary Hits",
       city: "London",
@@ -343,8 +248,6 @@ function officialProviderStations(): RadioStation[] {
       name: "Capital Dance",
       sourceUrl: "https://media-ssl.musicradio.com/CapitalDance",
       country: "GB",
-      forceProxy: true,
-      networkType: "residential",
       bitrateKbps: 48,
       genre: "Dance",
       city: "London",
@@ -359,8 +262,7 @@ function officialProviderStations(): RadioStation[] {
 function stationRegistry(app: FastifyInstance) {
   const byId = new Map<string, RadioStation>();
   for (const station of [...builtInStations(), ...officialProviderStations(), ...parseConfiguredStations(app)]) {
-    const routed = applyRegionalProxyPolicy(station);
-    byId.set(routed.id.toLowerCase(), routed);
+    byId.set(station.id.toLowerCase(), station);
   }
   return byId;
 }
@@ -428,18 +330,12 @@ async function resolveRadioBrowserStation(stationUuid: string): Promise<RadioBro
   return data[0] ?? null;
 }
 
-function geoRuleFor(stationUuid: string, rules: GeoRule[]) {
-  return rules.find((rule) => rule.stationUuid === stationUuid) ?? null;
-}
-
-function radioBrowserToStation(row: RadioBrowserStation, rules: GeoRule[]): RadioStation | null {
+function radioBrowserToStation(row: RadioBrowserStation): RadioStation | null {
   const stationUuid = String(row.stationuuid ?? "").trim();
   const sourceUrl = String(row.url_resolved || row.url || "").trim();
   if (!stationUuid || !/^https?:\/\//i.test(sourceUrl)) return null;
 
-  const rule = geoRuleFor(stationUuid, rules);
-  const country = rule?.country ?? (row.countrycode ? String(row.countrycode).toUpperCase() : undefined);
-  const forceProxy = Boolean(rule) || shouldForceCountryProxy(country);
+  const country = row.countrycode ? String(row.countrycode).toUpperCase() : undefined;
   const bitrate = Number(row.bitrate || 128);
   return {
     id: `rb-${stationUuid}`,
@@ -447,9 +343,6 @@ function radioBrowserToStation(row: RadioBrowserStation, rules: GeoRule[]): Radi
     name: String(row.name || "Unknown station").trim(),
     sourceUrl,
     country,
-    region: rule?.region,
-    forceProxy,
-    networkType: forceProxy ? "residential" : undefined,
     bitrateKbps: Number.isFinite(bitrate) && bitrate > 0 ? Math.max(64, Math.min(320, bitrate)) : 128,
     genre: String(row.tags || "").split(",").filter(Boolean).slice(0, 3).join(", ") || undefined,
     city: row.state ? String(row.state) : undefined,
@@ -540,8 +433,6 @@ async function fetchInternetRadioStations(query: string, country: string) {
         name,
         sourceUrl: streamUrl,
         country: country !== "ALL" ? country : undefined,
-        forceProxy: country !== "ALL" && shouldForceCountryProxy(country),
-        networkType: country !== "ALL" && shouldForceCountryProxy(country) ? "residential" : undefined,
         bitrateKbps: 128,
         genre: genreMatch ? stripHtml(genreMatch[1]) : undefined,
         language: undefined,
@@ -576,7 +467,6 @@ async function fetchXiphStations(query: string) {
         id: `xiph-${index}-${Buffer.from(sourceUrl).toString("base64url").slice(0, 20)}`,
         name,
         sourceUrl,
-        forceProxy: false,
         bitrateKbps: 128,
         source: "xiph",
       });
@@ -612,7 +502,6 @@ async function fetchLautFmStations(query: string) {
             name,
             sourceUrl: streamUrl,
             country: "DE",
-            forceProxy: false,
             bitrateKbps: Number(row.bitrate ?? 128) || 128,
             genre: Array.isArray(row.genres) ? row.genres.join(", ") : undefined,
             homepage: row.website ? String(row.website) : undefined,
@@ -674,7 +563,6 @@ async function fetchShoutcastStations(query: string) {
           id: `shoutcast-${id || index}`,
           name,
           sourceUrl,
-          forceProxy: false,
           bitrateKbps: Number.isFinite(bitrate) && bitrate > 0 ? Math.max(32, Math.min(320, bitrate)) : 128,
           genre: String(row?.genre ?? "").trim() || undefined,
           codec: String(row?.mt ?? row?.mime ?? "").toUpperCase() || undefined,
@@ -699,83 +587,6 @@ function dedupeStations(stations: RadioStation[]) {
   });
 }
 
-async function createRegionalProxySession(station: RadioStation) {
-  if (!station.country && !station.region) throw new Error("Geo-routed station has no country or region");
-  const base = cleanBaseUrl(process.env.NEKOROUTE_API_URL ?? DEFAULT_NEKOROUTE_URL);
-
-  const requestSession = async (networkType: "residential" | "hosting") => {
-    const selector = station.country
-      ? { country: station.country, networkType }
-      : { region: station.region, networkType };
-
-    const response = await fetch(`${base}/api/v1/preview/session`, {
-      method: "POST",
-      signal: AbortSignal.timeout(12_000),
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-        "user-agent": "OpenHaul-RadioProxy/1.3 (+https://github.com/NekoSuneProjects/OpenHaul)",
-      },
-      body: JSON.stringify({ url: station.sourceUrl, ...selector }),
-    });
-
-    if (!response.ok) {
-      const text = await response.text().catch(() => "");
-      throw new Error(`NekoRoute ${networkType} session failed with HTTP ${response.status}${text ? `: ${text.slice(0, 240)}` : ""}`);
-    }
-
-    const data = await response.json() as {
-      sessionId?: string;
-      node?: {
-        country?: string;
-        countryName?: string;
-        region?: string;
-        protocol?: string;
-        city?: string | null;
-        network?: {
-          connectionType?: string | null;
-          isHomeResidential?: boolean | null;
-          isHostingProvider?: boolean | null;
-        };
-      };
-    };
-
-    if (!data.sessionId) throw new Error("NekoRoute did not return a sessionId");
-    if (station.country && data.node?.country && data.node.country !== station.country) {
-      throw new Error(`NekoRoute returned ${data.node.country} instead of requested ${station.country}`);
-    }
-    if (station.region && data.node?.region && data.node.region !== station.region) {
-      throw new Error(`NekoRoute returned region ${data.node.region} instead of requested ${station.region}`);
-    }
-    if (networkType === "residential" && data.node?.network?.isHomeResidential !== true) {
-      throw new Error("NekoRoute returned a route that is not classified as home/residential");
-    }
-    if (networkType === "hosting" && data.node?.network?.isHostingProvider !== true && data.node?.network?.connectionType !== "hosting") {
-      throw new Error("NekoRoute returned a route that is not classified as hosting/VPS");
-    }
-
-    return {
-      base,
-      sessionId: data.sessionId,
-      node: data.node ?? null,
-      routeMode: networkType === "residential" ? "residential-proxy" : "hosting-proxy",
-    };
-  };
-
-  try {
-    return await requestSession("residential");
-  } catch (residentialError) {
-    try {
-      return await requestSession("hosting");
-    } catch (hostingError) {
-      throw new Error(
-        `No usable regional NekoRoute proxy. Residential: ${residentialError instanceof Error ? residentialError.message : String(residentialError)}; ` +
-        `Hosting/VPS: ${hostingError instanceof Error ? hostingError.message : String(hostingError)}`,
-      );
-    }
-  }
-}
-
 function stationOutputBase(station: RadioStation) {
   const prefix = publicBase();
   if (station.source === "radio-browser" && station.stationUuid) {
@@ -786,7 +597,6 @@ function stationOutputBase(station: RadioStation) {
 
 function stationPublicJson(station: RadioStation) {
   const base = stationOutputBase(station);
-  const directPlayable = !station.forceProxy;
   const ephemeralDirectorySource = ["internet-radio", "xiph", "lautfm", "shoutcast"].includes(station.source);
   return {
     id: station.id,
@@ -802,19 +612,9 @@ function stationPublicJson(station: RadioStation) {
     homepage: station.homepage ?? null,
     favicon: station.favicon ?? null,
     source: station.source,
-    routing: {
-      mode: station.forceProxy ? "residential-then-hosting-proxy" : "direct",
-      proxyRequired: Boolean(station.forceProxy),
-      provider: station.forceProxy ? "NekoRoute" : null,
-      country: station.forceProxy ? station.country ?? null : null,
-      region: station.forceProxy ? station.region ?? null : null,
-      networkType: station.forceProxy ? "residential-preferred-hosting-fallback" : null,
-      protocol: station.forceProxy ? "auto" : null,
-      supportedProtocols: station.forceProxy ? ["http", "https", "socks4", "socks5"] : [],
-    },
     playback: {
-      browser: directPlayable ? station.sourceUrl : `${base}.mp3`,
-      direct: directPlayable ? station.sourceUrl : null,
+      browser: station.sourceUrl,
+      direct: station.sourceUrl,
       gameMp3: ephemeralDirectorySource ? station.sourceUrl : `${base}.mp3`,
       ogg: `${base}.ogg`,
       aac: `${base}.aac`,
@@ -831,42 +631,11 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
         .header("icy-name", station.name)
         .header("icy-genre", station.genre ?? "Radio")
         .header("icy-br", String(station.bitrateKbps))
-        .header("x-openhaul-radio-route", station.forceProxy ? "residential-proxy" : "direct");
+        .header("x-openhaul-radio-route", "direct");
       return reply.code(200).send();
     }
 
-    let inputUrl = station.sourceUrl;
-    let proxyNode: Awaited<ReturnType<typeof createRegionalProxySession>>["node"] | null = null;
-    let actualRoute = station.forceProxy ? "residential-proxy" : "direct";
-
-    if (station.forceProxy) {
-      try {
-        const session = await createRegionalProxySession(station);
-        proxyNode = session.node;
-        inputUrl =
-          `${session.base}/api/preview-runtime/${encodeURIComponent(session.sessionId)}` +
-          `?kind=media&url=${encodeURIComponent(station.sourceUrl)}`;
-        actualRoute = session.routeMode;
-      } catch (error) {
-        app.log.warn({ error, stationId: station.id }, "Unable to create residential or hosting radio route");
-
-        if (!allowDirectProxyFallback() || !(await canReadAudioDirectly(station.sourceUrl))) {
-          return reply.code(503).send({
-            error: "radio_proxy_unavailable",
-            stationId: station.id,
-            message: error instanceof Error ? error.message : String(error),
-            fallback: "Direct source was unavailable or direct fallback is disabled.",
-          });
-        }
-
-        actualRoute = "direct-fallback";
-        inputUrl = station.sourceUrl;
-        app.log.warn(
-          { stationId: station.id },
-          "No healthy residential or hosting proxy matched; direct radio fallback is working and will be used",
-        );
-      }
-    }
+    const inputUrl = station.sourceUrl;
 
     const ffmpeg = spawn("ffmpeg", [
       "-hide_banner", "-loglevel", "warning", "-nostdin",
@@ -913,12 +682,9 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
         "icy-name": station.name,
         "icy-genre": station.genre ?? "Radio",
         "icy-br": String(station.bitrateKbps),
-        "x-openhaul-radio-route": actualRoute,
+        "x-openhaul-radio-route": "direct",
         "x-openhaul-radio-country": station.country ?? "",
         "x-openhaul-radio-region": station.region ?? "",
-        "x-openhaul-radio-proxy-country": proxyNode?.country ?? "",
-        "x-openhaul-radio-proxy-city": proxyNode?.city ?? "",
-        "x-openhaul-radio-proxy-protocol": proxyNode?.protocol ?? "",
       });
       ffmpeg.stdout.pipe(reply.raw);
     });
@@ -937,7 +703,39 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
 
 export async function registerRadioProxyRoutes(app: FastifyInstance) {
   const stations = stationRegistry(app);
-  const geoRules = parseGeoRules(app);
+
+  app.get("/api/v1/public/radio/catalog", async (request, reply) => {
+    const { limit } = catalogQuerySchema.parse(request.query);
+    const params = new URLSearchParams({
+      hidebroken: "true",
+      order: "votes",
+      reverse: "true",
+      offset: "0",
+      limit: String(limit),
+    });
+
+    const rows = await fetchRadioBrowser("/json/stations/search", params, 30_000) as RadioBrowserStation[];
+    const catalog = rows
+      .map((row) => radioBrowserToStation(row))
+      .filter((station): station is RadioStation => Boolean(station))
+      .filter((station) => {
+        try {
+          const parsed = new URL(station.sourceUrl);
+          const host = parsed.hostname.toLowerCase();
+          return host !== "localhost" && host !== "127.0.0.1" && host !== "::1";
+        } catch {
+          return false;
+        }
+      });
+
+    reply.header("cache-control", "public, max-age=900, stale-if-error=86400");
+    return {
+      requested: limit,
+      count: catalog.length,
+      source: "Radio Browser",
+      stations: catalog.map(stationPublicJson),
+    };
+  });
 
   app.get("/api/v1/public/radio/directory", async (request, reply) => {
     const query = directoryQuerySchema.parse(request.query);
@@ -957,7 +755,7 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
 
     const rows = await fetchRadioBrowser("/json/stations/search", params) as RadioBrowserStation[];
     const radioBrowserStations = rows
-      .map((row) => radioBrowserToStation(row, geoRules))
+      .map((row) => radioBrowserToStation(row))
       .filter((station): station is RadioStation => Boolean(station));
 
     const extraSources = query.page === 1 && query.q
@@ -1045,7 +843,7 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
   app.get("/api/v1/public/radio/browser/:stationUuid", async (request, reply) => {
     const { stationUuid } = z.object({ stationUuid: z.string().min(1).max(120) }).parse(request.params);
     const row = await resolveRadioBrowserStation(stationUuid);
-    const station = row ? radioBrowserToStation(row, geoRules) : null;
+    const station = row ? radioBrowserToStation(row) : null;
     if (!station) return reply.code(404).send({ error: "radio_station_not_found" });
     return stationPublicJson(station);
   });
@@ -1059,7 +857,7 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
         format: z.enum(["mp3", "ogg", "aac"]),
       }).parse(request.params);
       const row = await resolveRadioBrowserStation(params.stationUuid);
-      const station = row ? radioBrowserToStation(row, geoRules) : null;
+      const station = row ? radioBrowserToStation(row) : null;
       if (!station) return reply.code(404).send({ error: "radio_station_not_found" });
       return streamStation(app, station, formats[params.format], request, reply);
     },
