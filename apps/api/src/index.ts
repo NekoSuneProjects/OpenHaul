@@ -3,7 +3,7 @@ import cookie from "@fastify/cookie";
 import websocket from "@fastify/websocket";
 import Fastify from "fastify";
 import { z } from "zod";
-import { Fine, Job, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
+import { Fine, Job, TelemetryEvent, User, Vtc, VtcActivityEvent, VtcLedgerEntry, VtcMember, VtcModerationAction, initDatabase, sequelize } from "./db.js";
 import { requireScope, requireVtcApiKey } from "./auth.js";
 import { getLiveDrivers, removeLiveDriver, setLiveDriver } from "./live.js";
 import { addRealtimeClient, broadcastDriver, broadcastOffline } from "./realtime.js";
@@ -271,6 +271,19 @@ app.post("/api/v1/telemetry/live", async (request, reply) => {
     });
   }
 
+  if (!liveState.wasOnline) {
+    await TelemetryEvent.create({
+      driverId: driver.driverId,
+      vtcId: driver.vtcId ?? null,
+      game: driver.game,
+      type: "session.started",
+      source: "telemetry",
+      raw: body,
+      normalized: driver,
+      occurredAt: new Date(),
+    });
+  }
+
   return reply.code(202).send({ accepted: true, driverId: driver.driverId });
 });
 
@@ -292,6 +305,19 @@ app.delete("/api/v1/telemetry/live/:driverId", async (request, reply) => {
       title: (driver.username || driverId) + " stopped driving",
       detail: driver.game.toUpperCase(),
       metadata: { game: driver.game, truck: driver.truck, cargo: driver.cargo },
+    });
+  }
+
+  if (driver) {
+    await TelemetryEvent.create({
+      driverId,
+      vtcId: driver.vtcId ?? null,
+      game: driver.game,
+      type: "session.ended",
+      source: "telemetry",
+      raw: {},
+      normalized: driver,
+      occurredAt: new Date(),
     });
   }
 
@@ -336,6 +362,16 @@ app.post("/api/v1/telemetry/fines", async (request, reply) => {
         occurredAt: body.occurredAt,
       });
     }
+    await TelemetryEvent.create({
+      driverId: identity.user.steamId,
+      vtcId: membership?.vtc.id ?? null,
+      game: body.game,
+      type: "penalty." + body.type,
+      source: "telemetry",
+      raw: body,
+      normalized: fine.toJSON(),
+      occurredAt: body.occurredAt,
+    });
     return reply.code(201).send({ fine });
   }
 
@@ -391,6 +427,16 @@ app.post("/api/v1/telemetry/jobs/completed", async (request, reply) => {
         occurredAt: body.completedAt,
       });
     }
+    await TelemetryEvent.create({
+      driverId: identity.user.steamId,
+      vtcId: membership?.vtc.id ?? null,
+      game: body.game,
+      type: "job.completed",
+      source: "telemetry",
+      raw: body,
+      normalized: job.toJSON(),
+      occurredAt: body.completedAt,
+    });
     return reply.code(201).send({ job });
   }
 
