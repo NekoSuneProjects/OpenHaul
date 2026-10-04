@@ -30,6 +30,9 @@ export type LiveDriver = {
   specialJob?: boolean | null;
   cargoLoaded?: boolean | null;
   server?: string | null;
+  sessionMode?: "singleplayer" | "truckersmp" | null;
+  driverStatus?: "offline" | "client-online" | "menu" | "driving" | "on-job" | "paused" | null;
+  sessionId?: string | null;
   updatedAt: string;
 };
 
