@@ -186,23 +186,21 @@ function OverlayContent() {
 
         if (!active) return;
 
-        const stations: RadioStation[] = (data.stations ?? [])
-          .map((station, index) => {
-            const url = station.playback?.direct || station.playback?.browser || "";
-            if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return null;
-            return {
-              id: "catalog-" + (station.id || station.stationUuid || index),
-              name: station.name || "Unknown station",
-              url,
-              country: station.country || undefined,
-              language: station.language || undefined,
-              genre: station.genre || undefined,
-              codec: station.codec || undefined,
-              bitrateKbps: station.bitrateKbps || undefined,
-              source: station.source || "radio-browser",
-            } satisfies RadioStation;
-          })
-          .filter((station): station is RadioStation => station !== null);
+        const stations: RadioStation[] = (data.stations ?? []).flatMap((station, index): RadioStation[] => {
+          const url = station.playback?.direct || station.playback?.browser || "";
+          if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return [];
+          return [{
+            id: "catalog-" + (station.id || station.stationUuid || index),
+            name: station.name || "Unknown station",
+            url,
+            country: station.country || undefined,
+            language: station.language || undefined,
+            genre: station.genre || undefined,
+            codec: station.codec || undefined,
+            bitrateKbps: station.bitrateKbps || undefined,
+            source: station.source || "radio-browser",
+          }];
+        });
 
         setCatalogRadioStations(stations);
       } catch {
@@ -291,23 +289,21 @@ function OverlayContent() {
         }>;
       };
 
-      const stations: RadioStation[] = (data.stations ?? [])
-        .map((station, index) => {
-          const url = station.playback?.direct || station.playback?.browser || "";
-          if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return null;
-          return {
-            id: "online-" + (station.id || station.stationUuid || index),
-            name: station.name || "Unknown station",
-            url,
-            country: station.country || undefined,
-            language: station.language || undefined,
-            genre: station.genre || undefined,
-            codec: station.codec || undefined,
-            bitrateKbps: station.bitrateKbps || undefined,
-            source: station.source || "public-directory",
-          } satisfies RadioStation;
-        })
-        .filter((station): station is RadioStation => station !== null);
+      const stations: RadioStation[] = (data.stations ?? []).flatMap((station, index): RadioStation[] => {
+        const url = station.playback?.direct || station.playback?.browser || "";
+        if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return [];
+        return [{
+          id: "online-" + (station.id || station.stationUuid || index),
+          name: station.name || "Unknown station",
+          url,
+          country: station.country || undefined,
+          language: station.language || undefined,
+          genre: station.genre || undefined,
+          codec: station.codec || undefined,
+          bitrateKbps: station.bitrateKbps || undefined,
+          source: station.source || "public-directory",
+        }];
+      });
 
       setOnlineRadioStations(stations);
     } catch (error) {
