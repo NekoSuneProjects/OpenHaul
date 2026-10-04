@@ -14,6 +14,7 @@ public sealed class TelemetryService : IAsyncDisposable
 
     public event Action<string>? Status;
     public event Action<PluginLiveTelemetry>? LiveTelemetryReceived;
+    public event Action? PluginReconnectNeeded;
 
     public TelemetryService(ClientConfig config)
     {
@@ -79,7 +80,8 @@ public sealed class TelemetryService : IAsyncDisposable
                 {
                     if (IsSupportedGameRunning())
                     {
-                        Status?.Invoke("ETS2/ATS is running, but the OpenHaul telemetry plugin did not connect. Close the game, verify/update the plugin, then restart the game.");
+                        Status?.Invoke("ETS2/ATS is running, but the telemetry plugin is not connected. OpenHaul will repair/update it automatically as soon as the game closes.");
+                        PluginReconnectNeeded?.Invoke();
                     }
                     else
                     {
