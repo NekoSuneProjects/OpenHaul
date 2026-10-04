@@ -136,6 +136,30 @@ export default function ManageVtcPage() {
     if (response.ok) await load();
   };
 
+  const saveRecruitmentProfile = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const games = [];
+    if (form.get("gameEts2") === "on") games.push("ets2");
+    if (form.get("gameAts") === "on") games.push("ats");
+    const response = await fetch(api + "/api/v1/account/vtcs/" + id + "/recruitment-profile", {
+      method: "PUT",
+      credentials: "include",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        games: games.length ? games : ["ets2", "ats"],
+        languages: String(form.get("languages") ?? "English").split(",").map((value) => value.trim()).filter(Boolean),
+        timezone: String(form.get("timezone") ?? "").trim() || undefined,
+        truckersmp: form.get("truckersmp") === "on",
+        convoy: form.get("convoy") === "on",
+        minimumMileageKm: Number(form.get("minimumMileageKm") ?? 0),
+        voiceRequired: form.get("voiceRequired") === "on",
+        description: String(form.get("description") ?? "").trim() || undefined,
+      }),
+    });
+    setOpsStatus(response.ok ? "Recruitment matching profile saved." : "Unable to save recruitment profile.");
+  };
+
   const addLedger = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
@@ -409,6 +433,20 @@ export default function ManageVtcPage() {
         </label>
         <label><input type="checkbox" name="publicBalance" defaultChecked={Boolean(vtc.publicBalance)} /> Show balance publicly</label>
         <button className="button primary">Save company settings</button>
+      </form>
+
+      <div className="sectionTitle"><h2>Recruitment matching profile</h2></div>
+      <form className="card" onSubmit={saveRecruitmentProfile} style={{ display: "grid", gap: 12 }}>
+        <label><input type="checkbox" name="gameEts2" defaultChecked /> ETS2</label>
+        <label><input type="checkbox" name="gameAts" defaultChecked /> ATS</label>
+        <input name="languages" defaultValue="English" placeholder="Languages, comma separated" />
+        <input name="timezone" placeholder="Timezone, e.g. Europe/London" />
+        <input name="minimumMileageKm" type="number" min="0" defaultValue="0" placeholder="Minimum mileage km" />
+        <label><input type="checkbox" name="truckersmp" /> TruckersMP supported</label>
+        <label><input type="checkbox" name="convoy" defaultChecked /> SCS Convoy supported</label>
+        <label><input type="checkbox" name="voiceRequired" /> Voice chat required</label>
+        <textarea name="description" rows={4} placeholder="Recruitment description" />
+        <button className="button primary">Save recruitment profile</button>
       </form>
 
       <div className="sectionTitle"><h2>Invite drivers</h2></div>
