@@ -66,6 +66,24 @@ export function gameCoordsToLonLat(game: TruckGame, x: number, z: number): LonLa
   return [result[0], result[1]];
 }
 
+export function lonLatToGameCoords(game: TruckGame, lon: number, lat: number): [number, number] {
+  if (game === "ats") {
+    const projected = atsProjection.forward([lon, lat]);
+    const x = projected[0] / (0.000176689948 * METERS_PER_DEGREE);
+    const z = projected[1] / (-0.00017706234 * METERS_PER_DEGREE);
+    return [x, z];
+  }
+
+  const projected = ets2Projection.forward([lon, lat]);
+  const localX = projected[0] / (0.0001729241463 * METERS_PER_DEGREE);
+  const localZ = projected[1] / (-0.000171570875 * METERS_PER_DEGREE);
+
+  // This inverse is intended for viewport requests. The mainland projection
+  // deliberately returns a slightly wider box around the UK so the tracker
+  // query still includes legacy UK sectors despite their authored scale.
+  return [localX + 16660, localZ + 4150];
+}
+
 export function isValidLonLat([lon, lat]: LonLat) {
   return (
     Number.isFinite(lon) &&
