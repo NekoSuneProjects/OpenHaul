@@ -44,7 +44,32 @@ public sealed record PluginJobCompletedTelemetry(
     string? SourceCompany,
     string? DestinationCompany,
     double? DistanceKm,
-    long? Income);
+    long? Income,
+    string? EventId = null,
+    long? Expenses = null,
+    bool? Late = null,
+    double? CargoDamagePercent = null,
+    double? TruckDamagePercent = null,
+    double? TrailerDamagePercent = null,
+    double? SourceX = null,
+    double? SourceZ = null,
+    double? DestinationX = null,
+    double? DestinationZ = null);
+
+public sealed record PluginGenericTelemetryEvent(
+    string Game,
+    string EventType,
+    string? EventId = null,
+    long? Amount = null,
+    string? Currency = null,
+    double? X = null,
+    double? Y = null,
+    double? Z = null,
+    string? Cargo = null,
+    string? SourceCity = null,
+    string? DestinationCity = null,
+    double? DamagePercent = null,
+    string? Detail = null);
 
 public sealed record LiveTelemetry(
     string DriverId,
@@ -75,7 +100,10 @@ public sealed record LiveTelemetry(
     bool? SpecialJob = null,
     bool? CargoLoaded = null,
     string? SourceCompany = null,
-    string? DestinationCompany = null);
+    string? DestinationCompany = null,
+    string? SessionMode = null,
+    string? DriverStatus = null,
+    string? SessionId = null);
 
 public sealed record FineTelemetry(
     int? VtcId,
@@ -85,7 +113,8 @@ public sealed record FineTelemetry(
     int Amount,
     string Currency,
     string? City,
-    DateTimeOffset OccurredAt);
+    DateTimeOffset OccurredAt,
+    string? ExternalId = null);
 
 public sealed record JobCompletedTelemetry(
     int? VtcId,
@@ -96,7 +125,38 @@ public sealed record JobCompletedTelemetry(
     string? DestinationCity,
     double? DistanceKm,
     long? Income,
-    DateTimeOffset CompletedAt);
+    DateTimeOffset CompletedAt,
+    string? ExternalId = null,
+    string Status = "completed",
+    long Expenses = 0,
+    bool Late = false,
+    double CargoDamagePercent = 0,
+    double TruckDamagePercent = 0,
+    double TrailerDamagePercent = 0,
+    string? SourceCompany = null,
+    string? DestinationCompany = null,
+    double? SourceX = null,
+    double? SourceZ = null,
+    double? DestinationX = null,
+    double? DestinationZ = null);
+
+public sealed record GenericTelemetryEvent(
+    int? VtcId,
+    string DriverId,
+    string Game,
+    string Type,
+    string ExternalId,
+    DateTimeOffset OccurredAt,
+    long? Amount = null,
+    string? Currency = null,
+    double? X = null,
+    double? Y = null,
+    double? Z = null,
+    string? Cargo = null,
+    string? SourceCity = null,
+    string? DestinationCity = null,
+    double? DamagePercent = null,
+    string? Detail = null);
 
 public sealed record ClientConfig(
     string ApiUrl,
