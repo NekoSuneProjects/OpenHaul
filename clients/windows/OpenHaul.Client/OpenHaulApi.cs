@@ -82,6 +82,26 @@ public sealed class OpenHaulApi : IDisposable
         response.EnsureSuccessStatusCode();
     }
 
+    public async Task SendPresenceAsync(CancellationToken token)
+    {
+        using var response = await SendWithReconnectAsync(
+            () => new HttpRequestMessage(HttpMethod.Post, "api/v1/client/presence")
+            {
+                Content = JsonContent.Create(new { }, options: _json),
+            },
+            token);
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task SendPresenceOfflineAsync(CancellationToken token)
+    {
+        using var response = await SendWithReconnectAsync(
+            () => new HttpRequestMessage(HttpMethod.Delete, "api/v1/client/presence"),
+            token);
+        if (response.StatusCode != System.Net.HttpStatusCode.NoContent)
+            response.EnsureSuccessStatusCode();
+    }
+
     private async Task<HttpResponseMessage> SendWithReconnectAsync(
         Func<HttpRequestMessage> requestFactory,
         CancellationToken token)
