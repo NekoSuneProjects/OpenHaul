@@ -2,7 +2,7 @@ import { createHash, randomBytes } from "node:crypto";
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { Op, QueryTypes } from "sequelize";
 import { z } from "zod";
-import { Fine, Job, User, Vtc, VtcApplication, VtcInvite, VtcLedgerEntry, VtcMember, sequelize } from "./db.js";
+import { Fine, Job, PlatformRecord, User, Vtc, VtcApplication, VtcInvite, VtcLedgerEntry, VtcMember, sequelize } from "./db.js";
 import { requireUser } from "./accountSession.js";
 import { getLiveDrivers } from "./live.js";
 import { recordVtcActivity } from "./vtcOperations.js";
@@ -37,6 +37,7 @@ const ledgerSchema = z.object({
 });
 const roleSchema = z.object({
   role: z.enum(["admin", "staff", "member"]),
+  customRoleKey: z.string().max(120).nullable().optional(),
   title: z.string().max(80).nullable().optional(),
   status: z.enum(["active", "inactive", "suspended"]).default("active"),
 });
@@ -243,12 +244,23 @@ export async function registerCommunityVtcRoutes(app: FastifyInstance) {
       getLiveDrivers(id),
     ]);
 
+    const customRoles = await PlatformRecord.findAll({
+      where: {
+        scopeType: "vtc",
+        scopeId: String(id),
+        category: "roles",
+        status: { [Op.ne]: "deleted" },
+      },
+      order: [["createdAt", "ASC"]],
+    });
+
     return {
       vtc,
       members: membersWithStats,
       applications,
       invites,
       ledger,
+      customRoles,
       dashboard: {
         members: membersWithStats.length,
         online: liveDrivers.length,
