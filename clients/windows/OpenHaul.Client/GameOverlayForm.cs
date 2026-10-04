@@ -60,8 +60,6 @@ public sealed class GameOverlayForm : Form
         Shown += async (_, _) => await EnsureWebViewAsync();
     }
 
-    protected override bool ShowWithoutActivation => true;
-
     protected override CreateParams CreateParams
     {
         get
@@ -124,13 +122,14 @@ public sealed class GameOverlayForm : Form
         var restoreGame = IsOverlayForeground(GetForegroundWindow());
         _userVisible = false;
 
-        // WebView2 can own mouse capture while it is being interacted with.
-        // Release it before hiding so the simulator receives mouse input again
-        // as soon as we restore its foreground window.
-        ReleaseCapture();
+        // Drop WebView/overlay capture first, then hand the foreground back to
+        // the simulator. This mirrors the interaction handoff used by proper
+        // in-game overlays: one side owns mouse focus at a time.
+        ReleaseInteractiveCursor();
         Hide();
+
         if (restoreGame && _gameWindow != IntPtr.Zero && IsWindow(_gameWindow) && !IsIconic(_gameWindow))
-            SetForegroundWindow(_gameWindow);
+            ActivateWindowForInput(_gameWindow);
     }
 
     public void ReloadUi()
@@ -388,6 +387,8 @@ public sealed class GameOverlayForm : Form
         var height = Math.Max(1, rect.Bottom - rect.Top);
 
         var wasVisible = Visible;
+        var openingForInteraction = forceShow || !wasVisible;
+
         SetWindowPos(
             Handle,
             HwndTopMost,
@@ -395,23 +396,35 @@ public sealed class GameOverlayForm : Form
             origin.Y,
             width,
             height,
-            SwpShowWindow | SwpNoActivate);
+            openingForInteraction ? SwpShowWindow : (SwpShowWindow | SwpNoActivate));
 
         if (!Visible) Show();
         SyncWebViewViewport();
 
-        // Window tracking must not repeatedly steal focus from WebView controls
-        // or other applications. Activate only when opening the overlay.
-        if (forceShow || !wasVisible)
+        // ETS2/ATS uses relative mouse mode and can continuously re-clip the
+        // cursor while it owns foreground input. Simply calling ClipCursor(NULL)
+        // is therefore not enough. When opening, OpenHaul must actually take
+        // foreground/active focus away from the game, then focus WebView2.
+        if (openingForInteraction)
         {
-            SetForegroundWindow(Handle);
-            if (IsOverlayForeground(GetForegroundWindow()))
+            ReleaseInteractiveCursor();
+            ActivateWindowForInput(Handle);
+            ReleaseInteractiveCursor();
+
+            _webView.Focus();
+            _webView.CoreWebView2Controller?.MoveFocus(
+                CoreWebView2MoveFocusReason.Programmatic);
+
+            // Some game/window-mode combinations re-apply the clip once during
+            // the foreground transition. Release it again on the next UI turn.
+            BeginInvoke(new Action(() =>
             {
                 ReleaseInteractiveCursor();
                 _webView.Focus();
-            }
-
-            BeginInvoke(new Action(() => SyncWebViewViewport(forceNotify: true)));
+                _webView.CoreWebView2Controller?.MoveFocus(
+                    CoreWebView2MoveFocusReason.Programmatic);
+                SyncWebViewViewport(forceNotify: true);
+            }));
         }
     }
 
@@ -469,6 +482,46 @@ public sealed class GameOverlayForm : Form
     {
         ReleaseCapture();
         ClipCursor(IntPtr.Zero);
+
+        // Games can hide the OS cursor while in relative mouse mode. Bring the
+        // display count back to visible while the OpenHaul UI is interactive.
+        for (var i = 0; i < 16 && ShowCursor(true) < 0; i++) { }
+    }
+
+    private static void ActivateWindowForInput(IntPtr window)
+    {
+        if (window == IntPtr.Zero || !IsWindow(window)) return;
+
+        var foreground = GetForegroundWindow();
+        var currentThread = GetCurrentThreadId();
+        var foregroundThread = foreground != IntPtr.Zero
+            ? GetWindowThreadProcessId(foreground, IntPtr.Zero)
+            : 0;
+        var targetThread = GetWindowThreadProcessId(window, IntPtr.Zero);
+
+        var attachedForeground = false;
+        var attachedTarget = false;
+
+        try
+        {
+            if (foregroundThread != 0 && foregroundThread != currentThread)
+                attachedForeground = AttachThreadInput(currentThread, foregroundThread, true);
+
+            if (targetThread != 0 && targetThread != currentThread && targetThread != foregroundThread)
+                attachedTarget = AttachThreadInput(currentThread, targetThread, true);
+
+            BringWindowToTop(window);
+            SetForegroundWindow(window);
+            SetActiveWindow(window);
+            SetFocus(window);
+        }
+        finally
+        {
+            if (attachedTarget)
+                AttachThreadInput(currentThread, targetThread, false);
+            if (attachedForeground)
+                AttachThreadInput(currentThread, foregroundThread, false);
+        }
     }
 
     private static IntPtr FindGameWindow(IntPtr foreground, IntPtr previous)
@@ -556,6 +609,29 @@ public sealed class GameOverlayForm : Form
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool ClipCursor(IntPtr lpRect);
+
+    [DllImport("user32.dll")]
+    private static extern int ShowCursor([MarshalAs(UnmanagedType.Bool)] bool bShow);
+
+    [DllImport("kernel32.dll")]
+    private static extern uint GetCurrentThreadId();
+
+    [DllImport("user32.dll")]
+    private static extern uint GetWindowThreadProcessId(IntPtr hWnd, IntPtr lpdwProcessId);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool AttachThreadInput(uint idAttach, uint idAttachTo, [MarshalAs(UnmanagedType.Bool)] bool fAttach);
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool BringWindowToTop(IntPtr hWnd);
+
+    [DllImport("user32.dll")]
+    private static extern IntPtr SetActiveWindow(IntPtr hWnd);
+
+    [DllImport("user32.dll")]
+    private static extern IntPtr SetFocus(IntPtr hWnd);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
