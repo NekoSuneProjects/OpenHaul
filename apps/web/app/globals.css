@@ -55,7 +55,7 @@ h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.06
 .pill { width:max-content; border:1px solid var(--line); border-radius:999px; padding:5px 9px; color:var(--accent); font-size:.75rem; font-weight:800; }
 
 .radio { position:fixed; left:0; right:0; bottom:0; z-index:30; background:rgba(5,14,9,.95); backdrop-filter:blur(16px); border-top:1px solid var(--line); }
-.radioInner { min-height:72px; display:grid; grid-template-columns:auto 1fr auto; gap:13px; align-items:center; }
+.radioInner { min-height:72px; display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:13px; align-items:center; }
 .art { width:50px; height:50px; border-radius:10px; object-fit:cover; background:var(--panel); }
 .track { min-width:0; }
 .track strong,.track span { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block; }
@@ -1231,6 +1231,14 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
 }
 
 
+.radioControls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  min-width: 0;
+}
+
 .radioVolume {
   display: flex;
   align-items: center;
@@ -1273,6 +1281,10 @@ body.mapEmbedMode .embeddedMapPanel .mapCanvas {
 @media (max-width: 760px) {
   .radioInner {
     grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .radioControls {
+    gap: 8px;
   }
 
   .radioVolume {
