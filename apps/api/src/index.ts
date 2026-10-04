@@ -40,7 +40,7 @@ import { registerDiscordLinkRoutes } from "./discordLink.js";
 import { registerRadioProxyRoutes } from "./radioProxy.js";
 import { registerRadioHealthRoutes } from "./radioHealth.js";
 
-const app = Fastify({ logger: true });
+const app = Fastify({ logger: true, maxParamLength: 8192 });
 await app.register(cors, { origin: true, credentials: true });
 await app.register(cookie);
 await app.register(websocket);
