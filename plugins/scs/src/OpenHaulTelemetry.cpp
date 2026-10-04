@@ -164,6 +164,10 @@ PipeServer g_pipe;
 TelemetryState g_state;
 scs_log_t g_log = nullptr;
 auto g_lastLive = std::chrono::steady_clock::now();
+
+std::string escape_json(const std::string& value);
+std::int64_t s64_attribute(const scs_named_value_t* attributes, const char* name, std::int64_t fallback);
+
 std::uint64_t g_eventCounter = 0;
 const auto g_sessionNonce = static_cast<std::uint64_t>(GetTickCount64());
 
