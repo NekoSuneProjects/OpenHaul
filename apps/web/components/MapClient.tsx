@@ -28,6 +28,11 @@ type Driver = {
   navigationDistanceM?: number | null;
   navigationTimeS?: number | null;
   speedLimitKph?: number | null;
+  truckDamagePercent?: number | null;
+  trailerDamagePercent?: number | null;
+  cargoDamagePercent?: number | null;
+  specialJob?: boolean | null;
+  cargoLoaded?: boolean | null;
   server?: string | null;
   updatedAt: string;
 };
@@ -255,6 +260,11 @@ function driverFeatureCollection(drivers: Driver[]) {
           navigationDistanceM: driver.navigationDistanceM ?? 0,
           navigationTimeS: driver.navigationTimeS ?? 0,
           speedLimitKph: driver.speedLimitKph ?? 0,
+          truckDamagePercent: driver.truckDamagePercent ?? 0,
+          trailerDamagePercent: driver.trailerDamagePercent ?? 0,
+          cargoDamagePercent: driver.cargoDamagePercent ?? 0,
+          specialJob: driver.specialJob ? 1 : 0,
+          cargoLoaded: driver.cargoLoaded ? 1 : 0,
           vtc: driver.vtcName ?? "Independent",
           vtcTag: driver.vtcTag ?? "",
         },
@@ -500,6 +510,7 @@ export function MapClient() {
   const [mapReady, setMapReady] = useState(false);
   const [mapAssets, setMapAssets] = useState<MapAssets | null>(null);
   const [vtcOptions, setVtcOptions] = useState<VtcOption[]>([]);
+  const [mapIntel, setMapIntel] = useState<any>({ traffic: [], staff: [], specialCargo: [] });
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<any>(null);
@@ -568,6 +579,17 @@ export function MapClient() {
       })
       .catch(() => {});
     return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    const load = () => fetch(api + "/api/v1/public/map-intelligence", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : { traffic: [], staff: [], specialCargo: [] })
+      .then((data) => { if (active) setMapIntel(data); })
+      .catch(() => {});
+    void load();
+    const timer = setInterval(load, 5000);
+    return () => { active = false; clearInterval(timer); };
   }, []);
 
   useEffect(() => {
@@ -645,6 +667,52 @@ export function MapClient() {
           });
         }
 
+        if (!map.getSource("openhaul-traffic")) {
+          map.addSource("openhaul-traffic", {
+            type: "geojson",
+            data: { type: "FeatureCollection", features: [] },
+          });
+        }
+
+        map.addLayer({
+          id: "openhaul-traffic-jams",
+          type: "circle",
+          source: "openhaul-traffic",
+          paint: {
+            "circle-radius": ["interpolate", ["linear"], ["get", "drivers"], 3, 16, 10, 34],
+            "circle-color": [
+              "match", ["get", "severity"],
+              "high", "#ff4d4f",
+              "medium", "#ffb020",
+              "#ffd666",
+            ],
+            "circle-opacity": 0.32,
+            "circle-stroke-color": [
+              "match", ["get", "severity"],
+              "high", "#ff7875",
+              "medium", "#ffc53d",
+              "#ffe58f",
+            ],
+            "circle-stroke-width": 2,
+          },
+        });
+
+        map.addLayer({
+          id: "openhaul-traffic-label",
+          type: "symbol",
+          source: "openhaul-traffic",
+          layout: {
+            "text-field": ["concat", "TRAFFIC ", ["to-string", ["get", "drivers"]]],
+            "text-size": 11,
+            "text-offset": [0, 1.7],
+          },
+          paint: {
+            "text-color": "#fff7e6",
+            "text-halo-color": "#3a1200",
+            "text-halo-width": 2,
+          },
+        });
+
         if (!map.hasImage("openhaul-driver-arrow")) {
           const canvas = document.createElement("canvas");
           canvas.width = 64;
@@ -674,11 +742,15 @@ export function MapClient() {
           paint: {
             "circle-radius": 12,
             "circle-color": [
-              "match",
-              ["get", "game"],
-              "ets2", "#54e08a",
-              "ats", "#f0b35a",
-              "#3b82f6",
+              "case",
+              ["==", ["get", "staffSource"], "truckersmp"], "#ff4d4f",
+              ["==", ["get", "staffSource"], "openhaul"], "#a855f7",
+              ["match",
+                ["get", "game"],
+                "ets2", "#54e08a",
+                "ats", "#f0b35a",
+                "#3b82f6"
+              ],
             ],
             "circle-stroke-color": "#ffffff",
             "circle-stroke-width": 3,
@@ -753,7 +825,12 @@ export function MapClient() {
             String(properties.vtcTag ? "[" + properties.vtcTag + "] " : "") + String(properties.vtc || "Independent"),
             String(properties.game || "").toUpperCase() + " · " + Math.round(Number(properties.speedKph || 0)) + " km/h",
             String(properties.truck || "Unknown truck"),
+            properties.staffRole ? "🛡 " + String(properties.staffRole) : "",
             String(properties.cargo || "No cargo"),
+            Number(properties.specialJob || 0) ? "⭐ Special cargo / transport job" : "",
+            Number(properties.cargoLoaded || 0)
+              ? "Cargo damage " + Number(properties.cargoDamagePercent || 0).toFixed(1) + "% · Trailer " + Number(properties.trailerDamagePercent || 0).toFixed(1) + "%"
+              : "Truck damage " + Number(properties.truckDamagePercent || 0).toFixed(1) + "%",
             Number(properties.rpm || 0) > 0 ? Math.round(Number(properties.rpm)) + " RPM · " + Math.round(Number(properties.fuel || 0)) + " L fuel" : "",
             Number(properties.navigationDistanceM || 0) > 0 ? Math.round(Number(properties.navigationDistanceM) / 1000) + " km remaining · " + Math.round(Number(properties.speedLimitKph || 0)) + " km/h limit" : "",
             String(properties.route || properties.server || ""),
