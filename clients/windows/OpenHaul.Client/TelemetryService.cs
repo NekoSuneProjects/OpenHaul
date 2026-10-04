@@ -9,8 +9,11 @@ public sealed class TelemetryService : IAsyncDisposable
     private static readonly JsonSerializerOptions PluginJson = new(JsonSerializerDefaults.Web);
     private readonly ClientConfig _config;
     private readonly OpenHaulApi _api;
+    private readonly OfflineTelemetryQueue _offlineQueue = new();
+    private readonly string _sessionId = Guid.NewGuid().ToString("N");
     private bool _liveAccepted;
     private bool _serverUnavailable;
+    private bool _replayingOffline;
 
     public event Action<string>? Status;
     public event Action<PluginLiveTelemetry>? LiveTelemetryReceived;
@@ -59,13 +62,15 @@ public sealed class TelemetryService : IAsyncDisposable
                         catch (HttpRequestException ex)
                         {
                             _liveAccepted = false;
-                            MarkServerUnavailable("OpenHaul site/API is offline. Keeping telemetry connected and retrying automatically…");
+                            await _offlineQueue.EnqueueAsync(line, token);
+                            MarkServerUnavailable("OpenHaul site/API is offline. Telemetry events are queued locally and will resend automatically…");
                             Debug.WriteLine("OpenHaul reconnect: " + ex.Message);
                         }
                         catch (TaskCanceledException) when (!token.IsCancellationRequested)
                         {
                             _liveAccepted = false;
-                            MarkServerUnavailable("OpenHaul site/API timed out. Retrying automatically…");
+                            await _offlineQueue.EnqueueAsync(line, token);
+                            MarkServerUnavailable("OpenHaul site/API timed out. Telemetry events are queued locally and will resend automatically…");
                         }
                     }
 
@@ -146,7 +151,7 @@ public sealed class TelemetryService : IAsyncDisposable
                     plugin.Cargo,
                     plugin.SourceCity,
                     plugin.DestinationCity,
-                    null,
+                    SessionDetector.DetectTruckersMpServer(),
                     plugin.Rpm,
                     plugin.Fuel,
                     plugin.OdometerKm,
@@ -159,7 +164,10 @@ public sealed class TelemetryService : IAsyncDisposable
                     plugin.SpecialJob,
                     plugin.CargoLoaded,
                     plugin.SourceCompany,
-                    plugin.DestinationCompany);
+                    plugin.DestinationCompany,
+                    SessionDetector.SessionMode(),
+                    SessionDetector.DriverStatus(plugin),
+                    _sessionId);
 
                 response = await _api.SendLiveAsync(live, token);
                 if (response.IsSuccessStatusCode && !_liveAccepted)
@@ -183,7 +191,8 @@ public sealed class TelemetryService : IAsyncDisposable
                     checked((int)Math.Clamp(plugin.Amount, 0, int.MaxValue)),
                     plugin.Game.Equals("ats", StringComparison.OrdinalIgnoreCase) ? "USD" : "EUR",
                     null,
-                    DateTimeOffset.UtcNow);
+                    DateTimeOffset.UtcNow,
+                    plugin.EventId ?? $"{_config.DriverId}:fine:{plugin.Game}:{plugin.Offence}:{plugin.Amount}:{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}");
 
                 response = await _api.SendFineAsync(fine, token);
                 break;
@@ -203,9 +212,61 @@ public sealed class TelemetryService : IAsyncDisposable
                     plugin.DestinationCity,
                     plugin.DistanceKm,
                     plugin.Income,
-                    DateTimeOffset.UtcNow);
+                    DateTimeOffset.UtcNow,
+                    plugin.EventId,
+                    "completed",
+                    plugin.Expenses ?? 0,
+                    plugin.Late ?? false,
+                    plugin.CargoDamagePercent ?? 0,
+                    plugin.TruckDamagePercent ?? 0,
+                    plugin.TrailerDamagePercent ?? 0,
+                    plugin.SourceCompany,
+                    plugin.DestinationCompany,
+                    plugin.SourceX,
+                    plugin.SourceZ,
+                    plugin.DestinationX,
+                    plugin.DestinationZ);
 
                 response = await _api.SendJobAsync(job, token);
+                break;
+            }
+
+            default:
+            {
+                if (string.IsNullOrWhiteSpace(type) ||
+                    !(type.StartsWith("job.", StringComparison.OrdinalIgnoreCase) ||
+                      type.StartsWith("expense.", StringComparison.OrdinalIgnoreCase) ||
+                      type.StartsWith("damage.", StringComparison.OrdinalIgnoreCase) ||
+                      type.StartsWith("refuel.", StringComparison.OrdinalIgnoreCase) ||
+                      type.StartsWith("collision.", StringComparison.OrdinalIgnoreCase) ||
+                      type.StartsWith("route.", StringComparison.OrdinalIgnoreCase)))
+                    break;
+
+                var plugin = data.Deserialize<PluginGenericTelemetryEvent>(PluginJson);
+                if (plugin is null) return;
+
+                var externalId = plugin.EventId ??
+                    $"{_config.DriverId}:{type}:{DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()}";
+
+                var telemetryEvent = new GenericTelemetryEvent(
+                    _config.VtcId,
+                    _config.DriverId,
+                    plugin.Game,
+                    type,
+                    externalId,
+                    DateTimeOffset.UtcNow,
+                    plugin.Amount,
+                    plugin.Currency,
+                    plugin.X,
+                    plugin.Y,
+                    plugin.Z,
+                    plugin.Cargo,
+                    plugin.SourceCity,
+                    plugin.DestinationCity,
+                    plugin.DamagePercent,
+                    plugin.Detail);
+
+                response = await _api.SendEventAsync(telemetryEvent, token);
                 break;
             }
         }
@@ -239,7 +300,52 @@ public sealed class TelemetryService : IAsyncDisposable
                     _liveAccepted = true;
                     Status?.Invoke("Online: driving telemetry accepted by OpenHaul.");
                 }
+
+                if (!_replayingOffline)
+                    await FlushOfflineQueueAsync(token);
             }
+        }
+    }
+
+    private async Task FlushOfflineQueueAsync(CancellationToken token)
+    {
+        if (_replayingOffline) return;
+
+        _replayingOffline = true;
+        try
+        {
+            while (!token.IsCancellationRequested)
+            {
+                var batch = await _offlineQueue.PeekAsync(25, token);
+                if (batch.Count == 0) break;
+
+                var sent = 0;
+                foreach (var payload in batch)
+                {
+                    try
+                    {
+                        await HandleEnvelope(payload, token);
+                        sent++;
+                    }
+                    catch (Exception ex) when (ex is HttpRequestException or TaskCanceledException)
+                    {
+                        MarkServerUnavailable("OpenHaul is still offline; queued telemetry will retry later.");
+                        break;
+                    }
+                }
+
+                if (sent > 0)
+                {
+                    await _offlineQueue.RemoveFirstAsync(sent, token);
+                    Status?.Invoke($"Resent {sent} queued telemetry event(s).");
+                }
+
+                if (sent < batch.Count) break;
+            }
+        }
+        finally
+        {
+            _replayingOffline = false;
         }
     }
 
