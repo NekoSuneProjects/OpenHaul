@@ -74,6 +74,10 @@ const directoryQuerySchema = z.object({
   pageSize: z.coerce.number().int().min(10).max(200).default(50),
 });
 
+const catalogQuerySchema = z.object({
+  limit: z.coerce.number().int().min(1000).max(25000).default(20000),
+});
+
 const formats: Record<string, OutputFormat> = {
   mp3: {
     contentType: "audio/mpeg",
@@ -699,6 +703,39 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
 
 export async function registerRadioProxyRoutes(app: FastifyInstance) {
   const stations = stationRegistry(app);
+
+  app.get("/api/v1/public/radio/catalog", async (request, reply) => {
+    const { limit } = catalogQuerySchema.parse(request.query);
+    const params = new URLSearchParams({
+      hidebroken: "true",
+      order: "votes",
+      reverse: "true",
+      offset: "0",
+      limit: String(limit),
+    });
+
+    const rows = await fetchRadioBrowser("/json/stations/search", params, 30_000) as RadioBrowserStation[];
+    const catalog = rows
+      .map((row) => radioBrowserToStation(row))
+      .filter((station): station is RadioStation => Boolean(station))
+      .filter((station) => {
+        try {
+          const parsed = new URL(station.sourceUrl);
+          const host = parsed.hostname.toLowerCase();
+          return host !== "localhost" && host !== "127.0.0.1" && host !== "::1";
+        } catch {
+          return false;
+        }
+      });
+
+    reply.header("cache-control", "public, max-age=900, stale-if-error=86400");
+    return {
+      requested: limit,
+      count: catalog.length,
+      source: "Radio Browser",
+      stations: catalog.map(stationPublicJson),
+    };
+  });
 
   app.get("/api/v1/public/radio/directory", async (request, reply) => {
     const query = directoryQuerySchema.parse(request.query);
