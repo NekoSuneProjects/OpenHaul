@@ -17,7 +17,13 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
         "steamId",
         "displayName",
         "avatarUrl",
+        "bannerUrl",
         "profileUrl",
+        "bio",
+        "country",
+        "socials",
+        "profilePublic",
+        "moderationVisibility",
         "ownsEts2",
         "ownsAts",
         "ownershipVisibility",
@@ -26,6 +32,9 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
     });
 
     if (!user) return reply.code(404).send({ error: "driver_not_found" });
+    if (!Boolean(user.getDataValue("profilePublic"))) {
+      return reply.code(404).send({ error: "driver_profile_private" });
+    }
 
     const [memberships, jobs, fines, distanceKm, income, fineAmount, liveDrivers, twitch, moderation, nameChanges] = await Promise.all([
       VtcMember.findAll({
@@ -47,12 +56,14 @@ export async function registerPublicDriverRoutes(app: FastifyInstance) {
       Fine.sum("amount", { where: { driverId: steamId } }),
       getLiveDrivers(),
       TwitchAccount.findOne({ where: { userId: user.id } }),
-      VtcModerationAction.findAll({
-        where: { userId: user.id, type: { [Op.ne]: "note" } },
-        include: [{ model: Vtc, attributes: ["id", "name", "tag"] }],
-        order: [["id", "DESC"]],
-        limit: 100,
-      }),
+      user.getDataValue("moderationVisibility") === "public"
+        ? VtcModerationAction.findAll({
+            where: { userId: user.id, type: { [Op.ne]: "note" } },
+            include: [{ model: Vtc, attributes: ["id", "name", "tag"] }],
+            order: [["id", "DESC"]],
+            limit: 100,
+          })
+        : Promise.resolve([]),
       VtcActivityEvent.findAll({
         where: { driverId: steamId, type: "profile.name_changed" },
         include: [{ model: Vtc, attributes: ["id", "name", "tag"] }],
