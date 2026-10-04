@@ -823,7 +823,13 @@ public sealed class MainForm : Form
         {
             try
             {
-                await web.EnsureCoreWebView2Async();
+                var webViewData = Path.Combine(ClientSettings.SettingsDirectory, "WebView2", "MiniMap");
+                Directory.CreateDirectory(webViewData);
+                var environment = await Microsoft.Web.WebView2.Core.CoreWebView2Environment.CreateAsync(
+                    browserExecutableFolder: null,
+                    userDataFolder: webViewData);
+
+                await web.EnsureCoreWebView2Async(environment);
                 if (web.CoreWebView2 is null) return;
 
                 web.CoreWebView2.Settings.AreDefaultContextMenusEnabled = false;
