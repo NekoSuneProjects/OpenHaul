@@ -43,6 +43,7 @@ export default function AccountPage() {
   const [clientTokens, setClientTokens] = useState<any[]>([]);
   const [apiKeys, setApiKeys] = useState<any[]>([]);
   const [newApiKey, setNewApiKey] = useState("");
+  const [apiScopeSelection, setApiScopeSelection] = useState(["profile:read", "jobs:read", "fines:read", "vtcs:read", "stream:read"]);
   const [twitch, setTwitch] = useState<any>(null);
 
   const load = async () => {
@@ -135,7 +136,7 @@ export default function AccountPage() {
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         name: "Account API",
-        scopes: ["profile:read", "jobs:read", "fines:read", "vtcs:read", "stream:read"],
+        scopes: apiScopeSelection,
       }),
     });
 
@@ -149,6 +150,14 @@ export default function AccountPage() {
   const revokeApiKey = async (id: number) => {
     await fetch(api + "/api/v1/account/api-keys/" + id, {
       method: "DELETE",
+      credentials: "include",
+    });
+    await load();
+  };
+
+  const rotateApiKey = async (id: number) => {
+    await fetch(api + "/api/v1/account/api-keys/" + id + "/rotate", {
+      method: "POST",
       credentials: "include",
     });
     await load();
@@ -180,6 +189,14 @@ export default function AccountPage() {
   const revokeClientToken = async (id: number) => {
     await fetch(api + "/api/v1/account/client-tokens/" + id, {
       method: "DELETE",
+      credentials: "include",
+    });
+    await load();
+  };
+
+  const rotateClientToken = async (id: number) => {
+    await fetch(api + "/api/v1/account/client-tokens/" + id + "/rotate", {
+      method: "POST",
       credentials: "include",
     });
     await load();
@@ -404,8 +421,21 @@ export default function AccountPage() {
       <section className="card" style={{ marginBottom: 18 }}>
         <h3>Account API keys</h3>
         <p className="muted">Use these keys in your own dashboards, bots, scripts or integrations. Keys can read only your scoped account data and VTCs you actually belong to.</p>
+        <div className="grid" style={{ padding: "12px 0 0" }}>
+          {["profile:read", "jobs:read", "fines:read", "vtcs:read", "stream:read"].map((scope) => (
+            <label key={scope}>
+              <input
+                type="checkbox"
+                checked={apiScopeSelection.includes(scope)}
+                onChange={(event) => setApiScopeSelection((current) => event.target.checked
+                  ? Array.from(new Set([...current, scope]))
+                  : current.filter((item) => item !== scope))}
+              /> {scope}
+            </label>
+          ))}
+        </div>
         <div className="actions">
-          <button className="button primary" onClick={() => void createApiKey()}>Create API key</button>
+          <button className="button primary" disabled={apiScopeSelection.length === 0} onClick={() => void createApiKey()}>Create API key</button>
         </div>
         {newApiKey ? (
           <div style={{ marginTop: 16 }}>
@@ -420,7 +450,10 @@ export default function AccountPage() {
             <div><strong>{key.name}</strong><small>{key.prefix}…</small></div>
             <div><strong>{key.revokedAt ? "Revoked" : "Active"}</strong><small>{(key.scopes ?? []).join(", ")}</small></div>
             <div><small>{key.lastUsedAt ? "Last used " + new Date(key.lastUsedAt).toLocaleString() : "Never used"}</small></div>
-            <div>{!key.revokedAt ? <button className="button" onClick={() => void revokeApiKey(key.id)}>Revoke</button> : null}</div>
+            <div style={{ display: "grid", gap: 6 }}>
+              {!key.revokedAt ? <button className="button" onClick={() => void rotateApiKey(key.id)}>Rotate</button> : null}
+              {!key.revokedAt ? <button className="button" onClick={() => void revokeApiKey(key.id)}>Revoke</button> : null}
+            </div>
           </article>
         ))}
       </section>
@@ -474,7 +507,10 @@ export default function AccountPage() {
             <div><strong>{token.name}</strong><small>{token.prefix}…</small></div>
             <div><strong>{token.revokedAt ? "Revoked" : "Active"}</strong><small>{token.lastUsedAt ? "Last used " + new Date(token.lastUsedAt).toLocaleString() : "Never used"}</small></div>
             <div><small>Created {new Date(token.createdAt).toLocaleDateString()}</small></div>
-            <div>{!token.revokedAt ? <button className="button" onClick={() => void revokeClientToken(token.id)}>Revoke</button> : null}</div>
+            <div style={{ display: "grid", gap: 6 }}>
+              {!token.revokedAt ? <button className="button" onClick={() => void rotateClientToken(token.id)}>Rotate</button> : null}
+              {!token.revokedAt ? <button className="button" onClick={() => void revokeClientToken(token.id)}>Revoke</button> : null}
+            </div>
           </article>
         ))}
       </section>
