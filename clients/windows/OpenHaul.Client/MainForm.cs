@@ -304,6 +304,13 @@ public sealed class MainForm : Form
         _overlay?.UpdateTelemetry(telemetry);
     }
 
+    private void QueueTelemetryRepair()
+    {
+        _telemetryRetryPending = true;
+        if (!_telemetryRetryTimer.Enabled)
+            _telemetryRetryTimer.Start();
+    }
+
     private void ConfigureTelemetryRetry()
     {
         _telemetryRetryTimer.Interval = 15_000;
@@ -1968,6 +1975,7 @@ public sealed class MainForm : Form
         _telemetryService = new TelemetryService(_settings.ToConfig());
         _telemetryService.Status += SetStatus;
         _telemetryService.LiveTelemetryReceived += UpdateOverlayTelemetry;
+        _telemetryService.PluginReconnectNeeded += QueueTelemetryRepair;
         _telemetryButton.Text = "Stop Telemetry";
 
         _telemetryTask = Task.Run(
@@ -2000,6 +2008,7 @@ public sealed class MainForm : Form
         {
             service.Status -= SetStatus;
             service.LiveTelemetryReceived -= UpdateOverlayTelemetry;
+            service.PluginReconnectNeeded -= QueueTelemetryRepair;
             await service.DisposeAsync();
         }
 
