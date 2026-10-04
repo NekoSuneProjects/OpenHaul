@@ -516,13 +516,44 @@ export async function registerPlatformFeatureRoutes(app: FastifyInstance) {
     return { deletionRequested: true, retainedIdentity: true, message: "Personal feature data was tombstoned and active tokens were revoked." };
   });
 
-  app.get("/api/v1/setup/status", async () => ({
-    configured: Boolean(process.env.OPENHAUL_ADMIN_KEY && process.env.DATABASE_URL && process.env.OPENHAUL_INGEST_KEY),
-    databaseConfigured: Boolean(process.env.DATABASE_URL),
-    adminConfigured: Boolean(process.env.OPENHAUL_ADMIN_KEY),
-    ingestConfigured: Boolean(process.env.OPENHAUL_INGEST_KEY),
-    publicUrl: process.env.APP_URL ?? null,
-  }));
+  app.get("/api/v1/setup/status", async () => {
+    const completed = await PlatformRecord.findOne({
+      where: { scopeType: "global", scopeId: "instance", category: "setup", key: "bootstrap", status: "complete" },
+    });
+    return {
+      configured: Boolean(process.env.OPENHAUL_ADMIN_KEY && process.env.DATABASE_URL && process.env.OPENHAUL_INGEST_KEY),
+      databaseConfigured: Boolean(process.env.DATABASE_URL),
+      adminConfigured: Boolean(process.env.OPENHAUL_ADMIN_KEY),
+      ingestConfigured: Boolean(process.env.OPENHAUL_INGEST_KEY),
+      steamConfigured: Boolean(process.env.STEAM_WEB_API_KEY),
+      discordConfigured: Boolean(process.env.DISCORD_CLIENT_ID && process.env.DISCORD_BOT_TOKEN),
+      publicUrl: process.env.APP_URL ?? null,
+      bootstrapComplete: Boolean(completed),
+    };
+  });
+
+  app.post("/api/v1/setup/bootstrap", async (request, reply) => {
+    if (!adminAuthorized(request)) return reply.code(401).send({ error: "admin_required" });
+    const body = z.object({
+      instanceName: z.string().min(1).max(120).default("OpenHaul"),
+      publicUrl: z.string().url().optional(),
+      notes: z.string().max(2000).optional(),
+    }).parse(request.body ?? {});
+    const [record] = await PlatformRecord.findOrCreate({
+      where: { scopeType: "global", scopeId: "instance", category: "setup", key: "bootstrap" },
+      defaults: {
+        scopeType: "global",
+        scopeId: "instance",
+        category: "setup",
+        key: "bootstrap",
+        status: "complete",
+        data: { ...body, completedAt: new Date().toISOString() },
+        createdByUserId: null,
+      },
+    });
+    await record.update({ status: "complete", data: { ...body, completedAt: new Date().toISOString() } });
+    return { bootstrapComplete: true, record };
+  });
 
   app.get("/api/v1/admin/records", async (request, reply) => {
     if (!adminAuthorized(request)) return reply.code(401).send({ error: "admin_required" });
