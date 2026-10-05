@@ -1,5 +1,30 @@
 [
   {
+    "name": "Radio Nostalgia",
+    "url": "https://sc.mpbnl.nl/radionostalgia.mp3",
+    "country": "BG",
+    "type": "2010s music",
+    "tags": [
+      "2010s music",
+      "2010",
+      "2000s",
+      "hit music",
+      "pop music",
+      "pop",
+      "dance"
+    ],
+    "codec": "AAC+",
+    "bitrate": 384,
+    "language": "bulgarian,english",
+    "favicon": "https://radiodns.mpbnl.nl/logos/note/radio-nostalgia.png",
+    "homepage": "https://notefmbg.free.bg",
+    "stationUuid": "1d93cdf8-81a1-4be7-bd96-57ea52341823",
+    "checkedAt": "2026-10-05T10:42:57.969Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
     "name": "Общинско радио Велико Търново",
     "url": "http://195.34.121.140:8004/",
     "country": "BG",
@@ -17,7 +42,7 @@
     "favicon": "https://www.predavatel.com/bg/8/velikotarnovo_img/radio-vt98-2.png",
     "homepage": "https://radiovelikotarnovo.com/",
     "stationUuid": "c293656b-90a5-40e0-b2f3-6dcb937fe8fa",
-    "checkedAt": "2026-10-04T22:16:04.475Z",
+    "checkedAt": "2026-10-05T10:42:57.970Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -41,7 +66,28 @@
     "favicon": "https://top-radio.ru/assets/image/radio/180/radio-shlager.jpg",
     "homepage": "https://netbox.bgdelta/",
     "stationUuid": "9acdf1bd-41b3-443c-97e9-c132bfbf8922",
-    "checkedAt": "2026-10-04T22:16:04.475Z",
+    "checkedAt": "2026-10-05T10:42:57.970Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "MAGIC PARTY",
+    "url": "https://nova-radio.neterra.tv/magicparty",
+    "country": "BG",
+    "type": "90s",
+    "tags": [
+      "90s",
+      "party",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://play.nova.bg/video/magicparty/611100",
+    "stationUuid": "fb30ac4a-3077-4aa3-bd15-9ee99da9106f",
+    "checkedAt": "2026-10-05T10:42:58.169Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -58,7 +104,7 @@
     "favicon": "https://www.radiopi.top/favicon.ico",
     "homepage": "https://www.radiopi.top/",
     "stationUuid": "3672a2f3-a7d9-4319-8d2c-9089bb43505e",
-    "checkedAt": "2026-10-04T22:16:05.587Z",
+    "checkedAt": "2026-10-05T10:42:58.821Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -75,7 +121,7 @@
     "favicon": "https://www.radiopi.top/wp-content/themes/bridge/img/logo_white.png",
     "homepage": "https://www.radiopi.top/",
     "stationUuid": "375229cb-2a6b-4814-a679-ff67cd72c236",
-    "checkedAt": "2026-10-04T22:16:05.620Z",
+    "checkedAt": "2026-10-05T10:42:58.851Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -92,7 +138,7 @@
     "favicon": null,
     "homepage": "http://bnr.bg/shumen",
     "stationUuid": "859b1a8e-02ba-11ea-bbf2-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:05.701Z",
+    "checkedAt": "2026-10-05T10:42:59.012Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -109,7 +155,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "46f0d102-59a6-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:05.732Z",
+    "checkedAt": "2026-10-05T10:42:59.040Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -126,7 +172,7 @@
     "favicon": null,
     "homepage": "http://www.radiomixx.net/",
     "stationUuid": "96165981-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:05.819Z",
+    "checkedAt": "2026-10-05T10:42:59.067Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -143,27 +189,10 @@
     "favicon": null,
     "homepage": "https://radiomixx.net/",
     "stationUuid": "bb5a3144-402f-4f7c-a1c6-2c5e80170d19",
-    "checkedAt": "2026-10-04T22:16:05.834Z",
+    "checkedAt": "2026-10-05T10:42:59.165Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio ZARA",
-    "url": "https://www.radiozara.bg/play",
-    "country": "BG",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 256,
-    "language": null,
-    "favicon": "https://www.radiozara.bg/logo.png",
-    "homepage": "https://www.radiozara.bg/",
-    "stationUuid": "39b3b4eb-9a6a-4cab-9b84-141b519ea9d7",
-    "checkedAt": "2026-10-04T22:16:05.888Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "БНР Христо Ботев",
@@ -177,7 +206,7 @@
     "favicon": null,
     "homepage": "http://bnr.bg/hristobotev",
     "stationUuid": "96158e94-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:05.943Z",
+    "checkedAt": "2026-10-05T10:42:59.451Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -199,7 +228,7 @@
     "favicon": null,
     "homepage": "https://mmirojv.business.site/",
     "stationUuid": "230505d5-eb2a-48fd-87fd-d10d1bc7f0dc",
-    "checkedAt": "2026-10-04T22:16:06.554Z",
+    "checkedAt": "2026-10-05T10:43:00.211Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -220,7 +249,7 @@
     "favicon": null,
     "homepage": "https://folkradionazdrave.com/",
     "stationUuid": "bc30d1a6-a29f-4306-a1bb-04c864b6802a",
-    "checkedAt": "2026-10-04T22:16:06.701Z",
+    "checkedAt": "2026-10-05T10:43:00.268Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -249,7 +278,7 @@
     "favicon": "https://bgrapradio.com/img/bgrapradio.png",
     "homepage": "https://bgrapradio.com/",
     "stationUuid": "d59e3d12-3052-4626-8092-27a2b83d1f6e",
-    "checkedAt": "2026-10-04T22:16:06.889Z",
+    "checkedAt": "2026-10-05T10:43:00.618Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -284,7 +313,7 @@
     "favicon": "https://radionrg.com/img/radionrg.png",
     "homepage": "https://radionrg.com/",
     "stationUuid": "8123fac5-890c-4dd1-b306-71f511d3fbf1",
-    "checkedAt": "2026-10-04T22:16:07.092Z",
+    "checkedAt": "2026-10-05T10:43:00.697Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -305,7 +334,7 @@
     "favicon": null,
     "homepage": "http://bnr.bg/sofia",
     "stationUuid": "961634ec-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:07.395Z",
+    "checkedAt": "2026-10-05T10:43:00.932Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -325,7 +354,7 @@
     "favicon": null,
     "homepage": "http://bnr.bg/horizont",
     "stationUuid": "9616308f-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:07.764Z",
+    "checkedAt": "2026-10-05T10:43:01.042Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -347,7 +376,7 @@
     "favicon": "https://radio.euronews.bg/wp-content/uploads/2024/12/Radio-Logo-Blue.jpg",
     "homepage": "https://radio.euronews.bg/",
     "stationUuid": "abd6bf4b-210a-45da-ad7a-c87241c68040",
-    "checkedAt": "2026-10-04T22:16:07.825Z",
+    "checkedAt": "2026-10-05T10:43:01.228Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -370,7 +399,7 @@
     "favicon": "https://deepradio.eu/wp-content/uploads/2019/10/cropped-DEEPRADIONEWLOGOfluterrre-192x192.png",
     "homepage": "https://deepradio.eu/lounge/",
     "stationUuid": "f6ccb065-120e-44e5-b230-75d3e800d3b6",
-    "checkedAt": "2026-10-04T22:16:07.947Z",
+    "checkedAt": "2026-10-05T10:43:01.314Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -389,7 +418,7 @@
     "favicon": null,
     "homepage": "https://141.147.25.113/public/radio_big_boss",
     "stationUuid": "81d1c9d0-12a4-4cd0-8ea4-0703ea1fac90",
-    "checkedAt": "2026-10-04T22:16:08.099Z",
+    "checkedAt": "2026-10-05T10:43:01.627Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -417,7 +446,7 @@
     "favicon": null,
     "homepage": "https://radio-glas.mitropolia-sofia.org/",
     "stationUuid": "087bbce7-9fc7-48f3-9f8b-1b1109852108",
-    "checkedAt": "2026-10-04T22:16:08.385Z",
+    "checkedAt": "2026-10-05T10:43:02.038Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -438,7 +467,7 @@
     "favicon": null,
     "homepage": "https://www.radio1rock.bg/",
     "stationUuid": "2bd2057b-6b17-4343-ae2f-0de00e5c6fcc",
-    "checkedAt": "2026-10-04T22:16:08.639Z",
+    "checkedAt": "2026-10-05T10:43:02.375Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -459,7 +488,7 @@
     "favicon": null,
     "homepage": "https://bnr.bg/hristobotev",
     "stationUuid": "0dec7232-1b72-4316-996b-09d318a29b38",
-    "checkedAt": "2026-10-04T22:16:08.662Z",
+    "checkedAt": "2026-10-05T10:43:02.408Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -481,7 +510,7 @@
     "favicon": "http://radiomaia.com/wp-content/themes/radio/images/favicons/apple-touch-icon-120x120.png",
     "homepage": "http://radiomaia.com/",
     "stationUuid": "96409a24-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:08.782Z",
+    "checkedAt": "2026-10-05T10:43:02.601Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -503,7 +532,7 @@
     "favicon": "https://deepradio.eu/wp-content/uploads/2019/10/cropped-DEEPRADIONEWLOGOfluterrre-192x192.png",
     "homepage": "https://deepradio.eu/",
     "stationUuid": "fe175565-8369-4309-8351-dfbd41c6caca",
-    "checkedAt": "2026-10-04T22:16:08.963Z",
+    "checkedAt": "2026-10-05T10:43:02.698Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -522,10 +551,31 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "331464ed-2614-11e9-a80b-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:09.003Z",
+    "checkedAt": "2026-10-05T10:43:02.802Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "SWEET RADIO - BULGARIA",
+    "url": "https://stream.sweetradio.online:8001/HD",
+    "country": "BG",
+    "type": "dance",
+    "tags": [
+      "dance",
+      "deep house",
+      "nu disco"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "english",
+    "favicon": "https://sweetradio.online/wp-content/uploads/cropped-sweet-1a.png",
+    "homepage": "https://sweetradio.online/",
+    "stationUuid": "d994df65-5c71-48ec-b675-96b8d14bd4e9",
+    "checkedAt": "2026-10-05T10:43:03.179Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "DJ Zone House",
@@ -541,7 +591,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "16af6da3-dbaa-4f5e-8c7d-e48f04970a99",
-    "checkedAt": "2026-10-04T22:16:10.093Z",
+    "checkedAt": "2026-10-05T10:43:03.817Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -562,10 +612,29 @@
     "favicon": null,
     "homepage": "https://extrahitfolk.com/",
     "stationUuid": "ac215183-915b-48a9-93b6-3261b4f5a9ad",
-    "checkedAt": "2026-10-04T22:16:10.824Z",
+    "checkedAt": "2026-10-05T10:43:04.591Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Retro Folk",
+    "url": "http://79.98.108.170:8053/",
+    "country": "BG",
+    "type": "folk",
+    "tags": [
+      "folk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "28950e81-adbf-445b-ac81-367e35e739d3",
+    "checkedAt": "2026-10-05T10:43:05.154Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Radio Slavi",
@@ -581,7 +650,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "2b50c4c2-0f07-468c-bfa1-88f8c77607b3",
-    "checkedAt": "2026-10-04T22:16:11.230Z",
+    "checkedAt": "2026-10-05T10:43:05.314Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -601,7 +670,7 @@
     "favicon": null,
     "homepage": "https://folkradionazdrave.com/",
     "stationUuid": "5df71484-7818-4c6e-8c5a-948af4a4fcbd",
-    "checkedAt": "2026-10-04T22:16:11.771Z",
+    "checkedAt": "2026-10-05T10:43:05.639Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -622,7 +691,33 @@
     "favicon": "https://www.radiopi.top/favicon.ico",
     "homepage": "https://www.radiopi.top/",
     "stationUuid": "7e075105-f9e7-4519-bf85-dc256ffb30ec",
-    "checkedAt": "2026-10-04T22:16:11.855Z",
+    "checkedAt": "2026-10-05T10:43:05.657Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "BadRock Hard & Heavy",
+    "url": "https://play-radio0.jump.bg:7049/live",
+    "country": "BG",
+    "type": "hard rock",
+    "tags": [
+      "hard rock",
+      "hardcore",
+      "heavy metal",
+      "heavy power metal",
+      "heavy rock",
+      "metal",
+      "power metal",
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://www.badrockradio.net/wp-content/uploads/2024/06/960x0-100x100.webp",
+    "homepage": "https://badrockradio.net/",
+    "stationUuid": "2091bc8a-ced6-43cd-8f38-5b05d62ce3c5",
+    "checkedAt": "2026-10-05T10:43:05.688Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -648,7 +743,7 @@
     "favicon": "https://www.badrockradio.net/wp-content/uploads/2024/06/960x0-100x100.webp",
     "homepage": "https://www.badrockradio.net/",
     "stationUuid": "25608063-9335-43a9-a911-4697ea76a0ad",
-    "checkedAt": "2026-10-04T22:16:11.879Z",
+    "checkedAt": "2026-10-05T10:43:05.697Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -669,7 +764,7 @@
     "favicon": "https://radiomaia.com/wp-content/themes/radio/images/favicons/apple-touch-icon-120x120.png",
     "homepage": "http://radiomaia.com/",
     "stationUuid": "96427e24-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:12.302Z",
+    "checkedAt": "2026-10-05T10:43:06.179Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -688,7 +783,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "0c5c526f-d09f-49d7-89c6-4e82fe55b470",
-    "checkedAt": "2026-10-04T22:16:12.962Z",
+    "checkedAt": "2026-10-05T10:43:06.549Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -707,7 +802,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "8a3996de-66d8-4305-9722-fe58a16ee0b4",
-    "checkedAt": "2026-10-04T22:16:13.245Z",
+    "checkedAt": "2026-10-05T10:43:06.814Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -726,7 +821,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "8cf3525d-11ff-4d26-ae8c-6da274eda1a9",
-    "checkedAt": "2026-10-04T22:16:13.425Z",
+    "checkedAt": "2026-10-05T10:43:06.913Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -745,7 +840,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "8c1988a3-9a4a-4399-8c63-8a673a6f1dcb",
-    "checkedAt": "2026-10-04T22:16:13.666Z",
+    "checkedAt": "2026-10-05T10:43:07.266Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -762,7 +857,7 @@
     "favicon": null,
     "homepage": "https://play-radio0.jump.bg:7489/live",
     "stationUuid": "6a52f8f9-4ff1-4443-b501-4507d6070dbb",
-    "checkedAt": "2026-10-04T22:16:13.718Z",
+    "checkedAt": "2026-10-05T10:43:07.276Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -779,7 +874,7 @@
     "favicon": "https://badrockradio.net/wp-content/uploads/2025/01/max1-2.png",
     "homepage": "https://www.badrockradio.net/",
     "stationUuid": "e70fca85-a797-40c4-bb47-2f032ed14da7",
-    "checkedAt": "2026-10-04T22:16:13.733Z",
+    "checkedAt": "2026-10-05T10:43:07.311Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -796,7 +891,7 @@
     "favicon": "https://badrockradio.net/wp-content/uploads/2025/01/max1-2.png",
     "homepage": "https://www.badrockradio.net/",
     "stationUuid": "68db2b22-56ab-4f8e-96a6-e50012884f65",
-    "checkedAt": "2026-10-04T22:16:13.743Z",
+    "checkedAt": "2026-10-05T10:43:07.355Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -813,7 +908,7 @@
     "favicon": "https://bgrapradio.com/img/bgrapradio.png",
     "homepage": "https://bgrapradio.com/",
     "stationUuid": "bb71de6e-ce50-4409-9470-da465e23de33",
-    "checkedAt": "2026-10-04T22:16:13.933Z",
+    "checkedAt": "2026-10-05T10:43:07.407Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -830,7 +925,7 @@
     "favicon": "http://www.bumerangfm.net/images/logo.jpg",
     "homepage": "http://www.bumerangfm.net/",
     "stationUuid": "380f2d6f-eaac-4f64-ac88-30ff0203aa03",
-    "checkedAt": "2026-10-04T22:16:13.944Z",
+    "checkedAt": "2026-10-05T10:43:07.448Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -847,7 +942,7 @@
     "favicon": "https://www.bumerangfm.net/images/logo.jpg",
     "homepage": "https://www.bumerangfm.net/",
     "stationUuid": "19f5080a-9a9b-463b-afa5-a659c8ed445a",
-    "checkedAt": "2026-10-04T22:16:14.014Z",
+    "checkedAt": "2026-10-05T10:43:07.508Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -864,7 +959,7 @@
     "favicon": "https://danpenradio.net/wp-content/uploads/2024/07/cropped-7-192x192.png",
     "homepage": "https://danpenradio.net/",
     "stationUuid": "88f7e954-62de-4a53-88c2-4d25caf4c5a6",
-    "checkedAt": "2026-10-04T22:16:14.118Z",
+    "checkedAt": "2026-10-05T10:43:07.620Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -881,7 +976,7 @@
     "favicon": null,
     "homepage": "https://eyeseechaos.net/",
     "stationUuid": "ca387396-ca8b-45af-8f01-30c0a49644c2",
-    "checkedAt": "2026-10-04T22:16:14.318Z",
+    "checkedAt": "2026-10-05T10:43:07.781Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -898,7 +993,7 @@
     "favicon": null,
     "homepage": "http://www.folkbg.net/",
     "stationUuid": "dff1a1e1-8060-4f0a-b4e9-88687da0f92e",
-    "checkedAt": "2026-10-04T22:16:15.826Z",
+    "checkedAt": "2026-10-05T10:43:09.111Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -915,7 +1010,7 @@
     "favicon": "https://radiorazgrad.com/wp-content/uploads/2019/05/radiorz_logo_v2-167x38.png",
     "homepage": "https://radiorazgrad.com/",
     "stationUuid": "c5a0ff8d-6bd7-4f21-9741-1ba3cb9e263f",
-    "checkedAt": "2026-10-04T22:16:16.271Z",
+    "checkedAt": "2026-10-05T10:43:09.483Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -932,10 +1027,44 @@
     "favicon": null,
     "homepage": "https://zetramedia.com/",
     "stationUuid": "0bdfeaf3-3d5b-42d8-af96-a04c4f929882",
-    "checkedAt": "2026-10-04T22:16:16.579Z",
+    "checkedAt": "2026-10-05T10:43:09.799Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Rosen Dimitrov",
+    "url": "https://stream.sweetradio.online:8001/HD",
+    "country": "BG",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "english",
+    "favicon": "https://sweetradio.online/wp-content/uploads/cropped-sweet-1a.png",
+    "homepage": "https://sweetradio.online/",
+    "stationUuid": "bf1a0f56-bb9b-4c32-a4d9-03fb8e57005c",
+    "checkedAt": "2026-10-05T10:43:09.897Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Tvoeto Radio",
+    "url": "https://stream.sweetradio.online:8001/tvr",
+    "country": "BG",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "bulgarian",
+    "favicon": null,
+    "homepage": "http://tvoetoradio.net/",
+    "stationUuid": "a79232c0-285a-4156-bedc-2325a3c718a8",
+    "checkedAt": "2026-10-05T10:43:10.324Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Мая",
@@ -949,7 +1078,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "8493fd40-59a6-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:17.784Z",
+    "checkedAt": "2026-10-05T10:43:10.989Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -966,7 +1095,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "f99b605b-8e53-11e8-aa66-52543be04c81",
-    "checkedAt": "2026-10-04T22:16:17.984Z",
+    "checkedAt": "2026-10-05T10:43:11.054Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -983,10 +1112,49 @@
     "favicon": "https://mitropolia-sofia.org/wp-content/uploads/2023/09/heder-newvision5-1-150x150.png",
     "homepage": "https://radio-glas.mitropolia-sofia.org/",
     "stationUuid": "72ed6ad2-92b4-47f1-9cea-b203fe237f9d",
-    "checkedAt": "2026-10-04T22:16:18.098Z",
+    "checkedAt": "2026-10-05T10:43:11.125Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Retro Samokov",
+    "url": "https://radio.jump.bg/proxy/stanimi1/radioRETRO",
+    "country": "BG",
+    "type": "oldies",
+    "tags": [
+      "oldies",
+      "retro"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "bulgarian",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "3dd2d494-32df-40a1-ac44-b70316bf3e9c",
+    "checkedAt": "2026-10-05T10:43:13.862Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Note FM",
+    "url": "https://sc.mpbnl.nl/notefm.mp3",
+    "country": "BG",
+    "type": "pop music",
+    "tags": [
+      "pop music"
+    ],
+    "codec": "AAC+",
+    "bitrate": 384,
+    "language": "bulgarian,english",
+    "favicon": "https://radiodns.mpbnl.nl/logos/note/note-fm.png",
+    "homepage": "https://notefmbg.free.bg/",
+    "stationUuid": "652b1a93-eb0f-41d9-b030-a9215a73b21f",
+    "checkedAt": "2026-10-05T10:43:17.078Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Nostalgia",
@@ -1002,7 +1170,7 @@
     "favicon": "https://radiodns.mpbnl.nl/logos/note/radio-nostalgia.png",
     "homepage": "https://notefmbg.free.bg/",
     "stationUuid": "079278b7-f8cd-42b3-a81f-709f2a460887",
-    "checkedAt": "2026-10-04T22:16:22.170Z",
+    "checkedAt": "2026-10-05T10:43:17.082Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1021,7 +1189,7 @@
     "favicon": null,
     "homepage": "https://detskotobnr.binar.bg/",
     "stationUuid": "7820351e-7f52-49b2-98ff-93ac323323d6",
-    "checkedAt": "2026-10-04T22:16:22.639Z",
+    "checkedAt": "2026-10-05T10:43:17.776Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1040,7 +1208,7 @@
     "favicon": null,
     "homepage": "https://bnr.bg/plovdiv",
     "stationUuid": "ca5ab04f-d5f8-448a-bbd5-1fc37f323708",
-    "checkedAt": "2026-10-04T22:16:23.023Z",
+    "checkedAt": "2026-10-05T10:43:18.034Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1059,7 +1227,7 @@
     "favicon": null,
     "homepage": "https://bnr.bg/starazagora",
     "stationUuid": "cbd82be3-7d6a-4fe2-903c-432ce47e85e4",
-    "checkedAt": "2026-10-04T22:16:23.055Z",
+    "checkedAt": "2026-10-05T10:43:18.065Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1078,7 +1246,7 @@
     "favicon": "http://njsradio.com/wp-content/uploads/2019/04/njsavatar.png",
     "homepage": "http://njsradio.com/",
     "stationUuid": "2c1d1e23-eceb-485b-a2ad-ad94347f0bf7",
-    "checkedAt": "2026-10-04T22:16:23.077Z",
+    "checkedAt": "2026-10-05T10:43:18.123Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1097,7 +1265,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "33b4fadb-b0ed-4db9-99d3-af347a1141f0",
-    "checkedAt": "2026-10-04T22:16:23.297Z",
+    "checkedAt": "2026-10-05T10:43:18.383Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1116,7 +1284,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "010265c7-9bf7-401b-8cf1-6dd124efc916",
-    "checkedAt": "2026-10-04T22:16:23.364Z",
+    "checkedAt": "2026-10-05T10:43:18.407Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1135,7 +1303,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "d695ad18-81c0-47b2-902f-453663a88f76",
-    "checkedAt": "2026-10-04T22:16:23.656Z",
+    "checkedAt": "2026-10-05T10:43:18.700Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1154,7 +1322,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c84a259b-ed0a-4642-ae20-13e11072d81d",
-    "checkedAt": "2026-10-04T22:16:23.719Z",
+    "checkedAt": "2026-10-05T10:43:18.717Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1173,7 +1341,7 @@
     "favicon": null,
     "homepage": "https://bnr.bg/vidin",
     "stationUuid": "996ec8cf-4ed8-4ee4-84e5-b843d0fbcdcc",
-    "checkedAt": "2026-10-04T22:16:23.735Z",
+    "checkedAt": "2026-10-05T10:43:18.735Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

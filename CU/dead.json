@@ -31,7 +31,7 @@
     "favicon": "https://cdn-profiles.tunein.com/p3240836/images/logod.png",
     "homepage": "https://radiohc.cu/",
     "stationUuid": "8aebf57e-01df-44b0-bc8f-a32ad9275af2",
-    "checkedAt": "2026-10-04T22:29:34.238Z",
+    "checkedAt": "2026-10-05T10:56:18.168Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -60,10 +60,34 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/911/radio-rebelde-fm.fc8adab1.png",
     "homepage": "https://radiorebelde.cu/",
     "stationUuid": "fe653321-02bc-47ed-9102-f50e1abc5479",
-    "checkedAt": "2026-10-04T22:29:34.239Z",
+    "checkedAt": "2026-10-05T10:56:18.242Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Rebelde 1180 AM",
+    "url": "https://securestreams7.autopo.st/?uri=https://icecast.teveo.cu/kHKL7tWd",
+    "country": "CU",
+    "type": "1180 am",
+    "tags": [
+      "1180 am",
+      "5025 khz",
+      "emisora de la revolucion",
+      "radio rebelde",
+      "radio rebelde 1180 am",
+      "shortwave radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://static2.mytuner.mobi/media/tvos_radios/917/radio-rebelde-am.c2316379.png",
+    "homepage": "https://radiorebelde.cu/",
+    "stationUuid": "98920fee-500c-49c8-a973-ff4179967f50",
+    "checkedAt": "2026-10-05T10:56:18.244Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Prensa Latina - Agencia Informativa Latinoamericana",
@@ -87,7 +111,7 @@
     "favicon": null,
     "homepage": "https://www.prensa-latina.cu/",
     "stationUuid": "6a4e16db-a938-4288-afc5-d5779e4ae035",
-    "checkedAt": "2026-10-04T22:29:34.244Z",
+    "checkedAt": "2026-10-05T10:56:18.268Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -114,7 +138,7 @@
     "favicon": "https://ugc.production.linktr.ee/efcde3a6-71f8-41c9-8fe3-7199a7b2eede_394859921-851239673370933-4041308667218843423-n.jpeg",
     "homepage": "https://linktr.ee/radiomariadelacaridad",
     "stationUuid": "5bc4a928-a2d0-452f-901d-54ba623fe79a",
-    "checkedAt": "2026-10-04T22:29:35.024Z",
+    "checkedAt": "2026-10-05T10:56:19.030Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -136,7 +160,7 @@
     "favicon": "https://ugc.production.linktr.ee/efcde3a6-71f8-41c9-8fe3-7199a7b2eede_394859921-851239673370933-4041308667218843423-n.jpeg",
     "homepage": "https://linktr.ee/radiomariadelacaridad",
     "stationUuid": "7dbade96-ea02-4fde-a0ee-c81054fedd59",
-    "checkedAt": "2026-10-04T22:29:35.134Z",
+    "checkedAt": "2026-10-05T10:56:19.278Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -155,28 +179,9 @@
     "favicon": null,
     "homepage": "https://radio.prensa-latina.cu/",
     "stationUuid": "80b438a6-537d-468f-b365-1e376289247b",
-    "checkedAt": "2026-10-04T22:29:35.373Z",
+    "checkedAt": "2026-10-05T10:56:19.308Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Cubania Radio",
-    "url": "https://streamingv2.shoutcast.com/cubania?type=.mp3",
-    "country": "CU",
-    "type": "cuban",
-    "tags": [
-      "cuban"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://webradiodirectory.com/wp-content/uploads/2021/01/cd00bda24d4353292012e2846aedd1b1.jpg",
-    "homepage": "https://radiosdecuba.com/cubania/",
-    "stationUuid": "b6154a79-7eca-476c-ab74-1d96b5d4c456",
-    "checkedAt": "2026-10-04T22:29:35.395Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   }
 ]

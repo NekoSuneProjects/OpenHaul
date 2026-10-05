@@ -1,5 +1,27 @@
 [
   {
+    "name": "Estacion 105  105.1 FM",
+    "url": "http://radio.host.com.py:9460/;",
+    "country": "PY",
+    "type": "cumbia",
+    "tags": [
+      "cumbia",
+      "dance",
+      "entretenimiento",
+      "tropical"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": "spanish",
+    "favicon": "https://turadio.com.py/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-22-at-07.05.19-300x292.jpeg",
+    "homepage": "https://turadio.com.py/estacion105/",
+    "stationUuid": "bcf33ef9-e087-4de4-8b6e-0f2244f53a86",
+    "checkedAt": "2026-10-05T11:35:41.777Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
     "name": "Cuevas FM 91.7",
     "url": "https://radio.host.com.py:7020/;",
     "country": "PY",
@@ -17,7 +39,7 @@
     "favicon": "https://paraguayonline.net/wp-content/uploads/2019/03/cuevas.png",
     "homepage": "https://paraguayonline.net/cuevasfm/",
     "stationUuid": "88f74a2d-b52e-4fcf-9469-5fc5e2e6a2e5",
-    "checkedAt": "2026-10-04T23:05:44.033Z",
+    "checkedAt": "2026-10-05T11:35:42.555Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -40,31 +62,9 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20250110_213941532.jpg?alt=media&token=e07edbc2-8494-41bf-82ab-6f114efdf664",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "db29a363-60b4-4273-99b6-9fee973a7c1e",
-    "checkedAt": "2026-10-04T23:05:45.851Z",
+    "checkedAt": "2026-10-05T11:35:44.118Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Capital 101.7 FM",
-    "url": "http://ic2489.c1788.fastserv.com/stream",
-    "country": "PY",
-    "type": "pop",
-    "tags": [
-      "pop",
-      "soca",
-      "talk",
-      "varios"
-    ],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": "coronel oviedo",
-    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20241105_204252387.jpg?alt=media&token=da81a455-548b-4df2-8a82-0ea75530bd00",
-    "homepage": "https://m.desdeparaguay.com/capital",
-    "stationUuid": "5c7542d9-99d4-43a4-a17a-bcce485bcc50",
-    "checkedAt": "2026-10-04T23:05:46.115Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   }
 ]

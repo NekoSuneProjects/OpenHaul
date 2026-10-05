@@ -19,7 +19,7 @@
     "favicon": "https://radio.sandrokob.com/icon-512.png",
     "homepage": "https://radio.sandrokob.com/",
     "stationUuid": "f30e4028-6047-4cb3-ad6a-9073a89ef74f",
-    "checkedAt": "2026-10-04T22:47:36.226Z",
+    "checkedAt": "2026-10-05T11:16:38.895Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -44,7 +44,7 @@
     "favicon": "https://radio.sandrokob.com/icon-512.png",
     "homepage": "https://radio.sandrokob.com/",
     "stationUuid": "c4b67d8b-217b-450c-b28c-364510e47a11",
-    "checkedAt": "2026-10-04T22:47:36.353Z",
+    "checkedAt": "2026-10-05T11:16:39.024Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -63,7 +63,7 @@
     "favicon": null,
     "homepage": "http://mashiah.info/",
     "stationUuid": "691c81f5-d23b-4566-ba3a-1ea4fff9d8b6",
-    "checkedAt": "2026-10-04T22:47:36.563Z",
+    "checkedAt": "2026-10-05T11:16:39.123Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -82,10 +82,29 @@
     "favicon": null,
     "homepage": "http://mashiah.info/",
     "stationUuid": "39962d8b-e680-4c97-8193-02ec8e6b5885",
-    "checkedAt": "2026-10-04T22:47:36.568Z",
+    "checkedAt": "2026-10-05T11:16:39.138Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": ".assalam",
+    "url": "https://backup.qurango.net/radio/ahmad_khader_altarabulsi",
+    "country": "IL",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "bf1cebbf-a58d-41a4-95f2-8abd5e50f6bf",
+    "checkedAt": "2026-10-05T11:16:39.238Z",
+    "status": 500,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 500"
   },
   {
     "name": "Лучшее Радио",
@@ -101,7 +120,7 @@
     "favicon": "https://radio1064.co.il/images/favicon/apple-touch-icon.png",
     "homepage": "https://radio1064.co.il/",
     "stationUuid": "4e4b57a2-afb0-42e4-bcb6-797bcddc0d4c",
-    "checkedAt": "2026-10-04T22:47:36.938Z",
+    "checkedAt": "2026-10-05T11:16:39.266Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -120,7 +139,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/",
     "stationUuid": "23526b9e-a103-11e9-a787-52543be04c81",
-    "checkedAt": "2026-10-04T22:47:37.170Z",
+    "checkedAt": "2026-10-05T11:16:39.367Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -141,7 +160,7 @@
     "favicon": null,
     "homepage": "https://life-radio.surge.sh/",
     "stationUuid": "0bbde5f0-6437-424d-8ed5-15ab684b16e8",
-    "checkedAt": "2026-10-04T22:47:37.283Z",
+    "checkedAt": "2026-10-05T11:16:39.416Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -162,7 +181,7 @@
     "favicon": "https://i.imgur.com/TTJ8sWa.png",
     "homepage": "https://www.kan.org.il/content/kan/kan-reka/",
     "stationUuid": "060a4ce8-7d41-42bc-9cad-2a24a5de4167",
-    "checkedAt": "2026-10-04T22:47:37.538Z",
+    "checkedAt": "2026-10-05T11:16:39.584Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -185,7 +204,7 @@
     "favicon": null,
     "homepage": "http://www.995.co.il/",
     "stationUuid": "7b88796a-f6fc-4faf-b68b-e7ed0e49ead9",
-    "checkedAt": "2026-10-04T22:47:37.569Z",
+    "checkedAt": "2026-10-05T11:16:39.630Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -204,7 +223,7 @@
     "favicon": null,
     "homepage": "http://www.makan.org.il/",
     "stationUuid": "0c0da3bd-d26a-42af-9cf0-d393ffab9fe0",
-    "checkedAt": "2026-10-04T22:47:38.220Z",
+    "checkedAt": "2026-10-05T11:16:40.089Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -225,7 +244,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/live/radio.aspx?stationid=6",
     "stationUuid": "b5726cc9-2c77-4582-a775-f8f2e3163b23",
-    "checkedAt": "2026-10-04T22:47:38.344Z",
+    "checkedAt": "2026-10-05T11:16:40.219Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -247,7 +266,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/live/radio.aspx?stationid=6",
     "stationUuid": "bb29196b-9ebb-412c-bed1-8cf5d836d57c",
-    "checkedAt": "2026-10-04T22:47:38.422Z",
+    "checkedAt": "2026-10-05T11:16:40.233Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -267,7 +286,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/live/radio.aspx?stationid=6",
     "stationUuid": "9f382ade-7823-11ea-b1cf-52543be04c81",
-    "checkedAt": "2026-10-04T22:47:38.917Z",
+    "checkedAt": "2026-10-05T11:16:41.024Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -284,7 +303,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "af9fd426-2cc6-4450-afff-346531acb58f",
-    "checkedAt": "2026-10-04T22:47:39.104Z",
+    "checkedAt": "2026-10-05T11:16:41.595Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -301,7 +320,7 @@
     "favicon": null,
     "homepage": "https://www.euphonic.fm/",
     "stationUuid": "9af732ff-d6e9-492a-a809-9d2693bf53ea",
-    "checkedAt": "2026-10-04T22:47:39.197Z",
+    "checkedAt": "2026-10-05T11:16:41.726Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -318,7 +337,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/live/radio.aspx?stationid=4",
     "stationUuid": "6a8d9a2f-7c35-432a-a842-9993d2c70a41",
-    "checkedAt": "2026-10-04T22:47:39.861Z",
+    "checkedAt": "2026-10-05T11:16:42.379Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -335,7 +354,7 @@
     "favicon": "https://www.kan.org.il/favicon/apple-touch-icon.png",
     "homepage": "https://www.kan.org.il/live/radio.aspx?stationid=4",
     "stationUuid": "d60e8a70-af9a-11e9-acb2-52543be04c81",
-    "checkedAt": "2026-10-04T22:47:39.866Z",
+    "checkedAt": "2026-10-05T11:16:42.488Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -352,7 +371,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/live/radio.aspx?stationid=9",
     "stationUuid": "4f8a67e9-14ed-11e9-a80b-52543be04c81",
-    "checkedAt": "2026-10-04T22:47:39.869Z",
+    "checkedAt": "2026-10-05T11:16:42.492Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -369,7 +388,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/live/radio.aspx?stationid=9",
     "stationUuid": "0fcffb77-b99e-11e9-acb2-52543be04c81",
-    "checkedAt": "2026-10-04T22:47:39.873Z",
+    "checkedAt": "2026-10-05T11:16:42.526Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -386,7 +405,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/5/59/KAN_11.png",
     "homepage": "https://www.kan.org.il/",
     "stationUuid": "2d2dd232-8a91-4fba-8b99-4f994f2598cc",
-    "checkedAt": "2026-10-04T22:47:39.882Z",
+    "checkedAt": "2026-10-05T11:16:42.559Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -403,7 +422,7 @@
     "favicon": "https://mizrahit.fm/wp-content/uploads/2014/03/favicon.png",
     "homepage": "https://mizrahit.fm/",
     "stationUuid": "10026f8b-3e16-442e-94b3-33a8bb30f5b3",
-    "checkedAt": "2026-10-04T22:47:40.528Z",
+    "checkedAt": "2026-10-05T11:16:43.264Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -420,7 +439,7 @@
     "favicon": "https://breslevcarmiel.com/wp-content/uploads/2021/02/cropped-cropped-brc-top-1-32x32.png",
     "homepage": "https://breslevcarmiel.com/",
     "stationUuid": "eb0f1395-e636-4cb2-9267-198df77464a7",
-    "checkedAt": "2026-10-04T22:47:40.624Z",
+    "checkedAt": "2026-10-05T11:16:43.453Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -437,7 +456,7 @@
     "favicon": "https://radio1064.co.il/images/favicon/apple-touch-icon.png",
     "homepage": "https://radio1064.co.il/",
     "stationUuid": "e2d0c227-b2d9-4ec3-8a01-bfd6e731d0ed",
-    "checkedAt": "2026-10-04T22:47:40.854Z",
+    "checkedAt": "2026-10-05T11:16:43.811Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -454,7 +473,7 @@
     "favicon": null,
     "homepage": "http://kanliveicy.media.kan.org.il/icy/kangimmel_mp3",
     "stationUuid": "53c130a4-b6ff-4543-aa22-fc85aeb66418",
-    "checkedAt": "2026-10-04T22:47:40.936Z",
+    "checkedAt": "2026-10-05T11:16:43.829Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -473,7 +492,7 @@
     "favicon": "https://static.rlive.co.il/storage/uploads/stations/Dr2O6e5OlDz4uDa6ZjR8iZs3ss4AMnivNBOz5Suw.png",
     "homepage": "https://mizrahit.fm/",
     "stationUuid": "18a9fbb5-3662-47e0-b2a9-fae376dd0ce6",
-    "checkedAt": "2026-10-04T22:47:41.108Z",
+    "checkedAt": "2026-10-05T11:16:44.227Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -493,7 +512,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/",
     "stationUuid": "4f41fdf2-ee0e-4995-8e61-155255fd414c",
-    "checkedAt": "2026-10-04T22:47:41.146Z",
+    "checkedAt": "2026-10-05T11:16:44.248Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -512,7 +531,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "cb35118d-61f1-433c-b72f-b35b0fc7ed1f",
-    "checkedAt": "2026-10-04T22:47:41.162Z",
+    "checkedAt": "2026-10-05T11:16:44.266Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -531,7 +550,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/live/radio.aspx?stationid=4",
     "stationUuid": "77521022-781e-11ea-b1cf-52543be04c81",
-    "checkedAt": "2026-10-04T22:47:41.267Z",
+    "checkedAt": "2026-10-05T11:16:44.490Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -550,7 +569,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/live/radio.aspx?stationid=5",
     "stationUuid": "aeb93923-7821-11ea-b1cf-52543be04c81",
-    "checkedAt": "2026-10-04T22:47:41.275Z",
+    "checkedAt": "2026-10-05T11:16:44.506Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -569,7 +588,7 @@
     "favicon": "null",
     "homepage": "https://fmstream.org/index.php?s=Toker",
     "stationUuid": "3a752591-4cc0-4949-bd5d-2fb2b1935cd3",
-    "checkedAt": "2026-10-04T22:47:41.314Z",
+    "checkedAt": "2026-10-05T11:16:44.570Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -588,7 +607,7 @@
     "favicon": "null",
     "homepage": "https://live.toker.fm:6060/",
     "stationUuid": "0285cac9-9f41-4a51-82ad-0ef6695f533a",
-    "checkedAt": "2026-10-04T22:47:41.385Z",
+    "checkedAt": "2026-10-05T11:16:44.630Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -605,7 +624,7 @@
     "favicon": null,
     "homepage": "https://www.kan.org.il/",
     "stationUuid": "29b28a1a-e60d-4b1a-b57d-e7d46b95f36c",
-    "checkedAt": "2026-10-04T22:47:41.520Z",
+    "checkedAt": "2026-10-05T11:16:44.855Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

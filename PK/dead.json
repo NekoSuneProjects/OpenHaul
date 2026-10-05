@@ -13,7 +13,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c51340b2-9fbc-4cea-8738-258b2a33d16d",
-    "checkedAt": "2026-10-04T23:02:09.915Z",
+    "checkedAt": "2026-10-05T11:32:23.701Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -34,7 +34,7 @@
     "favicon": "http://fm100pakistan.com/favicon.ico",
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "4413f4de-4a87-4835-8525-a80a23b3d39f",
-    "checkedAt": "2026-10-04T23:02:10.116Z",
+    "checkedAt": "2026-10-05T11:32:23.879Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -57,7 +57,7 @@
     "favicon": null,
     "homepage": "https://fm91.com.pk/",
     "stationUuid": "47efdce4-809f-4cd3-8e3c-85a2eabce1ef",
-    "checkedAt": "2026-10-04T23:02:10.310Z",
+    "checkedAt": "2026-10-05T11:32:24.064Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -74,7 +74,7 @@
     "favicon": null,
     "homepage": "http://aladinradio.com/",
     "stationUuid": "4a29dbc1-77e1-449a-b6b5-62e19f66a8fc",
-    "checkedAt": "2026-10-04T23:02:10.514Z",
+    "checkedAt": "2026-10-05T11:32:24.209Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -91,7 +91,7 @@
     "favicon": "http://fm100pakistan.com/favicon.ico",
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "9312c071-8882-4f85-8539-0dcb1b59f1a8",
-    "checkedAt": "2026-10-04T23:02:10.622Z",
+    "checkedAt": "2026-10-05T11:32:24.233Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -108,7 +108,7 @@
     "favicon": "http://fm100pakistan.com/favicon.ico",
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "be82fba4-6953-4f0c-95e7-7aaa7f56b060",
-    "checkedAt": "2026-10-04T23:02:10.651Z",
+    "checkedAt": "2026-10-05T11:32:24.245Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -125,7 +125,7 @@
     "favicon": "http://fm100pakistan.com/favicon.ico",
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "7c4a79da-e5ad-44ea-a56a-e51634bfbef7",
-    "checkedAt": "2026-10-04T23:02:10.671Z",
+    "checkedAt": "2026-10-05T11:32:24.335Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -142,7 +142,7 @@
     "favicon": null,
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "b5bb3e73-fa20-4bbc-a8b5-2e1415d469dc",
-    "checkedAt": "2026-10-04T23:02:10.699Z",
+    "checkedAt": "2026-10-05T11:32:24.427Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -159,47 +159,9 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/ilm-radio-renala/",
     "stationUuid": "8281a8d0-4d03-4e1f-96ea-dbae81e5bf28",
-    "checkedAt": "2026-10-04T23:02:11.755Z",
+    "checkedAt": "2026-10-05T11:32:25.409Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Radio Pakistan D.I. Khan MW 711",
-    "url": "https://whmsonic.radio.gov.pk:7000/Dikhan",
-    "country": "PK",
-    "type": "public radio",
-    "tags": [
-      "public radio"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://radio.gov.pk/",
-    "stationUuid": "a8067725-3d72-406f-828b-9ba72f638479",
-    "checkedAt": "2026-10-04T23:02:12.914Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Radio Pakistan Karachi MW 639",
-    "url": "https://whmsonic.radio.gov.pk:7000/MW639khi",
-    "country": "PK",
-    "type": "public radio",
-    "tags": [
-      "public radio"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://radio.gov.pk/",
-    "stationUuid": "5a71813c-32f6-472e-8db1-51ccbe37cc19",
-    "checkedAt": "2026-10-04T23:02:13.013Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   }
 ]

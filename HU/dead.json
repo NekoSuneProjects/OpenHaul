@@ -19,7 +19,7 @@
     "favicon": "https://mmo.aiircdn.com/1377/6669663b59417.png",
     "homepage": "https://dejavuradio.hu/",
     "stationUuid": "5e4d837f-bfc5-4494-bb26-4ee78c6a88b2",
-    "checkedAt": "2026-10-04T22:46:27.448Z",
+    "checkedAt": "2026-10-05T11:15:27.697Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -38,7 +38,7 @@
     "favicon": null,
     "homepage": "http://ilovepecsradio.hu/",
     "stationUuid": "9642caa7-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-04T22:46:29.136Z",
+    "checkedAt": "2026-10-05T11:15:29.221Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -59,7 +59,7 @@
     "favicon": null,
     "homepage": "https://momoradio.hu/",
     "stationUuid": "e46cc843-dd5c-4b16-8fc7-ff87113c01a3",
-    "checkedAt": "2026-10-04T22:46:29.759Z",
+    "checkedAt": "2026-10-05T11:15:29.940Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -80,7 +80,7 @@
     "favicon": null,
     "homepage": "https://momoradio.hu/meset-hallgatok/",
     "stationUuid": "700aa831-d975-4de1-a7ec-99b79afacf6e",
-    "checkedAt": "2026-10-04T22:46:29.814Z",
+    "checkedAt": "2026-10-05T11:15:29.945Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -99,7 +99,7 @@
     "favicon": "https://oxygenmusic.hu/logo192.png",
     "homepage": "https://oxygenmusic.hu/",
     "stationUuid": "8e57a8e7-fc1b-4883-93f5-7ffda45897bf",
-    "checkedAt": "2026-10-04T22:46:30.230Z",
+    "checkedAt": "2026-10-05T11:15:30.578Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -120,7 +120,7 @@
     "favicon": null,
     "homepage": "http://www.medievalradio.org/",
     "stationUuid": "96354b4c-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-04T22:46:30.495Z",
+    "checkedAt": "2026-10-05T11:15:30.740Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -139,7 +139,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "dd72afd8-5613-427f-93bb-44ccf26f55d4",
-    "checkedAt": "2026-10-04T22:46:30.539Z",
+    "checkedAt": "2026-10-05T11:15:30.818Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -163,7 +163,7 @@
     "favicon": "https://www.gyorplusz.hu/wp-content/themes/gyorplusz/static/images/favicons/apple-icon-144x144.png",
     "homepage": "https://www.gyorplusz.hu/egyeb/gyor-radio/",
     "stationUuid": "f5a526ac-06ee-48f6-bf57-b9c951c8913d",
-    "checkedAt": "2026-10-04T22:46:30.543Z",
+    "checkedAt": "2026-10-05T11:15:30.825Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -178,79 +178,34 @@
     ],
     "codec": "MP3",
     "bitrate": 128,
-    "language": null,
-    "favicon": "https://dancewave.online/dw_logo.png",
-    "homepage": "https://dancewave.online/",
-    "stationUuid": "2ffe5219-ba4d-4fa1-bfd8-6cf926c65f8f",
-    "checkedAt": "2026-10-04T22:46:30.953Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Dance Wave!",
-    "url": "https://dancewave.online/dance.opus",
-    "country": "HU",
-    "type": "club dance electronic house trance",
-    "tags": [
-      "club dance electronic house trance"
-    ],
-    "codec": "OGG",
-    "bitrate": 96,
     "language": "english",
     "favicon": "https://dancewave.online/dw_logo.png",
     "homepage": "https://dancewave.online/",
-    "stationUuid": "b943ed28-3edd-4638-8754-cdd9953af2e3",
-    "checkedAt": "2026-10-04T22:46:30.956Z",
+    "stationUuid": "962cc6df-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-05T11:15:31.133Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Bridge Fm Hungary",
-    "url": "http://eu4.fastcast4u.com:1546/mp3",
+    "name": "Mercy Rádió - Kabaré",
+    "url": "http://stream.mercyradio.eu/kabare.mp3",
     "country": "HU",
     "type": "comedy",
     "tags": [
       "comedy",
-      "dance",
-      "disco",
-      "instumentalis",
-      "pop"
+      "talk"
     ],
     "codec": "MP3",
-    "bitrate": 96,
-    "language": "angol,hungarian",
-    "favicon": null,
-    "homepage": "https://bridge-fmhungary-hu.webnode.hu/",
-    "stationUuid": "e82e3639-bb08-4a6d-b547-9086c54414b8",
-    "checkedAt": "2026-10-04T22:46:31.258Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Bridge Fm Hungary",
-    "url": "https://radio.freestream.hu:8340/stream",
-    "country": "HU",
-    "type": "comedy",
-    "tags": [
-      "comedy",
-      "dance",
-      "disco",
-      "instumentalis",
-      "pop"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "angol,hungarian",
-    "favicon": null,
-    "homepage": "https://bridge-fmhungary-hu.webnode.hu/",
-    "stationUuid": "9d4ccdcc-e796-4242-8d1d-04a087479b81",
-    "checkedAt": "2026-10-04T22:46:31.337Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "bitrate": 160,
+    "language": "hungarian",
+    "favicon": "http://mercyradio.eu/favicon.ico",
+    "homepage": "http://mercyradio.eu/",
+    "stationUuid": "963787ad-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-05T11:15:31.844Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Periszkóp Rádió",
@@ -267,7 +222,7 @@
     "favicon": null,
     "homepage": "https://periszkopradio.hu/",
     "stationUuid": "83c6b15d-850b-46a1-9d6f-b32fe1d97fa6",
-    "checkedAt": "2026-10-04T22:46:31.463Z",
+    "checkedAt": "2026-10-05T11:15:31.965Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -288,7 +243,7 @@
     "favicon": "https://risefm.hu/wp-content/themes/risefm/images/favicon.png",
     "homepage": "https://risefm.hu/",
     "stationUuid": "d179dbad-dc36-4306-b1bc-4fccea9becca",
-    "checkedAt": "2026-10-04T22:46:31.831Z",
+    "checkedAt": "2026-10-05T11:15:32.565Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -309,7 +264,7 @@
     "favicon": "https://risefm.hu/wp-content/themes/risefm/images/favicon.png",
     "homepage": "https://risefm.hu/",
     "stationUuid": "28b16157-a0a0-4f6b-b9eb-f0143212783b",
-    "checkedAt": "2026-10-04T22:46:31.840Z",
+    "checkedAt": "2026-10-05T11:15:32.571Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -329,7 +284,7 @@
     "favicon": "https://risefm.hu/wp-content/themes/risefm/images/favicon.png",
     "homepage": "https://risefm.hu/",
     "stationUuid": "52664d85-94f2-4a12-aa8f-c7fae6ccf2da",
-    "checkedAt": "2026-10-04T22:46:31.855Z",
+    "checkedAt": "2026-10-05T11:15:32.629Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -349,7 +304,7 @@
     "favicon": null,
     "homepage": "https://takk-r.com/",
     "stationUuid": "4373c9bc-645c-4ad3-937b-13d6edb2d945",
-    "checkedAt": "2026-10-04T22:46:32.374Z",
+    "checkedAt": "2026-10-05T11:15:33.784Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -370,7 +325,7 @@
     "favicon": null,
     "homepage": "http://www.magicdiscoradio.com/",
     "stationUuid": "e2a91620-815e-11e9-aa30-52543be04c81",
-    "checkedAt": "2026-10-04T22:46:32.544Z",
+    "checkedAt": "2026-10-05T11:15:33.900Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -391,10 +346,30 @@
     "favicon": null,
     "homepage": "http://www.magicdiscoradio.com/",
     "stationUuid": "bdfc73e0-1091-45a1-a5ee-a8fe309e8021",
-    "checkedAt": "2026-10-04T22:46:32.936Z",
+    "checkedAt": "2026-10-05T11:15:34.439Z",
     "status": 500,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 500"
+  },
+  {
+    "name": "Mercy Rádió",
+    "url": "http://stream.mercyradio.eu/mercyradio.mp3",
+    "country": "HU",
+    "type": "hits",
+    "tags": [
+      "hits",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 160,
+    "language": "hungarian",
+    "favicon": "http://mercyradio.eu/wp-content/uploads/2014/02/fredy-mediapartner.png",
+    "homepage": "http://mercyradio.eu/",
+    "stationUuid": "96386322-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-05T11:15:34.782Z",
+    "status": 504,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 504"
   },
   {
     "name": "Radio Sense",
@@ -412,7 +387,7 @@
     "favicon": null,
     "homepage": "https://radiosense.hu/",
     "stationUuid": "7dcb71f0-5a5e-4d5f-95e7-90f2a1b6f670",
-    "checkedAt": "2026-10-04T22:46:33.240Z",
+    "checkedAt": "2026-10-05T11:15:34.878Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -431,7 +406,7 @@
     "favicon": null,
     "homepage": "https://www.jazzradio.hu/",
     "stationUuid": "5ed50943-04d1-4883-995e-e0a93379bd00",
-    "checkedAt": "2026-10-04T22:46:33.635Z",
+    "checkedAt": "2026-10-05T11:15:35.298Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -448,7 +423,7 @@
     "favicon": null,
     "homepage": "https://www.balatonfm.hu/",
     "stationUuid": "1335a4a5-1a11-4451-988d-44c095d79395",
-    "checkedAt": "2026-10-04T22:46:34.830Z",
+    "checkedAt": "2026-10-05T11:15:36.529Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -465,7 +440,7 @@
     "favicon": "https://yt3.googleusercontent.com/ytc/AIdro_m2M8stb2L_OLmi4fhIKalcjwO2pXXfHSuizY8Fukjc4Q=s900-c-k-c0x00ffffff-no-rj",
     "homepage": "https://euphonicmoments.com/radio/",
     "stationUuid": "7f8c2b16-148d-4bd9-bc31-daab5e6c43ba",
-    "checkedAt": "2026-10-04T22:46:36.013Z",
+    "checkedAt": "2026-10-05T11:15:37.841Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -482,7 +457,7 @@
     "favicon": null,
     "homepage": "http://www.forrasradio.hu/",
     "stationUuid": "96281df5-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-04T22:46:36.096Z",
+    "checkedAt": "2026-10-05T11:15:37.976Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -499,7 +474,7 @@
     "favicon": "http://pannoniaradio.hu/favicon.ico",
     "homepage": "http://pannoniaradio.hu/",
     "stationUuid": "2ce301af-e48a-11e9-a8ba-52543be04c81",
-    "checkedAt": "2026-10-04T22:46:37.274Z",
+    "checkedAt": "2026-10-05T11:15:39.418Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -516,7 +491,7 @@
     "favicon": "http://periszkopradio.hu/kepek/perilogo2014-masik.jpg",
     "homepage": "http://periszkopradio.hu/",
     "stationUuid": "671ec970-d2ec-44ed-a908-88b4b073ac4e",
-    "checkedAt": "2026-10-04T22:46:37.318Z",
+    "checkedAt": "2026-10-05T11:15:39.426Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -533,7 +508,7 @@
     "favicon": "https://radiocomedy.net/wp-content/uploads/2024/10/radiocomedy_logo_feher-1-768x348.png",
     "homepage": "http://radiocomedy.net/",
     "stationUuid": "32fe98bc-65e5-49bb-8f34-7d69a1a0acac",
-    "checkedAt": "2026-10-04T22:46:37.918Z",
+    "checkedAt": "2026-10-05T11:15:40.300Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -550,7 +525,7 @@
     "favicon": null,
     "homepage": "https://www.triofm.hu/",
     "stationUuid": "57ec4019-23fd-493a-98c7-2ffecc537e85",
-    "checkedAt": "2026-10-04T22:46:39.086Z",
+    "checkedAt": "2026-10-05T11:15:41.785Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -569,7 +544,7 @@
     "favicon": null,
     "homepage": "http://www.maxiradio.hu/",
     "stationUuid": "c26ea966-7cab-4c32-bb08-0aa6972a8a92",
-    "checkedAt": "2026-10-04T22:46:40.018Z",
+    "checkedAt": "2026-10-05T11:15:43.017Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -589,7 +564,7 @@
     "favicon": "https://risefm.hu/wp-content/themes/risefm/images/favicon.png",
     "homepage": "https://risefm.hu/",
     "stationUuid": "03852a9d-ea45-44af-8471-1014f222e4fd",
-    "checkedAt": "2026-10-04T22:46:40.602Z",
+    "checkedAt": "2026-10-05T11:15:43.790Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -608,26 +583,7 @@
     "favicon": null,
     "homepage": "https://videos.prd.dlivecdn.com/dlive/live.m3u8",
     "stationUuid": "6b97af80-6dd8-4d88-a824-62fca94d8fdc",
-    "checkedAt": "2026-10-04T22:46:40.986Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "OZONE FM",
-    "url": "https://oxygenmusic.hu:8000/ozonefm_128",
-    "country": "HU",
-    "type": "top hits",
-    "tags": [
-      "top hits"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://mlotgijtlucd.i.optimole.com/w:500/h:500/q:75/rt:fill/g:ce/https://oxys.group/app/ozone_fm_logo%20(1)_3ocrlth0_3dog9run.png",
-    "homepage": "https://oxygenmusic.hu/csatorna/ozone-fm",
-    "stationUuid": "a16d52d9-1467-43e0-8e2b-c4911bcf0895",
-    "checkedAt": "2026-10-04T22:46:41.156Z",
+    "checkedAt": "2026-10-05T11:15:44.192Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -648,7 +604,7 @@
     "favicon": null,
     "homepage": "https://www.fluxwave.fm/",
     "stationUuid": "ad1116ab-d0d8-4879-874c-8c99213cb31f",
-    "checkedAt": "2026-10-04T22:46:41.181Z",
+    "checkedAt": "2026-10-05T11:15:44.459Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
