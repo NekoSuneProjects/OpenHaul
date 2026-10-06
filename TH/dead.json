@@ -11,7 +11,7 @@
     "favicon": "https://bkk.fm/assets/logo-DsQ4EpQ2.png",
     "homepage": "https://bkk.fm/",
     "stationUuid": "4994cbbc-78e1-4009-84d3-563e4d3f6854",
-    "checkedAt": "2026-10-05T11:40:28.944Z",
+    "checkedAt": "2026-10-06T11:35:27.251Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
@@ -28,7 +28,7 @@
     "favicon": null,
     "homepage": "https://news1005.mcot.net/news1005/th",
     "stationUuid": "a536c388-c56b-489f-a37e-12fa75de0b40",
-    "checkedAt": "2026-10-05T11:40:28.947Z",
+    "checkedAt": "2026-10-06T11:35:27.253Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -45,7 +45,7 @@
     "favicon": null,
     "homepage": "https://thaitv5hd.com/live/",
     "stationUuid": "5751fa67-3bf3-4f93-aa61-57f689b6d797",
-    "checkedAt": "2026-10-05T11:40:29.067Z",
+    "checkedAt": "2026-10-06T11:35:27.447Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -62,7 +62,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/272/talay-9025.c2ab9312.png",
     "homepage": "https://www.facebook.com/Talay90.25/",
     "stationUuid": "a75cb53a-cb43-486c-9e58-443fdfaaa081",
-    "checkedAt": "2026-10-05T11:40:29.663Z",
+    "checkedAt": "2026-10-06T11:35:27.992Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -82,10 +82,31 @@
     "favicon": "https://s3.lvsr.proxy.damp11113.xyz/cdn/azdprfavicon.png",
     "homepage": "https://damp11113.xyz/",
     "stationUuid": "7b7b0ad3-e337-4b5f-9471-5bf22f7118d5",
-    "checkedAt": "2026-10-05T11:40:30.408Z",
+    "checkedAt": "2026-10-06T11:35:28.717Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "KRB Radio 2",
+    "url": "https://nontawat3664.i234.me:8443/stream",
+    "country": "TH",
+    "type": "blind radio",
+    "tags": [
+      "blind radio",
+      "country music",
+      "news"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "thai",
+    "favicon": "https://nmab.or.th/wp-content/uploads/2025/03/%E0%B9%82%E0%B8%A5%E0%B9%82%E0%B8%81%E0%B9%89-KRB-Radio-768x768.png",
+    "homepage": "https://www.nmab.or.th/radio",
+    "stationUuid": "2a2fdb06-a846-44b9-9c05-1a92aef502a1",
+    "checkedAt": "2026-10-06T11:35:28.811Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "fm99",
@@ -101,7 +122,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "3cb26271-6056-4685-8fc8-01bdc4ac94b1",
-    "checkedAt": "2026-10-05T11:40:30.680Z",
+    "checkedAt": "2026-10-06T11:35:29.021Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -121,7 +142,7 @@
     "favicon": "https://www.requestradio.in.th/favicon.ico",
     "homepage": "https://www.requestradio.in.th/forlife",
     "stationUuid": "9a29a5f2-a60d-4eb0-8345-6454a10a53fb",
-    "checkedAt": "2026-10-05T11:40:30.730Z",
+    "checkedAt": "2026-10-06T11:35:29.108Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -141,32 +162,10 @@
     "favicon": "https://www.requestradio.in.th/danceremix/wp-content/uploads/2016/07/cropped-icon-150x150.png",
     "homepage": "https://www.requestradio.in.th/danceremix",
     "stationUuid": "c3b0c8ba-eb2a-48a9-a463-dcc2182042bd",
-    "checkedAt": "2026-10-05T11:40:30.991Z",
+    "checkedAt": "2026-10-06T11:35:29.513Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Fabulous 103",
-    "url": "https://fabulous.thailandstreaming.net/fabulous.mp3",
-    "country": "TH",
-    "type": "electronic",
-    "tags": [
-      "electronic",
-      "folk",
-      "local news",
-      "local weather"
-    ],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "english",
-    "favicon": null,
-    "homepage": "https://alwayspattaya.com/",
-    "stationUuid": "d660e4c5-f676-422d-b535-b12691cc56b6",
-    "checkedAt": "2026-10-05T11:40:31.065Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Top News (Mobile Stream)",
@@ -187,7 +186,7 @@
     "favicon": "https://images.topnews.co.th/2022/07/logo_top-news-online-425x107.png",
     "homepage": "https://www.topnews.co.th/",
     "stationUuid": "2cf4de84-69ef-41da-9d90-57cd8b594f86",
-    "checkedAt": "2026-10-05T11:40:31.531Z",
+    "checkedAt": "2026-10-06T11:35:30.052Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -208,7 +207,7 @@
     "favicon": "https://scontent.fbkk28-1.fna.fbcdn.net/v/t39.30808-6/433227504_933644712102001_2903051028676042960_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=WziA7fVdNa0Q7kNvgGvd01s&_nc_oc=Adi_m9LUyDF0iyO-jY2Z6t-gy3rgxQX9Dey9ZgxsNydxkJ0tVtteIEuxU2eLYjRugGA&_nc_zt=23&_nc_ht=scontent.fbkk28-1.fna&_nc_gid=Albrg9YVo6VNfpUwkbdbAwJ&oh=00_AYBvg9shGSTqUOi6Xv3kaUYy0TcacAyKEYGjliUrJ-Ow2Q&oe=67894AD8",
     "homepage": "https://radio.mcot.net/",
     "stationUuid": "2f52653f-acb4-4f5d-bb9e-aa2f5f5b3154",
-    "checkedAt": "2026-10-05T11:40:31.776Z",
+    "checkedAt": "2026-10-06T11:35:30.289Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -225,7 +224,7 @@
     "favicon": null,
     "homepage": "https://radio.mcot.net/",
     "stationUuid": "3a857333-2d43-4207-a137-ce76e2b19ee8",
-    "checkedAt": "2026-10-05T11:40:34.839Z",
+    "checkedAt": "2026-10-06T11:35:33.711Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -242,7 +241,7 @@
     "favicon": null,
     "homepage": "https://.requestradio.in.th/",
     "stationUuid": "964e4d47-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-05T11:40:34.977Z",
+    "checkedAt": "2026-10-06T11:35:34.012Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -259,7 +258,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "489b1e34-a6ac-11e8-abb8-52543be04c81",
-    "checkedAt": "2026-10-05T11:40:35.158Z",
+    "checkedAt": "2026-10-06T11:35:34.035Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -276,7 +275,7 @@
     "favicon": "https://www.requestradio.in.th/looktung/wp-content/uploads/2017/10/cropped-icon-150x150.png",
     "homepage": "https://www.requestradio.in.th/looktung/",
     "stationUuid": "b287c7f5-92eb-11e8-a767-52543be04c81",
-    "checkedAt": "2026-10-05T11:40:35.170Z",
+    "checkedAt": "2026-10-06T11:35:34.109Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -293,7 +292,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "7e1b93a5-0ac5-48ec-8bc0-5db0b5f1dc4d",
-    "checkedAt": "2026-10-05T11:40:35.353Z",
+    "checkedAt": "2026-10-06T11:35:34.299Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -310,7 +309,7 @@
     "favicon": null,
     "homepage": "https://thainetradio.com:8014/",
     "stationUuid": "43680e4a-c5b9-46ff-b79e-2dfa24118b76",
-    "checkedAt": "2026-10-05T11:40:35.366Z",
+    "checkedAt": "2026-10-06T11:35:34.459Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -329,7 +328,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "371ea6ec-b966-413b-82f7-2634dd58ffc6",
-    "checkedAt": "2026-10-05T11:40:36.581Z",
+    "checkedAt": "2026-10-06T11:35:36.212Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -348,7 +347,7 @@
     "favicon": null,
     "homepage": "http://rstream.mcot.net:8000/status-json.xsl",
     "stationUuid": "62cb7e82-1a75-4015-bce9-30c3ae95fd54",
-    "checkedAt": "2026-10-05T11:40:37.114Z",
+    "checkedAt": "2026-10-06T11:35:36.819Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -367,7 +366,7 @@
     "favicon": null,
     "homepage": "http://azuracast.saber.proxy.damp11113.xyz/public/systest",
     "stationUuid": "e11d17da-5c76-4d77-bdd3-2250a200e61b",
-    "checkedAt": "2026-10-05T11:40:37.205Z",
+    "checkedAt": "2026-10-06T11:35:36.820Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -384,7 +383,7 @@
     "favicon": null,
     "homepage": "https://www.amarintv.com/",
     "stationUuid": "fb418ce4-1cc7-4e07-9386-676c4c68d46e",
-    "checkedAt": "2026-10-05T11:40:37.521Z",
+    "checkedAt": "2026-10-06T11:35:37.100Z",
     "status": 410,
     "contentType": "application/vnd.apple.mpegurl",
     "lastFailure": "HTTP 410"
@@ -401,7 +400,7 @@
     "favicon": null,
     "homepage": "https://true4u.com/tag/%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B2%E0%B8%A8%E0%B8%82%E0%B9%88%E0%B8%B2%E0%B8%A7/",
     "stationUuid": "7a281379-41fe-48c8-babf-6eb36285b086",
-    "checkedAt": "2026-10-05T11:40:38.594Z",
+    "checkedAt": "2026-10-06T11:35:38.294Z",
     "status": 410,
     "contentType": "application/vnd.apple.mpegurl",
     "lastFailure": "HTTP 410"
@@ -418,7 +417,7 @@
     "favicon": null,
     "homepage": "https://ch3plus.com/live",
     "stationUuid": "b4526b33-8874-4f71-ae1d-20b8b2b299e6",
-    "checkedAt": "2026-10-05T11:40:38.619Z",
+    "checkedAt": "2026-10-06T11:35:38.325Z",
     "status": 410,
     "contentType": "application/vnd.apple.mpegurl",
     "lastFailure": "HTTP 410"
@@ -437,29 +436,10 @@
     "favicon": null,
     "homepage": "https://www.requestradio.in.th/inter",
     "stationUuid": "a80bad78-de8c-4eeb-9e3a-1f011a5a4857",
-    "checkedAt": "2026-10-05T11:40:38.710Z",
+    "checkedAt": "2026-10-06T11:35:38.382Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Best Radio FM. 89.0 MHz.",
-    "url": "https://80sv2.hostpleng.com/?url=http://112.121.150.133:8198/;",
-    "country": "TH",
-    "type": "คลื่นฮิตอันดับ 1 ของชาวขอนแก่น",
-    "tags": [
-      "คลื่นฮิตอันดับ 1 ของชาวขอนแก่น"
-    ],
-    "codec": "AAC+",
-    "bitrate": 52,
-    "language": "thai",
-    "favicon": null,
-    "homepage": "https://bestradio89.com/",
-    "stationUuid": "46c93c88-147e-4bf5-9e08-ff93680984bf",
-    "checkedAt": "2026-10-05T11:40:38.726Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "MCOT อุดรธานี",
@@ -475,7 +455,7 @@
     "favicon": null,
     "homepage": "https://radio.mcot.net/",
     "stationUuid": "dd07e2b1-a32c-4376-aac1-8f1991aa8b6c",
-    "checkedAt": "2026-10-05T11:40:39.958Z",
+    "checkedAt": "2026-10-06T11:35:39.423Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

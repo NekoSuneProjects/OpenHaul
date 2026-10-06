@@ -19,7 +19,7 @@
     "favicon": "https://radio11q.com/wp-content/uploads/2017/10/apple-touch-icon.png",
     "homepage": "https://radio11q.com/",
     "stationUuid": "47cea623-5cb5-11e9-a622-52543be04c81",
-    "checkedAt": "2026-10-05T11:03:18.644Z",
+    "checkedAt": "2026-10-06T10:57:42.789Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -36,7 +36,7 @@
     "favicon": "https://static.wixstatic.com/media/11a381_59e62d5da10b4d6ca063f65e65d94748~mv2.png/v1/fill/w_35,h_35,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20Pelambre%20Records%201.png",
     "homepage": "https://www.djpelambrerecords.com/",
     "stationUuid": "b43b4297-c2b0-4713-a484-a5d28ccc915b",
-    "checkedAt": "2026-10-05T11:03:19.023Z",
+    "checkedAt": "2026-10-06T10:57:43.983Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -53,7 +53,7 @@
     "favicon": "https://laradioredonda.ec/favicon.ico",
     "homepage": "https://laradioredonda.ec/",
     "stationUuid": "22fe479c-dd39-4fa5-86ff-e1d3828298f9",
-    "checkedAt": "2026-10-05T11:03:19.906Z",
+    "checkedAt": "2026-10-06T10:57:45.035Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -70,7 +70,7 @@
     "favicon": "http://www.radiocoqueta.com/img/header-bg.jpg",
     "homepage": "http://www.radiocoqueta.com/",
     "stationUuid": "f9e21bfd-af98-4e47-83e6-eb575d002da3",
-    "checkedAt": "2026-10-05T11:03:20.366Z",
+    "checkedAt": "2026-10-06T10:57:45.646Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -92,7 +92,7 @@
     "favicon": "https://www.fabu.com.ec/wp-content/uploads/2022/02/22220555/Sin-titulo-3.png",
     "homepage": "https://www.fabu.com.ec/",
     "stationUuid": "1107f64c-dcd2-4bb3-9df0-163085a935b8",
-    "checkedAt": "2026-10-05T11:03:20.766Z",
+    "checkedAt": "2026-10-06T10:57:46.344Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -118,7 +118,7 @@
     "favicon": null,
     "homepage": "http://nuevotiempo.org/ecuador/",
     "stationUuid": "92222fe8-5ca6-11e9-a622-52543be04c81",
-    "checkedAt": "2026-10-05T11:03:23.123Z",
+    "checkedAt": "2026-10-06T10:57:48.858Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -145,32 +145,10 @@
     "favicon": null,
     "homepage": "https://www.radioantena3.com/",
     "stationUuid": "9d3cfaac-5c9a-11e9-a622-52543be04c81",
-    "checkedAt": "2026-10-05T11:03:23.525Z",
+    "checkedAt": "2026-10-06T10:57:49.412Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "RADIO ANTENA SUR 89.5FM (LA SEñAL DE ORO DESDE PONCE ENRIQUEZ(",
-    "url": "https://grupomundodigital.com:8504/antenashd",
-    "country": "EC",
-    "type": "cumbia",
-    "tags": [
-      "cumbia",
-      "folclor",
-      "musica andina",
-      "popular"
-    ],
-    "codec": "AAC+",
-    "bitrate": 112,
-    "language": "spanish",
-    "favicon": "https://radioantenasur.com.ec/images/logo_antenasur2016yes1.png",
-    "homepage": "https://radioantenasur.com.ec/",
-    "stationUuid": "06dbca35-b046-49a0-ba41-7941ed291af1",
-    "checkedAt": "2026-10-05T11:03:23.606Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Alfa Radio",
@@ -187,7 +165,7 @@
     "favicon": "https://www.alfa.com.ec/wp-content/uploads/2021/11/alfa-degra.png",
     "homepage": "https://www.alfa.com.ec/",
     "stationUuid": "f6a902b4-d3ae-4c2b-bb15-c00d55fd0711",
-    "checkedAt": "2026-10-05T11:03:23.912Z",
+    "checkedAt": "2026-10-06T10:57:49.853Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -210,10 +188,29 @@
     "favicon": "https://www.conecta2service.com/gallery_gen/aeb2309bdc6caff617c2acc2abc99d77_796x222.88.png",
     "homepage": "https://www.conecta2service.com/",
     "stationUuid": "726ec705-05de-47e6-967a-0895b00b0961",
-    "checkedAt": "2026-10-05T11:03:23.933Z",
+    "checkedAt": "2026-10-06T10:57:49.948Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "area deportiva",
+    "url": "https://cast.uncuartocomunicacion.com/listen/areadeportivafm/live",
+    "country": "EC",
+    "type": "deportes",
+    "tags": [
+      "deportes"
+    ],
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": "español ecuador",
+    "favicon": null,
+    "homepage": "https://areadeportiva.ec/",
+    "stationUuid": "fcc5e465-6871-4af2-8b51-754cfc8af693",
+    "checkedAt": "2026-10-06T10:57:50.637Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Area Deportiva 99.3 FM",
@@ -233,7 +230,7 @@
     "favicon": "https://areadeportiva.ec/wp-content/uploads/2024/01/cropped-IMG_3205-1.png",
     "homepage": "https://areadeportiva.ec/",
     "stationUuid": "9a36312c-b96b-45ca-9d7b-0b3a98bfbef8",
-    "checkedAt": "2026-10-05T11:03:24.319Z",
+    "checkedAt": "2026-10-06T10:57:50.721Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -252,7 +249,7 @@
     "favicon": null,
     "homepage": "https://laradioredonda.ec/",
     "stationUuid": "9e0bc34e-9948-469a-a36e-e1b0f960f8a4",
-    "checkedAt": "2026-10-05T11:03:24.419Z",
+    "checkedAt": "2026-10-06T10:57:50.817Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -277,7 +274,7 @@
     "favicon": "https://pitazoinicial.com/logo-pitazo.png",
     "homepage": "https://pitazoinicial.com/",
     "stationUuid": "cf9ad683-e429-43bf-92e8-a17d5241f625",
-    "checkedAt": "2026-10-05T11:03:24.535Z",
+    "checkedAt": "2026-10-06T10:57:50.925Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -302,7 +299,7 @@
     "favicon": null,
     "homepage": "http://lamundialista103.com/",
     "stationUuid": "3f5f948f-6259-11e9-a622-52543be04c81",
-    "checkedAt": "2026-10-05T11:03:24.631Z",
+    "checkedAt": "2026-10-06T10:57:51.043Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -326,7 +323,29 @@
     "favicon": null,
     "homepage": "https://www.lavozdeltomebamba.com/",
     "stationUuid": "b14269a7-789f-404a-956b-a4de9105ca57",
-    "checkedAt": "2026-10-05T11:03:25.414Z",
+    "checkedAt": "2026-10-06T10:57:51.838Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Tropicalida",
+    "url": "https://d2qzj7eqicisth.cloudfront.net/medialist_14854753276708185244_hls.m3u8",
+    "country": "EC",
+    "type": "merengue",
+    "tags": [
+      "merengue",
+      "pop",
+      "reggaeton",
+      "tropical"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "spanish",
+    "favicon": "https://alba-ec-tropicalida.cdn.mediatiquepress.com/wp-content/uploads/2022/02/22173451/circulo.png",
+    "homepage": "https://www.tropicalida.com.ec/",
+    "stationUuid": "4ac0f35b-4be3-4a74-8536-88f71e77875a",
+    "checkedAt": "2026-10-06T10:57:52.741Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -345,7 +364,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "4dd045de-6d28-464d-8da0-96660487729e",
-    "checkedAt": "2026-10-05T11:03:26.118Z",
+    "checkedAt": "2026-10-06T10:57:52.816Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -362,7 +381,7 @@
     "favicon": null,
     "homepage": "https://hot106fuego.com/",
     "stationUuid": "63e93a78-18bf-4321-9003-0f25ca11334f",
-    "checkedAt": "2026-10-05T11:03:26.168Z",
+    "checkedAt": "2026-10-06T10:57:52.945Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -379,7 +398,7 @@
     "favicon": null,
     "homepage": "https://web.canelaradio.com/",
     "stationUuid": "a6a7a3c2-8085-44a0-bc9e-57d2ee13c7f2",
-    "checkedAt": "2026-10-05T11:03:26.542Z",
+    "checkedAt": "2026-10-06T10:57:53.624Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -401,7 +420,7 @@
     "favicon": null,
     "homepage": "http://www.radiomarejada.com/",
     "stationUuid": "964fceb6-6256-11e9-a622-52543be04c81",
-    "checkedAt": "2026-10-05T11:03:27.446Z",
+    "checkedAt": "2026-10-06T10:57:54.643Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -423,7 +442,7 @@
     "favicon": "https://olimpicafmradio.com/favicon.ico",
     "homepage": "https://olimpicafmradio.com/",
     "stationUuid": "6f5a7529-5d9b-11e9-a622-52543be04c81",
-    "checkedAt": "2026-10-05T11:03:27.490Z",
+    "checkedAt": "2026-10-06T10:57:54.665Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -442,10 +461,31 @@
     "favicon": "https://i.ytimg.com/vi/s4rgiw1yd84/hqdefault.jpg",
     "homepage": "https://wwwradiocadenastereo.blogspot.com/",
     "stationUuid": "96e73dc5-d1f5-4058-929f-f1c49d5cc31e",
-    "checkedAt": "2026-10-05T11:03:28.180Z",
+    "checkedAt": "2026-10-06T10:57:55.767Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Metro Stereo",
+    "url": "https://due8atvq1x46v.cloudfront.net/medialist_14854753276708185244_hls.m3u8",
+    "country": "EC",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "rock",
+      "urban"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "english,spanish",
+    "favicon": "https://alba-ec-lametro.cdn.mediatiquepress.com/wp-content/uploads/2022/10/la-metro-logo-2022-1.jpg",
+    "homepage": "https://www.lametro.com.ec/",
+    "stationUuid": "52a8d29a-ab3e-4d4b-b15f-33358c636913",
+    "checkedAt": "2026-10-06T10:57:55.870Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "RADIO VALLE FM",
@@ -461,7 +501,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "1085f7f1-410b-4755-9631-21ac46a10ce6",
-    "checkedAt": "2026-10-05T11:03:28.332Z",
+    "checkedAt": "2026-10-06T10:57:55.889Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -480,10 +520,48 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "8a9ded8d-cd5e-4817-879d-1a37a36b407a",
-    "checkedAt": "2026-10-05T11:03:28.432Z",
+    "checkedAt": "2026-10-06T10:57:55.909Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "La Matro",
+    "url": "https://due8atvq1x46v.cloudfront.net/ts:abr.m3u8",
+    "country": "EC",
+    "type": "rock",
+    "tags": [
+      "rock"
+    ],
+    "codec": "AAC",
+    "bitrate": 322,
+    "language": "spanish",
+    "favicon": "https://alba-ec-lametro.cdn.mediatiquepress.com/wp-content/uploads/2022/10/la-metro-logo-2022-1.jpg",
+    "homepage": "https://www.lametro.com.ec/",
+    "stationUuid": "eae3828b-a74b-4ec5-ab8e-944ec2b4505a",
+    "checkedAt": "2026-10-06T10:57:55.947Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "La Metro",
+    "url": "https://due8atvq1x46v.cloudfront.net/ts:abr.m3u8",
+    "country": "EC",
+    "type": "rock",
+    "tags": [
+      "rock"
+    ],
+    "codec": "AAC",
+    "bitrate": 322,
+    "language": "espaňol",
+    "favicon": "https://alba-ec-lametro.cdn.mediatiquepress.com/wp-content/uploads/2022/10/la-metro-logo-2022-1.jpg",
+    "homepage": "https://www.lametro.com.ec/",
+    "stationUuid": "dc5706be-14f9-479f-8da0-2c90647dbca7",
+    "checkedAt": "2026-10-06T10:57:55.991Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio La Metro Stereo",
@@ -499,7 +577,7 @@
     "favicon": "https://www.lametro.com.ec/wp-content/uploads/2022/10/la-metro-logo-2022-1.jpg",
     "homepage": "https://www.lametro.com.ec/",
     "stationUuid": "5e37853b-be3e-452f-8f15-2035beba4ef3",
-    "checkedAt": "2026-10-05T11:03:28.553Z",
+    "checkedAt": "2026-10-06T10:57:56.022Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -518,7 +596,7 @@
     "favicon": "https://i.ytimg.com/vi/s4rgiw1yd84/hqdefault.jpg",
     "homepage": "https://wwwradiocadenastereo.blogspot.com/",
     "stationUuid": "559c6829-65cc-4b36-aabb-ffd583a07cda",
-    "checkedAt": "2026-10-05T11:03:28.624Z",
+    "checkedAt": "2026-10-06T10:57:56.130Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -537,7 +615,7 @@
     "favicon": "https://i.ytimg.com/vi/s4rgiw1yd84/hqdefault.jpg",
     "homepage": "https://wwwradiocadenastereo.blogspot.com/",
     "stationUuid": "6ec9f024-706f-416e-9cfa-fd296fc7650f",
-    "checkedAt": "2026-10-05T11:03:28.637Z",
+    "checkedAt": "2026-10-06T10:57:56.262Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

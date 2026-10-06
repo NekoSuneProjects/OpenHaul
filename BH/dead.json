@@ -11,9 +11,28 @@
     "favicon": "https://www.mbc.net/apple-touch-icon.png",
     "homepage": "https://www.mbc.net/channels",
     "stationUuid": "17bae22b-590b-4ce1-8bee-4a1c66277a60",
-    "checkedAt": "2026-10-05T10:42:57.870Z",
+    "checkedAt": "2026-10-06T10:35:51.201Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": ".إذاعة ماهر المعيقلي",
+    "url": "https://backup.qurango.net/radio/maher",
+    "country": "BH",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "3a424f70-7d7f-43a1-807f-9642b1e66792",
+    "checkedAt": "2026-10-06T10:35:51.914Z",
+    "status": 500,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 500"
   }
 ]

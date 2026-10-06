@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "http://cizgiotesi.biz.tr/",
     "stationUuid": "daae80c5-1bb9-4b2d-a866-fad589452b40",
-    "checkedAt": "2026-10-05T11:12:34.537Z",
+    "checkedAt": "2026-10-06T11:07:02.224Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -33,7 +33,7 @@
     "favicon": null,
     "homepage": "http://cizgiotesi.biz.tr/",
     "stationUuid": "837ffec9-86a4-4f1c-b142-6fc4354fac61",
-    "checkedAt": "2026-10-05T11:12:34.543Z",
+    "checkedAt": "2026-10-06T11:07:02.231Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -54,7 +54,7 @@
     "favicon": null,
     "homepage": "http://cizgiotesi.biz.tr/",
     "stationUuid": "f0dd7486-42ff-4547-84c2-bf05b54ce1ef",
-    "checkedAt": "2026-10-05T11:12:34.544Z",
+    "checkedAt": "2026-10-06T11:07:02.231Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -77,10 +77,31 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/redwine-radio/",
     "stationUuid": "dc334d04-d25c-4f86-94c5-051c296eb33a",
-    "checkedAt": "2026-10-05T11:12:34.618Z",
+    "checkedAt": "2026-10-06T11:07:02.740Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Mutant Radio",
+    "url": "https://listen.radioking.com/radio/282820/stream/328621",
+    "country": "GE",
+    "type": "independent",
+    "tags": [
+      "independent",
+      "music",
+      "variety"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://www.mutantradio.net/icon?e5faaecf67dfe01a",
+    "homepage": "https://www.mutantradio.net/",
+    "stationUuid": "e81caf1f-5049-48ad-99b7-b5ebdd03d3f3",
+    "checkedAt": "2026-10-06T11:07:03.282Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Soothing jazz",
@@ -99,7 +120,7 @@
     "favicon": null,
     "homepage": "http://cizgiotesi.biz.tr/",
     "stationUuid": "71221a1d-a0ff-4c18-8f7d-97d735795005",
-    "checkedAt": "2026-10-05T11:12:37.447Z",
+    "checkedAt": "2026-10-06T11:07:03.314Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

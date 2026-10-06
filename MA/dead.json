@@ -11,7 +11,7 @@
     "favicon": "https://xglite.blogspot.com",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "68ddcca4-fa29-49e0-97a1-182edd18f44a",
-    "checkedAt": "2026-10-05T11:22:25.465Z",
+    "checkedAt": "2026-10-06T11:16:52.672Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -30,7 +30,7 @@
     "favicon": "https://drive.google.com/file/d/1UCRLXymEBsuwoJVLF1VSsptvA_spPUeN/view?usp=drivesdk",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "00d94344-7f60-4f5d-9aee-dd917276c98d",
-    "checkedAt": "2026-10-05T11:22:26.216Z",
+    "checkedAt": "2026-10-06T11:16:53.040Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -49,29 +49,29 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/fr/c/ca/Medi_1_TV_logo.png",
     "homepage": "http://www.medi1.com/",
     "stationUuid": "baae5280-6e91-421b-bc15-7ace366768e0",
-    "checkedAt": "2026-10-05T11:22:26.880Z",
+    "checkedAt": "2026-10-06T11:16:53.825Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": ".إذاعة ماهر المعيقلي",
-    "url": "https://backup.qurango.net/radio/maher",
+    "name": "bldi",
+    "url": "http://beldifm.hf.ma/radio/8000/radio.mp3",
     "country": "MA",
     "type": "classical",
     "tags": [
       "classical"
     ],
     "codec": "MP3",
-    "bitrate": 128,
+    "bitrate": 64,
     "language": null,
     "favicon": null,
     "homepage": null,
-    "stationUuid": "0a5237a4-2a7f-46f5-a23f-91ec1a370726",
-    "checkedAt": "2026-10-05T11:22:26.954Z",
-    "status": 500,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 500"
+    "stationUuid": "b8807476-2ada-4600-9dc0-7b501691afc1",
+    "checkedAt": "2026-10-06T11:16:54.215Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Medi 1 Classique",
@@ -87,7 +87,7 @@
     "favicon": "https://www.medi1.com/favicon.ico",
     "homepage": "https://www.medi1.com/fr/webradio/Classique",
     "stationUuid": "4c6f8571-6e70-42d5-a4a6-669003ad1cee",
-    "checkedAt": "2026-10-05T11:22:27.236Z",
+    "checkedAt": "2026-10-06T11:16:54.316Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -106,7 +106,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "e300baf5-e1e2-4ba8-b4ff-6d029d5a0a99",
-    "checkedAt": "2026-10-05T11:22:27.254Z",
+    "checkedAt": "2026-10-06T11:16:54.336Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -125,7 +125,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/ezxx195gq2zuv",
     "stationUuid": "653dea16-ffe4-4db9-8744-427bb37d83ee",
-    "checkedAt": "2026-10-05T11:22:27.771Z",
+    "checkedAt": "2026-10-06T11:16:54.598Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -144,33 +144,9 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/8#",
     "stationUuid": "93c1a1a6-5571-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-10-05T11:22:28.433Z",
+    "checkedAt": "2026-10-06T11:16:55.127Z",
     "status": 404,
     "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "aswatalweb",
-    "url": "http://78.129.252.13:24460/stream",
-    "country": "MA",
-    "type": "film talk",
-    "tags": [
-      "film talk",
-      "live sport",
-      "music",
-      "music arabe",
-      "radio maroc",
-      "sports commentary"
-    ],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "arabic",
-    "favicon": null,
-    "homepage": "https://aswatalweb.com/",
-    "stationUuid": "1c1de83b-2d27-4ae2-920c-98a56df016b6",
-    "checkedAt": "2026-10-05T11:22:28.534Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
@@ -185,7 +161,7 @@
     "favicon": null,
     "homepage": "https://www.medi1.com/webradio/2#",
     "stationUuid": "96ccc468-1a6f-11e8-a334-52543be04c81",
-    "checkedAt": "2026-10-05T11:22:29.330Z",
+    "checkedAt": "2026-10-06T11:16:55.818Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -202,7 +178,7 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/3#",
     "stationUuid": "7c1bdaa1-56a8-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-10-05T11:22:29.413Z",
+    "checkedAt": "2026-10-06T11:16:55.841Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -219,7 +195,7 @@
     "favicon": "https://snrtlive.ma/sites/default/files/2024-02/logo-snrtnews2_2.png",
     "homepage": "https://snrtlive.ma/ar/alidaa-alwatania",
     "stationUuid": "4d8de7d2-1fc1-4f70-974c-12100d0fd68c",
-    "checkedAt": "2026-10-05T11:22:30.038Z",
+    "checkedAt": "2026-10-06T11:16:56.815Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"

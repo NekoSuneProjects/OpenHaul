@@ -14,7 +14,7 @@
     "favicon": "https://pic.qtfm.cn/2016/0408/20160408140827358.png",
     "homepage": "https://www.cbg.cn/",
     "stationUuid": "5bb0d2d0-12d9-4440-9844-80dc803e74e3",
-    "checkedAt": "2026-10-05T10:50:47.781Z",
+    "checkedAt": "2026-10-06T10:43:57.908Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -34,7 +34,7 @@
     "favicon": "https://i0.wp.com/top-radio.org/wp-content/uploads/2023/04/cropped-cropped-top-radio-512x512-1.png?fit=180%2c180&#038;ssl=1",
     "homepage": "https://top-radio.org/china/chengdu-simple-music-fm1051/",
     "stationUuid": "d01fcb00-226d-44ef-8188-7663fccb1d00",
-    "checkedAt": "2026-10-05T10:50:49.663Z",
+    "checkedAt": "2026-10-06T10:44:01.048Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -55,26 +55,7 @@
     "favicon": null,
     "homepage": "http://www.xianghunet.com/",
     "stationUuid": "cc9362e6-1f15-4788-af82-1c569087f12e",
-    "checkedAt": "2026-10-05T10:50:50.843Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "沅江综合广播",
-    "url": "https://liveplay-srs.voc.com.cn/hls/broadcast/163_a8d90e.m3u8",
-    "country": "CN",
-    "type": "5g智慧电台",
-    "tags": [
-      "5g智慧电台"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": null,
-    "homepage": "http://www.yjxww.cn/",
-    "stationUuid": "abd5d9d1-42fe-43fd-bfcc-c31659747e17",
-    "checkedAt": "2026-10-05T10:50:54.310Z",
+    "checkedAt": "2026-10-06T10:44:03.644Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -94,7 +75,7 @@
     "favicon": null,
     "homepage": "https://www.rtide.top/",
     "stationUuid": "f26eb7cc-8b15-46c1-8bac-6fd070908d27",
-    "checkedAt": "2026-10-05T10:50:56.611Z",
+    "checkedAt": "2026-10-06T10:44:11.609Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -114,7 +95,7 @@
     "favicon": "https://so1.360tres.com/t018afcf7cec54f927b.jpg",
     "homepage": "http://www.fjtv.net/",
     "stationUuid": "7151bcae-7867-4f18-a6f8-27e1410af843",
-    "checkedAt": "2026-10-05T10:50:58.914Z",
+    "checkedAt": "2026-10-06T10:44:13.138Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -137,7 +118,7 @@
     "favicon": null,
     "homepage": "http://www.sfrmt.com/",
     "stationUuid": "f404da88-9ddf-40cb-8c8e-6c0d2a836c73",
-    "checkedAt": "2026-10-05T10:50:59.554Z",
+    "checkedAt": "2026-10-06T10:44:13.654Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -159,10 +140,27 @@
     "favicon": null,
     "homepage": "http://www.ynradio.com/v2/",
     "stationUuid": "27826574-35e5-451a-b542-c679ea067cc3",
-    "checkedAt": "2026-10-05T10:51:04.163Z",
+    "checkedAt": "2026-10-06T10:44:19.188Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "AsiaFM 亚洲粤语台【2023.10.18】",
+    "url": "http://yyt.asiafm.net:8000/asiafm",
+    "country": "CN",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 96,
+    "language": "chinese",
+    "favicon": null,
+    "homepage": "http://www.asiafm.hk/",
+    "stationUuid": "fb1a81c7-cdf2-4ed8-912c-796918d0fa08",
+    "checkedAt": "2026-10-06T10:44:22.926Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "山东乡村广播",
@@ -179,26 +177,7 @@
     "favicon": "http://news.iqilu.com/favicon.ico",
     "homepage": "http://www.iqilu.com/",
     "stationUuid": "077abc54-66f4-4bc0-ab24-e2b0d438417a",
-    "checkedAt": "2026-10-05T10:51:07.689Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "河北农民广播",
-    "url": "https://radio.pull.hebtv.com/live/hebnczx.m3u8",
-    "country": "CN",
-    "type": "agriculture",
-    "tags": [
-      "agriculture"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "https://www.hebtv.com/public/img/icon_ie.jpg",
-    "homepage": "https://www.hebtv.com/",
-    "stationUuid": "36fc81fa-ac1f-4646-bc8f-70061455f3af",
-    "checkedAt": "2026-10-05T10:51:07.748Z",
+    "checkedAt": "2026-10-06T10:44:24.413Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -217,7 +196,7 @@
     "favicon": "https://pic.qtfm.cn/sso/48/1697701163012_XRqfP8aNp.jpeg",
     "homepage": "https://news.hbtv.com.cn/",
     "stationUuid": "886fa935-929a-4288-8200-e0152285633a",
-    "checkedAt": "2026-10-05T10:51:07.755Z",
+    "checkedAt": "2026-10-06T10:44:25.481Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -236,7 +215,7 @@
     "favicon": "http://radio.666scly.com/img/logo/20150107152930605.jpg",
     "homepage": "https://www.gstv.com.cn/",
     "stationUuid": "cba078e9-0e15-49da-8c32-cc2510a1f042",
-    "checkedAt": "2026-10-05T10:51:08.208Z",
+    "checkedAt": "2026-10-06T10:44:25.965Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -257,7 +236,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "c812f372-b5a1-436b-a0dd-3eb5c71d45c4",
-    "checkedAt": "2026-10-05T10:51:11.643Z",
+    "checkedAt": "2026-10-06T10:44:29.105Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -278,7 +257,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "56ea170a-ade4-40a5-81eb-6f5abcf36d8d",
-    "checkedAt": "2026-10-05T10:51:11.709Z",
+    "checkedAt": "2026-10-06T10:44:29.107Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -299,7 +278,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "57e609a6-5b2a-462b-825b-2e93bcb80257",
-    "checkedAt": "2026-10-05T10:51:11.767Z",
+    "checkedAt": "2026-10-06T10:44:29.796Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -320,7 +299,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "efacd00b-5fae-48d4-bcf4-8dc1ad1788be",
-    "checkedAt": "2026-10-05T10:51:11.860Z",
+    "checkedAt": "2026-10-06T10:44:30.613Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -341,7 +320,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "d47384fd-096f-44c6-8e66-f12663c54caa",
-    "checkedAt": "2026-10-05T10:51:12.793Z",
+    "checkedAt": "2026-10-06T10:44:30.929Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -362,7 +341,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "12ec346c-14ed-4373-a91f-49296c023f74",
-    "checkedAt": "2026-10-05T10:51:15.711Z",
+    "checkedAt": "2026-10-06T10:44:31.143Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -383,7 +362,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "e78f12f7-10de-484b-967c-7c578ff96150",
-    "checkedAt": "2026-10-05T10:51:15.749Z",
+    "checkedAt": "2026-10-06T10:44:32.418Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -404,7 +383,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "7f1ecc25-d132-47ad-8ea7-5ae82bf19c22",
-    "checkedAt": "2026-10-05T10:51:16.210Z",
+    "checkedAt": "2026-10-06T10:44:33.971Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -425,7 +404,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "ea7afd31-0656-4699-adfd-b50d6c643305",
-    "checkedAt": "2026-10-05T10:51:19.644Z",
+    "checkedAt": "2026-10-06T10:44:37.107Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -446,7 +425,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "c2a4eb89-4966-43d0-ba7b-38b66986d39f",
-    "checkedAt": "2026-10-05T10:51:19.717Z",
+    "checkedAt": "2026-10-06T10:44:37.108Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -467,7 +446,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "deb4d5a8-03a5-45d3-8157-8417dc150fa5",
-    "checkedAt": "2026-10-05T10:51:19.767Z",
+    "checkedAt": "2026-10-06T10:44:37.813Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -488,7 +467,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "9a1316a7-4f25-4d79-a62e-8323a9ac0cb4",
-    "checkedAt": "2026-10-05T10:51:19.862Z",
+    "checkedAt": "2026-10-06T10:44:38.614Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -509,7 +488,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "feafe6f5-438a-43e2-af56-30cba77dc45b",
-    "checkedAt": "2026-10-05T10:51:20.794Z",
+    "checkedAt": "2026-10-06T10:44:38.930Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -530,7 +509,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "8402491d-a6d6-4f03-a311-3e1276036b68",
-    "checkedAt": "2026-10-05T10:51:23.711Z",
+    "checkedAt": "2026-10-06T10:44:39.168Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -551,7 +530,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "c929409b-2fe2-4b9d-86ea-9faba5fd4e68",
-    "checkedAt": "2026-10-05T10:51:23.749Z",
+    "checkedAt": "2026-10-06T10:44:40.418Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -572,7 +551,7 @@
     "favicon": null,
     "homepage": "https://tv.cctv.com/",
     "stationUuid": "4e24464e-228d-4bd3-a888-77bc49137c3e",
-    "checkedAt": "2026-10-05T10:51:24.212Z",
+    "checkedAt": "2026-10-06T10:44:41.972Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -593,7 +572,7 @@
     "favicon": null,
     "homepage": "https://www.cnr.cn/",
     "stationUuid": "31b540f3-3b4d-4f14-95d7-4c3b6910c019",
-    "checkedAt": "2026-10-05T10:51:27.644Z",
+    "checkedAt": "2026-10-06T10:44:45.111Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -614,7 +593,7 @@
     "favicon": null,
     "homepage": "https://www.cnr.cn/",
     "stationUuid": "d3aa67c8-8708-4700-b2ed-c39c26599bdc",
-    "checkedAt": "2026-10-05T10:51:27.718Z",
+    "checkedAt": "2026-10-06T10:44:45.112Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -635,7 +614,7 @@
     "favicon": null,
     "homepage": "https://www.cnr.cn/",
     "stationUuid": "d2aae39f-cbc6-4c63-83f1-164d31541934",
-    "checkedAt": "2026-10-05T10:51:27.769Z",
+    "checkedAt": "2026-10-06T10:44:45.815Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -656,7 +635,7 @@
     "favicon": null,
     "homepage": "https://www.cnr.cn/",
     "stationUuid": "577530f4-7ab8-42af-b7db-696bc12f7a9a",
-    "checkedAt": "2026-10-05T10:51:27.863Z",
+    "checkedAt": "2026-10-06T10:44:46.620Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -677,7 +656,7 @@
     "favicon": null,
     "homepage": "https://www.cnr.cn/",
     "stationUuid": "bc108fcc-377b-4da7-9964-16f4ad8e5901",
-    "checkedAt": "2026-10-05T10:51:28.833Z",
+    "checkedAt": "2026-10-06T10:44:46.933Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -698,7 +677,7 @@
     "favicon": null,
     "homepage": "https://www.cnr.cn/",
     "stationUuid": "0ee5d089-9112-44e7-a253-c1e74b1f1ac6",
-    "checkedAt": "2026-10-05T10:51:31.711Z",
+    "checkedAt": "2026-10-06T10:44:47.166Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -719,7 +698,7 @@
     "favicon": null,
     "homepage": "https://www.cnr.cn/",
     "stationUuid": "cbba811a-2f43-4924-ae6d-d28222041753",
-    "checkedAt": "2026-10-05T10:51:31.757Z",
+    "checkedAt": "2026-10-06T10:44:48.427Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -739,10 +718,30 @@
     "favicon": null,
     "homepage": "http://www.hndt.com/",
     "stationUuid": "2f3329d7-f279-47e0-9508-3e9b6b82434e",
-    "checkedAt": "2026-10-05T10:51:36.623Z",
+    "checkedAt": "2026-10-06T10:44:54.991Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Sinchang News TV",
+    "url": "http://l.cztvcloud.com/channels/lantian/SXxinchang1/720p.m3u8",
+    "country": "CN",
+    "type": "chekiang",
+    "tags": [
+      "chekiang",
+      "hls video"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": null,
+    "homepage": "http://www.zjxcw.com/",
+    "stationUuid": "ea432480-4baf-11e8-a4d1-52543be04c81",
+    "checkedAt": "2026-10-06T10:44:56.427Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "云南教育广播",
@@ -759,10 +758,29 @@
     "favicon": "https://pic.qtfm.cn/2017/0328/20170328095251.jpeg",
     "homepage": "http://www.ynradio.com/v2/",
     "stationUuid": "0d02b866-3ba8-43ff-a9fa-c9ece40ef921",
-    "checkedAt": "2026-10-05T10:51:39.780Z",
+    "checkedAt": "2026-10-06T10:44:58.519Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "优优宝贝广播",
+    "url": "https://stream.zeno.fm/de26yhn9yy8uv",
+    "country": "CN",
+    "type": "children",
+    "tags": [
+      "children"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "chinese",
+    "favicon": "https://so1.360tres.com/t019dac03c3a9d0b20f.jpg",
+    "homepage": "https://baike.so.com/doc/6970003-7192689.html",
+    "stationUuid": "1eec02eb-0a5f-4af8-9c8d-0cb725ee28af",
+    "checkedAt": "2026-10-06T10:44:58.811Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "吉林教育广播",
@@ -781,7 +799,7 @@
     "favicon": "http://pic.qingting.fm/sso/48/1637552537206_tRfaVCcsp.jpeg",
     "homepage": "https://www.jlntv.cn/index",
     "stationUuid": "f0c497c5-956d-42b0-aa0f-9e620366d1b9",
-    "checkedAt": "2026-10-05T10:51:39.888Z",
+    "checkedAt": "2026-10-06T10:44:58.953Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -805,29 +823,10 @@
     "favicon": null,
     "homepage": "http://www.nxtv.com.cn/",
     "stationUuid": "66550e32-b188-4aef-b294-c859ef4882bb",
-    "checkedAt": "2026-10-05T10:51:40.212Z",
+    "checkedAt": "2026-10-06T10:44:59.311Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "汉川少儿广播",
-    "url": "https://stream.zeno.fm/6pa9cwlcb98vv",
-    "country": "CN",
-    "type": "children",
-    "tags": [
-      "children"
-    ],
-    "codec": "MP3",
-    "bitrate": 48,
-    "language": "chinese",
-    "favicon": "https://i2.hdslb.com/bfs/face/51589874ae7fb25769d80b29414ea25f07310911.jpg@168w_168h_1c.webp",
-    "homepage": "https://space.bilibili.com/3546652761656084",
-    "stationUuid": "8d4e5699-f8b5-425f-b09b-32e4106c1d62",
-    "checkedAt": "2026-10-05T10:51:40.414Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "上虞广播-1",
@@ -844,7 +843,7 @@
     "favicon": null,
     "homepage": "http://www.sybtv.com/sylive?cid=60401",
     "stationUuid": "665e82e0-4893-40f5-a611-32808f3d74ff",
-    "checkedAt": "2026-10-05T10:51:41.510Z",
+    "checkedAt": "2026-10-06T10:45:01.947Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -866,7 +865,7 @@
     "favicon": null,
     "homepage": "http://www.xttv.com.cn/",
     "stationUuid": "cc290aa2-843f-11e9-aa30-52543be04c81",
-    "checkedAt": "2026-10-05T10:51:44.376Z",
+    "checkedAt": "2026-10-06T10:45:06.522Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -892,7 +891,7 @@
     "favicon": "https://pic.qtfm.cn/2022/0121/20220121062312.jpeg",
     "homepage": "https://www.csbtv.com/",
     "stationUuid": "6cca27c2-7ce8-4b12-b908-f54f7c70fc95",
-    "checkedAt": "2026-10-05T10:51:45.295Z",
+    "checkedAt": "2026-10-06T10:45:07.827Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -912,7 +911,7 @@
     "favicon": null,
     "homepage": "http://www.hndt.com/",
     "stationUuid": "177a078b-b787-436e-b641-19f16b6708ef",
-    "checkedAt": "2026-10-05T10:51:46.844Z",
+    "checkedAt": "2026-10-06T10:45:09.104Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -932,30 +931,10 @@
     "favicon": null,
     "homepage": "http://www.hndt.com/",
     "stationUuid": "8c7b3b41-d290-11e9-a861-52543be04c81",
-    "checkedAt": "2026-10-05T10:51:47.112Z",
+    "checkedAt": "2026-10-06T10:45:09.255Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "滨海文艺广播",
-    "url": "http://traffic.jbh.tjbh.com/live/FM101.7/playlist.m3u8",
-    "country": "CN",
-    "type": "crosstalk",
-    "tags": [
-      "crosstalk",
-      "culture"
-    ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "chinese",
-    "favicon": null,
-    "homepage": "https://a.app.qq.com/o/simple.jsp?pkgname=com.pdmi.binhai.media&fromcase=40003",
-    "stationUuid": "935da57a-f1fe-407e-9d65-f0d58bc36792",
-    "checkedAt": "2026-10-05T10:51:47.871Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
   },
   {
     "name": "云南旅游广播",
@@ -972,7 +951,7 @@
     "favicon": "https://wx2.sinaimg.cn/mw2000/6ec466fely8hlqwi4er4pj20n60n63z4.jpg",
     "homepage": "https://www.ynradio.cn/",
     "stationUuid": "98ad1d71-f7fa-4fa4-96f6-c8a96462b9b6",
-    "checkedAt": "2026-10-05T10:51:48.807Z",
+    "checkedAt": "2026-10-06T10:45:11.083Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -991,7 +970,7 @@
     "favicon": "https://pic.qtfm.cn/2011/0926/20110926100411244.jpg",
     "homepage": "https://www.nmtv.cn/",
     "stationUuid": "89f4a008-dc90-48b8-b1d3-db16c0d008c7",
-    "checkedAt": "2026-10-05T10:51:49.111Z",
+    "checkedAt": "2026-10-06T10:45:11.165Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1012,7 +991,7 @@
     "favicon": "https://pic.qtfm.cn/2015/1028/20151028091741871.jpg",
     "homepage": "http://www.nntv.cn/",
     "stationUuid": "5fd76e7d-bf36-42ee-9b1d-e1398d8d88a4",
-    "checkedAt": "2026-10-05T10:51:49.114Z",
+    "checkedAt": "2026-10-06T10:45:11.221Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1033,7 +1012,7 @@
     "favicon": "https://pic.qtfm.cn/2022/1212/20221212050437.png",
     "homepage": "http://mgl.tmtzq.gov.cn/am/66064/U_3.html",
     "stationUuid": "781fc562-2938-465e-87c9-ab5085a3b04a",
-    "checkedAt": "2026-10-05T10:51:49.789Z",
+    "checkedAt": "2026-10-06T10:45:11.887Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1054,7 +1033,7 @@
     "favicon": "https://nginx-dlrm.dlrm.cn/dlrm/site1/resource/tv/dlrm/202511/18/0c1dd1a8-aeba-409e-857b-a5f4d0dc9c27.png",
     "homepage": "https://www.runsky.com/",
     "stationUuid": "6d2bc83c-d4f7-495e-b373-85df77ed153c",
-    "checkedAt": "2026-10-05T10:51:50.400Z",
+    "checkedAt": "2026-10-06T10:45:12.759Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -1073,7 +1052,7 @@
     "favicon": null,
     "homepage": "http://www.nxtv.com.cn/",
     "stationUuid": "104b2294-1147-4692-b33e-480e6a6a192f",
-    "checkedAt": "2026-10-05T10:51:50.422Z",
+    "checkedAt": "2026-10-06T10:45:13.110Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1093,7 +1072,7 @@
     "favicon": "http://pic.qingting.fm/2020/0405/20200405101433.jpeg",
     "homepage": "http://www.hcrt.cn/",
     "stationUuid": "2cd26e18-34f7-492c-8e47-0bc15b93fce7",
-    "checkedAt": "2026-10-05T10:51:51.417Z",
+    "checkedAt": "2026-10-06T10:45:14.740Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1112,7 +1091,7 @@
     "favicon": "http://tv.haoqu99.com/d/file/2016/0929/b6d66780015a60a45fb99eeccade9895.jpg",
     "homepage": "https://weibo.com/u/5044271705",
     "stationUuid": "499b7f4e-203b-4fd8-82f3-452bd4333f40",
-    "checkedAt": "2026-10-05T10:51:52.153Z",
+    "checkedAt": "2026-10-06T10:45:15.513Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1132,7 +1111,7 @@
     "favicon": "https://pic.qtfm.cn/2015/0623/20150623132233126.jpg",
     "homepage": "https://www.gzstv.com/",
     "stationUuid": "9ad38310-34d2-49ee-a766-9bfaea66e142",
-    "checkedAt": "2026-10-05T10:51:53.475Z",
+    "checkedAt": "2026-10-06T10:45:18.213Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1151,7 +1130,7 @@
     "favicon": "https://miaobi-lite.bj.bcebos.com/miaobi/5mao/b'6YCa6L695bGe5LqO5Lic5YyX5ZCXXzE3MzM1MDYzMjIuNjMwODA5'/0.png",
     "homepage": "http://www.hkssstv.com.cn/",
     "stationUuid": "8d5b0699-51ab-4d6c-9c6f-b064477865c6",
-    "checkedAt": "2026-10-05T10:51:53.830Z",
+    "checkedAt": "2026-10-06T10:45:18.591Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1172,7 +1151,7 @@
     "favicon": "http://pic.qingting.fm/2018/0530/20180530035437.jpeg",
     "homepage": "http://v.xiancity.cn/",
     "stationUuid": "b3e2e67c-cc2d-45ce-aede-475a661bda38",
-    "checkedAt": "2026-10-05T10:51:55.936Z",
+    "checkedAt": "2026-10-06T10:45:21.264Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -1191,7 +1170,7 @@
     "favicon": "https://pic.qtfm.cn/2015/0804/20150804105202673.jpg",
     "homepage": "https://www.nmtv.cn/",
     "stationUuid": "850f06e0-4950-493d-a79e-7a6de6a837dd",
-    "checkedAt": "2026-10-05T10:51:57.486Z",
+    "checkedAt": "2026-10-06T10:45:22.852Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1210,7 +1189,7 @@
     "favicon": "https://scgcscreen.sctv-tf.com/favicon.ico",
     "homepage": "http://www.sctv.com/",
     "stationUuid": "fde623c3-0c29-4f0f-a81b-4721ef2d6b37",
-    "checkedAt": "2026-10-05T10:51:57.891Z",
+    "checkedAt": "2026-10-06T10:45:24.016Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1229,7 +1208,7 @@
     "favicon": null,
     "homepage": "https://m.gdtv.cn/",
     "stationUuid": "1ae419ad-2dd8-4b00-8bfb-cce2291a894b",
-    "checkedAt": "2026-10-05T10:51:58.495Z",
+    "checkedAt": "2026-10-06T10:45:24.413Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1249,7 +1228,7 @@
     "favicon": null,
     "homepage": "http://www.jlntv.cn/newpc/wlt/dszb/folder3130/folder3138/",
     "stationUuid": "f973c540-62f1-4b84-b101-58b3d981c599",
-    "checkedAt": "2026-10-05T10:52:00.213Z",
+    "checkedAt": "2026-10-06T10:45:27.386Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1269,7 +1248,7 @@
     "favicon": null,
     "homepage": "http://38.76.209.235/public/nekofm_hit_songs",
     "stationUuid": "517f2494-86b4-4355-85bc-03e878429c7c",
-    "checkedAt": "2026-10-05T10:52:00.562Z",
+    "checkedAt": "2026-10-06T10:45:27.947Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1289,7 +1268,7 @@
     "favicon": "https://avatar.bdstatic.com/it/u=2384430107,437379490&fm=3012&app=3012&autime=1753174261&size=b200,200",
     "homepage": "https://haokan.baidu.com/author/1655684201701835",
     "stationUuid": "bf1db5bc-15fa-47eb-9586-bcc70143a9e3",
-    "checkedAt": "2026-10-05T10:52:00.701Z",
+    "checkedAt": "2026-10-06T10:45:28.065Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1310,10 +1289,10 @@
     "favicon": "http://pic.qingting.fm/2017/0328/20170328095251.jpeg",
     "homepage": "https://www.ynradio.cn/",
     "stationUuid": "d89101c5-7784-4eb8-8e6b-fd5631dcff69",
-    "checkedAt": "2026-10-05T10:52:01.028Z",
-    "status": null,
+    "checkedAt": "2026-10-06T10:45:28.345Z",
+    "status": 404,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "大连少儿广播 Young Radio",
@@ -1332,7 +1311,7 @@
     "favicon": "https://nginx-dlrm.dlrm.cn/dlrm/site1/resource/tv/dlrm/202511/25/e9abc5f9-4964-4dce-8500-07eae4ce6799.jpg",
     "homepage": "https://www.runsky.com/",
     "stationUuid": "ca0570d1-9c0a-442a-b2d3-0fdd1eb5911e",
-    "checkedAt": "2026-10-05T10:52:01.143Z",
+    "checkedAt": "2026-10-06T10:45:28.488Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -1351,7 +1330,7 @@
     "favicon": "http://www.am774.com/_CMS_TPL_IMG_/public/a_images/sy_img_02.jpg",
     "homepage": "http://www.am774.com/index.shtml",
     "stationUuid": "2abdf5b4-1603-4fb0-9150-b1ffce2b396f",
-    "checkedAt": "2026-10-05T10:52:01.218Z",
+    "checkedAt": "2026-10-06T10:45:28.564Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -1374,10 +1353,31 @@
     "favicon": "https://pic.qtfm.cn/2022/0921/20220921112337.gif",
     "homepage": "https://www.qtfm.cn/radios/20500161",
     "stationUuid": "e312b524-5d95-4593-8908-d9443463e789",
-    "checkedAt": "2026-10-05T10:52:01.641Z",
+    "checkedAt": "2026-10-06T10:45:28.966Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "兰州生活文艺广播",
+    "url": "https://liveplus.lzr.com.cn/aac_shwy/HD/live.m3u8",
+    "country": "CN",
+    "type": "entertainment",
+    "tags": [
+      "entertainment",
+      "music",
+      "storytelling"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://zainanjingshop.oss-cn-hangzhou.aliyuncs.com/lanzhou/2023-08-21/1692601944591-82505-生活文艺.jpg",
+    "homepage": "https://apps.apple.com/cn/app/%E7%88%B1%E5%85%B0%E5%B7%9E/id908186611",
+    "stationUuid": "842e6db7-3861-4f96-8a3b-18cbf4fcab9e",
+    "checkedAt": "2026-10-06T10:45:31.979Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "卫辉综合广播 动听925",
@@ -1395,7 +1395,7 @@
     "favicon": "https://pic.qtfm.cn/2024/0723/20240723044806.jpeg",
     "homepage": "http://weixin.qq.com/r/ii0mPl3EHgBhrRld93iY",
     "stationUuid": "a667806d-517c-45a5-a771-ab80eb695810",
-    "checkedAt": "2026-10-05T10:52:04.589Z",
+    "checkedAt": "2026-10-06T10:45:33.350Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1414,7 +1414,7 @@
     "favicon": "https://pic.qtfm.cn/2022/1212/20221212050437.png",
     "homepage": "https://www.qtfm.cn/radios/4910",
     "stationUuid": "72235395-87ea-4019-aedf-d01f6a9dca88",
-    "checkedAt": "2026-10-05T10:52:05.011Z",
+    "checkedAt": "2026-10-06T10:45:34.400Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1435,7 +1435,7 @@
     "favicon": "http://pic.qingting.fm/2021/1020/20211020103242.jpeg",
     "homepage": "http://www.newsxc.com/",
     "stationUuid": "8d911445-1862-4621-a0e4-340de20db8d2",
-    "checkedAt": "2026-10-05T10:52:06.301Z",
+    "checkedAt": "2026-10-06T10:45:35.388Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1455,7 +1455,7 @@
     "favicon": "https://pic.qtfm.cn/2022/0704/20220704115326.png",
     "homepage": "http://www.fengqiu.gov.cn/",
     "stationUuid": "698173c2-8d9c-4765-b3fc-38767fc43953",
-    "checkedAt": "2026-10-05T10:52:06.900Z",
+    "checkedAt": "2026-10-06T10:45:35.719Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1475,7 +1475,7 @@
     "favicon": null,
     "homepage": "http://www.fs024.com/",
     "stationUuid": "4f403b83-6555-48ff-a6ee-f88e2f36e2a2",
-    "checkedAt": "2026-10-05T10:52:08.748Z",
+    "checkedAt": "2026-10-06T10:45:38.978Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1495,7 +1495,7 @@
     "favicon": null,
     "homepage": "http://www.wsnews.com.cn/",
     "stationUuid": "35dec51f-878e-4424-90a2-d617cfd8967e",
-    "checkedAt": "2026-10-05T10:52:08.967Z",
+    "checkedAt": "2026-10-06T10:45:39.258Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1515,7 +1515,7 @@
     "favicon": "http://pic.qtfm.cn/device/b70f9a3879da45d1afee1ca35566ed62/1626423014787_pnfzhBn9g.jpeg!200",
     "homepage": "http://www.liuyang.gov.cn/ztzl/dwzt/czj39/lyczyjsgk7/42406074/42406022/",
     "stationUuid": "26f11d2b-c32a-471d-a8d9-20bf16ad7b0d",
-    "checkedAt": "2026-10-05T10:52:10.943Z",
+    "checkedAt": "2026-10-06T10:45:42.468Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1534,7 +1534,7 @@
     "favicon": null,
     "homepage": "http://m.hbgbdst.com/",
     "stationUuid": "955399fb-bf1c-4250-80fa-52669ddf2fb8",
-    "checkedAt": "2026-10-05T10:52:11.863Z",
+    "checkedAt": "2026-10-06T10:45:44.309Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1554,7 +1554,7 @@
     "favicon": null,
     "homepage": "http://www.zgbctv.com/fccommon/home/index",
     "stationUuid": "30228d54-c158-4477-a79e-eea1b0e634b4",
-    "checkedAt": "2026-10-05T10:52:13.400Z",
+    "checkedAt": "2026-10-06T10:45:47.263Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1575,7 +1575,7 @@
     "favicon": null,
     "homepage": "http://www.jxgztv.com/",
     "stationUuid": "b549f86e-4bb5-4856-9787-9d9aabb6473e",
-    "checkedAt": "2026-10-05T10:52:13.885Z",
+    "checkedAt": "2026-10-06T10:45:48.040Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1594,10 +1594,30 @@
     "favicon": "https://pic.qtfm.cn/2015/0609/201506091034228.jpg",
     "homepage": "http://www.shaheshi.gov.cn/info/bmzb.jsp?orgid=323&code=71",
     "stationUuid": "48c485bc-c617-47cf-bb50-42c7142441f1",
-    "checkedAt": "2026-10-05T10:52:14.201Z",
+    "checkedAt": "2026-10-06T10:45:48.405Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "镇江文艺广播",
+    "url": "https://zjtv-wshls.homecdn.com/live/64524.m3u8",
+    "country": "CN",
+    "type": "entertainment",
+    "tags": [
+      "entertainment",
+      "music"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "http://pic.qtfm.cn/2013/channel_logo/4605.jpg!200",
+    "homepage": "https://www.zjmc.tv/",
+    "stationUuid": "794ad6ab-7249-4fd8-8fff-bfbf4542c04a",
+    "checkedAt": "2026-10-06T10:45:49.102Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "长垣广播电视台综合广播",
@@ -1614,7 +1634,7 @@
     "favicon": "http://pic.qtfm.cn/2016/1219/20161219142814871.jpg",
     "homepage": "https://www.zyjjw.cn/cy/",
     "stationUuid": "e2c1afa9-8ab1-43fc-9b11-c7f58597af90",
-    "checkedAt": "2026-10-05T10:52:15.270Z",
+    "checkedAt": "2026-10-06T10:45:49.579Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1635,7 +1655,7 @@
     "favicon": "https://www.yjtvw.com/assets/player/fm895.jpg",
     "homepage": "https://www.yjtvw.com/index.html",
     "stationUuid": "093cbbea-f51a-4d8e-98e9-d671970ada04",
-    "checkedAt": "2026-10-05T10:52:15.406Z",
+    "checkedAt": "2026-10-06T10:45:49.719Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1654,7 +1674,7 @@
     "favicon": null,
     "homepage": "http://wap.qtv.com.cn/",
     "stationUuid": "4996275f-751c-11e9-af37-52543be04c81",
-    "checkedAt": "2026-10-05T10:52:15.488Z",
+    "checkedAt": "2026-10-06T10:45:50.133Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1676,7 +1696,7 @@
     "favicon": "https://i3.radionomy.com/radios/200/e32b5e31-0ebe-42e8-bb90-6aa0dff1f787.jpg",
     "homepage": "https://www.cinemix.us/",
     "stationUuid": "3d4d7515-eed3-4f9b-a0cc-3a5e5b165b12",
-    "checkedAt": "2026-10-05T10:52:16.590Z",
+    "checkedAt": "2026-10-06T10:45:51.963Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1696,7 +1716,7 @@
     "favicon": "https://pic.qtfm.cn/sso/48/1698889217738_0rTyUlJIJ.jpeg",
     "homepage": "http://www.aihuazhou.com/",
     "stationUuid": "a52631c1-4af4-4f49-be79-9ec640302fc8",
-    "checkedAt": "2026-10-05T10:52:18.229Z",
+    "checkedAt": "2026-10-06T10:45:54.863Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1715,10 +1735,29 @@
     "favicon": "https://img.downkuai.com/logo/20250524/edc68368cca3bb8634dc648abdbd549d.png",
     "homepage": "https://m.downkuai.com/android/157422.html",
     "stationUuid": "d8be8bae-ce58-48a5-b622-a787fdeda766",
-    "checkedAt": "2026-10-05T10:52:19.154Z",
+    "checkedAt": "2026-10-06T10:45:57.269Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "临夏市综合广播",
+    "url": "http://124.152.34.102:8030/dUhph2/dUhph2.m3u8",
+    "country": "CN",
+    "type": "full service",
+    "tags": [
+      "full service"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://nginx-linxs.xgsyun.com/linxs/site1/resource/app/icon/170538341069977b18596-564f-4a4a-b196-a191ac48868e.png",
+    "homepage": "https://nginx-linxs.xgsyun.com/linxs/site1/resource/app/template/router/index.html?data=eyJyb290VXJsIjoiaHR0cHM6Ly93YW4tbGlueHMueGdzeXVuLmNvbS9hcHAvIiwidHlwZSI6MCwiY2hhbm5lbCI6MiwidHZTdHlsZSI6MiwiY29sSWQiOjMzNSwiaXNTaGFyZSI6MSwiYXBwSWQiOjEsInNpdGVJRCI6MSwic2l0ZUlkIjoxLCJzeXN0ZW1UeXBlIjowLCJhcHBWZXJzaW9uIjoiMy4yLjEiLCJ3eEFwcElkIjoid3hkOWMzYTA4ZjNkODVhZjRjIn0=",
+    "stationUuid": "234735b0-a9be-44a5-b509-75cd7f592401",
+    "checkedAt": "2026-10-06T10:45:58.376Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "习水综合广播",
@@ -1734,7 +1773,7 @@
     "favicon": "https://pic.qtfm.cn/2016/0530/20160530115751500.png",
     "homepage": "https://www.zunyiol.cn/index.php?a=lists&catid=114",
     "stationUuid": "1719ea12-ef5d-4fbe-9933-582e10bac1c4",
-    "checkedAt": "2026-10-05T10:52:21.552Z",
+    "checkedAt": "2026-10-06T10:45:58.697Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1753,7 +1792,7 @@
     "favicon": "http://klmysjtglxt.rcsxzx.com/skin/default/images/klmyrongmei.png",
     "homepage": "http://klmysjtglxt.rcsxzx.com/",
     "stationUuid": "ef21c8df-b16b-4ad1-8711-a87568c11b4e",
-    "checkedAt": "2026-10-05T10:52:21.951Z",
+    "checkedAt": "2026-10-06T10:45:59.563Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1772,14 +1811,14 @@
     "favicon": null,
     "homepage": "http://klmysjtglxt.rcsxzx.com/",
     "stationUuid": "a6ca6bc7-bfc2-44ad-a23c-fb1eefafb96a",
-    "checkedAt": "2026-10-05T10:52:22.382Z",
+    "checkedAt": "2026-10-06T10:45:59.964Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "北京延庆之声",
-    "url": "https://videoplaynew.yanqingrmzx.com/yq/gb.m3u8",
+    "name": "呼伦贝尔汉语广播",
+    "url": "https://satellitepull.cnr.cn/live/wx32nmghlbehygb/playlist.m3u8?wsSession=d966c1f28016a758d88ba0c2-174814248595620&wsIPSercert=302e928c9e06924943d63c021170d763",
     "country": "CN",
     "type": "full service",
     "tags": [
@@ -1788,10 +1827,10 @@
     "codec": "UNKNOWN",
     "bitrate": 0,
     "language": "chinese",
-    "favicon": "https://pp.myapp.com/ma_icon/0/icon_53960094_1775636711/256",
-    "homepage": "https://sj.qq.com/appdetail/com.pdmi.yanqing.media?&from_wxz=1",
-    "stationUuid": "3991b676-ecdc-4963-a411-db2ac336a5e8",
-    "checkedAt": "2026-10-05T10:52:25.519Z",
+    "favicon": "http://pic.qtfm.cn/device/dabb293bfc8542379134a60f2fea0848/1717397525012_l6IwMdQ7g.jpg!200",
+    "homepage": "http://www.hrtonline.cn/",
+    "stationUuid": "fc6d2bec-52a8-4da8-a41d-8fb90646ecc2",
+    "checkedAt": "2026-10-06T10:46:06.390Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1810,7 +1849,7 @@
     "favicon": null,
     "homepage": "http://www.xfdown.com/soft/155512.html",
     "stationUuid": "6b1df702-aa5f-4626-9e0e-0a8b3ad4ae1d",
-    "checkedAt": "2026-10-05T10:52:28.198Z",
+    "checkedAt": "2026-10-06T10:46:06.711Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1829,10 +1868,10 @@
     "favicon": "http://pic.xfdown.com/uploads/2023-6/202361143067807.png",
     "homepage": "http://www.xfdown.com/soft/155512.html",
     "stationUuid": "0861fee3-44e0-4f3b-9401-bb48567fc646",
-    "checkedAt": "2026-10-05T10:52:28.745Z",
+    "checkedAt": "2026-10-06T10:46:06.905Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "哈密综合广播",
@@ -1848,10 +1887,67 @@
     "favicon": "http://pic.xfdown.com/uploads/2023-6/202361143067807.png",
     "homepage": "http://www.xfdown.com/soft/155512.html",
     "stationUuid": "5babe7d9-a3ff-46c5-b1cd-2502f6661fcb",
-    "checkedAt": "2026-10-05T10:52:29.314Z",
+    "checkedAt": "2026-10-06T10:46:07.156Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "嘉定综合广播",
+    "url": "http://5730.liveplay.myqcloud.com/live/JcmcGBMar.m3u8",
+    "country": "CN",
+    "type": "full service",
+    "tags": [
+      "full service"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://bkimg.cdn.bcebos.com/pic/9e3df8dcd100baa1cd11678ed144ae12c8fcc3ce80f0?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20",
+    "homepage": "http://www.jiading.gov.cn/",
+    "stationUuid": "a620a356-328c-4efe-8127-656d29ac717f",
+    "checkedAt": "2026-10-06T10:46:07.284Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "嘉峪关综合广播",
+    "url": "https://play.kankanlive.com/live/1754366461934397.m3u8",
+    "country": "CN",
+    "type": "full service",
+    "tags": [
+      "full service"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 2560,
+    "language": "chinese",
+    "favicon": "http://wap.jygxw.cn/static/image/jiayuguan/jiayuguan.png",
+    "homepage": "http://wap.jygxw.cn/",
+    "stationUuid": "0b2efa0f-a42e-420f-9bdc-a1416333b8ce",
+    "checkedAt": "2026-10-06T10:46:07.564Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "塔城汉语综合广播",
+    "url": "https://lhttp.qtfm.cn/live/20500031/64k.mp3",
+    "country": "CN",
+    "type": "full service",
+    "tags": [
+      "full service"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://pic.qtfm.cn/sso/198/1576826506358_0tWMi8ZoN.png",
+    "homepage": "https://www.tcxw.cc/",
+    "stationUuid": "0be2c6da-8c6c-406f-8aff-a4f22808e48d",
+    "checkedAt": "2026-10-06T10:46:08.956Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "大连电视台新闻综合频道",
@@ -1868,7 +1964,7 @@
     "favicon": "https://bkimg.cdn.bcebos.com/pic/1f178a82b9014a90f603b4cd8d2b2e12b31bb0514034?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20",
     "homepage": "https://www.runsky.com/",
     "stationUuid": "9195d1ca-f555-4b8e-84aa-0fc7ab66fccf",
-    "checkedAt": "2026-10-05T10:52:36.259Z",
+    "checkedAt": "2026-10-06T10:46:14.904Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -1891,7 +1987,7 @@
     "favicon": "http://pic.qtfm.cn/2015/1104/20151104112112387.jpg!200",
     "homepage": "http://v.iqilu.com/radio/",
     "stationUuid": "24cbcc7c-0e0e-45a1-b4be-8f939688d037",
-    "checkedAt": "2026-10-05T10:52:39.016Z",
+    "checkedAt": "2026-10-06T10:46:18.629Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1910,29 +2006,10 @@
     "favicon": "https://bkimg.cdn.bcebos.com/pic/1b4c510fd9f9d72a6059ddf0ea7c3f34349b023b0d9d?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080",
     "homepage": "https://cyxw.cn/",
     "stationUuid": "8ea16e58-9a9e-41c2-adbc-0713d416f534",
-    "checkedAt": "2026-10-05T10:52:39.030Z",
+    "checkedAt": "2026-10-06T10:46:19.292Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "嵊州综合广播 FM100.3",
-    "url": "https://l.cztvcloud.com/channels/lantian/SXshengzhouaud/128k.m3u8",
-    "country": "CN",
-    "type": "full service",
-    "tags": [
-      "full service"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "http://wap.szttkk.cn/static/img/oneImg2.33f80b3f.png",
-    "homepage": "http://wap.szttkk.cn/#/",
-    "stationUuid": "8b3cf8a1-5398-4e3b-8d27-0dfa7d039e46",
-    "checkedAt": "2026-10-05T10:52:39.325Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "德清之声",
@@ -1948,7 +2025,7 @@
     "favicon": "http://pic.qtfm.cn/2022/0428/20220428050759.jpeg",
     "homepage": "http://dqnews.zjol.com.cn/",
     "stationUuid": "1d765201-6fc2-4a97-a8e5-ec8ee488c366",
-    "checkedAt": "2026-10-05T10:52:43.223Z",
+    "checkedAt": "2026-10-06T10:46:23.914Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1967,7 +2044,7 @@
     "favicon": "https://www.huairtv.com/liveshowoss/resource/dvw_1610609746703.png",
     "homepage": "https://www.huairtv.com/",
     "stationUuid": "48815e57-7883-4d76-b031-4a4a12535eda",
-    "checkedAt": "2026-10-05T10:52:43.349Z",
+    "checkedAt": "2026-10-06T10:46:24.137Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1986,7 +2063,7 @@
     "favicon": "https://pic.qtfm.cn/2021/0122/20210122105428.jpeg",
     "homepage": "http://www.fs024.com/",
     "stationUuid": "912abf36-772d-43ed-ab15-c56001fce38c",
-    "checkedAt": "2026-10-05T10:52:43.711Z",
+    "checkedAt": "2026-10-06T10:46:25.213Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2005,7 +2082,7 @@
     "favicon": null,
     "homepage": "http://www.wsnews.com.cn/",
     "stationUuid": "3be7fdc1-2cc8-4e06-8b21-9afcf94291d9",
-    "checkedAt": "2026-10-05T10:52:43.958Z",
+    "checkedAt": "2026-10-06T10:46:25.238Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2024,10 +2101,49 @@
     "favicon": "https://jiyunchangli.hebyun.com.cn/upload/app/image/59ee97e4f381439eb2a03c120518d03e.png",
     "homepage": "https://www.hebyun.com.cn/html/download.html?siteId=37ac13b44bad430288e13ffa95654d46",
     "stationUuid": "bfe71bc1-5278-44c3-b130-17d45d95f1e9",
-    "checkedAt": "2026-10-05T10:52:47.051Z",
+    "checkedAt": "2026-10-06T10:46:28.053Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "朝阳综合广播",
+    "url": "https://lhttp.qtfm.cn/live/20715/64k.mp3",
+    "country": "CN",
+    "type": "full service",
+    "tags": [
+      "full service"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://www.cygbdst.com/assets/img/favicon.png",
+    "homepage": "https://www.cygbdst.com/",
+    "stationUuid": "3f196b43-6d26-467d-9a84-bfbc951478f5",
+    "checkedAt": "2026-10-06T10:46:28.988Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "杭州华语之声网络广播",
+    "url": "https://lhttp.qtfm.cn/live/20505/64k.mp3",
+    "country": "CN",
+    "type": "full service",
+    "tags": [
+      "full service",
+      "internet radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": null,
+    "homepage": "https://www.hoolo.tv/",
+    "stationUuid": "e546af1a-0b6c-482a-abb5-b5ad3e2c8877",
+    "checkedAt": "2026-10-06T10:46:30.497Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "梅州交通广播",
@@ -2043,7 +2159,7 @@
     "favicon": "https://pic.qtfm.cn/2024/0821/20240821111520.jpeg",
     "homepage": "https://www.meizhou.cn/",
     "stationUuid": "6561ee7d-baf1-4d67-a8d0-0af381df8fb4",
-    "checkedAt": "2026-10-05T10:52:49.108Z",
+    "checkedAt": "2026-10-06T10:46:32.718Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2062,7 +2178,7 @@
     "favicon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/57/8a/c0578af1-fed2-7ab8-897b-2205272d52fd/AppIcon-0-0-1x_U007emarketing-0-2-0-85-220.png/400x400ia-75.webp",
     "homepage": "https://apps.apple.com/cn/app/%E8%BD%AC%E4%B9%A1%E6%A2%A8%E6%A0%91/id1486745904",
     "stationUuid": "3a56cfd8-8769-47bc-bf52-7d949f8b0d8f",
-    "checkedAt": "2026-10-05T10:52:49.464Z",
+    "checkedAt": "2026-10-06T10:46:33.239Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2081,7 +2197,7 @@
     "favicon": "https://pic.qtfm.cn/sso/48/1746779030392_HdlemfDoi.jpeg",
     "homepage": "http://v.130400.cn/",
     "stationUuid": "20b6f4a9-c1a8-4e0d-a9d3-d52c3e3770a4",
-    "checkedAt": "2026-10-05T10:52:49.838Z",
+    "checkedAt": "2026-10-06T10:46:33.569Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2100,7 +2216,7 @@
     "favicon": "https://pic.qtfm.cn/2020/0604/20200604113902.jpeg",
     "homepage": "http://m.zmdnews.cn/category/46",
     "stationUuid": "9f40969c-e4d1-4271-94fd-ef6e541827eb",
-    "checkedAt": "2026-10-05T10:52:50.117Z",
+    "checkedAt": "2026-10-06T10:46:33.687Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2119,7 +2235,7 @@
     "favicon": "https://pic.qtfm.cn/sso/198/1563343327234_W-JYU6s7T.png",
     "homepage": "http://hanchuan.cjyun.org/",
     "stationUuid": "749e6067-443a-40d3-9fb3-f96d9e665ba5",
-    "checkedAt": "2026-10-05T10:52:50.373Z",
+    "checkedAt": "2026-10-06T10:46:35.495Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2138,7 +2254,26 @@
     "favicon": "http://pic.qtfm.cn/2018/0112/20180112044626.png!200",
     "homepage": "https://hym.yunxya.com/",
     "stationUuid": "9864c18c-954c-4523-91f8-191a09590d71",
-    "checkedAt": "2026-10-05T10:52:50.424Z",
+    "checkedAt": "2026-10-06T10:46:35.798Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "江陵广播电视台 综合广播",
+    "url": "https://lhttp-hw.qtfm.cn/live/20500203/64k.mp3",
+    "country": "CN",
+    "type": "full service",
+    "tags": [
+      "full service"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://pic.qtfm.cn/sso/48/1704348992639_gbNMIhY2y.jpeg",
+    "homepage": "https://www.qtfm.cn/radios/20500203",
+    "stationUuid": "21e46cfc-97ed-4b67-bb9b-a019427f0d3b",
+    "checkedAt": "2026-10-06T10:46:36.992Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2157,7 +2292,7 @@
     "favicon": "http://pic.qingting.fm/sso/48/1682325565418_w0caPM5GW.png",
     "homepage": "http://tv.1545ts.com/",
     "stationUuid": "bec19809-a04a-4205-af72-79d29d30bad2",
-    "checkedAt": "2026-10-05T10:52:51.790Z",
+    "checkedAt": "2026-10-06T10:46:38.463Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2176,7 +2311,7 @@
     "favicon": "http://pic.qingting.fm/2018/0502/20180502105316.jpeg",
     "homepage": "https://www.hbnews.net/",
     "stationUuid": "ab5650c9-8eeb-48ad-af4a-07d971dbb1d9",
-    "checkedAt": "2026-10-05T10:52:54.103Z",
+    "checkedAt": "2026-10-06T10:46:43.807Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2195,26 +2330,7 @@
     "favicon": "https://pic.qtfm.cn/2017/1017/20171017081632.png",
     "homepage": "https://www.yuxinet.cn/?pc=1",
     "stationUuid": "a8639110-48d9-444e-8b8a-743b5663affc",
-    "checkedAt": "2026-10-05T10:52:56.249Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "玉门综合广播",
-    "url": "http://live.yumentv.cn:30600/hls/_GuBFRBNR/playlist.m3u8",
-    "country": "CN",
-    "type": "full service",
-    "tags": [
-      "full service"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "https://bkimg.cdn.bcebos.com/pic/bd3eb13533fa828ba61e4cb44e535634970a304eec1d?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20",
-    "homepage": "https://nginx-yms.xgsyun.com/yms/site1/h/article/158/130.html?hm=s",
-    "stationUuid": "f85b9950-e9b9-40e5-8fd6-7380f0f6022b",
-    "checkedAt": "2026-10-05T10:52:56.560Z",
+    "checkedAt": "2026-10-06T10:46:47.161Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2233,7 +2349,26 @@
     "favicon": "http://radio.nettvpro.xyz/uploads/allimg/19/1-1Z51H031450-L.jpg",
     "homepage": "https://www.chinashishi.net/",
     "stationUuid": "2add7790-f139-4446-a364-9825bd3c5977",
-    "checkedAt": "2026-10-05T10:52:57.251Z",
+    "checkedAt": "2026-10-06T10:46:48.544Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "绍兴综合广播",
+    "url": "http://lhttp.qingting.fm/live/5052/64k.mp3",
+    "country": "CN",
+    "type": "full service",
+    "tags": [
+      "full service"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "http://pic.qtfm.cn/sso/48/1689237317741_ssnuc4EFB.png!200",
+    "homepage": "http://www.shaoxing.com.cn/",
+    "stationUuid": "e701e76e-be2e-44c2-8fc8-640f34a1a476",
+    "checkedAt": "2026-10-06T10:46:49.488Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2252,7 +2387,7 @@
     "favicon": "https://pic.qtfm.cn/2021/1027/20211027112120.jpeg",
     "homepage": "https://ms.dhzf.gov.cn/news/",
     "stationUuid": "6e93aea2-9106-4b35-ba5d-45b0e83b55ff",
-    "checkedAt": "2026-10-05T10:52:58.413Z",
+    "checkedAt": "2026-10-06T10:46:50.433Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2271,7 +2406,7 @@
     "favicon": "http://pic.qtfm.cn/2026/0129/20260129042445.jpeg",
     "homepage": "https://www.patv123.com/",
     "stationUuid": "6e7e309a-b471-4178-87d4-e0525bd695ee",
-    "checkedAt": "2026-10-05T10:52:58.781Z",
+    "checkedAt": "2026-10-06T10:46:51.079Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2290,7 +2425,7 @@
     "favicon": "http://pic.qtfm.cn/sso/48/1657850965659_T1r0nElfI.png",
     "homepage": "https://www.zyjjw.cn/tx/",
     "stationUuid": "2bceb10f-ab8b-463d-ae11-f9fcd00cd584",
-    "checkedAt": "2026-10-05T10:53:00.712Z",
+    "checkedAt": "2026-10-06T10:46:54.334Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2309,7 +2444,7 @@
     "favicon": "http://pic.qingting.fm/2015/0206/20150206234001978.jpg",
     "homepage": "http://www.qdnrbs.cn/",
     "stationUuid": "018ebca1-2dfc-413d-a6c1-c5bead93b382",
-    "checkedAt": "2026-10-05T10:53:07.410Z",
+    "checkedAt": "2026-10-06T10:47:01.103Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2330,10 +2465,30 @@
     "favicon": "https://nginx-dlrm.dlrm.cn/dlrm/site1/resource/tv/dlrm/202511/18/30e1c945-ef65-4831-b196-3e9fc7b4960d.jpg",
     "homepage": "https://www.runsky.com/",
     "stationUuid": "2414f1c5-bfff-4a22-8074-ed471bb03a0a",
-    "checkedAt": "2026-10-05T10:53:09.247Z",
+    "checkedAt": "2026-10-06T10:47:05.076Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Hong Kong Fantastic TV",
+    "url": "http://media.fantv.hk/m3u8/archive/channel2_stream1.m3u8",
+    "country": "CN",
+    "type": "hls video",
+    "tags": [
+      "hls video",
+      "hong kong"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "cantonese",
+    "favicon": null,
+    "homepage": "http://www.fantv.hk/",
+    "stationUuid": "19c96827-666a-11e8-b15b-52543be04c81",
+    "checkedAt": "2026-10-06T10:47:06.897Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "万盛融媒体中心综合广播",
@@ -2349,7 +2504,7 @@
     "favicon": "https://pic.qtfm.cn/2023/0508/20230508021125.jpeg",
     "homepage": "https://wansheng.cbg.cn/",
     "stationUuid": "40bbbc86-95d6-4270-ab37-e7649652eea0",
-    "checkedAt": "2026-10-05T10:53:15.989Z",
+    "checkedAt": "2026-10-06T10:47:09.531Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2368,7 +2523,7 @@
     "favicon": "https://pic.qtfm.cn/2020/0806/20200806032958.png",
     "homepage": "https://apps.apple.com/cn/app/%E9%87%91%E4%B8%B0%E5%9F%8E/id1671507779",
     "stationUuid": "5ac9a2e7-9100-40ca-b2fe-929fdfc8e870",
-    "checkedAt": "2026-10-05T10:53:16.552Z",
+    "checkedAt": "2026-10-06T10:47:09.784Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2388,7 +2543,7 @@
     "favicon": "http://img.njgb.com/templates/njgb/plLogo/fm966_20240419.png",
     "homepage": "http://www.njgb.com/",
     "stationUuid": "1fb63453-d4b8-4607-ad52-91563b87e0e0",
-    "checkedAt": "2026-10-05T10:53:19.134Z",
+    "checkedAt": "2026-10-06T10:47:11.588Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2408,7 +2563,7 @@
     "favicon": "https://pic.qtfm.cn/sso/198/1588926376033_JZDSf2mUW.png",
     "homepage": "https://apps.apple.com/cn/app/%E4%BA%91%E4%B8%8A%E6%96%B0%E5%8E%BF/id1466032756",
     "stationUuid": "5eae6396-bda9-4a02-96e4-0388e22783ee",
-    "checkedAt": "2026-10-05T10:53:22.430Z",
+    "checkedAt": "2026-10-06T10:47:14.411Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2427,51 +2582,10 @@
     "favicon": "http://pic.qingting.fm/2020/0405/20200405091347.jpeg",
     "homepage": "http://www.hcrt.cn/",
     "stationUuid": "44360a66-6420-40de-82af-540ec359ccf6",
-    "checkedAt": "2026-10-05T10:53:23.229Z",
+    "checkedAt": "2026-10-06T10:47:15.609Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "湖南潇湘之声",
-    "url": "http://a.live.hnradio.com/zxpd/radio120k_zxpd.m3u8?auth_key=1588751208-0-0-3440555a157a45fdcbdb7840504278c5",
-    "country": "CN",
-    "type": "information",
-    "tags": [
-      "information",
-      "music",
-      "news"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": null,
-    "homepage": "http://www.hnradio.com/",
-    "stationUuid": "2f7ff812-9c43-490a-8ae3-9e45650bae0c",
-    "checkedAt": "2026-10-05T10:53:25.444Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "湖南金鹰之声",
-    "url": "http://a.live.hnradio.com/jypd/radio120k_jypd.m3u8?auth_key=1588751199-0-0-e412c6c15ca2bf1ad6f0833c2bd73bb2",
-    "country": "CN",
-    "type": "information",
-    "tags": [
-      "information",
-      "music"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "http://pic.qingting.fm/2014/0606/20140606062037891.jpg",
-    "homepage": "http://www.hnradio.com/",
-    "stationUuid": "a9639794-7e5a-4d23-9b91-bfb8508aba05",
-    "checkedAt": "2026-10-05T10:53:25.641Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "漯河综合广播",
@@ -2487,10 +2601,29 @@
     "favicon": "http://pic.qingting.fm/2022/0613/20220613112022.jpeg",
     "homepage": "http://www.luohe.com.cn/",
     "stationUuid": "ed0a474f-10f2-4d41-a350-9653fe0a3ab0",
-    "checkedAt": "2026-10-05T10:53:25.908Z",
+    "checkedAt": "2026-10-06T10:47:17.006Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "甘肃新闻综合广播",
+    "url": "https://lhttp-hw.qtfm.cn/live/5022622/64k.mp3",
+    "country": "CN",
+    "type": "information",
+    "tags": [
+      "information"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://so1.360tres.com/t11938a03494107cd343502a5c8.png",
+    "homepage": "https://www.gstv.com.cn/",
+    "stationUuid": "9c0958f7-e1eb-4bef-8da5-c154325d9db1",
+    "checkedAt": "2026-10-06T10:47:17.403Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "郏县综合广播",
@@ -2507,7 +2640,7 @@
     "favicon": "https://pic.qtfm.cn/2024/0521/20240521111937.jpeg",
     "homepage": "https://m.weibo.cn/u/3195974732",
     "stationUuid": "5440fe81-984b-4998-8e60-5376f57e2bcb",
-    "checkedAt": "2026-10-05T10:53:29.233Z",
+    "checkedAt": "2026-10-06T10:47:19.184Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2526,26 +2659,7 @@
     "favicon": "https://pic.qtfm.cn/2025/0303/20250303093300.jpeg",
     "homepage": "https://www.weibo.com/fm107car?refer_flag=1005055013_",
     "stationUuid": "ed1fc1ee-229d-4370-b8cb-f716f1d103b2",
-    "checkedAt": "2026-10-05T10:53:34.512Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "自强之声",
-    "url": "https://lhttp-hw.qtfm.cn/live/5021905/64k.mp3",
-    "country": "CN",
-    "type": "internet radio",
-    "tags": [
-      "internet radio"
-    ],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "https://pic.qtfm.cn/2015/0818/20150818110223254.png",
-    "homepage": "http://www.fsaxgb.com/",
-    "stationUuid": "fb3bd8a8-0510-41e1-9de8-59f443641484",
-    "checkedAt": "2026-10-05T10:53:34.909Z",
+    "checkedAt": "2026-10-06T10:47:22.610Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2564,7 +2678,7 @@
     "favicon": "https://pic.qtfm.cn/2015/0213/20150213163921469.png",
     "homepage": "http://fsaxgb.com/",
     "stationUuid": "3830e3ce-bfbf-4ded-9e78-1cb18a6a4b1e",
-    "checkedAt": "2026-10-05T10:53:35.135Z",
+    "checkedAt": "2026-10-06T10:47:22.743Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2585,7 +2699,7 @@
     "favicon": "http://pic.qtfm.cn/2019/0518/20190518042423.jpeg",
     "homepage": "https://m.weibo.cn/u/2881623280?jumpfrom=weibocom",
     "stationUuid": "e541c9fc-71c1-4d16-a574-2b6615284429",
-    "checkedAt": "2026-10-05T10:53:35.289Z",
+    "checkedAt": "2026-10-06T10:47:23.209Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2604,7 +2718,7 @@
     "favicon": "http://pic.qingting.fm/2022/0104/20220104033228.jpeg",
     "homepage": "http://www.chinactv.com/",
     "stationUuid": "b6b014ba-63bc-4762-b17f-c61cce33b8e6",
-    "checkedAt": "2026-10-05T10:53:41.909Z",
+    "checkedAt": "2026-10-06T10:47:29.326Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2623,7 +2737,7 @@
     "favicon": null,
     "homepage": "http://www.chinactv.com/",
     "stationUuid": "02ed2843-c323-4aca-8bac-f709a9140c98",
-    "checkedAt": "2026-10-05T10:53:41.957Z",
+    "checkedAt": "2026-10-06T10:47:29.386Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2642,7 +2756,7 @@
     "favicon": "http://www.hljtv.com/hljtv.ico",
     "homepage": "http://www.hljtv.com/",
     "stationUuid": "b4e8edb9-104b-4b94-8db1-fc00497756af",
-    "checkedAt": "2026-10-05T10:53:42.361Z",
+    "checkedAt": "2026-10-06T10:47:30.228Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2661,7 +2775,7 @@
     "favicon": null,
     "homepage": "http://www.btgdt.com/",
     "stationUuid": "ed62a1ba-0f95-45bc-b6e8-7f638967bf04",
-    "checkedAt": "2026-10-05T10:53:42.730Z",
+    "checkedAt": "2026-10-06T10:47:30.409Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2680,7 +2794,7 @@
     "favicon": "http://www.syiptv.com/favicon.ico",
     "homepage": "http://www.syiptv.com/",
     "stationUuid": "bd786ad9-7259-4194-b15b-80dfdc520fe5",
-    "checkedAt": "2026-10-05T10:53:42.743Z",
+    "checkedAt": "2026-10-06T10:47:30.509Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2699,7 +2813,7 @@
     "favicon": "http://www.hljtv.com/hljtv.ico",
     "homepage": "http://www.hljtv.com/",
     "stationUuid": "bac7634f-dd95-46c0-b176-3961f1742511",
-    "checkedAt": "2026-10-05T10:53:44.044Z",
+    "checkedAt": "2026-10-06T10:47:31.330Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2719,7 +2833,7 @@
     "favicon": "https://pic.qingting.fm/2021/0104/20210104082111.png",
     "homepage": "http://www.lpsntv.com/",
     "stationUuid": "bc7cb7ff-da8e-439f-9353-dc3d189b7966",
-    "checkedAt": "2026-10-05T10:53:44.123Z",
+    "checkedAt": "2026-10-06T10:47:31.442Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2739,7 +2853,7 @@
     "favicon": "http://pic.qingting.fm/2013/channel_logo/1140.jpg",
     "homepage": "http://www.nbtv.cn/gbds/",
     "stationUuid": "eef9b4ce-b3db-4af6-a4e3-621860c845fa",
-    "checkedAt": "2026-10-05T10:53:44.629Z",
+    "checkedAt": "2026-10-06T10:47:31.885Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2758,7 +2872,7 @@
     "favicon": "http://pic.qingting.fm/2016/0321/2016032112384235.png",
     "homepage": "http://www.nbtv.cn/gbds/",
     "stationUuid": "7035e69e-ee4f-4383-ae11-32de0a447dd6",
-    "checkedAt": "2026-10-05T10:53:44.643Z",
+    "checkedAt": "2026-10-06T10:47:32.066Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2778,7 +2892,7 @@
     "favicon": "http://pic.qingting.fm/2017/0609/20170609033140.png",
     "homepage": "http://www.nbtv.cn/gbds/",
     "stationUuid": "7f1e0f5c-bbc9-484f-b521-c31e51503e9e",
-    "checkedAt": "2026-10-05T10:53:45.423Z",
+    "checkedAt": "2026-10-06T10:47:32.190Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2798,10 +2912,27 @@
     "favicon": "http://pic.qingting.fm/2016/0919/20160919041852.jpeg",
     "homepage": "http://www.nbtv.cn/gbds/",
     "stationUuid": "8ad93a05-a594-4a66-836b-c7644be3659f",
-    "checkedAt": "2026-10-05T10:53:45.521Z",
+    "checkedAt": "2026-10-06T10:47:32.192Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "179music",
+    "url": "https://stream.zeno.fm/mss1yzbbbm8uv",
+    "country": "CN",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "chinese",
+    "favicon": "https://zeno.fm/_ipx/q_85&fit_cover&s_288x288/https://images.zeno.fm/m2s_GHlJCj8KPIkj295khgQ3xtVZdh116e45WAjrdHo/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJRFE5LWYtb3dvTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJRFFwNWlnbmdvTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTY2MTU2MTgxNzAwMA.webp",
+    "homepage": "https://zeno.fm/radio/184179/",
+    "stationUuid": "29044ec4-7e4a-4f72-9499-82bc378640b7",
+    "checkedAt": "2026-10-06T10:47:32.878Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "80后音悦台",
@@ -2815,27 +2946,10 @@
     "favicon": null,
     "homepage": "http://www.hndt.com/",
     "stationUuid": "f2d9ec8c-00a5-4b8d-8764-7d96e379a41a",
-    "checkedAt": "2026-10-05T10:53:46.670Z",
+    "checkedAt": "2026-10-06T10:47:33.368Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "CNR-3 音乐之声",
-    "url": "http://antiserver.kuwo.cn/anti.s?rid=MUSIC_190038250&response=res&format=mp3|aac&type=convert_url&br=128kmp3&agent=iPhone&callback=getlink&jpcallback=getlink.mp3",
-    "country": "CN",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": null,
-    "homepage": "http://china.cnr.cn/",
-    "stationUuid": "764588ab-2f5b-4733-b32d-c16592010a43",
-    "checkedAt": "2026-10-05T10:53:48.184Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "NekoFM_Hit_songs",
@@ -2849,7 +2963,7 @@
     "favicon": null,
     "homepage": "http://38.76.209.235/public/nekofm_hit_songs",
     "stationUuid": "22edc6f0-9890-4dcd-9329-526485f00d2e",
-    "checkedAt": "2026-10-05T10:53:50.343Z",
+    "checkedAt": "2026-10-06T10:47:36.118Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2866,7 +2980,7 @@
     "favicon": null,
     "homepage": "http://www.dpcm.cn/",
     "stationUuid": "542f45ed-b762-11e8-aaf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:53:50.626Z",
+    "checkedAt": "2026-10-06T10:47:36.349Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2883,7 +2997,7 @@
     "favicon": "https://www.team-bhp.com/forum/attachments/street-experiences/458327d1692240014t-radio-auto-launched-radio-tuk-tuk-tuk_tuk_logo.308112138_std.jpg",
     "homepage": "https://radio.gawooni.games/",
     "stationUuid": "41dc05fc-7be7-4231-bd73-5bc1e39e49cd",
-    "checkedAt": "2026-10-05T10:53:52.343Z",
+    "checkedAt": "2026-10-06T10:47:37.713Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -2900,7 +3014,7 @@
     "favicon": "https://pic.qtfm.cn/2024/0924/20240924023803.jpeg",
     "homepage": "https://www.qingting.fm/radios/20211653",
     "stationUuid": "89950ef1-8b45-469c-b0e1-ce3d3650c074",
-    "checkedAt": "2026-10-05T10:53:53.750Z",
+    "checkedAt": "2026-10-06T10:47:39.343Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2917,7 +3031,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/qf4m209fnxhvv/",
     "stationUuid": "6c36b453-62af-4888-a512-b36c93e98e8f",
-    "checkedAt": "2026-10-05T10:53:54.002Z",
+    "checkedAt": "2026-10-06T10:47:39.552Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2934,7 +3048,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/p8zqvdsyexhvv/",
     "stationUuid": "1f5cd4f8-ae17-4fdd-9b7a-af5ddeea0517",
-    "checkedAt": "2026-10-05T10:53:55.307Z",
+    "checkedAt": "2026-10-06T10:47:41.309Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2951,7 +3065,7 @@
     "favicon": "https://so1.360tres.com/t011b75e6e56cb532bb.jpg",
     "homepage": "https://zeno.fm/radio/jay-chou-station/",
     "stationUuid": "e5545833-d1f0-4030-bb16-8b5baaed4714",
-    "checkedAt": "2026-10-05T10:53:55.369Z",
+    "checkedAt": "2026-10-06T10:47:41.422Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2968,7 +3082,7 @@
     "favicon": null,
     "homepage": "https://lhttp-hw.qtfm.cn/live/1090/64k.mp3",
     "stationUuid": "ff8a49e4-186c-4b9e-919c-1cf61327a8a9",
-    "checkedAt": "2026-10-05T10:53:55.910Z",
+    "checkedAt": "2026-10-06T10:47:41.894Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2985,7 +3099,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/chinese_ambassadorsradio/",
     "stationUuid": "e10cffd0-9037-46e3-8a2f-876a3e111a70",
-    "checkedAt": "2026-10-05T10:53:56.109Z",
+    "checkedAt": "2026-10-06T10:47:42.095Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3002,7 +3116,7 @@
     "favicon": "https://pic.qtfm.cn/sso/198/1614908090184_zF-X35-Mf.jpeg",
     "homepage": "http://wlzb.dalitv.net/live/pc/index?liveId=234246175&shareuid=0",
     "stationUuid": "6b0c5758-9911-4774-a792-a8b4ea6ff37d",
-    "checkedAt": "2026-10-05T10:53:56.146Z",
+    "checkedAt": "2026-10-06T10:47:42.181Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3019,7 +3133,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/x064x7r1exhvv/",
     "stationUuid": "40f008bb-bae0-4a53-805b-3bc654899d66",
-    "checkedAt": "2026-10-05T10:53:56.214Z",
+    "checkedAt": "2026-10-06T10:47:42.305Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3036,7 +3150,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/4x68eyvfnxhvv/",
     "stationUuid": "fa8abc5b-eeb7-4234-9ac6-d7ec90e4a083",
-    "checkedAt": "2026-10-05T10:53:56.616Z",
+    "checkedAt": "2026-10-06T10:47:43.074Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3053,7 +3167,7 @@
     "favicon": null,
     "homepage": "https://www.qtfm.cn/radios/5021523/",
     "stationUuid": "32ec3d4a-0ced-4b15-a9cf-4b18c7f5c85c",
-    "checkedAt": "2026-10-05T10:53:57.808Z",
+    "checkedAt": "2026-10-06T10:47:43.668Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3070,10 +3184,10 @@
     "favicon": null,
     "homepage": "https://www.fqxww.cn/",
     "stationUuid": "486e43d0-e25d-4785-9bd4-f2b3ec1ac445",
-    "checkedAt": "2026-10-05T10:53:58.404Z",
+    "checkedAt": "2026-10-06T10:47:44.621Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "测试12",
@@ -3087,10 +3201,10 @@
     "favicon": null,
     "homepage": "https://www.fqxww.cn/",
     "stationUuid": "7bcc6678-c334-4554-8071-a5ca6ba324ef",
-    "checkedAt": "2026-10-05T10:53:58.409Z",
+    "checkedAt": "2026-10-06T10:47:44.861Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "测试13",
@@ -3104,10 +3218,10 @@
     "favicon": null,
     "homepage": "https://www.fqxww.cn/",
     "stationUuid": "4f7be892-7114-4d98-b672-39a5e89c4aa4",
-    "checkedAt": "2026-10-05T10:53:58.474Z",
+    "checkedAt": "2026-10-06T10:47:44.910Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "测试15",
@@ -3121,10 +3235,10 @@
     "favicon": null,
     "homepage": "https://www.fqxww.cn/",
     "stationUuid": "e2304861-a690-4f77-881e-6705d8475833",
-    "checkedAt": "2026-10-05T10:53:58.532Z",
+    "checkedAt": "2026-10-06T10:47:44.911Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "测试8",
@@ -3138,7 +3252,7 @@
     "favicon": null,
     "homepage": "https://www.fqxww.cn/",
     "stationUuid": "84139b19-58ba-43a4-b133-c577f1cfa522",
-    "checkedAt": "2026-10-05T10:53:59.217Z",
+    "checkedAt": "2026-10-06T10:47:45.761Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3155,7 +3269,7 @@
     "favicon": "http://pic.qingting.fm/2016/0831/20160831105925.png",
     "homepage": "https://www.hh.cn/",
     "stationUuid": "d63c8949-7fc7-42e8-80c1-3cefb8f7f2bf",
-    "checkedAt": "2026-10-05T10:54:00.484Z",
+    "checkedAt": "2026-10-06T10:47:47.212Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3172,7 +3286,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/11wv2kt70xhvv/",
     "stationUuid": "55b9fabf-f6b9-4a68-acfd-5fdebc825eed",
-    "checkedAt": "2026-10-05T10:54:01.360Z",
+    "checkedAt": "2026-10-06T10:47:47.831Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3191,7 +3305,7 @@
     "favicon": null,
     "homepage": "http://www.hndt.com/",
     "stationUuid": "9aebbdea-d291-11e9-a861-52543be04c81",
-    "checkedAt": "2026-10-05T10:54:05.151Z",
+    "checkedAt": "2026-10-06T10:47:53.159Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3210,27 +3324,28 @@
     "favicon": "https://zeno.fm/_next/image/?url=https://images.zeno.fm/n8BeRAfmIFGXgfMKXgRmwxVp5iO8M4Jov2ikVGBmKsY/rs:fit:240:240/g:ce:0:0/aHR0cHM6Ly9zdHJlYW0tdG9vbHMuemVub21lZGlhLmNvbS9jb250ZW50L3N0YXRpb25zLzgwMmQ5YTdhLTgzZDctNDUxYS1hYjJlLWNlYWFlM2VkNGI5Yy9pbWFnZS8_dXBkYXRlZD0xNjkyODUzNTQ3MDAw.webp&w=750&q=100",
     "homepage": "https://zeno.fm/radio/asia-extreme-fm/",
     "stationUuid": "ba6f6852-37a6-47fb-829e-b56c48e6b3f6",
-    "checkedAt": "2026-10-05T10:54:05.306Z",
+    "checkedAt": "2026-10-06T10:47:53.311Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "Big B Radio - Cpop",
-    "url": "https://antares.dribbcast.com/proxy/cpop?mp=/s",
+    "name": "Big B Radio亚洲音乐台",
+    "url": "https://antares.dribbcast.com/proxy/apop?mp=/s",
     "country": "CN",
     "type": "music",
     "tags": [
       "music",
-      "pop"
+      "pop",
+      "rock"
     ],
-    "codec": "AAC+",
+    "codec": "MP3",
     "bitrate": 128,
-    "language": "chinese",
+    "language": "chinese,japanese,korean",
     "favicon": null,
-    "homepage": "https://bigbradio.net/cpop",
-    "stationUuid": "12cd39c2-a45a-48a9-a74b-1d387a55341e",
-    "checkedAt": "2026-10-05T10:54:05.605Z",
+    "homepage": "https://bigbradio.net/",
+    "stationUuid": "751de35b-f169-45fa-9fd5-ef4284fbe91e",
+    "checkedAt": "2026-10-06T10:47:54.070Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3250,7 +3365,7 @@
     "favicon": "http://www.bigbigmix.com/wp-content/uploads/2023/09/cropped-MIX-LOGO-INDEX.png",
     "homepage": "http://bigbigmix.com/",
     "stationUuid": "d67ef458-8c9e-4b21-ab68-aeb6d62b203a",
-    "checkedAt": "2026-10-05T10:54:05.796Z",
+    "checkedAt": "2026-10-06T10:47:54.162Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3270,29 +3385,10 @@
     "favicon": null,
     "homepage": "https://www.brtv.org.cn/",
     "stationUuid": "72482946-62c6-4a73-a161-7ec312ae48bf",
-    "checkedAt": "2026-10-05T10:54:06.268Z",
+    "checkedAt": "2026-10-06T10:47:54.523Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "KRadio 若望三電台",
-    "url": "https://stream.zeno.fm/4uih7z8lxj9uv",
-    "country": "CN",
-    "type": "music",
-    "tags": [
-      "music"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "cantonese",
-    "favicon": "https://zeno.fm/_ipx/f_webp&q_85&fit_cover&s_288x288/https://images.zeno.fm/JRIjfFvxZu9ZqF1xJcmjCiXPJYZSbW9gu1u6jJgbqc8/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvNTYzOWM0YTUtNWYxNy00MWVkLTk5YWMtZWQxYWZiYzdlZjY5L2ltYWdlLz91PTE2ODMzOTAzOTUwMDA.webp",
-    "homepage": "https://instagram.com/kradio_0123?igshid=YmMyMTA2M2Y=",
-    "stationUuid": "71cefff4-f739-4f9d-96c8-107f04168bbb",
-    "checkedAt": "2026-10-05T10:54:07.108Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Raggakings雷鬼音乐频道",
@@ -3309,7 +3405,7 @@
     "favicon": "https://raggakings.radio/wprk/wp-content/uploads/2020/12/cropped-RaggakingsLogo_ohneURL_512x512.jpg",
     "homepage": "https://raggakings.radio/wprk/",
     "stationUuid": "9b6699c4-576a-4ad7-a666-324cdefec14b",
-    "checkedAt": "2026-10-05T10:54:07.555Z",
+    "checkedAt": "2026-10-06T10:47:55.998Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3328,7 +3424,7 @@
     "favicon": null,
     "homepage": "http://www.yunfucity.com/",
     "stationUuid": "c852e186-7b1f-4f8e-ba3a-2dbc0ba5bdae",
-    "checkedAt": "2026-10-05T10:54:09.914Z",
+    "checkedAt": "2026-10-06T10:47:58.059Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3348,7 +3444,7 @@
     "favicon": "https://pic.qtfm.cn/2024/0319/20240319030620.jpeg",
     "homepage": "http://m.fbaoding.com/",
     "stationUuid": "27914812-e5a2-4aa1-9bb0-39809855c28f",
-    "checkedAt": "2026-10-05T10:54:10.973Z",
+    "checkedAt": "2026-10-06T10:47:59.185Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3367,7 +3463,7 @@
     "favicon": null,
     "homepage": "http://klmysjtglxt.rcsxzx.com/",
     "stationUuid": "5b0085e0-e029-440a-913b-9c8ca875d30c",
-    "checkedAt": "2026-10-05T10:54:11.330Z",
+    "checkedAt": "2026-10-06T10:47:59.637Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3387,7 +3483,7 @@
     "favicon": null,
     "homepage": "http://www.njgb.com/",
     "stationUuid": "8441319e-5782-46fa-9916-aa488723335d",
-    "checkedAt": "2026-10-05T10:54:11.584Z",
+    "checkedAt": "2026-10-06T10:47:59.846Z",
     "status": 404,
     "contentType": "text/plain",
     "lastFailure": "HTTP 404"
@@ -3406,7 +3502,7 @@
     "favicon": null,
     "homepage": "http://www.njgb.com/",
     "stationUuid": "34f4c6dd-b974-44f9-a7db-7b2a41ddcee4",
-    "checkedAt": "2026-10-05T10:54:13.767Z",
+    "checkedAt": "2026-10-06T10:48:01.817Z",
     "status": 404,
     "contentType": "text/plain",
     "lastFailure": "HTTP 404"
@@ -3426,7 +3522,7 @@
     "favicon": "https://image.cm.jstv.com/images/2024/9/5/2024951725522063507_773_s.png",
     "homepage": "http://www.njls.gov.cn/jrs/syw/index_15.html",
     "stationUuid": "0ee9de6f-73dc-4293-9750-5f9d3381fea4",
-    "checkedAt": "2026-10-05T10:54:13.804Z",
+    "checkedAt": "2026-10-06T10:48:01.826Z",
     "status": 404,
     "contentType": "application/json",
     "lastFailure": "HTTP 404"
@@ -3446,7 +3542,7 @@
     "favicon": "https://so1.360tres.com/t01ad424713a4ba945d.jpg",
     "homepage": "http://www.taierzhuang.gov.cn/?ivk_sa=1024320u",
     "stationUuid": "310674ca-acc4-48f6-9caf-a0b4678f5ca2",
-    "checkedAt": "2026-10-05T10:54:15.605Z",
+    "checkedAt": "2026-10-06T10:48:04.392Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3466,7 +3562,7 @@
     "favicon": null,
     "homepage": "https://app.iqilu.com/share/cmFkaW9sLTI2OS0x.html?UL=2",
     "stationUuid": "71097794-8a8b-49a1-ae12-fa01c90ea4c5",
-    "checkedAt": "2026-10-05T10:54:18.434Z",
+    "checkedAt": "2026-10-06T10:48:07.820Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3485,7 +3581,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/Dehy7LocbG9uNEPfaRliO0enHnh63W5W8zNQhS8Hwqc/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvOWE1NTYyN2QtNDFkMi00ODIzLTlkOGYtOWEwYmE3YmUwZTg5L2ltYWdlLz91PTE3MzM2ODQwNzYwMDA.webp",
     "homepage": "https://zeno.fm/radio/shibing/",
     "stationUuid": "6af87b3e-70e5-4170-a0ce-2378669c7b6b",
-    "checkedAt": "2026-10-05T10:54:18.452Z",
+    "checkedAt": "2026-10-06T10:48:08.072Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3504,7 +3600,7 @@
     "favicon": "https://pic.qtfm.cn/2024/0108/20240108040809.png",
     "homepage": "http://www.tstv.cn/",
     "stationUuid": "c56a051d-a802-4763-99b2-7ace2c260053",
-    "checkedAt": "2026-10-05T10:54:19.333Z",
+    "checkedAt": "2026-10-06T10:48:08.976Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3524,7 +3620,7 @@
     "favicon": null,
     "homepage": "http://www.gzastv.com/",
     "stationUuid": "6a0dc377-b2f4-47fe-9249-80e2ad5126f9",
-    "checkedAt": "2026-10-05T10:54:20.710Z",
+    "checkedAt": "2026-10-06T10:48:12.113Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3543,7 +3639,7 @@
     "favicon": "http://pic.qingting.fm/2018/1128/20181128155326321.jpg",
     "homepage": "https://www.newsyc.com/",
     "stationUuid": "39eafae9-5d67-44c5-b59b-9067db9085f1",
-    "checkedAt": "2026-10-05T10:54:22.421Z",
+    "checkedAt": "2026-10-06T10:48:13.094Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3563,7 +3659,7 @@
     "favicon": "https://pic.qingting.fm/sso/198/1628043155407_RQBN6PrYp.jpeg",
     "homepage": "https://www.qingting.fm/radios/15318691",
     "stationUuid": "e482c810-3bfb-4ff2-86b3-8e7e16c8bca2",
-    "checkedAt": "2026-10-05T10:54:22.471Z",
+    "checkedAt": "2026-10-06T10:48:13.215Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3583,7 +3679,7 @@
     "favicon": null,
     "homepage": "https://www.qingting.fm/radios/20500109/",
     "stationUuid": "5d3c386b-954d-4d94-b309-5fad0ad5ff80",
-    "checkedAt": "2026-10-05T10:54:24.153Z",
+    "checkedAt": "2026-10-06T10:48:14.555Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3603,7 +3699,26 @@
     "favicon": null,
     "homepage": "http://www.eprtv.cn/",
     "stationUuid": "bad1298f-8831-43e4-8905-8b7bc2c538ce",
-    "checkedAt": "2026-10-05T10:54:27.045Z",
+    "checkedAt": "2026-10-06T10:48:17.509Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "抚州交通音乐广播",
+    "url": "https://lhttp-hw.qtfm.cn/live/20500015/64k.mp3",
+    "country": "CN",
+    "type": "music",
+    "tags": [
+      "music"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "http://pic.qingting.fm/sso/48/1730445756612_mPcC-dRZ9.png",
+    "homepage": "https://www.zgfznews.com/",
+    "stationUuid": "ac7214a1-5d94-469f-bf0a-3be7a2d0c116",
+    "checkedAt": "2026-10-06T10:48:18.365Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3623,7 +3738,7 @@
     "favicon": null,
     "homepage": "http://www.wsrtv.com.cn/",
     "stationUuid": "75485b4a-a342-438b-a00b-0c0b0b08e20c",
-    "checkedAt": "2026-10-05T10:54:27.910Z",
+    "checkedAt": "2026-10-06T10:48:18.712Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3642,7 +3757,7 @@
     "favicon": null,
     "homepage": "http://m.gltvs.com/",
     "stationUuid": "ac4a0463-1720-11ea-a620-52543be04c81",
-    "checkedAt": "2026-10-05T10:54:30.946Z",
+    "checkedAt": "2026-10-06T10:48:21.174Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3661,7 +3776,7 @@
     "favicon": "http://pic.qingting.fm/2016/0911/20160911041424.jpeg",
     "homepage": "https://www.gltvs.com/",
     "stationUuid": "b60fd5f7-8502-4fb1-adcd-b4af383a5453",
-    "checkedAt": "2026-10-05T10:54:30.949Z",
+    "checkedAt": "2026-10-06T10:48:21.210Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3681,30 +3796,10 @@
     "favicon": "https://pic.qtfm.cn/2015/0330/2015033017402282.jpg",
     "homepage": "https://www.365500.com/",
     "stationUuid": "80738e7c-fd1a-4ba3-b3ff-6ba49bc777de",
-    "checkedAt": "2026-10-05T10:54:33.820Z",
+    "checkedAt": "2026-10-06T10:48:24.173Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "河北音乐广播",
-    "url": "https://radio.pull.hebtv.com/live/hebyy.m3u8",
-    "country": "CN",
-    "type": "music",
-    "tags": [
-      "music",
-      "oldies"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "https://www.hebtv.com/public/img/icon_ie.jpg",
-    "homepage": "https://www.hebtv.com/",
-    "stationUuid": "ec033ee7-327e-4fb0-87a4-b07391ef4d36",
-    "checkedAt": "2026-10-05T10:54:33.936Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "河南网络广播潮流音悦台",
@@ -3720,7 +3815,7 @@
     "favicon": null,
     "homepage": "http://www.hndt.com/",
     "stationUuid": "ec377298-822a-4df2-8412-d67ef64156d9",
-    "checkedAt": "2026-10-05T10:54:34.724Z",
+    "checkedAt": "2026-10-06T10:48:25.410Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3739,7 +3834,7 @@
     "favicon": null,
     "homepage": "http://www.1545ts.com/Radio/",
     "stationUuid": "1881c331-6db8-44be-bbd6-1a6acc8bee9b",
-    "checkedAt": "2026-10-05T10:54:35.033Z",
+    "checkedAt": "2026-10-06T10:48:25.831Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3759,7 +3854,7 @@
     "favicon": null,
     "homepage": "https://www.qingting.fm/radios/20211631",
     "stationUuid": "de2f0d5e-75c0-4135-bd01-2d42c6ed265d",
-    "checkedAt": "2026-10-05T10:54:36.577Z",
+    "checkedAt": "2026-10-06T10:48:27.617Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3778,7 +3873,7 @@
     "favicon": null,
     "homepage": "http://www.0763f.com/",
     "stationUuid": "99ace9a5-fb19-4f3d-99b6-0976d4a18bd9",
-    "checkedAt": "2026-10-05T10:54:37.197Z",
+    "checkedAt": "2026-10-06T10:48:28.058Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3797,7 +3892,7 @@
     "favicon": "https://pic.qtfm.cn/2018/0313/20180313045625.png",
     "homepage": "http://m.hbgbdst.com/",
     "stationUuid": "312a5df5-3e7d-4072-974d-fc2905ed0744",
-    "checkedAt": "2026-10-05T10:54:37.912Z",
+    "checkedAt": "2026-10-06T10:48:28.943Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3816,27 +3911,7 @@
     "favicon": null,
     "homepage": "http://m.gdzjdaily.com.cn/",
     "stationUuid": "44de3463-41ef-41cf-b77b-5f4262d96f3a",
-    "checkedAt": "2026-10-05T10:54:38.359Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "玉林综合广播",
-    "url": "https://lhttp.qingting.fm/live/1762/64k.mp3",
-    "country": "CN",
-    "type": "music",
-    "tags": [
-      "music",
-      "news"
-    ],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": null,
-    "homepage": "http://www.yltvb.com/",
-    "stationUuid": "98126479-359b-4504-a8fe-0fe7e38f913c",
-    "checkedAt": "2026-10-05T10:54:39.906Z",
+    "checkedAt": "2026-10-06T10:48:29.450Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3856,27 +3931,7 @@
     "favicon": null,
     "homepage": "http://www.n21.cc/",
     "stationUuid": "1a178822-5085-41d2-a4f2-335df176a541",
-    "checkedAt": "2026-10-05T10:54:39.939Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "登封综合广播",
-    "url": "https://lhttp.qtfm.cn/live/5022077/64k.mp3",
-    "country": "CN",
-    "type": "music",
-    "tags": [
-      "music",
-      "news"
-    ],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": null,
-    "homepage": "https://www.qingting.fm/radios/5022077",
-    "stationUuid": "f3e587ec-0c8c-42c6-9724-6231f6c5b682",
-    "checkedAt": "2026-10-05T10:54:39.942Z",
+    "checkedAt": "2026-10-06T10:48:30.904Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3895,7 +3950,7 @@
     "favicon": null,
     "homepage": "http://www.zohi.tv/",
     "stationUuid": "aa4ab95d-14a4-11e9-a80b-52543be04c81",
-    "checkedAt": "2026-10-05T10:54:40.744Z",
+    "checkedAt": "2026-10-06T10:48:31.638Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3914,7 +3969,7 @@
     "favicon": "http://pic.qtfm.cn/2019/0518/20190518112724.jpeg",
     "homepage": "https://www.zohi.tv/",
     "stationUuid": "4eba01dc-fac4-46be-8aff-b645eaade8ec",
-    "checkedAt": "2026-10-05T10:54:40.798Z",
+    "checkedAt": "2026-10-06T10:48:31.973Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3934,7 +3989,7 @@
     "favicon": "http://pic.qingting.fm/2018/0508/20180508044233.jpeg",
     "homepage": "http://www.myntv.cn/",
     "stationUuid": "7db62691-d16f-4dd5-8ce3-a5f2df8265b9",
-    "checkedAt": "2026-10-05T10:54:41.742Z",
+    "checkedAt": "2026-10-06T10:48:32.731Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3954,7 +4009,7 @@
     "favicon": "https://pic.qtfm.cn/2017/1117/20171117123448.png",
     "homepage": "http://www.mmstw.com/",
     "stationUuid": "42e9bdc5-8cf4-4a87-8c97-4bbce88f6e0e",
-    "checkedAt": "2026-10-05T10:54:42.519Z",
+    "checkedAt": "2026-10-06T10:48:33.333Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3973,7 +4028,7 @@
     "favicon": "http://pic.qingting.fm/2015/0528/20150528101127365.jpg",
     "homepage": "http://v.xiancity.cn/",
     "stationUuid": "eadabc82-ee72-405d-825c-f77c2e1bb70c",
-    "checkedAt": "2026-10-05T10:54:42.908Z",
+    "checkedAt": "2026-10-06T10:48:33.810Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -3992,7 +4047,7 @@
     "favicon": "https://pic.qtfm.cn/2017/0123/20170123055023.jpeg",
     "homepage": "https://www.qtfm.cn/radiopage/239/2",
     "stationUuid": "d49f5c67-a314-4c43-886c-00b1ec83ae19",
-    "checkedAt": "2026-10-05T10:54:43.289Z",
+    "checkedAt": "2026-10-06T10:48:34.323Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4011,7 +4066,7 @@
     "favicon": "http://pic.qingting.fm/2017/0123/20170123055023.jpeg",
     "homepage": "https://bookingmaster.gxrb.com.cn/cloudgxLive/liveDetails/2846",
     "stationUuid": "e7740ede-f965-4ce3-ba2e-4a04f1bb5e0f",
-    "checkedAt": "2026-10-05T10:54:43.316Z",
+    "checkedAt": "2026-10-06T10:48:34.530Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -4031,7 +4086,7 @@
     "favicon": null,
     "homepage": "https://www.gystv.com/",
     "stationUuid": "429f6d90-66f4-4a58-a23e-3232062b7fda",
-    "checkedAt": "2026-10-05T10:54:43.526Z",
+    "checkedAt": "2026-10-06T10:48:34.610Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4050,7 +4105,7 @@
     "favicon": "https://pic.qtfm.cn/2017/0317/20170317030908.png",
     "homepage": "http://www.gxhzxw.com/",
     "stationUuid": "05579077-4285-4176-bac8-f2ad282b1392",
-    "checkedAt": "2026-10-05T10:54:43.564Z",
+    "checkedAt": "2026-10-06T10:48:34.709Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4070,10 +4125,29 @@
     "favicon": "https://pic.qtfm.cn/2019/0807/20190807055844.png",
     "homepage": "http://www.suixi.gov.cn/sxxw/index.html",
     "stationUuid": "3513ddcf-a36d-495a-b99f-6c5abbb819e3",
-    "checkedAt": "2026-10-05T10:54:44.484Z",
+    "checkedAt": "2026-10-06T10:48:35.524Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "钦州音乐广播",
+    "url": "https://stream.gxqzxw.com/aac_audio889/playlist.m3u8",
+    "country": "CN",
+    "type": "music",
+    "tags": [
+      "music"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 51,
+    "language": "chinese",
+    "favicon": "http://radio.nettvpro.xyz/uploads/allimg/19/1-1Z5191R4330-L.jpg",
+    "homepage": "https://www.gxqzxw.com/",
+    "stationUuid": "09d9dd85-0630-4315-ad2c-da8333bf32e5",
+    "checkedAt": "2026-10-06T10:48:37.132Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "长春乡村戏曲广播",
@@ -4089,7 +4163,7 @@
     "favicon": null,
     "homepage": "http://www.chinactv.com/",
     "stationUuid": "bd9b1429-7c55-11ea-8a3b-52543be04c81",
-    "checkedAt": "2026-10-05T10:54:45.816Z",
+    "checkedAt": "2026-10-06T10:48:37.444Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4108,7 +4182,7 @@
     "favicon": "https://ytmedia.radio.cn/CCYT/202302/09/16/ooaRWbtET4tHDAMFR2023020916528.png",
     "homepage": "https://www.radio.cn/pc-portal/client.html",
     "stationUuid": "3e036973-4631-4c12-8d7a-0956f790fe11",
-    "checkedAt": "2026-10-05T10:54:49.342Z",
+    "checkedAt": "2026-10-06T10:48:40.988Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4128,7 +4202,7 @@
     "favicon": null,
     "homepage": "http://www.lnddbs.com/",
     "stationUuid": "4bf555f2-2f52-420b-9ea7-c46104777e4f",
-    "checkedAt": "2026-10-05T10:54:50.936Z",
+    "checkedAt": "2026-10-06T10:48:43.336Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4147,7 +4221,7 @@
     "favicon": "https://pic.qtfm.cn/2011/0926/20110926100610683.jpg",
     "homepage": "https://www.nmtv.cn/",
     "stationUuid": "3e41dc10-ebdd-4bab-b6ba-41806ee8b204",
-    "checkedAt": "2026-10-05T10:54:52.981Z",
+    "checkedAt": "2026-10-06T10:48:45.604Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4166,7 +4240,7 @@
     "favicon": null,
     "homepage": "https://2020.xmtv.cn/",
     "stationUuid": "dbd753f1-1fa4-4a8a-9765-3c04ff45a5df",
-    "checkedAt": "2026-10-05T10:54:53.613Z",
+    "checkedAt": "2026-10-06T10:48:46.648Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4185,7 +4259,7 @@
     "favicon": "https://nginx-dlrm.dlrm.cn/dlrm/site1/resource/tv/dlrm/202511/25/e5643a71-6827-4e18-8011-bc103d43e33a.png",
     "homepage": "https://www.runsky.com/",
     "stationUuid": "d3591773-54d2-4cb1-8800-efae2a63f8b5",
-    "checkedAt": "2026-10-05T10:54:55.805Z",
+    "checkedAt": "2026-10-06T10:48:49.143Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4204,7 +4278,7 @@
     "favicon": "http://www.bytoday.net/favicon.ico",
     "homepage": "http://www.bytoday.net/portal.php?mod=list&catid=1",
     "stationUuid": "c5ea141a-0078-4aad-b852-0e6c63178b45",
-    "checkedAt": "2026-10-05T10:54:56.550Z",
+    "checkedAt": "2026-10-06T10:48:50.063Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4223,7 +4297,26 @@
     "favicon": null,
     "homepage": "http://www.hh.cn/xw/mlxw/",
     "stationUuid": "79d12f66-fec8-4c1d-aec8-d81a9ad91195",
-    "checkedAt": "2026-10-05T10:54:58.859Z",
+    "checkedAt": "2026-10-06T10:48:53.174Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "抚州新闻综合广播",
+    "url": "https://lhttp-hw.qtfm.cn/live/20500226/64k.mp3",
+    "country": "CN",
+    "type": "news",
+    "tags": [
+      "news"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://pic.qtfm.cn/sso/48/1736388727441_0Fy9ZiSoW.png",
+    "homepage": "https://www.zgfznews.com/",
+    "stationUuid": "5302dc2f-44ee-4511-9600-e9d0d7e05dce",
+    "checkedAt": "2026-10-06T10:48:54.716Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4242,26 +4335,7 @@
     "favicon": null,
     "homepage": "http://www.wsrtv.com.cn/",
     "stationUuid": "d4c86e2f-5454-4c0c-9261-4ce1be4cbbd9",
-    "checkedAt": "2026-10-05T10:55:00.388Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "江西综合新闻广播",
-    "url": "http://live.ximalaya.com/radio-first-page-app/live/606/64.m3u8?transcode=ts",
-    "country": "CN",
-    "type": "news",
-    "tags": [
-      "news"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "https://wx2.sinaimg.cn/mw2000/bf25dc40ly8fx5936i2jrj20yi0yi768.jpg",
-    "homepage": "https://www.jxntv.cn/?mnlhl=16821",
-    "stationUuid": "1851c9e5-b9b3-4a89-b04c-6190172799f2",
-    "checkedAt": "2026-10-05T10:55:03.913Z",
+    "checkedAt": "2026-10-06T10:48:54.887Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4280,48 +4354,29 @@
     "favicon": "http://pic.qingting.fm/2020/0417/20200417022435.png",
     "homepage": "https://www.cbbn.net/",
     "stationUuid": "492ad3db-fab0-497d-93e8-3815b0f6870d",
-    "checkedAt": "2026-10-05T10:55:07.228Z",
+    "checkedAt": "2026-10-06T10:49:01.954Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "滨海综合广播 100.1",
-    "url": "http://traffic.jbh.tjbh.com/live/FM100.1/playlist.m3u8",
+    "name": "衢江广播",
+    "url": "http://l.cztvcloud.com/channels/lantian/SXqujiangaud/128k.m3u8",
     "country": "CN",
     "type": "news",
     "tags": [
       "news"
     ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "chinese",
-    "favicon": null,
-    "homepage": "https://a.app.qq.com/o/simple.jsp?pkgname=com.pdmi.binhai.media&fromcase=40003",
-    "stationUuid": "cc4f14eb-2268-4542-9289-94d8685829a0",
-    "checkedAt": "2026-10-05T10:55:08.436Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "登封人民广播电台",
-    "url": "https://lhttp.qingting.fm/live/5022077/64k.mp3",
-    "country": "CN",
-    "type": "news",
-    "tags": [
-      "news"
-    ],
-    "codec": "MP3",
+    "codec": "UNKNOWN",
     "bitrate": 0,
     "language": "chinese",
     "favicon": null,
-    "homepage": "http://dengfengtv.com/",
-    "stationUuid": "10936a6f-9b14-4c0a-923b-ef38fcb99df9",
-    "checkedAt": "2026-10-05T10:55:09.773Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "homepage": "http://qjnews.cztv.com/",
+    "stationUuid": "5fe805ca-dfda-45b4-b48f-40d0f55697ea",
+    "checkedAt": "2026-10-06T10:49:07.856Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "西安新闻广播",
@@ -4337,7 +4392,7 @@
     "favicon": "http://pic.qingting.fm/2015/1116/20151116155201700.jpg",
     "homepage": "http://v.xiancity.cn/",
     "stationUuid": "a3986e20-41db-4842-99e9-56051c675160",
-    "checkedAt": "2026-10-05T10:55:12.672Z",
+    "checkedAt": "2026-10-06T10:49:08.111Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4356,29 +4411,10 @@
     "favicon": null,
     "homepage": "http://erdszs.org.cn/",
     "stationUuid": "ad244620-2f3f-4a86-b7a3-bfb49214c49f",
-    "checkedAt": "2026-10-05T10:55:14.110Z",
+    "checkedAt": "2026-10-06T10:49:10.967Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "镇江综合广播",
-    "url": "https://zjtv-wshls.homecdn.com/live/64522.m3u8",
-    "country": "CN",
-    "type": "news",
-    "tags": [
-      "news"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "http://pic.qtfm.cn/2012/0809/20120809031540810.jpg!200",
-    "homepage": "https://www.zjmc.tv/",
-    "stationUuid": "c925e1b0-318d-48c9-98d7-c355dd971757",
-    "checkedAt": "2026-10-05T10:55:14.513Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "齐齐哈尔综合广播",
@@ -4394,7 +4430,7 @@
     "favicon": "https://www.qqhrnews.com/assets/img/favicon.ico",
     "homepage": "https://www.qqhrnews.com/",
     "stationUuid": "99d17936-172b-4ddf-af70-657ddbc65118",
-    "checkedAt": "2026-10-05T10:55:15.430Z",
+    "checkedAt": "2026-10-06T10:49:13.512Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4411,7 +4447,26 @@
     "favicon": "https://thumbnails.odycdn.com/optimize/s:300:0/quality:95/plain/https://thumbs.odycdn.com/0d1b7857e184a813b5c5adf14ee00aba.webp",
     "homepage": "https://odysee.com/@Shanghai-Beat-Radio:2",
     "stationUuid": "09bc54ef-2a64-4a26-afb7-4df8d3cacf02",
-    "checkedAt": "2026-10-05T10:55:15.811Z",
+    "checkedAt": "2026-10-06T10:49:13.662Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "唐县经典913",
+    "url": "https://lhttp-hw.qtfm.cn/live/20500222/64k.mp3",
+    "country": "CN",
+    "type": "oldies",
+    "tags": [
+      "oldies"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://pic.qtfm.cn/sso/48/1727059647546_p2VWrr4LH.png",
+    "homepage": "https://www.tangxian.gov.cn/",
+    "stationUuid": "d30b9ea3-bb9c-442e-aef9-90f10cd5b4e1",
+    "checkedAt": "2026-10-06T10:49:14.198Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4430,7 +4485,7 @@
     "favicon": "https://pic.qtfm.cn/2018/1221/20181221034004.png",
     "homepage": "https://yangquan.sxgov.cn/node_298836_2.htm",
     "stationUuid": "4d88d857-374b-4bf1-941a-78d4e660f1d7",
-    "checkedAt": "2026-10-05T10:55:16.586Z",
+    "checkedAt": "2026-10-06T10:49:14.505Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4449,7 +4504,7 @@
     "favicon": "https://oss.zjwtv.com/2023/8/4/bbb8c450-6dde-fadd-71a8-0a12708fbb5e.png",
     "homepage": "http://www.zjwtv.com/",
     "stationUuid": "0941ed99-579a-472e-8306-e6c24e840bd6",
-    "checkedAt": "2026-10-05T10:55:17.975Z",
+    "checkedAt": "2026-10-06T10:49:15.955Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4468,7 +4523,7 @@
     "favicon": "http://pic.qingting.fm/2017/0123/20170123055120.jpeg",
     "homepage": "https://bookingmaster.gxrb.com.cn/cloudgxLive/liveDetails/2843/",
     "stationUuid": "cd4da61a-bbf1-4e7c-95a7-5a33eb4205f7",
-    "checkedAt": "2026-10-05T10:55:18.701Z",
+    "checkedAt": "2026-10-06T10:49:16.402Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -4487,10 +4542,29 @@
     "favicon": "http://pic.qtfm.cn/2024/0109/20240109104937.png!200",
     "homepage": "http://www.2265.com/soft/445260.html",
     "stationUuid": "0a1a639d-5533-4090-94a8-9cdf44294a51",
-    "checkedAt": "2026-10-05T10:55:18.922Z",
+    "checkedAt": "2026-10-06T10:49:16.479Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "遂昌综合广播",
+    "url": "http://l.cztvcloud.com/channels/lantian/SXsuichangaud/128k.m3u8",
+    "country": "CN",
+    "type": "public radio",
+    "tags": [
+      "public radio"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": null,
+    "homepage": "http://scnews.zjol.com.cn/",
+    "stationUuid": "d2037a14-d47b-4052-ac94-1d4bb33ff707",
+    "checkedAt": "2026-10-06T10:49:21.162Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "保定经济广播",
@@ -4507,7 +4581,7 @@
     "favicon": "http://pic.qingting.fm/2022/1031/20221031114358.jpeg",
     "homepage": "https://sj.qq.com/appdetail/com.baoding.rmt.android",
     "stationUuid": "1a8885b0-44ce-480c-92aa-bbf787400b66",
-    "checkedAt": "2026-10-05T10:55:24.025Z",
+    "checkedAt": "2026-10-06T10:49:21.944Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4526,7 +4600,7 @@
     "favicon": null,
     "homepage": "http://xiancity.cn/",
     "stationUuid": "d53d8b9d-436e-11e8-b74d-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:24.069Z",
+    "checkedAt": "2026-10-06T10:49:22.016Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4545,7 +4619,7 @@
     "favicon": null,
     "homepage": "http://xiancity.cn/",
     "stationUuid": "aee9f13d-436e-11e8-b74d-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:24.124Z",
+    "checkedAt": "2026-10-06T10:49:22.153Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4564,7 +4638,7 @@
     "favicon": null,
     "homepage": "http://xiancity.cn/",
     "stationUuid": "4c570e3c-436e-11e8-b74d-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:24.207Z",
+    "checkedAt": "2026-10-06T10:49:22.209Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4583,7 +4657,7 @@
     "favicon": null,
     "homepage": "http://xiancity.cn/",
     "stationUuid": "7f9e926d-436e-11e8-b74d-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:24.379Z",
+    "checkedAt": "2026-10-06T10:49:22.219Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4603,7 +4677,7 @@
     "favicon": "https://pic.qtfm.cn/sso/198/1631520307064_Vedy5KORW.jpeg",
     "homepage": "https://www.brtv.org.cn/wap_index.shtml",
     "stationUuid": "7fb68cfc-de7e-495f-9cd1-cfb342c2626a",
-    "checkedAt": "2026-10-05T10:55:24.648Z",
+    "checkedAt": "2026-10-06T10:49:22.624Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4624,7 +4698,7 @@
     "favicon": "https://bkimg.cdn.bcebos.com/pic/eaf81a4c510fd9f9d72a101ce064c32a2834349b0e26?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20",
     "homepage": "https://www.runsky.com/",
     "stationUuid": "7d6d2f3a-8d4a-45af-8c41-14d98512c56b",
-    "checkedAt": "2026-10-05T10:55:24.880Z",
+    "checkedAt": "2026-10-06T10:49:22.828Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4643,7 +4717,7 @@
     "favicon": "https://pic.qtfm.cn/sso/198/1631520307064_Vedy5KORW.jpeg",
     "homepage": "https://www.brtv.org.cn/",
     "stationUuid": "c202d338-7674-4082-83a7-2f4fb8589b4e",
-    "checkedAt": "2026-10-05T10:55:24.935Z",
+    "checkedAt": "2026-10-06T10:49:23.007Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -4662,7 +4736,7 @@
     "favicon": "https://nginx-dlrm.dlrm.cn/dlrm/site1/resource/tv/dlrm/202511/14/0db0df48-d58d-4547-a716-e03ae7df2b46.jpg",
     "homepage": "https://www.runsky.com/",
     "stationUuid": "cfacdc69-16c6-4ca4-91ba-f0089dfaccf0",
-    "checkedAt": "2026-10-05T10:55:25.132Z",
+    "checkedAt": "2026-10-06T10:49:23.230Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4681,7 +4755,7 @@
     "favicon": "http://pic.qtfm.cn/2020/0326/upload_90e8c35b186e5c215ac65419703608af.100136-06EC340E-3E24-48A0-BAA1-23834A231276!200",
     "homepage": "https://www.brtv.org.cn/",
     "stationUuid": "cc120955-eb97-4052-8233-b4d26310bfbc",
-    "checkedAt": "2026-10-05T10:55:25.461Z",
+    "checkedAt": "2026-10-06T10:49:23.429Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -4700,7 +4774,7 @@
     "favicon": "https://wx3.sinaimg.cn/mw2000/bf5fd4fdly8gxfr6vgecfj20j60j6t96.jpg",
     "homepage": "https://www.lnjttz.cn/",
     "stationUuid": "27a76a54-ef2f-4d33-bb7b-bd37c40b6202",
-    "checkedAt": "2026-10-05T10:55:26.216Z",
+    "checkedAt": "2026-10-06T10:49:24.311Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4719,7 +4793,7 @@
     "favicon": "https://pic.qtfm.cn/2012/0814/20120814015923282.jpg",
     "homepage": "http://www.lnddbs.com/",
     "stationUuid": "2bccbc16-39c1-4901-8746-c9f6b41a6d3c",
-    "checkedAt": "2026-10-05T10:55:26.882Z",
+    "checkedAt": "2026-10-06T10:49:26.209Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4738,29 +4812,10 @@
     "favicon": "http://pic.qingting.fm/2015/0513/20150513163337451.jpg",
     "homepage": "http://www.luohe.com.cn/",
     "stationUuid": "be1a2eed-52e8-4a82-8c92-d93796c7b6f2",
-    "checkedAt": "2026-10-05T10:55:32.205Z",
+    "checkedAt": "2026-10-06T10:49:31.618Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "白山交通广播",
-    "url": "https://lhttp.qtfm.cn/live/5083/64k.mp3",
-    "country": "CN",
-    "type": "traffic",
-    "tags": [
-      "traffic"
-    ],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": null,
-    "homepage": "http://www.0439.com/",
-    "stationUuid": "67ac97ee-abff-4f4e-8b29-ace2a0fe72b2",
-    "checkedAt": "2026-10-05T10:55:32.407Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "茂名交通广播",
@@ -4776,7 +4831,7 @@
     "favicon": null,
     "homepage": "http://www.mmstw.com/",
     "stationUuid": "c93d1995-51d8-4467-b177-a3934d2cc30d",
-    "checkedAt": "2026-10-05T10:55:33.033Z",
+    "checkedAt": "2026-10-06T10:49:32.821Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4795,7 +4850,7 @@
     "favicon": null,
     "homepage": "http://v.xiancity.cn/",
     "stationUuid": "3ac160d3-bcfa-45e5-9c8e-20cfcaa507fe",
-    "checkedAt": "2026-10-05T10:55:33.568Z",
+    "checkedAt": "2026-10-06T10:49:33.461Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4814,26 +4869,7 @@
     "favicon": null,
     "homepage": "http://www.jxgztv.com/",
     "stationUuid": "4ecbd1f4-6af8-4a25-bb5b-faecfd877c66",
-    "checkedAt": "2026-10-05T10:55:33.697Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "鄂尔多斯交通文体广播",
-    "url": "http://lhttp.qingting.fm/live/20352/64k.mp3",
-    "country": "CN",
-    "type": "traffic",
-    "tags": [
-      "traffic"
-    ],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": null,
-    "homepage": "http://erdszs.org.cn/",
-    "stationUuid": "9ef06eef-b5b0-43a7-bcb2-c63ff5b6689b",
-    "checkedAt": "2026-10-05T10:55:34.218Z",
+    "checkedAt": "2026-10-06T10:49:33.525Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4852,10 +4888,29 @@
     "favicon": "http://pic.qtfm.cn/2012/0814/20120814015923282.jpg!200",
     "homepage": "http://dandong.nen.com.cn/",
     "stationUuid": "f884e75c-1cdd-4a4a-8b23-37bfe1fe55fa",
-    "checkedAt": "2026-10-05T10:55:35.075Z",
+    "checkedAt": "2026-10-06T10:49:34.748Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "宿州交通广播",
+    "url": "http://live.ahsz.tv/audio/s10001-jtgb/index.m3u8",
+    "country": "CN",
+    "type": "traffic information",
+    "tags": [
+      "traffic information"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "http://pic.qingting.fm/2015/0409/20150409103501988.jpg",
+    "homepage": "http://www.ahsz.tv/",
+    "stationUuid": "5c4940a2-55ee-4e9c-8751-eac9fa6417f2",
+    "checkedAt": "2026-10-06T10:49:35.832Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "哈密交通文艺广播",
@@ -4871,7 +4926,7 @@
     "favicon": null,
     "homepage": "http://www.xfdown.com/soft/155512.html",
     "stationUuid": "97ad9954-0000-44cb-854f-497278e7a7ca",
-    "checkedAt": "2026-10-05T10:55:39.723Z",
+    "checkedAt": "2026-10-06T10:49:39.619Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4890,7 +4945,7 @@
     "favicon": "https://nginx-dlrm.dlrm.cn/dlrm/site1/resource/tv/dlrm/202511/14/49331907-cfbb-4636-b0ec-406aa8987e93.png",
     "homepage": "https://www.runsky.com/",
     "stationUuid": "b4a2f55f-8eec-4034-9518-6fa0de776748",
-    "checkedAt": "2026-10-05T10:55:39.839Z",
+    "checkedAt": "2026-10-06T10:49:39.680Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -4909,7 +4964,7 @@
     "favicon": "https://pic.qtfm.cn/2019/0201/20190201091856.jpeg",
     "homepage": "http://www.chiznews.com/",
     "stationUuid": "cda6ce7f-9af4-45cd-b343-9a4f1441168d",
-    "checkedAt": "2026-10-05T10:55:40.888Z",
+    "checkedAt": "2026-10-06T10:49:41.308Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4928,29 +4983,10 @@
     "favicon": null,
     "homepage": "https://www.gystv.com/",
     "stationUuid": "41c76094-5d06-4e20-a8c7-a61f01c9ea20",
-    "checkedAt": "2026-10-05T10:55:41.704Z",
+    "checkedAt": "2026-10-06T10:49:42.734Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "镇江交通广播",
-    "url": "https://zjtv-wshls.homecdn.com/live/6451e.m3u8",
-    "country": "CN",
-    "type": "traffic radio broadcast",
-    "tags": [
-      "traffic radio broadcast"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "http://pic.qtfm.cn/2012/0809/20120809023827782.jpg!200",
-    "homepage": "https://www.zjmc.tv/",
-    "stationUuid": "03df6961-f7a7-46d7-b50b-f7417027aba5",
-    "checkedAt": "2026-10-05T10:55:41.904Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "BTV影视伴音",
@@ -4966,29 +5002,10 @@
     "favicon": null,
     "homepage": "https://www.brtv.org.cn/mobile/",
     "stationUuid": "25551838-e7c7-43cc-a1e7-7afac24f1bfe",
-    "checkedAt": "2026-10-05T10:55:42.755Z",
+    "checkedAt": "2026-10-06T10:49:43.833Z",
     "status": 404,
     "contentType": "application/vnd.apple.mpegurl",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "河北卫视伴音",
-    "url": "https://piccpndali.v.myalicdn.com/audio/hebei_2.m3u8",
-    "country": "CN",
-    "type": "tv",
-    "tags": [
-      "tv"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "chinese",
-    "favicon": "https://pics0.baidu.com/feed/d50735fae6cd7b8971b2a924449446b7db330eff.jpeg?token=555451cea8f01b0d8c87af9304e14ac2",
-    "homepage": "https://www.hebtv.com/",
-    "stationUuid": "f298d40f-61ac-4dfe-875b-bf0b3a3037c3",
-    "checkedAt": "2026-10-05T10:55:44.378Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Amur River News Radio",
@@ -5002,7 +5019,7 @@
     "favicon": null,
     "homepage": "http://www.hljtv.com/",
     "stationUuid": "4417592a-b730-11e8-aaf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:46.148Z",
+    "checkedAt": "2026-10-06T10:49:47.315Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5019,7 +5036,7 @@
     "favicon": null,
     "homepage": "http://www.hljtv.com/",
     "stationUuid": "9323ddbd-b730-11e8-aaf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:46.172Z",
+    "checkedAt": "2026-10-06T10:49:47.336Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5036,7 +5053,7 @@
     "favicon": null,
     "homepage": "http://www.cctv.com/",
     "stationUuid": "0433b02c-3742-11e9-9b4e-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:46.533Z",
+    "checkedAt": "2026-10-06T10:49:47.652Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -5053,7 +5070,7 @@
     "favicon": null,
     "homepage": "http://www.zgqx.gov.cn/",
     "stationUuid": "65a10f20-c24b-11e9-8502-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:48.088Z",
+    "checkedAt": "2026-10-06T10:49:48.511Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5070,7 +5087,7 @@
     "favicon": null,
     "homepage": "https://www.vfm995.com/pc.html",
     "stationUuid": "f686ae25-b33c-4f4b-977a-b7865945b815",
-    "checkedAt": "2026-10-05T10:55:48.333Z",
+    "checkedAt": "2026-10-06T10:49:49.040Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5087,7 +5104,7 @@
     "favicon": null,
     "homepage": "http://www.hljtv.com/",
     "stationUuid": "2b013028-fd6d-11e9-bbf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:48.853Z",
+    "checkedAt": "2026-10-06T10:49:49.146Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5104,7 +5121,7 @@
     "favicon": "http://www.hljtv.com/hljtv.ico",
     "homepage": "http://www.hljtv.com/",
     "stationUuid": "f94655b7-fd6b-11e9-bbf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:48.872Z",
+    "checkedAt": "2026-10-06T10:49:49.164Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5121,7 +5138,7 @@
     "favicon": null,
     "homepage": "http://www.hljtv.com/",
     "stationUuid": "2a4eef07-fd6e-11e9-bbf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:48.886Z",
+    "checkedAt": "2026-10-06T10:49:49.178Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5138,7 +5155,7 @@
     "favicon": "http://www.hljtv.com/hljtv.ico",
     "homepage": "http://www.hljtv.com/",
     "stationUuid": "b07ecaf1-fd6d-11e9-bbf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:48.905Z",
+    "checkedAt": "2026-10-06T10:49:49.195Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5155,7 +5172,7 @@
     "favicon": "http://www.hljtv.com/hljtv.ico",
     "homepage": "http://www.hljtv.com/",
     "stationUuid": "a70e03d2-fd6c-11e9-bbf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:48.911Z",
+    "checkedAt": "2026-10-06T10:49:49.218Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5172,7 +5189,7 @@
     "favicon": "http://www.huangchuan.gov.cn/favicon.ico",
     "homepage": "http://www.huangchuan.gov.cn/",
     "stationUuid": "3d0e9714-f984-11e9-bbf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:49.716Z",
+    "checkedAt": "2026-10-06T10:49:50.041Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5189,7 +5206,7 @@
     "favicon": null,
     "homepage": "http://www.guangshan.gov.cn/",
     "stationUuid": "37dc665f-c24a-11e9-8502-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:51.421Z",
+    "checkedAt": "2026-10-06T10:49:52.214Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5206,7 +5223,7 @@
     "favicon": null,
     "homepage": "http://www.qguiyang.cn/",
     "stationUuid": "1fc70394-b9b1-11e8-aaf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:51.521Z",
+    "checkedAt": "2026-10-06T10:49:52.357Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5223,7 +5240,7 @@
     "favicon": null,
     "homepage": "http://www.qguiyang.cn/",
     "stationUuid": "48deb640-b9b1-11e8-aaf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:51.708Z",
+    "checkedAt": "2026-10-06T10:49:52.952Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5240,7 +5257,7 @@
     "favicon": null,
     "homepage": "http://www.mengzhou.gov.cn/",
     "stationUuid": "16147a52-0de2-11ea-a87e-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:51.810Z",
+    "checkedAt": "2026-10-06T10:49:53.265Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5257,7 +5274,7 @@
     "favicon": null,
     "homepage": "http://www.myntv.cn/",
     "stationUuid": "f6f2b276-bff5-11e8-aaf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:51.910Z",
+    "checkedAt": "2026-10-06T10:49:53.409Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5274,7 +5291,7 @@
     "favicon": null,
     "homepage": "http://www.hnxx.gov.cn/",
     "stationUuid": "e2cb53e9-d45d-11e9-a861-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:53.462Z",
+    "checkedAt": "2026-10-06T10:49:55.254Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5291,7 +5308,7 @@
     "favicon": null,
     "homepage": "http://www.qtv.com.cn/",
     "stationUuid": "b2db59b9-bda9-11e8-aaf2-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:54.858Z",
+    "checkedAt": "2026-10-06T10:49:58.042Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5308,14 +5325,14 @@
     "favicon": null,
     "homepage": "http://tv.yuzhou.net.cn/",
     "stationUuid": "dc95bebf-cee3-11e9-a861-52543be04c81",
-    "checkedAt": "2026-10-05T10:55:56.388Z",
+    "checkedAt": "2026-10-06T10:49:59.643Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "上虞广播-3",
-    "url": "https://l.cztvcloud.com/channels/lantian/SXshangyuaud/128k.m3u8",
+    "name": "上虞广播-1",
+    "url": "https://l.cztvcloud.com/channels/lantian/SXshangyu1/720p.m3u8",
     "country": "CN",
     "type": "UNKNOWN",
     "tags": [],
@@ -5324,8 +5341,25 @@
     "language": "chinese",
     "favicon": "https://bkimg.cdn.bcebos.com/pic/f703738da9773912b31be570624b9118367adab444dd?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20",
     "homepage": "http://www.sybtv.com/sylive?cid=60401",
-    "stationUuid": "e83cf1e1-2406-4878-a9f7-06339002bd3b",
-    "checkedAt": "2026-10-05T10:55:57.722Z",
+    "stationUuid": "e673fba1-ca82-4b43-89db-5d099f2c9af0",
+    "checkedAt": "2026-10-06T10:50:00.214Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "上虞广播-2",
+    "url": "https://l.cztvcloud.com/channels/lantian/SXshangyu2/720p.m3u8",
+    "country": "CN",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://bkimg.cdn.bcebos.com/pic/f703738da9773912b31be570624b9118367adab444dd?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20",
+    "homepage": "http://www.sybtv.com/sylive?cid=60401",
+    "stationUuid": "a3fc3d0e-2c50-4392-b940-711e3b007464",
+    "checkedAt": "2026-10-06T10:50:00.505Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5342,7 +5376,7 @@
     "favicon": "http://tv.haoqu99.com/d/file/2016/0621/20160621010247354.jpg",
     "homepage": "https://www.runsky.com/",
     "stationUuid": "45023230-2687-4487-88fa-bca98d078c41",
-    "checkedAt": "2026-10-05T10:56:03.322Z",
+    "checkedAt": "2026-10-06T10:50:07.772Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -5359,7 +5393,7 @@
     "favicon": "https://www.tv-asahi.co.jp/favicon.ico",
     "homepage": "https://www.tv-asahi.co.jp/",
     "stationUuid": "f557e499-a0d9-44c0-9eea-49c42364f78b",
-    "checkedAt": "2026-10-05T10:56:04.236Z",
+    "checkedAt": "2026-10-06T10:50:08.660Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5376,7 +5410,7 @@
     "favicon": "http://www.uniqueradio.jp/favicon.ico",
     "homepage": "http://www.uniqueradio.jp/",
     "stationUuid": "55dbe1e7-ab0c-4956-bce3-3f00b4e8e0be",
-    "checkedAt": "2026-10-05T10:56:05.507Z",
+    "checkedAt": "2026-10-06T10:50:10.027Z",
     "status": 503,
     "contentType": "text/html",
     "lastFailure": "HTTP 503"
@@ -5393,7 +5427,7 @@
     "favicon": null,
     "homepage": "https://www.fqxww.cn/",
     "stationUuid": "a82870a5-1533-45a3-b268-3ce56e462503",
-    "checkedAt": "2026-10-05T10:56:05.509Z",
+    "checkedAt": "2026-10-06T10:50:10.033Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5410,7 +5444,7 @@
     "favicon": null,
     "homepage": "https://www.fqxww.cn/",
     "stationUuid": "fac57b97-83a9-47b4-874e-a3ab5c3e2bff",
-    "checkedAt": "2026-10-05T10:56:05.723Z",
+    "checkedAt": "2026-10-06T10:50:10.245Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5427,7 +5461,7 @@
     "favicon": null,
     "homepage": "https://www.fqxww.cn/",
     "stationUuid": "bf8f7ac9-b963-4692-b406-5a2ece95b17a",
-    "checkedAt": "2026-10-05T10:56:06.208Z",
+    "checkedAt": "2026-10-06T10:50:10.951Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -5444,10 +5478,27 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "56b490bf-0565-4016-8b5d-e5ae40523e2a",
-    "checkedAt": "2026-10-05T10:56:07.211Z",
+    "checkedAt": "2026-10-06T10:50:11.590Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "爱上海 LIVE 24",
+    "url": "https://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
+    "country": "CN",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": null,
+    "homepage": "https://www.bestv.com.cn/web",
+    "stationUuid": "8bfa6ed3-54ea-4b02-baae-09466df93681",
+    "checkedAt": "2026-10-06T10:50:11.676Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "綠邨電台",
@@ -5461,7 +5512,7 @@
     "favicon": "https://mfm995.com/wp-content/uploads/2022/09/cropped-icon20220930_1.png",
     "homepage": "https://mfm995.com/",
     "stationUuid": "030d3fc5-a775-4c61-a671-497766a51f32",
-    "checkedAt": "2026-10-05T10:56:07.929Z",
+    "checkedAt": "2026-10-06T10:50:12.171Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5478,7 +5529,7 @@
     "favicon": null,
     "homepage": "https://www.gdtv.cn/",
     "stationUuid": "56fc3a43-a6bb-4bc4-ba9d-6ddb3ba48c57",
-    "checkedAt": "2026-10-05T10:56:07.944Z",
+    "checkedAt": "2026-10-06T10:50:12.264Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -5495,7 +5546,7 @@
     "favicon": "http://www.hydst.com/UploadsGD/Images/MidThumbnail/20210708/2021070809472963710.jpg",
     "homepage": "http://www.hydst.com/hygdindex.html",
     "stationUuid": "f88ea47f-d059-4bcb-b413-e35bcb6ca164",
-    "checkedAt": "2026-10-05T10:56:08.137Z",
+    "checkedAt": "2026-10-06T10:50:12.739Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5514,9 +5565,28 @@
     "favicon": null,
     "homepage": "https://www.radio.cn/pc-portal/erji/radioStation.html",
     "stationUuid": "cf3316eb-d3c5-4328-9a88-f256fceb4261",
-    "checkedAt": "2026-10-05T10:56:14.770Z",
+    "checkedAt": "2026-10-06T10:50:19.310Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "安丘924(FM92.4)",
+    "url": "http://lhttp.qingting.fm/live/20212216/64k.mp3",
+    "country": "CN",
+    "type": "综合",
+    "tags": [
+      "综合"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "china",
+    "favicon": "https://weibo.com/favicon.ico",
+    "homepage": "https://weibo.com/jinrianqiu?refer_flag=1005055013_",
+    "stationUuid": "f9536b16-7174-4bd0-bdff-64ff5aebcca8",
+    "checkedAt": "2026-10-06T10:50:19.356Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   }
 ]

@@ -1,27 +1,5 @@
 [
   {
-    "name": "Estacion 105  105.1 FM",
-    "url": "http://radio.host.com.py:9460/;",
-    "country": "PY",
-    "type": "cumbia",
-    "tags": [
-      "cumbia",
-      "dance",
-      "entretenimiento",
-      "tropical"
-    ],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": "spanish",
-    "favicon": "https://turadio.com.py/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-22-at-07.05.19-300x292.jpeg",
-    "homepage": "https://turadio.com.py/estacion105/",
-    "stationUuid": "bcf33ef9-e087-4de4-8b6e-0f2244f53a86",
-    "checkedAt": "2026-10-05T11:35:41.777Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
     "name": "Cuevas FM 91.7",
     "url": "https://radio.host.com.py:7020/;",
     "country": "PY",
@@ -39,7 +17,7 @@
     "favicon": "https://paraguayonline.net/wp-content/uploads/2019/03/cuevas.png",
     "homepage": "https://paraguayonline.net/cuevasfm/",
     "stationUuid": "88f74a2d-b52e-4fcf-9469-5fc5e2e6a2e5",
-    "checkedAt": "2026-10-05T11:35:42.555Z",
+    "checkedAt": "2026-10-06T11:29:51.562Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -62,9 +40,31 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20250110_213941532.jpg?alt=media&token=e07edbc2-8494-41bf-82ab-6f114efdf664",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "db29a363-60b4-4273-99b6-9fee973a7c1e",
-    "checkedAt": "2026-10-05T11:35:44.118Z",
+    "checkedAt": "2026-10-06T11:29:53.115Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio RQP 94.3 FM",
+    "url": "http://rds3.desdeparaguay.net/transrqp/transrqp/playlist.m3u",
+    "country": "PY",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "rock",
+      "soft",
+      "top 40"
+    ],
+    "codec": "AAC",
+    "bitrate": 33,
+    "language": "asunción",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20241215_234329937.jpg?alt=media&token=f015eeac-3c79-4ae9-b799-b676845814d9",
+    "homepage": "http://www.rqp.com.py/",
+    "stationUuid": "74f0fa54-8f7f-482e-9a75-9ea2335ec9f2",
+    "checkedAt": "2026-10-06T11:29:53.358Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   }
 ]

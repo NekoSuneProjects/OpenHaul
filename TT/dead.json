@@ -16,7 +16,7 @@
     "favicon": "https://app-c02qmnhobp4x.appmedo.com",
     "homepage": "https://app-c02qmnhobp4x.appmedo.com/",
     "stationUuid": "219570cd-1e5f-47ca-a24a-8837fcfc5ddc",
-    "checkedAt": "2026-10-05T11:41:45.386Z",
+    "checkedAt": "2026-10-06T11:36:47.797Z",
     "status": 503,
     "contentType": "application/json",
     "lastFailure": "HTTP 503"
@@ -33,9 +33,26 @@
     "favicon": null,
     "homepage": "https://www.freedomskn.com/",
     "stationUuid": "14de0ba5-97e9-4aea-aeba-3ae9a152f6db",
-    "checkedAt": "2026-10-05T11:41:45.911Z",
+    "checkedAt": "2026-10-06T11:36:48.501Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Star 94.7",
+    "url": "https://fms.ttrn.org/live/star947.sdp/chunklist_w2060647527.m3u8",
+    "country": "TT",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://ojoworldtt.com/wp-content/uploads/2019/10/logo.png",
+    "homepage": "https://ojoworldtt.com/",
+    "stationUuid": "3e3982a4-84cd-488c-ad88-d78403a76f05",
+    "checkedAt": "2026-10-06T11:36:49.199Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   }
 ]

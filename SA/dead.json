@@ -11,7 +11,7 @@
     "favicon": "https://mbc.net/apple-touch-icon.png",
     "homepage": "https://mbc.net/",
     "stationUuid": "98df39c2-f5f9-4bc9-ae98-c554528c2cd9",
-    "checkedAt": "2026-10-05T11:39:10.532Z",
+    "checkedAt": "2026-10-06T11:34:07.622Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -28,7 +28,7 @@
     "favicon": null,
     "homepage": "https://www.mbc.net/channels/mbc-fm",
     "stationUuid": "835c47a0-2326-410c-8782-6a2c453a7497",
-    "checkedAt": "2026-10-05T11:39:10.535Z",
+    "checkedAt": "2026-10-06T11:34:07.631Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -45,7 +45,7 @@
     "favicon": "https://s3content.mbcloud.fm/channels/1705332503Group 4.png",
     "homepage": "https://mbcloud.fm/",
     "stationUuid": "9943284c-f96e-4b41-9253-913aaec7836b",
-    "checkedAt": "2026-10-05T11:39:10.545Z",
+    "checkedAt": "2026-10-06T11:34:07.649Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -62,7 +62,7 @@
     "favicon": "https://mbc.net/apple-touch-icon.png",
     "homepage": "https://mbc.net/",
     "stationUuid": "c7a5f6d9-e524-4bfe-9e19-70a74e7c63b4",
-    "checkedAt": "2026-10-05T11:39:10.548Z",
+    "checkedAt": "2026-10-06T11:34:07.651Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -79,7 +79,7 @@
     "favicon": "https://www.mbc.net/apple-touch-icon.png",
     "homepage": "https://www.mbc.net/channels/panorama-fm",
     "stationUuid": "215d9397-56e4-4c14-a875-2dbd123ca970",
-    "checkedAt": "2026-10-05T11:39:10.728Z",
+    "checkedAt": "2026-10-06T11:34:07.857Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -100,10 +100,29 @@
     "favicon": null,
     "homepage": "https://europe.afn.mil/AFN-360/",
     "stationUuid": "38d460ca-8827-47e0-9da2-e24ebfb8fd5b",
-    "checkedAt": "2026-10-05T11:39:10.985Z",
+    "checkedAt": "2026-10-06T11:34:08.087Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": ".ماهر المعيقلي",
+    "url": "https://backup.qurango.net/radio/maher",
+    "country": "SA",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "fc5fe23a-2369-4b1c-bc74-97df6468642b",
+    "checkedAt": "2026-10-06T11:34:09.472Z",
+    "status": 500,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 500"
   },
   {
     "name": "إذاعة طريق السلف",
@@ -119,7 +138,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5907b197-bc1b-407e-80c4-9181fb25f20e",
-    "checkedAt": "2026-10-05T11:39:12.388Z",
+    "checkedAt": "2026-10-06T11:34:09.495Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -138,7 +157,7 @@
     "favicon": null,
     "homepage": "https://salafwayfm.ly/",
     "stationUuid": "1bc95858-1db9-47ea-931c-9b05f5a1a45f",
-    "checkedAt": "2026-10-05T11:39:12.407Z",
+    "checkedAt": "2026-10-06T11:34:09.693Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -159,7 +178,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3p0_w8aZ0onEdNpOUezy4M66FMWj1hJ0l4g&s",
     "homepage": "https://tunein.com/radio/AFN-Gravity-s218436/",
     "stationUuid": "0a665cc9-7e9b-4495-a2c4-fedce778b514",
-    "checkedAt": "2026-10-05T11:39:12.562Z",
+    "checkedAt": "2026-10-06T11:34:10.010Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -180,10 +199,30 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3p0_w8aZ0onEdNpOUezy4M66FMWj1hJ0l4g&s",
     "homepage": "https://tunein.com/radio/AFN-Gravity-s218436/",
     "stationUuid": "d7c21806-839d-4262-b1ba-2acbb764762a",
-    "checkedAt": "2026-10-05T11:39:12.710Z",
+    "checkedAt": "2026-10-06T11:34:10.069Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Kapatid FM 95.8",
+    "url": "https://qp-pldt-live-grp-05-prod.akamaized.net/out/u/radyo5_qp.m3u8",
+    "country": "SA",
+    "type": "entertainment",
+    "tags": [
+      "entertainment",
+      "news"
+    ],
+    "codec": "AAC",
+    "bitrate": 463,
+    "language": "english,filipino",
+    "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMB6I8J7udQpuYwoR78lwR9mfRSUVn-ZYn-Q&s",
+    "homepage": "https://www.kapatidinternational.com/",
+    "stationUuid": "464dca1e-5f91-4801-89a3-739c1239e985",
+    "checkedAt": "2026-10-06T11:34:10.476Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "MBC FM",
@@ -199,7 +238,7 @@
     "favicon": "https://mbcradios.net/favicon/apple-touch-icon.png",
     "homepage": "https://mbcradios.net/#/",
     "stationUuid": "ae50f36e-5982-45ed-aad7-a9e32dfca8be",
-    "checkedAt": "2026-10-05T11:39:13.362Z",
+    "checkedAt": "2026-10-06T11:34:11.022Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -218,10 +257,29 @@
     "favicon": null,
     "homepage": "https://mbc-mood.s3.amazonaws.com/channels/16439614501635428726MBCfmmob.png",
     "stationUuid": "d36a55c5-48a1-4bdf-bb06-b7554aba43ec",
-    "checkedAt": "2026-10-05T11:39:13.364Z",
+    "checkedAt": "2026-10-06T11:34:11.033Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "MBC Mood",
+    "url": "https://radio-mbc-mood.mbc.net/radio-mbc-mood.m3u8",
+    "country": "SA",
+    "type": "music",
+    "tags": [
+      "music"
+    ],
+    "codec": "AAC+",
+    "bitrate": 70,
+    "language": "arabic",
+    "favicon": "https://assets.mbcmood.com/channels/1780385818Logo%20request%20thumbnail.jpg",
+    "homepage": "https://www.mbcmood.com/",
+    "stationUuid": "c8951dd4-5249-4022-847d-e71dadbea424",
+    "checkedAt": "2026-10-06T11:34:11.815Z",
+    "status": 301,
+    "contentType": "application/xml",
+    "lastFailure": "HTTP 301"
   },
   {
     "name": "WANASAH",
@@ -237,7 +295,7 @@
     "favicon": null,
     "homepage": "https://www.mbc.net/en/corporate/channels/wanasah.html",
     "stationUuid": "082d274e-c633-41b1-b83d-58395c7a4f58",
-    "checkedAt": "2026-10-05T11:39:14.193Z",
+    "checkedAt": "2026-10-06T11:34:12.044Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -258,7 +316,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS--T5gJabpXzfMBbKwit2Lp-avz_gfHRJawS4DXqPXmmWjrUaClhOaQtBX&s=10",
     "homepage": "https://ofwkradiofm.blogspot.com/?fbclid=IwZXh0bgNhZW0CMTEAAR2Res2QrcOjfBBnWqFdoH9ISHC2kdU5Vpcx07wWddE2l08F7PGsBqIpIm4_aem_A4ve4ht0J4SAMOeM23RsOQ&m=1",
     "stationUuid": "7a0012a1-d04d-421f-8e34-94749f03fd6f",
-    "checkedAt": "2026-10-05T11:39:14.820Z",
+    "checkedAt": "2026-10-06T11:34:13.130Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -279,7 +337,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS--T5gJabpXzfMBbKwit2Lp-avz_gfHRJawS4DXqPXmmWjrUaClhOaQtBX&s=10",
     "homepage": "https://ofwkradiofm.blogspot.com/?fbclid=IwZXh0bgNhZW0CMTEAAR2Res2QrcOjfBBnWqFdoH9ISHC2kdU5Vpcx07wWddE2l08F7PGsBqIpIm4_aem_A4ve4ht0J4SAMOeM23RsOQ&m=1",
     "stationUuid": "333c6b7f-5911-4258-8fe5-9471d2ec929b",
-    "checkedAt": "2026-10-05T11:39:14.886Z",
+    "checkedAt": "2026-10-06T11:34:13.176Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -300,7 +358,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS--T5gJabpXzfMBbKwit2Lp-avz_gfHRJawS4DXqPXmmWjrUaClhOaQtBX&s=10",
     "homepage": "https://ofwkradiofm.blogspot.com/?fbclid=IwZXh0bgNhZW0CMTEAAR2Res2QrcOjfBBnWqFdoH9ISHC2kdU5Vpcx07wWddE2l08F7PGsBqIpIm4_aem_A4ve4ht0J4SAMOeM23RsOQ&m=1",
     "stationUuid": "25b856db-33d5-4e34-b28c-e5749baf9ac5",
-    "checkedAt": "2026-10-05T11:39:15.009Z",
+    "checkedAt": "2026-10-06T11:34:13.249Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -321,7 +379,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS--T5gJabpXzfMBbKwit2Lp-avz_gfHRJawS4DXqPXmmWjrUaClhOaQtBX&s=10",
     "homepage": "https://ofwkradiofm.blogspot.com/?fbclid=IwZXh0bgNhZW0CMTEAAR2Res2QrcOjfBBnWqFdoH9ISHC2kdU5Vpcx07wWddE2l08F7PGsBqIpIm4_aem_A4ve4ht0J4SAMOeM23RsOQ&m=1",
     "stationUuid": "df9962aa-9cec-4706-8676-bb7c51198f9e",
-    "checkedAt": "2026-10-05T11:39:15.060Z",
+    "checkedAt": "2026-10-06T11:34:13.349Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -344,7 +402,7 @@
     "favicon": "https://wildheartfm.net/favicon",
     "homepage": "https://wildheartfm.net/",
     "stationUuid": "066d9295-1f84-4c28-857f-1e5638214bad",
-    "checkedAt": "2026-10-05T11:39:15.461Z",
+    "checkedAt": "2026-10-06T11:34:13.824Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -364,7 +422,7 @@
     "favicon": "https://mbc.net/apple-touch-icon.png",
     "homepage": "https://mbc.net/",
     "stationUuid": "adab5f75-f0d6-44e6-9b67-f9bfcc1112bd",
-    "checkedAt": "2026-10-05T11:39:16.110Z",
+    "checkedAt": "2026-10-06T11:34:14.976Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -381,7 +439,7 @@
     "favicon": "https://mbcradios.net/favicon/apple-touch-icon.png",
     "homepage": "https://mbcradios.net/",
     "stationUuid": "e65cfca0-dfe3-4378-a602-b1416158669d",
-    "checkedAt": "2026-10-05T11:39:16.663Z",
+    "checkedAt": "2026-10-06T11:34:15.535Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -398,7 +456,7 @@
     "favicon": "https://mbc-mood.s3.amazonaws.com/channels/1643962027wanass-mob.png",
     "homepage": "https://mbcradios.net/",
     "stationUuid": "d4b1391a-79b3-45df-a72e-ea6c252a3615",
-    "checkedAt": "2026-10-05T11:39:16.914Z",
+    "checkedAt": "2026-10-06T11:34:15.666Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -417,7 +475,7 @@
     "favicon": "https://www.skyradio105.com/favicon",
     "homepage": "https://www.skyradio105.com/",
     "stationUuid": "0af0cf4f-5388-424b-9892-d87decc31e6c",
-    "checkedAt": "2026-10-05T11:39:17.933Z",
+    "checkedAt": "2026-10-06T11:34:17.335Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
