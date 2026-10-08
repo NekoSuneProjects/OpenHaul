@@ -1,5 +1,39 @@
 [
   {
+    "name": "NRJ martinique",
+    "url": "https://streaming.nrjaudio.fm/ouquwgyoeo8p",
+    "country": "MQ",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://nrjantilles.com/",
+    "stationUuid": "2840715c-383c-4414-b2f6-6ae83f5082f5",
+    "checkedAt": "2026-10-08T12:24:51.245Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "radio sud-est Martinique",
+    "url": "http://sv1.vestaradio.com/RADIOSUDEST",
+    "country": "MQ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "francaise,french",
+    "favicon": null,
+    "homepage": "http://www.radiosudest.com/",
+    "stationUuid": "804b6fbe-0c6c-43ca-936e-f7fa6ce8bad5",
+    "checkedAt": "2026-10-08T12:24:51.481Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
     "name": "Super Radio",
     "url": "http://str81.streamakaci.com:9160/",
     "country": "MQ",
@@ -11,7 +45,7 @@
     "favicon": "http://super-radio.radio-site.com/upload/5b25e37f31f524.12118265.ico",
     "homepage": "http://www.cayali.fr/",
     "stationUuid": "2c449451-d215-11e9-a861-52543be04c81",
-    "checkedAt": "2026-10-06T11:17:24.952Z",
+    "checkedAt": "2026-10-08T12:24:51.632Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

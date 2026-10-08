@@ -16,10 +16,51 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/673/music-intense-974.3b7d0319.jpg",
     "homepage": "https://www.musicintense974.re/",
     "stationUuid": "1a2b764a-17d8-4758-8369-b9afdf964c76",
-    "checkedAt": "2026-10-06T11:29:48.393Z",
+    "checkedAt": "2026-10-08T12:37:50.249Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Top Fm Maxi Dance",
+    "url": "https://streamingv2.shoutcast.com/-TopFm-Maxidance",
+    "country": "RE",
+    "type": "974",
+    "tags": [
+      "974",
+      "créole",
+      "réunion"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": "https://static2.mytuner.mobi/media/tvos_radios/bnzjbtbqfqbv.png",
+    "homepage": "http://www.topfm.re/",
+    "stationUuid": "a71d51fc-6031-44ac-a60b-3187c10b0e5e",
+    "checkedAt": "2026-10-08T12:37:50.805Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Rire et Chansons Réunion",
+    "url": "https://streaming.nrjaudio.fm/oun3wuqn5eyc",
+    "country": "RE",
+    "type": "créole",
+    "tags": [
+      "créole",
+      "réunion"
+    ],
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": "https://static2.mytuner.mobi/media/tvos_radios/882/1065-rire-chansons-reunion.1c74c9f1.png",
+    "homepage": "http://rireetchansons.re/",
+    "stationUuid": "e304887a-f7b3-4688-9cea-9944865f5d4d",
+    "checkedAt": "2026-10-08T12:37:51.505Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Konect Radio",
@@ -33,10 +74,27 @@
     "favicon": "https://assets.comingsoonwp.com//themes/default/csmm-favicon.png",
     "homepage": "https://konect.re/",
     "stationUuid": "5a7ce3e3-11c3-4ba6-8428-13c5b2faf649",
-    "checkedAt": "2026-10-06T11:29:49.924Z",
+    "checkedAt": "2026-10-08T12:37:52.042Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "NRJ Réunion",
+    "url": "https://streaming.nrjaudio.fm/ougonmrb92oc",
+    "country": "RE",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": "https://i.ibb.co/B5w8zvHr/nrj-reunion-9d96388c.png",
+    "homepage": "http://www.nrj.re/",
+    "stationUuid": "379961f8-7bee-4f62-867e-2c1ecff35a62",
+    "checkedAt": "2026-10-08T12:37:52.591Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Salazes FM",
@@ -50,9 +108,28 @@
     "favicon": null,
     "homepage": "http://www.salazesfm.re/",
     "stationUuid": "8e5cb653-d39b-46cb-946f-99c2a1bad6ef",
-    "checkedAt": "2026-10-06T11:29:50.480Z",
+    "checkedAt": "2026-10-08T12:37:52.611Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Chérie FM Réunion",
+    "url": "https://streaming.nrjaudio.fm/ouw82wsk6j4d",
+    "country": "RE",
+    "type": "réunion",
+    "tags": [
+      "réunion"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": "https://i.ibb.co/n8PyG1KB/1019-cherie-fm-reunion-1c6097d3.png",
+    "homepage": "https://www.cheriefm.re/",
+    "stationUuid": "1745916e-dd00-41fd-9703-ba9a866661d4",
+    "checkedAt": "2026-10-08T12:37:52.721Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
   }
 ]

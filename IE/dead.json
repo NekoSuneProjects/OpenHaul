@@ -1,5 +1,28 @@
 [
   {
+    "name": "Rewind",
+    "url": "https://christmasfm.cdnstream1.com/2551_128.mp3",
+    "country": "IE",
+    "type": "1960s",
+    "tags": [
+      "1960s",
+      "1970s",
+      "1980s",
+      "classic hits",
+      "oldies"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://rewind.ie/",
+    "stationUuid": "ee4af689-2f0d-490b-93d2-e72180b76784",
+    "checkedAt": "2026-10-08T12:18:46.671Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
     "name": "Dunnes Radio",
     "url": "https://radiozender.mpbnetwerken.nl/dunnesradio.mp3",
     "country": "IE",
@@ -11,7 +34,7 @@
     "favicon": "https://live.one-tv.co.uk/api/station/dunnes_radio/art/d8d7c61e58f9056f63895313-1732469851.jpg",
     "homepage": "https://radio.dunnesroblox.com/",
     "stationUuid": "8b10bc8c-7bad-4ad3-88ff-9efaa5ddac42",
-    "checkedAt": "2026-10-06T11:11:20.933Z",
+    "checkedAt": "2026-10-08T12:18:47.877Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -28,7 +51,7 @@
     "favicon": "https://radio.dunnesroblox.com/apple-touch-icon.png",
     "homepage": "https://radio.dunnesroblox.com/",
     "stationUuid": "9da200a9-3147-4516-a561-f515befe5d12",
-    "checkedAt": "2026-10-06T11:11:21.065Z",
+    "checkedAt": "2026-10-08T12:18:47.933Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -45,7 +68,7 @@
     "favicon": "https://radio.dunnesroblox.com/favicon.png",
     "homepage": "https://radio.dunnesroblox.com/",
     "stationUuid": "af74fb64-d4be-4016-b797-1f01b6488954",
-    "checkedAt": "2026-10-06T11:11:21.085Z",
+    "checkedAt": "2026-10-08T12:18:48.008Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -62,7 +85,7 @@
     "favicon": "https://www.northernsound.ie/images/ns-white-green@2x.png",
     "homepage": "https://www.northernsound.ie/",
     "stationUuid": "75ed6b66-b3dd-4e52-b30b-70c0d4bda9e8",
-    "checkedAt": "2026-10-06T11:11:21.651Z",
+    "checkedAt": "2026-10-08T12:18:48.568Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -79,7 +102,7 @@
     "favicon": "https://www.wlrfm.com/images/ico/android-icon-192x192.png",
     "homepage": "https://www.wlrfm.com/",
     "stationUuid": "61d4ab97-5064-4601-88f9-574b249d0d9d",
-    "checkedAt": "2026-10-06T11:11:21.774Z",
+    "checkedAt": "2026-10-08T12:18:48.611Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -96,7 +119,7 @@
     "favicon": "https://www.radiokerry.ie/images/ico/apple-touch-icon.png",
     "homepage": "https://www.radiokerry.ie/",
     "stationUuid": "715cbead-94a7-482f-afca-192d6b63086f",
-    "checkedAt": "2026-10-06T11:11:21.778Z",
+    "checkedAt": "2026-10-08T12:18:48.652Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -113,7 +136,7 @@
     "favicon": "https://radiodns.mpbnl.nl/logos/crcfm/16x9.png",
     "homepage": "https://crcfm.ie/",
     "stationUuid": "eba63d9f-421e-4a75-9c57-f2d91ba0498b",
-    "checkedAt": "2026-10-06T11:11:21.966Z",
+    "checkedAt": "2026-10-08T12:18:48.743Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -130,7 +153,7 @@
     "favicon": "https://crcfm.ie/uploads/1/4/7/7/147722784/published/crcfm-3d-logo.png?1713432061",
     "homepage": "https://crcfm.ie/",
     "stationUuid": "de02a774-ae5b-4a8a-a975-b8cadfc066fa",
-    "checkedAt": "2026-10-06T11:11:22.012Z",
+    "checkedAt": "2026-10-08T12:18:48.882Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -147,7 +170,7 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/378/global-radio-cork-ireland.4122506e.jpg",
     "homepage": "http://globalradiocork.ie/",
     "stationUuid": "c7e252be-acba-4b9c-bf00-3dc5927a5584",
-    "checkedAt": "2026-10-06T11:11:22.232Z",
+    "checkedAt": "2026-10-08T12:18:49.003Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -164,27 +187,10 @@
     "favicon": null,
     "homepage": "http://icy-zurich.mpbnl.nl/pride.mp3",
     "stationUuid": "d1020686-dd9e-4e26-ab0c-39098224eac0",
-    "checkedAt": "2026-10-06T11:11:22.368Z",
+    "checkedAt": "2026-10-08T12:18:49.230Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "MPB Radio 1",
-    "url": "https://sc.mpbnl.nl/radio1",
-    "country": "IE",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": null,
-    "favicon": "https://www.mpbradio1.com/images/logo.png",
-    "homepage": "https://www.mpbradio1.com/#/",
-    "stationUuid": "d601c46a-9607-421b-b9c2-341a580d082f",
-    "checkedAt": "2026-10-06T11:11:22.514Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "MPB Radio 1 00s & 10s",
@@ -198,7 +204,7 @@
     "favicon": "https://www.mpbradio1.com/_next/image?url=%2Fincludes%2Fpng%2Flogo.png&w=256&q=75",
     "homepage": "https://www.mpbradio1.com/",
     "stationUuid": "2edd148f-c5cb-418e-b3b6-e45a68b5d016",
-    "checkedAt": "2026-10-06T11:11:22.733Z",
+    "checkedAt": "2026-10-08T12:18:49.250Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -215,7 +221,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/7/7597.v13.png",
     "homepage": "http://oceanfm.ie/",
     "stationUuid": "60381246-b0b2-4d46-988f-d4505633a55f",
-    "checkedAt": "2026-10-06T11:11:22.871Z",
+    "checkedAt": "2026-10-08T12:18:49.436Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -232,7 +238,7 @@
     "favicon": "https://www.southeastradio.ie/wp-content/uploads/2023/08/SER-logo-e1691589262592.png",
     "homepage": "https://www.southeastradio.ie/",
     "stationUuid": "136c419c-e745-4e5a-a225-10a98e9c4226",
-    "checkedAt": "2026-10-06T11:11:23.214Z",
+    "checkedAt": "2026-10-08T12:18:49.733Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -249,7 +255,7 @@
     "favicon": "https://www.southeastradio.ie/wp-content/uploads/2023/08/SER-logo-e1691589262592.png",
     "homepage": "https://www.southeastradio.ie/",
     "stationUuid": "cab0a989-f2a2-4f30-893e-4ffe1adb0bd0",
-    "checkedAt": "2026-10-06T11:11:23.332Z",
+    "checkedAt": "2026-10-08T12:18:49.745Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -266,7 +272,7 @@
     "favicon": null,
     "homepage": "http://svetur.intellmedia.lt:8282/tiesiogiai-32aac.m3u",
     "stationUuid": "c1c02921-c114-4233-a07e-37dbf913183f",
-    "checkedAt": "2026-10-06T11:11:23.723Z",
+    "checkedAt": "2026-10-08T12:18:50.205Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -289,7 +295,7 @@
     "favicon": "https://heartbeatfm.net/wp-content/uploads/2021/02/cropped-cropped-cropped-Heartbeat-Logo-Master-5.png",
     "homepage": "https://heartbeatfm.net/",
     "stationUuid": "d1796d3a-4e42-4393-85d8-0539e7d4a66f",
-    "checkedAt": "2026-10-06T11:11:24.321Z",
+    "checkedAt": "2026-10-08T12:18:50.788Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -311,7 +317,7 @@
     "favicon": "https://1drv.ms/i/c/0e918ab486233310/EQwy6f0ykkpMufi5iFQScLYBKyixBihc_7Thvs-KQkAlng?e=qMBtlm",
     "homepage": "https://heartbeatfm.net/",
     "stationUuid": "4c4f28cf-6102-4f62-bae4-55d125d2b548",
-    "checkedAt": "2026-10-06T11:11:24.365Z",
+    "checkedAt": "2026-10-08T12:18:50.794Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -330,7 +336,7 @@
     "favicon": "https://play-lh.googleusercontent.com/Oy2S0hLtVaIvtiXlbG6fxZCVEbQxGRjAD8ujOeJ2iSaaIjUhCk6uz5mB64577VjQ2-8",
     "homepage": "https://www.southeastradio.ie/",
     "stationUuid": "f81d5a73-e2b2-4550-8acb-6db1fd57b98a",
-    "checkedAt": "2026-10-06T11:11:24.483Z",
+    "checkedAt": "2026-10-08T12:18:50.890Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -350,7 +356,7 @@
     "favicon": null,
     "homepage": "https://www.rte.ie/radio/",
     "stationUuid": "9a5e572a-866c-449a-9efe-edf0bf84549f",
-    "checkedAt": "2026-10-06T11:11:24.520Z",
+    "checkedAt": "2026-10-08T12:18:50.939Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -370,7 +376,7 @@
     "favicon": null,
     "homepage": "https://8radio.com/listen/8radio320k/",
     "stationUuid": "6650bb57-12aa-41d3-8ae4-ed5dcf0909cd",
-    "checkedAt": "2026-10-06T11:11:24.602Z",
+    "checkedAt": "2026-10-08T12:18:51.001Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -391,7 +397,7 @@
     "favicon": "https://www.nova.ie/wp-content/uploads/2024/11/cropped-favicon-180x180.png",
     "homepage": "https://www.nova.ie/",
     "stationUuid": "5677bcd5-d83a-40d3-80d0-9378c0615ce6",
-    "checkedAt": "2026-10-06T11:11:25.775Z",
+    "checkedAt": "2026-10-08T12:18:51.534Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -411,7 +417,7 @@
     "favicon": "https://assets.production.linktr.ee/profiles/_next/static/logo-assets/apple-icon-120x120.png",
     "homepage": "https://linktr.ee/liveireland",
     "stationUuid": "4dd6db87-3ad7-4239-821d-602e837ed135",
-    "checkedAt": "2026-10-06T11:11:25.934Z",
+    "checkedAt": "2026-10-08T12:18:51.758Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -433,7 +439,7 @@
     "favicon": null,
     "homepage": "https://www.rte.ie/radio/",
     "stationUuid": "5aa8cdb3-aa51-49e2-a6ff-505a041e8a61",
-    "checkedAt": "2026-10-06T11:11:25.969Z",
+    "checkedAt": "2026-10-08T12:18:51.839Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -455,7 +461,7 @@
     "favicon": null,
     "homepage": "https://www.rte.ie/radio/rtejrradio/",
     "stationUuid": "76ec3bc1-29bb-475a-974a-995a00aea740",
-    "checkedAt": "2026-10-06T11:11:25.988Z",
+    "checkedAt": "2026-10-08T12:18:51.867Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -479,51 +485,31 @@
     "favicon": null,
     "homepage": "https://play.nova.ie/radio-player/#Radio",
     "stationUuid": "986d16e9-4a9c-46ac-82e3-ccad34a256d8",
-    "checkedAt": "2026-10-06T11:11:26.371Z",
+    "checkedAt": "2026-10-08T12:18:52.048Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "The Sound of Ireland",
-    "url": "https://christmasfm.cdnstream1.com/2548_128.mp3",
+    "name": "Rewind",
+    "url": "https://christmasfm.cdnstream1.com/2551_128.mp3",
     "country": "IE",
     "type": "classic hits",
     "tags": [
       "classic hits",
-      "ireland"
+      "gold",
+      "oldies"
     ],
     "codec": "MP3",
     "bitrate": 128,
     "language": "english",
-    "favicon": "https://imgur.com/a/sxDP2wB",
-    "homepage": "https://thesoundofireland.com/",
-    "stationUuid": "b3d731b8-8cb7-4d83-b155-1127ced9a346",
-    "checkedAt": "2026-10-06T11:11:27.121Z",
-    "status": 401,
+    "favicon": "https://imgur.com/Kc1dhwp",
+    "homepage": "https://rewind.ie/",
+    "stationUuid": "df44c4d5-df63-4f39-9230-ea57fa8d916b",
+    "checkedAt": "2026-10-08T12:18:52.324Z",
+    "status": 503,
     "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "all Classical Radio",
-    "url": "https://christmasfm.cdnstream1.com/2548_128.mp3",
-    "country": "IE",
-    "type": "classical",
-    "tags": [
-      "classical",
-      "opera",
-      "soundtracks"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://allclassicalradio.ie/wp-content/uploads/2026/03/classical-logo-v4-e1774621469482.png",
-    "homepage": "https://allclassicalradio.ie/",
-    "stationUuid": "1ef58ed0-c850-4e48-821b-0b44941e6181",
-    "checkedAt": "2026-10-06T11:11:27.460Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Clare FM",
@@ -539,34 +525,10 @@
     "favicon": null,
     "homepage": "https://clare.fm/",
     "stationUuid": "c671b4c7-36ee-4d7f-bbce-1c522411e4a6",
-    "checkedAt": "2026-10-06T11:11:27.584Z",
+    "checkedAt": "2026-10-08T12:18:53.183Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "The Sound of Ireland",
-    "url": "https://ais-sa2.cdnstream1.com/2548_128.mp3",
-    "country": "IE",
-    "type": "comedy",
-    "tags": [
-      "comedy",
-      "culture",
-      "music",
-      "people",
-      "stories",
-      "tourism"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxALpojA6_c_nqosvJI3b2LLwJ6MGKikgDcJfZN1-Y50DSkcOs85m3W_JQ&s=10",
-    "homepage": "https://thesoundofireland.com/",
-    "stationUuid": "0ca65a53-46d4-4d8d-81cf-ff45a56ea50a",
-    "checkedAt": "2026-10-06T11:11:29.010Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Cork City Community Radio",
@@ -585,7 +547,7 @@
     "favicon": null,
     "homepage": "https://cr.ie/",
     "stationUuid": "53034f42-4890-4318-bc14-0b7b68934d8e",
-    "checkedAt": "2026-10-06T11:11:29.413Z",
+    "checkedAt": "2026-10-08T12:18:54.384Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -606,7 +568,7 @@
     "favicon": "http://www.irishcountrymusicradio.com/main/favicon.ico",
     "homepage": "http://www.irishcountrymusicradio.com/",
     "stationUuid": "96159761-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-06T11:11:30.027Z",
+    "checkedAt": "2026-10-08T12:18:55.031Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -627,7 +589,7 @@
     "favicon": "https://www.radiokerry.ie/images/ico/apple-touch-icon.png",
     "homepage": "https://www.radiokerry.ie/",
     "stationUuid": "a15bdcf0-9689-44dc-b69f-1115453e48eb",
-    "checkedAt": "2026-10-06T11:11:30.533Z",
+    "checkedAt": "2026-10-08T12:18:55.432Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -649,7 +611,7 @@
     "favicon": null,
     "homepage": "https://www.ucc.ie/en/983fm/",
     "stationUuid": "2292ed14-9af0-446a-9bc1-6e91a29b5aad",
-    "checkedAt": "2026-10-06T11:11:30.610Z",
+    "checkedAt": "2026-10-08T12:18:55.462Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -670,7 +632,7 @@
     "favicon": null,
     "homepage": "https://www.rte.ie/radio/pulse/",
     "stationUuid": "54192068-303d-4f3d-9653-02a23f25feb9",
-    "checkedAt": "2026-10-06T11:11:31.083Z",
+    "checkedAt": "2026-10-08T12:18:55.949Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -689,7 +651,7 @@
     "favicon": "https://radiodns.mpbnl.nl/logos/mpb/radio1-mixmingle.png",
     "homepage": "https://mpbradio1.com/",
     "stationUuid": "f5a7e8d6-f25f-42d5-ac96-fc42c42629bc",
-    "checkedAt": "2026-10-06T11:11:31.095Z",
+    "checkedAt": "2026-10-08T12:18:55.973Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -708,7 +670,7 @@
     "favicon": "https://static.wixstatic.com/media/da966a_f5f97999e9404436a2c30e3336a3e307~mv2.png/v1/fill/w_292,h_292,al_c,q_95,enc_avif,quality_auto/da966a_f5f97999e9404436a2c30e3336a3e307~mv2.png",
     "homepage": "https://www.deephouse-radio.com/",
     "stationUuid": "8604376b-3ba2-4ef3-90ca-12ba9bb66c58",
-    "checkedAt": "2026-10-06T11:11:31.730Z",
+    "checkedAt": "2026-10-08T12:18:57.006Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -731,7 +693,7 @@
     "favicon": "https://www.nova.ie/favicon.ico",
     "homepage": "https://www.nova.ie/",
     "stationUuid": "391935f9-56f8-4a9a-9a31-47db3b36acec",
-    "checkedAt": "2026-10-06T11:11:32.150Z",
+    "checkedAt": "2026-10-08T12:18:57.703Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -750,7 +712,7 @@
     "favicon": "http://www.liveradio.ie/files/images/109615/resized/140x134c/sunshine.jpg",
     "homepage": "http://www.sunshineradio.ie/",
     "stationUuid": "96156040-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-06T11:11:32.265Z",
+    "checkedAt": "2026-10-08T12:18:57.756Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -769,7 +731,7 @@
     "favicon": "https://radiodns.mpbnl.nl/logos/mpb/radio2-ulster.png",
     "homepage": "https://mpbradio2.com/",
     "stationUuid": "a1c8b542-4fdd-4add-9b31-8b4fa50d8cfd",
-    "checkedAt": "2026-10-06T11:11:32.339Z",
+    "checkedAt": "2026-10-08T12:18:57.839Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -788,7 +750,7 @@
     "favicon": null,
     "homepage": "http://www.opentempofm.com/",
     "stationUuid": "9615fc76-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-06T11:11:32.684Z",
+    "checkedAt": "2026-10-08T12:18:57.853Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -808,7 +770,7 @@
     "favicon": null,
     "homepage": "https://www.rte.ie/radio/",
     "stationUuid": "ffb085ed-d817-44b4-ad8c-68bb933dfbee",
-    "checkedAt": "2026-10-06T11:11:32.696Z",
+    "checkedAt": "2026-10-08T12:18:57.985Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -829,30 +791,10 @@
     "favicon": "https://www.galwaybayfm.ie/images/ico/apple-touch-icon.png",
     "homepage": "https://galwaybayfm.ie/",
     "stationUuid": "567c9759-6b33-4fd9-867d-73643955886f",
-    "checkedAt": "2026-10-06T11:11:33.063Z",
+    "checkedAt": "2026-10-08T12:18:58.539Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "St. Itas Hospital Radio",
-    "url": "http://uk1.streamingpulse.com:7022/stream",
-    "country": "IE",
-    "type": "info",
-    "tags": [
-      "info",
-      "various music"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "irish",
-    "favicon": "https://cdn.instant.audio/images/logos/ieradio-org/saint-ita-s-hospital.png",
-    "homepage": "https://ieradio.org/saint-ita-s-hospital/",
-    "stationUuid": "89df4070-7e0b-407d-9fc7-b4afeb9561ec",
-    "checkedAt": "2026-10-06T11:11:33.479Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Ocean FM Sligo",
@@ -871,7 +813,7 @@
     "favicon": null,
     "homepage": "https://www.oceanfm.ie/",
     "stationUuid": "b9433d92-e541-4eb6-8019-f22a07a967c8",
-    "checkedAt": "2026-10-06T11:11:33.920Z",
+    "checkedAt": "2026-10-08T12:18:59.366Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -890,7 +832,7 @@
     "favicon": "https://images.squarespace-cdn.com/content/v1/5b584643c3c16a08ca110ca9/1534443146887-0XZ3DL6P3BTOPQ12SINO/favicon.ico?format=100w",
     "homepage": "https://www.absoluteirish.com/",
     "stationUuid": "ef141124-8536-4ada-bdf0-f30035d60cc7",
-    "checkedAt": "2026-10-06T11:11:34.167Z",
+    "checkedAt": "2026-10-08T12:18:59.627Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -909,7 +851,7 @@
     "favicon": "https://radiodns.mpbnl.nl/logos/mpb/radio2-easy.png",
     "homepage": "https://mpbradio2.com/",
     "stationUuid": "6462ecf8-d6ed-48ca-858a-50bef4d5616b",
-    "checkedAt": "2026-10-06T11:11:34.576Z",
+    "checkedAt": "2026-10-08T12:18:59.981Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -930,7 +872,7 @@
     "favicon": "https://www.shannonside.ie/images/ico/apple-touch-icon.png",
     "homepage": "https://www.shannonside.ie/",
     "stationUuid": "a92805a8-1dc6-414b-8acb-676aac1857f6",
-    "checkedAt": "2026-10-06T11:11:34.929Z",
+    "checkedAt": "2026-10-08T12:19:00.098Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -949,7 +891,7 @@
     "favicon": null,
     "homepage": "https://www.westlimerick102fm.com/",
     "stationUuid": "a741e1d9-48c9-4ce2-88d0-5f91e1f3ed07",
-    "checkedAt": "2026-10-06T11:11:35.011Z",
+    "checkedAt": "2026-10-08T12:19:00.372Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -968,7 +910,7 @@
     "favicon": null,
     "homepage": "https://clare.fm/",
     "stationUuid": "280ec340-9c64-498c-b78a-f8cef5418d80",
-    "checkedAt": "2026-10-06T11:11:35.117Z",
+    "checkedAt": "2026-10-08T12:19:00.464Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -985,7 +927,7 @@
     "favicon": null,
     "homepage": "https://www.ddmradio.com/",
     "stationUuid": "8af583b1-ac35-473b-8ff6-6f6f98e52202",
-    "checkedAt": "2026-10-06T11:11:37.276Z",
+    "checkedAt": "2026-10-08T12:19:02.714Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1002,7 +944,7 @@
     "favicon": "https://static.wixstatic.com/media/da966a_f5f97999e9404436a2c30e3336a3e307~mv2.png/v1/crop/x_250,y_0,w_450,h_700/fill/w_249,h_387,al_c,q_95,enc_auto/da966a_f5f97999e9404436a2c30e3336a3e307~mv2.png",
     "homepage": "https://www.deephouse-radio.com/",
     "stationUuid": "42748806-83dc-4ed0-a9d9-1a87bc9bd339",
-    "checkedAt": "2026-10-06T11:11:37.384Z",
+    "checkedAt": "2026-10-08T12:19:02.809Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1019,7 +961,7 @@
     "favicon": "https://www.galwaybayfm.ie/images/ico/apple-touch-icon.png",
     "homepage": "https://galwaybayfm.ie/",
     "stationUuid": "79198dfd-2eda-4c10-a055-4d4a0a92cc39",
-    "checkedAt": "2026-10-06T11:11:37.927Z",
+    "checkedAt": "2026-10-08T12:19:03.262Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1036,7 +978,7 @@
     "favicon": "https://www.galwaybayfm.ie/images/ico/apple-touch-icon.png",
     "homepage": "https://galwaybayfm.ie/",
     "stationUuid": "05900159-7e68-4f27-8db0-ea66371329f5",
-    "checkedAt": "2026-10-06T11:11:37.931Z",
+    "checkedAt": "2026-10-08T12:19:03.287Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1053,7 +995,7 @@
     "favicon": "https://www.radio.net/assets/fav/apple-touch-icon.png",
     "homepage": "https://www.radio.net/s/liveireland1",
     "stationUuid": "43385a94-e295-11e9-a8ba-52543be04c81",
-    "checkedAt": "2026-10-06T11:11:38.156Z",
+    "checkedAt": "2026-10-08T12:19:03.554Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1070,7 +1012,7 @@
     "favicon": "https://longwave.radioweb.co/upload/design/66f02b8663a098.94139347.png",
     "homepage": "https://longwave.radioweb.co/",
     "stationUuid": "f74aff65-d6ca-47b5-8832-c37ec9d8e522",
-    "checkedAt": "2026-10-06T11:11:38.168Z",
+    "checkedAt": "2026-10-08T12:19:03.559Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1087,7 +1029,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/9/131919.v5.png",
     "homepage": "https://one-tv.co.uk/radio/1/",
     "stationUuid": "34ad17ef-28ae-4da1-9966-3d04421562f8",
-    "checkedAt": "2026-10-06T11:11:38.194Z",
+    "checkedAt": "2026-10-08T12:19:03.635Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1104,7 +1046,7 @@
     "favicon": null,
     "homepage": "https://radiozender.mpbnetwerken.nl/pacificfm",
     "stationUuid": "f917a84a-14e4-4952-85cc-4ddaa3d48f5e",
-    "checkedAt": "2026-10-06T11:11:38.604Z",
+    "checkedAt": "2026-10-08T12:19:04.022Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1121,7 +1063,7 @@
     "favicon": null,
     "homepage": "https://radiozender.mpbnetwerken.nl/pacificfm-relax",
     "stationUuid": "5a6f3d45-4ecd-4bcb-a8b2-53304b1e9391",
-    "checkedAt": "2026-10-06T11:11:38.676Z",
+    "checkedAt": "2026-10-08T12:19:04.081Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1138,7 +1080,7 @@
     "favicon": "https://www.nova.ie/wp-content/uploads/2024/11/cropped-favicon-180x180.png",
     "homepage": "http://www.nova.ie/",
     "stationUuid": "406dbb8a-a581-11e9-a787-52543be04c81",
-    "checkedAt": "2026-10-06T11:11:39.075Z",
+    "checkedAt": "2026-10-08T12:19:04.382Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1155,7 +1097,7 @@
     "favicon": "https://www.nova.ie/favicon.ico",
     "homepage": "https://www.nova.ie/",
     "stationUuid": "a19882a7-5f94-437c-949d-6a8fcbd69748",
-    "checkedAt": "2026-10-06T11:11:39.086Z",
+    "checkedAt": "2026-10-08T12:19:04.448Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1172,7 +1114,7 @@
     "favicon": "https://tippfm.com/wp-content/uploads/sites/20/Tippfm-Logo-Header-Retina.png",
     "homepage": "https://tippfm.com/",
     "stationUuid": "80bd9177-fc93-4e8f-bbfd-b930e092f24c",
-    "checkedAt": "2026-10-06T11:11:40.712Z",
+    "checkedAt": "2026-10-08T12:19:05.920Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1189,7 +1131,7 @@
     "favicon": "https://tippfm.com/wp-content/uploads/sites/20/Tippfm-Logo-Header-Retina.png",
     "homepage": "https://tippfm.com/",
     "stationUuid": "d583df03-fff1-42dd-86fa-abd27a604f61",
-    "checkedAt": "2026-10-06T11:11:40.773Z",
+    "checkedAt": "2026-10-08T12:19:06.024Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -1206,7 +1148,7 @@
     "favicon": null,
     "homepage": "https://www.ucc.ie/en/983fm/",
     "stationUuid": "e338a398-9b8e-452c-a414-f4c5118fc34d",
-    "checkedAt": "2026-10-06T11:11:40.983Z",
+    "checkedAt": "2026-10-08T12:19:06.073Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1223,7 +1165,7 @@
     "favicon": "https://westlimerick102fm.ie/wp-content/uploads/2025/03/WLLogo.png",
     "homepage": "https://westlimerick102fm.ie/",
     "stationUuid": "d144f537-691f-4e56-bb2c-1eeeefb15c20",
-    "checkedAt": "2026-10-06T11:11:41.041Z",
+    "checkedAt": "2026-10-08T12:19:06.140Z",
     "status": 503,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 503"
@@ -1240,7 +1182,7 @@
     "favicon": null,
     "homepage": "https://radiozender.mpbnetwerken.nl/westsideradio.mp3",
     "stationUuid": "df772d0c-b491-424a-adc0-b53c8b8397d6",
-    "checkedAt": "2026-10-06T11:11:41.088Z",
+    "checkedAt": "2026-10-08T12:19:06.268Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1259,7 +1201,7 @@
     "favicon": null,
     "homepage": "https://www.rte.ie/radio/2xm/",
     "stationUuid": "6df6b2c1-df3e-4c7f-bbad-8d24ca804046",
-    "checkedAt": "2026-10-06T11:11:41.615Z",
+    "checkedAt": "2026-10-08T12:19:06.608Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1276,7 +1218,7 @@
     "favicon": null,
     "homepage": "https://sc.mpbnl.nl/status-json.xsl",
     "stationUuid": "4eaebb66-e771-46fe-b5fc-43e4e8eb7316",
-    "checkedAt": "2026-10-06T11:11:41.676Z",
+    "checkedAt": "2026-10-08T12:19:06.782Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1293,7 +1235,7 @@
     "favicon": null,
     "homepage": "https://ignoreradio.com/wp/",
     "stationUuid": "4d48a517-c85c-4b7c-95d4-dd76255d584b",
-    "checkedAt": "2026-10-06T11:11:41.846Z",
+    "checkedAt": "2026-10-08T12:19:07.173Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1312,35 +1254,10 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "91d70d2b-5d1b-45d3-812c-0f5597890344",
-    "checkedAt": "2026-10-06T11:11:42.784Z",
+    "checkedAt": "2026-10-08T12:19:07.777Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "MPB Radio 2 90s & 00s",
-    "url": "https://sc.mpbnl.nl/radio2-90s00s.mp3",
-    "country": "IE",
-    "type": "pop music",
-    "tags": [
-      "pop music",
-      "pop",
-      "hit music",
-      "90s music",
-      "rave",
-      "eurodance",
-      "90s pop"
-    ],
-    "codec": "AAC+",
-    "bitrate": 384,
-    "language": "english,irish",
-    "favicon": "https://radiodns.mpbnl.nl/logos/mpb/radio2-90s00s.png",
-    "homepage": "https://mpbradio2.com",
-    "stationUuid": "e2d36184-272d-4976-9518-4a174e17d11a",
-    "checkedAt": "2026-10-06T11:11:43.215Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "RTÉ Radio 1 Extra",
@@ -1357,7 +1274,7 @@
     "favicon": null,
     "homepage": "https://www.rte.ie/radio/rte-radio1-extra/",
     "stationUuid": "6f467d39-ab94-4a53-bcbc-15b4ead18226",
-    "checkedAt": "2026-10-06T11:11:43.923Z",
+    "checkedAt": "2026-10-08T12:19:08.727Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1376,7 +1293,7 @@
     "favicon": null,
     "homepage": "https://www.rte.ie/radio/",
     "stationUuid": "f778f85a-b4b4-48e8-89a0-c62a083c8bcd",
-    "checkedAt": "2026-10-06T11:11:43.953Z",
+    "checkedAt": "2026-10-08T12:19:08.754Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1395,7 +1312,7 @@
     "favicon": null,
     "homepage": "https://www.goreyfm.ie/",
     "stationUuid": "f0d057a4-1071-42b9-a2fd-0b085743b360",
-    "checkedAt": "2026-10-06T11:11:44.497Z",
+    "checkedAt": "2026-10-08T12:19:09.223Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"

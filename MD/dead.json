@@ -18,32 +18,10 @@
     "favicon": "https://glowlinks.net/the-glow-network.png",
     "homepage": "https://glowlinks.net/radio",
     "stationUuid": "11c07bdc-4fc3-4ee7-af17-f8eb1db7493c",
-    "checkedAt": "2026-10-06T11:17:08.715Z",
+    "checkedAt": "2026-10-08T12:24:41.218Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Smile FM",
-    "url": "https://sonicssl.namehost.ro/8050/;",
-    "country": "MD",
-    "type": "chr",
-    "tags": [
-      "chr",
-      "hits",
-      "pop",
-      "top40"
-    ],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": "romanian",
-    "favicon": null,
-    "homepage": "https://www.smilefm.md/",
-    "stationUuid": "c63563c8-edc3-4bb5-9962-63375bb4d6ad",
-    "checkedAt": "2026-10-06T11:17:10.079Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Moldova",
@@ -61,10 +39,30 @@
     "favicon": "https://radiomoldova.md/apple-touch-icon.png",
     "homepage": "https://radiomoldova.md/",
     "stationUuid": "ff73092b-7efe-464b-b70c-51c771058dc1",
-    "checkedAt": "2026-10-06T11:17:10.954Z",
+    "checkedAt": "2026-10-08T12:24:42.821Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Plai",
+    "url": "https://stream.radioplai.md/live",
+    "country": "MD",
+    "type": "folk",
+    "tags": [
+      "folk",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "romanian",
+    "favicon": "https://www.radioplai.md/logo-radio-plai.png",
+    "homepage": "https://www.radioplai.md/",
+    "stationUuid": "7ff4a334-50ab-439a-ba82-47a3c2dd0082",
+    "checkedAt": "2026-10-08T12:24:42.879Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Glowwave-FM",
@@ -78,7 +76,7 @@
     "favicon": "https://glowlinks.net/the-glow-network.png",
     "homepage": "https://glowlinks.net/radio",
     "stationUuid": "1cf33481-5bc1-4e66-a95f-9d5278542df1",
-    "checkedAt": "2026-10-06T11:17:11.805Z",
+    "checkedAt": "2026-10-08T12:24:43.426Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -95,7 +93,7 @@
     "favicon": null,
     "homepage": "http://imago.fm/",
     "stationUuid": "e9680f99-116f-43a4-aba5-f1d3bb54edc9",
-    "checkedAt": "2026-10-06T11:17:11.808Z",
+    "checkedAt": "2026-10-08T12:24:43.444Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -112,7 +110,7 @@
     "favicon": "https://www.miculsamaritean.com/favicon.png",
     "homepage": "https://www.miculsamaritean.com/",
     "stationUuid": "220e3f38-4f2b-402a-af1a-350e82aaddcb",
-    "checkedAt": "2026-10-06T11:17:11.924Z",
+    "checkedAt": "2026-10-08T12:24:43.548Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"

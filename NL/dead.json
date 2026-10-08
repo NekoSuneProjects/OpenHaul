@@ -13,7 +13,7 @@
     "favicon": "null",
     "homepage": "https://radiomap.eu/lt/play/lenta",
     "stationUuid": "e6fc7c7f-9ffb-4b3b-9963-8f038e066028",
-    "checkedAt": "2026-10-06T11:22:51.260Z",
+    "checkedAt": "2026-10-08T12:30:38.183Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -37,10 +37,62 @@
     "favicon": "https://hitradio038.eu/wp-content/uploads/2022/07/facebook_1658737516426_6957249400103467120-300x150.jpg",
     "homepage": "https://hitradio038.eu/",
     "stationUuid": "708e6e3d-b5b2-4c2f-a1e4-c28a1a047aaa",
-    "checkedAt": "2026-10-06T11:22:51.263Z",
+    "checkedAt": "2026-10-08T12:30:38.189Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "SmileFM",
+    "url": "https://streaming.live365.com/a93730",
+    "country": "NL",
+    "type": "00's",
+    "tags": [
+      "00's",
+      "80's",
+      "90's",
+      "hits",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": "https://smilefm.nl/wp-content/uploads/2026/01/tegel-smile-2026-1000.png",
+    "homepage": "https://smilefm.nl/",
+    "stationUuid": "88449e22-5284-4023-8440-fc0b70fd9ef4",
+    "checkedAt": "2026-10-08T12:30:38.191Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio De Wasrol",
+    "url": "https://streams.radioerfgoed.nl/radiodewasrol",
+    "country": "NL",
+    "type": "1920s",
+    "tags": [
+      "1920s",
+      "1930",
+      "1940s",
+      "blues",
+      "boogie woogie",
+      "country",
+      "dance hall",
+      "jazz",
+      "marsch",
+      "swing",
+      "vaudeville"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://www.radiodewasrol.nl/",
+    "stationUuid": "3880b004-8ccc-48bd-ad05-fe0063920b5c",
+    "checkedAt": "2026-10-08T12:30:39.697Z",
+    "status": 503,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Radio Exclusief",
@@ -57,7 +109,7 @@
     "favicon": null,
     "homepage": "https://radioexclusief.nl/",
     "stationUuid": "7b33c9cb-a5bd-4fb5-bd18-76a4a748c0c9",
-    "checkedAt": "2026-10-06T11:22:54.214Z",
+    "checkedAt": "2026-10-08T12:30:40.425Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -77,7 +129,7 @@
     "favicon": "https://www.devrolijkesnuiters.nl/uploads/devrolijkesnuiters.nl/1703461960-My%20Post.jpg",
     "homepage": "https://www.devrolijkesnuiters.nl/",
     "stationUuid": "eb1d6536-d38d-44e1-8970-f4053fba5ba0",
-    "checkedAt": "2026-10-06T11:22:54.379Z",
+    "checkedAt": "2026-10-08T12:30:40.567Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -99,7 +151,7 @@
     "favicon": "https://donderschoerradio.nl/.cm4all/mediadb/Nieuw%20Logo.jpg",
     "homepage": "https://donderschoerradio.nl/",
     "stationUuid": "61b87b15-0d7e-4489-943f-59a5b90c3add",
-    "checkedAt": "2026-10-06T11:22:54.515Z",
+    "checkedAt": "2026-10-08T12:30:40.575Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -120,7 +172,7 @@
     "favicon": "https://www.telco.eu/images/logo.png",
     "homepage": "https://www.telco.eu/",
     "stationUuid": "8d70c003-f6d5-491f-8009-174ec5d1a626",
-    "checkedAt": "2026-10-06T11:22:54.532Z",
+    "checkedAt": "2026-10-08T12:30:40.683Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -145,7 +197,7 @@
     "favicon": "https://happysoundradio.online/wp-content/uploads/go-x/u/7664c157-a9bb-4f07-a28b-0335191f0150/l0,t0,w1798,h1798/image-683x683.png",
     "homepage": "https://happysoundradio.online/",
     "stationUuid": "d884530e-a8d9-4754-aef5-923c8207775e",
-    "checkedAt": "2026-10-06T11:22:54.538Z",
+    "checkedAt": "2026-10-08T12:30:40.727Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -165,7 +217,7 @@
     "favicon": "https://onverantwoord.com/wp-content/uploads/2023/01/onverantwoord.svg",
     "homepage": "https://onverantwoord.com/",
     "stationUuid": "0b5a69b2-9c1b-4645-9259-da3d7fc59483",
-    "checkedAt": "2026-10-06T11:22:55.409Z",
+    "checkedAt": "2026-10-08T12:30:41.458Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -186,7 +238,7 @@
     "favicon": null,
     "homepage": "https://www.rtv80.nl/",
     "stationUuid": "ed5cfae3-4644-4e5f-ad6d-ba8d77a9f8c0",
-    "checkedAt": "2026-10-06T11:22:55.419Z",
+    "checkedAt": "2026-10-08T12:30:41.495Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -208,7 +260,7 @@
     "favicon": "https://www.radioblacklight.nl/images/logo%20blacklight.png",
     "homepage": "https://www.radioblacklight.nl/",
     "stationUuid": "0a42d615-59af-45a0-b04a-c6b3971b723e",
-    "checkedAt": "2026-10-06T11:22:55.485Z",
+    "checkedAt": "2026-10-08T12:30:41.503Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -228,7 +280,7 @@
     "favicon": "https://www.radiodemusketiers.nl/wp-content/uploads/2023/03/cropped-bannerRDM.jpg",
     "homepage": "https://www.radiodemusketiers.nl/",
     "stationUuid": "4692de73-3832-4dff-8fab-f23533a5a119",
-    "checkedAt": "2026-10-06T11:22:55.507Z",
+    "checkedAt": "2026-10-08T12:30:41.517Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -249,7 +301,7 @@
     "favicon": null,
     "homepage": "https://henkbeenen.nl/",
     "stationUuid": "9cada4c3-233b-4fd6-b37a-af3eb7e7718f",
-    "checkedAt": "2026-10-06T11:22:55.583Z",
+    "checkedAt": "2026-10-08T12:30:41.622Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -271,7 +323,7 @@
     "favicon": null,
     "homepage": "https://www.radiostadwoerden.com/",
     "stationUuid": "da294cf1-b4ba-4e8c-908b-1903ea42ad14",
-    "checkedAt": "2026-10-06T11:22:55.644Z",
+    "checkedAt": "2026-10-08T12:30:41.727Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -297,7 +349,7 @@
     "favicon": null,
     "homepage": "https://www.traxxradio.nl/",
     "stationUuid": "ff964a43-8239-4cbd-b116-a0f1d248cbd5",
-    "checkedAt": "2026-10-06T11:22:55.776Z",
+    "checkedAt": "2026-10-08T12:30:41.944Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -324,7 +376,7 @@
     "favicon": null,
     "homepage": "https://www.traxxradio.nl/",
     "stationUuid": "5a64c0e3-00e8-4c2c-9bda-3df857d3713b",
-    "checkedAt": "2026-10-06T11:22:55.833Z",
+    "checkedAt": "2026-10-08T12:30:42.024Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -346,7 +398,7 @@
     "favicon": "http://www.kxclassics.nl/images/favicon/apple-icon-120x120.png",
     "homepage": "http://www.kxclassics.nl/",
     "stationUuid": "960e3c23-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-06T11:22:56.547Z",
+    "checkedAt": "2026-10-08T12:30:42.769Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -370,7 +422,7 @@
     "favicon": "https://norafm.nl/wp-content/uploads/2025/01/NoraFM_Logo_300x300-150x150.jpg",
     "homepage": "https://norafm.nl/",
     "stationUuid": "740dde51-17b0-4f13-9b27-1b5b1e78b6ab",
-    "checkedAt": "2026-10-06T11:22:57.588Z",
+    "checkedAt": "2026-10-08T12:30:44.118Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -390,7 +442,7 @@
     "favicon": "https://c64radio.com/images/tsslogo.png",
     "homepage": "https://c64radio.com/",
     "stationUuid": "9bbffbcc-88fa-4c3c-84b8-eb93a88a9f7a",
-    "checkedAt": "2026-10-06T11:22:57.690Z",
+    "checkedAt": "2026-10-08T12:30:44.206Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -410,7 +462,7 @@
     "favicon": "https://c64radio.com/images/tsslogo.png",
     "homepage": "https://c64radio.com/",
     "stationUuid": "01783bf9-454c-424f-83c0-5664ed5c6247",
-    "checkedAt": "2026-10-06T11:22:57.714Z",
+    "checkedAt": "2026-10-08T12:30:44.222Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -431,7 +483,7 @@
     "favicon": "https://cache.usercontentapp.com/logo/stations/8372.png?format=png&enlarge=0&quality=90&width=960",
     "homepage": "https://www.andys80s.com/",
     "stationUuid": "65ed1497-20f0-4a23-9025-c0e37be5ef62",
-    "checkedAt": "2026-10-06T11:22:59.168Z",
+    "checkedAt": "2026-10-08T12:30:45.741Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -451,7 +503,7 @@
     "favicon": "https://www.planet90.com/assets/images/logo495-495x163.png",
     "homepage": "https://www.planet90.com/",
     "stationUuid": "acf6b64c-1aca-4e9e-93b1-2e9edaf9bf4c",
-    "checkedAt": "2026-10-06T11:22:59.819Z",
+    "checkedAt": "2026-10-08T12:30:46.441Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -471,7 +523,7 @@
     "favicon": "https://www.planet90.com/assets/images/logo495-495x163.png",
     "homepage": "https://www.planet90.com/",
     "stationUuid": "de75b9b0-69fc-4d4d-a5fe-5917a3a33dba",
-    "checkedAt": "2026-10-06T11:22:59.863Z",
+    "checkedAt": "2026-10-08T12:30:46.519Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -494,7 +546,7 @@
     "favicon": "https://platinumradio.nl/assets/img/logo.png",
     "homepage": "https://platinumradio.nl/stations/platinum-90s",
     "stationUuid": "5775383d-19f3-48ca-bfde-918bc99605a7",
-    "checkedAt": "2026-10-06T11:23:00.333Z",
+    "checkedAt": "2026-10-08T12:30:46.945Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -517,24 +569,7 @@
     "favicon": "https://live.platinumradio.nl/static/uploads/platinum_branding/platinum-p-icon-dark-512x512.png",
     "homepage": "https://live.platinumradio.nl/public/platinum_90s",
     "stationUuid": "c72be165-24fb-4269-81bc-506a1030a861",
-    "checkedAt": "2026-10-06T11:23:00.369Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "BigB21",
-    "url": "http://stream.bigb21.nl:12000/live",
-    "country": "NL",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://www.bigb21.nl/img/logo.png",
-    "homepage": "https://www.bigb21.nl/home",
-    "stationUuid": "35164ab3-3b6b-4023-b011-c09c5d811100",
-    "checkedAt": "2026-10-06T11:23:00.955Z",
+    "checkedAt": "2026-10-08T12:30:47.009Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -551,7 +586,7 @@
     "favicon": null,
     "homepage": "https://brasstimeradio.nl/",
     "stationUuid": "05e6ca7d-b638-4f35-9b76-2b228963b8f8",
-    "checkedAt": "2026-10-06T11:23:00.976Z",
+    "checkedAt": "2026-10-08T12:30:47.709Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -568,7 +603,7 @@
     "favicon": null,
     "homepage": "https://dbc.nl/",
     "stationUuid": "94127ab9-1beb-4c14-95a3-d33422dc3dd4",
-    "checkedAt": "2026-10-06T11:23:01.199Z",
+    "checkedAt": "2026-10-08T12:30:47.867Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -585,7 +620,7 @@
     "favicon": null,
     "homepage": "https://radioreg.net/",
     "stationUuid": "47107f40-91bb-4bf3-b554-d2e4e9c29e1c",
-    "checkedAt": "2026-10-06T11:23:01.219Z",
+    "checkedAt": "2026-10-08T12:30:47.874Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -602,7 +637,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "71b86a24-74b7-4e34-abce-19401605bd7a",
-    "checkedAt": "2026-10-06T11:23:02.941Z",
+    "checkedAt": "2026-10-08T12:30:48.832Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -619,7 +654,7 @@
     "favicon": null,
     "homepage": "https://www.mixcloud.com/live/ruudhuisman/",
     "stationUuid": "9dd58d99-b342-44df-9ebd-51a96819b833",
-    "checkedAt": "2026-10-06T11:23:04.138Z",
+    "checkedAt": "2026-10-08T12:30:49.707Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -636,7 +671,7 @@
     "favicon": null,
     "homepage": "https://radio-boemerangfm.nl/",
     "stationUuid": "5247b819-5537-4c65-b399-e1aac7226b72",
-    "checkedAt": "2026-10-06T11:23:04.468Z",
+    "checkedAt": "2026-10-08T12:30:49.770Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -653,7 +688,7 @@
     "favicon": null,
     "homepage": "http://www.radiohitec.nl/",
     "stationUuid": "cae8a48f-acd9-426f-8a30-33088338fa91",
-    "checkedAt": "2026-10-06T11:23:05.417Z",
+    "checkedAt": "2026-10-08T12:30:50.958Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -670,7 +705,7 @@
     "favicon": "https://ai-metal-radio-station.nl/favicon.png",
     "homepage": "https://ai-metal-radio-station.nl/",
     "stationUuid": "06a8121a-4bc5-4ee3-ba7f-c813b9e937ba",
-    "checkedAt": "2026-10-06T11:23:06.223Z",
+    "checkedAt": "2026-10-08T12:30:52.035Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -687,7 +722,7 @@
     "favicon": "null",
     "homepage": "https://radiotwentestad.nl/",
     "stationUuid": "24463b85-e433-4bb4-ba39-bf5ddc12b472",
-    "checkedAt": "2026-10-06T11:23:07.820Z",
+    "checkedAt": "2026-10-08T12:30:53.656Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -704,7 +739,7 @@
     "favicon": "https://www.zap.fm/uploads/logo/logo.png",
     "homepage": "https://www.zap.fm/#top",
     "stationUuid": "f7dff436-f7b5-428d-8d66-3b693c836d99",
-    "checkedAt": "2026-10-06T11:23:09.314Z",
+    "checkedAt": "2026-10-08T12:30:55.050Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -721,7 +756,7 @@
     "favicon": "https://www.zap.fm/uploads/logo/logo.png",
     "homepage": "https://www.zap.fm/#top",
     "stationUuid": "3e6f444c-a437-4bfb-9260-ca39322b1ac0",
-    "checkedAt": "2026-10-06T11:23:09.341Z",
+    "checkedAt": "2026-10-08T12:30:55.167Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -743,7 +778,7 @@
     "favicon": "https://i0.wp.com/klokradio.nl/wp-content/uploads/2017/08/klokradio-favicon-2017-100px.png?fit=100%2c100&#038;ssl=1",
     "homepage": "https://klokradio.nl/",
     "stationUuid": "1705c647-4929-467e-9840-950ecae626d8",
-    "checkedAt": "2026-10-06T11:23:09.564Z",
+    "checkedAt": "2026-10-08T12:30:55.267Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -769,7 +804,7 @@
     "favicon": null,
     "homepage": "https://www.gayradioeurope.eu/",
     "stationUuid": "30010c90-484b-49f4-af74-c0bfdafaa506",
-    "checkedAt": "2026-10-06T11:23:10.109Z",
+    "checkedAt": "2026-10-08T12:30:55.818Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -794,7 +829,7 @@
     "favicon": null,
     "homepage": "https://www.gayradio.nl/",
     "stationUuid": "84bab01e-70f9-435f-8fd0-116ab598b9a3",
-    "checkedAt": "2026-10-06T11:23:10.119Z",
+    "checkedAt": "2026-10-08T12:30:55.859Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -818,7 +853,7 @@
     "favicon": null,
     "homepage": "https://internetradio.kim/",
     "stationUuid": "797d2a19-b994-45f0-bcd6-1831335e30ed",
-    "checkedAt": "2026-10-06T11:23:10.262Z",
+    "checkedAt": "2026-10-08T12:30:55.868Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -839,7 +874,7 @@
     "favicon": "https://prod.cc.bijnpo.nl/assets/favicons/apple-touch-icon.png",
     "homepage": "https://www.npo3fm.nl/kx",
     "stationUuid": "5b8f5ae1-b160-4e5e-8189-25a0ca2ebf00",
-    "checkedAt": "2026-10-06T11:23:10.511Z",
+    "checkedAt": "2026-10-08T12:30:56.118Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -860,7 +895,7 @@
     "favicon": null,
     "homepage": "https://www.npo3fm.nl/kx",
     "stationUuid": "ce7eec49-8e07-47bd-ad81-abf5e5b4330b",
-    "checkedAt": "2026-10-06T11:23:10.534Z",
+    "checkedAt": "2026-10-08T12:30:56.179Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -880,7 +915,7 @@
     "favicon": "https://prod.cc.bijnpo.nl/assets/favicons/apple-touch-icon.png",
     "homepage": "http://kxradio.3fm.nl/",
     "stationUuid": "960a1d6d-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-06T11:23:10.576Z",
+    "checkedAt": "2026-10-08T12:30:56.201Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -899,7 +934,7 @@
     "favicon": null,
     "homepage": "https://rararadio.org/",
     "stationUuid": "b5631be6-9719-4c0d-9928-3e81488df192",
-    "checkedAt": "2026-10-06T11:23:10.971Z",
+    "checkedAt": "2026-10-08T12:30:56.500Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -921,7 +956,7 @@
     "favicon": "https://pinguinradio.com/dist/images/content/p-radio.jpg",
     "homepage": "https://pinguinradio.com/player/pinguin-radio",
     "stationUuid": "962e8aac-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-06T11:23:11.280Z",
+    "checkedAt": "2026-10-08T12:30:57.025Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -942,7 +977,7 @@
     "favicon": null,
     "homepage": "https://www.radioamerika.nl/",
     "stationUuid": "b3673f32-9642-4863-b9d6-efb2ca821814",
-    "checkedAt": "2026-10-06T11:23:12.050Z",
+    "checkedAt": "2026-10-08T12:30:57.664Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -963,7 +998,7 @@
     "favicon": "https://focus103.nl/wp-content/uploads/2024/08/QFM-Logo-2-768x517.png",
     "homepage": "https://qualityfm.nl/",
     "stationUuid": "a1bb4937-8e56-425d-bd72-e2a37d4b9897",
-    "checkedAt": "2026-10-06T11:23:12.321Z",
+    "checkedAt": "2026-10-08T12:30:58.224Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -984,7 +1019,7 @@
     "favicon": null,
     "homepage": "https://qualityfm.nl/",
     "stationUuid": "86313cf3-26fc-4748-a777-8d1541b7e5af",
-    "checkedAt": "2026-10-06T11:23:12.342Z",
+    "checkedAt": "2026-10-08T12:30:58.234Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1008,7 +1043,7 @@
     "favicon": null,
     "homepage": "https://www.radiosrinagar.nl/",
     "stationUuid": "964d4db0-83f3-4d27-9eb1-b3bd3e5c2399",
-    "checkedAt": "2026-10-06T11:23:13.184Z",
+    "checkedAt": "2026-10-08T12:30:59.651Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1029,7 +1064,7 @@
     "favicon": "https://www.radiotrefpunt.nl/uploads/monthly_2024_01/NPO-campus-logo-RGB.png.229db1af0c0ee2b6d964cb1ce970ce43.png",
     "homepage": "https://www.npocampus.nl/",
     "stationUuid": "a9db9b61-4d1b-4ac2-ac7c-c1232d076a32",
-    "checkedAt": "2026-10-06T11:23:14.122Z",
+    "checkedAt": "2026-10-08T12:31:01.485Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1048,7 +1083,26 @@
     "favicon": "https://pbs.twimg.com/profile_images/1493315154070618127/ClBuESH-_400x400.jpg",
     "homepage": "https://radioschuimkoppen.nl/",
     "stationUuid": "343af8c7-2f1a-4b11-8193-d7c0cf10f05b",
-    "checkedAt": "2026-10-06T11:23:14.214Z",
+    "checkedAt": "2026-10-08T12:31:01.507Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "SinterklaasRadio",
+    "url": "https://stream06.dotpoint.nl:8004/stream",
+    "country": "NL",
+    "type": "children",
+    "tags": [
+      "children"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "dutch",
+    "favicon": null,
+    "homepage": "https://www.sinterklaasradio.nl/",
+    "stationUuid": "14fc1e63-04e0-4f30-99da-b6f2ca91bbce",
+    "checkedAt": "2026-10-08T12:31:02.036Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1069,7 +1123,7 @@
     "favicon": "https://www.jazzdeville.com/favicon/jazzdeville/apple-touch-icon.png",
     "homepage": "https://www.jazzdeville.com/",
     "stationUuid": "b67cde9c-64d8-4b9d-ab30-268977330b50",
-    "checkedAt": "2026-10-06T11:23:15.317Z",
+    "checkedAt": "2026-10-08T12:31:02.394Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1091,7 +1145,7 @@
     "favicon": "https://powerstationbuddha.com/wp-content/uploads/2025/05/logo-powerstation-buddha-600-1.png",
     "homepage": "https://powerstationbuddha.com/",
     "stationUuid": "ead63749-c64b-43f2-b3da-fe4a454c781d",
-    "checkedAt": "2026-10-06T11:23:15.533Z",
+    "checkedAt": "2026-10-08T12:31:02.576Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1110,7 +1164,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRazg4CH2MVkVP7V5S9VHUAnu953XI_wgI_D5DltnJBMQYQgkJWjnOFGX-T6vLo-Zjneyo&usqp=CAU",
     "homepage": "https://powerstationbuddha.com/",
     "stationUuid": "992d12f2-ef19-474f-80fb-26c040ae53ba",
-    "checkedAt": "2026-10-06T11:23:15.644Z",
+    "checkedAt": "2026-10-08T12:31:02.601Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1130,7 +1184,7 @@
     "favicon": "https://i0.wp.com/klokradio.nl/wp-content/uploads/2017/08/klokradio-favicon-2017-100px.png?fit=100%2c100&#038;ssl=1",
     "homepage": "https://klokradio.nl/",
     "stationUuid": "ec5f23c2-c871-4124-9485-7b665b4b898f",
-    "checkedAt": "2026-10-06T11:23:16.869Z",
+    "checkedAt": "2026-10-08T12:31:03.615Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1152,7 +1206,7 @@
     "favicon": null,
     "homepage": "https://fouteradio.nl/",
     "stationUuid": "dbf04ebc-bf60-4c49-8e3f-61533c013748",
-    "checkedAt": "2026-10-06T11:23:17.949Z",
+    "checkedAt": "2026-10-08T12:31:04.314Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1175,7 +1229,7 @@
     "favicon": "https://onlinepiraat.nl/wp-content/uploads/2024/08/Opvullogo_wallpaper-2048x513.jpg",
     "homepage": "https://onlinepiraat.nl/",
     "stationUuid": "0e750ae8-dadc-443e-bb79-866dad81cd31",
-    "checkedAt": "2026-10-06T11:23:18.261Z",
+    "checkedAt": "2026-10-08T12:31:04.727Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1198,7 +1252,7 @@
     "favicon": "https://platinumradio.nl/assets/img/logo.png",
     "homepage": "https://platinumradio.nl/stations/platinum-radio",
     "stationUuid": "f4bff92d-aaea-401b-8220-684bb8001cf8",
-    "checkedAt": "2026-10-06T11:23:18.371Z",
+    "checkedAt": "2026-10-08T12:31:04.743Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1218,7 +1272,7 @@
     "favicon": null,
     "homepage": "https://www.pureclassix.com/",
     "stationUuid": "fe9fa868-948a-47e7-94a6-4f793ffe3f34",
-    "checkedAt": "2026-10-06T11:23:18.374Z",
+    "checkedAt": "2026-10-08T12:31:04.762Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1240,7 +1294,7 @@
     "favicon": null,
     "homepage": "https://www.stationamg.nl/",
     "stationUuid": "248e1517-9ceb-4c00-bbf1-d3d975da333f",
-    "checkedAt": "2026-10-06T11:23:18.469Z",
+    "checkedAt": "2026-10-08T12:31:04.937Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -1263,7 +1317,7 @@
     "favicon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Frararadio.nl%2FRARARadio%2520sticker%2520A7%2520square.jpg&f=1&nofb=1&ipt=530ccb7a58f58c030f2aad0d3f21421750a48295c4a1bfe15a7ca0803f80ed58",
     "homepage": "https://rararadio.org/",
     "stationUuid": "8976f995-ea6d-4dce-b695-5ac611f1c45a",
-    "checkedAt": "2026-10-06T11:23:23.032Z",
+    "checkedAt": "2026-10-08T12:31:08.596Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1282,7 +1336,7 @@
     "favicon": null,
     "homepage": "http://hit-fm.duckdns.org:8000/stream",
     "stationUuid": "1b1566f4-1334-4315-a6bf-67f017de8316",
-    "checkedAt": "2026-10-06T11:23:23.355Z",
+    "checkedAt": "2026-10-08T12:31:08.768Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1301,7 +1355,7 @@
     "favicon": null,
     "homepage": "https://aicountrymusic.nl/",
     "stationUuid": "0c6a3038-b414-459e-9451-3e99015cc0b6",
-    "checkedAt": "2026-10-06T11:23:23.546Z",
+    "checkedAt": "2026-10-08T12:31:08.943Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1326,7 +1380,7 @@
     "favicon": "https://4themusic.club/CMS/Images/4themusiclogo.svg",
     "homepage": "https://4themusic.club/",
     "stationUuid": "58f86365-9523-47fe-bca4-1dbf176a3e22",
-    "checkedAt": "2026-10-06T11:23:24.247Z",
+    "checkedAt": "2026-10-08T12:31:09.407Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1349,7 +1403,7 @@
     "favicon": null,
     "homepage": "http://www.clubstitute.nl/",
     "stationUuid": "348871b0-60ce-4ae3-9d58-67b3cc170a72",
-    "checkedAt": "2026-10-06T11:23:24.711Z",
+    "checkedAt": "2026-10-08T12:31:09.835Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1372,7 +1426,7 @@
     "favicon": null,
     "homepage": "https://www.happy-sound.nl/",
     "stationUuid": "e12d050a-611b-415b-8bff-afabf3c11188",
-    "checkedAt": "2026-10-06T11:23:24.898Z",
+    "checkedAt": "2026-10-08T12:31:10.222Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1391,7 +1445,7 @@
     "favicon": "https://www.jazzdeville.com/favicon/jazzdeville/apple-touch-icon.png",
     "homepage": "https://www.jazzdeville.com/",
     "stationUuid": "14357881-d9b0-4a8a-a139-c7a2f3098158",
-    "checkedAt": "2026-10-06T11:23:24.959Z",
+    "checkedAt": "2026-10-08T12:31:10.485Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1413,7 +1467,7 @@
     "favicon": "https://live.platinumradio.nl/static/uploads/platinum_branding/platinum-p-icon-dark-512x512.png",
     "homepage": "https://live.platinumradio.nl/public/masters_of_hardcore",
     "stationUuid": "3a5bd5ae-376a-403e-b532-7d527d801447",
-    "checkedAt": "2026-10-06T11:23:25.000Z",
+    "checkedAt": "2026-10-08T12:31:10.580Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1436,7 +1490,7 @@
     "favicon": "https://platinumradio.nl/assets/img/logo.png",
     "homepage": "https://platinumradio.nl/stations/platinum-hardstyle",
     "stationUuid": "ac55e685-cab2-4036-b8c9-cffac9ba8c41",
-    "checkedAt": "2026-10-06T11:23:25.020Z",
+    "checkedAt": "2026-10-08T12:31:10.619Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1456,7 +1510,7 @@
     "favicon": "null",
     "homepage": "https://www.classicsradio.org/",
     "stationUuid": "01558918-52d8-47b0-b5c3-748448074c57",
-    "checkedAt": "2026-10-06T11:23:25.912Z",
+    "checkedAt": "2026-10-08T12:31:11.538Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1477,10 +1531,33 @@
     "favicon": "https://static.wixstatic.com/media/7e13fe_b533853fb7224340925b1d5f184c937b~mv2.jpg/v1/fill/w_180,h_150,al_c,q_80,enc_avif,quality_auto/180%20x%20150%20Logo.jpg",
     "homepage": "https://www.radio105.nl/",
     "stationUuid": "87b3306c-264b-406d-bd40-9751a30ef66e",
-    "checkedAt": "2026-10-06T11:23:26.329Z",
+    "checkedAt": "2026-10-08T12:31:11.880Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio WORM",
+    "url": "https://origin.streamnerd.nl/worm/worm/icecast.audio",
+    "country": "NL",
+    "type": "diy",
+    "tags": [
+      "diy",
+      "experimental",
+      "interviews",
+      "mixes",
+      "sound art"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://radio.worm.org/",
+    "stationUuid": "325d36fa-5c9e-4ca0-b000-b6d5027cbd82",
+    "checkedAt": "2026-10-08T12:31:11.977Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "depiratenkoning",
@@ -1500,7 +1577,7 @@
     "favicon": "https://cdn.phototourl.com/member/2026-07-01-dca09737-aa6a-472a-8794-3e4cd33c6a30.jpg",
     "homepage": "https://depiratenkoning.nl/",
     "stationUuid": "195f5ef3-80ed-4ed0-9229-5e7e6b82f3e2",
-    "checkedAt": "2026-10-06T11:23:26.544Z",
+    "checkedAt": "2026-10-08T12:31:12.058Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -1522,7 +1599,7 @@
     "favicon": "https://ran-home.nl/img/sticker400.jpg",
     "homepage": "https://ran-home.nl/",
     "stationUuid": "6f192431-71b0-48b1-a22f-ea26d3745cb9",
-    "checkedAt": "2026-10-06T11:23:26.559Z",
+    "checkedAt": "2026-10-08T12:31:12.079Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1543,7 +1620,7 @@
     "favicon": "https://raw.githubusercontent.com/wootje/radiotv/main/radio/logo/radio6.png",
     "homepage": "https://www.npostart.nl/",
     "stationUuid": "675c24a5-ffb2-48f3-b855-157ae7dddd54",
-    "checkedAt": "2026-10-06T11:23:26.876Z",
+    "checkedAt": "2026-10-08T12:31:12.298Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1562,7 +1639,7 @@
     "favicon": "https://danceradiodenhaag.nl/wp-content/uploads/2020/06/favi-radio.png",
     "homepage": "http://www.danceradiodenhaag.nl/",
     "stationUuid": "c40710bb-bd77-43b7-ac68-9cd3321533f9",
-    "checkedAt": "2026-10-06T11:23:28.466Z",
+    "checkedAt": "2026-10-08T12:31:13.570Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1585,7 +1662,7 @@
     "favicon": "https://platinumradio.nl/assets/img/logo.png",
     "homepage": "https://platinumradio.nl/stations/masters-of-hardcore",
     "stationUuid": "6748630f-b8ad-4dfd-be3d-fb6f5ffcfe36",
-    "checkedAt": "2026-10-06T11:23:28.482Z",
+    "checkedAt": "2026-10-08T12:31:13.634Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1605,7 +1682,7 @@
     "favicon": null,
     "homepage": "https://contikenzo.com/",
     "stationUuid": "e846e8cf-eca1-4369-8d89-6b45bc73f3a2",
-    "checkedAt": "2026-10-06T11:23:28.925Z",
+    "checkedAt": "2026-10-08T12:31:14.073Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1624,7 +1701,7 @@
     "favicon": null,
     "homepage": "https://decibel.nl/",
     "stationUuid": "ea76709b-161d-4e8a-8ff4-aca2eea6f31e",
-    "checkedAt": "2026-10-06T11:23:29.054Z",
+    "checkedAt": "2026-10-08T12:31:14.254Z",
     "status": 404,
     "contentType": "text/html; charset=ISO-8859-1",
     "lastFailure": "HTTP 404"
@@ -1644,7 +1721,7 @@
     "favicon": "https://oiradio.co/assets/images/stations/c/c27cb4b3cf4986890468b85acce73f55.png",
     "homepage": "http://www.radyokewra.com/",
     "stationUuid": "3788322d-194e-47f2-b55a-25381b65ec51",
-    "checkedAt": "2026-10-06T11:23:29.349Z",
+    "checkedAt": "2026-10-08T12:31:14.714Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1666,7 +1743,7 @@
     "favicon": null,
     "homepage": "https://edfm.nl/",
     "stationUuid": "ee76ca66-0a59-4cbf-8e6b-4922b4fc8918",
-    "checkedAt": "2026-10-06T11:23:30.053Z",
+    "checkedAt": "2026-10-08T12:31:15.786Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1685,7 +1762,7 @@
     "favicon": "https://www.jazzdeville.com/favicon/jazzdeville/apple-touch-icon.png",
     "homepage": "https://www.jazzdeville.com/",
     "stationUuid": "6c391a02-366f-46c1-885b-4a1c7ac1fa69",
-    "checkedAt": "2026-10-06T11:23:30.213Z",
+    "checkedAt": "2026-10-08T12:31:15.867Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1704,7 +1781,7 @@
     "favicon": "https://www.allradio.nl/uploaded/logo/hardcore-power.jpg",
     "homepage": "https://www.hardcorepower.nl/",
     "stationUuid": "b78c2dd2-2812-4ce5-8ff4-87fdd08779cb",
-    "checkedAt": "2026-10-06T11:23:30.428Z",
+    "checkedAt": "2026-10-08T12:31:16.132Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1723,7 +1800,7 @@
     "favicon": null,
     "homepage": "https://www.q-dance.com/",
     "stationUuid": "be55afe2-1e2b-4613-bc7f-b3260090b3d4",
-    "checkedAt": "2026-10-06T11:23:30.727Z",
+    "checkedAt": "2026-10-08T12:31:16.259Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1743,7 +1820,7 @@
     "favicon": null,
     "homepage": "https://www.radiohardstyle.nl/",
     "stationUuid": "99d98308-a155-45ca-94ef-db1267494b7d",
-    "checkedAt": "2026-10-06T11:23:30.762Z",
+    "checkedAt": "2026-10-08T12:31:16.281Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1764,7 +1841,7 @@
     "favicon": "https://www.decibel.nl/favicon.ico",
     "homepage": "https://www.decibel.nl/",
     "stationUuid": "84ba5dfb-fd79-45aa-a70f-d6a901747b99",
-    "checkedAt": "2026-10-06T11:23:31.637Z",
+    "checkedAt": "2026-10-08T12:31:16.983Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -1785,7 +1862,7 @@
     "favicon": "https://brandslogos.com/wp-content/uploads/images/large/media-markt-logo.png",
     "homepage": "https://www.mediamarkt.nl/",
     "stationUuid": "51dd2c8e-029c-429f-b842-a322bdba93f6",
-    "checkedAt": "2026-10-06T11:23:32.436Z",
+    "checkedAt": "2026-10-08T12:31:17.602Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1805,7 +1882,7 @@
     "favicon": "https://www.jazzdeville.com/favicon/jazzdeville/apple-touch-icon.png",
     "homepage": "https://www.jazzdeville.com/",
     "stationUuid": "c55d8846-85e5-496a-a2b7-80228a9ef6c8",
-    "checkedAt": "2026-10-06T11:23:33.269Z",
+    "checkedAt": "2026-10-08T12:31:18.286Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1825,7 +1902,7 @@
     "favicon": null,
     "homepage": "http://www.nposoulenjazz.nl/",
     "stationUuid": "56e6500d-763b-4fbe-aee8-c2556386576e",
-    "checkedAt": "2026-10-06T11:23:33.274Z",
+    "checkedAt": "2026-10-08T12:31:18.294Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1845,7 +1922,7 @@
     "favicon": null,
     "homepage": "http://www.nposoulenjazz.nl/",
     "stationUuid": "9633a95e-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-06T11:23:33.319Z",
+    "checkedAt": "2026-10-08T12:31:18.305Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1866,7 +1943,7 @@
     "favicon": null,
     "homepage": "http://www.nposoulenjazz.nl/",
     "stationUuid": "e5bb47e0-13b3-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-06T11:23:33.323Z",
+    "checkedAt": "2026-10-08T12:31:18.319Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1887,7 +1964,7 @@
     "favicon": null,
     "homepage": "http://www.nposoulenjazz.nl/",
     "stationUuid": "bcad9b8e-13b3-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-06T11:23:33.377Z",
+    "checkedAt": "2026-10-08T12:31:18.320Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1906,7 +1983,7 @@
     "favicon": null,
     "homepage": "https://www.redlightjazzradio.nl/",
     "stationUuid": "cae78932-f010-43dd-97f0-3a1dea9fee6c",
-    "checkedAt": "2026-10-06T11:23:33.429Z",
+    "checkedAt": "2026-10-08T12:31:18.330Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1927,7 +2004,7 @@
     "favicon": "https://www.omroephw.nl/favicon.ico",
     "homepage": "https://www.omroephw.nl/",
     "stationUuid": "f06b4cb9-3a86-4546-9b8a-663faa16d558",
-    "checkedAt": "2026-10-06T11:23:34.818Z",
+    "checkedAt": "2026-10-08T12:31:19.131Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1949,7 +2026,28 @@
     "favicon": null,
     "homepage": "https://www.midvliet.nl/",
     "stationUuid": "42ea7619-f9cd-408f-af5e-eb5fe882f3ba",
-    "checkedAt": "2026-10-06T11:23:35.569Z",
+    "checkedAt": "2026-10-08T12:31:19.965Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "NU Radio",
+    "url": "https://mscp2.live-streams.nl:8172/nuradio",
+    "country": "NL",
+    "type": "local news",
+    "tags": [
+      "local news",
+      "local radio",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "dutch",
+    "favicon": "https://nuradio.nl/wp-content/uploads/2025/07/NU.png",
+    "homepage": "https://nuradio.nl/",
+    "stationUuid": "5a19f8eb-a99d-45cc-8e39-a02c17f60650",
+    "checkedAt": "2026-10-08T12:31:20.009Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1971,7 +2069,7 @@
     "favicon": "https://nuradio.nl/wp-content/uploads/2025/07/NU.png",
     "homepage": "https://nuradio.nl/",
     "stationUuid": "4daf7d56-e45f-4465-9bb9-bcc6bf981cdd",
-    "checkedAt": "2026-10-06T11:23:35.619Z",
+    "checkedAt": "2026-10-08T12:31:20.011Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1993,7 +2091,7 @@
     "favicon": "https://www.rtvalbrandswaard.com/wp-content/uploads/2021/07/Logo-RTV-Albrandswaard-Naam-FC_V1.jpg",
     "homepage": "https://www.rtvalbrandswaard.com/",
     "stationUuid": "9a276e05-45a2-45db-aa14-b0f4bd652d44",
-    "checkedAt": "2026-10-06T11:23:35.827Z",
+    "checkedAt": "2026-10-08T12:31:20.137Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2015,7 +2113,7 @@
     "favicon": "https://rtvmiddenholland.nl/wp-content/uploads/2024/03/Logo-rtw-waddinxveen.webp",
     "homepage": "https://rtvmiddenholland.nl/rtw-waddinxveen/",
     "stationUuid": "3f30ff6f-db02-4558-959e-ff534f10c7e6",
-    "checkedAt": "2026-10-06T11:23:36.052Z",
+    "checkedAt": "2026-10-08T12:31:20.197Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2037,7 +2135,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Samen1_Logo.png/250px-Samen1_Logo.png",
     "homepage": "https://samen1.nl/",
     "stationUuid": "74d55125-864f-4e89-b4b1-ac7a46f9f534",
-    "checkedAt": "2026-10-06T11:23:36.077Z",
+    "checkedAt": "2026-10-08T12:31:20.210Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2058,7 +2156,7 @@
     "favicon": "https://www.src.fm/images/logo_social.png",
     "homepage": "https://www.src.fm/",
     "stationUuid": "6b1dac61-2508-490e-a8e2-1da887227473",
-    "checkedAt": "2026-10-06T11:23:36.265Z",
+    "checkedAt": "2026-10-08T12:31:20.347Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2077,7 +2175,7 @@
     "favicon": "https://www.rtv794.nl/templates/localgrid/omroep/rtv794/icons/apple-icon-120x120.png",
     "homepage": "https://www.rtv794.nl/",
     "stationUuid": "1030ddec-d148-4f3c-aeca-fdbbc72c741a",
-    "checkedAt": "2026-10-06T11:23:36.715Z",
+    "checkedAt": "2026-10-08T12:31:20.647Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2096,7 +2194,7 @@
     "favicon": null,
     "homepage": "https://rtvslingeland.nl/",
     "stationUuid": "ee9d618c-99ff-456d-ac53-0bb46ae5820e",
-    "checkedAt": "2026-10-06T11:23:36.958Z",
+    "checkedAt": "2026-10-08T12:31:20.753Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2115,7 +2213,7 @@
     "favicon": "http://www.radio9oostzaan.nl/icon.png",
     "homepage": "http://www.radio9oostzaan.nl/",
     "stationUuid": "9bb3b5d4-b591-4614-9267-2884e6986ab0",
-    "checkedAt": "2026-10-06T11:23:37.040Z",
+    "checkedAt": "2026-10-08T12:31:20.803Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2136,7 +2234,7 @@
     "favicon": "https://sunlite.nl/favicon_new.ico",
     "homepage": "https://sunlite.nl/",
     "stationUuid": "29a303fa-f28a-4bf7-a8c2-b6e6708a51a5",
-    "checkedAt": "2026-10-06T11:23:37.484Z",
+    "checkedAt": "2026-10-08T12:31:20.993Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2153,7 +2251,7 @@
     "favicon": null,
     "homepage": "https://www.100p.nl/",
     "stationUuid": "3c8e9a9b-0b37-4c25-9061-0e6d02daf215",
-    "checkedAt": "2026-10-06T11:23:38.186Z",
+    "checkedAt": "2026-10-08T12:31:21.802Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -2170,7 +2268,7 @@
     "favicon": "http://juraini-ferary.nl/favicon.ico",
     "homepage": "http://juraini-ferary.nl/juraini-radio/",
     "stationUuid": "ab2c6f2a-8d79-455b-a334-26d2e7676a64",
-    "checkedAt": "2026-10-06T11:23:39.792Z",
+    "checkedAt": "2026-10-08T12:31:23.542Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2187,7 +2285,7 @@
     "favicon": null,
     "homepage": "http://www.hendrikdijkstra.nl/",
     "stationUuid": "1c128235-dab5-4c8b-ab62-e7688dda7ab1",
-    "checkedAt": "2026-10-06T11:23:40.074Z",
+    "checkedAt": "2026-10-08T12:31:24.048Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
@@ -2204,7 +2302,7 @@
     "favicon": null,
     "homepage": "https://hilversummeronline.wixsite.com/basefm-almere",
     "stationUuid": "76ca367a-3c59-4d15-a50c-98eac81d4242",
-    "checkedAt": "2026-10-06T11:23:40.170Z",
+    "checkedAt": "2026-10-08T12:31:24.136Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2221,7 +2319,7 @@
     "favicon": null,
     "homepage": "https://beeradio.nl/",
     "stationUuid": "77c1c676-5c76-4351-8da2-7c70cc505107",
-    "checkedAt": "2026-10-06T11:23:40.587Z",
+    "checkedAt": "2026-10-08T12:31:24.431Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2238,7 +2336,7 @@
     "favicon": null,
     "homepage": "http://www.beyondthebeatgeneration.com/",
     "stationUuid": "cda1c7ec-6bd4-4cb3-8488-4ec6935ba83f",
-    "checkedAt": "2026-10-06T11:23:40.627Z",
+    "checkedAt": "2026-10-08T12:31:24.443Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2255,7 +2353,7 @@
     "favicon": null,
     "homepage": "http://www.beyondthebeatgeneration.com/",
     "stationUuid": "1f29932d-a2c4-4343-957f-24cb2c36e69d",
-    "checkedAt": "2026-10-06T11:23:40.641Z",
+    "checkedAt": "2026-10-08T12:31:24.455Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2272,7 +2370,7 @@
     "favicon": null,
     "homepage": "https://bprfm.nl/",
     "stationUuid": "345c39c5-f3c5-4a73-b0d0-d400334883ac",
-    "checkedAt": "2026-10-06T11:23:41.012Z",
+    "checkedAt": "2026-10-08T12:31:24.979Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2289,7 +2387,7 @@
     "favicon": "https://www.classicsradio.org/images/ClassicsRadio-Logo.png",
     "homepage": "https://www.classicsradio.org/",
     "stationUuid": "44ab5fd9-2cc5-4a49-90c6-de5abd9c1606",
-    "checkedAt": "2026-10-06T11:23:42.515Z",
+    "checkedAt": "2026-10-08T12:31:26.436Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2306,10 +2404,27 @@
     "favicon": "https://www.clubstitute.nl/uploads/7/8/5/0/7850235/logo-clubstitute-radio_orig.png",
     "homepage": "https://www.clubstitute.nl/clubstitute-radio.html",
     "stationUuid": "62d71645-9fc6-42ca-a701-e005881dedce",
-    "checkedAt": "2026-10-06T11:23:42.636Z",
+    "checkedAt": "2026-10-08T12:31:26.508Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "De Hollandse Piraten Gigant",
+    "url": "https://dhpgstreaming.nl/proxy/dhpg/stream",
+    "country": "NL",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "nethe",
+    "favicon": null,
+    "homepage": "https://dehollandsepiratengigant.nl/",
+    "stationUuid": "b3df8c46-a515-4a1a-ad61-6f1333af72e2",
+    "checkedAt": "2026-10-08T12:31:27.926Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Decibel Eurodance",
@@ -2323,7 +2438,7 @@
     "favicon": "https://i0.wp.com/www.decibel.nl/wp-content/uploads/2022/04/Eurodance.png?w=1060&ssl=1",
     "homepage": "https://www.decibel.nl/decibeleurodance/",
     "stationUuid": "e2569ee0-1f70-4829-b9f7-dc4e268397f0",
-    "checkedAt": "2026-10-06T11:23:44.048Z",
+    "checkedAt": "2026-10-08T12:31:27.945Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -2340,7 +2455,7 @@
     "favicon": null,
     "homepage": "https://www.decibel.nl/",
     "stationUuid": "e95d1377-7575-4002-ac08-2a8d1d434284",
-    "checkedAt": "2026-10-06T11:23:44.054Z",
+    "checkedAt": "2026-10-08T12:31:28.020Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -2357,7 +2472,7 @@
     "favicon": null,
     "homepage": "https://www.decibel.nl/",
     "stationUuid": "5c91581c-d9ba-4a16-a23f-6559003bb8bf",
-    "checkedAt": "2026-10-06T11:23:44.061Z",
+    "checkedAt": "2026-10-08T12:31:28.041Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -2374,7 +2489,7 @@
     "favicon": "https://s.regiogroei.cloud/img/brand-logos/resized/logo_denhaagfm.jpg",
     "homepage": "https://www.denhaagfm.nl/",
     "stationUuid": "4fbc46d8-61bc-4761-b306-48242b91fb5c",
-    "checkedAt": "2026-10-06T11:23:44.420Z",
+    "checkedAt": "2026-10-08T12:31:28.138Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2391,7 +2506,7 @@
     "favicon": "https://elvismatters.com/headers/default/logo_links.gif",
     "homepage": "http://www.elvismatters.com/",
     "stationUuid": "84510be8-6b55-4578-9779-422da90eff71",
-    "checkedAt": "2026-10-06T11:23:45.609Z",
+    "checkedAt": "2026-10-08T12:31:29.208Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2408,10 +2523,44 @@
     "favicon": null,
     "homepage": "https://www.extram.nl/",
     "stationUuid": "46ce91d8-9deb-4579-8c72-62b546a0e66b",
-    "checkedAt": "2026-10-06T11:23:45.708Z",
+    "checkedAt": "2026-10-08T12:31:29.299Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Freak Radio NL",
+    "url": "http://streaming.shoutcast.com/freakradio",
+    "country": "NL",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": null,
+    "favicon": "https://freakradio.nl/wp-content/uploads/fbrfg/favicon-96x96.png",
+    "homepage": "https://freakradio.nl/",
+    "stationUuid": "c3f047d7-0554-4cc5-9916-5a8a1d172bc3",
+    "checkedAt": "2026-10-08T12:31:29.428Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Freak Radio NL",
+    "url": "http://streaming.shoutcast.com/freakradio",
+    "country": "NL",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": null,
+    "favicon": "https://freakradio.nl/wp-content/uploads/fbrfg/favicon-96x96.png",
+    "homepage": "https://freakradio.nl/",
+    "stationUuid": "01f71c14-b269-400a-9006-9cb6a1162c43",
+    "checkedAt": "2026-10-08T12:31:29.456Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Gay Radio Netherlands",
@@ -2425,7 +2574,7 @@
     "favicon": null,
     "homepage": "https://www.gayradio.nl/",
     "stationUuid": "4fd2c163-40ff-43d1-9b13-b31fd2e1e7fb",
-    "checkedAt": "2026-10-06T11:23:46.139Z",
+    "checkedAt": "2026-10-08T12:31:29.842Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2442,7 +2591,7 @@
     "favicon": "https://glxy.radio/wp-content/uploads/2022/01/GLXY-LOGO-RGB-500.png",
     "homepage": "https://glxy.radio/",
     "stationUuid": "115ad1e3-8ab6-4ce7-9d03-0126dcea8a8c",
-    "checkedAt": "2026-10-06T11:23:46.412Z",
+    "checkedAt": "2026-10-08T12:31:30.111Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2459,7 +2608,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "aece9305-b6da-46af-a565-bd992a196726",
-    "checkedAt": "2026-10-06T11:23:47.824Z",
+    "checkedAt": "2026-10-08T12:31:31.550Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2476,7 +2625,7 @@
     "favicon": null,
     "homepage": "https://www.hionline.eu/flac/",
     "stationUuid": "0cd616b2-db1d-4ce2-9fee-0782f349bd3e",
-    "checkedAt": "2026-10-06T11:23:47.983Z",
+    "checkedAt": "2026-10-08T12:31:31.615Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2493,7 +2642,7 @@
     "favicon": "http://www.rolandrispens.com/wp-content/uploads/2019/08/Schermafbeelding-2019-08-20-om-17.06.09-1024x510.png",
     "homepage": "http://www.rolandrispens.com/http-mscp2-live-streams-nl8100-flac-flac/?print=print",
     "stationUuid": "bcf8cb69-752e-4476-be96-2e18104d2bcc",
-    "checkedAt": "2026-10-06T11:23:48.039Z",
+    "checkedAt": "2026-10-08T12:31:31.662Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2510,7 +2659,7 @@
     "favicon": "http://hi-nrg.nl/favicon/android-icon-192x192.png",
     "homepage": "http://hi-nrg.nl/",
     "stationUuid": "00311749-cdf4-4611-bca7-10dac62fdd63",
-    "checkedAt": "2026-10-06T11:23:48.054Z",
+    "checkedAt": "2026-10-08T12:31:31.688Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2527,7 +2676,7 @@
     "favicon": "https://hitgolfradio.nl/wp-content/uploads/2025/06/hitgolfradio-768x336.png",
     "homepage": "https://hitgolfradio.nl/",
     "stationUuid": "76e4f80c-90a8-45c4-b4aa-7af6a3596019",
-    "checkedAt": "2026-10-06T11:23:48.057Z",
+    "checkedAt": "2026-10-08T12:31:31.730Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2544,7 +2693,7 @@
     "favicon": null,
     "homepage": "https://www.hoefvinyl.nl/",
     "stationUuid": "6b92dab9-86b9-492c-a436-6744b6418f4b",
-    "checkedAt": "2026-10-06T11:23:48.109Z",
+    "checkedAt": "2026-10-08T12:31:31.769Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2561,27 +2710,10 @@
     "favicon": "https://www.hortibiznewsradio.nl/img/3001_8301_hb-favico.jpg",
     "homepage": "https://www.hortibiznewsradio.nl/",
     "stationUuid": "46b412cf-4b06-4f90-8ed8-ac2766e1d39f",
-    "checkedAt": "2026-10-06T11:23:48.360Z",
+    "checkedAt": "2026-10-08T12:31:32.103Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "HotFM Tilburg",
-    "url": "http://barstream.bootz.nu:8000/Hotfm",
-    "country": "NL",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 160,
-    "language": null,
-    "favicon": "https://hotfm.nl/wp-content/uploads/2024/02/probeer-deze-e1706980572613-768x190.png",
-    "homepage": "https://hotfm.nl/",
-    "stationUuid": "1ccb77eb-7579-432b-8ac6-19f8f4ac22d9",
-    "checkedAt": "2026-10-06T11:23:48.628Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "i-turn Radio",
@@ -2595,7 +2727,7 @@
     "favicon": "https://i-turnradio.nl/favicon.ico?v=1.02",
     "homepage": "https://i-turnradio.nl/",
     "stationUuid": "bc4b16b8-0116-4d9d-8354-05e3489693d2",
-    "checkedAt": "2026-10-06T11:23:48.675Z",
+    "checkedAt": "2026-10-08T12:31:32.300Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2612,7 +2744,7 @@
     "favicon": "https://www.inthahouse.nl/wp-content/uploads/2021/12/cropped-android-chrome-512x512-1-32x32.png",
     "homepage": "https://www.inthahouse.nl/",
     "stationUuid": "c6232e97-faa5-43f5-8705-a2c92086e0d5",
-    "checkedAt": "2026-10-06T11:23:48.921Z",
+    "checkedAt": "2026-10-08T12:31:32.375Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2629,7 +2761,7 @@
     "favicon": "https://www.jungleradio.nl/images/jungle_logo.png",
     "homepage": "https://www.jungleradio.nl/",
     "stationUuid": "c81263cb-00e8-43c2-9242-2b3dde082255",
-    "checkedAt": "2026-10-06T11:23:51.140Z",
+    "checkedAt": "2026-10-08T12:31:34.550Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2646,7 +2778,7 @@
     "favicon": "https://jungletrain.net/jth-inc/images/jtlogo.png",
     "homepage": "https://jungletrain.net/",
     "stationUuid": "0adb24fb-a2fe-4a9b-97a4-bc82dfb1820c",
-    "checkedAt": "2026-10-06T11:23:51.177Z",
+    "checkedAt": "2026-10-08T12:31:34.570Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2663,7 +2795,7 @@
     "favicon": "https://scontent-muc2-1.xx.fbcdn.net/v/t39.30808-6/304873425_483287633804726_2163653909508722143_n.png?stp=dst-png&cstp=mx320x320&ctp=s320x320&_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=7YrS3LtdBfYQ7kNvwHpXO1Q&_nc_oc=AdonQ0KRTq3W3YOuYip7n8UdgnWtp36lVp_NoT6X3nSeZjPLNh3wGIk6RDMU9Vl6_Lo&_nc_zt=23&_nc_ht=scontent-muc2-1.xx&_nc_gid=1OSnaOyl6e55khEsUfyXfQ&_nc_ss=7b289&oh=00_AQBjAGN-f-H6SyUDx5X0086UzFdqtLuEggoKsGR61_qZTQ&oe=6A6EEBB0",
     "homepage": "https://jungletrain.net/",
     "stationUuid": "6c5e3147-fd61-4b9c-bb7a-8565a1033f6c",
-    "checkedAt": "2026-10-06T11:23:51.234Z",
+    "checkedAt": "2026-10-08T12:31:34.663Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2680,7 +2812,7 @@
     "favicon": null,
     "homepage": "https://kerkdienstgemist.nl/",
     "stationUuid": "e3c044b5-5c22-4fdf-9f9e-9278f1bc63a3",
-    "checkedAt": "2026-10-06T11:23:51.263Z",
+    "checkedAt": "2026-10-08T12:31:34.697Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2697,7 +2829,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/9/94/Logo_Kermis_Fm.png",
     "homepage": "https://www.kermisfm.nl/",
     "stationUuid": "222b2b54-cb0a-427c-aaf6-e5acbc81bcc1",
-    "checkedAt": "2026-10-06T11:23:51.310Z",
+    "checkedAt": "2026-10-08T12:31:34.741Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2714,7 +2846,7 @@
     "favicon": null,
     "homepage": "https://legato-radio.nl/",
     "stationUuid": "474146f8-4f89-43a3-b5ed-775d127e6b70",
-    "checkedAt": "2026-10-06T11:23:52.128Z",
+    "checkedAt": "2026-10-08T12:31:35.376Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2731,7 +2863,7 @@
     "favicon": "https://www.maxhitradio24.nl/images/2025--Logo--maxhitradio24-Photoroom_4wztbypu.png",
     "homepage": "https://www.maxhitradio24.nl/index.html",
     "stationUuid": "6c034bf0-601e-4191-9536-1bf87f349077",
-    "checkedAt": "2026-10-06T11:23:53.215Z",
+    "checkedAt": "2026-10-08T12:31:36.692Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2748,7 +2880,7 @@
     "favicon": "https://newsinternetradio.nl/wp-content/uploads/2021/04/LOGO-NewsIR-wit.png",
     "homepage": "https://newsinternetradio.nl/",
     "stationUuid": "28a933ee-57f1-4e7b-bdd9-497e8a159a96",
-    "checkedAt": "2026-10-06T11:23:54.578Z",
+    "checkedAt": "2026-10-08T12:31:38.234Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2765,7 +2897,7 @@
     "favicon": "https://norafm.nl/wp-content/uploads/2025/01/NoraFM_Logo_300x300-150x150.jpg",
     "homepage": "https://norafm.nl/",
     "stationUuid": "ca0521cf-0634-4a96-b5cb-ba3588c0c00e",
-    "checkedAt": "2026-10-06T11:23:54.851Z",
+    "checkedAt": "2026-10-08T12:31:38.466Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2782,7 +2914,7 @@
     "favicon": null,
     "homepage": "http://www.npo2.nl/",
     "stationUuid": "a0a4ce6e-49b7-4f5b-8987-385c32452a9c",
-    "checkedAt": "2026-10-06T11:23:55.050Z",
+    "checkedAt": "2026-10-08T12:31:38.584Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2799,7 +2931,7 @@
     "favicon": "https://www.nporadio2.nl/soulenjazz/apple-touch-icon.png",
     "homepage": "https://www.nporadio2.nl/soulenjazz",
     "stationUuid": "550fecf7-857c-4abc-bd94-2954098c9d13",
-    "checkedAt": "2026-10-06T11:23:55.473Z",
+    "checkedAt": "2026-10-08T12:31:38.775Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2816,7 +2948,7 @@
     "favicon": null,
     "homepage": "https://www.piratencombinatietwente.nl/",
     "stationUuid": "09205ca0-0d6f-484b-93f8-c8a723199ca7",
-    "checkedAt": "2026-10-06T11:23:57.379Z",
+    "checkedAt": "2026-10-08T12:31:40.450Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -2833,7 +2965,7 @@
     "favicon": null,
     "homepage": "https://platinumradio.nl/",
     "stationUuid": "51cc5ff4-d9f7-48ba-9ac9-ae9f4aea99e6",
-    "checkedAt": "2026-10-06T11:23:58.461Z",
+    "checkedAt": "2026-10-08T12:31:40.988Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2850,7 +2982,7 @@
     "favicon": "https://platinumradio.nl/assets/img/favicon.png",
     "homepage": "https://platinumradio.nl/",
     "stationUuid": "ad22ad75-21a8-4e08-8fb7-451efd761d75",
-    "checkedAt": "2026-10-06T11:23:58.482Z",
+    "checkedAt": "2026-10-08T12:31:41.007Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2867,7 +2999,7 @@
     "favicon": "https://ran-home.nl/img/sticker400.jpg",
     "homepage": "https://ran-home.nl/",
     "stationUuid": "c3d06883-5bcf-4bce-93d2-5868cec3baed",
-    "checkedAt": "2026-10-06T11:24:01.645Z",
+    "checkedAt": "2026-10-08T12:31:43.483Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2884,7 +3016,7 @@
     "favicon": "https://radioexperience.nl/wp-content/uploads/2022/07/MINI_MICO_RADIOE.png",
     "homepage": "https://radioexperience.nl/",
     "stationUuid": "472981c3-ec02-4ea0-b2f2-2d82a62d8071",
-    "checkedAt": "2026-10-06T11:24:04.537Z",
+    "checkedAt": "2026-10-08T12:31:44.197Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2901,7 +3033,7 @@
     "favicon": "https://www.fokkovandijk.nl/favicon.png",
     "homepage": "http://radiogolfbreker.nl/",
     "stationUuid": "00f3bcc1-a0c0-4f11-91d0-f21cf07c5474",
-    "checkedAt": "2026-10-06T11:24:04.813Z",
+    "checkedAt": "2026-10-08T12:31:44.233Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2918,7 +3050,7 @@
     "favicon": "https://www.omroephw.nl/favicon.ico",
     "homepage": "https://www.omroephw.nl/",
     "stationUuid": "61e5e7e5-7a9d-44bb-aae7-8a09e7fe7a2a",
-    "checkedAt": "2026-10-06T11:24:05.486Z",
+    "checkedAt": "2026-10-08T12:31:44.463Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2935,7 +3067,7 @@
     "favicon": "https://i.ibb.co/fYsYN5nv/486279844-1309381596939444-8468122003951244453-n.jpg",
     "homepage": "https://www.radionoordzee.nl/",
     "stationUuid": "c8e1fc4c-442e-4410-9ed6-2b1f75908c24",
-    "checkedAt": "2026-10-06T11:24:05.880Z",
+    "checkedAt": "2026-10-08T12:31:44.873Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -2952,7 +3084,7 @@
     "favicon": "https://radioseabreeze.nl/wp-content/uploads/2023/04/banner2023-768x192.png",
     "homepage": "https://radioseabreeze.nl/",
     "stationUuid": "8535963a-c8d0-421e-8774-1a5a031d2b27",
-    "checkedAt": "2026-10-06T11:24:07.025Z",
+    "checkedAt": "2026-10-08T12:31:45.284Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2969,7 +3101,7 @@
     "favicon": null,
     "homepage": "https://radio-toekomst.nl/",
     "stationUuid": "467189d9-4a73-4c15-bbce-87f581bcc03b",
-    "checkedAt": "2026-10-06T11:24:07.331Z",
+    "checkedAt": "2026-10-08T12:31:45.517Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2986,7 +3118,7 @@
     "favicon": "https://radio-73.nl/wp-content/uploads/2026/02/cropped-Logo.png",
     "homepage": "https://radio-73.nl/",
     "stationUuid": "380f2f35-480b-4e18-8568-db07265837a6",
-    "checkedAt": "2026-10-06T11:24:08.265Z",
+    "checkedAt": "2026-10-08T12:31:45.918Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3003,26 +3135,26 @@
     "favicon": "https://radio750.nl/wp-content/uploads/2025/02/Radio750-logo-vierkant.png",
     "homepage": "https://radio750.nl/",
     "stationUuid": "be38ac66-5465-41c8-81f0-ecd944196155",
-    "checkedAt": "2026-10-06T11:24:08.414Z",
+    "checkedAt": "2026-10-08T12:31:45.928Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "Rijnstreek FM Wageningen",
-    "url": "https://stream.rtvrijnstreek.nl:1973/rtvrstreek",
+    "name": "RealDanceRadio",
+    "url": "http://server-67.stream-server.nl/stream/realdanceradio",
     "country": "NL",
     "type": "MP3",
     "tags": [],
     "codec": "MP3",
     "bitrate": 192,
     "language": null,
-    "favicon": null,
-    "homepage": "https://www.rtvrijnstreek.nl/",
-    "stationUuid": "094124ad-e194-4b62-9091-9e22e7076ab9",
-    "checkedAt": "2026-10-06T11:24:09.976Z",
+    "favicon": "https://realdanceradio.amsterdam/wp-content/uploads/2025/07/IMG_6815.png",
+    "homepage": "https://realdanceradio.amsterdam/",
+    "stationUuid": "5634dac1-5b13-4d4b-9fe3-2bbab67d2b8a",
+    "checkedAt": "2026-10-08T12:31:46.570Z",
     "status": 404,
-    "contentType": "text/html; charset=utf-8",
+    "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
   },
   {
@@ -3037,27 +3169,10 @@
     "favicon": "https://rtvmaastricht.nl/rtvmaastricht_nl/images/logo-xs.png",
     "homepage": "https://rtvmaastricht.nl/",
     "stationUuid": "40b45602-44ff-409a-93f2-3ab3c3df2158",
-    "checkedAt": "2026-10-06T11:24:12.731Z",
+    "checkedAt": "2026-10-08T12:31:47.344Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "RTV Rijnstreek",
-    "url": "https://stream.rtvrijnstreek.nl:1973/rtvrstreek",
-    "country": "NL",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.rtvrijnstreek.nl/",
-    "stationUuid": "679f6e33-78e5-41fb-a75b-088af6466d40",
-    "checkedAt": "2026-10-06T11:24:12.844Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Sky Radio Lovesongs",
@@ -3071,7 +3186,7 @@
     "favicon": "https://cldnr.prod.webx.talpa.digital/talpa-network/image/fetch/f_webp,c_limit,w_128,q_auto/https%3A%2F%2Fimages.ctfassets.net%2Fm3kfiwxadki8%2F2GcTd4gzgdHdLC2Qfs8n3p%2Fd90182c4e4765e1964b8a23a4f83d8d6%2Fsky-lovesongs-tile.png",
     "homepage": "https://www.skyradio.nl/",
     "stationUuid": "571e9f87-9478-4803-94a5-2d2c926e2bf2",
-    "checkedAt": "2026-10-06T11:24:13.168Z",
+    "checkedAt": "2026-10-08T12:31:47.706Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3088,7 +3203,7 @@
     "favicon": "https://www.slamrockradio.com/images/logo-SlamRockRadio.png",
     "homepage": "https://www.slamrockradio.com/",
     "stationUuid": "7e400f31-81f3-4c13-ae3a-faa259442801",
-    "checkedAt": "2026-10-06T11:24:13.751Z",
+    "checkedAt": "2026-10-08T12:31:48.034Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3105,7 +3220,7 @@
     "favicon": "https://sleutelstad.nl/wp-content/themes/sleutelstad/img/sleutelstad_logo_payoff.svg",
     "homepage": "https://sleutelstad.nl/",
     "stationUuid": "35fc2af1-ee79-4241-843a-d1f410cc93ce",
-    "checkedAt": "2026-10-06T11:24:14.397Z",
+    "checkedAt": "2026-10-08T12:31:48.884Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3122,7 +3237,7 @@
     "favicon": null,
     "homepage": "https://tiktokdanceradio.nl/",
     "stationUuid": "90711373-0d18-42d9-adfc-4f4b821027b5",
-    "checkedAt": "2026-10-06T11:24:15.737Z",
+    "checkedAt": "2026-10-08T12:31:49.796Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3139,7 +3254,7 @@
     "favicon": null,
     "homepage": "https://www.radioveronica.nl/",
     "stationUuid": "f1b632f3-e6af-4cdd-95f0-3ca075725270",
-    "checkedAt": "2026-10-06T11:24:16.853Z",
+    "checkedAt": "2026-10-08T12:31:50.607Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3156,7 +3271,7 @@
     "favicon": "https://vivamixradio.com/wp-content/uploads/2026/02/cropped-headervivamix-768x146.png",
     "homepage": "https://vivamixradio.com/",
     "stationUuid": "997c9083-0dc8-434f-84f2-614e0d85dfec",
-    "checkedAt": "2026-10-06T11:24:16.883Z",
+    "checkedAt": "2026-10-08T12:31:50.655Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3173,7 +3288,7 @@
     "favicon": null,
     "homepage": "https://zwartewaterfm.nl/",
     "stationUuid": "4e0f7fc4-ae79-474d-b5d3-91b4d5877431",
-    "checkedAt": "2026-10-06T11:24:17.813Z",
+    "checkedAt": "2026-10-08T12:31:51.472Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3195,26 +3310,7 @@
     "favicon": "null",
     "homepage": "http://pjd2radiosxm.com/",
     "stationUuid": "18b03125-5367-4f89-a332-1a5578c3bbd7",
-    "checkedAt": "2026-10-06T11:24:18.324Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Radio Zuyd",
-    "url": "http://radiozuyd.shoutcaststream.com:8199/stream",
-    "country": "NL",
-    "type": "music",
-    "tags": [
-      "music"
-    ],
-    "codec": "MP3",
-    "bitrate": 160,
-    "language": "dutch",
-    "favicon": "http://radiozuyd.nl/wp-content/uploads/2018/11/Logo-Radio-Zuyd-2.png",
-    "homepage": "http://radiozuyd.nl/",
-    "stationUuid": "6212d683-22fa-48ed-aa82-f617a876d185",
-    "checkedAt": "2026-10-06T11:24:18.765Z",
+    "checkedAt": "2026-10-08T12:31:51.818Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3233,7 +3329,7 @@
     "favicon": "https://reformatorischeomroep.nl/apple-touch-icon.png",
     "homepage": "https://reformatorischeomroep.nl/",
     "stationUuid": "35a25ae7-7a20-4060-9154-9d25b52e3986",
-    "checkedAt": "2026-10-06T11:24:18.861Z",
+    "checkedAt": "2026-10-08T12:31:52.437Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3252,7 +3348,7 @@
     "favicon": "https://reformatorischeomroep.nl/apple-touch-icon.png",
     "homepage": "https://reformatorischeomroep.nl/",
     "stationUuid": "267fcaba-9e91-49e4-b50d-45cf5384fbb7",
-    "checkedAt": "2026-10-06T11:24:18.972Z",
+    "checkedAt": "2026-10-08T12:31:52.486Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3274,7 +3370,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20250112_182600817.jpg?alt=media&token=28c0fd31-be7a-4a72-974c-b668d2ca2c7f",
     "homepage": "http://q939fm/",
     "stationUuid": "aeadad8b-c3a2-48c6-a705-cf0174a870c7",
-    "checkedAt": "2026-10-06T11:24:19.119Z",
+    "checkedAt": "2026-10-08T12:31:52.602Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3294,7 +3390,7 @@
     "favicon": "null",
     "homepage": "http://q939fm.com/",
     "stationUuid": "8f93b407-a1e2-489b-86be-77400e02f903",
-    "checkedAt": "2026-10-06T11:24:19.133Z",
+    "checkedAt": "2026-10-08T12:31:52.625Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3313,7 +3409,7 @@
     "favicon": "null",
     "homepage": "https://stream01.pcradio.ru/Armin_van_buuren-med",
     "stationUuid": "e97a048c-e679-4344-841e-5217499dbd40",
-    "checkedAt": "2026-10-06T11:24:19.203Z",
+    "checkedAt": "2026-10-08T12:31:52.644Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3333,7 +3429,7 @@
     "favicon": null,
     "homepage": "https://radiocalipso.eu/",
     "stationUuid": "0e1b5bb0-a68f-46e3-8263-378e3eb488b2",
-    "checkedAt": "2026-10-06T11:24:19.241Z",
+    "checkedAt": "2026-10-08T12:31:52.833Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3352,7 +3448,7 @@
     "favicon": null,
     "homepage": "https://blablabla.nl/",
     "stationUuid": "acf38838-8e10-40b9-8dc5-eb5097d0365d",
-    "checkedAt": "2026-10-06T11:24:19.565Z",
+    "checkedAt": "2026-10-08T12:31:53.136Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3372,7 +3468,7 @@
     "favicon": "https://www.rivierenland-radio.nl/uploads/rivierenland-radio.nl/1640410917-Simple%20logo2.2%20on%20white%20350x124.png",
     "homepage": "https://www.rivierenland-radio.nl/",
     "stationUuid": "9902fee8-0f16-4b04-a6d3-fbd4a5de0a7e",
-    "checkedAt": "2026-10-06T11:24:19.803Z",
+    "checkedAt": "2026-10-08T12:31:53.626Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3392,7 +3488,7 @@
     "favicon": "https://wavefm.nl/images/favicon.png",
     "homepage": "https://wavefm.nl/",
     "stationUuid": "12277da2-9e46-490b-a26a-214f046008f0",
-    "checkedAt": "2026-10-06T11:24:19.960Z",
+    "checkedAt": "2026-10-08T12:31:53.877Z",
     "status": 523,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 523"
@@ -3409,7 +3505,7 @@
     "favicon": "https://www.classicsradio.org/images/ClassicsRadio-Logo.png",
     "homepage": "https://www.classicsradio.org/",
     "stationUuid": "9bdc3139-884e-43a9-b5a5-288f4e99a0dd",
-    "checkedAt": "2026-10-06T11:24:20.778Z",
+    "checkedAt": "2026-10-08T12:31:54.780Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3426,7 +3522,7 @@
     "favicon": "https://www.classicsradio.org/images/ClassicsRadio-Logo.png",
     "homepage": "https://www.classicsradio.org/",
     "stationUuid": "2342a6e2-c0d8-4312-8e6c-a8844ac5a63a",
-    "checkedAt": "2026-10-06T11:24:21.150Z",
+    "checkedAt": "2026-10-08T12:31:54.825Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3443,7 +3539,7 @@
     "favicon": "https://www.classicsradio.org/images/ClassicsRadio-Logo.png",
     "homepage": "https://www.classicsradio.org/",
     "stationUuid": "60125c62-a93f-499b-88fc-33bae004ce0a",
-    "checkedAt": "2026-10-06T11:24:21.183Z",
+    "checkedAt": "2026-10-08T12:31:54.890Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3462,7 +3558,7 @@
     "favicon": null,
     "homepage": "http://nostalgie.nl/",
     "stationUuid": "00a88f1e-4f55-4732-b718-9819dcb6c40a",
-    "checkedAt": "2026-10-06T11:24:22.241Z",
+    "checkedAt": "2026-10-08T12:31:55.887Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3482,10 +3578,27 @@
     "favicon": null,
     "homepage": "https://edfm.nl/",
     "stationUuid": "8eb32db3-e0cd-4fd3-9d01-3320a84b2992",
-    "checkedAt": "2026-10-06T11:24:22.571Z",
+    "checkedAt": "2026-10-08T12:31:56.308Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Noordkop 247",
+    "url": "https://noordkop247.nl/live/",
+    "country": "NL",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://noordkop247.nl/",
+    "stationUuid": "ccaa83ce-72ee-4214-ac8b-d52d7395c721",
+    "checkedAt": "2026-10-08T12:31:56.578Z",
+    "status": 403,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Radio Hardstyle",
@@ -3499,7 +3612,7 @@
     "favicon": null,
     "homepage": "https://www.radiohardstyle.nl/",
     "stationUuid": "2f4e7874-877a-4b39-a16f-2ca5f0a82397",
-    "checkedAt": "2026-10-06T11:24:23.020Z",
+    "checkedAt": "2026-10-08T12:31:56.705Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3516,7 +3629,7 @@
     "favicon": null,
     "homepage": "https://rtvijsselmond.nl/",
     "stationUuid": "516a7996-5000-4ee3-adf8-bfb160799452",
-    "checkedAt": "2026-10-06T11:24:23.232Z",
+    "checkedAt": "2026-10-08T12:31:56.817Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3535,7 +3648,7 @@
     "favicon": "https://i.imgur.com/bc1BrjT.jpeg",
     "homepage": "https://www.piratencombinatietwente.nl/",
     "stationUuid": "23f2043f-96e0-4147-91b4-679627d5def9",
-    "checkedAt": "2026-10-06T11:24:24.368Z",
+    "checkedAt": "2026-10-08T12:31:57.488Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -3554,7 +3667,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "2d4d3a80-77d0-4275-a5b0-ceac8b8040da",
-    "checkedAt": "2026-10-06T11:24:24.729Z",
+    "checkedAt": "2026-10-08T12:31:57.856Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3574,10 +3687,32 @@
     "favicon": "https://powerstationbuddha.com/wp-content/uploads/2025/05/logo-powerstation-buddha-600-1.png",
     "homepage": "https://powerstationbuddha.com/",
     "stationUuid": "4cb86641-c9c9-4544-b49b-b9f5cb014103",
-    "checkedAt": "2026-10-06T11:24:27.540Z",
+    "checkedAt": "2026-10-08T12:32:00.322Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Christmas Hits Radio NL",
+    "url": "https://stream06.dotpoint.nl:8006/stream",
+    "country": "NL",
+    "type": "season",
+    "tags": [
+      "season",
+      "seasonal",
+      "xmas",
+      "xmas rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "dutch,english",
+    "favicon": null,
+    "homepage": "https://www.christmashits.net/",
+    "stationUuid": "bd561f63-26fa-4bd1-b986-aa5025d7870b",
+    "checkedAt": "2026-10-08T12:32:01.284Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "BaseFM almere",
@@ -3593,7 +3728,7 @@
     "favicon": null,
     "homepage": "https://hilversummeronline.wixsite.com/basefm-almere",
     "stationUuid": "f2789e49-95b9-49ec-bb29-5785ded3d86c",
-    "checkedAt": "2026-10-06T11:24:30.714Z",
+    "checkedAt": "2026-10-08T12:32:03.344Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3612,7 +3747,7 @@
     "favicon": null,
     "homepage": "https://beatfm.nl/",
     "stationUuid": "faea3c57-3417-451b-a222-116e6b7730a2",
-    "checkedAt": "2026-10-06T11:24:30.795Z",
+    "checkedAt": "2026-10-08T12:32:03.370Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3629,7 +3764,7 @@
     "favicon": null,
     "homepage": "https://www.omroephorstaandemaas.nl/",
     "stationUuid": "5465ab25-a46d-46e7-a063-b6f0129c0521",
-    "checkedAt": "2026-10-06T11:24:31.084Z",
+    "checkedAt": "2026-10-08T12:32:03.469Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3646,7 +3781,7 @@
     "favicon": null,
     "homepage": "https://www.omroephorstaandemaas.nl/",
     "stationUuid": "a0d28d4f-6ea3-45bc-8b82-3d5f6cb57649",
-    "checkedAt": "2026-10-06T11:24:31.198Z",
+    "checkedAt": "2026-10-08T12:32:03.696Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3663,7 +3798,7 @@
     "favicon": "http://omroephorstaandemaas.nl",
     "homepage": "https://www.omroephorstaandemaas.nl/",
     "stationUuid": "51367d60-f989-429b-93d8-6dde920ebff9",
-    "checkedAt": "2026-10-06T11:24:31.201Z",
+    "checkedAt": "2026-10-08T12:32:03.716Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3680,7 +3815,7 @@
     "favicon": "http://omroephorstaandemaas.nl",
     "homepage": "https://www.omroephorstaandemaas.nl/",
     "stationUuid": "ff3920e9-9cc7-4276-acf0-2c2ce2ad974c",
-    "checkedAt": "2026-10-06T11:24:31.221Z",
+    "checkedAt": "2026-10-08T12:32:03.826Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3697,7 +3832,7 @@
     "favicon": null,
     "homepage": "http://www.studio040.nl/",
     "stationUuid": "76599869-2554-11e9-a80b-52543be04c81",
-    "checkedAt": "2026-10-06T11:24:31.278Z",
+    "checkedAt": "2026-10-08T12:32:03.874Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3716,7 +3851,7 @@
     "favicon": "http://hitradioloz.nl/images/hitradiolozradio.jpg",
     "homepage": "http://hitradioloz.nl/",
     "stationUuid": "0dcb79ae-08dd-4176-86ee-964e643806fa",
-    "checkedAt": "2026-10-06T11:24:31.505Z",
+    "checkedAt": "2026-10-08T12:32:04.307Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3735,7 +3870,7 @@
     "favicon": null,
     "homepage": "https://radion31.nl/",
     "stationUuid": "ba47e0e2-bc25-47da-b221-9304efbefb0f",
-    "checkedAt": "2026-10-06T11:24:31.750Z",
+    "checkedAt": "2026-10-08T12:32:04.467Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3754,7 +3889,7 @@
     "favicon": "https://supermixfm.nl/wp-content/uploads/2020/04/cropped-supermixfm-header-trans-3.png",
     "homepage": "https://supermixfm.nl/",
     "stationUuid": "85bb6aa4-b33c-4988-8d17-07bdc6705b4f",
-    "checkedAt": "2026-10-06T11:24:31.757Z",
+    "checkedAt": "2026-10-08T12:32:04.508Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3773,7 +3908,7 @@
     "favicon": "https://www.waterlandradio.nl/wp-content/uploads/2023/04/logo_waterlandradio_site.png",
     "homepage": "https://www.waterlandradio.nl/",
     "stationUuid": "46bf662e-4cc2-41d9-9737-bc98a60891ef",
-    "checkedAt": "2026-10-06T11:24:31.770Z",
+    "checkedAt": "2026-10-08T12:32:04.560Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
