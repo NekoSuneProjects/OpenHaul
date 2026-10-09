@@ -13,32 +13,10 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c51340b2-9fbc-4cea-8738-258b2a33d16d",
-    "checkedAt": "2026-10-08T12:34:20.321Z",
+    "checkedAt": "2026-10-09T11:36:54.557Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Hot FM 105",
-    "url": "http://172.93.237.106:8000/listen.mp3",
-    "country": "PK",
-    "type": "entertainment",
-    "tags": [
-      "entertainment",
-      "news",
-      "sports",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "urdu",
-    "favicon": "http://www.hotfm.com.pk/favicon.ico",
-    "homepage": "http://www.hotfm.com.pk/home.php",
-    "stationUuid": "82785967-c645-4bc2-a02a-e5e00e03ce4a",
-    "checkedAt": "2026-10-08T12:34:20.446Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "FM 100 Pakistan",
@@ -56,7 +34,7 @@
     "favicon": "http://fm100pakistan.com/favicon.ico",
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "4413f4de-4a87-4835-8525-a80a23b3d39f",
-    "checkedAt": "2026-10-08T12:34:20.503Z",
+    "checkedAt": "2026-10-09T11:36:54.739Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -79,10 +57,10 @@
     "favicon": null,
     "homepage": "https://fm91.com.pk/",
     "stationUuid": "47efdce4-809f-4cd3-8e3c-85a2eabce1ef",
-    "checkedAt": "2026-10-08T12:34:20.745Z",
+    "checkedAt": "2026-10-09T11:36:54.933Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Aladin Radio Network",
@@ -96,10 +74,10 @@
     "favicon": null,
     "homepage": "http://aladinradio.com/",
     "stationUuid": "4a29dbc1-77e1-449a-b6b5-62e19f66a8fc",
-    "checkedAt": "2026-10-08T12:34:21.131Z",
+    "checkedAt": "2026-10-09T11:36:55.089Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "FM 100 Pakistan Abbottabad",
@@ -113,7 +91,7 @@
     "favicon": "http://fm100pakistan.com/favicon.ico",
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "9312c071-8882-4f85-8539-0dcb1b59f1a8",
-    "checkedAt": "2026-10-08T12:34:21.137Z",
+    "checkedAt": "2026-10-09T11:36:55.235Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -130,7 +108,7 @@
     "favicon": "http://fm100pakistan.com/favicon.ico",
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "be82fba4-6953-4f0c-95e7-7aaa7f56b060",
-    "checkedAt": "2026-10-08T12:34:21.140Z",
+    "checkedAt": "2026-10-09T11:36:55.243Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -147,7 +125,7 @@
     "favicon": "http://fm100pakistan.com/favicon.ico",
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "7c4a79da-e5ad-44ea-a56a-e51634bfbef7",
-    "checkedAt": "2026-10-08T12:34:21.221Z",
+    "checkedAt": "2026-10-09T11:36:55.284Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -164,44 +142,10 @@
     "favicon": null,
     "homepage": "http://fm100pakistan.com/",
     "stationUuid": "b5bb3e73-fa20-4bbc-a8b5-2e1415d469dc",
-    "checkedAt": "2026-10-08T12:34:21.225Z",
+    "checkedAt": "2026-10-09T11:36:55.343Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "HOT FM Karachi",
-    "url": "http://172.93.237.106:8000/",
-    "country": "PK",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "urdu",
-    "favicon": "http://www.hotfm.com.pk/favicon.ico",
-    "homepage": "http://www.hotfm.com.pk/home.php",
-    "stationUuid": "e7bcdf54-4498-49b0-91f0-26cac233b6ce",
-    "checkedAt": "2026-10-08T12:34:22.899Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Hot fm Nawabshah",
-    "url": "https://stream.zeno.fm/t961q1d0vp6vv/",
-    "country": "PK",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": null,
-    "favicon": null,
-    "homepage": "http://zeno.fm/",
-    "stationUuid": "839ddcf6-e094-4542-96b6-4d7e6c252220",
-    "checkedAt": "2026-10-08T12:34:23.016Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
   },
   {
     "name": "ILM Radio Renala FM 92",
@@ -215,7 +159,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/ilm-radio-renala/",
     "stationUuid": "8281a8d0-4d03-4e1f-96ea-dbae81e5bf28",
-    "checkedAt": "2026-10-08T12:34:23.466Z",
+    "checkedAt": "2026-10-09T11:36:56.554Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -237,10 +181,29 @@
     "favicon": "https://fm91.com.pk/wp-content/uploads/2021/10/site-logo-2.png",
     "homepage": "https://fm91.com.pk/",
     "stationUuid": "d5144a6e-50c3-4dfb-a555-a82ff7756e19",
-    "checkedAt": "2026-10-08T12:34:24.747Z",
+    "checkedAt": "2026-10-09T11:36:57.408Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "FM 101 Khairpur",
+    "url": "https://whmsonic.radio.gov.pk:8054/stream",
+    "country": "PK",
+    "type": "public radio",
+    "tags": [
+      "public radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radio.gov.pk/",
+    "stationUuid": "db40900f-da30-44c1-84d0-1fb235daf393",
+    "checkedAt": "2026-10-09T11:36:57.916Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Radio Pakistan D.I. Khan MW 711",
@@ -256,7 +219,7 @@
     "favicon": null,
     "homepage": "https://radio.gov.pk/",
     "stationUuid": "a8067725-3d72-406f-828b-9ba72f638479",
-    "checkedAt": "2026-10-08T12:34:25.523Z",
+    "checkedAt": "2026-10-09T11:36:57.976Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"

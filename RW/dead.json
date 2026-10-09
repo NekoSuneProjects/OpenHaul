@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://mytuner-radio.com/radio/bachwezi-radio-488187/",
     "stationUuid": "f104917d-5b1d-4d0e-b63c-7778b3c62f17",
-    "checkedAt": "2026-10-08T12:41:49.456Z",
+    "checkedAt": "2026-10-09T11:46:24.732Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -28,7 +28,7 @@
     "favicon": null,
     "homepage": "https://mytuner-radio.com/radio/bachwezi-radio-488187/",
     "stationUuid": "b531b79e-f104-4d42-8707-a14a50f57378",
-    "checkedAt": "2026-10-08T12:41:49.457Z",
+    "checkedAt": "2026-10-09T11:46:24.732Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -45,7 +45,7 @@
     "favicon": null,
     "homepage": "https://www.socialcreator.com/gendananigiheradio",
     "stationUuid": "37acb127-cb1f-44ce-b8bf-76c3d938d470",
-    "checkedAt": "2026-10-08T12:41:49.457Z",
+    "checkedAt": "2026-10-09T11:46:24.733Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -62,10 +62,47 @@
     "favicon": null,
     "homepage": "https://www.socialcreator.com/gendananigiheradio",
     "stationUuid": "854e6b05-d91f-4f55-920d-5714a878fbbc",
-    "checkedAt": "2026-10-08T12:41:49.457Z",
+    "checkedAt": "2026-10-09T11:46:24.733Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Magic FM",
+    "url": "http://listen.rba.co.rw:8080/",
+    "country": "RW",
+    "type": "dance",
+    "tags": [
+      "dance",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 185,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://rba.co.rw/radio/7/Magic-Fm",
+    "stationUuid": "f2f65d44-2101-4742-9c93-314f124dedbf",
+    "checkedAt": "2026-10-09T11:46:24.735Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "90.7 Magic FM",
+    "url": "http://listen.rba.co.rw:8080/;",
+    "country": "RW",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 185,
+    "language": null,
+    "favicon": "http://listen.rba.co.rw/radios/logos/radiomagic.PNG",
+    "homepage": "http://listen.rba.co.rw/radios/radiomagic.html",
+    "stationUuid": "78602731-7afd-4e17-b418-b38f2f222add",
+    "checkedAt": "2026-10-09T11:46:25.369Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Rwanda",
@@ -79,9 +116,9 @@
     "favicon": "https://rba.co.rw/icon/icr_home_rwanda.png",
     "homepage": "https://rba.co.rw/",
     "stationUuid": "d05521ae-0b07-4c1e-ac57-939dc30771f0",
-    "checkedAt": "2026-10-08T12:41:49.708Z",
+    "checkedAt": "2026-10-09T11:46:25.721Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   }
 ]

@@ -15,7 +15,7 @@
     "favicon": null,
     "homepage": "https://www.nostalgie.fr/webradios/mur-des-radios/nostalgie-100-francais-80",
     "stationUuid": "6aadb9d6-6a51-4ffe-998c-c05ca0608991",
-    "checkedAt": "2026-10-08T12:33:05.155Z",
+    "checkedAt": "2026-10-09T11:35:32.321Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -35,7 +35,26 @@
     "favicon": null,
     "homepage": "https://radiomelodiles.radiostream321.com/",
     "stationUuid": "796bfdf1-efcd-47ec-bd94-1c50bbfcba71",
-    "checkedAt": "2026-10-08T12:33:05.165Z",
+    "checkedAt": "2026-10-09T11:35:32.330Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Hiti FM",
+    "url": "https://n01.radiojar.com/u0yz7p0mb.mp3",
+    "country": "PF",
+    "type": "pop music",
+    "tags": [
+      "pop music"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "english,french",
+    "favicon": null,
+    "homepage": "https://hiti-fm.com/",
+    "stationUuid": "c06d6586-9fa8-49cf-9731-7c582430a588",
+    "checkedAt": "2026-10-09T11:35:33.008Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

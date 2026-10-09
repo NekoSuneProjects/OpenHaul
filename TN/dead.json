@@ -1,24 +1,5 @@
 [
   {
-    "name": "#رواية قالون",
-    "url": "https://backup.qurango.net/radio/ahmad_khader_altarabulsi",
-    "country": "TN",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "fee206e3-0e67-4af2-aa63-d1372b429e34",
-    "checkedAt": "2026-10-08T12:43:27.418Z",
-    "status": 500,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 500"
-  },
-  {
     "name": "إذاعة طريق السلف",
     "url": "https://airtime.salafwayfm.ly/",
     "country": "TN",
@@ -32,7 +13,7 @@
     "favicon": null,
     "homepage": "https://salafwayfm.ly/",
     "stationUuid": "82de94c3-12b1-49c1-b838-16d6a80603a1",
-    "checkedAt": "2026-10-08T12:43:27.990Z",
+    "checkedAt": "2026-10-09T11:48:24.110Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -51,10 +32,44 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5ace1127-0af5-4000-ba34-72f8b9314062",
-    "checkedAt": "2026-10-08T12:43:28.313Z",
+    "checkedAt": "2026-10-09T11:48:24.576Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Diwan FM",
+    "url": "https://streaming.diwanfm.net/stream",
+    "country": "TN",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://diwanfm.net/",
+    "stationUuid": "935f5161-7201-4e08-8d2a-ddb826e8ba28",
+    "checkedAt": "2026-10-09T11:48:25.220Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "diwanfm",
+    "url": "https://streaming.diwanfm.net/stream",
+    "country": "TN",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://diwanfm.net/favicon.ico",
+    "homepage": "https://diwanfm.net/",
+    "stationUuid": "3dcd0385-1171-4a95-b31e-81d78af8bfac",
+    "checkedAt": "2026-10-09T11:48:25.248Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "الشيخ سعد الغامدي",
@@ -70,7 +85,7 @@
     "favicon": "null",
     "homepage": "https://qurango.net/radio/saad_alghamdi",
     "stationUuid": "c87ff033-7ac9-4975-91f8-a54d304e99bf",
-    "checkedAt": "2026-10-08T12:43:30.180Z",
+    "checkedAt": "2026-10-09T11:48:26.749Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"

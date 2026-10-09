@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://vovmedia.vn/vov-mekong",
     "stationUuid": "4130fd3a-0914-4a4d-bdbf-ba3224f3052a",
-    "checkedAt": "2026-10-08T13:00:16.594Z",
+    "checkedAt": "2026-10-09T12:23:07.414Z",
     "status": 503,
     "contentType": "text/html",
     "lastFailure": "HTTP 503"
@@ -31,7 +31,7 @@
     "favicon": "http://gbm.123tv.cn/file/2023/08-1691567015.jpg",
     "homepage": "https://vovworld.vn/en-US.vov",
     "stationUuid": "af9433ca-33ce-46e5-ac7c-733740901bee",
-    "checkedAt": "2026-10-08T13:00:16.600Z",
+    "checkedAt": "2026-10-09T12:23:07.418Z",
     "status": 503,
     "contentType": "text/html",
     "lastFailure": "HTTP 503"
@@ -50,7 +50,7 @@
     "favicon": "https://static.vovworld.vn/mobile/app_themes/images/logo_2020_mobile-min.png",
     "homepage": "https://vovworld.vn/en-US.vov",
     "stationUuid": "ef28b731-d233-4e5b-a60e-3328efc3fd82",
-    "checkedAt": "2026-10-08T13:00:16.601Z",
+    "checkedAt": "2026-10-09T12:23:07.419Z",
     "status": 503,
     "contentType": "text/html",
     "lastFailure": "HTTP 503"
@@ -71,7 +71,7 @@
     "favicon": "https://vov3.vov.vn/sites/default/files/vov3.png",
     "homepage": "https://vov3.vov.vn/",
     "stationUuid": "a94504ef-49f4-433e-b1f0-a83748941abd",
-    "checkedAt": "2026-10-08T13:00:17.901Z",
+    "checkedAt": "2026-10-09T12:23:08.582Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -90,7 +90,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "3cc192da-dbc2-4c90-94cf-8acecf7a908f",
-    "checkedAt": "2026-10-08T13:00:17.954Z",
+    "checkedAt": "2026-10-09T12:23:08.912Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -109,7 +109,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "4bb149bc-0bed-4b8d-8956-2487c6caea9f",
-    "checkedAt": "2026-10-08T13:00:18.074Z",
+    "checkedAt": "2026-10-09T12:23:08.945Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -128,7 +128,45 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "9b916475-2a74-42fd-aa45-86b88d8b5de5",
-    "checkedAt": "2026-10-08T13:00:18.194Z",
+    "checkedAt": "2026-10-09T12:23:09.004Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "CRI Tiếng Việt",
+    "url": "https://ice5.securenetsystems.net:80/KALI",
+    "country": "VN",
+    "type": "news",
+    "tags": [
+      "news"
+    ],
+    "codec": "AAC+",
+    "bitrate": 32,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "72aba108-76ae-443c-8531-80de3e86374f",
+    "checkedAt": "2026-10-09T12:23:09.262Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "KALI SAIGON",
+    "url": "https://ice5.securenetsystems.net:80/KALI",
+    "country": "VN",
+    "type": "news",
+    "tags": [
+      "news"
+    ],
+    "codec": "AAC+",
+    "bitrate": 32,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "e60fbd20-6903-45a8-bb9c-de5e704c3bb4",
+    "checkedAt": "2026-10-09T12:23:09.273Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -147,7 +185,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "de8a3b63-0d47-4cbf-9a0e-b620001292e0",
-    "checkedAt": "2026-10-08T13:00:18.682Z",
+    "checkedAt": "2026-10-09T12:23:09.483Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -168,7 +206,7 @@
     "favicon": null,
     "homepage": "https://vov2.vov.vn/",
     "stationUuid": "43c2cc4e-34e9-4f7f-acfa-85d4a3bf1889",
-    "checkedAt": "2026-10-08T13:00:20.388Z",
+    "checkedAt": "2026-10-09T12:23:10.906Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -185,7 +223,7 @@
     "favicon": null,
     "homepage": "https://voh.com.vn/radio-kenh-am-610-am610khz.html",
     "stationUuid": "518278ac-4ad3-4917-9ee8-243df197ec08",
-    "checkedAt": "2026-10-08T13:00:21.535Z",
+    "checkedAt": "2026-10-09T12:23:12.098Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -202,7 +240,7 @@
     "favicon": null,
     "homepage": "https://voh.com.vn/radio-kenh-fm-877-fm877mhz.html",
     "stationUuid": "0bbc02b1-4aff-43f3-9a01-af48ce8ad4bd",
-    "checkedAt": "2026-10-08T13:00:21.543Z",
+    "checkedAt": "2026-10-09T12:23:12.179Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -219,7 +257,7 @@
     "favicon": "https://voh.com.vn/favicon.ico",
     "homepage": "https://voh.com.vn/radio-kenh-fm-956-fm956mhz.html",
     "stationUuid": "a8a5e275-8d1c-4cb4-ac18-460660393359",
-    "checkedAt": "2026-10-08T13:00:21.561Z",
+    "checkedAt": "2026-10-09T12:23:12.213Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -236,7 +274,7 @@
     "favicon": "https://i.ibb.co/CBr490C/voh99.png",
     "homepage": "https://voh.com.vn/radio-kenh-fm-999-fm999mhz.html",
     "stationUuid": "a8200747-f284-4c30-8df0-1a9f4649df2d",
-    "checkedAt": "2026-10-08T13:00:21.821Z",
+    "checkedAt": "2026-10-09T12:23:12.549Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

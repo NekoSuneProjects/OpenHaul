@@ -1,5 +1,67 @@
 [
   {
+    "name": "Visir \"FM 957 Extra\" Reykjavik",
+    "url": "http://icecast.365net.is:8000/orbFmExtra.aac",
+    "country": "IS",
+    "type": "contemporary hits",
+    "tags": [
+      "contemporary hits",
+      "reykjavik",
+      "top 40"
+    ],
+    "codec": "AAC+",
+    "bitrate": 130,
+    "language": "icelandic",
+    "favicon": null,
+    "homepage": "http://fm957.visir.is/",
+    "stationUuid": "96238c62-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-09T11:23:32.103Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Country Bylgjan",
+    "url": "http://icecast.365net.is:8000/orbFmExtra.aac",
+    "country": "IS",
+    "type": "country",
+    "tags": [
+      "country"
+    ],
+    "codec": "AAC+",
+    "bitrate": 130,
+    "language": "icelandic",
+    "favicon": "https://www.visir.is/mi/cio/ad84742b-46c3-44e2-8ba5-9b1755e65677.png",
+    "homepage": "https://vefutvarp.visir.is/country/",
+    "stationUuid": "68252d54-fe00-4f37-bac7-7015f95c6a37",
+    "checkedAt": "2026-10-09T11:23:32.108Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Suðurland FM",
+    "url": "https://ice-11.spilarinn.is/xsudurlandfm",
+    "country": "IS",
+    "type": "country",
+    "tags": [
+      "country",
+      "pop",
+      "rock",
+      "varied"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "icelandic",
+    "favicon": "https://www.sudurlandfm.is/wp-content/uploads/2016/05/logo_blue-3.png",
+    "homepage": "https://www.sudurlandfm.is/",
+    "stationUuid": "625512ba-218e-49b5-a676-efc76c5871c7",
+    "checkedAt": "2026-10-09T11:23:32.163Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
     "name": "Cathedral 13",
     "url": "http://listen.shoutcast.com/cathedralxiii",
     "country": "IS",
@@ -11,7 +73,7 @@
     "favicon": "http://cathedral13.com/wp-content/uploads/2017/10/c13logo13-170x170.png",
     "homepage": "http://cathedral13.com/#!",
     "stationUuid": "efc88f87-3dfa-4478-9c8f-fa0148804328",
-    "checkedAt": "2026-10-08T12:21:25.524Z",
+    "checkedAt": "2026-10-09T11:23:32.502Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

@@ -11,7 +11,7 @@
     "favicon": "https://www.apple-fm.net/images/apple200text.png",
     "homepage": "https://www.apple-fm.net/",
     "stationUuid": "afaf4fe0-dedf-4226-ab59-85b82fe007c2",
-    "checkedAt": "2026-10-08T12:17:06.666Z",
+    "checkedAt": "2026-10-09T11:19:18.067Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -28,10 +28,46 @@
     "favicon": "https://new.brg-radio.com/wp-content/themes/brg-wp/img/logo.png",
     "homepage": "https://new.brg-radio.com/",
     "stationUuid": "c6c450a9-84cc-4592-a27a-412879c15878",
-    "checkedAt": "2026-10-08T12:17:06.906Z",
+    "checkedAt": "2026-10-09T11:19:18.181Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "大連都市之聲廣播",
+    "url": "https://lhttp-hw.qtfm.cn/live/1086/64k.mp3",
+    "country": "HK",
+    "type": "entertainment",
+    "tags": [
+      "entertainment"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "https://pic.baike.soso.com/ugc/baikepic2/17726/20160809183723-1630520041.jpg/0",
+    "homepage": "http://www.dltv.cn/",
+    "stationUuid": "9b15c524-f261-497d-8ea8-3a35bc2f8709",
+    "checkedAt": "2026-10-09T11:19:19.423Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "台山電台",
+    "url": "https://lhttp-hw.qtfm.cn/live/5022062/64k.mp3",
+    "country": "HK",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "cantonese",
+    "favicon": "http://pic.qingting.fm/2019/0313/20190313010126.jpeg",
+    "homepage": "http://www.jmnews.com.cn/a/content/2024-03/21/content_2679562.htm",
+    "stationUuid": "bcab3194-d497-453f-b3ac-644724a18345",
+    "checkedAt": "2026-10-09T11:19:20.831Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "珠海資訊廣播",
@@ -45,7 +81,7 @@
     "favicon": "http://pic.qingting.fm/2022/1231/20221231114640.png",
     "homepage": "https://www.hizh.cn/",
     "stationUuid": "9073a5eb-5a43-45a3-9c18-33bb5b4dab9c",
-    "checkedAt": "2026-10-08T12:17:10.293Z",
+    "checkedAt": "2026-10-09T11:19:23.742Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -64,7 +100,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5b253a02-28ed-48a7-a972-2aef5b114036",
-    "checkedAt": "2026-10-08T12:17:12.365Z",
+    "checkedAt": "2026-10-09T11:19:25.071Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -83,7 +119,7 @@
     "favicon": null,
     "homepage": "http://www.apple-fm.net/",
     "stationUuid": "c5a87eaf-c961-11e9-8502-52543be04c81",
-    "checkedAt": "2026-10-08T12:17:13.038Z",
+    "checkedAt": "2026-10-09T11:19:26.335Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -102,10 +138,29 @@
     "favicon": "https://pic.qtfm.cn/2024/0410/20240410025046.jpeg",
     "homepage": "https://www.qtfm.cn/radios/20500021",
     "stationUuid": "8c56edc7-6e44-4143-aeb5-51fe9a00dfe4",
-    "checkedAt": "2026-10-08T12:17:13.160Z",
+    "checkedAt": "2026-10-09T11:19:26.582Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "陽光衛視",
+    "url": "https://stream.chinasuntv.com/680k/mid_video_index.m3u8",
+    "country": "HK",
+    "type": "tv",
+    "tags": [
+      "tv"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "http://www.nettvpro.xyz/uploads/18/1-1PR5212U3439.jpg",
+    "homepage": "https://www.chinasuntv.com/",
+    "stationUuid": "8b41cd58-4393-4761-a6c5-25758f630144",
+    "checkedAt": "2026-10-09T11:19:27.103Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "澳门绿邦",
@@ -121,7 +176,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "392ab5e8-c91a-4b27-9792-cae5fb712ebe",
-    "checkedAt": "2026-10-08T12:17:14.881Z",
+    "checkedAt": "2026-10-09T11:19:28.671Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -140,7 +195,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "4dcf7151-3427-43bc-9ef1-24e3704ac0f2",
-    "checkedAt": "2026-10-08T12:17:14.943Z",
+    "checkedAt": "2026-10-09T11:19:28.685Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

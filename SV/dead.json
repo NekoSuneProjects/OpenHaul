@@ -1,26 +1,5 @@
 [
   {
-    "name": "Radio María El Salvador 107.3 FM",
-    "url": "http://dreamsiteradiocp.com:8098/stream",
-    "country": "SV",
-    "type": "catholic",
-    "tags": [
-      "catholic",
-      "christian",
-      "talk"
-    ],
-    "codec": "AAC+",
-    "bitrate": 32,
-    "language": "spanish",
-    "favicon": null,
-    "homepage": "http://www.radiomaria.org.sv/",
-    "stationUuid": "962e8454-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-08T12:42:53.542Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
     "name": "COOL FM 89.3",
     "url": "http://media.dominiocreativo.com:8006/coolfm",
     "country": "SV",
@@ -37,7 +16,7 @@
     "favicon": "https://statics-v3.streema.com/static/img/radios/profile_background_default_380.abf7abe7e86a.jpg",
     "homepage": "https://www.radiocoolfm.com/",
     "stationUuid": "6fcac531-7330-4e03-aa74-ad49907c17df",
-    "checkedAt": "2026-10-08T12:42:53.841Z",
+    "checkedAt": "2026-10-09T11:47:48.012Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -64,7 +43,7 @@
     "favicon": "https://cadenacentral.com/wp-content/uploads/2022/09/logo-original-300x161.png",
     "homepage": "https://lacentralfm.com/",
     "stationUuid": "8fb181d3-ed03-4425-829f-f780cb41d8d5",
-    "checkedAt": "2026-10-08T12:42:53.868Z",
+    "checkedAt": "2026-10-09T11:47:48.191Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -90,7 +69,7 @@
     "favicon": "https://www.mil80.com/wp-content/uploads/2022/08/logo-blanco-mil80.png",
     "homepage": "https://www.mil80.com/",
     "stationUuid": "88c9c355-9a63-4567-8634-124e46d14f19",
-    "checkedAt": "2026-10-08T12:42:53.956Z",
+    "checkedAt": "2026-10-09T11:47:48.242Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -107,7 +86,7 @@
     "favicon": "http://www.doremix.net/img/logodoremix.png",
     "homepage": "http://www.doremix.net/",
     "stationUuid": "f6fa45f2-859f-48d7-9c1a-bcae59a659b6",
-    "checkedAt": "2026-10-08T12:42:54.496Z",
+    "checkedAt": "2026-10-09T11:47:48.861Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -124,9 +103,60 @@
     "favicon": "https://www.asamblea.gob.sv/themes/asamblea/favicon.ico",
     "homepage": "https://www.asamblea.gob.sv/asamblea-social-media/radio-legislativa",
     "stationUuid": "93bc5ee4-9718-442f-8ce8-ad0f824c0c6a",
-    "checkedAt": "2026-10-08T12:42:55.189Z",
+    "checkedAt": "2026-10-09T11:47:49.857Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio YSUCA, 91.7 FM",
+    "url": "https://fast.citrus3.com:8314/stream",
+    "country": "SV",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "castellano. español",
+    "favicon": null,
+    "homepage": "https://ysuca.org.sv/",
+    "stationUuid": "e593f6b3-db97-4db9-9cf2-b72f71dcb5fa",
+    "checkedAt": "2026-10-09T11:47:50.199Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio YSUCA, 91.7 FM",
+    "url": "https://fast.citrus3.com:8314/stream",
+    "country": "SV",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "castellano. español",
+    "favicon": "https://ysuca.org.sv/wp-content/uploads/2024/08/favicon-base-blanca-circle.png",
+    "homepage": "https://ysuca.org.sv/",
+    "stationUuid": "ec7bc4ac-3a3a-4caf-ab46-c22865f534a9",
+    "checkedAt": "2026-10-09T11:47:50.413Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio YSUCA, 91.7 FM",
+    "url": "https://fast.citrus3.com:8314/stream",
+    "country": "SV",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "castellano. español",
+    "favicon": null,
+    "homepage": "https://ysuca.org.sv/",
+    "stationUuid": "64423ad8-8c64-42ae-9de7-0a5ed2dd1d7a",
+    "checkedAt": "2026-10-09T11:47:50.418Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   }
 ]

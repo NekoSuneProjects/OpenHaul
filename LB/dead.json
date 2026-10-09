@@ -13,10 +13,34 @@
     "favicon": "https://www.voiceofvan.net/backend/uploads/setting/1723180428.png",
     "homepage": "https://www.voiceofvan.net/",
     "stationUuid": "cee5d76c-dc30-4446-b4b4-db1512bbad2f",
-    "checkedAt": "2026-10-08T12:23:54.778Z",
+    "checkedAt": "2026-10-09T11:25:57.690Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Liban 96.2FM",
+    "url": "https://media2.streambrothers.com:8202/stream",
+    "country": "LB",
+    "type": "armenien",
+    "tags": [
+      "armenien",
+      "français",
+      "italien",
+      "jazz",
+      "radio nationale en français",
+      "variétés"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "french",
+    "favicon": "https://fr.radioliban.gov.lb/media/0p2iyzcn/logo.svg",
+    "homepage": "https://fr.radioliban.gov.lb/",
+    "stationUuid": "c930b4f7-0f98-4490-9477-02cc61229e9d",
+    "checkedAt": "2026-10-09T11:25:57.805Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Voice of Van",
@@ -30,7 +54,7 @@
     "favicon": "https://www.voiceofvan.net/backend/uploads/setting/1723180428.png",
     "homepage": "https://www.voiceofvan.net/",
     "stationUuid": "797a3f43-9ff0-4173-8071-6f3f21e664ed",
-    "checkedAt": "2026-10-08T12:23:56.061Z",
+    "checkedAt": "2026-10-09T11:25:59.000Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -49,7 +73,7 @@
     "favicon": "https://aghaniaghani.com/images/logo.png",
     "homepage": "https://aghaniaghani.com/",
     "stationUuid": "3f2c9689-bfb2-479c-9ecf-b0e80a360d6f",
-    "checkedAt": "2026-10-08T12:23:56.865Z",
+    "checkedAt": "2026-10-09T11:25:59.775Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -66,7 +90,7 @@
     "favicon": "https://youfofmlebanon.radiostream321.com/",
     "homepage": "https://youfofmlebanon.radiostream321.com/",
     "stationUuid": "e8625f5c-71ef-4a44-a418-f43ed9a031f7",
-    "checkedAt": "2026-10-08T12:23:57.271Z",
+    "checkedAt": "2026-10-09T11:26:00.242Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
