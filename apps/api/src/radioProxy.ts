@@ -883,8 +883,45 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
       if (!record) return reply.code(404).send({ error: "aurora_station_not_found" });
       try {
         const metadata = await getStreamNowPlaying(record.stream_url);
-        reply.header("cache-control", "public, max-age=10");
-        return { station: { id: stationId, name: record.name, listen_url: record.stream_url }, ...metadata };
+        // Aurora relays may not forward ICY metadata. If that happens, look up
+        // the station in Radio Browser and probe its resolved direct stream URL.
+        if (metadata.source === "unavailable" || !metadata.song) {
+          try {
+            const rows = await fetchRadioBrowser(
+              "/json/stations/byname/" + encodeURIComponent(record.name),
+              new URLSearchParams({ limit: "20", hidebroken: "true" }),
+              8000,
+            ) as RadioBrowserStation[];
+            const normalize = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+            const wanted = normalize(record.name);
+            const candidates = rows
+              .filter((row) => row.lastcheckok === 1 || row.lastcheckok === true)
+              .sort((a, b) => Number(normalize(b.name ?? "") === wanted) - Number(normalize(a.name ?? "") === wanted));
+            for (const candidate of candidates.slice(0, 4)) {
+              const resolved = String(candidate.url_resolved || "").trim();
+              if (!/^https?:\/\//i.test(resolved) || resolved === record.stream_url) continue;
+              try {
+                const fallback = await getStreamNowPlaying(resolved);
+                if (fallback.source === "icy" && fallback.song) {
+                  reply.header("cache-control", "public, max-age=5");
+                  return {
+                    station: { id: stationId, name: record.name, listen_url: record.stream_url },
+                    ...fallback,
+                    source: "icy",
+                    metadataFallback: "radio-browser",
+                    metadataStreamUrl: resolved,
+                  };
+                }
+              } catch { /* Try the next resolved Radio Browser stream. */ }
+            }
+          } catch { /* Keep the clear unavailable response when directory fallback fails. */ }
+        }
+        reply.header("cache-control", "no-store");
+        return {
+          station: { id: stationId, name: record.name, listen_url: record.stream_url },
+          ...metadata,
+          message: metadata.song ? undefined : "Now playing unavailable: this stream does not expose readable ICY metadata.",
+        };
       } catch {
         return { station: { id: stationId, name: record.name, listen_url: record.stream_url },
           song: null, artist: null, title: null, source: "unavailable", checkedAt: new Date().toISOString() };
