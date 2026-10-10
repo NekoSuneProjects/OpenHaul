@@ -869,6 +869,7 @@ function OverlayContent() {
                     .join(" · ") || "OpenHaul radio"}
                 </p>
                 <span className="gameOverlayRadioRoute">Direct station stream · no OpenHaul proxy</span>
+                <p aria-live="polite">{radioNowPlaying?.song ? "Now playing: " + radioNowPlaying.song : "Track metadata unavailable"}</p>
               </div>
               <div className="gameOverlayRadioControls">
                 <div className="gameOverlayRadioButtonRow">
