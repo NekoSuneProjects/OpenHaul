@@ -84,6 +84,7 @@ function OverlayContent() {
   const [onlineRadioLoading, setOnlineRadioLoading] = useState(false);
   const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
+  const [radioNowPlaying, setRadioNowPlaying] = useState<{ song: string | null; source: string } | null>(null);
   const [radioVolume, setRadioVolume] = useState(0.7);
   const [musicRegionCode, setMusicRegionCode] = useState("ZZ");
   const [musicRegionSource, setMusicRegionSource] = useState("");
@@ -407,6 +408,30 @@ function OverlayContent() {
       ?? null,
     [radioStations, catalogRadioStations, onlineRadioStations, selectedRadioId],
   );
+
+  useEffect(() => {
+    let active = true;
+    const load = async () => {
+      const id = selectedRadio?.id?.replace(/^(online-|json-)/, "") || "";
+      // The catalogue and online-search IDs resolve through the public station registry.
+      if (!id || !/^(rb-[a-z0-9-]{8,110}|[a-z0-9-]{1,64})$/i.test(id)) {
+        if (active) setRadioNowPlaying(null);
+        return;
+      }
+      try {
+        const response = await fetch(api + "/api/v1/public/radio/now-playing/" + encodeURIComponent(id), { cache: "no-store" });
+        if (response.ok && active) {
+          const result = await response.json() as { song?: string | null; source?: string };
+          setRadioNowPlaying({ song: result.song || null, source: result.source || "unavailable" });
+        } else if (active) setRadioNowPlaying(null);
+      } catch {
+        if (active) setRadioNowPlaying(null);
+      }
+    };
+    void load();
+    const timer = setInterval(() => void load(), 20000);
+    return () => { active = false; clearInterval(timer); };
+  }, [selectedRadio?.id]);
 
   const searchOnlineRadio = async () => {
     const query = radioQuery.trim();
