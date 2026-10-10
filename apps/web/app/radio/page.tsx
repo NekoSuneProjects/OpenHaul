@@ -294,7 +294,7 @@ export default function RadioPage() {
               <div style={{ minWidth: 0 }}>
                 <strong style={{ display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{station.name}</strong>
                 <small>{[station.state, station.country].filter(Boolean).join(" · ") || countryName(country)}</small>
-              {playingId === station.id ? <small style={{ display: "block" }}>{nowPlaying ? "Now playing: " + nowPlaying : "Track information unavailable"}</small> : null}
+              {playingId === station.id ? <small style={{ display: "block" }}>{nowPlaying ? "Now playing: " + nowPlaying : "Now playing unavailable"}</small> : null}
               </div>
             </div>
 
