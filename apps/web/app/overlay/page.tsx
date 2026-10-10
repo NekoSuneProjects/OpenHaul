@@ -328,7 +328,7 @@ function OverlayContent() {
       }
     };
     void load();
-    const timer = setInterval(() => void load(), 20000);
+    const timer = setInterval(() => void load(), 5000);
     return () => { active = false; clearInterval(timer); };
   }, [selectedRadio?.id]);
 
