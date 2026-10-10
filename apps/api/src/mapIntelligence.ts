@@ -1,3 +1,4 @@
+import { trackerWithFallback } from "./trackerSnapshots.js";
 import type { FastifyInstance } from "fastify";
 import { Op } from "sequelize";
 import { z } from "zod";
@@ -118,40 +119,36 @@ async function truckersMpViewportDrivers(
       : server.game === "ets2" || server.game === "promods")
   );
 
-  const areas = await Promise.allSettled(servers.map(async (server) => {
-    const params = new URLSearchParams({
-      x1: String(Math.round(left)),
-      y1: String(Math.round(top)),
-      x2: String(Math.round(right)),
-      y2: String(Math.round(bottom)),
-      server: String(server.map),
+  const areas = await Promise.all(servers.map(async (server) => {
+    const snapshotKey = ["viewport", game, server.map, ...rounded].join(":");
+    return trackerWithFallback<ExternalDriver[]>(snapshotKey, async () => {
+      const params = new URLSearchParams({
+        x1: String(Math.round(left)), y1: String(Math.round(top)),
+        x2: String(Math.round(right)), y2: String(Math.round(bottom)),
+        server: String(server.map),
+      });
+      const response = await fetch("https://tracker.ets2map.com/v3/area?" + params, {
+        signal: AbortSignal.timeout(6000),
+        headers: {
+          accept: "application/json",
+          "user-agent": "OpenHaul/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
+          referer: "https://map.truckersmp.com/",
+        },
+        cache: "no-store",
+      });
+      if (!response.ok) throw new Error("TruckersMP tracker HTTP " + response.status);
+      return parseTruckersMpRows(await response.json(), server.map).map(driver => ({
+        ...driver, game, server: server.name, trackerServerId: server.id, trackerMapId: server.map,
+      }));
     });
-    const response = await fetch("https://tracker.ets2map.com/v3/area?" + params.toString(), {
-      signal: AbortSignal.timeout(6000),
-      headers: {
-        accept: "application/json",
-        "user-agent": "OpenHaul/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
-        referer: "https://map.truckersmp.com/",
-      },
-      cache: "no-store",
-    });
-    if (!response.ok) throw new Error("TruckersMP tracker HTTP " + response.status);
-
-    return parseTruckersMpRows(await response.json(), server.map).map((driver) => ({
-      ...driver,
-      game,
-      server: server.name,
-      trackerServerId: server.id,
-      trackerMapId: server.map,
-    }));
   }));
 
   const deduped = new Map<string, ExternalDriver>();
   for (const result of areas) {
-    if (result.status !== "fulfilled") continue;
-    for (const driver of result.value) {
+    for (const driver of result.data) {
       const key = driver.driverId + ":" + (driver.server ?? "");
-      deduped.set(key, driver);
+      deduped.set(key, { ...driver, updatedAt: result.updatedAt || driver.updatedAt,
+        ...(result.stale ? { source: "truckersmp-provider" as const } : {}) });
     }
   }
 
@@ -265,7 +262,10 @@ async function truckersMpWideDrivers(): Promise<ExternalDriver[]> {
           y2: String(area.y2),
           server: String(area.server),
         });
-        const response = await fetch("https://tracker.ets2map.com/v3/area?" + params.toString(), {
+        const snapshot = await trackerWithFallback<ExternalDriver[]>(
+          "wide:" + area.server + ":" + [area.x1, area.y1, area.x2, area.y2].join(":"),
+          async () => {
+          const response = await fetch("https://tracker.ets2map.com/v3/area?" + params.toString(), {
           signal: AbortSignal.timeout(6000),
           headers: {
             accept: "application/json",
@@ -274,8 +274,11 @@ async function truckersMpWideDrivers(): Promise<ExternalDriver[]> {
           },
           cache: "no-store",
         });
-        if (!response.ok) throw new Error("TruckersMP tracker HTTP " + response.status);
-        return parseTruckersMpRows(await response.json(), area.server);
+          if (!response.ok) throw new Error("TruckersMP tracker HTTP " + response.status);
+          return parseTruckersMpRows(await response.json(), area.server);
+          },
+        );
+        return snapshot.data.map(driver => ({ ...driver, updatedAt: snapshot.updatedAt || driver.updatedAt }));
       }));
       value = areas.flat();
     }
