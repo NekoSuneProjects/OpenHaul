@@ -69,6 +69,7 @@ services:
       SHOUTCAST_API_URL: ${SHOUTCAST_API_URL:-https://api.shoutcast.com}
       SHOUTCAST_API_KEY: ${SHOUTCAST_API_KEY:-}
       RADIO_RELAY_SIGNING_SECRET: ${RADIO_RELAY_SIGNING_SECRET:-}
+      TRUCKERSMP_SNAPSHOT_DIR: /data-runtime/truckersmp-cache
       OPENHAUL_MAP_DATA_DIR: /data-runtime/maps
       OPENHAUL_MAP_AUTO_UPDATE: ${OPENHAUL_MAP_AUTO_UPDATE:-true}
       OPENHAUL_MAP_MANIFEST_URL: ${OPENHAUL_MAP_MANIFEST_URL:-https://github.com/NekoSuneProjects/OpenHaul/releases/download/map-data/maps.json}

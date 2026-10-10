@@ -1,3 +1,4 @@
+import { trackerWithFallback } from "./trackerSnapshots.js";
 import type { FastifyInstance } from "fastify";
 import { Op } from "sequelize";
 import { z } from "zod";
@@ -23,6 +24,7 @@ type ExternalDriver = {
   playerId?: string;
   vtcId?: number | null;
   updatedAt?: string;
+  stale?: boolean;
 };
 
 let tmpLiveCache: { expiresAt: number; value: ExternalDriver[] } | null = null;
@@ -55,39 +57,28 @@ const trackerAreaCache = new Map<string, { expiresAt: number; value: ExternalDri
 async function truckersMpTrackerServers(): Promise<TrackerServer[]> {
   if (trackerServerCache && trackerServerCache.expiresAt > Date.now()) return trackerServerCache.value;
 
-  try {
+  const snapshot = await trackerWithFallback<TrackerServer[]>("tracker:servers", async () => {
     const response = await fetch("https://truckersmp.krashnz.com/servers", {
       signal: AbortSignal.timeout(5000),
-      headers: {
-        accept: "application/json",
-        "user-agent": "OpenHaul/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
-      },
+      headers: { accept: "application/json", "user-agent": "OpenHaul/1.0" },
       cache: "no-store",
     });
-    if (!response.ok) throw new Error("TruckersMP server map HTTP " + response.status);
-
+    if (!response.ok) throw new Error("TruckersMP server mapping HTTP " + response.status);
     const payload = await response.json() as any;
     const value = (Array.isArray(payload?.servers) ? payload.servers : []).flatMap((server: any) => {
       const id = Number(server.id);
       const map = Number(server.map);
       if (!Number.isFinite(id) || !Number.isFinite(map)) return [];
-      return [{
-        id,
-        map,
-        name: String(server.name ?? "TruckersMP"),
-        game: String(server.game ?? "").toLowerCase(),
-        status: Boolean(server.status),
-        players: Number(server.players ?? 0),
-      }];
+      return [{ id, map, name: String(server.name ?? "TruckersMP"),
+        game: String(server.game ?? "").toLowerCase(), status: Boolean(server.status),
+        players: Number(server.players ?? 0) }];
     });
-
-    trackerServerCache = { value, expiresAt: Date.now() + 15_000 };
-    return value;
-  } catch {
-    return trackerServerCache?.value?.length
-      ? trackerServerCache.value
-      : FALLBACK_TRACKER_SERVERS;
-  }
+    if (!value.length) throw new Error("Empty TMP server mapping");
+    return value as TrackerServer[];
+  });
+  const value = snapshot.data.length ? snapshot.data : FALLBACK_TRACKER_SERVERS;
+  trackerServerCache = { value, expiresAt: Date.now() + (snapshot.stale ? 10000 : 15000) };
+  return value;
 }
 
 async function truckersMpViewportDrivers(
@@ -118,40 +109,36 @@ async function truckersMpViewportDrivers(
       : server.game === "ets2" || server.game === "promods")
   );
 
-  const areas = await Promise.allSettled(servers.map(async (server) => {
-    const params = new URLSearchParams({
-      x1: String(Math.round(left)),
-      y1: String(Math.round(top)),
-      x2: String(Math.round(right)),
-      y2: String(Math.round(bottom)),
-      server: String(server.map),
+  const areas = await Promise.all(servers.map(async (server) => {
+    const snapshotKey = ["viewport", game, server.map, ...rounded].join(":");
+    return trackerWithFallback<ExternalDriver[]>(snapshotKey, async () => {
+      const params = new URLSearchParams({
+        x1: String(Math.round(left)), y1: String(Math.round(top)),
+        x2: String(Math.round(right)), y2: String(Math.round(bottom)),
+        server: String(server.map),
+      });
+      const response = await fetch("https://tracker.ets2map.com/v3/area?" + params, {
+        signal: AbortSignal.timeout(6000),
+        headers: {
+          accept: "application/json",
+          "user-agent": "OpenHaul/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
+          referer: "https://map.truckersmp.com/",
+        },
+        cache: "no-store",
+      });
+      if (!response.ok) throw new Error("TruckersMP tracker HTTP " + response.status);
+      return parseTruckersMpRows(await response.json(), server.map).map(driver => ({
+        ...driver, game, server: server.name, trackerServerId: server.id, trackerMapId: server.map,
+      }));
     });
-    const response = await fetch("https://tracker.ets2map.com/v3/area?" + params.toString(), {
-      signal: AbortSignal.timeout(6000),
-      headers: {
-        accept: "application/json",
-        "user-agent": "OpenHaul/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
-        referer: "https://map.truckersmp.com/",
-      },
-      cache: "no-store",
-    });
-    if (!response.ok) throw new Error("TruckersMP tracker HTTP " + response.status);
-
-    return parseTruckersMpRows(await response.json(), server.map).map((driver) => ({
-      ...driver,
-      game,
-      server: server.name,
-      trackerServerId: server.id,
-      trackerMapId: server.map,
-    }));
   }));
 
   const deduped = new Map<string, ExternalDriver>();
   for (const result of areas) {
-    if (result.status !== "fulfilled") continue;
-    for (const driver of result.value) {
+    for (const driver of result.data) {
       const key = driver.driverId + ":" + (driver.server ?? "");
-      deduped.set(key, driver);
+      deduped.set(key, { ...driver, updatedAt: result.updatedAt || driver.updatedAt,
+        stale: result.stale });
     }
   }
 
@@ -265,7 +252,10 @@ async function truckersMpWideDrivers(): Promise<ExternalDriver[]> {
           y2: String(area.y2),
           server: String(area.server),
         });
-        const response = await fetch("https://tracker.ets2map.com/v3/area?" + params.toString(), {
+        const snapshot = await trackerWithFallback<ExternalDriver[]>(
+          "wide:" + area.server + ":" + [area.x1, area.y1, area.x2, area.y2].join(":"),
+          async () => {
+          const response = await fetch("https://tracker.ets2map.com/v3/area?" + params.toString(), {
           signal: AbortSignal.timeout(6000),
           headers: {
             accept: "application/json",
@@ -274,8 +264,11 @@ async function truckersMpWideDrivers(): Promise<ExternalDriver[]> {
           },
           cache: "no-store",
         });
-        if (!response.ok) throw new Error("TruckersMP tracker HTTP " + response.status);
-        return parseTruckersMpRows(await response.json(), area.server);
+          if (!response.ok) throw new Error("TruckersMP tracker HTTP " + response.status);
+          return parseTruckersMpRows(await response.json(), area.server);
+          },
+        );
+        return snapshot.data.map(driver => ({ ...driver, updatedAt: snapshot.updatedAt || driver.updatedAt, stale: snapshot.stale }));
       }));
       value = areas.flat();
     }
@@ -459,10 +452,12 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       generatedAt: new Date().toISOString(),
       game: query.game,
       count: drivers.length,
+      trackerStatus: drivers.some(driver => driver.stale) ? "stale" : "live",
+      staleDrivers: drivers.filter(driver => driver.stale).length,
       totalOnline: relevantServers.reduce((sum, server) => sum + server.players, 0),
       openHaulOnline: clientPresences.length,
       drivers,
-      traffic: densityTrafficClusters(drivers),
+      traffic: densityTrafficClusters(drivers.filter(driver => !driver.stale)),
       servers: relevantServers,
     };
   });
@@ -616,7 +611,7 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       generatedAt: new Date().toISOString(),
       traffic: [
         ...trafficClusters(trafficInput.filter((driver) => !driver.driverId.startsWith("tmp:"))),
-        ...densityTrafficClusters(externalOnly),
+        ...densityTrafficClusters(externalOnly.filter(driver => !driver.stale)),
       ],
       staff: [...openHaulStaff, ...tmpStaff],
       specialCargo: missions.map((record: any) => ({
