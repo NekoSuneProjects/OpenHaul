@@ -57,39 +57,28 @@ const trackerAreaCache = new Map<string, { expiresAt: number; value: ExternalDri
 async function truckersMpTrackerServers(): Promise<TrackerServer[]> {
   if (trackerServerCache && trackerServerCache.expiresAt > Date.now()) return trackerServerCache.value;
 
-  try {
+  const snapshot = await trackerWithFallback<TrackerServer[]>("tracker:servers", async () => {
     const response = await fetch("https://truckersmp.krashnz.com/servers", {
       signal: AbortSignal.timeout(5000),
-      headers: {
-        accept: "application/json",
-        "user-agent": "OpenHaul/1.0 (+https://github.com/NekoSuneProjects/OpenHaul)",
-      },
+      headers: { accept: "application/json", "user-agent": "OpenHaul/1.0" },
       cache: "no-store",
     });
-    if (!response.ok) throw new Error("TruckersMP server map HTTP " + response.status);
-
+    if (!response.ok) throw new Error("TruckersMP server mapping HTTP " + response.status);
     const payload = await response.json() as any;
     const value = (Array.isArray(payload?.servers) ? payload.servers : []).flatMap((server: any) => {
       const id = Number(server.id);
       const map = Number(server.map);
       if (!Number.isFinite(id) || !Number.isFinite(map)) return [];
-      return [{
-        id,
-        map,
-        name: String(server.name ?? "TruckersMP"),
-        game: String(server.game ?? "").toLowerCase(),
-        status: Boolean(server.status),
-        players: Number(server.players ?? 0),
-      }];
+      return [{ id, map, name: String(server.name ?? "TruckersMP"),
+        game: String(server.game ?? "").toLowerCase(), status: Boolean(server.status),
+        players: Number(server.players ?? 0) }];
     });
-
-    trackerServerCache = { value, expiresAt: Date.now() + 15_000 };
-    return value;
-  } catch {
-    return trackerServerCache?.value?.length
-      ? trackerServerCache.value
-      : FALLBACK_TRACKER_SERVERS;
-  }
+    if (!value.length) throw new Error("Empty TMP server mapping");
+    return value as TrackerServer[];
+  });
+  const value = snapshot.data.length ? snapshot.data : FALLBACK_TRACKER_SERVERS;
+  trackerServerCache = { value, expiresAt: Date.now() + (snapshot.stale ? 10000 : 15000) };
+  return value;
 }
 
 async function truckersMpViewportDrivers(
