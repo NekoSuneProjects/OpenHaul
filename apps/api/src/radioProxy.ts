@@ -10,6 +10,7 @@ const DEFAULT_INTERNET_RADIO_URL = "https://www.internet-radio.com";
 const DEFAULT_XIPH_DIRECTORY_URL = "https://dir.xiph.org";
 const DEFAULT_LAUTFM_API_URL = "https://api.laut.fm";
 const directoryCache = new Map<string, { expiresAt: number; value: RadioStation[] }>();
+const radioBrowserFaviconCache = new Map<string, string | null>();
 
 type OutputFormat = {
   contentType: string;
@@ -734,15 +735,46 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
         const streamPath = /^\/stream\/[A-Za-z]{2}\/[a-zA-Z0-9_%.~-]+\.mp3$/.test(candidate)
           ? candidate : "/stream/" + country + "/" + encodeURIComponent(id) + ".mp3";
         seen.add(id);
+        const favicon = String(row.favicon ?? "").trim();
         return [{
           id, name, country, station_region: String(row.station_region ?? "").slice(0, 120),
           genre: String(row.genre ?? "Live radio").slice(0, 120),
           language_code: String(row.language_code ?? "").slice(0, 10),
           stream_url: "https://geo-node.fumikoecho.ca" + streamPath,
+          favicon: /^https?:\/\//i.test(favicon) ? favicon : null,
           enabled: true,
         }];
       });
       if (!stations.length) throw new Error("Aurora station feed contains no valid stations");
+
+      // Aurora's feed does not consistently include station artwork. Fill gaps
+      // from Radio Browser by station name and country, caching results in memory.
+      const faviconCandidates = stations.filter((station: any) => !station.favicon).slice(0, 60);
+      for (let index = 0; index < faviconCandidates.length; index += 5) {
+        await Promise.all(faviconCandidates.slice(index, index + 5).map(async (station: any) => {
+          const cacheKey = String(station.country) + ":" + String(station.name).trim().toLowerCase();
+          if (radioBrowserFaviconCache.has(cacheKey)) {
+            station.favicon = radioBrowserFaviconCache.get(cacheKey) ?? null;
+            return;
+          }
+          try {
+            const rows = await fetchRadioBrowser("/json/stations/byname/" + encodeURIComponent(station.name),
+              new URLSearchParams({ limit: "20", hidebroken: "true" }), 4500) as RadioBrowserStation[];
+            const normalizedName = String(station.name).trim().toLowerCase().replace(/\s+/g, " ");
+            const match = rows
+              .filter((row) => String(row.countrycode ?? "").toUpperCase() === station.country)
+              .sort((a, b) => Number(String(b.name ?? "").trim().toLowerCase().replace(/\s+/g, " ") === normalizedName) -
+                Number(String(a.name ?? "").trim().toLowerCase().replace(/\s+/g, " ") === normalizedName))
+              .find((row) => /^https?:\/\//i.test(String(row.favicon ?? "").trim()));
+            const favicon = match ? String(match.favicon).trim() : null;
+            radioBrowserFaviconCache.set(cacheKey, favicon);
+            station.favicon = favicon;
+          } catch {
+            radioBrowserFaviconCache.set(cacheKey, null);
+            station.favicon = null;
+          }
+        }));
+      }
       stations.sort((a: any, b: any) => Number(b.country === "CA") - Number(a.country === "CA") ||
         a.country.localeCompare(b.country) || a.station_region.localeCompare(b.station_region) || a.name.localeCompare(b.name));
       auroraCache = { stations, expiresAt: Date.now() + 60000, updatedAt: new Date().toISOString() };
