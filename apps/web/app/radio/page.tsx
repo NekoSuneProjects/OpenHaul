@@ -279,7 +279,7 @@ export default function RadioPage() {
           <article
             className="driver"
             key={station.id}
-            style={{ gridTemplateColumns: "minmax(240px,2fr) minmax(140px,1fr) minmax(180px,1fr) auto" }}
+            style={{ gridTemplateColumns: "minmax(220px, 1.35fr) minmax(150px, .9fr) minmax(150px, .8fr) minmax(250px, auto)" }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 12, minWidth: 0 }}>
               {station.favicon ? (
@@ -298,19 +298,23 @@ export default function RadioPage() {
               </div>
             </div>
 
-            <div>
-              <strong>{station.genre || "Radio"}</strong>
-              <small>{station.language || "—"}</small>
+            <div className="radioStationTags">
+              <div className="radioStationTagList">
+                {(station.genre || "Live radio").split(/[,;|]/).map((rawTag) => rawTag.trim()).filter(Boolean).slice(0, 5).map((tag, index) => (
+                  <span className="radioStationTag" key={`${station.id}-tag-${index}`}>{tag}</span>
+                ))}
+              </div>
+              <small>{station.language || "Language unspecified"}</small>
             </div>
 
-            <div>
+            <div className="radioStationFormat">
               <span className="pill">{badgeText(station)}</span>
               <small style={{ display: "block", marginTop: 6 }}>
-                {station.codec || "Auto"}{station.bitrateKbps ? ` · ${station.bitrateKbps} kbps` : ""}
+                {station.codec || "MP3"}{station.bitrateKbps ? ` · ${station.bitrateKbps} kbps` : ""}
               </small>
             </div>
 
-            <div className="actions" style={{ justifyContent: "flex-end", flexWrap: "wrap" }}>
+            <div className="actions radioStationActions" style={{ justifyContent: "flex-end", flexWrap: "wrap" }}>
               <button className="button" onClick={() => void play(station)}>
                 {playingId === station.id ? "Pause" : "Play"}
               </button>
