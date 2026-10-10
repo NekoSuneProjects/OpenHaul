@@ -26,6 +26,7 @@ type RadioStation = {
   bitrateKbps?: number;
   country?: string;
   codec?: string;
+  favicon?: string | null;
   source?: string;
 };
 
@@ -204,14 +205,14 @@ function OverlayContent() {
         const feed = await response.json() as {
           updatedAt?: string;
           stations?: Array<{ id: string; name: string; country: string; station_region?: string;
-            genre?: string; language_code?: string; stream_url: string }>;
+            genre?: string; language_code?: string; stream_url: string; favicon?: string | null }>;
         };
         if (!active) return;
         setCatalogRadioStations((feed.stations ?? []).map(station => ({
           id: "aurora-" + station.id, name: station.name, url: station.stream_url,
           country: station.country, genre: station.genre || "Live radio",
           type: station.genre || "Live radio", language: station.language_code || undefined,
-          source: "aurora-kitsune",
+          favicon: station.favicon || undefined, source: "aurora-kitsune",
         })));
         setRadioCatalogVersion(feed.updatedAt || "");
       } catch {
@@ -954,7 +955,9 @@ function OverlayContent() {
                       className={active ? "active" : ""}
                       onClick={() => void playRadio(station)}
                     >
-                      <span className="gameOverlayRadioStationIcon">♫</span>
+                      <span className="gameOverlayRadioStationIcon">
+                        {station.favicon ? <img src={station.favicon} alt="" loading="lazy" onError={(event) => { event.currentTarget.style.display = "none"; }} /> : "♫"}
+                      </span>
                       <span>
                         <strong>{station.name}</strong>
                         <small>
