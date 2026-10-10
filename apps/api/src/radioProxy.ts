@@ -876,6 +876,20 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
   // URLs are resolved server-side from known stations, never accepted from a browser.
   app.get("/api/v1/public/radio/now-playing/:stationId", async (request, reply) => {
     const { stationId } = z.object({ stationId: z.string().min(1).max(120) }).parse(request.params);
+    if (stationId.startsWith("aurora-")) {
+      const auroraId = stationId.slice("aurora-".length);
+      const record = (auroraCache?.stations || []).find((entry) =>
+        (entry as { id?: string }).id === auroraId) as { name: string; stream_url: string } | undefined;
+      if (!record) return reply.code(404).send({ error: "aurora_station_not_found" });
+      try {
+        const metadata = await getStreamNowPlaying(record.stream_url);
+        reply.header("cache-control", "public, max-age=10");
+        return { station: { id: stationId, name: record.name, listen_url: record.stream_url }, ...metadata };
+      } catch {
+        return { station: { id: stationId, name: record.name, listen_url: record.stream_url },
+          song: null, artist: null, title: null, source: "unavailable", checkedAt: new Date().toISOString() };
+      }
+    }
     let station = stations.get(stationId.toLowerCase()) ?? null;
     if (!station && /^rb-[a-z0-9-]{8,110}$/i.test(stationId)) {
       const row = await resolveRadioBrowserStation(stationId.slice(3));
