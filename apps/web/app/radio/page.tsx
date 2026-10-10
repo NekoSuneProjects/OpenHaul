@@ -73,6 +73,7 @@ export default function RadioPage() {
   const [hasNext, setHasNext] = useState(false);
   const [loading, setLoading] = useState(true);
   const [playingId, setPlayingId] = useState<string | null>(null);
+  const [nowPlaying, setNowPlaying] = useState<string | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [queuedId, setQueuedId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -119,6 +120,21 @@ export default function RadioPage() {
   }, [auroraStations, country, query, tag, codec, page]);
 
   useEffect(() => setPage(1), [country, query, tag, codec]);
+
+  useEffect(() => {
+    if (!playingId) { setNowPlaying(null); return; }
+    let active = true;
+    const update = async () => {
+      try {
+        const response = await fetch(api + "/api/v1/public/radio/now-playing/" + encodeURIComponent(playingId), { cache: "no-store" });
+        const value = response.ok ? await response.json() as { song?: string | null } : null;
+        if (active) setNowPlaying(value?.song || null);
+      } catch { if (active) setNowPlaying(null); }
+    };
+    void update();
+    const timer = setInterval(() => void update(), 20000);
+    return () => { active = false; clearInterval(timer); };
+  }, [playingId]);
 
   const sortedCountries = useMemo(() => {
     const rows = [...countries];
@@ -206,6 +222,7 @@ export default function RadioPage() {
               onChange={(event) => setCountry(event.target.value)}
               style={{ width: "100%", marginTop: 6 }}
             >
+              <option value="ALL">All countries</option>
               {sortedCountries.map((item) => (
                 <option value={item.code} key={item.code}>
                   {countryName(item.code)} ({item.code}){item.count ? ` · ${item.count}` : ""}
@@ -250,7 +267,7 @@ export default function RadioPage() {
 
       <div className="sectionTitle">
         <div>
-          <h2>{countryName(country)} radio</h2>
+          <h2>{country === "ALL" ? "Aurora Kitsune radio" : countryName(country) + " radio"}</h2>
           <p className="muted" style={{ margin: 0 }}>
             {loading ? "Loading stations…" : `${stations.length} stations on this page`}
           </p>
@@ -277,6 +294,7 @@ export default function RadioPage() {
               <div style={{ minWidth: 0 }}>
                 <strong style={{ display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{station.name}</strong>
                 <small>{[station.state, station.country].filter(Boolean).join(" · ") || countryName(country)}</small>
+              {playingId === station.id ? <small style={{ display: "block" }}>{nowPlaying ? "Now playing: " + nowPlaying : "Track information unavailable"}</small> : null}
               </div>
             </div>
 
