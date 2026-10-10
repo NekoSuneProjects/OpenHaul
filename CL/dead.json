@@ -20,7 +20,7 @@
     "favicon": "https://www.fmdelosrecuerdos.cl/wp-content/uploads/2021/07/logohead.png",
     "homepage": "https://www.fmdelosrecuerdos.cl/",
     "stationUuid": "5058d941-f8c4-41f4-ba2b-b0c0388d224e",
-    "checkedAt": "2026-10-09T10:55:54.414Z",
+    "checkedAt": "2026-10-10T10:11:08.700Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -39,7 +39,7 @@
     "favicon": "https://www.punto9.cl/wp/wp-content/uploads/2023/07/cwx5hh9l7czv-removebg-preview-150x150.png",
     "homepage": "https://www.punto9.cl/wp/",
     "stationUuid": "1feef43d-ebd6-4a52-8fde-7a2d49d4f497",
-    "checkedAt": "2026-10-09T10:55:54.563Z",
+    "checkedAt": "2026-10-10T10:11:08.774Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -62,27 +62,27 @@
     "favicon": null,
     "homepage": "https://nostalgica.cl/",
     "stationUuid": "acf9c973-a7f0-4f43-8e74-6410747891a8",
-    "checkedAt": "2026-10-09T10:55:54.990Z",
+    "checkedAt": "2026-10-10T10:11:09.211Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "Radio Creación FM",
-    "url": "https://archi-us.digitalproserver.com/creacion-fm.aac",
+    "name": "Radio Euro Éxtasis",
+    "url": "https://conexion.radioeuroextasis.com/",
     "country": "CL",
     "type": "AAC",
     "tags": [],
     "codec": "AAC",
-    "bitrate": 128,
-    "language": "spanish",
-    "favicon": null,
-    "homepage": "http://radiocreacion.cl/",
-    "stationUuid": "1943a1b0-88c1-442e-8965-f4d437db8885",
-    "checkedAt": "2026-10-09T10:55:57.768Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "bitrate": 320,
+    "language": null,
+    "favicon": "https://radioeuroextasis.com/wp-content/uploads/2022/07/LOGO-12-512.png",
+    "homepage": "https://radioeuroextasis.com/",
+    "stationUuid": "4c0d89e2-b6f2-463d-899b-2c54699d390e",
+    "checkedAt": "2026-10-10T10:11:12.168Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Trending radio",
@@ -96,7 +96,7 @@
     "favicon": "https://trendingradio.cl/repro_horizontal/img/logotrending_250x250.png",
     "homepage": "https://trendingradio.cl/",
     "stationUuid": "cf32d3ce-ad18-4c09-97c4-a65f3e22ac3e",
-    "checkedAt": "2026-10-09T10:55:59.579Z",
+    "checkedAt": "2026-10-10T10:11:13.637Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -113,7 +113,7 @@
     "favicon": null,
     "homepage": "http://www.cysradio.cl/online/",
     "stationUuid": "4199cb1c-c9a8-4857-9e47-65ffb31f4764",
-    "checkedAt": "2026-10-09T10:56:00.023Z",
+    "checkedAt": "2026-10-10T10:11:14.214Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -130,7 +130,7 @@
     "favicon": null,
     "homepage": "https://www.cysradio.cl/",
     "stationUuid": "7b68527b-52d4-4e73-8530-0bc56a2a7f75",
-    "checkedAt": "2026-10-09T10:56:00.139Z",
+    "checkedAt": "2026-10-10T10:11:14.362Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -147,7 +147,7 @@
     "favicon": "https://clubretrohits.cl/medios/club-retrohits/logo.jpg",
     "homepage": "https://clubretrohits.cl/",
     "stationUuid": "5b164218-62a5-4a56-a5ff-3f87f9ad8b58",
-    "checkedAt": "2026-10-09T10:56:00.436Z",
+    "checkedAt": "2026-10-10T10:11:14.644Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -164,7 +164,7 @@
     "favicon": null,
     "homepage": "https://cysradio.cl/",
     "stationUuid": "d5662bb3-68a2-11ea-9d09-52543be04c81",
-    "checkedAt": "2026-10-09T10:56:00.447Z",
+    "checkedAt": "2026-10-10T10:11:14.649Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -181,7 +181,7 @@
     "favicon": "https://cdn.instant.audio/images/logos/emisora-cl/estacion-ranchera.png",
     "homepage": "https://www.estacionranchera.cl/",
     "stationUuid": "e1791fc1-4af5-4a78-b399-4eb677f5f48a",
-    "checkedAt": "2026-10-09T10:56:00.592Z",
+    "checkedAt": "2026-10-10T10:11:14.941Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -198,7 +198,7 @@
     "favicon": null,
     "homepage": "https://www.lapopular.cl/",
     "stationUuid": "ca561fb6-deb5-417d-a752-9f7cac0f52a6",
-    "checkedAt": "2026-10-09T10:56:00.670Z",
+    "checkedAt": "2026-10-10T10:11:14.955Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -215,7 +215,7 @@
     "favicon": "https://www.incondicionalmenteretro.cl/favicon.ico",
     "homepage": "https://www.incondicionalmenteretro.cl/",
     "stationUuid": "77fe06c0-754a-45d1-96df-eb24b97801c5",
-    "checkedAt": "2026-10-09T10:56:00.830Z",
+    "checkedAt": "2026-10-10T10:11:15.142Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -232,7 +232,7 @@
     "favicon": null,
     "homepage": "https://www.libelulachile.com/",
     "stationUuid": "d16e8cf0-cd2b-4ebf-b311-1fad15e2a72b",
-    "checkedAt": "2026-10-09T10:56:01.483Z",
+    "checkedAt": "2026-10-10T10:11:15.709Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -249,7 +249,7 @@
     "favicon": null,
     "homepage": "https://www.nostalgica.cl/",
     "stationUuid": "b94a990d-bf54-4c0b-a2bb-c161e8aebe57",
-    "checkedAt": "2026-10-09T10:56:01.693Z",
+    "checkedAt": "2026-10-10T10:11:16.286Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -266,7 +266,7 @@
     "favicon": null,
     "homepage": "https://www.carabineros.cl/radio/",
     "stationUuid": "211488f0-b28e-413e-86a3-c0bd98cd86a8",
-    "checkedAt": "2026-10-09T10:56:02.907Z",
+    "checkedAt": "2026-10-10T10:11:17.605Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -283,7 +283,7 @@
     "favicon": "https://clubretrohits.cl/wp-content/uploads/2024/10/radio4.gif",
     "homepage": "https://clubretrohits.cl/",
     "stationUuid": "22efbec6-390d-4fe5-9ddc-8703297dbd13",
-    "checkedAt": "2026-10-09T10:56:03.288Z",
+    "checkedAt": "2026-10-10T10:11:17.828Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -300,7 +300,7 @@
     "favicon": null,
     "homepage": "https://emisora.cl/exito-taguatagu/",
     "stationUuid": "9aaf7536-5558-4596-9a32-54c6a7f5d76d",
-    "checkedAt": "2026-10-09T10:56:03.447Z",
+    "checkedAt": "2026-10-10T10:11:18.015Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -317,7 +317,7 @@
     "favicon": null,
     "homepage": "https://www.nostalgica.cl/",
     "stationUuid": "8bd698b0-f038-465d-be06-359561cc4efa",
-    "checkedAt": "2026-10-09T10:56:04.229Z",
+    "checkedAt": "2026-10-10T10:11:19.130Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -334,7 +334,7 @@
     "favicon": "http://remusica.cl/wp-content/uploads/2026/03/Logo-Radio-Remusica.png",
     "homepage": "https://remusica.cl/",
     "stationUuid": "2ac67aa2-b8e1-4cb3-bf5d-5540af0d081d",
-    "checkedAt": "2026-10-09T10:56:05.354Z",
+    "checkedAt": "2026-10-10T10:11:20.168Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -356,7 +356,7 @@
     "favicon": "https://fanatica.cl/favicon.ico",
     "homepage": "https://fanatica.cl/",
     "stationUuid": "36ae979f-b56b-4299-bb88-b26fb817f65e",
-    "checkedAt": "2026-10-09T10:56:07.185Z",
+    "checkedAt": "2026-10-10T10:11:21.941Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -378,7 +378,7 @@
     "favicon": null,
     "homepage": "https://ratasordarec.cl/radio/",
     "stationUuid": "c86fb74e-a344-47b0-876c-caf1a76835d7",
-    "checkedAt": "2026-10-09T10:56:07.429Z",
+    "checkedAt": "2026-10-10T10:11:21.987Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -400,7 +400,7 @@
     "favicon": "https://fanatica.cl/favicon.ico",
     "homepage": "https://fanatica.cl/",
     "stationUuid": "bda87d0a-28fd-4307-8fec-74a62d1b9236",
-    "checkedAt": "2026-10-09T10:56:08.544Z",
+    "checkedAt": "2026-10-10T10:11:23.265Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -421,10 +421,33 @@
     "favicon": "https://www.radiostellamaris.cl/wp-content/uploads/2023/01/Radio-Stella-Maris-la-emisora-catolica-de-la-region-de-Valparaiso.png",
     "homepage": "https://www.radiostellamaris.cl/envivo/",
     "stationUuid": "59457195-3d3d-4708-ad71-016da5b74be7",
-    "checkedAt": "2026-10-09T10:56:08.902Z",
+    "checkedAt": "2026-10-10T10:11:23.635Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Colombina",
+    "url": "https://cast.radioservicios.cl:8314/radio",
+    "country": "CL",
+    "type": "classic rock",
+    "tags": [
+      "classic rock",
+      "misc",
+      "música pop",
+      "new wave",
+      "pop rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english,español chile,spanish",
+    "favicon": null,
+    "homepage": "https://colombinafm.cl/",
+    "stationUuid": "37d34f11-25fa-430e-9778-847fa4db6b3b",
+    "checkedAt": "2026-10-10T10:11:24.835Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Guitarra Clásica LatAm",
@@ -445,7 +468,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/guitarra-clasica-latam",
     "stationUuid": "e666a08b-2705-4cc6-a878-d4f4b4821190",
-    "checkedAt": "2026-10-09T10:56:11.680Z",
+    "checkedAt": "2026-10-10T10:11:26.183Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -468,7 +491,7 @@
     "favicon": null,
     "homepage": "https://rtnoticias.cl/v1/",
     "stationUuid": "13e073da-37a2-4ea1-abe8-cda2b1b6f9b3",
-    "checkedAt": "2026-10-09T10:56:12.131Z",
+    "checkedAt": "2026-10-10T10:11:26.665Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -492,10 +515,40 @@
     "favicon": "https://www.lapopular.cl/images/logo.png",
     "homepage": "https://www.lapopular.cl/",
     "stationUuid": "53aacd02-5747-46a1-8c98-d5a6d43bec7f",
-    "checkedAt": "2026-10-09T10:56:12.147Z",
+    "checkedAt": "2026-10-10T10:11:26.947Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Universidad de Chile",
+    "url": "https://sonic-us.arkeo.cl/8186/stream",
+    "country": "CL",
+    "type": "culture",
+    "tags": [
+      "culture",
+      "current affairs",
+      "derechos humanos",
+      "local news",
+      "multicultural",
+      "music",
+      "news",
+      "news talk",
+      "political talk",
+      "politics & current affairs",
+      "progressive politics",
+      "sports news"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://radio.uchile.cl/",
+    "stationUuid": "6dc2ec0f-bb83-4308-916c-570b9476cf5d",
+    "checkedAt": "2026-10-10T10:11:27.344Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Zumbale Radio",
@@ -513,7 +566,7 @@
     "favicon": null,
     "homepage": "https://www.zumbaleradio.cl/",
     "stationUuid": "5fb33f88-067f-4f53-9961-9b394b1724b6",
-    "checkedAt": "2026-10-09T10:56:13.520Z",
+    "checkedAt": "2026-10-10T10:11:28.357Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -535,7 +588,7 @@
     "favicon": "https://fanatica.cl/favicon.ico",
     "homepage": "https://fanatica.cl/",
     "stationUuid": "a7dbaa8f-2f98-47f3-a9b8-7d5ca66b9768",
-    "checkedAt": "2026-10-09T10:56:13.753Z",
+    "checkedAt": "2026-10-10T10:11:28.565Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -557,7 +610,7 @@
     "favicon": "https://www.digitalfm.cl/favicon.ico",
     "homepage": "https://www.digitalfm.cl/",
     "stationUuid": "e5301c69-77e1-4f41-a3fa-196f52505307",
-    "checkedAt": "2026-10-09T10:56:15.448Z",
+    "checkedAt": "2026-10-10T10:11:30.154Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -576,7 +629,7 @@
     "favicon": "https://radiokurruf.org/favicon.ico",
     "homepage": "https://radiokurruf.org/",
     "stationUuid": "0175a884-db8b-4b2f-8977-00b82d633824",
-    "checkedAt": "2026-10-09T10:56:18.655Z",
+    "checkedAt": "2026-10-10T10:11:33.622Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -593,7 +646,7 @@
     "favicon": null,
     "homepage": "https://aconcagua.beatfm.cl/",
     "stationUuid": "e77523c7-b592-45d5-956a-f4e9aca4b467",
-    "checkedAt": "2026-10-09T10:56:19.503Z",
+    "checkedAt": "2026-10-10T10:11:34.379Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -610,7 +663,7 @@
     "favicon": "https://www.fmdelosrecuerdos.cl/wp-content/uploads/2023/02/cropped-fav-recuerdos-180x180.png",
     "homepage": "http://www.fmdelosrecuerdos.cl/online.php",
     "stationUuid": "962db1df-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-09T10:56:21.118Z",
+    "checkedAt": "2026-10-10T10:11:35.805Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -627,7 +680,7 @@
     "favicon": null,
     "homepage": "https://stream.radio.co/s2aa019d6b/listen",
     "stationUuid": "828ef5aa-2b36-4393-8f7e-527fe6f433b3",
-    "checkedAt": "2026-10-09T10:56:21.386Z",
+    "checkedAt": "2026-10-10T10:11:36.018Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -644,9 +697,43 @@
     "favicon": null,
     "homepage": "http://www.fmdelosrecuerdos.cl/online.php",
     "stationUuid": "62678be8-2d99-4bc3-ac62-25871c98e268",
-    "checkedAt": "2026-10-09T10:56:22.051Z",
+    "checkedAt": "2026-10-10T10:11:36.639Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "FM Music",
+    "url": "https://stream.fmmusic.cl/9980/stream",
+    "country": "CL",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://www.fmmusic.cl/web/",
+    "stationUuid": "923788e1-77df-4c9e-a780-5aa96b7a60d2",
+    "checkedAt": "2026-10-10T10:11:36.789Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Caramelo San Vicente",
+    "url": "https://cast.radioservicios.cl:8316/sanvicente",
+    "country": "CL",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.caramelofm.cl/",
+    "stationUuid": "ff454d36-e4ea-4905-8beb-5c69b35af4b4",
+    "checkedAt": "2026-10-10T10:11:40.282Z",
+    "status": 404,
+    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
@@ -661,24 +748,7 @@
     "favicon": null,
     "homepage": "https://stream.radioclub80.cl:8072/status.xsl",
     "stationUuid": "c456feb0-c549-4453-8d19-18c2153e07ba",
-    "checkedAt": "2026-10-09T10:56:27.264Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "RADIO ISLA ONLINE",
-    "url": "https://sp.totalstreaming.net:8018/stream",
-    "country": "CL",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://radioisla.cl/wp-content/uploads/2024/07/unnamed-67x67.png",
-    "homepage": "https://radioisla.cl/Online/",
-    "stationUuid": "e7a08421-723f-41de-a1ac-1ff684334476",
-    "checkedAt": "2026-10-09T10:56:29.132Z",
+    "checkedAt": "2026-10-10T10:11:40.549Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -695,7 +765,7 @@
     "favicon": null,
     "homepage": "https://radiokurruf.org/",
     "stationUuid": "df0b6a9a-1438-41a4-ac6c-79e9ec700906",
-    "checkedAt": "2026-10-09T10:56:29.207Z",
+    "checkedAt": "2026-10-10T10:11:42.363Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -712,7 +782,7 @@
     "favicon": null,
     "homepage": "https://mytuner-radio.com/es/emisora/radio-perfeccion-80s-470974/",
     "stationUuid": "55388c26-89ca-49f3-9f5f-f21ca80d2e43",
-    "checkedAt": "2026-10-09T10:56:31.164Z",
+    "checkedAt": "2026-10-10T10:11:44.344Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -729,7 +799,7 @@
     "favicon": "https://www.observador.cl/favicon.ico",
     "homepage": "https://www.observador.cl/",
     "stationUuid": "56cf0431-1783-43c7-afc3-d91991b106b8",
-    "checkedAt": "2026-10-09T10:56:31.707Z",
+    "checkedAt": "2026-10-10T10:11:44.939Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -746,14 +816,14 @@
     "favicon": "https://eldiariodesantiago.cl/wp-content/uploads/2022/12/logo-300x300-1.png",
     "homepage": "https://eldiariodesantiago.cl/",
     "stationUuid": "1b72fbf0-3e2f-42cc-8d18-9fefe9116af1",
-    "checkedAt": "2026-10-09T10:56:32.409Z",
+    "checkedAt": "2026-10-10T10:11:45.635Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Radio Tongoy fm 107.1",
-    "url": "https://sonicstream-puntual.grupozgh.cl:7068/;",
+    "name": "Radio Sol Classic",
+    "url": "https://us9.maindigitalstream.com/ssl/radiosol",
     "country": "CL",
     "type": "MP3",
     "tags": [],
@@ -761,12 +831,12 @@
     "bitrate": 128,
     "language": "spanish",
     "favicon": null,
-    "homepage": "https://www.radiotongoyfm.cl/",
-    "stationUuid": "68821d10-879b-4ec3-a29c-550275dafce2",
-    "checkedAt": "2026-10-09T10:56:32.965Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
+    "homepage": "https://radiosol.cl/",
+    "stationUuid": "bba69902-9f44-4ed4-9130-286b5c2e71a3",
+    "checkedAt": "2026-10-10T10:11:45.790Z",
+    "status": 502,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "SEÑAL REC",
@@ -780,7 +850,7 @@
     "favicon": null,
     "homepage": "https://www.libelulachile.cl/",
     "stationUuid": "7a6edebf-6895-4ce7-a193-70b41f5e7790",
-    "checkedAt": "2026-10-09T10:56:34.904Z",
+    "checkedAt": "2026-10-10T10:11:48.248Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -797,7 +867,7 @@
     "favicon": "https://trendingradio.cl/repro_horizontal/img/logotrending_250x250.png",
     "homepage": "https://trendingradio.cl/",
     "stationUuid": "533d87f3-c812-4f91-aa92-f826bf164469",
-    "checkedAt": "2026-10-09T10:56:34.948Z",
+    "checkedAt": "2026-10-10T10:11:48.356Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -814,7 +884,7 @@
     "favicon": null,
     "homepage": "https://emisora.cl/ufro-clasica/",
     "stationUuid": "86049fbe-6c5f-48ad-a4c2-f189806025d2",
-    "checkedAt": "2026-10-09T10:56:35.225Z",
+    "checkedAt": "2026-10-10T10:11:48.570Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -834,7 +904,7 @@
     "favicon": "null",
     "homepage": "https://clubretrohits.cl/",
     "stationUuid": "7a03fe27-35ec-4ef6-8c0c-023a4d46c18a",
-    "checkedAt": "2026-10-09T10:56:35.720Z",
+    "checkedAt": "2026-10-10T10:11:49.141Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -856,7 +926,7 @@
     "favicon": "https://www.fmdos.cl/wp-content/uploads/2025/05/cropped-fmdos-logo@800x-192x192.webp",
     "homepage": "https://www.fmdos.cl/",
     "stationUuid": "ab715251-9809-4c48-886c-781f283f55ca",
-    "checkedAt": "2026-10-09T10:56:35.988Z",
+    "checkedAt": "2026-10-10T10:11:49.364Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
@@ -876,7 +946,7 @@
     "favicon": "https://www.fmdos.cl/wp-content/uploads/2025/05/cropped-fmdos-logo@800x-192x192.webp",
     "homepage": "https://www.fmdos.cl/",
     "stationUuid": "a3f8d7d7-274e-4fac-a03e-2577f80b55e9",
-    "checkedAt": "2026-10-09T10:56:36.251Z",
+    "checkedAt": "2026-10-10T10:11:49.561Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
@@ -893,7 +963,7 @@
     "favicon": "https://ctmradio.hopto.org/app/assets/favicon.png",
     "homepage": "https://ctmradio.hopto.org/",
     "stationUuid": "b06e7936-1794-48ec-861e-fcd60f29acbd",
-    "checkedAt": "2026-10-09T10:56:38.398Z",
+    "checkedAt": "2026-10-10T10:11:51.882Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -910,7 +980,7 @@
     "favicon": null,
     "homepage": "https://stations.radioclub80.cl/",
     "stationUuid": "05c5b4c6-9077-4ea4-aa2b-b75f11e64dea",
-    "checkedAt": "2026-10-09T10:56:39.037Z",
+    "checkedAt": "2026-10-10T10:11:52.485Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -929,7 +999,7 @@
     "favicon": null,
     "homepage": "http://orocoipo.cl/",
     "stationUuid": "638d34f7-e633-492e-9e7d-f9fbe0cc71ba",
-    "checkedAt": "2026-10-09T10:56:39.918Z",
+    "checkedAt": "2026-10-10T10:11:53.278Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -949,7 +1019,7 @@
     "favicon": null,
     "homepage": "https://fanatica.cl/",
     "stationUuid": "bdc0a04a-809d-454f-9f79-9f95929c60e1",
-    "checkedAt": "2026-10-09T10:56:40.632Z",
+    "checkedAt": "2026-10-10T10:11:53.879Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -968,7 +1038,7 @@
     "favicon": "https://www.punto9.cl/assets/logo-ec474d16.png",
     "homepage": "https://www.punto9.cl/",
     "stationUuid": "46620141-c7d1-4f26-b691-c6db57e83334",
-    "checkedAt": "2026-10-09T10:56:41.905Z",
+    "checkedAt": "2026-10-10T10:11:55.087Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -987,7 +1057,7 @@
     "favicon": "https://www.retroplustv.com/gallery/LOGO%20RETRO%20PLUS%20582X198-ts1680109231.jpg?ts=1767353319",
     "homepage": "https://www.retroplustv.com/",
     "stationUuid": "ea4a7bfc-0159-4da3-b136-26727d8a3644",
-    "checkedAt": "2026-10-09T10:56:43.066Z",
+    "checkedAt": "2026-10-10T10:11:56.208Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1006,9 +1076,28 @@
     "favicon": "https://www.retroplustv.com/gallery/LOGO%20RETRO%20PLUS%20582X198-ts1680109231.jpg?ts=1767353319",
     "homepage": "https://www.retroplustv.com/",
     "stationUuid": "6b838015-6713-498a-bfb9-f196d563bec1",
-    "checkedAt": "2026-10-09T10:56:43.137Z",
+    "checkedAt": "2026-10-10T10:11:56.516Z",
     "status": 404,
     "contentType": null,
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Caramelo San Vicente",
+    "url": "https://cast.radioservicios.cl:8316/sanvicente",
+    "country": "CL",
+    "type": "tropical ranchera",
+    "tags": [
+      "tropical ranchera"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://caramelofm.cl/",
+    "stationUuid": "4561ae13-4d54-4925-9342-d902c60c1c74",
+    "checkedAt": "2026-10-10T10:11:57.692Z",
+    "status": 404,
+    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   }
 ]

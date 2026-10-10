@@ -1,5 +1,35 @@
 [
   {
+    "name": "Ahenfie FM 106.1MHz",
+    "url": "https://radio.localstreamgh.com/listen/ahenfie_radio_/radio.mp3",
+    "country": "GH",
+    "type": "adazoa",
+    "tags": [
+      "adazoa",
+      "afrobeats",
+      "highlife",
+      "hiphop",
+      "hiplife",
+      "mrcrosby",
+      "music",
+      "news",
+      "sports",
+      "talks",
+      "twi pop",
+      "variety"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "akan,english",
+    "favicon": "https://cdn-profiles.tunein.com/s350080/images/logod.png?t=639145179930000000",
+    "homepage": "https://www.facebook.com/profile.php?id=61585644356322",
+    "stationUuid": "ef68e677-0d6d-4427-9a97-1b76f4619379",
+    "checkedAt": "2026-10-10T10:31:42.798Z",
+    "status": 416,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 416"
+  },
+  {
     "name": "ATL FM 100.5MHz",
     "url": "https://atlfm1005.radioca.st/stream?type=http&nocache=231",
     "country": "GH",
@@ -23,7 +53,7 @@
     "favicon": "https://cdn-profiles.tunein.com/s190555/images/logod.jpg?t=637048450040000000",
     "homepage": "https://atlfmnews.com/",
     "stationUuid": "b3317562-5d0c-4e49-981b-4247fb84f5be",
-    "checkedAt": "2026-10-09T11:17:06.108Z",
+    "checkedAt": "2026-10-10T10:31:43.235Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -48,7 +78,7 @@
     "favicon": "https://scontent-los4-1.xx.fbcdn.net/v/t39.30808-6/481904456_980915947582722_2509686940645709777_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGejgxTxnRpRJ9CCw9zK5LjXsnjS-iwXEleyeNL6LBcSfcgIwfBvFxN_t_rMA8pIoOaYkEhFO365voxbRdvn0ar&_nc_ohc=Vz3f8__xxHYQ7kNvwFjEFcA&_nc_oc=Adof5lEygF1ehASTlCsKHfKWnCxDrfwVC8BeCHZdVRbPu44-577aDE7Iy4jK4dwuiNV1I-lHHRem6wdHSK5LZ3x8&_nc_zt=23&_nc_ht=scontent-los4-1.xx&_nc_gid=wLVi1jVRxwTz2nhR4BofnQ&_nc_ss=7b2a8&oh=00_Af-KU_oV7yZ7eL_SqtjZezjqFP9tAqNwpJNf9RO0PPQ9iQ&oe=6A260003",
     "homepage": "https://www.facebook.com/asaase99.5/",
     "stationUuid": "76585fb1-ed3b-48d6-b02b-07f7d98295de",
-    "checkedAt": "2026-10-09T11:17:07.623Z",
+    "checkedAt": "2026-10-10T10:31:44.644Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -68,10 +98,34 @@
     "favicon": "https://radio.steprotech.com/static/uploads/lampradio/album_art.1746605147.jpg",
     "homepage": "https://radio.steprotech.com/public/lampradio",
     "stationUuid": "ff018ec5-b9c4-4406-934f-07555b3a3fc3",
-    "checkedAt": "2026-10-09T11:17:07.945Z",
+    "checkedAt": "2026-10-10T10:31:44.909Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Hello Fm",
+    "url": "https://atunwadigital.streamguys1.com/hellofm",
+    "country": "GH",
+    "type": "entertainment",
+    "tags": [
+      "entertainment",
+      "music",
+      "news",
+      "politics",
+      "sports",
+      "variety"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "akan",
+    "favicon": "https://www.despitemedia.com/images/hello.jpg",
+    "homepage": "https://hellofm.peacefmonline.com/",
+    "stationUuid": "9e5d55f9-2b72-4f97-b720-aa68c007f663",
+    "checkedAt": "2026-10-10T10:31:45.343Z",
+    "status": 502,
+    "contentType": null,
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Kasapa Fm",
@@ -90,7 +144,7 @@
     "favicon": "https://cdn-radiotime-logos.tunein.com/s174903g.png",
     "homepage": "http://www.kasapafmonline.com/",
     "stationUuid": "917e0b8d-5120-4fdb-b672-8ad444716613",
-    "checkedAt": "2026-10-09T11:17:08.527Z",
+    "checkedAt": "2026-10-10T10:31:45.534Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -114,29 +168,7 @@
     "favicon": "https://www.mytunein.com/images/logos/neat1009fm.jpg",
     "homepage": "https://neatfm.peacefmonline.com/",
     "stationUuid": "2efd332a-af0e-4dc6-b926-52e40138165c",
-    "checkedAt": "2026-10-09T11:17:08.833Z",
-    "status": 502,
-    "contentType": null,
-    "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Okay Fm",
-    "url": "http://okayfm.atunwadigital.streamguys1.com/okayfm",
-    "country": "GH",
-    "type": "entertainment",
-    "tags": [
-      "entertainment",
-      "music",
-      "news",
-      "variety"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "akan",
-    "favicon": "https://media-exp1.licdn.com/dms/image/C4E0BAQG5cPPTKAw0rg/company-logo_200_200/0/1565285120140?e=2159024400&v=beta&t=3f5W-lhKfL1vLGXD6LCzsKbK_TdxvX9h9oN4PD0jPkM",
-    "homepage": "https://okayfm.peacefmonline.com/",
-    "stationUuid": "e454bfa5-24a9-4c54-9815-2686424fb84a",
-    "checkedAt": "2026-10-09T11:17:09.213Z",
+    "checkedAt": "2026-10-10T10:31:45.785Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -159,7 +191,7 @@
     "favicon": "https://radio.steprotech.com/static/uploads/yediemradio/album_art.1737644657.jpg",
     "homepage": "https://yediemradio.com/",
     "stationUuid": "c520fff6-7dd8-4530-a7df-327538ea9584",
-    "checkedAt": "2026-10-09T11:17:10.621Z",
+    "checkedAt": "2026-10-10T10:31:47.474Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -176,7 +208,7 @@
     "favicon": null,
     "homepage": "https://heraldfmonline.radio12345.com/",
     "stationUuid": "0825b455-4807-4507-8e49-37320603a1c4",
-    "checkedAt": "2026-10-09T11:17:11.304Z",
+    "checkedAt": "2026-10-10T10:31:48.015Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -193,7 +225,7 @@
     "favicon": null,
     "homepage": "https://jesustempleradio.com/",
     "stationUuid": "f1259d1f-a0a4-4de9-8891-c76d6ced0903",
-    "checkedAt": "2026-10-09T11:17:11.366Z",
+    "checkedAt": "2026-10-10T10:31:48.036Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -210,7 +242,7 @@
     "favicon": "https://theproadmin.online/radio7/world/public/images/64702_radio.png",
     "homepage": "https://worldsradios.online/station/lawson-radio-963/19904",
     "stationUuid": "72f9fe91-680f-4314-ade1-72e98ca4a68a",
-    "checkedAt": "2026-10-09T11:17:11.369Z",
+    "checkedAt": "2026-10-10T10:31:48.056Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -227,7 +259,7 @@
     "favicon": "https://radio.steprotech.com/static/uploads/meyahradio/album_art.1741619975.jpg",
     "homepage": "https://radio.steprotech.com/public/meyahradio",
     "stationUuid": "30c88d94-14e2-43f4-b265-e75218ccde9b",
-    "checkedAt": "2026-10-09T11:17:11.447Z",
+    "checkedAt": "2026-10-10T10:31:48.229Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -249,10 +281,30 @@
     "favicon": "https://cdn.onlineradiobox.com/img/logo/8/7038.v3.png",
     "homepage": "https://zaaradio.com/",
     "stationUuid": "00c5f7bd-03af-441e-8be4-465be329aed9",
-    "checkedAt": "2026-10-09T11:17:12.753Z",
+    "checkedAt": "2026-10-10T10:31:49.429Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Nyatefe Radio",
+    "url": "https://node-26.zeno.fm/gagafyhmh5zuv?rj-ttl=5&rj-tok=AAABdyiJ2-cAWkd2Hxi7W-MVNQ",
+    "country": "GH",
+    "type": "news",
+    "tags": [
+      "news",
+      "variety"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://cdn.onlineradiobox.com/img/logo/8/93948.v3.png",
+    "homepage": null,
+    "stationUuid": "8f53fa68-4345-4f0e-a58c-dddafdfa2be3",
+    "checkedAt": "2026-10-10T10:31:49.463Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "GBC Uniiq 95.7 FM",
@@ -268,7 +320,7 @@
     "favicon": null,
     "homepage": "https://www.gbcghana.com/home",
     "stationUuid": "6e24ba7a-460b-4e1f-baf0-025875ba642f",
-    "checkedAt": "2026-10-09T11:17:12.896Z",
+    "checkedAt": "2026-10-10T10:31:49.650Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
