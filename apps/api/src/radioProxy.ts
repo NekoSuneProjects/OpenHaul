@@ -705,6 +705,58 @@ function streamStation(app: FastifyInstance, station: RadioStation, format: Outp
 export async function registerRadioProxyRoutes(app: FastifyInstance) {
   const stations = stationRegistry(app);
 
+  // Aurora Kitsune is the single station-list source used by the website and game overlay.
+  // Last-good cache keeps stations available during a short directory outage.
+  let auroraCache: { stations: unknown[]; expiresAt: number; updatedAt: string } | null = null;
+  app.get("/api/v1/public/radio/aurora-stations", async (_request, reply) => {
+    if (auroraCache && auroraCache.expiresAt > Date.now()) {
+      reply.header("cache-control", "public, max-age=30");
+      return { ...auroraCache, source: "aurora-kitsune", stale: false };
+    }
+    try {
+      const upstream = await fetch("https://geo-node.fumikoecho.ca/api/stations", {
+        headers: { accept: "application/json", "user-agent": "OpenHaul/2.0" },
+        signal: AbortSignal.timeout(10000),
+      });
+      if (!upstream.ok) throw new Error("Aurora station feed returned " + upstream.status);
+      const feed = await upstream.json() as { stations?: unknown };
+      if (!Array.isArray(feed.stations) || !feed.stations.length) throw new Error("Aurora station feed empty");
+      const seen = new Set<string>();
+      const stations = feed.stations.flatMap((value): object[] => {
+        if (!value || typeof value !== "object") return [];
+        const row = value as Record<string, unknown>;
+        if (row.enabled === false) return [];
+        const id = String(row.id ?? "").trim();
+        const name = String(row.name ?? "").trim();
+        const country = String(row.country ?? "").toUpperCase();
+        if (!id || id.length > 120 || !name || !/^[A-Z]{2}$/.test(country) || seen.has(id)) return [];
+        const candidate = String(row.stream_path ?? "");
+        const streamPath = /^\/stream\/[A-Za-z]{2}\/[a-zA-Z0-9_%.~-]+\.mp3$/.test(candidate)
+          ? candidate : "/stream/" + country + "/" + encodeURIComponent(id) + ".mp3";
+        seen.add(id);
+        return [{
+          id, name, country, station_region: String(row.station_region ?? "").slice(0, 120),
+          genre: String(row.genre ?? "Live radio").slice(0, 120),
+          language_code: String(row.language_code ?? "").slice(0, 10),
+          stream_url: "https://geo-node.fumikoecho.ca" + streamPath,
+          enabled: true,
+        }];
+      });
+      if (!stations.length) throw new Error("Aurora station feed contains no valid stations");
+      stations.sort((a: any, b: any) => Number(b.country === "CA") - Number(a.country === "CA") ||
+        a.country.localeCompare(b.country) || a.station_region.localeCompare(b.station_region) || a.name.localeCompare(b.name));
+      auroraCache = { stations, expiresAt: Date.now() + 60000, updatedAt: new Date().toISOString() };
+      reply.header("cache-control", "public, max-age=30");
+      return { ...auroraCache, source: "aurora-kitsune", stale: false };
+    } catch {
+      if (auroraCache) {
+        reply.header("cache-control", "public, max-age=10");
+        return { ...auroraCache, source: "aurora-kitsune", stale: true };
+      }
+      return reply.code(503).send({ error: "aurora_radio_unavailable", stations: [] });
+    }
+  });
+
   app.get("/api/v1/public/radio/catalog", async (request, reply) => {
     const { limit } = catalogQuerySchema.parse(request.query);
     const params = new URLSearchParams({
