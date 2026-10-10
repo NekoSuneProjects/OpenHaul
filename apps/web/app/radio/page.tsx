@@ -132,7 +132,7 @@ export default function RadioPage() {
       } catch { if (active) setNowPlaying(null); }
     };
     void update();
-    const timer = setInterval(() => void update(), 20000);
+    const timer = setInterval(() => void update(), 5000);
     return () => { active = false; clearInterval(timer); };
   }, [playingId]);
 
