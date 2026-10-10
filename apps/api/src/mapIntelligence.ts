@@ -24,6 +24,7 @@ type ExternalDriver = {
   playerId?: string;
   vtcId?: number | null;
   updatedAt?: string;
+  stale?: boolean;
 };
 
 let tmpLiveCache: { expiresAt: number; value: ExternalDriver[] } | null = null;
@@ -148,7 +149,7 @@ async function truckersMpViewportDrivers(
     for (const driver of result.data) {
       const key = driver.driverId + ":" + (driver.server ?? "");
       deduped.set(key, { ...driver, updatedAt: result.updatedAt || driver.updatedAt,
-        ...(result.stale ? { source: "truckersmp-provider" as const } : {}) });
+        stale: result.stale });
     }
   }
 
@@ -278,7 +279,7 @@ async function truckersMpWideDrivers(): Promise<ExternalDriver[]> {
           return parseTruckersMpRows(await response.json(), area.server);
           },
         );
-        return snapshot.data.map(driver => ({ ...driver, updatedAt: snapshot.updatedAt || driver.updatedAt }));
+        return snapshot.data.map(driver => ({ ...driver, updatedAt: snapshot.updatedAt || driver.updatedAt, stale: snapshot.stale }));
       }));
       value = areas.flat();
     }
@@ -462,10 +463,12 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       generatedAt: new Date().toISOString(),
       game: query.game,
       count: drivers.length,
+      trackerStatus: drivers.some(driver => driver.stale) ? "stale" : "live",
+      staleDrivers: drivers.filter(driver => driver.stale).length,
       totalOnline: relevantServers.reduce((sum, server) => sum + server.players, 0),
       openHaulOnline: clientPresences.length,
       drivers,
-      traffic: densityTrafficClusters(drivers),
+      traffic: densityTrafficClusters(drivers.filter(driver => !driver.stale)),
       servers: relevantServers,
     };
   });
@@ -619,7 +622,7 @@ export async function registerMapIntelligenceRoutes(app: FastifyInstance) {
       generatedAt: new Date().toISOString(),
       traffic: [
         ...trafficClusters(trafficInput.filter((driver) => !driver.driverId.startsWith("tmp:"))),
-        ...densityTrafficClusters(externalOnly),
+        ...densityTrafficClusters(externalOnly.filter(driver => !driver.stale)),
       ],
       staff: [...openHaulStaff, ...tmpStaff],
       specialCargo: missions.map((record: any) => ({
