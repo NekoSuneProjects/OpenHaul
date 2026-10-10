@@ -1,3 +1,4 @@
+import { getStreamNowPlaying } from "./radioMetadata.js";
 import { spawn } from "node:child_process";
 import type { FastifyInstance } from "fastify";
 import { z } from "zod";
@@ -817,6 +818,30 @@ export async function registerRadioProxyRoutes(app: FastifyInstance) {
       stations: [...stations.values()].map(stationPublicJson),
       note: "Configured/built-in stations. Use /api/v1/public/radio/directory for the worldwide directory.",
     };
+  });
+
+  // Shared now-playing API for station catalogue, site and overlay clients.
+  // URLs are resolved server-side from known stations, never accepted from a browser.
+  app.get("/api/v1/public/radio/now-playing/:stationId", async (request, reply) => {
+    const { stationId } = z.object({ stationId: z.string().min(1).max(120) }).parse(request.params);
+    let station = stations.get(stationId.toLowerCase()) ?? null;
+    if (!station && /^rb-[a-z0-9-]{8,110}$/i.test(stationId)) {
+      const row = await resolveRadioBrowserStation(stationId.slice(3));
+      station = row ? radioBrowserToStation(row) : null;
+    }
+    if (!station) return reply.code(404).send({ error: "radio_station_not_found" });
+    try {
+      const metadata = await getStreamNowPlaying(station.sourceUrl);
+      reply.header("cache-control", "public, max-age=10");
+      return { station: { id: station.id, name: station.name, listen_url: station.sourceUrl }, ...metadata };
+    } catch {
+      reply.header("cache-control", "public, max-age=5");
+      return {
+        station: { id: station.id, name: station.name, listen_url: station.sourceUrl },
+        song: null, artist: null, title: null, source: "unavailable",
+        checkedAt: new Date().toISOString(),
+      };
+    }
   });
 
   app.get("/api/v1/public/radio/stations/:stationId", async (request, reply) => {
