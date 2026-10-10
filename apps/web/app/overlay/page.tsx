@@ -317,9 +317,9 @@ function OverlayContent() {
   useEffect(() => {
     let active = true;
     const load = async () => {
-      const id = selectedRadio?.id?.replace(/^aurora-/, "") || "";
+      const id = selectedRadio?.id || "";
       // The catalogue and online-search IDs resolve through the public station registry.
-      if (!id || !/^(rb-[a-z0-9-]{8,110}|[a-z0-9-]{1,64})$/i.test(id)) {
+      if (!id || !/^(aurora-[a-z0-9_.-]{1,120}|rb-[a-z0-9-]{8,110}|[a-z0-9-]{1,64})$/i.test(id)) {
         if (active) setRadioNowPlaying(null);
         return;
       }
@@ -978,7 +978,7 @@ function OverlayContent() {
                     {catalogRadioLoading
                       ? "Loading worldwide active radio catalog…"
                       : (catalogRadioStations.length).toLocaleString() + " active stations available"}
-                    {onlineRadioStations.length ? " · " + onlineRadioStations.length + " extra search results" : ""}
+                    
                     {radioCatalogVersion && !Number.isNaN(Date.parse(radioCatalogVersion))
                       ? " · catalog " + new Date(radioCatalogVersion).toLocaleString()
                       : ""}
