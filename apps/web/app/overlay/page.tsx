@@ -935,24 +935,12 @@ function OverlayContent() {
                   </select>
                   <input
                     value={radioQuery}
-                    onChange={(event) => {
-                      setRadioQuery(event.target.value);
-                      setOnlineRadioStations([]);
-                      setOnlineRadioError("");
-                    }}
-                    onKeyDown={(event) => {
-                      if (event.key === "Enter") void searchOnlineRadio();
-                    }}
+                    onChange={(event) => setRadioQuery(event.target.value)}
+                    
                     placeholder="Search station, country, category, language or codec"
                     aria-label="Search radio stations"
                   />
-                  <button
-                    type="button"
-                    disabled={!radioQuery.trim() || onlineRadioLoading}
-                    onClick={() => void searchOnlineRadio()}
-                  >
-                    {onlineRadioLoading ? "Searching…" : "Search online"}
-                  </button>
+                  
                 </div>
               </div>
 
@@ -988,9 +976,7 @@ function OverlayContent() {
                     Showing {allVisibleRadioStations.length.toLocaleString()} of {allRadioSearchResults.length.toLocaleString()} matches. Search to narrow the list.
                   </div>
                 ) : null}
-                {onlineRadioError ? (
-                  <div className="gameOverlayRadioEmpty">Online search failed: {onlineRadioError}</div>
-                ) : null}
+                
               </div>
             </section>
             <audio
