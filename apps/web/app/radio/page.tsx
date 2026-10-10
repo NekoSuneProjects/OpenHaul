@@ -87,13 +87,13 @@ export default function RadioPage() {
         if (!res.ok) throw new Error("Aurora feed unavailable");
         const feed = await res.json() as { stations?: Array<{
           id: string; name: string; country: string; station_region?: string;
-          genre?: string; language_code?: string; stream_url: string;
+          genre?: string; language_code?: string; stream_url: string; favicon?: string | null;
         }> };
         if (!active) return;
         const rows: DirectoryStation[] = (feed.stations || []).map(station => ({
           id: "aurora-" + station.id, name: station.name, country: station.country,
           state: station.station_region || null, genre: station.genre || "Live radio",
-          language: station.language_code || null, codec: "MP3",
+          language: station.language_code || null, codec: "MP3", favicon: station.favicon || null,
           playback: { browser: station.stream_url, direct: station.stream_url, gameMp3: station.stream_url },
         }));
         setAuroraStations(rows);
