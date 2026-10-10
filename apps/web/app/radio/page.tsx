@@ -65,7 +65,7 @@ function badgeText(station: DirectoryStation) {
 export default function RadioPage() {
   const [stations, setStations] = useState<DirectoryStation[]>([]);
   const [countries, setCountries] = useState<Country[]>([]);
-  const [country, setCountry] = useState("CA");
+  const [country, setCountry] = useState("ALL");
   const [query, setQuery] = useState("");
   const [tag, setTag] = useState("");
   const [codec, setCodec] = useState("");
@@ -77,48 +77,46 @@ export default function RadioPage() {
   const [queuedId, setQueuedId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
+  const [auroraStations, setAuroraStations] = useState<DirectoryStation[]>([]);
   useEffect(() => {
-    fetch(`${api}/api/v1/public/radio/countries`, { cache: "no-store" })
-      .then((response) => response.ok ? response.json() : Promise.reject())
-      .then((data) => setCountries(data.countries ?? []))
-      .catch(() => setCountries([{ code: "CA", count: 0 }, { code: "US", count: 0 }, { code: "GB", count: 0 }]));
+    let active = true;
+    const update = async () => {
+      try {
+        const res = await fetch(api + "/api/v1/public/radio/aurora-stations", { cache: "no-store" });
+        if (!res.ok) throw new Error("Aurora feed unavailable");
+        const feed = await res.json() as { stations?: Array<{
+          id: string; name: string; country: string; station_region?: string;
+          genre?: string; language_code?: string; stream_url: string;
+        }> };
+        if (!active) return;
+        const rows: DirectoryStation[] = (feed.stations || []).map(station => ({
+          id: "aurora-" + station.id, name: station.name, country: station.country,
+          state: station.station_region || null, genre: station.genre || "Live radio",
+          language: station.language_code || null, codec: "MP3",
+          playback: { browser: station.stream_url, direct: station.stream_url, gameMp3: station.stream_url },
+        }));
+        setAuroraStations(rows);
+        setCountries([...new Set(rows.map(row => row.country || "").filter(Boolean))]
+          .map(code => ({ code, count: rows.filter(row => row.country === code).length })));
+      } catch { /* Keep last known stations during outages. */ }
+    };
+    void update();
+    const interval = setInterval(() => void update(), 60000);
+    return () => { active = false; clearInterval(interval); };
   }, []);
 
   useEffect(() => {
-    let active = true;
-    const timer = window.setTimeout(async () => {
-      setLoading(true);
-      const params = new URLSearchParams({
-        country,
-        page: String(page),
-        pageSize: "60",
-      });
-      if (query.trim()) params.set("q", query.trim());
-      if (tag.trim()) params.set("tag", tag.trim());
-      if (codec) params.set("codec", codec);
-
-      try {
-        const response = await fetch(`${api}/api/v1/public/radio/directory?${params.toString()}`, { cache: "no-store" });
-        if (!response.ok) throw new Error("Radio directory unavailable");
-        const data = await response.json() as DirectoryResponse;
-        if (!active) return;
-        setStations(data.stations ?? []);
-        setHasNext(Boolean(data.hasNext));
-      } catch {
-        if (active) {
-          setStations([]);
-          setHasNext(false);
-        }
-      } finally {
-        if (active) setLoading(false);
-      }
-    }, 250);
-
-    return () => {
-      active = false;
-      window.clearTimeout(timer);
-    };
-  }, [country, query, tag, codec, page]);
+    const term = query.trim().toLowerCase();
+    const matches = auroraStations.filter(station =>
+      (country === "ALL" || station.country === country) &&
+      (!term || [station.name, station.country, station.state, station.genre].some(value =>
+        String(value || "").toLowerCase().includes(term))) &&
+      (!tag.trim() || String(station.genre || "").toLowerCase().includes(tag.trim().toLowerCase())) &&
+      (!codec || codec.toLowerCase() === "mp3"));
+    setStations(matches.slice((page - 1) * 60, page * 60));
+    setHasNext(matches.length > page * 60);
+    setLoading(false);
+  }, [auroraStations, country, query, tag, codec, page]);
 
   useEffect(() => setPage(1), [country, query, tag, codec]);
 
