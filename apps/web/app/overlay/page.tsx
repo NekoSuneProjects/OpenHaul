@@ -48,8 +48,6 @@ type MusicSearchResult = {
 };
 
 const api = process.env.NEXT_PUBLIC_API_URL ?? "";
-const radioCatalogBaseUrl = (process.env.NEXT_PUBLIC_RADIO_CATALOG_URL
-  ?? "https://raw.githubusercontent.com/NekoSuneProjects/OpenHaul/radio-catalog").replace(/\/+$/, "");
 
 function OverlayContent() {
   const params = useSearchParams();
@@ -72,16 +70,12 @@ function OverlayContent() {
   const [cargoMissions, setCargoMissions] = useState(initialMissions);
   const audioRef = useRef<HTMLAudioElement>(null);
   const musicFrameRef = useRef<HTMLIFrameElement>(null);
-  const [radioStations] = useState<RadioStation[]>([]);
   const [selectedRadioId, setSelectedRadioId] = useState("");
   const [radioQuery, setRadioQuery] = useState("");
   const [radioCategory, setRadioCategory] = useState("ALL");
-  const [onlineRadioStations, setOnlineRadioStations] = useState<RadioStation[]>([]);
   const [catalogRadioStations, setCatalogRadioStations] = useState<RadioStation[]>([]);
   const [catalogRadioLoading, setCatalogRadioLoading] = useState(true);
   const [radioCatalogVersion, setRadioCatalogVersion] = useState("");
-  const [onlineRadioLoading, setOnlineRadioLoading] = useState(false);
-  const [onlineRadioError, setOnlineRadioError] = useState("");
   const [radioPlaying, setRadioPlaying] = useState(false);
   const [radioNowPlaying, setRadioNowPlaying] = useState<{ song: string | null; source: string } | null>(null);
   const [radioVolume, setRadioVolume] = useState(0.7);
@@ -247,7 +241,7 @@ function OverlayContent() {
       }
     }
     return [...values].sort((a, b) => a.localeCompare(b));
-  }, [radioStations, catalogRadioStations, onlineRadioStations]);
+  }, [catalogRadioStations]);
 
   const filteredRadioStations = useMemo(() => {
     const query = radioQuery.trim().toLowerCase();
@@ -278,7 +272,7 @@ function OverlayContent() {
         .filter(Boolean)
         .some((value) => String(value).toLowerCase().includes(query));
     });
-  }, [radioQuery, radioCategory, radioStations, catalogRadioStations]);
+  }, [radioQuery, radioCategory, catalogRadioStations]);
 
   const allRadioSearchResults = useMemo(() => {
     const seen = new Set<string>();
@@ -300,7 +294,7 @@ function OverlayContent() {
       seen.add(key);
       return true;
     });
-  }, [filteredRadioStations, onlineRadioStations, radioCategory]);
+  }, [filteredRadioStations, radioCategory]);
 
   const allVisibleRadioStations = useMemo(
     () => allRadioSearchResults.slice(0, radioQuery.trim() ? 1000 : 500),
@@ -311,15 +305,15 @@ function OverlayContent() {
     () => [...catalogRadioStations].find((station) => station.id === selectedRadioId)
       ?? catalogRadioStations[0]
       ?? null,
-    [radioStations, catalogRadioStations, onlineRadioStations, selectedRadioId],
+    [catalogRadioStations, selectedRadioId],
   );
 
   useEffect(() => {
     let active = true;
     const load = async () => {
       const id = selectedRadio?.id || "";
-      // The catalogue and online-search IDs resolve through the public station registry.
-      if (!id || !/^(aurora-[a-z0-9_.-]{1,120}|rb-[a-z0-9-]{8,110}|[a-z0-9-]{1,64})$/i.test(id)) {
+      // Station IDs come exclusively from Aurora Kitsune.
+      if (!id || !/^aurora-[a-z0-9_.-]{1,120}$/i.test(id)) {
         if (active) setRadioNowPlaying(null);
         return;
       }
@@ -338,8 +332,7 @@ function OverlayContent() {
     return () => { active = false; clearInterval(timer); };
   }, [selectedRadio?.id]);
 
-  const searchOnlineRadio = async () => {
-    const query = radioQuery.trim();
+  const query = radioQuery.trim();
     if (!query) return;
 
     setOnlineRadioLoading(true);
