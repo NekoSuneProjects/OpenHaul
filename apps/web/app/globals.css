@@ -92,17 +92,40 @@ h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.06
 }
 
 .maplibregl-popup-content {
-  background: #0c1b14;
-  color: var(--text);
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  /* Keep map tooltips fully opaque so map tiles and road labels never bleed through. */
+  background: #07140e !important;
+  background-color: #07140e !important;
+  color: #e8f5ec !important;
+  opacity: 1 !important;
+  border: 1px solid #426b53 !important;
+  border-radius: 10px;
   padding: 12px 14px;
-  box-shadow: 0 16px 42px rgba(0,0,0,.35);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .72);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.maplibregl-popup-content .mapPopup {
+  background: #07140e !important;
+  color: #e8f5ec !important;
+  opacity: 1 !important;
+}
+
+.maplibregl-popup-content .mapPopup strong {
+  color: #e8f5ec !important;
+  opacity: 1 !important;
+}
+
+.maplibregl-popup-content .mapPopup div,
+.maplibregl-popup-content .mapPopup span,
+.maplibregl-popup-content .mapPopup p {
+  color: #b8d6c2 !important;
+  opacity: 1 !important;
 }
 
 .maplibregl-popup-tip {
-  border-top-color: #0c1b14 !important;
-  border-bottom-color: #0c1b14 !important;
+  border-top-color: #07140e !important;
+  border-bottom-color: #07140e !important;
 }
 
 .maplibregl-popup-close-button {
