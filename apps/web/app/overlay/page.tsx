@@ -332,62 +332,7 @@ function OverlayContent() {
     return () => { active = false; clearInterval(timer); };
   }, [selectedRadio?.id]);
 
-  const query = radioQuery.trim();
-    if (!query) return;
 
-    setOnlineRadioLoading(true);
-    setOnlineRadioError("");
-    try {
-      const params = new URLSearchParams({
-        page: "1",
-        pageSize: "100",
-        country: "ALL",
-        q: query,
-      });
-      const response = await fetch(api + "/api/v1/public/radio/directory?" + params.toString(), {
-        cache: "no-store",
-      });
-      if (!response.ok) throw new Error("Public radio search returned HTTP " + response.status);
-
-      const data = await response.json() as {
-        stations?: Array<{
-          id?: string;
-          stationUuid?: string | null;
-          name?: string;
-          country?: string | null;
-          language?: string | null;
-          genre?: string | null;
-          codec?: string | null;
-          bitrateKbps?: number | null;
-          source?: string | null;
-          playback?: { direct?: string | null; browser?: string | null };
-        }>;
-      };
-
-      const stations: RadioStation[] = (data.stations ?? []).flatMap((station, index): RadioStation[] => {
-        const url = station.playback?.direct || station.playback?.browser || "";
-        if (!url || /^https?:\/\/(?:127\.0\.0\.1|localhost)(?::|\/|$)/i.test(url)) return [];
-        return [{
-          id: "online-" + (station.id || station.stationUuid || index),
-          name: station.name || "Unknown station",
-          url,
-          country: station.country || undefined,
-          language: station.language || undefined,
-          genre: station.genre || undefined,
-          codec: station.codec || undefined,
-          bitrateKbps: station.bitrateKbps || undefined,
-          source: station.source || "public-directory",
-        }];
-      });
-
-      setOnlineRadioStations(stations);
-    } catch (error) {
-      setOnlineRadioStations([]);
-      setOnlineRadioError(error instanceof Error ? error.message : String(error));
-    } finally {
-      setOnlineRadioLoading(false);
-    }
-  };
 
   const buildMusicEmbed = (value: string) => {
     const raw = value.trim();
