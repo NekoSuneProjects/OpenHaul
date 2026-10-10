@@ -52,6 +52,64 @@ h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.06
 .driver { display:grid; grid-template-columns:1.3fr .8fr .8fr 1fr; gap:12px; align-items:center; border:1px solid rgba(29,72,50,.8); background:rgba(8,20,14,.86); border-radius:13px; padding:13px; }
 .driver strong { display:block; }
 .driver small { color:var(--muted); }
+
+.radioStationTags,
+.radioStationFormat {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.radioStationTagList {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-width: 0;
+  margin-bottom: 7px;
+}
+
+.radioStationTag {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-width: 0;
+  padding: 4px 8px;
+  border: 1px solid rgba(84, 224, 138, .22);
+  border-radius: 7px;
+  background: rgba(84, 224, 138, .07);
+  color: #b9e9ca;
+  font-size: .76rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.radioStationTags small,
+.radioStationFormat small {
+  display: block;
+  color: var(--muted);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.radioStationFormat .pill {
+  display: inline-flex;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.radioStationActions {
+  min-width: 0;
+  margin-top: 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.radioStationActions .button {
+  white-space: nowrap;
+}
+
 .pill { width:max-content; border:1px solid var(--line); border-radius:999px; padding:5px 9px; color:var(--accent); font-size:.75rem; font-weight:800; }
 
 .radio { position:fixed; left:0; right:0; bottom:0; z-index:30; background:rgba(5,14,9,.95); backdrop-filter:blur(16px); border-top:1px solid var(--line); }
@@ -62,10 +120,36 @@ h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height:.92; letter-spacing:-.06
 .track span { color:var(--muted); font-size:.84rem; margin-top:3px; }
 .play { width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:var(--panel-2); color:var(--text); cursor:pointer; font-size:1.05rem; }
 
+@media (max-width: 900px) {
+  .driver[style*="minmax(220px"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    align-items: start;
+  }
+
+  .driver[style*="minmax(220px"] > :first-child {
+    min-width: 0;
+  }
+
+  .radioStationActions {
+    grid-column: 1 / -1;
+    justify-content: flex-start !important;
+  }
+}
+
 @media (max-width: 760px) {
   .grid { grid-template-columns:1fr; }
   .links { display:none; }
   .driver { grid-template-columns:1fr 1fr; }
+}
+
+@media (max-width: 520px) {
+  .driver[style*="minmax(220px"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .radioStationActions {
+    grid-column: auto;
+  }
 }
 
 
