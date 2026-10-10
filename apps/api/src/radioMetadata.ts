@@ -135,7 +135,7 @@ export async function getStreamNowPlaying(url: string): Promise<StreamNowPlaying
   if (pending) return pending;
   const task = probeStreamNowPlaying(url)
     .then((value) => {
-      cache.set(url, { expires: Date.now() + (value.song ? 15000 : 30000), value });
+      cache.set(url, { expires: Date.now() + (value.song ? 5000 : 10000), value });
       if (cache.size > 500) cache.delete(cache.keys().next().value!);
       return value;
     })
