@@ -1,5 +1,22 @@
 [
   {
+    "name": "Mello FM Jamaica",
+    "url": "http://peridot.streamguys.com:5660/live",
+    "country": "JM",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://mellofmjamaica.com/",
+    "stationUuid": "d752e163-f358-4526-9bd2-64d8a8fadb53",
+    "checkedAt": "2026-10-11T10:45:56.517Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
     "name": "Jamaica Dancehall Radio",
     "url": "https://stream.jamaicadancehallradio.com/listen/jamaica_dancehall_radio/radio.mp3",
     "country": "JM",
@@ -16,10 +33,30 @@
     "favicon": null,
     "homepage": "https://jamaicadancehallradio.com/",
     "stationUuid": "be9a69a1-56f2-4ba3-a9e9-c8bd55834ac7",
-    "checkedAt": "2026-10-10T10:39:05.853Z",
+    "checkedAt": "2026-10-11T10:45:56.944Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Mello Radio 88 FM",
+    "url": "http://peridot.streamguys.com:5660/live",
+    "country": "JM",
+    "type": "dancehall",
+    "tags": [
+      "dancehall",
+      "reggae"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.mellofmjamaica.com/",
+    "stationUuid": "9620041f-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-11T10:45:57.048Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Roots 96.1 FM",
@@ -37,7 +74,7 @@
     "favicon": "https://radiosjamaica.com/sites/default/files/styles/116_x_116/public/radio/logos/logo-roots-961-fm.png",
     "homepage": "https://rootsfmjamaica.com/",
     "stationUuid": "8bf1e5dc-42ee-4acd-866a-8645479cbd38",
-    "checkedAt": "2026-10-10T10:39:06.154Z",
+    "checkedAt": "2026-10-11T10:45:57.080Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -57,27 +94,24 @@
     "favicon": null,
     "homepage": "http://www.klassportsradio.com/",
     "stationUuid": "961f5829-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-10T10:39:06.361Z",
+    "checkedAt": "2026-10-11T10:45:57.201Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Stylz FM",
-    "url": "https://stream.zeno.fm/0d1hpcmqqy5tv",
+    "name": "KLAS ESPN Sports FM 89",
+    "url": "http://stream.zenolive.com/4uw093pbyvduv",
     "country": "JM",
-    "type": "love",
-    "tags": [
-      "love",
-      "reggae"
-    ],
+    "type": "MP3",
+    "tags": [],
     "codec": "MP3",
-    "bitrate": 192,
-    "language": "english,jamaican",
-    "favicon": "https://stylzfm.com/sites/default/files/favicon.ico",
-    "homepage": "http://www.stylzfm.com/",
-    "stationUuid": "2a2eeadb-3126-4048-b8f1-383c7f98c956",
-    "checkedAt": "2026-10-10T10:39:06.454Z",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "null",
+    "homepage": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://radiosjamaica.com/klas-sports-radio&ved=2ahUKEwi5pZ2As-6HAxXPDjQIHWsqO_cQFnoECB0QAQ&usg=AOvVaw1CyT2-HPN0vvov6Nu3A-I1",
+    "stationUuid": "aee4d1a0-519a-4b12-ae81-e735220993bc",
+    "checkedAt": "2026-10-11T10:45:57.760Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -94,9 +128,64 @@
     "favicon": "https://bit.ly/favicon.ico",
     "homepage": "https://bit.ly/3dS5wo0",
     "stationUuid": "0def5148-b222-43ba-9091-a410715f58e2",
-    "checkedAt": "2026-10-10T10:39:07.598Z",
+    "checkedAt": "2026-10-11T10:45:58.487Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Tarus Rilyes Radio new",
+    "url": "https://www.jango.com/stations/113321878/tunein",
+    "country": "JM",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.jango.com/stations/113321878/tunein",
+    "stationUuid": "55944306-9605-4bfb-99fd-9c0fd5fc8ba8",
+    "checkedAt": "2026-10-11T10:45:58.531Z",
+    "status": 403,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Mellow FM",
+    "url": "http://peridot.streamguys.com:5660/live",
+    "country": "JM",
+    "type": "various",
+    "tags": [
+      "various"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "english",
+    "favicon": "https://radiosjamaica.com/sites/default/files/styles/116_x_116/public/radio/logos/logo-mello-radio-montego-bay.png",
+    "homepage": "http://mellofmjamaica.com/",
+    "stationUuid": "ec16543f-5575-4901-b738-d11a693e3d86",
+    "checkedAt": "2026-10-11T10:45:58.741Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Omega KLAS Radio - God and Sports",
+    "url": "https://stream.zeno.fm/4uw093pbyvduv",
+    "country": "JM",
+    "type": "various",
+    "tags": [
+      "various"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://img1.wsimg.com/isteam/ip/110b9c42-85c9-44d5-b5fe-97c8299edea1/blob-797c83c.png",
+    "homepage": "https://omegaklas.com/",
+    "stationUuid": "69fde6c5-c30e-4022-adbd-61ec95d49718",
+    "checkedAt": "2026-10-11T10:45:59.071Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   }
 ]

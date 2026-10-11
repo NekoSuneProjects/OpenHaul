@@ -11,7 +11,7 @@
     "favicon": "https://i0.wp.com/astroradiogt.com/wp-content/uploads/2021/08/cropped-cropped-Banner-1.jpg?fit=180%2C180&ssl=1",
     "homepage": "https://astroradiogt.com/",
     "stationUuid": "7e163da0-4b78-4f0f-ad3c-162f55bba2b4",
-    "checkedAt": "2026-10-10T10:31:54.248Z",
+    "checkedAt": "2026-10-11T10:39:03.572Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -37,10 +37,32 @@
     "favicon": "https://statics-v3.streema.com/static/img/radios/profile_background_default_380.abf7abe7e86a.jpg",
     "homepage": "https://www.medios.gt/elcomandante",
     "stationUuid": "4f20bac8-09d8-4a2d-bb1f-bdd9a25826a4",
-    "checkedAt": "2026-10-10T10:31:55.064Z",
+    "checkedAt": "2026-10-11T10:39:04.172Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Central 91.9 FM",
+    "url": "http://live.myradioserver.net:7588/;",
+    "country": "GT",
+    "type": "bible",
+    "tags": [
+      "bible",
+      "evangelio",
+      "gospel",
+      "religious"
+    ],
+    "codec": "AAC+",
+    "bitrate": 32,
+    "language": "spanish",
+    "favicon": "https://laradiodepaz919.com/images/logo.png",
+    "homepage": "https://laradiodepaz919.com/",
+    "stationUuid": "a01028c9-02ef-41ee-ab7f-53e632e14a00",
+    "checkedAt": "2026-10-11T10:39:04.715Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Camino Santidad",
@@ -56,7 +78,7 @@
     "favicon": null,
     "homepage": "https://www.radiocaminodesantidad.com/",
     "stationUuid": "a010c3c2-bcac-4fdf-8028-bcd5ca17a858",
-    "checkedAt": "2026-10-10T10:31:55.893Z",
+    "checkedAt": "2026-10-11T10:39:04.899Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -76,10 +98,34 @@
     "favicon": "http://www.radiocultural.org/site/templates/yoo_infinite/favicon.ico",
     "homepage": "http://www.radiocultural.org/site",
     "stationUuid": "03533153-7b66-4028-a111-fc8d267c9958",
-    "checkedAt": "2026-10-10T10:31:56.243Z",
+    "checkedAt": "2026-10-11T10:39:05.230Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Emisoras Unidas 91.1 FM",
+    "url": "https://stream.zeno.fm/0zashcvc9zquv",
+    "country": "GT",
+    "type": "deportes",
+    "tags": [
+      "deportes",
+      "entretenimiento",
+      "information",
+      "noticias",
+      "radio hablada",
+      "variety"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://emisorasunidas.com/",
+    "stationUuid": "d489f3ef-782c-43e9-9165-9d9863db7de8",
+    "checkedAt": "2026-10-11T10:39:05.680Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "ARCA RADIO HD",
@@ -93,7 +139,7 @@
     "favicon": null,
     "homepage": "https://arcaradiohd.com/radioplayer/index.html",
     "stationUuid": "37749565-26fc-491c-981e-1e8434bb2fb1",
-    "checkedAt": "2026-10-10T10:31:57.851Z",
+    "checkedAt": "2026-10-11T10:39:06.731Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"

@@ -1,5 +1,135 @@
 [
   {
+    "name": "Paradise FM 00's & 10's",
+    "url": "https://stream.paradisefm.cw/00s10s",
+    "country": "CW",
+    "type": "00s",
+    "tags": [
+      "00s",
+      "10s",
+      "music",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "willemstad",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240830_090036010.jpg?alt=media&token=a1458f19-fb94-4f54-85e6-449b151630b4",
+    "homepage": "http://paradise.cw/",
+    "stationUuid": "a2ae6442-1297-4676-95ab-4fbf8d1a5ccb",
+    "checkedAt": "2026-10-11T10:25:52.395Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Paradise FM 60s & 70s",
+    "url": "https://stream.paradisefm.cw/60s70s",
+    "country": "CW",
+    "type": "60s",
+    "tags": [
+      "60s",
+      "70s",
+      "music",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "willemstad",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240830_085815429.jpg?alt=media&token=96ee0b32-9993-4842-916d-450162276bce",
+    "homepage": "http://paradise.cw/",
+    "stationUuid": "41948753-a7ca-40ce-852d-554a1e5cee69",
+    "checkedAt": "2026-10-11T10:25:52.397Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Paradise FM 80's & 90's",
+    "url": "https://stream.paradisefm.cw/80s90s",
+    "country": "CW",
+    "type": "80s",
+    "tags": [
+      "80s",
+      "90s",
+      "music",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "willemstad",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240830_085927930.jpg?alt=media&token=c3f2d6dd-6706-436b-bae6-57807357228c",
+    "homepage": "http://paradise.cw/",
+    "stationUuid": "9f848be9-c47b-4f84-b0ab-83d8c7cc9a69",
+    "checkedAt": "2026-10-11T10:25:52.399Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Paradise FM Nonstop",
+    "url": "https://stream.paradisefm.cw/ParadiseNonstop",
+    "country": "CW",
+    "type": "classic",
+    "tags": [
+      "classic",
+      "music",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "willemstad",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240830_090125214.jpg?alt=media&token=7c3b8daa-ae45-4725-9104-bf8a716c17c4",
+    "homepage": "http://paradise.cw/",
+    "stationUuid": "a8d28ee6-dcb3-4ce9-a6ea-0ca0bfc7f721",
+    "checkedAt": "2026-10-11T10:25:52.520Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Paradise FM Disco Inferno",
+    "url": "https://stream.paradisefm.cw/ParadiseDiscoInferno",
+    "country": "CW",
+    "type": "disco",
+    "tags": [
+      "disco",
+      "inferno",
+      "music",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "willemstad",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240830_090259478.jpg?alt=media&token=d7b6447d-0f85-4983-97c1-31b02344c9da",
+    "homepage": "http://paradise.cw/",
+    "stationUuid": "8cd9bdb8-d6ab-42de-853b-4f009dcc76d9",
+    "checkedAt": "2026-10-11T10:25:52.822Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Paradise FM Latin",
+    "url": "https://stream.paradisefm.cw/ParadiseLatin",
+    "country": "CW",
+    "type": "latin",
+    "tags": [
+      "latin",
+      "music",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "willemstad",
+    "favicon": null,
+    "homepage": "http://paradise.fm/",
+    "stationUuid": "09915bf0-a722-49c0-92f7-e9951c45e53e",
+    "checkedAt": "2026-10-11T10:25:52.859Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
     "name": "Easy 97.9 FM",
     "url": "http://64.150.176.42:8011/live",
     "country": "CW",
@@ -11,7 +141,7 @@
     "favicon": null,
     "homepage": "https://www.korsou.fm/",
     "stationUuid": "28818d80-a73d-4b28-993a-b9fa501f2d97",
-    "checkedAt": "2026-10-10T10:17:29.075Z",
+    "checkedAt": "2026-10-11T10:25:52.875Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -28,7 +158,7 @@
     "favicon": null,
     "homepage": "https://www.korsou.fm/",
     "stationUuid": "57655ddc-5c9e-4ee6-8a92-d0d5b03c694e",
-    "checkedAt": "2026-10-10T10:17:29.097Z",
+    "checkedAt": "2026-10-11T10:25:52.951Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"

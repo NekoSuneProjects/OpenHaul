@@ -14,10 +14,37 @@
     "favicon": "http://www.dhakafm904.com/assets/images/logo.png",
     "homepage": "http://www.dhakafm904.com/",
     "stationUuid": "520d1aba-0149-47bb-a007-fdf903ec2d1a",
-    "checkedAt": "2026-10-10T10:04:13.768Z",
+    "checkedAt": "2026-10-11T10:12:58.356Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Mellow Bangla",
+    "url": "https://radio.mellowbangla.com/stream",
+    "country": "BD",
+    "type": "bangla",
+    "tags": [
+      "bangla",
+      "bangla fm",
+      "bangla music",
+      "bangla radio",
+      "bangladesh",
+      "bengali",
+      "bengali music",
+      "folk",
+      "romantic"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "bengali,english,hindi",
+    "favicon": "https://www.mellowbangla.com/icon.png",
+    "homepage": "https://www.mellowbangla.com/",
+    "stationUuid": "58940095-dc8b-477f-a7e1-cbac01932f5c",
+    "checkedAt": "2026-10-11T10:12:58.356Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Dhaka FM",
@@ -34,9 +61,26 @@
     "favicon": "https://i.postimg.cc/Z5MBwBZ5/bd-dhaka-fm.webp",
     "homepage": "https://dhakafm904.com/",
     "stationUuid": "aab51d1e-4cd8-4e93-b844-27813f2dfbb6",
-    "checkedAt": "2026-10-10T10:04:14.490Z",
+    "checkedAt": "2026-10-11T10:12:58.961Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Today",
+    "url": "https://stream-285.surfernetwork.com/8wv4d8g4344tv",
+    "country": "BD",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://i.postimg.cc/MT7JFPDK/bd-radio-today.webp",
+    "homepage": "https://radiotodaybd.fm/",
+    "stationUuid": "d41bb3e8-ebb1-4931-964f-0d9959c1f4cf",
+    "checkedAt": "2026-10-11T10:12:59.670Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   }
 ]

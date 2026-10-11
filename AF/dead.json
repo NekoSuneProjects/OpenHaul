@@ -1,24 +1,5 @@
 [
   {
-    "name": ".Quran",
-    "url": "https://backup.qurango.net/radio/ahmad_khader_altarabulsi",
-    "country": "AF",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "e5170b20-91f8-4410-bb05-0a4b3b139d1f",
-    "checkedAt": "2026-10-10T09:57:24.867Z",
-    "status": 500,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 500"
-  },
-  {
     "name": "BNR Horizont",
     "url": "http://stream.bnr.bg:8011/horizont.aac",
     "country": "AF",
@@ -32,7 +13,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "02c1d76e-b9c9-46a8-964b-816a2d1ef058",
-    "checkedAt": "2026-10-10T09:57:25.372Z",
+    "checkedAt": "2026-10-11T10:06:54.437Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -51,7 +32,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "106f6c75-b52f-4ab2-9354-d9a9b8051ca3",
-    "checkedAt": "2026-10-10T09:57:26.481Z",
+    "checkedAt": "2026-10-11T10:06:55.175Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -70,7 +51,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "9a3e9c69-dd83-47ec-aead-2f42f4f1503f",
-    "checkedAt": "2026-10-10T09:57:26.862Z",
+    "checkedAt": "2026-10-11T10:06:55.333Z",
     "status": 429,
     "contentType": "text/html",
     "lastFailure": "HTTP 429"
@@ -89,7 +70,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "cabeef31-afc3-4fff-98e1-67d4581e420c",
-    "checkedAt": "2026-10-10T09:57:27.573Z",
+    "checkedAt": "2026-10-11T10:06:55.889Z",
     "status": 429,
     "contentType": "text/html",
     "lastFailure": "HTTP 429"
@@ -108,7 +89,7 @@
     "favicon": null,
     "homepage": "http://web.archive.org/web/20200815210240if_/https://adultswim-vodlive.cdn.turner.com/live/aqua-teen/stream_7.m3u8",
     "stationUuid": "2569a11b-e21d-4f2c-a000-16bd7d458eb1",
-    "checkedAt": "2026-10-10T09:57:27.741Z",
+    "checkedAt": "2026-10-11T10:06:55.993Z",
     "status": 429,
     "contentType": "text/html",
     "lastFailure": "HTTP 429"
@@ -127,7 +108,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "49cfd049-27e1-46d0-9686-a47b9afd9eaa",
-    "checkedAt": "2026-10-10T09:57:28.461Z",
+    "checkedAt": "2026-10-11T10:06:56.359Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -146,7 +127,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "bbf84cf5-f376-4fe6-87d6-d8b238bcd0b9",
-    "checkedAt": "2026-10-10T09:57:28.772Z",
+    "checkedAt": "2026-10-11T10:06:56.596Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -165,7 +146,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "eab83fa6-c204-43e5-8688-9cd7b3f7244d",
-    "checkedAt": "2026-10-10T09:57:28.996Z",
+    "checkedAt": "2026-10-11T10:06:56.877Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -184,7 +165,7 @@
     "favicon": "https://www.veseloeradio.ru/design/images/assets/img/icons/touch-icon-ipad.png",
     "homepage": "https://www.veseloeradio.ru/",
     "stationUuid": "e8c33906-ca90-4f0a-a733-0091a0ec6238",
-    "checkedAt": "2026-10-10T09:57:29.386Z",
+    "checkedAt": "2026-10-11T10:06:57.083Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -203,10 +184,29 @@
     "favicon": null,
     "homepage": "https://fmtempo.com.br/",
     "stationUuid": "422cc9bc-74ff-4761-9f3d-744710ef7398",
-    "checkedAt": "2026-10-10T09:57:30.263Z",
+    "checkedAt": "2026-10-11T10:06:57.769Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Vesti FM",
+    "url": "http://icecast.vgtrk.cdnvideo.ru/vestifm_mp3_128kbps",
+    "country": "AF",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "532cecce-036d-4421-ba61-6299ed9f7cf3",
+    "checkedAt": "2026-10-11T10:06:57.903Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "WJLI (Ken Haron)",
@@ -222,7 +222,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "22b3bedc-61ce-44b5-b4f7-3250e35850a9",
-    "checkedAt": "2026-10-10T09:57:30.547Z",
+    "checkedAt": "2026-10-11T10:06:58.513Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -241,7 +241,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "b9490f76-a89e-4b58-a2e3-a546dfeff5d4",
-    "checkedAt": "2026-10-10T09:57:30.869Z",
+    "checkedAt": "2026-10-11T10:06:58.582Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -260,7 +260,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "ba555cb1-f947-4fcb-92ce-8375fc82cb80",
-    "checkedAt": "2026-10-10T09:57:31.178Z",
+    "checkedAt": "2026-10-11T10:06:58.795Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -279,7 +279,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "7c6ca795-e59b-4a74-a229-8567362182b9",
-    "checkedAt": "2026-10-10T09:57:31.194Z",
+    "checkedAt": "2026-10-11T10:06:58.989Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -298,7 +298,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "07852577-cdf7-4786-90ad-362dbd73ff97",
-    "checkedAt": "2026-10-10T09:57:31.357Z",
+    "checkedAt": "2026-10-11T10:06:59.086Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -317,7 +317,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "b16acd6a-b2c7-4cc2-96e7-dba7676b5562",
-    "checkedAt": "2026-10-10T09:57:31.757Z",
+    "checkedAt": "2026-10-11T10:06:59.373Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -336,7 +336,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "970577a4-58b5-4022-8a20-815cda13f0bd",
-    "checkedAt": "2026-10-10T09:57:31.794Z",
+    "checkedAt": "2026-10-11T10:06:59.470Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -355,7 +355,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "6a3c2435-6ba0-465c-84ee-fe68a07cef17",
-    "checkedAt": "2026-10-10T09:57:32.470Z",
+    "checkedAt": "2026-10-11T10:07:00.489Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -374,7 +374,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "52da67e2-ad8a-4e69-89fa-cf915b570685",
-    "checkedAt": "2026-10-10T09:57:32.760Z",
+    "checkedAt": "2026-10-11T10:07:00.880Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -393,7 +393,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "a51b5897-b5e4-44e2-9717-d7e9108e673b",
-    "checkedAt": "2026-10-10T09:57:33.052Z",
+    "checkedAt": "2026-10-11T10:07:01.151Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -412,7 +412,7 @@
     "favicon": "null",
     "homepage": "https://stream.vovmedia.vn/vov5",
     "stationUuid": "fb1df47f-278f-416c-bec5-4205b9742e6e",
-    "checkedAt": "2026-10-10T09:57:35.630Z",
+    "checkedAt": "2026-10-11T10:07:04.864Z",
     "status": 503,
     "contentType": "text/html",
     "lastFailure": "HTTP 503"

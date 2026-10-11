@@ -1,5 +1,73 @@
 [
   {
+    "name": "RADIO CAAPUCU FM 91.7",
+    "url": "http://radio.host.com.py:9452/;",
+    "country": "PY",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "indie",
+      "local radio",
+      "rock",
+      "rock nacional"
+    ],
+    "codec": "AAC+",
+    "bitrate": 80,
+    "language": "spanish",
+    "favicon": "https://turadio.com.py/wp-content/uploads/2019/10/caapucu-300x259.png",
+    "homepage": "https://turadio.com.py/caapucufm/",
+    "stationUuid": "df7c112f-75a3-49bc-9250-cee6688fbddd",
+    "checkedAt": "2026-10-11T10:59:55.669Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio ABC FM 98.5 (Asunción)",
+    "url": "https://media.streambrothers.com:8350/stream",
+    "country": "PY",
+    "type": "asunción",
+    "tags": [
+      "asunción",
+      "pop",
+      "rock",
+      "top40"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "asunción,espsñol",
+    "favicon": "null",
+    "homepage": "http://www.abc.com.pyl/",
+    "stationUuid": "28343ff5-b885-4a71-8b55-b4545686b500",
+    "checkedAt": "2026-10-11T10:59:55.783Z",
+    "status": 404,
+    "contentType": "text/plain",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio ABC Cardinal 730 AM (Asunción)",
+    "url": "https://media.streambrothers.com:8342/stream",
+    "country": "PY",
+    "type": "cardinal",
+    "tags": [
+      "cardinal",
+      "news",
+      "pop",
+      "sports",
+      "top40"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "asunción,spanish",
+    "favicon": "null",
+    "homepage": "http://www.abc.com.py/",
+    "stationUuid": "ea9b9934-8eb7-434c-ac13-2d249b80f11e",
+    "checkedAt": "2026-10-11T10:59:55.893Z",
+    "status": 404,
+    "contentType": "text/plain",
+    "lastFailure": "HTTP 404"
+  },
+  {
     "name": "Cuevas FM 91.7",
     "url": "https://radio.host.com.py:7020/;",
     "country": "PY",
@@ -17,7 +85,7 @@
     "favicon": "https://paraguayonline.net/wp-content/uploads/2019/03/cuevas.png",
     "homepage": "https://paraguayonline.net/cuevasfm/",
     "stationUuid": "88f74a2d-b52e-4fcf-9469-5fc5e2e6a2e5",
-    "checkedAt": "2026-10-10T10:53:57.159Z",
+    "checkedAt": "2026-10-11T10:59:56.973Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -40,10 +108,29 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20250110_213941532.jpg?alt=media&token=e07edbc2-8494-41bf-82ab-6f114efdf664",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "db29a363-60b4-4273-99b6-9fee973a7c1e",
-    "checkedAt": "2026-10-10T10:53:58.602Z",
+    "checkedAt": "2026-10-11T10:59:58.416Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "ABC Cardinal 730AM",
+    "url": "http://media.streambrothers.com:18342/stream",
+    "country": "PY",
+    "type": "news",
+    "tags": [
+      "news"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://www.abc.com.py/",
+    "stationUuid": "9b318d0a-7e91-499e-a445-7e1e2c3a4d49",
+    "checkedAt": "2026-10-11T10:59:58.471Z",
+    "status": 404,
+    "contentType": "text/plain",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio RQP 94.3 FM",
@@ -62,7 +149,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20241215_234329937.jpg?alt=media&token=f015eeac-3c79-4ae9-b799-b676845814d9",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "74f0fa54-8f7f-482e-9a75-9ea2335ec9f2",
-    "checkedAt": "2026-10-10T10:53:58.819Z",
+    "checkedAt": "2026-10-11T10:59:58.649Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
