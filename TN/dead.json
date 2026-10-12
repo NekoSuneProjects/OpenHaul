@@ -13,7 +13,7 @@
     "favicon": null,
     "homepage": "https://salafwayfm.ly/",
     "stationUuid": "82de94c3-12b1-49c1-b838-16d6a80603a1",
-    "checkedAt": "2026-10-11T11:08:17.347Z",
+    "checkedAt": "2026-10-12T12:04:04.714Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -32,10 +32,31 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5ace1127-0af5-4000-ba34-72f8b9314062",
-    "checkedAt": "2026-10-11T11:08:17.746Z",
+    "checkedAt": "2026-10-12T12:04:05.141Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Zitouna Zitouna FM",
+    "url": "https://radio.radiotunisienne.tn/radiozaitouna",
+    "country": "TN",
+    "type": "coran",
+    "tags": [
+      "coran",
+      "religion",
+      "sonnah"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": "https://www.tunisie-radio.com/sites/default/files/styles/medium_2/public/radio/zitouna-fm.jpg",
+    "homepage": "http://www.zitounafm.net/",
+    "stationUuid": "a6c8c797-e8b5-4a82-b5eb-756062a17c90",
+    "checkedAt": "2026-10-12T12:04:05.403Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "الشيخ سعد الغامدي",
@@ -51,7 +72,7 @@
     "favicon": "null",
     "homepage": "https://qurango.net/radio/saad_alghamdi",
     "stationUuid": "c87ff033-7ac9-4975-91f8-a54d304e99bf",
-    "checkedAt": "2026-10-11T11:08:20.393Z",
+    "checkedAt": "2026-10-12T12:04:06.930Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"

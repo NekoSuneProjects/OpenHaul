@@ -17,7 +17,7 @@
     "favicon": "https://assets.radioplayer.org/276/2761018/288/162/lly7zgkr.png",
     "homepage": "https://www.radioton.de/",
     "stationUuid": "bc56ba8f-1fec-4a20-b48a-c5b68c12b035",
-    "checkedAt": "2026-10-11T10:26:25.649Z",
+    "checkedAt": "2026-10-12T11:22:42.191Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -51,7 +51,7 @@
     "favicon": "https://flashbass.fm/wp-content/uploads/2025/02/LOGO_flashbass-350x100-1-webp.webp",
     "homepage": "https://flashbass.fm/",
     "stationUuid": "03ca33a8-4b40-43dc-8023-83e2c923a886",
-    "checkedAt": "2026-10-11T10:26:28.828Z",
+    "checkedAt": "2026-10-12T11:22:46.022Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -77,7 +77,7 @@
     "favicon": null,
     "homepage": "https://murzilkifm.de/",
     "stationUuid": "3a83e59d-95b3-4e3a-8087-2bc48e01d4e2",
-    "checkedAt": "2026-10-11T10:26:30.549Z",
+    "checkedAt": "2026-10-12T11:22:48.557Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -102,7 +102,7 @@
     "favicon": null,
     "homepage": "https://murzilkifm.de/",
     "stationUuid": "aabbb886-ee2c-494b-9b65-a8844ec8733f",
-    "checkedAt": "2026-10-11T10:26:30.565Z",
+    "checkedAt": "2026-10-12T11:22:48.589Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -125,7 +125,7 @@
     "favicon": "https://nomusic.online/static/favicon.svg",
     "homepage": "https://nomusic.online/",
     "stationUuid": "14e53497-1112-4110-8d0b-0595518f15b7",
-    "checkedAt": "2026-10-11T10:26:31.603Z",
+    "checkedAt": "2026-10-12T11:22:49.887Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -148,10 +148,66 @@
     "favicon": "https://nomusic.online/static/favicon.svg",
     "homepage": "https://nomusic.online/",
     "stationUuid": "6ecfb2e5-737b-46bd-8af3-d639e1a72df6",
-    "checkedAt": "2026-10-11T10:26:31.620Z",
+    "checkedAt": "2026-10-12T11:22:49.983Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 0 N - Gold on Radio",
+    "url": "https://0n-gold.radionetz.de/0n-gold.mp3",
+    "country": "DE",
+    "type": "50er",
+    "tags": [
+      "50er",
+      "50s",
+      "60er",
+      "60s",
+      "funk",
+      "oldies",
+      "pop",
+      "rock 'n' roll",
+      "soul",
+      "twist"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://www.0nradio.com/logos/0n-gold_600x600.jpg",
+    "homepage": "http://www.0nradio.com/",
+    "stationUuid": "f36b67a6-b7aa-4511-a2fa-53feed51abe2",
+    "checkedAt": "2026-10-12T11:22:50.253Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "- 0 N - Gold on Radio",
+    "url": "https://0n-gold.radionetz.de/0n-gold.aac",
+    "country": "DE",
+    "type": "50er",
+    "tags": [
+      "50er",
+      "50s",
+      "60er",
+      "60s",
+      "funk",
+      "oldies",
+      "pop",
+      "rock 'n' roll",
+      "soul",
+      "twist"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "german",
+    "favicon": "https://www.0nradio.com/logos/0n-gold_600x600.jpg",
+    "homepage": "http://www.0nradio.com/",
+    "stationUuid": "0204d7b0-6976-4495-89e6-8b33ca7cd6f7",
+    "checkedAt": "2026-10-12T11:22:50.268Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio RheinFM",
@@ -170,7 +226,7 @@
     "favicon": null,
     "homepage": "https://radio-rheinfm.de/",
     "stationUuid": "08116616-f2fe-4ec3-9cb4-2e5226dd8c64",
-    "checkedAt": "2026-10-11T10:26:34.459Z",
+    "checkedAt": "2026-10-12T11:22:53.694Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -195,7 +251,7 @@
     "favicon": null,
     "homepage": "http://www.rbiradio.eu/",
     "stationUuid": "c06508f0-644e-11ea-be63-52543be04c81",
-    "checkedAt": "2026-10-11T10:26:35.547Z",
+    "checkedAt": "2026-10-12T11:22:55.463Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -221,7 +277,27 @@
     "favicon": null,
     "homepage": "https://www.flaemingradio.de/Fl%C3%A4mingradio",
     "stationUuid": "4c088b95-8b28-4beb-bd19-43a15725048f",
-    "checkedAt": "2026-10-11T10:26:38.576Z",
+    "checkedAt": "2026-10-12T11:22:59.120Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Grammo - Das Schellack-Radio",
+    "url": "https://icecast.multhielemedia.de/radio/8060/grammo",
+    "country": "DE",
+    "type": "78",
+    "tags": [
+      "78",
+      "schellack"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "german",
+    "favicon": null,
+    "homepage": "https://www.radio-grammo.de/",
+    "stationUuid": "8158a60d-be01-4538-a30a-6f3244afc31d",
+    "checkedAt": "2026-10-12T11:23:00.791Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -241,7 +317,7 @@
     "favicon": "https://nostalgie-radio.de/themes/nrj_nostalgie/assets/images/logo/GER_LOGO_NOSTALGIE_CLAIM_DARK_BACKGROUND.svg",
     "homepage": "https://nostalgie-radio.de/",
     "stationUuid": "9e598675-8333-4cca-bd3b-f87ecfdf0701",
-    "checkedAt": "2026-10-11T10:26:41.739Z",
+    "checkedAt": "2026-10-12T11:23:04.047Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -264,7 +340,7 @@
     "favicon": null,
     "homepage": "http://larmo.online/",
     "stationUuid": "5b54d348-a32b-4a92-91da-f5baf2137ae6",
-    "checkedAt": "2026-10-11T10:26:44.650Z",
+    "checkedAt": "2026-10-12T11:23:08.409Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -286,7 +362,7 @@
     "favicon": null,
     "homepage": "http://www.radiobavariainternational.de/",
     "stationUuid": "96058719-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:26:45.298Z",
+    "checkedAt": "2026-10-12T11:23:09.705Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -306,7 +382,7 @@
     "favicon": "https://www.replay.fm/content/images/site/logo-replay.fm.png",
     "homepage": "https://www.replay.fm/",
     "stationUuid": "82bab6ae-a56f-4118-a733-2b7a6112624e",
-    "checkedAt": "2026-10-11T10:26:46.807Z",
+    "checkedAt": "2026-10-12T11:23:12.356Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -323,7 +399,7 @@
     "favicon": "https://beatsandcharts.de/_next/image?url=%2Flogo.png&w=640&q=75",
     "homepage": "https://beatsandcharts.de/",
     "stationUuid": "b9738ea6-0afb-4e69-bb57-fe5bfa1baddd",
-    "checkedAt": "2026-10-11T10:26:50.979Z",
+    "checkedAt": "2026-10-12T11:23:18.817Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -340,7 +416,7 @@
     "favicon": null,
     "homepage": "http://listen.coretime.fm/tunein-aac-hd",
     "stationUuid": "1b3e0e60-377c-43e1-a23a-79e4b42d7649",
-    "checkedAt": "2026-10-11T10:26:51.321Z",
+    "checkedAt": "2026-10-12T11:23:19.292Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -357,7 +433,7 @@
     "favicon": null,
     "homepage": "https://www.antenne1.de/",
     "stationUuid": "9e8e7bca-d499-4c7a-8b3d-026736e863b1",
-    "checkedAt": "2026-10-11T10:26:52.223Z",
+    "checkedAt": "2026-10-12T11:23:20.741Z",
     "status": 412,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 412"
@@ -374,10 +450,27 @@
     "favicon": "https://www.kulthitradio.de/storage/thumbs/192x192/r:1640084467/916.png",
     "homepage": "https://www.kulthitradio.de/",
     "stationUuid": "00293bee-b9aa-4721-871c-4c4fc7add485",
-    "checkedAt": "2026-10-11T10:26:52.598Z",
+    "checkedAt": "2026-10-12T11:23:21.226Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Munich Vinyl Radio",
+    "url": "https://stream.munichvinylradio.de/listen/mvr/stream.aac",
+    "country": "DE",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 296,
+    "language": null,
+    "favicon": "https://munichvinylradio.de/assets/header.webp",
+    "homepage": "https://munichvinylradio.de/",
+    "stationUuid": "14f3eaf9-b373-45f9-8347-241f35af5088",
+    "checkedAt": "2026-10-12T11:23:21.292Z",
+    "status": 401,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "MyClubRadio House Floor",
@@ -391,7 +484,7 @@
     "favicon": "https://myclubradio.com/wp-content/uploads/2022/05/front_myclubradio_com.png",
     "homepage": "https://myclubradio.com/",
     "stationUuid": "4eaf69b4-f99f-4bf2-9a14-0864a40d1074",
-    "checkedAt": "2026-10-11T10:26:52.655Z",
+    "checkedAt": "2026-10-12T11:23:21.351Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -408,10 +501,27 @@
     "favicon": "https://myclubradio.com/wp-content/uploads/2022/05/front_myclubradio_com.png",
     "homepage": "https://myclubradio.com/",
     "stationUuid": "54ec4d18-fb06-4b0d-8380-b2bca4c2334a",
-    "checkedAt": "2026-10-11T10:26:52.666Z",
+    "checkedAt": "2026-10-12T11:23:21.369Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Chostingen",
+    "url": "https://radio.chostingen.de/hls/radio_chostingen/live.m3u8",
+    "country": "DE",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 52,
+    "language": null,
+    "favicon": "https://chostingen.de/wp-content/uploads/2022/10/cropped-cropped-LOGO2-300-2.png",
+    "homepage": "https://chostingen.de/",
+    "stationUuid": "fffc9ef3-b62b-4b0a-a429-d43c6b5b5249",
+    "checkedAt": "2026-10-12T11:23:22.248Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Radio TEDDY",
@@ -425,14 +535,14 @@
     "favicon": "https://www.radioteddy.de/assets/favicons/android-icon-192x192.png",
     "homepage": "https://www.radioteddy.de/",
     "stationUuid": "80247bef-fdeb-41ad-b8f2-257239aaa8a2",
-    "checkedAt": "2026-10-11T10:26:54.296Z",
+    "checkedAt": "2026-10-12T11:23:23.658Z",
     "status": 410,
     "contentType": null,
     "lastFailure": "HTTP 410"
   },
   {
     "name": "Wolkenradio",
-    "url": "http://wolkenradio.spcast.eu:80/stream128?time=1790753421",
+    "url": "http://wolkenradio.spcast.eu:80/stream128?time=1791799900",
     "country": "DE",
     "type": "AAC",
     "tags": [],
@@ -442,7 +552,7 @@
     "favicon": "https://wolkenradio.net/wp-content/uploads/sites/10/2025/09/wolkenradio_logo_pictogram.png",
     "homepage": "https://www.wolkenradio.net/",
     "stationUuid": "09cd32bf-b92b-4f37-878f-45af0ada6e99",
-    "checkedAt": "2026-10-11T10:26:55.742Z",
+    "checkedAt": "2026-10-12T11:23:25.656Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -459,7 +569,7 @@
     "favicon": "https://crooze.eu/wp-content/uploads/christmasCROOZE-600x600px.png",
     "homepage": "https://crooze.eu/en/radiochannel/xmas-crooze/",
     "stationUuid": "854e775d-9cbd-4710-b70b-e745354d4e53",
-    "checkedAt": "2026-10-11T10:26:56.286Z",
+    "checkedAt": "2026-10-12T11:23:26.171Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -476,7 +586,7 @@
     "favicon": null,
     "homepage": "https://www.icf.radio/",
     "stationUuid": "c3730d41-3ca8-4e3b-8033-1cc293b6dd8b",
-    "checkedAt": "2026-10-11T10:26:57.845Z",
+    "checkedAt": "2026-10-12T11:23:27.867Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -493,7 +603,7 @@
     "favicon": null,
     "homepage": "http://www.instrumentalhits.de/",
     "stationUuid": "802f01ab-9ff1-45b6-a00c-00502e01c136",
-    "checkedAt": "2026-10-11T10:26:57.869Z",
+    "checkedAt": "2026-10-12T11:23:27.910Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -510,7 +620,7 @@
     "favicon": null,
     "homepage": "http://facebook.com/juergen.erdenman.7",
     "stationUuid": "2f1935ae-f400-4666-8b09-766e2c0bb272",
-    "checkedAt": "2026-10-11T10:26:58.355Z",
+    "checkedAt": "2026-10-12T11:23:28.654Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -527,7 +637,7 @@
     "favicon": "https://softrock.radio/assets/img/soft-rock-radio-logo-250px.png",
     "homepage": "https://softrock.radio/#page-top",
     "stationUuid": "45d294e4-7b58-4e72-9d54-17c57da6473a",
-    "checkedAt": "2026-10-11T10:26:58.373Z",
+    "checkedAt": "2026-10-12T11:23:28.978Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -550,7 +660,7 @@
     "favicon": "https://radioukwplus.eu/wp-content/uploads/2026/02/LeipzigInternational_logo512.png",
     "homepage": "https://radioukwplus.eu/",
     "stationUuid": "3b763e88-a035-4dd6-be1f-97606070149d",
-    "checkedAt": "2026-10-11T10:27:00.775Z",
+    "checkedAt": "2026-10-12T11:23:32.366Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -575,7 +685,7 @@
     "favicon": "https://radioukwplus.eu/wp-content/uploads/2026/02/RadioUKWplus-512.png",
     "homepage": "https://radioukwplus.eu/",
     "stationUuid": "7cde4dfc-d60b-4cea-8fa3-46cab68b76d9",
-    "checkedAt": "2026-10-11T10:27:01.786Z",
+    "checkedAt": "2026-10-12T11:23:33.572Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -596,7 +706,7 @@
     "favicon": null,
     "homepage": "https://radio.stratinator.com/",
     "stationUuid": "67241710-8521-4376-8844-b71345ea6b2c",
-    "checkedAt": "2026-10-11T10:27:03.492Z",
+    "checkedAt": "2026-10-12T11:23:35.899Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -635,7 +745,7 @@
     "favicon": null,
     "homepage": "https://www.bundestag.de/mediathek",
     "stationUuid": "e7c974eb-5b0c-4c08-843d-2104ceee14ec",
-    "checkedAt": "2026-10-11T10:27:03.743Z",
+    "checkedAt": "2026-10-12T11:23:36.180Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -657,7 +767,7 @@
     "favicon": null,
     "homepage": "http://www.kamikaze-radio.de/",
     "stationUuid": "9623cbd4-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:07.045Z",
+    "checkedAt": "2026-10-12T11:23:39.880Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -677,7 +787,7 @@
     "favicon": null,
     "homepage": "https://dir.rcast.net/radio/1018259/worldtree",
     "stationUuid": "797e732d-eba2-4843-89a9-b2eefccc0ec4",
-    "checkedAt": "2026-10-11T10:27:15.783Z",
+    "checkedAt": "2026-10-12T11:23:49.941Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -696,63 +806,7 @@
     "favicon": null,
     "homepage": "http://5.178.106.47:8000/cityhunter.mp3",
     "stationUuid": "f2b3fd53-b402-49ad-ade1-ef648e549174",
-    "checkedAt": "2026-10-11T10:27:17.188Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Russia Today Germany",
-    "url": "https://rt-ger.rttv.com/dvr/rtdeutsch/playlist.m3u8",
-    "country": "DE",
-    "type": "ard",
-    "tags": [
-      "ard",
-      "bbc world news",
-      "deutsche welle",
-      "deutschland",
-      "dw deutsch",
-      "dw english",
-      "germany",
-      "iptv",
-      "livestream",
-      "rt de",
-      "rt deutsch",
-      "russia today",
-      "zdf"
-    ],
-    "codec": "AAC,H.264",
-    "bitrate": 4664,
-    "language": "english,german,russian,ukrainian",
-    "favicon": "https://th.bing.com/th/id/OIP.fFhTxl0dHi7zOZGQEOor6wAAAA",
-    "homepage": "https://de.rt.com/",
-    "stationUuid": "f3c8ee2d-64ca-4988-98f9-147a224d12b3",
-    "checkedAt": "2026-10-11T10:27:18.030Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "RT Deutsch",
-    "url": "https://rt-ger.rttv.com/dvr/rtdeutsch/playlist.m3u8",
-    "country": "DE",
-    "type": "ard zdf",
-    "tags": [
-      "ard zdf",
-      "iptv",
-      "kreml",
-      "live",
-      "propaganda",
-      "russisches staatsfernsehen",
-      "wladimir putin"
-    ],
-    "codec": "AAC,H.264",
-    "bitrate": 4664,
-    "language": "german,russian",
-    "favicon": null,
-    "homepage": "https://de.rt.com/",
-    "stationUuid": "6471076a-305e-4e4e-bf7f-8460ba570afb",
-    "checkedAt": "2026-10-11T10:27:18.150Z",
+    "checkedAt": "2026-10-12T11:23:52.226Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -775,7 +829,7 @@
     "favicon": null,
     "homepage": "http://akademieradio.de/",
     "stationUuid": "02843d61-60d0-11e9-a622-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:18.153Z",
+    "checkedAt": "2026-10-12T11:23:54.696Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -809,7 +863,7 @@
     "favicon": null,
     "homepage": "https://radio-hbw.de/",
     "stationUuid": "a1e3ced1-e77c-4e56-a2f1-31f9ccd08006",
-    "checkedAt": "2026-10-11T10:27:18.155Z",
+    "checkedAt": "2026-10-12T11:23:54.699Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -838,7 +892,7 @@
     "favicon": null,
     "homepage": "https://welt.de/",
     "stationUuid": "cbe135fa-9f00-4c8c-b611-ef97d2fa9804",
-    "checkedAt": "2026-10-11T10:27:18.234Z",
+    "checkedAt": "2026-10-12T11:23:54.897Z",
     "status": 401,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 401"
@@ -866,33 +920,10 @@
     "favicon": null,
     "homepage": "https://www.welt.de/mediathek/",
     "stationUuid": "466eaec5-1d76-4fa0-8a6e-506dabc30c9e",
-    "checkedAt": "2026-10-11T10:27:18.742Z",
+    "checkedAt": "2026-10-12T11:23:55.580Z",
     "status": 401,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "- 0 N - Soft Pop on Radio",
-    "url": "https://0n-softpop.radionetz.de/0n-softpop.mp3",
-    "country": "DE",
-    "type": "balladen",
-    "tags": [
-      "balladen",
-      "lovesongs",
-      "pop",
-      "soft pop",
-      "soft rock"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "german",
-    "favicon": "https://www.0nradio.com/logos/0n-soft-pop_600x600.jpg",
-    "homepage": "http://www.0nradio.com/",
-    "stationUuid": "b20789de-29dc-46ac-8341-61991053cde8",
-    "checkedAt": "2026-10-11T10:27:22.099Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio Neue Hoffnung (AAC 96 kbps)",
@@ -910,7 +941,7 @@
     "favicon": "https://www.mnr.ch/favicon.ico",
     "homepage": "https://www.mnr.ch/radio/",
     "stationUuid": "27ff36ee-eee2-11e8-a471-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:28.321Z",
+    "checkedAt": "2026-10-12T11:24:04.754Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -931,7 +962,7 @@
     "favicon": "https://www.mnr.ch/favicon.ico",
     "homepage": "https://www.mnr.ch/radio/",
     "stationUuid": "a081725c-eee2-11e8-a471-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:28.344Z",
+    "checkedAt": "2026-10-12T11:24:04.820Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -956,7 +987,7 @@
     "favicon": null,
     "homepage": "https://www.eifelbeats.de/",
     "stationUuid": "68d8a67e-235f-4783-862a-1f7e9821ceaa",
-    "checkedAt": "2026-10-11T10:27:28.856Z",
+    "checkedAt": "2026-10-12T11:24:05.679Z",
     "status": 521,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 521"
@@ -979,7 +1010,7 @@
     "favicon": "https://cdn.mdrjump.de/resources/jump/img/favicons/apple-icon-120x120.png",
     "homepage": "http://www.jumpradio.de/musik/channel/inthemix",
     "stationUuid": "9639b393-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:29.887Z",
+    "checkedAt": "2026-10-12T11:24:07.355Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1002,7 +1033,7 @@
     "favicon": "https://www.mdrjump.de/resources/jump/img/favicons/apple-icon-120x120.png",
     "homepage": "http://www.jumpradio.de/musik/channel/inthemix",
     "stationUuid": "9616aba0-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:29.897Z",
+    "checkedAt": "2026-10-12T11:24:07.399Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1025,7 +1056,7 @@
     "favicon": "https://cdn.mdrjump.de/resources/jump/img/favicons/apple-icon-120x120.png",
     "homepage": "http://www.jumpradio.de/musik/channel/inthemix",
     "stationUuid": "963b5001-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:29.920Z",
+    "checkedAt": "2026-10-12T11:24:07.449Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1046,7 +1077,7 @@
     "favicon": null,
     "homepage": "http://sputnik.de/sendungen/musikspecials/sputnik-blackbeatz--100.html",
     "stationUuid": "962d4105-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:29.923Z",
+    "checkedAt": "2026-10-12T11:24:07.474Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1067,7 +1098,7 @@
     "favicon": null,
     "homepage": "http://sputnik.de/sendungen/musikspecials/sputnik-blackbeatz--100.html",
     "stationUuid": "963b7137-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:29.925Z",
+    "checkedAt": "2026-10-12T11:24:07.477Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1090,7 +1121,7 @@
     "favicon": null,
     "homepage": "https://connectingbeats.de/",
     "stationUuid": "b5a84062-ba98-431d-b4be-f6a2f165bfa6",
-    "checkedAt": "2026-10-11T10:27:33.456Z",
+    "checkedAt": "2026-10-12T11:24:13.124Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1114,7 +1145,7 @@
     "favicon": null,
     "homepage": "https://connectingbeats.de/",
     "stationUuid": "5e2aac7a-ae15-47f0-8fdb-7ace277bd541",
-    "checkedAt": "2026-10-11T10:27:33.758Z",
+    "checkedAt": "2026-10-12T11:24:13.147Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1138,10 +1169,35 @@
     "favicon": "https://www.evosonic.de/wp-content/uploads/2021/08/favicon.png",
     "homepage": "https://evosonic.de/",
     "stationUuid": "ef054585-43a1-4a8c-bdc2-1091de51580f",
-    "checkedAt": "2026-10-11T10:27:33.827Z",
+    "checkedAt": "2026-10-12T11:24:13.325Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Freies Sender Kombinat Hamburg",
+    "url": "http://stream1.datenkollektiv.net/fsk.mp3",
+    "country": "DE",
+    "type": "bürgerradio",
+    "tags": [
+      "bürgerradio",
+      "community radio",
+      "freies radio",
+      "fsk-hh",
+      "hamburch",
+      "moin",
+      "nicht-kommerzielles lokalradio"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "german,norddeutsch",
+    "favicon": null,
+    "homepage": "https://www.fsk-hh.org/",
+    "stationUuid": "d3ff43b1-642a-46ba-9e3c-b392040c8018",
+    "checkedAt": "2026-10-12T11:24:13.937Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio T Chemnitz (102.7 FM)",
@@ -1160,7 +1216,7 @@
     "favicon": "https://www.uplink-network.de/wp-content/uploads/2017/07/cropped-favicon.png",
     "homepage": "https://www.facebook.com/RadioT.Chemnitz/?locale=de_DE",
     "stationUuid": "165ab8e6-4baa-42c6-a6a0-a157b0b98726",
-    "checkedAt": "2026-10-11T10:27:34.646Z",
+    "checkedAt": "2026-10-12T11:24:14.128Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1186,7 +1242,7 @@
     "favicon": "https://www.bvb.de/content/dam/bvbweb/de/matches/football/profis/teams/157.svg",
     "homepage": "https://www.bvb.de/de/de/aktuelles/bvb-netradio.html",
     "stationUuid": "eab2ac02-65dc-45da-9129-a7e31165e8c4",
-    "checkedAt": "2026-10-11T10:27:34.674Z",
+    "checkedAt": "2026-10-12T11:24:14.191Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
@@ -1207,10 +1263,53 @@
     "favicon": null,
     "homepage": "https://radio.hs-merseburg.de/",
     "stationUuid": "bf9c5161-5f8a-434a-8e0d-363edab8c886",
-    "checkedAt": "2026-10-11T10:27:35.099Z",
+    "checkedAt": "2026-10-12T11:24:14.485Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "h2radio",
+    "url": "http://stream.h2radio.de:8000/h2radio.mp3",
+    "country": "DE",
+    "type": "campus radio",
+    "tags": [
+      "campus radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://www.h2radio.de/wp/wp-content/uploads/2020/03/cropped-h2radio_logo_rund-1-180x180.png",
+    "homepage": "http://www.h2radio.de/",
+    "stationUuid": "96268ffe-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-12T11:24:14.582Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "h²radio",
+    "url": "http://stream.h2radio.de:8000/h2radio.mp3",
+    "country": "DE",
+    "type": "campusradio",
+    "tags": [
+      "campusradio",
+      "h2radio",
+      "hochschulradio",
+      "magedburg",
+      "stendal",
+      "uniradio"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": null,
+    "homepage": "https://www.h2radio.de/",
+    "stationUuid": "220b0612-b3b5-48e0-a75c-179ae42a7407",
+    "checkedAt": "2026-10-12T11:24:14.860Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Q",
@@ -1226,10 +1325,31 @@
     "favicon": null,
     "homepage": "http://www.radioq.de/",
     "stationUuid": "96875961-4280-4b99-ae9b-a11581bae3bc",
-    "checkedAt": "2026-10-11T10:27:35.614Z",
+    "checkedAt": "2026-10-12T11:24:15.224Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Donald's Radio",
+    "url": "https://radio.donald.cat/listen/donalds_radio/radio.mp3",
+    "country": "DE",
+    "type": "celtic",
+    "tags": [
+      "celtic",
+      "celtic rock",
+      "random"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": "https://radio.donald.cat/static/uploads/browser_icon/180.1787009119.png",
+    "homepage": "https://radio.donald.cat/",
+    "stationUuid": "056e64f2-5bed-45a1-b3df-0b1f719580c8",
+    "checkedAt": "2026-10-12T11:24:16.209Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Charivari München - Live Hits",
@@ -1247,7 +1367,7 @@
     "favicon": "https://www.charivari.de/apple-icon-120x120.png",
     "homepage": "https://www.charivari.de/",
     "stationUuid": "6de1ef49-b016-11e9-acb2-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:36.546Z",
+    "checkedAt": "2026-10-12T11:24:16.528Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -1268,7 +1388,7 @@
     "favicon": "https://www.charivari.de/apple-icon-120x120.png",
     "homepage": "https://www.charivari.de/",
     "stationUuid": "e0419c41-b016-11e9-acb2-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:36.560Z",
+    "checkedAt": "2026-10-12T11:24:16.533Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -1289,7 +1409,7 @@
     "favicon": "https://www.charivari.de/apple-icon-120x120.png",
     "homepage": "https://www.charivari.de/",
     "stationUuid": "aa523091-b016-11e9-acb2-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:36.570Z",
+    "checkedAt": "2026-10-12T11:24:16.642Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -1311,7 +1431,7 @@
     "favicon": "https://music-fm.de/wp-content/uploads/2024/10/cropped-mfm_web_icon-180x180.png",
     "homepage": "https://music-fm.de/",
     "stationUuid": "e8e9db52-4018-4d94-a5cc-5bacdb402fbe",
-    "checkedAt": "2026-10-11T10:27:39.238Z",
+    "checkedAt": "2026-10-12T11:24:22.189Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1333,7 +1453,7 @@
     "favicon": "https://slmm-radio.de/favicon.ico",
     "homepage": "https://www.slmm-radio.de/",
     "stationUuid": "5ae8f416-e6b6-404b-a284-355b39e3ac2c",
-    "checkedAt": "2026-10-11T10:27:40.012Z",
+    "checkedAt": "2026-10-12T11:24:23.164Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1353,7 +1473,7 @@
     "favicon": null,
     "homepage": "https://www.charivari.de/",
     "stationUuid": "1783079b-9ebb-4cdc-8e99-035ca00a34d9",
-    "checkedAt": "2026-10-11T10:27:42.779Z",
+    "checkedAt": "2026-10-12T11:24:27.087Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -1372,7 +1492,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "38ad2840-6df9-4ef0-b8d8-bae7a1e904f6",
-    "checkedAt": "2026-10-11T10:27:43.584Z",
+    "checkedAt": "2026-10-12T11:24:28.389Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1393,7 +1513,7 @@
     "favicon": "https://image.jimcdn.com/app/cms/image/transf/none/path/sc0fc92ce0c32e802/backgroundarea/i2a1b09bffe92a641/version/1491489327/image.jpg",
     "homepage": "https://www.89hitfm.eu/",
     "stationUuid": "96491403-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:43.699Z",
+    "checkedAt": "2026-10-12T11:24:28.403Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1413,7 +1533,7 @@
     "favicon": "http://www.powerradio4u.de/media/themes/stockholm.png",
     "homepage": "http://www.powerradio4u.de/",
     "stationUuid": "96160571-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:44.142Z",
+    "checkedAt": "2026-10-12T11:24:28.792Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1432,30 +1552,10 @@
     "favicon": null,
     "homepage": "https://camillo929.de/",
     "stationUuid": "be10aaaf-83ae-4157-880e-d2637c27cc63",
-    "checkedAt": "2026-10-11T10:27:45.802Z",
+    "checkedAt": "2026-10-12T11:24:30.531Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "De Stemm Radio",
-    "url": "http://s2.stationplaylist.com:7044/listen.aac",
-    "country": "DE",
-    "type": "christian",
-    "tags": [
-      "christian",
-      "plautdietsch"
-    ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "low german",
-    "favicon": null,
-    "homepage": "https://express.adobe.com/page/98WxY/",
-    "stationUuid": "2892305e-e427-45d8-8777-462d7d8b3a54",
-    "checkedAt": "2026-10-11T10:27:46.224Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "ICF Radio",
@@ -1473,7 +1573,7 @@
     "favicon": null,
     "homepage": "https://www.icf.radio/",
     "stationUuid": "0120260a-4ce5-475c-98ff-d718da2a3367",
-    "checkedAt": "2026-10-11T10:27:47.313Z",
+    "checkedAt": "2026-10-12T11:24:32.247Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1494,7 +1594,7 @@
     "favicon": null,
     "homepage": "https://www.icf.radio/",
     "stationUuid": "67be0208-a173-4a4a-b188-338a8e4aba73",
-    "checkedAt": "2026-10-11T10:27:47.318Z",
+    "checkedAt": "2026-10-12T11:24:32.303Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1513,7 +1613,7 @@
     "favicon": null,
     "homepage": "https://jesustempleradio.com/",
     "stationUuid": "395a1a17-8e1b-4a22-890d-37e532f4d952",
-    "checkedAt": "2026-10-11T10:27:47.457Z",
+    "checkedAt": "2026-10-12T11:24:32.438Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1532,7 +1632,7 @@
     "favicon": "http://www.gemeinde-gottes-gifhorn.de/favicon.ico",
     "homepage": "http://www.gemeinde-gottes-gifhorn.de/",
     "stationUuid": "bd6b3484-6f96-4ce0-b667-a3b024985d22",
-    "checkedAt": "2026-10-11T10:27:47.719Z",
+    "checkedAt": "2026-10-12T11:24:32.916Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1554,7 +1654,7 @@
     "favicon": "https://www.ramasuri.de/storage/thumbs/192x192/r:1712659775/174120.png",
     "homepage": "https://www.ramasuri.de/",
     "stationUuid": "2becc641-0e38-4460-b96c-65eb5754bddd",
-    "checkedAt": "2026-10-11T10:27:53.381Z",
+    "checkedAt": "2026-10-12T11:24:40.171Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1575,7 +1675,7 @@
     "favicon": null,
     "homepage": "https://radiovintage.com/",
     "stationUuid": "c0667fbd-a493-465a-a1bd-15e1af295cfb",
-    "checkedAt": "2026-10-11T10:27:53.388Z",
+    "checkedAt": "2026-10-12T11:24:40.189Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1595,7 +1695,7 @@
     "favicon": "https://www.oksh.de/hl/wp-content/uploads/sites/3/2017/08/touchicon-120.png",
     "homepage": "http://www.okluebeck.de/",
     "stationUuid": "962afcce-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:27:54.629Z",
+    "checkedAt": "2026-10-12T11:24:41.800Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1619,10 +1719,10 @@
     "favicon": null,
     "homepage": "https://radio.imgdump.lol/",
     "stationUuid": "ba23da21-8489-4e88-a0e8-3adbf11973bc",
-    "checkedAt": "2026-10-11T10:27:54.834Z",
+    "checkedAt": "2026-10-12T11:24:42.095Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Mother Earth Klassik",
@@ -1638,7 +1738,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "a28139fb-4b89-4134-b422-8b061722fc8c",
-    "checkedAt": "2026-10-11T10:27:57.433Z",
+    "checkedAt": "2026-10-12T11:24:46.033Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1657,7 +1757,7 @@
     "favicon": "https://motherearthradio.de/wp-content/uploads/2024/03/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "f8be9353-dc99-4a02-8b08-59cee0c3c4d1",
-    "checkedAt": "2026-10-11T10:27:57.436Z",
+    "checkedAt": "2026-10-12T11:24:46.065Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -1676,7 +1776,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "34ddce7f-02fc-4f58-bba9-68c13e84c71e",
-    "checkedAt": "2026-10-11T10:27:57.439Z",
+    "checkedAt": "2026-10-12T11:24:46.071Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1695,7 +1795,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "161e02a5-f119-4661-9265-a073f5df2218",
-    "checkedAt": "2026-10-11T10:27:57.447Z",
+    "checkedAt": "2026-10-12T11:24:46.078Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1714,7 +1814,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "58acdff5-c281-426c-93f9-d720baf3f9fd",
-    "checkedAt": "2026-10-11T10:27:57.466Z",
+    "checkedAt": "2026-10-12T11:24:46.111Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1735,7 +1835,7 @@
     "favicon": "https://www1.wdr.de/resources/img/favicon/apple-touch-icon.png",
     "homepage": "https://www1.wdr.de/radio/wdr3/index.html",
     "stationUuid": "3eb97b52-cc99-445d-b518-53477df5a94b",
-    "checkedAt": "2026-10-11T10:27:58.335Z",
+    "checkedAt": "2026-10-12T11:24:47.116Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1754,9 +1854,29 @@
     "favicon": "https://www.jokefm.de/wp-content/uploads/2018/11/JOKEFM_Logo_1000x6161.png",
     "homepage": "https://www.jokefm.de/",
     "stationUuid": "18072785-9b30-4b06-a8b3-3c9c3596983b",
-    "checkedAt": "2026-10-11T10:28:00.537Z",
+    "checkedAt": "2026-10-12T11:24:49.457Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Grammo",
+    "url": "https://icecast.multhielemedia.de/radio/8060/grammo",
+    "country": "DE",
+    "type": "community",
+    "tags": [
+      "community",
+      "greek"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://myonlineradio.de/radio-grammo",
+    "stationUuid": "8ca0ed9a-85c0-4ab4-aee7-7c401d4d1d5e",
+    "checkedAt": "2026-10-12T11:24:49.667Z",
+    "status": 404,
+    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
@@ -1773,7 +1893,7 @@
     "favicon": "https://scontent-ber1-1.xx.fbcdn.net/v/t1.6435-9/86970785_108025277452220_6505182501885968384_n.jpg?_nc_ohc=YML4NReJxJ0AX-sIF_a&_nc_ht=scontent-ber1-1.xx&oh=00_AfBrBUHlcVxiVf566NyOHz1OS9nI1o5nlmXdKu-s1wflSQ&oe=65F33FDC",
     "homepage": "https://chaos.social/@satanskrapfen.rss",
     "stationUuid": "5c8725e5-00c9-4684-9a78-49e253f4de88",
-    "checkedAt": "2026-10-11T10:28:02.958Z",
+    "checkedAt": "2026-10-12T11:24:51.987Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1792,7 +1912,7 @@
     "favicon": "https://scontent-ber1-1.xx.fbcdn.net/v/t1.6435-9/86970785_108025277452220_6505182501885968384_n.jpg?_nc_ohc=YML4NReJxJ0AX-sIF_a&_nc_ht=scontent-ber1-1.xx&oh=00_AfBrBUHlcVxiVf566NyOHz1OS9nI1o5nlmXdKu-s1wflSQ&oe=65F33FDC",
     "homepage": "https://chaos.social/@satanskrapfen.rss",
     "stationUuid": "58e9e8c7-ce77-4044-8787-6043452002b7",
-    "checkedAt": "2026-10-11T10:28:02.967Z",
+    "checkedAt": "2026-10-12T11:24:51.991Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1811,7 +1931,7 @@
     "favicon": "https://scontent-ber1-1.xx.fbcdn.net/v/t1.6435-9/86970785_108025277452220_6505182501885968384_n.jpg?_nc_ohc=YML4NReJxJ0AX-sIF_a&_nc_ht=scontent-ber1-1.xx&oh=00_AfBrBUHlcVxiVf566NyOHz1OS9nI1o5nlmXdKu-s1wflSQ&oe=65F33FDC",
     "homepage": "https://chaos.social/@satanskrapfen.rss",
     "stationUuid": "5690f708-8d47-4fed-a6c6-eecf8194197b",
-    "checkedAt": "2026-10-11T10:28:02.989Z",
+    "checkedAt": "2026-10-12T11:24:52.034Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1833,7 +1953,7 @@
     "favicon": "http://www.radio-alpenfunk.de/cms/wp-content/uploads/2015/07/favicon-96x96.png",
     "homepage": "http://www.radio-alpenfunk.de/",
     "stationUuid": "961f8ef0-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:03.347Z",
+    "checkedAt": "2026-10-12T11:24:52.255Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1860,7 +1980,7 @@
     "favicon": "https://endzeitradio.de/favicon.ico",
     "homepage": "https://endzeitradio.de/",
     "stationUuid": "05b4bb5e-d906-4b2d-a3a9-cceb4f338dfa",
-    "checkedAt": "2026-10-11T10:28:03.863Z",
+    "checkedAt": "2026-10-12T11:24:52.888Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1882,7 +2002,7 @@
     "favicon": null,
     "homepage": "https://artigian-fm.blogspot.com/",
     "stationUuid": "860f7dbb-a8ce-48d9-9365-1618d658bb10",
-    "checkedAt": "2026-10-11T10:28:04.642Z",
+    "checkedAt": "2026-10-12T11:24:54.070Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1904,10 +2024,56 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/arti-gian-fm/",
     "stationUuid": "e1445672-3084-4906-b688-13a985ab519a",
-    "checkedAt": "2026-10-11T10:28:06.681Z",
+    "checkedAt": "2026-10-12T11:24:56.421Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "midnox Radio",
+    "url": "https://radio.midnox.de/listen/midnox/radio.mp3",
+    "country": "DE",
+    "type": "dance",
+    "tags": [
+      "dance",
+      "house",
+      "pop",
+      "schlager",
+      "trance"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "german",
+    "favicon": "https://midnox.de/midnox_radio_logo.png",
+    "homepage": "https://midnox.de/",
+    "stationUuid": "c3c0a057-5fb0-40fd-86aa-33a4f500e46f",
+    "checkedAt": "2026-10-12T11:24:57.405Z",
+    "status": 401,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "midnox Radio",
+    "url": "https://vitacola.spdns.eu/listen/midnox/radio.mp3",
+    "country": "DE",
+    "type": "dance",
+    "tags": [
+      "dance",
+      "house",
+      "pop",
+      "schlager",
+      "trance"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "german",
+    "favicon": "https://midnox.de/midnox_radio_logo.png",
+    "homepage": "https://midnox.de/",
+    "stationUuid": "a82e99d4-c6d2-46ca-a6e7-836d9390137b",
+    "checkedAt": "2026-10-12T11:24:57.470Z",
+    "status": 401,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Sunshine Live - Party",
@@ -1925,7 +2091,7 @@
     "favicon": null,
     "homepage": "http://www.sunshine-live.de/#",
     "stationUuid": "1c1e88e0-4919-11e8-b1b0-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:09.601Z",
+    "checkedAt": "2026-10-12T11:24:59.149Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1945,7 +2111,7 @@
     "favicon": null,
     "homepage": "https://www.sunshine-live.de/",
     "stationUuid": "f3f82135-d15e-11e9-a861-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:09.605Z",
+    "checkedAt": "2026-10-12T11:24:59.166Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1967,7 +2133,7 @@
     "favicon": "https://teatime.fm/media/icons/tt/apple-touch-icon.png",
     "homepage": "https://teatime.fm/",
     "stationUuid": "9624a7d5-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:09.758Z",
+    "checkedAt": "2026-10-12T11:24:59.273Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1992,7 +2158,7 @@
     "favicon": "https://technobase.fm/media/icons/tb/apple-touch-icon.png",
     "homepage": "https://technobase.fm/",
     "stationUuid": "960e96f3-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:09.775Z",
+    "checkedAt": "2026-10-12T11:24:59.283Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2015,7 +2181,7 @@
     "favicon": "https://img1.wsimg.com/isteam/ip/6f1d2653-b246-41b5-a567-81f3d7deef16/favicon/0a09de53-7d5e-42f3-8d7c-61e5c575a688.png",
     "homepage": "https://yesbananasdjs.godaddysites.com/",
     "stationUuid": "c6d60043-5d0d-471c-ac95-d4ef8772c433",
-    "checkedAt": "2026-10-11T10:28:10.149Z",
+    "checkedAt": "2026-10-12T11:24:59.848Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2034,7 +2200,7 @@
     "favicon": null,
     "homepage": "https://laut.fm/ddr-radio",
     "stationUuid": "17df08e3-09c4-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:11.993Z",
+    "checkedAt": "2026-10-12T11:25:02.536Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2058,7 +2224,7 @@
     "favicon": "https://clubtime.fm/media/icons/clt/apple-touch-icon.png",
     "homepage": "https://clubtime.fm/",
     "stationUuid": "960ed6ac-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:13.349Z",
+    "checkedAt": "2026-10-12T11:25:04.234Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2081,7 +2247,7 @@
     "favicon": null,
     "homepage": "https://laut.fm/deutscherockradio",
     "stationUuid": "4cc3d06b-6ae9-4889-bc18-ff14a5de7b1d",
-    "checkedAt": "2026-10-11T10:28:14.832Z",
+    "checkedAt": "2026-10-12T11:25:06.004Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2100,7 +2266,7 @@
     "favicon": "https://cdn6.site-media.eu/images/560/4447086/handyplanet.jpg",
     "homepage": "https://www.planet-disco-fox.de/",
     "stationUuid": "158bcfdd-854d-4bd2-a586-05de2a118c7e",
-    "checkedAt": "2026-10-11T10:28:16.389Z",
+    "checkedAt": "2026-10-12T11:25:09.284Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2121,7 +2287,7 @@
     "favicon": "https://radio-budowlaniec.de/themes/custom/quatro/Budowlaniec-2-RED200px).svg",
     "homepage": "https://radio-budowlaniec.de/",
     "stationUuid": "35698b4f-1d0a-4969-92ab-8bb3c768698e",
-    "checkedAt": "2026-10-11T10:28:16.525Z",
+    "checkedAt": "2026-10-12T11:25:09.435Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2141,7 +2307,7 @@
     "favicon": null,
     "homepage": "https://www.proo-radio.de/",
     "stationUuid": "479a358a-7ad4-4d83-9369-9a1976f1ca98",
-    "checkedAt": "2026-10-11T10:28:16.888Z",
+    "checkedAt": "2026-10-12T11:25:10.094Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2162,7 +2328,7 @@
     "favicon": null,
     "homepage": "https://dnb.band/",
     "stationUuid": "4881d7d6-b288-4585-a383-f926f3d017cf",
-    "checkedAt": "2026-10-11T10:28:17.717Z",
+    "checkedAt": "2026-10-12T11:25:11.336Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2181,7 +2347,7 @@
     "favicon": "https://image.jimcdn.com/app/cms/image/transf/none/path/sc0fc92ce0c32e802/image/i43b8a451dc745337/version/1588158078/image.png",
     "homepage": "http://www.hitfm.de/",
     "stationUuid": "960e80cf-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:17.983Z",
+    "checkedAt": "2026-10-12T11:25:11.955Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2203,7 +2369,7 @@
     "favicon": "https://www.partyvibe.com/wp-content/uploads/2020/12/party-vibe-radio-logo.png",
     "homepage": "https://www.partyvibe.com/",
     "stationUuid": "0c2308a7-5f34-4f9f-a0b0-b9a5467b331a",
-    "checkedAt": "2026-10-11T10:28:18.391Z",
+    "checkedAt": "2026-10-12T11:25:12.607Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2222,10 +2388,10 @@
     "favicon": "https://motherearthradio.de/wp-content/uploads/2024/03/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "c716896e-7c7c-44ef-8ce8-2fb8d0a9c97e",
-    "checkedAt": "2026-10-11T10:28:19.769Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
+    "checkedAt": "2026-10-12T11:25:15.188Z",
+    "status": 403,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Mother Earth Radio",
@@ -2241,7 +2407,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "000224e7-aa03-45f3-bc7f-3852e310c591",
-    "checkedAt": "2026-10-11T10:28:19.853Z",
+    "checkedAt": "2026-10-12T11:25:15.204Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2260,7 +2426,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "90a39e1e-fa70-4b99-8846-da1a1bd8b563",
-    "checkedAt": "2026-10-11T10:28:19.861Z",
+    "checkedAt": "2026-10-12T11:25:15.217Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2279,7 +2445,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "1f5bc79f-f711-4827-911b-a3746e19a3fb",
-    "checkedAt": "2026-10-11T10:28:19.863Z",
+    "checkedAt": "2026-10-12T11:25:15.241Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2298,7 +2464,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "91a6efcf-5e05-4175-a268-b8a74bcc9b64",
-    "checkedAt": "2026-10-11T10:28:19.867Z",
+    "checkedAt": "2026-10-12T11:25:15.256Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2319,7 +2485,7 @@
     "favicon": null,
     "homepage": "https://streams.ilovemusic.de/",
     "stationUuid": "8ea5c537-31d7-4af8-93dd-030ce3cb38d8",
-    "checkedAt": "2026-10-11T10:28:20.359Z",
+    "checkedAt": "2026-10-12T11:25:16.084Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2338,7 +2504,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "9be8d81d-67f7-4b3d-a905-ef2a78d3fd9b",
-    "checkedAt": "2026-10-11T10:28:25.161Z",
+    "checkedAt": "2026-10-12T11:25:20.961Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2357,7 +2523,7 @@
     "favicon": "https://media.mastodon.de/accounts/avatars/111/773/078/668/664/240/original/39054a716ed6e7e9.jpg",
     "homepage": "https://chaos.social/api/v1/accounts/41324/statuses",
     "stationUuid": "88d56cad-7a27-4f18-91da-d0bd8efbfca4",
-    "checkedAt": "2026-10-11T10:28:25.487Z",
+    "checkedAt": "2026-10-12T11:25:21.077Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2376,7 +2542,7 @@
     "favicon": "https://media.mastodon.de/accounts/avatars/111/773/078/668/664/240/original/39054a716ed6e7e9.jpg",
     "homepage": "https://chaos.social/api/v1/accounts/41324/statuses",
     "stationUuid": "864efed9-3bbd-4a87-bfe9-b1993dfa2a33",
-    "checkedAt": "2026-10-11T10:28:25.490Z",
+    "checkedAt": "2026-10-12T11:25:21.081Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2395,7 +2561,7 @@
     "favicon": "https://media.mastodon.de/accounts/avatars/111/773/078/668/664/240/original/39054a716ed6e7e9.jpg",
     "homepage": "https://chaos.social/api/v1/accounts/41324/statuses",
     "stationUuid": "6c1facd0-fc3f-40e3-a718-f4aeebd703e7",
-    "checkedAt": "2026-10-11T10:28:25.512Z",
+    "checkedAt": "2026-10-12T11:25:21.114Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2414,7 +2580,7 @@
     "favicon": "https://i1.sndcdn.com/avatars-HlE7iyGUFiyhCZWz-gKiVbg-t200x200.jpg",
     "homepage": "https://eosradio.de/",
     "stationUuid": "2d30e3bb-c83f-4e2d-83b2-f08862a7496c",
-    "checkedAt": "2026-10-11T10:28:26.267Z",
+    "checkedAt": "2026-10-12T11:25:21.991Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -2434,7 +2600,7 @@
     "favicon": "https://secure.gravatar.com/avatar/3d417d46e874e8c99e0283550d4a429e?s=36&#038;d=mm&#038;r=g",
     "homepage": "https://www.prysmradio.com/",
     "stationUuid": "88862e2c-35bf-4161-bd91-e58f35d31dad",
-    "checkedAt": "2026-10-11T10:28:26.859Z",
+    "checkedAt": "2026-10-12T11:25:22.791Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2455,7 +2621,7 @@
     "favicon": "https://www.retrowelle.com/wp-content/uploads/2023/12/Logo-mit-Slogan-1170x309.png",
     "homepage": "https://www.retrowelle.com/retrowelle2/",
     "stationUuid": "54b83c87-06ac-442f-bbab-b364727c007a",
-    "checkedAt": "2026-10-11T10:28:27.000Z",
+    "checkedAt": "2026-10-12T11:25:23.029Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2476,7 +2642,7 @@
     "favicon": "https://www.radio-legende.de/favicon.ico",
     "homepage": "https://www.radio-legende.de/",
     "stationUuid": "a5c3b4fd-5c6f-47b6-a2e6-8cfdc63ce52b",
-    "checkedAt": "2026-10-11T10:28:28.205Z",
+    "checkedAt": "2026-10-12T11:25:24.549Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2501,7 +2667,7 @@
     "favicon": "https://www.freies-radio-wiesental.de/apple-touch-icon.png",
     "homepage": "https://www.freies-radio-wiesental.de/",
     "stationUuid": "68b1b5f1-0c7a-11e9-a80b-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:29.159Z",
+    "checkedAt": "2026-10-12T11:25:25.534Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2522,7 +2688,7 @@
     "favicon": "http://www.radioinpulz.de/favicon.ico",
     "homepage": "http://www.radioinpulz.de/",
     "stationUuid": "96194dc4-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:29.181Z",
+    "checkedAt": "2026-10-12T11:25:25.576Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2541,7 +2707,7 @@
     "favicon": "null",
     "homepage": "http://listen.coretime.fm/tunein-mp3",
     "stationUuid": "3e0b917c-3d62-4333-8ab2-acb9e39e0c78",
-    "checkedAt": "2026-10-11T10:28:29.326Z",
+    "checkedAt": "2026-10-12T11:25:25.731Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2562,7 +2728,26 @@
     "favicon": "https://www.phonostar.de/images/auto_created/soulpowerfm_3184x184.png",
     "homepage": "http://soulpowerfm.de/",
     "stationUuid": "9632df35-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:29.559Z",
+    "checkedAt": "2026-10-12T11:25:26.200Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "FohlenRadio",
+    "url": "http://borussiamg-ice-edge-1005.fra-eco.cdn.addradio.net/borussiamg/live/mp3/high",
+    "country": "DE",
+    "type": "fußball",
+    "tags": [
+      "fußball"
+    ],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.borussia.de/",
+    "stationUuid": "f6b915bd-74a8-4a6c-a7ce-bcdfa49546c8",
+    "checkedAt": "2026-10-12T11:25:26.349Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2581,7 +2766,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c8b871f1-1c52-4888-870c-d043aea8652a",
-    "checkedAt": "2026-10-11T10:28:31.325Z",
+    "checkedAt": "2026-10-12T11:25:28.901Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -2600,7 +2785,7 @@
     "favicon": "null",
     "homepage": "https://www.schwarze-welle.de/",
     "stationUuid": "1c2e1d58-f030-49bb-aa48-00e97c16830b",
-    "checkedAt": "2026-10-11T10:28:32.186Z",
+    "checkedAt": "2026-10-12T11:25:29.622Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2623,7 +2808,7 @@
     "favicon": "https://coretime.fm/media/icons/ct/apple-touch-icon.png",
     "homepage": "https://coretime.fm/",
     "stationUuid": "960ed5f1-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:34.043Z",
+    "checkedAt": "2026-10-12T11:25:32.159Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2642,7 +2827,7 @@
     "favicon": null,
     "homepage": "https://west-coast-vibes.de/",
     "stationUuid": "638aa5fe-80e4-44e4-ba74-2638cd42cde2",
-    "checkedAt": "2026-10-11T10:28:36.112Z",
+    "checkedAt": "2026-10-12T11:25:34.760Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2661,7 +2846,7 @@
     "favicon": "https://image.jimcdn.com/app/cms/image/transf/none/path/sc0fc92ce0c32e802/image/i43b8a451dc745337/version/1588158078/image.png",
     "homepage": "https://www.89hitfm.eu/",
     "stationUuid": "fa0e6b6a-5a80-11e9-a622-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:37.720Z",
+    "checkedAt": "2026-10-12T11:25:36.647Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2683,7 +2868,7 @@
     "favicon": "https://www.charivari.de/favicon.ico",
     "homepage": "https://www.charivari.de/radio/webradio/italo-hits",
     "stationUuid": "dda97017-e75c-11e9-a96c-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:37.993Z",
+    "checkedAt": "2026-10-12T11:25:37.190Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -2706,33 +2891,10 @@
     "favicon": "https://www.radioarabella.de/storage/thumbs/192x192/r:1658501906/788381.png",
     "homepage": "https://www.radioarabella.de/",
     "stationUuid": "963beab0-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:38.332Z",
+    "checkedAt": "2026-10-12T11:25:37.804Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Offener Kanal Saarland",
-    "url": "http://offenerkanalsaarland.stream.laut.fm/offenerkanalsaarland?t302=2026-10-01_13-43-05&uuid=ff223eaf-1f6e-5eed-a57b-c972d8e7b8e4",
-    "country": "DE",
-    "type": "house",
-    "tags": [
-      "house",
-      "oldies",
-      "pop",
-      "rock",
-      "saarland"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "german",
-    "favicon": null,
-    "homepage": "http://www.ok-saar.de/",
-    "stationUuid": "3d5c6150-e1be-49b0-a9df-0498cf1374df",
-    "checkedAt": "2026-10-11T10:28:39.327Z",
-    "status": 429,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 429"
   },
   {
     "name": "Mother Earth Instrumental",
@@ -2748,7 +2910,7 @@
     "favicon": "https://motherearthradio.de/wp-content/uploads/2024/03/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "c2065a71-3586-4adc-b970-59ba7b424d8f",
-    "checkedAt": "2026-10-11T10:28:41.025Z",
+    "checkedAt": "2026-10-12T11:25:41.391Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2767,7 +2929,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "148bcbde-7084-492d-88be-0ba14fd387a5",
-    "checkedAt": "2026-10-11T10:28:41.028Z",
+    "checkedAt": "2026-10-12T11:25:41.436Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2786,7 +2948,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "facce262-5a16-4d78-b6b8-8d09ba644f0c",
-    "checkedAt": "2026-10-11T10:28:41.035Z",
+    "checkedAt": "2026-10-12T11:25:41.461Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2805,7 +2967,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "31326993-a43b-43da-9d74-2eec2bf7a71d",
-    "checkedAt": "2026-10-11T10:28:41.037Z",
+    "checkedAt": "2026-10-12T11:25:41.468Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2824,10 +2986,29 @@
     "favicon": null,
     "homepage": "https://artifm.blogspot.com/",
     "stationUuid": "dd848d92-56c2-45a4-8e79-958ffcf9fae6",
-    "checkedAt": "2026-10-11T10:28:41.104Z",
+    "checkedAt": "2026-10-12T11:25:41.551Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Slonskyradio",
+    "url": "https://h2866159.stratoserver.net:8443/",
+    "country": "DE",
+    "type": "international",
+    "tags": [
+      "international"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://slonskyradio.eu/wp-content/uploads/2023/11/cropped-slonskyradio-favicon-180x180.png",
+    "homepage": "https://slonskyradio.eu/",
+    "stationUuid": "56c895f5-8d83-4121-be74-b08b55d727b7",
+    "checkedAt": "2026-10-12T11:25:42.026Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "das Landradio",
@@ -2844,7 +3025,7 @@
     "favicon": "https://item.radio456.com/007452/330159/logo-72859.png",
     "homepage": "http://daslandradio.de/",
     "stationUuid": "943169c3-7abc-4d7a-bb81-301bea9bb75b",
-    "checkedAt": "2026-10-11T10:28:42.243Z",
+    "checkedAt": "2026-10-12T11:25:42.924Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2863,7 +3044,7 @@
     "favicon": "https://radioukwplus.eu/wp-content/uploads/2026/02/Jazz512.png",
     "homepage": "https://radioukwplus.eu/jazz/",
     "stationUuid": "31228244-8582-483d-8a52-db41fca893cf",
-    "checkedAt": "2026-10-11T10:28:46.496Z",
+    "checkedAt": "2026-10-12T11:25:47.047Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2882,7 +3063,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "da7d0447-62e1-45a8-8075-10f692de49b0",
-    "checkedAt": "2026-10-11T10:28:46.604Z",
+    "checkedAt": "2026-10-12T11:25:47.210Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2901,7 +3082,7 @@
     "favicon": "https://motherearthradio.de/wp-content/uploads/2024/03/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "a63ee551-5157-4dc1-b7ea-800356efc306",
-    "checkedAt": "2026-10-11T10:28:46.608Z",
+    "checkedAt": "2026-10-12T11:25:47.215Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2920,7 +3101,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "6935074b-7c5a-4503-95ff-1ffebafb85e9",
-    "checkedAt": "2026-10-11T10:28:46.618Z",
+    "checkedAt": "2026-10-12T11:25:47.217Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2939,10 +3120,54 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "85d6175d-5a02-41f6-9f7a-9b9d4f3b8bfb",
-    "checkedAt": "2026-10-11T10:28:46.632Z",
+    "checkedAt": "2026-10-12T11:25:47.223Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Munich Vinyl Radio",
+    "url": "https://stream.munichvinylradio.de/listen/mvr/stream.aac",
+    "country": "DE",
+    "type": "jazz",
+    "tags": [
+      "jazz",
+      "klassik",
+      "pop",
+      "rock"
+    ],
+    "codec": "AAC",
+    "bitrate": 296,
+    "language": "german",
+    "favicon": null,
+    "homepage": "https://munichvinylradio.de/",
+    "stationUuid": "cf1ecd17-e359-4ddb-9496-6fd5c40d77f3",
+    "checkedAt": "2026-10-12T11:25:47.238Z",
+    "status": 401,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Munich Vinyl Radio",
+    "url": "https://stream.munichvinylradio.de/listen/mvr/stream192k.flac",
+    "country": "DE",
+    "type": "jazz",
+    "tags": [
+      "jazz",
+      "klassik",
+      "pop",
+      "rock"
+    ],
+    "codec": "OGG",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": null,
+    "homepage": "https://munichvinylradio.de/",
+    "stationUuid": "a654a524-1f93-48bd-ac97-e021da7a9627",
+    "checkedAt": "2026-10-12T11:25:47.244Z",
+    "status": 401,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Studentenradio HS Merseburg",
@@ -2958,7 +3183,7 @@
     "favicon": "https://media.mastodon.de/accounts/avatars/111/773/078/668/664/240/original/39054a716ed6e7e9.jpg",
     "homepage": "http://radio-zett.de/",
     "stationUuid": "80d6df20-50ce-4d6a-9374-861d1b0abea1",
-    "checkedAt": "2026-10-11T10:28:46.973Z",
+    "checkedAt": "2026-10-12T11:25:47.592Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2977,7 +3202,7 @@
     "favicon": "https://media.mastodon.de/accounts/avatars/111/773/078/668/664/240/original/39054a716ed6e7e9.jpg",
     "homepage": "http://radio-zett.de/",
     "stationUuid": "dcf94677-eb5b-4fae-8e3c-b75ef7d33171",
-    "checkedAt": "2026-10-11T10:28:46.976Z",
+    "checkedAt": "2026-10-12T11:25:47.647Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2996,7 +3221,7 @@
     "favicon": null,
     "homepage": "http://www.studiowelle-hiltrup.de/",
     "stationUuid": "1d04a645-26df-4d23-974c-cdf7a341a40c",
-    "checkedAt": "2026-10-11T10:28:47.518Z",
+    "checkedAt": "2026-10-12T11:25:48.440Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3015,7 +3240,7 @@
     "favicon": null,
     "homepage": "https://www.firatfm.com/",
     "stationUuid": "d760d539-d556-4571-94c6-f15935c35635",
-    "checkedAt": "2026-10-11T10:28:47.798Z",
+    "checkedAt": "2026-10-12T11:25:48.811Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3035,7 +3260,7 @@
     "favicon": null,
     "homepage": "http://sputnik.de/sendungen/musikspecials/sputnik-blackbeatz--100.html",
     "stationUuid": "96078cf5-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:48.170Z",
+    "checkedAt": "2026-10-12T11:25:49.452Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3056,7 +3281,7 @@
     "favicon": "https://www.ramasuri.de/storage/thumbs/192x192/r:1712659775/174120.png",
     "homepage": "https://www.ramasuri.de/",
     "stationUuid": "961bba36-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:49.239Z",
+    "checkedAt": "2026-10-12T11:25:51.162Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3077,7 +3302,7 @@
     "favicon": "https://www.radio-wein-welle.de/favicon.ico",
     "homepage": "https://www.radio-wein-welle.de/",
     "stationUuid": "95c7c167-3213-439f-ab17-7cc56d1cfa58",
-    "checkedAt": "2026-10-11T10:28:49.475Z",
+    "checkedAt": "2026-10-12T11:25:51.433Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3098,7 +3323,7 @@
     "favicon": "https://myradio.bibliotehnika.com/besticon.png",
     "homepage": "https://myradio.bibliotehnika.org/",
     "stationUuid": "38ab9422-e728-450e-ac2f-b24e71a356e1",
-    "checkedAt": "2026-10-11T10:28:52.901Z",
+    "checkedAt": "2026-10-12T11:25:56.273Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3118,7 +3343,7 @@
     "favicon": "http://www.radio-hbw.de/bilder/logo/logo_120x120.png",
     "homepage": "http://www.radio-hbw.de/",
     "stationUuid": "9611d75a-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:53.684Z",
+    "checkedAt": "2026-10-12T11:25:56.988Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3135,7 +3360,7 @@
     "favicon": "https://image.jimcdn.com/app/cms/image/transf/none/path/sc0fc92ce0c32e802/backgroundarea/i2a1b09bffe92a641/version/1491489327/image.jpg",
     "homepage": "http://www.hitfm.de/",
     "stationUuid": "25fbcc41-f404-11e9-a96c-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:56.117Z",
+    "checkedAt": "2026-10-12T11:26:00.794Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3152,7 +3377,7 @@
     "favicon": null,
     "homepage": "http://www.hitfm.de/",
     "stationUuid": "580ef0cb-f403-11e9-a96c-52543be04c81",
-    "checkedAt": "2026-10-11T10:28:56.131Z",
+    "checkedAt": "2026-10-12T11:26:00.835Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3169,7 +3394,7 @@
     "favicon": null,
     "homepage": "https://www.89.0rtl.de/",
     "stationUuid": "ad4725f0-b0f0-4837-a0d4-feef29215b41",
-    "checkedAt": "2026-10-11T10:28:56.391Z",
+    "checkedAt": "2026-10-12T11:26:01.365Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3186,7 +3411,7 @@
     "favicon": "https://akademieradio.de/ao242.png",
     "homepage": "https://akademieradio.de/",
     "stationUuid": "fc799b9d-67dd-44c9-b423-5b9b22e160bd",
-    "checkedAt": "2026-10-11T10:28:58.769Z",
+    "checkedAt": "2026-10-12T11:26:04.842Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3203,7 +3428,7 @@
     "favicon": "https://www.radioarabella.de/storage/thumbs/192x192/r:1658501906/788381.png",
     "homepage": "http://www.radioarabella.de/audio-player/radio-arabella-80er",
     "stationUuid": "d80822b0-4c65-11e8-a4d1-52543be04c81",
-    "checkedAt": "2026-10-11T10:29:02.607Z",
+    "checkedAt": "2026-10-12T11:26:09.522Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3220,7 +3445,7 @@
     "favicon": null,
     "homepage": "https://radioarabellakult.de/",
     "stationUuid": "7a089f4a-3cd7-11e9-aa55-52543be04c81",
-    "checkedAt": "2026-10-11T10:29:02.639Z",
+    "checkedAt": "2026-10-12T11:26:09.560Z",
     "status": 520,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 520"
@@ -3237,7 +3462,7 @@
     "favicon": null,
     "homepage": "https://www.arberlandradio.com/",
     "stationUuid": "c489b2a2-d3bc-4815-bd38-a56d131f43fc",
-    "checkedAt": "2026-10-11T10:29:02.689Z",
+    "checkedAt": "2026-10-12T11:26:09.687Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3254,7 +3479,7 @@
     "favicon": null,
     "homepage": "http://www.arberlandradio.com/",
     "stationUuid": "dfdc1967-be0e-42bd-91ec-042e6d740b10",
-    "checkedAt": "2026-10-11T10:29:02.717Z",
+    "checkedAt": "2026-10-12T11:26:09.878Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3271,7 +3496,7 @@
     "favicon": null,
     "homepage": "http://www.arberlandradio.com/",
     "stationUuid": "1c4702cd-13bd-4b15-8958-6516e3fa0901",
-    "checkedAt": "2026-10-11T10:29:02.741Z",
+    "checkedAt": "2026-10-12T11:26:09.909Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3288,7 +3513,7 @@
     "favicon": null,
     "homepage": "https://www.arberwoidradio.com/",
     "stationUuid": "de8255d0-f8d2-4f3f-ad55-b32ca85af532",
-    "checkedAt": "2026-10-11T10:29:02.783Z",
+    "checkedAt": "2026-10-12T11:26:09.929Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3305,7 +3530,7 @@
     "favicon": "https://c2.radioboss.fm/stationlogo/1109.jpg?r=63",
     "homepage": "https://artefaktorradio.online/",
     "stationUuid": "0c4899ff-e925-4b2c-ae6d-bcfb9be1987d",
-    "checkedAt": "2026-10-11T10:29:02.807Z",
+    "checkedAt": "2026-10-12T11:26:09.936Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3322,7 +3547,7 @@
     "favicon": "https://daf-radio.de/dateien_upload/avatar/avatar1733442419508.png",
     "homepage": null,
     "stationUuid": "86643937-7a84-467e-9506-8e77eafe6282",
-    "checkedAt": "2026-10-11T10:29:02.896Z",
+    "checkedAt": "2026-10-12T11:26:10.060Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3334,12 +3559,12 @@
     "type": "MP3",
     "tags": [],
     "codec": "MP3",
-    "bitrate": 192,
+    "bitrate": 320,
     "language": null,
     "favicon": "https://daf-radio.de/dateien_upload/versuch_lila20201.png",
     "homepage": null,
     "stationUuid": "b22564a4-5551-4181-9b5a-547fbdaf1caf",
-    "checkedAt": "2026-10-11T10:29:02.965Z",
+    "checkedAt": "2026-10-12T11:26:10.122Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3356,7 +3581,7 @@
     "favicon": "http://www.ballermann-radio.com/favicon.ico",
     "homepage": "http://www.ballermann-radio.com/",
     "stationUuid": "2b452c23-830c-40bc-a67b-b55cd9a3814b",
-    "checkedAt": "2026-10-11T10:29:03.533Z",
+    "checkedAt": "2026-10-12T11:26:10.853Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3373,7 +3598,7 @@
     "favicon": "http://www.ballermann-radio.com/favicon.ico",
     "homepage": "http://www.ballermann-radio.com/",
     "stationUuid": "4d1f9cde-b2ee-4e7a-82d1-aba579d30159",
-    "checkedAt": "2026-10-11T10:29:03.537Z",
+    "checkedAt": "2026-10-12T11:26:10.917Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3390,7 +3615,7 @@
     "favicon": "https://www.breakpirates.com/assets/bp-head.jpg",
     "homepage": "https://www.breakpirates.com/radio",
     "stationUuid": "bf4d4f9d-41e5-4b59-bc45-b5be35f5efaf",
-    "checkedAt": "2026-10-11T10:29:08.619Z",
+    "checkedAt": "2026-10-12T11:26:16.670Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3407,7 +3632,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cosmo_Logo_2017.svg/640px-Cosmo_Logo_2017.svg.png",
     "homepage": "https://www1.wdr.de/radio/cosmo/",
     "stationUuid": "c3f011d4-ddbc-431c-a298-7b5a835c6a0d",
-    "checkedAt": "2026-10-11T10:29:12.045Z",
+    "checkedAt": "2026-10-12T11:26:20.392Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
@@ -3424,7 +3649,7 @@
     "favicon": "https://www.darkradio.de/Webbilder/dr_logo.jpg",
     "homepage": "https://www.darkradio.de/",
     "stationUuid": "e944b43a-a721-4c35-9ea0-877973ce3f66",
-    "checkedAt": "2026-10-11T10:29:12.558Z",
+    "checkedAt": "2026-10-12T11:26:21.120Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3441,7 +3666,7 @@
     "favicon": null,
     "homepage": "https://darkambientradio.de/news.php",
     "stationUuid": "f0f421a5-e86f-450b-a5d0-02e0667f9144",
-    "checkedAt": "2026-10-11T10:29:12.641Z",
+    "checkedAt": "2026-10-12T11:26:21.176Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3458,7 +3683,7 @@
     "favicon": null,
     "homepage": "http://ice.somafm.com/deepspaceone",
     "stationUuid": "834c36ec-5266-4167-8b1d-2d9ce6239f48",
-    "checkedAt": "2026-10-11T10:29:12.671Z",
+    "checkedAt": "2026-10-12T11:26:21.230Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3475,7 +3700,7 @@
     "favicon": "https://static.wixstatic.com/media/6f879f_232fab79ec54424884c2014f3fa72df5~mv2.png/v1/fill/w_380,h_172,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/DMR_Wei%C3%9F_edited.png",
     "homepage": "https://www.deutschesmusikradio.de/",
     "stationUuid": "fdc7fd7c-4f40-44ff-99d7-56c7cf322abd",
-    "checkedAt": "2026-10-11T10:29:12.995Z",
+    "checkedAt": "2026-10-12T11:26:21.702Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3492,7 +3717,7 @@
     "favicon": "https://static.wixstatic.com/media/6f879f_232fab79ec54424884c2014f3fa72df5~mv2.png/v1/fill/w_380,h_172,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/DMR_Wei%C3%9F_edited.png",
     "homepage": "https://www.deutschesmusikradio.de/",
     "stationUuid": "2ca15751-5798-46d6-9ced-f21a0933bef5",
-    "checkedAt": "2026-10-11T10:29:13.005Z",
+    "checkedAt": "2026-10-12T11:26:21.721Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3509,7 +3734,7 @@
     "favicon": null,
     "homepage": "https://www.electroradio.fm/",
     "stationUuid": "6b650c01-3967-4156-af32-0337ed6a9b19",
-    "checkedAt": "2026-10-11T10:29:14.285Z",
+    "checkedAt": "2026-10-12T11:26:23.606Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3526,14 +3751,14 @@
     "favicon": null,
     "homepage": "http://www.eliteradio.eu/",
     "stationUuid": "5976120f-7409-4e9d-993b-f6887b8a2b72",
-    "checkedAt": "2026-10-11T10:29:14.521Z",
+    "checkedAt": "2026-10-12T11:26:23.760Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "EXOGAMING",
-    "url": "https://exogaming.stream.laut.fm/exogaming",
+    "name": "Energy NRJ Reggae",
+    "url": "http://nrj.de/reggae",
     "country": "DE",
     "type": "MP3",
     "tags": [],
@@ -3541,12 +3766,12 @@
     "bitrate": 128,
     "language": null,
     "favicon": null,
-    "homepage": "https://exogaming.stream.laut.fm/",
-    "stationUuid": "7a92f951-d7a4-495a-bbed-0a41ca2cd8b8",
-    "checkedAt": "2026-10-11T10:29:15.845Z",
-    "status": 429,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 429"
+    "homepage": "https://www.energy.de/national",
+    "stationUuid": "8f974505-527e-4c11-9783-6e915b56822b",
+    "checkedAt": "2026-10-12T11:26:24.489Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Feierwerk",
@@ -3560,10 +3785,27 @@
     "favicon": "https://www.feierwerk.de/apple-icon-120x120.png",
     "homepage": "https://www.feierwerk.de/radio-feierwerk/",
     "stationUuid": "b124ca48-5628-4d50-9099-dba1de9d22bf",
-    "checkedAt": "2026-10-11T10:29:16.026Z",
+    "checkedAt": "2026-10-12T11:26:25.921Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Freies Senderkombinat Hamburg",
+    "url": "http://stream.fsk-hh.org:8000/fsk.mp3",
+    "country": "DE",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "deutch",
+    "favicon": null,
+    "homepage": "https://www.fsk-hh.org/",
+    "stationUuid": "ec8e2d25-8dd3-4ebc-ae97-630e491821ab",
+    "checkedAt": "2026-10-12T11:26:29.863Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Gugglifox",
@@ -3577,7 +3819,7 @@
     "favicon": "https://gugglifox-radio.de",
     "homepage": "https://gugglifox-radio.de/",
     "stationUuid": "7405a526-3198-4494-b48c-31070b36ccb0",
-    "checkedAt": "2026-10-11T10:29:20.716Z",
+    "checkedAt": "2026-10-12T11:26:31.004Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3594,7 +3836,7 @@
     "favicon": null,
     "homepage": "https://www.halloradio.net/",
     "stationUuid": "cd64b865-ff99-4018-bfdc-100f2400ec6c",
-    "checkedAt": "2026-10-11T10:29:20.773Z",
+    "checkedAt": "2026-10-12T11:26:31.082Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3611,7 +3853,7 @@
     "favicon": null,
     "homepage": "https://www.hardrockpalace.de/",
     "stationUuid": "1848a28c-724d-47d0-bfd7-c3e9c05ec231",
-    "checkedAt": "2026-10-11T10:29:20.927Z",
+    "checkedAt": "2026-10-12T11:26:31.380Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3628,7 +3870,7 @@
     "favicon": "https://lh3.googleusercontent.com/sitesv/AA5AbUBxtO1-DgA2N64xV5jqdAlxr1EqSSvru1xJBmyjSqFaDPCuymWIi_GkN2D6fbKLGQ-2y-eobyYJVKMNrv9seBREiC96GDXjTX-9R8DT_vbRRq0eJP2U-c5sMISht_-31C-Z4NyRrKwGfxF1YQrtWvyCZnk52CcDR-TiVrNGy7FbRQU8A9M_Jwj5CQ09SOIO6t-LKeaE7i7QdofXoQ",
     "homepage": "https://www.hardrockpalace.de/",
     "stationUuid": "c973a54e-ef9e-417e-b84c-044036d37a43",
-    "checkedAt": "2026-10-11T10:29:20.940Z",
+    "checkedAt": "2026-10-12T11:26:31.470Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3645,7 +3887,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "08f6c2a3-dd20-49b7-b5ab-8b7f598dd747",
-    "checkedAt": "2026-10-11T10:29:21.749Z",
+    "checkedAt": "2026-10-12T11:26:33.129Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3662,7 +3904,7 @@
     "favicon": "https://ilovemusic.de/fileadmin/coverbilder/djsfrommars_cantstopthephatbassfeeling.jpg",
     "homepage": "https://ilovemusic.de/ilovedjsfrommars",
     "stationUuid": "3be31f8b-5c12-4d24-8189-ea1846cae5a8",
-    "checkedAt": "2026-10-11T10:29:24.431Z",
+    "checkedAt": "2026-10-12T11:26:36.219Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3679,7 +3921,7 @@
     "favicon": null,
     "homepage": "https://inmydreamsradio.net/",
     "stationUuid": "3616b04f-b19b-4f78-aa05-e06dcd6fb677",
-    "checkedAt": "2026-10-11T10:29:25.017Z",
+    "checkedAt": "2026-10-12T11:26:37.059Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3696,7 +3938,7 @@
     "favicon": "https://internetradio.kim/kim.png",
     "homepage": "https://internetradio.kim/",
     "stationUuid": "57d415f1-d6a8-4e68-8516-36c6273fcbc4",
-    "checkedAt": "2026-10-11T10:29:25.113Z",
+    "checkedAt": "2026-10-12T11:26:37.087Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3713,7 +3955,7 @@
     "favicon": null,
     "homepage": "https://karnevalsmusik.stream.laut.fm/",
     "stationUuid": "cdee1650-f0cb-44e6-bc60-cebeda2d04f1",
-    "checkedAt": "2026-10-11T10:29:25.711Z",
+    "checkedAt": "2026-10-12T11:26:38.220Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3730,7 +3972,7 @@
     "favicon": null,
     "homepage": "https://kingdub.tv/",
     "stationUuid": "e2c8fd6e-fc12-45cb-8054-b3a5892a073e",
-    "checkedAt": "2026-10-11T10:29:25.834Z",
+    "checkedAt": "2026-10-12T11:26:38.452Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3747,7 +3989,7 @@
     "favicon": null,
     "homepage": "https://kingdub.tb/",
     "stationUuid": "96e66ed8-f2e8-4759-b337-4379a47984bd",
-    "checkedAt": "2026-10-11T10:29:25.838Z",
+    "checkedAt": "2026-10-12T11:26:38.469Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3764,7 +4006,7 @@
     "favicon": null,
     "homepage": "https://laut.fm/c1104",
     "stationUuid": "7234ef06-0c69-47b8-a399-d790ce3918d8",
-    "checkedAt": "2026-10-11T10:29:28.164Z",
+    "checkedAt": "2026-10-12T11:26:41.392Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3781,7 +4023,7 @@
     "favicon": null,
     "homepage": "http://www.lcd-radio.de/",
     "stationUuid": "bad686fc-d8ee-4ca7-8136-d2cc51ba47ed",
-    "checkedAt": "2026-10-11T10:29:28.278Z",
+    "checkedAt": "2026-10-12T11:26:41.422Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3798,7 +4040,7 @@
     "favicon": "https://www.oksh.de/hl/wp-content/uploads/sites/3/2017/08/okhl-signet-x2.png",
     "homepage": "https://www.oksh.de/hl/hoeren/luebeck-fm-livestream/",
     "stationUuid": "da50776b-5dd8-4d5e-a1a5-d5ffed866ac1",
-    "checkedAt": "2026-10-11T10:29:28.986Z",
+    "checkedAt": "2026-10-12T11:26:42.237Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3815,7 +4057,7 @@
     "favicon": "https://cdn.mdrjump.de/resources/jump/img/favicons/apple-icon-120x120.png",
     "homepage": "http://www.jumpradio.de/musik/channel/trend",
     "stationUuid": "9616ae14-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:29:29.796Z",
+    "checkedAt": "2026-10-12T11:26:43.474Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3832,7 +4074,7 @@
     "favicon": "https://www.mdrjump.de/resources/jump/img/favicons/apple-icon-120x120.png",
     "homepage": "http://www.jumpradio.de/musik/channel/trend",
     "stationUuid": "9639b6bc-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:29:29.811Z",
+    "checkedAt": "2026-10-12T11:26:43.528Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3849,7 +4091,7 @@
     "favicon": "https://cdn.mdrjump.de/resources/jump/img/favicons/apple-icon-120x120.png",
     "homepage": "http://www.jumpradio.de/musik/channel/trend",
     "stationUuid": "9639af78-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:29:29.821Z",
+    "checkedAt": "2026-10-12T11:26:43.536Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3866,7 +4108,7 @@
     "favicon": "https://motherearthradio.de/images/mergoldcube512.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "29706917-cf4c-46d5-a262-b8a08fe13c37",
-    "checkedAt": "2026-10-11T10:29:30.772Z",
+    "checkedAt": "2026-10-12T11:26:45.099Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3883,7 +4125,7 @@
     "favicon": null,
     "homepage": "https://mueggelseewelle.de/",
     "stationUuid": "b6d3e1e1-4189-4fa7-9300-8426d603d854",
-    "checkedAt": "2026-10-11T10:29:30.892Z",
+    "checkedAt": "2026-10-12T11:26:45.185Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3900,7 +4142,7 @@
     "favicon": null,
     "homepage": "https://murzilkifm.de/",
     "stationUuid": "325bfc09-d4a5-418b-955c-a4df70147f7c",
-    "checkedAt": "2026-10-11T10:29:31.045Z",
+    "checkedAt": "2026-10-12T11:26:45.338Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3917,10 +4159,44 @@
     "favicon": "https://musikwelle-allgaeu.de/wp-content/uploads/2025/01/mwa-logo15.webp",
     "homepage": "https://musikwelle-allgaeu.de/",
     "stationUuid": "2734b91e-7c75-4360-8e25-0667ea511f82",
-    "checkedAt": "2026-10-11T10:29:31.154Z",
+    "checkedAt": "2026-10-12T11:26:45.530Z",
     "status": 401,
     "contentType": "text/html",
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Nostalgie - Discofever",
+    "url": "http://nrj.de/nostalgiediscofever",
+    "country": "DE",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "34b8e787-5d35-4fe0-b366-aa6c05c39861",
+    "checkedAt": "2026-10-12T11:26:46.630Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Nostalgie - Route66",
+    "url": "http://nrj.de/nostalgieroute66",
+    "country": "DE",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "c51bcad9-4426-4928-bf8c-7ec1f108ba93",
+    "checkedAt": "2026-10-12T11:26:46.760Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Ostsee Welle Hit Radio Mecklenburg Vorpommern",
@@ -3934,7 +4210,7 @@
     "favicon": "https://www.ostseewelle.de/assets/icons/apple-touch-icon.png",
     "homepage": "https://www.ostseewelle.de/",
     "stationUuid": "c5f5f80b-85c2-4b22-8f17-53ca080b5cf4",
-    "checkedAt": "2026-10-11T10:29:33.508Z",
+    "checkedAt": "2026-10-12T11:26:48.439Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3951,7 +4227,7 @@
     "favicon": null,
     "homepage": "https://mineaxe.net/",
     "stationUuid": "ba052097-7626-403e-924c-a71b57ab1e6f",
-    "checkedAt": "2026-10-11T10:29:33.635Z",
+    "checkedAt": "2026-10-12T11:26:48.614Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3968,7 +4244,7 @@
     "favicon": null,
     "homepage": "http://cheetah.streemlion.com:5230/",
     "stationUuid": "64be59b9-2ff3-4acf-a725-8725c5c556d1",
-    "checkedAt": "2026-10-11T10:29:33.710Z",
+    "checkedAt": "2026-10-12T11:26:48.781Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3985,7 +4261,7 @@
     "favicon": null,
     "homepage": "http://cheetah.streemlion.com:5230/",
     "stationUuid": "0f144bce-c4a7-4569-a0dd-9edfd3f9ab4e",
-    "checkedAt": "2026-10-11T10:29:33.736Z",
+    "checkedAt": "2026-10-12T11:26:48.842Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4002,7 +4278,7 @@
     "favicon": null,
     "homepage": "http://45.76.91.99/listen/quran_radio_network/radio.mp3",
     "stationUuid": "f0734075-4497-4f61-bb4c-66e5ce39f3e6",
-    "checkedAt": "2026-10-11T10:29:34.917Z",
+    "checkedAt": "2026-10-12T11:26:50.204Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4019,7 +4295,7 @@
     "favicon": null,
     "homepage": "https://www.radiobrocken.de/",
     "stationUuid": "1113ea1a-190e-4fce-b5de-595686b5b556",
-    "checkedAt": "2026-10-11T10:29:38.748Z",
+    "checkedAt": "2026-10-12T11:26:55.056Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4036,7 +4312,7 @@
     "favicon": null,
     "homepage": "https://www.radiobrocken.de/",
     "stationUuid": "91fef335-ccf7-4656-bf37-c5c0b91af6f7",
-    "checkedAt": "2026-10-11T10:29:38.836Z",
+    "checkedAt": "2026-10-12T11:26:55.075Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4053,7 +4329,7 @@
     "favicon": "https://radio-budowlaniec.de/themes/custom/quatro/Budowlaniec-2-RED200px).svg",
     "homepage": "https://radio-budowlaniec.de/",
     "stationUuid": "bd0b164b-f587-4cbc-9bc8-87c9bc0976b3",
-    "checkedAt": "2026-10-11T10:29:38.843Z",
+    "checkedAt": "2026-10-12T11:26:55.152Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -4070,7 +4346,7 @@
     "favicon": null,
     "homepage": "http://dashboard.radiocorax.de/",
     "stationUuid": "03101c4c-9279-4e98-804e-b353988d407c",
-    "checkedAt": "2026-10-11T10:29:38.976Z",
+    "checkedAt": "2026-10-12T11:26:55.321Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4087,7 +4363,7 @@
     "favicon": null,
     "homepage": "https://www.radio-fratz.de/",
     "stationUuid": "b97c3b7a-64f9-44d4-905b-239a2ef67b3c",
-    "checkedAt": "2026-10-11T10:29:40.015Z",
+    "checkedAt": "2026-10-12T11:26:56.799Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4104,7 +4380,7 @@
     "favicon": "https://amberg-weiden.radiogalaxy.de/storage/thumbs/192x192/r:1677262065/17728.png",
     "homepage": "https://www.galaxy-amberg-weiden.de/",
     "stationUuid": "518a4191-fc13-4861-9882-e7c679e66297",
-    "checkedAt": "2026-10-11T10:29:40.091Z",
+    "checkedAt": "2026-10-12T11:26:56.815Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4121,7 +4397,7 @@
     "favicon": null,
     "homepage": "http://radio-marabu.de/",
     "stationUuid": "ba6d1373-547d-11e9-a4d7-52543be04c81",
-    "checkedAt": "2026-10-11T10:29:42.488Z",
+    "checkedAt": "2026-10-12T11:26:59.934Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4138,7 +4414,7 @@
     "favicon": "https://musikwelle-allgaeu.de/wp-content/uploads/2025/01/mwa-logo15.webp",
     "homepage": "https://musikwelle-allgaeu.de/",
     "stationUuid": "99a11e96-7f58-4e51-8722-f6d7164c396b",
-    "checkedAt": "2026-10-11T10:29:42.814Z",
+    "checkedAt": "2026-10-12T11:27:00.611Z",
     "status": 401,
     "contentType": "text/html",
     "lastFailure": "HTTP 401"
@@ -4155,7 +4431,7 @@
     "favicon": "https://popexpress.de/wp-content/uploads/2021/09/pex_trans_100_neu.png",
     "homepage": "https://popexpress.de/",
     "stationUuid": "92d888cf-32e0-48a0-9b10-8926d9c6f8fb",
-    "checkedAt": "2026-10-11T10:29:43.985Z",
+    "checkedAt": "2026-10-12T11:27:01.859Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -4172,7 +4448,7 @@
     "favicon": null,
     "homepage": "https://www.radio-smile.de/",
     "stationUuid": "4c566a01-605b-4799-9548-2d02a7fd4e8c",
-    "checkedAt": "2026-10-11T10:29:45.078Z",
+    "checkedAt": "2026-10-12T11:27:03.302Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4189,7 +4465,7 @@
     "favicon": "https://radio-hoerbar.de/images/1%20Naddel/Soundbar%20Transparent.png",
     "homepage": "https://radio-hoerbar.de/",
     "stationUuid": "e87f5d26-4caa-4f5f-8418-a82ff8487181",
-    "checkedAt": "2026-10-11T10:29:47.129Z",
+    "checkedAt": "2026-10-12T11:27:06.316Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -4206,7 +4482,7 @@
     "favicon": null,
     "homepage": "https://www.radioemergency.de/",
     "stationUuid": "125e193e-e036-4d69-a4df-f90178952c48",
-    "checkedAt": "2026-10-11T10:29:47.586Z",
+    "checkedAt": "2026-10-12T11:27:07.450Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4223,7 +4499,7 @@
     "favicon": null,
     "homepage": "https://www.radioemergency.de/",
     "stationUuid": "c464e093-0363-417b-b332-406541d55d1c",
-    "checkedAt": "2026-10-11T10:29:47.605Z",
+    "checkedAt": "2026-10-12T11:27:07.495Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4240,7 +4516,7 @@
     "favicon": null,
     "homepage": "http://www.rbiradio.eu/",
     "stationUuid": "00ec7bcc-209c-46ea-9ad2-63bc49ee3768",
-    "checkedAt": "2026-10-11T10:29:49.152Z",
+    "checkedAt": "2026-10-12T11:27:09.557Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -4257,7 +4533,7 @@
     "favicon": "https://readthedocs-static-prod.s3.amazonaws.com/images/favicon.f231b6609d0b.png",
     "homepage": "https://readthedocs.org/",
     "stationUuid": "8f14d4a0-ec9e-4c14-86fa-40d5833dafd7",
-    "checkedAt": "2026-10-11T10:29:51.527Z",
+    "checkedAt": "2026-10-12T11:27:14.121Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4274,7 +4550,7 @@
     "favicon": null,
     "homepage": "https://sound-of-pulse.de/",
     "stationUuid": "abb45126-0000-41cc-b64d-ef4a431e53c9",
-    "checkedAt": "2026-10-11T10:29:55.372Z",
+    "checkedAt": "2026-10-12T11:27:18.416Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4291,27 +4567,27 @@
     "favicon": "https://www.toneart-radio.de/images/icons/toneart-radio-dj-in-the-mix.jpg",
     "homepage": "https://www.toneart-radio.de/",
     "stationUuid": "74ccfe75-7284-4eec-b58b-3380a5b7a458",
-    "checkedAt": "2026-10-11T10:29:58.447Z",
+    "checkedAt": "2026-10-12T11:27:23.104Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "TOWER TOWN Street",
-    "url": "https://radio-grafenwoehr-street.stream.laut.fm/radio-grafenwoehr-street?t302=2026-10-01_04-48-23&uuid=4ce37f16-7b6b-ea50-212f-46542ca25c81",
+    "name": "Trigger.FM",
+    "url": "https://hd-radio.triggerfm.de/",
     "country": "DE",
     "type": "MP3",
     "tags": [],
     "codec": "MP3",
-    "bitrate": 128,
+    "bitrate": 256,
     "language": null,
-    "favicon": null,
-    "homepage": "https://sites.google.com/view/radio-grafenwoehr/startseite",
-    "stationUuid": "c4fe0b74-cadf-4aff-a0e2-2e9c7ebd2920",
-    "checkedAt": "2026-10-11T10:29:59.598Z",
-    "status": 429,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 429"
+    "favicon": "https://triggerfm.com/images/logo-256.webp",
+    "homepage": "https://triggerfm.com/",
+    "stationUuid": "69054dc2-740f-40b8-9617-b02680ce991f",
+    "checkedAt": "2026-10-12T11:27:24.466Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Trigger.FM HARTMUT – Oldies & Deutsche Musik",
@@ -4325,10 +4601,27 @@
     "favicon": "https://swr3.de/assets/swr3/icons/apple-touch-icon.png",
     "homepage": "https://triggerfm.com/radiochannel/trigger-fm-hartmut-oldies-deutsche-musik",
     "stationUuid": "ac1c8b2c-3915-4e1b-a35b-660147a16203",
-    "checkedAt": "2026-10-11T10:29:59.783Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-10-12T11:27:24.564Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Trigger.FM Info",
+    "url": "https://info-hd-radio.triggerfm.de/",
+    "country": "DE",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 256,
+    "language": null,
+    "favicon": "https://triggerfm.com/images/channels/info.png",
+    "homepage": "https://triggerfm.com/",
+    "stationUuid": "249b9dc9-73b2-4f6f-9c2c-60b480a7f5dc",
+    "checkedAt": "2026-10-12T11:27:24.570Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Trigger.FM PAUL – Electro, House, Dance",
@@ -4342,10 +4635,10 @@
     "favicon": "https://triggerfm.com/wp-content/uploads/2023/09/512x512-trigger-logo.png",
     "homepage": "https://triggerfm.com/radiochannel/trigger-fm-paul-derbeat",
     "stationUuid": "f398eaf6-e953-4576-92f1-f3f38b26c9ec",
-    "checkedAt": "2026-10-11T10:29:59.819Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-10-12T11:27:24.611Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Triquency (Hochschulradio TH OWL / Lemgo)",
@@ -4359,7 +4652,7 @@
     "favicon": null,
     "homepage": "http://triquency.de/",
     "stationUuid": "c6888b87-92cc-4159-b3cf-2e1cde29cfd4",
-    "checkedAt": "2026-10-11T10:29:59.851Z",
+    "checkedAt": "2026-10-12T11:27:24.624Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4376,7 +4669,7 @@
     "favicon": null,
     "homepage": "http://www.antenne-motorstadl.com/",
     "stationUuid": "961ddada-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:00.754Z",
+    "checkedAt": "2026-10-12T11:27:25.781Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4393,27 +4686,10 @@
     "favicon": null,
     "homepage": "https://stream.rundfunker.net/public/worni_fm",
     "stationUuid": "dd88cc92-ef4c-418e-a5ee-f35f169f4972",
-    "checkedAt": "2026-10-11T10:30:01.387Z",
+    "checkedAt": "2026-10-12T11:27:26.956Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "Yesterday.FM",
-    "url": "https://yesterdayfm.schlagerparadies.de/yesterdayfm",
-    "country": "DE",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": null,
-    "favicon": null,
-    "homepage": "http://www.rockhausradio.de/",
-    "stationUuid": "b059f79c-e89a-44c1-92e1-96f9a40f4713",
-    "checkedAt": "2026-10-11T10:30:01.677Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio LORA München 92,4",
@@ -4432,7 +4708,7 @@
     "favicon": null,
     "homepage": "https://lora924.de/",
     "stationUuid": "1afa90a4-421e-4949-8369-cdf376476aa5",
-    "checkedAt": "2026-10-11T10:30:02.163Z",
+    "checkedAt": "2026-10-12T11:27:27.695Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4451,7 +4727,7 @@
     "favicon": "https://pbs.twimg.com/profile_images/469051279486906368/QLjkWvWr.jpeg",
     "homepage": "http://95.90.100.8:8000/",
     "stationUuid": "a6f744a2-126c-470b-9025-78a29908b611",
-    "checkedAt": "2026-10-11T10:30:05.511Z",
+    "checkedAt": "2026-10-12T11:27:31.230Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4470,7 +4746,7 @@
     "favicon": "https://pbs.twimg.com/profile_images/469051279486906368/QLjkWvWr.jpeg",
     "homepage": "http://95.90.100.8:8000/",
     "stationUuid": "fa8fe18b-a7a9-4886-bc0a-2bc38efa2d84",
-    "checkedAt": "2026-10-11T10:30:05.580Z",
+    "checkedAt": "2026-10-12T11:27:31.313Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4489,7 +4765,7 @@
     "favicon": "https://pbs.twimg.com/profile_images/469051279486906368/QLjkWvWr.jpeg",
     "homepage": "http://95.90.100.8:8000/",
     "stationUuid": "a13976b6-38c1-40ab-bc0b-2524c2d637d2",
-    "checkedAt": "2026-10-11T10:30:05.645Z",
+    "checkedAt": "2026-10-12T11:27:31.364Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4508,7 +4784,7 @@
     "favicon": "https://api.ardmediathek.de/image-service/images/urn:ard:image:c3ab9296f3b282bf?w=512",
     "homepage": "https://www.br.de/radio/br24/index.html",
     "stationUuid": "65e1287a-6e7b-11ea-b1cf-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:06.543Z",
+    "checkedAt": "2026-10-12T11:27:32.287Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4527,7 +4803,24 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "b4d467ce-b850-458f-9345-75fa99b46c04",
-    "checkedAt": "2026-10-11T10:30:06.566Z",
+    "checkedAt": "2026-10-12T11:27:32.372Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Freies Sender Kombinat Hamburg",
+    "url": "https://streaming.fueralle.org/fsk.ogg",
+    "country": "DE",
+    "type": "OGG",
+    "tags": [],
+    "codec": "OGG",
+    "bitrate": 320,
+    "language": null,
+    "favicon": "https://www.fsk-hh.org/favicon.ico",
+    "homepage": "https://www.fsk-hh.org/",
+    "stationUuid": "fd3d0da7-1832-45fd-a51f-8f95d6d91ee7",
+    "checkedAt": "2026-10-12T11:27:33.560Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4544,7 +4837,7 @@
     "favicon": "https://motherearthradio.de/wp-content/uploads/2024/03/motherearthlogo-300x133-1-e1753355123898.png",
     "homepage": "https://motherearthradio.de/",
     "stationUuid": "5c2b8d62-c7df-4503-b608-a6b064a0eeb8",
-    "checkedAt": "2026-10-11T10:30:08.097Z",
+    "checkedAt": "2026-10-12T11:27:33.833Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -4561,7 +4854,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "838a20f6-d8c9-4bbb-b19c-1b822452f52d",
-    "checkedAt": "2026-10-11T10:30:08.547Z",
+    "checkedAt": "2026-10-12T11:27:34.165Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4578,7 +4871,49 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "ca4f04dc-3f43-4fbc-bf5d-5b183e15780e",
-    "checkedAt": "2026-10-11T10:30:08.549Z",
+    "checkedAt": "2026-10-12T11:27:34.294Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 0 N - Schlager Kult on Radio",
+    "url": "https://0n-schlagerkult.radionetz.de/0n-schlagerkult.mp3",
+    "country": "DE",
+    "type": "oldies",
+    "tags": [
+      "oldies",
+      "schlager",
+      "world music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://www.0nradio.com/logos/0n-schlager-kult_600x600.jpg",
+    "homepage": "http://www.0nradio.com/",
+    "stationUuid": "23495167-bf9e-11e9-8502-52543be04c81",
+    "checkedAt": "2026-10-12T11:27:35.205Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 1 A - Schlager Kult von 1A Radio",
+    "url": "https://1a-schlagerkult.radionetz.de/1a-schlagerkult.mp3",
+    "country": "DE",
+    "type": "oldies",
+    "tags": [
+      "oldies",
+      "schlager",
+      "world music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://www.1aradio.com/logos/1a-schlager-kult_600x600.jpg",
+    "homepage": "http://www.1aradio.com/",
+    "stationUuid": "5061f15e-f36c-11e8-a471-52543be04c81",
+    "checkedAt": "2026-10-12T11:27:35.310Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4597,7 +4932,7 @@
     "favicon": "https://dasneueradioseefunk.imsueden.de/storage/thumbs/192x192/r:1722683756/ef8y5qvmbni7g.png",
     "homepage": "http://www.radio-seefunk.de/",
     "stationUuid": "960e7751-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:11.738Z",
+    "checkedAt": "2026-10-12T11:27:39.129Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4614,7 +4949,7 @@
     "favicon": null,
     "homepage": "https://www.schlagerplanetradio.com/radios/100-schlager-in-the-mix",
     "stationUuid": "776cb14f-6ed3-4fd3-816c-96ae0ef8b65e",
-    "checkedAt": "2026-10-11T10:30:13.081Z",
+    "checkedAt": "2026-10-12T11:27:42.165Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -4631,7 +4966,7 @@
     "favicon": null,
     "homepage": "https://www.schlagerplanetradio.com/radios/100-schlager-in-the-mix",
     "stationUuid": "291b50c5-d7d3-4872-b364-9cad7172caa1",
-    "checkedAt": "2026-10-11T10:30:13.127Z",
+    "checkedAt": "2026-10-12T11:27:42.268Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -4648,7 +4983,7 @@
     "favicon": null,
     "homepage": "https://www.schlagerplanetradio.com/radios/100-schlager-in-the-mix",
     "stationUuid": "bf36d88d-d6cb-4bb6-ab67-0ab8e57664f0",
-    "checkedAt": "2026-10-11T10:30:13.148Z",
+    "checkedAt": "2026-10-12T11:27:42.295Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -4665,7 +5000,7 @@
     "favicon": null,
     "homepage": "https://meatthebeat,de/",
     "stationUuid": "082fbd5d-10f6-4e92-af3f-ff77dfe61957",
-    "checkedAt": "2026-10-11T10:30:14.057Z",
+    "checkedAt": "2026-10-12T11:27:43.257Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4682,7 +5017,7 @@
     "favicon": "https://radiocorax.de/wp-content/uploads/cropped-corax_icon.jpg",
     "homepage": "https://radiocorax.de/",
     "stationUuid": "0998a987-54c4-4927-bfad-db5a53dc6ab5",
-    "checkedAt": "2026-10-11T10:30:14.329Z",
+    "checkedAt": "2026-10-12T11:27:43.426Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4699,7 +5034,7 @@
     "favicon": "https://dev.radiocorax.de/wp-content/uploads/logo-4.png",
     "homepage": "https://radiocorax.de/",
     "stationUuid": "7163a1eb-b8ee-47bc-82a3-799044446ac0",
-    "checkedAt": "2026-10-11T10:30:14.375Z",
+    "checkedAt": "2026-10-12T11:27:43.487Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4716,7 +5051,24 @@
     "favicon": "https://radio.net",
     "homepage": "https://www.radioemscherlippe.de/",
     "stationUuid": "75ae7839-462f-4df4-90cd-45045ce98d2e",
-    "checkedAt": "2026-10-11T10:30:14.459Z",
+    "checkedAt": "2026-10-12T11:27:43.589Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Schwarzewelle Radio",
+    "url": "https://stream.lauft.fm/schwarzewelleradio",
+    "country": "DE",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "0c4c0c8a-1f63-40a0-9e25-08a18792e7e4",
+    "checkedAt": "2026-10-12T11:27:44.075Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4733,7 +5085,7 @@
     "favicon": null,
     "homepage": "https://www.jango.com/music/Tarrus+Riley",
     "stationUuid": "08c4e161-f4a6-45ab-827b-21e1f04bcf1a",
-    "checkedAt": "2026-10-11T10:30:15.324Z",
+    "checkedAt": "2026-10-12T11:27:44.092Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -4754,7 +5106,7 @@
     "favicon": "http://www.ballermann-radio.com/favicon.ico",
     "homepage": "http://www.ballermann-radio.com/",
     "stationUuid": "960e5584-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:15.978Z",
+    "checkedAt": "2026-10-12T11:27:44.830Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4775,7 +5127,7 @@
     "favicon": "http://www.ballermann-radio.com/favicon.ico",
     "homepage": "http://www.ballermann-radio.com/",
     "stationUuid": "9610aeb6-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:16.127Z",
+    "checkedAt": "2026-10-12T11:27:45.047Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4795,7 +5147,7 @@
     "favicon": "https://www.charivari.de/favicon.ico",
     "homepage": "https://www.charivari.de/radio/webradio/partyhitmix",
     "stationUuid": "98508250-e75d-11e9-a96c-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:16.164Z",
+    "checkedAt": "2026-10-12T11:27:45.059Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -4815,7 +5167,7 @@
     "favicon": null,
     "homepage": "http://www.radiopartywelle.com/",
     "stationUuid": "961812f8-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:16.990Z",
+    "checkedAt": "2026-10-12T11:27:45.938Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4834,7 +5186,7 @@
     "favicon": "https://linuxmc.tech/favicon.ico",
     "homepage": "https://linuxmc.tech/",
     "stationUuid": "29e98e5d-3f99-4a93-971c-115ee0b61c13",
-    "checkedAt": "2026-10-11T10:30:17.171Z",
+    "checkedAt": "2026-10-12T11:27:46.189Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4854,10 +5206,30 @@
     "favicon": "https://image.jimcdn.com/app/cms/image/transf/none/path/sc0fc92ce0c32e802/image/i43b8a451dc745337/version/1588158078/image.png",
     "homepage": "http://www.hitfm.de/",
     "stationUuid": "960e7f28-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:17.790Z",
+    "checkedAt": "2026-10-12T11:27:46.800Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "All Dixie Rock",
+    "url": "http://streaming.live365.com/a88164",
+    "country": "DE",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "german",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "f19b34d2-ec9b-4fcd-8569-1b15baea2818",
+    "checkedAt": "2026-10-12T11:27:47.364Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Arabella 80s",
@@ -4874,7 +5246,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "b424ac51-221f-40c5-96e7-22fa5e529b8f",
-    "checkedAt": "2026-10-11T10:30:20.832Z",
+    "checkedAt": "2026-10-12T11:27:49.790Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4894,7 +5266,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "276af9c4-a32b-40fa-9900-66e793ed8c44",
-    "checkedAt": "2026-10-11T10:30:20.887Z",
+    "checkedAt": "2026-10-12T11:27:49.883Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -4914,7 +5286,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "f0462edd-deaf-4bbc-9292-2d497b830fbb",
-    "checkedAt": "2026-10-11T10:30:20.901Z",
+    "checkedAt": "2026-10-12T11:27:49.895Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -4934,7 +5306,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "1850cfb3-589d-45d5-84b6-caa2006fa316",
-    "checkedAt": "2026-10-11T10:30:21.131Z",
+    "checkedAt": "2026-10-12T11:27:50.288Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4954,7 +5326,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "02b72d4c-9b36-42ee-af41-c783b20fac67",
-    "checkedAt": "2026-10-11T10:30:21.448Z",
+    "checkedAt": "2026-10-12T11:27:50.960Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -4974,7 +5346,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "12a80ef2-af92-45e6-ac10-b7380dd9ee62",
-    "checkedAt": "2026-10-11T10:30:21.468Z",
+    "checkedAt": "2026-10-12T11:27:50.982Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -4994,7 +5366,7 @@
     "favicon": "https://upload.dieneue1077.de/production/static/1699276324466/icons/icon_64.ax1w460g800.png",
     "homepage": "https://www.dieneue1077.de/",
     "stationUuid": "c92395ae-b0b3-4364-ace0-0d8224bf8776",
-    "checkedAt": "2026-10-11T10:30:21.524Z",
+    "checkedAt": "2026-10-12T11:27:51.031Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5014,7 +5386,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "68965b92-f213-44dd-8a08-7d7aa968f015",
-    "checkedAt": "2026-10-11T10:30:21.735Z",
+    "checkedAt": "2026-10-12T11:27:51.164Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5033,7 +5405,7 @@
     "favicon": "https://oetpai.fra1.digitaloceanspaces.com/new_images/onestop_1410624.png",
     "homepage": "https://directory.shoutcast.com/",
     "stationUuid": "a4ccdf2a-4157-4c61-9fd6-9a76f93fd2e7",
-    "checkedAt": "2026-10-11T10:30:23.339Z",
+    "checkedAt": "2026-10-12T11:27:53.064Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5053,7 +5425,7 @@
     "favicon": null,
     "homepage": "https://www.joker-radio.de/",
     "stationUuid": "820eef01-cd9b-45b0-a985-cde2245598e3",
-    "checkedAt": "2026-10-11T10:30:23.347Z",
+    "checkedAt": "2026-10-12T11:27:53.067Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -5072,7 +5444,7 @@
     "favicon": "https://www.bonifatiuswerk.de/fileadmin/templates/bonifatiuswerk/img/apple-touch-icon_120x120.png",
     "homepage": "https://www.bonifatiuswerk.de/de/news/2020/radio-gottesdienst-fuer-kinder-mit-geschichten-liedern-und-gebeten/",
     "stationUuid": "5da175a0-7249-4eee-ad85-94fd104c352e",
-    "checkedAt": "2026-10-11T10:30:24.579Z",
+    "checkedAt": "2026-10-12T11:27:53.466Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5092,7 +5464,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "d009185f-d3e5-4816-acb8-06bde439d4e7",
-    "checkedAt": "2026-10-11T10:30:25.893Z",
+    "checkedAt": "2026-10-12T11:27:55.081Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5111,7 +5483,7 @@
     "favicon": "https://radiomw.tv/wp-content/uploads/2019/02/C5D652BB-2F16-4FAA-8B53-B3AD105AFA8F.gif",
     "homepage": "https://radiomw.tv/",
     "stationUuid": "f9695835-3b23-4d4c-bb93-ac3b76844010",
-    "checkedAt": "2026-10-11T10:30:27.106Z",
+    "checkedAt": "2026-10-12T11:27:56.647Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5130,7 +5502,7 @@
     "favicon": null,
     "homepage": "https://radiomw.tv/",
     "stationUuid": "4236fe26-3eab-4fc1-adb8-d10291577b02",
-    "checkedAt": "2026-10-11T10:30:27.123Z",
+    "checkedAt": "2026-10-12T11:27:56.651Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5149,7 +5521,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "cdb438e4-13f0-4320-b15f-f98820c2f2aa",
-    "checkedAt": "2026-10-11T10:30:27.292Z",
+    "checkedAt": "2026-10-12T11:27:57.025Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5168,7 +5540,7 @@
     "favicon": "https://stream.rundfunker.net/static/icons/production/120.png",
     "homepage": "https://worni-mc.eu/",
     "stationUuid": "bd59a603-0e1e-416e-9d57-1d3beb537c90",
-    "checkedAt": "2026-10-11T10:30:28.570Z",
+    "checkedAt": "2026-10-12T11:27:59.408Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -5187,7 +5559,7 @@
     "favicon": null,
     "homepage": "https://illerlive.de/",
     "stationUuid": "660e627d-431f-42d3-b229-a6521f5a10d4",
-    "checkedAt": "2026-10-11T10:30:29.120Z",
+    "checkedAt": "2026-10-12T11:28:00.225Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5206,7 +5578,7 @@
     "favicon": null,
     "homepage": "https://101.ru/",
     "stationUuid": "98c35027-03aa-4bcd-b517-0528be782947",
-    "checkedAt": "2026-10-11T10:30:29.253Z",
+    "checkedAt": "2026-10-12T11:28:00.287Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5225,7 +5597,7 @@
     "favicon": "https://top100station.de/assets/logo.png",
     "homepage": "https://top100station.de/",
     "stationUuid": "33630bca-350d-465e-a858-bcbfae35cfdf",
-    "checkedAt": "2026-10-11T10:30:29.896Z",
+    "checkedAt": "2026-10-12T11:28:01.065Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5246,7 +5618,7 @@
     "favicon": "https://www.partyvibe.com/wp-content/uploads/2020/12/party-vibe-radio-logo.png",
     "homepage": "https://www.partyvibe.com/",
     "stationUuid": "7cc4cdb8-8a2a-4e61-aff1-a6734a7ba53b",
-    "checkedAt": "2026-10-11T10:30:31.055Z",
+    "checkedAt": "2026-10-12T11:28:03.143Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5265,7 +5637,7 @@
     "favicon": "https://pbs.twimg.com/profile_images/469051279486906368/QLjkWvWr.jpeg",
     "homepage": "https://t.me/Am3el1us",
     "stationUuid": "eab286ea-4ba0-41cc-b08f-230cb5571503",
-    "checkedAt": "2026-10-11T10:30:33.762Z",
+    "checkedAt": "2026-10-12T11:28:06.226Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5284,7 +5656,7 @@
     "favicon": "https://pbs.twimg.com/profile_images/469051279486906368/QLjkWvWr.jpeg",
     "homepage": "https://t.me/Am3el1us",
     "stationUuid": "c893a663-e6ba-43c1-b1ca-570c63529683",
-    "checkedAt": "2026-10-11T10:30:33.770Z",
+    "checkedAt": "2026-10-12T11:28:06.285Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5303,10 +5675,87 @@
     "favicon": "https://pbs.twimg.com/profile_images/469051279486906368/QLjkWvWr.jpeg",
     "homepage": "https://t.me/Am3el1us",
     "stationUuid": "0c019b53-b2a8-42ec-8172-8a56626dba79",
-    "checkedAt": "2026-10-11T10:30:33.773Z",
+    "checkedAt": "2026-10-12T11:28:06.332Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "NRG Reggae",
+    "url": "http://nrj.de/reggae",
+    "country": "DE",
+    "type": "reggae",
+    "tags": [
+      "reggae",
+      "roots reggae"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": null,
+    "homepage": "https://www.energy.de/streams/reggae",
+    "stationUuid": "b3818867-71fc-4fde-9d2b-6d2352fbd47a",
+    "checkedAt": "2026-10-12T11:28:06.374Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Reggae Radio Rastamusic.com",
+    "url": "http://origin-rastamusic.streamguys1.com/rastamusic.mp3",
+    "country": "DE",
+    "type": "reggae",
+    "tags": [
+      "reggae"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "english",
+    "favicon": "https://static.wixstatic.com/media/a09246_33fe4aef6e5f4f17b605a8d8645ff015%7emv2.png/v1/fill/w_32%2ch_32%2clg_1%2cusm_0.66_1.00_0.01/a09246_33fe4aef6e5f4f17b605a8d8645ff015%7emv2.png",
+    "homepage": "http://www.rastamusic.com/",
+    "stationUuid": "960ebc25-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-12T11:28:06.381Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "- 1 A - 90er von 1A Radio",
+    "url": "https://1a-90er.radionetz.de/1a-90er.mp3",
+    "country": "DE",
+    "type": "rock",
+    "tags": [
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://www.1aradio.com/logos/1a-90er_600x600.jpg",
+    "homepage": "http://www.1aradio.com/",
+    "stationUuid": "8f999b50-f373-11e8-a471-52543be04c81",
+    "checkedAt": "2026-10-12T11:28:08.747Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 1 A - 90er von 1A Radio",
+    "url": "https://1a-90er.radionetz.de/1a-90er.mp3",
+    "country": "DE",
+    "type": "rock",
+    "tags": [
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english,german",
+    "favicon": "https://www.1aradio.com/logos/1a-90er_600x600.jpg",
+    "homepage": "http://www.1aradio.com/",
+    "stationUuid": "db997f5a-84a7-4cfb-b6d8-bf18202a527f",
+    "checkedAt": "2026-10-12T11:28:08.760Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "MDR Jump Rock",
@@ -5322,7 +5771,7 @@
     "favicon": "https://cdn.mdrjump.de/resources/jump/img/favicons/apple-icon-120x120.png",
     "homepage": "http://www.jumpradio.de/musik/channel/rock",
     "stationUuid": "960c47c7-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:37.008Z",
+    "checkedAt": "2026-10-12T11:28:12.129Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5341,7 +5790,7 @@
     "favicon": "https://cdn.mdrjump.de/resources/jump/img/favicons/apple-icon-120x120.png",
     "homepage": "http://www.jumpradio.de/musik/channel/rock",
     "stationUuid": "963b5f69-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:37.039Z",
+    "checkedAt": "2026-10-12T11:28:12.177Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5360,7 +5809,7 @@
     "favicon": "https://cdn.mdrjump.de/resources/jump/img/favicons/apple-icon-120x120.png",
     "homepage": "http://www.jumpradio.de/musik/channel/rock",
     "stationUuid": "9639b1cc-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:37.056Z",
+    "checkedAt": "2026-10-12T11:28:12.215Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5379,7 +5828,7 @@
     "favicon": "https://www.radio.de/images/broadcasts/f2/00/10737/1/c175.png",
     "homepage": "https://www.radioemergency.de/",
     "stationUuid": "5e03f711-93e5-4810-83f9-099afceca9b6",
-    "checkedAt": "2026-10-11T10:30:38.571Z",
+    "checkedAt": "2026-10-12T11:28:14.176Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5398,7 +5847,127 @@
     "favicon": null,
     "homepage": "https://www.radioemergency.de/",
     "stationUuid": "21f58c07-ecd9-491f-a5d0-74eef1b8c71d",
-    "checkedAt": "2026-10-11T10:30:38.587Z",
+    "checkedAt": "2026-10-12T11:28:14.196Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 0 N - Volksmusik on Radio",
+    "url": "https://0n-volksmusik.radionetz.de/0n-volksmusik.mp3",
+    "country": "DE",
+    "type": "schlager",
+    "tags": [
+      "schlager",
+      "volksmusik"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://www.0nradio.com/logos/0n-volksmusik_600x600.jpg",
+    "homepage": "http://www.0nradio.com/",
+    "stationUuid": "8deaaab0-bf9e-11e9-8502-52543be04c81",
+    "checkedAt": "2026-10-12T11:28:18.134Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 0 N - Volksmusik on Radio",
+    "url": "https://0n-volksmusik.radionetz.de/0n-volksmusik.aac",
+    "country": "DE",
+    "type": "schlager",
+    "tags": [
+      "schlager",
+      "volksmusik"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "german",
+    "favicon": "https://www.0nradio.com/logos/0n-volksmusik_600x600.jpg",
+    "homepage": "http://www.0nradio.com/",
+    "stationUuid": "ef973b3f-bf9e-11e9-8502-52543be04c81",
+    "checkedAt": "2026-10-12T11:28:18.258Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 1 A - Volksmusik von 1A Radio",
+    "url": "https://1a-volksmusik.radionetz.de/1a-volksmusik.mp3",
+    "country": "DE",
+    "type": "schlager",
+    "tags": [
+      "schlager",
+      "volksmusik"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://www.1aradio.com/logos/1a-volksmusik_600x600.jpg",
+    "homepage": "http://www.1aradio.com/",
+    "stationUuid": "45a63332-a7d0-4e5f-a30f-18cae83fafb3",
+    "checkedAt": "2026-10-12T11:28:18.272Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 1 A - Volksmusik von 1A Radio",
+    "url": "https://1a-volksmusik.radionetz.de/1a-volksmusik.aac",
+    "country": "DE",
+    "type": "schlager",
+    "tags": [
+      "schlager",
+      "volksmusik"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "german",
+    "favicon": "https://www.1aradio.com/logos/1a-volksmusik_600x600.jpg",
+    "homepage": "http://www.1aradio.com/",
+    "stationUuid": "fe7e30bf-f36b-11e8-a471-52543be04c81",
+    "checkedAt": "2026-10-12T11:28:18.389Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 1 A - Volksmusik von 1A Radio",
+    "url": "https://1a-volksmusik.radionetz.de/1a-volksmusik.mp3",
+    "country": "DE",
+    "type": "schlager",
+    "tags": [
+      "schlager",
+      "volksmusik"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://www.1aradio.com/logos/1a-volksmusik_600x600.jpg",
+    "homepage": "http://www.1aradio.com/",
+    "stationUuid": "6654baa5-dd56-4b61-a07e-f5625ab314f9",
+    "checkedAt": "2026-10-12T11:28:18.400Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "- 1 A - Volksmusik von 1A Radio",
+    "url": "https://1a-volksmusik.radionetz.de/1a-volksmusik.mp3",
+    "country": "DE",
+    "type": "schlager",
+    "tags": [
+      "schlager",
+      "volksmusik"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://www.1aradio.com/logos/1a-volksmusik_600x600.jpg",
+    "homepage": "http://www.1aradio.com/",
+    "stationUuid": "cd31f31f-f36b-11e8-a471-52543be04c81",
+    "checkedAt": "2026-10-12T11:28:18.415Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5417,7 +5986,7 @@
     "favicon": null,
     "homepage": "https://bsj.fm/",
     "stationUuid": "0e70fd09-2116-4571-b010-9c577c8638bf",
-    "checkedAt": "2026-10-11T10:30:44.953Z",
+    "checkedAt": "2026-10-12T11:28:28.489Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5437,7 +6006,7 @@
     "favicon": null,
     "homepage": "http://soulpowerfm.de/",
     "stationUuid": "1cb1c6a3-02d6-426f-8e4c-f7411264b2d1",
-    "checkedAt": "2026-10-11T10:30:45.495Z",
+    "checkedAt": "2026-10-12T11:28:29.292Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5456,7 +6025,7 @@
     "favicon": "https://static.104.6rtl.com/img/8016/951662/183000/o/480/480/rtl_nfl_radio_1600x1600.png",
     "homepage": "https://www.104.6rtl.com/",
     "stationUuid": "4aace60a-ddf5-4931-b7d1-9a2e21bbb5fe",
-    "checkedAt": "2026-10-11T10:30:45.891Z",
+    "checkedAt": "2026-10-12T11:28:29.854Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5475,7 +6044,7 @@
     "favicon": "https://www.rtlnflradio.de/assets/icons/logo.svg",
     "homepage": "https://www.rtlnflradio.de/",
     "stationUuid": "d9919f30-88b3-40a2-9841-b02ff18ab60c",
-    "checkedAt": "2026-10-11T10:30:45.897Z",
+    "checkedAt": "2026-10-12T11:28:29.895Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5494,7 +6063,7 @@
     "favicon": "https://image.jimcdn.com/app/cms/image/transf/none/path/sc0fc92ce0c32e802/image/i43b8a451dc745337/version/1588158078/image.png",
     "homepage": "http://www.hitfm.de/",
     "stationUuid": "960e8009-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:45.909Z",
+    "checkedAt": "2026-10-12T11:28:29.912Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5513,7 +6082,7 @@
     "favicon": "https://www.hardbase.fm/images/site/weareone_fire_220_220.jpg",
     "homepage": null,
     "stationUuid": "d4f98e6d-1c1c-4c25-92f5-dc0ea54244cd",
-    "checkedAt": "2026-10-11T10:30:46.822Z",
+    "checkedAt": "2026-10-12T11:28:31.200Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5532,48 +6101,10 @@
     "favicon": "https://www.hardbase.fm/images/site/weareone_fire_220_220.jpg",
     "homepage": null,
     "stationUuid": "50f8eca8-483d-4e9e-9bcb-893099e31d16",
-    "checkedAt": "2026-10-11T10:30:46.833Z",
+    "checkedAt": "2026-10-12T11:28:31.218Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "energy sachsen",
-    "url": "http://nrj.de/sachsen",
-    "country": "DE",
-    "type": "top hits",
-    "tags": [
-      "top hits"
-    ],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "german",
-    "favicon": null,
-    "homepage": "https://www.energy.de/sachsen",
-    "stationUuid": "e15b39e7-05e1-42b1-9c8f-f8fc2eac53e6",
-    "checkedAt": "2026-10-11T10:30:47.869Z",
-    "status": 429,
-    "contentType": "text/plain; charset=utf-8",
-    "lastFailure": "HTTP 429"
-  },
-  {
-    "name": "90s90s Trance",
-    "url": "https://regiocast.streamabc.net/regc-90s90strance-mp3-192-2383645",
-    "country": "DE",
-    "type": "trance",
-    "tags": [
-      "trance"
-    ],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.90s90s.de/radios/trance",
-    "stationUuid": "bb3117fb-0513-4251-9135-ba9cdc730d41",
-    "checkedAt": "2026-10-11T10:30:48.019Z",
-    "status": 429,
-    "contentType": "text/plain; charset=utf-8",
-    "lastFailure": "HTTP 429"
   },
   {
     "name": "ANIXE HD",
@@ -5589,7 +6120,7 @@
     "favicon": "https://www.anixehd.tv/favicon.ico",
     "homepage": "https://www.anixehd.tv/",
     "stationUuid": "1ce6d0ae-1d9f-4528-b4b5-d604446412c7",
-    "checkedAt": "2026-10-11T10:30:48.496Z",
+    "checkedAt": "2026-10-12T11:28:32.994Z",
     "status": 403,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 403"
@@ -5608,7 +6139,7 @@
     "favicon": null,
     "homepage": "https://baden-tv.com/",
     "stationUuid": "b272eae0-4851-11e8-b1b0-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:48.530Z",
+    "checkedAt": "2026-10-12T11:28:33.144Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5627,7 +6158,7 @@
     "favicon": null,
     "homepage": "http://www3.k-tv.org/",
     "stationUuid": "7fb0e88b-484e-11e8-b1b0-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:48.576Z",
+    "checkedAt": "2026-10-12T11:28:33.161Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5644,7 +6175,7 @@
     "favicon": null,
     "homepage": "https://bundestag.de/",
     "stationUuid": "4f40392a-60d6-4b61-9589-1d30ce321d81",
-    "checkedAt": "2026-10-11T10:30:48.869Z",
+    "checkedAt": "2026-10-12T11:28:33.682Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5661,7 +6192,7 @@
     "favicon": null,
     "homepage": "https://bundestag.de/",
     "stationUuid": "f263dfc3-1be1-485d-9018-0eb1aa7898b3",
-    "checkedAt": "2026-10-11T10:30:48.880Z",
+    "checkedAt": "2026-10-12T11:28:33.757Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5678,7 +6209,7 @@
     "favicon": null,
     "homepage": "https://bundestag.de/",
     "stationUuid": "ca9fc10f-8964-4df0-b1d8-750a1e7fae8f",
-    "checkedAt": "2026-10-11T10:30:48.905Z",
+    "checkedAt": "2026-10-12T11:28:33.848Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5697,7 +6228,7 @@
     "favicon": "https://web.archive.org/web/20220121062448if_/https://www.radio-zett.de/dateien_upload/avatar/avatar_4_22_emil_jiw.jpg",
     "homepage": "http://202.61.251.37:8000/",
     "stationUuid": "f4eae943-1981-4f99-a249-2fa1247d8104",
-    "checkedAt": "2026-10-11T10:30:49.187Z",
+    "checkedAt": "2026-10-12T11:28:34.193Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5716,7 +6247,7 @@
     "favicon": "https://web.archive.org/web/20220121062448if_/https://www.radio-zett.de/dateien_upload/avatar/avatar_4_22_emil_jiw.jpg",
     "homepage": "http://202.61.251.37:8000/",
     "stationUuid": "65882531-c52b-46ed-b410-ec3ba3ed8990",
-    "checkedAt": "2026-10-11T10:30:49.197Z",
+    "checkedAt": "2026-10-12T11:28:34.204Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5735,7 +6266,7 @@
     "favicon": "https://web.archive.org/web/20220121062448if_/https://www.radio-zett.de/dateien_upload/avatar/avatar_4_22_emil_jiw.jpg",
     "homepage": "http://202.61.251.37:8000/",
     "stationUuid": "8a3a287f-118b-4ad2-9cc6-81e032bcd59a",
-    "checkedAt": "2026-10-11T10:30:49.199Z",
+    "checkedAt": "2026-10-12T11:28:34.206Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5754,7 +6285,7 @@
     "favicon": null,
     "homepage": "http://www.fr-hef.de/",
     "stationUuid": "ce723732-4508-11ea-a860-52543be04c81",
-    "checkedAt": "2026-10-11T10:30:49.205Z",
+    "checkedAt": "2026-10-12T11:28:34.211Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5773,7 +6304,7 @@
     "favicon": "https://radio.wir-schaffen.de/wp-content/uploads/2023/11/cropped-wohltatradio.png",
     "homepage": "https://radio.wir-schaffen.de/",
     "stationUuid": "9a28e188-0f58-4e2c-aa59-cd908844a51d",
-    "checkedAt": "2026-10-11T10:30:49.370Z",
+    "checkedAt": "2026-10-12T11:28:34.569Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"

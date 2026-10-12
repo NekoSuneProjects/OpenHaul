@@ -1,5 +1,24 @@
 [
   {
+    "name": "Radio Pakistan Lahore",
+    "url": "https://whmsonic.radio.gov.pk:8026/relay?type=http&nocache=9",
+    "country": "PK",
+    "type": "🌀",
+    "tags": [
+      "🌀"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "urdu",
+    "favicon": "null",
+    "homepage": "https://whmsonic.radio.gov.pk:8026/relay?type=http&nocache=9",
+    "stationUuid": "cab938da-32c3-485b-81ef-a56701cf33e1",
+    "checkedAt": "2026-10-12T11:54:53.159Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
     "name": "fm.92.",
     "url": "http://s47.myradiostream.com:12804/listen.m4a",
     "country": "PK",
@@ -13,7 +32,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c51340b2-9fbc-4cea-8738-258b2a33d16d",
-    "checkedAt": "2026-10-11T10:56:54.278Z",
+    "checkedAt": "2026-10-12T11:54:54.489Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -36,7 +55,7 @@
     "favicon": null,
     "homepage": "https://fm91.com.pk/",
     "stationUuid": "47efdce4-809f-4cd3-8e3c-85a2eabce1ef",
-    "checkedAt": "2026-10-11T10:56:54.718Z",
+    "checkedAt": "2026-10-12T11:54:54.892Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -53,7 +72,7 @@
     "favicon": null,
     "homepage": "http://aladinradio.com/",
     "stationUuid": "4a29dbc1-77e1-449a-b6b5-62e19f66a8fc",
-    "checkedAt": "2026-10-11T10:56:54.874Z",
+    "checkedAt": "2026-10-12T11:54:55.116Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -70,28 +89,28 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/ilm-radio-renala/",
     "stationUuid": "8281a8d0-4d03-4e1f-96ea-dbae81e5bf28",
-    "checkedAt": "2026-10-11T10:56:56.119Z",
+    "checkedAt": "2026-10-12T11:54:56.513Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
   },
   {
-    "name": "Radio Pakistan D.I. Khan MW 711",
-    "url": "https://whmsonic.radio.gov.pk:7000/Dikhan",
+    "name": "FM 101 Khairpur",
+    "url": "https://whmsonic.radio.gov.pk:8054/stream",
     "country": "PK",
     "type": "public radio",
     "tags": [
       "public radio"
     ],
     "codec": "MP3",
-    "bitrate": 96,
+    "bitrate": 128,
     "language": null,
     "favicon": null,
     "homepage": "https://radio.gov.pk/",
-    "stationUuid": "a8067725-3d72-406f-828b-9ba72f638479",
-    "checkedAt": "2026-10-11T10:56:57.272Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "stationUuid": "db40900f-da30-44c1-84d0-1fb235daf393",
+    "checkedAt": "2026-10-12T11:54:57.619Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   }
 ]

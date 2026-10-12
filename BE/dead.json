@@ -11,7 +11,7 @@
     "favicon": "https://mooyzo.be/wp-content/uploads/2018/06/mooyzo-favicon.png",
     "homepage": "https://mooyzo.be/",
     "stationUuid": "7c3ee6fb-d5ab-4cba-b8c8-e40ebaba8efc",
-    "checkedAt": "2026-10-11T10:13:00.269Z",
+    "checkedAt": "2026-10-12T11:07:03.024Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -28,7 +28,7 @@
     "favicon": "https://assets.radioplayer.org/056/0567/600/600/kz4elh2i.png",
     "homepage": "http://player.mint.be/",
     "stationUuid": "029ef185-d694-40a5-9298-8d6eb5799f80",
-    "checkedAt": "2026-10-11T10:13:01.187Z",
+    "checkedAt": "2026-10-12T11:07:04.336Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -45,7 +45,7 @@
     "favicon": null,
     "homepage": "https://www.mint.be/player/",
     "stationUuid": "8f40491c-77e4-4379-9e18-28b38b620fd5",
-    "checkedAt": "2026-10-11T10:13:01.267Z",
+    "checkedAt": "2026-10-12T11:07:04.472Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -66,10 +66,178 @@
     "favicon": "http://45.13.239.248/static/uploads/musi/album_art.1787755577.jpg",
     "homepage": "https://musi.be/",
     "stationUuid": "c3238ea0-dd81-4267-83a6-a6858ceaaaf9",
-    "checkedAt": "2026-10-11T10:13:02.605Z",
+    "checkedAt": "2026-10-12T11:07:06.021Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Air Libre",
+    "url": "http://streaming.domainepublic.net:8000/radioairlibre.ogg",
+    "country": "BE",
+    "type": "alternative",
+    "tags": [
+      "alternative"
+    ],
+    "codec": "OGG",
+    "bitrate": 0,
+    "language": "french",
+    "favicon": null,
+    "homepage": "http://www.radioairlibre.be/",
+    "stationUuid": "960d1cf5-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-12T11:07:06.057Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Air Libre",
+    "url": "https://streaming.domainepublic.net/radioairlibre.ogg",
+    "country": "BE",
+    "type": "alternative",
+    "tags": [
+      "alternative"
+    ],
+    "codec": "OGG",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radioairlibre.net/",
+    "stationUuid": "7dcdbd3f-d867-47a4-bbd6-f8b1331233eb",
+    "checkedAt": "2026-10-12T11:07:06.108Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "radio campus",
+    "url": "http://streamer.radiocampus.be/stream.mp3",
+    "country": "BE",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "community radio",
+      "free radio",
+      "university radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french,persian",
+    "favicon": "http://www.radiocampus.be/favicon.ico",
+    "homepage": "http://www.radiocampus.be/",
+    "stationUuid": "3f1d3248-26db-468d-9667-df088b018fdc",
+    "checkedAt": "2026-10-12T11:07:06.172Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Campus BXL 92.1 [AAC+]",
+    "url": "http://164.15.252.129:8000/stream.aacplus",
+    "country": "BE",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "eclectic",
+      "electro",
+      "experimental",
+      "folk",
+      "hip hop",
+      "indie",
+      "jazz",
+      "progressive",
+      "rock"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.radiocampus.be/",
+    "stationUuid": "11b71495-0443-473e-95b2-e6d454200888",
+    "checkedAt": "2026-10-12T11:07:06.182Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Campus BXL 92.1 [AAC+]",
+    "url": "http://164.15.252.129:8000/stream.aacplus",
+    "country": "BE",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "classic rock; alternative rock indie",
+      "eclectic",
+      "electro"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://www.radiocampus.be/favicon.ico",
+    "homepage": "https://www.radiocampus.be/",
+    "stationUuid": "05d4fdce-30a1-49e4-bdf2-58ecf7560606",
+    "checkedAt": "2026-10-12T11:07:06.355Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Campus BXL 92.1 [AAC+]",
+    "url": "https://www.radiocampus.be/stream/stream.aacplus",
+    "country": "BE",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "bruxelles",
+      "eclectic",
+      "electro",
+      "experimental",
+      "folk",
+      "hip hop",
+      "indie",
+      "jazz",
+      "progressive",
+      "punk",
+      "rock"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.radiocampus.be/",
+    "stationUuid": "57238c01-c13f-43d7-b262-e5d1634f5a08",
+    "checkedAt": "2026-10-12T11:07:06.405Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Radio Campus BXL 92.1 [Ogg HQ]",
+    "url": "https://www.radiocampus.be/stream/stream_hi.ogg",
+    "country": "BE",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "eclectic",
+      "electro",
+      "experimental",
+      "folk",
+      "hip hop",
+      "indie",
+      "jazz",
+      "progressive",
+      "rock"
+    ],
+    "codec": "OGG",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.radiocampus.be/",
+    "stationUuid": "963ad064-579c-4c56-978e-0f97e178db08",
+    "checkedAt": "2026-10-12T11:07:06.574Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Mint",
@@ -86,7 +254,7 @@
     "favicon": null,
     "homepage": "https://mint.be/player/",
     "stationUuid": "fc00e0c5-8876-4926-bf51-c0f70b11fc9e",
-    "checkedAt": "2026-10-11T10:13:04.170Z",
+    "checkedAt": "2026-10-12T11:07:09.280Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -108,7 +276,7 @@
     "favicon": null,
     "homepage": "http://antipode.be/",
     "stationUuid": "0170bda3-e6a5-4aad-a4ef-6231484d5d03",
-    "checkedAt": "2026-10-11T10:13:04.199Z",
+    "checkedAt": "2026-10-12T11:07:09.287Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -127,7 +295,7 @@
     "favicon": "https://rcf.be/wp-content/themes/neutro-rcf/favicon.ico",
     "homepage": "https://rcf.be/",
     "stationUuid": "31de9e75-8054-11e9-aa30-52543be04c81",
-    "checkedAt": "2026-10-11T10:13:04.362Z",
+    "checkedAt": "2026-10-12T11:07:09.726Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -151,7 +319,7 @@
     "favicon": null,
     "homepage": "https://www.boutersemonair.be/",
     "stationUuid": "bf2e499d-f4b2-466b-add2-dee95aeac971",
-    "checkedAt": "2026-10-11T10:13:04.629Z",
+    "checkedAt": "2026-10-12T11:07:10.283Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -170,7 +338,7 @@
     "favicon": null,
     "homepage": "https://feel-good-radioo.cms.webnode.be/",
     "stationUuid": "d4c5c947-6d01-48d9-888c-b74fe8620a58",
-    "checkedAt": "2026-10-11T10:13:04.711Z",
+    "checkedAt": "2026-10-12T11:07:10.505Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -190,7 +358,7 @@
     "favicon": "https://belgiefm.com/sites/default/files/radio/logos/logo-croozefm.png",
     "homepage": "https://crooze.eu/en/",
     "stationUuid": "2714541a-9983-4401-984e-27b7a824df99",
-    "checkedAt": "2026-10-11T10:13:07.483Z",
+    "checkedAt": "2026-10-12T11:07:15.026Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -211,7 +379,7 @@
     "favicon": "https://tisvloms.eu/wp-content/uploads/2017/10/tis-vloms-logo-400.png",
     "homepage": "https://tisvloms.eu/",
     "stationUuid": "32269fbf-4191-40ae-ae41-2d9ecb936c0e",
-    "checkedAt": "2026-10-11T10:13:07.773Z",
+    "checkedAt": "2026-10-12T11:07:15.328Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -231,7 +399,7 @@
     "favicon": null,
     "homepage": "http://radiomedia.be.be/",
     "stationUuid": "4a5d52b4-05c0-465b-98f5-811aa6016cb7",
-    "checkedAt": "2026-10-11T10:13:08.317Z",
+    "checkedAt": "2026-10-12T11:07:15.802Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -251,7 +419,7 @@
     "favicon": null,
     "homepage": "https://tisvloms.eu/",
     "stationUuid": "513af0f8-7327-4b82-a989-e172a609737c",
-    "checkedAt": "2026-10-11T10:13:09.015Z",
+    "checkedAt": "2026-10-12T11:07:16.587Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -273,10 +441,29 @@
     "favicon": null,
     "homepage": "http://www.lazerhothits.eu/",
     "stationUuid": "962b4e52-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:13:09.134Z",
+    "checkedAt": "2026-10-12T11:07:16.681Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Campus Bruxelles 92.1",
+    "url": "http://164.15.252.129:8000/stream.aacplus",
+    "country": "BE",
+    "type": "jazz",
+    "tags": [
+      "jazz"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://www.radiocampus.be/",
+    "stationUuid": "cef12917-6422-4668-8be4-345aa69c37ce",
+    "checkedAt": "2026-10-12T11:07:17.003Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "' t Is Vloms Affligem, be",
@@ -290,7 +477,7 @@
     "favicon": null,
     "homepage": "https://tisvloms.eu/",
     "stationUuid": "ad105e4a-c4d9-4b11-a106-a2840dd08e00",
-    "checkedAt": "2026-10-11T10:13:10.029Z",
+    "checkedAt": "2026-10-12T11:07:17.833Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -307,7 +494,7 @@
     "favicon": null,
     "homepage": "https://tisvloms.eu/",
     "stationUuid": "808c18e9-51ab-4a35-9dbc-6b392b39de96",
-    "checkedAt": "2026-10-11T10:13:10.113Z",
+    "checkedAt": "2026-10-12T11:07:17.882Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -324,7 +511,7 @@
     "favicon": null,
     "homepage": "https://tisvloms.eu/",
     "stationUuid": "20d57f3e-e8f1-4f16-b08a-e7190009028b",
-    "checkedAt": "2026-10-11T10:13:10.141Z",
+    "checkedAt": "2026-10-12T11:07:17.973Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -341,7 +528,7 @@
     "favicon": null,
     "homepage": "https://tisvloms.eu/",
     "stationUuid": "95088657-c7eb-4f40-8952-bbd96677b6b0",
-    "checkedAt": "2026-10-11T10:13:10.212Z",
+    "checkedAt": "2026-10-12T11:07:17.976Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -358,7 +545,7 @@
     "favicon": "https://img1.wsimg.com/isteam/ip/405836de-9b54-4347-a9dd-4870992390f3/logo%20square%20390%20X%20388.png/:/rs=w:105,h:104,cg:true,m/cr=w:105,h:104/qt=q:100/ll",
     "homepage": "https://8090.rocks/home",
     "stationUuid": "72c95c2a-0728-433f-8bb0-67fb2d1fcfea",
-    "checkedAt": "2026-10-11T10:13:10.717Z",
+    "checkedAt": "2026-10-12T11:07:18.922Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -375,7 +562,7 @@
     "favicon": "https://www.antipode.be/images/antipode-red.png",
     "homepage": "https://www.antipode.be/",
     "stationUuid": "ec24e61c-1704-40a4-b593-a220b598e792",
-    "checkedAt": "2026-10-11T10:13:10.777Z",
+    "checkedAt": "2026-10-12T11:07:19.151Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -392,7 +579,7 @@
     "favicon": "https://crooze.fm/favicon.ico",
     "homepage": "https://crooze.fm/streams/chillout/",
     "stationUuid": "15768fa1-50b4-11ea-b877-52543be04c81",
-    "checkedAt": "2026-10-11T10:13:13.978Z",
+    "checkedAt": "2026-10-12T11:07:24.757Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -409,7 +596,7 @@
     "favicon": "https://spacial.com/wp-content/uploads/2019/08/cropped-favicon-180x180.png",
     "homepage": "http://spacial.com/",
     "stationUuid": "ac329316-ec89-4203-b4eb-ad3ac850222c",
-    "checkedAt": "2026-10-11T10:13:14.053Z",
+    "checkedAt": "2026-10-12T11:07:25.002Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -426,7 +613,7 @@
     "favicon": null,
     "homepage": "https://tisvloms.eu/",
     "stationUuid": "6df8ec59-cd8c-47cd-8d04-bf146ec9be52",
-    "checkedAt": "2026-10-11T10:13:16.814Z",
+    "checkedAt": "2026-10-12T11:07:26.247Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -443,7 +630,7 @@
     "favicon": "https://onibradio.com/wp-content/uploads/2024/03/01-ONIB-DISCO-400X400-copie-170x170.jpg",
     "homepage": "https://onibradio.com/#",
     "stationUuid": "dc9fdacf-bcb3-45fb-9ded-57fc077efcbf",
-    "checkedAt": "2026-10-11T10:13:18.339Z",
+    "checkedAt": "2026-10-12T11:07:27.273Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -460,7 +647,7 @@
     "favicon": "https://pepsradio.be/upload/60396f9575fa23.74426916.ico",
     "homepage": "https://pepsradio.be/",
     "stationUuid": "ecb77cdf-0848-47b2-bcc2-fb53fb9cbd69",
-    "checkedAt": "2026-10-11T10:13:18.352Z",
+    "checkedAt": "2026-10-12T11:07:27.429Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -477,10 +664,27 @@
     "favicon": null,
     "homepage": "http://www.radio-minerva.be/",
     "stationUuid": "961872d1-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:13:19.733Z",
+    "checkedAt": "2026-10-12T11:07:28.887Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Studio 22 Gullegem, be",
+    "url": "http://stream.twinmedia.be:8010/;.pls",
+    "country": "BE",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://www.luister22.be/",
+    "stationUuid": "58cae019-de8d-469a-ae31-dc60042d1d61",
+    "checkedAt": "2026-10-12T11:07:29.611Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Victoria Carnaval",
@@ -494,7 +698,7 @@
     "favicon": null,
     "homepage": "https://www.radiovictoria.be/",
     "stationUuid": "a483f736-7598-41cf-a5c9-77d2daedaae3",
-    "checkedAt": "2026-10-11T10:13:20.674Z",
+    "checkedAt": "2026-10-12T11:07:29.886Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -511,7 +715,7 @@
     "favicon": null,
     "homepage": "https://www.radiorsj.be/",
     "stationUuid": "06845788-c9d7-4ab1-83e2-5550973048e9",
-    "checkedAt": "2026-10-11T10:13:20.726Z",
+    "checkedAt": "2026-10-12T11:07:29.957Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -528,10 +732,10 @@
     "favicon": null,
     "homepage": "http://www.sudradio.net/",
     "stationUuid": "960ee91b-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-11T10:13:21.317Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-10-12T11:07:30.612Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "ایران بلژ",
@@ -545,7 +749,7 @@
     "favicon": null,
     "homepage": "https://iranbelge.ismyradio.com/",
     "stationUuid": "01b93239-cfe8-4765-b958-12289f57ca59",
-    "checkedAt": "2026-10-11T10:13:23.939Z",
+    "checkedAt": "2026-10-12T11:07:33.780Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -565,7 +769,7 @@
     "favicon": "https://usercontent.one/wp/www.radioapollo.be/wp-content/uploads/2023/10/radioapollo.jpg",
     "homepage": "https://www.radioapollo.be/",
     "stationUuid": "0ed0b12c-4102-4607-b99b-a596b3b3bea1",
-    "checkedAt": "2026-10-11T10:13:24.383Z",
+    "checkedAt": "2026-10-12T11:07:34.488Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -585,7 +789,7 @@
     "favicon": null,
     "homepage": "http://www.komifoo.be/",
     "stationUuid": "6e6b2143-e35c-4297-841e-27927aa0ecee",
-    "checkedAt": "2026-10-11T10:13:25.335Z",
+    "checkedAt": "2026-10-12T11:07:35.498Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -605,7 +809,7 @@
     "favicon": null,
     "homepage": "https://melindafm.be/",
     "stationUuid": "86cab780-21a4-4951-89e4-8532fee53255",
-    "checkedAt": "2026-10-11T10:13:25.538Z",
+    "checkedAt": "2026-10-12T11:07:35.686Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -624,7 +828,7 @@
     "favicon": null,
     "homepage": "http://www.radioutopia.be/",
     "stationUuid": "4bb619df-aeab-4a34-bf7c-dedaba379caa",
-    "checkedAt": "2026-10-11T10:13:25.655Z",
+    "checkedAt": "2026-10-12T11:07:35.937Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -643,7 +847,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "9f14d03c-4d26-4c6f-b0ac-cae7bbc45e6f",
-    "checkedAt": "2026-10-11T10:13:27.767Z",
+    "checkedAt": "2026-10-12T11:07:38.166Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -662,7 +866,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "84994bcd-c93c-40e5-97d9-0f8e8919a6fd",
-    "checkedAt": "2026-10-11T10:13:28.602Z",
+    "checkedAt": "2026-10-12T11:07:39.162Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -681,7 +885,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "292ff027-ab96-44d1-9dc3-ee2b1cd7fdd9",
-    "checkedAt": "2026-10-11T10:13:28.604Z",
+    "checkedAt": "2026-10-12T11:07:39.202Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -700,7 +904,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "4e5b8555-1ce2-4ed5-b302-f9bb45a79ec0",
-    "checkedAt": "2026-10-11T10:13:28.660Z",
+    "checkedAt": "2026-10-12T11:07:39.258Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

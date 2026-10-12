@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://astanafm.kz/",
     "stationUuid": "e5b9eb79-1569-4cda-b86d-605750ec707a",
-    "checkedAt": "2026-10-11T10:46:43.331Z",
+    "checkedAt": "2026-10-12T11:44:47.830Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -31,7 +31,7 @@
     "favicon": null,
     "homepage": "http://spacebeat.strangled.net/",
     "stationUuid": "af31308a-5407-4f53-9986-50b01b8ce933",
-    "checkedAt": "2026-10-11T10:46:43.337Z",
+    "checkedAt": "2026-10-12T11:44:47.832Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -50,10 +50,33 @@
     "favicon": "https://tihbus.droppages.com/sbr-logo.png",
     "homepage": "https://t.me/spacebeatradio",
     "stationUuid": "4a1a7199-a7ec-435d-9835-7387b4941750",
-    "checkedAt": "2026-10-11T10:46:44.088Z",
+    "checkedAt": "2026-10-12T11:44:48.599Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "((beu))",
+    "url": "https://stream.beufm.kz/beufm",
+    "country": "KZ",
+    "type": "etnic",
+    "tags": [
+      "etnic",
+      "kazakh music",
+      "kazakh pop",
+      "modern",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "kazakh,russian",
+    "favicon": "https://beufm.kz/template/logo_white.png",
+    "homepage": "https://beufm.kz/",
+    "stationUuid": "8d19ab98-ff22-440c-af05-0b1669b8a2ba",
+    "checkedAt": "2026-10-12T11:44:48.612Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Love Radio Kazakhstan",
@@ -67,9 +90,26 @@
     "favicon": "https://loveradio.kz/img/touch-icon-ipad-pro.png",
     "homepage": "https://loveradio.kz/",
     "stationUuid": "75437893-9527-4de8-902e-c04f08af2dfc",
-    "checkedAt": "2026-10-11T10:46:45.476Z",
+    "checkedAt": "2026-10-12T11:44:50.022Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Радио Микс Казахстан",
+    "url": "http://streaming.radionomy.com/JamendoLounge",
+    "country": "KZ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://registan.kz/#",
+    "stationUuid": "879f6b2f-e28f-42ee-80a0-03cca480997b",
+    "checkedAt": "2026-10-12T11:44:50.088Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   }
 ]
