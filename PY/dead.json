@@ -1,28 +1,5 @@
 [
   {
-    "name": "RADIO CAAPUCU FM 91.7",
-    "url": "http://radio.host.com.py:9452/;",
-    "country": "PY",
-    "type": "alternative",
-    "tags": [
-      "alternative",
-      "indie",
-      "local radio",
-      "rock",
-      "rock nacional"
-    ],
-    "codec": "AAC+",
-    "bitrate": 80,
-    "language": "spanish",
-    "favicon": "https://turadio.com.py/wp-content/uploads/2019/10/caapucu-300x259.png",
-    "homepage": "https://turadio.com.py/caapucufm/",
-    "stationUuid": "df7c112f-75a3-49bc-9250-cee6688fbddd",
-    "checkedAt": "2026-10-12T11:58:24.458Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
     "name": "Radio ABC FM 98.5 (Asunción)",
     "url": "https://media.streambrothers.com:8350/stream",
     "country": "PY",
@@ -39,10 +16,10 @@
     "favicon": "null",
     "homepage": "http://www.abc.com.pyl/",
     "stationUuid": "28343ff5-b885-4a71-8b55-b4545686b500",
-    "checkedAt": "2026-10-12T11:58:24.676Z",
-    "status": 404,
-    "contentType": "text/plain",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-10-15T09:20:43.221Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio ABC Cardinal 730 AM (Asunción)",
@@ -62,10 +39,32 @@
     "favicon": "null",
     "homepage": "http://www.abc.com.py/",
     "stationUuid": "ea9b9934-8eb7-434c-ac13-2d249b80f11e",
-    "checkedAt": "2026-10-12T11:58:24.708Z",
-    "status": 404,
-    "contentType": "text/plain",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-10-15T09:20:43.328Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Estacion 105  105.1 FM",
+    "url": "http://radio.host.com.py:9460/;",
+    "country": "PY",
+    "type": "cumbia",
+    "tags": [
+      "cumbia",
+      "dance",
+      "entretenimiento",
+      "tropical"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": "spanish",
+    "favicon": "https://turadio.com.py/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-22-at-07.05.19-300x292.jpeg",
+    "homepage": "https://turadio.com.py/estacion105/",
+    "stationUuid": "bcf33ef9-e087-4de4-8b6e-0f2244f53a86",
+    "checkedAt": "2026-10-15T09:20:43.723Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Cuevas FM 91.7",
@@ -85,10 +84,10 @@
     "favicon": "https://paraguayonline.net/wp-content/uploads/2019/03/cuevas.png",
     "homepage": "https://paraguayonline.net/cuevasfm/",
     "stationUuid": "88f74a2d-b52e-4fcf-9469-5fc5e2e6a2e5",
-    "checkedAt": "2026-10-12T11:58:25.709Z",
-    "status": 502,
+    "checkedAt": "2026-10-15T09:20:44.452Z",
+    "status": 404,
     "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio RQP 94.3 FM",
@@ -108,7 +107,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20250110_213941532.jpg?alt=media&token=e07edbc2-8494-41bf-82ab-6f114efdf664",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "db29a363-60b4-4273-99b6-9fee973a7c1e",
-    "checkedAt": "2026-10-12T11:58:27.267Z",
+    "checkedAt": "2026-10-15T09:20:46.025Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -127,10 +126,10 @@
     "favicon": null,
     "homepage": "https://www.abc.com.py/",
     "stationUuid": "9b318d0a-7e91-499e-a445-7e1e2c3a4d49",
-    "checkedAt": "2026-10-12T11:58:27.306Z",
-    "status": 404,
-    "contentType": "text/plain",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-10-15T09:20:46.123Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio RQP 94.3 FM",
@@ -149,7 +148,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20241215_234329937.jpg?alt=media&token=f015eeac-3c79-4ae9-b799-b676845814d9",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "74f0fa54-8f7f-482e-9a75-9ea2335ec9f2",
-    "checkedAt": "2026-10-12T11:58:27.483Z",
+    "checkedAt": "2026-10-15T09:20:46.249Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"

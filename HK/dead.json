@@ -11,27 +11,10 @@
     "favicon": "https://www.apple-fm.net/images/apple200text.png",
     "homepage": "https://www.apple-fm.net/",
     "stationUuid": "afaf4fe0-dedf-4226-ab59-85b82fe007c2",
-    "checkedAt": "2026-10-12T11:38:27.352Z",
+    "checkedAt": "2026-10-15T09:01:03.086Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "華語 HITS",
-    "url": "https://das-edge14-live365-dal02.cdnstream.com/a57743_2",
-    "country": "HK",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 320,
-    "language": null,
-    "favicon": "https://new.brg-radio.com/wp-content/themes/brg-wp/img/logo.png",
-    "homepage": "https://new.brg-radio.com/",
-    "stationUuid": "c6c450a9-84cc-4592-a27a-412879c15878",
-    "checkedAt": "2026-10-12T11:38:27.367Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "珠海資訊廣播",
@@ -45,7 +28,7 @@
     "favicon": "http://pic.qingting.fm/2022/1231/20221231114640.png",
     "homepage": "https://www.hizh.cn/",
     "stationUuid": "9073a5eb-5a43-45a3-9c18-33bb5b4dab9c",
-    "checkedAt": "2026-10-12T11:38:30.832Z",
+    "checkedAt": "2026-10-15T09:01:06.928Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -64,7 +47,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5b253a02-28ed-48a7-a972-2aef5b114036",
-    "checkedAt": "2026-10-12T11:38:32.507Z",
+    "checkedAt": "2026-10-15T09:01:08.082Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -83,7 +66,7 @@
     "favicon": null,
     "homepage": "http://www.apple-fm.net/",
     "stationUuid": "c5a87eaf-c961-11e9-8502-52543be04c81",
-    "checkedAt": "2026-10-12T11:38:33.317Z",
+    "checkedAt": "2026-10-15T09:01:08.971Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -102,10 +85,29 @@
     "favicon": "https://pic.qtfm.cn/2024/0410/20240410025046.jpeg",
     "homepage": "https://www.qtfm.cn/radios/20500021",
     "stationUuid": "8c56edc7-6e44-4143-aeb5-51fe9a00dfe4",
-    "checkedAt": "2026-10-12T11:38:33.404Z",
+    "checkedAt": "2026-10-15T09:01:09.056Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "陽光衛視",
+    "url": "https://stream.chinasuntv.com/680k/mid_video_index.m3u8",
+    "country": "HK",
+    "type": "tv",
+    "tags": [
+      "tv"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "chinese",
+    "favicon": "http://www.nettvpro.xyz/uploads/18/1-1PR5212U3439.jpg",
+    "homepage": "https://www.chinasuntv.com/",
+    "stationUuid": "8b41cd58-4393-4761-a6c5-25758f630144",
+    "checkedAt": "2026-10-15T09:01:09.362Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "澳门绿邦",
@@ -121,7 +123,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "392ab5e8-c91a-4b27-9792-cae5fb712ebe",
-    "checkedAt": "2026-10-12T11:38:34.953Z",
+    "checkedAt": "2026-10-15T09:01:10.463Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -140,7 +142,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "4dcf7151-3427-43bc-9ef1-24e3704ac0f2",
-    "checkedAt": "2026-10-12T11:38:34.992Z",
+    "checkedAt": "2026-10-15T09:01:10.470Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

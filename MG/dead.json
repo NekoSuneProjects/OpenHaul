@@ -1,22 +1,44 @@
 [
   {
-    "name": "Radio Don Bosco",
-    "url": "http://onair15.xdevel.com:9248/;",
+    "name": "Hopefy Radio MG",
+    "url": "https://hopefy.fanantenanahoanao.org/listen/hopefy_radio_mg/radio.mp3",
     "country": "MG",
-    "type": "catholic",
+    "type": "christian",
     "tags": [
-      "catholic"
+      "christian",
+      "gospel",
+      "religious"
     ],
     "codec": "MP3",
     "bitrate": 128,
-    "language": "english",
-    "favicon": null,
-    "homepage": "https://rdb.mg/",
-    "stationUuid": "94f00da6-4a0a-460e-b2cb-0eb8060ab2cb",
-    "checkedAt": "2026-10-12T11:46:02.704Z",
+    "language": "malagasy",
+    "favicon": "https://hopefy.fanantenanahoanao.org/static/uploads/album_art.1718582233.png",
+    "homepage": "https://radio.fanantenanahoanao.org/",
+    "stationUuid": "14e39ca9-6bf4-4273-96c2-dd00ee862828",
+    "checkedAt": "2026-10-15T09:08:14.568Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Oasis",
+    "url": "https://hopefy.fanantenanahoanao.org/listen/radiooasistana/radio.mp3",
+    "country": "MG",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "religious"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.fanantenanahoanao.org/",
+    "stationUuid": "15c1f776-8895-49bf-a2e1-8705374448c9",
+    "checkedAt": "2026-10-15T09:08:14.569Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "NetPro.TV Radio",
@@ -36,10 +58,52 @@
     "favicon": "https://app.netpro.tv/assets/apps/user_506/app_7327/draft/icon/app_icon.png",
     "homepage": "https://www.netpro.tv/",
     "stationUuid": "461efd87-b75b-4d8c-aed9-4cbd57aa4735",
-    "checkedAt": "2026-10-12T11:46:02.712Z",
+    "checkedAt": "2026-10-15T09:08:14.572Z",
     "status": 521,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 521"
+  },
+  {
+    "name": "RADIO FEON'ANDAPA",
+    "url": "https://s12.myradiostream.com/20048/listen.mp3",
+    "country": "MG",
+    "type": "fampitambaovao",
+    "tags": [
+      "fampitambaovao",
+      "fanabeazana",
+      "fialamboly"
+    ],
+    "codec": null,
+    "bitrate": 0,
+    "language": "mg",
+    "favicon": "http://s12.myradiostream.com:20048/stream",
+    "homepage": "https://www.facebook.com/Radiorfa",
+    "stationUuid": "77014a4c-0818-4719-98ea-f36f2c291cb1",
+    "checkedAt": "2026-10-15T09:08:14.623Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "RADIO RFA ANDAPA",
+    "url": "https://s12.myradiostream.com/20048/listen.mp3",
+    "country": "MG",
+    "type": "fampitambaovao",
+    "tags": [
+      "fampitambaovao",
+      "fanabeazana",
+      "fialamboly"
+    ],
+    "codec": null,
+    "bitrate": 0,
+    "language": "mg",
+    "favicon": "https://ibb.co/wh0ngfGz",
+    "homepage": "https://rfaradio946fm.simdif.com/",
+    "stationUuid": "9ef7ed08-58c7-4bf7-a336-2e9e6b6903c6",
+    "checkedAt": "2026-10-15T09:08:14.631Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "RADIO RFA ANDAPA",
@@ -55,69 +119,10 @@
     "favicon": "https://www.facebook.com/Radiorfa",
     "homepage": "http://radiorfa.on-air.fm/",
     "stationUuid": "79125ba7-2b6b-4814-a90f-f495b0bde3e0",
-    "checkedAt": "2026-10-12T11:46:02.773Z",
+    "checkedAt": "2026-10-15T09:08:14.730Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "RADIO FEON'ANDAPA",
-    "url": "https://s12.myradiostream.com/20048/listen.mp3",
-    "country": "MG",
-    "type": "fanabeazana",
-    "tags": [
-      "fanabeazana",
-      "fialamboly",
-      "fampitambaovao"
-    ],
-    "codec": null,
-    "bitrate": 0,
-    "language": "mg",
-    "favicon": "http://s12.myradiostream.com:20048/stream",
-    "homepage": "https://www.facebook.com/Radiorfa",
-    "stationUuid": "77014a4c-0818-4719-98ea-f36f2c291cb1",
-    "checkedAt": "2026-10-12T11:46:02.904Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "RADIO RFA ANDAPA",
-    "url": "https://s12.myradiostream.com/20048/listen.mp3",
-    "country": "MG",
-    "type": "fanabeazana",
-    "tags": [
-      "fanabeazana",
-      "fampitambaovao",
-      "fialamboly"
-    ],
-    "codec": null,
-    "bitrate": 0,
-    "language": "mg",
-    "favicon": "https://ibb.co/wh0ngfGz",
-    "homepage": "https://rfaradio946fm.simdif.com/",
-    "stationUuid": "9ef7ed08-58c7-4bf7-a336-2e9e6b6903c6",
-    "checkedAt": "2026-10-12T11:46:02.974Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Radio Don Bosco Madagascar",
-    "url": "http://onair15.xdevel.com:9248/;stream.mp3",
-    "country": "MG",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://onair.rdb.mg/logo.webp",
-    "homepage": "https://rdb.mg/",
-    "stationUuid": "fdd518db-f5ac-408b-a262-5e41155f6c8d",
-    "checkedAt": "2026-10-12T11:46:03.085Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
   },
   {
     "name": "RNM",
@@ -131,7 +136,7 @@
     "favicon": "https://www.radiomadagasikara.com/wp-content/uploads/2026/02/cropped-cropped-cropped-download.jpeg",
     "homepage": "https://www.radiomadagasikara.com/",
     "stationUuid": "abd5b430-79b5-4252-85c7-06443abd943f",
-    "checkedAt": "2026-10-12T11:46:03.559Z",
+    "checkedAt": "2026-10-15T09:08:15.295Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -148,7 +153,7 @@
     "favicon": null,
     "homepage": "https://www.facebook.com/Radiorfa",
     "stationUuid": "d5dbb073-5d18-45ed-a500-9320b471e2f2",
-    "checkedAt": "2026-10-12T11:46:03.633Z",
+    "checkedAt": "2026-10-15T09:08:15.352Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -165,28 +170,26 @@
     "favicon": null,
     "homepage": "https://rfaradio946fm.simdif.com/",
     "stationUuid": "7f6e8b10-d871-4e30-ba54-9f672035a9dc",
-    "checkedAt": "2026-10-12T11:46:03.656Z",
+    "checkedAt": "2026-10-15T09:08:15.355Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
   },
   {
-    "name": "Radio Don Bosco",
-    "url": "http://onair15.xdevel.com:9248/;stream.mp3",
+    "name": "RADIO RFA ANDAPA",
+    "url": "https://s12.myradiostream.com/20048/listen.mp3",
     "country": "MG",
-    "type": "rdb",
-    "tags": [
-      "rdb"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
     "language": null,
     "favicon": null,
-    "homepage": "https://rdb.mg/",
-    "stationUuid": "61c35dd2-373a-489a-b9c8-9ccc8e608029",
-    "checkedAt": "2026-10-12T11:46:03.714Z",
-    "status": null,
+    "homepage": "https://rfaradio946fm.simdif.com/",
+    "stationUuid": "7c4768b2-2f01-4798-9bc2-4e26f883475d",
+    "checkedAt": "2026-10-15T09:08:15.514Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "HTTP 401"
   }
 ]

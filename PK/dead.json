@@ -1,24 +1,5 @@
 [
   {
-    "name": "Radio Pakistan Lahore",
-    "url": "https://whmsonic.radio.gov.pk:8026/relay?type=http&nocache=9",
-    "country": "PK",
-    "type": "🌀",
-    "tags": [
-      "🌀"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "urdu",
-    "favicon": "null",
-    "homepage": "https://whmsonic.radio.gov.pk:8026/relay?type=http&nocache=9",
-    "stationUuid": "cab938da-32c3-485b-81ef-a56701cf33e1",
-    "checkedAt": "2026-10-12T11:54:53.159Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
     "name": "fm.92.",
     "url": "http://s47.myradiostream.com:12804/listen.m4a",
     "country": "PK",
@@ -32,30 +13,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c51340b2-9fbc-4cea-8738-258b2a33d16d",
-    "checkedAt": "2026-10-12T11:54:54.489Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio One FM 91",
-    "url": "https://cc.vmakerhost.com/proxy/karachi?mp=/stream",
-    "country": "PK",
-    "type": "islamabad",
-    "tags": [
-      "islamabad",
-      "karachi",
-      "lahore",
-      "pakistan fm radio",
-      "radio one fm91"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english,urdu",
-    "favicon": null,
-    "homepage": "https://fm91.com.pk/",
-    "stationUuid": "47efdce4-809f-4cd3-8e3c-85a2eabce1ef",
-    "checkedAt": "2026-10-12T11:54:54.892Z",
+    "checkedAt": "2026-10-15T09:17:14.870Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -72,10 +30,27 @@
     "favicon": null,
     "homepage": "http://aladinradio.com/",
     "stationUuid": "4a29dbc1-77e1-449a-b6b5-62e19f66a8fc",
-    "checkedAt": "2026-10-12T11:54:55.116Z",
-    "status": null,
+    "checkedAt": "2026-10-15T09:17:15.598Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "FM 101 Mithi",
+    "url": "https://whmsonic.radio.gov.pk:8052/stream",
+    "country": "PK",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radio.gov.pk/",
+    "stationUuid": "d41946b4-342a-4b9a-b0e5-f86f017980ea",
+    "checkedAt": "2026-10-15T09:17:16.370Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "ILM Radio Renala FM 92",
@@ -89,14 +64,33 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/ilm-radio-renala/",
     "stationUuid": "8281a8d0-4d03-4e1f-96ea-dbae81e5bf28",
-    "checkedAt": "2026-10-12T11:54:56.513Z",
+    "checkedAt": "2026-10-15T09:17:17.093Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
   },
   {
-    "name": "FM 101 Khairpur",
-    "url": "https://whmsonic.radio.gov.pk:8054/stream",
+    "name": "Radio Pakistan D.I. Khan MW 711",
+    "url": "https://whmsonic.radio.gov.pk:7000/Dikhan",
+    "country": "PK",
+    "type": "public radio",
+    "tags": [
+      "public radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radio.gov.pk/",
+    "stationUuid": "a8067725-3d72-406f-828b-9ba72f638479",
+    "checkedAt": "2026-10-15T09:17:18.349Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Pakistan Karachi MW 639",
+    "url": "https://whmsonic.radio.gov.pk:7000/MW639khi",
     "country": "PK",
     "type": "public radio",
     "tags": [
@@ -107,10 +101,10 @@
     "language": null,
     "favicon": null,
     "homepage": "https://radio.gov.pk/",
-    "stationUuid": "db40900f-da30-44c1-84d0-1fb235daf393",
-    "checkedAt": "2026-10-12T11:54:57.619Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
+    "stationUuid": "5a71813c-32f6-472e-8db1-51ccbe37cc19",
+    "checkedAt": "2026-10-15T09:17:18.369Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   }
 ]

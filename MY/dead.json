@@ -1,5 +1,26 @@
 [
   {
+    "name": "THR Gegar Pilihan #1 Pantai Timur",
+    "url": "https://stream-eu-a.rcs.revma.com/cn0zcqsbv4uvv/36_1nbhrvq7qpz1h02/playlist.m3u8",
+    "country": "MY",
+    "type": "#1 pilihan pantai timur",
+    "tags": [
+      "#1 pilihan pantai timur",
+      "entertaining segments",
+      "mix genres"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "kelantanese malay,malay",
+    "favicon": "https://cdn-profiles.tunein.com/s3129/images/logod.jpg",
+    "homepage": "https://gegar.syok.my/",
+    "stationUuid": "f4e89fce-5d97-4e6a-bc72-b5738344dc91",
+    "checkedAt": "2026-10-15T09:08:51.979Z",
+    "status": 400,
+    "contentType": null,
+    "lastFailure": "HTTP 400"
+  },
+  {
     "name": "Ai FM",
     "url": "https://28153.live.streamtheworld.com/AI_FMAAC.aac",
     "country": "MY",
@@ -11,7 +32,7 @@
     "favicon": "https://aifm.rtm.gov.my/storage/app/uploads/public/610/366/55c/61036655c4ab3209025602.png",
     "homepage": "https://www.aifm.net.my/",
     "stationUuid": "34089334-2941-436b-9831-e6580363df2f",
-    "checkedAt": "2026-10-12T11:46:31.595Z",
+    "checkedAt": "2026-10-15T09:08:52.646Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -28,7 +49,7 @@
     "favicon": null,
     "homepage": "https://ikimfm.my/",
     "stationUuid": "3910d02a-f926-40ad-b9c1-65f1c8ed240e",
-    "checkedAt": "2026-10-12T11:46:31.948Z",
+    "checkedAt": "2026-10-15T09:08:53.161Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -45,7 +66,7 @@
     "favicon": "https://rtm-images.glueapi.io/420x0/radio-asset/MINNAL_FM.png",
     "homepage": "https://rtmklik.rtm.gov.my/radio/nasional/32964",
     "stationUuid": "e1d4f6e2-6c41-44ba-a065-7fe3509efe18",
-    "checkedAt": "2026-10-12T11:46:32.270Z",
+    "checkedAt": "2026-10-15T09:08:53.372Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -62,7 +83,7 @@
     "favicon": "https://rtm-images.glueapi.io/420x0/radio-asset/MINNAL_FM.png",
     "homepage": "https://rtmklik.rtm.gov.my/radio/nasional/32964",
     "stationUuid": "bb78b905-2877-4fda-9e9e-0d2391ae3a9f",
-    "checkedAt": "2026-10-12T11:46:32.284Z",
+    "checkedAt": "2026-10-15T09:08:53.377Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -79,10 +100,29 @@
     "favicon": null,
     "homepage": "https://pahangfm.rtm.gov.my/",
     "stationUuid": "bd0f071c-f657-4456-bfe8-9ff717c5a18b",
-    "checkedAt": "2026-10-12T11:46:32.306Z",
+    "checkedAt": "2026-10-15T09:08:53.383Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Melody FM Malaysia",
+    "url": "https://n09.rcs.revma.com/2u1n6dtbv4uvv/9_11l86ncot7z1w02/playlist.m3u8",
+    "country": "MY",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://media2.fishtank.my/app_themes/melody/ico/apple-icon-120x120.png",
+    "homepage": "https://melody.syok.my/",
+    "stationUuid": "ec55577f-cff5-4b8b-aeaa-6438c2dfc446",
+    "checkedAt": "2026-10-15T09:08:55.519Z",
+    "status": 400,
+    "contentType": null,
+    "lastFailure": "HTTP 400"
   },
   {
     "name": "HITZ | Malaysia's #1 Hit Music Station - All the hitz, all the time!",
@@ -100,7 +140,7 @@
     "favicon": null,
     "homepage": "https://hitz.syok.my/",
     "stationUuid": "5c721e6a-abe9-40db-ac03-a18d81b62d70",
-    "checkedAt": "2026-10-12T11:46:34.900Z",
+    "checkedAt": "2026-10-15T09:08:55.615Z",
     "status": 400,
     "contentType": null,
     "lastFailure": "HTTP 400"
@@ -119,27 +159,10 @@
     "favicon": null,
     "homepage": "http://live.skychatz.org/",
     "stationUuid": "b6453f76-5883-4283-bcf0-e43333bb554b",
-    "checkedAt": "2026-10-12T11:46:35.783Z",
+    "checkedAt": "2026-10-15T09:08:56.473Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Gold",
-    "url": "https://ss1.audiorama.com.mx:6584/https://radiomalaysia.net/gold-fm.html",
-    "country": "MY",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://radiomalaysia.net/gold-fm.html",
-    "stationUuid": "b2a1338c-0de4-499b-90d9-e36a522a8e6e",
-    "checkedAt": "2026-10-12T11:46:36.240Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
   },
   {
     "name": "BIGCOWFM 大牛网络电台 马来西亚中文网络电台",
@@ -156,10 +179,44 @@
     "favicon": "https://bigcowfm.com/wp-content/uploads/2024/01/bigcowFM_2024logo.png",
     "homepage": "https://bigcowfm.com/",
     "stationUuid": "57e03703-db20-40b4-9107-35258026ae67",
-    "checkedAt": "2026-10-12T11:46:37.292Z",
+    "checkedAt": "2026-10-15T09:08:57.964Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "ERA FM",
+    "url": "https://n17a-eu.rcs.revma.com/crec9cmbv4uvv/23_11p2ghidfhj2d02/playlist.m3u8?rj-ttl=5&rj-tok=AAABlF2WiCgAJUPufokb6G0b3Q",
+    "country": "MY",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fastromedia.com.my%2Four_brands%2Fdigital-advertising%2Fera%2F&psig=AOvVaw0_msqzV89WfcT2jzgWU5lK&ust=1736822940550000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCls-XX8YoDFQAAAAAdAAAAABAE",
+    "homepage": "https://era.syok.my/",
+    "stationUuid": "a4e79d4f-8c40-46a4-bd5b-37c5266ae8e8",
+    "checkedAt": "2026-10-15T09:08:58.057Z",
+    "status": 400,
+    "contentType": null,
+    "lastFailure": "HTTP 400"
+  },
+  {
+    "name": "era sarawak",
+    "url": "https://n10.rcs.revma.com/bkqfqkrbv4uvv/10_6dkcmkt5m85u02/playlist.m3u8",
+    "country": "MY",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://audio1.syok.my/amp-era-kch",
+    "stationUuid": "311696c4-a5d6-43c1-bed1-127008042cd1",
+    "checkedAt": "2026-10-15T09:08:58.074Z",
+    "status": 400,
+    "contentType": null,
+    "lastFailure": "HTTP 400"
   },
   {
     "name": "MIX 94.5 FM Malaysia",
@@ -173,7 +230,7 @@
     "favicon": "https://online-radio.my/uploads/img/mix.jpg",
     "homepage": "https://online-radio.my/34-mix.html",
     "stationUuid": "a3feae57-23e1-4231-aa2d-8fab47ecc9bf",
-    "checkedAt": "2026-10-12T11:46:37.389Z",
+    "checkedAt": "2026-10-15T09:08:58.101Z",
     "status": 400,
     "contentType": null,
     "lastFailure": "HTTP 400"
@@ -190,7 +247,7 @@
     "favicon": "https://media2.fishtank.my/stations/my/square_md.jpg",
     "homepage": "https://audio1.syok.my/myfm",
     "stationUuid": "2f53bfe1-af12-409d-960a-f9522ed8de80",
-    "checkedAt": "2026-10-12T11:46:37.446Z",
+    "checkedAt": "2026-10-15T09:08:58.123Z",
     "status": 400,
     "contentType": null,
     "lastFailure": "HTTP 400"
@@ -207,7 +264,7 @@
     "favicon": "https://cdn.webrad.io/images/logos/radioonline-my/myfm.png",
     "homepage": "https://my.syok.my/",
     "stationUuid": "a519d4f1-1e1d-40d6-97d2-5fbe4540d01b",
-    "checkedAt": "2026-10-12T11:46:37.482Z",
+    "checkedAt": "2026-10-15T09:08:58.166Z",
     "status": 400,
     "contentType": null,
     "lastFailure": "HTTP 400"
@@ -224,7 +281,7 @@
     "favicon": null,
     "homepage": "https://mifntechnology.github.io/siaranMy/radio/SuriaFm/playlist.m3u8",
     "stationUuid": "c8cd4a8d-9785-4ce9-a3f5-148dbd44c8b0",
-    "checkedAt": "2026-10-12T11:46:37.543Z",
+    "checkedAt": "2026-10-15T09:08:58.187Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -241,9 +298,26 @@
     "favicon": null,
     "homepage": "https://dengar.suria.my/",
     "stationUuid": "e5007572-634d-4a87-9c99-9fa9169e6fab",
-    "checkedAt": "2026-10-12T11:46:37.564Z",
+    "checkedAt": "2026-10-15T09:08:58.208Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "THR Gegar",
+    "url": "https://n09.rcs.revma.com/cn0zcqsbv4uvv/9_1i7eg69ua9k0u02/playlist.m3u8",
+    "country": "MY",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "english,malay",
+    "favicon": null,
+    "homepage": "https://gegar.syok.my/",
+    "stationUuid": "c1c9b960-43c9-4b25-9ccd-6eb1e3f9ed59",
+    "checkedAt": "2026-10-15T09:08:58.223Z",
+    "status": 400,
+    "contentType": null,
+    "lastFailure": "HTTP 400"
   }
 ]

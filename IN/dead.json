@@ -1,5 +1,28 @@
 [
   {
+    "name": "Desi Hits 2000s",
+    "url": "https://www.desizoneradio.com/relay2",
+    "country": "IN",
+    "type": "2000s",
+    "tags": [
+      "2000s",
+      "bollywood",
+      "hindi",
+      "india",
+      "music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "hindi",
+    "favicon": null,
+    "homepage": "https://www.desizoneradio.com/",
+    "stationUuid": "eed87399-8146-43bc-94f0-525c9b0d8e6a",
+    "checkedAt": "2026-10-15T09:03:10.376Z",
+    "status": 502,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 502"
+  },
+  {
     "name": "mmi catholic media St. Xavier Province",
     "url": "https://165.22.217.209:8010/radio.mp3",
     "country": "IN",
@@ -22,7 +45,7 @@
     "favicon": null,
     "homepage": "https://divinewisdomministries.com/mmicatholicradio/",
     "stationUuid": "13a54b68-8721-4a7d-86ae-3a692c54ec9c",
-    "checkedAt": "2026-10-12T11:40:32.738Z",
+    "checkedAt": "2026-10-15T09:03:10.378Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -46,10 +69,33 @@
     "favicon": "https://www.indifun.net/favicon.ico",
     "homepage": "https://www.indifun.net/",
     "stationUuid": "b28100df-a107-46fd-927d-0ad31316f28f",
-    "checkedAt": "2026-10-12T11:40:33.001Z",
+    "checkedAt": "2026-10-15T09:03:10.529Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Nostalgic Bollywood 90s",
+    "url": "https://www.desizoneradio.com/relay3",
+    "country": "IN",
+    "type": "90s",
+    "tags": [
+      "90s",
+      "bollywood",
+      "hindi",
+      "india",
+      "music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "hindi",
+    "favicon": null,
+    "homepage": "https://www.desizoneradio.com/",
+    "stationUuid": "8d500dcb-6352-4009-aae2-5a095021ff2a",
+    "checkedAt": "2026-10-15T09:03:10.746Z",
+    "status": 502,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "AIR Agra",
@@ -63,7 +109,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/06/AIR-Agra.png",
     "homepage": null,
     "stationUuid": "8c8696dd-26d9-416f-bf95-a48366aabd2f",
-    "checkedAt": "2026-10-12T11:40:34.485Z",
+    "checkedAt": "2026-10-15T09:03:12.027Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -80,7 +126,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "48d7339f-3728-45b5-b304-171d7996b465",
-    "checkedAt": "2026-10-12T11:40:34.497Z",
+    "checkedAt": "2026-10-15T09:03:12.098Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -97,7 +143,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnTFizwbOJ2iBxFcmZaAq-z684MUT1ezmz2B7_Mxr_IhdnIbQRie3MaNU&s=10",
     "homepage": "https://prasarbharati.gov.in/all-india-radio-2/",
     "stationUuid": "90149231-17ed-4268-88ec-e3818f81b395",
-    "checkedAt": "2026-10-12T11:40:34.575Z",
+    "checkedAt": "2026-10-15T09:03:12.351Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -114,7 +160,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/homepage-air/",
     "stationUuid": "93cd93af-daac-4a8d-b972-a8bc3934b79d",
-    "checkedAt": "2026-10-12T11:40:34.845Z",
+    "checkedAt": "2026-10-15T09:03:12.438Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -131,7 +177,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/homepage-air/",
     "stationUuid": "881ac340-4d36-4b94-825f-58b227170079",
-    "checkedAt": "2026-10-12T11:40:34.884Z",
+    "checkedAt": "2026-10-15T09:03:12.448Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -148,24 +194,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/homepage-air/",
     "stationUuid": "98f7a72e-9c21-4db7-a3d5-f616f6a7cb15",
-    "checkedAt": "2026-10-12T11:40:35.073Z",
-    "status": 404,
-    "contentType": null,
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "AIR Nanded",
-    "url": "https://air.pc.cdn.bitgravity.com/air/live/pbaudio072/playlist.m3u8",
-    "country": "IN",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 95,
-    "language": "hindi,marathi",
-    "favicon": null,
-    "homepage": "https://prasarbharati.gov.in/",
-    "stationUuid": "50d2f50b-2cc7-4a0d-ae09-647d5e46d9b6",
-    "checkedAt": "2026-10-12T11:40:35.513Z",
+    "checkedAt": "2026-10-15T09:03:12.456Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -182,7 +211,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2024/01/air-odia.png",
     "homepage": null,
     "stationUuid": "91d19f4d-c30b-4408-9539-3719c6d728ab",
-    "checkedAt": "2026-10-12T11:40:38.776Z",
+    "checkedAt": "2026-10-15T09:03:12.990Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -199,7 +228,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/07/air-patna.jpg",
     "homepage": null,
     "stationUuid": "6a4888eb-0fd6-4f1f-b79e-bf22d36003be",
-    "checkedAt": "2026-10-12T11:40:38.821Z",
+    "checkedAt": "2026-10-15T09:03:13.041Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -216,7 +245,7 @@
     "favicon": "null",
     "homepage": "http://allindiaradio.gov.in/",
     "stationUuid": "2cac7404-7d69-4df4-8f6d-7337172e079f",
-    "checkedAt": "2026-10-12T11:40:38.927Z",
+    "checkedAt": "2026-10-15T09:03:13.238Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -233,7 +262,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2024/01/air-silchar.jpg",
     "homepage": null,
     "stationUuid": "7ce0cb1a-44bb-45b5-b2d6-edd6b330f189",
-    "checkedAt": "2026-10-12T11:40:39.223Z",
+    "checkedAt": "2026-10-15T09:03:16.346Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -250,7 +279,7 @@
     "favicon": "https://radiosindia.com/images/airkannurfm.jpg",
     "homepage": null,
     "stationUuid": "e1ad071c-2034-4344-8089-86bb7a8cbd6c",
-    "checkedAt": "2026-10-12T11:40:39.378Z",
+    "checkedAt": "2026-10-15T09:03:16.579Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -267,7 +296,7 @@
     "favicon": "https://radiosindia.com/images/air.jpg",
     "homepage": null,
     "stationUuid": "169723d5-52dc-451b-9a5e-75ba90fffb40",
-    "checkedAt": "2026-10-12T11:40:40.113Z",
+    "checkedAt": "2026-10-15T09:03:17.127Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -284,7 +313,7 @@
     "favicon": null,
     "homepage": "https://akashvani.gov.in/",
     "stationUuid": "09a36dec-fb9d-456f-b705-4aa23a719ec5",
-    "checkedAt": "2026-10-12T11:40:41.001Z",
+    "checkedAt": "2026-10-15T09:03:17.337Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -301,7 +330,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "206927d9-023e-4aed-b4bb-c79b0b504e6b",
-    "checkedAt": "2026-10-12T11:40:41.062Z",
+    "checkedAt": "2026-10-15T09:03:17.483Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -318,7 +347,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/03/AkashvaniKozhikode.jpg",
     "homepage": null,
     "stationUuid": "80590875-22a9-4fe1-b5a7-5e18b66b7d4d",
-    "checkedAt": "2026-10-12T11:40:43.038Z",
+    "checkedAt": "2026-10-15T09:03:17.494Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -335,7 +364,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "f8148132-1d97-48a0-8d90-7338f5c67299",
-    "checkedAt": "2026-10-12T11:40:43.039Z",
+    "checkedAt": "2026-10-15T09:03:17.788Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -352,7 +381,7 @@
     "favicon": "https://onlineradiofm.in/assets/image/radio/180/air-assamese1.jpg",
     "homepage": "https://onlineradiofm.in/stations/all-india-radio-air-assamese",
     "stationUuid": "bfe26d12-6290-47b3-85a0-93dc61a70b4a",
-    "checkedAt": "2026-10-12T11:40:43.085Z",
+    "checkedAt": "2026-10-15T09:03:17.795Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -369,7 +398,7 @@
     "favicon": null,
     "homepage": "http://allindiaradio.gov.in/",
     "stationUuid": "2d489121-7afe-4eaf-90b2-5bad2437a2e6",
-    "checkedAt": "2026-10-12T11:40:43.191Z",
+    "checkedAt": "2026-10-15T09:03:18.530Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -386,7 +415,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2024/01/fm-rainbow-curttack.jpg",
     "homepage": null,
     "stationUuid": "95a6f36c-34f4-452a-bb4d-d66b50613e3b",
-    "checkedAt": "2026-10-12T11:40:45.405Z",
+    "checkedAt": "2026-10-15T09:03:22.078Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -403,7 +432,7 @@
     "favicon": "https://radiosindia.com/images/fmrainbowcoimbatore.jpg",
     "homepage": null,
     "stationUuid": "f4fd6dbc-a2c6-435c-a366-7ec795a4ce23",
-    "checkedAt": "2026-10-12T11:40:46.252Z",
+    "checkedAt": "2026-10-15T09:03:22.097Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -420,7 +449,7 @@
     "favicon": "https://radiosindia.com/images/gvprakash.jpg",
     "homepage": null,
     "stationUuid": "6480cdfa-7b43-4cbb-be57-8d4e28e5aca5",
-    "checkedAt": "2026-10-12T11:40:47.396Z",
+    "checkedAt": "2026-10-15T09:03:22.903Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -437,7 +466,7 @@
     "favicon": "https://radiosindia.com/images/air.jpg",
     "homepage": null,
     "stationUuid": "ea6da915-0a4f-4898-99b0-91a263240b8d",
-    "checkedAt": "2026-10-12T11:40:47.540Z",
+    "checkedAt": "2026-10-15T09:03:23.194Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -454,7 +483,7 @@
     "favicon": null,
     "homepage": "http://malayalam.radiobeat.in/",
     "stationUuid": "f8cda04c-6342-4d6d-aba2-2822e83c7d4e",
-    "checkedAt": "2026-10-12T11:40:48.219Z",
+    "checkedAt": "2026-10-15T09:03:23.753Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -471,7 +500,7 @@
     "favicon": null,
     "homepage": "http://allindiaradio.gov.in/Default.aspx",
     "stationUuid": "885cb3a8-7649-4794-a486-a31f91d21f2e",
-    "checkedAt": "2026-10-12T11:40:48.240Z",
+    "checkedAt": "2026-10-15T09:03:23.758Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -488,7 +517,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/03/RainbowFMKochi.jpg",
     "homepage": null,
     "stationUuid": "589870a5-a356-46d8-96c1-86b474527797",
-    "checkedAt": "2026-10-12T11:40:49.263Z",
+    "checkedAt": "2026-10-15T09:03:24.876Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -505,7 +534,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/rajiniradio.jpg",
     "homepage": null,
     "stationUuid": "b5f7e5e5-5c6a-440e-b1db-0c495f486018",
-    "checkedAt": "2026-10-12T11:40:49.445Z",
+    "checkedAt": "2026-10-15T09:03:24.932Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -522,7 +551,7 @@
     "favicon": null,
     "homepage": "https://air.pc.cdn.bitgravity.com/air/live/pbaudio176/playlist.m3u8",
     "stationUuid": "7f7dd7f2-23f4-43c4-96d1-0382e09fdae0",
-    "checkedAt": "2026-10-12T11:40:51.476Z",
+    "checkedAt": "2026-10-15T09:03:27.239Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -539,7 +568,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/tamilhdradio.jpg",
     "homepage": null,
     "stationUuid": "859d7b59-ad97-4e2d-9b0e-6c9a48de8662",
-    "checkedAt": "2026-10-12T11:40:53.162Z",
+    "checkedAt": "2026-10-15T09:03:28.805Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -556,26 +585,9 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/12/fm-pune.jpg",
     "homepage": null,
     "stationUuid": "6a9421b2-6907-49ae-93ef-fb835f262065",
-    "checkedAt": "2026-10-12T11:40:53.460Z",
+    "checkedAt": "2026-10-15T09:03:28.954Z",
     "status": 404,
     "contentType": null,
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Radio City chennai",
-    "url": "http://radios.crabdance.com:8002/5",
-    "country": "IN",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": null,
-    "favicon": "https://www.radiocity.in/rc-new/images/RC-logonew.png",
-    "homepage": "https://www.radiocity.in/",
-    "stationUuid": "2a2c76f6-f926-4d81-bc3b-d93bf0a22b63",
-    "checkedAt": "2026-10-12T11:40:56.735Z",
-    "status": 404,
-    "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
@@ -590,7 +602,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/09/radio-fiji-hindi.png",
     "homepage": null,
     "stationUuid": "f293e7ea-6bd5-43f8-bd07-80f784a02e12",
-    "checkedAt": "2026-10-12T11:40:57.246Z",
+    "checkedAt": "2026-10-15T09:03:33.220Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -607,7 +619,7 @@
     "favicon": "https://radiosindia.com/images/radiofiji2.jpg",
     "homepage": null,
     "stationUuid": "76b94ff4-05f7-4be5-a493-c48d6691d219",
-    "checkedAt": "2026-10-12T11:40:57.701Z",
+    "checkedAt": "2026-10-15T09:03:33.820Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -624,7 +636,7 @@
     "favicon": "https://radiosindia.com/images/radiotarana.jpg",
     "homepage": null,
     "stationUuid": "2d9fd8d2-83e5-4527-9abd-b534c644aa98",
-    "checkedAt": "2026-10-12T11:40:57.735Z",
+    "checkedAt": "2026-10-15T09:03:33.825Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -647,7 +659,7 @@
     "favicon": "https://prasarbharati.gov.in/wp-content/uploads/2020/04/cropped-pblogo-180x180.png",
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "84485b3d-695c-405d-8d55-b5c0f7f78f2f",
-    "checkedAt": "2026-10-12T11:40:59.225Z",
+    "checkedAt": "2026-10-15T09:03:35.315Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -667,7 +679,7 @@
     "favicon": "https://www.radio.de/300/schizoidchillout.png?version=be7061f2a2c3158557ce771b7370382f",
     "homepage": "http://schizoid.in/",
     "stationUuid": "8ec83c06-4156-4a0f-9c12-1fa23bdc4703",
-    "checkedAt": "2026-10-12T11:40:59.573Z",
+    "checkedAt": "2026-10-15T09:03:35.480Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -686,7 +698,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/tbn8c0zdka0uv",
     "stationUuid": "e6b0edc5-9487-417d-a829-3b0bf9416db9",
-    "checkedAt": "2026-10-12T11:41:00.960Z",
+    "checkedAt": "2026-10-15T09:03:36.736Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -705,7 +717,7 @@
     "favicon": null,
     "homepage": "http://80.225.211.98:8010/",
     "stationUuid": "58c1efce-d58e-4ea5-a3c1-e3f299e5c497",
-    "checkedAt": "2026-10-12T11:41:01.555Z",
+    "checkedAt": "2026-10-15T09:03:37.392Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -727,10 +739,32 @@
     "favicon": null,
     "homepage": "https://newsonair.gov.in/",
     "stationUuid": "fa7cd74b-ee5b-462a-903e-399a47b796d1",
-    "checkedAt": "2026-10-12T11:41:01.584Z",
+    "checkedAt": "2026-10-15T09:03:37.399Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "DesiZone Radio",
+    "url": "https://www.desizoneradio.com/relay1",
+    "country": "IN",
+    "type": "bollywood",
+    "tags": [
+      "bollywood",
+      "hindi",
+      "india",
+      "music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "hindi",
+    "favicon": null,
+    "homepage": "https://www.desizoneradio.com/",
+    "stationUuid": "bb749e5f-7f10-43a1-a5ec-bf723d9e54bf",
+    "checkedAt": "2026-10-15T09:03:37.689Z",
+    "status": 502,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Pew Hits Desi",
@@ -746,7 +780,7 @@
     "favicon": null,
     "homepage": "http://130.210.5.45:8002/pewhitsdesi",
     "stationUuid": "8e30841f-01e0-4e5a-90a7-fd629f26beb5",
-    "checkedAt": "2026-10-12T11:41:02.819Z",
+    "checkedAt": "2026-10-15T09:03:38.456Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -767,10 +801,52 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/vZNzLXx52E.png",
     "homepage": "https://www.radiocity.in/",
     "stationUuid": "365b9975-ecea-4ab9-be65-98e66b8f9ef3",
-    "checkedAt": "2026-10-12T11:41:03.414Z",
+    "checkedAt": "2026-10-15T09:03:38.759Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "JAVA HITS",
+    "url": "http://89.106.84.153:6731/",
+    "country": "IN",
+    "type": "bollywood hits",
+    "tags": [
+      "bollywood hits",
+      "bollywood music",
+      "hindi songs"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "english hindi",
+    "favicon": null,
+    "homepage": "https://highrise.game/",
+    "stationUuid": "0e13b868-4cab-475f-b610-df96930f0382",
+    "checkedAt": "2026-10-15T09:03:39.628Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "JAVA HITS",
+    "url": "http://89.106.84.153:6731/javahits",
+    "country": "IN",
+    "type": "bollywood hits",
+    "tags": [
+      "bollywood hits",
+      "bollywood music",
+      "hindi songs"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://javahits.duckdns.org/",
+    "stationUuid": "c78d4e18-5be3-44a4-95aa-722b35e8bed8",
+    "checkedAt": "2026-10-15T09:03:39.634Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Luminous Radio",
@@ -789,7 +865,7 @@
     "favicon": null,
     "homepage": "http://www.luminousradio.com/",
     "stationUuid": "96249384-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-12T11:41:04.665Z",
+    "checkedAt": "2026-10-15T09:03:39.932Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -808,7 +884,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-african.php",
     "stationUuid": "99f2acdb-6835-456d-ab46-7083993de855",
-    "checkedAt": "2026-10-12T11:41:05.972Z",
+    "checkedAt": "2026-10-15T09:03:42.360Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -827,7 +903,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-bangla.php",
     "stationUuid": "8e438325-e3ae-4309-8478-5f31c6259e8b",
-    "checkedAt": "2026-10-12T11:41:05.991Z",
+    "checkedAt": "2026-10-15T09:03:42.437Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -846,7 +922,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-bibleinformation.php",
     "stationUuid": "f2d8520a-95c6-4df9-954a-35d0f9b32688",
-    "checkedAt": "2026-10-12T11:41:06.064Z",
+    "checkedAt": "2026-10-15T09:03:42.444Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -865,7 +941,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-chinese.php",
     "stationUuid": "55c2418b-c361-4684-b380-ad3d921c25c9",
-    "checkedAt": "2026-10-12T11:41:06.071Z",
+    "checkedAt": "2026-10-15T09:03:42.464Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -884,7 +960,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-daniel.php",
     "stationUuid": "fa0dbaf5-b436-4a17-92fc-ca2554e8aff2",
-    "checkedAt": "2026-10-12T11:41:06.101Z",
+    "checkedAt": "2026-10-15T09:03:42.469Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -903,7 +979,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-endtime.php",
     "stationUuid": "38f36d4c-ac21-4edb-abec-00621831e970",
-    "checkedAt": "2026-10-12T11:41:06.116Z",
+    "checkedAt": "2026-10-15T09:03:42.475Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -922,7 +998,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-english.php",
     "stationUuid": "6060f161-21df-4560-bc40-457d25c2b550",
-    "checkedAt": "2026-10-12T11:41:06.151Z",
+    "checkedAt": "2026-10-15T09:03:42.480Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -941,7 +1017,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-estherrani.php",
     "stationUuid": "4cb6c137-0862-4d9f-84b0-f549f3f2712d",
-    "checkedAt": "2026-10-12T11:41:06.176Z",
+    "checkedAt": "2026-10-15T09:03:42.486Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -960,7 +1036,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-french.php",
     "stationUuid": "16eb2aff-21a7-47b8-9098-5871596569e2",
-    "checkedAt": "2026-10-12T11:41:06.189Z",
+    "checkedAt": "2026-10-15T09:03:42.488Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -979,7 +1055,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-african.php",
     "stationUuid": "6c112d6d-cf08-43a2-9f70-06d1cbe73db7",
-    "checkedAt": "2026-10-12T11:41:06.191Z",
+    "checkedAt": "2026-10-15T09:03:42.491Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -998,7 +1074,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-gujarati.php",
     "stationUuid": "7b213258-cc0b-4c03-b038-7b035a53548f",
-    "checkedAt": "2026-10-12T11:41:06.203Z",
+    "checkedAt": "2026-10-15T09:03:42.494Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1017,7 +1093,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-hebrew.php",
     "stationUuid": "22bb8cd0-57da-4ee9-86e8-e439bdb49949",
-    "checkedAt": "2026-10-12T11:41:06.206Z",
+    "checkedAt": "2026-10-15T09:03:42.501Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1036,7 +1112,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-hindi.php",
     "stationUuid": "f7f4002f-9559-4ca1-a59c-8e9e5d4fda9e",
-    "checkedAt": "2026-10-12T11:41:06.215Z",
+    "checkedAt": "2026-10-15T09:03:42.504Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1055,7 +1131,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-kannada.php",
     "stationUuid": "6280288a-92c1-4c8c-8168-b370aa374712",
-    "checkedAt": "2026-10-12T11:41:06.217Z",
+    "checkedAt": "2026-10-15T09:03:42.507Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1074,7 +1150,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-konkani.php",
     "stationUuid": "0dbdda4e-a0b7-4cc2-8e6a-94b8a8781868",
-    "checkedAt": "2026-10-12T11:41:06.221Z",
+    "checkedAt": "2026-10-15T09:03:42.510Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1093,7 +1169,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-malayalam.php",
     "stationUuid": "b4690433-50b0-42e0-83c2-17fe18e14533",
-    "checkedAt": "2026-10-12T11:41:06.230Z",
+    "checkedAt": "2026-10-15T09:03:42.517Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1112,7 +1188,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-manipuri.php",
     "stationUuid": "518becd4-f12f-492a-8b1b-d5e30047ae28",
-    "checkedAt": "2026-10-12T11:41:06.232Z",
+    "checkedAt": "2026-10-15T09:03:42.519Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1131,7 +1207,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-marathi.php",
     "stationUuid": "ab8323d6-c37d-43af-b400-f9b6c7b43285",
-    "checkedAt": "2026-10-12T11:41:06.241Z",
+    "checkedAt": "2026-10-15T09:03:42.523Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1150,7 +1226,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-mizo.php",
     "stationUuid": "9c82dfe0-78e5-48bc-93a9-29db75150387",
-    "checkedAt": "2026-10-12T11:41:06.244Z",
+    "checkedAt": "2026-10-15T09:03:42.525Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1169,7 +1245,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-nepali.php",
     "stationUuid": "aaccf18f-21c8-459a-9e37-ab379374f17c",
-    "checkedAt": "2026-10-12T11:41:06.248Z",
+    "checkedAt": "2026-10-15T09:03:42.535Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1188,7 +1264,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-odia.php",
     "stationUuid": "973134a2-1f8d-4eb2-8b0f-19dbcfee25d9",
-    "checkedAt": "2026-10-12T11:41:06.258Z",
+    "checkedAt": "2026-10-15T09:03:42.536Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1207,7 +1283,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-paul.php",
     "stationUuid": "e106dd7a-0122-46f1-b035-b791547f0b61",
-    "checkedAt": "2026-10-12T11:41:06.268Z",
+    "checkedAt": "2026-10-15T09:03:42.541Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1226,7 +1302,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-peter.php",
     "stationUuid": "182d0694-2898-4588-81b0-5ea601f7269e",
-    "checkedAt": "2026-10-12T11:41:06.276Z",
+    "checkedAt": "2026-10-15T09:03:42.548Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1245,7 +1321,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-punjabi.php",
     "stationUuid": "70940872-1f72-489c-835b-94bb4c919d43",
-    "checkedAt": "2026-10-12T11:41:06.277Z",
+    "checkedAt": "2026-10-15T09:03:42.549Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1264,7 +1340,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-tamil.php",
     "stationUuid": "c324bd6e-5776-4f32-b7ef-25a0d6dad5e7",
-    "checkedAt": "2026-10-12T11:41:06.284Z",
+    "checkedAt": "2026-10-15T09:03:42.554Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1283,7 +1359,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-tamil-bible.php",
     "stationUuid": "87618f82-49cf-43cb-9d35-75cd6860e410",
-    "checkedAt": "2026-10-12T11:41:06.295Z",
+    "checkedAt": "2026-10-15T09:03:42.555Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1302,7 +1378,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-tamilkids.php",
     "stationUuid": "f5229ff7-6e2e-496c-bfd8-c36675b0f2d5",
-    "checkedAt": "2026-10-12T11:41:06.303Z",
+    "checkedAt": "2026-10-15T09:03:42.561Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1321,7 +1397,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-telugu.php",
     "stationUuid": "084af4ff-0a39-4100-8fa6-c62337c84736",
-    "checkedAt": "2026-10-12T11:41:06.306Z",
+    "checkedAt": "2026-10-15T09:03:42.566Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1340,7 +1416,7 @@
     "favicon": null,
     "homepage": "https://handofjesus.in/radio/christian-radio-urdu.php",
     "stationUuid": "e0fd2a91-586f-4c06-a1d9-8b1eb95c4ff9",
-    "checkedAt": "2026-10-12T11:41:06.310Z",
+    "checkedAt": "2026-10-15T09:03:42.567Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1359,7 +1435,7 @@
     "favicon": "null",
     "homepage": "https://stream.zeno.fm/v0gde6udfg8uv",
     "stationUuid": "6754e858-ff26-4081-84aa-c909cc7dfdf7",
-    "checkedAt": "2026-10-12T11:41:06.521Z",
+    "checkedAt": "2026-10-15T09:03:43.115Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1378,7 +1454,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "81a4ab9d-7145-46a3-80a6-ba0082129a09",
-    "checkedAt": "2026-10-12T11:41:06.620Z",
+    "checkedAt": "2026-10-15T09:03:43.256Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1397,7 +1473,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "7e428607-1dd5-4773-ae54-5a1fc2e8c450",
-    "checkedAt": "2026-10-12T11:41:06.846Z",
+    "checkedAt": "2026-10-15T09:03:43.406Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1416,7 +1492,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "b6cc934d-5166-45c0-9a60-583173d5bf3b",
-    "checkedAt": "2026-10-12T11:41:06.936Z",
+    "checkedAt": "2026-10-15T09:03:43.416Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1435,7 +1511,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "2544bca7-d69a-47cb-8d66-da15100ec98a",
-    "checkedAt": "2026-10-12T11:41:07.128Z",
+    "checkedAt": "2026-10-15T09:03:43.481Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1454,7 +1530,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "af85ed0b-c7d2-45f5-b5b0-78ac19fb55ad",
-    "checkedAt": "2026-10-12T11:41:07.658Z",
+    "checkedAt": "2026-10-15T09:03:43.700Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1473,7 +1549,7 @@
     "favicon": null,
     "homepage": "https://newsonair.com/playersource.php?channel=43",
     "stationUuid": "e4ca1d79-16c4-4a60-a34a-0d7b7c24ffa5",
-    "checkedAt": "2026-10-12T11:41:08.052Z",
+    "checkedAt": "2026-10-15T09:03:43.886Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1492,7 +1568,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "769aef5c-a5ed-404a-87df-fb4103ee32f1",
-    "checkedAt": "2026-10-12T11:41:09.557Z",
+    "checkedAt": "2026-10-15T09:03:44.090Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1511,7 +1587,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "b97fb412-1e24-47ed-bc99-5eab15a5d588",
-    "checkedAt": "2026-10-12T11:41:11.579Z",
+    "checkedAt": "2026-10-15T09:03:47.447Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1530,7 +1606,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "a8ff020f-f9d1-4871-9e2f-6e4c63f02485",
-    "checkedAt": "2026-10-12T11:41:11.776Z",
+    "checkedAt": "2026-10-15T09:03:47.634Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1553,7 +1629,7 @@
     "favicon": null,
     "homepage": "http://80.225.211.98:8002/",
     "stationUuid": "52a4da9e-6bc6-44a4-a053-c2b6f0b2f480",
-    "checkedAt": "2026-10-12T11:41:12.268Z",
+    "checkedAt": "2026-10-15T09:03:48.133Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1577,7 +1653,7 @@
     "favicon": null,
     "homepage": "http://80.225.211.98:8002/",
     "stationUuid": "df384e05-2bc7-48c0-8a8d-c1f8992b635e",
-    "checkedAt": "2026-10-12T11:41:12.340Z",
+    "checkedAt": "2026-10-15T09:03:48.135Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1598,7 +1674,7 @@
     "favicon": null,
     "homepage": "http://schizoid.in/",
     "stationUuid": "96202f73-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-12T11:41:12.381Z",
+    "checkedAt": "2026-10-15T09:03:48.183Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1620,7 +1696,7 @@
     "favicon": "https://prasarbharati.gov.in/wp-content/uploads/2020/04/cropped-pblogo-180x180.png",
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "a715c44d-4494-4fda-a3d9-4d2ab4483597",
-    "checkedAt": "2026-10-12T11:41:13.196Z",
+    "checkedAt": "2026-10-15T09:03:48.521Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1642,7 +1718,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "0923786e-4a3c-4149-b7fa-154fe4f6e410",
-    "checkedAt": "2026-10-12T11:41:13.276Z",
+    "checkedAt": "2026-10-15T09:03:48.638Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1664,7 +1740,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "137201a1-6422-4909-aa3d-7a8dffad7ae1",
-    "checkedAt": "2026-10-12T11:41:13.650Z",
+    "checkedAt": "2026-10-15T09:03:49.087Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1683,7 +1759,7 @@
     "favicon": null,
     "homepage": "http://schizoid.in/",
     "stationUuid": "96201019-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-12T11:41:13.887Z",
+    "checkedAt": "2026-10-15T09:03:49.476Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1708,10 +1784,10 @@
     "favicon": "https://lh6.googleusercontent.com/57XRds1V-EbiFg5MfW5n8JXtq5IY6euDTwZLXRO38Uu37iKC6tcCuDFPumsNrgij9CiD3MPvaWvuG5JOOzTCJio=w1280",
     "homepage": "https://sites.google.com/view/recitetruth",
     "stationUuid": "6879a7fa-370c-45f1-bfc6-0f570af6e7b4",
-    "checkedAt": "2026-10-12T11:41:16.249Z",
-    "status": 503,
+    "checkedAt": "2026-10-15T09:03:52.040Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 503"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Pew Hits",
@@ -1731,7 +1807,7 @@
     "favicon": null,
     "homepage": "http://80.225.211.98:9364/",
     "stationUuid": "afc49cdf-9153-4740-b390-1321ccd65835",
-    "checkedAt": "2026-10-12T11:41:17.212Z",
+    "checkedAt": "2026-10-15T09:03:52.925Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1751,7 +1827,7 @@
     "favicon": "https://tools.zeno.fm/favicon.ico",
     "homepage": "https://tools.zeno.fm/accounts/agxzfnplbm8tc3RhdHNyGAsSC0JpbGxpbmdCYXNlGICAkIv-qtgIDKIBBHplbm8",
     "stationUuid": "e76ef8d4-ca55-4edc-bf5e-661f5de4c4b5",
-    "checkedAt": "2026-10-12T11:41:19.119Z",
+    "checkedAt": "2026-10-15T09:03:55.045Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1773,7 +1849,7 @@
     "favicon": null,
     "homepage": "http://www.newsonair.com/",
     "stationUuid": "71c8f585-b0d7-4268-94b1-7af897d4291e",
-    "checkedAt": "2026-10-12T11:41:19.549Z",
+    "checkedAt": "2026-10-15T09:03:55.630Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1793,30 +1869,10 @@
     "favicon": null,
     "homepage": "https://www.radiocity.in/",
     "stationUuid": "55d556eb-0d2c-4ad5-978d-41d6fe418a26",
-    "checkedAt": "2026-10-12T11:41:20.444Z",
+    "checkedAt": "2026-10-15T09:03:56.347Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "Radio Indigo 91.9 FM in Panaji/Bangalore",
-    "url": "https://a5.asurahosting.com:8600/radio.mp3",
-    "country": "IN",
-    "type": "hiphop",
-    "tags": [
-      "hiphop",
-      "smooth"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.indigomusic.com/",
-    "stationUuid": "64c906b5-83db-453e-bfcf-b7b35b6c98c2",
-    "checkedAt": "2026-10-12T11:41:20.463Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Pew_Hits",
@@ -1832,7 +1888,7 @@
     "favicon": null,
     "homepage": "http://130.210.5.45:8002/pewhits",
     "stationUuid": "9ee9e24f-7905-45af-9e5f-af72eb4c90b5",
-    "checkedAt": "2026-10-12T11:41:20.825Z",
+    "checkedAt": "2026-10-15T09:03:56.700Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1851,7 +1907,7 @@
     "favicon": null,
     "homepage": "http://130.210.5.45:8002/pewhits",
     "stationUuid": "cfa9c7c3-aefd-4bb4-af82-bf3deebc101b",
-    "checkedAt": "2026-10-12T11:41:20.846Z",
+    "checkedAt": "2026-10-15T09:03:56.795Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1870,7 +1926,7 @@
     "favicon": null,
     "homepage": "http://130.210.5.45:8002/pewhits",
     "stationUuid": "2cc6ba46-d801-436e-8121-9c7513a10c7e",
-    "checkedAt": "2026-10-12T11:41:20.894Z",
+    "checkedAt": "2026-10-15T09:03:56.843Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1889,7 +1945,7 @@
     "favicon": null,
     "homepage": "http://130.210.5.45:8002/pewhits",
     "stationUuid": "5192e46e-df9b-4fe2-8ba4-6d9a49be7ce6",
-    "checkedAt": "2026-10-12T11:41:21.000Z",
+    "checkedAt": "2026-10-15T09:03:56.987Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1908,7 +1964,7 @@
     "favicon": null,
     "homepage": "http://130.210.5.45:8002/pewhits",
     "stationUuid": "53b808be-9d37-43dd-b6a0-dd1492ab6f3a",
-    "checkedAt": "2026-10-12T11:41:21.159Z",
+    "checkedAt": "2026-10-15T09:03:57.084Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1929,7 +1985,7 @@
     "favicon": null,
     "homepage": "https://www.tamilradios.com/air-tiruchirappalli-am-936",
     "stationUuid": "6ea782da-cc61-49c7-a173-2e6687141ada",
-    "checkedAt": "2026-10-12T11:41:21.172Z",
+    "checkedAt": "2026-10-15T09:03:57.115Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1952,7 +2008,7 @@
     "favicon": null,
     "homepage": "https://www.tamilradios.com/kaviyarasar-radio",
     "stationUuid": "38593d1f-0b51-427f-bd16-a425cd71d6a7",
-    "checkedAt": "2026-10-12T11:41:21.300Z",
+    "checkedAt": "2026-10-15T09:03:57.263Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1974,7 +2030,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "53c13dee-e203-4afd-b282-2f46f8fc0621",
-    "checkedAt": "2026-10-12T11:41:21.526Z",
+    "checkedAt": "2026-10-15T09:03:57.477Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1996,7 +2052,7 @@
     "favicon": "https://prasarbharati.gov.in/wp-content/uploads/2020/04/cropped-pblogo-180x180.png",
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "88559cee-11c9-4d84-ab6f-2204820a1fe1",
-    "checkedAt": "2026-10-12T11:41:21.887Z",
+    "checkedAt": "2026-10-15T09:03:57.612Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2018,7 +2074,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "2eb52e62-b2c3-4bb4-86c2-05275efddf81",
-    "checkedAt": "2026-10-12T11:41:21.956Z",
+    "checkedAt": "2026-10-15T09:03:57.985Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2039,10 +2095,31 @@
     "favicon": null,
     "homepage": "https://www.tamilradios.com/s-jankaki-radio",
     "stationUuid": "ceb09075-f0f4-42c3-96ac-d9276fc58f48",
-    "checkedAt": "2026-10-12T11:41:23.140Z",
+    "checkedAt": "2026-10-15T09:03:59.972Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "AIR Thrissur",
+    "url": "https://d1tmej9eu7kw5c.cloudfront.net/f70fdeca437dc326/f70fdeca437dc326.m3u8",
+    "country": "IN",
+    "type": "local radio",
+    "tags": [
+      "local radio",
+      "malayalam",
+      "news"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "malayalam",
+    "favicon": "https://newsonair.gov.in/wp-content/uploads/2024/03/Akhashvani-1.png",
+    "homepage": "https://akashvani.gov.in/radio/live.php",
+    "stationUuid": "623c7ebd-1f39-4eed-8e1d-57e467da0bc7",
+    "checkedAt": "2026-10-15T09:04:01.463Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Magesh online radio 24/7",
@@ -2063,7 +2140,7 @@
     "favicon": "https://tools.zeno.fm/favicon.ico",
     "homepage": "https://tools.zeno.fm/accounts/agxzfnplbm8tc3RhdHNyGAsSC0JpbGxpbmdCYXNlGICAkIv-qtgIDKIBBHplbm8",
     "stationUuid": "6d08dd60-ff26-434b-a74d-2b6ddf61af01",
-    "checkedAt": "2026-10-12T11:41:25.912Z",
+    "checkedAt": "2026-10-15T09:04:01.781Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2084,7 +2161,7 @@
     "favicon": "https://forwardmystream.com/stations/300/annaifm-1512.png",
     "homepage": "https://zeno.fm/radio/annai-fm/",
     "stationUuid": "3d2a3386-d041-465f-887c-fd2ca5ec5522",
-    "checkedAt": "2026-10-12T11:41:25.915Z",
+    "checkedAt": "2026-10-15T09:04:01.844Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2106,7 +2183,7 @@
     "favicon": null,
     "homepage": "http://www.newsonair.com/",
     "stationUuid": "bbd6e74d-85cd-495d-aea5-1da1f34863fc",
-    "checkedAt": "2026-10-12T11:41:26.200Z",
+    "checkedAt": "2026-10-15T09:04:02.032Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2126,7 +2203,7 @@
     "favicon": null,
     "homepage": "https://www.tamilradios.com/mohan-hits-radio",
     "stationUuid": "46661ca1-caf4-4e77-b30b-afbaff9e8e1d",
-    "checkedAt": "2026-10-12T11:41:26.283Z",
+    "checkedAt": "2026-10-15T09:04:02.167Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2143,7 +2220,7 @@
     "favicon": "https://radiosindia.com/images/a1tamilradio1.jpg",
     "homepage": null,
     "stationUuid": "3d50c01d-3bbd-4641-be8b-d1071bf05705",
-    "checkedAt": "2026-10-12T11:41:27.362Z",
+    "checkedAt": "2026-10-15T09:04:03.253Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2160,7 +2237,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2024/01/air-rourkela.jpg",
     "homepage": null,
     "stationUuid": "13f2aacf-c34d-44c1-91bf-5078ac5a8737",
-    "checkedAt": "2026-10-12T11:41:30.059Z",
+    "checkedAt": "2026-10-15T09:04:05.514Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2177,7 +2254,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/homepage-air/",
     "stationUuid": "f7f9e0c1-b946-4c86-adcc-3faaaf7ff25e",
-    "checkedAt": "2026-10-12T11:41:30.153Z",
+    "checkedAt": "2026-10-15T09:04:05.641Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2194,7 +2271,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/ajmer-radio/",
     "stationUuid": "4b3f5e44-708d-4aaa-b5b1-62f35f67a647",
-    "checkedAt": "2026-10-12T11:41:30.293Z",
+    "checkedAt": "2026-10-15T09:04:05.800Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2211,7 +2288,7 @@
     "favicon": "https://akashvani.gov.in/favicon.png",
     "homepage": "https://akashvani.gov.in/",
     "stationUuid": "d2ac69b6-5b16-47e2-a700-9b46007e6703",
-    "checkedAt": "2026-10-12T11:41:30.709Z",
+    "checkedAt": "2026-10-15T09:04:06.321Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2228,7 +2305,7 @@
     "favicon": "https://akashvani.gov.in/favicon.png",
     "homepage": "https://akashvani.gov.in/",
     "stationUuid": "9a8f3ecd-4b7b-4e0d-847f-8a9ed3eb952d",
-    "checkedAt": "2026-10-12T11:41:30.853Z",
+    "checkedAt": "2026-10-15T09:04:06.369Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2245,7 +2322,7 @@
     "favicon": "https://onlineradiofm.in/assets/image/radio/180/airsiliguri1.jpg",
     "homepage": "https://akashvani.gov.in/",
     "stationUuid": "17e87cf7-85c8-4303-a04b-6e526559384f",
-    "checkedAt": "2026-10-12T11:41:30.974Z",
+    "checkedAt": "2026-10-15T09:04:06.557Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2262,7 +2339,7 @@
     "favicon": "https://radiosindia.com/images/annaifm.jpg",
     "homepage": null,
     "stationUuid": "39b19df6-e1cb-46d2-994f-a2d7f9dc8b65",
-    "checkedAt": "2026-10-12T11:41:34.457Z",
+    "checkedAt": "2026-10-15T09:04:10.204Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2279,7 +2356,7 @@
     "favicon": "https://auralradiokerala.com/images/Logo%20circle.png",
     "homepage": "https://auralradiokerala.com/",
     "stationUuid": "56f80a47-da6e-47ac-a588-417920009725",
-    "checkedAt": "2026-10-12T11:41:34.959Z",
+    "checkedAt": "2026-10-15T09:04:10.531Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2296,7 +2373,7 @@
     "favicon": "https://drive.google.com/file/d/1MVVBUm_yDtdUDc4GOxeNDHs5niIppM0I/view?usp=sharing",
     "homepage": "https://www.bhaktiworldmedia.com/",
     "stationUuid": "14422f91-84b3-4b44-9633-a1b2c7d024af",
-    "checkedAt": "2026-10-12T11:41:35.772Z",
+    "checkedAt": "2026-10-15T09:04:11.352Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2313,7 +2390,7 @@
     "favicon": "https://stream-172.zeno.fm/kutyooocsdqtv?zs=ZIfiXki4Ssuh6DAv2X2uuw",
     "homepage": "https://www.bhaktiworldmedia.com/",
     "stationUuid": "2da86a36-a55b-4a18-8d32-36b4dda35520",
-    "checkedAt": "2026-10-12T11:41:35.778Z",
+    "checkedAt": "2026-10-15T09:04:11.353Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2330,7 +2407,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/1/88371.v5.png",
     "homepage": "http://bollyhitsradio.com/",
     "stationUuid": "99e5be86-2441-4779-8918-71981f6edf79",
-    "checkedAt": "2026-10-12T11:41:36.189Z",
+    "checkedAt": "2026-10-15T09:04:11.799Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2347,7 +2424,7 @@
     "favicon": "https://bollyhitsradio.com/wp-content/uploads/sites/558/2026/02/BollyHits-Radio-White-300x300.jpg",
     "homepage": "https://bollyhitsradio.com/",
     "stationUuid": "2168a3d0-2322-4c77-a724-d2600df6637c",
-    "checkedAt": "2026-10-12T11:41:36.257Z",
+    "checkedAt": "2026-10-15T09:04:11.828Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2364,7 +2441,7 @@
     "favicon": "https://bolly999.radio12345.com/users.img/3420482/1769078155/icon_thumb_80_1769078155.png",
     "homepage": "http://bolly999.radio12345.com/",
     "stationUuid": "7005d183-f238-4a50-aecc-c3d315840aed",
-    "checkedAt": "2026-10-12T11:41:36.311Z",
+    "checkedAt": "2026-10-15T09:04:11.856Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2381,7 +2458,7 @@
     "favicon": null,
     "homepage": "https://divinewisdomministries.com/mmicatholicradio/",
     "stationUuid": "bfd30fc6-2412-4bb5-9640-1b42a987f342",
-    "checkedAt": "2026-10-12T11:41:36.990Z",
+    "checkedAt": "2026-10-15T09:04:12.424Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2398,7 +2475,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "e157666e-5668-48a6-a9a2-29b232dfc449",
-    "checkedAt": "2026-10-12T11:41:37.051Z",
+    "checkedAt": "2026-10-15T09:04:12.441Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2415,7 +2492,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/7/75/Club_FM_Logo.jpg",
     "homepage": "https://www.clubfm.in/",
     "stationUuid": "8a358178-97aa-4470-95d0-5afbc4b07a22",
-    "checkedAt": "2026-10-12T11:41:37.582Z",
+    "checkedAt": "2026-10-15T09:04:12.750Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -2432,7 +2509,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/02/cmr-tamil-hd.jpg",
     "homepage": null,
     "stationUuid": "5680fd3b-99c3-4922-bb58-2b740d04186e",
-    "checkedAt": "2026-10-12T11:41:37.655Z",
+    "checkedAt": "2026-10-15T09:04:12.810Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2449,7 +2526,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/08/cmr-hindi-hd.jpg",
     "homepage": null,
     "stationUuid": "b29703dd-762b-45b4-b5d2-52983626f7b2",
-    "checkedAt": "2026-10-12T11:41:37.674Z",
+    "checkedAt": "2026-10-15T09:04:12.816Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2466,7 +2543,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/08/cmr-hindi-hd.jpg",
     "homepage": null,
     "stationUuid": "1da63dcc-1cba-433d-81e8-fde6445345d9",
-    "checkedAt": "2026-10-12T11:41:37.689Z",
+    "checkedAt": "2026-10-15T09:04:12.819Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2483,7 +2560,7 @@
     "favicon": "https://radiosindia.com/images/cmrfm.jpg",
     "homepage": null,
     "stationUuid": "03b06013-ce0b-42c7-b015-a4ed1d46fdbb",
-    "checkedAt": "2026-10-12T11:41:37.694Z",
+    "checkedAt": "2026-10-15T09:04:12.821Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2500,7 +2577,7 @@
     "favicon": "https://radiosindia.com/images/cmrhindihdradio.jpg",
     "homepage": null,
     "stationUuid": "ab025e8f-f847-4931-89cb-11f880464ec6",
-    "checkedAt": "2026-10-12T11:41:37.708Z",
+    "checkedAt": "2026-10-15T09:04:12.825Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2517,7 +2594,7 @@
     "favicon": "https://radiosindia.com/images/cmrthamilfm.jpg",
     "homepage": null,
     "stationUuid": "d78c09cb-a4de-459a-9ff0-355ded3c233c",
-    "checkedAt": "2026-10-12T11:41:37.729Z",
+    "checkedAt": "2026-10-15T09:04:12.833Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2534,27 +2611,10 @@
     "favicon": "https://liveradios.in/wp-content/uploads/erode.jpg",
     "homepage": null,
     "stationUuid": "f331f83a-4299-4a36-9423-963f424a5677",
-    "checkedAt": "2026-10-12T11:41:39.248Z",
+    "checkedAt": "2026-10-15T09:04:14.245Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "etr-fm",
-    "url": "https://bud.streampanel.net:6257/stream",
-    "country": "IN",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": "tamil",
-    "favicon": "https://liveradios.in/wp-content/uploads/ETRFM.jpg",
-    "homepage": null,
-    "stationUuid": "3c9159fc-d565-4df8-81d8-e3583755ebb6",
-    "checkedAt": "2026-10-12T11:41:39.255Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "FM AIR Gorakhpur",
@@ -2568,7 +2628,7 @@
     "favicon": null,
     "homepage": "https://vividhbharati.in/",
     "stationUuid": "021cb0b1-d019-41e2-a4e5-85ef448fde1f",
-    "checkedAt": "2026-10-12T11:41:39.633Z",
+    "checkedAt": "2026-10-15T09:04:14.497Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2585,7 +2645,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5d519846-6e35-4f6b-9607-8fe150c349d1",
-    "checkedAt": "2026-10-12T11:41:40.120Z",
+    "checkedAt": "2026-10-15T09:04:14.867Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2602,10 +2662,27 @@
     "favicon": "https://radiosindia.com/images/fmrainbow.jpg",
     "homepage": null,
     "stationUuid": "08298a5d-39b2-403d-bd13-50a49c28c019",
-    "checkedAt": "2026-10-12T11:41:40.295Z",
+    "checkedAt": "2026-10-15T09:04:14.958Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "GupShup Internet Radio",
+    "url": "https://internetradio.gupshupradio.com:8080/?type=mp3",
+    "country": "IN",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": null,
+    "favicon": "https://gupshupradio.com/wp-content/uploads/2021/11/gupshuplogo.png",
+    "homepage": "https://gupshupradio.com/",
+    "stationUuid": "1879602f-541a-4832-84f3-b8a5a0ea3e0d",
+    "checkedAt": "2026-10-15T09:04:16.056Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Gupshup Radio",
@@ -2619,7 +2696,24 @@
     "favicon": "https://gupshupradio.com/",
     "homepage": "https://gupshupradio.com/",
     "stationUuid": "eafa92ce-427d-45b9-9c7a-6229e0a6eba4",
-    "checkedAt": "2026-10-12T11:41:41.630Z",
+    "checkedAt": "2026-10-15T09:04:16.083Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Gupshup Radio",
+    "url": "https://internetradio.gupshupradio.com:8080/?type=mp3",
+    "country": "IN",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": null,
+    "favicon": "https://gupshupradio.com/wp-content/uploads/2021/11/gupshuplogo.png",
+    "homepage": "https://gupshupradio.com/",
+    "stationUuid": "f9f4e42d-3ac8-4db0-8332-616eda005d64",
+    "checkedAt": "2026-10-15T09:04:16.086Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2636,7 +2730,7 @@
     "favicon": null,
     "homepage": "https://harmanbeats.up.railway.app/harman",
     "stationUuid": "b3148267-7c8f-46ec-8faa-1d4fcd106f8e",
-    "checkedAt": "2026-10-12T11:41:43.147Z",
+    "checkedAt": "2026-10-15T09:04:16.945Z",
     "status": 404,
     "contentType": "application/json",
     "lastFailure": "HTTP 404"
@@ -2653,7 +2747,7 @@
     "favicon": "http://indifun.net/wp-content/uploads/2018/03/Lucio_cute-450x450.png",
     "homepage": "http://indifun.net/",
     "stationUuid": "f7ee1409-5e3c-412a-aa71-f0b4ae2f6cd2",
-    "checkedAt": "2026-10-12T11:41:45.049Z",
+    "checkedAt": "2026-10-15T09:04:18.896Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2670,7 +2764,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "e8d00483-b23c-49e8-a3a2-cdd0e0503474",
-    "checkedAt": "2026-10-12T11:41:48.251Z",
+    "checkedAt": "2026-10-15T09:04:21.574Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -2687,7 +2781,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2022/01/madhur-tarang-kannada.jpg",
     "homepage": null,
     "stationUuid": "2e8bd946-f3e9-438a-a234-4c9d60807f5c",
-    "checkedAt": "2026-10-12T11:41:48.875Z",
+    "checkedAt": "2026-10-15T09:04:22.020Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2704,7 +2798,7 @@
     "favicon": "https://radiosindia.com/https://radiosindia.com/images/madhurtarang.jpg",
     "homepage": null,
     "stationUuid": "fe845761-9414-4817-9571-2da4e7ffc91c",
-    "checkedAt": "2026-10-12T11:41:48.878Z",
+    "checkedAt": "2026-10-15T09:04:22.044Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2721,7 +2815,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/08/namaste-bollywood.jpg",
     "homepage": null,
     "stationUuid": "702371ed-b373-4627-b370-45127c2e280f",
-    "checkedAt": "2026-10-12T11:41:51.384Z",
+    "checkedAt": "2026-10-15T09:04:23.807Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2738,7 +2832,7 @@
     "favicon": null,
     "homepage": "https://tamilradios.net/nellai-tamil-fm/",
     "stationUuid": "b62812cb-0b9b-4b9c-8851-9d57887b8f2f",
-    "checkedAt": "2026-10-12T11:41:51.678Z",
+    "checkedAt": "2026-10-15T09:04:24.057Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2755,7 +2849,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/nellai-tamil-fm.jpg",
     "homepage": null,
     "stationUuid": "5f17f08b-646f-4205-89eb-c31de21f9bee",
-    "checkedAt": "2026-10-12T11:41:51.696Z",
+    "checkedAt": "2026-10-15T09:04:24.060Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2772,7 +2866,7 @@
     "favicon": "https://zeno.fm/static/icons/apple-icon-120x120.png",
     "homepage": "https://zeno.fm/old-mong-radio/",
     "stationUuid": "12c90f42-2592-4311-9c18-169f4b23d6f8",
-    "checkedAt": "2026-10-12T11:41:52.145Z",
+    "checkedAt": "2026-10-15T09:04:24.651Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2789,7 +2883,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/07/radio-old-monk.jpg",
     "homepage": null,
     "stationUuid": "2a3f2b51-0654-4b23-ab23-bceb7b206509",
-    "checkedAt": "2026-10-12T11:41:52.239Z",
+    "checkedAt": "2026-10-15T09:04:24.653Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2806,7 +2900,24 @@
     "favicon": null,
     "homepage": "http://online-radio.eu/radio/92688-osho-radio",
     "stationUuid": "8e0abdd4-a729-4ab1-9b79-143cbf5a7fef",
-    "checkedAt": "2026-10-12T11:41:52.256Z",
+    "checkedAt": "2026-10-15T09:04:24.736Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Parwaz Radio Punjabi",
+    "url": "http://mehramedia.com:8081/;",
+    "country": "IN",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 32,
+    "language": "punjabi",
+    "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/04/parwaz-radio.jpg",
+    "homepage": null,
+    "stationUuid": "b35104c4-a3a3-4600-9f3b-7fbafa4ba7c4",
+    "checkedAt": "2026-10-15T09:04:24.754Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2823,7 +2934,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/pattas-radio-1.jpg",
     "homepage": null,
     "stationUuid": "b7b8b756-8cd4-4235-8a1c-6539e5f57afb",
-    "checkedAt": "2026-10-12T11:41:52.381Z",
+    "checkedAt": "2026-10-15T09:04:24.756Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2840,7 +2951,7 @@
     "favicon": "https://radionindia.in/admin/images/69002_radio.png",
     "homepage": "https://stream-146.zeno.fm/eyxg23ky4x8uv?zs=GHjNqDT1S12EKMQTUO2k3A",
     "stationUuid": "187e27b0-56e7-4a12-8d60-7da37e88bc15",
-    "checkedAt": "2026-10-12T11:41:53.285Z",
+    "checkedAt": "2026-10-15T09:04:25.552Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2857,7 +2968,7 @@
     "favicon": "https://radiodc.in/wp-content/uploads/2024/02/radio-dc-logo-768x768.png",
     "homepage": "https://radiodc.in/",
     "stationUuid": "8282f318-daf0-4848-87ef-75ce6dc0ec92",
-    "checkedAt": "2026-10-12T11:41:53.947Z",
+    "checkedAt": "2026-10-15T09:04:26.310Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2874,7 +2985,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/10/radio-dehotties.jpg",
     "homepage": null,
     "stationUuid": "703f5b43-61e7-48b5-a665-35d7fadb8f77",
-    "checkedAt": "2026-10-12T11:41:54.317Z",
+    "checkedAt": "2026-10-15T09:04:26.654Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2891,7 +3002,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2024/01/radio-dunia-fm.jpg",
     "homepage": null,
     "stationUuid": "43c446cd-41ef-4181-b5b9-e4f2b4acec0a",
-    "checkedAt": "2026-10-12T11:41:54.435Z",
+    "checkedAt": "2026-10-15T09:04:27.159Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2908,7 +3019,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/10/radio-khushkhabri.jpg",
     "homepage": null,
     "stationUuid": "a2ed09ae-7ac3-46da-b31d-b7773fa4d422",
-    "checkedAt": "2026-10-12T11:41:54.648Z",
+    "checkedAt": "2026-10-15T09:04:27.436Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2925,7 +3036,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/10/radio-mallu.jpg",
     "homepage": null,
     "stationUuid": "5df29da0-3ee0-4934-aa8b-7464aeef11ba",
-    "checkedAt": "2026-10-12T11:41:54.880Z",
+    "checkedAt": "2026-10-15T09:04:27.853Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2942,7 +3053,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/12/radio-thamil-hd.jpg",
     "homepage": null,
     "stationUuid": "1bd9d8be-61da-4bbb-9439-7ddb0eb82d67",
-    "checkedAt": "2026-10-12T11:41:56.878Z",
+    "checkedAt": "2026-10-15T09:04:29.797Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2959,7 +3070,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/radiomallu.jpg",
     "homepage": null,
     "stationUuid": "1046bcbf-da93-424d-8e46-2fcb0441921a",
-    "checkedAt": "2026-10-12T11:41:57.242Z",
+    "checkedAt": "2026-10-15T09:04:30.135Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2976,7 +3087,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/radiomistooty.jpg",
     "homepage": null,
     "stationUuid": "9f1c89f0-4ccc-4476-b22d-f83c1877e979",
-    "checkedAt": "2026-10-12T11:41:57.400Z",
+    "checkedAt": "2026-10-15T09:04:30.315Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2993,7 +3104,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/radiopetti.png",
     "homepage": null,
     "stationUuid": "8a2c6077-d964-428c-a456-caf385b259a7",
-    "checkedAt": "2026-10-12T11:41:57.492Z",
+    "checkedAt": "2026-10-15T09:04:30.420Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3010,7 +3121,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/radiothamilhd.jpg",
     "homepage": null,
     "stationUuid": "d9bdec79-aa61-4d76-82fd-fae8ff480c82",
-    "checkedAt": "2026-10-12T11:41:57.532Z",
+    "checkedAt": "2026-10-15T09:04:30.437Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3027,7 +3138,7 @@
     "favicon": "https://radiosindia.com/images/radiobaingan.jpg",
     "homepage": null,
     "stationUuid": "a1fb9fe3-e6ae-4fdd-8e76-1ce9602bcab9",
-    "checkedAt": "2026-10-12T11:41:57.681Z",
+    "checkedAt": "2026-10-15T09:04:30.591Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3044,7 +3155,7 @@
     "favicon": "https://radiosindia.com/images/radiocity.jpg",
     "homepage": null,
     "stationUuid": "db7dc662-1231-44d6-b976-76cf6ae6feae",
-    "checkedAt": "2026-10-12T11:41:57.850Z",
+    "checkedAt": "2026-10-15T09:04:30.687Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -3061,7 +3172,7 @@
     "favicon": "https://radiosindia.com/images/radiocityhiphop.jpg",
     "homepage": null,
     "stationUuid": "5d6fc567-4cfe-4321-8169-bbc5a6699cf2",
-    "checkedAt": "2026-10-12T11:41:57.930Z",
+    "checkedAt": "2026-10-15T09:04:30.778Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -3078,7 +3189,7 @@
     "favicon": "https://radiosindia.com/images/radiodehotties.jpg",
     "homepage": null,
     "stationUuid": "f809c7f4-7fed-43b5-93ed-f00fae8c7c9d",
-    "checkedAt": "2026-10-12T11:41:57.945Z",
+    "checkedAt": "2026-10-15T09:04:30.782Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3095,7 +3206,7 @@
     "favicon": "https://radiosindia.com/images/radiomadurai.jpg",
     "homepage": null,
     "stationUuid": "d1f9d08f-f32e-4c1a-9789-b91c0f0d44ef",
-    "checkedAt": "2026-10-12T11:41:58.130Z",
+    "checkedAt": "2026-10-15T09:04:30.996Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3112,7 +3223,7 @@
     "favicon": "https://radiosindia.com/images/radiopetti1.jpg",
     "homepage": null,
     "stationUuid": "3af16786-e534-4039-9363-7f4d084973a5",
-    "checkedAt": "2026-10-12T11:41:58.515Z",
+    "checkedAt": "2026-10-15T09:04:31.368Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3129,7 +3240,7 @@
     "favicon": null,
     "homepage": "https://sites.google.com/view/recitetruth",
     "stationUuid": "d054c652-a8fa-438a-af76-8f11f2b4b765",
-    "checkedAt": "2026-10-12T11:41:59.866Z",
+    "checkedAt": "2026-10-15T09:04:32.611Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -3146,7 +3257,7 @@
     "favicon": null,
     "homepage": "https://sites.google.com/view/recitetruth",
     "stationUuid": "84637ead-2e79-4db5-9ef9-71e8bc7511eb",
-    "checkedAt": "2026-10-12T11:41:59.886Z",
+    "checkedAt": "2026-10-15T09:04:32.644Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -3163,7 +3274,7 @@
     "favicon": "https://radiobarfi.com/wp-content/uploads/2024/04/Red-FM-93.5-Live-Online.png.webp",
     "homepage": "https://www.redfmindia.in/delhi",
     "stationUuid": "bce9aa64-8fd5-434e-8c9d-3ee67c594a06",
-    "checkedAt": "2026-10-12T11:41:59.938Z",
+    "checkedAt": "2026-10-15T09:04:32.847Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3180,7 +3291,7 @@
     "favicon": "https://radiosindia.com/images/sstamilradio1.jpg",
     "homepage": null,
     "stationUuid": "10a6ff92-8c61-4f47-a5c6-327d38127582",
-    "checkedAt": "2026-10-12T11:42:02.085Z",
+    "checkedAt": "2026-10-15T09:04:34.748Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -3197,7 +3308,7 @@
     "favicon": null,
     "homepage": "https://tagore-radio.pages.dev/",
     "stationUuid": "63e136fc-d317-48f4-a4f4-db4dbf6781c3",
-    "checkedAt": "2026-10-12T11:42:02.557Z",
+    "checkedAt": "2026-10-15T09:04:35.174Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3214,7 +3325,7 @@
     "favicon": "https://tagore-radio.pages.dev/icons/icon-512.png",
     "homepage": "https://tagore-radio.pages.dev/",
     "stationUuid": "f59170dc-5b4d-4d95-8276-d731c96ae6c9",
-    "checkedAt": "2026-10-12T11:42:02.574Z",
+    "checkedAt": "2026-10-15T09:04:35.188Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3231,7 +3342,7 @@
     "favicon": null,
     "homepage": "https://tamilsunradio.com/",
     "stationUuid": "c908b0c4-d1e2-4bd2-b721-49f80e2c4af2",
-    "checkedAt": "2026-10-12T11:42:02.882Z",
+    "checkedAt": "2026-10-15T09:04:35.301Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3248,7 +3359,7 @@
     "favicon": "https://onlineradiohub.com/wp-content/uploads/2023/12/tamil-sun-fm-1.jpg",
     "homepage": null,
     "stationUuid": "d79ea4a0-e818-4af1-9ba5-528d1c0276dc",
-    "checkedAt": "2026-10-12T11:42:02.887Z",
+    "checkedAt": "2026-10-15T09:04:35.376Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3265,7 +3376,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/tamil-sun-fm-new-logo.jpg",
     "homepage": null,
     "stationUuid": "5e2b4d3b-71c5-4600-80b7-fef837ad7bed",
-    "checkedAt": "2026-10-12T11:42:03.842Z",
+    "checkedAt": "2026-10-15T09:04:36.284Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3282,7 +3393,7 @@
     "favicon": "https://radiosindia.com/images/tamilhdradio.jpg",
     "homepage": null,
     "stationUuid": "af63d5d4-f223-4168-b4d3-00ebfacb0ba9",
-    "checkedAt": "2026-10-12T11:42:04.447Z",
+    "checkedAt": "2026-10-15T09:04:36.488Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3299,7 +3410,7 @@
     "favicon": "https://radiosindia.com/images/tamilsunfm.jpg",
     "homepage": null,
     "stationUuid": "f13351e6-9a70-4db4-8a27-2a881bec9f01",
-    "checkedAt": "2026-10-12T11:42:05.212Z",
+    "checkedAt": "2026-10-15T09:04:36.843Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3316,7 +3427,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/thalam-logo.jpg",
     "homepage": null,
     "stationUuid": "6ec07832-d238-41a4-b076-5055508186de",
-    "checkedAt": "2026-10-12T11:42:06.433Z",
+    "checkedAt": "2026-10-15T09:04:37.141Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3333,7 +3444,7 @@
     "favicon": null,
     "homepage": "http://www.thebetter.fm/",
     "stationUuid": "758c38ea-fb3a-4006-a1af-44bf5c9cc001",
-    "checkedAt": "2026-10-12T11:42:06.923Z",
+    "checkedAt": "2026-10-15T09:04:37.562Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3350,7 +3461,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/thulifm.jpg",
     "homepage": null,
     "stationUuid": "3ac2f8ca-a827-4127-90dd-fd1e8bb7eb92",
-    "checkedAt": "2026-10-12T11:42:07.626Z",
+    "checkedAt": "2026-10-15T09:04:38.096Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3367,7 +3478,7 @@
     "favicon": "https://radiosindia.com/images/thulifm.jpg",
     "homepage": null,
     "stationUuid": "1040519b-a411-4914-9741-ac2976dccb5c",
-    "checkedAt": "2026-10-12T11:42:07.649Z",
+    "checkedAt": "2026-10-15T09:04:38.222Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3384,7 +3495,7 @@
     "favicon": "https://radiosindia.com/images/unity101.jpg",
     "homepage": null,
     "stationUuid": "ee1fe0bb-7cd5-4834-bb8f-ac0f9cd88656",
-    "checkedAt": "2026-10-12T11:42:08.302Z",
+    "checkedAt": "2026-10-15T09:04:38.988Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3401,7 +3512,7 @@
     "favicon": null,
     "homepage": "http://54.198.182.246:8000/",
     "stationUuid": "88648e34-23d6-432f-a65b-0d70f8708ef5",
-    "checkedAt": "2026-10-12T11:42:09.219Z",
+    "checkedAt": "2026-10-15T09:04:39.820Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3420,7 +3531,7 @@
     "favicon": "null",
     "homepage": "http://stream.zeno.fm/spm0t8gq45quv",
     "stationUuid": "b1c8fb75-fbe2-48fa-90a9-c2ff7a69724d",
-    "checkedAt": "2026-10-12T11:42:09.538Z",
+    "checkedAt": "2026-10-15T09:04:40.049Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3439,7 +3550,45 @@
     "favicon": "null",
     "homepage": "http://main.weefmgrenada.com:5032/",
     "stationUuid": "95a8b735-64e4-4a1f-91ae-ebdc238a4c7e",
-    "checkedAt": "2026-10-12T11:42:11.133Z",
+    "checkedAt": "2026-10-15T09:04:41.282Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "gpsp",
+    "url": "https://internetradio.gupshupradio.com:8080/?type=mp3",
+    "country": "IN",
+    "type": "music",
+    "tags": [
+      "music"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english hindi",
+    "favicon": null,
+    "homepage": "https://gupshupradio.com/",
+    "stationUuid": "285e367e-8e7f-49e6-83cb-4810272a2cdc",
+    "checkedAt": "2026-10-15T09:04:41.303Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "GUP SHUP",
+    "url": "https://internetradio.gupshupradio.com:8080/?type=mp3",
+    "country": "IN",
+    "type": "music",
+    "tags": [
+      "music"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "assamese",
+    "favicon": null,
+    "homepage": "https://gupshupradio.com/",
+    "stationUuid": "0cc4c41b-2486-4b6e-a235-0337258253e4",
+    "checkedAt": "2026-10-15T09:04:41.320Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3458,7 +3607,7 @@
     "favicon": "null",
     "homepage": "https://stream.zeno.fm/eyxg23ky4x8uv",
     "stationUuid": "f898b7e1-7363-4afe-83ac-6655ae12356c",
-    "checkedAt": "2026-10-12T11:42:12.155Z",
+    "checkedAt": "2026-10-15T09:04:42.268Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3477,7 +3626,7 @@
     "favicon": "null",
     "homepage": "https://stream-141.zeno.fm/eyxg23ky4x8uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJleXhnMjNreTR4OHV2IiwiaG9zdCI6InN0cmVhbS0xNDEuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IlhDQWt5azR2UkVtOXI4ZzVvMWVGT3ciLCJpYXQiOjE",
     "stationUuid": "bcdd230a-a12f-4c40-a24b-a68ff936e206",
-    "checkedAt": "2026-10-12T11:42:12.438Z",
+    "checkedAt": "2026-10-15T09:04:42.635Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3496,7 +3645,7 @@
     "favicon": "null",
     "homepage": "https://stream-141.zeno.fm/eyxg23ky4x8uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJleXhnMjNreTR4OHV2IiwiaG9zdCI6InN0cmVhbS0xNDEuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IlhDQWt5azR2UkVtOXI4ZzVvMWVGT3ciLCJpYXQiOjE",
     "stationUuid": "23664121-7908-4efa-ae14-ed2d742e899f",
-    "checkedAt": "2026-10-12T11:42:12.556Z",
+    "checkedAt": "2026-10-15T09:04:42.637Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3515,7 +3664,7 @@
     "favicon": "https://stream-141.zeno.fm/favicon.ico",
     "homepage": "https://stream-141.zeno.fm/eyxg23ky4x8uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJleXhnMjNreTR4OHV2IiwiaG9zdCI6InN0cmVhbS0xNDEuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IlhDQWt5azR2UkVtOXI4ZzVvMWVGT3ciLCJpYXQiOjE",
     "stationUuid": "af779fc8-4c75-4494-8db7-09bf86e17bbb",
-    "checkedAt": "2026-10-12T11:42:12.586Z",
+    "checkedAt": "2026-10-15T09:04:42.690Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3534,7 +3683,7 @@
     "favicon": "null",
     "homepage": "https://stream-141.zeno.fm/eyxg23ky4x8uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJleXhnMjNreTR4OHV2IiwiaG9zdCI6InN0cmVhbS0xNDEuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IlhDQWt5azR2UkVtOXI4ZzVvMWVGT3ciLCJpYXQiOjE",
     "stationUuid": "1d160457-527d-47c5-a2bf-9c219de22be4",
-    "checkedAt": "2026-10-12T11:42:12.591Z",
+    "checkedAt": "2026-10-15T09:04:42.780Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3553,7 +3702,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/0eukcvcf8tzuv",
     "stationUuid": "ae3da839-d59e-419c-bc76-07154a05bff3",
-    "checkedAt": "2026-10-12T11:42:12.706Z",
+    "checkedAt": "2026-10-15T09:04:42.874Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3572,10 +3721,29 @@
     "favicon": "null",
     "homepage": "http://s6.myradiostream.com:15054/",
     "stationUuid": "750d767b-cb9a-46c3-b598-d899f0507bff",
-    "checkedAt": "2026-10-12T11:42:13.484Z",
+    "checkedAt": "2026-10-15T09:04:43.500Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Red Fm",
+    "url": "https://funasia.streamguys1.com/live9",
+    "country": "IN",
+    "type": "music",
+    "tags": [
+      "music"
+    ],
+    "codec": "AAC",
+    "bitrate": 320,
+    "language": "hindi",
+    "favicon": "null",
+    "homepage": "https://funasia.streamguys1.com/live9",
+    "stationUuid": "15812c43-c571-4770-9065-b64b4d5338d1",
+    "checkedAt": "2026-10-15T09:04:43.682Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Air Telugu",
@@ -3591,9 +3759,47 @@
     "favicon": "https://liveradios.in/wp-content/uploads/output-onlinepngtools-1-150x150.png",
     "homepage": "https://liveradios.in/air-telugu.html",
     "stationUuid": "8ae09aeb-bcf9-49b2-b126-0db6be46de5f",
-    "checkedAt": "2026-10-12T11:42:14.707Z",
+    "checkedAt": "2026-10-15T09:04:44.560Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Jajabara",
+    "url": "https://streams.radiojajabara.com/hdradio_jajabara.mp3",
+    "country": "IN",
+    "type": "odia",
+    "tags": [
+      "odia"
+    ],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://liveradios.in/wp-content/uploads/radio-jajabara.jpg",
+    "homepage": null,
+    "stationUuid": "40bf2e3e-aad1-4db9-bc83-e854efd4b5d3",
+    "checkedAt": "2026-10-15T09:04:45.474Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Sanskar",
+    "url": "https://mehramedia.com/stream.mp3",
+    "country": "IN",
+    "type": "odia",
+    "tags": [
+      "odia"
+    ],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR63dYHkBvYiw7TjDFI-kNdEvgjhoMpw_3B4g&s",
+    "homepage": null,
+    "stationUuid": "01ca33b9-94d9-449b-b49b-a0f9b76ffb5c",
+    "checkedAt": "2026-10-15T09:04:45.494Z",
+    "status": 404,
+    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
@@ -3608,7 +3814,7 @@
     "favicon": "https://zeno.fm/radio/sagar-fm/",
     "homepage": "https://zeno.fm/radio/sagar-fm/",
     "stationUuid": "f6599df3-e110-4919-a551-2a7869d1a934",
-    "checkedAt": "2026-10-12T11:42:16.585Z",
+    "checkedAt": "2026-10-15T09:04:46.056Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3627,7 +3833,7 @@
     "favicon": "https://onlineradiofm.in/assets/image/radio/180/clubfmnewlogo.webp",
     "homepage": "https://clubfm.in/",
     "stationUuid": "c8c0d91f-4e30-4e0a-80a9-2cb2b28614ff",
-    "checkedAt": "2026-10-12T11:42:16.683Z",
+    "checkedAt": "2026-10-15T09:04:46.266Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -3646,7 +3852,7 @@
     "favicon": null,
     "homepage": "http://schizoid.in/",
     "stationUuid": "961fd3e5-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-12T11:42:16.977Z",
+    "checkedAt": "2026-10-15T09:04:46.490Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3665,7 +3871,7 @@
     "favicon": null,
     "homepage": "http://schizoid.in/",
     "stationUuid": "d72d0715-1925-11e8-a334-52543be04c81",
-    "checkedAt": "2026-10-12T11:42:16.990Z",
+    "checkedAt": "2026-10-15T09:04:46.533Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3684,7 +3890,7 @@
     "favicon": "null",
     "homepage": "http://old.sgpc.net/",
     "stationUuid": "3f5922fc-7e86-4b2b-943a-ba9ff7000701",
-    "checkedAt": "2026-10-12T11:42:18.291Z",
+    "checkedAt": "2026-10-15T09:04:47.679Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3703,7 +3909,7 @@
     "favicon": null,
     "homepage": "https://newsonair.com/playersource.php?channel=43",
     "stationUuid": "1327cd05-3c91-4632-b23d-d44b32351627",
-    "checkedAt": "2026-10-12T11:42:18.314Z",
+    "checkedAt": "2026-10-15T09:04:48.157Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3722,7 +3928,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20241003_181218917.jpg?alt=media&token=0dcbdb6e-da16-4ba4-890c-71fa2a38b262",
     "homepage": "https://stream.zeno.fm/jqmyjaoycfkvv",
     "stationUuid": "e6885461-1feb-400a-94b6-3662a9e4e921",
-    "checkedAt": "2026-10-12T11:42:18.757Z",
+    "checkedAt": "2026-10-15T09:04:48.321Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3742,7 +3948,7 @@
     "favicon": "https://www.tamilradios.com/assets/img/radio-logos/tamil-80s-radio.jpg",
     "homepage": "https://www.tamilradios.com/tamil-80s-radio",
     "stationUuid": "c1437982-06c6-4af7-90c0-24aa688bea13",
-    "checkedAt": "2026-10-12T11:42:19.436Z",
+    "checkedAt": "2026-10-15T09:04:48.767Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3764,7 +3970,7 @@
     "favicon": null,
     "homepage": "https://www.tamilradios.com/tms-radio",
     "stationUuid": "377744f7-70da-49b7-91ca-7fde3621e452",
-    "checkedAt": "2026-10-12T11:42:20.153Z",
+    "checkedAt": "2026-10-15T09:04:49.356Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3783,10 +3989,29 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "4f0a586b-7874-46fd-b5ea-768080870031",
-    "checkedAt": "2026-10-12T11:42:21.389Z",
+    "checkedAt": "2026-10-15T09:04:50.177Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Parwaz radio",
+    "url": "http://mehramedia.com:8081/",
+    "country": "IN",
+    "type": "talk & speech",
+    "tags": [
+      "talk & speech"
+    ],
+    "codec": "MP3",
+    "bitrate": 32,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://mehramedia.com:8081/",
+    "stationUuid": "fad585c5-0936-47f5-b06d-8b5ae695b8e6",
+    "checkedAt": "2026-10-15T09:04:50.584Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Anirudh Radio",
@@ -3803,7 +4028,7 @@
     "favicon": "https://southradios.com/assets/images/logo/logo90.webp",
     "homepage": "https://southradios.com/",
     "stationUuid": "b333d813-9ca7-44b4-b3ef-d45f08812321",
-    "checkedAt": "2026-10-12T11:42:23.084Z",
+    "checkedAt": "2026-10-15T09:04:52.312Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3823,7 +4048,7 @@
     "favicon": "https://southradios.com/assets/images/logo/logo90.webp",
     "homepage": "https://southradios.com/",
     "stationUuid": "f2032117-cf31-45c7-8fba-b55a5b175ae8",
-    "checkedAt": "2026-10-12T11:42:23.306Z",
+    "checkedAt": "2026-10-15T09:04:52.341Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3843,7 +4068,7 @@
     "favicon": "https://southradios.com/assets/images/logo/logo90.webp",
     "homepage": "https://southradios.com/",
     "stationUuid": "3aada0cb-3d7e-48e0-8794-a3c1f8cea18a",
-    "checkedAt": "2026-10-12T11:42:23.370Z",
+    "checkedAt": "2026-10-15T09:04:52.524Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3863,7 +4088,7 @@
     "favicon": "https://southradios.com/assets/images/logo/logo90.webp",
     "homepage": "https://southradios.com/",
     "stationUuid": "4777c422-ab53-403e-9bb0-92118342149e",
-    "checkedAt": "2026-10-12T11:42:24.978Z",
+    "checkedAt": "2026-10-15T09:04:54.326Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3883,7 +4108,7 @@
     "favicon": "https://southradios.com/assets/images/logo/logo90.webp",
     "homepage": "https://southradios.com/",
     "stationUuid": "f24a5efb-cd79-430c-a51c-d7c0acef50f7",
-    "checkedAt": "2026-10-12T11:42:24.990Z",
+    "checkedAt": "2026-10-15T09:04:54.490Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3903,7 +4128,7 @@
     "favicon": "https://southradios.com/assets/images/logo/logo90.webp",
     "homepage": "https://southradios.com/",
     "stationUuid": "ad55f7ee-6c42-495f-9958-ed09dcbeced8",
-    "checkedAt": "2026-10-12T11:42:25.745Z",
+    "checkedAt": "2026-10-15T09:04:54.533Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3923,7 +4148,7 @@
     "favicon": "https://southradios.com/assets/images/logo/logo90.webp",
     "homepage": "https://southradios.com/",
     "stationUuid": "35b1a30b-0ac9-4fc2-8a3d-070b9a76238f",
-    "checkedAt": "2026-10-12T11:42:27.437Z",
+    "checkedAt": "2026-10-15T09:04:56.766Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3942,10 +4167,10 @@
     "favicon": "https://southradios.com/assets/images/logo/logo90.webp",
     "homepage": "https://southradios.com/",
     "stationUuid": "bfcef0ca-eeb3-402f-b9c8-f6485f295890",
-    "checkedAt": "2026-10-12T11:42:28.775Z",
-    "status": 503,
+    "checkedAt": "2026-10-15T09:04:57.820Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 503"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "AIR Agra",
@@ -3959,7 +4184,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/homepage-air/",
     "stationUuid": "600a7112-9b72-4979-9774-3aa989a6e7ff",
-    "checkedAt": "2026-10-12T11:42:31.992Z",
+    "checkedAt": "2026-10-15T09:05:01.095Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3976,24 +4201,7 @@
     "favicon": null,
     "homepage": "https://prasarbharati.gov.in/homepage-air/",
     "stationUuid": "b9078dfd-fa88-4c62-bf43-5308e057cad7",
-    "checkedAt": "2026-10-12T11:42:32.506Z",
-    "status": 404,
-    "contentType": null,
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "AIR Devikulam",
-    "url": "https://air.pc.cdn.bitgravity.com/air/live/pbaudio214/chunklist.m3u8",
-    "country": "IN",
-    "type": "UNKNOWN",
-    "tags": [],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "malayalam",
-    "favicon": null,
-    "homepage": "https://akashvani.gov.in/radio/live.php",
-    "stationUuid": "46a4bf55-b97d-407e-9394-024c4f88279e",
-    "checkedAt": "2026-10-12T11:42:32.667Z",
+    "checkedAt": "2026-10-15T09:05:01.374Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4010,7 +4218,7 @@
     "favicon": "https://tamilradios.net/webpimg/radio_86835_fm-rainbow-thiruchi.webp",
     "homepage": "https://prasarbharati.gov.in/",
     "stationUuid": "f37138c6-587b-4f54-a13a-17789e346865",
-    "checkedAt": "2026-10-12T11:42:33.405Z",
+    "checkedAt": "2026-10-15T09:05:01.935Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4027,7 +4235,7 @@
     "favicon": "https://kochifm.blogspot.com/favicon.ico",
     "homepage": "https://kochifm.blogspot.com/",
     "stationUuid": "9d8b6f75-923b-45fc-a840-48343676e94d",
-    "checkedAt": "2026-10-12T11:42:33.541Z",
+    "checkedAt": "2026-10-15T09:05:02.328Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4044,7 +4252,7 @@
     "favicon": null,
     "homepage": "https://akashvani.gov.in/radio/live.php",
     "stationUuid": "bcc76c89-91c7-4745-8267-964683efc947",
-    "checkedAt": "2026-10-12T11:42:34.174Z",
+    "checkedAt": "2026-10-15T09:05:02.533Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4061,7 +4269,7 @@
     "favicon": null,
     "homepage": "https://akashvani.gov.in/radio/live.php",
     "stationUuid": "998e9783-a44b-4eba-a4c4-b0eb561af805",
-    "checkedAt": "2026-10-12T11:42:35.847Z",
+    "checkedAt": "2026-10-15T09:05:02.847Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4078,7 +4286,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/aircoimbatore.jpg",
     "homepage": null,
     "stationUuid": "a18a9640-24dd-43c1-99c8-f1a4ce30467e",
-    "checkedAt": "2026-10-12T11:42:36.553Z",
+    "checkedAt": "2026-10-15T09:05:05.053Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4095,7 +4303,7 @@
     "favicon": "https://liveradios.in/wp-content/uploads/1200px-Logo_of_AIR.svg_.png",
     "homepage": null,
     "stationUuid": "ff6b5073-384d-4d82-9626-4720de3cb0ef",
-    "checkedAt": "2026-10-12T11:42:36.792Z",
+    "checkedAt": "2026-10-15T09:05:05.276Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4112,7 +4320,7 @@
     "favicon": null,
     "homepage": "https://air.pc.cdn.bitgravity.com/",
     "stationUuid": "4adeeb20-2890-4ae5-b736-74e465963547",
-    "checkedAt": "2026-10-12T11:42:37.281Z",
+    "checkedAt": "2026-10-15T09:05:05.987Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4129,7 +4337,7 @@
     "favicon": null,
     "homepage": "https://www.jawaradio.com/radio/all-india-radio/fm-rainbow-goa",
     "stationUuid": "972bed4d-5c23-46a1-825d-8e0affe85ae2",
-    "checkedAt": "2026-10-12T11:42:37.694Z",
+    "checkedAt": "2026-10-15T09:05:06.373Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4146,7 +4354,7 @@
     "favicon": null,
     "homepage": "https://akashvani.gov.in/radio/live.php",
     "stationUuid": "f6f1bdc4-a825-44c6-b361-e6b1ae5f0858",
-    "checkedAt": "2026-10-12T11:42:38.834Z",
+    "checkedAt": "2026-10-15T09:05:07.289Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -4163,7 +4371,7 @@
     "favicon": null,
     "homepage": "https://akashvani.gov.in/radio/live.php",
     "stationUuid": "5dea3ae4-ba33-442e-9c50-ea893e21807a",
-    "checkedAt": "2026-10-12T11:42:39.035Z",
+    "checkedAt": "2026-10-15T09:05:07.447Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -4183,7 +4391,7 @@
     "favicon": "http://zeus.hidencloud.com:24724/stream_bot1",
     "homepage": "http://zeus.hidencloud.com:24724/stream_bot1",
     "stationUuid": "594b4a39-0d5e-4efd-ae2f-f8ac307e6860",
-    "checkedAt": "2026-10-12T11:42:39.656Z",
+    "checkedAt": "2026-10-15T09:05:07.628Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

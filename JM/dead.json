@@ -1,5 +1,22 @@
 [
   {
+    "name": "Mello FM Jamaica",
+    "url": "http://peridot.streamguys.com:5660/live",
+    "country": "JM",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://mellofmjamaica.com/",
+    "stationUuid": "d752e163-f358-4526-9bd2-64d8a8fadb53",
+    "checkedAt": "2026-10-15T09:06:18.372Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
     "name": "Jamaica Dancehall Radio",
     "url": "https://stream.jamaicadancehallradio.com/listen/jamaica_dancehall_radio/radio.mp3",
     "country": "JM",
@@ -16,10 +33,30 @@
     "favicon": null,
     "homepage": "https://jamaicadancehallradio.com/",
     "stationUuid": "be9a69a1-56f2-4ba3-a9e9-c8bd55834ac7",
-    "checkedAt": "2026-10-12T11:44:01.382Z",
+    "checkedAt": "2026-10-15T09:06:18.835Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Mello Radio 88 FM",
+    "url": "http://peridot.streamguys.com:5660/live",
+    "country": "JM",
+    "type": "dancehall",
+    "tags": [
+      "dancehall",
+      "reggae"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.mellofmjamaica.com/",
+    "stationUuid": "9620041f-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-15T09:06:18.903Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Roots 96.1 FM",
@@ -37,7 +74,7 @@
     "favicon": "https://radiosjamaica.com/sites/default/files/styles/116_x_116/public/radio/logos/logo-roots-961-fm.png",
     "homepage": "https://rootsfmjamaica.com/",
     "stationUuid": "8bf1e5dc-42ee-4acd-866a-8645479cbd38",
-    "checkedAt": "2026-10-12T11:44:01.616Z",
+    "checkedAt": "2026-10-15T09:06:18.998Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -57,27 +94,10 @@
     "favicon": null,
     "homepage": "http://www.klassportsradio.com/",
     "stationUuid": "961f5829-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-12T11:44:01.717Z",
+    "checkedAt": "2026-10-15T09:06:19.074Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "808 Live Reggaecast",
-    "url": "http://808.rastamusic.com/rastamusic.mp3",
-    "country": "JM",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": null,
-    "favicon": "https://static.wixstatic.com/media/a09246_33fe4aef6e5f4f17b605a8d8645ff015%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/a09246_33fe4aef6e5f4f17b605a8d8645ff015%7Emv2.png",
-    "homepage": "https://www.alphaboysschoolradio.com/",
-    "stationUuid": "481d2466-5f1c-4b15-a56d-767dbd805672",
-    "checkedAt": "2026-10-12T11:44:01.985Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "WORLDWYDE OUTERNATIONAL",
@@ -91,7 +111,7 @@
     "favicon": "https://bit.ly/favicon.ico",
     "homepage": "https://bit.ly/3dS5wo0",
     "stationUuid": "0def5148-b222-43ba-9091-a410715f58e2",
-    "checkedAt": "2026-10-12T11:44:02.844Z",
+    "checkedAt": "2026-10-15T09:06:20.236Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -108,9 +128,28 @@
     "favicon": null,
     "homepage": "https://www.jango.com/stations/113321878/tunein",
     "stationUuid": "55944306-9605-4bfb-99fd-9c0fd5fc8ba8",
-    "checkedAt": "2026-10-12T11:44:02.918Z",
+    "checkedAt": "2026-10-15T09:06:20.270Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Mellow FM",
+    "url": "http://peridot.streamguys.com:5660/live",
+    "country": "JM",
+    "type": "various",
+    "tags": [
+      "various"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "english",
+    "favicon": "https://radiosjamaica.com/sites/default/files/styles/116_x_116/public/radio/logos/logo-mello-radio-montego-bay.png",
+    "homepage": "http://mellofmjamaica.com/",
+    "stationUuid": "ec16543f-5575-4901-b738-d11a693e3d86",
+    "checkedAt": "2026-10-15T09:06:20.420Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   }
 ]
