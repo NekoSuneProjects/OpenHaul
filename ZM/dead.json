@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "name": "Kasama Radio 87.7 FM",
+    "url": "https://s38.myradiostream.com:16708/stream",
+    "country": "ZM",
+    "type": "adult contemporary",
+    "tags": [
+      "adult contemporary",
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 24,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://kasamaradio.com/",
+    "stationUuid": "9a4b7c3f-f637-46e8-b915-2c755e475fd1",
+    "checkedAt": "2026-10-17T09:15:48.368Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "K-FM 95.5",
+    "url": "http://uk7freenew.listen2myradio.com:29485/;",
+    "country": "ZM",
+    "type": "afro beat",
+    "tags": [
+      "afro beat",
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://kfmmansa.radio12345.com/",
+    "stationUuid": "581d323f-0fe1-4aae-8cb8-f26815897284",
+    "checkedAt": "2026-10-17T09:15:48.864Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  }
+]

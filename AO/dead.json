@@ -11,7 +11,7 @@
     "favicon": "https://pcradio.app/images/stations/61b09c9d4e570.jpg",
     "homepage": "https://pcradio.app/radio/rna-canal-a",
     "stationUuid": "45eeeaad-acc1-4704-b2b7-0c454a38c3c1",
-    "checkedAt": "2026-10-15T08:24:38.746Z",
+    "checkedAt": "2026-10-17T07:54:03.546Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -32,7 +32,7 @@
     "favicon": "https://minhawebradio.com/contents/14886/cover/xm126892c1bc31f36300a057381855f3ab_14886_1750685385.png",
     "homepage": "https://radiojihenda.com/",
     "stationUuid": "682715df-58c2-4765-b888-204307736498",
-    "checkedAt": "2026-10-15T08:24:38.750Z",
+    "checkedAt": "2026-10-17T07:54:03.548Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -49,7 +49,7 @@
     "favicon": null,
     "homepage": "https://www.radiomais.ao/",
     "stationUuid": "142e1b71-b56b-4a9c-b08f-55703b611390",
-    "checkedAt": "2026-10-15T08:24:39.062Z",
+    "checkedAt": "2026-10-17T07:54:08.329Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -66,7 +66,7 @@
     "favicon": null,
     "homepage": "https://radiomfmangola.com/",
     "stationUuid": "5be023eb-7209-4ab0-8d69-27e356aad314",
-    "checkedAt": "2026-10-15T08:24:39.096Z",
+    "checkedAt": "2026-10-17T07:54:08.334Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -86,7 +86,67 @@
     "favicon": "https://sites.google.com/view/radiobairrodeangola",
     "homepage": "https://sites.google.com/view/radiobairrodeangola",
     "stationUuid": "88a9d0f2-7ef5-4119-ae96-d87c2f6f9469",
-    "checkedAt": "2026-10-15T08:24:39.342Z",
+    "checkedAt": "2026-10-17T07:54:08.506Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Platina FM",
+    "url": "https://stream.zeno.fm/bckqpsxrqv8uv",
+    "country": "AO",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": "portuguese",
+    "favicon": null,
+    "homepage": "https://platinafm.com/",
+    "stationUuid": "d024beb9-4443-4a1a-8939-e0868f3f6100",
+    "checkedAt": "2026-10-17T07:54:09.328Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Rádio Kamwenho Notícias",
+    "url": "https://stream-179.surfernetwork.com/e6mfzggsjsmuv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJlNm1memdnc2pzbXV2IiwiaG9zdCI6InN0cmVhbS0xNzkuc3VyZmVybmV0d29yay5jb20iLCJ0bSI6ZmFsc2UsInJ0dGwiOjUsImp0aSI6InB6RjV0Mm8zUlYtTHdUdUJSdV9NdGciLCJpYXQiOjE3OTIxMDUzOTMsImV4cCI6MTc5MjEwNTQ1M30.zw_seRLpAsP4KvhWp2RcBGB-6BHaZBTLb_sSJErNzW8",
+    "country": "AO",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "portuguese",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "b3e8bd16-50bc-4ea3-b89d-ad03eaf008c3",
+    "checkedAt": "2026-10-17T07:54:13.940Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Rádio Namibe",
+    "url": "https://paineldj6.com.br:20118/stream",
+    "country": "AO",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": "portuguese",
+    "favicon": null,
+    "homepage": "https://rna.ao/rna.ao/radiochanels/radio-namibe/",
+    "stationUuid": "153a5ca3-3425-45de-a0c3-09a5fafc50c4",
+    "checkedAt": "2026-10-17T07:54:16.168Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -105,7 +165,7 @@
     "favicon": "https://postimg.cc/5HR8nS0W",
     "homepage": "https://player.xradios.com.br/player-home-page/6794",
     "stationUuid": "8762cad0-5b45-4685-9c09-68de818a3ec1",
-    "checkedAt": "2026-10-15T08:24:39.493Z",
+    "checkedAt": "2026-10-17T07:54:19.308Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

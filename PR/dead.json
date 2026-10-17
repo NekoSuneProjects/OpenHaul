@@ -17,7 +17,7 @@
     "favicon": null,
     "homepage": "http://echo355.com/",
     "stationUuid": "9d28e755-6a29-4b59-a93c-3cc5a2abddca",
-    "checkedAt": "2026-10-15T09:18:32.716Z",
+    "checkedAt": "2026-10-17T08:51:17.293Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -42,7 +42,7 @@
     "favicon": "https://highrise-bot-builder.replit.app/favicon.svg",
     "homepage": "https://highrise-bot-builder.replit.app/",
     "stationUuid": "61f30f9e-d4dd-466b-a1c0-f55b451007f8",
-    "checkedAt": "2026-10-15T09:18:33.171Z",
+    "checkedAt": "2026-10-17T08:51:17.825Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -64,7 +64,7 @@
     "favicon": "http://www.wrtu.pr/favicon.ico",
     "homepage": "http://www.wrtu.pr/",
     "stationUuid": "96267f26-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-15T09:18:33.762Z",
+    "checkedAt": "2026-10-17T08:51:18.362Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -81,10 +81,44 @@
     "favicon": null,
     "homepage": "https://www.salseoradio.com/",
     "stationUuid": "323d1135-fb57-4c1d-93c9-34be4d011223",
-    "checkedAt": "2026-10-15T09:18:34.852Z",
+    "checkedAt": "2026-10-17T08:51:19.661Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Samui Island Radio",
+    "url": "https://us2new.listen2myradio.com:2199/listen.php?port=10040&type=s2&mount=/stream",
+    "country": "PR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "http://new.samuiislandradio.com/wp-content/uploads/2022/02/round-logo-1_2-with-transparency-1.png",
+    "homepage": "https://new.samuiislandradio.com/",
+    "stationUuid": "d02f4de9-d414-46e8-8df6-9b6f38edd8e2",
+    "checkedAt": "2026-10-17T08:51:19.708Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "LA X",
+    "url": "http://stream.eleden.com:8235/lax.ogg",
+    "country": "PR",
+    "type": "OGG",
+    "tags": [],
+    "codec": "OGG",
+    "bitrate": 48,
+    "language": null,
+    "favicon": "http://lax.fm/portal/wp-content/uploads/2015/10/header-logo.jpg",
+    "homepage": "https://lax.fm/",
+    "stationUuid": "909fe396-4f70-4a03-b14b-4cfe86ff7b7d",
+    "checkedAt": "2026-10-17T08:51:20.062Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "WAPA TV",
@@ -98,9 +132,30 @@
     "favicon": null,
     "homepage": "https://www.wapa.tv/",
     "stationUuid": "36ef3359-df7d-4b2c-b732-0c5a050089f4",
-    "checkedAt": "2026-10-15T09:18:35.406Z",
+    "checkedAt": "2026-10-17T08:51:20.234Z",
     "status": 403,
     "contentType": "application/xml",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "La X 100.7 FM",
+    "url": "http://stream.eleden.com:8235/lax.ogg",
+    "country": "PR",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "reggaeton",
+      "rock"
+    ],
+    "codec": "OGG",
+    "bitrate": 48,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://www.lax.fm/",
+    "stationUuid": "2d661749-ce77-4514-bfd8-271cf8847cf5",
+    "checkedAt": "2026-10-17T08:51:20.244Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   }
 ]

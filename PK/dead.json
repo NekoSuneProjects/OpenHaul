@@ -13,7 +13,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c51340b2-9fbc-4cea-8738-258b2a33d16d",
-    "checkedAt": "2026-10-15T09:17:14.870Z",
+    "checkedAt": "2026-10-17T08:50:07.936Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -30,27 +30,10 @@
     "favicon": null,
     "homepage": "http://aladinradio.com/",
     "stationUuid": "4a29dbc1-77e1-449a-b6b5-62e19f66a8fc",
-    "checkedAt": "2026-10-15T09:17:15.598Z",
+    "checkedAt": "2026-10-17T08:50:08.524Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "FM 101 Mithi",
-    "url": "https://whmsonic.radio.gov.pk:8052/stream",
-    "country": "PK",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://radio.gov.pk/",
-    "stationUuid": "d41946b4-342a-4b9a-b0e5-f86f017980ea",
-    "checkedAt": "2026-10-15T09:17:16.370Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "ILM Radio Renala FM 92",
@@ -64,29 +47,10 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/ilm-radio-renala/",
     "stationUuid": "8281a8d0-4d03-4e1f-96ea-dbae81e5bf28",
-    "checkedAt": "2026-10-15T09:17:17.093Z",
+    "checkedAt": "2026-10-17T08:50:09.904Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Radio Pakistan D.I. Khan MW 711",
-    "url": "https://whmsonic.radio.gov.pk:7000/Dikhan",
-    "country": "PK",
-    "type": "public radio",
-    "tags": [
-      "public radio"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://radio.gov.pk/",
-    "stationUuid": "a8067725-3d72-406f-828b-9ba72f638479",
-    "checkedAt": "2026-10-15T09:17:18.349Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Pakistan Karachi MW 639",
@@ -102,7 +66,7 @@
     "favicon": null,
     "homepage": "https://radio.gov.pk/",
     "stationUuid": "5a71813c-32f6-472e-8db1-51ccbe37cc19",
-    "checkedAt": "2026-10-15T09:17:18.369Z",
+    "checkedAt": "2026-10-17T08:50:11.214Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"

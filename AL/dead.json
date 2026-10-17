@@ -1,5 +1,64 @@
 [
   {
+    "name": "Radio Ngjallja",
+    "url": "https://radio.ngjallja.org/radio_ngjallja",
+    "country": "AL",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel",
+      "religious",
+      "talk"
+    ],
+    "codec": "AAC",
+    "bitrate": 320,
+    "language": "albanian",
+    "favicon": null,
+    "homepage": "https://media.ngjallja.org/",
+    "stationUuid": "c82c8533-a3a2-4a6c-99d6-58a2f87fe236",
+    "checkedAt": "2026-10-17T07:53:56.547Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio plus 102.2 FM",
+    "url": "https://cast2.my-control-panel.com/proxy/radiopl1/stream",
+    "country": "AL",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://www.radioplus.fm/Theme/Air/assets/img/radioplus.svg",
+    "homepage": "https://www.radioplus.fm/",
+    "stationUuid": "cce81735-f67e-47a8-8851-6ceb6c576e35",
+    "checkedAt": "2026-10-17T07:53:58.343Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Ora News",
+    "url": "https://live1.mediadesk.al/oranews.m3u8",
+    "country": "AL",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "albanian",
+    "favicon": null,
+    "homepage": "https://www.oranews.tv/",
+    "stationUuid": "c2caf164-c2bf-4eac-a719-ce6bd6cf25cb",
+    "checkedAt": "2026-10-17T07:53:58.586Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
     "name": "sasaram",
     "url": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio075/chunklist.m3u8",
     "country": "AL",
@@ -11,7 +70,7 @@
     "favicon": null,
     "homepage": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio075/chunklist.m3u8",
     "stationUuid": "e439aa52-203a-4f83-a8e4-995d5c90f554",
-    "checkedAt": "2026-10-15T08:24:34.104Z",
+    "checkedAt": "2026-10-17T07:53:58.958Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

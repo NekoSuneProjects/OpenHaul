@@ -19,29 +19,10 @@
     "favicon": null,
     "homepage": "http://cizgiotesi.biz.tr/",
     "stationUuid": "f141c4d7-134d-4397-ae5e-03bd4d5eaac4",
-    "checkedAt": "2026-10-15T08:31:57.639Z",
+    "checkedAt": "2026-10-17T08:03:04.566Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Media FM Classic",
-    "url": "https://icecast.livetv.az/mediafm",
-    "country": "AZ",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": "azerbaijani",
-    "favicon": "https://mediafm.az/wp-content/uploads/2026/03/Media_Classic_309x309.png",
-    "homepage": "https://mediafm.az/",
-    "stationUuid": "25a44f17-f2be-4a0a-8dfd-a8bdcc1c526e",
-    "checkedAt": "2026-10-15T08:31:57.782Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Media FM Classic",
@@ -57,10 +38,10 @@
     "favicon": "https://mediafm.az/wp-content/uploads/2026/03/Media_Classic_309x309.png",
     "homepage": "https://mediafm.az/",
     "stationUuid": "78b65d51-19d6-4412-a8ff-d094eb3c757a",
-    "checkedAt": "2026-10-15T08:31:57.787Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "checkedAt": "2026-10-17T08:03:04.788Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Veten",
@@ -80,7 +61,7 @@
     "favicon": null,
     "homepage": "https://podbox.me/radioveten",
     "stationUuid": "7fcfb6b0-2a30-4276-8f33-211ec24e1119",
-    "checkedAt": "2026-10-15T08:31:57.842Z",
+    "checkedAt": "2026-10-17T08:03:04.862Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -101,7 +82,7 @@
     "favicon": "https://duckduckgo.com/?q=baku+retro+fm+logo&t=iphone&ia=images&iax=images&iai=https%3A%2F%2Fcdn-profiles.tunein.com%2Fs352998%2Fimages%2Flogod.png%3Ft%3D639068441060000000",
     "homepage": "https://retrofm.az/",
     "stationUuid": "7d817fc7-07d7-40d5-8186-e88fd73ece1e",
-    "checkedAt": "2026-10-15T08:31:57.992Z",
+    "checkedAt": "2026-10-17T08:03:04.937Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -120,7 +101,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240130_231946336.jpg?alt=media&token=4aed92f8-f8f5-479f-b60b-68b56f1bb844",
     "homepage": "http://5.191.241.101:8000/bakuretrofm",
     "stationUuid": "9d0d21cd-9562-4436-801f-e4700d626894",
-    "checkedAt": "2026-10-15T08:31:57.994Z",
+    "checkedAt": "2026-10-17T08:03:04.964Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -139,49 +120,10 @@
     "favicon": "null",
     "homepage": "http://5.191.241.101:8000/bakuretrofm",
     "stationUuid": "4884f8f5-87e8-4874-9ef0-a8ebe51c69c5",
-    "checkedAt": "2026-10-15T08:31:58.002Z",
+    "checkedAt": "2026-10-17T08:03:05.002Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Media fm mugam",
-    "url": "http://icecast.livetv.az/mediamugam",
-    "country": "AZ",
-    "type": "folk music",
-    "tags": [
-      "folk music",
-      "narodna - etno"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "azerbaijani",
-    "favicon": null,
-    "homepage": "https://mediafm.az/",
-    "stationUuid": "5a24bae2-2f31-439e-ac30-86d16a403200",
-    "checkedAt": "2026-10-15T08:31:58.126Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Media FM Mugam",
-    "url": "http://icecast.livetv.az/mediamugam",
-    "country": "AZ",
-    "type": "folk/ethno/national music",
-    "tags": [
-      "folk/ethno/national music"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "azerbaijani",
-    "favicon": "https://mediafm.az/wp-content/uploads/2026/02/Media_MugamLogo309x309.png",
-    "homepage": "https://mediafm.az/",
-    "stationUuid": "95efc006-fa7a-4934-95e8-05b1cfa61d25",
-    "checkedAt": "2026-10-15T08:31:58.181Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Soothing jazz",
@@ -200,7 +142,7 @@
     "favicon": null,
     "homepage": "http://cizgiotesi.biz.tr/",
     "stationUuid": "bb474fb6-baa3-4a11-9304-4c7afdf4d638",
-    "checkedAt": "2026-10-15T08:31:58.266Z",
+    "checkedAt": "2026-10-17T08:03:05.165Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -217,7 +159,7 @@
     "favicon": null,
     "homepage": "https://bakuhitfm.az/",
     "stationUuid": "3396f826-a6d4-40fd-b9e4-04db9687f719",
-    "checkedAt": "2026-10-15T08:32:00.775Z",
+    "checkedAt": "2026-10-17T08:03:05.750Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -234,7 +176,7 @@
     "favicon": null,
     "homepage": "http://balakenfm.radiostream123.com/",
     "stationUuid": "cc427fef-7204-4c95-82ed-5362fbe6e04e",
-    "checkedAt": "2026-10-15T08:32:01.191Z",
+    "checkedAt": "2026-10-17T08:03:05.865Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -251,7 +193,7 @@
     "favicon": null,
     "homepage": "http://www.spacetv.az/",
     "stationUuid": "6b020b6e-993d-42d6-87e1-6c069440743d",
-    "checkedAt": "2026-10-15T08:32:01.568Z",
+    "checkedAt": "2026-10-17T08:03:05.995Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -270,7 +212,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "296c5e60-982e-406a-9a26-6d0e199cc97a",
-    "checkedAt": "2026-10-15T08:32:02.698Z",
+    "checkedAt": "2026-10-17T08:03:06.453Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -287,7 +229,7 @@
     "favicon": null,
     "homepage": "https://www.106fm.az/",
     "stationUuid": "00b36473-ed34-4e12-84fe-1a69dec6c893",
-    "checkedAt": "2026-10-15T08:32:03.430Z",
+    "checkedAt": "2026-10-17T08:03:06.647Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -304,7 +246,7 @@
     "favicon": null,
     "homepage": "https://106-3fm.az/",
     "stationUuid": "61babc79-1406-4fac-bf74-41cb71bfe281",
-    "checkedAt": "2026-10-15T08:32:03.448Z",
+    "checkedAt": "2026-10-17T08:03:06.652Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
