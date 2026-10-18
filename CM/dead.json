@@ -1,5 +1,48 @@
 [
   {
+    "name": "Radio Bonne Nouvelle",
+    "url": "https://radiobonnenouvelle2.ice.infomaniak.ch/radiobonnenouvelle2-96.mp3",
+    "country": "CM",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel",
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://www.radiobonnenouvelle.org/",
+    "stationUuid": "e7a23f81-f41a-4bee-b58c-3846d1b627a1",
+    "checkedAt": "2026-10-18T08:21:28.258Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Veritas",
+    "url": "https://stream.zeno.fm/habvtzvnqxiuv",
+    "country": "CM",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "3d426e5d-d4c0-4b71-a6c9-8292c4702984",
+    "checkedAt": "2026-10-18T08:21:28.664Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
     "name": "Equinoxe Radio",
     "url": "https://listen.radioking.com/radio/39218/stream/76118",
     "country": "CM",
@@ -13,29 +56,10 @@
     "favicon": null,
     "homepage": "http://www.radioequinoxe.com/",
     "stationUuid": "332f6491-d62d-48a4-b44a-fa8020896949",
-    "checkedAt": "2026-10-17T08:10:03.150Z",
+    "checkedAt": "2026-10-18T08:21:29.465Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Hausafulani Radio",
-    "url": "https://listen.radioking.com/radio/876181/stream/946306",
-    "country": "CM",
-    "type": "hits",
-    "tags": [
-      "hits"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "hausa",
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "0ecb9927-dd0e-4300-bce9-0b01b37630c2",
-    "checkedAt": "2026-10-17T08:10:03.196Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "CRTV Radio",
@@ -52,7 +76,7 @@
     "favicon": "https://radioenlignefrance.com/storage/radios/6885/8855/conversions/DkvJakmCUOOuVMaiESwrtRtXbTOkl6-metaQ1JUVi1SYWRpby5qcGc=--lg.webp",
     "homepage": "https://www.crtv.cm/",
     "stationUuid": "964b07c5-d89d-4b37-b5f1-dfddbac876c5",
-    "checkedAt": "2026-10-17T08:10:03.283Z",
+    "checkedAt": "2026-10-18T08:21:29.601Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -73,7 +97,7 @@
     "favicon": null,
     "homepage": "https://dir.rcast.net/players/244422",
     "stationUuid": "50e84985-0372-4270-a16b-053aac9ecbbf",
-    "checkedAt": "2026-10-17T08:10:03.419Z",
+    "checkedAt": "2026-10-18T08:21:29.853Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"

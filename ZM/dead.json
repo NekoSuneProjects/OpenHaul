@@ -1,21 +1,23 @@
 [
   {
-    "name": "Kasama Radio 87.7 FM",
-    "url": "https://s38.myradiostream.com:16708/stream",
+    "name": "Flava Radio & TV",
+    "url": "https://s8.yesstreaming.net:7021/stream",
     "country": "ZM",
     "type": "adult contemporary",
     "tags": [
       "adult contemporary",
-      "news",
+      "gospel",
+      "rb",
+      "soul",
       "talk"
     ],
     "codec": "MP3",
-    "bitrate": 24,
+    "bitrate": 96,
     "language": "english",
     "favicon": null,
-    "homepage": "https://kasamaradio.com/",
-    "stationUuid": "9a4b7c3f-f637-46e8-b915-2c755e475fd1",
-    "checkedAt": "2026-10-17T09:15:48.368Z",
+    "homepage": "https://flavaradioandtv.com/",
+    "stationUuid": "7f5bc9bf-6987-4644-aed2-c64c6e20805b",
+    "checkedAt": "2026-10-18T09:49:33.773Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -36,9 +38,69 @@
     "favicon": null,
     "homepage": "https://kfmmansa.radio12345.com/",
     "stationUuid": "581d323f-0fe1-4aae-8cb8-f26815897284",
-    "checkedAt": "2026-10-17T09:15:48.864Z",
+    "checkedAt": "2026-10-18T09:49:35.976Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Gifts and Blessings Radio",
+    "url": "https://stream.zeno.fm/h575zb67schvv",
+    "country": "ZM",
+    "type": "gospel",
+    "tags": [
+      "gospel"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "558541ab-0279-4c48-886c-e2b6c4560e45",
+    "checkedAt": "2026-10-18T09:49:37.638Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Sky FM Zambia",
+    "url": "https://stream.zeno.fm/7s554b67schvv",
+    "country": "ZM",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "4924e50c-2d24-4235-97bb-9677f6d50cfb",
+    "checkedAt": "2026-10-18T09:49:39.152Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Tuta Radio",
+    "url": "https://s11.myradiostream.com/24282/;?type=http&nocache=1791494215",
+    "country": "ZM",
+    "type": "news",
+    "tags": [
+      "news",
+      "sports",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://tutaradio.com/",
+    "stationUuid": "eb76e7a2-25b7-4fb5-8415-8f39b938aee9",
+    "checkedAt": "2026-10-18T09:49:39.359Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   }
 ]

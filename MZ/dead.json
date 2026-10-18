@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://www.rm.co.mz/canais/",
     "stationUuid": "957804bb-ed53-4da1-9aa3-390a4a90559c",
-    "checkedAt": "2026-10-17T08:41:46.889Z",
+    "checkedAt": "2026-10-18T08:51:26.272Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -30,9 +30,30 @@
     "favicon": null,
     "homepage": "https://www.rm.co.mz/rm.co.mz/",
     "stationUuid": "80a56515-a3d8-4e77-95a0-e88962dc0843",
-    "checkedAt": "2026-10-17T08:41:47.009Z",
+    "checkedAt": "2026-10-18T08:51:26.876Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Sofala FM",
+    "url": "https://radiosofala.mamahost.net/stream",
+    "country": "MZ",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "talk",
+      "top 40"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "portuguese",
+    "favicon": null,
+    "homepage": "https://play.google.com/store/apps/details?id=com.radiosofala.fm",
+    "stationUuid": "446920a8-c687-4fc6-8d50-74971f1dd504",
+    "checkedAt": "2026-10-18T08:51:27.266Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   }
 ]

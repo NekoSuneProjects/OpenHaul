@@ -18,7 +18,7 @@
     "favicon": "https://youfm.ro/wp-content/uploads/2025/02/logo-you-fm.jpg",
     "homepage": "https://www.youfmromania.com/",
     "stationUuid": "93e769c6-f0a4-4ca7-99fd-ab06eccf3dd7",
-    "checkedAt": "2026-10-17T08:53:20.053Z",
+    "checkedAt": "2026-10-18T09:03:49.139Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -44,7 +44,7 @@
     "favicon": null,
     "homepage": "https://www.radionoise.ro/",
     "stationUuid": "a63358e2-1caa-47c9-a2eb-3e9c8af84a77",
-    "checkedAt": "2026-10-17T08:53:20.464Z",
+    "checkedAt": "2026-10-18T09:03:50.064Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -68,7 +68,7 @@
     "favicon": "https://www.radionoise.ro/wp-content/uploads/2022/07/faviconnew.png",
     "homepage": "https://www.radionoise.ro/",
     "stationUuid": "5f07a434-987f-4e41-8498-53e130ffb7bb",
-    "checkedAt": "2026-10-17T08:53:20.618Z",
+    "checkedAt": "2026-10-18T09:03:50.068Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -97,7 +97,7 @@
     "favicon": null,
     "homepage": "http://www.rahanopolis.ro/",
     "stationUuid": "6d16b73a-495b-4f15-9478-535799c17909",
-    "checkedAt": "2026-10-17T08:53:20.676Z",
+    "checkedAt": "2026-10-18T09:03:50.255Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -124,7 +124,7 @@
     "favicon": "https://www.radionoise.ro/wp-content/uploads/2022/07/faviconnew.png",
     "homepage": "https://www.radionoise.ro/",
     "stationUuid": "c34aa04b-3258-4528-b5d8-56a3ba461c98",
-    "checkedAt": "2026-10-17T08:53:20.692Z",
+    "checkedAt": "2026-10-18T09:03:50.257Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -148,7 +148,7 @@
     "favicon": "https://assets-global.website-files.com/5dceb9db6467914eb3a15c70/657c8454c3f3f960ff79528e_Frame%206.png",
     "homepage": "https://www.nicecream.fm/",
     "stationUuid": "2544388d-08ff-4d60-8faa-39bf0662a51f",
-    "checkedAt": "2026-10-17T08:53:21.006Z",
+    "checkedAt": "2026-10-18T09:03:50.764Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -171,10 +171,56 @@
     "favicon": "https://cdn-profiles.tunein.com/s300309/images/logod.png",
     "homepage": "https://www.radiotimibanat.com/",
     "stationUuid": "e81b2a46-e756-4aec-9795-ff3d2c109d1d",
-    "checkedAt": "2026-10-17T08:53:21.156Z",
+    "checkedAt": "2026-10-18T09:03:50.986Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Oldies Romania",
+    "url": "http://listen.radiooldies.ro:9200/;",
+    "country": "RO",
+    "type": "80's",
+    "tags": [
+      "80's",
+      "80s",
+      "90's",
+      "90s",
+      "oldies"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "romanian",
+    "favicon": "https://www.radiooldies.ro/wp-content/uploads/2018/02/radiooldies-logo.png",
+    "homepage": "https://www.radiooldies.ro/",
+    "stationUuid": "3c98d6c2-f370-4171-920a-883d938cb3f3",
+    "checkedAt": "2026-10-18T09:03:51.352Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Romantic",
+    "url": "https://radio-romantic.ro/stream",
+    "country": "RO",
+    "type": "80's",
+    "tags": [
+      "80's",
+      "dance",
+      "oldies",
+      "retro",
+      "retro music"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://radio-romantic.ro/www.radio-romantic.ro.jpg",
+    "homepage": "https://radio-romantic.ro/",
+    "stationUuid": "701fcd20-6e49-4cc4-8623-a3d7be03b5d8",
+    "checkedAt": "2026-10-18T09:03:51.372Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Bandit",
@@ -197,7 +243,27 @@
     "favicon": null,
     "homepage": "https://radiobandit.ro/",
     "stationUuid": "0acff5ae-5356-4261-96cb-8d9c196b9721",
-    "checkedAt": "2026-10-17T08:53:21.732Z",
+    "checkedAt": "2026-10-18T09:03:51.971Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Coresi 80s -Brașov",
+    "url": "https://s5.radio.co/sfb029759c/listen",
+    "country": "RO",
+    "type": "80s",
+    "tags": [
+      "80s",
+      "oldies"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "română",
+    "favicon": "https://coresibrasov.ro/media/RADIO-CORESI-08-V2-1.png",
+    "homepage": "https://coresibrasov.ro/",
+    "stationUuid": "88a8d0ab-ffab-40a9-9a1a-f1f6fd70e69c",
+    "checkedAt": "2026-10-18T09:03:52.248Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -222,24 +288,7 @@
     "favicon": "https://90s3nergy.com/wp-content/uploads/2025/07/cropped-K9VggvrHMS-192x192.png",
     "homepage": "https://90s3nergy.com/",
     "stationUuid": "6b640433-b72e-4eae-aa2d-f1ee19a9374d",
-    "checkedAt": "2026-10-17T08:53:22.495Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Magic tv",
-    "url": "https://tv.broadcasting.ro/magictv/925f90db-5c88-4190-a53d-5163cdffe6f4.m3u8",
-    "country": "RO",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 1408,
-    "language": "romanian",
-    "favicon": "https://cdn.tvivu.com/logos/magic-tv-3-160.webp",
-    "homepage": "https://www.magicfm.ro/magictv",
-    "stationUuid": "a978503d-dc53-4a7d-97c7-f0b39c098e3f",
-    "checkedAt": "2026-10-17T08:53:23.962Z",
+    "checkedAt": "2026-10-18T09:03:59.372Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -256,7 +305,7 @@
     "favicon": null,
     "homepage": "https://www.mdifm.ro/",
     "stationUuid": "86013eb0-5c34-4ea9-bc45-51854b685f60",
-    "checkedAt": "2026-10-17T08:53:25.146Z",
+    "checkedAt": "2026-10-18T09:04:03.858Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -273,7 +322,7 @@
     "favicon": "https://nostalgicfm.ro/icons/android-chrome-512x512.png",
     "homepage": "https://nostalgicfm.ro/",
     "stationUuid": "d439db53-8a19-4d42-a2e8-5dd201c382c7",
-    "checkedAt": "2026-10-17T08:53:25.200Z",
+    "checkedAt": "2026-10-18T09:04:03.882Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -290,7 +339,7 @@
     "favicon": null,
     "homepage": "http://radiodreams.g1.ro/",
     "stationUuid": "1719f6e6-ea73-415f-bcbc-0499eb51c798",
-    "checkedAt": "2026-10-17T08:53:25.451Z",
+    "checkedAt": "2026-10-18T09:04:04.061Z",
     "status": 400,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 400"
@@ -307,7 +356,7 @@
     "favicon": "http://radiodreams.g1.ro/images/logo.png",
     "homepage": "http://radiodreams.g1.ro/",
     "stationUuid": "441f9d37-3b6f-4b67-81ee-86f15c72c9cf",
-    "checkedAt": "2026-10-17T08:53:25.459Z",
+    "checkedAt": "2026-10-18T09:04:04.138Z",
     "status": 400,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 400"
@@ -324,7 +373,7 @@
     "favicon": null,
     "homepage": "https://radio-flacararusaliilor.ro/",
     "stationUuid": "fbb35e2e-7e8c-4b0e-a588-9190b34b60fd",
-    "checkedAt": "2026-10-17T08:53:25.758Z",
+    "checkedAt": "2026-10-18T09:04:04.173Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -341,7 +390,7 @@
     "favicon": null,
     "homepage": "https://radioromanian.ro/live/dance",
     "stationUuid": "d3c07fa7-e329-470e-b5ff-661de0902680",
-    "checkedAt": "2026-10-17T08:53:26.343Z",
+    "checkedAt": "2026-10-18T09:04:04.364Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -358,7 +407,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/roll.png",
     "homepage": "https://www.smartradio.ro/radio/nroll/",
     "stationUuid": "79f0e166-2c86-4ee0-96e8-dad0c17008b6",
-    "checkedAt": "2026-10-17T08:53:26.640Z",
+    "checkedAt": "2026-10-18T09:04:04.463Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -375,7 +424,7 @@
     "favicon": "https://www.terrafm.online/favicon.ico",
     "homepage": "https://www.terrafm.online/mobile",
     "stationUuid": "1ab4f1dd-7c9d-4f77-b067-4c7ac29cf9ac",
-    "checkedAt": "2026-10-17T08:53:26.943Z",
+    "checkedAt": "2026-10-18T09:04:04.582Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -400,7 +449,7 @@
     "favicon": "https://assets-global.website-files.com/5dceb9db6467914eb3a15c70/657c8454884d7395f0eb2ef5_Frame%205.png",
     "homepage": "https://www.nicecream.fm/",
     "stationUuid": "935728a9-a3e3-466d-8c6b-f23a906d0803",
-    "checkedAt": "2026-10-17T08:53:27.302Z",
+    "checkedAt": "2026-10-18T09:04:04.748Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -424,7 +473,7 @@
     "favicon": "https://assets-global.website-files.com/5dceb9db6467914eb3a15c70/657c8454fde51c0d1e660e7f_65330da52d6562ee1c861fbb_Frame%207.png",
     "homepage": "https://nicecream.fm/",
     "stationUuid": "477ce41c-0523-497b-83b0-441081e68743",
-    "checkedAt": "2026-10-17T08:53:27.356Z",
+    "checkedAt": "2026-10-18T09:04:04.819Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -448,7 +497,7 @@
     "favicon": null,
     "homepage": "https://freshfm.ro/",
     "stationUuid": "980fa8f5-84cb-4730-8252-d71827d6e9e4",
-    "checkedAt": "2026-10-17T08:53:27.839Z",
+    "checkedAt": "2026-10-18T09:04:04.899Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -469,7 +518,7 @@
     "favicon": null,
     "homepage": "http://www.paprikaradio.ro/",
     "stationUuid": "53903241-34a0-46a2-a877-edb06080f384",
-    "checkedAt": "2026-10-17T08:53:28.054Z",
+    "checkedAt": "2026-10-18T09:04:05.075Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -489,7 +538,7 @@
     "favicon": "https://radiodacia.ro/wp-content/uploads/2024/01/cropped-logo512.jpg",
     "homepage": "https://radiodacia.ro/",
     "stationUuid": "174f0866-b7d3-4e9c-97cc-b13d2502f843",
-    "checkedAt": "2026-10-17T08:53:28.676Z",
+    "checkedAt": "2026-10-18T09:04:05.184Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -510,32 +559,10 @@
     "favicon": "https://radiodacia.ro/wp-content/uploads/2024/01/cropped-logo512.jpg",
     "homepage": "https://radiodacia.ro/",
     "stationUuid": "87ebe6d8-65a5-427f-9792-12f673edae1c",
-    "checkedAt": "2026-10-17T08:53:29.546Z",
+    "checkedAt": "2026-10-18T09:04:05.249Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Sighet FM 89.3",
-    "url": "https://radio.zifer.ro/SighetFM",
-    "country": "RO",
-    "type": "adult contemporary",
-    "tags": [
-      "adult contemporary",
-      "local",
-      "news",
-      "pop"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "romanian",
-    "favicon": "https://scontent.fomr1-1.fna.fbcdn.net/v/t39.30808-6/299334146_488042999987436_6761144453671171694_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=h9lp6WJIYowQ7kNvwGlVZGi&_nc_oc=AdnPh9-nWc5pYAm5l7lXHfbn4adZgOnJEDV7hu7BfMkx87srAhhTPeNQAnm1wD-2tso&_nc_zt=23&_nc_ht=scontent.fomr1-1.fna&_nc_gid=rvzBwCYFbBrHy14GZROqHA&oh=00_AfsY8Hg0HuMxxtQVwCUBKCx873JF287BrAVpyBIR2CqcgA&oe=69A0E9DD",
-    "homepage": "https://sighetfm.ro/",
-    "stationUuid": "32e5ee6d-1f76-4353-a9aa-f37252b1a878",
-    "checkedAt": "2026-10-17T08:53:30.140Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Smart Radio -Smart the Fusion",
@@ -555,7 +582,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/fusion.png",
     "homepage": "https://www.smartradio.ro/radio/fusion/",
     "stationUuid": "f4be1f55-685e-437e-84c4-b8734d6f5a2f",
-    "checkedAt": "2026-10-17T08:53:30.157Z",
+    "checkedAt": "2026-10-18T09:04:06.599Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -574,7 +601,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "4e1d83f0-bcd2-4b1a-9514-d2a19fa7d011",
-    "checkedAt": "2026-10-17T08:53:30.676Z",
+    "checkedAt": "2026-10-18T09:04:07.239Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -597,7 +624,7 @@
     "favicon": null,
     "homepage": "http://www.radiosky.ro/",
     "stationUuid": "07aa77b3-5a03-11ea-be63-52543be04c81",
-    "checkedAt": "2026-10-17T08:53:30.787Z",
+    "checkedAt": "2026-10-18T09:04:07.351Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -620,7 +647,7 @@
     "favicon": "https://www.radiosky.ro/wp-content/uploads/2024/01/Pro_logo_sky_icon.png",
     "homepage": "https://www.radiosky.ro/",
     "stationUuid": "7f55dd5d-fcf2-4341-a7cc-2fee9365f533",
-    "checkedAt": "2026-10-17T08:53:31.000Z",
+    "checkedAt": "2026-10-18T09:04:07.579Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -639,7 +666,7 @@
     "favicon": "https://ebsradio.ro/stream/img/stream-alternative.png",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "0f2c59bb-c204-4d17-a0ea-3e8623cb1d73",
-    "checkedAt": "2026-10-17T08:53:31.416Z",
+    "checkedAt": "2026-10-18T09:04:08.105Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -662,7 +689,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-trucker/",
     "stationUuid": "69daf830-d313-4045-a710-fb6c444d32a9",
-    "checkedAt": "2026-10-17T08:53:32.265Z",
+    "checkedAt": "2026-10-18T09:04:09.539Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -681,7 +708,7 @@
     "favicon": "https://ebsradio.ro/wp-content/themes/ebs/favicons/apple-touch-icon.png",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "e13b81e6-7dca-4a9d-a13b-0327b2dd5219",
-    "checkedAt": "2026-10-17T08:53:32.630Z",
+    "checkedAt": "2026-10-18T09:04:10.073Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -700,7 +727,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "b636d82c-6319-4008-86d4-aadfb04b8e1f",
-    "checkedAt": "2026-10-17T08:53:32.666Z",
+    "checkedAt": "2026-10-18T09:04:10.138Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -719,7 +746,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-blues/",
     "stationUuid": "e5e2395a-b1f0-49cb-b23c-115b9d321103",
-    "checkedAt": "2026-10-17T08:53:32.726Z",
+    "checkedAt": "2026-10-18T09:04:10.177Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -742,7 +769,7 @@
     "favicon": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg3CqVqpBztMtGIDhCIBa0Yk5-qJK4yLnh9bfDgLMWivDgf3jV_pyv-C9J79Bm7KrMLaHS6OUhG9g7EG8OoCPDEjEJPyDQi3D36Y8TRCBH1E3qFH5pyU7vauid_3VGAVNPiPj9p3Yo1E9U/w72-h72-p-k-no-nu/1651480698180138-0.png",
     "homepage": "https://sfinxradio.blogspot.com/",
     "stationUuid": "6bef1a23-ac98-4ee3-b766-364eb736d228",
-    "checkedAt": "2026-10-17T08:53:32.893Z",
+    "checkedAt": "2026-10-18T09:04:10.473Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -763,7 +790,7 @@
     "favicon": "https://bluz.ro/shuffle-fm-logo.png",
     "homepage": "https://bluz.ro/",
     "stationUuid": "99fe1774-f4fa-4c24-9bbf-7b473caec585",
-    "checkedAt": "2026-10-17T08:53:32.980Z",
+    "checkedAt": "2026-10-18T09:04:10.480Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -786,7 +813,7 @@
     "favicon": "https://www.x-fm.ro/images/logo_xfm.png",
     "homepage": "https://www.x-fm.ro/",
     "stationUuid": "b887db2d-fd7c-4add-9c00-a6d3b9cac001",
-    "checkedAt": "2026-10-17T08:53:32.992Z",
+    "checkedAt": "2026-10-18T09:04:10.569Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -808,7 +835,7 @@
     "favicon": "https://cdn-radiotime-logos.tunein.com/s131243q.png",
     "homepage": "http://www.drums.ro/",
     "stationUuid": "e29a76c5-43bd-4b8a-994a-b772d3acc6ec",
-    "checkedAt": "2026-10-17T08:53:33.005Z",
+    "checkedAt": "2026-10-18T09:04:10.679Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -830,7 +857,7 @@
     "favicon": "https://ebsradio.ro/stream/img/stream-lounge.png",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "1daa1014-3662-448a-a1f2-9709bde3fbc1",
-    "checkedAt": "2026-10-17T08:53:33.678Z",
+    "checkedAt": "2026-10-18T09:04:11.494Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -852,7 +879,7 @@
     "favicon": "https://radiodacia.ro/wp-content/uploads/2021/12/favicon-300x300.png",
     "homepage": "https://radiodacia.ro/",
     "stationUuid": "0abcc194-9d5c-4789-b954-03a4bc1ad8f9",
-    "checkedAt": "2026-10-17T08:53:33.753Z",
+    "checkedAt": "2026-10-18T09:04:11.572Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -873,7 +900,7 @@
     "favicon": null,
     "homepage": "https://sonafm.ro/listen",
     "stationUuid": "37fa8ad7-739a-46cb-973d-4aa4267ee90d",
-    "checkedAt": "2026-10-17T08:53:33.779Z",
+    "checkedAt": "2026-10-18T09:04:11.643Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -895,7 +922,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-chill/",
     "stationUuid": "33cb969d-1269-4314-a967-013cac3fdc2b",
-    "checkedAt": "2026-10-17T08:53:33.883Z",
+    "checkedAt": "2026-10-18T09:04:11.777Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -917,7 +944,7 @@
     "favicon": "https://radiodacia.ro/wp-content/uploads/2021/12/favicon-300x300.png",
     "homepage": "https://radiodacia.ro/",
     "stationUuid": "a8e5f232-e9bd-4d32-b007-d1ba6f0ae95d",
-    "checkedAt": "2026-10-17T08:53:33.894Z",
+    "checkedAt": "2026-10-18T09:04:11.945Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -942,7 +969,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Logo_Radio_Rom%C3%A2nia_3Net_Florian_Pitti%C8%99_%282008%29.svg/1200px-Logo_Radio_Rom%C3%A2nia_3Net_Florian_Pitti%C8%99_%282008%29.svg.png",
     "homepage": "https://www.radio3net.ro/",
     "stationUuid": "0415d15a-90e5-4c4b-b3d5-9b33aa866bdd",
-    "checkedAt": "2026-10-17T08:53:34.037Z",
+    "checkedAt": "2026-10-18T09:04:12.050Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -961,7 +988,7 @@
     "favicon": null,
     "homepage": "http://rvesibiu.ro/",
     "stationUuid": "f86e0d8a-7ec0-4460-a7c8-aeb265c76de7",
-    "checkedAt": "2026-10-17T08:53:34.665Z",
+    "checkedAt": "2026-10-18T09:04:12.569Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -982,7 +1009,7 @@
     "favicon": "https://ebsradio.ro/stream/img/stream-xmas.png",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "50afeb66-74d5-4b6b-b423-c98eaf3d93cd",
-    "checkedAt": "2026-10-17T08:53:34.868Z",
+    "checkedAt": "2026-10-18T09:04:12.854Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1002,7 +1029,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/radio.png",
     "homepage": "https://www.smartradio.ro/",
     "stationUuid": "7ae42e14-2fa1-4d00-8c4d-0820a1f45421",
-    "checkedAt": "2026-10-17T08:53:34.903Z",
+    "checkedAt": "2026-10-18T09:04:12.883Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1021,7 +1048,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-classic/",
     "stationUuid": "4bac58ae-72f7-4a91-807a-c9caffd0ae08",
-    "checkedAt": "2026-10-17T08:53:34.954Z",
+    "checkedAt": "2026-10-18T09:04:12.941Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1040,7 +1067,7 @@
     "favicon": "https://radiodacia.ro/wp-content/uploads/2024/01/cropped-logo512.jpg",
     "homepage": "https://radiodacia.ro/",
     "stationUuid": "b0257aeb-70f7-4dab-baf2-4699ba9c9dda",
-    "checkedAt": "2026-10-17T08:53:35.036Z",
+    "checkedAt": "2026-10-18T09:04:13.061Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1059,7 +1086,7 @@
     "favicon": "https://www.radioking.com/api/track/cover/57ef0546-f068-42f1-87ea-e6cdb79db856",
     "homepage": "https://welove.radio/radio/simigerie/",
     "stationUuid": "91a6e353-7e1a-407b-a522-7bedbbd7fd4a",
-    "checkedAt": "2026-10-17T08:53:35.053Z",
+    "checkedAt": "2026-10-18T09:04:13.082Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1081,7 +1108,7 @@
     "favicon": "https://www.radiogaga.ro/wp-content/themes/sounder-child/images/GaGa_Logo_100_MAGYAR.jpg",
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "6a1149f0-cf81-4b74-a08e-b1475bc83723",
-    "checkedAt": "2026-10-17T08:53:35.440Z",
+    "checkedAt": "2026-10-18T09:04:13.758Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1101,7 +1128,7 @@
     "favicon": null,
     "homepage": "http://www.radio3net.ro/",
     "stationUuid": "f7c3e272-6632-46e8-a3ae-9265f94af020",
-    "checkedAt": "2026-10-17T08:53:35.522Z",
+    "checkedAt": "2026-10-18T09:04:13.869Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1122,7 +1149,7 @@
     "favicon": "https://www.radiogaga.ro/wp-content/themes/sounder-child/images/GaGa_Logo_ROCK.jpg",
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "1a7e1dc0-49af-4f3a-8459-07d07dcd040a",
-    "checkedAt": "2026-10-17T08:53:35.707Z",
+    "checkedAt": "2026-10-18T09:04:14.242Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1142,7 +1169,7 @@
     "favicon": null,
     "homepage": "https://www.radionoise.ro/",
     "stationUuid": "841bfaf5-06e9-4710-afc8-8fdb0cd3f0bc",
-    "checkedAt": "2026-10-17T08:53:35.806Z",
+    "checkedAt": "2026-10-18T09:04:14.449Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1162,7 +1189,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "9424794b-23f4-4e31-aa1f-126ec4f355a5",
-    "checkedAt": "2026-10-17T08:53:35.915Z",
+    "checkedAt": "2026-10-18T09:04:14.686Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1182,7 +1209,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/radio.png",
     "homepage": "https://www.smartradio.ro/",
     "stationUuid": "b3c02c44-6118-4808-9973-5b06b1fec1e7",
-    "checkedAt": "2026-10-17T08:53:36.143Z",
+    "checkedAt": "2026-10-18T09:04:15.172Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1201,7 +1228,7 @@
     "favicon": null,
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "141ffa80-2ae5-4645-a4c2-419de04da3b4",
-    "checkedAt": "2026-10-17T08:53:36.377Z",
+    "checkedAt": "2026-10-18T09:04:16.081Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1224,7 +1251,7 @@
     "favicon": null,
     "homepage": "https://www.radioexpert.net/radio-ardeleanca-fm-online-radio-bra%C8%99ov/",
     "stationUuid": "f9a030da-da03-4511-82f3-dea28cf25a38",
-    "checkedAt": "2026-10-17T08:53:36.417Z",
+    "checkedAt": "2026-10-18T09:04:16.155Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1245,7 +1272,7 @@
     "favicon": "https://xatimg.com/image/U0CFpkygkkEI.png",
     "homepage": "https://radioxtream.com/",
     "stationUuid": "ce4cdb7e-ee90-47e7-9524-6404ece30262",
-    "checkedAt": "2026-10-17T08:53:36.507Z",
+    "checkedAt": "2026-10-18T09:04:16.353Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1266,7 +1293,7 @@
     "favicon": "https://xatimg.com/image/U0CFpkygkkEI.png",
     "homepage": "https://radioxtream.com/",
     "stationUuid": "6d5d259d-db1c-4128-bc30-455fb358ce1b",
-    "checkedAt": "2026-10-17T08:53:36.527Z",
+    "checkedAt": "2026-10-18T09:04:16.397Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1287,7 +1314,7 @@
     "favicon": "https://radioxtream.com/wp-content/uploads/2024/11/dadada.png",
     "homepage": "https://radioxtream.com/",
     "stationUuid": "d1818640-fc07-42e2-8b65-698e3b048d16",
-    "checkedAt": "2026-10-17T08:53:36.757Z",
+    "checkedAt": "2026-10-18T09:04:16.581Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1309,7 +1336,7 @@
     "favicon": null,
     "homepage": "https://radiodreams.ro/",
     "stationUuid": "b076a9b4-7f92-42ff-aa02-d9a4f256a477",
-    "checkedAt": "2026-10-17T08:53:38.360Z",
+    "checkedAt": "2026-10-18T09:04:19.664Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1331,7 +1358,7 @@
     "favicon": "https://app.radio.com.ro/v5/images/31636_radio.webp",
     "homepage": "https://www.untold.com/ro",
     "stationUuid": "3129941a-4b4b-42b0-a2bb-aacb1086d8ee",
-    "checkedAt": "2026-10-17T08:53:42.184Z",
+    "checkedAt": "2026-10-18T09:04:20.582Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1352,7 +1379,7 @@
     "favicon": "https://www.smilefm.ro/wp-content/uploads/2013/01/logo1.png",
     "homepage": "https://www.smilefm.ro/",
     "stationUuid": "bbb6c0bf-2d5c-42bc-954d-ef9d8736270c",
-    "checkedAt": "2026-10-17T08:53:42.792Z",
+    "checkedAt": "2026-10-18T09:04:21.874Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1371,7 +1398,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "238bb423-5987-4789-a9dd-080fa32276ff",
-    "checkedAt": "2026-10-17T08:53:43.504Z",
+    "checkedAt": "2026-10-18T09:04:23.154Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1390,7 +1417,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-country/",
     "stationUuid": "82778416-4e60-4bcd-88d5-dd41dff0cf43",
-    "checkedAt": "2026-10-17T08:53:43.539Z",
+    "checkedAt": "2026-10-18T09:04:23.241Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1413,7 +1440,7 @@
     "favicon": null,
     "homepage": "https://pmainfo.radio12345.com/",
     "stationUuid": "caaf5117-19bb-4091-ae05-2cc1370363fb",
-    "checkedAt": "2026-10-17T08:53:43.575Z",
+    "checkedAt": "2026-10-18T09:04:23.388Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1433,7 +1460,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/294238395_447079774096627_5456665759646713176_n.png?stp=dst-png_s200x200&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=HASQmyiACeMQ7kNvwELwBo6&_nc_oc=AdpdDSEOFvPdh7sll_IY6uUrviuzfFsE5gI5KWPa_kwSGtgFyc4WrH8wnVGsfKRJOx3Cb79ULIv4HZdoiTDMRZXh&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=ISEIgRihfB2plLEDq3RpSg&oh=00_Af01lO1CXkxZ__A7kr-oDIPxF3FoZCXp4HK9_lYcOqA2tw&oe=69F1176E",
     "homepage": "https://radiociresarii.ro/",
     "stationUuid": "9fe7c130-239a-4b44-a2d1-4385fff1fab2",
-    "checkedAt": "2026-10-17T08:53:43.948Z",
+    "checkedAt": "2026-10-18T09:04:23.951Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1453,7 +1480,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/nmq5mH24m1b295ULonHY1JzVajZg7zddpjguFBYzxsU/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvODdhNDJmZjktYzA3Zi00NDQ0LTk5MzEtNTQ4MmU0NGRhY2YxL2ltYWdlLz91PTE3MzIyMjA1NjMwMDA.webp",
     "homepage": "https://zeno.fm/radio/crestin-total-radio/",
     "stationUuid": "6b943d69-2862-4769-bfa2-f571cae8e2e8",
-    "checkedAt": "2026-10-17T08:53:44.711Z",
+    "checkedAt": "2026-10-18T09:04:24.804Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1473,7 +1500,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/rrUZV89mrteGV7hFoC7hoAwgygL2xmVMZuyb1cbfs0c/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvNGY1ZDRkYmYtZTc0OC00NWZhLTlmZTYtMWFmNTExYjJmODY2L2ltYWdlLz91PTE2ODAzOTc0MTgwMDA.webp",
     "homepage": "https://zeno.fm/radio/iehova-ire-wn2m/",
     "stationUuid": "698dd56d-0bfc-40a2-b0aa-b050f78183e7",
-    "checkedAt": "2026-10-17T08:53:44.763Z",
+    "checkedAt": "2026-10-18T09:04:24.837Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1493,7 +1520,7 @@
     "favicon": "https://teatruradiofonic.com/wp-content/uploads/2021/10/radio-teatruradiofoniclive-1.jpg",
     "homepage": "https://teatruradiofonic.com/radio-teatru-radiofonic-romania/",
     "stationUuid": "6dff1b65-11e6-40a5-814d-de2c4227fc7b",
-    "checkedAt": "2026-10-17T08:53:45.007Z",
+    "checkedAt": "2026-10-18T09:04:25.099Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1515,31 +1542,10 @@
     "favicon": "https://radiodamblagii.com/logo.png",
     "homepage": "https://radiodamblagii.com/",
     "stationUuid": "3cb57040-2fc7-4152-a2f2-f8d812eaf9ee",
-    "checkedAt": "2026-10-17T08:53:45.019Z",
+    "checkedAt": "2026-10-18T09:04:25.160Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Radio Damblagii",
-    "url": "https://radio.rodnuk.com/hls/radio_damblagii/Radio-Damblagii.m3u8",
-    "country": "RO",
-    "type": "damblagii",
-    "tags": [
-      "damblagii",
-      "manele",
-      "romania"
-    ],
-    "codec": "AAC",
-    "bitrate": 52,
-    "language": "romanian",
-    "favicon": "https://radiodamblagii.com/logo-white.png",
-    "homepage": "https://radiodamblagii.com/",
-    "stationUuid": "d0855aee-dc7c-4140-bf60-6323c8bde7b5",
-    "checkedAt": "2026-10-17T08:53:45.067Z",
-    "status": 530,
-    "contentType": "text/html; charset=UTF-8",
-    "lastFailure": "HTTP 530"
   },
   {
     "name": "Aeroport Radio",
@@ -1558,7 +1564,7 @@
     "favicon": "https://scontent.fotp3-3.fna.fbcdn.net/v/t39.30808-1/305846514_415017403951767_874304368816780100_n.jpg?stp=dst-jpg_p200x200&_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=VGH8huFwSqQQ7kNvgHDPQZE&_nc_ht=scontent.fotp3-3.fna&oh=00_AYCrlIPOUN2BMvoDX5NoANxHZHTtC9amO5H_tK5sFxAEnw&oe=6661C338",
     "homepage": "https://www.facebook.com/cartieraeroport",
     "stationUuid": "44a78bc0-c648-4afa-ace7-80b1d8170a0c",
-    "checkedAt": "2026-10-17T08:53:45.155Z",
+    "checkedAt": "2026-10-18T09:04:25.270Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1580,7 +1586,7 @@
     "favicon": "https://barcasagirad.radiostream321.com/users.img/2758087/84/32/97800287916221.thumb.png",
     "homepage": "https://barcasagirad.radiostream321.com/",
     "stationUuid": "7b3ede92-9372-49a7-8a6f-4ca2f0373f22",
-    "checkedAt": "2026-10-17T08:53:45.203Z",
+    "checkedAt": "2026-10-18T09:04:25.354Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1603,7 +1609,7 @@
     "favicon": "https://www.radioexpert.net/radio-logo/romania/radio-dejavumusic-191-alba-iulia-romania-320.jpg",
     "homepage": "https://xat.com/dejavumusic",
     "stationUuid": "8eeae7f4-03ed-42db-916c-59a3bc308313",
-    "checkedAt": "2026-10-17T08:53:45.599Z",
+    "checkedAt": "2026-10-18T09:04:25.928Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1624,7 +1630,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/ZxpIffJCQXRQu8YC2T31s7DXW7tKdodPl58_snUyhHI/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJQ1FoYW51aWdnTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJQ3dpdmZydWdzTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTY0Mzc0NTk1ODAwMA.webp",
     "homepage": "https://zeno.fm/radio/im-aquafm-bv/",
     "stationUuid": "1f12e8fa-c63b-48de-a164-33ba972f515b",
-    "checkedAt": "2026-10-17T08:53:45.903Z",
+    "checkedAt": "2026-10-18T09:04:26.265Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1647,7 +1653,7 @@
     "favicon": null,
     "homepage": "https://napocafm.ro/",
     "stationUuid": "f979d55f-91cf-49ae-951a-698c4aa8c87b",
-    "checkedAt": "2026-10-17T08:53:46.463Z",
+    "checkedAt": "2026-10-18T09:04:26.780Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1670,7 +1676,7 @@
     "favicon": "https://2024.orionradio.ro/wp-content/uploads/2023/12/logo-PRO-orion.png",
     "homepage": "https://orionradio.ro/",
     "stationUuid": "c0a9b799-275f-48cd-9edb-d4c39b318d9c",
-    "checkedAt": "2026-10-17T08:53:46.565Z",
+    "checkedAt": "2026-10-18T09:04:26.940Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1690,7 +1696,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2015/01/Radio-Beat-Romania.jpg",
     "homepage": "https://www.radiobeat.ro/",
     "stationUuid": "d8d483c5-a730-4cf8-a52d-edd32491bdee",
-    "checkedAt": "2026-10-17T08:53:47.002Z",
+    "checkedAt": "2026-10-18T09:04:27.476Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1710,7 +1716,7 @@
     "favicon": "https://stream.radioboom.ro/static/uploads/boom_energy/album_art.1711440856.jpg",
     "homepage": "https://radioboom.ro/",
     "stationUuid": "a729b1ff-376c-4bd7-8b67-b951ea1609b4",
-    "checkedAt": "2026-10-17T08:53:47.028Z",
+    "checkedAt": "2026-10-18T09:04:27.514Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1729,7 +1735,7 @@
     "favicon": "https://live.radioboom.ro/generic_song-energy.png",
     "homepage": "https://stream.radioboom.ro/public/boom_energy",
     "stationUuid": "884b4607-adc3-4cf7-abcf-0ad650deffb6",
-    "checkedAt": "2026-10-17T08:53:47.046Z",
+    "checkedAt": "2026-10-18T09:04:27.544Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1752,7 +1758,7 @@
     "favicon": "https://radiodacia.ro/wp-content/uploads/2021/12/favicon-300x300.png",
     "homepage": "https://radiodacia.ro/",
     "stationUuid": "17a8bbbf-fb5e-4f49-882e-aadef2146102",
-    "checkedAt": "2026-10-17T08:53:47.335Z",
+    "checkedAt": "2026-10-18T09:04:27.881Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1773,7 +1779,7 @@
     "favicon": "https://radiodacia.ro/wp-content/uploads/2024/01/cropped-logo512.jpg",
     "homepage": "https://radiodacia.ro/",
     "stationUuid": "5b221048-faec-455c-83d0-274cb47f3ce0",
-    "checkedAt": "2026-10-17T08:53:47.384Z",
+    "checkedAt": "2026-10-18T09:04:27.885Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1792,7 +1798,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/0/109890.v17.png",
     "homepage": "https://www.radio-extrem.com/",
     "stationUuid": "69681626-efe8-4990-abc6-61dc431eb44a",
-    "checkedAt": "2026-10-17T08:53:47.579Z",
+    "checkedAt": "2026-10-18T09:04:28.140Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1813,7 +1819,7 @@
     "favicon": "https://www.radiogaga.ro/wp-content/themes/sounder-child/images/GaGa_Logo_DANCE.jpg",
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "ea47918c-ddc7-4431-8554-4a309316453a",
-    "checkedAt": "2026-10-17T08:53:47.770Z",
+    "checkedAt": "2026-10-18T09:04:28.368Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1834,7 +1840,7 @@
     "favicon": "https://scontent.fotp3-3.fna.fbcdn.net/v/t39.30808-1/300774583_168969529018935_7014446756400651511_n.jpg?stp=c44.0.709.709a_dst-jpg_s200x200_tt6&_nc_cat=102&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=choaRUM9uXgQ7kNvwHGAgC8&_nc_oc=AdqLrU7aZhScy-l7DemA5EU2EfuaXHW7nxHDtsxPxS_RzvCskZuT-04V6P-qWWLQeiZX2an-7NzhT6qpt_FRlT_f&_nc_zt=24&_nc_ht=scontent.fotp3-3.fna&_nc_gid=_qKvAnCD2gdUSJOSuNWxmA&_nc_ss=7b289&oh=00_Af7oOx4kNxr7T1ct8BThh9gZRDIVUkwMEnBdtglN3gmU2A&oe=69FF53CE",
     "homepage": "https://www.facebook.com/RadioBestTop1/",
     "stationUuid": "134a8df8-3897-4160-b6d5-7c5efd33c40b",
-    "checkedAt": "2026-10-17T08:53:47.843Z",
+    "checkedAt": "2026-10-18T09:04:28.376Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1854,7 +1860,7 @@
     "favicon": "https://www.radioliberty.ro/images/stations/1739903627.webp",
     "homepage": "https://www.radioliberty.ro/listen/radio-liberty-mixt",
     "stationUuid": "cde5191b-7c92-4646-9d28-08a1728fef04",
-    "checkedAt": "2026-10-17T08:53:48.283Z",
+    "checkedAt": "2026-10-18T09:04:28.784Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1875,10 +1881,30 @@
     "favicon": "https://napocalive.ro/images/images.png",
     "homepage": "https://napocalive.ro/radio-napoca-fm-live",
     "stationUuid": "02ee0a3e-85ed-4c7e-a3ff-f15f0d8f4e02",
-    "checkedAt": "2026-10-17T08:53:49.068Z",
+    "checkedAt": "2026-10-18T09:04:29.765Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Noise",
+    "url": "http://live.radionoise.ro:9100/;",
+    "country": "RO",
+    "type": "dance",
+    "tags": [
+      "dance",
+      "dj"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "romanian",
+    "favicon": "https://www.radionoise.ro/wp-content/uploads/2022/07/faviconnew.png",
+    "homepage": "https://www.radionoise.ro/",
+    "stationUuid": "99d3bb67-04ef-44c3-a2a3-998122746e45",
+    "checkedAt": "2026-10-18T09:04:29.805Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio România 3 Net",
@@ -1898,7 +1924,7 @@
     "favicon": "https://www.radio3net.ro/img/logos/logo_3.png",
     "homepage": "https://www.radio3net.ro/",
     "stationUuid": "f5f7550d-33b5-4502-af3c-aa08c8d8d79f",
-    "checkedAt": "2026-10-17T08:53:50.440Z",
+    "checkedAt": "2026-10-18T09:04:31.687Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1922,7 +1948,7 @@
     "favicon": null,
     "homepage": "https://www.radiostres.com/",
     "stationUuid": "bec48ae2-b043-4252-af7b-583a1b7f3331",
-    "checkedAt": "2026-10-17T08:53:50.511Z",
+    "checkedAt": "2026-10-18T09:04:31.763Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1945,7 +1971,7 @@
     "favicon": "https://www.radiostres.com/templates/music-club/images/logo.png",
     "homepage": "https://www.radiostres.com/",
     "stationUuid": "09f76ef5-12a7-433f-a1c6-8b3351b9f96a",
-    "checkedAt": "2026-10-17T08:53:53.019Z",
+    "checkedAt": "2026-10-18T09:04:33.161Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1966,7 +1992,7 @@
     "favicon": null,
     "homepage": "https://www.radioexpert.net/radio-suflet-iubit-2022-online-radio-mioveni/",
     "stationUuid": "f2a31704-d682-44f9-94ea-701f3f60cf3d",
-    "checkedAt": "2026-10-17T08:53:54.465Z",
+    "checkedAt": "2026-10-18T09:04:34.780Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1986,7 +2012,7 @@
     "favicon": "https://play-lh.googleusercontent.com/hM_-E1xyae535u4_mDcpUsQ2Oc2luWYN-IW-5Fe4U4qoy8HbH8x_iEvbqjOHM7tbDPs=w240-h480",
     "homepage": "https://xat.com/RadioKyssEcstrem",
     "stationUuid": "b0ca796d-eea9-4b27-bdcc-f8597bcf4f59",
-    "checkedAt": "2026-10-17T08:53:54.568Z",
+    "checkedAt": "2026-10-18T09:04:34.941Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2006,7 +2032,7 @@
     "favicon": "https://media.smartradio.ro/2019/12/rave-1.png",
     "homepage": "https://www.smartradio.ro/radio/rave/",
     "stationUuid": "84901345-d259-470d-84c7-946ba64d36c8",
-    "checkedAt": "2026-10-17T08:53:55.793Z",
+    "checkedAt": "2026-10-18T09:04:36.297Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2026,7 +2052,7 @@
     "favicon": null,
     "homepage": "http://www.radiospring.ro/",
     "stationUuid": "e6a3f442-3329-41a2-92db-a9959de4f882",
-    "checkedAt": "2026-10-17T08:53:56.081Z",
+    "checkedAt": "2026-10-18T09:04:36.704Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2047,7 +2073,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/mXQvp_hXBL0QShl9ZzEuKuv-uVhFPKLnAsQK6mBu_9g/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvNWU5YTQ0NDctOTRmNS00MTZlLTliNzgtZTJkOWMzMGRjMmQ1L2ltYWdlLz91PTE3NTc4NDE4MzAwMDA.webp",
     "homepage": "https://zeno.fm/radio/radio-stil-mix-dance-107-9-mhz-fm/",
     "stationUuid": "e11a1967-5c94-4bb8-ba08-ebd41cd301ee",
-    "checkedAt": "2026-10-17T08:53:56.348Z",
+    "checkedAt": "2026-10-18T09:04:37.175Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2071,7 +2097,7 @@
     "favicon": "https://scontent.fclj2-1.fna.fbcdn.net/v/t39.30808-6/462704691_999686372170606_3100489220787181229_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGnOI5JB_JULgykU1C-8L2dUhpv9UijQQZSGm_1SKNBBoUlhr6XfS7-Ibo6bYZmShdonUsaTs-3V7kTkbx06F8f&_nc_ohc=4LkNWlD8fssQ7kNvgGru4dF&_nc_ht=scontent.fclj2-1.fna&_nc_gid=AWUVmp3kYX7tU7PemAdTxfE&oh=00_AYDV90D1up4YNZk-jGBcS0oFCAV1s-b85yCKulyCr_x17Q&oe=670CD2D8",
     "homepage": "https://terrafm.ro/",
     "stationUuid": "fc16c080-0b0d-4e10-a198-f9b01a906272",
-    "checkedAt": "2026-10-17T08:53:56.993Z",
+    "checkedAt": "2026-10-18T09:04:37.952Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2094,7 +2120,7 @@
     "favicon": "https://cdn-radiotime-logos.tunein.com/s289060d.png",
     "homepage": "https://www.facebook.com/radiotopdanceromania",
     "stationUuid": "a67536ef-5fa8-4731-ab71-42b5af2af91d",
-    "checkedAt": "2026-10-17T08:53:57.111Z",
+    "checkedAt": "2026-10-18T09:04:38.238Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2116,7 +2142,7 @@
     "favicon": "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2FdJDmhhIZjbp3mGDHN54PFmrmSk_wcdqEOWJZLc6BbwU%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9zdHJlYW0tdG9vbHMuemVub21lZGlhLmNvbS9jb250ZW50L3N0YXRpb25zL2FneHpmbnBsYm04dGMzUmhkSE55TWdzU0NrRjFkR2hEYkdsbGJuUVlnSURRN3JpVDZRc01DeElPVTNSaGRHbHZibEJ5YjJacGJHVVlnSURJOHNfNDBBc01vZ0VFZW1WdWJ3L2ltYWdlLz91cGRhdGVkPTE2NjE2Njk2MjMwMDA.webp&w=1920&q=100",
     "homepage": "https://zeno.fm/radio/radio-usoara-twist/",
     "stationUuid": "b01a5b00-976e-430e-b218-fab4ad4c2937",
-    "checkedAt": "2026-10-17T08:53:57.258Z",
+    "checkedAt": "2026-10-18T09:04:38.403Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2136,7 +2162,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/83-MRYtuFgmTM9VewqR8KmFkgEXZUkNtoLbzmOTajz4/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJRFE3cmlUNlFzTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJREk4c180MEFzTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTY2MTY2OTYyMzAwMA.webp",
     "homepage": "https://zeno.fm/radio/radio-usoara-twist/",
     "stationUuid": "cb903ad1-afd2-46ac-af6c-e9b853ced5ab",
-    "checkedAt": "2026-10-17T08:53:57.326Z",
+    "checkedAt": "2026-10-18T09:04:38.404Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2156,7 +2182,7 @@
     "favicon": "https://www.radiopebune.eu/js/radio_logo.jpg",
     "homepage": "https://www.radiopebune.eu/",
     "stationUuid": "75f8a111-4898-480d-8b59-a9deff4240c3",
-    "checkedAt": "2026-10-17T08:53:57.331Z",
+    "checkedAt": "2026-10-18T09:04:38.499Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2179,7 +2205,7 @@
     "favicon": "https://www.x-fm.ro/templates/ja_corona/images/logo.png",
     "homepage": "https://www.x-fm.ro/",
     "stationUuid": "554d2468-ebf0-4dc0-83de-f14a62f9ad06",
-    "checkedAt": "2026-10-17T08:53:57.716Z",
+    "checkedAt": "2026-10-18T09:04:38.929Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2200,7 +2226,7 @@
     "favicon": "https://www.x-fm.ro/images/logo_xfm.png",
     "homepage": "https://www.x-fm.ro/",
     "stationUuid": "7ebc0879-0bc8-4a31-9f13-e01d5a593d94",
-    "checkedAt": "2026-10-17T08:53:57.775Z",
+    "checkedAt": "2026-10-18T09:04:38.991Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2219,7 +2245,7 @@
     "favicon": "https://radioenergyfm.com/sitepad-data/uploads/2026/07/cropped-icon-192x192.png",
     "homepage": "https://radioenergyfm.com/deep/",
     "stationUuid": "2f5a5628-1b99-49e9-bb5c-b58b6d1dc2ff",
-    "checkedAt": "2026-10-17T08:53:58.194Z",
+    "checkedAt": "2026-10-18T09:04:39.542Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2240,7 +2266,7 @@
     "favicon": null,
     "homepage": "https://pmainfo.radio12345.com/",
     "stationUuid": "0c59fdc7-530f-4029-9312-badb15109efa",
-    "checkedAt": "2026-10-17T08:53:58.367Z",
+    "checkedAt": "2026-10-18T09:04:39.851Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2259,7 +2285,7 @@
     "favicon": "https://www.radiogaga.ro/wp-content/themes/sounder-child/images/GaGa_Logo_DISCO-CLASSIC.jpg",
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "d3608647-cc42-4433-9b06-b305dddd4128",
-    "checkedAt": "2026-10-17T08:53:58.512Z",
+    "checkedAt": "2026-10-18T09:04:39.942Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2280,7 +2306,7 @@
     "favicon": "https://play-lh.googleusercontent.com/ypVb0U7-YUPC3JqDyC9vEeeNNWxTxXVPeFZPLwMcVuUXrYFx2xJQxq3jBsyu8Dd1WQQ=w240-h480",
     "homepage": "https://www.untold.com/ro",
     "stationUuid": "44ced508-4a92-43ce-aeae-74e496fb4b78",
-    "checkedAt": "2026-10-17T08:53:59.081Z",
+    "checkedAt": "2026-10-18T09:04:40.711Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2299,7 +2325,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-drumandbass/",
     "stationUuid": "c3b21b05-322b-4c78-8d4d-fceb0a2b52c2",
-    "checkedAt": "2026-10-17T08:53:59.220Z",
+    "checkedAt": "2026-10-18T09:04:40.944Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2319,7 +2345,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-dubstep/",
     "stationUuid": "712f95b4-eaff-48a9-af6f-fc64c46d5ffe",
-    "checkedAt": "2026-10-17T08:53:59.343Z",
+    "checkedAt": "2026-10-18T09:04:41.038Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2338,7 +2364,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "042a0fd6-e9f5-45af-abf1-628c0ff27c39",
-    "checkedAt": "2026-10-17T08:53:59.717Z",
+    "checkedAt": "2026-10-18T09:04:41.189Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2357,7 +2383,7 @@
     "favicon": "https://ebsradio.ro/stream/img/stream-electro.png",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "a86e2000-1958-4bd3-965d-1ba8881cdc8f",
-    "checkedAt": "2026-10-17T08:53:59.934Z",
+    "checkedAt": "2026-10-18T09:04:41.460Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2379,7 +2405,7 @@
     "favicon": "https://www.radiounirea.ro/wp-content/uploads/2025/07/radiounirea-fm-logo-2025.jpg",
     "homepage": "https://www.radiounirea.ro/",
     "stationUuid": "d47606cd-4b23-4e90-a879-a39a7f1710e9",
-    "checkedAt": "2026-10-17T08:54:00.026Z",
+    "checkedAt": "2026-10-18T09:04:41.643Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2401,7 +2427,7 @@
     "favicon": "https://static.wixstatic.com/media/afff71_463f41819a67472587d781fce01e63c9~mv2.jpg/v1/fill/w_218,h_223,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/afff71_463f41819a67472587d781fce01e63c9~mv2.jpg",
     "homepage": "https://szekelyradio.wixsite.com/szekelyradio",
     "stationUuid": "283325b9-4641-4d07-8d45-8b8843191c75",
-    "checkedAt": "2026-10-17T08:54:00.154Z",
+    "checkedAt": "2026-10-18T09:04:42.068Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2422,7 +2448,7 @@
     "favicon": "https://www.paprikaradio.ro/themes/ketikidis-octobercms-success/assets/images/logo_shadow6.png",
     "homepage": "http://www.paprikaradio.ro/",
     "stationUuid": "57dc798e-fa66-4850-a08f-4d1a274e4f12",
-    "checkedAt": "2026-10-17T08:54:00.419Z",
+    "checkedAt": "2026-10-18T09:04:42.552Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2444,7 +2470,7 @@
     "favicon": "http://szekelyradio.top/foto/szekely.jpeg",
     "homepage": "http://szekelyradio.top/",
     "stationUuid": "30a18245-32ba-423f-b495-cd312480638c",
-    "checkedAt": "2026-10-17T08:54:01.053Z",
+    "checkedAt": "2026-10-18T09:04:43.447Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2465,7 +2491,7 @@
     "favicon": "https://play-lh.googleusercontent.com/folNvnoQ_b78PSueNJzg7K5w2iiL3lvPJAP-bkGwOMZNTKjJp51yMwdzWG1nI4Q8vK0=w240-h480",
     "homepage": "https://ssl.kenhost.ro:8010/stream",
     "stationUuid": "3bd66923-29f0-4e79-b56f-ec13149cef60",
-    "checkedAt": "2026-10-17T08:54:01.454Z",
+    "checkedAt": "2026-10-18T09:04:46.781Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2486,7 +2512,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "dd7585d5-9673-4dcb-a960-ea9c953a9bee",
-    "checkedAt": "2026-10-17T08:54:01.463Z",
+    "checkedAt": "2026-10-18T09:04:46.865Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2507,7 +2533,7 @@
     "favicon": "https://radiodacia.ro/wp-content/uploads/2024/01/cropped-logo512.jpg",
     "homepage": "https://radiodacia.ro/",
     "stationUuid": "9b59dbc1-799e-4a00-975c-db68454b1794",
-    "checkedAt": "2026-10-17T08:54:01.493Z",
+    "checkedAt": "2026-10-18T09:04:46.956Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2528,7 +2554,7 @@
     "favicon": "https://radiowanda.ro/images/1024/22180258/cropped-1000018725-ijqq0wqNxkgHavuJQ4sZpQ.png",
     "homepage": "https://radiowanda.ro/",
     "stationUuid": "0ee5e4d2-4ae2-406b-abee-032ad54bef96",
-    "checkedAt": "2026-10-17T08:54:01.858Z",
+    "checkedAt": "2026-10-18T09:04:47.485Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2548,7 +2574,7 @@
     "favicon": "https://scontent.fotp3-3.fna.fbcdn.net/v/t39.30808-1/656366163_1570961888052844_658249108253755036_n.jpg?stp=c154.432.1136.1136a_dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=mYsvpVvnzDcQ7kNvwFstBZY&_nc_oc=Adol3-JAgV_Ux-9dAyjbu1rdQoibI1NncrPC0QuwFFZ02t2D1-yHIOGfRUdmMq2QNlk8WouwYqwP7ZR7Vm_6jMZs&_nc_zt=24&_nc_ht=scontent.fotp3-3.fna&_nc_gid=a57Fj-8SsrZ2riOxXkcOdA&_nc_ss=7b289&oh=00_Af7W2GuvCWJkUGEtSNERjBreg9xLg4cNLLvO0vxkLNANDw&oe=6A0F96AA",
     "homepage": "https://rvecluj.ro/",
     "stationUuid": "677cf3c7-9ce7-445b-916a-38c660d303dd",
-    "checkedAt": "2026-10-17T08:54:01.974Z",
+    "checkedAt": "2026-10-18T09:04:47.589Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2572,7 +2598,7 @@
     "favicon": "https://www.radionoise.ro/wp-content/uploads/2022/07/faviconnew.png",
     "homepage": "https://www.radionoise.ro/",
     "stationUuid": "a3b2c6a4-9a2f-4766-b439-164986932e95",
-    "checkedAt": "2026-10-17T08:54:02.469Z",
+    "checkedAt": "2026-10-18T09:04:47.977Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2591,7 +2617,7 @@
     "favicon": "https://media.smartradio.ro/2020/07/move.png",
     "homepage": "https://www.smartradio.ro/radio/move/",
     "stationUuid": "63353098-69ce-44a6-aa21-c00ca1d1f0dd",
-    "checkedAt": "2026-10-17T08:54:02.519Z",
+    "checkedAt": "2026-10-18T09:04:48.105Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2610,7 +2636,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "d185daea-6bf2-4835-8396-9bf833ee0303",
-    "checkedAt": "2026-10-17T08:54:02.720Z",
+    "checkedAt": "2026-10-18T09:04:48.249Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2630,7 +2656,7 @@
     "favicon": null,
     "homepage": "http://radiobaditapopular.ro/",
     "stationUuid": "b5f187a1-a865-498e-9b5d-0dc43218716a",
-    "checkedAt": "2026-10-17T08:54:02.808Z",
+    "checkedAt": "2026-10-18T09:04:48.344Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2652,7 +2678,7 @@
     "favicon": null,
     "homepage": "https://radioetnomania.com/",
     "stationUuid": "0d7cab56-57bb-46d0-bc83-335cdc3dc7e4",
-    "checkedAt": "2026-10-17T08:54:02.814Z",
+    "checkedAt": "2026-10-18T09:04:48.373Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2671,10 +2697,33 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "2d6f60f0-2ba0-406f-b43f-2e946bbd63c7",
-    "checkedAt": "2026-10-17T08:54:03.137Z",
+    "checkedAt": "2026-10-18T09:04:48.542Z",
     "status": 429,
     "contentType": "text/html",
     "lastFailure": "HTTP 429"
+  },
+  {
+    "name": "Radio Veselia Folclor",
+    "url": "http://asculta.radioveseliafolclor.com:8232/;",
+    "country": "RO",
+    "type": "folk",
+    "tags": [
+      "folk",
+      "muzică de petrecere",
+      "muzică populară",
+      "petrecere",
+      "populară"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "romanian",
+    "favicon": null,
+    "homepage": "https://www.radioveseliafolclor.com/",
+    "stationUuid": "dccc2a60-30c2-482f-a3c7-f01b15682c11",
+    "checkedAt": "2026-10-18T09:04:48.738Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Smart Radio -Smart Champs-Elysees",
@@ -2690,7 +2739,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/radio.png",
     "homepage": "https://www.smartradio.ro/",
     "stationUuid": "09efda48-4f3a-4df6-88f7-a9022f12050b",
-    "checkedAt": "2026-10-17T08:54:03.571Z",
+    "checkedAt": "2026-10-18T09:04:48.861Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2710,7 +2759,7 @@
     "favicon": "https://ebsradio.ro/wp-content/themes/ebs/favicons/apple-touch-icon.png",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "8f3e4883-76cd-421e-a77b-770a8c19ee18",
-    "checkedAt": "2026-10-17T08:54:03.647Z",
+    "checkedAt": "2026-10-18T09:04:48.977Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2729,10 +2778,33 @@
     "favicon": "https://media.smartradio.ro/2019/12/groovy-3.png",
     "homepage": "https://www.smartradio.ro/radio/groovy/",
     "stationUuid": "a413d8e0-3b71-4775-8e6d-525cc7635752",
-    "checkedAt": "2026-10-17T08:54:03.863Z",
+    "checkedAt": "2026-10-18T09:04:49.180Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Boom Gold",
+    "url": "https://stream.radioboom.ro/listen/boom_gold/radio.mp3",
+    "country": "RO",
+    "type": "gold",
+    "tags": [
+      "gold",
+      "hits",
+      "oldies",
+      "pop",
+      "retro"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "english,romanian",
+    "favicon": "https://stream.radioboom.ro/static/uploads/boom_gold/album_art.1711440856.jpg",
+    "homepage": "https://radioboom.ro/",
+    "stationUuid": "be67303b-4ac1-41e9-af0f-5b18fd3a43cc",
+    "checkedAt": "2026-10-18T09:04:49.346Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Rádió GaGa Gold",
@@ -2749,7 +2821,7 @@
     "favicon": "https://www.radiogaga.ro/wp-content/themes/sounder-child/images/GaGa_Logo_GOLD.jpg",
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "1a2c9de3-ae45-4f09-b7d6-0c8a55bd6f97",
-    "checkedAt": "2026-10-17T08:54:04.051Z",
+    "checkedAt": "2026-10-18T09:04:49.396Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2772,7 +2844,7 @@
     "favicon": "https://romanticfm.ro/img/default-album-cover.jpg",
     "homepage": "https://romanticfm.ro/",
     "stationUuid": "d7e2cfbb-d145-49e8-931b-64f1d427c65e",
-    "checkedAt": "2026-10-17T08:54:04.283Z",
+    "checkedAt": "2026-10-18T09:04:49.605Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2792,7 +2864,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-urban/",
     "stationUuid": "18efae6f-cda4-4ecf-9f36-0f6d35a5af4c",
-    "checkedAt": "2026-10-17T08:54:05.086Z",
+    "checkedAt": "2026-10-18T09:04:50.138Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2813,7 +2885,7 @@
     "favicon": "https://ebsradio.ro/stream/img/stream-music.png",
     "homepage": "https://www.ebsradio.ro/",
     "stationUuid": "841a24b5-45b0-4f1c-9f6b-31c4bfb64ce3",
-    "checkedAt": "2026-10-17T08:54:05.276Z",
+    "checkedAt": "2026-10-18T09:04:50.338Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2833,7 +2905,7 @@
     "favicon": null,
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "cda8a4e5-28e6-4275-9efd-0c34ddfd2e84",
-    "checkedAt": "2026-10-17T08:54:05.305Z",
+    "checkedAt": "2026-10-18T09:04:50.373Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2852,7 +2924,26 @@
     "favicon": null,
     "homepage": "https://radioalpin.ro/",
     "stationUuid": "f053e780-1227-4e2a-bdb4-1ccff192fd02",
-    "checkedAt": "2026-10-17T08:54:05.581Z",
+    "checkedAt": "2026-10-18T09:04:50.650Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio BOOM Gold -Buzău, Rm. Sarat 96,7 FM",
+    "url": "https://stream.radioboom.ro:8500/radio.mp3",
+    "country": "RO",
+    "type": "hits",
+    "tags": [
+      "hits"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "română",
+    "favicon": "https://live.radioboom.ro/generic_song-gold.png",
+    "homepage": "https://stream.radioboom.ro/public/boom_gold",
+    "stationUuid": "7f6ea09c-9176-4bf7-aa37-e38858393883",
+    "checkedAt": "2026-10-18T09:04:50.659Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2871,7 +2962,7 @@
     "favicon": null,
     "homepage": "https://radiorot.ro/",
     "stationUuid": "f4f20351-0552-42d6-989e-981b76c0c368",
-    "checkedAt": "2026-10-17T08:54:05.758Z",
+    "checkedAt": "2026-10-18T09:04:50.775Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2892,7 +2983,7 @@
     "favicon": "https://radiovocescampi.ro/wp-content/uploads/2021/12/LOGO-DESK.png",
     "homepage": "https://radiovocescampi.ro/",
     "stationUuid": "879a826f-a2a8-49d7-ba7b-51cf7c39a4cf",
-    "checkedAt": "2026-10-17T08:54:05.858Z",
+    "checkedAt": "2026-10-18T09:04:50.780Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2911,7 +3002,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/altro.png",
     "homepage": "https://www.smartradio.ro/radio/altro/",
     "stationUuid": "a48631ce-dfcd-4635-b2a7-af632ee83cd0",
-    "checkedAt": "2026-10-17T08:54:05.932Z",
+    "checkedAt": "2026-10-18T09:04:50.966Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2932,7 +3023,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/trending.png",
     "homepage": "https://www.smartradio.ro/radio/trend/",
     "stationUuid": "55956ca8-db3a-4bac-9664-955a30c0126a",
-    "checkedAt": "2026-10-17T08:54:05.938Z",
+    "checkedAt": "2026-10-18T09:04:51.062Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2954,7 +3045,7 @@
     "favicon": "https://radiovocescampi.ro/wp-content/uploads/2021/12/LOGO-DESK.png",
     "homepage": "https://radiovocescampi.ro/",
     "stationUuid": "f6ec66f4-3ffc-45b6-91a6-478b7ded744f",
-    "checkedAt": "2026-10-17T08:54:06.110Z",
+    "checkedAt": "2026-10-18T09:04:51.282Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2976,7 +3067,7 @@
     "favicon": "https://radiovocescampi.ro/wp-content/uploads/2021/12/LOGO-DESK.png",
     "homepage": "https://radiovocescampi.ro/",
     "stationUuid": "e1f18752-2b61-4bd2-8b19-277c144031d3",
-    "checkedAt": "2026-10-17T08:54:06.121Z",
+    "checkedAt": "2026-10-18T09:04:51.290Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2997,7 +3088,7 @@
     "favicon": "https://www.radioexpert.net/radio-logo/romania/radio-nnl-251-curtea-de-arge%C8%99-romania-320.jpg",
     "homepage": "https://www.radioexpert.net/radio-nnl-online-radio-curtea-de-arge%C8%99/",
     "stationUuid": "e514a95f-c6d6-455d-8439-2cb83f7b6d02",
-    "checkedAt": "2026-10-17T08:54:06.159Z",
+    "checkedAt": "2026-10-18T09:04:51.360Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3016,7 +3107,7 @@
     "favicon": "https://ebsradio.ro/stream/img/stream-magyar-zene.png",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "fdaf940d-3c3c-4084-83f4-8d257f31f2ed",
-    "checkedAt": "2026-10-17T08:54:06.191Z",
+    "checkedAt": "2026-10-18T09:04:51.373Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3035,7 +3126,7 @@
     "favicon": null,
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "96ec39bb-5fc6-4e2a-80c1-e76f45747d34",
-    "checkedAt": "2026-10-17T08:54:06.194Z",
+    "checkedAt": "2026-10-18T09:04:51.381Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3054,7 +3145,7 @@
     "favicon": "https://play-lh.googleusercontent.com/rW1UDPKMMmZBFU4Hp2MCRmsfkTqcsD3kGZoy87LI_MFYsvM22lsGEyeNMHApTA7iQKY",
     "homepage": "https://www.radiotequila.ro/",
     "stationUuid": "808b4770-e822-42c9-bbb4-95c00dfbbdf1",
-    "checkedAt": "2026-10-17T08:54:06.297Z",
+    "checkedAt": "2026-10-18T09:04:51.681Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3074,7 +3165,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "3d8a2e32-99dc-499f-9e94-4d4cbf105580",
-    "checkedAt": "2026-10-17T08:54:06.300Z",
+    "checkedAt": "2026-10-18T09:04:51.764Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3093,7 +3184,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "d36601c5-630f-41fd-a315-2d928fe1f201",
-    "checkedAt": "2026-10-17T08:54:06.329Z",
+    "checkedAt": "2026-10-18T09:04:51.948Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3112,7 +3203,7 @@
     "favicon": null,
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "a472e7a2-36f7-48a2-a497-7c6c0daa2c3d",
-    "checkedAt": "2026-10-17T08:54:06.516Z",
+    "checkedAt": "2026-10-18T09:04:52.275Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3131,7 +3222,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "3486ec0b-c679-4da3-bb29-b8e794c88f70",
-    "checkedAt": "2026-10-17T08:54:06.520Z",
+    "checkedAt": "2026-10-18T09:04:52.360Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3150,7 +3241,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-jazz/",
     "stationUuid": "f207d129-cdbb-435a-94a1-8d63c1ae920a",
-    "checkedAt": "2026-10-17T08:54:06.545Z",
+    "checkedAt": "2026-10-18T09:04:52.374Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3170,7 +3261,7 @@
     "favicon": "https://radiodacia.ro/wp-content/uploads/2024/01/cropped-logo512.jpg",
     "homepage": "https://radiodacia.ro/",
     "stationUuid": "da5e3b42-6ab2-42cb-bf77-8040a62ca9ac",
-    "checkedAt": "2026-10-17T08:54:06.575Z",
+    "checkedAt": "2026-10-18T09:04:53.379Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3189,7 +3280,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-kpop/",
     "stationUuid": "08bc2047-f307-4f69-abc4-9972b805633f",
-    "checkedAt": "2026-10-17T08:54:06.837Z",
+    "checkedAt": "2026-10-18T09:04:53.763Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3208,7 +3299,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-latino/",
     "stationUuid": "609658e3-208b-40b3-a27e-c8f38abf24c0",
-    "checkedAt": "2026-10-17T08:54:06.926Z",
+    "checkedAt": "2026-10-18T09:04:53.957Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3230,7 +3321,7 @@
     "favicon": null,
     "homepage": "https://radio-crasna.blogspot.com/?m=0",
     "stationUuid": "8975165c-1d1c-4011-a741-b836f62a3726",
-    "checkedAt": "2026-10-17T08:54:06.962Z",
+    "checkedAt": "2026-10-18T09:04:53.962Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3251,31 +3342,10 @@
     "favicon": "https://www.radiotargujiu.ro/wp-content/uploads/2024/10/logo-wide-rtj.png",
     "homepage": "https://www.radiotargujiu.ro/",
     "stationUuid": "d8152a96-a840-4426-9f6b-e014523d7385",
-    "checkedAt": "2026-10-17T08:54:07.160Z",
+    "checkedAt": "2026-10-18T09:04:54.155Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Viva FM -statia Pașcani 103.9 FM",
-    "url": "https://cloud.radiosonicpanel.ro:8010/stream",
-    "country": "RO",
-    "type": "local",
-    "tags": [
-      "local",
-      "local news",
-      "music"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "romania",
-    "favicon": "https://static.wikia.nocookie.net/logopedia/images/6/60/Viva_FM_2011_Alternate.png",
-    "homepage": "https://vivafm.ro/",
-    "stationUuid": "859a3a67-8a00-4e1e-a75f-54ee26ac704f",
-    "checkedAt": "2026-10-17T08:54:07.396Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Rádió GaGa Csíkszék",
@@ -3293,7 +3363,7 @@
     "favicon": null,
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "e0261ebb-d93a-4c19-a055-6faa1bd3dd67",
-    "checkedAt": "2026-10-17T08:54:07.852Z",
+    "checkedAt": "2026-10-18T09:04:55.491Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3314,7 +3384,7 @@
     "favicon": null,
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "d7634419-597a-48a2-bdc9-4ddd150201dc",
-    "checkedAt": "2026-10-17T08:54:07.863Z",
+    "checkedAt": "2026-10-18T09:04:55.494Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3335,7 +3405,7 @@
     "favicon": null,
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "da3fa670-2528-4b41-8632-b1011198c8c7",
-    "checkedAt": "2026-10-17T08:54:07.890Z",
+    "checkedAt": "2026-10-18T09:04:55.549Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3358,7 +3428,7 @@
     "favicon": "https://www.radiogaga.ro/favicon.ico",
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "135c2f61-022d-4bfd-8300-14ac06e8a063",
-    "checkedAt": "2026-10-17T08:54:07.978Z",
+    "checkedAt": "2026-10-18T09:04:55.681Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3381,7 +3451,7 @@
     "favicon": null,
     "homepage": "https://www.radiogaga.ro/",
     "stationUuid": "223a60ac-3e31-41a1-888f-cd4d3ed910ff",
-    "checkedAt": "2026-10-17T08:54:07.987Z",
+    "checkedAt": "2026-10-18T09:04:55.688Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3402,31 +3472,10 @@
     "favicon": "https://radiosibiu.ro/wp-content/uploads/2020/07/radio_sibiu-768x540.png",
     "homepage": "https://radiosibiu.ro/",
     "stationUuid": "8b732d36-178f-4018-b42c-227d5da6267d",
-    "checkedAt": "2026-10-17T08:54:08.054Z",
+    "checkedAt": "2026-10-18T09:04:55.751Z",
     "status": 521,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 521"
-  },
-  {
-    "name": "Sighet FM -Sighetu Marmației 89.3 FM",
-    "url": "https://radio.zifer.ro/SighetFM",
-    "country": "RO",
-    "type": "local news",
-    "tags": [
-      "local news",
-      "local radio",
-      "music"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "romania",
-    "favicon": "https://sighetfm.ro/wp-content/uploads/2024/03/LOGO-RADIO.png",
-    "homepage": "https://sighetfm.ro/",
-    "stationUuid": "8bf51886-555a-4ac7-9ae6-b16ef3757f12",
-    "checkedAt": "2026-10-17T08:54:08.080Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Atlas21 (Atlas FM) -Alba Iulia 99,7 FM",
@@ -3445,7 +3494,7 @@
     "favicon": "https://atlas21.ro/wp-content/uploads/2025/04/logo-atlas21-300x89.png",
     "homepage": "https://atlas21.ro/",
     "stationUuid": "a6e60124-cfe4-4d41-90a1-676c3e3548f1",
-    "checkedAt": "2026-10-17T08:54:09.092Z",
+    "checkedAt": "2026-10-18T09:04:57.080Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3465,7 +3514,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "adcd9e09-b022-4049-90d7-ee0b9d14e546",
-    "checkedAt": "2026-10-17T08:54:09.160Z",
+    "checkedAt": "2026-10-18T09:04:57.187Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3486,7 +3535,7 @@
     "favicon": "https://brandingradio.com/wp-content/uploads/logos/radio-calarasi-press.png",
     "homepage": "https://calarasipress.ro/lansam-radio-calarasi-press-din-martie-suntem-live-nonstop-online/%20%20%20https://brandingradio.com/radiocalarasipress/",
     "stationUuid": "cde9fc59-ce06-4160-a85d-27c87e4fef58",
-    "checkedAt": "2026-10-17T08:54:09.482Z",
+    "checkedAt": "2026-10-18T09:04:57.976Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3507,7 +3556,7 @@
     "favicon": "https://radio-killer.ro/wp-content/uploads/2024/05/cropped-423194686_966152755062131_755612300964353990_n.jpg",
     "homepage": "https://radio-killer.ro/",
     "stationUuid": "200c77e9-e7f6-4bcd-adee-20d6061691f8",
-    "checkedAt": "2026-10-17T08:54:09.746Z",
+    "checkedAt": "2026-10-18T09:04:58.661Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3528,10 +3577,31 @@
     "favicon": "https://files.cdn-files-a.com/uploads/6878586/400_66dbf7e00ffe0.jpg",
     "homepage": "https://radio-killer.ro/",
     "stationUuid": "133fdf37-9d5a-45fc-900d-743f1a5b11a3",
-    "checkedAt": "2026-10-17T08:54:09.769Z",
+    "checkedAt": "2026-10-18T09:04:58.877Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio Transilvania - Turda 89,9 FM",
+    "url": "https://stream2.radiotransilvania.ro/Cluj",
+    "country": "RO",
+    "type": "local radio",
+    "tags": [
+      "local radio",
+      "music",
+      "news"
+    ],
+    "codec": "MP3",
+    "bitrate": 160,
+    "language": "română",
+    "favicon": "https://radiotransilvania.ro/images/transi/logo-green.png",
+    "homepage": "https://radiotransilvania.ro/helyseg/11/turda",
+    "stationUuid": "d57004f1-3258-4908-a979-853ba61aa450",
+    "checkedAt": "2026-10-18T09:04:59.382Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "EBS Radio Lounge -Cluj Napoca",
@@ -3547,7 +3617,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "acb77ef0-7f24-4d96-86ac-bc1681c55ccc",
-    "checkedAt": "2026-10-17T08:54:10.040Z",
+    "checkedAt": "2026-10-18T09:04:59.954Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3566,7 +3636,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/lounge.png",
     "homepage": "https://www.smartradio.ro/radio/lounge/",
     "stationUuid": "ebd24ba3-1f7b-4e81-8608-36ceb8275927",
-    "checkedAt": "2026-10-17T08:54:10.044Z",
+    "checkedAt": "2026-10-18T09:05:00.072Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3586,28 +3656,7 @@
     "favicon": "https://play-lh.googleusercontent.com/u2m4oVC_mtcPP123T0Xy4CEzZZxTXuBoEoj_pNn7rueFef7EXZV45hR_3kARujlhzLI=w240-h480",
     "homepage": "https://xat.com/Balamuc_FM",
     "stationUuid": "ffefe9bc-b89a-476e-b05e-071636bb0533",
-    "checkedAt": "2026-10-17T08:54:10.277Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Capital FM - Manele",
-    "url": "http://manele.capitalfm.ro:8020/;",
-    "country": "RO",
-    "type": "manele",
-    "tags": [
-      "manele",
-      "manele și petrecere",
-      "petrecere"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "romanian",
-    "favicon": null,
-    "homepage": "https://capitalfm.ro/",
-    "stationUuid": "56322f1e-0b86-4e1f-8fef-5b983e7eddfc",
-    "checkedAt": "2026-10-17T08:54:10.320Z",
+    "checkedAt": "2026-10-18T09:05:00.861Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3626,7 +3675,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-manele/",
     "stationUuid": "6341dc7e-8eff-485e-91de-045cfbb85974",
-    "checkedAt": "2026-10-17T08:54:10.570Z",
+    "checkedAt": "2026-10-18T09:05:01.971Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3646,31 +3695,10 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-trapanele/",
     "stationUuid": "96bad4fc-987b-48d1-b334-fbe19a70e449",
-    "checkedAt": "2026-10-17T08:54:10.586Z",
+    "checkedAt": "2026-10-18T09:05:02.066Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio 1 Manele",
-    "url": "http://radio1manele.no-ip.org:8000/;",
-    "country": "RO",
-    "type": "manele",
-    "tags": [
-      "manele",
-      "manele și petrecere",
-      "muzică de petrecere"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "romanian",
-    "favicon": "https://cdn.onlineradiobox.com/img/l/5/65075.v6.png",
-    "homepage": "https://radiounumanele.ro/",
-    "stationUuid": "3340862a-169e-4dd8-bc81-fa75c20d2e81",
-    "checkedAt": "2026-10-17T08:54:10.615Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Claudia",
@@ -3688,7 +3716,7 @@
     "favicon": "https://www.facebook.com/favicon.ico",
     "homepage": "https://www.facebook.com/www.ClaudiaFm.ml/",
     "stationUuid": "d6e588dc-3380-4a83-84a8-4d1f0f287611",
-    "checkedAt": "2026-10-17T08:54:10.691Z",
+    "checkedAt": "2026-10-18T09:05:02.540Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3707,50 +3735,7 @@
     "favicon": "https://radioem.ro/assets/radioem_logo.png",
     "homepage": "https://radioem.ro/",
     "stationUuid": "bcbb78ae-a5b5-428f-bc9d-f548d1dcd342",
-    "checkedAt": "2026-10-17T08:54:10.722Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Radio Party București",
-    "url": "http://asculta.radiopartybucuresti.ro:8050/;",
-    "country": "RO",
-    "type": "manele",
-    "tags": [
-      "manele",
-      "manele si petrecere",
-      "manele și petrecere",
-      "petrecere și manele"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "romanian",
-    "favicon": "http://radiopartybucuresti.ro/wp-content/uploads/2019/04/logoborder.png",
-    "homepage": "https://radiopartybucuresti.ro/",
-    "stationUuid": "a84c4b0c-f039-4f2a-a381-018522632c96",
-    "checkedAt": "2026-10-17T08:54:11.201Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Radio Super Manele",
-    "url": "http://manele.capitalfm.ro:8020/stream",
-    "country": "RO",
-    "type": "manele",
-    "tags": [
-      "manele",
-      "manele noi",
-      "manele și petrecere"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "romanian",
-    "favicon": null,
-    "homepage": "http://radiosuper.ro/",
-    "stationUuid": "e2019de4-34b0-40f2-b09a-5a22b0d6eb10",
-    "checkedAt": "2026-10-17T08:54:11.335Z",
+    "checkedAt": "2026-10-18T09:05:02.683Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3770,7 +3755,7 @@
     "favicon": "https://radioplay.ro/wp-content/uploads/2019/04/rpmare-180x180.png",
     "homepage": "https://radioplay.ro/",
     "stationUuid": "be6569af-5eeb-4131-be73-c3dadc2eb76d",
-    "checkedAt": "2026-10-17T08:54:11.484Z",
+    "checkedAt": "2026-10-18T09:05:05.286Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3792,7 +3777,7 @@
     "favicon": "https://www.radiostres.com/templates/music-club/images/logo.png",
     "homepage": "https://www.radiostres.com/",
     "stationUuid": "79bfb775-5c61-42a1-b76e-1f9355dba0e3",
-    "checkedAt": "2026-10-17T08:54:12.278Z",
+    "checkedAt": "2026-10-18T09:05:05.485Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3811,10 +3796,29 @@
     "favicon": "https://www.radiotequila.ro/wp-content/uploads/2026/02/new-logo.png",
     "homepage": "https://www.radiotequila.ro/live-tv/",
     "stationUuid": "f732b809-896f-4e1c-bb46-25d7ca693f47",
-    "checkedAt": "2026-10-17T08:54:13.478Z",
+    "checkedAt": "2026-10-18T09:05:09.038Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Trapanele Radio",
+    "url": "http://live.radiotrapanele.ro:8132/stream",
+    "country": "RO",
+    "type": "manele",
+    "tags": [
+      "manele"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "romania",
+    "favicon": "https://www.radiotrapanele.ro/wp-content/uploads/2021/09/cropped-RadioTrapanele-1.png",
+    "homepage": "https://www.radiotrapanele.ro/",
+    "stationUuid": "4bfec7cd-4992-4ddc-993d-fae3d23f2664",
+    "checkedAt": "2026-10-18T09:05:09.178Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Wanda Radio - Radio Wanda Manele",
@@ -3830,7 +3834,26 @@
     "favicon": "https://radiowanda.ro/images/1024/22180258/cropped-1000018725-ijqq0wqNxkgHavuJQ4sZpQ.png",
     "homepage": "https://radiowanda.ro/",
     "stationUuid": "78f188d0-015c-4a4f-9585-47556f7b8670",
-    "checkedAt": "2026-10-17T08:54:18.963Z",
+    "checkedAt": "2026-10-18T09:05:09.380Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio 1 Manele",
+    "url": "http://radio1manele.no-ip.org:8000/",
+    "country": "RO",
+    "type": "manele și petrecere",
+    "tags": [
+      "manele și petrecere"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radiounumanele.ro/",
+    "stationUuid": "56fc68d7-3849-4c6d-8ebf-d67936b8f238",
+    "checkedAt": "2026-10-18T09:05:09.590Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3850,32 +3873,10 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-metal/",
     "stationUuid": "cd97fc7b-7b13-49a6-8eec-aa7e07fb8957",
-    "checkedAt": "2026-10-17T08:54:19.336Z",
+    "checkedAt": "2026-10-18T09:05:09.745Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Damblagii",
-    "url": "https://radio.rodnuk.com/hls/radio_damblagii/live.m3u8",
-    "country": "RO",
-    "type": "mix",
-    "tags": [
-      "mix",
-      "music",
-      "pop",
-      "romanian"
-    ],
-    "codec": "AAC",
-    "bitrate": 52,
-    "language": "romanian",
-    "favicon": "https://radiodamblagii.com/logo.png",
-    "homepage": "https://radiodamblagii.com/",
-    "stationUuid": "60cb68ff-09d5-4c41-a09e-07b6c87ccb4f",
-    "checkedAt": "2026-10-17T08:54:19.545Z",
-    "status": 530,
-    "contentType": "text/html; charset=UTF-8",
-    "lastFailure": "HTTP 530"
   },
   {
     "name": "Smart Radio",
@@ -3891,7 +3892,7 @@
     "favicon": "https://www.smartradio.ro/wp-content/themes/smart-radio/apple-icon-120x120.png",
     "homepage": "https://www.smartradio.ro/",
     "stationUuid": "b92d9907-2880-4a99-9052-8d4792133506",
-    "checkedAt": "2026-10-17T08:54:19.586Z",
+    "checkedAt": "2026-10-18T09:05:10.049Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3912,7 +3913,7 @@
     "favicon": "https://ebsradio.ro/stream/img/stream-movies-soundtrack.png",
     "homepage": "https://www.ebsradio.ro/",
     "stationUuid": "db61d84c-620c-4e56-b262-cbbe0909c828",
-    "checkedAt": "2026-10-17T08:54:19.653Z",
+    "checkedAt": "2026-10-18T09:05:10.150Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3931,7 +3932,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "9c89c403-b0d1-4d4c-8922-ff0dd1180341",
-    "checkedAt": "2026-10-17T08:54:19.663Z",
+    "checkedAt": "2026-10-18T09:05:10.153Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -3948,7 +3949,7 @@
     "favicon": null,
     "homepage": "http://www.radiodoina.ro/",
     "stationUuid": "5e0d918f-c682-11e8-a498-52543be04c81",
-    "checkedAt": "2026-10-17T08:54:20.794Z",
+    "checkedAt": "2026-10-18T09:05:11.468Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3965,7 +3966,7 @@
     "favicon": "https://electriccastle.ro/assets/img/radio/ec-radio-logo.png",
     "homepage": "https://electriccastle.ro/radio",
     "stationUuid": "23096972-ec87-45ae-883e-e5155774cc3c",
-    "checkedAt": "2026-10-17T08:54:20.867Z",
+    "checkedAt": "2026-10-18T09:05:11.617Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3982,7 +3983,7 @@
     "favicon": "https://grig.blog/favicon.ico",
     "homepage": "https://grig.blog/radio.html",
     "stationUuid": "bf694f65-8168-4170-ba62-a5f61a3fb912",
-    "checkedAt": "2026-10-17T08:54:21.199Z",
+    "checkedAt": "2026-10-18T09:05:11.763Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3999,7 +4000,7 @@
     "favicon": "https://marinandreassebastian.lovestoblog.com/wp/wp-content/uploads/2026/05/cropped-cropped-WhatsApp-Image-2026-05-16-at-15.01.15-300x215.jpeg",
     "homepage": "https://marinandreassebastian.lovestoblog.com/wp/mas-vibe-radio-romania-3/",
     "stationUuid": "b76d4609-d84a-4f0a-9d13-8143ea00d9ad",
-    "checkedAt": "2026-10-17T08:54:21.531Z",
+    "checkedAt": "2026-10-18T09:05:12.176Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4016,7 +4017,7 @@
     "favicon": "https://www.radiomedias.ro/wp-content/uploads/2022/08/cropped-favicon-180x180.png",
     "homepage": "https://www.radiomedias.ro/",
     "stationUuid": "9dde386d-c681-11e8-a498-52543be04c81",
-    "checkedAt": "2026-10-17T08:54:21.568Z",
+    "checkedAt": "2026-10-18T09:05:12.213Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4033,7 +4034,7 @@
     "favicon": null,
     "homepage": "https://www.radioromance21.ro/",
     "stationUuid": "ef18816d-31b6-4e0f-9da5-6297244b0e53",
-    "checkedAt": "2026-10-17T08:54:21.693Z",
+    "checkedAt": "2026-10-18T09:05:12.546Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -4050,7 +4051,7 @@
     "favicon": "https://www.radiocolor.ro/wp-content/uploads/2020/06/color-cu-alb.png",
     "homepage": "https://radiocolor.ro/",
     "stationUuid": "53380b33-35e6-43c8-89b9-5c5d95327930",
-    "checkedAt": "2026-10-17T08:54:21.887Z",
+    "checkedAt": "2026-10-18T09:05:12.869Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4067,7 +4068,7 @@
     "favicon": "http://www.radiogaga.ro/favicon.ico",
     "homepage": "http://www.radiogaga.ro/",
     "stationUuid": "06749e9d-9412-498d-86f3-c9ebae5dc58f",
-    "checkedAt": "2026-10-17T08:54:22.601Z",
+    "checkedAt": "2026-10-18T09:05:13.498Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4084,7 +4085,7 @@
     "favicon": "https://hs1.radiolibertymp.ro/api/station/lmpphonk/art/376e5bb5a236f20263773979",
     "homepage": "https://hs1.radiolibertymp.ro/api/station/lmpphonk/art/376e5bb5a236f20263773979",
     "stationUuid": "fd7fbe29-9282-4ddf-9a8c-61505eba61c8",
-    "checkedAt": "2026-10-17T08:54:23.259Z",
+    "checkedAt": "2026-10-18T09:05:14.066Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4101,7 +4102,7 @@
     "favicon": null,
     "homepage": "https://radiolibertymp.ro/listen-phonk/",
     "stationUuid": "a384717a-40da-4bad-953c-0c0df3f09a50",
-    "checkedAt": "2026-10-17T08:54:23.288Z",
+    "checkedAt": "2026-10-18T09:05:14.136Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4118,7 +4119,7 @@
     "favicon": null,
     "homepage": "https://www.radiomedias.ro/",
     "stationUuid": "24fefecf-9324-11e8-a767-52543be04c81",
-    "checkedAt": "2026-10-17T08:54:23.374Z",
+    "checkedAt": "2026-10-18T09:05:14.352Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4135,7 +4136,7 @@
     "favicon": null,
     "homepage": "https://www.radionoise.ro/",
     "stationUuid": "33dbccf6-73be-4226-9024-a4e66525e828",
-    "checkedAt": "2026-10-17T08:54:24.436Z",
+    "checkedAt": "2026-10-18T09:05:16.762Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4152,7 +4153,7 @@
     "favicon": "https://www.radionoise.ro/wp-content/uploads/2026/07/Radio-Noise-We-Love-90s-Logo.png",
     "homepage": "https://www.radionoise.ro/",
     "stationUuid": "905fa7cf-9bb5-439d-a36d-c9797640fdaf",
-    "checkedAt": "2026-10-17T08:54:24.886Z",
+    "checkedAt": "2026-10-18T09:05:17.391Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4169,7 +4170,7 @@
     "favicon": null,
     "homepage": "https://rph.ro/",
     "stationUuid": "973c7c4e-745a-46bf-a4c9-fa21a515f7b3",
-    "checkedAt": "2026-10-17T08:54:25.073Z",
+    "checkedAt": "2026-10-18T09:05:17.571Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4186,7 +4187,7 @@
     "favicon": "https://radioprahova.ro/uploads/logo/logo-rph.png",
     "homepage": "https://radioprahova.ro/",
     "stationUuid": "d7348196-a6ad-4881-9c7a-8393306b2bed",
-    "checkedAt": "2026-10-17T08:54:25.081Z",
+    "checkedAt": "2026-10-18T09:05:17.576Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4203,7 +4204,7 @@
     "favicon": null,
     "homepage": "https://radiot.ro/",
     "stationUuid": "0efbb5f4-1236-478a-92ee-8cf84a017261",
-    "checkedAt": "2026-10-17T08:54:25.339Z",
+    "checkedAt": "2026-10-18T09:05:17.733Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4220,7 +4221,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "821143ce-1950-46b4-b17c-88192493661f",
-    "checkedAt": "2026-10-17T08:54:25.452Z",
+    "checkedAt": "2026-10-18T09:05:17.841Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4237,7 +4238,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "ab85d962-ff75-4dc3-80d3-f1f963f3d225",
-    "checkedAt": "2026-10-17T08:54:25.563Z",
+    "checkedAt": "2026-10-18T09:05:17.870Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4254,7 +4255,7 @@
     "favicon": "https://radiotvoltenita.ro/wp-content/uploads/2026/03/cropped-ChatGPT-Image-Mar-10-2026-08_36_57-PM.jpg",
     "homepage": "https://radiotvoltenita.ro/",
     "stationUuid": "92dcb071-1c89-4670-a8dd-74836998d840",
-    "checkedAt": "2026-10-17T08:54:25.797Z",
+    "checkedAt": "2026-10-18T09:05:18.069Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4271,7 +4272,7 @@
     "favicon": null,
     "homepage": "http://www.radiogaga.ro/",
     "stationUuid": "4289f487-dd42-4630-a135-9271121065cb",
-    "checkedAt": "2026-10-17T08:54:26.040Z",
+    "checkedAt": "2026-10-18T09:05:18.251Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4288,7 +4289,7 @@
     "favicon": "https://rockandmore.ro/wp-content/uploads/2026/03/logo-rock@more_header-2.png",
     "homepage": "https://www.rockandmore.ro/",
     "stationUuid": "f04651cd-3804-42df-8f14-4ac0ba60722f",
-    "checkedAt": "2026-10-17T08:54:26.267Z",
+    "checkedAt": "2026-10-18T09:05:18.340Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4305,7 +4306,7 @@
     "favicon": "https://www.sonafm.ro/logo.png",
     "homepage": "https://www.sonafm.ro/",
     "stationUuid": "bfc28e28-7e7d-4756-96ae-b3f97a039835",
-    "checkedAt": "2026-10-17T08:54:26.447Z",
+    "checkedAt": "2026-10-18T09:05:18.544Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -4322,7 +4323,7 @@
     "favicon": null,
     "homepage": "http://r.thetigerbeast.ovh/",
     "stationUuid": "b67e06ab-e7a1-43f4-91da-a7a5f42cdd47",
-    "checkedAt": "2026-10-17T08:54:26.806Z",
+    "checkedAt": "2026-10-18T09:05:18.841Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4339,7 +4340,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/RD1pxTew1LH4dd8NmupjPAyUNWspT19R9iGtpe5sPbI/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJRFE3cmlUNlFzTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJRFE5c0gtaFFvTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTY2MDg1NTM3NzAwMA.webp",
     "homepage": "https://zeno.fm/radio/radio-manele-twist/",
     "stationUuid": "7771bf6e-401f-42e5-b2a7-587670915b39",
-    "checkedAt": "2026-10-17T08:54:26.938Z",
+    "checkedAt": "2026-10-18T09:05:19.011Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4358,7 +4359,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/radio.png",
     "homepage": "https://www.smartradio.ro/",
     "stationUuid": "5a10daed-1c66-45d7-afd8-011d1b3cc9aa",
-    "checkedAt": "2026-10-17T08:54:28.086Z",
+    "checkedAt": "2026-10-18T09:05:20.566Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4378,7 +4379,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREZzwMuwUM_6hFuE5usP8KHPwl2N9T4qKeTQ&s",
     "homepage": "http://radio.umfcv.ro/",
     "stationUuid": "14acc389-e4cb-4854-85c5-0af8555c855d",
-    "checkedAt": "2026-10-17T08:54:28.196Z",
+    "checkedAt": "2026-10-18T09:05:20.581Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4400,7 +4401,7 @@
     "favicon": "http://radiofavoritfm.ro/ffm.ico",
     "homepage": "http://www.radiofavoritfm.ro/",
     "stationUuid": "38c0c3ff-6b5d-468e-96d5-acaebc4ef4ea",
-    "checkedAt": "2026-10-17T08:54:28.356Z",
+    "checkedAt": "2026-10-18T09:05:20.846Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4420,7 +4421,7 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "e63abb8e-05a8-4739-a96d-8131793ba09c",
-    "checkedAt": "2026-10-17T08:54:28.511Z",
+    "checkedAt": "2026-10-18T09:05:21.565Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -4441,7 +4442,7 @@
     "favicon": null,
     "homepage": "https://www.nationalfm.ro/",
     "stationUuid": "e90b58ac-7976-427d-b5c3-bcccdae1cc7d",
-    "checkedAt": "2026-10-17T08:54:28.652Z",
+    "checkedAt": "2026-10-18T09:05:21.842Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4460,10 +4461,135 @@
     "favicon": "https://www.eteatru.ro/images/eteatru-logo.png",
     "homepage": "https://www.eteatru.ro/",
     "stationUuid": "b7dfda3a-c998-4639-b9ee-3a5939bfe974",
-    "checkedAt": "2026-10-17T08:54:28.678Z",
+    "checkedAt": "2026-10-18T09:05:22.084Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio Sud Craiova 97,4 FM",
+    "url": "http://media.gds.ro:8500/128.mp3",
+    "country": "RO",
+    "type": "news",
+    "tags": [
+      "news",
+      "pop",
+      "rock",
+      "top40"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english,romanian",
+    "favicon": "https://www.radiosud.ro/",
+    "homepage": "https://www.radiosud.ro/",
+    "stationUuid": "0a5ebb09-d790-4247-87a4-805c1693d5d4",
+    "checkedAt": "2026-10-18T09:05:22.461Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Târgu Jiu",
+    "url": "https://stream.radiotargujiu.ro/stream",
+    "country": "RO",
+    "type": "news",
+    "tags": [
+      "news",
+      "pop",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "romanian",
+    "favicon": "https://www.radiotargujiu.ro/icons/icon-192.png",
+    "homepage": "https://www.radiotargujiu.ro/",
+    "stationUuid": "3de4353c-823c-4b28-90e9-9865a5fd3034",
+    "checkedAt": "2026-10-18T09:05:25.676Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Realitatea FM",
+    "url": "https://shout.realitatea.net:8001/rfmweb",
+    "country": "RO",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 141,
+    "language": "romanian",
+    "favicon": "https://radiorfm.ro/wp-content/uploads/2023/05/favicon.png",
+    "homepage": "https://realitateafm.net/",
+    "stationUuid": "fbf65b83-6883-4b09-8f8b-5205cdbd509d",
+    "checkedAt": "2026-10-18T09:05:26.083Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Régió Rádió",
+    "url": "https://stream.regioradio.info:8000/radio.mp3",
+    "country": "RO",
+    "type": "news",
+    "tags": [
+      "news",
+      "online radio",
+      "regional"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "hungarian",
+    "favicon": "https://i1.sndcdn.com/avatars-000544067565-v5a6ge-t1080x1080.jpg",
+    "homepage": "https://regioradio.info/",
+    "stationUuid": "c4226d31-a278-4052-a50b-d362a42b3d7b",
+    "checkedAt": "2026-10-18T09:05:26.679Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "REPLAY NEWS - Română",
+    "url": "https://replaynewsro.ice.infomaniak.ch/replaynewsro-128.mp3",
+    "country": "RO",
+    "type": "news",
+    "tags": [
+      "news"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "romanian",
+    "favicon": "https://www.publicsante.com/BIENVENU/LOGO%20REPLAY%20NEWS-RO.png",
+    "homepage": "https://www.replaynews.net/",
+    "stationUuid": "a97e2a53-0d1f-42c5-a0cc-4bb2ecd5e6d1",
+    "checkedAt": "2026-10-18T09:05:27.774Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "RFI Romania",
+    "url": "http://asculta.rfi.ro:9128/live.aac",
+    "country": "RO",
+    "type": "news",
+    "tags": [
+      "news",
+      "oldies",
+      "pop",
+      "rock"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "romanian",
+    "favicon": null,
+    "homepage": "https://www.rfi.ro/",
+    "stationUuid": "6d1e1d4c-a321-11e9-a787-52543be04c81",
+    "checkedAt": "2026-10-18T09:05:27.974Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "EBS Radio Nostalgie -Cluj Napoca",
@@ -4479,10 +4605,10 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "75b7d5d0-d973-4bfe-b03a-dae9fbe6b3c1",
-    "checkedAt": "2026-10-17T08:54:29.097Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "checkedAt": "2026-10-18T09:05:29.966Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "EBS | Nouvelle Vague",
@@ -4498,10 +4624,10 @@
     "favicon": null,
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "c986b29d-9ed8-4332-ba38-ef948344a7c5",
-    "checkedAt": "2026-10-17T08:54:29.128Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "checkedAt": "2026-10-18T09:05:45.136Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "EBS Radio Nouvelle Vague -Cluj Napoca",
@@ -4517,10 +4643,83 @@
     "favicon": "https://scontent.fotp3-2.fna.fbcdn.net/v/t39.30808-1/424699851_900411308760121_5814278330535517772_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=4bHHNtcga1oQ7kNvwE1LkAM&_nc_oc=AdqXoNNkiAPFMKZSs5EHuUvph5XfMuD3gmn9mPLn8Fb3XjP02Bn9ztVhFni3M4WQt7rcvvW5xX69vTCFBtdzr45N&_nc_zt=24&_nc_ht=scontent.fotp3-2.fna&_nc_gid=sp4e4LyJ74z3g8DC8ddc8A&_nc_ss=7b289&oh=00_Af7AMVbsN7B5Zf5Q6jGH_r7pf4dXsR3B_jUAyuB7Ektoeg&oe=6A0FBE16",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "f57edd32-f6b9-4489-b84f-29d30d4dcb52",
-    "checkedAt": "2026-10-17T08:54:29.131Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "checkedAt": "2026-10-18T09:05:46.143Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "METRONOM FM",
+    "url": "http://metronom-fm.ro:8000/stream.ogg",
+    "country": "RO",
+    "type": "OGG",
+    "tags": [],
+    "codec": "OGG",
+    "bitrate": 192,
+    "language": null,
+    "favicon": "https://www.metronom-fm.ro/images/radio_ok.png",
+    "homepage": "https://www.metronom-fm.ro/",
+    "stationUuid": "ec1583fb-6a8a-427c-a1a0-d4469d2ba3a7",
+    "checkedAt": "2026-10-18T09:05:48.079Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "shred.ing",
+    "url": "https://shred.ing/",
+    "country": "RO",
+    "type": "OGG",
+    "tags": [],
+    "codec": "OGG",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://shred.ing/favicon.ico",
+    "homepage": "https://shred.ing/play",
+    "stationUuid": "e4c2b2db-d36b-4bcd-a890-3043a236e485",
+    "checkedAt": "2026-10-18T09:05:48.844Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "ElekTrik Brasov",
+    "url": "https://stream.zeno.fm/n1s4zgbz8p8uv",
+    "country": "RO",
+    "type": "oldies",
+    "tags": [
+      "oldies",
+      "top"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "română",
+    "favicon": "https://zenoimages.s3.us-west-001.backblazeb2.com/agxzfnplbm8tc3RhdHNyMgsSCkF1dGhDbGllbnQYgICw6Obd7wgMCxIOU3RhdGlvblByb2ZpbGUYgICw6LnS8ggMogEEemVubw/cards/6e76f94c-7d3a-4019-a1e3-e41ea3da08aa",
+    "homepage": "https://zeno.fm/radio/elektrik-brasov/",
+    "stationUuid": "71d39a29-7c81-45f9-9105-3d37218cc1b5",
+    "checkedAt": "2026-10-18T09:05:50.271Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "GoldFM",
+    "url": "http://80.86.106.110:8002/",
+    "country": "RO",
+    "type": "oldies",
+    "tags": [
+      "oldies"
+    ],
+    "codec": "AAC+",
+    "bitrate": 96,
+    "language": "romanian",
+    "favicon": "http://www.radiogoldfm.ro/favicon.ico",
+    "homepage": "http://www.radiogoldfm.ro/",
+    "stationUuid": "960e6dcb-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-10-18T09:05:52.370Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "LibertyMP Nostalgia -Cluj Napoca",
@@ -4536,10 +4735,29 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-nostalgia/",
     "stationUuid": "22cc5ce5-7a3d-4e13-886d-8e49a2cbddb3",
-    "checkedAt": "2026-10-17T08:54:29.280Z",
+    "checkedAt": "2026-10-18T09:05:52.960Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Liberty Oldies -București",
+    "url": "https://sonicssl.namehost.ro/7790/stream",
+    "country": "RO",
+    "type": "oldies",
+    "tags": [
+      "oldies"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "română",
+    "favicon": "https://www.radioliberty.ro/images/stations/1744356753.webp",
+    "homepage": "https://www.radioliberty.ro/listen/radio-liberty-oldies",
+    "stationUuid": "0bffc2f6-118d-464c-9a8b-773b491f5a4e",
+    "checkedAt": "2026-10-18T09:05:53.367Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Marketescu Travel",
@@ -4557,7 +4775,7 @@
     "favicon": "https://static.wixstatic.com/media/f12f63_ac20107a8c5d4bf5b07d3acb79350b48~mv2.png/v1/fill/w_504,h_512,al_c,lg_1,q_85,enc_auto/Travel.png",
     "homepage": "https://marketescu.ro/",
     "stationUuid": "696c09b3-06b4-40e3-9e7e-d09b2df4b654",
-    "checkedAt": "2026-10-17T08:54:29.416Z",
+    "checkedAt": "2026-10-18T09:06:09.470Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4577,7 +4795,7 @@
     "favicon": "http://www.radioamen.ro/wp-content/uploads/2015/04/cropped-10923564_1382726562033378_4808948414804758594_n-192x192.jpgg",
     "homepage": "http://www.radioamen.ro/",
     "stationUuid": "986e161b-381e-4288-9b82-2fb8f57bae71",
-    "checkedAt": "2026-10-17T08:54:29.721Z",
+    "checkedAt": "2026-10-18T09:06:11.048Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4597,7 +4815,24 @@
     "favicon": "https://doxologia.ro/sites/default/files/favicon_doxologia.png",
     "homepage": "https://doxologia.ro/radio-doxologia-psaltica",
     "stationUuid": "76421d0b-8f58-4262-b056-f1d832b01468",
-    "checkedAt": "2026-10-17T08:54:29.784Z",
+    "checkedAt": "2026-10-18T09:06:12.171Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Silviu PC",
+    "url": "http://192.168.0.108/stream/swyh.mp3",
+    "country": "RO",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://google.com/",
+    "stationUuid": "7279fc2f-96dd-4c51-8107-735dc3f34036",
+    "checkedAt": "2026-10-18T09:06:13.467Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4617,7 +4852,7 @@
     "favicon": "https://cdn-radiotime-logos.tunein.com/s65930d.png",
     "homepage": "http://www.radiofavoritfm.ro/",
     "stationUuid": "36fffdc2-8cdd-4ac3-b7b8-610357ef7e6b",
-    "checkedAt": "2026-10-17T08:54:30.059Z",
+    "checkedAt": "2026-10-18T09:06:13.945Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4637,7 +4872,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-populara/",
     "stationUuid": "a061dfa6-e1d8-4b65-bd5f-b97fc9d50515",
-    "checkedAt": "2026-10-17T08:54:30.191Z",
+    "checkedAt": "2026-10-18T09:06:14.555Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4652,12 +4887,12 @@
       "populară"
     ],
     "codec": "MP3",
-    "bitrate": 128,
+    "bitrate": 24,
     "language": "românä",
     "favicon": "https://cdn.onlineradiobox.com/img/l/2/143652.v4.png",
     "homepage": "https://www.facebook.com/people/Radiolive-Mioveni/pfbid0RdnaP11Lw4HatE2bWuFeBsNqtprKBqDsj7j5YqmZk4mLRG3xdG8mLijzGqfTYcF4l/",
     "stationUuid": "2a144934-3544-426d-a0ae-2efab744989c",
-    "checkedAt": "2026-10-17T08:54:30.505Z",
+    "checkedAt": "2026-10-18T09:06:15.278Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4677,7 +4912,7 @@
     "favicon": "https://scontent.fotp3-3.fna.fbcdn.net/v/t39.30808-1/616088354_1474569234671996_8895643201828963395_n.jpg?stp=c283.0.1024.1024a_dst-jpg_s200x200_tt6&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=OGWyOhf_nj4Q7kNvwHVL2Ou&_nc_oc=AdkxH8VA8s1q0kGDZ-4hjd-QiH23xNCXESopSvbstst8Tr0TqlK9FSUMssXFqU4d1C9HLqEpDRfcB2Hqw-wyymu6&_nc_zt=24&_nc_ht=scontent.fotp3-3.fna&_nc_gid=tDSX4HFBJ36aglI_6ZHSRg&oh=00_AfvCpvXLJmrikM8c33qVM3e3AH3N3iLYZloTbtWdqkbhgw&oe=699F15CB",
     "homepage": "https://www.facebook.com/RadioSuperLiveOficial/",
     "stationUuid": "aaa1b87c-b08c-49ed-96da-b266dcc2f764",
-    "checkedAt": "2026-10-17T08:54:30.675Z",
+    "checkedAt": "2026-10-18T09:06:19.859Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4697,7 +4932,7 @@
     "favicon": "https://cdn-profiles.tunein.com/s222371/images/logod.png",
     "homepage": "https://www.radiotimibanat.com/",
     "stationUuid": "e6784de4-a19a-4883-9f1e-3d3259fc726b",
-    "checkedAt": "2026-10-17T08:54:30.818Z",
+    "checkedAt": "2026-10-18T09:06:20.166Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4717,7 +4952,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-phonk/",
     "stationUuid": "47775dab-ab5f-4a09-a131-a964f5b445e7",
-    "checkedAt": "2026-10-17T08:54:31.041Z",
+    "checkedAt": "2026-10-18T09:06:20.364Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4737,7 +4972,7 @@
     "favicon": null,
     "homepage": "http://mdifm.ro/",
     "stationUuid": "d280637d-8b7e-11e9-ad01-52543be04c81",
-    "checkedAt": "2026-10-17T08:54:31.152Z",
+    "checkedAt": "2026-10-18T09:06:20.541Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4756,7 +4991,7 @@
     "favicon": null,
     "homepage": "http://www.radiogaga.ro/",
     "stationUuid": "2da7b8ab-d486-4649-b78a-68b8a08e9a2d",
-    "checkedAt": "2026-10-17T08:54:31.238Z",
+    "checkedAt": "2026-10-18T09:06:20.585Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4776,7 +5011,7 @@
     "favicon": "https://radiobarikada.ro/graphics/logo.png",
     "homepage": "https://radiobarikada.ro/",
     "stationUuid": "0083a696-7401-4609-a844-aac2e34c4b25",
-    "checkedAt": "2026-10-17T08:54:31.691Z",
+    "checkedAt": "2026-10-18T09:06:21.045Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4796,7 +5031,7 @@
     "favicon": "https://media.smartradio.ro/2019/12/street-2.png",
     "homepage": "https://www.smartradio.ro/radio/street/",
     "stationUuid": "6a7f7b5b-13e6-4750-944b-d112d0b582c3",
-    "checkedAt": "2026-10-17T08:54:32.279Z",
+    "checkedAt": "2026-10-18T09:06:21.491Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4815,7 +5050,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-reggae/",
     "stationUuid": "30f11210-f4d9-473f-aa0b-9a16eb87ddaa",
-    "checkedAt": "2026-10-17T08:54:32.296Z",
+    "checkedAt": "2026-10-18T09:06:21.517Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4834,7 +5069,7 @@
     "favicon": "https://www.rvesv.ro/favicon.ico",
     "homepage": "https://www.rvesv.ro/",
     "stationUuid": "18a14983-a9e3-4401-9be7-8f7ab2c9aaa9",
-    "checkedAt": "2026-10-17T08:54:32.909Z",
+    "checkedAt": "2026-10-18T09:06:21.870Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4853,7 +5088,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-rock/",
     "stationUuid": "2f643cf4-d0d5-445f-8e1d-4c5b6bb08566",
-    "checkedAt": "2026-10-17T08:54:33.328Z",
+    "checkedAt": "2026-10-18T09:06:22.207Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4872,7 +5107,7 @@
     "favicon": "https://napocalive.ro/images/images.png",
     "homepage": "https://napocalive.ro/radio-napoca-rock",
     "stationUuid": "e24cb2d7-7425-42d9-9da8-bdddf4a9cb10",
-    "checkedAt": "2026-10-17T08:54:33.542Z",
+    "checkedAt": "2026-10-18T09:06:22.288Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4891,7 +5126,7 @@
     "favicon": "https://media.smartradio.ro/2019/10/roll.png",
     "homepage": "https://www.smartradio.ro/radio/nroll/",
     "stationUuid": "cd6f3462-9ac2-4fe1-afd0-26b05c68a35f",
-    "checkedAt": "2026-10-17T08:54:33.764Z",
+    "checkedAt": "2026-10-18T09:06:22.544Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4910,7 +5145,7 @@
     "favicon": "https://rockerinside.com/wp-content/uploads/2024/08/cropped-favicon-1-180x180.png",
     "homepage": "https://rockerinside.com/",
     "stationUuid": "503a2e66-d1af-49cb-be54-192a239f42b9",
-    "checkedAt": "2026-10-17T08:54:33.776Z",
+    "checkedAt": "2026-10-18T09:06:22.555Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -4932,7 +5167,7 @@
     "favicon": null,
     "homepage": "https://www.nationalfm.ro/",
     "stationUuid": "c49c0d0c-f611-41d6-b66d-6b5c9fdd7cc4",
-    "checkedAt": "2026-10-17T08:54:33.881Z",
+    "checkedAt": "2026-10-18T09:06:22.575Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4952,7 +5187,7 @@
     "favicon": "https://ebsradio.ro/stream/img/stream-romanian-gold.png",
     "homepage": "https://ebsradio.ro/",
     "stationUuid": "94a6daaf-6925-449e-bb4b-2054b40ca219",
-    "checkedAt": "2026-10-17T08:54:33.932Z",
+    "checkedAt": "2026-10-18T09:06:22.648Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -4972,7 +5207,7 @@
     "favicon": "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2Fh3proKiqAORLmJMZPaMlNZVimSUyWy0TC-jdiVgHdEs%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9zdHJlYW0tdG9vbHMuemVub21lZGlhLmNvbS9jb250ZW50L3N0YXRpb25zL2FneHpmbnBsYm04dGMzUmhkSE55TWdzU0NrRjFkR2hEYkdsbGJuUVlnSURRN3JpVDZRc01DeElPVTNSaGRHbHZibEJ5YjJacGJHVVlnSURRaTRhY21Ba01vZ0VFZW1WdWJ3L2ltYWdlLz91cGRhdGVkPTE2NjE2NzQxNjcwMDA.webp&w=1920&q=100",
     "homepage": "https://zeno.fm/radio/radio-trap-twist/",
     "stationUuid": "0461bd47-c4b9-4f93-b057-1e03039a02d6",
-    "checkedAt": "2026-10-17T08:54:33.998Z",
+    "checkedAt": "2026-10-18T09:06:22.686Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4991,7 +5226,26 @@
     "favicon": "https://media.smartradio.ro/2019/12/soundtrack-1.png",
     "homepage": "https://www.smartradio.ro/radio/soundtrack/",
     "stationUuid": "f8b465a0-0be6-47e1-bc79-fc4b93f4e90e",
-    "checkedAt": "2026-10-17T08:54:34.313Z",
+    "checkedAt": "2026-10-18T09:06:22.941Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio7ABC",
+    "url": "https://desktop-jcf8pp6.taila8446a.ts.net/live",
+    "country": "RO",
+    "type": "talk",
+    "tags": [
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "romanian",
+    "favicon": "https://radio7abc.ro/wp-content/uploads/2026/08/radio7abc-pwa-icon-512-fixed.png",
+    "homepage": "https://radio7abc.ro/",
+    "stationUuid": "67c46d10-e1fd-4e49-ba56-b9091ed86485",
+    "checkedAt": "2026-10-18T09:06:23.062Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5010,7 +5264,7 @@
     "favicon": "http://www.eteatru.ro/images/eteatru-logo.png",
     "homepage": "http://eteatru.ro/",
     "stationUuid": "b3b8de23-2fd3-4e4c-b790-19c7eca713d8",
-    "checkedAt": "2026-10-17T08:54:34.540Z",
+    "checkedAt": "2026-10-18T09:06:23.282Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -5029,7 +5283,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-techno/",
     "stationUuid": "f2b450ed-8dfa-4460-98ec-c55b441f4480",
-    "checkedAt": "2026-10-17T08:54:34.959Z",
+    "checkedAt": "2026-10-18T09:06:23.366Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5048,7 +5302,7 @@
     "favicon": "https://www.eteatru.ro/images/eteatru-logo.png",
     "homepage": "https://www.eteatru.ro/",
     "stationUuid": "f4831736-ac74-4a06-93bf-08d1ff2c0293",
-    "checkedAt": "2026-10-17T08:54:35.016Z",
+    "checkedAt": "2026-10-18T09:06:23.442Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -5067,7 +5321,7 @@
     "favicon": "https://radioenergyfm.com/sitepad-data/uploads/2026/07/cropped-icon-192x192.png",
     "homepage": "https://radioenergyfm.com/trance/",
     "stationUuid": "ef996d12-8c37-4b1d-9800-23df035a2b38",
-    "checkedAt": "2026-10-17T08:54:35.513Z",
+    "checkedAt": "2026-10-18T09:06:23.854Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -5086,7 +5340,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2026/03/Radio-LibertyMP-Latino.jpg",
     "homepage": "https://radiolibertymp.ro/listen-trap/",
     "stationUuid": "62b80667-141b-4521-a16c-b6cb9e081c85",
-    "checkedAt": "2026-10-17T08:54:35.626Z",
+    "checkedAt": "2026-10-18T09:06:23.942Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5105,7 +5359,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/3BFRi4b8MWXZHGzvqCwjHZ31lvggfTYAX8I1HKQ-dsA/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJRFE3cmlUNlFzTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJRFFpNGFjbUFrTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTY2MTY3NDE2NzAwMA.webp",
     "homepage": "https://zeno.fm/radio/radio-trap-twist/",
     "stationUuid": "3768ce7a-d6a6-480a-888d-97df98a6fcc3",
-    "checkedAt": "2026-10-17T08:54:35.769Z",
+    "checkedAt": "2026-10-18T09:06:24.049Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

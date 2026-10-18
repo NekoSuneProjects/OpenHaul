@@ -16,7 +16,7 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/673/music-intense-974.3b7d0319.jpg",
     "homepage": "https://www.musicintense974.re/",
     "stationUuid": "1a2b764a-17d8-4758-8369-b9afdf964c76",
-    "checkedAt": "2026-10-17T08:53:07.209Z",
+    "checkedAt": "2026-10-18T09:03:35.468Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -37,10 +37,10 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/bnzjbtbqfqbv.png",
     "homepage": "http://www.topfm.re/",
     "stationUuid": "a71d51fc-6031-44ac-a60b-3187c10b0e5e",
-    "checkedAt": "2026-10-17T08:53:07.425Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "checkedAt": "2026-10-18T09:03:35.574Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Konect Radio",
@@ -54,7 +54,7 @@
     "favicon": "https://assets.comingsoonwp.com//themes/default/csmm-favicon.png",
     "homepage": "https://konect.re/",
     "stationUuid": "5a7ce3e3-11c3-4ba6-8428-13c5b2faf649",
-    "checkedAt": "2026-10-17T08:53:08.518Z",
+    "checkedAt": "2026-10-18T09:03:36.704Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -71,7 +71,45 @@
     "favicon": null,
     "homepage": "http://www.salazesfm.re/",
     "stationUuid": "8e5cb653-d39b-46cb-946f-99c2a1bad6ef",
-    "checkedAt": "2026-10-17T08:53:08.839Z",
+    "checkedAt": "2026-10-18T09:03:37.111Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Freedom 2",
+    "url": "https://freedomice.streamakaci.com/freedom2.mp3",
+    "country": "RE",
+    "type": "réunion",
+    "tags": [
+      "réunion"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "french",
+    "favicon": "https://i.ibb.co/JWDzwWRY/k4-SXf84-Df7-upscayl-2x-digital-art-4x.png",
+    "homepage": "http://www.freedom.fr/",
+    "stationUuid": "15a7dda6-4225-41a2-9cdd-b1bb46af2907",
+    "checkedAt": "2026-10-18T09:03:37.256Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Freedom FM",
+    "url": "https://freedomice.streamakaci.com/freedom.mp3",
+    "country": "RE",
+    "type": "réunion",
+    "tags": [
+      "réunion"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "french",
+    "favicon": "https://i.ibb.co/JWDzwWRY/k4-SXf84-Df7-upscayl-2x-digital-art-4x.png",
+    "homepage": "http://www.freedom.fr/",
+    "stationUuid": "d2745f5d-d5a1-446f-b875-7096bd86e35c",
+    "checkedAt": "2026-10-18T09:03:37.284Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

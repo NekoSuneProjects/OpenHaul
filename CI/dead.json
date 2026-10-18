@@ -15,9 +15,72 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/eb-fm/",
     "stationUuid": "e419cb02-f72c-4e4b-97e7-b19b2dcefbfb",
-    "checkedAt": "2026-10-17T08:09:23.287Z",
+    "checkedAt": "2026-10-18T08:20:47.006Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio Chandelier",
+    "url": "http://serveur3.wanastream.com:10500/;",
+    "country": "CI",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel",
+      "religious"
+    ],
+    "codec": "MP3",
+    "bitrate": 56,
+    "language": "french",
+    "favicon": null,
+    "homepage": "http://www.radiochandelier.ci/",
+    "stationUuid": "7e19bf7b-c09c-48f7-81b3-f52a1ee9c27a",
+    "checkedAt": "2026-10-18T08:20:47.611Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Fréquence Vie",
+    "url": "https://streamer.galcom.org:8443/RadioFrequenceVie",
+    "country": "CI",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://www.radiofrequencevie.com/",
+    "stationUuid": "d0ea7f2e-fd63-492a-ba12-b9d92554b59e",
+    "checkedAt": "2026-10-18T08:20:47.838Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Nostalgie CI",
+    "url": "http://213.136.96.14:8000/nostalgie2.mp3",
+    "country": "CI",
+    "type": "oldies",
+    "tags": [
+      "oldies",
+      "pop",
+      "top 40"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://www.nostalgie.ci/",
+    "stationUuid": "64950083-4946-40bc-8576-8a1c50e7442d",
+    "checkedAt": "2026-10-18T08:20:49.505Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   }
 ]

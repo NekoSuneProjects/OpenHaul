@@ -1,19 +1,23 @@
 [
   {
-    "name": "MGL Radio",
-    "url": "http://stream17.shoutcastsolutions.com:8096/",
+    "name": "Ehlelradio",
+    "url": "https://stream.zeno.fm/c6cvywws538uv",
     "country": "MN",
-    "type": "MP3",
-    "tags": [],
+    "type": "music",
+    "tags": [
+      "music",
+      "news",
+      "talk"
+    ],
     "codec": "MP3",
     "bitrate": 128,
     "language": "mongolian",
     "favicon": null,
-    "homepage": "http://mglradio.com/",
-    "stationUuid": "fa31e2f5-8092-11e9-aa30-52543be04c81",
-    "checkedAt": "2026-10-17T08:41:27.068Z",
-    "status": null,
+    "homepage": null,
+    "stationUuid": "e06f5e4b-3b17-4fe1-a4d4-5fe85131d580",
+    "checkedAt": "2026-10-18T08:51:05.758Z",
+    "status": 503,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "HTTP 503"
   }
 ]
