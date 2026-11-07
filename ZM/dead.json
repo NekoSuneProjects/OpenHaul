@@ -17,10 +17,10 @@
     "favicon": null,
     "homepage": "https://flavaradioandtv.com/",
     "stationUuid": "7f5bc9bf-6987-4644-aed2-c64c6e20805b",
-    "checkedAt": "2026-10-18T09:49:33.773Z",
-    "status": 401,
+    "checkedAt": "2026-11-07T15:35:25.271Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 401"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "K-FM 95.5",
@@ -38,33 +38,14 @@
     "favicon": null,
     "homepage": "https://kfmmansa.radio12345.com/",
     "stationUuid": "581d323f-0fe1-4aae-8cb8-f26815897284",
-    "checkedAt": "2026-10-18T09:49:35.976Z",
+    "checkedAt": "2026-11-07T15:35:25.918Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Gifts and Blessings Radio",
-    "url": "https://stream.zeno.fm/h575zb67schvv",
-    "country": "ZM",
-    "type": "gospel",
-    "tags": [
-      "gospel"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "558541ab-0279-4c48-886c-e2b6c4560e45",
-    "checkedAt": "2026-10-18T09:49:37.638Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "Sky FM Zambia",
-    "url": "https://stream.zeno.fm/7s554b67schvv",
+    "name": "MISE RADIO",
+    "url": "https://s5.radio.co/sa6cfcde9f/listen",
     "country": "ZM",
     "type": "news",
     "tags": [
@@ -75,12 +56,12 @@
     "bitrate": 128,
     "language": "english",
     "favicon": null,
-    "homepage": null,
-    "stationUuid": "4924e50c-2d24-4235-97bb-9677f6d50cfb",
-    "checkedAt": "2026-10-18T09:49:39.152Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
+    "homepage": "https://www.misefm.com/",
+    "stationUuid": "e1b94001-1f59-4e5c-9458-d92a72f6ce17",
+    "checkedAt": "2026-11-07T15:35:28.523Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Tuta Radio",
@@ -98,7 +79,7 @@
     "favicon": null,
     "homepage": "https://tutaradio.com/",
     "stationUuid": "eb76e7a2-25b7-4fb5-8415-8f39b938aee9",
-    "checkedAt": "2026-10-18T09:49:39.359Z",
+    "checkedAt": "2026-11-07T15:35:28.976Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

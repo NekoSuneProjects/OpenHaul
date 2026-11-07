@@ -11,10 +11,30 @@
     "favicon": "https://kolektivradio.com/wp-content/uploads/2023/11/Kolektivradio-Logo-Cat-col.png",
     "homepage": "https://kolektivradio.com/",
     "stationUuid": "eb89eaba-2aba-431b-ba0e-51d7adff3b4a",
-    "checkedAt": "2026-10-18T09:48:57.445Z",
+    "checkedAt": "2026-11-07T15:34:57.621Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Radio Zëri i Shtimes",
+    "url": "http://radio.1dhe1.com:8090/stream",
+    "country": "XK",
+    "type": "kosova",
+    "tags": [
+      "kosova",
+      "shqip"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://radiozeri.info/",
+    "stationUuid": "5ee3d745-db38-4f32-98a6-c08e41c2733f",
+    "checkedAt": "2026-11-07T15:34:57.626Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Urban FM 103.5",
@@ -28,9 +48,9 @@
     "favicon": "https://radiourban.fm/wp-content/uploads/2023/04/URBAN-FM-LOGO.png",
     "homepage": "https://radiourban.fm/",
     "stationUuid": "d178f465-86ba-4b84-8c2f-4b07f4c1e58b",
-    "checkedAt": "2026-10-18T09:48:57.671Z",
-    "status": 500,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 500"
+    "checkedAt": "2026-11-07T15:34:57.939Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   }
 ]

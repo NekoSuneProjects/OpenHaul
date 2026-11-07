@@ -19,7 +19,28 @@
     "favicon": "http://delayerfm.com/images/logo-artistas.png",
     "homepage": "http://delayerfm.com/",
     "stationUuid": "cb9e8a53-3041-4f39-b5c0-d1d7f6046a7e",
-    "checkedAt": "2026-10-18T08:33:07.819Z",
+    "checkedAt": "2026-11-07T14:35:53.141Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Azul Radio",
+    "url": "http://radio.domiplay.net:9300/;",
+    "country": "DO",
+    "type": "baladas en español",
+    "tags": [
+      "baladas en español",
+      "musica romantica",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 80,
+    "language": "spanish",
+    "favicon": "https://domiplay.net/imgs/isotipo.svg",
+    "homepage": "https://domiplay.net/escuchar/azul-radio",
+    "stationUuid": "1e6d3b15-afea-4bf4-aa7a-0a57f655f8b5",
+    "checkedAt": "2026-11-07T14:35:55.632Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -41,7 +62,7 @@
     "favicon": null,
     "homepage": "http://cariciasfm.com/",
     "stationUuid": "13b147a6-3230-43fb-af54-1a4b41dedd63",
-    "checkedAt": "2026-10-18T08:33:09.985Z",
+    "checkedAt": "2026-11-07T14:35:55.744Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -62,7 +83,7 @@
     "favicon": "https://estacion977.com/assets/img/logoEstacion977_300_shd.png",
     "homepage": "https://estacion977.com/",
     "stationUuid": "13d3c0b4-4324-4118-ae58-14afc74490db",
-    "checkedAt": "2026-10-18T08:33:10.441Z",
+    "checkedAt": "2026-11-07T14:35:55.930Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -81,10 +102,30 @@
     "favicon": null,
     "homepage": "https://exclusiveradio.webradiosite.com/",
     "stationUuid": "42fa8a66-e458-4b31-b1db-7f33cd8657cd",
-    "checkedAt": "2026-10-18T08:33:10.653Z",
+    "checkedAt": "2026-11-07T14:35:56.261Z",
     "status": null,
     "contentType": null,
     "lastFailure": "Request cannot be constructed from a URL that includes credentials: https://exclusiveradio@gmx.com/"
+  },
+  {
+    "name": "Radio Arca de Salvación 95.3 FM",
+    "url": "https://nrf1.newradio.it:10396/stream",
+    "country": "DO",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "religious"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": "https://cdn.onlineradiobox.com/img/fblogo/2/32362.v5.png",
+    "homepage": null,
+    "stationUuid": "5645f643-d4e7-4798-9221-148497e867dc",
+    "checkedAt": "2026-11-07T14:35:56.521Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Azúcar 89.1 FM",
@@ -104,7 +145,7 @@
     "favicon": "https://cdn-radiotime-logos.tunein.com/s134497g.png",
     "homepage": "http://azucar89fm.com/",
     "stationUuid": "763c2fa2-0acd-47df-b314-ecf2fb2c43ad",
-    "checkedAt": "2026-10-18T08:33:11.768Z",
+    "checkedAt": "2026-11-07T14:35:57.476Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -125,7 +166,7 @@
     "favicon": "https://ritmohits.live/assets/favicon.png",
     "homepage": "https://ritmohits.live/",
     "stationUuid": "a7fc99a7-77e1-4443-8941-26de761669f6",
-    "checkedAt": "2026-10-18T08:33:12.212Z",
+    "checkedAt": "2026-11-07T14:35:57.849Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -144,10 +185,29 @@
     "favicon": null,
     "homepage": "https://cibaenafm.blogspot.com/",
     "stationUuid": "90110f22-5824-4290-ab9b-9353fd17c9f5",
-    "checkedAt": "2026-10-18T08:33:12.326Z",
+    "checkedAt": "2026-11-07T14:35:58.025Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Lago FM - Brutalmente Joven",
+    "url": "https://cast6.asurahosting.com/proxy/deivy/stream",
+    "country": "DO",
+    "type": "mix",
+    "tags": [
+      "mix"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://lagofm.com/",
+    "stationUuid": "546e2790-e614-4b90-acd5-1f2704072baf",
+    "checkedAt": "2026-11-07T14:35:58.142Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "eztramsounds",
@@ -161,10 +221,27 @@
     "favicon": null,
     "homepage": "https://eztram.co/",
     "stationUuid": "6e3e2f9e-3dcf-454d-ab11-40c88d597d77",
-    "checkedAt": "2026-10-18T08:33:12.982Z",
+    "checkedAt": "2026-11-07T14:35:58.752Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Genial FM",
+    "url": "https://nexostream.net:8040/live",
+    "country": "DO",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 112,
+    "language": null,
+    "favicon": "https://genialfm.net/assets/default.jpg",
+    "homepage": "https://genialfm.net/#site",
+    "stationUuid": "77d9bfde-12fe-4af2-8b9b-e95862c4a616",
+    "checkedAt": "2026-11-07T14:35:59.015Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Naranjo Dulce Radio",
@@ -178,7 +255,24 @@
     "favicon": "https://public-rf-upload.minhawebradio.net/97916/logo/176c2eafd9ce1606f1394360515906f6.png",
     "homepage": "https://naranjodulceradio.webradiosite.com/",
     "stationUuid": "ca9130ca-4f2d-4c2e-a96b-0b87d16e28ea",
-    "checkedAt": "2026-10-18T08:33:13.657Z",
+    "checkedAt": "2026-11-07T14:35:59.422Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Urban Hits",
+    "url": "https://urbanhits.live/listen/urbanhits/live",
+    "country": "DO",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://admin.nexotuner.net/nexopro/nexo/public/images/1775045111logo.png",
+    "homepage": "https://urbanhits.live/",
+    "stationUuid": "51bb8e1e-1a34-47d0-9f4a-ce921b798245",
+    "checkedAt": "2026-11-07T14:36:00.637Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -195,7 +289,7 @@
     "favicon": "https://public-rf-upload.minhawebradio.net/252370/logo/291cb762d4ebc34d6894d9bdd6b03452.jpg",
     "homepage": "https://yarahradio.com/",
     "stationUuid": "baaeadf5-f042-4978-bfdf-53d0244f5a37",
-    "checkedAt": "2026-10-18T08:33:14.943Z",
+    "checkedAt": "2026-11-07T14:36:00.655Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -212,7 +306,7 @@
     "favicon": null,
     "homepage": "https://exclusiveradio.webradiosite.com/",
     "stationUuid": "eb1caf32-9840-416b-a1cb-d6876aa09a02",
-    "checkedAt": "2026-10-18T08:33:15.156Z",
+    "checkedAt": "2026-11-07T14:36:01.120Z",
     "status": null,
     "contentType": null,
     "lastFailure": "Request cannot be constructed from a URL that includes credentials: https://exclusiveradio@gmx.com/"
@@ -231,7 +325,7 @@
     "favicon": "http://telemicro.com.do/favicon.ico",
     "homepage": "http://telemicro.com.do/web/",
     "stationUuid": "961b0346-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-10-18T08:33:15.484Z",
+    "checkedAt": "2026-11-07T14:36:01.957Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"

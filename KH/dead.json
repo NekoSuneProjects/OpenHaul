@@ -1,5 +1,27 @@
 [
   {
+    "name": "Family FM 99.5 (Witthyu Krousar)",
+    "url": "https://s14.myradiostream.com/10064/;.mp3",
+    "country": "KH",
+    "type": "family",
+    "tags": [
+      "family",
+      "khmer",
+      "music",
+      "phnom penh"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "khmer",
+    "favicon": null,
+    "homepage": "https://www.facebook.com/Familyfm99.5/",
+    "stationUuid": "cc20bea1-aeea-4801-8f62-6aaab144f150",
+    "checkedAt": "2026-11-07T14:54:29.071Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
     "name": "Daun Penh EFM",
     "url": "http://203.189.159.204:9051/dpnefmpp",
     "country": "KH",
@@ -16,7 +38,7 @@
     "favicon": null,
     "homepage": "https://www.facebook.com/DaunPenhEFM",
     "stationUuid": "6de058e6-63d5-4c24-b19f-9e1631262f72",
-    "checkedAt": "2026-10-18T08:49:37.952Z",
+    "checkedAt": "2026-11-07T14:54:29.072Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -39,26 +61,9 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "e323fc91-48c5-4c2f-a898-9225cb700e85",
-    "checkedAt": "2026-10-18T08:49:37.953Z",
+    "checkedAt": "2026-11-07T14:54:29.073Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Sangkem Radio",
-    "url": "https://live.sangkemtv.com/radio.mp3",
-    "country": "KH",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.sangkemtv.com/sangkem-online-radio",
-    "stationUuid": "65b508f2-e022-4831-9dd5-b98d5a348452",
-    "checkedAt": "2026-10-18T08:49:38.269Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   }
 ]

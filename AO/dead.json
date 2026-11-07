@@ -1,5 +1,24 @@
 [
   {
+    "name": "Powermix FM",
+    "url": "https://cast.iplayradio.net/listen/powermixfm/stream",
+    "country": "AO",
+    "type": "90s dance",
+    "tags": [
+      "90s dance"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://powermixfm.com/",
+    "stationUuid": "7b4fcdc7-4e59-47cf-8062-87123715b4a5",
+    "checkedAt": "2026-11-07T14:08:10.280Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
     "name": "RNA - Canal A",
     "url": "https://stream.pcradio.ru/rna_canala-med",
     "country": "AO",
@@ -11,7 +30,7 @@
     "favicon": "https://pcradio.app/images/stations/61b09c9d4e570.jpg",
     "homepage": "https://pcradio.app/radio/rna-canal-a",
     "stationUuid": "45eeeaad-acc1-4704-b2b7-0c454a38c3c1",
-    "checkedAt": "2026-10-18T08:08:21.319Z",
+    "checkedAt": "2026-11-07T14:08:10.312Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -32,7 +51,27 @@
     "favicon": "https://minhawebradio.com/contents/14886/cover/xm126892c1bc31f36300a057381855f3ab_14886_1750685385.png",
     "homepage": "https://radiojihenda.com/",
     "stationUuid": "682715df-58c2-4765-b888-204307736498",
-    "checkedAt": "2026-10-18T08:08:21.323Z",
+    "checkedAt": "2026-11-07T14:08:10.314Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "TRS Rádio Online",
+    "url": "https://link.radio.br:17308/stream",
+    "country": "AO",
+    "type": "gospel",
+    "tags": [
+      "gospel",
+      "latin"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "portuguese",
+    "favicon": null,
+    "homepage": "https://www.trsradioonline.ao/",
+    "stationUuid": "f834de28-9f73-41be-976b-90720cfbab3d",
+    "checkedAt": "2026-11-07T14:08:12.069Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -49,7 +88,7 @@
     "favicon": null,
     "homepage": "https://www.radiomais.ao/",
     "stationUuid": "142e1b71-b56b-4a9c-b08f-55703b611390",
-    "checkedAt": "2026-10-18T08:08:23.280Z",
+    "checkedAt": "2026-11-07T14:08:12.171Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -66,7 +105,7 @@
     "favicon": null,
     "homepage": "https://radiomfmangola.com/",
     "stationUuid": "5be023eb-7209-4ab0-8d69-27e356aad314",
-    "checkedAt": "2026-10-18T08:08:23.323Z",
+    "checkedAt": "2026-11-07T14:08:12.173Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -86,14 +125,14 @@
     "favicon": "https://sites.google.com/view/radiobairrodeangola",
     "homepage": "https://sites.google.com/view/radiobairrodeangola",
     "stationUuid": "88a9d0f2-7ef5-4119-ae96-d87c2f6f9469",
-    "checkedAt": "2026-10-18T08:08:23.519Z",
+    "checkedAt": "2026-11-07T14:08:12.420Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "Platina FM",
-    "url": "https://stream.zeno.fm/bckqpsxrqv8uv",
+    "name": "Rádio STTOP FM",
+    "url": "https://wz7.servidoresbrasil.com:8478/stream",
     "country": "AO",
     "type": "news",
     "tags": [
@@ -104,12 +143,12 @@
     "bitrate": 128,
     "language": "portuguese",
     "favicon": null,
-    "homepage": "https://platinafm.com/",
-    "stationUuid": "d024beb9-4443-4a1a-8939-e0868f3f6100",
-    "checkedAt": "2026-10-18T08:08:23.629Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
+    "homepage": "https://www.sttopfm.com/",
+    "stationUuid": "6893a5af-c1b9-4713-b435-9015c13f3183",
+    "checkedAt": "2026-11-07T14:08:14.051Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Bairro de Angola",
@@ -125,7 +164,7 @@
     "favicon": "https://postimg.cc/5HR8nS0W",
     "homepage": "https://player.xradios.com.br/player-home-page/6794",
     "stationUuid": "8762cad0-5b45-4685-9c09-68de818a3ec1",
-    "checkedAt": "2026-10-18T08:08:25.934Z",
+    "checkedAt": "2026-11-07T14:08:14.711Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

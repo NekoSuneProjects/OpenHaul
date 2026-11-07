@@ -1,46 +1,46 @@
 [
   {
-    "name": "Radio Bonne Nouvelle",
-    "url": "https://radiobonnenouvelle2.ice.infomaniak.ch/radiobonnenouvelle2-96.mp3",
+    "name": "CHRISTRADIO Yaoundé",
+    "url": "https://stream-285.surfernetwork.com/gtb3znv0h2zuv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJndGIzem52MGgyenV2IiwiaG9zdCI6InN0cmVhbS0yODUuc3VyZmVybmV0d29yay5jb20iLCJ0bSI6ZmFsc2UsInJ0dGwiOjUsImp0aSI6IkRyRjJSd3VIUW15NU9OaGdMWnJHUmciLCJpYXQiOjE3OTM5MDE2MDMsImV4cCI6MTc5MzkwMTY2M30.pnGM1p7INgc65943zsf9n2M6fZasPw-W9pM3xRow2VE",
     "country": "CM",
     "type": "christian",
     "tags": [
       "christian",
-      "gospel",
-      "news",
+      "religious",
       "talk"
     ],
     "codec": "MP3",
     "bitrate": 128,
     "language": "french",
     "favicon": null,
-    "homepage": "https://www.radiobonnenouvelle.org/",
-    "stationUuid": "e7a23f81-f41a-4bee-b58c-3846d1b627a1",
-    "checkedAt": "2026-10-18T08:21:28.258Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "homepage": "https://christradio.mdn.live/",
+    "stationUuid": "af01c6a1-a1a7-46cf-97ea-15883ef6d669",
+    "checkedAt": "2026-11-07T14:22:45.383Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
-    "name": "Radio Veritas",
-    "url": "https://stream.zeno.fm/habvtzvnqxiuv",
+    "name": "Radio Vie Nouvelle",
+    "url": "https://lafrequencedevie.ice.infomaniak.ch/lafrequencedevie-64.mp3",
     "country": "CM",
     "type": "christian",
     "tags": [
       "christian",
-      "news",
+      "gospel",
+      "religious",
       "talk"
     ],
     "codec": "MP3",
     "bitrate": 128,
-    "language": "english",
+    "language": "french",
     "favicon": null,
-    "homepage": null,
-    "stationUuid": "3d426e5d-d4c0-4b71-a6c9-8292c4702984",
-    "checkedAt": "2026-10-18T08:21:28.664Z",
-    "status": 503,
+    "homepage": "https://radiovienouvelle.com/",
+    "stationUuid": "b4e1a053-e139-4e21-b11e-ccc3b31fd87a",
+    "checkedAt": "2026-11-07T14:22:46.260Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 503"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Equinoxe Radio",
@@ -56,10 +56,31 @@
     "favicon": null,
     "homepage": "http://www.radioequinoxe.com/",
     "stationUuid": "332f6491-d62d-48a4-b44a-fa8020896949",
-    "checkedAt": "2026-10-18T08:21:29.465Z",
+    "checkedAt": "2026-11-07T14:22:46.746Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio Rissalatou Salam",
+    "url": "https://s.prc.pawacast.com/listen/radio-rissalatou-salam-96-0fm/radio.mp3",
+    "country": "CM",
+    "type": "islamic",
+    "tags": [
+      "islamic",
+      "religious",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "04ca502e-2841-4568-a378-3df4fcbada2b",
+    "checkedAt": "2026-11-07T14:22:46.762Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "CRTV Radio",
@@ -76,10 +97,30 @@
     "favicon": "https://radioenlignefrance.com/storage/radios/6885/8855/conversions/DkvJakmCUOOuVMaiESwrtRtXbTOkl6-metaQ1JUVi1SYWRpby5qcGc=--lg.webp",
     "homepage": "https://www.crtv.cm/",
     "stationUuid": "964b07c5-d89d-4b37-b5f1-dfddbac876c5",
-    "checkedAt": "2026-10-18T08:21:29.601Z",
+    "checkedAt": "2026-11-07T14:22:46.880Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "CRTV Littoral",
+    "url": "https://stream.zeno.fm/jnbojyc1vdwvv",
+    "country": "CM",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://crtv.cm/",
+    "stationUuid": "14f6e67f-a6bd-4829-b6d0-08550a53ec17",
+    "checkedAt": "2026-11-07T14:22:47.020Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Dream FM",
@@ -97,9 +138,29 @@
     "favicon": null,
     "homepage": "https://dir.rcast.net/players/244422",
     "stationUuid": "50e84985-0372-4270-a16b-053aac9ecbbf",
-    "checkedAt": "2026-10-18T08:21:29.853Z",
+    "checkedAt": "2026-11-07T14:22:47.115Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Suellaba FM 105",
+    "url": "https://10gb1.acangroup.org:8000/suellaba-fm",
+    "country": "CM",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://crtv.cm/radio/suellaba-fm",
+    "stationUuid": "20cd420b-3af1-451a-9d79-5c0c3ae13f67",
+    "checkedAt": "2026-11-07T14:22:47.645Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   }
 ]

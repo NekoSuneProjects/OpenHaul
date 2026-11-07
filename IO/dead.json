@@ -14,7 +14,7 @@
     "favicon": "https://ticktock.radio/static/assets/img/apple-icon-120x120.png",
     "homepage": "https://ticktock.radio/",
     "stationUuid": "218de9a5-7d76-4ab7-8d3e-c5704a2ebcc5",
-    "checkedAt": "2026-10-18T08:46:09.543Z",
+    "checkedAt": "2026-11-07T14:50:32.039Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -33,7 +33,7 @@
     "favicon": "https://ticktock.radio/static/assets/img/apple-icon-120x120.png",
     "homepage": "https://ticktock.radio/",
     "stationUuid": "63a5c1f5-2849-4bab-8a4c-1ef7a689d0c6",
-    "checkedAt": "2026-10-18T08:46:09.545Z",
+    "checkedAt": "2026-11-07T14:50:32.040Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -53,7 +53,7 @@
     "favicon": "https://ticktock.radio/static/assets/img/apple-icon-120x120.png",
     "homepage": "https://ticktock.radio/",
     "stationUuid": "0acc9bfe-ccee-46d3-97cf-bfc487733412",
-    "checkedAt": "2026-10-18T08:46:09.547Z",
+    "checkedAt": "2026-11-07T14:50:32.041Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -72,9 +72,26 @@
     "favicon": "https://ticktock.radio/static/assets/img/apple-icon-120x120.png",
     "homepage": "https://ticktock.radio/",
     "stationUuid": "e816acc1-4a2f-4c43-9c42-fb5dba56032c",
-    "checkedAt": "2026-10-18T08:46:09.549Z",
+    "checkedAt": "2026-11-07T14:50:32.042Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Firstspost",
+    "url": "https://www.firstpost.com/",
+    "country": "IO",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://www.firstpost.com/",
+    "homepage": "https://www.firstpost.com/",
+    "stationUuid": "f68fc03d-e5b5-4450-8ea7-9d9f3dd69913",
+    "checkedAt": "2026-11-07T14:50:32.043Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   }
 ]

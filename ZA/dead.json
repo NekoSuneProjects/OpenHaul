@@ -11,7 +11,7 @@
     "favicon": "https://bosveldstereo.co.za/wp-content/uploads/2020/01/logo-invert-opt-03.png",
     "homepage": "https://bosveldstereo.co.za/",
     "stationUuid": "6f36e760-be10-4d43-9e99-1915cc543bad",
-    "checkedAt": "2026-10-18T09:48:58.894Z",
+    "checkedAt": "2026-11-07T15:34:59.653Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -28,7 +28,7 @@
     "favicon": null,
     "homepage": "https://lmradio.co.za/",
     "stationUuid": "f25e0a43-b6e9-4d63-849b-93b0522da04d",
-    "checkedAt": "2026-10-18T09:48:59.382Z",
+    "checkedAt": "2026-11-07T15:34:59.980Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -45,7 +45,7 @@
     "favicon": null,
     "homepage": "https://www.radio-south-africa.co.za/lm-radio",
     "stationUuid": "1e18b9ec-9f32-4c8a-90b4-43764a66a093",
-    "checkedAt": "2026-10-18T09:48:59.386Z",
+    "checkedAt": "2026-11-07T15:35:00.044Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -62,7 +62,7 @@
     "favicon": "https://jellyfin.vandelegend.co.za/web/null",
     "homepage": "https://25283.live.streamtheworld.com/METROFMAAC.aac?dist=triton-widget&tdsdk=js-2.9&swm=false&pname=tdwidgets&pversion=2.9&banners=none&burst-time=15&sbmid=541b37d8-153e-41d8-85b9-35e10d314d8c",
     "stationUuid": "132300de-6456-4d83-a197-85ca3e2caae8",
-    "checkedAt": "2026-10-18T09:49:00.547Z",
+    "checkedAt": "2026-11-07T15:35:01.175Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -79,10 +79,35 @@
     "favicon": "null",
     "homepage": "https://25283.live.streamtheworld.com/METROFMAAC.aac?dist=triton-widget&tdsdk=js-2.9&swm=false&pname=tdwidgets&pversion=2.9&banners=none&burst-time=15&sbmid=541b37d8-153e-41d8-85b9-35e10d314d8c",
     "stationUuid": "9e8ccaf9-99b1-4b80-ac33-66b3b5057745",
-    "checkedAt": "2026-10-18T09:49:00.551Z",
+    "checkedAt": "2026-11-07T15:35:01.206Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Kaleidoscope Online",
+    "url": "https://superagent-269bfe30.base44.app/functions/kaleidoscopeRadio?go=stream",
+    "country": "ZA",
+    "type": "afrikaans",
+    "tags": [
+      "afrikaans",
+      "blind",
+      "boeremusiek",
+      "community",
+      "country",
+      "dance",
+      "gospel"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "afrikaans,english",
+    "favicon": null,
+    "homepage": "https://superagent-269bfe30.base44.app/functions/kaleidoscopeRadio",
+    "stationUuid": "55ed164c-9ca6-49dd-bf8c-1c4339507e3b",
+    "checkedAt": "2026-11-07T15:35:03.081Z",
+    "status": 503,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Radio Daspoort",
@@ -98,7 +123,7 @@
     "favicon": null,
     "homepage": "https://c40.radioboss.fm:8268/stream",
     "stationUuid": "eb2fccb2-8502-49a3-9320-305e91728de0",
-    "checkedAt": "2026-10-18T09:49:02.686Z",
+    "checkedAt": "2026-11-07T15:35:03.276Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -117,7 +142,7 @@
     "favicon": "https://www.radiofreetankwa.com/uploads/8/5/8/1/8581569/published/screenshot-2019-12-27-at-13-00-14.png?1577451635",
     "homepage": "https://www.radiofreetankwa.com/",
     "stationUuid": "ad084a49-3398-42c7-a82a-a127fe1c281e",
-    "checkedAt": "2026-10-18T09:49:02.758Z",
+    "checkedAt": "2026-11-07T15:35:03.319Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -153,7 +178,7 @@
     "favicon": null,
     "homepage": "https://radiio.link/",
     "stationUuid": "56e53111-3005-434e-8db0-04af4aab8876",
-    "checkedAt": "2026-10-18T09:49:02.972Z",
+    "checkedAt": "2026-11-07T15:35:03.434Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -189,7 +214,7 @@
     "favicon": "https://radiio.link/blu.svg",
     "homepage": "https://radiio.link/",
     "stationUuid": "6620f002-b733-45fe-bade-079cb24762e3",
-    "checkedAt": "2026-10-18T09:49:03.047Z",
+    "checkedAt": "2026-11-07T15:35:03.484Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -210,7 +235,7 @@
     "favicon": null,
     "homepage": "https://radioalansaar.org.za/",
     "stationUuid": "738555cc-4515-4350-8b98-d628f5017963",
-    "checkedAt": "2026-10-18T09:49:04.211Z",
+    "checkedAt": "2026-11-07T15:35:04.859Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -229,7 +254,7 @@
     "favicon": null,
     "homepage": "https://www.hellenicradio.org.za/",
     "stationUuid": "6c3db0fd-3700-4d07-ae61-3f562bfe8202",
-    "checkedAt": "2026-10-18T09:49:04.445Z",
+    "checkedAt": "2026-11-07T15:35:05.447Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -248,7 +273,7 @@
     "favicon": null,
     "homepage": "https://c2.radioboss.fm:9202/stream",
     "stationUuid": "2959083f-c139-4e72-b1cd-4ce00df3518d",
-    "checkedAt": "2026-10-18T09:49:04.824Z",
+    "checkedAt": "2026-11-07T15:35:05.772Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -267,27 +292,10 @@
     "favicon": "https://www.hellenicradio.org.za/wp-content/uploads/2023/07/LOGO.png",
     "homepage": "http://www.hellenicradio.org.za/",
     "stationUuid": "dbb1e550-d0d4-4dbd-b956-57e65c4fb545",
-    "checkedAt": "2026-10-18T09:49:05.462Z",
+    "checkedAt": "2026-11-07T15:35:06.806Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "AFROBEATS FM",
-    "url": "https://audio.afrobeatsfm.com:8443/;",
-    "country": "ZA",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://afrobeatsfm.com/logo.jpg",
-    "homepage": "https://afrobeatsfm.com/",
-    "stationUuid": "629c8df6-1cbb-4602-bc26-c4c580228759",
-    "checkedAt": "2026-10-18T09:49:08.654Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "AL-Ansaar Radio",
@@ -301,7 +309,7 @@
     "favicon": "https://linktr.ee/favicon.ico",
     "homepage": "https://linktr.ee/Alansaar",
     "stationUuid": "e7b9541b-de25-4be8-a4ed-bd9c7ba5326d",
-    "checkedAt": "2026-10-18T09:49:10.147Z",
+    "checkedAt": "2026-11-07T15:35:08.712Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -318,7 +326,7 @@
     "favicon": "https://alansaar.org.za/favicon.ico",
     "homepage": "https://alansaar.org.za/",
     "stationUuid": "fd183918-a6fe-4af2-8c18-9f4f91049a26",
-    "checkedAt": "2026-10-18T09:49:10.366Z",
+    "checkedAt": "2026-11-07T15:35:08.725Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -335,10 +343,27 @@
     "favicon": null,
     "homepage": "https://radiio.link/",
     "stationUuid": "6efd9d3a-6c28-482a-a641-15ed7585a0a0",
-    "checkedAt": "2026-10-18T09:49:12.946Z",
+    "checkedAt": "2026-11-07T15:35:09.316Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
+  },
+  {
+    "name": "Chai FM",
+    "url": "https://zas1.ndx.co.za:8008/stream?1702143258610",
+    "country": "ZA",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.chaifm.com/",
+    "stationUuid": "b65fccc0-1e7c-4337-acff-b64d19e84e95",
+    "checkedAt": "2026-11-07T15:35:10.612Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "EVR",
@@ -352,27 +377,10 @@
     "favicon": "https://radio.eclipse-streaming.co.za/static/uploads/album_art.1708559460.jpg",
     "homepage": "https://eclipse-radio.eclipse-streaming.co.za/public/evr",
     "stationUuid": "cde89677-cb75-4e86-a7e3-8a53d008c3a9",
-    "checkedAt": "2026-10-18T09:49:17.631Z",
+    "checkedAt": "2026-11-07T15:35:11.235Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Marley Music Radio",
-    "url": "https://marleymusic.online/listen/marleymusic/radio.mp3",
-    "country": "ZA",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 320,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.marleymusic.fm/",
-    "stationUuid": "c31350b3-a41d-4e56-83fb-c02eb3be0679",
-    "checkedAt": "2026-10-18T09:49:19.052Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
   },
   {
     "name": "Melkies Radio",
@@ -386,9 +394,26 @@
     "favicon": "https://radio2.eclipse-streaming.co.za/api/station/melkies/art/743dfd89be4058a65b368cdd",
     "homepage": "https://radio2.eclipse-streaming.co.za/public/melkies",
     "stationUuid": "6fc4059c-e74b-4e83-89a1-b7ff4cae8d58",
-    "checkedAt": "2026-10-18T09:49:19.363Z",
+    "checkedAt": "2026-11-07T15:35:13.057Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "MERAFONG 360 ONLINE RADIO",
+    "url": "https://sv2.famcast.co.za/stream/merafong?t=1769529345666",
+    "country": "ZA",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://eu2.contabostorage.com/b94f201d35554c5283f96247e0e97a2c:famcast-storage/ThaboM/merafong-360-online-radio.webp",
+    "homepage": "https://famcast.co.za/q/stations/merafong-360-online-radio/#",
+    "stationUuid": "13942d11-f0e4-43e4-9e9b-3d3902944a2a",
+    "checkedAt": "2026-11-07T15:35:13.065Z",
+    "status": 404,
+    "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
   },
   {
@@ -403,7 +428,7 @@
     "favicon": "https://radio786.co.za/786/786.png",
     "homepage": "https://www.radio786.co.za/",
     "stationUuid": "e6dd9def-97d2-467b-9c07-bf5065f28959",
-    "checkedAt": "2026-10-18T09:49:19.787Z",
+    "checkedAt": "2026-11-07T15:35:13.619Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -420,7 +445,7 @@
     "favicon": "https://www.rockafm.co.za/wp-content/uploads/2025/02/2022-Rocka-FM-Logo.png",
     "homepage": "https://www.rockafm.co.za/",
     "stationUuid": "082884a5-99e4-4d21-9da4-bd4446f529b1",
-    "checkedAt": "2026-10-18T09:49:20.651Z",
+    "checkedAt": "2026-11-07T15:35:14.302Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -437,10 +462,27 @@
     "favicon": "https://radio.eclipse-streaming.co.za/static/uploads/the_better_dot_fm/album_art.1708590513.jpg",
     "homepage": "https://eclipse-radio.eclipse-streaming.co.za/public/the_better_dot_fm",
     "stationUuid": "09a1997a-c0a9-4fa0-87cd-a74785954d76",
-    "checkedAt": "2026-10-18T09:49:20.845Z",
+    "checkedAt": "2026-11-07T15:35:14.704Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Knysna FM",
+    "url": "https://knysnafm.co.zahttps//www.radio-south-africa.co.za/knysna-fm",
+    "country": "ZA",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://knysnafm.co.za/",
+    "stationUuid": "f10b8075-87dd-4ee9-9d7e-9cdacb84178c",
+    "checkedAt": "2026-11-07T15:35:15.854Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio Daspoort",
@@ -456,7 +498,7 @@
     "favicon": null,
     "homepage": "https://c44.radioboss.fm:8174/stream",
     "stationUuid": "045e9298-613e-4b40-8e6c-2760ee6dbe13",
-    "checkedAt": "2026-10-18T09:49:22.235Z",
+    "checkedAt": "2026-11-07T15:35:16.536Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -475,7 +517,7 @@
     "favicon": null,
     "homepage": "https://c44.radioboss.fm:8174/stream",
     "stationUuid": "826ab6b9-82c5-40dd-abfc-08d989afc3db",
-    "checkedAt": "2026-10-18T09:49:22.437Z",
+    "checkedAt": "2026-11-07T15:35:16.681Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -494,10 +536,29 @@
     "favicon": null,
     "homepage": "https://c44.radioboss.fm:8174/stream",
     "stationUuid": "2b381535-ff41-49c7-98f8-6477040a80ee",
-    "checkedAt": "2026-10-18T09:49:22.555Z",
+    "checkedAt": "2026-11-07T15:35:16.813Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Bigode Grosso",
+    "url": "https://cp-1.owh.radio.br/listen/owh_s35236/radio-mp3",
+    "country": "ZA",
+    "type": "popular",
+    "tags": [
+      "popular"
+    ],
+    "codec": "AAC",
+    "bitrate": 96,
+    "language": "portuguese",
+    "favicon": "https://cp-1.owh.radio.br/static/uploads/owh_s35236/album_art.1790703504.jpg",
+    "homepage": "https://www.owh.radio.br/",
+    "stationUuid": "ff6240ce-0f35-40c5-955b-54d6a2315b50",
+    "checkedAt": "2026-11-07T15:35:17.089Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Capital Radio 604",
@@ -513,7 +574,7 @@
     "favicon": null,
     "homepage": "https://www.capital604.com/",
     "stationUuid": "19328ca9-507a-4973-9e8a-8617a42f98c2",
-    "checkedAt": "2026-10-18T09:49:23.152Z",
+    "checkedAt": "2026-11-07T15:35:17.672Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

@@ -17,121 +17,10 @@
     "favicon": null,
     "homepage": "https://radio.xecod.com/listen/basit-archive",
     "stationUuid": "f4909283-122e-4fd9-8b0a-8022be9bd719",
-    "checkedAt": "2026-10-18T08:33:41.279Z",
+    "checkedAt": "2026-11-07T14:36:21.470Z",
     "status": 404,
     "contentType": "application/json",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "OmniRadio - Sheikh Ahmad Tamim Al-Maraghi (الشيخ أحمد تميم المراغي)",
-    "url": "https://radio.xecod.com/station/ahmad-tamim",
-    "country": "EG",
-    "type": "arabic",
-    "tags": [
-      "arabic",
-      "islam",
-      "islamic",
-      "quran",
-      "religious"
-    ],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "ar",
-    "favicon": null,
-    "homepage": "https://radio.xecod.com/listen/ahmad-tamim",
-    "stationUuid": "32177b1c-bcaf-4e43-97ab-6692116c5a57",
-    "checkedAt": "2026-10-18T08:33:56.632Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "OmniRadio - Sheikh Ahmad Tamim Al-Maraghi (الشيخ أحمد تميم المراغي)",
-    "url": "https://radio.xecod.com/station/ahmad-tamim",
-    "country": "EG",
-    "type": "arabic",
-    "tags": [
-      "arabic",
-      "islam",
-      "islamic",
-      "quran",
-      "religious"
-    ],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "ar",
-    "favicon": null,
-    "homepage": "https://radio.xecod.com/listen/ahmad-tamim",
-    "stationUuid": "994587a0-ae80-44c3-a4cd-43192de91000",
-    "checkedAt": "2026-10-18T08:33:56.730Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "OmniRadio - Sheikh Ahmad Tamim Al-Maraghi (الشيخ أحمد تميم المراغي)",
-    "url": "https://radio.xecod.com/station/ahmad-tamim",
-    "country": "EG",
-    "type": "arabic",
-    "tags": [
-      "arabic",
-      "islam",
-      "islamic",
-      "quran",
-      "religious"
-    ],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "ar",
-    "favicon": null,
-    "homepage": "https://radio.xecod.com/listen/ahmad-tamim",
-    "stationUuid": "82226c8c-b094-4965-9d4e-9dcd26c4414a",
-    "checkedAt": "2026-10-18T08:33:56.734Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "OmniRadio - Sheikh Ahmad Tamim Al-Maraghi (الشيخ أحمد تميم المراغي)",
-    "url": "https://radio.xecod.com/station/ahmad-tamim",
-    "country": "EG",
-    "type": "arabic",
-    "tags": [
-      "arabic",
-      "islam",
-      "islamic",
-      "quran",
-      "religious"
-    ],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "ar",
-    "favicon": null,
-    "homepage": "https://radio.xecod.com/listen/ahmad-tamim",
-    "stationUuid": "afb059f3-75c2-4e23-85f8-9c0ea071aef6",
-    "checkedAt": "2026-10-18T08:33:56.767Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": ".إذاعة ماهر المعيقلي",
-    "url": "https://backup.qurango.net/radio/maher",
-    "country": "EG",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "1f82ec6c-21f0-4f65-8ab8-a8ba272e3a20",
-    "checkedAt": "2026-10-18T08:34:26.543Z",
-    "status": 500,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 500"
   },
   {
     "name": "إذاعة طريق السلف",
@@ -147,10 +36,50 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "8f7c5854-1147-4c6e-9780-198d9b1105b8",
-    "checkedAt": "2026-10-18T08:34:26.652Z",
+    "checkedAt": "2026-11-07T14:37:31.965Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Nile FM 104.2",
+    "url": "https://audio.nrpstream.com/listen/nile_fm/radio.mp3",
+    "country": "EG",
+    "type": "hits",
+    "tags": [
+      "hits",
+      "music",
+      "pop"
+    ],
+    "codec": null,
+    "bitrate": 0,
+    "language": "english",
+    "favicon": "https://nilefm.com/static/android-icon-192x192.png",
+    "homepage": "https://nilefm.com/",
+    "stationUuid": "7e7a093f-680c-45c4-ac66-862e471458dd",
+    "checkedAt": "2026-11-07T14:37:32.206Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "إذاعة محمود خليل الحصري",
+    "url": "https://qurango.net/radio/mahmoud_khalil_alhussary_warsh",
+    "country": "EG",
+    "type": "islamic",
+    "tags": [
+      "islamic"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": null,
+    "homepage": "https://qurango.net",
+    "stationUuid": "3f5d8a52-dea9-4201-9575-a58adc8e9263",
+    "checkedAt": "2026-11-07T14:37:32.232Z",
+    "status": 502,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Coptic Voice Radio",
@@ -164,7 +93,7 @@
     "favicon": "http://copticvoiceradio.org/wp-content/uploads/2015/08/logo_2000-fm.png",
     "homepage": "http://copticvoiceradio.org/",
     "stationUuid": "63720d26-6244-4f24-9e8d-d7e2ab7850e7",
-    "checkedAt": "2026-10-18T08:34:26.794Z",
+    "checkedAt": "2026-11-07T14:37:32.576Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -181,7 +110,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/djqjrjhxsrgtv",
     "stationUuid": "90bf5b0a-b323-474f-aef1-1b34dbf165e3",
-    "checkedAt": "2026-10-18T08:34:26.971Z",
+    "checkedAt": "2026-11-07T14:37:32.828Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -201,7 +130,7 @@
     "favicon": null,
     "homepage": "http://live.mp3quran.net:9728/",
     "stationUuid": "f6fa7958-c75f-11e8-a54a-52543be04c81",
-    "checkedAt": "2026-10-18T08:34:28.081Z",
+    "checkedAt": "2026-11-07T14:37:33.751Z",
     "status": 502,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 502"

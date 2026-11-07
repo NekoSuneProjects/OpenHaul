@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://mytuner-radio.com/radio/bachwezi-radio-488187/",
     "stationUuid": "f104917d-5b1d-4d0e-b63c-7778b3c62f17",
-    "checkedAt": "2026-10-18T09:11:59.392Z",
+    "checkedAt": "2026-11-07T15:14:24.116Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -28,7 +28,7 @@
     "favicon": null,
     "homepage": "https://mytuner-radio.com/radio/bachwezi-radio-488187/",
     "stationUuid": "b531b79e-f104-4d42-8707-a14a50f57378",
-    "checkedAt": "2026-10-18T09:11:59.393Z",
+    "checkedAt": "2026-11-07T15:14:24.117Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -45,7 +45,7 @@
     "favicon": null,
     "homepage": "https://www.socialcreator.com/gendananigiheradio",
     "stationUuid": "37acb127-cb1f-44ce-b8bf-76c3d938d470",
-    "checkedAt": "2026-10-18T09:11:59.394Z",
+    "checkedAt": "2026-11-07T15:14:24.117Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -62,26 +62,30 @@
     "favicon": null,
     "homepage": "https://www.socialcreator.com/gendananigiheradio",
     "stationUuid": "854e6b05-d91f-4f55-920d-5714a878fbbc",
-    "checkedAt": "2026-10-18T09:11:59.394Z",
+    "checkedAt": "2026-11-07T15:14:24.117Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "Radio Rwanda",
-    "url": "https://listen.rba.co.rw:8008/rwanda/",
+    "name": "Radio 1",
+    "url": "http://80.241.215.175:5000/;",
     "country": "RW",
-    "type": "MP3",
-    "tags": [],
+    "type": "local music",
+    "tags": [
+      "local music",
+      "news",
+      "talk"
+    ],
     "codec": "MP3",
     "bitrate": 128,
     "language": null,
-    "favicon": "https://rba.co.rw/icon/icr_home_rwanda.png",
-    "homepage": "https://rba.co.rw/",
-    "stationUuid": "d05521ae-0b07-4c1e-ac57-939dc30771f0",
-    "checkedAt": "2026-10-18T09:11:59.657Z",
-    "status": null,
+    "favicon": null,
+    "homepage": "http://tv1.rw/",
+    "stationUuid": "1dc3ae71-b19a-46bc-8ad5-54d6defda867",
+    "checkedAt": "2026-11-07T15:14:24.192Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "HTTP 401"
   }
 ]

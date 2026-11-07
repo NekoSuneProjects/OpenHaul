@@ -1,45 +1,68 @@
 [
   {
-    "name": "Nkhoma Synod Radio",
-    "url": "http://cast1.asurahosting.com:7347/live",
+    "name": "Radio Tigabane",
+    "url": "https://play.streamafrica.net/tigabane",
     "country": "MW",
     "type": "christian",
     "tags": [
       "christian",
-      "gospel",
-      "religious"
+      "news",
+      "religious",
+      "talk"
     ],
     "codec": "MP3",
     "bitrate": 128,
     "language": "chichewa",
     "favicon": null,
     "homepage": null,
-    "stationUuid": "ec8b44a1-2fdb-4664-a986-b567ba9c7d18",
-    "checkedAt": "2026-10-18T08:51:17.784Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
+    "stationUuid": "7dc397f5-4cd3-4a8d-a4aa-89b3c0b1939d",
+    "checkedAt": "2026-11-07T14:56:19.288Z",
+    "status": 502,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 502"
   },
   {
-    "name": "Nkhoma Synod Radio",
-    "url": "http://cast1.asurahosting.com:7347/live",
+    "name": "Tuntufye FM Radio",
+    "url": "https://stream.zeno.fm/ekhjwjjj0a0vv",
     "country": "MW",
     "type": "christian",
     "tags": [
       "christian",
-      "gospel",
-      "religious"
+      "news",
+      "religious",
+      "talk"
     ],
     "codec": "MP3",
     "bitrate": 128,
     "language": "chichewa",
     "favicon": null,
-    "homepage": null,
-    "stationUuid": "bb4735b4-9e5e-41ce-8e4b-d8a477ea4c63",
-    "checkedAt": "2026-10-18T08:51:17.831Z",
-    "status": null,
+    "homepage": "https://tuntufyefm.com/",
+    "stationUuid": "9bdb2efa-d6e5-4728-9190-e67e96e780c1",
+    "checkedAt": "2026-11-07T14:56:19.339Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Angoni Radio Station",
+    "url": "https://live.netradio.pro/listen/angoni/radio.mp3",
+    "country": "MW",
+    "type": "education",
+    "tags": [
+      "education",
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "chichewa",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "de97fdca-66c6-482e-8761-d22383ca1a6e",
+    "checkedAt": "2026-11-07T14:56:19.440Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Mzimba Community Radio - 107.6 FM",
@@ -56,9 +79,90 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "d67bd854-c35d-42f5-861f-6588ac8fcb95",
-    "checkedAt": "2026-10-18T08:51:19.647Z",
+    "checkedAt": "2026-11-07T14:56:21.012Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Prof K. Online Radio",
+    "url": "https://play.streamafrica.net/profkradio",
+    "country": "MW",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "AAC",
+    "bitrate": 96,
+    "language": "chichewa",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "54971480-a3bb-4e62-9bcc-aacf32f13939",
+    "checkedAt": "2026-11-07T14:56:21.114Z",
+    "status": 502,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Story Club FM",
+    "url": "https://stream.zeno.fm/pmsyym60maauv",
+    "country": "MW",
+    "type": "news",
+    "tags": [
+      "news",
+      "sports",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://www.storyclubfm.com/",
+    "stationUuid": "66c9f684-260b-4426-89f1-c7465dd54726",
+    "checkedAt": "2026-11-07T14:56:21.166Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "We Can Media Online Radio",
+    "url": "https://stream.zeno.fm/sg6x5m9nviltv",
+    "country": "MW",
+    "type": "news",
+    "tags": [
+      "news",
+      "sports",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "chichewa",
+    "favicon": null,
+    "homepage": "https://zeno.fm/radio/we-can-media-online-radio/",
+    "stationUuid": "62e53beb-462c-45b5-8616-373273aad9db",
+    "checkedAt": "2026-11-07T14:56:21.266Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Khoza Radio",
+    "url": "https://stream.zeno.fm/d0gkttv941zuv",
+    "country": "MW",
+    "type": "talk",
+    "tags": [
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://kalumw.com/lunkhunkhu2/",
+    "stationUuid": "7cf8a6c1-0a43-4e8c-8141-333c442bae4b",
+    "checkedAt": "2026-11-07T14:56:21.351Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   }
 ]

@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://astanafm.kz/",
     "stationUuid": "e5b9eb79-1569-4cda-b86d-605750ec707a",
-    "checkedAt": "2026-10-18T08:49:55.649Z",
+    "checkedAt": "2026-11-07T14:54:51.762Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -31,10 +31,30 @@
     "favicon": null,
     "homepage": "http://spacebeat.strangled.net/",
     "stationUuid": "af31308a-5407-4f53-9986-50b01b8ce933",
-    "checkedAt": "2026-10-18T08:49:55.651Z",
+    "checkedAt": "2026-11-07T14:54:51.764Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Lux FM Kazakhstan",
+    "url": "https://service.luxfm.kz/bc/live",
+    "country": "KZ",
+    "type": "culture",
+    "tags": [
+      "culture",
+      "music"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "russian",
+    "favicon": null,
+    "homepage": "https://luxfm.kz/",
+    "stationUuid": "addc5dcf-a1b4-49bf-a60c-d191945b7ed6",
+    "checkedAt": "2026-11-07T14:54:52.244Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Space Beat (64k AAC)",
@@ -50,10 +70,29 @@
     "favicon": "https://tihbus.droppages.com/sbr-logo.png",
     "homepage": "https://t.me/spacebeatradio",
     "stationUuid": "4a1a7199-a7ec-435d-9835-7387b4941750",
-    "checkedAt": "2026-10-18T08:49:57.348Z",
+    "checkedAt": "2026-11-07T14:54:52.452Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "The Holy Quran  by Sheikh Mahmoud Al-Husari",
+    "url": "https://qurango.net/radio/mahmoud_khalil_alhussary_warsh",
+    "country": "KZ",
+    "type": "islamic، classical",
+    "tags": [
+      "islamic، classical"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": "null",
+    "homepage": "https://qurango.net/radio/mahmoud_khalil_alhussary_warsh",
+    "stationUuid": "2bdfd9b3-e163-4276-a476-5153d8e6bc00",
+    "checkedAt": "2026-11-07T14:54:53.552Z",
+    "status": 502,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Love Radio Kazakhstan",
@@ -67,9 +106,45 @@
     "favicon": "https://loveradio.kz/img/touch-icon-ipad-pro.png",
     "homepage": "https://loveradio.kz/",
     "stationUuid": "75437893-9527-4de8-902e-c04f08af2dfc",
-    "checkedAt": "2026-10-18T08:49:58.867Z",
+    "checkedAt": "2026-11-07T14:54:53.983Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Радио NS Павлодар",
+    "url": "https://service.ns.kz/bc/live",
+    "country": "KZ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.ns.kz/",
+    "stationUuid": "faf8bdda-5653-438e-94a2-e8fdad745661",
+    "checkedAt": "2026-11-07T14:54:54.247Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "NS-Rock",
+    "url": "https://icecast.ns.kz/radions",
+    "country": "KZ",
+    "type": "varios",
+    "tags": [
+      "varios"
+    ],
+    "codec": "AAC",
+    "bitrate": 80,
+    "language": "kazakh,russian",
+    "favicon": null,
+    "homepage": "http://www.ns.kz/",
+    "stationUuid": "dbaf93a0-220f-4b76-81db-89d60dbac857",
+    "checkedAt": "2026-11-07T14:54:54.786Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   }
 ]

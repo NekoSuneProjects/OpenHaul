@@ -1,26 +1,5 @@
 [
   {
-    "name": "EB FM",
-    "url": "https://stream.zeno.fm/oy1uo8lwuy9uv",
-    "country": "CI",
-    "type": "actualités",
-    "tags": [
-      "actualités",
-      "gospel",
-      "émission"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "american english,french",
-    "favicon": null,
-    "homepage": "https://zeno.fm/radio/eb-fm/",
-    "stationUuid": "e419cb02-f72c-4e4b-97e7-b19b2dcefbfb",
-    "checkedAt": "2026-10-18T08:20:47.006Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
     "name": "Radio Chandelier",
     "url": "http://serveur3.wanastream.com:10500/;",
     "country": "CI",
@@ -36,51 +15,48 @@
     "favicon": null,
     "homepage": "http://www.radiochandelier.ci/",
     "stationUuid": "7e19bf7b-c09c-48f7-81b3-f52a1ee9c27a",
-    "checkedAt": "2026-10-18T08:20:47.611Z",
+    "checkedAt": "2026-11-07T14:22:06.394Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Radio Fréquence Vie",
-    "url": "https://streamer.galcom.org:8443/RadioFrequenceVie",
+    "name": "Radio Santé CI",
+    "url": "https://stream-179.surfernetwork.com/ghjewb6oraitv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJnaGpld2I2b3JhaXR2IiwiaG9zdCI6InN0cmVhbS0xNzkuc3VyZmVybmV0d29yay5jb20iLCJ0bSI6ZmFsc2UsInJ0dGwiOjUsImp0aSI6Ikc2RlVSeUtjVGw2M0tKby1NQkN0NFEiLCJpYXQiOjE3OTI2Njg4MDIsImV4cCI6MTc5MjY2ODg2Mn0.uO5auc44MaDvmR756ZS0tSFqiXxcy461C-xb3kWtVEw",
     "country": "CI",
-    "type": "christian",
+    "type": "news",
     "tags": [
-      "christian",
-      "gospel",
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "4618aed1-340e-42e1-8932-8317dcedc777",
+    "checkedAt": "2026-11-07T14:22:07.831Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Radio Nuit Blanche",
+    "url": "https://free.rcast.net/73850",
+    "country": "CI",
+    "type": "talk",
+    "tags": [
       "talk"
     ],
     "codec": "MP3",
     "bitrate": 96,
     "language": "french",
     "favicon": null,
-    "homepage": "https://www.radiofrequencevie.com/",
-    "stationUuid": "d0ea7f2e-fd63-492a-ba12-b9d92554b59e",
-    "checkedAt": "2026-10-18T08:20:47.838Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Nostalgie CI",
-    "url": "http://213.136.96.14:8000/nostalgie2.mp3",
-    "country": "CI",
-    "type": "oldies",
-    "tags": [
-      "oldies",
-      "pop",
-      "top 40"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "french",
-    "favicon": null,
-    "homepage": "https://www.nostalgie.ci/",
-    "stationUuid": "64950083-4946-40bc-8576-8a1c50e7442d",
-    "checkedAt": "2026-10-18T08:20:49.505Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "homepage": null,
+    "stationUuid": "123ab45f-8634-4b3b-b0f1-4ee98a7fb918",
+    "checkedAt": "2026-11-07T14:22:08.441Z",
+    "status": 500,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 500"
   }
 ]

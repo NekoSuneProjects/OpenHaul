@@ -1,24 +1,5 @@
 [
   {
-    "name": "seba",
-    "url": "http://213.6.93.254:8000/sebafm",
-    "country": "PS",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "e7e418ef-a7c1-48d1-a1ac-64010dcb7fa4",
-    "checkedAt": "2026-10-18T09:03:13.074Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
     "name": "Radio alHara",
     "url": "http://n02.radiojar.com/78cxy6wkxtzuv?1634328730=&rj-tok=AAABfIWfHK4AlWz8Q03vJJQdWw&rj-ttl=5",
     "country": "PS",
@@ -32,7 +13,7 @@
     "favicon": "https://yamakan.place/palestine/favicon.ico",
     "homepage": "https://yamakan.place/palestine/",
     "stationUuid": "d62fa52b-7c1c-492c-9861-cd2c0ec02f00",
-    "checkedAt": "2026-10-18T09:03:13.079Z",
+    "checkedAt": "2026-11-07T15:09:40.809Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -51,7 +32,7 @@
     "favicon": "https://www.radioalhara.net/favicon.ico",
     "homepage": "https://www.radioalhara.net/",
     "stationUuid": "308a9f58-fb54-44dc-b95d-bb40fe4f3631",
-    "checkedAt": "2026-10-18T09:03:13.080Z",
+    "checkedAt": "2026-11-07T15:09:40.810Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -70,9 +51,26 @@
     "favicon": "https://www.radioalhara.net/favicon.ico",
     "homepage": "https://www.radioalhara.net/",
     "stationUuid": "25099007-e335-4bad-bd3a-515a34be3cc4",
-    "checkedAt": "2026-10-18T09:03:13.147Z",
+    "checkedAt": "2026-11-07T15:09:40.845Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Amen24",
+    "url": "https://rstream.hadara.ps/proxy/amen24/stream",
+    "country": "PS",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://amen24.ps/sites/default/files/amen-logo2_0.png",
+    "homepage": "https://amen24.ps/",
+    "stationUuid": "5a51cff5-24d5-422f-bbab-aa0a8078f88b",
+    "checkedAt": "2026-11-07T15:09:40.908Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   }
 ]
