@@ -13,9 +13,26 @@
     "favicon": null,
     "homepage": "http://signalx.radio12345.com/",
     "stationUuid": "df786327-ac94-4782-945b-aff3df3f4027",
-    "checkedAt": "2026-11-07T14:45:51.756Z",
+    "checkedAt": "2026-11-08T11:09:21.382Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "BONHEUR FM Guinée live - 101.4 FM",
+    "url": "https://stream.zeno.fm/gzxp5eqkafeuv",
+    "country": "GN",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 24,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://zeno.fm/radio/radiobonheurfmguinee/",
+    "stationUuid": "a336c3dc-aa76-46d5-bcfb-677fd792347e",
+    "checkedAt": "2026-11-08T11:09:21.382Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   }
 ]

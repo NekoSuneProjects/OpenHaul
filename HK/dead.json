@@ -11,7 +11,7 @@
     "favicon": "https://foxxradio.com/upload/hk/1620700276.jpg.webp",
     "homepage": "https://www.facebook.com/881903com/",
     "stationUuid": "4c1ca3b1-28c9-47db-93b7-de2053232009",
-    "checkedAt": "2026-11-07T14:48:10.821Z",
+    "checkedAt": "2026-11-08T11:11:33.615Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -28,7 +28,7 @@
     "favicon": "https://www.apple-fm.net/images/apple200text.png",
     "homepage": "https://www.apple-fm.net/",
     "stationUuid": "afaf4fe0-dedf-4226-ab59-85b82fe007c2",
-    "checkedAt": "2026-11-07T14:48:10.921Z",
+    "checkedAt": "2026-11-08T11:11:33.632Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -45,7 +45,7 @@
     "favicon": "http://pic.qingting.fm/2022/1231/20221231114640.png",
     "homepage": "https://www.hizh.cn/",
     "stationUuid": "9073a5eb-5a43-45a3-9c18-33bb5b4dab9c",
-    "checkedAt": "2026-11-07T14:48:14.414Z",
+    "checkedAt": "2026-11-08T11:11:37.674Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -64,7 +64,7 @@
     "favicon": "https://foxxradio.com/upload/hk/1620698984.jpg.webp",
     "homepage": "https://www.881903.com/",
     "stationUuid": "cad4969e-cf50-4c96-8348-60e4c288ff61",
-    "checkedAt": "2026-11-07T14:48:14.737Z",
+    "checkedAt": "2026-11-08T11:11:38.318Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -83,7 +83,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5b253a02-28ed-48a7-a972-2aef5b114036",
-    "checkedAt": "2026-11-07T14:48:15.055Z",
+    "checkedAt": "2026-11-08T11:11:38.646Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -102,7 +102,7 @@
     "favicon": null,
     "homepage": "http://www.apple-fm.net/",
     "stationUuid": "c5a87eaf-c961-11e9-8502-52543be04c81",
-    "checkedAt": "2026-11-07T14:48:15.566Z",
+    "checkedAt": "2026-11-08T11:11:39.202Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -121,7 +121,7 @@
     "favicon": "https://foxxradio.com/upload/hk/1620700109.jpg.webp",
     "homepage": "https://www.my903.com/903openbox",
     "stationUuid": "b72e497b-d2c1-436f-8508-2048a1b28e84",
-    "checkedAt": "2026-11-07T14:48:15.566Z",
+    "checkedAt": "2026-11-08T11:11:39.225Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -140,7 +140,7 @@
     "favicon": "https://pic.qtfm.cn/2024/0410/20240410025046.jpeg",
     "homepage": "https://www.qtfm.cn/radios/20500021",
     "stationUuid": "8c56edc7-6e44-4143-aeb5-51fe9a00dfe4",
-    "checkedAt": "2026-11-07T14:48:15.603Z",
+    "checkedAt": "2026-11-08T11:11:39.251Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -157,9 +157,43 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "a6a2441d-4d74-4b9f-ba61-89564fba0982",
-    "checkedAt": "2026-11-07T14:48:15.605Z",
+    "checkedAt": "2026-11-08T11:11:39.255Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "AisaFM亚洲粤语台",
+    "url": "https://live.ximalaya.com/radio-first-page-app/live/999/64.m3u8?transcode=ts",
+    "country": "HK",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "76faebfa-2f00-49ed-876b-ab8af204cbd6",
+    "checkedAt": "2026-11-08T11:11:39.897Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "中央人民廣播電台 中國之聲",
+    "url": "http://zbbf2.ahbztv.com/live/4f3.m3u8",
+    "country": "HK",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 233,
+    "language": "chinese",
+    "favicon": null,
+    "homepage": "https://www.cnr.cn/",
+    "stationUuid": "a41c628e-3961-43d2-9aec-91521d00788b",
+    "checkedAt": "2026-11-08T11:11:40.098Z",
+    "status": 404,
+    "contentType": null,
     "lastFailure": "HTTP 404"
   },
   {
@@ -176,7 +210,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "392ab5e8-c91a-4b27-9792-cae5fb712ebe",
-    "checkedAt": "2026-11-07T14:48:18.205Z",
+    "checkedAt": "2026-11-08T11:11:41.349Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -195,7 +229,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "4dcf7151-3427-43bc-9ef1-24e3704ac0f2",
-    "checkedAt": "2026-11-07T14:48:18.229Z",
+    "checkedAt": "2026-11-08T11:11:41.372Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

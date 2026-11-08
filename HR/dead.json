@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "http://garesnica.net/krugoval/",
     "stationUuid": "96242d53-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-07T14:48:10.528Z",
+    "checkedAt": "2026-11-08T11:11:33.030Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -28,7 +28,7 @@
     "favicon": "https://www.cvrai.com/apple-touch-icon.png",
     "homepage": "https://www.cvrai.com/",
     "stationUuid": "aa50ce48-9504-4e9c-8543-beab36cc2173",
-    "checkedAt": "2026-11-07T14:48:11.625Z",
+    "checkedAt": "2026-11-08T11:11:34.118Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -45,7 +45,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/3/24263.v15.png",
     "homepage": "https://trogirskiportal.hr/radio_trogir/",
     "stationUuid": "451810cd-7eef-4516-94a2-68b865f26fe6",
-    "checkedAt": "2026-11-07T14:48:11.757Z",
+    "checkedAt": "2026-11-08T11:11:34.161Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -62,7 +62,7 @@
     "favicon": "https://www.radio-zlatar.hr/novosti_slike/kzz.png",
     "homepage": "https://www.radio-zlatar.hr/",
     "stationUuid": "96236b8d-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-07T14:48:13.363Z",
+    "checkedAt": "2026-11-08T11:11:35.653Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -81,7 +81,7 @@
     "favicon": "https://radio-bnm.hr/wp-content/uploads/2024/03/bnm-radio-logo-30.png",
     "homepage": "https://radio-bnm.hr/",
     "stationUuid": "a90c6b9a-3119-4fbe-9f14-2a520e56dc41",
-    "checkedAt": "2026-11-07T14:48:13.860Z",
+    "checkedAt": "2026-11-08T11:11:36.083Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -100,10 +100,33 @@
     "favicon": null,
     "homepage": "http://www.radiovrbovec.hr/",
     "stationUuid": "96236145-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-07T14:48:14.322Z",
+    "checkedAt": "2026-11-08T11:11:36.621Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Studentski radio UNIOS",
+    "url": "http://radio.unios.hr:8000/stream.mp3",
+    "country": "HR",
+    "type": "education",
+    "tags": [
+      "education",
+      "information",
+      "local news",
+      "pop",
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "croatian",
+    "favicon": null,
+    "homepage": "http://radio.unios.hr/",
+    "stationUuid": "0037676d-a9b1-4ed6-9521-17cb9c18ceb8",
+    "checkedAt": "2026-11-08T11:11:37.065Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "GalacticFM - Progressive House & Trance",
@@ -121,7 +144,7 @@
     "favicon": null,
     "homepage": "https://s20.reliastream.com/public/8116",
     "stationUuid": "6ceb8ce2-e38c-4cd8-b51c-46bfa95d9f39",
-    "checkedAt": "2026-11-07T14:48:14.818Z",
+    "checkedAt": "2026-11-08T11:11:37.066Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -142,7 +165,7 @@
     "favicon": "https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_webp/rgk.hr/wp-content/uploads/2024/05/cropped-favicon1-180x180.png",
     "homepage": "https://rgk.hr/",
     "stationUuid": "23c4373b-b89c-431f-a023-f16f1789145c",
-    "checkedAt": "2026-11-07T14:48:15.559Z",
+    "checkedAt": "2026-11-08T11:11:37.794Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -161,7 +184,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "ccb68cd6-4f9c-4330-a40e-61b69d6a81ad",
-    "checkedAt": "2026-11-07T14:48:15.771Z",
+    "checkedAt": "2026-11-08T11:11:37.945Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -183,7 +206,7 @@
     "favicon": null,
     "homepage": "https://rovinj.fm/",
     "stationUuid": "9baa9e63-acb8-414d-a833-74b2cbbd75e8",
-    "checkedAt": "2026-11-07T14:48:15.926Z",
+    "checkedAt": "2026-11-08T11:11:38.101Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -202,7 +225,7 @@
     "favicon": null,
     "homepage": "https://radiopreporod.com/",
     "stationUuid": "7714e1fa-de27-42e9-83f6-d649d5aa4def",
-    "checkedAt": "2026-11-07T14:48:16.397Z",
+    "checkedAt": "2026-11-08T11:11:38.627Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -223,7 +246,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/apple-touch-icon-120x120.png",
     "homepage": "https://onlineradiobox.com/hr/soundsetplavi/",
     "stationUuid": "6b460145-8526-499c-8447-e3c8549f2346",
-    "checkedAt": "2026-11-07T14:48:16.662Z",
+    "checkedAt": "2026-11-08T11:11:38.870Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -245,7 +268,7 @@
     "favicon": "http://laganini.fm/wp-content/uploads/2022/08/cropped-favicon-2-180x180.png",
     "homepage": "https://laganini.fm/rijeka/",
     "stationUuid": "50678df9-1924-4eca-9629-bc760deae91a",
-    "checkedAt": "2026-11-07T14:48:16.893Z",
+    "checkedAt": "2026-11-08T11:11:38.926Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -264,7 +287,7 @@
     "favicon": "https://radio-bnm.hr/wp-content/uploads/2024/03/bnm-radio-logo-30.png",
     "homepage": "https://radio-bnm.hr/",
     "stationUuid": "3b407f3c-e31a-42bc-827d-df56cbbe818a",
-    "checkedAt": "2026-11-07T14:48:17.202Z",
+    "checkedAt": "2026-11-08T11:11:39.167Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -287,7 +310,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/awmrmwl3yzgv.png",
     "homepage": "https://radiokorzo.hr/",
     "stationUuid": "79cbd2c8-b4a0-4506-b992-a5ad5d59c43f",
-    "checkedAt": "2026-11-07T14:48:17.406Z",
+    "checkedAt": "2026-11-08T11:11:39.295Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -304,7 +327,7 @@
     "favicon": "https://ampupradio.com/Images/Logo/512.png?cachebuster=1612052708",
     "homepage": "https://ampupradio.com/",
     "stationUuid": "9e839a06-9a0d-467d-8018-0bb422bcc746",
-    "checkedAt": "2026-11-07T14:48:18.056Z",
+    "checkedAt": "2026-11-08T11:11:39.745Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -321,7 +344,7 @@
     "favicon": null,
     "homepage": "https://a1.asurahosting.com/public/galacticfm_-_progressive_house__trance",
     "stationUuid": "f654975c-1da7-4fa8-948d-7ec7ba5a1974",
-    "checkedAt": "2026-11-07T14:48:19.326Z",
+    "checkedAt": "2026-11-08T11:11:41.055Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -338,7 +361,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/apple-touch-icon-120x120.png",
     "homepage": "https://onlineradiobox.com/hr/soundsettrsat/",
     "stationUuid": "e915eff1-9639-4fef-90ef-2990ed34fae4",
-    "checkedAt": "2026-11-07T14:48:20.071Z",
+    "checkedAt": "2026-11-08T11:11:42.118Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -355,7 +378,7 @@
     "favicon": null,
     "homepage": "https://sonic1-rbx.cloud-center.ro:8026/stream",
     "stationUuid": "99ba175d-00db-48ab-8c0b-3faf34a142b1",
-    "checkedAt": "2026-11-07T14:48:20.317Z",
+    "checkedAt": "2026-11-08T11:11:42.508Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -372,7 +395,7 @@
     "favicon": null,
     "homepage": "https://sonic1-rbx.cloud-center.ro/8026/stream",
     "stationUuid": "483ab295-ea7a-4d2b-83db-f315d5c8a843",
-    "checkedAt": "2026-11-07T14:48:20.328Z",
+    "checkedAt": "2026-11-08T11:11:43.066Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -389,7 +412,7 @@
     "favicon": null,
     "homepage": "http://laganini.fm/",
     "stationUuid": "2d780df5-3fad-4531-b48c-973bd2dc1d8c",
-    "checkedAt": "2026-11-07T14:48:20.355Z",
+    "checkedAt": "2026-11-08T11:11:43.180Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -406,7 +429,7 @@
     "favicon": null,
     "homepage": "http://laganini.fm/",
     "stationUuid": "97060c8f-d746-4673-8ff2-0432df0558a4",
-    "checkedAt": "2026-11-07T14:48:20.577Z",
+    "checkedAt": "2026-11-08T11:11:43.258Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -423,7 +446,7 @@
     "favicon": "http://laganini.fm/wp-content/uploads/2022/08/cropped-favicon-2-180x180.png",
     "homepage": "http://laganini.fm/",
     "stationUuid": "0b829d20-6296-4c01-8d5f-074beb39af3d",
-    "checkedAt": "2026-11-07T14:48:23.773Z",
+    "checkedAt": "2026-11-08T11:11:45.946Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -440,7 +463,7 @@
     "favicon": null,
     "homepage": "http://laganini.fm/",
     "stationUuid": "526dda35-9a66-4bea-83c2-d4d84c9bec0a",
-    "checkedAt": "2026-11-07T14:48:24.663Z",
+    "checkedAt": "2026-11-08T11:11:46.871Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -457,7 +480,7 @@
     "favicon": "https://radio808.com/wp-content/uploads/2018/02/cropped-logo-808-192x192.png",
     "homepage": "https://radio808.com/",
     "stationUuid": "d5eee22a-6fc0-11e8-83fa-52543be04c81",
-    "checkedAt": "2026-11-07T14:48:26.926Z",
+    "checkedAt": "2026-11-08T11:11:49.044Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -474,7 +497,7 @@
     "favicon": "https://radio-bnm.hr/wp-content/uploads/2024/03/bnm-radio-logo-30.png",
     "homepage": "https://radio-bnm.hr/",
     "stationUuid": "1c22fe66-d083-4e66-bd49-468db0b7dfab",
-    "checkedAt": "2026-11-07T14:48:27.017Z",
+    "checkedAt": "2026-11-08T11:11:49.111Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -491,7 +514,7 @@
     "favicon": null,
     "homepage": "http://www.radio-koprivnica.hr/",
     "stationUuid": "9624268f-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-07T14:48:28.329Z",
+    "checkedAt": "2026-11-08T11:11:50.511Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -508,7 +531,7 @@
     "favicon": "https://www.radiotvornica.hr/favicon.png",
     "homepage": "https://www.radiotvornica.hr/#",
     "stationUuid": "960125a3-5b14-4dfc-970f-0a508dbd618d",
-    "checkedAt": "2026-11-07T14:48:28.725Z",
+    "checkedAt": "2026-11-08T11:11:51.129Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -525,7 +548,7 @@
     "favicon": null,
     "homepage": "https://www.radio-roza.org/",
     "stationUuid": "2beeeeea-fe3a-4a3d-b8f6-fb6aeab2e594",
-    "checkedAt": "2026-11-07T14:48:29.625Z",
+    "checkedAt": "2026-11-08T11:11:51.920Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -542,7 +565,7 @@
     "favicon": null,
     "homepage": "https://rkc.hr/",
     "stationUuid": "241c65d2-a334-4e2b-904f-c08eac19f072",
-    "checkedAt": "2026-11-07T14:48:30.120Z",
+    "checkedAt": "2026-11-08T11:11:52.083Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -561,7 +584,7 @@
     "favicon": "https://radio-bnm.hr/wp-content/uploads/2024/03/bnm-radio-logo-30.png",
     "homepage": "https://radio-bnm.hr/",
     "stationUuid": "eeae2c89-9a58-4c9c-aa04-4bb76d45c8d7",
-    "checkedAt": "2026-11-07T14:48:32.351Z",
+    "checkedAt": "2026-11-08T11:11:53.765Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -580,7 +603,7 @@
     "favicon": "http://laganini.fm/wp-content/uploads/2022/08/laganini-fm-logo.png",
     "homepage": "http://laganini.fm/",
     "stationUuid": "b4ad9a90-4a6a-48f9-a1c1-efddc362ed84",
-    "checkedAt": "2026-11-07T14:48:32.812Z",
+    "checkedAt": "2026-11-08T11:11:54.182Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -599,7 +622,7 @@
     "favicon": "https://radio-bnm.hr/wp-content/uploads/2024/03/bnm-radio-logo-30.png",
     "homepage": "https://radio-bnm.hr/",
     "stationUuid": "1d91f99c-c193-4371-85dd-3d8e38fd47cb",
-    "checkedAt": "2026-11-07T14:48:32.862Z",
+    "checkedAt": "2026-11-08T11:11:54.301Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -618,7 +641,7 @@
     "favicon": "https://rbbinternetradio.com/wp-content/uploads/2023/03/267272195_1301172043639200_8595569174602970131_n-1-150x150.jpg",
     "homepage": "https://rbbinternetradio.com/",
     "stationUuid": "3c0d3177-d2fb-4c04-ac6f-0e03173c42cb",
-    "checkedAt": "2026-11-07T14:48:33.255Z",
+    "checkedAt": "2026-11-08T11:11:54.541Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

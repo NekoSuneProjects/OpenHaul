@@ -1,26 +1,5 @@
 [
   {
-    "name": "CHRISTRADIO Yaoundé",
-    "url": "https://stream-285.surfernetwork.com/gtb3znv0h2zuv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJndGIzem52MGgyenV2IiwiaG9zdCI6InN0cmVhbS0yODUuc3VyZmVybmV0d29yay5jb20iLCJ0bSI6ZmFsc2UsInJ0dGwiOjUsImp0aSI6IkRyRjJSd3VIUW15NU9OaGdMWnJHUmciLCJpYXQiOjE3OTM5MDE2MDMsImV4cCI6MTc5MzkwMTY2M30.pnGM1p7INgc65943zsf9n2M6fZasPw-W9pM3xRow2VE",
-    "country": "CM",
-    "type": "christian",
-    "tags": [
-      "christian",
-      "religious",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "french",
-    "favicon": null,
-    "homepage": "https://christradio.mdn.live/",
-    "stationUuid": "af01c6a1-a1a7-46cf-97ea-15883ef6d669",
-    "checkedAt": "2026-11-07T14:22:45.383Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
     "name": "Radio Vie Nouvelle",
     "url": "https://lafrequencedevie.ice.infomaniak.ch/lafrequencedevie-64.mp3",
     "country": "CM",
@@ -37,7 +16,7 @@
     "favicon": null,
     "homepage": "https://radiovienouvelle.com/",
     "stationUuid": "b4e1a053-e139-4e21-b11e-ccc3b31fd87a",
-    "checkedAt": "2026-11-07T14:22:46.260Z",
+    "checkedAt": "2026-11-08T10:45:23.878Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -56,7 +35,7 @@
     "favicon": null,
     "homepage": "http://www.radioequinoxe.com/",
     "stationUuid": "332f6491-d62d-48a4-b44a-fa8020896949",
-    "checkedAt": "2026-11-07T14:22:46.746Z",
+    "checkedAt": "2026-11-08T10:45:24.343Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -77,7 +56,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "04ca502e-2841-4568-a378-3df4fcbada2b",
-    "checkedAt": "2026-11-07T14:22:46.762Z",
+    "checkedAt": "2026-11-08T10:45:24.396Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -97,7 +76,7 @@
     "favicon": "https://radioenlignefrance.com/storage/radios/6885/8855/conversions/DkvJakmCUOOuVMaiESwrtRtXbTOkl6-metaQ1JUVi1SYWRpby5qcGc=--lg.webp",
     "homepage": "https://www.crtv.cm/",
     "stationUuid": "964b07c5-d89d-4b37-b5f1-dfddbac876c5",
-    "checkedAt": "2026-11-07T14:22:46.880Z",
+    "checkedAt": "2026-11-08T10:45:24.541Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -117,7 +96,7 @@
     "favicon": null,
     "homepage": "https://crtv.cm/",
     "stationUuid": "14f6e67f-a6bd-4829-b6d0-08550a53ec17",
-    "checkedAt": "2026-11-07T14:22:47.020Z",
+    "checkedAt": "2026-11-08T10:45:24.654Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -138,10 +117,30 @@
     "favicon": null,
     "homepage": "https://dir.rcast.net/players/244422",
     "stationUuid": "50e84985-0372-4270-a16b-053aac9ecbbf",
-    "checkedAt": "2026-11-07T14:22:47.115Z",
+    "checkedAt": "2026-11-08T10:45:24.715Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "For You Radio",
+    "url": "https://rstream.az-multimedia.com:7269/stream",
+    "country": "CM",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://foryoumedia-africa.com/",
+    "stationUuid": "ad5f9c49-3342-4b52-987c-f025543a723c",
+    "checkedAt": "2026-11-08T10:45:24.749Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Suellaba FM 105",
@@ -158,7 +157,7 @@
     "favicon": null,
     "homepage": "https://crtv.cm/radio/suellaba-fm",
     "stationUuid": "20cd420b-3af1-451a-9d79-5c0c3ae13f67",
-    "checkedAt": "2026-11-07T14:22:47.645Z",
+    "checkedAt": "2026-11-08T10:45:25.200Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"

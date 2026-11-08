@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://www.cbs.co.kr/",
     "stationUuid": "fb8a911e-e106-43fa-af7e-9a2da7779164",
-    "checkedAt": "2026-11-07T14:54:30.973Z",
+    "checkedAt": "2026-11-08T11:17:35.165Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -28,7 +28,7 @@
     "favicon": null,
     "homepage": "http://www.cbs.co.kr/",
     "stationUuid": "499d1484-b8ce-4ec4-827d-e18ea9ef997a",
-    "checkedAt": "2026-11-07T14:54:30.974Z",
+    "checkedAt": "2026-11-08T11:17:35.166Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -45,7 +45,7 @@
     "favicon": null,
     "homepage": "https://www.cbs.co.kr/",
     "stationUuid": "9686c674-268e-46b6-b8e3-c80df26733fd",
-    "checkedAt": "2026-11-07T14:54:30.975Z",
+    "checkedAt": "2026-11-08T11:17:35.167Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -62,7 +62,7 @@
     "favicon": null,
     "homepage": "https://www.cpbc.co.kr/",
     "stationUuid": "38b5da3e-1859-47f3-9fb3-38e34741a84a",
-    "checkedAt": "2026-11-07T14:54:31.573Z",
+    "checkedAt": "2026-11-08T11:17:35.632Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -79,7 +79,7 @@
     "favicon": null,
     "homepage": "http://www.imbc.com/",
     "stationUuid": "fc4c247a-7f66-11e9-aa30-52543be04c81",
-    "checkedAt": "2026-11-07T14:54:36.350Z",
+    "checkedAt": "2026-11-08T11:17:38.223Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -96,7 +96,24 @@
     "favicon": null,
     "homepage": "https://m.imbc.com/RadioMain",
     "stationUuid": "730d9f95-57a3-4eec-94a2-ed270baa64c8",
-    "checkedAt": "2026-11-07T14:54:36.382Z",
+    "checkedAt": "2026-11-08T11:17:38.366Z",
+    "status": 400,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 400"
+  },
+  {
+    "name": "MBC FM4U",
+    "url": "https://minimw.imbc.com/dmfm/_definst_/mfm.stream/playlist.m3u8?_lsu_sa_=6091301D43E23A546149F5B43B713149B58634B5280FE2EC3430C4a216413DE69EaA336238F29B4B60DB3F61E8bA614BB9C1C480E3E7385D951EEB3D1DACF1BE6E31D0AC0A70C9DC112731F9F1DD6FEA15ED43C7F16B0C5371D51C9B51BF02616198C7ABB751DE5C4407B9DCE3F8B247",
+    "country": "KR",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 65,
+    "language": "korean",
+    "favicon": "http://img.imbc.com/commons/2018/image/comm2018noti/meta_mbc.png",
+    "homepage": "http://www.imbc.com/",
+    "stationUuid": "8f6a0b47-7be2-11e9-aa30-52543be04c81",
+    "checkedAt": "2026-11-08T11:17:38.706Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -113,7 +130,7 @@
     "favicon": null,
     "homepage": "https://www.imbc.com/",
     "stationUuid": "01335461-d022-4ad8-9fbc-1bd3ef534def",
-    "checkedAt": "2026-11-07T14:54:36.793Z",
+    "checkedAt": "2026-11-08T11:17:39.147Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -130,7 +147,7 @@
     "favicon": null,
     "homepage": "https://www.sbs.co.kr/",
     "stationUuid": "e6bc48f7-7be2-11e9-aa30-52543be04c81",
-    "checkedAt": "2026-11-07T14:54:36.959Z",
+    "checkedAt": "2026-11-08T11:17:39.323Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -147,7 +164,7 @@
     "favicon": null,
     "homepage": "https://www.sbs.co.kr/",
     "stationUuid": "1cc29b79-7be3-11e9-aa30-52543be04c81",
-    "checkedAt": "2026-11-07T14:54:37.474Z",
+    "checkedAt": "2026-11-08T11:17:39.867Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -164,7 +181,7 @@
     "favicon": "http://www.cpbc.co.kr/favicon.ico",
     "homepage": "http://www.cpbc.co.kr/",
     "stationUuid": "c649b05d-2a19-11e9-96d1-52543be04c81",
-    "checkedAt": "2026-11-07T14:54:40.115Z",
+    "checkedAt": "2026-11-08T11:17:42.442Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -183,7 +200,7 @@
     "favicon": null,
     "homepage": "http://www.kbs.co.kr/",
     "stationUuid": "7d011452-9249-4d30-936b-36ebec3dce50",
-    "checkedAt": "2026-11-07T14:54:41.062Z",
+    "checkedAt": "2026-11-08T11:17:42.902Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -202,7 +219,7 @@
     "favicon": "https://images2.imgbox.com/da/9b/4bV5pJxL_o.png",
     "homepage": "https://radio.kbs.co.kr/",
     "stationUuid": "bd8fb526-2493-4849-a686-88fbcaa2f144",
-    "checkedAt": "2026-11-07T14:54:41.729Z",
+    "checkedAt": "2026-11-08T11:17:42.968Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -222,9 +239,47 @@
     "favicon": null,
     "homepage": "https://radio.bsod.kr/",
     "stationUuid": "7ad9cd85-3f76-4217-9616-fa6dd81cd409",
-    "checkedAt": "2026-11-07T14:54:41.927Z",
+    "checkedAt": "2026-11-08T11:17:43.029Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "kbs classic fm",
+    "url": "https://1fm.gscdn.kbs.co.kr/1fm_192_2.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly8xZm0uZ3NjZG4ua2JzLmNvLmtyLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTQwOTk1ODB9fX1dfQ__&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA&Signature=KexMIvyr8FpfjOxwI8gGWh-ZRG-hMtK6OMqk3IQrYowAwbAzVhxTyTam0o6kzp7j7s78~EXgi8bHpqD3emI~ib18EWlszLeujhGKWkBnbwkBuSLHgKWhf5YAvRYLRFFzglM9kqN0rhFMuLcLyzp5EMksNMvEd4m3C2oiNgoz8AnypIkuRQjl8cIV7q~-UP~BbUcSZJKihiFGNsVNx4YbPJSgjT-lmSHEwWdSELIPufTcjfzR6k5wcOQqT0l3S6HfbhymzRXjzPp7u8-HWBrgjJD10ebOBPbOdbCxn5pnFGfZOBacPfa4vUG~1A5GHBNn7gpZXlqIH6M9ZXA6YEwW-w__",
+    "country": "KR",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "4be766ba-038c-4795-87b0-04be87b1e712",
+    "checkedAt": "2026-11-08T11:17:43.256Z",
+    "status": 403,
+    "contentType": "text/xml",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "KBS Classic FM",
+    "url": "https://1fm.gscdn.kbs.co.kr/1fm_192_2.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly8xZm0uZ3NjZG4ua2JzLmNvLmtyLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTQxMTAzODN9fX1dfQ__&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA&Signature=Q-6D8qKpBUZwUyDRv43aZSdAtZayES-JV07vz1zTBLAV9dG3e0VdwDTNPZ55~89~BCgMI0QK4ATbYQ8ZjcWm~0UW3uGX0wQtF4Iz87qYmg77u7BWv6qs3F1BAcVEc0-I2nCcrDF9vYoRnVf973jped9TWmi66Wc9Eg1r6ZgiK2-hin5Ked0~bxg~hEwuiqYuOXl~-I2EClps2JG1o9Yru6oD1vLoTBubFYsLcdJIqpga0jUJW3idgxR7uakuJiO01grtN0KAvIJdhaYXV7HdTtU2rPf~TEUoi3QykXo7QRYOhPaiPdOFZR8mF4dpmLJGINa~dkL40~~nKv1sdQSbgw__",
+    "country": "KR",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "korean",
+    "favicon": "http://www.kbs.co.kr//resources/images/favorite/favorite.png",
+    "homepage": "http://www.kbs.co.kr/",
+    "stationUuid": "c038a859-7be1-11e9-aa30-52543be04c81",
+    "checkedAt": "2026-11-08T11:17:43.306Z",
+    "status": 403,
+    "contentType": "text/xml",
     "lastFailure": "HTTP 403"
   },
   {
@@ -241,7 +296,7 @@
     "favicon": "http://www.kbs.co.kr//resources/images/favorite/favorite.png",
     "homepage": "http://www.kbs.co.kr/",
     "stationUuid": "e3d4515f-eb35-40e2-aeb9-dc48e9ba910c",
-    "checkedAt": "2026-11-07T14:54:42.312Z",
+    "checkedAt": "2026-11-08T11:17:43.357Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -260,7 +315,7 @@
     "favicon": null,
     "homepage": "https://www.inlive.co.kr/",
     "stationUuid": "8e068903-fbf8-4fac-aa9d-08b2b8d5eb47",
-    "checkedAt": "2026-11-07T14:54:42.348Z",
+    "checkedAt": "2026-11-08T11:17:43.366Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -279,29 +334,10 @@
     "favicon": null,
     "homepage": "https://www.inlive.co.kr/",
     "stationUuid": "06c07813-9589-42ba-8e21-e83e997fc806",
-    "checkedAt": "2026-11-07T14:54:42.351Z",
+    "checkedAt": "2026-11-08T11:17:43.418Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "kbs해피fm",
-    "url": "https://2radio-bora.gscdn.kbs.co.kr/2radio-bora-01/2radio-bora-01_hd.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly8ycmFkaW8tYm9yYS5nc2Nkbi5rYnMuY28ua3IvMnJhZGlvLWJvcmEtMDEvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5Mzg1MjM2OX19fV19&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA&Signature=WXqLuf~qi05E322PGCbA-Udb6~NkMu2fnW5iIym82xVZYU41be0RjwKKDrFpUFlKCc6BmZsdw~CmXFHVBd1L2seAPZjBfvaZAoLXjK7aZjBX3uWM3gr7jMVmTllc-72TRenQkblVD0eyoW4ATKRfq615nbRXnYSL2ul39-MveeTf~U1otgdm6TE6H4ejHUXjCuyLHMPDINagNnrfiOGzCzTqJe3Qi8kauGf-GtMFpoJs-Xbzt2LUF2SIENEH3xWYm78hGOXHUGvvtAxHwceY7PKVURVFuDc7w-OY~KEunpRnRwVBAayf108o0n~Ggr0JJ65JWUNufDYtQO1L46kKTQ__",
-    "country": "KR",
-    "type": "country",
-    "tags": [
-      "country"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "8dc941a6-c866-4552-9fea-541c137cfb5d",
-    "checkedAt": "2026-11-07T14:54:42.413Z",
-    "status": 403,
-    "contentType": "text/xml",
-    "lastFailure": "HTTP 403"
   },
   {
     "name": "(BSOD) MBC mini All-That-Music",
@@ -317,7 +353,7 @@
     "favicon": null,
     "homepage": "https://radio.bsod.kr/",
     "stationUuid": "9d4d4eef-d7e3-4a96-bc8f-550d9b6962e4",
-    "checkedAt": "2026-11-07T14:54:43.218Z",
+    "checkedAt": "2026-11-08T11:17:44.565Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -338,7 +374,7 @@
     "favicon": null,
     "homepage": "https://andongmbc.co.kr/main/radio/radio.php",
     "stationUuid": "b2b7599e-16b9-4225-9ffa-263b0cb541a6",
-    "checkedAt": "2026-11-07T14:54:43.312Z",
+    "checkedAt": "2026-11-08T11:17:44.639Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -357,7 +393,7 @@
     "favicon": null,
     "homepage": "https://www.sbs.co.kr/",
     "stationUuid": "0fc7173f-5106-4c47-9156-621124fb0803",
-    "checkedAt": "2026-11-07T14:54:45.176Z",
+    "checkedAt": "2026-11-08T11:17:45.811Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -376,7 +412,7 @@
     "favicon": "https://images2.imgbox.com/90/eb/3P5W5nPd_o.png",
     "homepage": "https://www.cbs.co.kr/radio",
     "stationUuid": "018935b5-88de-46da-a323-f35b4178503b",
-    "checkedAt": "2026-11-07T14:54:46.469Z",
+    "checkedAt": "2026-11-08T11:17:47.119Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -395,7 +431,7 @@
     "favicon": null,
     "homepage": "http://online-radio.eu/radio/10169-floyd-server-rock-ballad-from-09-25-05",
     "stationUuid": "44dc6d1c-abe5-402a-be20-3545a0a13101",
-    "checkedAt": "2026-11-07T14:54:47.782Z",
+    "checkedAt": "2026-11-08T11:17:48.590Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -414,7 +450,7 @@
     "favicon": "https://afngo.net/static/media/afn-go-logo.819b415046feba6d7000b1e9569d468c.svg",
     "homepage": "https://afngo.net/afnpacific/Daegu",
     "stationUuid": "9f13623e-258d-4081-bb09-e166373896c2",
-    "checkedAt": "2026-11-07T14:54:47.893Z",
+    "checkedAt": "2026-11-08T11:17:48.612Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -431,7 +467,7 @@
     "favicon": null,
     "homepage": "https://radio.bsod.kr/",
     "stationUuid": "b5885ea7-009a-4e46-8b44-3da1d7860ab8",
-    "checkedAt": "2026-11-07T14:54:48.010Z",
+    "checkedAt": "2026-11-08T11:17:49.295Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -448,7 +484,7 @@
     "favicon": "http://serpent0.duckdns.org:8088/kbsfm.pls",
     "homepage": "http://serpent0.duckdns.org:8088/kbsfm.pls",
     "stationUuid": "f9f853c9-51d7-4127-9796-5c838a786107",
-    "checkedAt": "2026-11-07T14:54:48.502Z",
+    "checkedAt": "2026-11-08T11:17:49.891Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -465,7 +501,7 @@
     "favicon": "https://jtv.co.kr/2021/favicon.ico",
     "homepage": "https://www.jtv.co.kr/",
     "stationUuid": "cb45bd69-ec15-4fe2-8a6f-0af262fb2aad",
-    "checkedAt": "2026-11-07T14:54:48.964Z",
+    "checkedAt": "2026-11-08T11:17:50.051Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -482,9 +518,26 @@
     "favicon": null,
     "homepage": "http://kbs.co.kr/",
     "stationUuid": "223f554a-0647-4bf0-86d2-11d46ed79dce",
-    "checkedAt": "2026-11-07T14:54:49.129Z",
+    "checkedAt": "2026-11-08T11:17:50.066Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "KBS 1Radio",
+    "url": "https://2radio-bora.gscdn.kbs.co.kr/2radio-bora-01/2radio-bora-01_hd.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly8ycmFkaW8tYm9yYS5nc2Nkbi5rYnMuY28ua3IvMnJhZGlvLWJvcmEtMDEvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5NDEyOTU5Mn19fV19&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA&Signature=iuNprM-kmzIs3v44fdDDXSY9-tVxo~6G7MbzR8SLsrDIFi7goVjAqa4wRYp0FlhTojCapKDZlVouZIG2GWWP7A1bk-WnabZSe5UTCnHpIiK8rVLdbCBT9L3mlkZUpJqnn9Y7QpPfu6hZVrlD47zXgS6Kp28PCjNEGNCW30DQqbcpMt3fbd~P7SUn5kBg6zkFf8Bmf-0c0VxymxBppkAszbzFTBw9~20GwQpPErC8C531gwesQzcGRy-fUVOIjbYFlh4CqCgTMqGaIpiwf9bgwKDSaRWcDIsSW3DvYzlj6UHyaJ~BVrf2JGdroLuCkIdr6Dbf1MaV4-YVqBDrSyrnVQ__",
+    "country": "KR",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "korean",
+    "favicon": "https://res.static.kbs.co.kr/favicon.png",
+    "homepage": "http://www.kbs.co.kr/",
+    "stationUuid": "9b3576ec-7f67-11e9-aa30-52543be04c81",
+    "checkedAt": "2026-11-08T11:17:50.311Z",
+    "status": 403,
+    "contentType": "text/xml",
     "lastFailure": "HTTP 403"
   },
   {
@@ -499,7 +552,7 @@
     "favicon": null,
     "homepage": "http://kbs.co.kr/",
     "stationUuid": "11c0bd17-9a8c-41a7-a050-3cf612c205f6",
-    "checkedAt": "2026-11-07T14:54:49.265Z",
+    "checkedAt": "2026-11-08T11:17:50.445Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -516,7 +569,7 @@
     "favicon": null,
     "homepage": "http://kbs.co.kr/",
     "stationUuid": "59373d6b-79e2-41d1-a808-ea6a7cbe4ba3",
-    "checkedAt": "2026-11-07T14:54:49.312Z",
+    "checkedAt": "2026-11-08T11:17:50.449Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -533,7 +586,7 @@
     "favicon": null,
     "homepage": "https://www.kbs.co.kr/",
     "stationUuid": "817d592b-206d-44d1-b58e-3f03c09af18a",
-    "checkedAt": "2026-11-07T14:54:49.352Z",
+    "checkedAt": "2026-11-08T11:17:50.495Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -550,7 +603,41 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "d52bcf11-db1b-44d7-be0d-c37dad6bb568",
-    "checkedAt": "2026-11-07T14:54:49.408Z",
+    "checkedAt": "2026-11-08T11:17:50.512Z",
+    "status": 403,
+    "contentType": "text/xml",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "KBS Classic FM",
+    "url": "https://1fm.gscdn.kbs.co.kr/1fm_192_2.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly8xZm0uZ3NjZG4ua2JzLmNvLmtyLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTQxMDczOTV9fX1dfQ__&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA&Signature=cNmDZKjXWeWtHzAqyQWwWkljXh9LyoDp9pepXS0xUfoM8IDssXW2iFyKs4M1QzlvXXHlGNf8b4Fu7nmOL6xJTIkf-x6HMEhDqNyavJTRok479QjUpxMq4IMDWPn3eZ71LXaE8FviQUAY0WU7AagWC~6mAdxjs9vWRaQ~EVcmQVLlMxxGXCK7Qc-M5WVaWzAdIMXe9mjkhwrqDo3JaiBzj7xesV0gOuwAOEiBaTnQjRha3NxLgarAyZ~~BJPNJgNiIOvCQJrgvgpWzFCI~dQXGkWbsLAJVm7s0Vacu9bTwdAvNFLVHnDJfM2-stmyAG5gzqQ9PF9DlvcAxfnzSC6Zzw__",
+    "country": "KR",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "e0df5138-3057-4f08-b1e9-1a6b72e0f4ad",
+    "checkedAt": "2026-11-08T11:17:50.524Z",
+    "status": 403,
+    "contentType": "text/xml",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "KBS Classic FM",
+    "url": "https://1fm.gscdn.kbs.co.kr/1fm_192_2.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly8xZm0uZ3NjZG4ua2JzLmNvLmtyLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTQxMjkwMDh9fX1dfQ__&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA&Signature=GOZHxx9HEABtSQ~zgBzxPX-NLRjLWSqvMChUJPLix9ZrMGhcoYKcxM1yXk-SuSsSBV-YLiNdubzr9CiTuNF-Rj~Hb~GxBbyEfEjzwVMDG5akzPawSY683eA7mO2Kg4cr9a14xoZVaxozM8vUxq04yIb9XyhaZdfPSFdS~vRBEibUou3jWkRGkP67QNk77CWQ~IGfp6xGv28DmRPn8tRfO9Q0l2CMdlxTaAl2FMmct2XMNUW4GstC6C4VjukGOxh4nElHMoP3qtI2pDVcg~3AS8XZSPFFqKoymIf-Bwv794a8iSOZGJaLo9E4-cfDWElas7Vj-N1ibld7vpNv-kVSdA__",
+    "country": "KR",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://images2.imgbox.com/da/9b/4bV5pJxL_o.png",
+    "homepage": "https://radio.kbs.co.kr/",
+    "stationUuid": "d35905f6-d373-4bec-8ff1-153d0e991c1c",
+    "checkedAt": "2026-11-08T11:17:50.559Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -567,7 +654,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "d197d3eb-87b2-48f9-8624-d96d17c3b023",
-    "checkedAt": "2026-11-07T14:54:49.686Z",
+    "checkedAt": "2026-11-08T11:17:50.563Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -584,7 +671,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "90a264a2-d2e9-4f80-b88b-f6e2761a9171",
-    "checkedAt": "2026-11-07T14:54:49.688Z",
+    "checkedAt": "2026-11-08T11:17:50.578Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -601,7 +688,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "63a8b961-1cd7-406f-8665-3cd005befd88",
-    "checkedAt": "2026-11-07T14:54:49.718Z",
+    "checkedAt": "2026-11-08T11:17:50.586Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -618,7 +705,7 @@
     "favicon": "https://images2.imgbox.com/da/9b/4bV5pJxL_o.png",
     "homepage": "https://radio.kbs.co.kr/",
     "stationUuid": "45ed53c7-c1f5-4aae-9f8b-88703f00939f",
-    "checkedAt": "2026-11-07T14:54:49.719Z",
+    "checkedAt": "2026-11-08T11:17:50.601Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -635,7 +722,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "f68aa3f4-d847-4dab-818a-81f46d336812",
-    "checkedAt": "2026-11-07T14:54:49.727Z",
+    "checkedAt": "2026-11-08T11:17:50.608Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -652,7 +739,7 @@
     "favicon": "https://res.static.kbs.co.kr/favicon.png",
     "homepage": "http://www.kbs.co.kr/",
     "stationUuid": "18849c31-3a21-481f-8c0d-e6ca46cb240c",
-    "checkedAt": "2026-11-07T14:54:49.736Z",
+    "checkedAt": "2026-11-08T11:17:50.609Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -669,7 +756,41 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "fe39221a-c1de-4c2f-a9ca-28a916f96010",
-    "checkedAt": "2026-11-07T14:54:49.744Z",
+    "checkedAt": "2026-11-08T11:17:50.618Z",
+    "status": 403,
+    "contentType": "text/xml",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "KBS Cool FM",
+    "url": "https://2fm-ad.gscdn.kbs.co.kr/2fm_ad_192_1.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly8yZm0tYWQuZ3NjZG4ua2JzLmNvLmtyLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTQxMjcyMDN9fX1dfQ__&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA&Signature=KIxC~FrTsOXu3bhAq1hNkwZnlW9WAWRgh9QHU9U0D6k9e2sqm0oEUBXHiQ4mxACfDr2uvoooGktTdTWyqkuETFeFw~qsbIqHWreR5rJSvWck5Jo2e-HXk5MDMP0tiSR7xwp4inT4iefcy~0EuDuBHhZIILeEFi0JBSrayQwh2wCe5wKAh3GrZ9Tfl7uymDVMZCuxxY~~8Fz92J~~Sou2TVMcEM8d~hu-a9SGyL-fBUrQx-IjeS4IC-CmJ6GCAm~u3iMvOh4Wzt0hBW5hiKazQAzBDC2Q~rTlZUlG7T9ECP25rKrV3LgZE8HA0TzkwIHMszGuJXvq4bydBJV3WE5l2g__",
+    "country": "KR",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "http://www.kbs.co.kr//resources/images/favorite/favorite.png",
+    "homepage": "http://www.kbs.co.kr/",
+    "stationUuid": "d06a6392-127d-40f8-b52d-fc610bc97178",
+    "checkedAt": "2026-11-08T11:17:50.628Z",
+    "status": 403,
+    "contentType": "text/xml",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "KBS Cool FM",
+    "url": "https://2fm-ad.gscdn.kbs.co.kr/2fm_ad_192_1.m3u8?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly8yZm0tYWQuZ3NjZG4ua2JzLmNvLmtyLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTQwOTIzOTR9fX1dfQ__&Key-Pair-Id=APKAICDSGT3Y7IXGJ3TA&Signature=C85jy7mKLZS7m5eb4hIXWKqN41hPtPovPwkvRrC-Hu~nMJWtm1xyUGKo06I7Clgc171a0JvPHdwbk58HMWlShYL36fcg0zCO9PwlkdqSneOZTLHH~QyZb0NTa219ZLoA~cGwjt8mD87BE7l8YaBPOh49lhXRJZ4-HheOjuZC584xyfj-XpwiZBz4iJ7peEp1BJD0Cpgo2F5GuWEIqz7l9Trqq7y2Xwnz7-FpiLXssWQtEFK~6SGNTx~WQp1cAK4O2~kulu21L2-TOI8mrgKAOw53ZggQhwqfwcLhWW5RELHFTJpKQ~XFB-cTJKbxpbIfRgf3u5nG1eGxG~StJylv2Q__",
+    "country": "KR",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "korean",
+    "favicon": "https://res.static.kbs.co.kr/favicon.png",
+    "homepage": "http://www.kbs.co.kr/",
+    "stationUuid": "5cfee8db-7be2-11e9-aa30-52543be04c81",
+    "checkedAt": "2026-11-08T11:17:50.662Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -686,7 +807,7 @@
     "favicon": "https://i.imgur.com/NyGnXcp.png",
     "homepage": "https://www.kbs.co.kr/",
     "stationUuid": "12d601b9-0c10-4f6d-8d85-e460b993c1a4",
-    "checkedAt": "2026-11-07T14:54:49.807Z",
+    "checkedAt": "2026-11-08T11:17:51.112Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"

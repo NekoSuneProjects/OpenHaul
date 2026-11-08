@@ -1,24 +1,5 @@
 [
   {
-    "name": "Powermix FM",
-    "url": "https://cast.iplayradio.net/listen/powermixfm/stream",
-    "country": "AO",
-    "type": "90s dance",
-    "tags": [
-      "90s dance"
-    ],
-    "codec": "MP3",
-    "bitrate": 320,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://powermixfm.com/",
-    "stationUuid": "7b4fcdc7-4e59-47cf-8062-87123715b4a5",
-    "checkedAt": "2026-11-07T14:08:10.280Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
-  },
-  {
     "name": "RNA - Canal A",
     "url": "https://stream.pcradio.ru/rna_canala-med",
     "country": "AO",
@@ -30,7 +11,7 @@
     "favicon": "https://pcradio.app/images/stations/61b09c9d4e570.jpg",
     "homepage": "https://pcradio.app/radio/rna-canal-a",
     "stationUuid": "45eeeaad-acc1-4704-b2b7-0c454a38c3c1",
-    "checkedAt": "2026-11-07T14:08:10.312Z",
+    "checkedAt": "2026-11-08T10:31:03.926Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -51,7 +32,7 @@
     "favicon": "https://minhawebradio.com/contents/14886/cover/xm126892c1bc31f36300a057381855f3ab_14886_1750685385.png",
     "homepage": "https://radiojihenda.com/",
     "stationUuid": "682715df-58c2-4765-b888-204307736498",
-    "checkedAt": "2026-11-07T14:08:10.314Z",
+    "checkedAt": "2026-11-08T10:31:03.929Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -71,10 +52,31 @@
     "favicon": null,
     "homepage": "https://www.trsradioonline.ao/",
     "stationUuid": "f834de28-9f73-41be-976b-90720cfbab3d",
-    "checkedAt": "2026-11-07T14:08:12.069Z",
+    "checkedAt": "2026-11-08T10:31:05.920Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "RÁDIO NXT FM 98.7",
+    "url": "https://stream-179.surfernetwork.com/wnez02wihrevv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJ3bmV6MDJ3aWhyZXZ2IiwiaG9zdCI6InN0cmVhbS0xNzkuc3VyZmVybmV0d29yay5jb20iLCJ0bSI6ZmFsc2UsInJ0dGwiOjUsImp0aSI6ImZkaWhMLVR5U2M2bm9oaWdhZGNSY0EiLCJpYXQiOjE3OTM4NTM3MTQsImV4cCI6MTc5Mzg1Mzc3NH0.M_Fe4VutTUWO9x15TQK9xwJsCTDx1mjRadQu9gOUdMQ",
+    "country": "AO",
+    "type": "latin",
+    "tags": [
+      "latin",
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "portuguese",
+    "favicon": null,
+    "homepage": "https://radionxtfm.ao/",
+    "stationUuid": "b7418dd1-3b11-42df-8283-0c9f3ce0780d",
+    "checkedAt": "2026-11-08T10:31:05.948Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Rádio Mais",
@@ -88,7 +90,7 @@
     "favicon": null,
     "homepage": "https://www.radiomais.ao/",
     "stationUuid": "142e1b71-b56b-4a9c-b08f-55703b611390",
-    "checkedAt": "2026-11-07T14:08:12.171Z",
+    "checkedAt": "2026-11-08T10:31:06.025Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -105,7 +107,7 @@
     "favicon": null,
     "homepage": "https://radiomfmangola.com/",
     "stationUuid": "5be023eb-7209-4ab0-8d69-27e356aad314",
-    "checkedAt": "2026-11-07T14:08:12.173Z",
+    "checkedAt": "2026-11-08T10:31:06.051Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -125,30 +127,31 @@
     "favicon": "https://sites.google.com/view/radiobairrodeangola",
     "homepage": "https://sites.google.com/view/radiobairrodeangola",
     "stationUuid": "88a9d0f2-7ef5-4119-ae96-d87c2f6f9469",
-    "checkedAt": "2026-11-07T14:08:12.420Z",
+    "checkedAt": "2026-11-08T10:31:06.260Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "Rádio STTOP FM",
-    "url": "https://wz7.servidoresbrasil.com:8478/stream",
+    "name": "Rádio Cuquema",
+    "url": "https://radios2.justweb.pt:8034/stream",
     "country": "AO",
     "type": "news",
     "tags": [
       "news",
+      "pop",
       "talk"
     ],
-    "codec": "AAC",
+    "codec": "MP3",
     "bitrate": 128,
     "language": "portuguese",
     "favicon": null,
-    "homepage": "https://www.sttopfm.com/",
-    "stationUuid": "6893a5af-c1b9-4713-b435-9015c13f3183",
-    "checkedAt": "2026-11-07T14:08:14.051Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "homepage": "https://play.google.com/store/apps/details?id=justweb.radio.cuquema",
+    "stationUuid": "6795d0a7-4dbd-40bf-b793-39c8f8f822b2",
+    "checkedAt": "2026-11-08T10:31:06.613Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Bairro de Angola",
@@ -164,7 +167,7 @@
     "favicon": "https://postimg.cc/5HR8nS0W",
     "homepage": "https://player.xradios.com.br/player-home-page/6794",
     "stationUuid": "8762cad0-5b45-4685-9c09-68de818a3ec1",
-    "checkedAt": "2026-11-07T14:08:14.711Z",
+    "checkedAt": "2026-11-08T10:31:08.540Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

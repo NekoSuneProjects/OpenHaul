@@ -13,7 +13,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c51340b2-9fbc-4cea-8738-258b2a33d16d",
-    "checkedAt": "2026-11-07T15:06:47.141Z",
+    "checkedAt": "2026-11-08T11:28:41.850Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -30,10 +30,27 @@
     "favicon": null,
     "homepage": "http://aladinradio.com/",
     "stationUuid": "4a29dbc1-77e1-449a-b6b5-62e19f66a8fc",
-    "checkedAt": "2026-11-07T15:06:47.817Z",
+    "checkedAt": "2026-11-08T11:28:42.523Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "FM 101 Larkana",
+    "url": "https://whmsonic.radio.gov.pk:8050/stream",
+    "country": "PK",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radio.gov.pk/",
+    "stationUuid": "4ff924cf-f0a7-4983-b354-09eb32d75352",
+    "checkedAt": "2026-11-08T11:28:42.974Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "ILM Radio Renala FM 92",
@@ -47,7 +64,27 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/ilm-radio-renala/",
     "stationUuid": "8281a8d0-4d03-4e1f-96ea-dbae81e5bf28",
-    "checkedAt": "2026-11-07T15:06:51.253Z",
+    "checkedAt": "2026-11-08T11:28:44.018Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Power Radio FM 99 Islamabad",
+    "url": "https://isb.power99.live/stream",
+    "country": "PK",
+    "type": "music",
+    "tags": [
+      "music",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "urdu",
+    "favicon": "https://power99.live/static/images/logo.png",
+    "homepage": "https://power99.live/",
+    "stationUuid": "8a48cb73-a60c-4136-b223-95dc6e61b58b",
+    "checkedAt": "2026-11-08T11:28:44.915Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -66,7 +103,7 @@
     "favicon": null,
     "homepage": "https://radio.gov.pk/",
     "stationUuid": "5a71813c-32f6-472e-8db1-51ccbe37cc19",
-    "checkedAt": "2026-11-07T15:06:52.710Z",
+    "checkedAt": "2026-11-08T11:28:45.172Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"

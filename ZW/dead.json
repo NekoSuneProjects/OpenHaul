@@ -11,9 +11,29 @@
     "favicon": null,
     "homepage": "https://radio.msu.ac.zw/",
     "stationUuid": "cddac1d4-2e9b-4023-9738-1e373541987b",
-    "checkedAt": "2026-11-07T15:35:25.717Z",
+    "checkedAt": "2026-11-08T11:56:52.570Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Breeze FM 91.2",
+    "url": "https://stream.zeno.fm/d1vbtsfem98uv",
+    "country": "ZW",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://breezefm.co.zw/",
+    "stationUuid": "c8dc82ef-9b65-4c92-932e-81721649aafd",
+    "checkedAt": "2026-11-08T11:56:52.799Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   }
 ]
