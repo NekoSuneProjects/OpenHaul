@@ -20,7 +20,7 @@
     "favicon": null,
     "homepage": "https://vanessa-unreceptive-dia.ngrok-free.dev/",
     "stationUuid": "812223d2-81b1-49c2-9bc4-b0b7b3f026c2",
-    "checkedAt": "2026-11-08T10:31:15.172Z",
+    "checkedAt": "2026-11-09T11:44:59.331Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -40,7 +40,7 @@
     "favicon": "https://vogalfunk.com/wp-content/uploads/2021/01/VF_Web_Grafik_Home.png",
     "homepage": "https://www.acousticlakeside.com/",
     "stationUuid": "ce13abb5-0471-4501-863d-5fd6de469d7d",
-    "checkedAt": "2026-11-08T10:31:15.189Z",
+    "checkedAt": "2026-11-09T11:44:59.362Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -64,7 +64,7 @@
     "favicon": "https://www.fro.at/wp-content/themes/fro/images/fro_favicon_32x32pxl.png",
     "homepage": "http://www.fro.at/index.php",
     "stationUuid": "961d67e0-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-08T10:31:15.378Z",
+    "checkedAt": "2026-11-09T11:44:59.603Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -83,10 +83,29 @@
     "favicon": "https://welle1.at/wp-content/uploads/2020/06/cropped-radiopro_theme_icon_1080x1080_2020-180x180.png",
     "homepage": "https://welle1.at/",
     "stationUuid": "65d4ae6a-eda2-4d2c-bc68-7b8ee6310bde",
-    "checkedAt": "2026-11-08T10:31:15.647Z",
+    "checkedAt": "2026-11-09T11:44:59.934Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Energy NRJ Österreich",
+    "url": "http://stream1.energy.at:8000/aut",
+    "country": "AT",
+    "type": "charts",
+    "tags": [
+      "charts"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "german",
+    "favicon": "https://energy.at/api/streams/logos/aut.svg",
+    "homepage": "https://energy.at/",
+    "stationUuid": "964ef42e-93cd-4533-88e7-a30e9e75217d",
+    "checkedAt": "2026-11-09T11:45:00.651Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "T-Rock",
@@ -103,10 +122,33 @@
     "favicon": "https://static.wixstatic.com/media/548694_aae16b06081043c2822c5e9eadff5bde%7emv2.png/v1/fill/w_32%2ch_32%2clg_1%2cusm_0.66_1.00_0.01/548694_aae16b06081043c2822c5e9eadff5bde%7emv2.png",
     "homepage": "https://www.t-rock.at/",
     "stationUuid": "3493572b-9798-40b2-98fb-aef2295b6133",
-    "checkedAt": "2026-11-08T10:31:17.648Z",
+    "checkedAt": "2026-11-09T11:45:03.225Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "ENERGY ÖSTERREICH",
+    "url": "https://streaming.nrjaudio.fm/ouvfydoarp52",
+    "country": "AT",
+    "type": "dance",
+    "tags": [
+      "dance",
+      "hits",
+      "pop",
+      "r'n'b",
+      "top 40"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "german",
+    "favicon": "https://cdn.brandfetch.io/idBu4-_WiS/w/2048/h/2048/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1769076313016",
+    "homepage": "https://energy.at/",
+    "stationUuid": "f9e99aae-d4cc-47e3-ac1a-cecc842343a1",
+    "checkedAt": "2026-11-09T11:45:04.524Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Radio Agora 105,5",
@@ -123,7 +165,7 @@
     "favicon": "https://www.agora.at/images/favicons/apple-touch-icon.png",
     "homepage": "https://www.agora.at/",
     "stationUuid": "7387b7ff-2778-4b0b-b001-e4f134586961",
-    "checkedAt": "2026-11-08T10:31:19.383Z",
+    "checkedAt": "2026-11-09T11:45:05.797Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -142,7 +184,7 @@
     "favicon": "http://www.radiosol.at/favicon.ico",
     "homepage": "http://www.radiosol.at/",
     "stationUuid": "962492bf-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-08T10:31:19.721Z",
+    "checkedAt": "2026-11-09T11:45:06.218Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -161,7 +203,7 @@
     "favicon": null,
     "homepage": "https://www.kronehit.at/",
     "stationUuid": "0a4053ad-4e90-40f2-993c-540b4ed2e667",
-    "checkedAt": "2026-11-08T10:31:21.114Z",
+    "checkedAt": "2026-11-09T11:45:07.937Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -178,7 +220,7 @@
     "favicon": null,
     "homepage": "https://www.radio886.at/",
     "stationUuid": "0cee0f71-175b-4c1d-9b32-8939e2797151",
-    "checkedAt": "2026-11-08T10:31:21.841Z",
+    "checkedAt": "2026-11-09T11:45:08.430Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -195,7 +237,7 @@
     "favicon": null,
     "homepage": "https://www.radio886.at/",
     "stationUuid": "df6d4fe8-6f77-49fc-bb3a-9341e5d9f54c",
-    "checkedAt": "2026-11-08T10:31:21.850Z",
+    "checkedAt": "2026-11-09T11:45:08.443Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -212,7 +254,7 @@
     "favicon": null,
     "homepage": "https://www.radio886.at/",
     "stationUuid": "7c630780-bfce-43d8-ae6a-fabfe4ca3a05",
-    "checkedAt": "2026-11-08T10:31:21.867Z",
+    "checkedAt": "2026-11-09T11:45:08.468Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -229,7 +271,7 @@
     "favicon": "https://austrianpowerradio.com/favicon.ico",
     "homepage": "https://austrianpowerradio.com/",
     "stationUuid": "216d8ef9-e1fe-49fc-a44b-1f6896f6a680",
-    "checkedAt": "2026-11-08T10:31:22.853Z",
+    "checkedAt": "2026-11-09T11:45:09.481Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -246,7 +288,7 @@
     "favicon": "https://austrianpowerradio.com/wp-content/uploads/2024/04/Logo_transparen-WEISSt-768x841.png",
     "homepage": "https://austrianpowerradio.com/",
     "stationUuid": "e56af1d8-ec96-40c7-bb6c-00dc06e3b453",
-    "checkedAt": "2026-11-08T10:31:22.912Z",
+    "checkedAt": "2026-11-09T11:45:09.507Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -263,7 +305,7 @@
     "favicon": null,
     "homepage": "https://www.cr944.at/",
     "stationUuid": "51fc72b8-463f-4987-b3f7-940ea8b49170",
-    "checkedAt": "2026-11-08T10:31:22.926Z",
+    "checkedAt": "2026-11-09T11:45:09.559Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -280,7 +322,7 @@
     "favicon": null,
     "homepage": "https://www.cr944.at/",
     "stationUuid": "9647af16-a09f-4b57-aa7c-4669a75be554",
-    "checkedAt": "2026-11-08T10:31:22.973Z",
+    "checkedAt": "2026-11-09T11:45:09.651Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -297,10 +339,27 @@
     "favicon": null,
     "homepage": "https://www.fhstp.ac.at/en/campus/on-campus-media/campus-city-radio-94.4",
     "stationUuid": "5fd361c7-c8be-4efb-9581-b4f514683078",
-    "checkedAt": "2026-11-08T10:31:23.070Z",
+    "checkedAt": "2026-11-09T11:45:09.790Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Energy",
+    "url": "http://stream1.energy.at:8000/vie",
+    "country": "AT",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://stream1.energy.at:8000/vie",
+    "stationUuid": "215f1d14-f91d-402e-8bc9-f01bf729a65f",
+    "checkedAt": "2026-11-09T11:45:10.375Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Garage Sounds",
@@ -314,7 +373,7 @@
     "favicon": null,
     "homepage": "http://audio.gendercriminals.gay/listen/garage_sounds/radio.mp3.m3u",
     "stationUuid": "256e2302-c65a-491d-a65d-dcac07bf40ca",
-    "checkedAt": "2026-11-08T10:31:24.055Z",
+    "checkedAt": "2026-11-09T11:45:11.062Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -331,7 +390,7 @@
     "favicon": "https://infinisync.at/data/images/logo_small.png",
     "homepage": "https://infinisync.at/",
     "stationUuid": "935cbbf6-312f-4adb-b7e9-79404e53f52f",
-    "checkedAt": "2026-11-08T10:31:24.512Z",
+    "checkedAt": "2026-11-09T11:45:11.415Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -348,7 +407,7 @@
     "favicon": "https://www.agora.at/images/favicons/apple-touch-icon.png",
     "homepage": "https://www.agora.at/home/",
     "stationUuid": "5daaf267-22c2-4078-bf9d-068e99cd76d6",
-    "checkedAt": "2026-11-08T10:31:27.012Z",
+    "checkedAt": "2026-11-09T11:45:14.757Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -365,7 +424,7 @@
     "favicon": null,
     "homepage": "http://www.radioharmonie.at/",
     "stationUuid": "96096e93-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-08T10:31:28.024Z",
+    "checkedAt": "2026-11-09T11:45:16.260Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -382,7 +441,7 @@
     "favicon": null,
     "homepage": "http://www.radiomax.at/",
     "stationUuid": "960633eb-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-08T10:31:28.362Z",
+    "checkedAt": "2026-11-09T11:45:16.954Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -399,7 +458,7 @@
     "favicon": "https://replayscape.com/pix/logo/171206a_simpler_full_0of12_zoom_tiny_blue.jpg",
     "homepage": "https://replayscape.com/",
     "stationUuid": "dbd87fa6-def3-4d64-81dc-77a30609b49f",
-    "checkedAt": "2026-11-08T10:31:29.162Z",
+    "checkedAt": "2026-11-09T11:45:18.297Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -416,7 +475,7 @@
     "favicon": "https://replayscape.com/pix/logo/171206a_simpler_full_0of12_zoom_tiny_blue.jpg",
     "homepage": "https://replayscape.com/",
     "stationUuid": "67e0ad0a-b3b4-4385-b5df-f0c61fe72b11",
-    "checkedAt": "2026-11-08T10:31:29.195Z",
+    "checkedAt": "2026-11-09T11:45:18.351Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -433,7 +492,7 @@
     "favicon": "http://audio.gendercriminals.gay/static/uploads/sleepytime_tea/album_art.1711358678.jpg",
     "homepage": "http://audio.gendercriminals.gay/",
     "stationUuid": "777df551-2ce6-4797-a460-de591bcc91c9",
-    "checkedAt": "2026-11-08T10:31:29.553Z",
+    "checkedAt": "2026-11-09T11:45:18.718Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -450,7 +509,7 @@
     "favicon": "https://www.sub.fm/wp-content/uploads/2020/11/subfm350-1.png",
     "homepage": "https://www.sub.fm/",
     "stationUuid": "1e001fc9-5e74-492c-9154-e8eae252a14a",
-    "checkedAt": "2026-11-08T10:31:29.603Z",
+    "checkedAt": "2026-11-09T11:45:18.835Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
@@ -467,7 +526,7 @@
     "favicon": null,
     "homepage": "http://www.superfly.fm/",
     "stationUuid": "9605bab6-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-08T10:31:29.646Z",
+    "checkedAt": "2026-11-09T11:45:18.865Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -484,7 +543,7 @@
     "favicon": "https://superfly.fm/player/img/s_logo.png?cb=V3000009",
     "homepage": "https://superfly.fm/player/index.php?stream=web_pure_playlist%22",
     "stationUuid": "28ab7f9d-2cb7-4f56-9f10-69c59cc15916",
-    "checkedAt": "2026-11-08T10:31:29.671Z",
+    "checkedAt": "2026-11-09T11:45:18.940Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -501,7 +560,7 @@
     "favicon": null,
     "homepage": "http://www.fro.at/",
     "stationUuid": "9605fc47-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-08T10:31:30.326Z",
+    "checkedAt": "2026-11-09T11:45:19.433Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -518,10 +577,46 @@
     "favicon": null,
     "homepage": "https://www.oe24radio.at/player/radioplayer/5",
     "stationUuid": "80630be8-1675-47d3-8c1f-d53eb48a7d3f",
-    "checkedAt": "2026-11-08T10:31:30.989Z",
+    "checkedAt": "2026-11-09T11:45:20.332Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Servus Radio",
+    "url": "https://stream.servusradio.at/listen/servusradio/live128.mp3",
+    "country": "AT",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": "german",
+    "favicon": "https://servusradio.at/wp-content/uploads/2024/01/cropped-Servus_Radio_Logo_APP-32x32.png",
+    "homepage": "https://servusradio.at/",
+    "stationUuid": "3ee154cd-5bd5-4160-98e5-409dc73b61c7",
+    "checkedAt": "2026-11-09T11:45:20.509Z",
+    "status": 401,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Energy NRJ Innsbruck",
+    "url": "http://stream1.energy.at:8000/ibk",
+    "country": "AT",
+    "type": "pop",
+    "tags": [
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "german",
+    "favicon": "https://media.metacast.eu/pictures/10_2015/OdriLYWpbHJqKDAcGCMv-7384.png",
+    "homepage": "https://energy.at/",
+    "stationUuid": "96087c49-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-09T11:45:20.651Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Stadtradio Krems",
@@ -537,7 +632,7 @@
     "favicon": "https://www.stadtradio.at/favicon.ico",
     "homepage": "https://www.stadtradio.at/",
     "stationUuid": "eb62bb35-c701-41ec-b661-661412cffaf9",
-    "checkedAt": "2026-11-08T10:31:31.315Z",
+    "checkedAt": "2026-11-09T11:45:20.921Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -559,7 +654,7 @@
     "favicon": "https://example.com/besticon.png",
     "homepage": "https://28radio.cc/",
     "stationUuid": "c15e7f15-b5b3-4bca-9a42-c97f345ed2f4",
-    "checkedAt": "2026-11-08T10:31:31.338Z",
+    "checkedAt": "2026-11-09T11:45:20.951Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -581,7 +676,7 @@
     "favicon": "https://example.com/besticon.png",
     "homepage": "https://28radio.cc/",
     "stationUuid": "3356312f-f88a-4fe1-b752-cc28c07ad927",
-    "checkedAt": "2026-11-08T10:31:31.362Z",
+    "checkedAt": "2026-11-09T11:45:21.034Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -603,7 +698,7 @@
     "favicon": "https://example.com/besticon.png",
     "homepage": "https://28radio.cc/",
     "stationUuid": "ea59d91a-bf84-4650-8817-46bdda4f72a5",
-    "checkedAt": "2026-11-08T10:31:31.366Z",
+    "checkedAt": "2026-11-09T11:45:21.052Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -622,7 +717,7 @@
     "favicon": "http://audio.gendercriminals.gay/static/uploads/sleepytime_tea/album_art.1711358678.jpg",
     "homepage": "http://audio.gendercriminals.gay/public/lo-fi_halloween_and_chill",
     "stationUuid": "171259e7-3712-4ce4-9af8-602eab100870",
-    "checkedAt": "2026-11-08T10:31:32.255Z",
+    "checkedAt": "2026-11-09T11:45:22.446Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -641,7 +736,7 @@
     "favicon": "http://audio.gendercriminals.gay/static/uploads/sleepytime_tea/album_art.1711358678.jpg",
     "homepage": "http://audio.gendercriminals.gay/public/lo-fi_halloween_and_chill",
     "stationUuid": "93fbc908-ad0f-4fec-977b-b6296f89a9f1",
-    "checkedAt": "2026-11-08T10:31:32.284Z",
+    "checkedAt": "2026-11-09T11:45:22.466Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -660,7 +755,7 @@
     "favicon": "https://emap.fm/images/logo_emap.gif",
     "homepage": "https://emap.fm/",
     "stationUuid": "8837db1f-de40-4205-80c1-cc78ca807e84",
-    "checkedAt": "2026-11-08T10:31:32.490Z",
+    "checkedAt": "2026-11-09T11:45:22.799Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

@@ -1,5 +1,31 @@
 [
   {
+    "name": "Haze Pub Radio",
+    "url": "https://live.leproradio.com/rocks.ogg",
+    "country": "LT",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "drum bass",
+      "electronic",
+      "hip hop",
+      "metal",
+      "punk",
+      "rap",
+      "rock"
+    ],
+    "codec": "OGG",
+    "bitrate": 128,
+    "language": "lithuanian",
+    "favicon": null,
+    "homepage": "https://kalaver.in/rocks/",
+    "stationUuid": "d469d86b-e0a7-45ac-aa94-6be76329ab82",
+    "checkedAt": "2026-11-09T12:36:13.523Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
     "name": "Tauragės Radijas 98.2 FM",
     "url": "http://stream.tauragesradijas.lt:8000/tr1",
     "country": "LT",
@@ -15,10 +41,32 @@
     "favicon": null,
     "homepage": "https://www.tauragesradijas.lt/",
     "stationUuid": "7c306b40-8092-4470-8f17-dd2dd2971add",
-    "checkedAt": "2026-11-08T11:18:20.242Z",
+    "checkedAt": "2026-11-09T12:36:13.526Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Easy FM",
+    "url": "https://netradio.ziniur.lt/easyfm.mp3",
+    "country": "LT",
+    "type": "classic rock",
+    "tags": [
+      "classic rock",
+      "jazz",
+      "lounge",
+      "smooth jazz"
+    ],
+    "codec": "MP3",
+    "bitrate": 256,
+    "language": "english,lithuanian",
+    "favicon": null,
+    "homepage": "https://www.ziniuradijas.lt/easy-fm/",
+    "stationUuid": "38129622-6899-11ea-9d09-52543be04c81",
+    "checkedAt": "2026-11-09T12:36:13.935Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "thisislit",
@@ -38,7 +86,7 @@
     "favicon": "https://litradio.org/static/uploads/browser_icon/192.1769443347.png",
     "homepage": "https://litradio.org/",
     "stationUuid": "38f6bee2-eb67-49e1-bdab-b8072f866b78",
-    "checkedAt": "2026-11-08T11:18:20.841Z",
+    "checkedAt": "2026-11-09T12:36:14.063Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -60,30 +108,10 @@
     "favicon": null,
     "homepage": "https://powerfm.zygmediagroup.com/",
     "stationUuid": "73771960-8329-475e-b1fe-2fbd3174e294",
-    "checkedAt": "2026-11-08T11:18:21.245Z",
+    "checkedAt": "2026-11-09T12:36:14.436Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "PMR.lt",
-    "url": "https://stream.pmr.lt/pmr.mp3",
-    "country": "LT",
-    "type": "ethnic",
-    "tags": [
-      "ethnic",
-      "folk"
-    ],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": "english",
-    "favicon": null,
-    "homepage": "https://pmr.lt/en",
-    "stationUuid": "caa33a39-080b-4997-9a32-b5189e1391b7",
-    "checkedAt": "2026-11-08T11:18:21.614Z",
-    "status": 404,
-    "contentType": "text/xml; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "broken teeth radio",
@@ -99,7 +127,7 @@
     "favicon": "https://voxfutura.space/noize/noize.png",
     "homepage": "http://brokenteeth.space/",
     "stationUuid": "d5222813-1966-46b0-96c3-c22782a548fc",
-    "checkedAt": "2026-11-08T11:18:21.727Z",
+    "checkedAt": "2026-11-09T12:36:14.821Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -118,7 +146,7 @@
     "favicon": null,
     "homepage": "https://radio.domkutis.com/",
     "stationUuid": "9a3a5423-b460-44d4-8369-fe2b3f0a7033",
-    "checkedAt": "2026-11-08T11:18:21.917Z",
+    "checkedAt": "2026-11-09T12:36:14.932Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -138,7 +166,26 @@
     "favicon": null,
     "homepage": "https://litradio.org/",
     "stationUuid": "96205ffe-2d31-4859-9737-e8c8f33aee0d",
-    "checkedAt": "2026-11-08T11:18:21.921Z",
+    "checkedAt": "2026-11-09T12:36:14.960Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Criminal Tribe",
+    "url": "https://live.leproradio.com/criminal.ogg",
+    "country": "LT",
+    "type": "hits",
+    "tags": [
+      "hits"
+    ],
+    "codec": "OGG",
+    "bitrate": 128,
+    "language": "lithuanian",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "ca2f44c2-a48e-465f-a555-e6bab9ed4c24",
+    "checkedAt": "2026-11-09T12:36:15.092Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -159,10 +206,27 @@
     "favicon": "https://scontent.fkun2-1.fna.fbcdn.net/v/t39.30808-1/237186583_218050030330917_8268135555047002828_n.jpg?stp=dst-jpg_tt6&cstp=mx1000x1000&ctp=s200x200&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=1Qs_-wA2x6sQ7kNvwHlBfGG&_nc_oc=AdrzexU-h_3-Y-imvQ8m2DllB2_b9eJMCt3dSV5DV8qBLU9yywIecELTpYtr5QJKhAc&_nc_zt=24&_nc_ht=scontent.fkun2-1.fna&_nc_gid=tKQ5737IPApATx2tflViPg&_nc_ss=7f289&oh=00_AQIPzCESU5vIsfyFsywsBdMAiAzfjtbAxvITB2Qj2BuqDg&oe=6A98A6F8",
     "homepage": "https://pukas.lt/",
     "stationUuid": "140b9dc3-da5c-4a66-850f-692ccb19fffe",
-    "checkedAt": "2026-11-08T11:18:22.034Z",
+    "checkedAt": "2026-11-09T12:36:15.120Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "-=PoWeR=-",
+    "url": "https://cast1.my-control-panel.com/proxy/eventas/stream",
+    "country": "LT",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english,lithuanian,russian",
+    "favicon": null,
+    "homepage": "https://powerradio.webstarts.com/",
+    "stationUuid": "d134f955-f21e-4086-a572-c9cb5999f7e9",
+    "checkedAt": "2026-11-09T12:36:15.934Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Cold Tear Radio",
@@ -176,7 +240,7 @@
     "favicon": "https://th.bing.com/th/id/OIP.0bD3EllJGSWsRQhdkQGuygHaL9?pid=ImgDet",
     "homepage": "https://radio.coldtear.com/",
     "stationUuid": "c9bbaec4-aa0e-4087-b346-523343d873c3",
-    "checkedAt": "2026-11-08T11:18:23.370Z",
+    "checkedAt": "2026-11-09T12:36:16.009Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -193,7 +257,7 @@
     "favicon": null,
     "homepage": "https://radio.domkutis.com/",
     "stationUuid": "ccfdc79b-a5bc-4099-8189-b2c379defca7",
-    "checkedAt": "2026-11-08T11:18:23.629Z",
+    "checkedAt": "2026-11-09T12:36:16.013Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -210,7 +274,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/kabradio/",
     "stationUuid": "51d969b3-4f43-48f8-acb9-eebcd57384c8",
-    "checkedAt": "2026-11-08T11:18:24.443Z",
+    "checkedAt": "2026-11-09T12:36:16.731Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -227,10 +291,10 @@
     "favicon": null,
     "homepage": "https://stream-46.zeno.fm/f6m1zbud5p8uv",
     "stationUuid": "50f5be05-04aa-41b4-9ce3-2f440a38a6b2",
-    "checkedAt": "2026-11-08T11:18:25.413Z",
-    "status": 503,
+    "checkedAt": "2026-11-09T12:36:17.219Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 503"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radijo stotis Lietus",
@@ -244,7 +308,7 @@
     "favicon": "http://www.radijas.fm/media/_catalog/www.radijas.fm-radijo-stotis-lietus.png",
     "homepage": "https://www.lietus.fm/",
     "stationUuid": "ef8bef74-7125-473a-85c2-36dbcf8334b7",
-    "checkedAt": "2026-11-08T11:18:25.711Z",
+    "checkedAt": "2026-11-09T12:36:17.690Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -261,7 +325,7 @@
     "favicon": null,
     "homepage": "https://radior.lt/",
     "stationUuid": "9182472a-9d9a-4469-ad0f-36ede5f1d7e3",
-    "checkedAt": "2026-11-08T11:18:25.993Z",
+    "checkedAt": "2026-11-09T12:36:18.252Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -278,7 +342,7 @@
     "favicon": null,
     "homepage": "https://rockfm.lt/",
     "stationUuid": "c124ca8d-7cf1-4a9e-b75f-344bc08a9026",
-    "checkedAt": "2026-11-08T11:18:26.246Z",
+    "checkedAt": "2026-11-09T12:36:18.778Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -295,7 +359,7 @@
     "favicon": null,
     "homepage": "https://saulesradijas.lt/",
     "stationUuid": "9c95a062-1333-4b7b-a987-0886e98130cd",
-    "checkedAt": "2026-11-08T11:18:26.380Z",
+    "checkedAt": "2026-11-09T12:36:18.820Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -312,7 +376,7 @@
     "favicon": null,
     "homepage": "https://solfm.lt/index.html",
     "stationUuid": "86a2be13-ea6e-4cb3-9977-ea443f2ac8ae",
-    "checkedAt": "2026-11-08T11:18:26.382Z",
+    "checkedAt": "2026-11-09T12:36:18.832Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -329,7 +393,7 @@
     "favicon": null,
     "homepage": "https://radiosignal.news/",
     "stationUuid": "ab5eec21-da45-4c56-9f5b-29dd26ec9661",
-    "checkedAt": "2026-11-08T11:18:27.063Z",
+    "checkedAt": "2026-11-09T12:36:20.605Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -346,7 +410,7 @@
     "favicon": null,
     "homepage": "https://radiosignal.news/",
     "stationUuid": "aa47de76-c791-44e2-bb32-5879e918bd32",
-    "checkedAt": "2026-11-08T11:18:27.086Z",
+    "checkedAt": "2026-11-09T12:36:20.614Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -367,7 +431,24 @@
     "favicon": null,
     "homepage": "https://nashalenta.com/",
     "stationUuid": "4e057766-080f-4839-bafe-5518bc124e1e",
-    "checkedAt": "2026-11-08T11:18:27.177Z",
+    "checkedAt": "2026-11-09T12:36:21.106Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Leproradio",
+    "url": "https://live.leproradio.com/bender.ogg",
+    "country": "LT",
+    "type": "OGG",
+    "tags": [],
+    "codec": "OGG",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://leproradio.com/static/img/icon90.png",
+    "homepage": "https://leproradio.com/",
+    "stationUuid": "9672c2a0-8106-4e37-b938-a2a834f1243e",
+    "checkedAt": "2026-11-09T12:36:21.152Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -384,7 +465,7 @@
     "favicon": null,
     "homepage": "https://www.lietus.fm/",
     "stationUuid": "37103a34-a5eb-4569-94b5-82c4fa4bbe51",
-    "checkedAt": "2026-11-08T11:18:27.367Z",
+    "checkedAt": "2026-11-09T12:36:21.449Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -401,7 +482,7 @@
     "favicon": null,
     "homepage": "https://www.lietus.fm/",
     "stationUuid": "c22cfbc0-ae1b-4c0f-bbce-684fce5bfb5d",
-    "checkedAt": "2026-11-08T11:18:27.410Z",
+    "checkedAt": "2026-11-09T12:36:21.497Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -420,7 +501,7 @@
     "favicon": null,
     "homepage": "https://upsas.lt/",
     "stationUuid": "2d4ff3d0-ba9e-49ec-b99b-d0ab50ad5dd8",
-    "checkedAt": "2026-11-08T11:18:27.689Z",
+    "checkedAt": "2026-11-09T12:36:21.878Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -439,7 +520,7 @@
     "favicon": null,
     "homepage": "https://rusradio.lt/",
     "stationUuid": "662e0761-69bc-49b3-8f3f-bd5deea5b375",
-    "checkedAt": "2026-11-08T11:18:28.079Z",
+    "checkedAt": "2026-11-09T12:36:22.084Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -458,7 +539,7 @@
     "favicon": "https://saulesradijas.lt/wp-content/themes/sr/img/icons/favicon.ico",
     "homepage": "http://saulesradijas.lt/",
     "stationUuid": "1e2ee9d1-274b-4573-a397-2ca875dd29a7",
-    "checkedAt": "2026-11-08T11:18:28.109Z",
+    "checkedAt": "2026-11-09T12:36:22.097Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -477,7 +558,7 @@
     "favicon": "https://streamingp.shoutcast.com/JamendoLounge?lang=lt%3bq%3d0.9",
     "homepage": "https://streamingp.shoutcast.com/JamendoLounge?lang=lt%3bq%3d0.9",
     "stationUuid": "1e0a1dd3-3563-465a-be48-36c7741eb46c",
-    "checkedAt": "2026-11-08T11:18:28.243Z",
+    "checkedAt": "2026-11-09T12:36:22.675Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -496,7 +577,7 @@
     "favicon": "https://radior.lt/wp-content/uploads/2024/06/cropped-button_red-4x-180x180.png",
     "homepage": "https://radior.lt/online/",
     "stationUuid": "0ab0244c-dfa4-4a28-8626-f3bded87e54f",
-    "checkedAt": "2026-11-08T11:18:28.469Z",
+    "checkedAt": "2026-11-09T12:36:22.880Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -515,7 +596,7 @@
     "favicon": null,
     "homepage": "http://www.m-1.fm/",
     "stationUuid": "963d153d-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-08T11:18:28.554Z",
+    "checkedAt": "2026-11-09T12:36:23.078Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -534,47 +615,9 @@
     "favicon": "http://tauragesradijas.lt/images/120x120.png",
     "homepage": "http://tauragesradijas.lt/",
     "stationUuid": "f93a2094-41fd-11e8-b74d-52543be04c81",
-    "checkedAt": "2026-11-08T11:18:29.112Z",
+    "checkedAt": "2026-11-09T12:36:23.745Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "PMR",
-    "url": "https://pmr.lt/streams/pmr-3",
-    "country": "LT",
-    "type": "world music",
-    "tags": [
-      "world music"
-    ],
-    "codec": "AAC+",
-    "bitrate": 192,
-    "language": null,
-    "favicon": "https://pmr.lt/favicons/favicon-194x194.png",
-    "homepage": "https://pmr.lt/",
-    "stationUuid": "fdcd6fd4-f930-46b8-97a5-47f5802a6ee2",
-    "checkedAt": "2026-11-08T11:18:29.116Z",
-    "status": 404,
-    "contentType": "text/xml; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "pmr.lt - world music radio",
-    "url": "http://pmr.lt/streams/pmr-1",
-    "country": "LT",
-    "type": "world music",
-    "tags": [
-      "world music"
-    ],
-    "codec": "AAC+",
-    "bitrate": 192,
-    "language": null,
-    "favicon": "https://pmr.lt/favicons/favicon-144x144.png",
-    "homepage": "https://pmr.lt/",
-    "stationUuid": "78510466-1da7-4ea9-8d7e-ab79663687c7",
-    "checkedAt": "2026-11-08T11:18:29.134Z",
-    "status": 404,
-    "contentType": "text/xml; charset=utf-8",
-    "lastFailure": "HTTP 404"
   }
 ]

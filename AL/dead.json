@@ -1,5 +1,49 @@
 [
   {
+    "name": "Nest Radio",
+    "url": "https://radio.nestnews.al/listen/nest-radio/radio.mp3",
+    "country": "AL",
+    "type": "albanian",
+    "tags": [
+      "albanian",
+      "dance",
+      "hits",
+      "international",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "albanian",
+    "favicon": "https://radio.nestnews.al/assets/nest-logo.png",
+    "homepage": "https://radio.nestnews.al/",
+    "stationUuid": "f9a5c912-b3e0-4c11-92c2-fd8b136543d3",
+    "checkedAt": "2026-11-09T11:44:38.099Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio 7",
+    "url": "https://rpn.bozztv.com/radio/Med7-RadioTirana/icecast.audio",
+    "country": "AL",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "albanian",
+    "favicon": null,
+    "homepage": "https://radio-7.net/",
+    "stationUuid": "9f61b80d-13dd-404f-909f-a8e2e75b1d06",
+    "checkedAt": "2026-11-09T11:44:38.951Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
     "name": "Extravaganza Radio - Sexy Secrets Records",
     "url": "https://pstnet5.shoutcastnet.com:50374/stream",
     "country": "AL",
@@ -15,32 +59,10 @@
     "favicon": null,
     "homepage": "https://extravaganza-radio.com/",
     "stationUuid": "9fb0abb6-a53d-43e7-ae61-34b79bb1e258",
-    "checkedAt": "2026-11-08T10:30:54.762Z",
+    "checkedAt": "2026-11-09T11:44:39.683Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "ArgusRadio",
-    "url": "https://stream.argusradio.net/radio.mp3",
-    "country": "AL",
-    "type": "deep house",
-    "tags": [
-      "deep house",
-      "downtempo",
-      "melodic house",
-      "organic house"
-    ],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": "english",
-    "favicon": "https://argusradio.net/static/uploads/branding/argus_logo.png",
-    "homepage": "https://argusradio.net/public/argusradio",
-    "stationUuid": "b87b9635-7424-4643-aa1b-3cb7246608ab",
-    "checkedAt": "2026-11-08T10:30:54.940Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Emigranti",
@@ -57,52 +79,10 @@
     "favicon": null,
     "homepage": "http://www.radioemigranti.com/",
     "stationUuid": "e87c2e39-388e-4b4b-81ad-c07322a09795",
-    "checkedAt": "2026-11-08T10:30:55.133Z",
+    "checkedAt": "2026-11-09T11:44:40.255Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Radio Mergimi",
-    "url": "https://radio.radiomergimi.com:8114/stream",
-    "country": "AL",
-    "type": "folk",
-    "tags": [
-      "folk",
-      "hip hop",
-      "pop",
-      "reggae"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "albanian",
-    "favicon": null,
-    "homepage": "https://radiomergimi.com/",
-    "stationUuid": "d8436e8e-888d-490e-a59b-b91a2b042c9e",
-    "checkedAt": "2026-11-08T10:30:55.375Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "RadioNatyra",
-    "url": "https://mars.streamerr.co/8266/stream",
-    "country": "AL",
-    "type": "folk",
-    "tags": [
-      "folk",
-      "pop"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "albanian",
-    "favicon": null,
-    "homepage": "https://radionatyra.com/",
-    "stationUuid": "94c64c7f-fb62-41f3-9f00-e40ad0053377",
-    "checkedAt": "2026-11-08T10:30:55.716Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Intradio",
@@ -119,7 +99,7 @@
     "favicon": null,
     "homepage": "https://intradio.live/",
     "stationUuid": "bbe507a3-14d6-400f-9b3f-8420266bcb9e",
-    "checkedAt": "2026-11-08T10:30:55.795Z",
+    "checkedAt": "2026-11-09T11:44:41.197Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -139,7 +119,7 @@
     "favicon": null,
     "homepage": "https://www.oranews.tv/",
     "stationUuid": "c2caf164-c2bf-4eac-a719-ce6bd6cf25cb",
-    "checkedAt": "2026-11-08T10:30:56.664Z",
+    "checkedAt": "2026-11-09T11:44:42.097Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -156,7 +136,7 @@
     "favicon": null,
     "homepage": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio075/chunklist.m3u8",
     "stationUuid": "e439aa52-203a-4f83-a8e4-995d5c90f554",
-    "checkedAt": "2026-11-08T10:30:57.172Z",
+    "checkedAt": "2026-11-09T11:44:42.583Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

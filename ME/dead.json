@@ -18,27 +18,10 @@
     "favicon": "http://www.rtcg.me/assets/img/favicons/apple-icon-180x180.png",
     "homepage": "https://radio.rtcg.me/",
     "stationUuid": "4017c17b-add1-4884-bda6-dbc8841827b4",
-    "checkedAt": "2026-11-08T11:18:55.554Z",
+    "checkedAt": "2026-11-09T12:36:50.832Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Boka News",
-    "url": "http://bokanews.me:8000/source?1734500086794",
-    "country": "ME",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": null,
-    "favicon": "https://bokanews.me/wp-content/uploads/2014/09/Boka-News-Logo-2014.png",
-    "homepage": "https://bokanews.me/",
-    "stationUuid": "5e3d64bc-662f-4034-8e2b-c6262ab18ed7",
-    "checkedAt": "2026-11-08T11:18:55.558Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "РЦГ Classic",
@@ -54,10 +37,29 @@
     "favicon": null,
     "homepage": "https://rtcg.me/cir/radio/radio-uzivo/rcg-classic-uzivo.html",
     "stationUuid": "59f16ab6-519d-44b7-af67-4624bd3efbb6",
-    "checkedAt": "2026-11-08T11:18:55.608Z",
+    "checkedAt": "2026-11-09T12:36:51.067Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Elmag Evergreen",
+    "url": "https://radio.elmag.me/evergreen.mp3",
+    "country": "ME",
+    "type": "evergreen",
+    "tags": [
+      "evergreen"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "montenegro",
+    "favicon": null,
+    "homepage": "https://www.elmag.me/",
+    "stationUuid": "cfe52db3-7529-49e8-b0eb-4bfc93599ae8",
+    "checkedAt": "2026-11-09T12:36:51.590Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Andrijevica",
@@ -73,7 +75,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "398f407b-3fac-441f-8b8a-96d7ef1f53be",
-    "checkedAt": "2026-11-08T11:18:55.884Z",
+    "checkedAt": "2026-11-09T12:36:51.594Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -92,7 +94,7 @@
     "favicon": null,
     "homepage": "http://www.rtcg.me/",
     "stationUuid": "d76ebdee-dd87-4af1-bfd2-b894ecb61dac",
-    "checkedAt": "2026-11-08T11:18:56.038Z",
+    "checkedAt": "2026-11-09T12:36:51.829Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -111,10 +113,86 @@
     "favicon": "http://www.rtcg.me/assets/img/favicons/apple-icon-180x180.png",
     "homepage": "http://www.rtcg.me/",
     "stationUuid": "6d5706cd-0afb-42a8-a171-351378cd82b0",
-    "checkedAt": "2026-11-08T11:18:56.042Z",
+    "checkedAt": "2026-11-09T12:36:51.878Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Mag radio",
+    "url": "http://radio.elmag.me/mag.mp3",
+    "country": "ME",
+    "type": "narodna",
+    "tags": [
+      "narodna"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "montenegro",
+    "favicon": "https://www.magradio.me/wp-content/uploads/2018/01/favicon-114.png",
+    "homepage": "https://www.magradio.me/",
+    "stationUuid": "b319caad-a572-4d5e-b09e-21fd5c36924a",
+    "checkedAt": "2026-11-09T12:36:52.381Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Elmag Folk Gold",
+    "url": "https://radio.elmag.me/folkgold.mp3",
+    "country": "ME",
+    "type": "narodna",
+    "tags": [
+      "narodna"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "montenegro",
+    "favicon": null,
+    "homepage": "https://www.elmag.me/",
+    "stationUuid": "4949fc63-01cd-46e1-a17d-a99fdd461c62",
+    "checkedAt": "2026-11-09T12:36:52.481Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Novi Elmag radio",
+    "url": "http://radio.elmag.me/elmag.mp3",
+    "country": "ME",
+    "type": "pop",
+    "tags": [
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "montenegro",
+    "favicon": null,
+    "homepage": "https://www.elmag.me/",
+    "stationUuid": "6632cefc-115e-4f66-97bd-7b851f7d9494",
+    "checkedAt": "2026-11-09T12:36:55.582Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Elmag Nostalgija",
+    "url": "https://radio.elmag.me/nostalgija.mp3",
+    "country": "ME",
+    "type": "pop - 80s - 90s",
+    "tags": [
+      "pop - 80s - 90s"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "montenegrin",
+    "favicon": "null",
+    "homepage": "https://www.elmag.me/",
+    "stationUuid": "98b21b7f-ae52-4aa7-a6a6-3d4289d67201",
+    "checkedAt": "2026-11-09T12:36:55.584Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Rcg Yug",
@@ -130,28 +208,9 @@
     "favicon": "http://www.rtcg.me/assets/img/favicons/apple-icon-180x180.png",
     "homepage": "http://www.rtcg.me/",
     "stationUuid": "c20b90e7-9def-4dee-a1a0-39abd4e054a3",
-    "checkedAt": "2026-11-08T11:18:56.852Z",
+    "checkedAt": "2026-11-09T12:36:57.771Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Radio Boka News",
-    "url": "http://bokanews.me:8000/source",
-    "country": "ME",
-    "type": "zabavna",
-    "tags": [
-      "zabavna"
-    ],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": "montenegro",
-    "favicon": null,
-    "homepage": "https://bokanews.me/",
-    "stationUuid": "87461d15-221e-40db-ab2e-df0efda03598",
-    "checkedAt": "2026-11-08T11:18:56.940Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   }
 ]
