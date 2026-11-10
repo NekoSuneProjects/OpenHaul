@@ -11,7 +11,7 @@
     "favicon": "https://xglite.blogspot.com",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "68ddcca4-fa29-49e0-97a1-182edd18f44a",
-    "checkedAt": "2026-11-09T12:36:32.277Z",
+    "checkedAt": "2026-11-10T12:11:09.346Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -30,7 +30,7 @@
     "favicon": "https://drive.google.com/file/d/1UCRLXymEBsuwoJVLF1VSsptvA_spPUeN/view?usp=drivesdk",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "00d94344-7f60-4f5d-9aee-dd917276c98d",
-    "checkedAt": "2026-11-09T12:36:32.743Z",
+    "checkedAt": "2026-11-10T12:11:09.751Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -51,7 +51,7 @@
     "favicon": null,
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "4797d484-176c-4c96-949b-243fb0b0dccd",
-    "checkedAt": "2026-11-09T12:36:32.772Z",
+    "checkedAt": "2026-11-10T12:11:09.768Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -70,7 +70,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/fr/c/ca/Medi_1_TV_logo.png",
     "homepage": "http://www.medi1.com/",
     "stationUuid": "baae5280-6e91-421b-bc15-7ace366768e0",
-    "checkedAt": "2026-11-09T12:36:33.368Z",
+    "checkedAt": "2026-11-10T12:11:10.298Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -89,7 +89,7 @@
     "favicon": "https://www.medi1.com/favicon.ico",
     "homepage": "https://www.medi1.com/fr/webradio/Classique",
     "stationUuid": "4c6f8571-6e70-42d5-a4a6-669003ad1cee",
-    "checkedAt": "2026-11-09T12:36:33.876Z",
+    "checkedAt": "2026-11-10T12:11:10.752Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -108,7 +108,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "e300baf5-e1e2-4ba8-b4ff-6d029d5a0a99",
-    "checkedAt": "2026-11-09T12:36:33.891Z",
+    "checkedAt": "2026-11-10T12:11:10.770Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -127,7 +127,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/ezxx195gq2zuv",
     "stationUuid": "653dea16-ffe4-4db9-8744-427bb37d83ee",
-    "checkedAt": "2026-11-09T12:36:34.225Z",
+    "checkedAt": "2026-11-10T12:11:11.185Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -146,7 +146,7 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/8#",
     "stationUuid": "93c1a1a6-5571-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-09T12:36:34.914Z",
+    "checkedAt": "2026-11-10T12:11:11.670Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -163,7 +163,7 @@
     "favicon": null,
     "homepage": "https://www.medi1.com/webradio/2#",
     "stationUuid": "96ccc468-1a6f-11e8-a334-52543be04c81",
-    "checkedAt": "2026-11-09T12:36:35.787Z",
+    "checkedAt": "2026-11-10T12:11:12.501Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -180,10 +180,27 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/3#",
     "stationUuid": "7c1bdaa1-56a8-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-09T12:36:35.882Z",
+    "checkedAt": "2026-11-10T12:11:12.530Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "2M radio maroc",
+    "url": "https://radio2m.ma/",
+    "country": "MA",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radio2m.ma/",
+    "stationUuid": "60ce5b1d-7e4f-48e6-86dc-01e4fd29335d",
+    "checkedAt": "2026-11-10T12:11:13.044Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Chada FM",
@@ -197,10 +214,10 @@
     "favicon": "https://chada.ma/wp-content/uploads/2022/09/cropped-LOGO-CHADA-NEW-1.png",
     "homepage": "https://chada.ma/fr/",
     "stationUuid": "f622d310-df86-4ffb-850e-4941e364c22b",
-    "checkedAt": "2026-11-09T12:36:36.407Z",
-    "status": 502,
-    "contentType": "text/html; charset=UTF-8",
-    "lastFailure": "HTTP 502"
+    "checkedAt": "2026-11-10T12:11:13.067Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "SNRT",
@@ -214,7 +231,7 @@
     "favicon": "https://snrtlive.ma/sites/default/files/2024-02/logo-snrtnews2_2.png",
     "homepage": "https://snrtlive.ma/ar/alidaa-alwatania",
     "stationUuid": "4d8de7d2-1fc1-4f70-974c-12100d0fd68c",
-    "checkedAt": "2026-11-09T12:36:36.520Z",
+    "checkedAt": "2026-11-10T12:11:13.069Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"

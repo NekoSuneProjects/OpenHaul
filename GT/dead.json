@@ -11,7 +11,7 @@
     "favicon": "https://i0.wp.com/astroradiogt.com/wp-content/uploads/2021/08/cropped-cropped-Banner-1.jpg?fit=180%2C180&ssl=1",
     "homepage": "https://astroradiogt.com/",
     "stationUuid": "7e163da0-4b78-4f0f-ad3c-162f55bba2b4",
-    "checkedAt": "2026-11-09T12:25:12.466Z",
+    "checkedAt": "2026-11-10T12:00:30.511Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -37,10 +37,32 @@
     "favicon": "https://statics-v3.streema.com/static/img/radios/profile_background_default_380.abf7abe7e86a.jpg",
     "homepage": "https://www.medios.gt/elcomandante",
     "stationUuid": "4f20bac8-09d8-4a2d-bb1f-bdd9a25826a4",
-    "checkedAt": "2026-11-09T12:25:13.135Z",
+    "checkedAt": "2026-11-10T12:00:31.169Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Central 91.9 FM",
+    "url": "http://live.myradioserver.net:7588/;",
+    "country": "GT",
+    "type": "bible",
+    "tags": [
+      "bible",
+      "evangelio",
+      "gospel",
+      "religious"
+    ],
+    "codec": "AAC+",
+    "bitrate": 32,
+    "language": "spanish",
+    "favicon": "https://laradiodepaz919.com/images/logo.png",
+    "homepage": "https://laradiodepaz919.com/",
+    "stationUuid": "a01028c9-02ef-41ee-ab7f-53e632e14a00",
+    "checkedAt": "2026-11-10T12:00:31.494Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Camino Santidad",
@@ -56,7 +78,7 @@
     "favicon": null,
     "homepage": "https://www.radiocaminodesantidad.com/",
     "stationUuid": "a010c3c2-bcac-4fdf-8028-bcd5ca17a858",
-    "checkedAt": "2026-11-09T12:25:13.910Z",
+    "checkedAt": "2026-11-10T12:00:31.797Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -80,10 +102,34 @@
     "favicon": "https://radio.com.gt/uploads/img/stereo-gerardi.jpg",
     "homepage": "https://www.facebook.com/EstereoGerardi",
     "stationUuid": "f954089f-6159-4f22-bcdb-4fb07d7bc62d",
-    "checkedAt": "2026-11-09T12:25:14.780Z",
+    "checkedAt": "2026-11-10T12:00:32.244Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Dinámica 89.9 FM",
+    "url": "https://cloudstream2032.conectarhosting.com/8312/stream",
+    "country": "GT",
+    "type": "entretenimiento",
+    "tags": [
+      "entretenimiento",
+      "latino",
+      "música en español",
+      "pop",
+      "pop en español",
+      "reggaeton"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": "https://www.corporacionradialfm.com/assets/img/logo.png",
+    "homepage": "https://www.corporacionradialfm.com/dinamicafm",
+    "stationUuid": "657e0b11-11e6-412b-913b-6de2375984d4",
+    "checkedAt": "2026-11-10T12:00:32.567Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "ARCA RADIO HD",
@@ -97,7 +143,7 @@
     "favicon": null,
     "homepage": "https://arcaradiohd.com/radioplayer/index.html",
     "stationUuid": "37749565-26fc-491c-981e-1e8434bb2fb1",
-    "checkedAt": "2026-11-09T12:25:16.079Z",
+    "checkedAt": "2026-11-10T12:00:33.466Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -114,7 +160,7 @@
     "favicon": "https://metropolisantigua.com/wp-content/uploads/2025/11/cropped-logo-3-192x192.png",
     "homepage": "https://metropolisantigua.com/",
     "stationUuid": "e6d7a104-c09d-42d6-985d-9da6c70c1d8b",
-    "checkedAt": "2026-11-09T12:25:17.394Z",
+    "checkedAt": "2026-11-10T12:00:34.336Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

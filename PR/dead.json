@@ -17,7 +17,7 @@
     "favicon": null,
     "homepage": "http://echo355.com/",
     "stationUuid": "9d28e755-6a29-4b59-a93c-3cc5a2abddca",
-    "checkedAt": "2026-11-09T12:50:17.981Z",
+    "checkedAt": "2026-11-10T12:23:34.906Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -42,7 +42,7 @@
     "favicon": "https://highrise-bot-builder.replit.app/favicon.svg",
     "homepage": "https://highrise-bot-builder.replit.app/",
     "stationUuid": "61f30f9e-d4dd-466b-a1c0-f55b451007f8",
-    "checkedAt": "2026-11-09T12:50:18.790Z",
+    "checkedAt": "2026-11-10T12:23:35.553Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -62,7 +62,7 @@
     "favicon": "https://listenonlineradio.com/wp-content/uploads/2019/12/104.1-Redentor.jpg",
     "homepage": "https://facebook.com/104.1Redentor",
     "stationUuid": "d14750f8-9bbf-45c7-bf9a-3315e10db893",
-    "checkedAt": "2026-11-09T12:50:18.928Z",
+    "checkedAt": "2026-11-10T12:23:35.702Z",
     "status": 500,
     "contentType": "text/html",
     "lastFailure": "HTTP 500"
@@ -84,7 +84,7 @@
     "favicon": "http://www.wrtu.pr/favicon.ico",
     "homepage": "http://www.wrtu.pr/",
     "stationUuid": "96267f26-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-09T12:50:19.441Z",
+    "checkedAt": "2026-11-10T12:23:36.143Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -101,7 +101,7 @@
     "favicon": null,
     "homepage": "https://caribeclasico.org/#contacto",
     "stationUuid": "47a260d4-cb41-4a1a-8146-24b9b3d71fd5",
-    "checkedAt": "2026-11-09T12:50:19.547Z",
+    "checkedAt": "2026-11-10T12:23:36.345Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -118,10 +118,27 @@
     "favicon": null,
     "homepage": "https://www.salseoradio.com/",
     "stationUuid": "323d1135-fb57-4c1d-93c9-34be4d011223",
-    "checkedAt": "2026-11-09T12:50:20.918Z",
+    "checkedAt": "2026-11-10T12:23:37.462Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "WAPA RADIO",
+    "url": "https://livestreamcdn.net:2000/stream/waparadio",
+    "country": "PR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "http://waparadio.com/",
+    "stationUuid": "53dd3239-5823-45cd-b36f-d3d837bcf8bd",
+    "checkedAt": "2026-11-10T12:23:37.705Z",
+    "status": 500,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 500"
   },
   {
     "name": "WKAQ 580",
@@ -137,7 +154,7 @@
     "favicon": "https://bloximages.chicago2.vip.townnews.com/wkaq580.com/content/tncms/custom/image/9732c65a-a5bb-11ee-8102-67d137cd6b72.png?resize=400%2C167",
     "homepage": "https://www.wkaq580.com/",
     "stationUuid": "b95692d0-9b6f-4810-b6e6-395bbe6a5d0b",
-    "checkedAt": "2026-11-09T12:50:21.334Z",
+    "checkedAt": "2026-11-10T12:23:37.940Z",
     "status": 500,
     "contentType": null,
     "lastFailure": "HTTP 500"
@@ -154,7 +171,7 @@
     "favicon": null,
     "homepage": "https://www.wapa.tv/",
     "stationUuid": "36ef3359-df7d-4b2c-b732-0c5a050089f4",
-    "checkedAt": "2026-11-09T12:50:21.628Z",
+    "checkedAt": "2026-11-10T12:23:38.271Z",
     "status": 403,
     "contentType": "application/xml",
     "lastFailure": "HTTP 403"

@@ -1,27 +1,31 @@
 [
   {
-    "name": "Blu Radio - Musica",
-    "url": "https://playerservices.streamtheworld.com/api/livestream-redirect/MUSICABLU.mp3",
+    "name": "La Radio Estación ZaS Radio",
+    "url": "https://stream-176.surfernetwork.com/axxxe1rs2nhvv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJheHh4ZTFyczJuaHZ2IiwiaG9zdCI6InN0cmVhbS0xNzYuc3VyZmVybmV0d29yay5jb20iLCJ0bSI6ZmFsc2UsInJ0dGwiOjUsImp0aSI6IjM0TGM0RkJlUjJhYVN4cVc5NHpiRWciLCJpYXQiOjE3OTM5MzU4NzAsImV4cCI6MTc5MzkzNTkzMH0.HS9muFLmboxIxmnU-yGoiJJ-jMUej4wuIdyg-k9whxQ",
     "country": "CO",
     "type": "2000s",
     "tags": [
       "2000s",
+      "60s",
+      "70s",
       "80s",
       "90s",
       "classic hits",
+      "hits",
       "music",
-      "musica"
+      "pop rock",
+      "rock"
     ],
     "codec": "MP3",
     "bitrate": 128,
     "language": "spanish",
-    "favicon": "https://caracoltv.brightspotcdn.com/dims4/default/be3d3b3/2147483647/strip/true/crop/315x314+0+0/resize/120x120!/quality/90/?url=http%3A%2F%2Fcaracol-brightspot.s3.amazonaws.com%2Fbf%2F7e%2F3970272b49a4b5fa943fc505a9d1%2Fblu-radio-logo-2019-rgb.png",
-    "homepage": "https://www.bluradio.com/",
-    "stationUuid": "ef5b93e8-5c46-4f0b-a5cc-9e417ff53685",
-    "checkedAt": "2026-11-09T12:01:39.857Z",
-    "status": null,
+    "favicon": "https://zeno.fm/_ipx/q_85&fit_cover&s_144x144/https://images.zeno.fm/NgYfdrvZ9rTMm75m9Mxkb6RxQ1NUs7zzrg-g59kHDAE/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJQ0k3WnJFaUFvTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJQ0lqWXpFaWdvTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTY2MTU4NjQ4MjAwMA.webp",
+    "homepage": "https://zeno.fm/radio/LaRadioEstacion/",
+    "stationUuid": "a5cdbad8-f4d6-4e1c-93b5-07d1480760e5",
+    "checkedAt": "2026-11-10T11:38:13.051Z",
+    "status": 503,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Radio El Mundo Del Rock",
@@ -43,7 +47,7 @@
     "favicon": "https://static-media.streema.com/media/cache/2a/71/2a71006c8bbed1b17cc6ecefbb7f8ce9.jpg",
     "homepage": "https://radioelmundodelrock.wixsite.com/radio",
     "stationUuid": "2c698788-e07c-4db5-8fa6-aa539414633a",
-    "checkedAt": "2026-11-09T12:01:42.065Z",
+    "checkedAt": "2026-11-10T11:38:14.912Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -60,10 +64,10 @@
     "favicon": null,
     "homepage": "https://www.cayenatv.com/tv.html",
     "stationUuid": "39be9575-bbaf-4bb4-b151-51218e191f59",
-    "checkedAt": "2026-11-09T12:01:43.428Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
+    "checkedAt": "2026-11-10T11:38:15.685Z",
+    "status": 502,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Fiesta Stereo 95.8 FM La Plata, Huila",
@@ -77,7 +81,7 @@
     "favicon": "https://fiestastereo958.com/wp-content/uploads/2021/11/logobg.png",
     "homepage": "https://fiestastereo958.com/",
     "stationUuid": "4286dd02-37a7-4106-9e0c-42d1e498a05b",
-    "checkedAt": "2026-11-09T12:01:43.663Z",
+    "checkedAt": "2026-11-10T11:38:16.167Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -94,41 +98,7 @@
     "favicon": null,
     "homepage": "https://www.facebook.com/kristian.jimenezgomez.79?mibextid=ZbWKwL",
     "stationUuid": "044bc75f-2faa-4552-a44a-8aa0d02da157",
-    "checkedAt": "2026-11-09T12:01:46.083Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Caliente stereo 90.2",
-    "url": "https://play8.tikast.com:20003/stream",
-    "country": "CO",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.calientestereo.com.co/",
-    "stationUuid": "f566ed2b-fa16-4315-b2b2-822f2aa9cd0a",
-    "checkedAt": "2026-11-09T12:01:47.095Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Carnaval X Siempre (Barranquilla)",
-    "url": "https://streaming.radiosenlinea.com.ar:10328/stream/1/",
-    "country": "CO",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 56,
-    "language": "spanish",
-    "favicon": "https://emisorascolombianas.online/logos/carnaval-barranquilla.png",
-    "homepage": "https://emisorascolombianas.online/carnaval-barranquilla/",
-    "stationUuid": "d74c9d75-c10f-4ebc-8df4-a36a598558ca",
-    "checkedAt": "2026-11-09T12:01:47.681Z",
+    "checkedAt": "2026-11-10T11:38:17.736Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -145,7 +115,7 @@
     "favicon": "http://cdn-radiotime-logos.tunein.com/s230348d.png",
     "homepage": null,
     "stationUuid": "24ff6683-aeb0-42df-bd7c-bfd4d8f5f7be",
-    "checkedAt": "2026-11-09T12:01:47.697Z",
+    "checkedAt": "2026-11-10T11:38:20.770Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -162,7 +132,7 @@
     "favicon": null,
     "homepage": "https://www.emisorascolombianas.co/diciembre-stereo",
     "stationUuid": "864e41c5-eaf2-4e3f-8f06-b69c27d12f74",
-    "checkedAt": "2026-11-09T12:01:47.857Z",
+    "checkedAt": "2026-11-10T11:38:20.860Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -179,7 +149,7 @@
     "favicon": "https://cdn.colombia.com/canales/la-kalle-3023-v1.jpg",
     "homepage": "https://www.colombia.com/radio/la-kalle-96.9-fm-bogota-3706",
     "stationUuid": "2da02883-86eb-41dd-96df-7eb1ea314c38",
-    "checkedAt": "2026-11-09T12:01:48.272Z",
+    "checkedAt": "2026-11-10T11:38:21.571Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -196,7 +166,7 @@
     "favicon": null,
     "homepage": "https://laquetegusta.com/",
     "stationUuid": "6fbe41f2-4aa3-46ad-87ee-e340d8437470",
-    "checkedAt": "2026-11-09T12:01:48.803Z",
+    "checkedAt": "2026-11-10T11:38:21.761Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -213,7 +183,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/4/42/Mix_Colombia_logo.png",
     "homepage": "https://mixradio.co/category/cali/",
     "stationUuid": "2fc9e873-75b5-43e2-a317-f9d813849b6c",
-    "checkedAt": "2026-11-09T12:01:49.352Z",
+    "checkedAt": "2026-11-10T11:38:22.574Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -230,10 +200,44 @@
     "favicon": "https://emisorascolombianas.online/logos/paisa-estereo.png",
     "homepage": "https://emisorascolombianas.online/paisa-estereo/",
     "stationUuid": "c69c2e51-61e2-4206-884f-64c82fd9b2dc",
-    "checkedAt": "2026-11-09T12:01:50.774Z",
+    "checkedAt": "2026-11-10T11:38:23.512Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "radioparallevar",
+    "url": "https://laradio.stream/proxy/rumbafm/stream",
+    "country": "CO",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 96,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.radioparallevar.com/",
+    "stationUuid": "508ec9f6-a902-4c48-b779-f9a0c3a237bd",
+    "checkedAt": "2026-11-10T11:38:28.536Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Rumbera Estéreo (Barranquilla)",
+    "url": "https://sc10.conectarhosting.com/proxy/rumberastereo?mp=/stream",
+    "country": "CO",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": "https://emisorascolombianas.online/logos/rumbera-barranquilla.png",
+    "homepage": "https://emisorascolombianas.online/rumbera-barranquilla/",
+    "stationUuid": "f8595cec-40d1-42ee-b945-4fc77b77eb27",
+    "checkedAt": "2026-11-10T11:38:28.821Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "UdeC Radio",
@@ -247,7 +251,7 @@
     "favicon": null,
     "homepage": "https://www.udecradio.co/",
     "stationUuid": "c05be753-6130-4e8a-893e-153c3b8735db",
-    "checkedAt": "2026-11-09T12:01:55.835Z",
+    "checkedAt": "2026-11-10T11:38:28.952Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -269,7 +273,7 @@
     "favicon": null,
     "homepage": "https://americastereo.net/",
     "stationUuid": "3e9a4f18-6743-4d68-a9ca-1e34ee719a85",
-    "checkedAt": "2026-11-09T12:01:56.753Z",
+    "checkedAt": "2026-11-10T11:38:30.875Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -298,36 +302,10 @@
     "favicon": "https://cdn-profiles.tunein.com/s344903/images/logod.png?t=638868937610000000",
     "homepage": "https://africariberadio.epizy.com/?i=2",
     "stationUuid": "face192a-f2fa-4d05-98c9-86a62eea5e8b",
-    "checkedAt": "2026-11-09T12:01:57.993Z",
+    "checkedAt": "2026-11-10T11:38:31.454Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Unicauca stereo",
-    "url": "https://emisora.unicauca.edu.co/stream",
-    "country": "CO",
-    "type": "alternative",
-    "tags": [
-      "alternative",
-      "clasica",
-      "jazz",
-      "metal",
-      "música andina",
-      "pop",
-      "rock",
-      "}"
-    ],
-    "codec": "MP3",
-    "bitrate": 256,
-    "language": null,
-    "favicon": "https://www.unicauca.edu.co/",
-    "homepage": "https://emisora.unicauca.edu.co/",
-    "stationUuid": "68934d0a-e8ef-4c37-a722-821a65ecaf8f",
-    "checkedAt": "2026-11-09T12:01:58.858Z",
-    "status": 403,
-    "contentType": "text/plain; charset=utf-8",
-    "lastFailure": "HTTP 403"
   },
   {
     "name": "Tropical Bailable",
@@ -352,7 +330,7 @@
     "favicon": null,
     "homepage": "https://americastereo.net/",
     "stationUuid": "8e75a19e-5df0-46e1-bd73-2fdaea520a26",
-    "checkedAt": "2026-11-09T12:02:00.546Z",
+    "checkedAt": "2026-11-10T11:38:35.357Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -375,7 +353,7 @@
     "favicon": "https://static-media.streema.com/media/cache/f8/30/f8303b818fbdde3cefe418b0922b5ec7.jpg",
     "homepage": "https://zeno.fm/radio/la-max-baladas-rock/",
     "stationUuid": "be6f8737-882b-4b5f-aab7-5b28d52c7755",
-    "checkedAt": "2026-11-09T12:02:01.011Z",
+    "checkedAt": "2026-11-10T11:38:36.140Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -398,7 +376,7 @@
     "favicon": null,
     "homepage": "https://surf.aloncast.com/s/hits-collections-station",
     "stationUuid": "0c6ef528-5109-47f6-a457-15dfb9b0f354",
-    "checkedAt": "2026-11-09T12:02:01.736Z",
+    "checkedAt": "2026-11-10T11:38:36.839Z",
     "status": 502,
     "contentType": "text/plain;charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -421,7 +399,7 @@
     "favicon": "https://imgur.com/ayHCbGm.jpeg",
     "homepage": "https://americastereo.net/",
     "stationUuid": "3c578c2f-16ba-4291-8755-d45c9704be02",
-    "checkedAt": "2026-11-09T12:02:02.200Z",
+    "checkedAt": "2026-11-10T11:38:37.129Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -443,7 +421,7 @@
     "favicon": "https://play-lh.googleusercontent.com/kg45WMt36l4PqPjTwEDQeywQqTWyEouSnHPy2bP3p4nyIMy-yDyLeOaOrZia6TQCvJ6nNFFY7zu8N_lw49sE-Gc",
     "homepage": "https://eldoradoradio.cundinamarca.gov.co/",
     "stationUuid": "e318a674-0cef-47dd-a1d6-982c5eb8cadb",
-    "checkedAt": "2026-11-09T12:02:04.917Z",
+    "checkedAt": "2026-11-10T11:38:39.972Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -468,7 +446,7 @@
     "favicon": "https://tamefmstereo.com/wp-content/uploads/2024/04/cropped-cropped-logo-emisora-fCE-1-224x118.png",
     "homepage": "https://tamefmstereo.com/",
     "stationUuid": "3174ca45-e521-4bcd-8f74-42144758bdf6",
-    "checkedAt": "2026-11-09T12:02:05.090Z",
+    "checkedAt": "2026-11-10T11:38:40.014Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -493,7 +471,7 @@
     "favicon": "https://zeno.fm/_ipx/q_100&fit_cover&s_160x160/https://images.zeno.fm/gqC320ggeRScIdPalA1rOfEOT7_HTz1MR6qowwS4mD8/rs:fill:256:256/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJREE5UFNwa1FzTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJQ2c2SnIyNmdrTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTY2NDIyNzEzODAwMA.webp",
     "homepage": "https://zeno.fm/radio/idolos-del-pueblo/",
     "stationUuid": "016ffe84-aaaf-4f92-a90e-57e5cae3378c",
-    "checkedAt": "2026-11-09T12:02:07.294Z",
+    "checkedAt": "2026-11-10T11:38:42.189Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -519,10 +497,10 @@
     "favicon": "https://static-media.streema.com/media/cache/6b/11/6b11b6cd278f6b6b3a6f3a487cf5ab16.png",
     "homepage": "https://elcafedelmundo.com/",
     "stationUuid": "7a1a8546-9445-4a25-a731-a0f649223d85",
-    "checkedAt": "2026-11-09T12:02:07.948Z",
+    "checkedAt": "2026-11-10T11:38:42.692Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "m radio 106.3 corozal",
@@ -542,7 +520,7 @@
     "favicon": null,
     "homepage": "https://lamradio.co/",
     "stationUuid": "a9c0fc7c-8de3-4eec-9106-0fafd43765f3",
-    "checkedAt": "2026-11-09T12:02:08.866Z",
+    "checkedAt": "2026-11-10T11:38:43.398Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -566,7 +544,7 @@
     "favicon": "https://images.app.goo.gl/DY1eDCAb4VT2Yb6X7",
     "homepage": "https://minutodedios.fm/bogota/",
     "stationUuid": "07504685-0de1-4860-8b88-ac4f3f11baab",
-    "checkedAt": "2026-11-09T12:02:09.467Z",
+    "checkedAt": "2026-11-10T11:38:45.234Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -590,7 +568,7 @@
     "favicon": "https://www.arenosaestereo.com/wp-content/uploads/2022/10/favicon.png",
     "homepage": "https://www.arenosaestereo.com/",
     "stationUuid": "6bf64dea-4ccb-4869-8927-a55ed97a62cb",
-    "checkedAt": "2026-11-09T12:02:09.810Z",
+    "checkedAt": "2026-11-10T11:38:45.857Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -614,7 +592,7 @@
     "favicon": "https://madrigalfm.com/wp-content/uploads/elementor/thumbs/youtube-crossover-qjmsd48x8wrd3xveezze4h2jf5d9wu66ntirddnlxa.png",
     "homepage": "https://madrigalfm.com/",
     "stationUuid": "88d71c95-2aa4-4f62-907d-b7303b5181d9",
-    "checkedAt": "2026-11-09T12:02:10.355Z",
+    "checkedAt": "2026-11-10T11:38:46.759Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -636,7 +614,7 @@
     "favicon": null,
     "homepage": "https://americastereo.net/",
     "stationUuid": "06bb1bd0-99f4-4ddd-b06a-eac29e313724",
-    "checkedAt": "2026-11-09T12:02:11.203Z",
+    "checkedAt": "2026-11-10T11:38:46.979Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -662,10 +640,71 @@
     "favicon": null,
     "homepage": "http://emisora.caroycuervo.gov.co/",
     "stationUuid": "eb06299b-2d4f-11e8-91bf-52543be04c81",
-    "checkedAt": "2026-11-09T12:02:14.576Z",
+    "checkedAt": "2026-11-10T11:38:47.973Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "104.1 Emisora Comunitaria - La Radio de Todos",
+    "url": "https://streamyes.alsolnet.com/comunitariafm/live/chunklist_w7037173.m3u8",
+    "country": "CO",
+    "type": "community radio",
+    "tags": [
+      "community radio",
+      "crossover",
+      "variety"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "spanish",
+    "favicon": "https://104florencia.co/wp-content/uploads/2021/09/104.1-sede-curiplaya-2048x996.jpg",
+    "homepage": "https://104florencia.co/",
+    "stationUuid": "da2ead9d-faec-45ed-a455-a19ce4e7ec9b",
+    "checkedAt": "2026-11-10T11:38:49.173Z",
+    "status": 404,
+    "contentType": null,
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Pingüino Estéreo",
+    "url": "http://radiolatina.info:9750/",
+    "country": "CO",
+    "type": "community radio",
+    "tags": [
+      "community radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "spanish",
+    "favicon": "http://pinguinostereo1069.blogspot.com/favicon.ico",
+    "homepage": "http://pinguinostereo1069.blogspot.com/",
+    "stationUuid": "96184ddf-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-10T11:38:49.795Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "campo serrano radio 96.7 aguachica",
+    "url": "https://virtual5.emisorasvirtuales.com:8150/live",
+    "country": "CO",
+    "type": "comunitaria",
+    "tags": [
+      "comunitaria",
+      "crossover",
+      "música y noticias"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://camposerranoradio.com/home/",
+    "stationUuid": "f516faaf-0a46-4e17-bb92-1bce13ce91c5",
+    "checkedAt": "2026-11-10T11:38:49.899Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "la nueva 95.7 bosconia cesar",
@@ -682,7 +721,7 @@
     "favicon": null,
     "homepage": "https://www.colombia.com/radio/la-nueva-95.7-fm-bosconia-6174",
     "stationUuid": "1839a601-ec59-4303-a10e-22c46da9785b",
-    "checkedAt": "2026-11-09T12:02:16.411Z",
+    "checkedAt": "2026-11-10T11:38:50.518Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -702,7 +741,7 @@
     "favicon": null,
     "homepage": "https://ipuc.org.co/",
     "stationUuid": "d5e7c2c1-7c9c-44ff-b567-f457bf45ef3d",
-    "checkedAt": "2026-11-09T12:02:19.339Z",
+    "checkedAt": "2026-11-10T11:38:54.870Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -721,7 +760,7 @@
     "favicon": "https://emisorascolombianas.online/logos/minuto-am-barranquilla.png",
     "homepage": "https://emisorascolombianas.online/minuto-am-barranquilla/",
     "stationUuid": "2a2c4e30-e20d-4f7f-b0ac-0dbcc5dfbe0c",
-    "checkedAt": "2026-11-09T12:02:20.100Z",
+    "checkedAt": "2026-11-10T11:38:55.776Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -740,10 +779,29 @@
     "favicon": "https://emisorascolombianas.online/logos/minuto-bogota.png",
     "homepage": "https://emisorascolombianas.online/minuto-bogota/",
     "stationUuid": "1fd44011-2db5-4328-9e78-e1024151deda",
-    "checkedAt": "2026-11-09T12:02:20.218Z",
+    "checkedAt": "2026-11-10T11:38:56.029Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio María (Bogotá)",
+    "url": "https://dreamsiteradiocp2.com/proxy/rmcolombia2?mp=/stream/1/",
+    "country": "CO",
+    "type": "cristianas",
+    "tags": [
+      "cristianas"
+    ],
+    "codec": "AAC+",
+    "bitrate": 32,
+    "language": "spanish",
+    "favicon": "https://emisorascolombianas.online/logos/maria.png",
+    "homepage": "https://emisorascolombianas.online/maria/",
+    "stationUuid": "9141e02d-6486-4d43-94ff-de26325053ac",
+    "checkedAt": "2026-11-10T11:38:56.249Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Alfa Stereo 106.3 FM",
@@ -764,7 +822,7 @@
     "favicon": "https://alfastereo.com/wp-content/uploads/2022/04/cropped-favicon-180x180.gif",
     "homepage": "https://alfastereo.com/",
     "stationUuid": "aeb210e7-baf2-4db9-b607-8d6313d629c3",
-    "checkedAt": "2026-11-09T12:02:20.841Z",
+    "checkedAt": "2026-11-10T11:38:56.961Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -789,7 +847,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/xt6bIpnf8DF5Y6VXG-PSw8k-Qqhug-oCO6MdvlnJQJI/rs:fill:256:256/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvZThkYmQyNzItYzY2Yy00Y2IyLTg0YTQtOTYwMDU0ZmVlYTJmL2ltYWdlLz91PTE3Mzc0NzY4NTcwMDA.webp",
     "homepage": "https://zeno.fm/radio/bacana/",
     "stationUuid": "5c48eff7-00fe-450e-8ccc-0f8a6247de2e",
-    "checkedAt": "2026-11-09T12:02:21.668Z",
+    "checkedAt": "2026-11-10T11:38:58.361Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -815,7 +873,7 @@
     "favicon": "https://carbonstereo.com/wp-content/uploads/logo-app.png",
     "homepage": "https://carbonstereo.com/",
     "stationUuid": "28c98fe3-666a-4007-b9de-929aecc04ce4",
-    "checkedAt": "2026-11-09T12:02:22.410Z",
+    "checkedAt": "2026-11-10T11:38:59.450Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -839,7 +897,7 @@
     "favicon": null,
     "homepage": "http://cristalstereoisnos.com/",
     "stationUuid": "6eec283a-9758-473b-a480-37bd026ece48",
-    "checkedAt": "2026-11-09T12:02:23.101Z",
+    "checkedAt": "2026-11-10T11:39:00.963Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -862,7 +920,7 @@
     "favicon": "https://cristalinacaqueta.com/static/base/images/cristalina-caqueta.png",
     "homepage": "https://cristalinacaqueta.com/",
     "stationUuid": "0a3cb7eb-9649-4f39-9764-3d01f366fe2b",
-    "checkedAt": "2026-11-09T12:02:23.116Z",
+    "checkedAt": "2026-11-10T11:39:01.004Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -885,7 +943,7 @@
     "favicon": "https://cristalinacundinamarca.com/static/base/images/cristalinaMapa.png",
     "homepage": "https://cristalinacundinamarca.com/",
     "stationUuid": "70c3c3bc-86ed-4a6a-82b6-386634925250",
-    "checkedAt": "2026-11-09T12:02:23.130Z",
+    "checkedAt": "2026-11-10T11:39:01.116Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -908,7 +966,7 @@
     "favicon": "https://cristalinahuila.com/static/base/images/cristalina-huila.png",
     "homepage": "https://cristalinahuila.com/",
     "stationUuid": "d79a1fe0-7df6-4a8a-b8fb-cafb59609a08",
-    "checkedAt": "2026-11-09T12:02:23.189Z",
+    "checkedAt": "2026-11-10T11:39:01.119Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -933,7 +991,7 @@
     "favicon": "https://energia1025.com/wp-content/uploads/2019/11/cropped-logoe2.png",
     "homepage": "https://energia1025.com/",
     "stationUuid": "eaaa2597-050f-4990-ac07-ca1494ea7ff2",
-    "checkedAt": "2026-11-09T12:02:23.517Z",
+    "checkedAt": "2026-11-10T11:39:01.520Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -955,7 +1013,7 @@
     "favicon": "https://fiestastereo958.com/wp-content/uploads/2021/11/logobg-768x420.png",
     "homepage": "https://fiestastereo958.com/",
     "stationUuid": "7358db4b-dfbe-46a5-8b43-2d32ef6500f1",
-    "checkedAt": "2026-11-09T12:02:23.746Z",
+    "checkedAt": "2026-11-10T11:39:01.997Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -980,7 +1038,7 @@
     "favicon": "http://inrai.net/static/base/images/inrai/Hjdoblek%20Neiva-01.png",
     "homepage": "http://inrai.net/",
     "stationUuid": "94bf4a1e-bc4a-4f48-a292-f878f003d193",
-    "checkedAt": "2026-11-09T12:02:23.858Z",
+    "checkedAt": "2026-11-10T11:39:02.311Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1003,7 +1061,7 @@
     "favicon": "https://lacaquetena.net/static/base/images/lacaquetena.png",
     "homepage": "https://lacaquetena.net/",
     "stationUuid": "ec3e6c0f-80ff-4bb5-be55-647acf6aaa4e",
-    "checkedAt": "2026-11-09T12:02:24.307Z",
+    "checkedAt": "2026-11-10T11:39:02.655Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1023,7 +1081,7 @@
     "favicon": null,
     "homepage": "https://www.lakzonastereo.com/",
     "stationUuid": "525b3316-c014-42aa-b439-92587690f2fc",
-    "checkedAt": "2026-11-09T12:02:24.630Z",
+    "checkedAt": "2026-11-10T11:39:03.115Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1046,7 +1104,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/OTOequ7v_U7ZT9Yx_2t_75CPT9pF1wmELR8gkbBV-Kw/rs:fill:256:256/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvMTFjYzlmY2YtNjA5OC00NTA5LTk0MDktZDhhNDk1ZGY2ZGZiL2ltYWdlLz91PTE2NjMzNjA4MDcwMDA.webp",
     "homepage": "https://zeno.fm/radio/la-mezcla-tambo/",
     "stationUuid": "5390d6d2-1135-4879-aabf-a9f936a158c7",
-    "checkedAt": "2026-11-09T12:02:24.762Z",
+    "checkedAt": "2026-11-10T11:39:03.204Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1069,7 +1127,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/zsMB6oDkheCqExQtysJU21ucZG6O5YFXiPxcI-ct-FM/rs:fill:256:256/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvNzg1ZWU3NmUtOTRhYy00NTY5LTllYWItMDQ2ZjI2NmY5NTRlL2ltYWdlLz91PTE2ODU4ODc0NjkwMDA.webp",
     "homepage": "https://zeno.fm/radio/la-radio-de-mi-gente/",
     "stationUuid": "cdf40694-36c5-4b5f-a377-5ed62adf0652",
-    "checkedAt": "2026-11-09T12:02:24.984Z",
+    "checkedAt": "2026-11-10T11:39:03.320Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1090,7 +1148,7 @@
     "favicon": null,
     "homepage": "https://streaminghd.co/user/lacostenaradio",
     "stationUuid": "1a5e7768-292e-4003-81dc-e5275ec14476",
-    "checkedAt": "2026-11-09T12:02:25.004Z",
+    "checkedAt": "2026-11-10T11:39:03.430Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1116,7 +1174,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/pediffaster.appspot.com/o/images%2FCopia%20de%20PUERTO%20BERR%C3%8DO%20STEREO%20(2).png?alt=media&token=f8abbbc3-5b7a-40a8-be96-448192764409",
     "homepage": "https://puertoberriostereo.com/",
     "stationUuid": "049440e9-046b-4edc-ae31-5d9d0203b1dd",
-    "checkedAt": "2026-11-09T12:02:26.182Z",
+    "checkedAt": "2026-11-10T11:39:04.590Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1142,7 +1200,7 @@
     "favicon": "https://static-media.streema.com/media/cache/9a/99/9a99efc835dc24c9f6ec654570165736.png",
     "homepage": "https://zeno.fm/radio/95_7-Radio_Policia_Sincelejo/",
     "stationUuid": "88624d9a-d694-4e03-98b3-7244531b6092",
-    "checkedAt": "2026-11-09T12:02:26.903Z",
+    "checkedAt": "2026-11-10T11:39:04.945Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1164,7 +1222,7 @@
     "favicon": null,
     "homepage": "https://www.radiorodadero1480am.com/",
     "stationUuid": "6993458e-7966-4d1e-b89d-d41a3027bcc9",
-    "checkedAt": "2026-11-09T12:02:27.221Z",
+    "checkedAt": "2026-11-10T11:39:05.245Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1188,7 +1246,7 @@
     "favicon": "https://radiovoltio.com/wp-content/uploads/2025/08/cropped-Copia-de-dummy.png",
     "homepage": "https://radiovoltio.com/",
     "stationUuid": "d078ed78-75b3-49af-9bb2-017f589001fd",
-    "checkedAt": "2026-11-09T12:02:27.407Z",
+    "checkedAt": "2026-11-10T11:39:05.436Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1211,7 +1269,7 @@
     "favicon": null,
     "homepage": "https://uniguajira.edu.co/universidad-de-la-guajira/sintoniza-la-emisora-89-3-fm/",
     "stationUuid": "f906341c-a1f0-493e-ad0d-3e8008566016",
-    "checkedAt": "2026-11-09T12:02:27.801Z",
+    "checkedAt": "2026-11-10T11:39:05.941Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1234,7 +1292,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/4/140434.v2.png",
     "homepage": "https://www.facebook.com/vidastereo94.5falan",
     "stationUuid": "ad651bbc-93aa-44e8-8952-ea25c9332a49",
-    "checkedAt": "2026-11-09T12:02:27.971Z",
+    "checkedAt": "2026-11-10T11:39:05.986Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1263,7 +1321,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/4/135914.v4.png",
     "homepage": "https://radios.com.co/yacopi-stereo/",
     "stationUuid": "994c5727-28a0-4b93-b69f-3673ac2afb18",
-    "checkedAt": "2026-11-09T12:02:28.033Z",
+    "checkedAt": "2026-11-10T11:39:06.119Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1286,7 +1344,7 @@
     "favicon": null,
     "homepage": "https://americastereo.net/",
     "stationUuid": "58ade750-2707-4284-8804-ee5944e89abe",
-    "checkedAt": "2026-11-09T12:02:28.182Z",
+    "checkedAt": "2026-11-10T11:39:06.407Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1311,10 +1369,36 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/TkxSUUlqpRvFKZDQs5A2nUuYTd3Op50aMzyyJQoHgwk/rs:fill:256:256/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJQ3c5ZnFxclFrTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJQ3cxZDI1MndvTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTczOTk5NjQ0MDAwMA.webp",
     "homepage": "https://zeno.fm/radio/namuy-wam-en-vivo/",
     "stationUuid": "32384b78-b3ca-444d-861f-ee5f03c8f7b2",
-    "checkedAt": "2026-11-09T12:02:29.043Z",
+    "checkedAt": "2026-11-10T11:39:07.178Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "DiscoRumba 95.4 FM",
+    "url": "https://virtual1.emisorasvirtuales.com:8050/live",
+    "country": "CO",
+    "type": "cumbias",
+    "tags": [
+      "cumbias",
+      "electro",
+      "electronica",
+      "latin",
+      "merengue",
+      "salsa",
+      "tropical",
+      "vallenato"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "espaňol",
+    "favicon": null,
+    "homepage": "http://www.discorumba.tk/",
+    "stationUuid": "13399043-0b5a-460a-9405-d4ee93fc1a92",
+    "checkedAt": "2026-11-10T11:39:08.125Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "AS radio 690 am",
@@ -1333,7 +1417,7 @@
     "favicon": null,
     "homepage": "https://colombia.as.com/",
     "stationUuid": "81c17c7a-8894-4b39-b4ea-624ecb001be6",
-    "checkedAt": "2026-11-09T12:02:30.831Z",
+    "checkedAt": "2026-11-10T11:39:08.810Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1358,7 +1442,7 @@
     "favicon": "http://colmundoradio.com.co/wp-content/uploads/2020/01/icon_home.png",
     "homepage": "https://colmundoradio.com.co/",
     "stationUuid": "5a3ae864-5917-4ec7-93bd-4ad577e52c5e",
-    "checkedAt": "2026-11-09T12:02:31.903Z",
+    "checkedAt": "2026-11-10T11:39:10.139Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1380,7 +1464,7 @@
     "favicon": null,
     "homepage": "https://antenadelosandes.com.co/player/",
     "stationUuid": "2839b65c-712b-4751-a13d-4e7ada6df3a4",
-    "checkedAt": "2026-11-09T12:02:34.520Z",
+    "checkedAt": "2026-11-10T11:39:12.791Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1401,10 +1485,10 @@
     "favicon": "https://xn--lacosteastereo-wnb.com/wp-content/uploads/2023/04/Portada-Pagina-Web-La-Costena-2023.png",
     "homepage": "https://xn--lacosteastereo-wnb.com/",
     "stationUuid": "500639f5-4b92-49e8-8ac1-280086d3c3e6",
-    "checkedAt": "2026-11-09T12:02:35.026Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "checkedAt": "2026-11-10T11:39:13.399Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "JT 1",
@@ -1420,10 +1504,10 @@
     "favicon": "null",
     "homepage": "http://www.joventaoista.org/",
     "stationUuid": "5f34a9cc-9207-4227-86d0-b79eb04b5975",
-    "checkedAt": "2026-11-09T12:02:35.998Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-10T11:39:14.214Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "JT 2",
@@ -1439,10 +1523,10 @@
     "favicon": "null",
     "homepage": "https://joventaoista.org/",
     "stationUuid": "9a524f99-36fd-4157-bdde-51ffe781185a",
-    "checkedAt": "2026-11-09T12:02:36.084Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-10T11:39:14.308Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "JT 2",
@@ -1458,10 +1542,10 @@
     "favicon": "null",
     "homepage": "http://www.joventaoista.org/",
     "stationUuid": "2e730282-1c54-4000-921a-9864f35f3e29",
-    "checkedAt": "2026-11-09T12:02:36.184Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-10T11:39:14.759Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "JT 3",
@@ -1477,10 +1561,10 @@
     "favicon": "null",
     "homepage": "http://www.joventaoista.org/",
     "stationUuid": "291a9300-4825-4a86-b704-9801c3a4e05a",
-    "checkedAt": "2026-11-09T12:02:36.407Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-10T11:39:14.786Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "La Voz de Etashtitlan",
@@ -1496,10 +1580,10 @@
     "favicon": "https://www.vozdeetashtitlan.org/wp-content/uploads/2023/05/cropped-jsjsjsjs-1-180x180.png",
     "homepage": "http://www.vozdeetashtitlan.org/",
     "stationUuid": "14edaafc-fc6a-4e8b-af48-52eff16f2b11",
-    "checkedAt": "2026-11-09T12:02:36.533Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-10T11:39:15.420Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "La Voz de Etashtitlan",
@@ -1515,10 +1599,10 @@
     "favicon": "null",
     "homepage": "http://www.vozdeetashtitlan.org/",
     "stationUuid": "7f67b018-a34e-4561-9473-848ab089399d",
-    "checkedAt": "2026-11-09T12:02:36.551Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-10T11:39:15.785Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Ecos del Combeima (HJNC, 790 kHz AM, Ibagué, Tolima)",
@@ -1538,7 +1622,7 @@
     "favicon": null,
     "homepage": "http://www.ecosdelcombeima.com/",
     "stationUuid": "603a1140-339c-11e8-bb9b-52543be04c81",
-    "checkedAt": "2026-11-09T12:02:38.615Z",
+    "checkedAt": "2026-11-10T11:39:21.322Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1558,7 +1642,7 @@
     "favicon": "https://crvradio.com.co/wp-content/uploads/2021/05/cropped-Faviconweb-180x180.png",
     "homepage": "https://crvradio.com.co/emisoras-2/",
     "stationUuid": "7eb07b47-238d-4beb-936e-c7359647fba6",
-    "checkedAt": "2026-11-09T12:02:38.616Z",
+    "checkedAt": "2026-11-10T11:39:21.431Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1581,7 +1665,7 @@
     "favicon": "https://sararestereo.net/wp-content/uploads/2019/01/logob.png",
     "homepage": "https://www.sararestereo.net/",
     "stationUuid": "c3f32e5b-dd02-4e56-9a5f-445ceacaf3b2",
-    "checkedAt": "2026-11-09T12:02:39.900Z",
+    "checkedAt": "2026-11-10T11:39:23.278Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1602,10 +1686,29 @@
     "favicon": null,
     "homepage": "https://www.akadiatech.com/radio/",
     "stationUuid": "3adaddff-b037-450b-9d30-13f26d97bd9c",
-    "checkedAt": "2026-11-09T12:02:39.998Z",
+    "checkedAt": "2026-11-10T11:39:23.346Z",
     "status": 503,
     "contentType": "text/html",
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Unicauca stereo",
+    "url": "https://emisora.unicauca.edu.co/stream",
+    "country": "CO",
+    "type": "jazz",
+    "tags": [
+      "jazz"
+    ],
+    "codec": "MP3",
+    "bitrate": 256,
+    "language": "spanish",
+    "favicon": "https://www.unicauca.edu.co/",
+    "homepage": "https://www.unicauca.edu.co/sitioemisora/content/unicauca-stereo",
+    "stationUuid": "e20bd52d-f519-4731-ae19-b9c087f35eb0",
+    "checkedAt": "2026-11-10T11:39:23.491Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Paisa Estereo",
@@ -1622,7 +1725,7 @@
     "favicon": "http://rimixradio.com/audio/img/paisa.ico",
     "homepage": "http://rimixradio.com/audio/paisa.html",
     "stationUuid": "96054151-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-09T12:02:40.359Z",
+    "checkedAt": "2026-11-10T11:39:23.523Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1645,10 +1748,10 @@
     "favicon": null,
     "homepage": "http://fantasticainternacional.com/",
     "stationUuid": "a9b873cb-33b2-11e8-bb9b-52543be04c81",
-    "checkedAt": "2026-11-09T12:02:42.441Z",
-    "status": null,
+    "checkedAt": "2026-11-10T11:39:25.283Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Alfa Stereo 106.3 FM",
@@ -1662,7 +1765,7 @@
     "favicon": null,
     "homepage": "https://alfastereo.com/",
     "stationUuid": "df2dbf15-26e8-48dc-bc3d-1bb231dc7383",
-    "checkedAt": "2026-11-09T12:02:45.519Z",
+    "checkedAt": "2026-11-10T11:39:27.539Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1679,7 +1782,7 @@
     "favicon": null,
     "homepage": "https://americastereo.net/",
     "stationUuid": "04f334b2-ce12-45f4-b7f1-b8f7d7e6b1aa",
-    "checkedAt": "2026-11-09T12:02:48.770Z",
+    "checkedAt": "2026-11-10T11:39:30.256Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1696,7 +1799,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/063/hjdoblek-neiva.5736aaca.png",
     "homepage": "https://hjdoblekhuila.com/",
     "stationUuid": "d773bba5-1ce3-4ad5-a8b9-afa04d9fc080",
-    "checkedAt": "2026-11-09T12:02:48.773Z",
+    "checkedAt": "2026-11-10T11:39:30.267Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1713,7 +1816,7 @@
     "favicon": null,
     "homepage": "https://americastereo.net/",
     "stationUuid": "a93caf61-5488-4ef6-810d-52253459a0f2",
-    "checkedAt": "2026-11-09T12:02:48.917Z",
+    "checkedAt": "2026-11-10T11:39:30.354Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1730,7 +1833,7 @@
     "favicon": null,
     "homepage": "https://americastereo.net/",
     "stationUuid": "8e80379a-45f5-4e2c-8463-3c787ab3bfee",
-    "checkedAt": "2026-11-09T12:02:49.478Z",
+    "checkedAt": "2026-11-10T11:39:30.907Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1747,7 +1850,7 @@
     "favicon": null,
     "homepage": "http://centrocristianobogota2819.epizy.com/",
     "stationUuid": "090652d1-c12d-45e0-9a8c-9b11a9ce559e",
-    "checkedAt": "2026-11-09T12:02:51.019Z",
+    "checkedAt": "2026-11-10T11:39:32.896Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1764,7 +1867,7 @@
     "favicon": null,
     "homepage": "https://www.radioonlinefusagasuga.com/index.html",
     "stationUuid": "6a4acd37-a63c-4724-ac52-81a5898c035b",
-    "checkedAt": "2026-11-09T12:02:51.621Z",
+    "checkedAt": "2026-11-10T11:39:33.403Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1781,7 +1884,7 @@
     "favicon": "https://radiovoltio.com/wp-content/uploads/2025/08/cropped-Copia-de-dummy.png",
     "homepage": "https://radiovoltio.com/",
     "stationUuid": "027645f5-6892-4c90-accf-42af167eb69e",
-    "checkedAt": "2026-11-09T12:02:52.259Z",
+    "checkedAt": "2026-11-10T11:39:34.105Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1798,7 +1901,7 @@
     "favicon": "https://i.postimg.cc/k4DgWGCw/LOGO-4K.png",
     "homepage": "https://streamcast.vitrinamusical.com/public/redencionstereo",
     "stationUuid": "7d27a2d7-ef49-4f46-907c-22b577fe9b67",
-    "checkedAt": "2026-11-09T12:02:52.308Z",
+    "checkedAt": "2026-11-10T11:39:34.306Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1815,7 +1918,7 @@
     "favicon": "https://i.postimg.cc/k4DgWGCw/LOGO-4K.png",
     "homepage": "https://streamcast.vitrinamusical.com/public/redencionstereo",
     "stationUuid": "2715fde0-2464-4343-b7a4-78d3e9ebd1f4",
-    "checkedAt": "2026-11-09T12:02:52.330Z",
+    "checkedAt": "2026-11-10T11:39:34.469Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1832,7 +1935,7 @@
     "favicon": null,
     "homepage": "https://www.cadena5.com.co/",
     "stationUuid": "067b3c01-3d7d-48cd-8291-1dec8596e3b7",
-    "checkedAt": "2026-11-09T12:02:52.480Z",
+    "checkedAt": "2026-11-10T11:39:34.508Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1849,7 +1952,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/san-sebastian-estereo-1070-fm/",
     "stationUuid": "2458c4f7-5acb-4450-bf1d-3437a53be7cc",
-    "checkedAt": "2026-11-09T12:02:52.830Z",
+    "checkedAt": "2026-11-10T11:39:34.954Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -1869,7 +1972,7 @@
     "favicon": "https://sistemacardenal.com/wp-content/themes/enfold/images/layout/logo.png",
     "homepage": "https://sistemacardenal.com/",
     "stationUuid": "29ced94c-3733-4f80-b48d-b40eb6eb34d4",
-    "checkedAt": "2026-11-09T12:02:56.967Z",
+    "checkedAt": "2026-11-10T11:39:38.394Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1890,7 +1993,7 @@
     "favicon": "https://sistemacardenal.com/wp-content/themes/enfold/images/layout/logo.png",
     "homepage": "https://sistemacardenal.com/",
     "stationUuid": "3ccdb1ad-db62-4636-8207-78c3855de466",
-    "checkedAt": "2026-11-09T12:02:57.082Z",
+    "checkedAt": "2026-11-10T11:39:38.623Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1909,29 +2012,10 @@
     "favicon": null,
     "homepage": "https://vocesdelcorazon.net/",
     "stationUuid": "3efdacf0-4e57-466a-91e1-2c6eeb44d3eb",
-    "checkedAt": "2026-11-09T12:03:00.095Z",
+    "checkedAt": "2026-11-10T11:39:40.751Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "La Voz De La Jagua 95.7 FM",
-    "url": "https://radiohd3.streaminghd.co:8082/stream",
-    "country": "CO",
-    "type": "noticias",
-    "tags": [
-      "noticias"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": "spanish",
-    "favicon": "https://lavozdelajagua.com/wp-content/uploads/2023/03/cropped-favicon-192x192.png",
-    "homepage": "https://lavozdelajagua.com/",
-    "stationUuid": "90bfb530-f1ac-4f09-a5d3-e89c49e37c87",
-    "checkedAt": "2026-11-09T12:03:00.973Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "LOS 40 Colombia",
@@ -1945,7 +2029,7 @@
     "favicon": "https://los40es00.epimg.net/static/LOS40/images/favicons/favicon.icon",
     "homepage": "https://los40.com.co/",
     "stationUuid": "0ba603ff-c395-4796-bfb6-d87773a98c7c",
-    "checkedAt": "2026-11-09T12:03:02.014Z",
+    "checkedAt": "2026-11-10T11:39:43.320Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1964,7 +2048,7 @@
     "favicon": null,
     "homepage": "https://masmusicaretro.wixsite.com/online",
     "stationUuid": "b6846adc-0062-452e-a3db-c95e52fbe225",
-    "checkedAt": "2026-11-09T12:03:04.968Z",
+    "checkedAt": "2026-11-10T11:39:46.147Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1984,10 +2068,49 @@
     "favicon": "https://imgur.com/ayHCbGm.jpeg",
     "homepage": "https://americastereo.net/",
     "stationUuid": "4799c2c5-0dba-421c-b5e8-8a19a3935f8c",
-    "checkedAt": "2026-11-09T12:03:05.049Z",
+    "checkedAt": "2026-11-10T11:39:46.260Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "RADIO FARO",
+    "url": "http://uk16freenew.listen2myradio.com:36944/",
+    "country": "CO",
+    "type": "public radio",
+    "tags": [
+      "public radio"
+    ],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://wwwradiofaro.radiostream123.com/",
+    "stationUuid": "715a2d3f-e4e5-47c4-a8d5-9563f712b7bf",
+    "checkedAt": "2026-11-10T11:39:46.313Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "RADIO FARO - iluminando tu camino",
+    "url": "https://stream.zeno.fm/ktmo3y14nkfuv",
+    "country": "CO",
+    "type": "public radio",
+    "tags": [
+      "public radio",
+      "radio cristiana"
+    ],
+    "codec": null,
+    "bitrate": 0,
+    "language": "espaňol",
+    "favicon": null,
+    "homepage": "https://zeno.fm/radio/radio-faro/",
+    "stationUuid": "9e0e5b05-7d71-43ed-9b0b-928daface0b9",
+    "checkedAt": "2026-11-10T11:39:46.353Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Energia 102.5 FM",
@@ -2003,7 +2126,7 @@
     "favicon": "https://energia1025.com/wp-content/uploads/2019/11/cropped-logoenergia-2-180x180.png",
     "homepage": "https://energia1025.com/",
     "stationUuid": "9a91be3c-a87e-46f7-aabd-28aa49074013",
-    "checkedAt": "2026-11-09T12:03:06.959Z",
+    "checkedAt": "2026-11-10T11:39:48.116Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2022,7 +2145,7 @@
     "favicon": "https://emisorascolombianas.online/logos/energia.png",
     "homepage": "https://emisorascolombianas.online/energia/",
     "stationUuid": "471e5a50-11ed-46bc-8210-c921ecd4d353",
-    "checkedAt": "2026-11-09T12:03:07.456Z",
+    "checkedAt": "2026-11-10T11:39:48.629Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2041,7 +2164,7 @@
     "favicon": null,
     "homepage": "https://www.cardenalstereo.com/",
     "stationUuid": "8c47744b-44ce-48f5-9143-bbe9033d0e36",
-    "checkedAt": "2026-11-09T12:03:09.043Z",
+    "checkedAt": "2026-11-10T11:39:50.375Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"

@@ -17,7 +17,7 @@
     "favicon": "null",
     "homepage": "http://radiomreza.com/",
     "stationUuid": "5fb27345-eee8-4165-959a-ae838cbcf842",
-    "checkedAt": "2026-11-09T12:37:09.554Z",
+    "checkedAt": "2026-11-10T12:11:46.838Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -34,7 +34,7 @@
     "favicon": null,
     "homepage": "https://radiovalandovo.mk/",
     "stationUuid": "57be3500-cfd6-4aed-a196-b51ae6d1e418",
-    "checkedAt": "2026-11-09T12:37:09.558Z",
+    "checkedAt": "2026-11-10T12:11:46.840Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -51,7 +51,7 @@
     "favicon": null,
     "homepage": "https://play.radiobubamara.mk/res/img/bubamara-logo.svg",
     "stationUuid": "eee5572c-fe8c-4635-9ed8-180df14d2911",
-    "checkedAt": "2026-11-09T12:37:09.559Z",
+    "checkedAt": "2026-11-10T12:11:46.840Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -74,7 +74,7 @@
     "favicon": "null",
     "homepage": "http://radiomreza.com/",
     "stationUuid": "011fa4eb-5864-4c09-a68c-470bbdb51cd2",
-    "checkedAt": "2026-11-09T12:37:09.951Z",
+    "checkedAt": "2026-11-10T12:11:47.132Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -94,7 +94,7 @@
     "favicon": "https://clubradio.mk/wp-content/uploads/2025/03/Screenshot_3.png",
     "homepage": "https://clubradio.mk/",
     "stationUuid": "50d71107-d951-46d9-9266-669c1f86d12c",
-    "checkedAt": "2026-11-09T12:37:10.002Z",
+    "checkedAt": "2026-11-10T12:11:47.159Z",
     "status": 410,
     "contentType": "text/html",
     "lastFailure": "HTTP 410"
@@ -116,10 +116,50 @@
     "favicon": "null",
     "homepage": "http://radiomreza.mk/",
     "stationUuid": "1a7e09d8-6d1c-446e-8c63-40e41dd5db04",
-    "checkedAt": "2026-11-09T12:37:10.026Z",
+    "checkedAt": "2026-11-10T12:11:47.179Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Star Radio (Ex-YU Retro) Skopje, Macedonia",
+    "url": "https://radiostar.pro/stream/exyuretro.php",
+    "country": "MK",
+    "type": "exyu",
+    "tags": [
+      "exyu"
+    ],
+    "codec": "AAC+",
+    "bitrate": 256,
+    "language": "macedonian",
+    "favicon": null,
+    "homepage": "https://radiostar.pro/radiochannel/ex-yu-retro/",
+    "stationUuid": "6e7a1699-8edf-415e-8357-45a750c50ed6",
+    "checkedAt": "2026-11-10T12:11:47.337Z",
+    "status": 508,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 508"
+  },
+  {
+    "name": "Star Radio (Live) Skopje, Macedonia",
+    "url": "https://radiostar.pro/stream/starlive.php",
+    "country": "MK",
+    "type": "exyu",
+    "tags": [
+      "exyu",
+      "macedonian pop",
+      "macedonian rock"
+    ],
+    "codec": "AAC+",
+    "bitrate": 256,
+    "language": "macedonian",
+    "favicon": null,
+    "homepage": "https://radiostar.pro/radiochannel/star-live/",
+    "stationUuid": "c1d3f11b-adea-4cdb-9ebc-b52793a85701",
+    "checkedAt": "2026-11-10T12:11:47.362Z",
+    "status": 508,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 508"
   },
   {
     "name": "Star Folk Radio - Skopje, Macedonia",
@@ -138,10 +178,71 @@
     "favicon": "null",
     "homepage": "http://radiomreza.com/",
     "stationUuid": "92a44f00-fca8-4ee8-a6ff-af1a35c099ce",
-    "checkedAt": "2026-11-09T12:37:10.407Z",
+    "checkedAt": "2026-11-10T12:11:47.413Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Star Radio (MK Narodna) Skopje, Macedonia",
+    "url": "https://radiostar.pro/stream/mknarodna.php",
+    "country": "MK",
+    "type": "macedonian folk",
+    "tags": [
+      "macedonian folk"
+    ],
+    "codec": "AAC+",
+    "bitrate": 256,
+    "language": "macedonian",
+    "favicon": "https://radiostar.pro/wp-content/uploads/2023/10/MK-NARODNA-300x300.png",
+    "homepage": "https://radiostar.pro/radiochannel/mk-narodna/",
+    "stationUuid": "943b7637-871c-4957-986b-d6bd9ac47240",
+    "checkedAt": "2026-11-10T12:11:47.722Z",
+    "status": 508,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 508"
+  },
+  {
+    "name": "Star Radio (Urban Folk) Skopje, Macedonia",
+    "url": "https://radiostar.pro/stream/narodna.php",
+    "country": "MK",
+    "type": "macedonian folk",
+    "tags": [
+      "macedonian folk",
+      "macedonian pop",
+      "serbian folk",
+      "serbian pop"
+    ],
+    "codec": "AAC+",
+    "bitrate": 256,
+    "language": "macedonian",
+    "favicon": "https://radiostar.pro/wp-content/uploads/2023/08/NARODNA-URBAN-300x300.png",
+    "homepage": "https://radiostar.pro/radiochannel/urban-folk/",
+    "stationUuid": "214e3c3c-063d-4f43-ab19-f9fe9f0a67ab",
+    "checkedAt": "2026-11-10T12:11:47.724Z",
+    "status": 508,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 508"
+  },
+  {
+    "name": "Star Radio (Plus) Skopje, Macedonia",
+    "url": "https://radiostar.pro/stream/starplus.php",
+    "country": "MK",
+    "type": "macedonian pop",
+    "tags": [
+      "macedonian pop",
+      "serbian pop"
+    ],
+    "codec": "AAC+",
+    "bitrate": 192,
+    "language": "macedonian",
+    "favicon": "https://radiostar.pro/wp-content/uploads/2023/08/PLUS-300x300.png",
+    "homepage": "https://radiostar.pro/radiochannel/star-plus/",
+    "stationUuid": "e2d37a2e-41d5-4800-b1cd-0dc76eb57b00",
+    "checkedAt": "2026-11-10T12:11:47.725Z",
+    "status": 508,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 508"
   },
   {
     "name": "Club Radio Macedonia",
@@ -155,7 +256,7 @@
     "favicon": null,
     "homepage": "https://clubradio.mk/",
     "stationUuid": "971191b3-f8f6-4c67-b41a-0333bc0b0106",
-    "checkedAt": "2026-11-09T12:37:10.884Z",
+    "checkedAt": "2026-11-10T12:11:47.819Z",
     "status": 410,
     "contentType": "text/html",
     "lastFailure": "HTTP 410"
@@ -172,7 +273,7 @@
     "favicon": null,
     "homepage": "https://www.maestrofm.md/",
     "stationUuid": "ea329ea5-42c8-4834-b9e6-94c5d4a9c250",
-    "checkedAt": "2026-11-09T12:37:11.039Z",
+    "checkedAt": "2026-11-10T12:11:47.965Z",
     "status": 503,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 503"
@@ -189,7 +290,7 @@
     "favicon": null,
     "homepage": "https://radiobar-on.com/",
     "stationUuid": "38cf18ba-9831-460c-9483-7118ce84d7a8",
-    "checkedAt": "2026-11-09T12:37:11.438Z",
+    "checkedAt": "2026-11-10T12:11:48.402Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -206,10 +307,30 @@
     "favicon": null,
     "homepage": "https://live.mkdstream.com/listen/lakos/stream",
     "stationUuid": "0a2944be-8325-485f-8562-09cb46b41cc4",
-    "checkedAt": "2026-11-09T12:37:11.641Z",
+    "checkedAt": "2026-11-10T12:11:48.514Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Star Radio (World Hits) Skopje, Macedonia",
+    "url": "https://radiostar.pro/stream/worldretro.php",
+    "country": "MK",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "world hits"
+    ],
+    "codec": "AAC+",
+    "bitrate": 256,
+    "language": "macedonian",
+    "favicon": null,
+    "homepage": "https://radiostar.pro/radiochannel/world-hits/",
+    "stationUuid": "34f253c7-9c10-4327-b87c-8525d1e6b438",
+    "checkedAt": "2026-11-10T12:11:48.629Z",
+    "status": 508,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 508"
   },
   {
     "name": "Експрес Радио 101.1 Струмица, Македонија",
@@ -225,7 +346,7 @@
     "favicon": null,
     "homepage": "https://ekspresradio.com.mk/index.html",
     "stationUuid": "7fa6ba8e-839e-49be-b80e-bd0ce9f44e04",
-    "checkedAt": "2026-11-09T12:37:11.780Z",
+    "checkedAt": "2026-11-10T12:11:48.685Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
