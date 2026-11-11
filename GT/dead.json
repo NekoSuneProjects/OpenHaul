@@ -11,7 +11,7 @@
     "favicon": "https://i0.wp.com/astroradiogt.com/wp-content/uploads/2021/08/cropped-cropped-Banner-1.jpg?fit=180%2C180&ssl=1",
     "homepage": "https://astroradiogt.com/",
     "stationUuid": "7e163da0-4b78-4f0f-ad3c-162f55bba2b4",
-    "checkedAt": "2026-11-10T12:00:30.511Z",
+    "checkedAt": "2026-11-11T11:44:51.035Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -37,7 +37,7 @@
     "favicon": "https://statics-v3.streema.com/static/img/radios/profile_background_default_380.abf7abe7e86a.jpg",
     "homepage": "https://www.medios.gt/elcomandante",
     "stationUuid": "4f20bac8-09d8-4a2d-bb1f-bdd9a25826a4",
-    "checkedAt": "2026-11-10T12:00:31.169Z",
+    "checkedAt": "2026-11-11T11:44:51.650Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -59,7 +59,7 @@
     "favicon": "https://laradiodepaz919.com/images/logo.png",
     "homepage": "https://laradiodepaz919.com/",
     "stationUuid": "a01028c9-02ef-41ee-ab7f-53e632e14a00",
-    "checkedAt": "2026-11-10T12:00:31.494Z",
+    "checkedAt": "2026-11-11T11:44:51.900Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -78,7 +78,7 @@
     "favicon": null,
     "homepage": "https://www.radiocaminodesantidad.com/",
     "stationUuid": "a010c3c2-bcac-4fdf-8028-bcd5ca17a858",
-    "checkedAt": "2026-11-10T12:00:31.797Z",
+    "checkedAt": "2026-11-11T11:44:52.188Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -102,10 +102,34 @@
     "favicon": "https://radio.com.gt/uploads/img/stereo-gerardi.jpg",
     "homepage": "https://www.facebook.com/EstereoGerardi",
     "stationUuid": "f954089f-6159-4f22-bcdb-4fb07d7bc62d",
-    "checkedAt": "2026-11-10T12:00:32.244Z",
+    "checkedAt": "2026-11-11T11:44:52.716Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Emisoras Unidas 91.1 FM",
+    "url": "https://stream.zeno.fm/3tfg0vng9ueuv",
+    "country": "GT",
+    "type": "deportes",
+    "tags": [
+      "deportes",
+      "entretenimiento",
+      "information",
+      "noticias",
+      "radio hablada",
+      "variety"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": "https://static.emisorasunidas.com/uploads/2024/02/emisoras-unidas-home-radio-noticias-desktop.svg",
+    "homepage": "https://emisorasunidas.com/",
+    "stationUuid": "471b5294-c110-406f-a597-bc0f2cfcd033",
+    "checkedAt": "2026-11-11T11:44:52.740Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Dinámica 89.9 FM",
@@ -126,10 +150,10 @@
     "favicon": "https://www.corporacionradialfm.com/assets/img/logo.png",
     "homepage": "https://www.corporacionradialfm.com/dinamicafm",
     "stationUuid": "657e0b11-11e6-412b-913b-6de2375984d4",
-    "checkedAt": "2026-11-10T12:00:32.567Z",
+    "checkedAt": "2026-11-11T11:44:52.942Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "ARCA RADIO HD",
@@ -143,7 +167,7 @@
     "favicon": null,
     "homepage": "https://arcaradiohd.com/radioplayer/index.html",
     "stationUuid": "37749565-26fc-491c-981e-1e8434bb2fb1",
-    "checkedAt": "2026-11-10T12:00:33.466Z",
+    "checkedAt": "2026-11-11T11:44:53.868Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -160,7 +184,7 @@
     "favicon": "https://metropolisantigua.com/wp-content/uploads/2025/11/cropped-logo-3-192x192.png",
     "homepage": "https://metropolisantigua.com/",
     "stationUuid": "e6d7a104-c09d-42d6-985d-9da6c70c1d8b",
-    "checkedAt": "2026-11-10T12:00:34.336Z",
+    "checkedAt": "2026-11-11T11:44:54.805Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

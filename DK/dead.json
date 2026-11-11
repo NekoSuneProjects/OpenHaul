@@ -16,7 +16,7 @@
     "favicon": null,
     "homepage": "https://stinesen.dk/",
     "stationUuid": "c86d26e1-0fdd-48e8-b362-67145770d981",
-    "checkedAt": "2026-11-10T11:44:40.749Z",
+    "checkedAt": "2026-11-11T11:30:06.591Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -33,7 +33,7 @@
     "favicon": "https://lostinthe80s.com/wp-content/uploads/2020/02/cropped-ezgif.com-resize-5.png",
     "homepage": "https://lostinthe80s.com/",
     "stationUuid": "f96c6d9e-bce1-4ef9-bb19-07a98c74b043",
-    "checkedAt": "2026-11-10T11:44:41.411Z",
+    "checkedAt": "2026-11-11T11:30:07.459Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -55,10 +55,31 @@
     "favicon": "https://www.phonostar.de/images/auto_created/DR_P6_4184x184.png",
     "homepage": "https://www.dr.dk/lyd/p6beat",
     "stationUuid": "eb6ef47c-ae5b-448e-9075-086655e6a149",
-    "checkedAt": "2026-11-10T11:44:42.627Z",
+    "checkedAt": "2026-11-11T11:30:08.251Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "The Lake Radio",
+    "url": "http://hyades.shoutca.st:8627/stream",
+    "country": "DK",
+    "type": "art radio",
+    "tags": [
+      "art radio",
+      "independent",
+      "random"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "danish,english",
+    "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_y-rKrhgLZlQQVkl_54LtwGcYktgPfmZyis3ZFzlcsQh00QJjQFKPDWXn&s=10",
+    "homepage": "https://thelakeradio.com/",
+    "stationUuid": "c076addc-ad49-4b3d-8fc9-8c8db787e4fa",
+    "checkedAt": "2026-11-11T11:30:08.503Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio Humleborg",
@@ -81,7 +102,7 @@
     "favicon": "https://humleborg.dk/templates/yootheme/vendor/yootheme/theme-joomla/assets/images/favicon.png",
     "homepage": "https://humleborg.dk/",
     "stationUuid": "6491342a-6d10-45da-87fd-edca5464367f",
-    "checkedAt": "2026-11-10T11:44:42.929Z",
+    "checkedAt": "2026-11-11T11:30:08.650Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -101,7 +122,7 @@
     "favicon": "https://www.phonostar.de/images/auto_created/DR_P2_4184x184.png",
     "homepage": "https://www.dr.dk/lyd/p2",
     "stationUuid": "9fb61667-1d5d-4b5d-b22f-88708afa8b05",
-    "checkedAt": "2026-11-10T11:44:43.200Z",
+    "checkedAt": "2026-11-11T11:30:08.989Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -123,7 +144,7 @@
     "favicon": "https://www.dr.dk/favicon.ico",
     "homepage": "https://www.dr.dk/lyd/p1",
     "stationUuid": "308ec8a5-4473-4cf5-8318-1c827acc9b95",
-    "checkedAt": "2026-11-10T11:44:43.375Z",
+    "checkedAt": "2026-11-11T11:30:09.258Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -148,7 +169,7 @@
     "favicon": "https://cdn-profiles.tunein.com/s361016/images/logod.jpg?t=639246983870000000",
     "homepage": "https://historyradio.free.nf/",
     "stationUuid": "adca3071-8636-4114-a18e-2d458054ed58",
-    "checkedAt": "2026-11-10T11:44:43.389Z",
+    "checkedAt": "2026-11-11T11:30:09.272Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -168,7 +189,7 @@
     "favicon": "https://www.radio.de/images/broadcasts/ea/89/10773/2/c300.png",
     "homepage": "https://www.dr.dk/lyd/p3",
     "stationUuid": "813fe40d-5afb-4fd5-a56a-7a24c6c6db3d",
-    "checkedAt": "2026-11-10T11:44:43.777Z",
+    "checkedAt": "2026-11-11T11:30:09.607Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -187,7 +208,7 @@
     "favicon": "https://www.phonostar.de/images/auto_created/DR_P8_5184x184.png",
     "homepage": "https://www.dr.dk/lyd/p8jazz",
     "stationUuid": "f27942a0-068b-401c-baf6-c5922b814a8f",
-    "checkedAt": "2026-11-10T11:44:44.102Z",
+    "checkedAt": "2026-11-11T11:30:10.007Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -204,7 +225,7 @@
     "favicon": "https://asset.dr.dk/imagescaler/?protocol=https&server=api.dr.dk&file=%2Fradio%2Fv2%2Fimages%2Fraw%2Furn%3Adr%3Aradio%3Aimage%3A6025105a7e656f3a131798ef&scaleAfter=crop&quality=70&w=300&h=169",
     "homepage": "https://www.dr.dk/lyd/p6beat",
     "stationUuid": "292b9615-6f5a-431a-a1b7-a077a01b593a",
-    "checkedAt": "2026-11-10T11:44:44.939Z",
+    "checkedAt": "2026-11-11T11:30:10.718Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -221,7 +242,7 @@
     "favicon": "https://www.dr.dk/lyd/programmer",
     "homepage": "https://www.dr.dk/nyhedsbrev/images/drlyd.png",
     "stationUuid": "d79bac43-32ab-45e9-b3ed-f64750f517a0",
-    "checkedAt": "2026-11-10T11:44:45.060Z",
+    "checkedAt": "2026-11-11T11:30:10.756Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -238,7 +259,7 @@
     "favicon": "https://www.dr.dk/nyhedsbrev/images/drlyd.png",
     "homepage": "https://www.dr.dk/lyd/programmer",
     "stationUuid": "e8cf62bc-61f2-445c-b2ed-bec5bd5226ea",
-    "checkedAt": "2026-11-10T11:44:45.184Z",
+    "checkedAt": "2026-11-11T11:30:10.885Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -255,7 +276,7 @@
     "favicon": "https://www.dr.dk/nyhedsbrev/images/drlyd.png",
     "homepage": "https://www.dr.dk/lyd/programmer",
     "stationUuid": "f84f4e21-d148-4f56-bb08-91c451a112de",
-    "checkedAt": "2026-11-10T11:44:45.455Z",
+    "checkedAt": "2026-11-11T11:30:11.155Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -272,7 +293,7 @@
     "favicon": "https://www.dr.dk/nyhedsbrev/images/drlyd.png",
     "homepage": "https://www.dr.dk/lyd/programmer",
     "stationUuid": "6ab19eed-7623-4ac6-958d-e83948a4e2fe",
-    "checkedAt": "2026-11-10T11:44:45.718Z",
+    "checkedAt": "2026-11-11T11:30:11.710Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -289,7 +310,7 @@
     "favicon": "https://www.dr.dk/nyhedsbrev/images/drlyd.png",
     "homepage": "https://www.dr.dk/lyd/programmer",
     "stationUuid": "6a4bd31d-4268-43b8-9910-5f4467dd607e",
-    "checkedAt": "2026-11-10T11:44:45.747Z",
+    "checkedAt": "2026-11-11T11:30:11.760Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -306,7 +327,7 @@
     "favicon": "https://www.dr.dk/favicon.ico",
     "homepage": "https://www.dr.dk/lyd/programmer",
     "stationUuid": "62a1c816-add0-4319-88c1-90d28456f522",
-    "checkedAt": "2026-11-10T11:44:45.781Z",
+    "checkedAt": "2026-11-11T11:30:11.811Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -323,7 +344,7 @@
     "favicon": "https://www.dr.dk/favicon.ico",
     "homepage": "https://www.dr.dk/lyd/programmer",
     "stationUuid": "d3147cc4-f679-4539-91bc-e47b1612cb16",
-    "checkedAt": "2026-11-10T11:44:51.667Z",
+    "checkedAt": "2026-11-11T11:30:17.435Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -340,7 +361,7 @@
     "favicon": "https://asset.dr.dk/imagescaler/?protocol=https&server=api.dr.dk&file=%2Fradio%2Fv2%2Fimages%2Fraw%2Furn%3Adr%3Aradio%3Aimage%3A6025106e7e656f3a131798f6&scaleAfter=crop&quality=70&w=300&h=169",
     "homepage": "https://www.dr.dk/lyd/p6beat",
     "stationUuid": "ed6dbdc4-3512-41d2-aa2d-136b83d8b505",
-    "checkedAt": "2026-11-10T11:44:53.490Z",
+    "checkedAt": "2026-11-11T11:30:19.423Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -357,7 +378,7 @@
     "favicon": "https://www.dr.dk/nyhedsbrev/images/drlyd.png",
     "homepage": "https://www.dr.dk/lyd/programmer",
     "stationUuid": "434c4e8f-ce9b-447c-80f6-1f2f75a3e566",
-    "checkedAt": "2026-11-10T11:44:53.515Z",
+    "checkedAt": "2026-11-11T11:30:19.434Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -374,7 +395,7 @@
     "favicon": "https://mmo.aiircdn.com/1027/6435447863904.jpg",
     "homepage": "https://www.femernfm.dk/",
     "stationUuid": "a4053cb4-7fd0-4c3b-9228-a93a1275c6ad",
-    "checkedAt": "2026-11-10T11:44:53.721Z",
+    "checkedAt": "2026-11-11T11:30:19.756Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -391,7 +412,7 @@
     "favicon": null,
     "homepage": "https://www.flrnord.dk/",
     "stationUuid": "7017408d-aae6-4565-a615-5654c1dc32cb",
-    "checkedAt": "2026-11-10T11:44:54.977Z",
+    "checkedAt": "2026-11-11T11:30:20.994Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -408,7 +429,7 @@
     "favicon": "https://radiomars.dk/wp-content/uploads/2025/02/logo-300x300.png",
     "homepage": "https://radiomars.dk/",
     "stationUuid": "4b4e418e-b536-48f8-b970-78bab26845c5",
-    "checkedAt": "2026-11-10T11:44:58.554Z",
+    "checkedAt": "2026-11-11T11:30:24.023Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -425,10 +446,44 @@
     "favicon": "https://radiovictoria.dk/favicon.ico",
     "homepage": "https://radiovictoria.dk/",
     "stationUuid": "9a08be90-0ae7-4963-b40b-bc7627c8d53a",
-    "checkedAt": "2026-11-10T11:44:59.377Z",
+    "checkedAt": "2026-11-11T11:30:24.756Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "The Lake Radio",
+    "url": "http://hyades.shoutca.st:8627/",
+    "country": "DK",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "http://thelakeradio.com/favicon.ico",
+    "homepage": "http://thelakeradio.com/",
+    "stationUuid": "4821c495-7c75-11e9-aa30-52543be04c81",
+    "checkedAt": "2026-11-11T11:30:25.597Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "UMLANDO Radio",
+    "url": "https://a2.asurahosting.com:6520/radio.mp3",
+    "country": "DK",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://www.umlando.dk/",
+    "stationUuid": "bd2c8477-0702-4efe-aa9b-207880a1d68f",
+    "checkedAt": "2026-11-11T11:30:25.863Z",
+    "status": 416,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 416"
   },
   {
     "name": "Vi Elsker Radio",
@@ -442,7 +497,7 @@
     "favicon": null,
     "homepage": "https://skala.fm/",
     "stationUuid": "7ad24348-a4d4-48e1-9293-8d52904244ac",
-    "checkedAt": "2026-11-10T11:45:00.733Z",
+    "checkedAt": "2026-11-11T11:30:26.072Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -463,7 +518,7 @@
     "favicon": "https://www.phonostar.de/images/auto_created/DR_P4_4184x184.png",
     "homepage": "https://www.dr.dk/lyd/p4kbh",
     "stationUuid": "608e7e03-7c4d-4a44-a55a-f83967d00170",
-    "checkedAt": "2026-11-10T11:45:01.294Z",
+    "checkedAt": "2026-11-11T11:30:26.388Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -483,7 +538,7 @@
     "favicon": "https://www.dr.dk/favicon.ico",
     "homepage": "https://www.dr.dk/lyd/p3",
     "stationUuid": "1e412c99-d6ac-4d25-9f14-417a7a219c60",
-    "checkedAt": "2026-11-10T11:45:01.515Z",
+    "checkedAt": "2026-11-11T11:30:26.709Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -502,7 +557,7 @@
     "favicon": "http://radioflr.dk/wp-content/uploads/2025/12/RadioFLR_Logo.png",
     "homepage": "https://radioflr.dk/",
     "stationUuid": "df2f6bd2-73c2-4398-ae78-3222fdba454a",
-    "checkedAt": "2026-11-10T11:45:02.108Z",
+    "checkedAt": "2026-11-11T11:30:27.599Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -521,10 +576,29 @@
     "favicon": "https://listenapi.s3.amazonaws.com/img/ConfigWebListenBarLogoImageUrl/212.jpg?ver=1490197142",
     "homepage": "http://www.radioplay.dk/radiosoft",
     "stationUuid": "963cba5e-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-10T11:45:03.204Z",
+    "checkedAt": "2026-11-11T11:30:28.414Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Rar",
+    "url": "http://techno-low.rautemusik.fm/",
+    "country": "DK",
+    "type": "tec",
+    "tags": [
+      "tec"
+    ],
+    "codec": "AAC+",
+    "bitrate": 47,
+    "language": "engilsh",
+    "favicon": "null",
+    "homepage": "https://rar/",
+    "stationUuid": "5761523c-2a23-480b-82e3-b20a09f48ae4",
+    "checkedAt": "2026-11-11T11:30:28.462Z",
+    "status": 404,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Mod Strømmen",
@@ -540,7 +614,7 @@
     "favicon": "https://www.blogger.com/",
     "homepage": "https://modstroem.blogspot.com/",
     "stationUuid": "d2c846c1-bb55-4987-a683-a181b22cd276",
-    "checkedAt": "2026-11-10T11:45:03.346Z",
+    "checkedAt": "2026-11-11T11:30:28.469Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
@@ -557,7 +631,7 @@
     "favicon": "https://www.dr.dk/nyhedsbrev/images/drlyd.png",
     "homepage": "https://www.dr.dk/lyd/programmer",
     "stationUuid": "9dad9743-9cb9-41c3-a093-4158ae9bb4eb",
-    "checkedAt": "2026-11-10T11:45:03.358Z",
+    "checkedAt": "2026-11-11T11:30:28.524Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"
@@ -574,7 +648,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "3877366e-eb34-4cb8-84a1-b7b187a97a67",
-    "checkedAt": "2026-11-10T11:45:03.380Z",
+    "checkedAt": "2026-11-11T11:30:28.526Z",
     "status": 404,
     "contentType": "application/x-mpegURL",
     "lastFailure": "HTTP 404"

@@ -13,7 +13,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c51340b2-9fbc-4cea-8738-258b2a33d16d",
-    "checkedAt": "2026-11-10T12:22:19.298Z",
+    "checkedAt": "2026-11-11T12:06:22.595Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -30,7 +30,7 @@
     "favicon": null,
     "homepage": "http://aladinradio.com/",
     "stationUuid": "4a29dbc1-77e1-449a-b6b5-62e19f66a8fc",
-    "checkedAt": "2026-11-10T12:22:19.879Z",
+    "checkedAt": "2026-11-11T12:06:23.311Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -47,7 +47,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/ilm-radio-renala/",
     "stationUuid": "8281a8d0-4d03-4e1f-96ea-dbae81e5bf28",
-    "checkedAt": "2026-11-10T12:22:21.551Z",
+    "checkedAt": "2026-11-11T12:06:24.899Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -67,28 +67,9 @@
     "favicon": "https://power99.live/static/images/logo.png",
     "homepage": "https://power99.live/",
     "stationUuid": "8a48cb73-a60c-4136-b223-95dc6e61b58b",
-    "checkedAt": "2026-11-10T12:22:22.839Z",
+    "checkedAt": "2026-11-11T12:06:25.874Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Radio Pakistan D.I. Khan MW 711",
-    "url": "https://whmsonic.radio.gov.pk:7000/Dikhan",
-    "country": "PK",
-    "type": "public radio",
-    "tags": [
-      "public radio"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://radio.gov.pk/",
-    "stationUuid": "a8067725-3d72-406f-828b-9ba72f638479",
-    "checkedAt": "2026-11-10T12:22:23.006Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   }
 ]

@@ -17,7 +17,7 @@
     "favicon": null,
     "homepage": "https://radiometro.no/",
     "stationUuid": "7b1266f2-da4f-47a9-9f50-d689a8d64d3f",
-    "checkedAt": "2026-11-10T12:20:05.560Z",
+    "checkedAt": "2026-11-11T12:04:04.713Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -40,7 +40,7 @@
     "favicon": "https://5000bergen.no/wp-content/uploads/2020/06/cropped-favicon-32x32.png",
     "homepage": "https://5000bergen.no/",
     "stationUuid": "2f147458-9d03-47e3-a3c5-50e1c62459f5",
-    "checkedAt": "2026-11-10T12:20:05.811Z",
+    "checkedAt": "2026-11-11T12:04:04.916Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -62,10 +62,31 @@
     "favicon": "https://pbs.twimg.com/media/Fn3VyiVWQAAqut9?format=png",
     "homepage": "https://www.radioguide.fm/internet-radio-norway/unleashing-epic-soundtrack",
     "stationUuid": "fb4fa30f-071a-4f76-a27d-ff4fa80016c5",
-    "checkedAt": "2026-11-10T12:20:06.057Z",
+    "checkedAt": "2026-11-11T12:04:05.105Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "radiOrakel",
+    "url": "https://stream.radiorakel.no/radiorakel_hq",
+    "country": "NO",
+    "type": "feminist",
+    "tags": [
+      "feminist",
+      "minority genders",
+      "progressive politics"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "norwegian",
+    "favicon": "https://radiorakel.no/wp-content/uploads/2024/10/logo-radiorakel-fm-99.3.png",
+    "homepage": "https://radiorakel.no/",
+    "stationUuid": "d09031a8-abea-44dc-bb5b-d7739ec28ceb",
+    "checkedAt": "2026-11-11T12:04:05.169Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "1FM Jazz",
@@ -81,7 +102,7 @@
     "favicon": "https://www.1fmmolde.com/uploads/1/2/2/5/122527073/jazz_orig.png",
     "homepage": "https://www.1fmmolde.com/",
     "stationUuid": "81564356-298b-45a5-99e0-446e83e5981a",
-    "checkedAt": "2026-11-10T12:20:06.732Z",
+    "checkedAt": "2026-11-11T12:04:06.171Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -98,7 +119,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/420/1fm-rock.0a45dd11.png",
     "homepage": "https://www.1fmmolde.com/",
     "stationUuid": "b5b89594-8687-495b-90bf-3834b26e354a",
-    "checkedAt": "2026-11-10T12:20:07.411Z",
+    "checkedAt": "2026-11-11T12:04:06.663Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -115,7 +136,7 @@
     "favicon": null,
     "homepage": "https://5000bergen.no/",
     "stationUuid": "52458b21-a252-4391-b1d7-cc77174a9b6f",
-    "checkedAt": "2026-11-10T12:20:07.442Z",
+    "checkedAt": "2026-11-11T12:04:06.668Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -132,10 +153,27 @@
     "favicon": "https://radiorox.no/wp-content/uploads/2017/09/rox-logo.png",
     "homepage": "https://radiorox.no/",
     "stationUuid": "b52a92d5-a8c1-4120-8318-46854c657378",
-    "checkedAt": "2026-11-10T12:20:09.715Z",
+    "checkedAt": "2026-11-11T12:04:09.249Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "radiOrakel FM 99.3",
+    "url": "https://stream.radiorakel.no/fm993.mp3",
+    "country": "NO",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://radiorakel.no/wp-content/uploads/2020/06/RoR_Logo_Transparent_compact-1.png",
+    "homepage": "https://radiorakel.no/",
+    "stationUuid": "31b93aef-1b32-4a6f-b91a-dea7d92e691b",
+    "checkedAt": "2026-11-11T12:04:09.574Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "RRA",
@@ -149,7 +187,7 @@
     "favicon": null,
     "homepage": "http://rastaarena.no/",
     "stationUuid": "b184b203-10d1-45aa-8d16-6ba8a5be5f4b",
-    "checkedAt": "2026-11-10T12:20:10.021Z",
+    "checkedAt": "2026-11-11T12:04:09.586Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -166,7 +204,7 @@
     "favicon": "https://www.scansat.no/favicon.ico",
     "homepage": "https://www.scansat.no/",
     "stationUuid": "84554245-69c3-4e7d-a1ef-681b7bb79120",
-    "checkedAt": "2026-11-10T12:20:10.062Z",
+    "checkedAt": "2026-11-11T12:04:09.670Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -183,7 +221,7 @@
     "favicon": "https://www.radiototen.no/favicon.ico",
     "homepage": "https://www.radiototen.no/",
     "stationUuid": "41bdec91-34d0-4396-b783-6ab940dde681",
-    "checkedAt": "2026-11-10T12:20:10.273Z",
+    "checkedAt": "2026-11-11T12:04:10.224Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -202,7 +240,7 @@
     "favicon": null,
     "homepage": "https://radiometro.no/",
     "stationUuid": "c85ea118-4061-4b4e-bf09-9dc68ff14a0d",
-    "checkedAt": "2026-11-10T12:20:10.593Z",
+    "checkedAt": "2026-11-11T12:04:10.606Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -219,7 +257,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "cf6ffaa0-2e00-4b76-a6b7-00cf04b1a2a8",
-    "checkedAt": "2026-11-10T12:20:11.315Z",
+    "checkedAt": "2026-11-11T12:04:11.764Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -236,7 +274,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/radio-korgen-direkte/",
     "stationUuid": "1806358e-7444-42e5-9c80-00606c483e24",
-    "checkedAt": "2026-11-10T12:20:11.320Z",
+    "checkedAt": "2026-11-11T12:04:11.822Z",
     "status": 404,
     "contentType": "application/json",
     "lastFailure": "HTTP 404"
@@ -255,7 +293,7 @@
     "favicon": "https://www.radio.net/images/broadcasts/ff/1e/10026/1/c300.png",
     "homepage": "https://radiometro.no/",
     "stationUuid": "090afb3b-63dc-439b-bd7f-5ea81122d620",
-    "checkedAt": "2026-11-10T12:20:13.345Z",
+    "checkedAt": "2026-11-11T12:04:14.508Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -274,7 +312,7 @@
     "favicon": "null",
     "homepage": "http://108.59.11.81:10107/stream",
     "stationUuid": "246132bf-4896-47c4-b94d-0855def3b7ec",
-    "checkedAt": "2026-11-10T12:20:13.797Z",
+    "checkedAt": "2026-11-11T12:04:14.822Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

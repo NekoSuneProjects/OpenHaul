@@ -1,5 +1,52 @@
 [
   {
+    "name": "West FM Swing Radio",
+    "url": "http://westfm.freeddns.org:8000/westfm",
+    "country": "NZ",
+    "type": "1920s",
+    "tags": [
+      "1920s",
+      "1930's",
+      "1940's",
+      "jazz",
+      "swing"
+    ],
+    "codec": "MP3",
+    "bitrate": 48,
+    "language": "english",
+    "favicon": "https://i.postimg.cc/VNjvHX2V/West-FM.jpg",
+    "homepage": "http://westfmradio.com/",
+    "stationUuid": "0d61ab6a-5d38-4cbb-aa37-efaf7fae9823",
+    "checkedAt": "2026-11-11T12:04:23.100Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Keep Laughing Forever Radio",
+    "url": "http://carol.epichosts.co.uk:8610/autodj.mp3",
+    "country": "NZ",
+    "type": "80's",
+    "tags": [
+      "80's",
+      "90's",
+      "movie themes",
+      "nostalgia",
+      "soundtracks",
+      "tv themes"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://static.wixstatic.com/media/53e57b_acd90b3739fe4bde8acaadfd96d35520~mv2.jpg/v1/fill/w_415,h_415,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Radio%20Monkey-01%20(1).jpg",
+    "homepage": "https://www.keeplaughingforever.com/radio",
+    "stationUuid": "064b2425-e377-49b5-98bb-e6459596b020",
+    "checkedAt": "2026-11-11T12:04:23.264Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
     "name": "Radio Ferrymead 1413 AM",
     "url": "https://s2.stationplaylist.com:9440/listen.aac?1780841789005",
     "country": "NZ",
@@ -11,7 +58,7 @@
     "favicon": null,
     "homepage": "https://www.radioferrymead.co.nz/",
     "stationUuid": "fdf25d0a-1227-4cf5-9e55-b2f791f67578",
-    "checkedAt": "2026-11-10T12:20:26.654Z",
+    "checkedAt": "2026-11-11T12:04:27.360Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -28,7 +75,7 @@
     "favicon": "https://static.wixstatic.com/media/997731_6db60f6e7a53483b81213fa9eac4da43~mv2.jpg/v1/fill/w_250,h_116,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a%20logo.jpg",
     "homepage": "https://www.radiouniversofm.co.nz/",
     "stationUuid": "e7aa06ad-2f82-4ad5-b2b9-b04b280c4f1e",
-    "checkedAt": "2026-11-10T12:20:27.104Z",
+    "checkedAt": "2026-11-11T12:04:28.105Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -49,7 +96,7 @@
     "favicon": "https://lh3.googleusercontent.com/sitesv/AA5AbUA_u_j1gvQEVPUAiosRq7lTsmW11yYC9dm4m8rUOrEWdaGDDkabOJYIkjLVAytN5U04J6iqCRV1NQoDGfmynj-yO4ZdP1Gf8m6yBe5V54zsTwEhFHrSzGvIifYsd0Ba5XacQx3Ee3MP-yJ3rW9cQsLeyzuoo6LDBIIr8AVwjwX8zEYZ8IsoAkyuMOXTrlmyXY9hn9a4Dlmh99vT919cJ9WtOg",
     "homepage": "https://www.radiokps.nz/",
     "stationUuid": "0d28f346-2f03-41a6-b8f9-2e17f26734e2",
-    "checkedAt": "2026-11-10T12:20:30.130Z",
+    "checkedAt": "2026-11-11T12:04:31.226Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -69,7 +116,7 @@
     "favicon": null,
     "homepage": "https://radiohydra.org/",
     "stationUuid": "88de303b-77c9-4492-8a87-04923001fe13",
-    "checkedAt": "2026-11-10T12:20:31.665Z",
+    "checkedAt": "2026-11-11T12:04:32.950Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -88,7 +135,7 @@
     "favicon": "https://static-media.streema.com/media/cache/9f/95/9f9598196955d2228f613c8f0cda3da9.jpg",
     "homepage": "https://radio.garden/listen/radio-bay-fm-100-7/XeC94ir4",
     "stationUuid": "013e7197-c0b5-4b71-a10d-5e45e76c68d0",
-    "checkedAt": "2026-11-10T12:20:31.880Z",
+    "checkedAt": "2026-11-11T12:04:33.036Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -108,7 +155,7 @@
     "favicon": "https://www.facebook.com/favicon.ico",
     "homepage": "https://www.facebook.com/Awa-Whanui-Big-River-FM-Northern-Wairoa-Community-Radio-Trust-185296624864141/",
     "stationUuid": "0a26a71c-798e-4159-994d-effb22b68697",
-    "checkedAt": "2026-11-10T12:20:33.545Z",
+    "checkedAt": "2026-11-11T12:04:34.736Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -128,10 +175,32 @@
     "favicon": "https://www.facebook.com/favicon.ico",
     "homepage": "https://www.facebook.com/CountryRadioInvercargill",
     "stationUuid": "440973ef-aa99-4946-9083-08bce4bd73b5",
-    "checkedAt": "2026-11-10T12:20:33.570Z",
+    "checkedAt": "2026-11-11T12:04:34.747Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "OAR 105.4FM Dunedin",
+    "url": "https://live.accessmedia.nz/Otago.stream/playlist.m3u8",
+    "country": "NZ",
+    "type": "community",
+    "tags": [
+      "community",
+      "music",
+      "otago",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 134,
+    "language": "english",
+    "favicon": "https://liveonlineradio.net/wp-content/uploads/2017/05/Otago-Access-Radio-220x108.jpg",
+    "homepage": "https://oar.org.nz/",
+    "stationUuid": "ff3a3778-cd32-46cc-8461-193d2d56b766",
+    "checkedAt": "2026-11-11T12:04:35.279Z",
+    "status": 404,
+    "contentType": null,
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Ngāti Porou",
@@ -150,7 +219,7 @@
     "favicon": "https://radiongatiporou.com/wp-content/uploads/2019/08/logo_blue-200x133.png",
     "homepage": "https://radiongatiporou.com/",
     "stationUuid": "d592657d-0359-42b7-99cc-fb1fd5388e49",
-    "checkedAt": "2026-11-10T12:20:34.301Z",
+    "checkedAt": "2026-11-11T12:04:35.653Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -173,7 +242,7 @@
     "favicon": "https://static.wixstatic.com/media/d14534_259a89e4fcec4fb1a130d955fd584e8e~mv2_d_4534_2593_s_4_2.png/v1/fill/w_203,h_116,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Radio%20K%20Logo%20small.png",
     "homepage": "https://www.radiokahungunu.nz/",
     "stationUuid": "7ab615c6-4c5f-4e12-b9e5-e34139b2eaaa",
-    "checkedAt": "2026-11-10T12:20:34.451Z",
+    "checkedAt": "2026-11-11T12:04:35.721Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -195,7 +264,7 @@
     "favicon": null,
     "homepage": "http://8k.nz/8K/phone/index.html",
     "stationUuid": "54663c94-5a9d-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-10T12:20:34.502Z",
+    "checkedAt": "2026-11-11T12:04:35.866Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -217,7 +286,7 @@
     "favicon": "https://awafm.co.nz/wp-content/uploads/2021/05/AWA-Logo-Plain.png",
     "homepage": "https://awafm.co.nz/",
     "stationUuid": "996d7cd0-474c-4b02-9ec1-38d96f5e8a87",
-    "checkedAt": "2026-11-10T12:20:34.538Z",
+    "checkedAt": "2026-11-11T12:04:35.905Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -237,7 +306,7 @@
     "favicon": "https://static.wixstatic.com/media/2997c4_dd6042bd43aa449c9318d09ed79dd9eb%7emv2.png/v1/fill/w_32%2ch_32%2clg_1%2cusm_0.66_1.00_0.01/2997c4_dd6042bd43aa449c9318d09ed79dd9eb%7emv2.png",
     "homepage": "https://www.q97.co.nz/",
     "stationUuid": "2d5c53a1-7fd8-43ea-b296-032afe788adf",
-    "checkedAt": "2026-11-10T12:20:35.350Z",
+    "checkedAt": "2026-11-11T12:04:36.625Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -257,7 +326,7 @@
     "favicon": null,
     "homepage": "http://www.countryradio.co.nz/",
     "stationUuid": "9ef832af-3283-4d23-acbf-2b4c2c2c697b",
-    "checkedAt": "2026-11-10T12:20:35.649Z",
+    "checkedAt": "2026-11-11T12:04:36.988Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -276,7 +345,7 @@
     "favicon": "https://player.streamerr.co/uploads/logos/Untitled_design_-_2023-10-211.png",
     "homepage": "https://southerncrosscountry.co.nz/",
     "stationUuid": "4d182f6b-a7c8-4bcf-a519-08c6ea36b374",
-    "checkedAt": "2026-11-10T12:20:36.285Z",
+    "checkedAt": "2026-11-11T12:04:37.613Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -298,10 +367,36 @@
     "favicon": null,
     "homepage": "https://www.8k.nz/",
     "stationUuid": "15025b54-958a-40d0-9cd0-40e755bac4e9",
-    "checkedAt": "2026-11-10T12:20:38.707Z",
+    "checkedAt": "2026-11-11T12:04:40.344Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "RADIO PANJABI",
+    "url": "https://s20.reliastream.com/stream/8134",
+    "country": "NZ",
+    "type": "folk",
+    "tags": [
+      "folk",
+      "hip-hop",
+      "news",
+      "news talk",
+      "podcast",
+      "pop",
+      "punjabi",
+      "world news"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "english,punjabi",
+    "favicon": null,
+    "homepage": "http://www.radiopanjabi.com/",
+    "stationUuid": "54316866-201d-461d-b35e-2411c36fbebc",
+    "checkedAt": "2026-11-11T12:04:41.049Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Rush FM",
@@ -319,7 +414,7 @@
     "favicon": null,
     "homepage": "http://rushfm.co.nz/",
     "stationUuid": "c8345e4f-dff4-49a2-a391-e88950ad1a6a",
-    "checkedAt": "2026-11-10T12:20:39.586Z",
+    "checkedAt": "2026-11-11T12:04:41.250Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -342,7 +437,7 @@
     "favicon": "https://static.wixstatic.com/media/2997c4_037e291ea90b41719f166f41a3ea5005%7emv2.png/v1/fill/w_32%2ch_32%2clg_1%2cusm_0.66_1.00_0.01/2997c4_037e291ea90b41719f166f41a3ea5005%7emv2.png",
     "homepage": "https://www.1xx.co.nz/",
     "stationUuid": "8ab96af5-c8e3-4254-9df0-e98dea76a7d7",
-    "checkedAt": "2026-11-10T12:20:40.558Z",
+    "checkedAt": "2026-11-11T12:04:42.776Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -359,7 +454,7 @@
     "favicon": "https://2xsfm.cloudlink.nz/logo.jpg",
     "homepage": "https://2xsfm.co.nz/",
     "stationUuid": "2570f19b-2667-40fa-b5a1-f3222507a7a2",
-    "checkedAt": "2026-11-10T12:20:40.812Z",
+    "checkedAt": "2026-11-11T12:04:43.114Z",
     "status": 403,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 403"
@@ -376,7 +471,7 @@
     "favicon": null,
     "homepage": "https://www.8k.nz/",
     "stationUuid": "97f78b49-f24b-4a1b-b2b1-2ae29e9c141b",
-    "checkedAt": "2026-11-10T12:20:40.926Z",
+    "checkedAt": "2026-11-11T12:04:43.926Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -393,7 +488,7 @@
     "favicon": "https://canva.link/1hef0nenf0vyz88",
     "homepage": "https://www.eagle-radio.co.nz/",
     "stationUuid": "bc26c66c-7ca3-435e-bec6-2607e998a055",
-    "checkedAt": "2026-11-10T12:20:41.391Z",
+    "checkedAt": "2026-11-11T12:04:44.277Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -410,7 +505,7 @@
     "favicon": "https://canva.link/1hef0nenf0vyz88",
     "homepage": "https://www.eagle-radio.co.nz/",
     "stationUuid": "6549109c-2243-4ec4-b6ee-6d2f4d5d9e3d",
-    "checkedAt": "2026-11-10T12:20:41.425Z",
+    "checkedAt": "2026-11-11T12:04:44.392Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -427,7 +522,7 @@
     "favicon": "https://primary.jwwb.nl/public/m/o/a/temp-qwwivcgxsmoafqnsfida/ai-logo-b2b5d92b6b7c-standard.png?enable-io=true&width=96",
     "homepage": "https://my.secure.website/935eagleradio/",
     "stationUuid": "ab0e5b44-4811-4fcc-94ce-fa94e92771f8",
-    "checkedAt": "2026-11-10T12:20:41.518Z",
+    "checkedAt": "2026-11-11T12:04:44.415Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -444,7 +539,7 @@
     "favicon": "https://primary.jwwb.nl/public/m/o/a/temp-qwwivcgxsmoafqnsfida/ai-logo-b2b5d92b6b7c-standard.png?enable-io=true&width=96",
     "homepage": "https://my.secure.website/935eagleradio/",
     "stationUuid": "0ba12bee-a773-4fea-a317-340a71f6cc5d",
-    "checkedAt": "2026-11-10T12:20:41.621Z",
+    "checkedAt": "2026-11-11T12:04:44.445Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -461,7 +556,7 @@
     "favicon": "https://primary.jwwb.nl/public/m/o/a/temp-qwwivcgxsmoafqnsfida/ai-logo-b2b5d92b6b7c-standard.png?enable-io=true&width=96",
     "homepage": "https://www.eagle-radio.co.nz/",
     "stationUuid": "4f03ad1b-c5f2-4ffb-86b8-f27627d4ddbb",
-    "checkedAt": "2026-11-10T12:20:41.649Z",
+    "checkedAt": "2026-11-11T12:04:44.500Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -478,7 +573,7 @@
     "favicon": null,
     "homepage": "https://www.eagle-radio.co.nz/",
     "stationUuid": "e6804cab-1147-4546-a7be-271eb42dcbdc",
-    "checkedAt": "2026-11-10T12:20:41.721Z",
+    "checkedAt": "2026-11-11T12:04:44.542Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -495,7 +590,7 @@
     "favicon": null,
     "homepage": "https://www.eagle-radio.co.nz/",
     "stationUuid": "cd1ab509-ce26-40ed-9fed-d4a085bb2977",
-    "checkedAt": "2026-11-10T12:20:41.752Z",
+    "checkedAt": "2026-11-11T12:04:44.551Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -512,7 +607,7 @@
     "favicon": "https://primary.jwwb.nl/public/m/o/a/temp-qwwivcgxsmoafqnsfida/ai-logo-b2b5d92b6b7c-standard.png?enable-io=true&width=96",
     "homepage": "https://www.eagle-radio.co.nz/",
     "stationUuid": "9eebd3eb-8ade-4000-9944-076ef9b8b71a",
-    "checkedAt": "2026-11-10T12:20:41.765Z",
+    "checkedAt": "2026-11-11T12:04:44.577Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -529,7 +624,7 @@
     "favicon": "http://www.bigriverfm.co.nz/bigriverfm.png",
     "homepage": "http://www.bigriverfm.co.nz/",
     "stationUuid": "756a4cf1-9329-46d0-8739-3defcbf3c0e5",
-    "checkedAt": "2026-11-10T12:20:42.283Z",
+    "checkedAt": "2026-11-11T12:04:44.939Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -546,7 +641,7 @@
     "favicon": "https://i.postimg.cc/zfDv8KLT/EAGLE-COUNTRY-91-(3).png",
     "homepage": "https://my.secure.website/eagle-country-91/",
     "stationUuid": "753b251e-287b-4dd5-bda6-ac93082e03ec",
-    "checkedAt": "2026-11-10T12:20:42.835Z",
+    "checkedAt": "2026-11-11T12:04:45.562Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -563,7 +658,7 @@
     "favicon": null,
     "homepage": "https://radio.flexmedia.stream/public/echoes_radio",
     "stationUuid": "b3cb7dc0-9cc3-4baf-8c71-fb053c12c69b",
-    "checkedAt": "2026-11-10T12:20:42.925Z",
+    "checkedAt": "2026-11-11T12:04:45.618Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -580,7 +675,7 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/852/tyfm-auckland.7894fd3c.png",
     "homepage": "https://tyfm.co.nz/?from=mtr",
     "stationUuid": "1ae05631-77ec-4df1-af50-b38e1d283b3d",
-    "checkedAt": "2026-11-10T12:20:45.441Z",
+    "checkedAt": "2026-11-11T12:04:48.390Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -599,7 +694,7 @@
     "favicon": "https://static-media.streema.com/media/cache/9f/95/9f9598196955d2228f613c8f0cda3da9.jpg",
     "homepage": "https://www.facebook.com/radiobayfm/",
     "stationUuid": "9714a993-112d-444f-ae52-65307c0fa2c4",
-    "checkedAt": "2026-11-10T12:20:45.921Z",
+    "checkedAt": "2026-11-11T12:04:48.832Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -618,10 +713,27 @@
     "favicon": null,
     "homepage": "https://camera.jakebriggs.com/jakemusic",
     "stationUuid": "f4886ec1-b9ee-4a75-af0b-02000ad1edd6",
-    "checkedAt": "2026-11-10T12:20:47.875Z",
+    "checkedAt": "2026-11-11T12:04:50.896Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "OAR FM - Otago Access Radio",
+    "url": "https://live.accessmedia.nz/Otago.stream_aac/chunklist_w1332745084.m3u8",
+    "country": "NZ",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://oar.org.nz/wp-content/uploads/2024/09/cropped-favicon-180x180.png",
+    "homepage": "https://oar.org.nz/",
+    "stationUuid": "c6253fc0-c45b-474b-926c-4f35727004fd",
+    "checkedAt": "2026-11-11T12:04:52.810Z",
+    "status": 404,
+    "contentType": null,
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Southland",
@@ -635,7 +747,7 @@
     "favicon": null,
     "homepage": "https://radiosouthland.org.nz/",
     "stationUuid": "6d1d0246-6c5e-4f00-ae57-3f483bd82e98",
-    "checkedAt": "2026-11-10T12:20:49.528Z",
+    "checkedAt": "2026-11-11T12:04:52.825Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -654,7 +766,7 @@
     "favicon": null,
     "homepage": "https://amped-ai.tgnz.net/",
     "stationUuid": "16356b10-6e2e-427e-9184-5e843cbe13a0",
-    "checkedAt": "2026-11-10T12:20:50.066Z",
+    "checkedAt": "2026-11-11T12:04:53.420Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"

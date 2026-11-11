@@ -15,10 +15,10 @@
     "favicon": "https://matrixfmlebanon.com/assets/img/icns/apple-touch-icon-180x180.png",
     "homepage": "https://matrixfmlebanon.com/",
     "stationUuid": "862001c7-1ff4-4573-b936-40f634d8be45",
-    "checkedAt": "2026-11-10T12:10:32.991Z",
+    "checkedAt": "2026-11-11T11:54:34.441Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Click FM Lebanon",
@@ -41,7 +41,7 @@
     "favicon": null,
     "homepage": "https://clickfm.net/",
     "stationUuid": "2c076f29-e122-4f09-a853-f99b294a3569",
-    "checkedAt": "2026-11-10T12:10:33.650Z",
+    "checkedAt": "2026-11-11T11:54:35.158Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -60,7 +60,7 @@
     "favicon": "https://www.voiceofvan.net/backend/uploads/setting/1723180428.png",
     "homepage": "https://www.voiceofvan.net/",
     "stationUuid": "cee5d76c-dc30-4446-b4b4-db1512bbad2f",
-    "checkedAt": "2026-11-10T12:10:33.766Z",
+    "checkedAt": "2026-11-11T11:54:35.311Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -77,27 +77,10 @@
     "favicon": "https://www.voiceofvan.net/backend/uploads/setting/1723180428.png",
     "homepage": "https://www.voiceofvan.net/",
     "stationUuid": "797a3f43-9ff0-4173-8071-6f3f21e664ed",
-    "checkedAt": "2026-11-10T12:10:37.669Z",
+    "checkedAt": "2026-11-11T11:54:38.379Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Sawt El Shaeb",
-    "url": "https://audio.osina.cloud:9320/stream",
-    "country": "LB",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": null,
-    "favicon": "https://sawtachaab.com/web/images/profile.jpg",
-    "homepage": "https://sawtachaab.com/web/",
-    "stationUuid": "f76343e1-ff9d-4b76-b576-c64aedf9eb77",
-    "checkedAt": "2026-11-10T12:10:37.956Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Sawt El Wifak",
@@ -111,10 +94,10 @@
     "favicon": null,
     "homepage": "https://sawtelwifak.com/",
     "stationUuid": "5a6f9ddf-6ad5-4eec-bc91-dcce53927f40",
-    "checkedAt": "2026-11-10T12:10:37.963Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "checkedAt": "2026-11-11T11:54:38.823Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Aghani Aghani TV",
@@ -130,9 +113,28 @@
     "favicon": "https://aghaniaghani.com/images/logo.png",
     "homepage": "https://aghaniaghani.com/",
     "stationUuid": "3f2c9689-bfb2-479c-9ecf-b0e80a360d6f",
-    "checkedAt": "2026-11-10T12:10:38.498Z",
+    "checkedAt": "2026-11-11T11:54:39.230Z",
     "status": 404,
     "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "mfm",
+    "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2jtth90njc1/playlist.m3u8",
+    "country": "LB",
+    "type": "music",
+    "tags": [
+      "music"
+    ],
+    "codec": "AAC",
+    "bitrate": 90,
+    "language": "arabic",
+    "favicon": "https://www.mtv.com.lb/images/header/mfm-logo.svg",
+    "homepage": "https://www.mtv.com.lb/ar/mfm/live",
+    "stationUuid": "124da4f3-080e-411e-b3d3-7fddbe83d014",
+    "checkedAt": "2026-11-11T11:54:39.243Z",
+    "status": 404,
+    "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 404"
   }
 ]

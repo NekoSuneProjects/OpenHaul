@@ -11,7 +11,7 @@
     "favicon": "https://tamilhdradio.com/images/stations/1727742750.webp",
     "homepage": "https://anowhosting.com/",
     "stationUuid": "d4465cfe-0f0d-471c-9195-aae4f43ff4fc",
-    "checkedAt": "2026-11-10T12:10:46.424Z",
+    "checkedAt": "2026-11-11T11:54:42.574Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -28,7 +28,7 @@
     "favicon": "https://trn.lk/favicon.ico",
     "homepage": "https://trn.lk/wowradio",
     "stationUuid": "7b7bd2c6-2feb-42bc-8a20-c0a1d6f79049",
-    "checkedAt": "2026-11-10T12:10:46.425Z",
+    "checkedAt": "2026-11-11T11:54:42.575Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -49,7 +49,7 @@
     "favicon": null,
     "homepage": "https://trn.lk/skyradio",
     "stationUuid": "e3cae23f-a8b0-4f64-a360-a8b6625a60d6",
-    "checkedAt": "2026-11-10T12:10:46.812Z",
+    "checkedAt": "2026-11-11T11:54:42.985Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -69,10 +69,10 @@
     "favicon": null,
     "homepage": "https://radio.tnltv.lk/",
     "stationUuid": "9d10be4b-4b1f-483e-820a-64c46abae1e2",
-    "checkedAt": "2026-11-10T12:10:46.883Z",
+    "checkedAt": "2026-11-11T11:54:43.101Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Punnagai Radio",
@@ -91,7 +91,7 @@
     "favicon": "https://punnagairadio.com/public/frontend/assets/images/logo/logo.png",
     "homepage": "https://punnagairadio.com/",
     "stationUuid": "df6fd1af-734b-4d51-b446-ebd1c8d29a57",
-    "checkedAt": "2026-11-10T12:10:47.130Z",
+    "checkedAt": "2026-11-11T11:54:43.316Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -112,7 +112,7 @@
     "favicon": null,
     "homepage": "http://sithafm.lk/",
     "stationUuid": "5ad9ac86-e034-11e8-a9cc-52543be04c81",
-    "checkedAt": "2026-11-10T12:10:47.440Z",
+    "checkedAt": "2026-11-11T11:54:43.593Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -133,7 +133,7 @@
     "favicon": "http://shreefm.lk/img/sitha-symbol-svg.png",
     "homepage": "http://shreefm.lk/",
     "stationUuid": "1592c34c-98ce-4f40-8e15-a72663fb4bd1",
-    "checkedAt": "2026-11-10T12:10:47.657Z",
+    "checkedAt": "2026-11-11T11:54:43.737Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -154,7 +154,7 @@
     "favicon": "https://i.imgur.com/YZJ6wlT.png",
     "homepage": "https://theoneradio.listen2myshow.com/",
     "stationUuid": "562a9b7b-0472-4dd1-b99d-f796964d42c1",
-    "checkedAt": "2026-11-10T12:10:47.810Z",
+    "checkedAt": "2026-11-11T11:54:43.909Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -171,7 +171,7 @@
     "favicon": null,
     "homepage": "http://www.slbc.lk/",
     "stationUuid": "c0c69afc-1354-4b0b-aac6-f43e4df98da6",
-    "checkedAt": "2026-11-10T12:10:48.115Z",
+    "checkedAt": "2026-11-11T11:54:44.219Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -188,27 +188,10 @@
     "favicon": "http://ranfm.lk/images/logoranFM.png",
     "homepage": "http://ranfm.lk/",
     "stationUuid": "dd8c96f8-cbb3-478c-9b31-8d4d0113120b",
-    "checkedAt": "2026-11-10T12:10:49.170Z",
+    "checkedAt": "2026-11-11T11:54:45.332Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "SLBC Asia Service",
-    "url": "http://220.247.227.6:8000/Asiastream",
-    "country": "LK",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://www.slbc.lk/images/top-logo.png",
-    "homepage": "http://220.247.227.6:8000/Asiastream",
-    "stationUuid": "54c06649-0788-4eb6-ad03-d456090fea7f",
-    "checkedAt": "2026-11-10T12:10:49.191Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "SLBC CIR",
@@ -222,7 +205,7 @@
     "favicon": null,
     "homepage": "https://www.slbc.lk/world-heritage-sites/cir",
     "stationUuid": "b70cf566-3f63-464e-a758-98a1cd379cce",
-    "checkedAt": "2026-11-10T12:10:49.206Z",
+    "checkedAt": "2026-11-11T11:54:45.446Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -241,7 +224,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/gumnada/",
     "stationUuid": "6434196c-0ccb-47b3-a043-a2e05a7346cb",
-    "checkedAt": "2026-11-10T12:10:49.606Z",
+    "checkedAt": "2026-11-11T11:54:45.842Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -260,28 +243,28 @@
     "favicon": "https://listenonlineradio.com/wp-content/uploads/2020/01/E-FM.jpg",
     "homepage": null,
     "stationUuid": "8a5c70df-60b8-48c0-813a-99320d529fca",
-    "checkedAt": "2026-11-10T12:10:49.978Z",
+    "checkedAt": "2026-11-11T11:54:46.237Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Pirai FM",
-    "url": "http://220.247.234.207:8000/piraistream",
+    "name": "Star FM Srilanka",
+    "url": "https://stream.starfm.lk:12025/stream",
     "country": "LK",
-    "type": "slbc mazhayaga fm",
+    "type": "tamil songs",
     "tags": [
-      "slbc mazhayaga fm"
+      "tamil songs"
     ],
     "codec": "MP3",
-    "bitrate": 128,
-    "language": "tamil",
-    "favicon": null,
-    "homepage": "https://www.slbc.lk/world-heritage-sites/pirei-fm",
-    "stationUuid": "bdfa6f41-ddce-47d2-934d-244a9628d82e",
-    "checkedAt": "2026-11-10T12:10:49.980Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "bitrate": 320,
+    "language": null,
+    "favicon": "https://www.starfm.lk/favicon.ico",
+    "homepage": "https://www.starfm.lk/",
+    "stationUuid": "bc8805dd-a40c-449e-9f43-ce592e9073a0",
+    "checkedAt": "2026-11-11T11:54:46.470Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   }
 ]

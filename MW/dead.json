@@ -11,7 +11,7 @@
     "favicon": "https://nthambiradio.exclusivemw.live/",
     "homepage": "https://nthambiradio.exclusivemw.live/",
     "stationUuid": "57f5f581-69a3-41f6-bebe-b6382d2a18fe",
-    "checkedAt": "2026-11-10T12:12:01.221Z",
+    "checkedAt": "2026-11-11T11:56:00.224Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -33,7 +33,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "7dc397f5-4cd3-4a8d-a4aa-89b3c0b1939d",
-    "checkedAt": "2026-11-10T12:12:02.036Z",
+    "checkedAt": "2026-11-11T11:56:01.164Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -55,7 +55,7 @@
     "favicon": null,
     "homepage": "https://tuntufyefm.com/",
     "stationUuid": "9bdb2efa-d6e5-4728-9190-e67e96e780c1",
-    "checkedAt": "2026-11-10T12:12:02.083Z",
+    "checkedAt": "2026-11-11T11:56:01.320Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -76,10 +76,27 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "de97fdca-66c6-482e-8761-d22383ca1a6e",
-    "checkedAt": "2026-11-10T12:12:02.234Z",
+    "checkedAt": "2026-11-11T11:56:01.577Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Amaryllis E-Radio",
+    "url": "https://s4.radio.co/s40c05d6b1/low",
+    "country": "MW",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://amaryllishotels.com/assets/images/AMARYLLIS%20LOGO_favicon-01.png",
+    "homepage": "https://amaryllis-eradio.vercel.app/",
+    "stationUuid": "d5c8ae88-3b49-4fd9-8e68-4cfa9cc877d5",
+    "checkedAt": "2026-11-11T11:56:02.347Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Mzimba Community Radio - 107.6 FM",
@@ -96,7 +113,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "d67bd854-c35d-42f5-861f-6588ac8fcb95",
-    "checkedAt": "2026-11-10T12:12:03.904Z",
+    "checkedAt": "2026-11-11T11:56:03.090Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -116,7 +133,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "54971480-a3bb-4e62-9bcc-aacf32f13939",
-    "checkedAt": "2026-11-10T12:12:03.960Z",
+    "checkedAt": "2026-11-11T11:56:03.244Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -137,10 +154,30 @@
     "favicon": null,
     "homepage": "https://www.storyclubfm.com/",
     "stationUuid": "66c9f684-260b-4426-89f1-c7465dd54726",
-    "checkedAt": "2026-11-10T12:12:04.060Z",
+    "checkedAt": "2026-11-11T11:56:03.276Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "UWALA Radio",
+    "url": "https://servidor22.brlogic.com:7078/live",
+    "country": "MW",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "39007a42-9bff-44c6-830d-d20e9e08d43d",
+    "checkedAt": "2026-11-11T11:56:03.448Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "We Can Media Online Radio",
@@ -158,7 +195,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/we-can-media-online-radio/",
     "stationUuid": "62e53beb-462c-45b5-8616-373273aad9db",
-    "checkedAt": "2026-11-10T12:12:04.182Z",
+    "checkedAt": "2026-11-11T11:56:03.468Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -177,7 +214,7 @@
     "favicon": null,
     "homepage": "https://kalumw.com/lunkhunkhu2/",
     "stationUuid": "7cf8a6c1-0a43-4e8c-8141-333c442bae4b",
-    "checkedAt": "2026-11-10T12:12:04.316Z",
+    "checkedAt": "2026-11-11T11:56:03.567Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
