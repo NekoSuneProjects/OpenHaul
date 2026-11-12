@@ -1,5 +1,26 @@
 [
   {
+    "name": "NTN Radio 89.1 Georgetown",
+    "url": "http://auds1.intacs.com/ntnradio",
+    "country": "GY",
+    "type": "bollywood",
+    "tags": [
+      "bollywood",
+      "georgetown",
+      "south asian music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://ntntv-radio.com/",
+    "stationUuid": "96486b05-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-12T12:10:14.872Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
     "name": "97.5 FM MAAD",
     "url": "https://streaming.broadcastradio.com/brutal",
     "country": "GY",
@@ -11,9 +32,26 @@
     "favicon": "https://www.maad97.com/favicon.ico",
     "homepage": "https://www.maad97.com/",
     "stationUuid": "d62a9816-aea5-40c9-b109-a538c57d693a",
-    "checkedAt": "2026-11-11T11:47:19.238Z",
+    "checkedAt": "2026-11-12T12:10:14.920Z",
     "status": 404,
     "contentType": "application/json; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "FM 89.1 NTN Radio",
+    "url": "https://auds1.intacs.com/ntnradio",
+    "country": "GY",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://www.facebook.com/photo/?fbid=584085576742403&set=a.584085550075739",
+    "homepage": "https://www.facebook.com/people/National-Television-Network-TVRadio-891-FM/100054228980719/",
+    "stationUuid": "5efcadc5-fb67-4534-8124-9a1ecabc9cd7",
+    "checkedAt": "2026-11-12T12:10:15.250Z",
+    "status": 404,
+    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   }
 ]

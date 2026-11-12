@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://vovmedia.vn/vov-mekong",
     "stationUuid": "4130fd3a-0914-4a4d-bdbf-ba3224f3052a",
-    "checkedAt": "2026-11-11T12:35:57.125Z",
+    "checkedAt": "2026-11-12T13:01:43.017Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -31,7 +31,7 @@
     "favicon": "http://gbm.123tv.cn/file/2023/08-1691567015.jpg",
     "homepage": "https://vovworld.vn/en-US.vov",
     "stationUuid": "af9433ca-33ce-46e5-ac7c-733740901bee",
-    "checkedAt": "2026-11-11T12:35:57.131Z",
+    "checkedAt": "2026-11-12T13:01:43.024Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -50,7 +50,7 @@
     "favicon": "https://static.vovworld.vn/mobile/app_themes/images/logo_2020_mobile-min.png",
     "homepage": "https://vovworld.vn/en-US.vov",
     "stationUuid": "ef28b731-d233-4e5b-a60e-3328efc3fd82",
-    "checkedAt": "2026-11-11T12:35:57.131Z",
+    "checkedAt": "2026-11-12T13:01:43.025Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -71,29 +71,10 @@
     "favicon": "https://vov3.vov.vn/sites/default/files/vov3.png",
     "homepage": "https://vov3.vov.vn/",
     "stationUuid": "a94504ef-49f4-433e-b1f0-a83748941abd",
-    "checkedAt": "2026-11-11T12:35:57.891Z",
+    "checkedAt": "2026-11-12T13:01:43.998Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "CAND",
-    "url": "https://lives.antv.gov.vn/channel/antv/channel/antv_480p/chunks.m3u8",
-    "country": "VN",
-    "type": "news",
-    "tags": [
-      "news"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "4bb149bc-0bed-4b8d-8956-2487c6caea9f",
-    "checkedAt": "2026-11-11T12:35:57.951Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "CAND",
@@ -109,7 +90,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "9b916475-2a74-42fd-aa45-86b88d8b5de5",
-    "checkedAt": "2026-11-11T12:35:58.335Z",
+    "checkedAt": "2026-11-12T13:01:44.299Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -128,7 +109,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "de8a3b63-0d47-4cbf-9a0e-b620001292e0",
-    "checkedAt": "2026-11-11T12:35:58.699Z",
+    "checkedAt": "2026-11-12T13:01:44.713Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -149,10 +130,80 @@
     "favicon": null,
     "homepage": "https://vov2.vov.vn/",
     "stationUuid": "43c2cc4e-34e9-4f7f-acfa-85d4a3bf1889",
-    "checkedAt": "2026-11-11T12:35:59.842Z",
+    "checkedAt": "2026-11-12T13:01:45.958Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Cherry Radio Music 247",
+    "url": "https://stream-176.zeno.fm/umt5gqmg3reuv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJ1bXQ1Z3FtZzNyZXV2IiwiaG9zdCI6InN0cmVhbS0xNzYuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IkNZUXVUREM3VGNtTjEyblNnR0x4UkEiLCJpYXQiOjE3Mjk3NDI5MzAsImV4cCI6MTcyOTc0Mjk5MH0.nXD9Wgj-wiNAqBZ-Pdh_3sfnI3b-Nsa4DwbcZgO1o5I&adtonosListenerId=01JAYBBMWV0MGTJKRSBW480E4Z",
+    "country": "VN",
+    "type": "pop",
+    "tags": [
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "3d35f6b4-0ade-42ca-a378-e8f3dfd66426",
+    "checkedAt": "2026-11-12T13:01:46.092Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Kien Giang Radio",
+    "url": "http://tv.kgtv.vn/live/kgaudio/kgaudio.m3u8",
+    "country": "VN",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "vietnamese",
+    "favicon": null,
+    "homepage": "http://kgtv.vn/",
+    "stationUuid": "1ffbc866-698e-11e9-af37-52543be04c81",
+    "checkedAt": "2026-11-12T13:01:48.911Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Kien Giang TV",
+    "url": "http://tv.kgtv.vn/live/kgtv/kgtv.m3u8",
+    "country": "VN",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "vietnamese",
+    "favicon": "http://kgtv.vn/favicon.ico",
+    "homepage": "http://kgtv.vn/",
+    "stationUuid": "3b127ac7-698d-11e9-af37-52543be04c81",
+    "checkedAt": "2026-11-12T13:01:48.929Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Kien Giang TV-1",
+    "url": "http://tv.kgtv.vn/live/kgtv1/kgtv1.m3u8",
+    "country": "VN",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "vietnamese",
+    "favicon": "http://kgtv.vn/favicon.ico",
+    "homepage": "http://kgtv.vn/",
+    "stationUuid": "76192bb9-698d-11e9-af37-52543be04c81",
+    "checkedAt": "2026-11-12T13:01:49.142Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "VOH AM 610",
@@ -166,7 +217,7 @@
     "favicon": null,
     "homepage": "https://voh.com.vn/radio-kenh-am-610-am610khz.html",
     "stationUuid": "518278ac-4ad3-4917-9ee8-243df197ec08",
-    "checkedAt": "2026-11-11T12:36:00.761Z",
+    "checkedAt": "2026-11-12T13:01:49.392Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -183,7 +234,7 @@
     "favicon": null,
     "homepage": "https://voh.com.vn/radio-kenh-fm-877-fm877mhz.html",
     "stationUuid": "0bbc02b1-4aff-43f3-9a01-af48ce8ad4bd",
-    "checkedAt": "2026-11-11T12:36:00.795Z",
+    "checkedAt": "2026-11-12T13:01:50.110Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -200,7 +251,7 @@
     "favicon": "https://voh.com.vn/favicon.ico",
     "homepage": "https://voh.com.vn/radio-kenh-fm-956-fm956mhz.html",
     "stationUuid": "a8a5e275-8d1c-4cb4-ac18-460660393359",
-    "checkedAt": "2026-11-11T12:36:00.904Z",
+    "checkedAt": "2026-11-12T13:01:50.442Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -217,7 +268,7 @@
     "favicon": "https://i.ibb.co/CBr490C/voh99.png",
     "homepage": "https://voh.com.vn/radio-kenh-fm-999-fm999mhz.html",
     "stationUuid": "a8200747-f284-4c30-8df0-1a9f4649df2d",
-    "checkedAt": "2026-11-11T12:36:01.233Z",
+    "checkedAt": "2026-11-12T13:01:51.094Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

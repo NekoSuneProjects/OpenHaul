@@ -13,7 +13,7 @@
     "favicon": null,
     "homepage": "https://audioserver.pro/babilonia/",
     "stationUuid": "fb331621-caf7-4d84-94a5-3a665e23063f",
-    "checkedAt": "2026-11-11T12:35:17.679Z",
+    "checkedAt": "2026-11-12T13:01:04.451Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -30,7 +30,7 @@
     "favicon": null,
     "homepage": "https://audioserver.pro/babilonia/",
     "stationUuid": "3b667a9b-c2ed-47f4-ac8c-3ce916888cdf",
-    "checkedAt": "2026-11-11T12:35:19.312Z",
+    "checkedAt": "2026-11-12T13:01:06.984Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -51,7 +51,7 @@
     "favicon": "https://www.delplatafm.com/wp-content/uploads/2021/10/logo-delta.png",
     "homepage": "https://www.delplatafm.com/",
     "stationUuid": "b0cfe0f0-87f1-4083-aefd-b4727f620584",
-    "checkedAt": "2026-11-11T12:35:20.056Z",
+    "checkedAt": "2026-11-12T13:01:07.646Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -79,7 +79,7 @@
     "favicon": "https://4.bp.blogspot.com/-kEcSU07Giuc/W_ghHfD0ufI/AAAAAAAAABs/7MizkiJ9v6QDzLkbUdpM9fUEfzabxBJVQCK4BGAYYCw/w800/La%2BIsla%2BRadio%2BOnline%2BDel%2BUruguay.png",
     "homepage": "http://radiolaisla.blogspot.com/",
     "stationUuid": "f8b82060-2912-45ce-8b71-7ee565d434b5",
-    "checkedAt": "2026-11-11T12:35:20.829Z",
+    "checkedAt": "2026-11-12T13:01:08.171Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -99,10 +99,32 @@
     "favicon": null,
     "homepage": "https://www.lacotorrafm.com/",
     "stationUuid": "af71bfe6-7b6a-41bc-bb6d-df34b56a19f2",
-    "checkedAt": "2026-11-11T12:35:21.393Z",
+    "checkedAt": "2026-11-12T13:01:08.729Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Cosquin Rock Radio Uruguay",
+    "url": "https://icecast15.innovanexo.com:9000/radiocero.mp3",
+    "country": "UY",
+    "type": "chat",
+    "tags": [
+      "chat",
+      "fun",
+      "gossip",
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": "https://cosquinrockuy.net/wp-content/uploads/2025/11/logo-color-17.png",
+    "homepage": "https://cosquinrockuy.net/",
+    "stationUuid": "2571cb2c-ef3c-4c9b-b475-ff308df9d29f",
+    "checkedAt": "2026-11-12T13:01:08.836Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "CX 30 Radio Nacional (La Treinta)",
@@ -119,7 +141,7 @@
     "favicon": null,
     "homepage": "https://www.radionacional.com.uy/web/",
     "stationUuid": "a369d9a1-5f08-413a-8b22-631383f7de6a",
-    "checkedAt": "2026-11-11T12:35:22.097Z",
+    "checkedAt": "2026-11-12T13:01:09.442Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -141,7 +163,7 @@
     "favicon": "http://www.delacumbrefm.com/images/WhatsApp_Image_2023-06-06_at_11.20.40.jpeg",
     "homepage": "http://www.delacumbrefm.com/",
     "stationUuid": "efd75d3e-6d95-4c7a-8c1a-8cc1360d6be7",
-    "checkedAt": "2026-11-11T12:35:23.049Z",
+    "checkedAt": "2026-11-12T13:01:10.331Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -162,7 +184,7 @@
     "favicon": null,
     "homepage": "https://www.conciertofm.com/",
     "stationUuid": "42edf7a6-ed2d-4c02-ae9d-bca6f6809648",
-    "checkedAt": "2026-11-11T12:35:23.114Z",
+    "checkedAt": "2026-11-12T13:01:10.435Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -188,7 +210,7 @@
     "favicon": "https://cadenadelmar.uy/assets/grafica/logo.png",
     "homepage": "https://cadenadelmar.uy/",
     "stationUuid": "4df031ce-f044-4c7f-9227-d85f1b85b324",
-    "checkedAt": "2026-11-11T12:35:23.300Z",
+    "checkedAt": "2026-11-12T13:01:10.714Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -208,7 +230,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240623_101428021.jpg?alt=media&token=4553b784-4a5a-41b8-ae80-1e11e7359772",
     "homepage": "https://sport890.com.uy/",
     "stationUuid": "747c7cb7-e1d6-4447-ad7f-5fd8de9157a3",
-    "checkedAt": "2026-11-11T12:35:23.425Z",
+    "checkedAt": "2026-11-12T13:01:10.819Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -230,7 +252,7 @@
     "favicon": "https://cdn.webrad.io/images/logos/radios-com-uy/casupa-fm.png",
     "homepage": "https://radiocasupa941.webnode.com.uy/",
     "stationUuid": "f9fa2179-649e-4ded-99c9-4e4687f51361",
-    "checkedAt": "2026-11-11T12:35:23.769Z",
+    "checkedAt": "2026-11-12T13:01:11.048Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -252,10 +274,10 @@
     "favicon": "https://www.cxradio.com.br/img/Radio/Logo/66ad6ade51a3094504c0ce983c295be8.webp",
     "homepage": "https://hiperactivafm.com.uy/",
     "stationUuid": "f62684bc-5dc1-491b-ab83-c295a1c87d3c",
-    "checkedAt": "2026-11-11T12:35:24.616Z",
+    "checkedAt": "2026-11-12T13:01:12.203Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Sport 890",
@@ -271,30 +293,10 @@
     "favicon": null,
     "homepage": "https://www.sport890.com.uy/",
     "stationUuid": "4c530f6d-bffa-4d15-b1cc-8f922386ee30",
-    "checkedAt": "2026-11-11T12:35:24.884Z",
+    "checkedAt": "2026-11-12T13:01:12.501Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Amatista FM 90.7",
-    "url": "http://usa15.ciudaddigital.com.uy:8044/AmatistaFM",
-    "country": "UY",
-    "type": "gospel",
-    "tags": [
-      "gospel",
-      "religion"
-    ],
-    "codec": "MP3",
-    "bitrate": 56,
-    "language": "spanish",
-    "favicon": "https://amatistafm.com/Imagenes/desde%20artigas%20capital%20piedras.JPG",
-    "homepage": "https://amatistafm.com/",
-    "stationUuid": "f49b28f9-c102-4bca-b388-8d96922a8926",
-    "checkedAt": "2026-11-11T12:35:25.452Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "FM del Carmen 105.3",
@@ -314,7 +316,7 @@
     "favicon": "http://www.fmdelcarmen.com/img/isotipo.png",
     "homepage": "http://www.fmdelcarmen.com/",
     "stationUuid": "f17ab61c-bdeb-461e-873b-3edff12a65e9",
-    "checkedAt": "2026-11-11T12:35:25.818Z",
+    "checkedAt": "2026-11-12T13:01:13.397Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -331,7 +333,7 @@
     "favicon": "https://cadenadelmar.uy/assets/grafica/logo.png",
     "homepage": "https://cadenadelmar.uy/",
     "stationUuid": "b57475ab-09ad-4cbd-a78e-e21512848a50",
-    "checkedAt": "2026-11-11T12:35:26.252Z",
+    "checkedAt": "2026-11-12T13:01:14.191Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -348,7 +350,7 @@
     "favicon": "https://radio36.com.uy/wp-content/uploads/2025/11/CABEZAL-WEB-36-e1762485361875.png",
     "homepage": "https://radio36.com.uy/",
     "stationUuid": "92d7ddd0-2422-4e40-bff7-038dd304fdb1",
-    "checkedAt": "2026-11-11T12:35:26.446Z",
+    "checkedAt": "2026-11-12T13:01:14.598Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -365,7 +367,7 @@
     "favicon": "https://www.radionacional.com.uy/web/wp-content/uploads/2022/07/cropped-favicons-180x180.png",
     "homepage": "https://www.radionacional.com.uy/web/",
     "stationUuid": "c460eb55-14db-42b9-8f61-ea51e776e1e1",
-    "checkedAt": "2026-11-11T12:35:26.927Z",
+    "checkedAt": "2026-11-12T13:01:14.996Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -382,7 +384,7 @@
     "favicon": null,
     "homepage": "http://www.delacumbrefm.com/",
     "stationUuid": "725aa60f-f9a9-46eb-b2ec-e683441c1be0",
-    "checkedAt": "2026-11-11T12:35:27.064Z",
+    "checkedAt": "2026-11-12T13:01:15.090Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -399,27 +401,10 @@
     "favicon": "https://www.delacumbrefm.com/images/Logo.jpeg",
     "homepage": "https://www.delacumbrefm.com/",
     "stationUuid": "27dcfbc0-5e9c-4e26-93ce-640a731665ca",
-    "checkedAt": "2026-11-11T12:35:27.168Z",
+    "checkedAt": "2026-11-12T13:01:15.134Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "La Bottega Radio Online",
-    "url": "https://streaming6.locucionar.com:24048/stream",
-    "country": "UY",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://static-media.streema.com/media/cache/b7/b8/b7b8d13cd752de8782070ccec44ab932.png",
-    "homepage": "https://www.labottegaonline.com/radio/index.html",
-    "stationUuid": "a974b0af-bd2b-4437-a0c6-e5c7fafa1111",
-    "checkedAt": "2026-11-11T12:35:28.732Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "La Elegida FM",
@@ -433,7 +418,7 @@
     "favicon": null,
     "homepage": "https://laelegidafm.com/",
     "stationUuid": "597f1cfa-f62e-4c51-af7d-189eb84d785d",
-    "checkedAt": "2026-11-11T12:35:28.835Z",
+    "checkedAt": "2026-11-12T13:01:18.792Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -450,7 +435,7 @@
     "favicon": null,
     "homepage": "https://laelegidafm.com/",
     "stationUuid": "67adab78-e9d6-41b9-8aa5-35792b196a25",
-    "checkedAt": "2026-11-11T12:35:28.853Z",
+    "checkedAt": "2026-11-12T13:01:19.338Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -467,10 +452,10 @@
     "favicon": null,
     "homepage": "https://laveredawebradio.com/",
     "stationUuid": "55445708-b08f-49b4-822a-14374efa9641",
-    "checkedAt": "2026-11-11T12:35:29.186Z",
+    "checkedAt": "2026-11-12T13:01:19.624Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Mas FM 101.3",
@@ -484,7 +469,7 @@
     "favicon": "https://i0.wp.com/masfm.com.uy/wp-content/uploads/2016/06/portadadereproductor.jpg?resize=256%2C256&ssl=1",
     "homepage": "https://masfm.com.uy/",
     "stationUuid": "915e77b1-9539-4363-9139-6b01f92c77d0",
-    "checkedAt": "2026-11-11T12:35:29.396Z",
+    "checkedAt": "2026-11-12T13:01:19.792Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -501,7 +486,7 @@
     "favicon": "https://montevideojazzradio.com/wp-content/uploads/2022/07/cropped-72396285_952890841735510_2637510734681997312_n-270x270.png",
     "homepage": "https://montevideojazzradio.com/",
     "stationUuid": "6e6e0965-cf25-4426-9f0c-125dfa7401ea",
-    "checkedAt": "2026-11-11T12:35:30.021Z",
+    "checkedAt": "2026-11-12T13:01:20.525Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -518,7 +503,7 @@
     "favicon": "https://radio36.com.uy/wp-content/uploads/2024/08/cropped-android-chrome-192x192-1-1-180x180.png",
     "homepage": "http://www.radio36.com.uy/",
     "stationUuid": "9630d9f1-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-11T12:35:30.829Z",
+    "checkedAt": "2026-11-12T13:01:21.392Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -535,7 +520,7 @@
     "favicon": "https://static.wixstatic.com/media/70feb5_58ac170957af42108431964e6845d606%7emv2.png/v1/fill/w_180%2ch_180%2clg_1%2cusm_0.66_1.00_0.01/70feb5_58ac170957af42108431964e6845d606%7emv2.png",
     "homepage": "https://radiocristaldeluruguay.com.uy/",
     "stationUuid": "28adde68-2ac2-464e-a2f2-0d1afc6b7bc8",
-    "checkedAt": "2026-11-11T12:35:31.103Z",
+    "checkedAt": "2026-11-12T13:01:21.692Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -552,27 +537,10 @@
     "favicon": null,
     "homepage": "https://radiopedal.uy/",
     "stationUuid": "b3a94aef-59bf-47fd-8037-f7f8b9782f70",
-    "checkedAt": "2026-11-11T12:35:31.409Z",
+    "checkedAt": "2026-11-12T13:01:22.331Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Río Branco",
-    "url": "https://medios.ciudaddigital.com.uy:18164/RioBranco",
-    "country": "UY",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 32,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.radioriobranco.com.uy/",
-    "stationUuid": "e77b3308-dcc1-48b3-8991-ea10a227a360",
-    "checkedAt": "2026-11-11T12:35:31.460Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Vichadero",
@@ -586,7 +554,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/6/29206.v4.png",
     "homepage": "https://www.radiovichadero.com/",
     "stationUuid": "1143115e-e833-4bb4-be2e-06137559d34c",
-    "checkedAt": "2026-11-11T12:35:31.535Z",
+    "checkedAt": "2026-11-12T13:01:22.595Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -605,7 +573,7 @@
     "favicon": null,
     "homepage": "https://www.delplatafm.com/",
     "stationUuid": "d72b4036-96c4-47fb-bc8e-05131ad20f3d",
-    "checkedAt": "2026-11-11T12:35:31.772Z",
+    "checkedAt": "2026-11-12T13:01:22.737Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -624,7 +592,7 @@
     "favicon": null,
     "homepage": "https://www.fmlike.com.uy/",
     "stationUuid": "9627ff31-841f-4453-8e87-91abd62c9b25",
-    "checkedAt": "2026-11-11T12:35:31.790Z",
+    "checkedAt": "2026-11-12T13:01:22.750Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -644,7 +612,7 @@
     "favicon": "https://comodin.uy/static/uploads/pipi_cucu/album_art.1703858689.jpg",
     "homepage": "https://comodin.uy/",
     "stationUuid": "04973c4b-bda8-4638-a877-b33093c3db9e",
-    "checkedAt": "2026-11-11T12:35:32.615Z",
+    "checkedAt": "2026-11-12T13:01:23.534Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -663,7 +631,7 @@
     "favicon": null,
     "homepage": "https://enperspectiva.uy/",
     "stationUuid": "5a706ecf-4ff1-44da-92dc-3e29bdbab92a",
-    "checkedAt": "2026-11-11T12:35:32.671Z",
+    "checkedAt": "2026-11-12T13:01:23.604Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -680,7 +648,7 @@
     "favicon": "https://www.sport890.com.uy/logo.png?v=3",
     "homepage": "https://www.sport890.com.uy/",
     "stationUuid": "6ea99ee7-125d-4f03-b422-800f32560c35",
-    "checkedAt": "2026-11-11T12:35:33.258Z",
+    "checkedAt": "2026-11-12T13:01:24.007Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -699,7 +667,7 @@
     "favicon": null,
     "homepage": "http://cx10continente.com/",
     "stationUuid": "d63a3754-792d-4513-8005-bc2396878b11",
-    "checkedAt": "2026-11-11T12:35:33.629Z",
+    "checkedAt": "2026-11-12T13:01:24.415Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -718,7 +686,7 @@
     "favicon": null,
     "homepage": "https://elshaddaimiha.uy/",
     "stationUuid": "bb9f3627-eee0-4396-8f43-a6fbc92d4df4",
-    "checkedAt": "2026-11-11T12:35:33.858Z",
+    "checkedAt": "2026-11-12T13:01:24.503Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -737,7 +705,7 @@
     "favicon": null,
     "homepage": "https://www.nuevotiempo.org/uruguay/",
     "stationUuid": "cce1e1a1-8705-4890-8129-01c0711e7ef8",
-    "checkedAt": "2026-11-11T12:35:34.011Z",
+    "checkedAt": "2026-11-12T13:01:24.899Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -754,7 +722,7 @@
     "favicon": null,
     "homepage": "https://www.rf.com.uy/",
     "stationUuid": "f4dff1d7-e875-415e-8e3a-1cbfa3bd2fb9",
-    "checkedAt": "2026-11-11T12:35:35.128Z",
+    "checkedAt": "2026-11-12T13:01:25.702Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

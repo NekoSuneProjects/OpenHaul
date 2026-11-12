@@ -16,7 +16,7 @@
     "favicon": null,
     "homepage": "https://www.flashbackfm.ch/",
     "stationUuid": "aa5f5294-8a35-4844-9294-92e4659b13d7",
-    "checkedAt": "2026-11-11T11:22:18.539Z",
+    "checkedAt": "2026-11-12T11:40:29.025Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -41,7 +41,7 @@
     "favicon": "https://flowstateradio.net/assets/img/station/chill-logo-128.png",
     "homepage": "https://flowstateradio.net/",
     "stationUuid": "390cacf0-a566-40e2-bb7c-d67259210662",
-    "checkedAt": "2026-11-11T11:22:18.810Z",
+    "checkedAt": "2026-11-12T11:40:29.282Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -66,7 +66,7 @@
     "favicon": "https://flowstateradio.net/assets/img/station/classical-logo-128.png",
     "homepage": "https://flowstateradio.net/",
     "stationUuid": "99c52d95-e7a5-480e-8c41-3a2b88ff8f7a",
-    "checkedAt": "2026-11-11T11:22:18.913Z",
+    "checkedAt": "2026-11-12T11:40:29.321Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -91,7 +91,7 @@
     "favicon": "https://flowstateradio.net/assets/img/station/house-logo-128.png",
     "homepage": "https://flowstateradio.net/",
     "stationUuid": "deac0e99-2625-4925-bec7-a817d2800048",
-    "checkedAt": "2026-11-11T11:22:18.923Z",
+    "checkedAt": "2026-11-12T11:40:29.342Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -114,7 +114,7 @@
     "favicon": "https://radio.texoplex.ch/favicon.png",
     "homepage": "https://radio.texoplex.ch/",
     "stationUuid": "80c7e209-f2ec-4d4f-9860-8289449490d8",
-    "checkedAt": "2026-11-11T11:22:23.229Z",
+    "checkedAt": "2026-11-12T11:40:33.375Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -135,10 +135,34 @@
     "favicon": null,
     "homepage": "https://s6.citrus3.com/public/ai-musicworld",
     "stationUuid": "24187e3c-be59-46cc-892b-6f6202eab7ec",
-    "checkedAt": "2026-11-11T11:22:23.383Z",
+    "checkedAt": "2026-11-12T11:40:33.540Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Vinyl-Valley Rock Radio",
+    "url": "https://listen.radioking.com/radio/265822/stream/311047",
+    "country": "CH",
+    "type": "blues rock",
+    "tags": [
+      "blues rock",
+      "classic rock",
+      "hard rock",
+      "heavy metal",
+      "progressive metal",
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "german",
+    "favicon": "https://image.radioking.io/radios/265822/logo/f46222eb-a1b8-4192-8a00-c6755d10080a.jpeg",
+    "homepage": "https://vvrr.page.radio/",
+    "stationUuid": "f95f4310-ff8c-4106-9b8e-18f05e594f1f",
+    "checkedAt": "2026-11-12T11:40:33.844Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Henri Dès",
@@ -155,7 +179,7 @@
     "favicon": "http://www.radio-henrides.net/henri.jpg",
     "homepage": "http://www.radio-henrides.net/",
     "stationUuid": "0300ba77-b93b-478f-bc59-775a2ca34125",
-    "checkedAt": "2026-11-11T11:22:24.504Z",
+    "checkedAt": "2026-11-12T11:40:34.246Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -174,7 +198,7 @@
     "favicon": null,
     "homepage": "https://antennejesus.live/",
     "stationUuid": "6f774e8a-12d1-4835-acfe-9d398075aaed",
-    "checkedAt": "2026-11-11T11:22:25.096Z",
+    "checkedAt": "2026-11-12T11:40:34.788Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -193,7 +217,7 @@
     "favicon": "https://www.mnr.ch/favicon.ico",
     "homepage": "https://www.mnr.ch/audio/",
     "stationUuid": "e25f32ee-e4f7-4e50-a67f-a98948eb20d5",
-    "checkedAt": "2026-11-11T11:22:25.316Z",
+    "checkedAt": "2026-11-12T11:40:34.953Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -212,7 +236,7 @@
     "favicon": "https://www.mnr.ch/favicon.ico",
     "homepage": "https://www.mnr.ch/radio/",
     "stationUuid": "446160e9-ec70-4499-bba4-bd56f5c0d75c",
-    "checkedAt": "2026-11-11T11:22:25.327Z",
+    "checkedAt": "2026-11-12T11:40:34.967Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -231,7 +255,7 @@
     "favicon": null,
     "homepage": "https://www.mnr.ch/audio/informationen/",
     "stationUuid": "5b111b59-820c-46ca-aae1-09edb5a75067",
-    "checkedAt": "2026-11-11T11:22:25.362Z",
+    "checkedAt": "2026-11-12T11:40:34.971Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -250,7 +274,7 @@
     "favicon": "https://www.drift.fm/wp-content/uploads/2020/06/Drift-FM_Logo_transparent_400px_00c8007a1_1367.png",
     "homepage": "https://www.drift.fm/",
     "stationUuid": "613afd76-188c-479b-9585-edddc1059a17",
-    "checkedAt": "2026-11-11T11:22:29.832Z",
+    "checkedAt": "2026-11-12T11:40:37.998Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -274,7 +298,7 @@
     "favicon": null,
     "homepage": "http://radio-gaba.ddns.net:8000/",
     "stationUuid": "101612cf-7aab-46ea-95c5-899216c8478c",
-    "checkedAt": "2026-11-11T11:22:30.874Z",
+    "checkedAt": "2026-11-12T11:40:38.921Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -293,10 +317,33 @@
     "favicon": null,
     "homepage": "https://www.crans-montana.radio/",
     "stationUuid": "e31e2db4-5b41-4318-8665-62b0b244f85f",
-    "checkedAt": "2026-11-11T11:22:30.991Z",
+    "checkedAt": "2026-11-12T11:40:39.171Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Public Domain Swiss Schlager",
+    "url": "http://relay.publicdomainradio.org/swiss_schlager.mp3",
+    "country": "CH",
+    "type": "folk",
+    "tags": [
+      "folk",
+      "public domain",
+      "royalty free",
+      "swiss",
+      "swiss folk schlager"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "http://radio.publicdomainproject.org/images/pdlogo.svg",
+    "homepage": "http://radio.publicdomainproject.org/de/index.html",
+    "stationUuid": "40db03d1-4396-45ee-9d00-d3e0f756b018",
+    "checkedAt": "2026-11-12T11:40:40.830Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio15.ch",
@@ -312,7 +359,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "20fbab1c-c68e-4676-8d48-e4626027ca29",
-    "checkedAt": "2026-11-11T11:22:32.377Z",
+    "checkedAt": "2026-11-12T11:40:40.836Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -333,7 +380,7 @@
     "favicon": "https://www.globalsport.ch/uploads/images/illustrations/Logos%20Cantons/btn-vaud.png",
     "homepage": "https://www.globalsport.ch/",
     "stationUuid": "6d88394a-e6b9-4a7d-8f74-dfa047325b23",
-    "checkedAt": "2026-11-11T11:22:32.567Z",
+    "checkedAt": "2026-11-12T11:40:40.940Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -354,7 +401,7 @@
     "favicon": "https://www.globalsport.ch/uploads/images/illustrations/Logos%20Cantons/btn-suisse.png",
     "homepage": "https://www.globalsport.ch/",
     "stationUuid": "1e28b81b-2900-4f68-a633-bb6c68481fae",
-    "checkedAt": "2026-11-11T11:22:32.635Z",
+    "checkedAt": "2026-11-12T11:40:40.979Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -373,7 +420,7 @@
     "favicon": null,
     "homepage": "https://radiochablais.ch/",
     "stationUuid": "11a84a23-4d3c-4575-81b7-fdac6224145a",
-    "checkedAt": "2026-11-11T11:22:32.636Z",
+    "checkedAt": "2026-11-12T11:40:41.069Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -392,7 +439,7 @@
     "favicon": null,
     "homepage": "http://www.1.fm/",
     "stationUuid": "962a8995-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-11T11:22:32.927Z",
+    "checkedAt": "2026-11-12T11:40:41.368Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -415,7 +462,7 @@
     "favicon": "http://www.swissgroove.ch/favicon.ico",
     "homepage": "http://www.swissgroove.ch/en/home-en/",
     "stationUuid": "52245352-266f-11ea-aa0c-52543be04c81",
-    "checkedAt": "2026-11-11T11:22:33.445Z",
+    "checkedAt": "2026-11-12T11:40:41.843Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -434,7 +481,7 @@
     "favicon": null,
     "homepage": "https://www.flashbackfm.ch/",
     "stationUuid": "a92a107d-3326-4d46-b7c1-d127b630bdfe",
-    "checkedAt": "2026-11-11T11:22:35.384Z",
+    "checkedAt": "2026-11-12T11:40:44.446Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -455,7 +502,7 @@
     "favicon": "https://www.radiomorcoteinternational.com/favicon.ico",
     "homepage": "https://www.radiomorcoteinternational.com/",
     "stationUuid": "738d12b5-50e6-4de1-af01-146bedb559ec",
-    "checkedAt": "2026-11-11T11:22:37.844Z",
+    "checkedAt": "2026-11-12T11:40:46.749Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -472,27 +519,10 @@
     "favicon": null,
     "homepage": "https://flowstateradio.net/",
     "stationUuid": "769cea15-d547-4ec7-99a4-92060a9d79e9",
-    "checkedAt": "2026-11-11T11:22:39.518Z",
+    "checkedAt": "2026-11-12T11:40:48.519Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Loungemain Radio Jazz-Chill-Funk",
-    "url": "http://185.238.128.191:8002/live",
-    "country": "CH",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://loungemain.mozello.com/",
-    "stationUuid": "9e628a56-59a3-45eb-8834-f4f72c2be4fe",
-    "checkedAt": "2026-11-11T11:22:41.608Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "pinkradio.com | samo najbolji hitovi",
@@ -506,7 +536,7 @@
     "favicon": "https://pinkradio.com/images/pinkradio-logo.png",
     "homepage": "https://pinkradio.com/",
     "stationUuid": "1354ac93-e91e-43e0-8e84-69a48565e340",
-    "checkedAt": "2026-11-11T11:22:42.717Z",
+    "checkedAt": "2026-11-12T11:40:51.261Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -523,7 +553,7 @@
     "favicon": "https://www.radiochablais.ch/images/site/radiochablais1.png",
     "homepage": "https://radiochablais.ch/",
     "stationUuid": "599b513a-a386-40d7-b3ef-191790fab777",
-    "checkedAt": "2026-11-11T11:22:44.114Z",
+    "checkedAt": "2026-11-12T11:40:52.364Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -540,7 +570,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/d0xobhere89uv",
     "stationUuid": "65667ae6-5354-4133-b53f-ee5fce69951c",
-    "checkedAt": "2026-11-11T11:22:45.031Z",
+    "checkedAt": "2026-11-12T11:40:53.076Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -557,7 +587,7 @@
     "favicon": "https://www.rts.ch/hbv7/static/images/favicon/rts/180x180.png",
     "homepage": "https://www.rts.ch/",
     "stationUuid": "a8405754-81f9-45d2-8bb9-f0facec1e232",
-    "checkedAt": "2026-11-11T11:22:48.368Z",
+    "checkedAt": "2026-11-12T11:40:55.190Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -574,7 +604,7 @@
     "favicon": null,
     "homepage": "http://www.vibracionlatina.ch/",
     "stationUuid": "96133755-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-11T11:22:49.322Z",
+    "checkedAt": "2026-11-12T11:40:55.782Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -591,7 +621,7 @@
     "favicon": null,
     "homepage": "http://www.vibration108.ch/player/vibrationchansonfrancaise/",
     "stationUuid": "96133d92-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-11T11:22:49.396Z",
+    "checkedAt": "2026-11-12T11:40:55.968Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -608,7 +638,7 @@
     "favicon": null,
     "homepage": "https://www.vibration108.ch/",
     "stationUuid": "d18ccdde-508f-11e8-a4d1-52543be04c81",
-    "checkedAt": "2026-11-11T11:22:49.609Z",
+    "checkedAt": "2026-11-12T11:40:55.985Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -625,7 +655,7 @@
     "favicon": null,
     "homepage": "http://vibrationgayradio.ch/",
     "stationUuid": "96133ae8-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-11T11:22:49.836Z",
+    "checkedAt": "2026-11-12T11:40:56.177Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -642,7 +672,7 @@
     "favicon": null,
     "homepage": "https://www.vibration108.ch/",
     "stationUuid": "13f04dc6-5090-11e8-a4d1-52543be04c81",
-    "checkedAt": "2026-11-11T11:22:49.846Z",
+    "checkedAt": "2026-11-12T11:40:56.358Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -659,7 +689,7 @@
     "favicon": "https://radiochablais.ch/images/xradiochablais1.png.pagespeed.ic.p3soqp385z.png",
     "homepage": "http://www.vibration108.ch/player/vibrationsofthits/",
     "stationUuid": "961338cb-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-11T11:22:49.853Z",
+    "checkedAt": "2026-11-12T11:40:56.398Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -676,7 +706,7 @@
     "favicon": "http://www.vibration108.ch/wp-content/uploads/2014/06/favicon.jpg",
     "homepage": "http://www.vibration108.ch/player/vibrationzenrelax/",
     "stationUuid": "96133c49-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-11T11:22:50.718Z",
+    "checkedAt": "2026-11-12T11:40:59.264Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -693,7 +723,7 @@
     "favicon": "http://transmiss.ion.ovh/api/station/volnadavida/art/e8c237f255cb9ca7df3a9da1",
     "homepage": "http://transmiss.ion.ovh/listen/volnadavida/radio.mp3",
     "stationUuid": "c6d504a1-353b-4dbb-9170-f2b861092bd5",
-    "checkedAt": "2026-11-11T11:22:53.217Z",
+    "checkedAt": "2026-11-12T11:41:01.119Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -710,7 +740,7 @@
     "favicon": "http://transmiss.ion.ovh/api/station/volnadavida/art/e8c237f255cb9ca7df3a9da1",
     "homepage": "http://transmiss.ion.ovh/public/volnadavida",
     "stationUuid": "5754a7d4-fa77-41c3-afaa-c364dfa1eafb",
-    "checkedAt": "2026-11-11T11:22:53.264Z",
+    "checkedAt": "2026-11-12T11:41:01.164Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -727,7 +757,7 @@
     "favicon": "https://kisscollector.ch/favicon.ico",
     "homepage": "https://kisscollector.ch/",
     "stationUuid": "2e7a82c7-2edb-4bf6-ab90-05d9efc23dfb",
-    "checkedAt": "2026-11-11T11:22:57.909Z",
+    "checkedAt": "2026-11-12T11:41:04.747Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -744,7 +774,7 @@
     "favicon": "https://rockstarradio.ch/favicon.ico",
     "homepage": "https://rockstarradio.ch/",
     "stationUuid": "c742461b-af8e-4442-a742-bc2ac04858f7",
-    "checkedAt": "2026-11-11T11:22:58.264Z",
+    "checkedAt": "2026-11-12T11:41:05.377Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -761,44 +791,10 @@
     "favicon": "https://www.urbnradio.ch/favicon.ico",
     "homepage": "https://www.urbnradio.ch/",
     "stationUuid": "ffe3ebaa-62ce-443d-a30f-029b70ee0757",
-    "checkedAt": "2026-11-11T11:22:58.269Z",
+    "checkedAt": "2026-11-12T11:41:05.450Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "1.fm spa",
-    "url": "http://e.mytuner-radio.com/embed/1fm-spa-425144",
-    "country": "CH",
-    "type": "Other",
-    "tags": [],
-    "codec": null,
-    "bitrate": 0,
-    "language": "engilsh",
-    "favicon": null,
-    "homepage": "http://www.1.fm/",
-    "stationUuid": "ac21a570-15fc-4416-9901-833ccdd0c6d6",
-    "checkedAt": "2026-11-11T11:22:58.344Z",
-    "status": 500,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 500"
-  },
-  {
-    "name": "GRRIF",
-    "url": "https://grrif.ice.infomaniak.ch/grrif-128.aac",
-    "country": "CH",
-    "type": "Other",
-    "tags": [],
-    "codec": null,
-    "bitrate": 0,
-    "language": "francaise",
-    "favicon": null,
-    "homepage": "https://www.grrif.ch/",
-    "stationUuid": "f2eb7c23-f888-4e96-afbf-5274b734d623",
-    "checkedAt": "2026-11-11T11:22:58.419Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "rro",
@@ -812,7 +808,7 @@
     "favicon": "https://play.radioplayer.org/de/live/NzU2fjEwOQ",
     "homepage": "https://www.google.com/goto?url=CAEScwHrOzAVqbBv0yUsQIIFrQz9qMuClBh3_yznyJo_WoIY9pncNyA0I_zth2GQ52La5D2LVeMkjpdnOrtRmcDqLhY0qOdu1NPie-A7PxzyQxsXw0pM2ZvUFdcbpwpUCtBYNRz21hoEnFkWDWfwQYhIgVnYugo",
     "stationUuid": "65527d2f-e945-49f6-92b9-7e9942735fd2",
-    "checkedAt": "2026-11-11T11:22:58.605Z",
+    "checkedAt": "2026-11-12T11:41:06.250Z",
     "status": 500,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 500"
@@ -829,7 +825,7 @@
     "favicon": "https://pomona.ch",
     "homepage": "https://pomona.ch/rro",
     "stationUuid": "970c9ae8-91aa-4c42-bd3e-8f5ad3779830",
-    "checkedAt": "2026-11-11T11:22:58.684Z",
+    "checkedAt": "2026-11-12T11:41:06.380Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -849,7 +845,7 @@
     "favicon": null,
     "homepage": "https://www.yesfm.ch/",
     "stationUuid": "17c03213-cc95-441c-adfc-35d11858e432",
-    "checkedAt": "2026-11-11T11:22:59.511Z",
+    "checkedAt": "2026-11-12T11:41:07.265Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -868,7 +864,7 @@
     "favicon": "https://images.ctfassets.net/ydbd72j4j18y/1n7IFHTNPGwwdaRvOXbkmm/ed901e780ac9352ef5e23b882882f40d/Rockit_Logo_2021_Claim_noBorder_2021.png",
     "homepage": "https://rockitradio.ch/",
     "stationUuid": "ea857055-0db9-4fee-a63b-3faa079719dc",
-    "checkedAt": "2026-11-11T11:23:00.118Z",
+    "checkedAt": "2026-11-12T11:41:07.914Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

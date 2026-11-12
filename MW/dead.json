@@ -1,20 +1,45 @@
 [
   {
-    "name": "Nthambi Radio",
-    "url": "https://radio.exclusivemw.live/listen/nthambi_online_radio/radio.mp3",
+    "name": "Nkhoma Synod Radio",
+    "url": "http://cast1.asurahosting.com:7347/live",
     "country": "MW",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 96,
-    "language": null,
-    "favicon": "https://nthambiradio.exclusivemw.live/",
-    "homepage": "https://nthambiradio.exclusivemw.live/",
-    "stationUuid": "57f5f581-69a3-41f6-bebe-b6382d2a18fe",
-    "checkedAt": "2026-11-11T11:56:00.224Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel",
+      "religious"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "chichewa",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "ec8b44a1-2fdb-4664-a986-b567ba9c7d18",
+    "checkedAt": "2026-11-12T12:21:28.264Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Nkhoma Synod Radio",
+    "url": "http://cast1.asurahosting.com:7347/live",
+    "country": "MW",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel",
+      "religious"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "chichewa",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "bb4735b4-9e5e-41ce-8e4b-d8a477ea4c63",
+    "checkedAt": "2026-11-12T12:21:28.272Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Tigabane",
@@ -33,7 +58,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "7dc397f5-4cd3-4a8d-a4aa-89b3c0b1939d",
-    "checkedAt": "2026-11-11T11:56:01.164Z",
+    "checkedAt": "2026-11-12T12:21:28.347Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -55,7 +80,7 @@
     "favicon": null,
     "homepage": "https://tuntufyefm.com/",
     "stationUuid": "9bdb2efa-d6e5-4728-9190-e67e96e780c1",
-    "checkedAt": "2026-11-11T11:56:01.320Z",
+    "checkedAt": "2026-11-12T12:21:28.471Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -76,7 +101,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "de97fdca-66c6-482e-8761-d22383ca1a6e",
-    "checkedAt": "2026-11-11T11:56:01.577Z",
+    "checkedAt": "2026-11-12T12:21:28.567Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -93,7 +118,7 @@
     "favicon": "https://amaryllishotels.com/assets/images/AMARYLLIS%20LOGO_favicon-01.png",
     "homepage": "https://amaryllis-eradio.vercel.app/",
     "stationUuid": "d5c8ae88-3b49-4fd9-8e68-4cfa9cc877d5",
-    "checkedAt": "2026-11-11T11:56:02.347Z",
+    "checkedAt": "2026-11-12T12:21:29.317Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -113,7 +138,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "d67bd854-c35d-42f5-861f-6588ac8fcb95",
-    "checkedAt": "2026-11-11T11:56:03.090Z",
+    "checkedAt": "2026-11-12T12:21:30.055Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -133,7 +158,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "54971480-a3bb-4e62-9bcc-aacf32f13939",
-    "checkedAt": "2026-11-11T11:56:03.244Z",
+    "checkedAt": "2026-11-12T12:21:30.134Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -154,30 +179,10 @@
     "favicon": null,
     "homepage": "https://www.storyclubfm.com/",
     "stationUuid": "66c9f684-260b-4426-89f1-c7465dd54726",
-    "checkedAt": "2026-11-11T11:56:03.276Z",
+    "checkedAt": "2026-11-12T12:21:30.167Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "UWALA Radio",
-    "url": "https://servidor22.brlogic.com:7078/live",
-    "country": "MW",
-    "type": "news",
-    "tags": [
-      "news",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": "english",
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "39007a42-9bff-44c6-830d-d20e9e08d43d",
-    "checkedAt": "2026-11-11T11:56:03.448Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "We Can Media Online Radio",
@@ -195,7 +200,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/radio/we-can-media-online-radio/",
     "stationUuid": "62e53beb-462c-45b5-8616-373273aad9db",
-    "checkedAt": "2026-11-11T11:56:03.468Z",
+    "checkedAt": "2026-11-12T12:21:30.410Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -214,7 +219,7 @@
     "favicon": null,
     "homepage": "https://kalumw.com/lunkhunkhu2/",
     "stationUuid": "7cf8a6c1-0a43-4e8c-8141-333c442bae4b",
-    "checkedAt": "2026-11-11T11:56:03.567Z",
+    "checkedAt": "2026-11-12T12:21:30.432Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"

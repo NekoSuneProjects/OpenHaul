@@ -11,10 +11,27 @@
     "favicon": "https://www.koprivljanskiradio.com/images/13654287_1017881974927424_7392547567572622816_n.jpg",
     "homepage": "https://www.koprivljanskiradio.com/",
     "stationUuid": "8774cb71-f2ac-4e37-a02a-e15da844eff2",
-    "checkedAt": "2026-11-11T11:14:56.664Z",
+    "checkedAt": "2026-11-12T11:33:32.966Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Olovo",
+    "url": "http://sonicpanel.vmakerhost.com:8038/stream",
+    "country": "BA",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "bosnian",
+    "favicon": "https://radio.olovo.ba/storage/2020/04/logo_radio_olovo@2x.png",
+    "homepage": "https://radio.olovo.ba/",
+    "stationUuid": "58265cf7-b41d-4308-b0f9-25c6d8c367fa",
+    "checkedAt": "2026-11-12T11:33:32.967Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Postaja Odzak",
@@ -32,7 +49,7 @@
     "favicon": null,
     "homepage": "https://www.radioodzak.com/",
     "stationUuid": "ba798dfd-f293-4247-ab35-a3bed05c5ede",
-    "checkedAt": "2026-11-11T11:14:57.671Z",
+    "checkedAt": "2026-11-12T11:33:34.068Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -51,7 +68,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "719d8893-1c53-4040-b5bc-a00345a0898e",
-    "checkedAt": "2026-11-11T11:14:57.771Z",
+    "checkedAt": "2026-11-12T11:33:34.220Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -70,7 +87,7 @@
     "favicon": null,
     "homepage": "https://www.radiovitez.ba/",
     "stationUuid": "7b6756aa-1fe0-485b-a897-ffa3e25b5b86",
-    "checkedAt": "2026-11-11T11:14:57.899Z",
+    "checkedAt": "2026-11-12T11:33:34.331Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -90,7 +107,7 @@
     "favicon": null,
     "homepage": "http://www.rtvhit.com/",
     "stationUuid": "6445ddb7-c238-11e8-aaf2-52543be04c81",
-    "checkedAt": "2026-11-11T11:14:58.093Z",
+    "checkedAt": "2026-11-12T11:33:34.553Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -112,7 +129,7 @@
     "favicon": "https://cdn-profiles.tunein.com/s9967/images/logog.png",
     "homepage": "https://radiokakanj.co.ba/",
     "stationUuid": "1b52f3a0-2920-4f17-a549-73c85713385f",
-    "checkedAt": "2026-11-11T11:14:58.103Z",
+    "checkedAt": "2026-11-12T11:33:34.554Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -131,7 +148,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "845580a9-4dad-4f09-b194-ea7175263eb9",
-    "checkedAt": "2026-11-11T11:14:58.640Z",
+    "checkedAt": "2026-11-12T11:33:35.048Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -152,7 +169,7 @@
     "favicon": "http://www.exyuradio.net/pub/catalog/149-radio-studio-d-uzivo.jpg",
     "homepage": "http://www.studiod.ba/",
     "stationUuid": "3352c127-e31e-4c77-868d-148478dc633e",
-    "checkedAt": "2026-11-11T11:14:58.642Z",
+    "checkedAt": "2026-11-12T11:33:35.076Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -172,7 +189,7 @@
     "favicon": "https://www.skalaradio.net/wp-content/uploads/2016/02/logoskala.png",
     "homepage": "https://www.skalaradio.net/",
     "stationUuid": "4aa287d0-a765-431a-87ee-e5247a0702f3",
-    "checkedAt": "2026-11-11T11:14:58.695Z",
+    "checkedAt": "2026-11-12T11:33:35.079Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -191,31 +208,10 @@
     "favicon": "https://www.phonostar.de/images/auto_created/Radio_Miljacka184x184.png",
     "homepage": "https://www.radiomiljacka.ba/",
     "stationUuid": "5cab177d-49de-492b-af93-f4467fd25690",
-    "checkedAt": "2026-11-11T11:14:58.836Z",
+    "checkedAt": "2026-11-12T11:33:35.175Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "RadioMajevica.com",
-    "url": "https://live.radiomajevica.com:7520/live",
-    "country": "BA",
-    "type": "izvorna",
-    "tags": [
-      "izvorna",
-      "narodna",
-      "zabavna"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": "bosnian",
-    "favicon": "https://www.radiomajevica.com/favicon.ico",
-    "homepage": "https://www.radiomajevica.com/",
-    "stationUuid": "c0c8ab11-ee88-47f1-b1d1-448c79185c55",
-    "checkedAt": "2026-11-11T11:14:58.907Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Feral 100.4 Sarajevo",
@@ -231,7 +227,7 @@
     "favicon": "http://www.uzivoradio.com/favicon.ico",
     "homepage": "http://www.uzivoradio.com/feral-kalesija.html",
     "stationUuid": "961d9331-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-11T11:14:59.006Z",
+    "checkedAt": "2026-11-12T11:33:35.361Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -248,7 +244,7 @@
     "favicon": "https://www.radioavaz.net/photos/muzicki%20radio%20avaz.png",
     "homepage": "https://www.radioavaz.net/",
     "stationUuid": "7b1b984d-4ee2-42cb-b7ad-143d8837bea4",
-    "checkedAt": "2026-11-11T11:14:59.116Z",
+    "checkedAt": "2026-11-12T11:33:35.545Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -265,7 +261,7 @@
     "favicon": "http://kalmanradio.ba/wp-content/uploads/2018/02/web-logo.png",
     "homepage": "https://kalmanradio.ba/",
     "stationUuid": "090ac8e3-e46a-4e45-ba7f-6cc578e62137",
-    "checkedAt": "2026-11-11T11:14:59.203Z",
+    "checkedAt": "2026-11-12T11:33:35.832Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -282,7 +278,7 @@
     "favicon": null,
     "homepage": "https://www.radio8.ba/",
     "stationUuid": "f0fbc23b-cc64-48a3-9e5b-0e130ce663c9",
-    "checkedAt": "2026-11-11T11:14:59.544Z",
+    "checkedAt": "2026-11-12T11:33:36.324Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -299,7 +295,7 @@
     "favicon": null,
     "homepage": "https://www.radiobihac.com/",
     "stationUuid": "bdbffffd-35b6-4c1f-b2e2-5cbf4ff91565",
-    "checkedAt": "2026-11-11T11:14:59.679Z",
+    "checkedAt": "2026-11-12T11:33:36.352Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -316,7 +312,7 @@
     "favicon": null,
     "homepage": "https://radiobobar.com/",
     "stationUuid": "e0e4752b-1bf6-45ca-8f98-25d0804b5850",
-    "checkedAt": "2026-11-11T11:14:59.712Z",
+    "checkedAt": "2026-11-12T11:33:36.450Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -333,7 +329,7 @@
     "favicon": "https://crt.ba/wp-content/uploads/2021/11/crtLogo.png",
     "homepage": "https://crt.ba/",
     "stationUuid": "08a07369-bda2-463c-94c2-36fae4e4c2ac",
-    "checkedAt": "2026-11-11T11:14:59.910Z",
+    "checkedAt": "2026-11-12T11:33:36.536Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -350,7 +346,7 @@
     "favicon": null,
     "homepage": "https://radiodonjivakuf.com.ba/",
     "stationUuid": "94e75dd3-ec35-41df-888a-068cc1bc78e5",
-    "checkedAt": "2026-11-11T11:15:00.015Z",
+    "checkedAt": "2026-11-12T11:33:36.660Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -367,7 +363,7 @@
     "favicon": null,
     "homepage": "https://www.media-kljuc.ba/",
     "stationUuid": "536e2b7c-7415-4021-a31d-183e283a2558",
-    "checkedAt": "2026-11-11T11:15:00.051Z",
+    "checkedAt": "2026-11-12T11:33:36.721Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -384,24 +380,7 @@
     "favicon": null,
     "homepage": "https://rtvlukavac.ba/",
     "stationUuid": "a199193d-22f4-47b6-a117-1197f7a6b38c",
-    "checkedAt": "2026-11-11T11:15:00.191Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio M Cafe",
-    "url": "https://team-data.ba:9032/play?sid=1&t=1781439858301",
-    "country": "BA",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://radiom.ba/assets/storage/photos/shares/radio-m-caffe.png",
-    "homepage": "https://radiom.ba/bs/radio-m-cafe",
-    "stationUuid": "41f7ec54-d936-4d38-a65f-74d910a2738e",
-    "checkedAt": "2026-11-11T11:15:00.266Z",
+    "checkedAt": "2026-11-12T11:33:36.918Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -418,7 +397,7 @@
     "favicon": "https://radiom.ba/assets/storage/photos/shares/radio-m-caffe.png",
     "homepage": "https://radiom.ba/bs/radio-m-cafe",
     "stationUuid": "34ce2c40-ee73-479c-8ff1-39c91d3231b7",
-    "checkedAt": "2026-11-11T11:15:00.298Z",
+    "checkedAt": "2026-11-12T11:33:37.018Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -435,7 +414,7 @@
     "favicon": "https://radiom.ba/wp-content/uploads/2021/10/cafe-v3-768x768.jpg",
     "homepage": "https://radiom.ba/en/homepage/",
     "stationUuid": "a318e302-cb18-45c7-8fda-305589f1780c",
-    "checkedAt": "2026-11-11T11:15:00.324Z",
+    "checkedAt": "2026-11-12T11:33:37.021Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -452,7 +431,7 @@
     "favicon": null,
     "homepage": "https://www.radiomiljacka.ba/",
     "stationUuid": "5e64847a-8514-4c52-9dd4-61bd3a3e320f",
-    "checkedAt": "2026-11-11T11:15:00.379Z",
+    "checkedAt": "2026-11-12T11:33:37.068Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -469,7 +448,7 @@
     "favicon": null,
     "homepage": "http://www.radionovigrad.com/",
     "stationUuid": "96299813-1489-4c76-b923-d5034aff3c81",
-    "checkedAt": "2026-11-11T11:15:00.417Z",
+    "checkedAt": "2026-11-12T11:33:37.122Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -486,7 +465,7 @@
     "favicon": "https://www.radiopreporod.com/mobile/index_htm_files/4889@2x.png",
     "homepage": "https://www.radiopreporod.com/",
     "stationUuid": "7e408d94-d99b-47d2-bbdd-c2936570de6b",
-    "checkedAt": "2026-11-11T11:15:00.436Z",
+    "checkedAt": "2026-11-12T11:33:37.147Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -503,7 +482,7 @@
     "favicon": "https://cdn.radiosrebrenik.ba/RadioSrebrenikLogo-1.png",
     "homepage": "https://www.radiosrebrenik.ba/",
     "stationUuid": "1c5b2de1-abde-4f28-bdb4-6067780901bf",
-    "checkedAt": "2026-11-11T11:15:00.561Z",
+    "checkedAt": "2026-11-12T11:33:37.260Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -520,7 +499,7 @@
     "favicon": "https://www.radiotesanj.ba/assets/site/assets/images/logo-white-mobile.png",
     "homepage": "https://www.radiotesanj.ba/",
     "stationUuid": "815be578-d795-438d-822c-09fa91c78286",
-    "checkedAt": "2026-11-11T11:15:00.636Z",
+    "checkedAt": "2026-11-12T11:33:37.318Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -539,7 +518,7 @@
     "favicon": null,
     "homepage": "http://radio8.ba/",
     "stationUuid": "b958c002-0986-4806-8fb9-a3aac4a36859",
-    "checkedAt": "2026-11-11T11:15:01.339Z",
+    "checkedAt": "2026-11-12T11:33:37.783Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -559,7 +538,7 @@
     "favicon": "https://radiom.ba/assets/storage/photos/shares/radio-m-plus.png",
     "homepage": "https://radiom.ba/bs/radio-m-plus",
     "stationUuid": "42dad1c8-cbd2-4fea-85da-451f8da17bfd",
-    "checkedAt": "2026-11-11T11:15:01.362Z",
+    "checkedAt": "2026-11-12T11:33:37.836Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -578,7 +557,7 @@
     "favicon": null,
     "homepage": "https://www.kupreskiradio.com/",
     "stationUuid": "0356e497-ffb7-11e9-bbf2-52543be04c81",
-    "checkedAt": "2026-11-11T11:15:01.494Z",
+    "checkedAt": "2026-11-12T11:33:37.895Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -597,7 +576,7 @@
     "favicon": "http://radiobirac.ba/radio-birac.ico",
     "homepage": "http://radiobirac.ba/",
     "stationUuid": "0bc9150d-c487-49c5-af59-7425284da4ff",
-    "checkedAt": "2026-11-11T11:15:01.861Z",
+    "checkedAt": "2026-11-12T11:33:38.234Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

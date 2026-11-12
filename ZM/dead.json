@@ -1,27 +1,5 @@
 [
   {
-    "name": "Metro 94.5 FM Zambia",
-    "url": "https://s24.myradiostream.com:15422/;;",
-    "country": "ZM",
-    "type": "90s",
-    "tags": [
-      "90s",
-      "news",
-      "pop",
-      "sports"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": "english",
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "dd8df116-2a6c-4b30-9aad-0216882db63b",
-    "checkedAt": "2026-11-11T12:36:35.438Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
     "name": "Flava Radio & TV",
     "url": "https://s8.yesstreaming.net:7021/stream",
     "country": "ZM",
@@ -39,7 +17,7 @@
     "favicon": null,
     "homepage": "https://flavaradioandtv.com/",
     "stationUuid": "7f5bc9bf-6987-4644-aed2-c64c6e20805b",
-    "checkedAt": "2026-11-11T12:36:35.445Z",
+    "checkedAt": "2026-11-12T13:02:25.607Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -60,30 +38,7 @@
     "favicon": null,
     "homepage": "https://kfmmansa.radio12345.com/",
     "stationUuid": "581d323f-0fe1-4aae-8cb8-f26815897284",
-    "checkedAt": "2026-11-11T12:36:36.023Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "iWave FM Radio",
-    "url": "https://s47.myradiostream.com/9934/listen.mp3",
-    "country": "ZM",
-    "type": "christian",
-    "tags": [
-      "christian",
-      "hip hop",
-      "news",
-      "rb",
-      "talk"
-    ],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": "english",
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "50ec59df-dd3d-40a5-ad65-6bb037ac542d",
-    "checkedAt": "2026-11-11T12:36:36.536Z",
+    "checkedAt": "2026-11-12T13:02:26.217Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -104,32 +59,30 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "87559094-0e45-49ad-ba5b-7b6cd2f7917c",
-    "checkedAt": "2026-11-11T12:36:36.786Z",
+    "checkedAt": "2026-11-12T13:02:27.230Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Smooth 90.1fm",
-    "url": "https://s25.myradiostream.com/15172/listen.mp3",
+    "name": "Mafken FM",
+    "url": "https://listen.streamaudio.co/proxy/mafkenfm/stream",
     "country": "ZM",
     "type": "news",
     "tags": [
       "news",
-      "pop",
-      "sports",
       "talk"
     ],
     "codec": "MP3",
     "bitrate": 128,
     "language": "english",
     "favicon": null,
-    "homepage": "https://www.smoothfmzambia.org/",
-    "stationUuid": "0dbbbaa1-fd10-4f09-a960-958438a5f34d",
-    "checkedAt": "2026-11-11T12:36:38.792Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
+    "homepage": "https://mafken.fm/",
+    "stationUuid": "412db3e9-b3e0-49ff-a1f6-425ae047dc19",
+    "checkedAt": "2026-11-12T13:02:29.053Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Tuta Radio",
@@ -147,17 +100,18 @@
     "favicon": null,
     "homepage": "https://tutaradio.com/",
     "stationUuid": "eb76e7a2-25b7-4fb5-8415-8f39b938aee9",
-    "checkedAt": "2026-11-11T12:36:38.925Z",
+    "checkedAt": "2026-11-12T13:02:30.112Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
   },
   {
-    "name": "Bola radio",
-    "url": "http://s9.myradiostream.com:47470/listen.mp3",
+    "name": "Yours FM",
+    "url": "http://5.135.154.91:17362/stream",
     "country": "ZM",
-    "type": "sports",
+    "type": "news",
     "tags": [
+      "news",
       "sports",
       "talk"
     ],
@@ -165,9 +119,9 @@
     "bitrate": 96,
     "language": "english",
     "favicon": null,
-    "homepage": "https://www.bolabet.co.zm/",
-    "stationUuid": "1221dedf-9ad6-446e-ae0a-1dcece45a301",
-    "checkedAt": "2026-11-11T12:36:39.223Z",
+    "homepage": "https://yoursfmradio.on-air.fm/",
+    "stationUuid": "53abdbff-3d19-4cff-9099-1426bbad265d",
+    "checkedAt": "2026-11-12T13:02:30.330Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

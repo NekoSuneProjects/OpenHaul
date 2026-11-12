@@ -11,7 +11,7 @@
     "favicon": "https://foxxradio.com/upload/hk/1620700276.jpg.webp",
     "homepage": "https://www.facebook.com/881903com/",
     "stationUuid": "4c1ca3b1-28c9-47db-93b7-de2053232009",
-    "checkedAt": "2026-11-11T11:47:21.993Z",
+    "checkedAt": "2026-11-12T12:10:20.015Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -28,27 +28,10 @@
     "favicon": "https://www.apple-fm.net/images/apple200text.png",
     "homepage": "https://www.apple-fm.net/",
     "stationUuid": "afaf4fe0-dedf-4226-ab59-85b82fe007c2",
-    "checkedAt": "2026-11-11T11:47:22.537Z",
+    "checkedAt": "2026-11-12T12:10:21.519Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "華語 HITS",
-    "url": "https://das-edge14-live365-dal02.cdnstream.com/a57743_2",
-    "country": "HK",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 320,
-    "language": null,
-    "favicon": "https://new.brg-radio.com/wp-content/themes/brg-wp/img/logo.png",
-    "homepage": "https://new.brg-radio.com/",
-    "stationUuid": "c6c450a9-84cc-4592-a27a-412879c15878",
-    "checkedAt": "2026-11-11T11:47:22.542Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "珠海資訊廣播",
@@ -62,7 +45,7 @@
     "favicon": "http://pic.qingting.fm/2022/1231/20221231114640.png",
     "homepage": "https://www.hizh.cn/",
     "stationUuid": "9073a5eb-5a43-45a3-9c18-33bb5b4dab9c",
-    "checkedAt": "2026-11-11T11:47:26.342Z",
+    "checkedAt": "2026-11-12T12:10:30.672Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -81,7 +64,7 @@
     "favicon": "https://foxxradio.com/upload/hk/1620698984.jpg.webp",
     "homepage": "https://www.881903.com/",
     "stationUuid": "cad4969e-cf50-4c96-8348-60e4c288ff61",
-    "checkedAt": "2026-11-11T11:47:26.761Z",
+    "checkedAt": "2026-11-12T12:10:32.516Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -100,7 +83,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5b253a02-28ed-48a7-a972-2aef5b114036",
-    "checkedAt": "2026-11-11T11:47:27.208Z",
+    "checkedAt": "2026-11-12T12:10:33.773Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -119,7 +102,7 @@
     "favicon": null,
     "homepage": "http://www.apple-fm.net/",
     "stationUuid": "c5a87eaf-c961-11e9-8502-52543be04c81",
-    "checkedAt": "2026-11-11T11:47:27.877Z",
+    "checkedAt": "2026-11-12T12:10:35.023Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -138,7 +121,7 @@
     "favicon": "https://foxxradio.com/upload/hk/1620700109.jpg.webp",
     "homepage": "https://www.my903.com/903openbox",
     "stationUuid": "b72e497b-d2c1-436f-8508-2048a1b28e84",
-    "checkedAt": "2026-11-11T11:47:27.909Z",
+    "checkedAt": "2026-11-12T12:10:35.372Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -157,7 +140,7 @@
     "favicon": "https://pic.qtfm.cn/2024/0410/20240410025046.jpeg",
     "homepage": "https://www.qtfm.cn/radios/20500021",
     "stationUuid": "8c56edc7-6e44-4143-aeb5-51fe9a00dfe4",
-    "checkedAt": "2026-11-11T11:47:27.932Z",
+    "checkedAt": "2026-11-12T12:10:35.422Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -174,27 +157,29 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "a6a2441d-4d74-4b9f-ba61-89564fba0982",
-    "checkedAt": "2026-11-11T11:47:27.937Z",
+    "checkedAt": "2026-11-12T12:10:35.610Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "中央人民廣播電台 中國之聲",
-    "url": "http://zbbf2.ahbztv.com/live/4f3.m3u8",
+    "name": "陽光衛視",
+    "url": "https://stream.chinasuntv.com/680k/mid_video_index.m3u8",
     "country": "HK",
-    "type": "UNKNOWN",
-    "tags": [],
+    "type": "tv",
+    "tags": [
+      "tv"
+    ],
     "codec": "UNKNOWN",
-    "bitrate": 233,
+    "bitrate": 0,
     "language": "chinese",
-    "favicon": null,
-    "homepage": "https://www.cnr.cn/",
-    "stationUuid": "a41c628e-3961-43d2-9aec-91521d00788b",
-    "checkedAt": "2026-11-11T11:47:28.885Z",
-    "status": 404,
+    "favicon": "http://www.nettvpro.xyz/uploads/18/1-1PR5212U3439.jpg",
+    "homepage": "https://www.chinasuntv.com/",
+    "stationUuid": "8b41cd58-4393-4761-a6c5-25758f630144",
+    "checkedAt": "2026-11-12T12:10:35.951Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 404"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "澳门绿邦",
@@ -210,7 +195,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "392ab5e8-c91a-4b27-9792-cae5fb712ebe",
-    "checkedAt": "2026-11-11T11:47:29.731Z",
+    "checkedAt": "2026-11-12T12:10:39.910Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -229,7 +214,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "4dcf7151-3427-43bc-9ef1-24e3704ac0f2",
-    "checkedAt": "2026-11-11T11:47:29.755Z",
+    "checkedAt": "2026-11-12T12:10:39.934Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
