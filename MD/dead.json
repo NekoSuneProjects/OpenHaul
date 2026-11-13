@@ -18,7 +18,7 @@
     "favicon": "https://glowlinks.net/the-glow-network.png",
     "homepage": "https://glowlinks.net/radio",
     "stationUuid": "11c07bdc-4fc3-4ee7-af17-f8eb1db7493c",
-    "checkedAt": "2026-11-12T12:21:02.134Z",
+    "checkedAt": "2026-11-13T12:03:49.872Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -37,10 +37,31 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "9a608389-3cae-4614-8768-2561f18472f7",
-    "checkedAt": "2026-11-12T12:21:03.168Z",
-    "status": 404,
-    "contentType": "text/xml; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-13T12:03:53.185Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Haliz Gagauz Radiosu - GRT",
+    "url": "http://s02.radio-tochka.com:8020/radio?type=.mp3",
+    "country": "MD",
+    "type": "ethno...",
+    "tags": [
+      "ethno...",
+      "folk",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "gagauz",
+    "favicon": "null",
+    "homepage": "http://gagauzradio.ru/feedback",
+    "stationUuid": "e0e7f619-6324-4a23-adae-dcc548a18072",
+    "checkedAt": "2026-11-13T12:03:54.083Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio Moldova",
@@ -58,7 +79,7 @@
     "favicon": "https://radiomoldova.md/apple-touch-icon.png",
     "homepage": "https://radiomoldova.md/",
     "stationUuid": "ff73092b-7efe-464b-b70c-51c771058dc1",
-    "checkedAt": "2026-11-12T12:21:03.611Z",
+    "checkedAt": "2026-11-13T12:03:54.332Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -75,7 +96,7 @@
     "favicon": "https://glowlinks.net/the-glow-network.png",
     "homepage": "https://glowlinks.net/radio",
     "stationUuid": "1cf33481-5bc1-4e66-a95f-9d5278542df1",
-    "checkedAt": "2026-11-12T12:21:04.158Z",
+    "checkedAt": "2026-11-13T12:03:55.819Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -92,27 +113,10 @@
     "favicon": null,
     "homepage": "http://imago.fm/",
     "stationUuid": "e9680f99-116f-43a4-aba5-f1d3bb54edc9",
-    "checkedAt": "2026-11-12T12:21:04.165Z",
+    "checkedAt": "2026-11-13T12:03:55.983Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Nebula-Radio",
-    "url": "http://myradio24.org/donsergio",
-    "country": "MD",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://myradio24.com/users/donsergio/nocover.jpg",
-    "homepage": "https://www.nebulah-radio.com/",
-    "stationUuid": "b5478dcd-4e54-4035-acfa-542f45937f85",
-    "checkedAt": "2026-11-12T12:21:04.208Z",
-    "status": 403,
-    "contentType": "audio/mpeg",
-    "lastFailure": "HTTP 403"
   },
   {
     "name": "Radio Micul Samaritean",
@@ -126,7 +130,7 @@
     "favicon": "https://www.miculsamaritean.com/favicon.png",
     "homepage": "https://www.miculsamaritean.com/",
     "stationUuid": "220e3f38-4f2b-402a-af1a-350e82aaddcb",
-    "checkedAt": "2026-11-12T12:21:04.254Z",
+    "checkedAt": "2026-11-13T12:03:56.097Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"

@@ -18,29 +18,10 @@
     "favicon": "http://www.rtcg.me/assets/img/favicons/apple-icon-180x180.png",
     "homepage": "https://radio.rtcg.me/",
     "stationUuid": "4017c17b-add1-4884-bda6-dbc8841827b4",
-    "checkedAt": "2026-11-12T12:21:02.086Z",
+    "checkedAt": "2026-11-13T12:03:50.107Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Radio Krš Podgorica",
-    "url": "https://stream.radiokrs.me:8443/lq.mp3",
-    "country": "ME",
-    "type": "alternative",
-    "tags": [
-      "alternative"
-    ],
-    "codec": "MP3",
-    "bitrate": 320,
-    "language": "montenegro",
-    "favicon": null,
-    "homepage": "https://radiokrs.com/",
-    "stationUuid": "84270636-7745-4648-87e7-2bd2a8ecebd2",
-    "checkedAt": "2026-11-12T12:21:02.090Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "РЦГ Classic",
@@ -56,7 +37,7 @@
     "favicon": null,
     "homepage": "https://rtcg.me/cir/radio/radio-uzivo/rcg-classic-uzivo.html",
     "stationUuid": "59f16ab6-519d-44b7-af67-4624bd3efbb6",
-    "checkedAt": "2026-11-12T12:21:02.265Z",
+    "checkedAt": "2026-11-13T12:03:50.730Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -75,7 +56,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "398f407b-3fac-441f-8b8a-96d7ef1f53be",
-    "checkedAt": "2026-11-12T12:21:02.568Z",
+    "checkedAt": "2026-11-13T12:03:51.397Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -94,7 +75,7 @@
     "favicon": null,
     "homepage": "http://www.rtcg.me/",
     "stationUuid": "d76ebdee-dd87-4af1-bfd2-b894ecb61dac",
-    "checkedAt": "2026-11-12T12:21:02.699Z",
+    "checkedAt": "2026-11-13T12:03:51.988Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -113,7 +94,45 @@
     "favicon": "http://www.rtcg.me/assets/img/favicons/apple-icon-180x180.png",
     "homepage": "http://www.rtcg.me/",
     "stationUuid": "6d5706cd-0afb-42a8-a171-351378cd82b0",
-    "checkedAt": "2026-11-12T12:21:02.701Z",
+    "checkedAt": "2026-11-13T12:03:52.512Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Radio Berane",
+    "url": "https://stream.iradio.pro/proxy/radioberane?mp=/stream;",
+    "country": "ME",
+    "type": "lokalni",
+    "tags": [
+      "lokalni"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "montenegro",
+    "favicon": null,
+    "homepage": "https://stream.iradio.pro/proxy/radioberane?mp=/stream;",
+    "stationUuid": "22cc8c4c-5921-46ae-886e-8f32d26da28b",
+    "checkedAt": "2026-11-13T12:03:52.685Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Radio Berane",
+    "url": "https://stream.iradio.pro/proxy/radioberane?mp=/stream;",
+    "country": "ME",
+    "type": "lokalni",
+    "tags": [
+      "lokalni"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "montenegro",
+    "favicon": null,
+    "homepage": "http://www.radioberane.com/",
+    "stationUuid": "4384a02b-3625-44df-aaae-dede1a96e4b8",
+    "checkedAt": "2026-11-13T12:03:52.758Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -132,7 +151,26 @@
     "favicon": "http://www.rtcg.me/assets/img/favicons/apple-icon-180x180.png",
     "homepage": "http://www.rtcg.me/",
     "stationUuid": "c20b90e7-9def-4dee-a1a0-39abd4e054a3",
-    "checkedAt": "2026-11-12T12:21:03.405Z",
+    "checkedAt": "2026-11-13T12:03:54.329Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Radio Kotor",
+    "url": "https://stream.iradio.pro/proxy/radiokotor?mp=/stream",
+    "country": "ME",
+    "type": "zabavna",
+    "tags": [
+      "zabavna"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "montenegrin",
+    "favicon": null,
+    "homepage": "https://radiokotor.info/",
+    "stationUuid": "0d1ae8b3-e8c5-4ec7-a8b3-7ea70bd87025",
+    "checkedAt": "2026-11-13T12:03:54.510Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"

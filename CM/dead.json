@@ -1,46 +1,25 @@
 [
   {
-    "name": "Peña Mundi FM",
-    "url": "https://stream.zeno.fm/15k8hpd4fm0uv",
-    "country": "CM",
-    "type": "african music",
-    "tags": [
-      "african music",
-      "news",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "french",
-    "favicon": null,
-    "homepage": "https://penamundi.radio12345.com/",
-    "stationUuid": "ba559818-25e0-41fc-887e-3b4036435138",
-    "checkedAt": "2026-11-12T11:41:10.834Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "Royal FM Cameroun",
-    "url": "http://server.it-innov.com:8000/royalfm.mp3",
+    "name": "CRTV 237 Webradio",
+    "url": "https://237webradio.ice.infomaniak.ch/crtv237webradio-128.aac",
     "country": "CM",
     "type": "cameroon",
     "tags": [
       "cameroon",
+      "crtv",
       "generaliste",
-      "news",
-      "talk"
+      "public"
     ],
     "codec": "MP3",
-    "bitrate": 80,
-    "language": "french",
+    "bitrate": 128,
+    "language": "english,french",
     "favicon": null,
-    "homepage": "https://royalfm-cameroun.com/fr",
-    "stationUuid": "fca865ad-768b-492d-9103-996daa6c3f73",
-    "checkedAt": "2026-11-12T11:41:11.327Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "homepage": "https://www.crtv.cm/radio/crtv237webradio",
+    "stationUuid": "82fa893b-a893-452f-95dd-eeb5c2fa726d",
+    "checkedAt": "2026-11-13T11:25:41.922Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Equinoxe Radio",
@@ -56,7 +35,7 @@
     "favicon": null,
     "homepage": "http://www.radioequinoxe.com/",
     "stationUuid": "332f6491-d62d-48a4-b44a-fa8020896949",
-    "checkedAt": "2026-11-12T11:41:12.679Z",
+    "checkedAt": "2026-11-13T11:25:43.330Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -77,7 +56,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "04ca502e-2841-4568-a378-3df4fcbada2b",
-    "checkedAt": "2026-11-12T11:41:12.747Z",
+    "checkedAt": "2026-11-13T11:25:43.516Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -97,7 +76,7 @@
     "favicon": "https://radioenlignefrance.com/storage/radios/6885/8855/conversions/DkvJakmCUOOuVMaiESwrtRtXbTOkl6-metaQ1JUVi1SYWRpby5qcGc=--lg.webp",
     "homepage": "https://www.crtv.cm/",
     "stationUuid": "964b07c5-d89d-4b37-b5f1-dfddbac876c5",
-    "checkedAt": "2026-11-12T11:41:12.930Z",
+    "checkedAt": "2026-11-13T11:25:43.701Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -117,7 +96,7 @@
     "favicon": null,
     "homepage": "https://crtv.cm/",
     "stationUuid": "14f6e67f-a6bd-4829-b6d0-08550a53ec17",
-    "checkedAt": "2026-11-12T11:41:13.064Z",
+    "checkedAt": "2026-11-13T11:25:43.782Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -138,10 +117,30 @@
     "favicon": null,
     "homepage": "https://dir.rcast.net/players/244422",
     "stationUuid": "50e84985-0372-4270-a16b-053aac9ecbbf",
-    "checkedAt": "2026-11-12T11:41:13.164Z",
+    "checkedAt": "2026-11-13T11:25:43.902Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "For You Radio",
+    "url": "https://rstream.az-multimedia.com:7269/stream",
+    "country": "CM",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://foryoumedia-africa.com/",
+    "stationUuid": "ad5f9c49-3342-4b52-987c-f025543a723c",
+    "checkedAt": "2026-11-13T11:25:44.002Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Sky FM Nguti",
@@ -158,7 +157,7 @@
     "favicon": null,
     "homepage": "https://skyfmcameroon.com/",
     "stationUuid": "0c8b8cd4-0b04-442b-8fe5-dda559a31903",
-    "checkedAt": "2026-11-12T11:41:13.644Z",
+    "checkedAt": "2026-11-13T11:25:44.301Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -178,7 +177,7 @@
     "favicon": null,
     "homepage": "https://crtv.cm/radio/suellaba-fm",
     "stationUuid": "20cd420b-3af1-451a-9d79-5c0c3ae13f67",
-    "checkedAt": "2026-11-12T11:41:13.734Z",
+    "checkedAt": "2026-11-13T11:25:44.346Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"

@@ -13,7 +13,7 @@
     "favicon": "http://www.kcna.kp/assets/img/home/mark.png",
     "homepage": "http://www.kcna.kp/kp",
     "stationUuid": "87978669-6d37-4a17-8333-fc43d5c2fc08",
-    "checkedAt": "2026-11-12T12:18:58.213Z",
+    "checkedAt": "2026-11-13T12:01:40.420Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -34,29 +34,10 @@
     "favicon": null,
     "homepage": "http://www.gnu.rep.kp/",
     "stationUuid": "dd8772a9-0f3e-4903-a138-0da1af91c4bf",
-    "checkedAt": "2026-11-12T12:19:01.054Z",
+    "checkedAt": "2026-11-13T12:01:41.685Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
-  },
-  {
-    "name": "Voice of Chongro",
-    "url": "https://stream.zeno.fm/oldwnjuma3duv",
-    "country": "KP",
-    "type": "music",
-    "tags": [
-      "music"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "korean",
-    "favicon": "https://zeno.fm/_ipx/f_webp&q_85&fit_cover&s_288x288/https://images.zeno.fm/gSvreLhLuVh1fUjDbdkvgmnIEJCdgomYW8toTV7Mq9Y/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvNDYzYjY3ZGMtY2U5NC00OGVlLWJmNjYtZDBlYWJkMWQ2OTA0L2ltYWdlLz91PTE3MjE0NzQ0NjAwMDA.webp",
-    "homepage": "https://sf1buynlarge.wixsite.com/chongronaenara/music",
-    "stationUuid": "0a83de69-837b-4a24-8e59-dbe87dc75c9f",
-    "checkedAt": "2026-11-12T12:19:01.064Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Voice of Korea",
@@ -73,7 +54,7 @@
     "favicon": "https://vok.rep.kp/resources/img/logo_k.png",
     "homepage": "https://vok.rep.kp/",
     "stationUuid": "4248dc89-1aad-4f6a-a17f-07e82be242c6",
-    "checkedAt": "2026-11-12T12:19:01.373Z",
+    "checkedAt": "2026-11-13T12:01:41.800Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -92,29 +73,10 @@
     "favicon": "https://www.vok.rep.kp/resources/img/logo_k.png",
     "homepage": "https://www.vok.rep.kp/index.php/home/main/ch",
     "stationUuid": "feb8130a-faf9-419f-9027-777a480bef7b",
-    "checkedAt": "2026-11-12T12:19:03.321Z",
+    "checkedAt": "2026-11-13T12:01:41.805Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
-  },
-  {
-    "name": "Pyongyang Radio FM",
-    "url": "https://listen7.myradio24.com/69366",
-    "country": "KP",
-    "type": "news music",
-    "tags": [
-      "news music"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "spanish",
-    "favicon": "https://kfaspain.es/wp-content/uploads/2022/01/KCBS-LOGO.png",
-    "homepage": "https://kfaspain.es/emisora-central-de-corea-pyongyang-fm/",
-    "stationUuid": "2d8ae9e8-d207-44fe-8a35-196388626837",
-    "checkedAt": "2026-11-12T12:19:04.349Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Korean Central Broadcasting System (KCBS)",
@@ -128,9 +90,9 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/Korean_Central_Television_2005.svg/1280px-Korean_Central_Television_2005.svg.png",
     "homepage": "http://vok.rep.kp/",
     "stationUuid": "5eff646d-3027-45f0-a4a3-2ff90b789339",
-    "checkedAt": "2026-11-12T12:19:04.559Z",
-    "status": null,
+    "checkedAt": "2026-11-13T12:01:42.203Z",
+    "status": 404,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 404"
   }
 ]

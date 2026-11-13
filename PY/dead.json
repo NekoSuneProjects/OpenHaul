@@ -1,5 +1,39 @@
 [
   {
+    "name": "Monumental 1080 AM",
+    "url": "https://mdstrm.com/audio/62d81ca6a459e4082203c95b/icecast.audio",
+    "country": "PY",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 93,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://monumental.com.py/en-vivo/",
+    "stationUuid": "55a28761-fb75-44da-abdd-9026134905a6",
+    "checkedAt": "2026-11-13T12:24:47.150Z",
+    "status": 403,
+    "contentType": "application/json; charset=utf-8",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Rock&Pop Paraguay",
+    "url": "https://cp9.serverse.com/proxy/rockandpop/stream",
+    "country": "PY",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://rockandpop.com.py/wp-content/uploads/2020/06/cropped-cropped-logorockas-180x180-1-180x180.png",
+    "homepage": "https://rockandpop.com.py/",
+    "stationUuid": "98073eff-a00a-42ce-b855-715770e5cd87",
+    "checkedAt": "2026-11-13T12:24:48.434Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
     "name": "Radio ABC FM 98.5 (Asunción)",
     "url": "https://media.streambrothers.com:8350/stream",
     "country": "PY",
@@ -16,7 +50,7 @@
     "favicon": "null",
     "homepage": "http://www.abc.com.pyl/",
     "stationUuid": "28343ff5-b885-4a71-8b55-b4545686b500",
-    "checkedAt": "2026-11-12T12:35:58.952Z",
+    "checkedAt": "2026-11-13T12:24:49.687Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -39,29 +73,7 @@
     "favicon": "null",
     "homepage": "http://www.abc.com.py/",
     "stationUuid": "ea9b9934-8eb7-434c-ac13-2d249b80f11e",
-    "checkedAt": "2026-11-12T12:35:58.962Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Estacion 105  105.1 FM",
-    "url": "http://radio.host.com.py:9460/;",
-    "country": "PY",
-    "type": "cumbia",
-    "tags": [
-      "cumbia",
-      "dance",
-      "entretenimiento",
-      "tropical"
-    ],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": "spanish",
-    "favicon": "https://turadio.com.py/wp-content/uploads/2021/09/WhatsApp-Image-2021-09-22-at-07.05.19-300x292.jpeg",
-    "homepage": "https://turadio.com.py/estacion105/",
-    "stationUuid": "bcf33ef9-e087-4de4-8b6e-0f2244f53a86",
-    "checkedAt": "2026-11-12T12:35:59.222Z",
+    "checkedAt": "2026-11-13T12:24:49.710Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -83,10 +95,10 @@
     "favicon": "https://cdn.radoxo.com/images/paraguay/conquistador-fm.avif?v=1791194402",
     "homepage": "https://www.conquistadorfm891.com/",
     "stationUuid": "c8568a6a-3111-40bc-ac5c-e50428da965d",
-    "checkedAt": "2026-11-12T12:35:59.797Z",
-    "status": null,
+    "checkedAt": "2026-11-13T12:24:51.859Z",
+    "status": 404,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Cuevas FM 91.7",
@@ -106,7 +118,7 @@
     "favicon": "https://paraguayonline.net/wp-content/uploads/2019/03/cuevas.png",
     "homepage": "https://paraguayonline.net/cuevasfm/",
     "stationUuid": "88f74a2d-b52e-4fcf-9469-5fc5e2e6a2e5",
-    "checkedAt": "2026-11-12T12:36:00.108Z",
+    "checkedAt": "2026-11-13T12:24:52.969Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -127,7 +139,7 @@
     "favicon": "https://cdn.radoxo.com/images/paraguay/farra.avif?v=1791194402",
     "homepage": "https://farra.com.py/",
     "stationUuid": "7372eb4f-62f3-4308-adc1-0b0592fa7794",
-    "checkedAt": "2026-11-12T12:36:01.120Z",
+    "checkedAt": "2026-11-13T12:24:53.782Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -144,7 +156,7 @@
     "favicon": "https://www.getmeradio.com/stations/electrolevel-radiomix-8626/logos/512x512.png?t=1792973792074",
     "homepage": "https://getme.radio/electrolevel-radiomix",
     "stationUuid": "c3abe2b9-6b32-4272-8a70-c4889bf94b87",
-    "checkedAt": "2026-11-12T12:36:01.543Z",
+    "checkedAt": "2026-11-13T12:24:54.401Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -167,7 +179,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20250110_213941532.jpg?alt=media&token=e07edbc2-8494-41bf-82ab-6f114efdf664",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "db29a363-60b4-4273-99b6-9fee973a7c1e",
-    "checkedAt": "2026-11-12T12:36:02.598Z",
+    "checkedAt": "2026-11-13T12:24:56.359Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -186,7 +198,7 @@
     "favicon": null,
     "homepage": "https://www.abc.com.py/",
     "stationUuid": "9b318d0a-7e91-499e-a445-7e1e2c3a4d49",
-    "checkedAt": "2026-11-12T12:36:02.842Z",
+    "checkedAt": "2026-11-13T12:24:56.831Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -208,7 +220,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20241215_234329937.jpg?alt=media&token=f015eeac-3c79-4ae9-b799-b676845814d9",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "74f0fa54-8f7f-482e-9a75-9ea2335ec9f2",
-    "checkedAt": "2026-11-12T12:36:03.198Z",
+    "checkedAt": "2026-11-13T12:24:57.499Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
