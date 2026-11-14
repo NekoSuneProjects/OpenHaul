@@ -16,10 +16,57 @@
     "favicon": "https://app-c02qmnhobp4x.appmedo.com",
     "homepage": "https://app-c02qmnhobp4x.appmedo.com/",
     "stationUuid": "219570cd-1e5f-47ca-a24a-8837fcfc5ddc",
-    "checkedAt": "2026-11-13T12:35:58.218Z",
+    "checkedAt": "2026-11-14T11:48:10.415Z",
     "status": 503,
     "contentType": "application/json",
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Smash Radio TT",
+    "url": "https://nginx.smashradiott.com/radio.mp3",
+    "country": "TT",
+    "type": "caribbean",
+    "tags": [
+      "caribbean",
+      "dancehall",
+      "reggae",
+      "soca",
+      "tobago",
+      "trinidad",
+      "urban"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "american english",
+    "favicon": "https://nginx.smashradiott.com/media/logo.png",
+    "homepage": "https://smashradiott.com/",
+    "stationUuid": "c19192f3-90cb-4035-bb88-42b57efd8433",
+    "checkedAt": "2026-11-14T11:48:10.416Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Isaac 98.1fm",
+    "url": "https://ice66.securenetsystems.net/FFBN?playSessionID=8D29A2B7-D966-0B14-AFCD7A340AFA6C15",
+    "country": "TT",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "christian-gospel",
+      "gospel",
+      "jesus"
+    ],
+    "codec": "AAC+",
+    "bitrate": 32,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.isaac981.com/",
+    "stationUuid": "cc80eeff-a65e-4411-ac33-5334bad1ad5c",
+    "checkedAt": "2026-11-14T11:48:10.417Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Freedom FM 106.5",
@@ -33,7 +80,7 @@
     "favicon": null,
     "homepage": "https://www.freedomskn.com/",
     "stationUuid": "14de0ba5-97e9-4aea-aeba-3ae9a152f6db",
-    "checkedAt": "2026-11-13T12:35:59.242Z",
+    "checkedAt": "2026-11-14T11:48:11.179Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -53,7 +100,7 @@
     "favicon": "https://whrfm.webnode.page/favicon.ico",
     "homepage": "https://whrfm.webnode.page/",
     "stationUuid": "313df7ec-69fd-4e5d-b9e8-e8c5ab7e8cd1",
-    "checkedAt": "2026-11-13T12:36:00.917Z",
+    "checkedAt": "2026-11-14T11:48:11.990Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -73,7 +120,7 @@
     "favicon": "https://whrfm.webnode.page/favicon.ico",
     "homepage": "https://whrfm.webnode.page/",
     "stationUuid": "f75876b5-718d-4b81-9ed6-f5d5943770d9",
-    "checkedAt": "2026-11-13T12:36:01.042Z",
+    "checkedAt": "2026-11-14T11:48:12.114Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

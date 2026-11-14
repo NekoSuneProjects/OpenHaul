@@ -25,7 +25,7 @@
     "favicon": "https://soundworks.live/static/uploads/browser_icon/original.1754442702.png",
     "homepage": "https://radio.soundworks.live/",
     "stationUuid": "e4b5616e-6ad3-4dcb-a486-021b0607d807",
-    "checkedAt": "2026-11-13T12:24:07.352Z",
+    "checkedAt": "2026-11-14T11:40:02.102Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -45,10 +45,32 @@
     "favicon": "https://rfmsite2023-images.azureedge.net/icons/favicon.ico",
     "homepage": "https://rfm.sapo.pt/",
     "stationUuid": "9cdbc707-6729-4887-93fc-75bce2198484",
-    "checkedAt": "2026-11-13T12:24:07.353Z",
+    "checkedAt": "2026-11-14T11:40:02.105Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "M80 Rádio – Pop",
+    "url": "https://stream-icy.bauermedia.pt/m80pop.aac",
+    "country": "PT",
+    "type": "70s",
+    "tags": [
+      "70s",
+      "80s",
+      "90s",
+      "pop"
+    ],
+    "codec": "AAC",
+    "bitrate": 127,
+    "language": "portuguese",
+    "favicon": null,
+    "homepage": "https://m80.iol.pt/",
+    "stationUuid": "b50fea42-9c22-45c3-a7d5-afc772cab87d",
+    "checkedAt": "2026-11-14T11:40:03.274Z",
+    "status": 500,
+    "contentType": null,
+    "lastFailure": "HTTP 500"
   },
   {
     "name": "80'S RFM",
@@ -65,7 +87,7 @@
     "favicon": "https://rfmsite2023-images.azureedge.net/icons/favicon.ico",
     "homepage": "https://rfm.sapo.pt/",
     "stationUuid": "32261346-3238-4017-b9de-61d86b4bbb31",
-    "checkedAt": "2026-11-13T12:24:09.048Z",
+    "checkedAt": "2026-11-14T11:40:03.469Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -92,7 +114,7 @@
     "favicon": "https://radioregional.pt/wp-content/uploads/2022/02/rr-logo-1.png",
     "homepage": "https://radioregional.pt/",
     "stationUuid": "7b84ea7e-ab5a-4f22-98a8-b062720f0cf4",
-    "checkedAt": "2026-11-13T12:24:09.122Z",
+    "checkedAt": "2026-11-14T11:40:03.490Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -122,7 +144,7 @@
     "favicon": "https://radioregional.pt/wp-content/uploads/2022/02/rr-logo-1.png",
     "homepage": "https://radioregional.pt/",
     "stationUuid": "f53ff59d-fd3f-4dd0-9ce7-4654dbb4a128",
-    "checkedAt": "2026-11-13T12:24:09.151Z",
+    "checkedAt": "2026-11-14T11:40:03.549Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -157,7 +179,7 @@
     "favicon": "https://radioregional.pt/wp-content/uploads/2022/02/rr-logo-1.png",
     "homepage": "https://radioregional.pt/",
     "stationUuid": "c636dc32-376e-4bcc-8ba4-76aa264458e2",
-    "checkedAt": "2026-11-13T12:24:09.315Z",
+    "checkedAt": "2026-11-14T11:40:03.597Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -179,7 +201,7 @@
     "favicon": "https://radioregional.pt/wp-content/uploads/2022/02/rr-logo-1.png",
     "homepage": "https://radioregional.pt/",
     "stationUuid": "4cf9a93f-722e-41f2-a412-7011d6d8f267",
-    "checkedAt": "2026-11-13T12:24:09.321Z",
+    "checkedAt": "2026-11-14T11:40:03.647Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -205,7 +227,7 @@
     "favicon": null,
     "homepage": "https://tuganet.fm/",
     "stationUuid": "df6c713f-7558-4c87-bdee-f8255c95511e",
-    "checkedAt": "2026-11-13T12:24:09.528Z",
+    "checkedAt": "2026-11-14T11:40:03.724Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -225,7 +247,7 @@
     "favicon": "https://rfmsite2023-images.azureedge.net/icons/favicon.ico",
     "homepage": "https://rfm.sapo.pt/",
     "stationUuid": "65c33fc8-8710-438d-a309-308ba6db729d",
-    "checkedAt": "2026-11-13T12:24:09.696Z",
+    "checkedAt": "2026-11-14T11:40:04.075Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -242,7 +264,24 @@
     "favicon": null,
     "homepage": "https://radio.qeom.pt/",
     "stationUuid": "6f464a35-f408-4bac-9a5c-431f6cb8e560",
-    "checkedAt": "2026-11-13T12:24:10.501Z",
+    "checkedAt": "2026-11-14T11:40:04.731Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "RIO - Rádio Internacional Odemira",
+    "url": "https://hts02.brascast.com:10476/live",
+    "country": "PT",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 320,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radiodemira.pt/",
+    "stationUuid": "ae4b9856-2eff-4d29-882f-660f575ff69d",
+    "checkedAt": "2026-11-14T11:40:05.193Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -259,7 +298,7 @@
     "favicon": "https://favicone.com/www.radiobotareu.pt",
     "homepage": "https://www.radiobotareu.pt/",
     "stationUuid": "3101c0b2-bdef-4a97-9e1a-062abf175bcf",
-    "checkedAt": "2026-11-13T12:24:11.291Z",
+    "checkedAt": "2026-11-14T11:40:05.524Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -278,7 +317,7 @@
     "favicon": null,
     "homepage": "https://stm7.xradios.com.br:6944/live",
     "stationUuid": "3dc62a25-5ade-447c-8ded-c340d9f5fe95",
-    "checkedAt": "2026-11-13T12:24:12.066Z",
+    "checkedAt": "2026-11-14T11:40:06.166Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -298,7 +337,7 @@
     "favicon": "https://cm-castelobranco.pt/css/site/img/logo.png",
     "homepage": "http://www.cm-castelobranco.pt/",
     "stationUuid": "96195219-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-13T12:24:12.397Z",
+    "checkedAt": "2026-11-14T11:40:06.286Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -319,7 +358,7 @@
     "favicon": "https://nigga.pt/favicon.png",
     "homepage": "https://nigga.pt/",
     "stationUuid": "70f4ade6-731f-40cf-b215-aadf26deb2c2",
-    "checkedAt": "2026-11-13T12:24:14.187Z",
+    "checkedAt": "2026-11-14T11:40:07.113Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -339,7 +378,7 @@
     "favicon": null,
     "homepage": "https://radio.nitro-server.uk/public/rdioperlpia",
     "stationUuid": "e04a54c7-cb9b-4f7e-bb44-39846880904b",
-    "checkedAt": "2026-11-13T12:24:15.286Z",
+    "checkedAt": "2026-11-14T11:40:07.896Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -361,10 +400,10 @@
     "favicon": "https://observador.pt/wp-content/themes/observador-child/assets/build/img/apple-touch-icon.png",
     "homepage": "https://observador.pt/radio",
     "stationUuid": "1dd472ee-1851-4698-ae1a-097e872df7cb",
-    "checkedAt": "2026-11-13T12:24:16.296Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-14T11:40:08.517Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Back to the 80s",
@@ -380,7 +419,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "46caa663-278f-44e5-b746-36369d7c2765",
-    "checkedAt": "2026-11-13T12:24:17.254Z",
+    "checkedAt": "2026-11-14T11:40:09.042Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -399,7 +438,7 @@
     "favicon": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9l5hioJHnb99wLMAOD7sai10WTa6YpW1JfW5GvSJWGE8C_r0KfPieC4gCYPJtRgLOhcBjihgMoOQ3KvTNAB3iaO5T3LRSmrvjE-3-WA3u0HZa_3jIk1Gpq2buERY8F8IxpWBPcVsn5dbSOk0dUiYncOOCweTZ-e0UP3VyJWeSPtp208W3i_YJkwRWG3-A/s1080/PCIMG_2026-03-19_10-06-56.JPG",
     "homepage": "https://spaceneonradio.blogspot.com/",
     "stationUuid": "b77d4a10-8634-4f76-a579-8421c9131dde",
-    "checkedAt": "2026-11-13T12:24:18.505Z",
+    "checkedAt": "2026-11-14T11:40:10.553Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -418,7 +457,7 @@
     "favicon": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9l5hioJHnb99wLMAOD7sai10WTa6YpW1JfW5GvSJWGE8C_r0KfPieC4gCYPJtRgLOhcBjihgMoOQ3KvTNAB3iaO5T3LRSmrvjE-3-WA3u0HZa_3jIk1Gpq2buERY8F8IxpWBPcVsn5dbSOk0dUiYncOOCweTZ-e0UP3VyJWeSPtp208W3i_YJkwRWG3-A/s1080/PCIMG_2026-03-19_10-06-56.JPG",
     "homepage": "https://spaceneonradio.blogspot.com/",
     "stationUuid": "faae6118-c0cd-454b-ab33-630f7955e1d3",
-    "checkedAt": "2026-11-13T12:24:18.604Z",
+    "checkedAt": "2026-11-14T11:40:10.705Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -439,7 +478,7 @@
     "favicon": "https://station-images-prod.radio-assets.com/2160/altodouro.png",
     "homepage": "https://www.radioaltodouro.com/",
     "stationUuid": "d2fc6bba-b839-41ea-8a45-d604da481999",
-    "checkedAt": "2026-11-13T12:24:21.100Z",
+    "checkedAt": "2026-11-14T11:40:12.609Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -469,7 +508,7 @@
     "favicon": "https://radioregional.pt/wp-content/uploads/2022/02/rr-logo-1.png",
     "homepage": "https://radioregional.pt/",
     "stationUuid": "823b9c9b-182a-462b-8fe4-e6e6d12ec9a6",
-    "checkedAt": "2026-11-13T12:24:21.302Z",
+    "checkedAt": "2026-11-14T11:40:12.768Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -488,7 +527,7 @@
     "favicon": "https://github.com/RadioParalelo/RadioParalelo/blob/main/web/paralelologoblackstartransparente.png",
     "homepage": "https://radioparalelo.indymedia.pt/",
     "stationUuid": "20d0b43e-bd9a-435e-b5b3-9e66774866ca",
-    "checkedAt": "2026-11-13T12:24:21.618Z",
+    "checkedAt": "2026-11-14T11:40:13.050Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -509,28 +548,7 @@
     "favicon": "https://cdn.instant.audio/images/logos/radioonline-com-pt/alto-douro.png",
     "homepage": "http://www.radioaltodouro.com/",
     "stationUuid": "5f6195e8-ace8-4ff4-9a8f-5b13ef0f6c32",
-    "checkedAt": "2026-11-13T12:24:22.329Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Rádio Dom Bosco FM",
-    "url": "https://stream.streamaudio.de:8000/radio-dom-bosco-fm",
-    "country": "PT",
-    "type": "lamego",
-    "tags": [
-      "lamego",
-      "local",
-      "viseu"
-    ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "portuguese",
-    "favicon": "https://cdn.radoxo.com/images/portugal/radio-dom-bosco-fm.webp",
-    "homepage": "https://ouvirradios.pt/62822-radio-dom-bosco-fm.html",
-    "stationUuid": "83b848cb-7f5d-4606-a879-6be199c0de81",
-    "checkedAt": "2026-11-13T12:24:22.413Z",
+    "checkedAt": "2026-11-14T11:40:13.386Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -551,7 +569,7 @@
     "favicon": "http://www.radio94fm.pt/favicon.ico",
     "homepage": "http://www.radio94fm.pt/",
     "stationUuid": "e806e30f-bade-43a4-b9ab-e14230ef50de",
-    "checkedAt": "2026-11-13T12:24:23.190Z",
+    "checkedAt": "2026-11-14T11:40:13.749Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -571,7 +589,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "d5a57e7d-e035-4a5d-83ed-b02b0e67ec43",
-    "checkedAt": "2026-11-13T12:24:24.673Z",
+    "checkedAt": "2026-11-14T11:40:14.512Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -591,7 +609,7 @@
     "favicon": "https://cdn.radoxo.com/images/portugal/smart-cap-code-radio.webp",
     "homepage": "https://ouvirradios.pt/102138-smart-cap-code-radio.html",
     "stationUuid": "2a4b4c04-15e3-4333-9555-9cc703c2ac19",
-    "checkedAt": "2026-11-13T12:24:25.249Z",
+    "checkedAt": "2026-11-14T11:40:15.012Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -611,7 +629,7 @@
     "favicon": null,
     "homepage": "http://www.cantinhodamadeira.pt/",
     "stationUuid": "4433ce8a-6be4-11e9-af37-52543be04c81",
-    "checkedAt": "2026-11-13T12:24:26.099Z",
+    "checkedAt": "2026-11-14T11:40:15.269Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -632,7 +650,7 @@
     "favicon": "http://www.radioplanicie.com/favicon.ico",
     "homepage": "http://www.radioplanicie.com/",
     "stationUuid": "96190b45-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-13T12:24:26.896Z",
+    "checkedAt": "2026-11-14T11:40:15.559Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -652,7 +670,7 @@
     "favicon": null,
     "homepage": "https://famaradio.pt/",
     "stationUuid": "bbae2983-5bca-4ce8-8ef3-633878586af4",
-    "checkedAt": "2026-11-13T12:24:27.913Z",
+    "checkedAt": "2026-11-14T11:40:15.980Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -671,7 +689,7 @@
     "favicon": null,
     "homepage": "https://radiodemira.pt/",
     "stationUuid": "0d4692f8-7653-4ee4-b939-f3970f9762d0",
-    "checkedAt": "2026-11-13T12:24:28.075Z",
+    "checkedAt": "2026-11-14T11:40:16.063Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -693,7 +711,7 @@
     "favicon": "https://www.superfm.com/wp-content/uploads/2015/09/superfmlogo.png",
     "homepage": "https://www.superfm.com/",
     "stationUuid": "0f4f1565-e7cc-4705-abc7-2593d3b38de6",
-    "checkedAt": "2026-11-13T12:24:28.528Z",
+    "checkedAt": "2026-11-14T11:40:16.343Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -710,7 +728,7 @@
     "favicon": "http://www.radio94fm.pt/wp-content/themes/radio-94fm/assets/img/logo_final.png",
     "homepage": "http://www.radio94fm.pt/",
     "stationUuid": "3554c721-9e45-4214-aa7e-ae0f00c19677",
-    "checkedAt": "2026-11-13T12:24:28.651Z",
+    "checkedAt": "2026-11-14T11:40:16.535Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -727,7 +745,7 @@
     "favicon": "https://www.1054cascais.com/img/logo_white.png",
     "homepage": "https://www.1054cascais.com/",
     "stationUuid": "d6db3215-8210-4fb6-a968-be79bf05e202",
-    "checkedAt": "2026-11-13T12:24:30.073Z",
+    "checkedAt": "2026-11-14T11:40:17.331Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -744,27 +762,10 @@
     "favicon": "https://www.mediawise.pt",
     "homepage": "https://www.mediawise.pt/",
     "stationUuid": "82205a6f-7b49-457a-b68c-b84e6a783f60",
-    "checkedAt": "2026-11-13T12:24:31.260Z",
+    "checkedAt": "2026-11-14T11:40:17.928Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Posto Emissor do Funchal (PEF) - Canal 1 OM",
-    "url": "https://centova.radio.com.pt/proxy/422?mp=/stream;",
-    "country": "PT",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "portuguese",
-    "favicon": "https://www.celsoazevedo.com/files/2026/pef-am.png",
-    "homepage": "https://www.pef.pt/",
-    "stationUuid": "de23e719-22a0-4f40-a47f-a943ba2d3808",
-    "checkedAt": "2026-11-13T12:24:31.912Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio 94 FM",
@@ -778,27 +779,10 @@
     "favicon": "http://www.radio94fm.pt/favicon.ico",
     "homepage": "http://www.radio94fm.pt/",
     "stationUuid": "8c6284d7-e302-40d5-a5b1-445be570a492",
-    "checkedAt": "2026-11-13T12:24:32.302Z",
+    "checkedAt": "2026-11-14T11:40:18.440Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Rádio Marginal",
-    "url": "https://centova.radios.pt/proxy/499?mp=/stream",
-    "country": "PT",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://marginal.fm/",
-    "stationUuid": "7d385089-1f17-493d-8f54-7f387ccf8d22",
-    "checkedAt": "2026-11-13T12:24:34.170Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Rádio Miróbriga",
@@ -812,7 +796,7 @@
     "favicon": "https://www.radiom24.com/assets/dist/img/logo-md.png",
     "homepage": "https://www.radiom24.com/",
     "stationUuid": "453c2be8-5c7b-43f1-bce1-51bc23bce0fb",
-    "checkedAt": "2026-11-13T12:24:35.170Z",
+    "checkedAt": "2026-11-14T11:40:19.433Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -829,7 +813,7 @@
     "favicon": "https://pt.pinterest.com/pin/702280135674122283/",
     "homepage": "https://www.radio-tv-montanha.pt/",
     "stationUuid": "aa0f0de8-5977-4c9f-b281-fce48d9ee781",
-    "checkedAt": "2026-11-13T12:24:35.309Z",
+    "checkedAt": "2026-11-14T11:40:19.489Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -846,7 +830,7 @@
     "favicon": "http://radiomovimento.pt/images/rm-logo_2023.png",
     "homepage": "http://radiomovimento.pt/",
     "stationUuid": "ec7c1dd5-4515-4711-8a9c-003689fa97be",
-    "checkedAt": "2026-11-13T12:24:35.449Z",
+    "checkedAt": "2026-11-14T11:40:19.535Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -863,7 +847,7 @@
     "favicon": null,
     "homepage": "https://rp.radioplanicie.com/",
     "stationUuid": "edbd1565-d6aa-4487-8564-e56883453124",
-    "checkedAt": "2026-11-13T12:24:36.166Z",
+    "checkedAt": "2026-11-14T11:40:19.794Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -880,7 +864,7 @@
     "favicon": "https://radioregional.pt/wp-content/uploads/2022/02/rr-logo-1.png",
     "homepage": "https://radioregional.pt/",
     "stationUuid": "4061e68a-7f97-44bb-a453-76489a23c99c",
-    "checkedAt": "2026-11-13T12:24:36.439Z",
+    "checkedAt": "2026-11-14T11:40:19.944Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -897,7 +881,7 @@
     "favicon": "https://resfmradio.com/wp-content/uploads/2021/10/cropped-Logo_RES-FM_Verde_2.png",
     "homepage": "https://resfmradio.com/",
     "stationUuid": "206b4dd9-d3b4-43d5-a775-fcf3a0213289",
-    "checkedAt": "2026-11-13T12:24:37.504Z",
+    "checkedAt": "2026-11-14T11:40:20.413Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -917,7 +901,7 @@
     "favicon": "https://radiotagide.pt/wp-content/uploads/2022/04/cropped-SIMBOLO_TAGIDE-32x32.png",
     "homepage": "https://radiotagide.pt/",
     "stationUuid": "0dfc4377-1bb4-4a20-ba77-d0b4df0e488b",
-    "checkedAt": "2026-11-13T12:24:41.529Z",
+    "checkedAt": "2026-11-14T11:40:22.076Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -936,7 +920,7 @@
     "favicon": "https://www.1054cascais.com/img/cover.jpg",
     "homepage": "https://www.1054cascais.com/",
     "stationUuid": "7b6c8b15-4fa1-4a11-a737-d34a8b428151",
-    "checkedAt": "2026-11-13T12:24:44.962Z",
+    "checkedAt": "2026-11-14T11:40:23.878Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -955,7 +939,7 @@
     "favicon": "https://rfmsite2023-images.azureedge.net/icons/favicon.ico",
     "homepage": "https://rfm.sapo.pt/",
     "stationUuid": "fe2a2341-9fc3-486e-8d6c-93af792fdbcb",
-    "checkedAt": "2026-11-13T12:24:45.149Z",
+    "checkedAt": "2026-11-14T11:40:23.924Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

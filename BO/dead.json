@@ -30,7 +30,7 @@
     "favicon": null,
     "homepage": "https://www.radiohitbolivia.com/",
     "stationUuid": "33d5863f-3f2f-4d7a-839e-70a766958997",
-    "checkedAt": "2026-11-13T11:19:09.969Z",
+    "checkedAt": "2026-11-14T10:45:56.265Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -47,10 +47,27 @@
     "favicon": "https://lapatria.bo/favicon.ico",
     "homepage": "https://lapatria.bo/radio/",
     "stationUuid": "b116be7f-ebe9-4e03-9746-2ee2569bc149",
-    "checkedAt": "2026-11-13T11:19:10.443Z",
+    "checkedAt": "2026-11-14T10:45:56.701Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "LOVE FM: All you need is Love ♥ Amor en tu radio",
+    "url": "https://mdstrm.com/audio/66a01759c5aa2b85d66b5933/live.m3u8",
+    "country": "BO",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 99,
+    "language": "spanish",
+    "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
+    "homepage": "https://maxplay.com.mx/radios/love-veracruz-1037-fm/",
+    "stationUuid": "8fc9d9c7-432c-4a2f-8818-5f6ad1799457",
+    "checkedAt": "2026-11-14T10:45:56.778Z",
+    "status": 400,
+    "contentType": "application/json; charset=utf-8",
+    "lastFailure": "HTTP 400"
   },
   {
     "name": "Ciudad Radio 101.5 FM",
@@ -72,7 +89,7 @@
     "favicon": "https://ciudadradiofm.com/imagenes/radio-ciudad-montero.jpg",
     "homepage": "https://ciudadradiofm.com/",
     "stationUuid": "49f62c80-0b72-435f-babb-93e1f9524f33",
-    "checkedAt": "2026-11-13T11:19:11.345Z",
+    "checkedAt": "2026-11-14T10:45:57.439Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -93,7 +110,7 @@
     "favicon": "https://radioconquistadorsucre.com/img/fm.png",
     "homepage": "https://radioconquistadorsucre.com/",
     "stationUuid": "e68dfd86-ec4b-4343-8f6a-c6b605f72051",
-    "checkedAt": "2026-11-13T11:19:12.044Z",
+    "checkedAt": "2026-11-14T10:45:58.248Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -113,7 +130,7 @@
     "favicon": null,
     "homepage": "https://www.rqp.com.bo/",
     "stationUuid": "8c6d6806-cfdb-465e-8848-8fb907625b3a",
-    "checkedAt": "2026-11-13T11:19:12.199Z",
+    "checkedAt": "2026-11-14T10:45:58.487Z",
     "status": 404,
     "contentType": "application/vnd.apple.mpegurl",
     "lastFailure": "HTTP 404"
@@ -134,7 +151,7 @@
     "favicon": "https://www.radiosangabriel.org.bo/rsg/sites/default/files/favicon_1.ico",
     "homepage": "https://www.radiosangabriel.org.bo/rsg/",
     "stationUuid": "c4470760-58cd-429e-bc53-2421377c854d",
-    "checkedAt": "2026-11-13T11:19:12.356Z",
+    "checkedAt": "2026-11-14T10:45:58.719Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -155,7 +172,7 @@
     "favicon": "https://graph.facebook.com/radiosangabrieldebolivia/picture?width=200&height=200",
     "homepage": "https://www.radiosangabriel.org.bo/",
     "stationUuid": "0d3b22fb-5c35-48eb-9f57-8446aff5da12",
-    "checkedAt": "2026-11-13T11:19:12.453Z",
+    "checkedAt": "2026-11-14T10:45:58.764Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -178,7 +195,7 @@
     "favicon": "https://aiquileradiotelevision.com/wp-content/uploads/2024/04/cropped-cropped-cropped-cropped-cropped-AIQUILEvA-TV-160x76.png",
     "homepage": "https://aiquileradiotelevision.com/",
     "stationUuid": "02526d3c-631d-403d-95a8-33b8e72ecdd0",
-    "checkedAt": "2026-11-13T11:19:12.498Z",
+    "checkedAt": "2026-11-14T10:45:58.808Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -198,7 +215,7 @@
     "favicon": null,
     "homepage": "https://www.radiomonumental.com.bo/index",
     "stationUuid": "3d208e62-09d4-4308-ac88-9df5a1f30750",
-    "checkedAt": "2026-11-13T11:19:12.643Z",
+    "checkedAt": "2026-11-14T10:45:58.981Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -223,7 +240,7 @@
     "favicon": "https://image.winudf.com/v2/image1/Y29tLnRlY25pY29tcHVzZWJhc2VyaS5yYWRpb2FjdGl2YWd1YW5heV9zY3JlZW5fMF8xNzMwMjI3ODkwXzA0OQ/screen-0.webp?h=200&fakeurl=1&type=.webp",
     "homepage": "https://www.tiktok.com/@radio.activa.guan/",
     "stationUuid": "458db59b-c0c9-467e-93c8-febb0dec8415",
-    "checkedAt": "2026-11-13T11:19:12.668Z",
+    "checkedAt": "2026-11-14T10:45:59.066Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -244,7 +261,7 @@
     "favicon": "https://ibb.co/ksyWcQzg",
     "homepage": "https://www.radio-browser.info/add",
     "stationUuid": "8d5f0b96-6026-42bf-8cbd-b2021fc6934d",
-    "checkedAt": "2026-11-13T11:19:12.770Z",
+    "checkedAt": "2026-11-14T10:45:59.160Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -266,7 +283,7 @@
     "favicon": null,
     "homepage": "http://elderribadorradio.disweb.top/",
     "stationUuid": "2e0080ef-dd8b-481b-a7f7-9bba15b6a59d",
-    "checkedAt": "2026-11-13T11:19:13.060Z",
+    "checkedAt": "2026-11-14T10:45:59.455Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -287,7 +304,7 @@
     "favicon": "https://i.ibb.co/v6BKzZfx/logo-viacha.jpg",
     "homepage": "https://viacha.gob.bo/",
     "stationUuid": "80a8e612-2804-4f1b-82e3-8121b65562aa",
-    "checkedAt": "2026-11-13T11:19:13.272Z",
+    "checkedAt": "2026-11-14T10:45:59.680Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -304,7 +321,7 @@
     "favicon": null,
     "homepage": "https://atlantidafm903.com/",
     "stationUuid": "a6e6d8ec-2096-419a-987e-2f387513377e",
-    "checkedAt": "2026-11-13T11:19:13.449Z",
+    "checkedAt": "2026-11-14T10:45:59.887Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -323,10 +340,48 @@
     "favicon": "https://radiogigante.com.bo/brand.php?v=1",
     "homepage": "https://radiogigante.com.bo/",
     "stationUuid": "32662860-845b-4e93-9304-9bd251d04a75",
-    "checkedAt": "2026-11-13T11:19:14.443Z",
+    "checkedAt": "2026-11-14T10:46:00.958Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Fides La Paz",
+    "url": "http://192.95.23.89:6358/stream",
+    "country": "BO",
+    "type": "noticias",
+    "tags": [
+      "noticias"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "español - latinoamerica",
+    "favicon": null,
+    "homepage": "https://radiofides.com/es/",
+    "stationUuid": "ff5a9bdb-d2de-48fd-9538-bad8cf1b1ed2",
+    "checkedAt": "2026-11-14T10:46:01.088Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Fides La Paz",
+    "url": "http://192.95.23.89:6358/stream",
+    "country": "BO",
+    "type": "noticias",
+    "tags": [
+      "noticias"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://radiofides.com/es/",
+    "stationUuid": "c5ef3a09-d75e-404c-967e-a63df36c2460",
+    "checkedAt": "2026-11-14T10:46:01.097Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio Gente",
@@ -342,7 +397,7 @@
     "favicon": "https://fexred.com/player/gente/logo.png",
     "homepage": "https://radiogentebol.com/",
     "stationUuid": "1d8fb10c-382c-4951-8946-ee4e0739fe4d",
-    "checkedAt": "2026-11-13T11:19:14.839Z",
+    "checkedAt": "2026-11-14T10:46:01.364Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

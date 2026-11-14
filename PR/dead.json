@@ -1,5 +1,22 @@
 [
   {
+    "name": "LOVE FM: All you need is Love ♥ Clásicos del pop",
+    "url": "https://mdstrm.com/audio/66a01759c5aa2b85d66b5933/live.m3u8",
+    "country": "PR",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 98,
+    "language": "spanish",
+    "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
+    "homepage": "https://maxplay.com.mx/radios/love-veracruz-1037-fm/",
+    "stationUuid": "c4e6ce5e-c2a2-4979-99fb-9f81a98c3d06",
+    "checkedAt": "2026-11-14T11:38:26.331Z",
+    "status": 400,
+    "contentType": "application/json; charset=utf-8",
+    "lastFailure": "HTTP 400"
+  },
+  {
     "name": "Echo 355",
     "url": "http://stream.zeno.fm/hssq9ydayf9uv",
     "country": "PR",
@@ -17,7 +34,7 @@
     "favicon": null,
     "homepage": "http://echo355.com/",
     "stationUuid": "9d28e755-6a29-4b59-a93c-3cc5a2abddca",
-    "checkedAt": "2026-11-13T12:21:51.932Z",
+    "checkedAt": "2026-11-14T11:38:26.869Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -42,9 +59,31 @@
     "favicon": "https://highrise-bot-builder.replit.app/favicon.svg",
     "homepage": "https://highrise-bot-builder.replit.app/",
     "stationUuid": "61f30f9e-d4dd-466b-a1c0-f55b451007f8",
-    "checkedAt": "2026-11-13T12:21:52.554Z",
+    "checkedAt": "2026-11-14T11:38:27.578Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Amor 90.9",
+    "url": "https://stream.eleden.com:8360/amor909.aac",
+    "country": "PR",
+    "type": "latin pop",
+    "tags": [
+      "latin pop",
+      "latino",
+      "pop",
+      "spanish"
+    ],
+    "codec": "AAC",
+    "bitrate": 32,
+    "language": "spanish",
+    "favicon": "https://img1.wsimg.com/isteam/ip/9a9f59d3-eabd-4c6a-a9ec-755cd4d68af2/LOGO%20AMOR.png",
+    "homepage": "https://amoradiofm.com/",
+    "stationUuid": "09c1a573-41af-4d33-80aa-de9fe8fe7d1b",
+    "checkedAt": "2026-11-14T11:38:27.809Z",
+    "status": 404,
+    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
@@ -64,7 +103,7 @@
     "favicon": "http://www.wrtu.pr/favicon.ico",
     "homepage": "http://www.wrtu.pr/",
     "stationUuid": "96267f26-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-13T12:21:53.678Z",
+    "checkedAt": "2026-11-14T11:38:28.250Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -81,7 +120,7 @@
     "favicon": null,
     "homepage": "https://caribeclasico.org/#contacto",
     "stationUuid": "47a260d4-cb41-4a1a-8146-24b9b3d71fd5",
-    "checkedAt": "2026-11-13T12:21:53.911Z",
+    "checkedAt": "2026-11-14T11:38:28.373Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -98,7 +137,7 @@
     "favicon": null,
     "homepage": "https://www.salseoradio.com/",
     "stationUuid": "323d1135-fb57-4c1d-93c9-34be4d011223",
-    "checkedAt": "2026-11-13T12:21:55.544Z",
+    "checkedAt": "2026-11-14T11:38:29.459Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -117,7 +156,7 @@
     "favicon": "https://bloximages.chicago2.vip.townnews.com/wkaq580.com/content/tncms/custom/image/9732c65a-a5bb-11ee-8102-67d137cd6b72.png?resize=400%2C167",
     "homepage": "https://www.wkaq580.com/",
     "stationUuid": "b95692d0-9b6f-4810-b6e6-395bbe6a5d0b",
-    "checkedAt": "2026-11-13T12:22:00.336Z",
+    "checkedAt": "2026-11-14T11:38:29.854Z",
     "status": 500,
     "contentType": null,
     "lastFailure": "HTTP 500"
@@ -134,7 +173,7 @@
     "favicon": null,
     "homepage": "https://www.wapa.tv/",
     "stationUuid": "36ef3359-df7d-4b2c-b732-0c5a050089f4",
-    "checkedAt": "2026-11-13T12:22:01.098Z",
+    "checkedAt": "2026-11-14T11:38:30.127Z",
     "status": 403,
     "contentType": "application/xml",
     "lastFailure": "HTTP 403"

@@ -1,5 +1,24 @@
 [
   {
+    "name": "pastacast",
+    "url": "https://radio.nudel.cc/listen/pastacast/radio.mp3",
+    "country": "AQ",
+    "type": "algorave",
+    "tags": [
+      "algorave"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radio.nudel.cc/public/pastacast",
+    "stationUuid": "2228b37f-3267-4dd6-91a5-bb9791e6bb8f",
+    "checkedAt": "2026-11-14T10:37:05.113Z",
+    "status": 502,
+    "contentType": null,
+    "lastFailure": "HTTP 502"
+  },
+  {
     "name": "FunkyUncleFm",
     "url": "http://funkyunclefm.net:8000/fufm",
     "country": "AQ",
@@ -20,7 +39,7 @@
     "favicon": null,
     "homepage": "https://funkyunclefm.net:8443/",
     "stationUuid": "74f00739-fa45-4744-88c9-47b93959b36d",
-    "checkedAt": "2026-11-13T11:09:59.420Z",
+    "checkedAt": "2026-11-14T10:37:05.114Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -39,7 +58,7 @@
     "favicon": null,
     "homepage": "http://serpent0.duckdns.org:8088/kbs1fm.pls",
     "stationUuid": "b46ca30c-c28d-4cb9-89a8-d207440d1b78",
-    "checkedAt": "2026-11-13T11:09:59.587Z",
+    "checkedAt": "2026-11-14T10:37:05.255Z",
     "status": 403,
     "contentType": "text/xml",
     "lastFailure": "HTTP 403"
@@ -58,7 +77,7 @@
     "favicon": "https://uiuiui.in/uploads/posts/2022-11/783436035-7a890000a5f2bd305a992d50ffc480b3.webp",
     "homepage": "https://www.radiox.sk/",
     "stationUuid": "6f7d90ee-8ff0-4a80-8129-10c8eadf187a",
-    "checkedAt": "2026-11-13T11:09:59.731Z",
+    "checkedAt": "2026-11-14T10:37:05.461Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

@@ -11,7 +11,7 @@
     "favicon": "https://xglite.blogspot.com",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "68ddcca4-fa29-49e0-97a1-182edd18f44a",
-    "checkedAt": "2026-11-13T12:03:24.024Z",
+    "checkedAt": "2026-11-14T11:26:04.236Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -30,7 +30,7 @@
     "favicon": "https://drive.google.com/file/d/1UCRLXymEBsuwoJVLF1VSsptvA_spPUeN/view?usp=drivesdk",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "00d94344-7f60-4f5d-9aee-dd917276c98d",
-    "checkedAt": "2026-11-13T12:03:25.063Z",
+    "checkedAt": "2026-11-14T11:26:04.662Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -51,10 +51,33 @@
     "favicon": null,
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "4797d484-176c-4c96-949b-243fb0b0dccd",
-    "checkedAt": "2026-11-13T12:03:25.149Z",
+    "checkedAt": "2026-11-14T11:26:04.670Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Kabana Rooftop Marrakech",
+    "url": "https://stream.vibe-stream.com/kabana-rooftop-marrakech.mp3",
+    "country": "MA",
+    "type": "arabic grooves",
+    "tags": [
+      "arabic grooves",
+      "disco",
+      "electronic",
+      "house",
+      "live music"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://stream.vibe-stream.com/vibestream-logo.png",
+    "homepage": "https://www.vibe-stream.com/venue?id=kabana-rooftop-marrakech",
+    "stationUuid": "79ed8ddf-5e4d-4f4b-92e9-51dfbf899241",
+    "checkedAt": "2026-11-14T11:26:04.713Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Medi1 Tarab",
@@ -70,7 +93,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/fr/c/ca/Medi_1_TV_logo.png",
     "homepage": "http://www.medi1.com/",
     "stationUuid": "baae5280-6e91-421b-bc15-7ace366768e0",
-    "checkedAt": "2026-11-13T12:03:26.290Z",
+    "checkedAt": "2026-11-14T11:26:05.276Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -89,7 +112,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "b8807476-2ada-4600-9dc0-7b501691afc1",
-    "checkedAt": "2026-11-13T12:03:26.635Z",
+    "checkedAt": "2026-11-14T11:26:05.492Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -108,7 +131,7 @@
     "favicon": "https://www.medi1.com/favicon.ico",
     "homepage": "https://www.medi1.com/fr/webradio/Classique",
     "stationUuid": "4c6f8571-6e70-42d5-a4a6-669003ad1cee",
-    "checkedAt": "2026-11-13T12:03:27.144Z",
+    "checkedAt": "2026-11-14T11:26:05.660Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -127,7 +150,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "e300baf5-e1e2-4ba8-b4ff-6d029d5a0a99",
-    "checkedAt": "2026-11-13T12:03:27.234Z",
+    "checkedAt": "2026-11-14T11:26:05.676Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -146,7 +169,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/ezxx195gq2zuv",
     "stationUuid": "653dea16-ffe4-4db9-8744-427bb37d83ee",
-    "checkedAt": "2026-11-13T12:03:27.775Z",
+    "checkedAt": "2026-11-14T11:26:05.932Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -165,34 +188,10 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/8#",
     "stationUuid": "93c1a1a6-5571-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-13T12:03:29.763Z",
+    "checkedAt": "2026-11-14T11:26:06.514Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "aswatalweb",
-    "url": "http://78.129.252.13:24460/stream",
-    "country": "MA",
-    "type": "film talk",
-    "tags": [
-      "film talk",
-      "live sport",
-      "music",
-      "music arabe",
-      "radio maroc",
-      "sports commentary"
-    ],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "arabic",
-    "favicon": null,
-    "homepage": "https://aswatalweb.com/",
-    "stationUuid": "1c1de83b-2d27-4ae2-920c-98a56df016b6",
-    "checkedAt": "2026-11-13T12:03:29.921Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
   },
   {
     "name": "Medi 1 Radio Andalouse",
@@ -206,7 +205,7 @@
     "favicon": null,
     "homepage": "https://www.medi1.com/webradio/2#",
     "stationUuid": "96ccc468-1a6f-11e8-a334-52543be04c81",
-    "checkedAt": "2026-11-13T12:03:30.900Z",
+    "checkedAt": "2026-11-14T11:26:07.319Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -223,7 +222,7 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/3#",
     "stationUuid": "7c1bdaa1-56a8-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-13T12:03:30.948Z",
+    "checkedAt": "2026-11-14T11:26:07.345Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -240,7 +239,7 @@
     "favicon": "https://chada.ma/wp-content/uploads/2022/09/cropped-LOGO-CHADA-NEW-1.png",
     "homepage": "https://chada.ma/fr/",
     "stationUuid": "f622d310-df86-4ffb-850e-4941e364c22b",
-    "checkedAt": "2026-11-13T12:03:32.145Z",
+    "checkedAt": "2026-11-14T11:26:07.946Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -257,7 +256,7 @@
     "favicon": "https://snrtlive.ma/sites/default/files/2024-02/logo-snrtnews2_2.png",
     "homepage": "https://snrtlive.ma/ar/alidaa-alwatania",
     "stationUuid": "4d8de7d2-1fc1-4f70-974c-12100d0fd68c",
-    "checkedAt": "2026-11-13T12:03:32.485Z",
+    "checkedAt": "2026-11-14T11:26:07.970Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"

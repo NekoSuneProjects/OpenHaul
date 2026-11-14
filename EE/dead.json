@@ -18,7 +18,7 @@
     "favicon": "https://elmar.pleier.ee/favicons/elmar/apple-touch-icon.png",
     "homepage": "https://elmar.pleier.ee/elmari-kuld",
     "stationUuid": "a13e6834-cb4c-423d-912b-d8b25962b88b",
-    "checkedAt": "2026-11-13T11:39:37.881Z",
+    "checkedAt": "2026-11-14T11:06:21.446Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -41,7 +41,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/favicon-194x194.png",
     "homepage": "https://sky.ee/retrofm",
     "stationUuid": "2634a58d-684b-44b1-9ed5-b0006494bec9",
-    "checkedAt": "2026-11-13T11:39:37.885Z",
+    "checkedAt": "2026-11-14T11:06:21.452Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -61,7 +61,7 @@
     "favicon": "http://sooviraadio.net/favicon.ico",
     "homepage": "http://sooviraadio.net/raadio/",
     "stationUuid": "962037d3-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-13T11:39:37.886Z",
+    "checkedAt": "2026-11-14T11:06:21.454Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -78,7 +78,7 @@
     "favicon": null,
     "homepage": "http://www.allthebestradio.ee/",
     "stationUuid": "fd410917-333f-42e7-bbbb-8800819d2d7b",
-    "checkedAt": "2026-11-13T11:39:37.887Z",
+    "checkedAt": "2026-11-14T11:06:21.457Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -95,7 +95,7 @@
     "favicon": "https://sky.ee/storage/radio-stations/2025/12/Super-Radio-logo.svg",
     "homepage": "https://superradio.sky.ee/",
     "stationUuid": "ec7959cb-7ff7-416a-966e-b6cc228eb886",
-    "checkedAt": "2026-11-13T11:39:38.370Z",
+    "checkedAt": "2026-11-14T11:06:21.897Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -112,7 +112,7 @@
     "favicon": "https://viru.treraadio.ee/favicon.ico",
     "homepage": "https://viru.treraadio.ee/",
     "stationUuid": "c18ef90f-648d-4225-bdae-fdbe36686974",
-    "checkedAt": "2026-11-13T11:39:38.372Z",
+    "checkedAt": "2026-11-14T11:06:21.937Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -129,10 +129,33 @@
     "favicon": null,
     "homepage": "https://xfm.ee/",
     "stationUuid": "a409b60a-c6ad-4ec4-9dcf-7ad62fc431d6",
-    "checkedAt": "2026-11-13T11:39:38.380Z",
+    "checkedAt": "2026-11-14T11:06:21.976Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Raadio PRT",
+    "url": "https://jvrywgaxjrdgauspdrvr.supabase.co/functions/v1/stream-proxy",
+    "country": "EE",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "classical music",
+      "indie",
+      "pop",
+      "world news"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://app.razuna.eu/file/remote?i=69b02e84716eee643f7d39d7&f=t&dl=t&c=0eaa5c77e60d1ec1a6e1cc17020ad748&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiIvZmlsZS9yZW1vdGU_aT02OWIwMmU4NDcxNmVlZTY0M2Y3ZDM5ZDcmZj10JmRsPXQmYz0wZWFhNWM3N2U2MGQxZWMxYTZlMWNjMTcwMjBhZDc0OCIsInR5cGUiOiJkaXJlY3QifQ.I05lzlYk8PKrY3o-nJiNf8XOCxxug6VskfjHjCsVwuU",
+    "homepage": "https://raadioprt.rf.gd/",
+    "stationUuid": "aa073fdf-19e3-41fb-9633-7fe2e35a6499",
+    "checkedAt": "2026-11-14T11:06:22.357Z",
+    "status": 502,
+    "contentType": "application/json",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "NikRadofem",
@@ -151,7 +174,7 @@
     "favicon": null,
     "homepage": "https://nikradofem.online/",
     "stationUuid": "0ee95d59-6288-40ea-af17-42c34b2a51a5",
-    "checkedAt": "2026-11-13T11:39:38.831Z",
+    "checkedAt": "2026-11-14T11:06:22.390Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -172,7 +195,7 @@
     "favicon": null,
     "homepage": "https://xlradio.ee/",
     "stationUuid": "9841da34-8bf0-4916-aa2b-81e620edc454",
-    "checkedAt": "2026-11-13T11:39:39.677Z",
+    "checkedAt": "2026-11-14T11:06:23.152Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -192,7 +215,7 @@
     "favicon": "https://keskeesti.treraadio.ee/favicon.ico",
     "homepage": "https://keskeesti.treraadio.ee/",
     "stationUuid": "7b74904f-ac67-4576-8f07-854cbd31af11",
-    "checkedAt": "2026-11-13T11:39:39.698Z",
+    "checkedAt": "2026-11-14T11:06:23.164Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -212,7 +235,7 @@
     "favicon": "https://parnu.treraadio.ee/favicon.ico",
     "homepage": "https://parnu.treraadio.ee/",
     "stationUuid": "9c4c2f78-a41d-4f46-8eea-1b26a0f2f9d8",
-    "checkedAt": "2026-11-13T11:39:39.707Z",
+    "checkedAt": "2026-11-14T11:06:23.190Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -232,7 +255,7 @@
     "favicon": "https://rapla.treraadio.ee/favicon.ico",
     "homepage": "https://rapla.treraadio.ee/",
     "stationUuid": "549fc715-9050-4dad-b6db-4c0e7cc9d27e",
-    "checkedAt": "2026-11-13T11:39:39.791Z",
+    "checkedAt": "2026-11-14T11:06:23.244Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -253,7 +276,7 @@
     "favicon": "https://sky.ee/storage/articles/2026/02/eurovision-detail-1.webp",
     "homepage": "https://kissfm.sky.ee/",
     "stationUuid": "1e2ce322-78b3-448e-9e35-5f8c4ab68241",
-    "checkedAt": "2026-11-13T11:39:40.118Z",
+    "checkedAt": "2026-11-14T11:06:23.672Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -274,7 +297,7 @@
     "favicon": "https://sky.ee/favicon.ico",
     "homepage": "https://sky.ee/skyplus",
     "stationUuid": "05d3034c-7599-4fa4-a2c5-3b8cfb055849",
-    "checkedAt": "2026-11-13T11:39:40.334Z",
+    "checkedAt": "2026-11-14T11:06:23.935Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -295,7 +318,7 @@
     "favicon": "https://site.prelive.sky.ee/sites/default/files/2021-08/skyplus.svg",
     "homepage": "https://sky.ee/skyplus",
     "stationUuid": "d3d942e0-89e7-4c55-8f18-e6b03057d0e3",
-    "checkedAt": "2026-11-13T11:39:40.521Z",
+    "checkedAt": "2026-11-14T11:06:24.146Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -314,7 +337,7 @@
     "favicon": "https://site.prelive.sky.ee/sites/default/files/2023-11/mini_kissfm.svg",
     "homepage": "https://sky.ee/kissfm",
     "stationUuid": "740fac1d-059d-4eb1-be47-6aa11805ae90",
-    "checkedAt": "2026-11-13T11:39:40.722Z",
+    "checkedAt": "2026-11-14T11:06:24.370Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -333,7 +356,7 @@
     "favicon": "https://www.upload.ee/image/18986375/Kuvatommis_16-1-2026_4820_xfm.ee.jpeg",
     "homepage": "https://xfm.ee/",
     "stationUuid": "1f32a224-b1fb-4bd1-90a9-d23cb176e85c",
-    "checkedAt": "2026-11-13T11:39:40.981Z",
+    "checkedAt": "2026-11-14T11:06:24.651Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -354,7 +377,7 @@
     "favicon": "https://site.prelive.sky.ee/sites/default/files/2023-11/mini_kissfm.svg",
     "homepage": "https://sky.ee/kissfm",
     "stationUuid": "3f862d3a-9af4-4c0c-b877-fb53ecce1ca8",
-    "checkedAt": "2026-11-13T11:39:41.116Z",
+    "checkedAt": "2026-11-14T11:06:24.859Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -375,7 +398,7 @@
     "favicon": "http://www.kaguraadio.ee/wp-content/uploads/2019/11/cropped-Kaguraadio-logo4-32x32.jpg",
     "homepage": "http://kaguraadio.ee/",
     "stationUuid": "09f5298d-1eca-40e0-8831-db32d036d777",
-    "checkedAt": "2026-11-13T11:39:41.215Z",
+    "checkedAt": "2026-11-14T11:06:24.972Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -394,7 +417,7 @@
     "favicon": "https://sky.ee/storage/radio-stations/2025/12/Rock-FM-Metal-card.webp",
     "homepage": "https://rockfm.sky.ee/",
     "stationUuid": "d21f1a73-6718-4a79-84cc-0968e8d05d08",
-    "checkedAt": "2026-11-13T11:39:41.238Z",
+    "checkedAt": "2026-11-14T11:06:25.065Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -411,7 +434,7 @@
     "favicon": null,
     "homepage": "http://www.kuma.fm/",
     "stationUuid": "9608a0a9-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-13T11:39:41.461Z",
+    "checkedAt": "2026-11-14T11:06:27.210Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -430,7 +453,7 @@
     "favicon": "https://raadioduo.pleier.ee/favicons/duo/apple-touch-icon.png",
     "homepage": "https://raadioduo.pleier.ee/",
     "stationUuid": "5be25c88-4f25-4a69-96ff-e48979e796f5",
-    "checkedAt": "2026-11-13T11:39:42.272Z",
+    "checkedAt": "2026-11-14T11:06:28.289Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -449,7 +472,7 @@
     "favicon": "https://treraadio.ee/img/landing/ringfm-logo-active.svg",
     "homepage": "https://ringfm.treraadio.ee/",
     "stationUuid": "58312bac-4ed0-4974-a4de-adee0ef0275e",
-    "checkedAt": "2026-11-13T11:39:42.432Z",
+    "checkedAt": "2026-11-14T11:06:28.309Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -468,7 +491,7 @@
     "favicon": null,
     "homepage": "https://edge05.cdn.bitflip.ee:8888/retro1.mp3?",
     "stationUuid": "3055ea31-af16-4a32-91b9-1a81366fc73a",
-    "checkedAt": "2026-11-13T11:39:42.500Z",
+    "checkedAt": "2026-11-14T11:06:28.469Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -487,7 +510,7 @@
     "favicon": "https://sky.ee/storage/radio-stations/2025/12/Super-Radio-logo.svg",
     "homepage": "https://superradio.sky.ee/",
     "stationUuid": "14c78c59-d759-4a50-ae53-7c1c5271382d",
-    "checkedAt": "2026-11-13T11:39:42.514Z",
+    "checkedAt": "2026-11-14T11:06:28.472Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -506,7 +529,7 @@
     "favicon": "https://sky.ee/favicon.ico",
     "homepage": "https://sky.ee/retrofm",
     "stationUuid": "3586ad23-e161-4dd2-aaa8-b8dc372ab0e9",
-    "checkedAt": "2026-11-13T11:39:42.896Z",
+    "checkedAt": "2026-11-14T11:06:28.983Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"

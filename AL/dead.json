@@ -1,5 +1,22 @@
 [
   {
+    "name": "LOVE FM: Klasikët e muzikës pop nga vitet '80 deri në ditët e sotme",
+    "url": "https://mdstrm.com/audio/66a01759c5aa2b85d66b5933/live.m3u8",
+    "country": "AL",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 98,
+    "language": null,
+    "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
+    "homepage": "https://maxplay.com.mx/",
+    "stationUuid": "694b32bf-8463-493b-86c5-1e7c818f1b59",
+    "checkedAt": "2026-11-14T10:36:52.697Z",
+    "status": 400,
+    "contentType": "application/json; charset=utf-8",
+    "lastFailure": "HTTP 400"
+  },
+  {
     "name": "Extravaganza Radio - Sexy Secrets Records",
     "url": "https://pstnet5.shoutcastnet.com:50374/stream",
     "country": "AL",
@@ -15,7 +32,7 @@
     "favicon": null,
     "homepage": "https://extravaganza-radio.com/",
     "stationUuid": "9fb0abb6-a53d-43e7-ae61-34b79bb1e258",
-    "checkedAt": "2026-11-13T11:09:49.442Z",
+    "checkedAt": "2026-11-14T10:36:54.597Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -35,7 +52,7 @@
     "favicon": null,
     "homepage": "http://www.radioemigranti.com/",
     "stationUuid": "e87c2e39-388e-4b4b-81ad-c07322a09795",
-    "checkedAt": "2026-11-13T11:09:49.918Z",
+    "checkedAt": "2026-11-14T10:36:55.065Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -55,44 +72,10 @@
     "favicon": null,
     "homepage": "https://intradio.live/",
     "stationUuid": "bbe507a3-14d6-400f-9b3f-8420266bcb9e",
-    "checkedAt": "2026-11-13T11:09:50.635Z",
+    "checkedAt": "2026-11-14T10:36:55.863Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "CLUB FM",
-    "url": "https://cp1.sednastream.com/proxy/clubfm?mp=/stream",
-    "country": "AL",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://clubfm.al/wp-content/uploads/2022/01/Logo-Club-FM-768x432.png",
-    "homepage": "https://clubfm.al/",
-    "stationUuid": "51469310-07fd-466c-a001-32620a258859",
-    "checkedAt": "2026-11-13T11:09:50.981Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Radio Club FM - Tirana 100.4 MHz",
-    "url": "https://cp1.sednastream.com/proxy/clubfm?mp=/stream",
-    "country": "AL",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "http://clubfm.al/",
-    "stationUuid": "7ac71088-cd65-417d-b437-850cc1b5fabb",
-    "checkedAt": "2026-11-13T11:09:51.095Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Ora News",
@@ -109,31 +92,10 @@
     "favicon": null,
     "homepage": "https://www.oranews.tv/",
     "stationUuid": "c2caf164-c2bf-4eac-a719-ce6bd6cf25cb",
-    "checkedAt": "2026-11-13T11:09:51.531Z",
+    "checkedAt": "2026-11-14T10:37:00.038Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
-  },
-  {
-    "name": "Radio SOL",
-    "url": "https://cp1.sednastream.com/proxy/radiosol/stream",
-    "country": "AL",
-    "type": "news",
-    "tags": [
-      "news",
-      "pop",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "albanian",
-    "favicon": null,
-    "homepage": "https://radiosol.al/",
-    "stationUuid": "05950b1e-b836-44f8-bcd8-78fba5130e88",
-    "checkedAt": "2026-11-13T11:09:51.716Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
   },
   {
     "name": "sasaram",
@@ -147,7 +109,7 @@
     "favicon": null,
     "homepage": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio075/chunklist.m3u8",
     "stationUuid": "e439aa52-203a-4f83-a8e4-995d5c90f554",
-    "checkedAt": "2026-11-13T11:09:52.064Z",
+    "checkedAt": "2026-11-14T10:37:00.387Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

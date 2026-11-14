@@ -1,5 +1,45 @@
 [
   {
+    "name": "MUSIQUERA",
+    "url": "https://securestreams7.autopo.st/?uri=http://s4.voscast.com:9320/stream",
+    "country": "GT",
+    "type": "192kbps",
+    "tags": [
+      "192kbps",
+      "musiquera",
+      "musiquera 93.3 fm",
+      "rancheras",
+      "tu mejor compañera"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "spanish",
+    "favicon": "https://cdn-profiles.tunein.com/s251791/images/logog.png",
+    "homepage": "https://musiquera.com/?=GT",
+    "stationUuid": "21a1ba2b-f479-4354-83cf-740d32337625",
+    "checkedAt": "2026-11-14T11:15:41.994Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "LOVE FM: All you need is Love / Clásicos del pop",
+    "url": "https://mdstrm.com/audio/66a01759c5aa2b85d66b5933/live.m3u8",
+    "country": "GT",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 99,
+    "language": "spanish",
+    "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
+    "homepage": "https://lovefm.com.mx/",
+    "stationUuid": "d02c9870-3580-4f3d-8ab1-9366335a712d",
+    "checkedAt": "2026-11-14T11:15:43.284Z",
+    "status": 400,
+    "contentType": "application/json; charset=utf-8",
+    "lastFailure": "HTTP 400"
+  },
+  {
     "name": "Astro Radio",
     "url": "https://sonicpanel.streamsolutions.us:10945/stream",
     "country": "GT",
@@ -11,7 +51,7 @@
     "favicon": "https://i0.wp.com/astroradiogt.com/wp-content/uploads/2021/08/cropped-cropped-Banner-1.jpg?fit=180%2C180&ssl=1",
     "homepage": "https://astroradiogt.com/",
     "stationUuid": "7e163da0-4b78-4f0f-ad3c-162f55bba2b4",
-    "checkedAt": "2026-11-13T11:48:55.321Z",
+    "checkedAt": "2026-11-14T11:15:43.496Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -37,7 +77,7 @@
     "favicon": "https://statics-v3.streema.com/static/img/radios/profile_background_default_380.abf7abe7e86a.jpg",
     "homepage": "https://www.medios.gt/elcomandante",
     "stationUuid": "4f20bac8-09d8-4a2d-bb1f-bdd9a25826a4",
-    "checkedAt": "2026-11-13T11:48:56.052Z",
+    "checkedAt": "2026-11-14T11:15:44.120Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -59,7 +99,7 @@
     "favicon": "https://laradiodepaz919.com/images/logo.png",
     "homepage": "https://laradiodepaz919.com/",
     "stationUuid": "a01028c9-02ef-41ee-ab7f-53e632e14a00",
-    "checkedAt": "2026-11-13T11:48:56.414Z",
+    "checkedAt": "2026-11-14T11:15:44.550Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -76,7 +116,24 @@
     "favicon": null,
     "homepage": "https://arcaradiohd.com/radioplayer/index.html",
     "stationUuid": "37749565-26fc-491c-981e-1e8434bb2fb1",
-    "checkedAt": "2026-11-13T11:48:58.369Z",
+    "checkedAt": "2026-11-14T11:15:47.148Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Futura 92.3",
+    "url": "https://unsaved-gadfly-addilyn.ngrok-free.dev/mystream.mp3",
+    "country": "GT",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 256,
+    "language": null,
+    "favicon": "https://www.futuraradio.com.gt/assets/img/futura_923.png",
+    "homepage": "https://www.futuraradio.com.gt/#/",
+    "stationUuid": "3a4bea5a-1aa1-4e73-bc6c-50737a4558f5",
+    "checkedAt": "2026-11-14T11:15:47.625Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -93,7 +150,7 @@
     "favicon": "https://metropolisantigua.com/wp-content/uploads/2025/11/cropped-logo-3-192x192.png",
     "homepage": "https://metropolisantigua.com/",
     "stationUuid": "e6d7a104-c09d-42d6-985d-9da6c70c1d8b",
-    "checkedAt": "2026-11-13T11:48:59.206Z",
+    "checkedAt": "2026-11-14T11:15:48.110Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

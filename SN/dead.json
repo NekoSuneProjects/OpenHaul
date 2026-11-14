@@ -13,7 +13,7 @@
     "favicon": "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2F__jz1rteNr9MfI1GGFmwJpVEvCGsjW6xR9APAcOKB-Q%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9zdHJlYW0tdG9vbHMuemVub21lZGlhLmNvbS9jb250ZW50L3N0YXRpb25zL2FneHpmbnBsYm04dGMzUmhkSE55TWdzU0NrRjFkR2hEYkdsbGJuUVlnSUNBaTRueWxBc01DeElPVTNSaGRHbHZibEJ5YjJacGJHVVlnSURRaHVMUWtna01vZ0VFZW1WdWJ3L2ltYWdlLz91cGRhdGVkPTE2NjE2OTY3MDkwMDA.webp&w=1920&q=100",
     "homepage": "https://www.facebook.com/BANEXU/",
     "stationUuid": "5df3c291-b0de-4ca4-86d1-9b86885f52af",
-    "checkedAt": "2026-11-13T12:33:23.531Z",
+    "checkedAt": "2026-11-14T11:46:20.823Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -33,10 +33,30 @@
     "favicon": null,
     "homepage": "http://manoorefm.net/",
     "stationUuid": "3e0f7c61-3613-48f6-adff-bb709e086f27",
-    "checkedAt": "2026-11-13T12:33:23.852Z",
+    "checkedAt": "2026-11-14T11:46:21.142Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Central FM 107.1 Thiés",
+    "url": "https://stream.zeno.fm/t2e45xqkunhvv",
+    "country": "SN",
+    "type": "music",
+    "tags": [
+      "music",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 112,
+    "language": "french",
+    "favicon": "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2F8I51IAfy-nt_TCaCPQWVjrnGccefLK96dH7nSvo4Bjc%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9zdHJlYW0tdG9vbHMuemVub21lZGlhLmNvbS9jb250ZW50L3N0YXRpb25zL2FneHpmbnBsYm04dGMzUmhkSE55TWdzU0NrRjFkR2hEYkdsbGJuUVlnSUNRc0oyazVBZ01DeElPVTNSaGRHbHZibEJ5YjJacGJHVVlnSUNJcGFIZmpnc01vZ0VFZW1WdWJ3L2ltYWdlLz91cGRhdGVkPTE2NjE2OTgwODAwMDA.webp&w=1920&q=100",
+    "homepage": "https://www.facebook.com/fmcentrale/",
+    "stationUuid": "f79c039e-e176-4dcc-ac89-29f3de462da6",
+    "checkedAt": "2026-11-14T11:46:21.712Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Sweet Radio",
@@ -53,7 +73,7 @@
     "favicon": "https://sweetradiosenegal.mystrikingly.com/favicon.ico",
     "homepage": "https://sweetradiosenegal.mystrikingly.com/",
     "stationUuid": "9d49b5d3-f566-47c0-a0f2-5b22e0bf089b",
-    "checkedAt": "2026-11-13T12:33:25.006Z",
+    "checkedAt": "2026-11-14T11:46:22.206Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
