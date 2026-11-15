@@ -20,7 +20,7 @@
     "favicon": "https://www.ilef.ankara.edu.tr/wp-content/uploads/sites/264/2020/10/loginlogo.png",
     "homepage": "https://www.ilef.ankara.edu.tr/radyoilef/",
     "stationUuid": "dd10f037-269c-42e0-9bfb-c22726aa8a7c",
-    "checkedAt": "2026-11-14T11:47:05.507Z",
+    "checkedAt": "2026-11-15T12:17:03.809Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -40,7 +40,7 @@
     "favicon": null,
     "homepage": "https://radyonostaljininsesi.blogspot.com/",
     "stationUuid": "1acd6cf8-b847-455e-82fc-ae914199ed40",
-    "checkedAt": "2026-11-14T11:47:06.209Z",
+    "checkedAt": "2026-11-15T12:17:04.278Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -57,7 +57,7 @@
     "favicon": "https://www.alemfm.com/assets/img/alemfm-apple-touch-icon.png",
     "homepage": "https://www.alemfm.com/",
     "stationUuid": "10f4ee63-82fa-413f-a862-14556d5f95b8",
-    "checkedAt": "2026-11-14T11:47:07.527Z",
+    "checkedAt": "2026-11-15T12:17:05.719Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -74,27 +74,95 @@
     "favicon": "https://cdn.alemfm.com/resize/407x430/BroadcasterImages/alemprogramsizbuyuk.png",
     "homepage": "https://www.alemfm.com/",
     "stationUuid": "3fa95d90-9b20-4c4c-91c9-1c556f55a084",
-    "checkedAt": "2026-11-14T11:47:07.535Z",
+    "checkedAt": "2026-11-15T12:17:05.750Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "Radyo Fenomen Dans",
-    "url": "https://live.radyofenomen.com/fenomendans/abr/playlist.m3u8",
+    "name": "Slow Turk",
+    "url": "https://radyo.duhnet.tv/ak_dtvh_slowturk",
     "country": "TR",
     "type": "AAC",
     "tags": [],
     "codec": "AAC",
-    "bitrate": 149,
+    "bitrate": 0,
+    "language": "turkish",
+    "favicon": "https://www.slowturk.com.tr/_next/image?url=https%3A%2F%2Fassets.blupoint.io%2Fimg%2F85%2F330x175%2F6410d8c4310c17000763c62b&w=256&q=75",
+    "homepage": "https://www.slowturk.com.tr/",
+    "stationUuid": "19af1cc7-2094-401c-9aa5-47402cb5fe39",
+    "checkedAt": "2026-11-15T12:17:09.971Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Slow Turk",
+    "url": "https://radyo.duhnet.tv/ak_dtvh_slowturk",
+    "country": "TR",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 0,
+    "language": "turkish",
+    "favicon": "https://www.slowturk.com.tr/_next/image?url=https%3A%2F%2Fassets.blupoint.io%2Fimg%2F85%2F330x175%2F6410d8c4310c17000763c62b&w=256&q=75",
+    "homepage": "https://www.slowturk.com.tr/",
+    "stationUuid": "d2dba30c-5bb6-4e65-bd5c-a5de71566b17",
+    "checkedAt": "2026-11-15T12:17:09.980Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Slow Turk",
+    "url": "https://radyo.duhnet.tv/ak_dtvh_slowturk",
+    "country": "TR",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 0,
+    "language": "turkish",
+    "favicon": "https://www.slowturk.com.tr/_next/image?url=https%3A%2F%2Fassets.blupoint.io%2Fimg%2F85%2F330x175%2F6410d8c4310c17000763c62b&w=256&q=75",
+    "homepage": "https://www.slowturk.com.tr/",
+    "stationUuid": "0d42ef06-c0a4-46f0-a4dd-d5455594c610",
+    "checkedAt": "2026-11-15T12:17:10.082Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Slow Turk",
+    "url": "https://radyo.duhnet.tv/ak_dtvh_slowturk",
+    "country": "TR",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 0,
+    "language": "turkish",
+    "favicon": "https://www.slowturk.com.tr/_next/image?url=https%3A%2F%2Fassets.blupoint.io%2Fimg%2F85%2F330x175%2F6410d8c4310c17000763c62b&w=256&q=75",
+    "homepage": "https://www.slowturk.com.tr/",
+    "stationUuid": "97f3bb39-24a0-461d-b282-b0ccae5a12c4",
+    "checkedAt": "2026-11-15T12:17:10.091Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "ÇINAR FM",
+    "url": "https://sslyayin.netyayin.net:10992/",
+    "country": "TR",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 64,
     "language": null,
     "favicon": null,
-    "homepage": "https://www.radyofenomen.com/",
-    "stationUuid": "fc8dcd89-2712-4f63-b674-43a39c216423",
-    "checkedAt": "2026-11-14T11:47:10.533Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "homepage": "https://www.radyodinle.one/radyo-cinar",
+    "stationUuid": "cdd35eda-263b-4475-81d7-6696024e097e",
+    "checkedAt": "2026-11-15T12:17:10.983Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Fenerbahce Radyo",
@@ -108,7 +176,7 @@
     "favicon": null,
     "homepage": "http://live.radyofenerbahce.org/html5/",
     "stationUuid": "6cc1ec36-e315-4191-ba52-2c4cb79b3a5f",
-    "checkedAt": "2026-11-14T11:47:12.349Z",
+    "checkedAt": "2026-11-15T12:17:11.313Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -125,7 +193,7 @@
     "favicon": null,
     "homepage": "https://numberone.com.tr/",
     "stationUuid": "5509836d-9ca5-4584-bd61-86298fa725b4",
-    "checkedAt": "2026-11-14T11:47:14.070Z",
+    "checkedAt": "2026-11-15T12:17:12.729Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -142,7 +210,7 @@
     "favicon": null,
     "homepage": "https://www.numberone.com.tr/",
     "stationUuid": "0934aa26-d212-441c-a47e-474c3f289bab",
-    "checkedAt": "2026-11-14T11:47:14.104Z",
+    "checkedAt": "2026-11-15T12:17:12.801Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -159,7 +227,7 @@
     "favicon": null,
     "homepage": "https://n10101m.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/u_stream_5c9e2f95dcb16_1/playlist.m3u8",
     "stationUuid": "4ee9a854-2f52-43d7-8707-31bed53cb19a",
-    "checkedAt": "2026-11-14T11:47:14.113Z",
+    "checkedAt": "2026-11-15T12:17:12.809Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -176,7 +244,7 @@
     "favicon": null,
     "homepage": "https://n10101m.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/u_stream_5c9e2f95dcb16_1/playlist.m3u8",
     "stationUuid": "ce6b6ddb-db52-4dfe-ab54-23bee667744e",
-    "checkedAt": "2026-11-14T11:47:14.165Z",
+    "checkedAt": "2026-11-15T12:17:12.859Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -193,7 +261,7 @@
     "favicon": null,
     "homepage": "https://radiocom.80.yayin.com.tr/",
     "stationUuid": "b4d477b5-fc04-4841-9822-549a9c519ff3",
-    "checkedAt": "2026-11-14T11:47:15.465Z",
+    "checkedAt": "2026-11-15T12:17:13.860Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -210,7 +278,7 @@
     "favicon": null,
     "homepage": "https://radyo34.radyotvonline.net/radyo34",
     "stationUuid": "4b6dc119-dcef-4a8c-876e-e7a112cb1da0",
-    "checkedAt": "2026-11-14T11:47:16.390Z",
+    "checkedAt": "2026-11-15T12:17:14.742Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -227,7 +295,7 @@
     "favicon": null,
     "homepage": "https://www.radyogunes.com/",
     "stationUuid": "268c3674-cf72-4b55-b1c0-1571808cd6ec",
-    "checkedAt": "2026-11-14T11:47:18.567Z",
+    "checkedAt": "2026-11-15T12:17:16.992Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -244,7 +312,7 @@
     "favicon": null,
     "homepage": "https://yayin.radyoliva.com:3068/stream",
     "stationUuid": "41b114b6-5da8-4deb-bc5a-61ffdfa5c7f1",
-    "checkedAt": "2026-11-14T11:47:19.212Z",
+    "checkedAt": "2026-11-15T12:17:17.648Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -261,7 +329,7 @@
     "favicon": null,
     "homepage": "https://radyo.yayindakiler.com:2042/",
     "stationUuid": "689795bf-e424-4971-af4f-d8b0f158a5d1",
-    "checkedAt": "2026-11-14T11:47:20.334Z",
+    "checkedAt": "2026-11-15T12:17:18.856Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -278,7 +346,24 @@
     "favicon": "https://www.radyonetordu.com/tr/wp-content/uploads/2017/03/radionetlogoson150.png",
     "homepage": "https://www.radyonetordu.com/tr/kunye",
     "stationUuid": "ab10c41c-9833-4937-9af7-6edc5c90f027",
-    "checkedAt": "2026-11-14T11:47:20.582Z",
+    "checkedAt": "2026-11-15T12:17:19.072Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "RADYO NEVŞEHİR",
+    "url": "https://stream2.rtvtakip.com:7025/",
+    "country": "TR",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://stream2.rtvtakip.com:7025/",
+    "stationUuid": "746b1b83-ca14-458e-a10b-fda3d833fea5",
+    "checkedAt": "2026-11-15T12:17:19.188Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -295,7 +380,7 @@
     "favicon": null,
     "homepage": "https://sssx.radyosfer.com/tutkuradyo/",
     "stationUuid": "783e1011-b7a8-4efb-ad39-de7593b442b7",
-    "checkedAt": "2026-11-14T11:47:22.422Z",
+    "checkedAt": "2026-11-15T12:17:20.952Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -319,7 +404,7 @@
     "favicon": null,
     "homepage": "http://ilef.ankara.edu.tr/radyoilef/",
     "stationUuid": "962886df-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-14T11:47:25.327Z",
+    "checkedAt": "2026-11-15T12:17:24.104Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -340,7 +425,7 @@
     "favicon": "http://www.otomobil.com.tr/wp-content/uploads/2012/04/RADYO_TRAFIK_1.jpg",
     "homepage": "http://radyotrafik.com/",
     "stationUuid": "960e285b-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-14T11:47:25.343Z",
+    "checkedAt": "2026-11-15T12:17:24.126Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -366,10 +451,34 @@
     "favicon": "https://lazuri.app/apple-icon.png",
     "homepage": "https://lazuri.app/radyo",
     "stationUuid": "cc710820-4042-4fb8-adbc-ede52199055c",
-    "checkedAt": "2026-11-14T11:47:26.134Z",
-    "status": 401,
-    "contentType": "text/plain;charset=UTF-8",
-    "lastFailure": "HTTP 401"
+    "checkedAt": "2026-11-15T12:17:24.876Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Hedgehog Radio",
+    "url": "https://stream.hedgehogradio.com/radio.mp3",
+    "country": "TR",
+    "type": "atmospheric",
+    "tags": [
+      "atmospheric",
+      "darkwave",
+      "doom metal",
+      "gothic metal",
+      "progressive metal",
+      "symphonic metal"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "english",
+    "favicon": "https://hedgehogradio.com/public/art/avatar-400.png",
+    "homepage": "https://hedgehogradio.com/",
+    "stationUuid": "b1760e2d-260e-477e-a31a-87028d4a44ff",
+    "checkedAt": "2026-11-15T12:17:25.146Z",
+    "status": 530,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 530"
   },
   {
     "name": "irvess",
@@ -389,7 +498,7 @@
     "favicon": "https://irvess.com/assets/img/icon-512.png",
     "homepage": "https://irvess.com/",
     "stationUuid": "0677809b-7a09-4151-9aaa-78021b566ed6",
-    "checkedAt": "2026-11-14T11:47:26.427Z",
+    "checkedAt": "2026-11-15T12:17:25.187Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -408,7 +517,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "b484174d-2580-4740-894d-7c5f98c4c1fa",
-    "checkedAt": "2026-11-14T11:47:27.564Z",
+    "checkedAt": "2026-11-15T12:17:26.171Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -427,7 +536,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "38909aea-a9a4-45aa-b149-51c3fffdeba1",
-    "checkedAt": "2026-11-14T11:47:27.657Z",
+    "checkedAt": "2026-11-15T12:17:26.417Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -447,7 +556,7 @@
     "favicon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic-media.streema.com%2Fmedia%2Fcache%2F67%2F92%2F67927d9794c4535218ca4dfc85e58c1c.jpg&f=1&nofb=1&ipt=199dd090ea0b2d9b521c7b84cc0e2838c2b42aacd8a2ff4a04f2ea06a32ae0b6",
     "homepage": "http://eskiweb.radyo.itu.edu.tr/v1/klasik/index.html",
     "stationUuid": "6d8f8858-7f5f-4223-956a-73ecd2b23b21",
-    "checkedAt": "2026-11-14T11:47:28.006Z",
+    "checkedAt": "2026-11-15T12:17:26.683Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -466,7 +575,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "3bc2e65e-76da-4b32-89f6-0fde42ec19c0",
-    "checkedAt": "2026-11-14T11:47:28.621Z",
+    "checkedAt": "2026-11-15T12:17:27.284Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -487,7 +596,7 @@
     "favicon": "http://baser.org/Kuran.jpg",
     "homepage": "http://baser.org/",
     "stationUuid": "d7e6ec7b-7ea8-4442-b046-c2a149b24c7f",
-    "checkedAt": "2026-11-14T11:47:29.682Z",
+    "checkedAt": "2026-11-15T12:17:28.521Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -506,7 +615,7 @@
     "favicon": "http://baser.org/favicon.ico",
     "homepage": "http://baser.org/",
     "stationUuid": "c0aa78c7-8461-4c36-a85a-b651f2f5fa39",
-    "checkedAt": "2026-11-14T11:47:29.700Z",
+    "checkedAt": "2026-11-15T12:17:28.528Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -530,7 +639,7 @@
     "favicon": null,
     "homepage": "https://www.semerkandradyo.com.tr/",
     "stationUuid": "e88f008a-4fc6-11e9-a4d7-52543be04c81",
-    "checkedAt": "2026-11-14T11:47:29.707Z",
+    "checkedAt": "2026-11-15T12:17:28.545Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -555,32 +664,10 @@
     "favicon": "https://www.radyodinle.one/img/205x205/igdir-fm.jpg",
     "homepage": "https://www.facebook.com/IGDIR.FM",
     "stationUuid": "306a62ba-58c5-4eec-bc21-d5a8718ac458",
-    "checkedAt": "2026-11-14T11:47:30.668Z",
+    "checkedAt": "2026-11-15T12:17:29.463Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radyo Yaren",
-    "url": "https://sslyayin.radyoyayini.com:7097/stream",
-    "country": "TR",
-    "type": "folk",
-    "tags": [
-      "folk",
-      "oyun havası",
-      "türk halk müziği",
-      "türkü"
-    ],
-    "codec": "AAC+",
-    "bitrate": 96,
-    "language": "turkish",
-    "favicon": null,
-    "homepage": "https://radyoyaren.com.tr/",
-    "stationUuid": "f98e9c03-6014-4a91-b19d-a44e13130d7a",
-    "checkedAt": "2026-11-14T11:47:34.857Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "SZC",
@@ -601,7 +688,7 @@
     "favicon": null,
     "homepage": "https://www.szctv.com.tr/",
     "stationUuid": "8c399031-7342-47b7-b8e5-b6690dc9e9a0",
-    "checkedAt": "2026-11-14T11:47:35.362Z",
+    "checkedAt": "2026-11-15T12:17:31.495Z",
     "status": 404,
     "contentType": "application/vnd.apple.mpegurl",
     "lastFailure": "HTTP 404"
@@ -622,7 +709,7 @@
     "favicon": null,
     "homepage": "https://firatfm.com.tr/",
     "stationUuid": "ec87d8d3-757c-41cd-b7de-c313adbc0f84",
-    "checkedAt": "2026-11-14T11:47:35.637Z",
+    "checkedAt": "2026-11-15T12:17:31.741Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -642,7 +729,7 @@
     "favicon": null,
     "homepage": "https://www.radyo2000.com.tr/",
     "stationUuid": "2fe55dc1-e247-424a-be5d-575ee46f21e2",
-    "checkedAt": "2026-11-14T11:47:35.712Z",
+    "checkedAt": "2026-11-15T12:17:31.885Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -663,7 +750,7 @@
     "favicon": null,
     "homepage": "https://www.cagrifm.com.tr/",
     "stationUuid": "58424e47-51db-41e6-9042-efcbdc9c1a2d",
-    "checkedAt": "2026-11-14T11:47:36.111Z",
+    "checkedAt": "2026-11-15T12:17:32.338Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -682,7 +769,7 @@
     "favicon": null,
     "homepage": "https://acsradyo.com/",
     "stationUuid": "c9e14543-dbaf-4173-9d3a-68344f1a1776",
-    "checkedAt": "2026-11-14T11:47:36.255Z",
+    "checkedAt": "2026-11-15T12:17:32.694Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -701,7 +788,7 @@
     "favicon": "https://www.miracfm.com/uploads/box/photos/yenilendik.png",
     "homepage": "https://www.miracfm.com/",
     "stationUuid": "288483da-41bd-466a-8282-d3f5dcc4c2d0",
-    "checkedAt": "2026-11-14T11:47:37.205Z",
+    "checkedAt": "2026-11-15T12:17:33.795Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -720,7 +807,7 @@
     "favicon": "https://www.canliradyodinle.fm/wp-content/uploads/safak-radyo-kayseri.jpg",
     "homepage": "http://www.safakradyo.com/",
     "stationUuid": "d9eb277b-f0d6-4c02-aeaa-273521944bec",
-    "checkedAt": "2026-11-14T11:47:37.811Z",
+    "checkedAt": "2026-11-15T12:17:34.473Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -743,7 +830,7 @@
     "favicon": null,
     "homepage": "http://modyan.com/",
     "stationUuid": "9056e9ee-3859-11e8-bb9b-52543be04c81",
-    "checkedAt": "2026-11-14T11:47:37.948Z",
+    "checkedAt": "2026-11-15T12:17:34.609Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -760,7 +847,7 @@
     "favicon": null,
     "homepage": "https://sssx.radyosfer.com/banazdostfm/stream",
     "stationUuid": "982901c7-0d99-4dc7-b0d4-868df964e13f",
-    "checkedAt": "2026-11-14T11:47:39.099Z",
+    "checkedAt": "2026-11-15T12:17:35.651Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -777,7 +864,7 @@
     "favicon": null,
     "homepage": "https://sssx.radyosfer.com/burdurfm/stream",
     "stationUuid": "b21891f2-2a92-4497-9e02-c8b103968f31",
-    "checkedAt": "2026-11-14T11:47:39.378Z",
+    "checkedAt": "2026-11-15T12:17:36.020Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -794,27 +881,10 @@
     "favicon": null,
     "homepage": "https://radyo.yayin.com.tr:5926/",
     "stationUuid": "38c54239-74cd-4472-93b0-93bdd6b9d55b",
-    "checkedAt": "2026-11-14T11:47:39.661Z",
+    "checkedAt": "2026-11-15T12:17:36.265Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "DAMAR TURK FM",
-    "url": "https://live.radyositesihazir.com:10997/",
-    "country": "TR",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "french,german,turkish",
-    "favicon": "https://www.damarturkfm.com/favicon.ico",
-    "homepage": "https://www.damarturkfm.com/",
-    "stationUuid": "f035ba3b-6ec5-418a-ba73-9a504ab70c13",
-    "checkedAt": "2026-11-14T11:47:40.101Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "DENİZ FM",
@@ -828,7 +898,7 @@
     "favicon": null,
     "homepage": "https://www.radyodeniz.com.tr/",
     "stationUuid": "12d61660-cf20-4261-b4a5-84cb7a429404",
-    "checkedAt": "2026-11-14T11:47:40.499Z",
+    "checkedAt": "2026-11-15T12:17:37.209Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -845,7 +915,7 @@
     "favicon": null,
     "homepage": "https://stream.radiojar.com/cg24hdbwa0hvv",
     "stationUuid": "577aa633-ae8e-4452-9eee-7d98d39e721f",
-    "checkedAt": "2026-11-14T11:47:41.146Z",
+    "checkedAt": "2026-11-15T12:17:37.681Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -862,7 +932,7 @@
     "favicon": null,
     "homepage": "https://ssl16.ozelip.com/asistan/stream/914fcb8228b91c6fe05b3bd0fa85299c",
     "stationUuid": "1118ceba-eda2-4079-8972-55a9d2632404",
-    "checkedAt": "2026-11-14T11:47:41.974Z",
+    "checkedAt": "2026-11-15T12:17:38.522Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -879,7 +949,7 @@
     "favicon": null,
     "homepage": "https://canli.radyogenclik.com:9000/",
     "stationUuid": "89d50a21-18fa-483e-bfa6-1cee8519866e",
-    "checkedAt": "2026-11-14T11:47:42.494Z",
+    "checkedAt": "2026-11-15T12:17:39.183Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -896,7 +966,7 @@
     "favicon": null,
     "homepage": "https://sssx.radyosfer.com/gurbetcifm/",
     "stationUuid": "2819a537-4bb1-4ace-9e46-6d878293facf",
-    "checkedAt": "2026-11-14T11:47:42.872Z",
+    "checkedAt": "2026-11-15T12:17:39.521Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -913,7 +983,7 @@
     "favicon": null,
     "homepage": "https://radyo.yayin.com.tr:4078/mp3",
     "stationUuid": "a1cd74f5-1f8b-4fff-aab5-f0cbbddd2b77",
-    "checkedAt": "2026-11-14T11:47:43.365Z",
+    "checkedAt": "2026-11-15T12:17:40.015Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -930,7 +1000,7 @@
     "favicon": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic-media.streema.com%2Fmedia%2Fcache%2F67%2F92%2F67927d9794c4535218ca4dfc85e58c1c.jpg&f=1&nofb=1&ipt=199dd090ea0b2d9b521c7b84cc0e2838c2b42aacd8a2ff4a04f2ea06a32ae0b6",
     "homepage": "http://eskiweb.radyo.itu.edu.tr/v1/klasik/index.html",
     "stationUuid": "23f34553-6c06-46dd-9fe8-99cf0807c112",
-    "checkedAt": "2026-11-14T11:47:44.112Z",
+    "checkedAt": "2026-11-15T12:17:42.340Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -947,7 +1017,7 @@
     "favicon": "https://kampusfm.gumushane.edu.tr/media/thumbnails/kampusfm_logo.png.1400x270_q100.png",
     "homepage": "https://kampusfm.gumushane.edu.tr/",
     "stationUuid": "6c5a88c9-c1e3-407d-b3ba-07f8e07370ca",
-    "checkedAt": "2026-11-14T11:47:45.914Z",
+    "checkedAt": "2026-11-15T12:17:44.018Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -964,7 +1034,7 @@
     "favicon": "https://i.ibb.co/0jL5ZynT/logo.png",
     "homepage": "https://stream.casthost.net/",
     "stationUuid": "d79acec3-f4c0-4b48-b030-8071d67d4181",
-    "checkedAt": "2026-11-14T11:47:45.973Z",
+    "checkedAt": "2026-11-15T12:17:44.145Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -981,7 +1051,7 @@
     "favicon": null,
     "homepage": "https://anadolu.liderhost.com.tr:10929/",
     "stationUuid": "429d64ec-d941-4b51-ac44-5f20e95f2f79",
-    "checkedAt": "2026-11-14T11:47:47.186Z",
+    "checkedAt": "2026-11-15T12:17:45.006Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -998,7 +1068,7 @@
     "favicon": "http://baser.org/favicon.ico",
     "homepage": "http://baser.org/",
     "stationUuid": "1ded7dfc-ef59-43ff-a982-b48e1cda3e6a",
-    "checkedAt": "2026-11-14T11:47:47.565Z",
+    "checkedAt": "2026-11-15T12:17:45.172Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1015,7 +1085,7 @@
     "favicon": null,
     "homepage": "https://radio.lateradio.live/;",
     "stationUuid": "d2735526-f82d-43e2-85b2-15f56504c889",
-    "checkedAt": "2026-11-14T11:47:47.643Z",
+    "checkedAt": "2026-11-15T12:17:45.347Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1032,7 +1102,7 @@
     "favicon": null,
     "homepage": "https://radyoserver3.okeylisans.com:14000/8552/;",
     "stationUuid": "ca65951c-408b-43cc-be1e-b4633c4bca64",
-    "checkedAt": "2026-11-14T11:47:47.999Z",
+    "checkedAt": "2026-11-15T12:17:45.557Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1049,7 +1119,7 @@
     "favicon": "https://yt3.googleusercontent.com/ZzE0NDKojssDQUdsUHRN_wamUGEcw1Btzx8hno612Nxm-OLAtm_7KS1fjHlA7K9Pac3Y0etR8Q=s900-c-k-c0x00ffffff-no-rj",
     "homepage": "http://radyo.mersin.edu.tr/",
     "stationUuid": "2909d57b-e94f-40e6-b0a1-4bf870461e39",
-    "checkedAt": "2026-11-14T11:47:48.402Z",
+    "checkedAt": "2026-11-15T12:17:45.994Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1066,7 +1136,7 @@
     "favicon": null,
     "homepage": "https://radyo.yayin.com.tr:6321/;",
     "stationUuid": "0093fc47-2c9b-4e1b-8025-7c3f384556bb",
-    "checkedAt": "2026-11-14T11:47:48.849Z",
+    "checkedAt": "2026-11-15T12:17:46.350Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1083,7 +1153,7 @@
     "favicon": null,
     "homepage": "https://live.sinirsizhost.com/8036/stream",
     "stationUuid": "33f6ba1e-b11d-4df5-9b80-b1ba2faf9211",
-    "checkedAt": "2026-11-14T11:47:49.009Z",
+    "checkedAt": "2026-11-15T12:17:46.464Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1100,7 +1170,7 @@
     "favicon": null,
     "homepage": "https://anadolu.liderhost.com.tr:10921/;",
     "stationUuid": "8e8dddce-50c3-4684-b51c-2dab05736a65",
-    "checkedAt": "2026-11-14T11:47:49.370Z",
+    "checkedAt": "2026-11-15T12:17:46.747Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1117,7 +1187,7 @@
     "favicon": null,
     "homepage": "https://sssx.radyosfer.com/radyocaglar/stream",
     "stationUuid": "d373a4a9-0328-42f7-832a-e4b3282da042",
-    "checkedAt": "2026-11-14T11:47:51.152Z",
+    "checkedAt": "2026-11-15T12:17:48.234Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1134,7 +1204,7 @@
     "favicon": "https://www.davulalan.com/wp-content/uploads/2025/11/Radyo-Davualan-1.png",
     "homepage": "https://www.davulalan.com/tarihimiz",
     "stationUuid": "5e805017-9d5e-440e-a3a4-da12878fb17f",
-    "checkedAt": "2026-11-14T11:47:51.274Z",
+    "checkedAt": "2026-11-15T12:17:48.448Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1151,7 +1221,7 @@
     "favicon": "https://pazargencradyo.com/images/genc_logo.png",
     "homepage": "https://pazargencradyo.com/",
     "stationUuid": "3e8dd945-bb10-47d8-b380-4c41f118bac8",
-    "checkedAt": "2026-11-14T11:47:51.814Z",
+    "checkedAt": "2026-11-15T12:17:49.132Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1168,7 +1238,7 @@
     "favicon": null,
     "homepage": "http://radyogercek.com/",
     "stationUuid": "710f33b9-d5b3-4b3e-be13-29215a69ee01",
-    "checkedAt": "2026-11-14T11:47:51.954Z",
+    "checkedAt": "2026-11-15T12:17:49.144Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1185,7 +1255,7 @@
     "favicon": "https://radyogokturk.com/dinle/doc/avatar.jpg",
     "homepage": "https://www.radyogokturk.com/",
     "stationUuid": "38233bd5-104c-420e-af33-7af24b90ec67",
-    "checkedAt": "2026-11-14T11:47:51.984Z",
+    "checkedAt": "2026-11-15T12:17:49.178Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1202,7 +1272,7 @@
     "favicon": null,
     "homepage": "https://radyo.yayindakiler.com:4118/",
     "stationUuid": "950a337b-ced9-4966-bc23-34c1e5ecf865",
-    "checkedAt": "2026-11-14T11:47:52.083Z",
+    "checkedAt": "2026-11-15T12:17:49.259Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1219,7 +1289,7 @@
     "favicon": null,
     "homepage": "https://radyo.yayindakiler.com:4118/",
     "stationUuid": "ff44edd5-1e07-48ba-9a83-38435811660e",
-    "checkedAt": "2026-11-14T11:47:52.089Z",
+    "checkedAt": "2026-11-15T12:17:49.289Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1236,7 +1306,7 @@
     "favicon": "null",
     "homepage": "https://radyokarabali.net/",
     "stationUuid": "0e086ad4-2575-4437-b6db-796770537ea5",
-    "checkedAt": "2026-11-14T11:47:52.139Z",
+    "checkedAt": "2026-11-15T12:17:49.421Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1253,7 +1323,7 @@
     "favicon": null,
     "homepage": "https://yayin.radiolight.net:8005/live",
     "stationUuid": "3812453c-cfdc-4686-a797-41c4ae384c6a",
-    "checkedAt": "2026-11-14T11:47:52.313Z",
+    "checkedAt": "2026-11-15T12:17:49.630Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1270,7 +1340,7 @@
     "favicon": null,
     "homepage": "https://megaradyoiskenderun.ozelip.com/8024/stream",
     "stationUuid": "73e22b2e-7d9e-4f69-a9fd-4d8675579aea",
-    "checkedAt": "2026-11-14T11:47:52.389Z",
+    "checkedAt": "2026-11-15T12:17:49.833Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1287,7 +1357,7 @@
     "favicon": null,
     "homepage": "https://live.sinirsizhost.com/8042/stream",
     "stationUuid": "4d48c1bd-ec23-40ac-bdf2-000255a053bc",
-    "checkedAt": "2026-11-14T11:47:52.412Z",
+    "checkedAt": "2026-11-15T12:17:49.846Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1304,7 +1374,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "943a244d-171c-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-14T11:47:52.781Z",
+    "checkedAt": "2026-11-15T12:17:50.341Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1321,7 +1391,7 @@
     "favicon": null,
     "homepage": "https://sssx.radyosfer.com/tokatfm/stream",
     "stationUuid": "9172c11e-e995-4f64-8a64-86abbaf8466d",
-    "checkedAt": "2026-11-14T11:47:53.710Z",
+    "checkedAt": "2026-11-15T12:17:51.210Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1338,7 +1408,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/528but9e7motv",
     "stationUuid": "cb004a3a-8480-484a-b449-322363901e39",
-    "checkedAt": "2026-11-14T11:47:53.902Z",
+    "checkedAt": "2026-11-15T12:17:51.440Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1355,7 +1425,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "2adbdfbb-1b24-479d-b956-f175c4bb2590",
-    "checkedAt": "2026-11-14T11:47:54.244Z",
+    "checkedAt": "2026-11-15T12:17:51.852Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1372,7 +1442,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5483caa9-b021-4351-94d5-0da5649e3f11",
-    "checkedAt": "2026-11-14T11:47:54.263Z",
+    "checkedAt": "2026-11-15T12:17:51.863Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1389,7 +1459,7 @@
     "favicon": "http://miracfm.com/",
     "homepage": "https://www.miracfm.com/index.php",
     "stationUuid": "8dd5c769-27eb-403b-bcb0-c4da623cf84c",
-    "checkedAt": "2026-11-14T11:47:55.643Z",
+    "checkedAt": "2026-11-15T12:17:52.937Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1408,7 +1478,7 @@
     "favicon": null,
     "homepage": "https://www.numberone.com.tr/2015/12/17/nr1-turk-fm-dinle-canli-radyo-dinle/",
     "stationUuid": "4bead555-fefa-401b-b9e1-e5f525c714b8",
-    "checkedAt": "2026-11-14T11:47:56.127Z",
+    "checkedAt": "2026-11-15T12:17:53.712Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1429,7 +1499,7 @@
     "favicon": null,
     "homepage": "https://www.virginradioturkiye.com/",
     "stationUuid": "5eb594b6-e2b3-4468-b6c5-79d5036cf736",
-    "checkedAt": "2026-11-14T11:47:57.448Z",
+    "checkedAt": "2026-11-15T12:17:55.018Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1448,7 +1518,7 @@
     "favicon": "http://www.radyo.itu.edu.tr/Sitefinity/WebsiteTemplates/GenelTemplate/App_Themes/ITUGenelTemplate/Images/favicon.ico",
     "homepage": "http://www.radyo.itu.edu.tr/",
     "stationUuid": "39e9fafe-85ca-422b-b448-20f47c67c47c",
-    "checkedAt": "2026-11-14T11:47:57.842Z",
+    "checkedAt": "2026-11-15T12:17:55.679Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1467,7 +1537,7 @@
     "favicon": null,
     "homepage": "http://www.radyospor.com/",
     "stationUuid": "960e5bb2-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-14T11:47:58.375Z",
+    "checkedAt": "2026-11-15T12:17:56.038Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1484,78 +1554,10 @@
     "favicon": null,
     "homepage": "https://stream.ege.edu.tr/hls/rek.m3u8",
     "stationUuid": "38a8e550-3a2e-476d-86b3-5016a4a5ee6a",
-    "checkedAt": "2026-11-14T11:47:59.818Z",
+    "checkedAt": "2026-11-15T12:17:57.620Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "FENOMEN DANS",
-    "url": "https://live.radyofenomen.com/fenomendans/abr/fenomendans/128/chunks.m3u8",
-    "country": "TR",
-    "type": "UNKNOWN",
-    "tags": [],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://live.radyofenomen.com/fenomendans/abr/fenomendans/128/chunks.m3u8",
-    "stationUuid": "8d1a57d9-209b-440c-83a0-d1c45d307715",
-    "checkedAt": "2026-11-14T11:48:00.154Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Fenomen Dans 256",
-    "url": "https://live.radyofenomen.com/fenomendans/256/chunks.m3u8",
-    "country": "TR",
-    "type": "UNKNOWN",
-    "tags": [],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "turkish",
-    "favicon": null,
-    "homepage": "https://www.radyofenomen.com/",
-    "stationUuid": "7225904f-6fd7-404f-b4a7-81e75e301ed4",
-    "checkedAt": "2026-11-14T11:48:00.184Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "FENOMEN POP",
-    "url": "https://live.radyofenomen.com/fenomenpop/abr/fenomenpop/128/chunks.m3u8",
-    "country": "TR",
-    "type": "UNKNOWN",
-    "tags": [],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://live.radyofenomen.com/fenomenpop/abr/fenomenpop/128/chunks.m3u8",
-    "stationUuid": "bd3e6e56-f6f5-49de-8062-2c2b4c67afb3",
-    "checkedAt": "2026-11-14T11:48:00.396Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Fenomen Pop 256",
-    "url": "https://live.radyofenomen.com/fenomenpop/256/chunks.m3u8",
-    "country": "TR",
-    "type": "UNKNOWN",
-    "tags": [],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.radyofenomen.com/",
-    "stationUuid": "6e99824b-53e8-48c5-acae-6b320ac52f25",
-    "checkedAt": "2026-11-14T11:48:00.416Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "FENOMEN RAP",
@@ -1569,7 +1571,7 @@
     "favicon": null,
     "homepage": "https://live.radyofenomen.com/fenomenrap/abr/fenomenrap/128/chunks.m3u8",
     "stationUuid": "bd54a457-92ce-433c-aab6-f625518dbbad",
-    "checkedAt": "2026-11-14T11:48:00.432Z",
+    "checkedAt": "2026-11-15T12:17:58.253Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1586,7 +1588,7 @@
     "favicon": "https://www.ligradyo.com.tr/assets/img/ligradyo-apple-touch-icon.png",
     "homepage": "https://www.ligradyo.com.tr/",
     "stationUuid": "d220e7fc-cfc3-48c0-895a-ec109709936d",
-    "checkedAt": "2026-11-14T11:48:00.940Z",
+    "checkedAt": "2026-11-15T12:17:58.614Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1603,7 +1605,7 @@
     "favicon": null,
     "homepage": "https://n10101m.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/u_stream_5c9e3ed520608_1/playlist.m3u8",
     "stationUuid": "a415514b-30e0-4d07-9b0f-9e13c4b5af9f",
-    "checkedAt": "2026-11-14T11:48:01.049Z",
+    "checkedAt": "2026-11-15T12:17:58.754Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1620,10 +1622,44 @@
     "favicon": null,
     "homepage": "https://n10101m.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/u_stream_5c9e3e06878b9_1/playlist.m3u8",
     "stationUuid": "584e9b87-5d40-486e-a35f-c3e93974ce62",
-    "checkedAt": "2026-11-14T11:48:01.051Z",
+    "checkedAt": "2026-11-15T12:17:58.768Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Power FM Türkiye",
+    "url": "https://listen.powerapp.com.tr/powerfm/256/chunks.m3u8",
+    "country": "TR",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://cdn.powergroup.com.tr/image/100x100/powerapp/channels/v3/inverse/logo_37.png?v=716",
+    "homepage": "https://www.powerapp.com.tr/",
+    "stationUuid": "c7cca8f9-2e40-4f3e-9834-be8bc2bad704",
+    "checkedAt": "2026-11-15T12:17:58.814Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Power FM Türkiye",
+    "url": "https://listen.powerapp.com.tr/powerfm/256/chunks.m3u8",
+    "country": "TR",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://cdn.powergroup.com.tr/image/100x100/powerapp/channels/v3/inverse/logo_37.png?v=716",
+    "homepage": "https://www.powerapp.com.tr/",
+    "stationUuid": "dd307ed2-052d-4373-85c6-24f15f96d89c",
+    "checkedAt": "2026-11-15T12:17:58.907Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Semerkand Radyo",
@@ -1637,7 +1673,7 @@
     "favicon": null,
     "homepage": "https://semerkandradyo.com.tr/",
     "stationUuid": "2072d084-1863-4c73-ad67-2b5a0ab5fe70",
-    "checkedAt": "2026-11-14T11:48:02.003Z",
+    "checkedAt": "2026-11-15T12:17:59.487Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"

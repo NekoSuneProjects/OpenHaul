@@ -1,5 +1,35 @@
 [
   {
+    "name": "Radio Habana Cuba 102.5 MHz",
+    "url": "https://theonestopradio.com/stream?url=https://icecast.teveo.cu/McW3fLhs",
+    "country": "CU",
+    "type": "102.5 fm",
+    "tags": [
+      "102.5 fm",
+      "11760 khz",
+      "15140 khz",
+      "6000 khz",
+      "deportes",
+      "fidel castro",
+      "news",
+      "noticias",
+      "radio habana cuba",
+      "revolución",
+      "shortwave",
+      "shortwave radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "english,esperanto,french,kreyol,portuguese,spanish,العربية",
+    "favicon": "https://static2.mytuner.mobi/media/tvos_radios/wBFBCeE72A.jpg",
+    "homepage": "https://radiohc.cu/",
+    "stationUuid": "23f98d74-519d-4f3b-8d69-5e5a652070ef",
+    "checkedAt": "2026-11-15T11:29:35.206Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
     "name": "Prensa Latina - Agencia Informativa Latinoamericana",
     "url": "https://cdn4.onstream.audio:9267/stream?download=false",
     "country": "CU",
@@ -21,7 +51,7 @@
     "favicon": null,
     "homepage": "https://www.prensa-latina.cu/",
     "stationUuid": "6a4e16db-a938-4288-afc5-d5779e4ae035",
-    "checkedAt": "2026-11-14T10:59:16.862Z",
+    "checkedAt": "2026-11-15T11:29:36.853Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -42,34 +72,10 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://lovefm.com.mx/",
     "stationUuid": "05d02562-984f-4e89-b3d7-e0e973558efd",
-    "checkedAt": "2026-11-14T10:59:16.949Z",
+    "checkedAt": "2026-11-15T11:29:36.949Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
-  },
-  {
-    "name": "CMBQ Radio Enciclopedia - Habana, Cuba",
-    "url": "https://icecast.teveo.cu/9Rnrbjzq",
-    "country": "CU",
-    "type": "beautiful music",
-    "tags": [
-      "beautiful music",
-      "easy listning",
-      "instrumental music",
-      "jazz easy listening",
-      "latin jazz",
-      "smooth jazz"
-    ],
-    "codec": null,
-    "bitrate": 0,
-    "language": "spanish",
-    "favicon": "https://www.radioenciclopedia.cu/wp-content/uploads/2023/05/cropped-cmbq-radio-enciclopedia.jpg",
-    "homepage": "http://www.radioenciclopedia.cu/",
-    "stationUuid": "b0623beb-0e70-4f1b-bb16-a21ed51a0395",
-    "checkedAt": "2026-11-14T10:59:16.971Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio María de la Caridad",
@@ -93,7 +99,7 @@
     "favicon": "https://ugc.production.linktr.ee/efcde3a6-71f8-41c9-8fe3-7199a7b2eede_394859921-851239673370933-4041308667218843423-n.jpeg",
     "homepage": "https://linktr.ee/radiomariadelacaridad",
     "stationUuid": "5bc4a928-a2d0-452f-901d-54ba623fe79a",
-    "checkedAt": "2026-11-14T10:59:17.049Z",
+    "checkedAt": "2026-11-15T11:29:36.974Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -115,7 +121,7 @@
     "favicon": "https://ugc.production.linktr.ee/efcde3a6-71f8-41c9-8fe3-7199a7b2eede_394859921-851239673370933-4041308667218843423-n.jpeg",
     "homepage": "https://linktr.ee/radiomariadelacaridad",
     "stationUuid": "7dbade96-ea02-4fde-a0ee-c81054fedd59",
-    "checkedAt": "2026-11-14T10:59:17.127Z",
+    "checkedAt": "2026-11-15T11:29:37.029Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -134,7 +140,7 @@
     "favicon": null,
     "homepage": "https://radio.prensa-latina.cu/",
     "stationUuid": "80b438a6-537d-468f-b365-1e376289247b",
-    "checkedAt": "2026-11-14T10:59:17.143Z",
+    "checkedAt": "2026-11-15T11:29:37.097Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -153,7 +159,7 @@
     "favicon": "https://webradiodirectory.com/wp-content/uploads/2021/01/cd00bda24d4353292012e2846aedd1b1.jpg",
     "homepage": "https://radiosdecuba.com/cubania/",
     "stationUuid": "b6154a79-7eca-476c-ab74-1d96b5d4c456",
-    "checkedAt": "2026-11-14T10:59:17.207Z",
+    "checkedAt": "2026-11-15T11:29:37.192Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"

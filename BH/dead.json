@@ -11,9 +11,29 @@
     "favicon": "https://www.mbc.net/apple-touch-icon.png",
     "homepage": "https://www.mbc.net/channels",
     "stationUuid": "17bae22b-590b-4ce1-8bee-4a1c66277a60",
-    "checkedAt": "2026-11-14T10:45:27.418Z",
+    "checkedAt": "2026-11-15T11:15:58.762Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Traditional Radio 95.0",
+    "url": "https://5c7b683162943.streamlock.net/live/ngrp:radio-95-0_all/chunklist_w1641860732_b981072.m3u8",
+    "country": "BH",
+    "type": "bahrain",
+    "tags": [
+      "bahrain",
+      "traditional radio 95.0"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.mia.gov.bh/media-center/traditional-radio-95-0/?lang=en",
+    "stationUuid": "b35b9f40-86b2-4686-852c-12190c252e87",
+    "checkedAt": "2026-11-15T11:15:59.177Z",
+    "status": 404,
+    "contentType": null,
+    "lastFailure": "HTTP 404"
   }
 ]

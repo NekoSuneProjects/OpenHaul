@@ -25,7 +25,7 @@
     "favicon": "https://elixir.fm/favicon.ico",
     "homepage": "https://elixir.fm/",
     "stationUuid": "84ec1d59-348c-4fc2-b4f3-e851cad7a27d",
-    "checkedAt": "2026-11-14T11:24:28.114Z",
+    "checkedAt": "2026-11-15T11:54:22.800Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -42,7 +42,24 @@
     "favicon": null,
     "homepage": "https://www.jayfm.co/",
     "stationUuid": "d0209e7d-ddd8-4d5f-bb30-7f181f3b3b41",
-    "checkedAt": "2026-11-14T11:24:28.119Z",
+    "checkedAt": "2026-11-15T11:54:22.807Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio Maria Kenya Kisumu",
+    "url": "http://141.95.98.87:8129/stream",
+    "country": "KE",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.radiomaria.co.ke/",
+    "stationUuid": "21afccb2-db57-4562-9e3b-dad19db6cb00",
+    "checkedAt": "2026-11-15T11:54:23.115Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -63,7 +80,7 @@
     "favicon": "https://cdn.webrad.io/images/brand/icon_192x192.png",
     "homepage": "https://radio.or.ke/zoza/",
     "stationUuid": "17a4abbd-d7fb-495b-a94b-9a6f96c51e41",
-    "checkedAt": "2026-11-14T11:24:28.502Z",
+    "checkedAt": "2026-11-15T11:54:23.290Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -82,14 +99,14 @@
     "favicon": null,
     "homepage": "https://streams.rautemusik.fm/caribbean-wave/mp3-192/",
     "stationUuid": "ad87fdc8-cb5a-4e06-82a7-0f34b7408a38",
-    "checkedAt": "2026-11-14T11:24:29.745Z",
+    "checkedAt": "2026-11-15T11:54:24.284Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "GHETT",
-    "url": "http://stream.zeno.fm/kvudezx1h2zuv",
+    "name": "JEMBE FM",
+    "url": "https://cast3.asurahosting.com/proxy/jembemed/stream",
     "country": "KE",
     "type": "classical",
     "tags": [
@@ -99,88 +116,12 @@
     "bitrate": 128,
     "language": null,
     "favicon": null,
-    "homepage": "http://stream.zeno.fm/kvudezx1h2zuv",
-    "stationUuid": "bc861a93-3fdf-48f4-8e79-836ad54c0a61",
-    "checkedAt": "2026-11-14T11:24:29.927Z",
-    "status": 503,
+    "homepage": "https://cast3.asurahosting.com/proxy/jembemed/stream",
+    "stationUuid": "eeeb6128-8f59-410a-aef9-c5971d3ff9ad",
+    "checkedAt": "2026-11-15T11:54:24.747Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "ghett kenya",
-    "url": "http://stream-27.zeno.fm/kvudezx1h2zuv?zs=hCl2Q4ZVSPykhlahMviRpQ",
-    "country": "KE",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "http://stream-27.zeno.fm/kvudezx1h2zuv?zs=hCl2Q4ZVSPykhlahMviRpQ",
-    "stationUuid": "03b2bf54-42b9-45e5-b298-281d45f44c3e",
-    "checkedAt": "2026-11-14T11:24:29.946Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "ghett kenya",
-    "url": "http://stream-27.zeno.fm/kvudezx1h2zuv?zs=hCl2Q4ZVSPykhlahMviRpQ",
-    "country": "KE",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "http://stream-27.zeno.fm/kvudezx1h2zuv?zs=hCl2Q4ZVSPykhlahMviRpQ",
-    "stationUuid": "6b002723-bdbe-4a74-b5dd-009e2443930b",
-    "checkedAt": "2026-11-14T11:24:29.956Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "ghetto kenya",
-    "url": "https://stream.zeno.fm/kvudezx1h2zuv",
-    "country": "KE",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://stream.zeno.fm/kvudezx1h2zuv",
-    "stationUuid": "cde57b4c-11d1-49a0-b7e3-98f5f943653f",
-    "checkedAt": "2026-11-14T11:24:30.036Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "GHETTOO KENYA",
-    "url": "http://stream.zeno.fm/cs4q33arb2zuv",
-    "country": "KE",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "http://stream.zeno.fm/cs4q33arb2zuv",
-    "stationUuid": "315f16b5-041b-4d95-8b58-74b13e393f20",
-    "checkedAt": "2026-11-14T11:24:30.146Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "MWANGAZA WA NENO FM KENYA",
@@ -196,7 +137,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/e34h1cbrmeruv",
     "stationUuid": "634b577b-d224-4507-909f-0c864ba1b32f",
-    "checkedAt": "2026-11-14T11:24:30.350Z",
+    "checkedAt": "2026-11-15T11:54:24.836Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -215,7 +156,7 @@
     "favicon": null,
     "homepage": "https://streamingv2.shoutcast.com/nrg-radio-ke",
     "stationUuid": "b1eedddc-2192-4ccc-94b8-23c744f5b851",
-    "checkedAt": "2026-11-14T11:24:30.484Z",
+    "checkedAt": "2026-11-15T11:54:25.046Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -234,7 +175,7 @@
     "favicon": null,
     "homepage": "https://streamingv2.shoutcast.com/nrg-radio-ke",
     "stationUuid": "88969ffd-e8f8-48d6-9324-4e7603581846",
-    "checkedAt": "2026-11-14T11:24:30.523Z",
+    "checkedAt": "2026-11-15T11:54:25.099Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -253,9 +194,28 @@
     "favicon": null,
     "homepage": "https://streamingv2.shoutcast.com/nrg-radio-ke",
     "stationUuid": "baf2db38-c095-418c-beca-c87136dacd1d",
-    "checkedAt": "2026-11-14T11:24:30.525Z",
+    "checkedAt": "2026-11-15T11:54:25.136Z",
     "status": 404,
     "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Ambassador Radio",
+    "url": "https://icy.cloudrad.io/9b2c9add",
+    "country": "KE",
+    "type": "gospel",
+    "tags": [
+      "gospel"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://assets.clrd.net/uploads/logos/autodj/01a1c5d1-b277-7d8c-81df-ea409b2c9add/ec4128ee-3617-4ee9-836e-01997479da67-master-1536x1024.png",
+    "homepage": null,
+    "stationUuid": "df7f45c3-dd1a-480a-b37a-982dbd7d4fcc",
+    "checkedAt": "2026-11-15T11:54:25.675Z",
+    "status": 404,
+    "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
@@ -272,7 +232,7 @@
     "favicon": null,
     "homepage": "http://www.jurainiradio.nl/",
     "stationUuid": "6bfe2bbd-6799-4791-8196-4719793e5344",
-    "checkedAt": "2026-11-14T11:24:31.538Z",
+    "checkedAt": "2026-11-15T11:54:26.115Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -289,27 +249,27 @@
     "favicon": null,
     "homepage": "https://bloomradio.co.ke/#",
     "stationUuid": "92ebf372-a0db-4420-acdd-37854525401f",
-    "checkedAt": "2026-11-14T11:24:31.601Z",
+    "checkedAt": "2026-11-15T11:54:26.212Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "ghetto kenya",
-    "url": "https://stream.zeno.fm/kvudezx1h2zuv",
+    "name": "Radio47",
+    "url": "https://streaming.shoutcast.com/radio-47?ver=690109",
     "country": "KE",
     "type": "MP3",
     "tags": [],
     "codec": "MP3",
     "bitrate": 128,
     "language": null,
-    "favicon": null,
-    "homepage": "https://stream.zeno.fm/kvudezx1h2zuv",
-    "stationUuid": "a0e293c3-f091-4794-a6bf-4918f72d1c76",
-    "checkedAt": "2026-11-14T11:24:31.763Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
+    "favicon": "https://yt3.googleusercontent.com/a3-veb-GPFI4o15P_DyjAXssVg_TTKGAjdgsWL_Iuvev83rzTB3xUfmoMxrMkbpNfO9IuFmT=s900-c-k-c0x00ffffff-no-rj",
+    "homepage": "https://www.radio47.fm/#!",
+    "stationUuid": "87583ab5-0d53-43ac-a414-46bb39c89217",
+    "checkedAt": "2026-11-15T11:54:26.731Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "NRG Radio",
@@ -325,7 +285,7 @@
     "favicon": "https://nrg.radio/favicon.ico",
     "homepage": "https://nrg.radio/",
     "stationUuid": "8e17bd51-765e-4103-916a-69a4ed56ac9a",
-    "checkedAt": "2026-11-14T11:24:32.794Z",
+    "checkedAt": "2026-11-15T11:54:27.535Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
