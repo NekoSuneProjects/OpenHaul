@@ -1,5 +1,27 @@
 [
   {
+    "name": "Power FM Zimbabwe",
+    "url": "https://backupradiostreaming.zbc.co.zw:8000/radio.mp3",
+    "country": "ZW",
+    "type": "african music",
+    "tags": [
+      "african music",
+      "dancehall",
+      "pop",
+      "reggae"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://www.powerfm.co.zw/",
+    "stationUuid": "3fb04841-0a0b-495e-a82c-7a48ab665354",
+    "checkedAt": "2026-11-16T13:12:35.765Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
     "name": "MSU RADIO 90.3 FM",
     "url": "https://listen.radioking.com/radio/873191/stream/943246",
     "country": "ZW",
@@ -11,9 +33,29 @@
     "favicon": null,
     "homepage": "https://radio.msu.ac.zw/",
     "stationUuid": "cddac1d4-2e9b-4023-9738-1e373541987b",
-    "checkedAt": "2026-11-15T12:36:04.076Z",
+    "checkedAt": "2026-11-16T13:12:37.738Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Luzibo Radio",
+    "url": "https://backupradiostreaming.zbc.co.zw:8010/radio.mp3",
+    "country": "ZW",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://www.luziboradio.co.zw/",
+    "stationUuid": "0f0dd9cb-7b4c-44f2-8b06-cf6d2f30cbc0",
+    "checkedAt": "2026-11-16T13:12:39.849Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   }
 ]

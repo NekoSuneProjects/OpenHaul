@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://astanafm.kz/",
     "stationUuid": "e5b9eb79-1569-4cda-b86d-605750ec707a",
-    "checkedAt": "2026-11-15T11:54:58.801Z",
+    "checkedAt": "2026-11-16T12:27:53.625Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -31,10 +31,51 @@
     "favicon": null,
     "homepage": "http://spacebeat.strangled.net/",
     "stationUuid": "af31308a-5407-4f53-9986-50b01b8ce933",
-    "checkedAt": "2026-11-15T11:54:58.802Z",
+    "checkedAt": "2026-11-16T12:27:53.627Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Радио Classic",
+    "url": "https://radio-streams.kaztrk.kz/classic/classic/icecast.audio",
+    "country": "KZ",
+    "type": "classical music",
+    "tags": [
+      "classical music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "kazakh",
+    "favicon": "https://qazradio.fm/images/classicfm.png?v=0.133",
+    "homepage": "https://qazradio.fm/kz/",
+    "stationUuid": "dbcb9ca8-5c14-4fd4-977a-04bfe3c6ba4c",
+    "checkedAt": "2026-11-16T12:27:54.274Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Жаңа MIX",
+    "url": "https://live.zhanafm.kz:8443/zhanamix",
+    "country": "KZ",
+    "type": "dj remix",
+    "tags": [
+      "dj remix",
+      "mix",
+      "mixtapes",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "english,kazakh,russian",
+    "favicon": null,
+    "homepage": "https://zhanafm.kz/",
+    "stationUuid": "46793fb4-4daf-47c6-b64e-f59510f2ec14",
+    "checkedAt": "2026-11-16T12:27:54.463Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Space Beat (64k AAC)",
@@ -50,10 +91,98 @@
     "favicon": "https://tihbus.droppages.com/sbr-logo.png",
     "homepage": "https://t.me/spacebeatradio",
     "stationUuid": "4a1a7199-a7ec-435d-9835-7387b4941750",
-    "checkedAt": "2026-11-15T11:54:59.719Z",
+    "checkedAt": "2026-11-16T12:27:54.496Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Qazaq radiosy",
+    "url": "https://radio-streams.kaztrk.kz/qazradio/qazradio/icecast.audio",
+    "country": "KZ",
+    "type": "etnic",
+    "tags": [
+      "etnic",
+      "folk"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "kazakh",
+    "favicon": "https://qazradio.fm/images/qazradio.png",
+    "homepage": "https://qazradio.fm/kz/",
+    "stationUuid": "3aa2641c-45aa-4ee8-b1e2-1b397fac47e5",
+    "checkedAt": "2026-11-16T12:27:54.608Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Aspan FM",
+    "url": "http://77.240.38.228:8000/aspanfm",
+    "country": "KZ",
+    "type": "etno",
+    "tags": [
+      "etno",
+      "kazakh music",
+      "kazakh pop",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "kazakh",
+    "favicon": "https://play-lh.googleusercontent.com/5RoB9Ug0phTuTpTqgExTIo5cdgPllBJhvpEmLfj_t2tZCkUJst9OzrwzhgsNGvv_VwQ=w240-h480-rw",
+    "homepage": "https://www.instagram.com/aspanfm",
+    "stationUuid": "dd1745e2-b8ee-46fb-b82b-2aae118e7ff4",
+    "checkedAt": "2026-11-16T12:27:54.645Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio TMK",
+    "url": "https://a4.radioheart.ru:9036/RH13170",
+    "country": "KZ",
+    "type": "etno",
+    "tags": [
+      "etno",
+      "kazan",
+      "relax",
+      "tatar",
+      "tatarstan"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "tatar",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240422_113249093.jpg?alt=media&token=f4c478dc-d724-4936-8fd1-50a22dcf3539",
+    "homepage": "https://radiotmk.ru/",
+    "stationUuid": "11208a93-9194-4a60-84f8-99bfe1912b83",
+    "checkedAt": "2026-11-16T12:27:54.763Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio TMK",
+    "url": "https://a4.radioheart.ru:9036/RH13170",
+    "country": "KZ",
+    "type": "etno",
+    "tags": [
+      "etno",
+      "kazan",
+      "relax",
+      "tatar",
+      "tatarstan"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "tatar",
+    "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240422_112734993.jpg?alt=media&token=d63d1ce1-c73e-460b-9104-094181b608e4",
+    "homepage": "https://radiotmk.ru/",
+    "stationUuid": "cfbc1dc9-b8e1-4e7c-8205-efe774f6dbbf",
+    "checkedAt": "2026-11-16T12:27:55.086Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "The Holy Quran  by Sheikh Mahmoud Al-Husari",
@@ -69,7 +198,7 @@
     "favicon": "null",
     "homepage": "https://qurango.net/radio/mahmoud_khalil_alhussary_warsh",
     "stationUuid": "2bdfd9b3-e163-4276-a476-5153d8e6bc00",
-    "checkedAt": "2026-11-15T11:55:00.539Z",
+    "checkedAt": "2026-11-16T12:27:56.385Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -86,9 +215,26 @@
     "favicon": "https://loveradio.kz/img/touch-icon-ipad-pro.png",
     "homepage": "https://loveradio.kz/",
     "stationUuid": "75437893-9527-4de8-902e-c04f08af2dfc",
-    "checkedAt": "2026-11-15T11:55:01.135Z",
+    "checkedAt": "2026-11-16T12:27:58.742Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio 90 Eurodance",
+    "url": "https://myradio24.org/5967",
+    "country": "KZ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": "https://streema.com/_ipx/f_avif,webp&q_80&s_160x160/https://static-media.streema.com/media/cache/e2/b9/e2b9f77fd2d83b6447e2bb6ebb6a9f22.jpg",
+    "homepage": "https://vk.ru/90seurodance",
+    "stationUuid": "53d8dc8f-92cf-452f-8674-3d404e91e776",
+    "checkedAt": "2026-11-16T12:27:59.075Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   }
 ]

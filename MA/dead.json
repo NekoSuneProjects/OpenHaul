@@ -11,7 +11,7 @@
     "favicon": "https://xglite.blogspot.com",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "68ddcca4-fa29-49e0-97a1-182edd18f44a",
-    "checkedAt": "2026-11-15T11:55:56.843Z",
+    "checkedAt": "2026-11-16T12:28:46.239Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -30,7 +30,7 @@
     "favicon": "https://drive.google.com/file/d/1UCRLXymEBsuwoJVLF1VSsptvA_spPUeN/view?usp=drivesdk",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "00d94344-7f60-4f5d-9aee-dd917276c98d",
-    "checkedAt": "2026-11-15T11:55:57.343Z",
+    "checkedAt": "2026-11-16T12:28:46.624Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -51,7 +51,7 @@
     "favicon": null,
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "4797d484-176c-4c96-949b-243fb0b0dccd",
-    "checkedAt": "2026-11-15T11:55:57.365Z",
+    "checkedAt": "2026-11-16T12:28:46.643Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -70,29 +70,10 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/fr/c/ca/Medi_1_TV_logo.png",
     "homepage": "http://www.medi1.com/",
     "stationUuid": "baae5280-6e91-421b-bc15-7ace366768e0",
-    "checkedAt": "2026-11-15T11:55:57.949Z",
+    "checkedAt": "2026-11-16T12:28:47.251Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "bldi",
-    "url": "http://beldifm.hf.ma/radio/8000/radio.mp3",
-    "country": "MA",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "b8807476-2ada-4600-9dc0-7b501691afc1",
-    "checkedAt": "2026-11-15T11:55:58.338Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
   },
   {
     "name": "Medi 1 Classique",
@@ -108,7 +89,7 @@
     "favicon": "https://www.medi1.com/favicon.ico",
     "homepage": "https://www.medi1.com/fr/webradio/Classique",
     "stationUuid": "4c6f8571-6e70-42d5-a4a6-669003ad1cee",
-    "checkedAt": "2026-11-15T11:55:58.429Z",
+    "checkedAt": "2026-11-16T12:28:47.848Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -127,7 +108,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "e300baf5-e1e2-4ba8-b4ff-6d029d5a0a99",
-    "checkedAt": "2026-11-15T11:55:58.448Z",
+    "checkedAt": "2026-11-16T12:28:47.865Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -146,7 +127,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/ezxx195gq2zuv",
     "stationUuid": "653dea16-ffe4-4db9-8744-427bb37d83ee",
-    "checkedAt": "2026-11-15T11:55:58.771Z",
+    "checkedAt": "2026-11-16T12:28:48.340Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -165,7 +146,7 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/8#",
     "stationUuid": "93c1a1a6-5571-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-15T11:55:59.354Z",
+    "checkedAt": "2026-11-16T12:28:48.916Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -182,7 +163,7 @@
     "favicon": null,
     "homepage": "https://www.medi1.com/webradio/2#",
     "stationUuid": "96ccc468-1a6f-11e8-a334-52543be04c81",
-    "checkedAt": "2026-11-15T11:56:00.246Z",
+    "checkedAt": "2026-11-16T12:28:49.720Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -199,7 +180,7 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/3#",
     "stationUuid": "7c1bdaa1-56a8-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-15T11:56:00.265Z",
+    "checkedAt": "2026-11-16T12:28:49.739Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -216,9 +197,66 @@
     "favicon": "https://snrtlive.ma/sites/default/files/2024-02/logo-snrtnews2_2.png",
     "homepage": "https://snrtlive.ma/ar/alidaa-alwatania",
     "stationUuid": "4d8de7d2-1fc1-4f70-974c-12100d0fd68c",
-    "checkedAt": "2026-11-15T11:56:00.871Z",
+    "checkedAt": "2026-11-16T12:28:51.536Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Yabiladi Azawan Amazigh",
+    "url": "https://radio.yabiladi.com:9002/;stream.mp3",
+    "country": "MA",
+    "type": "world music",
+    "tags": [
+      "world music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english,francaise",
+    "favicon": "https://static.yabiladi.com/images_new/logo_2_yab.png?4",
+    "homepage": "https://www.yabiladi.com/radio/",
+    "stationUuid": "0caedaf7-ecd4-4bd8-96e9-082b79a19d90",
+    "checkedAt": "2026-11-16T12:28:51.609Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Yabiladi Chaabi Maroc",
+    "url": "https://radio.yabiladi.com:8102/;stream.mp3",
+    "country": "MA",
+    "type": "world music",
+    "tags": [
+      "world music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english,francaise",
+    "favicon": "https://static.yabiladi.com/images_new/logo_2_yab.png?4",
+    "homepage": "https://www.yabiladi.com/radio/",
+    "stationUuid": "9d874da9-550c-4176-a595-8ee83e0c72bc",
+    "checkedAt": "2026-11-16T12:28:51.633Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Yabiladi Radio",
+    "url": "https://radio.yabiladi.com:8002/;stream.mp3",
+    "country": "MA",
+    "type": "world music",
+    "tags": [
+      "world music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english,francaise",
+    "favicon": "https://static.yabiladi.com/images_new/logo_2_yab.png?4",
+    "homepage": "https://www.yabiladi.com/radio/",
+    "stationUuid": "dae1a80a-3fd7-433d-a805-4ede99e568b2",
+    "checkedAt": "2026-11-16T12:28:51.644Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   }
 ]

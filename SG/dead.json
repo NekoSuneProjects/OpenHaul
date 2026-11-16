@@ -11,7 +11,7 @@
     "favicon": "https://kakee.sg/images/camokakislibraries/kakee-reskin/img-kakee-logo.png",
     "homepage": "https://kakee.sg/",
     "stationUuid": "aeeff4da-ef06-4562-b1ba-47cdac547889",
-    "checkedAt": "2026-11-15T12:16:04.212Z",
+    "checkedAt": "2026-11-16T12:51:10.844Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -30,9 +30,28 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "4a4760a9-da09-4a12-9962-d9d7b545099c",
-    "checkedAt": "2026-11-15T12:16:05.018Z",
+    "checkedAt": "2026-11-16T12:51:11.519Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "RIA 897",
+    "url": "https://22393.live.streamtheworld.com/RIA897FM_SC",
+    "country": "SG",
+    "type": "pop",
+    "tags": [
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://yt3.ggpht.com/ytc/AMLnZu_SfufvaDW12AZL2cX8C9oG1G1pxRDu6ctcPN75VA=s900-c-k-c0x00ffffff-no-rj",
+    "homepage": "https://www.melisten.sg/radio/ria-897",
+    "stationUuid": "722e9620-5c47-4139-b4ae-9d3a2ffd2bd5",
+    "checkedAt": "2026-11-16T12:51:12.061Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   }
 ]

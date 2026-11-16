@@ -1,5 +1,28 @@
 [
   {
+    "name": "RADIO CAAPUCU FM 91.7",
+    "url": "http://radio.host.com.py:9452/;",
+    "country": "PY",
+    "type": "alternative",
+    "tags": [
+      "alternative",
+      "indie",
+      "local radio",
+      "rock",
+      "rock nacional"
+    ],
+    "codec": "AAC+",
+    "bitrate": 96,
+    "language": "spanish",
+    "favicon": "https://turadio.com.py/wp-content/uploads/2019/10/caapucu-300x259.png",
+    "homepage": "https://turadio.com.py/caapucufm/",
+    "stationUuid": "df7c112f-75a3-49bc-9250-cee6688fbddd",
+    "checkedAt": "2026-11-16T12:43:42.280Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
     "name": "Radio ABC FM 98.5 (Asunción)",
     "url": "https://media.streambrothers.com:8350/stream",
     "country": "PY",
@@ -16,7 +39,7 @@
     "favicon": "null",
     "homepage": "http://www.abc.com.pyl/",
     "stationUuid": "28343ff5-b885-4a71-8b55-b4545686b500",
-    "checkedAt": "2026-11-15T12:10:25.554Z",
+    "checkedAt": "2026-11-16T12:43:42.504Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -39,7 +62,7 @@
     "favicon": "null",
     "homepage": "http://www.abc.com.py/",
     "stationUuid": "ea9b9934-8eb7-434c-ac13-2d249b80f11e",
-    "checkedAt": "2026-11-15T12:10:25.564Z",
+    "checkedAt": "2026-11-16T12:43:42.510Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -61,10 +84,10 @@
     "favicon": "https://cdn.radoxo.com/images/paraguay/conquistador-fm.avif?v=1791194402",
     "homepage": "https://www.conquistadorfm891.com/",
     "stationUuid": "c8568a6a-3111-40bc-ac5c-e50428da965d",
-    "checkedAt": "2026-11-15T12:10:26.369Z",
-    "status": null,
+    "checkedAt": "2026-11-16T12:43:43.460Z",
+    "status": 404,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Top Milenium 91.5 FM",
@@ -83,7 +106,7 @@
     "favicon": "null",
     "homepage": "http://www.topmilenium915.com.py/",
     "stationUuid": "14e56432-1b64-4bc4-b9aa-a7c5d4bfe00b",
-    "checkedAt": "2026-11-15T12:10:26.564Z",
+    "checkedAt": "2026-11-16T12:43:43.658Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -106,10 +129,31 @@
     "favicon": "https://paraguayonline.net/wp-content/uploads/2019/03/cuevas.png",
     "homepage": "https://paraguayonline.net/cuevasfm/",
     "stationUuid": "88f74a2d-b52e-4fcf-9469-5fc5e2e6a2e5",
-    "checkedAt": "2026-11-15T12:10:26.673Z",
+    "checkedAt": "2026-11-16T12:43:43.758Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Farra 101.3 FM",
+    "url": "https://rfs1.farra.com.py:9433/stream",
+    "country": "PY",
+    "type": "latino",
+    "tags": [
+      "latino",
+      "pop",
+      "top 40"
+    ],
+    "codec": null,
+    "bitrate": 0,
+    "language": "asunción,spanish",
+    "favicon": "https://cdn.radoxo.com/images/paraguay/farra.avif?v=1791194402",
+    "homepage": "https://farra.com.py/",
+    "stationUuid": "7372eb4f-62f3-4308-adc1-0b0592fa7794",
+    "checkedAt": "2026-11-16T12:43:44.653Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Electrolevel Radiomix",
@@ -123,7 +167,7 @@
     "favicon": "https://www.getmeradio.com/stations/electrolevel-radiomix-8626/logos/512x512.png?t=1792973792074",
     "homepage": "https://getme.radio/electrolevel-radiomix",
     "stationUuid": "c3abe2b9-6b32-4272-8a70-c4889bf94b87",
-    "checkedAt": "2026-11-15T12:10:27.887Z",
+    "checkedAt": "2026-11-16T12:43:46.213Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -146,7 +190,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20250110_213941532.jpg?alt=media&token=e07edbc2-8494-41bf-82ab-6f114efdf664",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "db29a363-60b4-4273-99b6-9fee973a7c1e",
-    "checkedAt": "2026-11-15T12:10:28.579Z",
+    "checkedAt": "2026-11-16T12:43:47.318Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -165,7 +209,7 @@
     "favicon": null,
     "homepage": "https://www.abc.com.py/",
     "stationUuid": "9b318d0a-7e91-499e-a445-7e1e2c3a4d49",
-    "checkedAt": "2026-11-15T12:10:28.689Z",
+    "checkedAt": "2026-11-16T12:43:47.416Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -187,7 +231,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20241215_234329937.jpg?alt=media&token=f015eeac-3c79-4ae9-b799-b676845814d9",
     "homepage": "http://www.rqp.com.py/",
     "stationUuid": "74f0fa54-8f7f-482e-9a75-9ea2335ec9f2",
-    "checkedAt": "2026-11-15T12:10:28.952Z",
+    "checkedAt": "2026-11-16T12:43:47.625Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"

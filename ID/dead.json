@@ -19,54 +19,10 @@
     "favicon": "https://www.mahakax.com/wp-content/uploads/2022/06/logo-kisfm.png",
     "homepage": "https://www.kis951fm.com/",
     "stationUuid": "97a53925-e4bb-4d93-8d09-d03a2efe8e17",
-    "checkedAt": "2026-11-15T11:48:36.690Z",
+    "checkedAt": "2026-11-16T12:21:03.930Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "StarStream Radio - The Classic Rock Rewind",
-    "url": "https://streaming.live365.com/a76931",
-    "country": "ID",
-    "type": "70s",
-    "tags": [
-      "70s",
-      "80s",
-      "classic alternative",
-      "classic rock"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://static.wixstatic.com/media/837828_03b79a4d1d0345839c9a2e523d54662c~mv2.png/v1/fill/w_246,h_246,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/837828_03b79a4d1d0345839c9a2e523d54662c~mv2.png",
-    "homepage": "https://radiostream.novawap.com/",
-    "stationUuid": "72d00d68-f7e9-4a5a-bae6-dab4c9bd4e6e",
-    "checkedAt": "2026-11-15T11:48:37.342Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "StarStream Radio - The Classic Rock Rewind",
-    "url": "https://streaming.live365.com/a76931",
-    "country": "ID",
-    "type": "70s",
-    "tags": [
-      "70s",
-      "80s",
-      "classic alternative",
-      "classic rock"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://static.wixstatic.com/media/837828_567a64fa790042dca71f5fbafbabf7a6~mv2.jpeg",
-    "homepage": "https://radiostream.novawap.com/",
-    "stationUuid": "49d660ef-8dfe-4fdd-abd8-b509e4349d2d",
-    "checkedAt": "2026-11-15T11:48:37.414Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Most 1058",
@@ -86,7 +42,7 @@
     "favicon": "https://radio-online.id/assets/image/radio/180/most1058.jpg",
     "homepage": "https://www.most1058fm.com/",
     "stationUuid": "97b55cd1-357b-4324-bee9-8c5005e19707",
-    "checkedAt": "2026-11-15T11:48:37.448Z",
+    "checkedAt": "2026-11-16T12:21:04.914Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -103,7 +59,7 @@
     "favicon": "https://i.ibb.co/sypbbhj/untitled-design-2.png",
     "homepage": "https://cosmopolitanfm.com/",
     "stationUuid": "736345ce-11b5-4cd6-bcf5-4b2f02c80921",
-    "checkedAt": "2026-11-15T11:48:39.164Z",
+    "checkedAt": "2026-11-16T12:21:06.994Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -120,10 +76,44 @@
     "favicon": "https://firzadankiaradio.blogspot.com/favicon.ico",
     "homepage": "https://firzadankiaradio.blogspot.com/",
     "stationUuid": "e4715c0a-ed7c-4255-92c4-7793139086aa",
-    "checkedAt": "2026-11-15T11:48:39.445Z",
+    "checkedAt": "2026-11-16T12:21:07.114Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Gajahmada FM",
+    "url": "https://server.radioimeldafm.co.id:8040/gajahmadafm",
+    "country": "ID",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 80,
+    "language": "indonesian",
+    "favicon": null,
+    "homepage": "https://gajahmadafm.co.id/",
+    "stationUuid": "e4e8f150-f6ed-4486-a65f-d21467dd7af6",
+    "checkedAt": "2026-11-16T12:21:07.179Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Gajahmada FM",
+    "url": "https://server.radioimeldafm.co.id:8040/gajahmadafm",
+    "country": "ID",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 80,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://gajahmadafm.co.id/",
+    "stationUuid": "ff88b2dc-3993-4ff3-bcda-8fa74e3e1e2d",
+    "checkedAt": "2026-11-16T12:21:07.244Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "GCD Yogyakarta 98,6FM",
@@ -137,7 +127,7 @@
     "favicon": "https://gcdfm.com/cni-content/uploads/modules/siteconfig/thumbs/small/20160929094815.jpg",
     "homepage": "https://gcdfm.com/",
     "stationUuid": "19e9056a-10e0-445f-8016-49d5cdea9f0d",
-    "checkedAt": "2026-11-15T11:48:39.726Z",
+    "checkedAt": "2026-11-16T12:21:07.359Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -154,10 +144,44 @@
     "favicon": "http://cdn.theradiohub.com/logos/157.jpg",
     "homepage": "https://firzadankiaradio.blogspot.com/",
     "stationUuid": "6fde88b3-1d11-471e-abf0-5f25e468a9af",
-    "checkedAt": "2026-11-15T11:48:40.176Z",
+    "checkedAt": "2026-11-16T12:21:08.012Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "KISI FM BOGOR",
+    "url": "http://live.kisifm.com/kisifm",
+    "country": "ID",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://i.imgur.com/2vnfxBN.png",
+    "homepage": "https://kisifm.com/",
+    "stationUuid": "68e2662a-ccd4-470d-8e25-16e5e794d1f0",
+    "checkedAt": "2026-11-16T12:21:08.040Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "KPFM Balikpapan",
+    "url": "https://pu.klikhost.com/proxy/kpfmbpn/stream",
+    "country": "ID",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 160,
+    "language": null,
+    "favicon": "https://live.kapefm.com/wp-content/uploads/2024/07/logo-kapefmcom.png",
+    "homepage": "https://live.kapefm.com/",
+    "stationUuid": "4eb96af6-524e-4236-9243-bd27a4624dbe",
+    "checkedAt": "2026-11-16T12:21:08.140Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Lodiko MuLo",
@@ -171,7 +195,7 @@
     "favicon": "https://www.radioplug.co.uk/img/channel/06-07-2019-08-11-00.png",
     "homepage": "https://firzadankiaradio.blogspot.com/",
     "stationUuid": "d7dc1b62-3f55-46bd-add7-65b8913795fa",
-    "checkedAt": "2026-11-15T11:48:40.472Z",
+    "checkedAt": "2026-11-16T12:21:08.226Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -188,7 +212,7 @@
     "favicon": "https://www.radioplug.co.uk/img/channel/06-07-2019-08-11-00.png",
     "homepage": "https://firzadankiaradio.blogspot.com/",
     "stationUuid": "e72e7256-23ad-4bb7-8da1-20d6502b6b66",
-    "checkedAt": "2026-11-15T11:48:40.547Z",
+    "checkedAt": "2026-11-16T12:21:08.413Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -205,7 +229,7 @@
     "favicon": "https://gemarandik.mubakab.go.id/real/logo.png",
     "homepage": "https://gemarandik.mubakab.go.id/",
     "stationUuid": "811c1f2b-e697-4d45-85f5-8e7304d425fc",
-    "checkedAt": "2026-11-15T11:48:42.010Z",
+    "checkedAt": "2026-11-16T12:21:10.417Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -222,7 +246,7 @@
     "favicon": "https://remfm.unnes.ac.id/assets/img/favicon.png",
     "homepage": "https://remfm.unnes.ac.id/index.php/",
     "stationUuid": "a78c5fc5-a0d0-4df3-a599-9505c4fb7ac9",
-    "checkedAt": "2026-11-15T11:48:42.622Z",
+    "checkedAt": "2026-11-16T12:21:11.216Z",
     "status": 416,
     "contentType": "text/html",
     "lastFailure": "HTTP 416"
@@ -239,7 +263,7 @@
     "favicon": "https://radio.retrosquad.id/static/uploads/browser_icon/192.1777128038.png",
     "homepage": "https://retrosquad.id/",
     "stationUuid": "7349ebdd-f839-4100-8cee-4a361a0b9c58",
-    "checkedAt": "2026-11-15T11:48:42.691Z",
+    "checkedAt": "2026-11-16T12:21:11.246Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -256,7 +280,7 @@
     "favicon": null,
     "homepage": "https://retrosquad.id/",
     "stationUuid": "15775b47-33a5-4734-84e6-84191ba4656c",
-    "checkedAt": "2026-11-15T11:48:42.698Z",
+    "checkedAt": "2026-11-16T12:21:11.322Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -273,7 +297,7 @@
     "favicon": "https://spirittoc.com/wp-content/uploads/2021/08/cropped-Spirit-Online-2-1.png",
     "homepage": "https://spirittoc.com/",
     "stationUuid": "69b0e1d4-092a-4e58-936c-25b6ac35e899",
-    "checkedAt": "2026-11-15T11:48:42.802Z",
+    "checkedAt": "2026-11-16T12:21:11.370Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -290,7 +314,7 @@
     "favicon": null,
     "homepage": "https://vosmedia.net/",
     "stationUuid": "c287681e-34c4-4f85-a910-df626c4409ef",
-    "checkedAt": "2026-11-15T11:48:43.401Z",
+    "checkedAt": "2026-11-16T12:21:12.255Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -307,7 +331,7 @@
     "favicon": "https://deltafm.net/_ipx/q_100/img/logo.png",
     "homepage": "https://deltafm.net/",
     "stationUuid": "a7e7bdd1-ab8c-45c4-8853-481fc85cea65",
-    "checkedAt": "2026-11-15T11:48:43.938Z",
+    "checkedAt": "2026-11-16T12:21:12.514Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -324,7 +348,7 @@
     "favicon": null,
     "homepage": "https://femaleradio.co.id/",
     "stationUuid": "8edcb6da-009a-4bf7-95f4-b2b78d570a76",
-    "checkedAt": "2026-11-15T11:48:44.082Z",
+    "checkedAt": "2026-11-16T12:21:12.624Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -341,26 +365,9 @@
     "favicon": null,
     "homepage": "https://batarafm.baritoutarakab.go.id/",
     "stationUuid": "298c621e-f7da-45b1-ad73-587243884b05",
-    "checkedAt": "2026-11-15T11:48:45.035Z",
+    "checkedAt": "2026-11-16T12:21:13.466Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Luhak Nan Tuo 102.5 FM",
-    "url": "https://stream2.jejestreaming.com:8100/stream",
-    "country": "ID",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 56,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://radiolnt.tanahdatar.go.id/",
-    "stationUuid": "d8caeff5-5f9d-41b1-8f2c-762f2b164b55",
-    "checkedAt": "2026-11-15T11:48:45.085Z",
-    "status": 404,
-    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
@@ -375,7 +382,7 @@
     "favicon": null,
     "homepage": "https://mustang88fm.com/",
     "stationUuid": "f4a992d1-27a1-4686-bd32-7bfa82ce5e68",
-    "checkedAt": "2026-11-15T11:48:46.181Z",
+    "checkedAt": "2026-11-16T12:21:14.841Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -392,7 +399,7 @@
     "favicon": null,
     "homepage": "https://www.pramborsfm.com/",
     "stationUuid": "0fc564bb-fb29-4d76-a36f-394dd826144a",
-    "checkedAt": "2026-11-15T11:48:46.609Z",
+    "checkedAt": "2026-11-16T12:21:15.255Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -409,10 +416,27 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/id/d/d1/Prambors.svg",
     "homepage": "https://www.pramborsfm.com/",
     "stationUuid": "cfbcd6dd-dd71-411f-82f8-1b7c2f0bcca8",
-    "checkedAt": "2026-11-15T11:48:46.641Z",
+    "checkedAt": "2026-11-16T12:21:15.369Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Elshinta Surabaya",
+    "url": "https://stream-ssl.arenastreaming.com:8030/surabaya",
+    "country": "ID",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": null,
+    "favicon": "https://elshinta.com/template/elshinta_mobile/images/radio.png",
+    "homepage": "https://elshinta.com//live/radio",
+    "stationUuid": "39e90ff6-e0d7-432c-a5ff-a6e629724a31",
+    "checkedAt": "2026-11-16T12:21:16.041Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Galasika FM",
@@ -426,7 +450,7 @@
     "favicon": "https://galasikamedia.web.id/images/logo.png",
     "homepage": "https://www.galasikamedia.web.id/",
     "stationUuid": "77f91986-4021-4786-b462-5cd3a3505385",
-    "checkedAt": "2026-11-15T11:48:47.474Z",
+    "checkedAt": "2026-11-16T12:21:16.140Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -443,7 +467,7 @@
     "favicon": "https://streaming.radioidola.com/wp-content/themes/livecast/np/images/noImagePic.jpg",
     "homepage": "https://streaming.radioidola.com/",
     "stationUuid": "d80a922b-0892-4ac0-b9bb-0439bb6e46ff",
-    "checkedAt": "2026-11-15T11:48:47.558Z",
+    "checkedAt": "2026-11-16T12:21:16.219Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -460,7 +484,7 @@
     "favicon": null,
     "homepage": "http://www.salafybelitung.com/radio.html",
     "stationUuid": "844458a6-1779-42f2-863c-6cdf07122023",
-    "checkedAt": "2026-11-15T11:48:47.583Z",
+    "checkedAt": "2026-11-16T12:21:16.240Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -477,27 +501,10 @@
     "favicon": null,
     "homepage": "http://radiokitafm.com/index.html",
     "stationUuid": "969de0c7-4c5a-4844-b955-1bdbf2c428a5",
-    "checkedAt": "2026-11-15T11:48:47.711Z",
+    "checkedAt": "2026-11-16T12:21:16.652Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Suara Lumajang",
-    "url": "http://radio.suaralumajang.com:8287/live",
-    "country": "ID",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://suaralumajang.com/img/1.jpg",
-    "homepage": "https://suaralumajang.com/",
-    "stationUuid": "7799809e-4214-4e40-990e-e250789122c5",
-    "checkedAt": "2026-11-15T11:48:47.849Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Singosari FM Brebes (Official Station)",
@@ -511,7 +518,7 @@
     "favicon": "https://drive.google.com/file/d/1uSOTY7C1nDTbWMltHubSjwUUPXssmxQa/view?usp=sharing",
     "homepage": "https://singosarifmbrebes.radiostream123.com/",
     "stationUuid": "ce1930c4-3fec-4c9c-b8da-f76068d5a630",
-    "checkedAt": "2026-11-15T11:48:49.572Z",
+    "checkedAt": "2026-11-16T12:21:19.546Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -528,7 +535,7 @@
     "favicon": "https://drive.google.com/file/d/1uSOTY7C1nDTbWMltHubSjwUUPXssmxQa/view?usp=sharing",
     "homepage": "https://singosarifmbrebes.radiostream123.com/",
     "stationUuid": "cae591b2-3050-494c-bb33-cbf4fe55bb80",
-    "checkedAt": "2026-11-15T11:48:49.623Z",
+    "checkedAt": "2026-11-16T12:21:19.549Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -545,78 +552,10 @@
     "favicon": null,
     "homepage": "https://indonesiastreaming.com/suarainspirasi/",
     "stationUuid": "b1e0a07c-a8f7-4d0c-bc8d-ab9102e014c2",
-    "checkedAt": "2026-11-15T11:48:49.681Z",
+    "checkedAt": "2026-11-16T12:21:19.562Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "StarStream Radio - Alternative Rock 2010 to Now",
-    "url": "https://streaming.live365.com/a72059",
-    "country": "ID",
-    "type": "adult alternative",
-    "tags": [
-      "adult alternative",
-      "alternative",
-      "indie rock",
-      "soft rock",
-      "various"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://static.wixstatic.com/media/837828_41566379983b496ca3e2e4349c493aa5~mv2.jpeg",
-    "homepage": "https://radiostream.novawap.com/",
-    "stationUuid": "28764a9a-43ff-4297-9557-7f9f71908853",
-    "checkedAt": "2026-11-15T11:48:50.048Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "StarStream Radio - Rock 90's and 00's",
-    "url": "https://streaming.live365.com/a65639",
-    "country": "ID",
-    "type": "adult alternative",
-    "tags": [
-      "adult alternative",
-      "classic alternative",
-      "grunge",
-      "rock"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://static.wixstatic.com/media/837828_015de28f5b1e48338e60b45911f0fa64~mv2.jpeg",
-    "homepage": "https://live365.com/station/StarStream-Radio---Rock-90-s-and-00-s-a65639",
-    "stationUuid": "51be16d7-5b9b-4855-b536-b642455079d7",
-    "checkedAt": "2026-11-15T11:48:50.203Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "StarStream Radio - The Vinyl Vibe",
-    "url": "https://streaming.live365.com/a29175",
-    "country": "ID",
-    "type": "adult alternative",
-    "tags": [
-      "adult alternative",
-      "alternative",
-      "classic alternative",
-      "soft rock",
-      "various"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://static.wixstatic.com/media/837828_8ad6426e19624af38be7a52e88671f1c~mv2.jpeg",
-    "homepage": "https://radiostream.novawap.com/",
-    "stationUuid": "b76d061c-16dc-48ab-930d-07759c6c993c",
-    "checkedAt": "2026-11-15T11:48:50.215Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Jak! 101 FM",
@@ -635,50 +574,10 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbrC6oNQdlo-WUOCcuRMa2pYNg69uarSGrKA&s",
     "homepage": "https://jak101fm.com/",
     "stationUuid": "68cfd6a4-59c1-440d-af4b-4b2153e99591",
-    "checkedAt": "2026-11-15T11:48:50.478Z",
+    "checkedAt": "2026-11-16T12:21:20.470Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "vadanya",
-    "url": "https://s1.free-shoutcast.com/stream/18194",
-    "country": "ID",
-    "type": "all genre",
-    "tags": [
-      "all genre"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english,indonesian",
-    "favicon": "https://cdn.phototourl.com/free/2026-09-12-f841aa42-8595-481a-a012-3784d5b05151.png",
-    "homepage": "https://vadanyaplaylist01.apacobagjls1.workers.dev/",
-    "stationUuid": "ec51de6a-9b1e-419b-bec5-9a421909b7b0",
-    "checkedAt": "2026-11-15T11:48:50.847Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Nindy Radio 98.2 FM",
-    "url": "http://radio.garden/api/ara/content/listen/823zxnHk/channel.mp3",
-    "country": "ID",
-    "type": "alternative",
-    "tags": [
-      "alternative",
-      "love song",
-      "pop"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english,indonesian",
-    "favicon": "https://i.imgur.io/HWhcQrG_d.jpg?maxwidth=640",
-    "homepage": "https://youtube.com/@NindyVEVO",
-    "stationUuid": "c235f4e1-c2e9-4719-a442-e88d06f87f5d",
-    "checkedAt": "2026-11-15T11:48:51.374Z",
-    "status": 403,
-    "contentType": "text/plain; charset=utf-8",
-    "lastFailure": "HTTP 403"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio Fress FM",
@@ -697,7 +596,7 @@
     "favicon": null,
     "homepage": "https://www.fressfm.com/",
     "stationUuid": "18fc76a2-046d-42f1-bf41-adbd4bc33151",
-    "checkedAt": "2026-11-15T11:48:52.431Z",
+    "checkedAt": "2026-11-16T12:21:22.132Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -717,10 +616,34 @@
     "favicon": null,
     "homepage": "https://kbr.id/",
     "stationUuid": "c67d843c-89d6-4cbe-912e-17327973f18f",
-    "checkedAt": "2026-11-15T11:48:52.498Z",
+    "checkedAt": "2026-11-16T12:21:22.274Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Gajahmada FM Semarang",
+    "url": "https://server.radioimeldafm.co.id/radio/8040/gajahmadafm",
+    "country": "ID",
+    "type": "chill",
+    "tags": [
+      "chill",
+      "local",
+      "local radio",
+      "news",
+      "pop",
+      "semarang"
+    ],
+    "codec": "AAC",
+    "bitrate": 80,
+    "language": "indonesian",
+    "favicon": "https://static.mytuner.mobi/media/tvos_radios/CpvRgznUmJ.jpg",
+    "homepage": "http://www.gajahmadafm.co.id/",
+    "stationUuid": "864b965b-cf12-48ba-acac-3599a3c6d0b7",
+    "checkedAt": "2026-11-16T12:21:23.335Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Spirit Online",
@@ -738,7 +661,7 @@
     "favicon": "https://spirittoc.com/wp-content/uploads/2021/08/cropped-Spirit-Online-2-1.png",
     "homepage": "https://spirittoc.com/",
     "stationUuid": "5f474f3f-ce07-4273-9f9e-1c23d18948db",
-    "checkedAt": "2026-11-15T11:48:53.695Z",
+    "checkedAt": "2026-11-16T12:21:23.440Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -762,7 +685,7 @@
     "favicon": "https://blogger.googleusercontent.com/img/a/AVvXsEhdrOev9J4qtJ2fy3--jDuqSEJS0xtjR7ujzHbl5xZKHjnq8nlozAiNlCi-6cOBeTjNKKa7p2RFw5NdpYDl7y419h1h9nVTKrbnMdJWo0Eoug96sWYJ7YTYvvx-AIwSMsv3iCXsWn9yRWdGLTYJk9WOPW6XTRDRyqitB_6OOgLZQymiLo1yvLXRYfkwmA=s1600",
     "homepage": "https://www.1921baliheadbanger.com/",
     "stationUuid": "e256f349-4796-4998-971c-f0d22f3465f8",
-    "checkedAt": "2026-11-15T11:48:53.765Z",
+    "checkedAt": "2026-11-16T12:21:23.472Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -787,7 +710,7 @@
     "favicon": "https://www.mahakax.com/wp-content/uploads/2022/06/logo-mustang.png",
     "homepage": "https://mustang88fm.com/",
     "stationUuid": "0e8d8529-72b2-4988-843f-d7d6c75b446a",
-    "checkedAt": "2026-11-15T11:48:54.401Z",
+    "checkedAt": "2026-11-16T12:21:23.671Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -806,30 +729,9 @@
     "favicon": "https://d3kle7qwymxpcy.cloudfront.net/images/broadcasts/1c/be/120598/1/c300.png",
     "homepage": "http://firzadankiaradio.blogspot.com/",
     "stationUuid": "24b3d0de-b3f7-4686-bdf7-8a18296855ef",
-    "checkedAt": "2026-11-15T11:48:55.773Z",
+    "checkedAt": "2026-11-16T12:21:25.100Z",
     "status": 401,
     "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "_Wawa Radio 101.2 FM",
-    "url": "https://xn--tmz.xn--6frz82g/streams",
-    "country": "ID",
-    "type": "dance",
-    "tags": [
-      "dance",
-      "hardcore",
-      "mixed"
-    ],
-    "codec": "MP3",
-    "bitrate": 256,
-    "language": "english,indonesian,java",
-    "favicon": null,
-    "homepage": "https://xn--tmz.xn--6frz82g/",
-    "stationUuid": "60cf8889-689e-49e5-8f0b-992c0fa3f567",
-    "checkedAt": "2026-11-15T11:48:55.868Z",
-    "status": 401,
-    "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 401"
   },
   {
@@ -847,7 +749,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/",
     "stationUuid": "2eeff69e-23ed-4edc-9db2-bc99d20755fc",
-    "checkedAt": "2026-11-15T11:48:56.273Z",
+    "checkedAt": "2026-11-16T12:21:25.447Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -869,10 +771,30 @@
     "favicon": "https://i.imgur.com/7K0xs17.png",
     "homepage": null,
     "stationUuid": "fa9a81e1-3481-47e3-b4f3-1b4c4b833af9",
-    "checkedAt": "2026-11-15T11:48:56.535Z",
+    "checkedAt": "2026-11-16T12:21:25.638Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "ELPAS RADIO",
+    "url": "https://live.elpasradio.com/listen/elpasradio/stream",
+    "country": "ID",
+    "type": "dangdut",
+    "tags": [
+      "dangdut",
+      "pop"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "english,indonesian",
+    "favicon": "https://i.imgur.com/HnGOXjC.jpeg",
+    "homepage": "http://www.elpasradio.com/",
+    "stationUuid": "550256be-30d6-4145-b0fe-a266ecce64ec",
+    "checkedAt": "2026-11-16T12:21:26.172Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Hot 93.2 FM Jakarta",
@@ -890,29 +812,49 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/bwa9cq6nkvue.jpg",
     "homepage": "https://hot932fm.com/",
     "stationUuid": "4fbee4a8-f8e6-4b34-98ed-21bde0af1b0d",
-    "checkedAt": "2026-11-15T11:48:57.109Z",
+    "checkedAt": "2026-11-16T12:21:26.318Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
-    "name": "RADIKS FM SEMARANG",
-    "url": "https://i.klikhost.com:9620/stream",
+    "name": "Radio Dangdut Indonesia",
+    "url": "http://202.147.199.99:8000/",
     "country": "ID",
     "type": "dangdut",
     "tags": [
       "dangdut"
     ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "indonesian",
-    "favicon": "https://cppradionet.com/wp-content/uploads/2025/10/RADIKS.png",
-    "homepage": "https://cppradionet.com/radiks-99-semarang/",
-    "stationUuid": "b26a55ce-32ad-4821-ae68-14425e942917",
-    "checkedAt": "2026-11-15T11:48:57.639Z",
-    "status": 401,
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": "https://liveonlineradio.net/wp-content/uploads/2012/10/radio-dangdut-1.jpg",
+    "homepage": "https://radiofm.novawap.com/",
+    "stationUuid": "d17ae8f0-7a85-473b-af0e-f8139c106107",
+    "checkedAt": "2026-11-16T12:21:26.838Z",
+    "status": 503,
     "contentType": null,
-    "lastFailure": "HTTP 401"
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Radio Dangdut Indonesia",
+    "url": "http://202.147.199.99:8000/;stream/1",
+    "country": "ID",
+    "type": "dangdut",
+    "tags": [
+      "dangdut",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": "https://liveonlineradio.net/wp-content/uploads/2012/10/radio-dangdut-1.jpg",
+    "homepage": "https://radiofm.novawap.com/",
+    "stationUuid": "dff9c444-e9e3-46d4-9f25-3194afda9483",
+    "checkedAt": "2026-11-16T12:21:26.851Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Radio Purwodadi FM",
@@ -929,7 +871,7 @@
     "favicon": "https://i1.sndcdn.com/artworks-000401074338-uht722-t500x500.jpg",
     "homepage": "https://grobogan.go.id/",
     "stationUuid": "7b035d6f-48a0-4730-8e92-95f7bc8feb8a",
-    "checkedAt": "2026-11-15T11:48:58.129Z",
+    "checkedAt": "2026-11-16T12:21:26.961Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -950,10 +892,29 @@
     "favicon": null,
     "homepage": "https://www.radiowijangsongko.com/",
     "stationUuid": "ba97bbba-ae42-4071-9fea-f92023d23a2b",
-    "checkedAt": "2026-11-15T11:48:58.225Z",
+    "checkedAt": "2026-11-16T12:21:27.105Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "DEHILLS RADIO",
+    "url": "https://live.dehills.id/listen/dehills/stream",
+    "country": "ID",
+    "type": "easy",
+    "tags": [
+      "easy"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "english,indonesian",
+    "favicon": "https://i.imgur.com/jXvNwDm.jpeg",
+    "homepage": "http://www.dehills.id/",
+    "stationUuid": "60048490-3f98-45f9-bbd6-179f91694234",
+    "checkedAt": "2026-11-16T12:21:27.791Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "95.9 smart FM jakarta",
@@ -971,7 +932,7 @@
     "favicon": "http://www.radiosmartfm.com/assets/icon.ico",
     "homepage": "http://radiosmartfm.com/",
     "stationUuid": "14257686-118d-4a31-ac31-601075190c77",
-    "checkedAt": "2026-11-15T11:48:59.730Z",
+    "checkedAt": "2026-11-16T12:21:29.333Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -990,7 +951,7 @@
     "favicon": "https://i.ibb.co/cpy1q30r/ramadan-mpo777.png",
     "homepage": "https://cosmopolitanfm.com/",
     "stationUuid": "1e879be6-a5bf-4e67-871c-357199a28e4b",
-    "checkedAt": "2026-11-15T11:48:59.948Z",
+    "checkedAt": "2026-11-16T12:21:29.602Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1009,7 +970,7 @@
     "favicon": "https://i.ibb.co/sypbbhj/untitled-design-2.png",
     "homepage": "https://cosmopolitanfm.com/",
     "stationUuid": "a3fbed44-49c4-47d7-8fdc-15bd87d361eb",
-    "checkedAt": "2026-11-15T11:48:59.996Z",
+    "checkedAt": "2026-11-16T12:21:29.660Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1028,7 +989,7 @@
     "favicon": "null",
     "homepage": "http://streaming.mendhutfm.com:8790/stream",
     "stationUuid": "9d428c44-08e4-4a00-93d3-068600d17814",
-    "checkedAt": "2026-11-15T11:49:00.080Z",
+    "checkedAt": "2026-11-16T12:21:29.894Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1047,7 +1008,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/",
     "stationUuid": "71e24e9a-a82c-4666-b61b-56b89c6f256d",
-    "checkedAt": "2026-11-15T11:49:00.184Z",
+    "checkedAt": "2026-11-16T12:21:30.292Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1066,7 +1027,7 @@
     "favicon": "https://f4.bcbits.com/img/0000616041_71.jpg",
     "homepage": "https://radiostream.novawap.com/",
     "stationUuid": "b3b290e7-815a-4bbf-97e4-0d752e795f47",
-    "checkedAt": "2026-11-15T11:49:00.705Z",
+    "checkedAt": "2026-11-16T12:21:30.526Z",
     "status": 500,
     "contentType": "text/plain;charset=UTF-8",
     "lastFailure": "HTTP 500"
@@ -1085,10 +1046,31 @@
     "favicon": "https://images-v2.noiceid.cc/catalog/300x300/content-1760435142123.webp",
     "homepage": "https://www.deltafmmakassar.com/",
     "stationUuid": "a8f4ca38-6f2d-4ae6-bca8-6d8e5ddb0b93",
-    "checkedAt": "2026-11-15T11:49:01.420Z",
+    "checkedAt": "2026-11-16T12:21:31.497Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "KPFM Balikpapan",
+    "url": "https://pu.klikhost.com/proxy/kpfmbpn/stream",
+    "country": "ID",
+    "type": "hits",
+    "tags": [
+      "hits",
+      "indonesia",
+      "pop"
+    ],
+    "codec": "OGG",
+    "bitrate": 230,
+    "language": "bahasa indonesia,english,indonesian",
+    "favicon": "https://live.kapefm.com/wp-content/uploads/2024/07/logo-kapefmcom.png",
+    "homepage": "https://live.kapefm.com/",
+    "stationUuid": "03a48833-aaeb-4576-aac2-2d5c7c106cbc",
+    "checkedAt": "2026-11-16T12:21:31.698Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Prambors FM Jakarta 102.2",
@@ -1107,7 +1089,7 @@
     "favicon": "https://static.wixstatic.com/media/f66dc6_9dc6cbfe361c4cb0bddbe39262ec761d~mv2.png/v1/fill/w_980,h_980,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/f66dc6_9dc6cbfe361c4cb0bddbe39262ec761d~mv2.png",
     "homepage": "http://www.pramborsfm.com/",
     "stationUuid": "ab8ee851-2750-475e-ab77-aab0b2c49823",
-    "checkedAt": "2026-11-15T11:49:02.288Z",
+    "checkedAt": "2026-11-16T12:21:32.294Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1126,7 +1108,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdGjOvrjJ4pt9-BmbmOg7_4WxP8zKeoy9EDd9wcfjMAzFuwoQPN5ziO84&s=10",
     "homepage": "https://pramborsmks.com/",
     "stationUuid": "b9d101fc-e7d5-4804-9aef-a198769c70db",
-    "checkedAt": "2026-11-15T11:49:02.425Z",
+    "checkedAt": "2026-11-16T12:21:32.716Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1149,7 +1131,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi57hSIBiIVp-4lzSM_9nOl4PjUHNS1EHv9g&usqp=CAU",
     "homepage": "https://zeno.fm/",
     "stationUuid": "9d22ff88-65e2-4e80-bb05-cb55e3037522",
-    "checkedAt": "2026-11-15T11:49:03.391Z",
+    "checkedAt": "2026-11-16T12:21:34.204Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1172,10 +1154,51 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbOar4cPXVK8MrnO6gP7fUc8fQVpkLRFPdCQ&s",
     "homepage": "https://gen987fm.com/",
     "stationUuid": "a7443a0f-36ea-44cc-8e86-372d5e6d8380",
-    "checkedAt": "2026-11-15T11:49:03.540Z",
+    "checkedAt": "2026-11-16T12:21:34.305Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Loker Musik Indonesia",
+    "url": "https://stream.lokermusik.com/listen/lokermusik/lokermusik",
+    "country": "ID",
+    "type": "indonesia",
+    "tags": [
+      "indonesia",
+      "pop"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "english,indonesian",
+    "favicon": "https://cdn-profiles.tunein.com/s299056/images/logod.png",
+    "homepage": "https://www.lokermusik.com/",
+    "stationUuid": "083d312c-59c5-47fc-a00a-5515cc6771f2",
+    "checkedAt": "2026-11-16T12:21:34.827Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio CMN",
+    "url": "https://stream.coolkas.com/listen/radiocmn/radiocmn",
+    "country": "ID",
+    "type": "indonesia",
+    "tags": [
+      "indonesia",
+      "pop",
+      "top 40"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "english,indonesian",
+    "favicon": "https://www.radiobells.com/stations/coolmusicnow.jpg",
+    "homepage": "https://cmn.coolkas.com/",
+    "stationUuid": "694625e4-2b2f-47b0-8f62-051ab739ad68",
+    "checkedAt": "2026-11-16T12:21:35.022Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "RMK Radio Ciamis",
@@ -1193,10 +1216,31 @@
     "favicon": "https://i.imgur.com/E0GN8Eu.png",
     "homepage": "https://radiomasakini.com/",
     "stationUuid": "8bd79219-f613-469f-aee2-10dacdea95db",
-    "checkedAt": "2026-11-15T11:49:03.973Z",
+    "checkedAt": "2026-11-16T12:21:35.035Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Sunda Radio",
+    "url": "https://sundaradio.com/live/sundaradio",
+    "country": "ID",
+    "type": "indonesia",
+    "tags": [
+      "indonesia",
+      "pop",
+      "sunda"
+    ],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": "english,indonesian",
+    "favicon": "https://i.imgur.com/60EsDSg.png",
+    "homepage": "https://www.sundaradio.com/",
+    "stationUuid": "ef362ccc-a204-4054-82a4-69e239510d03",
+    "checkedAt": "2026-11-16T12:21:35.268Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "TIDI Radio Bogor",
@@ -1214,7 +1258,7 @@
     "favicon": "https://i.imgur.com/9hMuEke.jpeg",
     "homepage": "https://tidiradio.com/",
     "stationUuid": "2ffe6f15-2151-4874-96aa-ce90981c6561",
-    "checkedAt": "2026-11-15T11:49:04.131Z",
+    "checkedAt": "2026-11-16T12:21:35.369Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1235,7 +1279,7 @@
     "favicon": "https://live.youngstersradio.com/logoyoungsters.jpeg",
     "homepage": "https://youngstersradio.com/",
     "stationUuid": "63894d00-c332-41c1-bd00-b04f22193cba",
-    "checkedAt": "2026-11-15T11:49:04.154Z",
+    "checkedAt": "2026-11-16T12:21:35.439Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1255,7 +1299,7 @@
     "favicon": "https://radiodakwahmustofa.com/wp-content/uploads/2022/11/Logo-Radio-Warna-Plong-Emboss-Cloudradio-150x150@2x.png",
     "homepage": "https://radiodakwahmustofa.com/",
     "stationUuid": "1093d2fd-d68a-41b9-9f0e-8040ec6c0254",
-    "checkedAt": "2026-11-15T11:49:04.577Z",
+    "checkedAt": "2026-11-16T12:21:36.246Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1275,7 +1319,7 @@
     "favicon": "https://www.radio.net/175/japanimradio.png?version=3d5ac811aaf956b4801b89ea7b55944b8a0edc26",
     "homepage": "https://radiostream.novawap.com/",
     "stationUuid": "7a131f94-8512-4970-9d71-5b23ba009703",
-    "checkedAt": "2026-11-15T11:49:05.061Z",
+    "checkedAt": "2026-11-16T12:21:36.835Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1296,7 +1340,7 @@
     "favicon": null,
     "homepage": "https://radiostream.novawap.com/",
     "stationUuid": "3cc94fad-9a6f-4b9a-bee7-7dc0d7eb33ef",
-    "checkedAt": "2026-11-15T11:49:05.146Z",
+    "checkedAt": "2026-11-16T12:21:37.112Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1316,7 +1360,7 @@
     "favicon": "http://firzadankiaradio.blogspot.com/favicon.ico",
     "homepage": "http://firzadankiaradio.blogspot.com/",
     "stationUuid": "e6e58185-5327-494b-a74f-a8256aef839e",
-    "checkedAt": "2026-11-15T11:49:05.921Z",
+    "checkedAt": "2026-11-16T12:21:38.533Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1335,7 +1379,7 @@
     "favicon": "https://files.wap4.co/download/BQACAgUAAyEGAATmhXPfAAMNaiwaxyOwQQH7G0j64kc_LvQPaUIAAkYkAAJlfmBVF2OkoNxRBjg8BA/logo.jpeg",
     "homepage": "https://radiostream.novawap.com/",
     "stationUuid": "d8f9577d-21fc-4bba-983d-094601b65c18",
-    "checkedAt": "2026-11-15T11:49:06.102Z",
+    "checkedAt": "2026-11-16T12:21:38.882Z",
     "status": 500,
     "contentType": "text/plain;charset=UTF-8",
     "lastFailure": "HTTP 500"
@@ -1358,7 +1402,7 @@
     "favicon": "http://www.sonora.co.id/assets/icon.ico",
     "homepage": "http://www.sonora.co.id/",
     "stationUuid": "3ff79e0c-6051-4aec-a3e9-40472c78ddb1",
-    "checkedAt": "2026-11-15T11:49:06.457Z",
+    "checkedAt": "2026-11-16T12:21:39.712Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1380,7 +1424,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrbO3GhqbU6aFrxog5dD_oSs-8f-G-ovTSJamwgi0WANW_DK9EFaALIko&s=10",
     "homepage": "https://radioswarasemarangfm.co.id/",
     "stationUuid": "e45d3451-d020-4ee5-a273-a25fc7df02bf",
-    "checkedAt": "2026-11-15T11:49:06.473Z",
+    "checkedAt": "2026-11-16T12:21:39.812Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1400,7 +1444,7 @@
     "favicon": "https://imgx.sonora.id/file/smartfm/desktop/images/logo-smartfm.png",
     "homepage": "https://smartfm.sonora.id/",
     "stationUuid": "e6a3dac9-955f-4d6c-a452-bb2da87d9cf7",
-    "checkedAt": "2026-11-15T11:49:06.967Z",
+    "checkedAt": "2026-11-16T12:21:40.616Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1419,29 +1463,10 @@
     "favicon": "https://1.bp.blogspot.com/-34W3zxwUV3s/Xxt4aEddUII/AAAAAAAAbRk/z5KItZoR5TQThJmJ0MMXBd_g82GtC4_owCLcBGAsYHQ/s320/firza%2BRadio.png",
     "homepage": "http://firzadankiaradio.blogspot.com/",
     "stationUuid": "5cdf8807-6f27-4239-9d43-e4a2a468aee8",
-    "checkedAt": "2026-11-15T11:49:07.017Z",
+    "checkedAt": "2026-11-16T12:21:40.618Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "EL SHADDAI FM SOLO",
-    "url": "http://shaddai.onlivestreaming.net:9130/live",
-    "country": "ID",
-    "type": "media kristen",
-    "tags": [
-      "media kristen"
-    ],
-    "codec": "MP3",
-    "bitrate": 48,
-    "language": null,
-    "favicon": null,
-    "homepage": "http://elshaddaifm.com/",
-    "stationUuid": "96061cb7-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-15T11:49:07.240Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "101.5 cakrawala FM surabaya",
@@ -1457,7 +1482,7 @@
     "favicon": null,
     "homepage": "http://cakrawalafm.net/",
     "stationUuid": "af8dd437-d0b2-49e9-8a9c-99bf5bd7f1f1",
-    "checkedAt": "2026-11-15T11:49:07.997Z",
+    "checkedAt": "2026-11-16T12:21:41.958Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1476,7 +1501,7 @@
     "favicon": "https://www.sonorabandung.com/icon-gila.webp",
     "homepage": "http://www.sonorabandung.com/",
     "stationUuid": "bffe0959-edde-4adb-8b05-6a045317dca2",
-    "checkedAt": "2026-11-15T11:49:08.665Z",
+    "checkedAt": "2026-11-16T12:21:43.013Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1495,7 +1520,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "236b5aaf-cbd7-411d-9047-b1ab3e8849cd",
-    "checkedAt": "2026-11-15T11:49:08.957Z",
+    "checkedAt": "2026-11-16T12:21:43.216Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1512,7 +1537,7 @@
     "favicon": "https://mqfmnetwork.com/wp-content/uploads/2023/02/cropped-logo-MQFM-768x172.png",
     "homepage": "https://mqfmnetwork.com/",
     "stationUuid": "fed42d6a-4243-4ec3-8ac1-8c54571ade93",
-    "checkedAt": "2026-11-15T11:49:09.195Z",
+    "checkedAt": "2026-11-16T12:21:43.422Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1529,7 +1554,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/cJzEPL7JJJ.png",
     "homepage": "https://www.1921baliheadbanger.com/?m=1",
     "stationUuid": "b9dfc5e8-bba1-49e2-97bd-5db30229dfac",
-    "checkedAt": "2026-11-15T11:49:09.204Z",
+    "checkedAt": "2026-11-16T12:21:43.562Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1546,10 +1571,10 @@
     "favicon": "https://www.medanfm.id/2017/assets/img/logo.png",
     "homepage": "https://www.medanfm.id/2017/",
     "stationUuid": "7b17aa19-e2e9-44e3-8be5-d5e60e41fd04",
-    "checkedAt": "2026-11-15T11:49:09.275Z",
+    "checkedAt": "2026-11-16T12:21:43.615Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Brava Radio",
@@ -1563,7 +1588,7 @@
     "favicon": "https://bravaradio.com/wp-content/uploads/2014/12/logo.gif",
     "homepage": "https://bravaradio.com/",
     "stationUuid": "37a9cbce-07ec-4747-84d2-3774baac2e6f",
-    "checkedAt": "2026-11-15T11:49:09.858Z",
+    "checkedAt": "2026-11-16T12:21:44.314Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1580,7 +1605,7 @@
     "favicon": null,
     "homepage": "https://bravaradio.com/",
     "stationUuid": "a4d441bf-b23d-40b2-b2cd-bb8022e6b033",
-    "checkedAt": "2026-11-15T11:49:09.881Z",
+    "checkedAt": "2026-11-16T12:21:44.347Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1597,10 +1622,10 @@
     "favicon": "https://cityradio.id/5.0/assets/img/city_logo_web.png",
     "homepage": "https://www.cityradio.id/",
     "stationUuid": "691728f3-a498-4fdb-beb2-c72405efa2d6",
-    "checkedAt": "2026-11-15T11:49:09.893Z",
+    "checkedAt": "2026-11-16T12:21:44.421Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "CityRadio 959 FM",
@@ -1614,7 +1639,7 @@
     "favicon": "https://cityradio.id/5.0/assets/img/city_logo_web.png",
     "homepage": "https://www.cityradio.id/",
     "stationUuid": "8cf1797a-e216-4c9f-bc42-f593a0289770",
-    "checkedAt": "2026-11-15T11:49:09.938Z",
+    "checkedAt": "2026-11-16T12:21:44.425Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1631,7 +1656,7 @@
     "favicon": "https://fresh959fm.com/wp-content/uploads/2024/04/Logo-Fresh-retina-300x135.png",
     "homepage": "https://fresh959fm.com/",
     "stationUuid": "4e8c9b76-06dd-41b7-a128-156edb79312c",
-    "checkedAt": "2026-11-15T11:49:10.404Z",
+    "checkedAt": "2026-11-16T12:21:44.975Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1648,24 +1673,7 @@
     "favicon": "https://gemini101fm.com/wp-content/uploads/2024/04/cropped-LOGO-GEMINI.png",
     "homepage": "https://gemini101fm.com/",
     "stationUuid": "5b5d9efa-8482-4824-b9fd-e3b5be7f32d7",
-    "checkedAt": "2026-11-15T11:49:10.436Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "HANG106FM",
-    "url": "https://streamline.hangfm.id:8000/radio.mp3",
-    "country": "ID",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": null,
-    "favicon": "https://panel.hangmedia.co.id/assets/images/LOGHANGsmallA.png",
-    "homepage": "https://panel.hangmedia.co.id/av/radio.html",
-    "stationUuid": "1525bffc-d1cd-44f7-b58f-6529ce3dd4c2",
-    "checkedAt": "2026-11-15T11:49:10.725Z",
+    "checkedAt": "2026-11-16T12:21:45.178Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1682,10 +1690,27 @@
     "favicon": "https://kbr.id/images/logo/kbr-with-tagline-with-age.svg",
     "homepage": "https://kbr.id/",
     "stationUuid": "281b3203-b256-47aa-990c-321d8cd2f6a1",
-    "checkedAt": "2026-11-15T11:49:11.656Z",
+    "checkedAt": "2026-11-16T12:21:46.811Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Metrum Radio",
+    "url": "https://ssg.streamingmurah.com:8400/;",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://i0.wp.com/metrum.co.id/kanal/uploads/2024/06/cropped-Logo-Metrum-512x512-1.png?fit=180%2C180&ssl=1",
+    "homepage": "https://metrum.co.id/",
+    "stationUuid": "d757ca77-0dc8-487c-848f-474f077168aa",
+    "checkedAt": "2026-11-16T12:21:47.679Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Montini 106 FM Manado",
@@ -1699,7 +1724,7 @@
     "favicon": "https://montiniradio.com/wp-content/uploads/2022/03/LOGO.png",
     "homepage": "https://montiniradio.com/",
     "stationUuid": "c113e919-39c3-42d2-ad59-4900ed67ac7c",
-    "checkedAt": "2026-11-15T11:49:12.946Z",
+    "checkedAt": "2026-11-16T12:21:48.639Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1716,7 +1741,7 @@
     "favicon": "https://www.motionradiofm.com/assets/logo.png",
     "homepage": "https://www.motionradiofm.com/",
     "stationUuid": "99024ce7-02ca-482f-9584-c2024e83c726",
-    "checkedAt": "2026-11-15T11:49:12.972Z",
+    "checkedAt": "2026-11-16T12:21:48.663Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1733,7 +1758,7 @@
     "favicon": "https://mqfmnetwork.com/wp-content/uploads/2023/02/cropped-logo-MQFM-768x172.png",
     "homepage": "https://mqfmnetwork.com/",
     "stationUuid": "78dee7e2-14ad-4303-af9a-785fc7f4e3ea",
-    "checkedAt": "2026-11-15T11:49:13.196Z",
+    "checkedAt": "2026-11-16T12:21:48.712Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1750,10 +1775,27 @@
     "favicon": "https://mtbfm.co.id/wp-content/uploads/2024/11/Logo-MTB-3.png",
     "homepage": "https://mtbfm.co.id/#",
     "stationUuid": "39772aa7-69e7-443f-bb27-1107d6dc8552",
-    "checkedAt": "2026-11-15T11:49:13.203Z",
+    "checkedAt": "2026-11-16T12:21:48.773Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "NADAPA DIGITAL PRO 1",
+    "url": "https://ssg.streamingmurah.com:8116/:8000/;?download=false",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://nadapadigital.com/wp-content/uploads/2025/01/cropped-nadapa-logo-512x512-1.png",
+    "homepage": "https://nadapadigital.com/",
+    "stationUuid": "e3f9ec4a-43e9-4f71-b51b-6b1e9c042a90",
+    "checkedAt": "2026-11-16T12:21:48.885Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Paddygrooves",
@@ -1767,7 +1809,7 @@
     "favicon": "https://thumbnailer.mixcloud.com/unsafe/160x160/profile/8/b/5/2/cc9f-1737-481d-861e-2ca4fa65ec83",
     "homepage": "https://paddygrooves.radio/",
     "stationUuid": "e28b7ecb-f8d4-49fc-828c-b71d557aa7ea",
-    "checkedAt": "2026-11-15T11:49:13.809Z",
+    "checkedAt": "2026-11-16T12:21:50.268Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1784,7 +1826,7 @@
     "favicon": null,
     "homepage": "https://radiocahayaislam.blogspot.com/",
     "stationUuid": "83980d82-c147-4b18-9632-fc590d76b8fd",
-    "checkedAt": "2026-11-15T11:49:15.342Z",
+    "checkedAt": "2026-11-16T12:21:53.887Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1801,10 +1843,44 @@
     "favicon": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEieeRuYlJ5MU5CTQ-QBNViUNynBs4uiosiAbME-72SS-r_Jp0hsHejC7xBzNvSuqEAaMl1hVqLXcf-4mDpUj_hBW1lb7n2rlHB51oCcBpUTL6W3vFrAy5vZQP-dWyITxEJg1ek40dC6HJmJmrjI8qqNMiLDIf47-aeY6x3ZQZRGiE1-IQ/s1600/1000272864.png",
     "homepage": "https://radiocahayaislam.blogspot.com/",
     "stationUuid": "2394176b-b601-469d-b1a2-743101584d6b",
-    "checkedAt": "2026-11-15T11:49:15.437Z",
+    "checkedAt": "2026-11-16T12:21:54.135Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Dangdut 97.1 FM Jakarta",
+    "url": "http://202.147.199.99:8000/;",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": "http://www.hit-tuner.net/images/radiologos/img_laender/radio_dangdut_971.png",
+    "homepage": "http://www.rdifm.co.id/",
+    "stationUuid": "5f96f5c1-e75a-4129-abd3-d7e08360fa56",
+    "checkedAt": "2026-11-16T12:21:54.252Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Radio Dangdut Indonesia",
+    "url": "http://202.147.199.99:8000/;",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://www.rdifm.co.id/",
+    "stationUuid": "1b586cd5-13f6-4be2-b69e-925169df928a",
+    "checkedAt": "2026-11-16T12:21:54.363Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Radio Internet Indonesia (radio-i2.com)",
@@ -1818,27 +1894,27 @@
     "favicon": "https://radio-i2.com/wp-content/uploads/2025/11/favicon-radioi2-300x302.png",
     "homepage": "https://radio-i2.com/",
     "stationUuid": "31e57a47-3737-4aa9-9461-9bd31eec8f24",
-    "checkedAt": "2026-11-15T11:49:18.071Z",
+    "checkedAt": "2026-11-16T12:21:56.570Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Radio NUR FM Rembang",
-    "url": "https://ssi.streamingmurah.com:8002/live",
+    "name": "Radio Muara Jakarta",
+    "url": "http://45.64.97.82:8778/stream/1/",
     "country": "ID",
     "type": "MP3",
     "tags": [],
     "codec": "MP3",
     "bitrate": 128,
     "language": null,
-    "favicon": "http://live.nurfmrembang.com/images/logo-menu.png",
-    "homepage": "https://www.nurfmrembang.com/",
-    "stationUuid": "0832e6d9-ad31-41b4-a555-03ec63226f02",
-    "checkedAt": "2026-11-15T11:49:18.512Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "favicon": null,
+    "homepage": "http://y2mate.com/",
+    "stationUuid": "c2562aa0-6e56-41d7-ba3e-f7d7d65701ec",
+    "checkedAt": "2026-11-16T12:21:56.886Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Online Sulita",
@@ -1852,7 +1928,7 @@
     "favicon": "https://hpanel.hostinger.com/favicons/hostinger.png",
     "homepage": "https://www.sas.or.id/",
     "stationUuid": "ab6a8302-cf1c-48c9-b26a-1deb5b7b36b1",
-    "checkedAt": "2026-11-15T11:49:18.570Z",
+    "checkedAt": "2026-11-16T12:21:57.109Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1869,7 +1945,7 @@
     "favicon": null,
     "homepage": "http://www.sulita.net/",
     "stationUuid": "896b0eda-d623-48e6-b55d-eaf067648465",
-    "checkedAt": "2026-11-15T11:49:18.627Z",
+    "checkedAt": "2026-11-16T12:21:57.126Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1886,7 +1962,7 @@
     "favicon": null,
     "homepage": "https://www.radiorodja.com/live/",
     "stationUuid": "70abc402-ef45-42ae-84ce-daf16cea3ca9",
-    "checkedAt": "2026-11-15T11:49:18.833Z",
+    "checkedAt": "2026-11-16T12:21:57.516Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1903,7 +1979,7 @@
     "favicon": "https://www.radiorumahoma.com/assets/img/rroblack.jpg",
     "homepage": "https://radiorumahoma.com/",
     "stationUuid": "538128a3-0288-44f6-ae82-e2c4611b3146",
-    "checkedAt": "2026-11-15T11:49:18.848Z",
+    "checkedAt": "2026-11-16T12:21:57.756Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1920,7 +1996,7 @@
     "favicon": "https://radio.sayangquran.com/static/uploads/browser_icon/180.1762835340.png",
     "homepage": "https://radio.sayangquran.com/public/radiosq",
     "stationUuid": "9b9f9ccf-c33a-4dd4-89ac-14b864819e87",
-    "checkedAt": "2026-11-15T11:49:19.087Z",
+    "checkedAt": "2026-11-16T12:21:57.790Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1937,7 +2013,126 @@
     "favicon": "http://serambifm.com/wp-content/themes/v3.3/img/laguna-britana.png?1772024008517",
     "homepage": "http://serambifm.com/",
     "stationUuid": "8b58a3ec-26ae-4c25-8db3-e575a75db9bb",
-    "checkedAt": "2026-11-15T11:49:19.114Z",
+    "checkedAt": "2026-11-16T12:21:57.852Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Suara Banjar",
+    "url": "https://streamrsb.banjarkab.go.id/stream.ogg",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://rsb.banjarkab.go.id/wp-content/uploads/2022/08/cropped-logorsb.jpg",
+    "homepage": "https://rsb.banjarkab.go.id/",
+    "stationUuid": "0bec703c-48fa-456a-9ef1-3d9f89fa5397",
+    "checkedAt": "2026-11-16T12:21:58.314Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "RadioQu Bogor",
+    "url": "https://ssg.streamingmurah.com:8398/stream",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 48,
+    "language": "indonesian",
+    "favicon": "https://radioqubogor.com/assets/img/iconapp1.png",
+    "homepage": "https://radioqubogor.com/",
+    "stationUuid": "8563c426-db1e-4ad7-8661-5ea274879370",
+    "checkedAt": "2026-11-16T12:21:59.265Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "RadioQu Bogor",
+    "url": "https://ssg.streamingmurah.com:8398/stream",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 48,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radioqubogor.com/",
+    "stationUuid": "992ac137-e071-4bba-8c20-8d331213dd1b",
+    "checkedAt": "2026-11-16T12:21:59.295Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Retjo Buntung FM",
+    "url": "https://ssg.streamingmurah.com:9940/stream",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://retjobuntungfm.com/themes/radio/images/logo.png",
+    "homepage": "https://retjobuntungfm.com/home",
+    "stationUuid": "9ead572a-8ccb-43dc-8afa-ff362c615c9c",
+    "checkedAt": "2026-11-16T12:21:59.730Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Slawi FM Tegal",
+    "url": "https://i.klikhost.com/9032/;",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "javanese",
+    "favicon": "https://slawifm.id/wp-content/uploads/2021/01/slawi-fm-1.png",
+    "homepage": "https://slawifm.id/",
+    "stationUuid": "39e6bd0f-27d4-4748-93de-c9ce86c09611",
+    "checkedAt": "2026-11-16T12:22:02.865Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Slawi FM Tegal",
+    "url": "https://i.klikhost.com/9032/;",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "bahasa jawa",
+    "favicon": "https://slawifm.id/wp-content/uploads/2021/01/slawi-fm-1.png",
+    "homepage": "https://slawifm.id/",
+    "stationUuid": "0aee2a47-19d6-4532-9442-567b4820e89b",
+    "checkedAt": "2026-11-16T12:22:03.017Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Slawi FM Tegal",
+    "url": "https://i.klikhost.com/9032/;",
+    "country": "ID",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "indonesian",
+    "favicon": "https://slawifm.id/wp-content/uploads/2021/01/slawi-fm-1.png",
+    "homepage": "https://slawifm.id/",
+    "stationUuid": "bce51a67-e922-48c2-9d52-0dd686d37cba",
+    "checkedAt": "2026-11-16T12:22:03.128Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1954,7 +2149,7 @@
     "favicon": null,
     "homepage": "https://radio.solopos.com/",
     "stationUuid": "da90ca9a-8e73-40f5-8bb1-d6c1448456b0",
-    "checkedAt": "2026-11-15T11:49:22.738Z",
+    "checkedAt": "2026-11-16T12:22:03.160Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1971,7 +2166,7 @@
     "favicon": "http://www.sonora.co.id/assets/icon.ico",
     "homepage": "http://www.sonora.co.id/network/15/Palembang",
     "stationUuid": "14b9911e-91e5-4b93-bd5a-034987f1b53c",
-    "checkedAt": "2026-11-15T11:49:23.151Z",
+    "checkedAt": "2026-11-16T12:22:03.931Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1988,7 +2183,7 @@
     "favicon": "https://www.stylefmtasik.com/wp-content/uploads/2020/07/logo-kotak.png",
     "homepage": "https://www.stylefmtasik.com/",
     "stationUuid": "4ffbf4dd-415f-433f-8404-4abc261d3cd8",
-    "checkedAt": "2026-11-15T11:49:23.343Z",
+    "checkedAt": "2026-11-16T12:22:04.114Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2005,7 +2200,7 @@
     "favicon": "https://www.stylefmtasik.com/wp-content/uploads/2020/07/logo-kotak.png",
     "homepage": "https://www.stylefmtasik.com/",
     "stationUuid": "10c96c09-2c0e-42fa-9a0a-c25fb8f90da7",
-    "checkedAt": "2026-11-15T11:49:23.384Z",
+    "checkedAt": "2026-11-16T12:22:04.311Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2022,7 +2217,7 @@
     "favicon": null,
     "homepage": "https://radio.pasuruankab.go.id/",
     "stationUuid": "bf5ed4a2-60a8-47f5-9898-0158d3304773",
-    "checkedAt": "2026-11-15T11:49:23.532Z",
+    "checkedAt": "2026-11-16T12:22:05.119Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2039,7 +2234,7 @@
     "favicon": null,
     "homepage": "https://radioswarasemarangfm.co.id/",
     "stationUuid": "0347a882-1616-48f5-834d-0381f74307e8",
-    "checkedAt": "2026-11-15T11:49:24.212Z",
+    "checkedAt": "2026-11-16T12:22:05.914Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2058,7 +2253,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoorUN6xkuaIk6TGP-9ihpdnXm229tGwOtllkyFdsupw&s",
     "homepage": "https://www.deltafm.net/",
     "stationUuid": "6c2703d2-1e6d-4de3-8b02-97d86a8c46aa",
-    "checkedAt": "2026-11-15T11:49:25.409Z",
+    "checkedAt": "2026-11-16T12:22:07.730Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2077,7 +2272,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoorUN6xkuaIk6TGP-9ihpdnXm229tGwOtllkyFdsupw&s",
     "homepage": "https://www.deltafm.net/",
     "stationUuid": "cdd58252-09b9-4c89-b688-243cf107ad29",
-    "checkedAt": "2026-11-15T11:49:25.442Z",
+    "checkedAt": "2026-11-16T12:22:07.734Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2098,7 +2293,7 @@
     "favicon": "https://i-car.id/wp-content/uploads/2021/07/son-jakarta.jpg",
     "homepage": "https://www.sonora.co.id/",
     "stationUuid": "fc4d5e3b-fe29-4ef8-b9d8-24773cde62db",
-    "checkedAt": "2026-11-15T11:49:30.055Z",
+    "checkedAt": "2026-11-16T12:22:09.011Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2117,7 +2312,7 @@
     "favicon": "https://programres.kbs.co.kr/i0000-2083/2020/10/23/1603419373882_286788.jpg",
     "homepage": "https://radiostream.novawap.com/",
     "stationUuid": "6e549610-fc75-44c6-ace0-93d949ddda63",
-    "checkedAt": "2026-11-15T11:49:30.438Z",
+    "checkedAt": "2026-11-16T12:22:09.713Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -2134,10 +2329,10 @@
     "favicon": "https://cityradio.id/5.0/assets/img/city_logo_web.png",
     "homepage": "https://www.cityradio.id/5.0/streaming?line=2",
     "stationUuid": "443733b4-147b-43af-a6f3-faf987867924",
-    "checkedAt": "2026-11-15T11:49:31.397Z",
-    "status": 403,
-    "contentType": "text/plain; charset=utf-8",
-    "lastFailure": "HTTP 403"
+    "checkedAt": "2026-11-16T12:22:10.601Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "City Radio 959 FM",
@@ -2151,27 +2346,29 @@
     "favicon": "https://cityradio.id/5.0/assets/img/city_logo_web.png",
     "homepage": "https://www.cityradio.id/5.0/streaming?line=2",
     "stationUuid": "7c84dc53-d82e-4a41-bde2-6ba258309844",
-    "checkedAt": "2026-11-15T11:49:31.546Z",
-    "status": 403,
-    "contentType": "text/plain; charset=utf-8",
-    "lastFailure": "HTTP 403"
+    "checkedAt": "2026-11-16T12:22:10.853Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "City Radio Mandarin",
-    "url": "https://live.cityradio.id/cr-mandarin.ogg",
+    "name": "BIMASAKTI FM KEBUMEN",
+    "url": "https://i.klikhost.com:9622/stream",
     "country": "ID",
-    "type": "OGG",
-    "tags": [],
-    "codec": "OGG",
-    "bitrate": 96,
-    "language": null,
-    "favicon": "https://cityradio.id/5.0/assets/img/city_logo_web.png",
-    "homepage": "https://www.cityradio.id/5.0/streaming?line=2",
-    "stationUuid": "d2354601-868f-4ce4-978f-5fe9cc9ac91b",
-    "checkedAt": "2026-11-15T11:49:31.562Z",
-    "status": 403,
-    "contentType": "text/plain; charset=utf-8",
-    "lastFailure": "HTTP 403"
+    "type": "pop",
+    "tags": [
+      "pop"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "indonesian",
+    "favicon": "https://cppradionet.com/wp-content/uploads/2025/10/bimasakti-768x768.jpg",
+    "homepage": "https://cppradionet.com/radio-keluarga-indonesia/",
+    "stationUuid": "7dde95f3-1b27-4f42-9447-7e353e93ef57",
+    "checkedAt": "2026-11-16T12:22:12.876Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Brava Radio",
@@ -2187,7 +2384,7 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/323/brava-radio.f6f68914.png",
     "homepage": "https://radiostream.novawap.com/",
     "stationUuid": "f62d226a-9020-4397-9ef5-4b3573e84762",
-    "checkedAt": "2026-11-15T11:49:33.160Z",
+    "checkedAt": "2026-11-16T12:22:12.992Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2206,10 +2403,48 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi57hSIBiIVp-4lzSM_9nOl4PjUHNS1EHv9g&usqp=CAU",
     "homepage": "https://zeno.fm/",
     "stationUuid": "c580792d-f54d-4238-8f74-c93f0a263816",
-    "checkedAt": "2026-11-15T11:49:33.262Z",
+    "checkedAt": "2026-11-16T12:22:13.121Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Camajaya FM",
+    "url": "https://ssg.streamingmurah.com:8078/;",
+    "country": "ID",
+    "type": "pop",
+    "tags": [
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 32,
+    "language": "indonesian",
+    "favicon": null,
+    "homepage": "https://radiocamajaya.com/",
+    "stationUuid": "f2b23ea7-60dc-4e87-8615-3ace715b18bd",
+    "checkedAt": "2026-11-16T12:22:13.176Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Cosmo Radio 101.9 FM Bandung",
+    "url": "http://scg.streamingmurah.com:8074/stream",
+    "country": "ID",
+    "type": "pop",
+    "tags": [
+      "pop"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": "indonesian",
+    "favicon": "https://zeno.fm/_ipx/f_webp&q_85&fit_cover&s_288x288/https://images.zeno.fm/glLcKdCqSmBZZ7r9WF8p5lNyczaoX264kYSBBZzl3sE/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvZjNlODFhNGEtZGQ3OS00ZTlmLTk4NDktMTg5ZmZhMTIzMjE5L2ltYWdlLz91PTE3MTM5MDUzNjMwMDA.webp",
+    "homepage": "https://www.instagram.com/cosmoradio.id/",
+    "stationUuid": "992d0d38-d771-4105-aa33-fc7cd9e30035",
+    "checkedAt": "2026-11-16T12:22:13.533Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Firza Radio Tapsel",
@@ -2225,7 +2460,7 @@
     "favicon": "https://firzadankiaradio.blogspot.com/favicon.ico",
     "homepage": "https://firzadankiaradio.blogspot.com/",
     "stationUuid": "5db18055-48a2-4179-92d0-38a3631fe0d8",
-    "checkedAt": "2026-11-15T11:49:33.958Z",
+    "checkedAt": "2026-11-16T12:22:14.829Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2244,7 +2479,7 @@
     "favicon": "https://www.mahakax.com/wp-content/uploads/2022/09/Logo-Gen-Jkt-png.png",
     "homepage": "https://gen987fm.com/",
     "stationUuid": "d804911c-51bf-4f86-ae99-9564b11d210d",
-    "checkedAt": "2026-11-15T11:49:34.439Z",
+    "checkedAt": "2026-11-16T12:22:15.614Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2263,7 +2498,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2013/12 /gen-fm-1.Jpg",
     "homepage": "https://radiofm.novawap.com/",
     "stationUuid": "499b6a84-90ab-439d-9351-8ef66be5c799",
-    "checkedAt": "2026-11-15T11:49:34.469Z",
+    "checkedAt": "2026-11-16T12:22:15.716Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2282,29 +2517,10 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2013/12/gen-fm-1.jpg",
     "homepage": "https://radiofm.novawap.com/",
     "stationUuid": "e879b3dd-45a2-47ea-9520-833d9a0d9305",
-    "checkedAt": "2026-11-15T11:49:34.592Z",
+    "checkedAt": "2026-11-16T12:22:15.854Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "iSWARA JOGJA",
-    "url": "https://stream.radiojar.com/hnf2cbv80k8uv",
-    "country": "ID",
-    "type": "pop",
-    "tags": [
-      "pop"
-    ],
-    "codec": "AAC",
-    "bitrate": 0,
-    "language": null,
-    "favicon": "https://assets-static.iswaranetwork.com/2025/03/PLAYER-ISWARA-2025-COVER.jpg",
-    "homepage": "https://radiostream.novawap.com/",
-    "stationUuid": "7472a4a7-bc5a-47d5-b51a-66833a8f309b",
-    "checkedAt": "2026-11-15T11:49:34.963Z",
-    "status": 503,
-    "contentType": "text/plain",
-    "lastFailure": "HTTP 503"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "JAK 101 FM",
@@ -2320,7 +2536,7 @@
     "favicon": "https://www.mahakax.com/wp-content/uploads/2022/06/jakfm.png",
     "homepage": "https://jak101fm.com/",
     "stationUuid": "a5dbe024-ac26-4e09-b56c-8e7023fa8bcf",
-    "checkedAt": "2026-11-15T11:49:35.180Z",
+    "checkedAt": "2026-11-16T12:22:16.638Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2339,67 +2555,71 @@
     "favicon": "https://streaming.classynetradio.com/static/uploads/kr_radio/album_art.1725613994.png",
     "homepage": "https://www.krradiojogja.com/",
     "stationUuid": "938723d6-33d4-4e27-b14c-94853b9984ce",
-    "checkedAt": "2026-11-15T11:49:35.462Z",
+    "checkedAt": "2026-11-16T12:22:17.160Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "Polaris FM Kudus",
-    "url": "https://i.klikhost.com:8160/stream",
+    "name": "PASFM Pati",
+    "url": "http://scg.streamingmurah.com:8886/mp3/;",
     "country": "ID",
     "type": "pop",
     "tags": [
       "pop"
     ],
-    "codec": "AAC+",
+    "codec": "MP3",
     "bitrate": 64,
     "language": null,
-    "favicon": null,
+    "favicon": "https://images.noiceid.cc/catalog/content-1684912392682",
     "homepage": "https://radiostream.novawap.com/",
-    "stationUuid": "75dd38c7-462c-4c78-813d-bb1fa5e3ad8c",
-    "checkedAt": "2026-11-15T11:49:36.993Z",
-    "status": 401,
+    "stationUuid": "e6a8cf61-97dc-4cd4-bba3-de653e95307a",
+    "checkedAt": "2026-11-16T12:22:19.159Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 401"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "POP FM Jogja",
-    "url": "https://i.klikhost.com:9154/stream",
+    "name": "Radio Bola",
+    "url": "https://live.radiobola.co.id/listen/radiobola/stream",
     "country": "ID",
     "type": "pop",
     "tags": [
-      "pop"
+      "pop",
+      "rock",
+      "top 40"
     ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "indonesian",
-    "favicon": "https://cppradionet.com/wp-content/uploads/2025/09/POP-Jogja-2023.png",
-    "homepage": "https://cppradionet.com/pop-jogja/",
-    "stationUuid": "6499027d-5b9f-42a7-810b-6b78590ef41b",
-    "checkedAt": "2026-11-15T11:49:37.104Z",
-    "status": 401,
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": "english,indonesian",
+    "favicon": "https://i.imgur.com/jWiTHyJ.jpeg",
+    "homepage": "https://radiobola.co.id/",
+    "stationUuid": "3f9ae972-51ea-47b4-b664-a6038c72d77f",
+    "checkedAt": "2026-11-16T12:22:20.574Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 401"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "RADIKS FM SEMARANG",
-    "url": "https://i.klikhost.com:9620/;",
+    "name": "Radio Bola",
+    "url": "https://live.radiobola.co.id/listen/radiobola/stream",
     "country": "ID",
     "type": "pop",
     "tags": [
-      "pop"
+      "pop",
+      "rock",
+      "top 40"
     ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "indonesian",
-    "favicon": "https://cppradionet.com/wp-content/uploads/2025/10/RADIKS.png",
-    "homepage": "https://cppradionet.com/radiks-99-semarang/",
-    "stationUuid": "8c535e8b-0b48-470d-a9ae-35a341e79379",
-    "checkedAt": "2026-11-15T11:49:37.648Z",
-    "status": 401,
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": "english,indonesian",
+    "favicon": "https://i.imgur.com/jWiTHyJ.jpeg",
+    "homepage": "https://radiobola.co.id/",
+    "stationUuid": "58c515c0-263d-4ab7-a240-69cf5c29eb12",
+    "checkedAt": "2026-11-16T12:22:20.654Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 401"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "rava Radio",
@@ -2415,10 +2635,29 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/323/brava-radio.f6f68914.png",
     "homepage": "https://radiostream.novawap.com/",
     "stationUuid": "680a6837-bb31-4ecb-8dd0-2637157f48a5",
-    "checkedAt": "2026-11-15T11:49:38.640Z",
+    "checkedAt": "2026-11-16T12:22:21.968Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Streaming Murah",
+    "url": "https://ssg.streamingmurah.com:7777/stream",
+    "country": "ID",
+    "type": "pop",
+    "tags": [
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://streamingmurah.com/wp-content/uploads/2014/08/logostreamingbaru3.png",
+    "homepage": "https://radiostream.novawap.com/",
+    "stationUuid": "d30603ce-5e75-4f2b-83ea-a6b709040253",
+    "checkedAt": "2026-11-16T12:22:22.845Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Toss FM",
@@ -2434,7 +2673,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2021/11/Toss-FM-100x47.webp",
     "homepage": "https://radiostream.novawap.com/",
     "stationUuid": "dd9a8eb4-b2d1-433c-9502-38f9a59957e9",
-    "checkedAt": "2026-11-15T11:49:39.587Z",
+    "checkedAt": "2026-11-16T12:22:23.396Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2453,7 +2692,7 @@
     "favicon": "https://static-roov.rctiplus.id/images/radio/trax-fm-jakarta-1759820968.jpg",
     "homepage": "https://radiostream.novawap.com/",
     "stationUuid": "3e1e40af-712f-43d1-a48f-41b00d2e17d2",
-    "checkedAt": "2026-11-15T11:49:39.726Z",
+    "checkedAt": "2026-11-16T12:22:23.532Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2473,10 +2712,30 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/543/voks-radio-bali-102-fm.a66dc9b5.png",
     "homepage": "https://voksradiobali.com/",
     "stationUuid": "37301c44-126c-4c5e-9a96-cad2492558c1",
-    "checkedAt": "2026-11-15T11:49:39.976Z",
+    "checkedAt": "2026-11-16T12:22:23.816Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Voks Radio Bali 99.3 FM",
+    "url": "https://svara-stream.radioddns.net/bali_voksradio_993fm",
+    "country": "ID",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "rock"
+    ],
+    "codec": "OGG",
+    "bitrate": 160,
+    "language": "indonesian",
+    "favicon": "https://static2.mytuner.mobi/media/tvos_radios/544/voks-radio-bali-993-fm.e48e3a67.png",
+    "homepage": "https://www.voksradiobali.com/",
+    "stationUuid": "6fbbf527-a781-42d3-acd5-25d0dcddd20c",
+    "checkedAt": "2026-11-16T12:22:23.926Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Voks Radio Bali 99.3 FM",
@@ -2493,10 +2752,49 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/544/voks-radio-bali-993-fm.e48e3a67.png",
     "homepage": "https://www.voksradiobali.com/",
     "stationUuid": "b0dd710b-8778-44fe-b618-325ec33600de",
-    "checkedAt": "2026-11-15T11:49:40.096Z",
+    "checkedAt": "2026-11-16T12:22:24.186Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Voks Radio Jogja 105.3 FM",
+    "url": "https://svara-stream.radioddns.net/yogyakarta_voksradio",
+    "country": "ID",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "rock"
+    ],
+    "codec": "AAC",
+    "bitrate": 256,
+    "language": "indonesian",
+    "favicon": "https://images.noiceid.cc/catalog/300x300/content-1665646151940",
+    "homepage": "https://www.voksradiojogja.com/",
+    "stationUuid": "81024caf-d1b8-4f71-a064-159902d68c7a",
+    "checkedAt": "2026-11-16T12:22:24.221Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "ZENITH FM SALATIGA",
+    "url": "https://i.klikhost.com:9616/stream",
+    "country": "ID",
+    "type": "pop",
+    "tags": [
+      "pop"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "indonesian",
+    "favicon": "https://cppradionet.com/wp-content/uploads/2025/10/zenith-768x768.jpg",
+    "homepage": "https://cppradionet.com/radio-keluarga-indonesia/",
+    "stationUuid": "f37d14a2-bfc9-4a72-b51d-7f0bf7af064f",
+    "checkedAt": "2026-11-16T12:22:24.595Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Dua Tujuh FM",
@@ -2512,7 +2810,7 @@
     "favicon": "https://i.postimg.cc/7LfNn5pj/Chat-GPT-Image-1-Jun-2026-13-25-24.png",
     "homepage": "https://duatujuhfm.radio12345.com/",
     "stationUuid": "ec7dd731-025b-4edb-bd5a-6982eec16697",
-    "checkedAt": "2026-11-15T11:49:40.796Z",
+    "checkedAt": "2026-11-16T12:22:27.159Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2532,7 +2830,7 @@
     "favicon": "https://www.radioplug.co.uk/img/channel/07-07-2019-06-09-53.jpg",
     "homepage": "https://firzadankiaradio.blogspot.com/",
     "stationUuid": "ea98daef-9f9a-46af-9b36-1811212ae4c7",
-    "checkedAt": "2026-11-15T11:49:40.827Z",
+    "checkedAt": "2026-11-16T12:22:27.212Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2551,7 +2849,7 @@
     "favicon": "https://firzadankiaradio.blogspot.com/favicon.ico",
     "homepage": "https://firzadankiaradio.blogspot.com/",
     "stationUuid": "6e3d1eea-7c9d-44b0-b1e0-0547d13670de",
-    "checkedAt": "2026-11-15T11:49:40.896Z",
+    "checkedAt": "2026-11-16T12:22:27.355Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2570,29 +2868,48 @@
     "favicon": "https://cdn.theradiohub.com/logos/263.png",
     "homepage": "https://firzadankiaradio.blogspot.com/",
     "stationUuid": "4f02ff6c-877a-46e9-9ba7-9bd57f21a7e6",
-    "checkedAt": "2026-11-15T11:49:40.949Z",
+    "checkedAt": "2026-11-16T12:22:27.416Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
   },
   {
-    "name": "Nur FM Rembang",
-    "url": "https://ssi.streamingmurah.com:8002/live",
+    "name": "VOS RADIO",
+    "url": "https://live.voss.my.id/listen/voss/voss",
     "country": "ID",
-    "type": "religious",
+    "type": "populer",
     "tags": [
-      "religious"
+      "populer"
     ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "bahasa indonesia,bahasa jawa,indonesian,java,javanese,jawa",
-    "favicon": "https://www.nurfmrembang.com/wp-content/uploads/2020/01/logo.png",
-    "homepage": "https://live.nurfmrembang.com/",
-    "stationUuid": "e4c36cba-3bac-45b9-a41b-13216967359e",
-    "checkedAt": "2026-11-15T11:49:41.338Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "codec": "AAC",
+    "bitrate": 96,
+    "language": "english,indonesian",
+    "favicon": "https://cdn.onlineradiobox.com/img/l/6/94966.v8.png",
+    "homepage": "https://voss.my.id/",
+    "stationUuid": "971a0130-f008-4679-8bef-1fc66fe50e4a",
+    "checkedAt": "2026-11-16T12:22:28.612Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Marilyn Manson Radio",
+    "url": "https://stream.pcradio.ru/Marilyn_Manson-hi",
+    "country": "ID",
+    "type": "rock",
+    "tags": [
+      "rock"
+    ],
+    "codec": "AAC",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://fmcube.net/images/stations/61b09d2a5b53a.jpg",
+    "homepage": "https://radiostream.novawap.com/",
+    "stationUuid": "860f9205-5ec8-45fb-8da6-69b82ad6ecb4",
+    "checkedAt": "2026-11-16T12:22:32.247Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "THE ROCKIN LIFE - BANDUNG",
@@ -2608,7 +2925,7 @@
     "favicon": "https://assets-static.therockinlife.com/wp-content/uploads/2024/12/TRL-MUSIC-STREAM-PLAYER-BANDUNG.jpg",
     "homepage": "https://therockinlife.com/streaming-bandung/",
     "stationUuid": "4ea1cf6c-39ad-4ef1-afc5-044f79c95cf4",
-    "checkedAt": "2026-11-15T11:49:43.029Z",
+    "checkedAt": "2026-11-16T12:22:33.048Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -2627,10 +2944,48 @@
     "favicon": "https://i.imgur.com/ToiFPP2.jpg",
     "homepage": "https://www.radioistara.com/",
     "stationUuid": "6dca0860-d2eb-4a4d-a170-87b186495bdc",
-    "checkedAt": "2026-11-15T11:49:43.063Z",
+    "checkedAt": "2026-11-16T12:22:33.071Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Suara Al Jihad FM Banjarmaein",
+    "url": "http://i.klikhost.com:8044/;stream.mp3",
+    "country": "ID",
+    "type": "talk & speech",
+    "tags": [
+      "talk & speech"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "f159c2be-717c-4217-b566-65ddd23a832a",
+    "checkedAt": "2026-11-16T12:22:33.352Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Wijaya FM 103.5 FM Surabaya",
+    "url": "http://wijayafm.onlivestreaming.net:9880/stream?",
+    "country": "ID",
+    "type": "undefined",
+    "tags": [
+      "undefined"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "indonesian",
+    "favicon": "https://radiowijayafm.com/wp-content/uploads/2017/10/favicon.png",
+    "homepage": "https://radiowijayafm.com/",
+    "stationUuid": "4dd1c605-504d-4240-9b5d-072eed0e9b5a",
+    "checkedAt": "2026-11-16T12:22:34.527Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "CNN Indonesia TV",
@@ -2644,7 +2999,7 @@
     "favicon": "https://cdn.cnnindonesia.com/cnnid/mobile/images/logo__cnn.png?v=10.16.9",
     "homepage": "http://www.cnnindonesia.com/",
     "stationUuid": "aa3cee2f-df72-11e8-a9cc-52543be04c81",
-    "checkedAt": "2026-11-15T11:49:44.155Z",
+    "checkedAt": "2026-11-16T12:22:34.619Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

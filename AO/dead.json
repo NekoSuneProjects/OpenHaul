@@ -1,5 +1,24 @@
 [
   {
+    "name": "Powermix FM",
+    "url": "https://cast.iplayradio.net/listen/powermixfm/stream",
+    "country": "AO",
+    "type": "90s dance",
+    "tags": [
+      "90s dance"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://powermixfm.com/",
+    "stationUuid": "7b4fcdc7-4e59-47cf-8062-87123715b4a5",
+    "checkedAt": "2026-11-16T11:36:46.464Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
     "name": "LOVE FM:  Músicas pop espanholas clássicas dos anos 80, 90 e 2000",
     "url": "https://mdstrm.com/audio/66a01759c5aa2b85d66b5933/live.m3u8",
     "country": "AO",
@@ -11,7 +30,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/",
     "stationUuid": "02d17e43-6573-48c1-8408-b00fc7c247cc",
-    "checkedAt": "2026-11-15T11:07:45.182Z",
+    "checkedAt": "2026-11-16T11:36:46.467Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -28,7 +47,7 @@
     "favicon": "https://pcradio.app/images/stations/61b09c9d4e570.jpg",
     "homepage": "https://pcradio.app/radio/rna-canal-a",
     "stationUuid": "45eeeaad-acc1-4704-b2b7-0c454a38c3c1",
-    "checkedAt": "2026-11-15T11:07:45.185Z",
+    "checkedAt": "2026-11-16T11:36:46.470Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -49,29 +68,29 @@
     "favicon": "https://minhawebradio.com/contents/14886/cover/xm126892c1bc31f36300a057381855f3ab_14886_1750685385.png",
     "homepage": "https://radiojihenda.com/",
     "stationUuid": "682715df-58c2-4765-b888-204307736498",
-    "checkedAt": "2026-11-15T11:07:45.188Z",
+    "checkedAt": "2026-11-16T11:36:46.473Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Rádio Lunda Norte",
-    "url": "https://paineldj6.com.br:20114/stream",
+    "name": "Rádio Kairós Angola",
+    "url": "https://www.radiokairosangola.ao/livenow",
     "country": "AO",
-    "type": "brazilian music",
+    "type": "christian",
     "tags": [
-      "brazilian music",
-      "hits",
+      "christian",
+      "gospel",
       "news",
       "talk"
     ],
     "codec": "MP3",
-    "bitrate": 128,
+    "bitrate": 0,
     "language": "portuguese",
     "favicon": null,
-    "homepage": "https://radiolundanorte.rf.gd/",
-    "stationUuid": "890c1e26-9c41-4383-ae8d-854242fa45d6",
-    "checkedAt": "2026-11-15T11:07:45.435Z",
+    "homepage": "https://www.radiokairosangola.ao/",
+    "stationUuid": "76ed8f8a-25b0-4429-95b2-358e2cdef5e6",
+    "checkedAt": "2026-11-16T11:36:47.139Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -91,7 +110,7 @@
     "favicon": null,
     "homepage": "https://www.trsradioonline.ao/",
     "stationUuid": "f834de28-9f73-41be-976b-90720cfbab3d",
-    "checkedAt": "2026-11-15T11:07:46.668Z",
+    "checkedAt": "2026-11-16T11:36:47.982Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -108,7 +127,7 @@
     "favicon": null,
     "homepage": "https://www.radiomais.ao/",
     "stationUuid": "142e1b71-b56b-4a9c-b08f-55703b611390",
-    "checkedAt": "2026-11-15T11:07:46.791Z",
+    "checkedAt": "2026-11-16T11:36:48.050Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -125,7 +144,7 @@
     "favicon": null,
     "homepage": "https://radiomfmangola.com/",
     "stationUuid": "5be023eb-7209-4ab0-8d69-27e356aad314",
-    "checkedAt": "2026-11-15T11:07:46.839Z",
+    "checkedAt": "2026-11-16T11:36:48.065Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -145,7 +164,7 @@
     "favicon": "https://sites.google.com/view/radiobairrodeangola",
     "homepage": "https://sites.google.com/view/radiobairrodeangola",
     "stationUuid": "88a9d0f2-7ef5-4119-ae96-d87c2f6f9469",
-    "checkedAt": "2026-11-15T11:07:47.099Z",
+    "checkedAt": "2026-11-16T11:36:48.401Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -165,7 +184,7 @@
     "favicon": null,
     "homepage": "https://platinafm.com/",
     "stationUuid": "d024beb9-4443-4a1a-8939-e0868f3f6100",
-    "checkedAt": "2026-11-15T11:07:47.172Z",
+    "checkedAt": "2026-11-16T11:36:48.420Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -185,7 +204,7 @@
     "favicon": null,
     "homepage": "https://rna.ao/rna.ao/radiochanels/radio-lunda-sul/",
     "stationUuid": "c62a836d-07d4-466f-9361-f9ce9a43a50a",
-    "checkedAt": "2026-11-15T11:07:47.937Z",
+    "checkedAt": "2026-11-16T11:36:49.075Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -205,7 +224,7 @@
     "favicon": null,
     "homepage": "https://rna.ao/rna.ao/radiochanels/radio-namibe/",
     "stationUuid": "153a5ca3-3425-45de-a0c3-09a5fafc50c4",
-    "checkedAt": "2026-11-15T11:07:48.356Z",
+    "checkedAt": "2026-11-16T11:36:49.367Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -224,7 +243,7 @@
     "favicon": "https://postimg.cc/5HR8nS0W",
     "homepage": "https://player.xradios.com.br/player-home-page/6794",
     "stationUuid": "8762cad0-5b45-4685-9c09-68de818a3ec1",
-    "checkedAt": "2026-11-15T11:07:49.160Z",
+    "checkedAt": "2026-11-16T11:36:50.291Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
