@@ -1,5 +1,39 @@
 [
   {
+    "name": "Live FM",
+    "url": "https://stream.aiir.com/dbv0rxpwp6ytv",
+    "country": "BH",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 320,
+    "language": "bangla,english,hindi,kannada,malayalam,tamil,telugu,urdu/punjabi/seraiki",
+    "favicon": null,
+    "homepage": "https://www.livefm.bh/",
+    "stationUuid": "104dc6c9-bfe7-464b-bf4f-e485a921c109",
+    "checkedAt": "2026-11-17T12:08:57.388Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Live FM",
+    "url": "https://stream.aiir.com/dbv0rxpwp6ytv",
+    "country": "BH",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 320,
+    "language": "bangla,english,hindi,kannada,malayalam,punjabi,tamil,telugu,urdu",
+    "favicon": null,
+    "homepage": "https://www.livefm.bh/",
+    "stationUuid": "09cf6598-9899-4ff3-bb90-25bd517b7375",
+    "checkedAt": "2026-11-17T12:08:57.390Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
     "name": "Panorama FM",
     "url": "https://shls-panoramafm-prod-dub.shahid.net/out/v1/66262e420d824475aaae794dc2d69f14/index.m3u8",
     "country": "BH",
@@ -11,29 +45,9 @@
     "favicon": "https://www.mbc.net/apple-touch-icon.png",
     "homepage": "https://www.mbc.net/channels",
     "stationUuid": "17bae22b-590b-4ce1-8bee-4a1c66277a60",
-    "checkedAt": "2026-11-16T11:45:20.078Z",
+    "checkedAt": "2026-11-17T12:08:57.391Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Traditional Radio 95.0",
-    "url": "https://5c7b683162943.streamlock.net/live/ngrp:radio-95-0_all/chunklist_w1641860732_b981072.m3u8",
-    "country": "BH",
-    "type": "bahrain",
-    "tags": [
-      "bahrain",
-      "traditional radio 95.0"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.mia.gov.bh/media-center/traditional-radio-95-0/?lang=en",
-    "stationUuid": "b35b9f40-86b2-4686-852c-12190c252e87",
-    "checkedAt": "2026-11-16T11:45:20.642Z",
-    "status": 404,
-    "contentType": null,
-    "lastFailure": "HTTP 404"
   }
 ]

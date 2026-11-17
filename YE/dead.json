@@ -1,37 +1,22 @@
 [
   {
-    "name": "Noor Al-Eman",
-    "url": "http://edge.mixlr.com/channel/boaht",
+    "name": ". quran",
+    "url": "https://backup.qurango.net/radio/ahmad_khader_altarabulsi",
     "country": "YE",
-    "type": "MP3",
-    "tags": [],
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
     "codec": "MP3",
-    "bitrate": 0,
-    "language": "arabic",
+    "bitrate": 128,
+    "language": null,
     "favicon": null,
-    "homepage": "https://nooraleman.com/",
-    "stationUuid": "d5f23db0-d3a1-44f1-adea-be5d931ef12f",
-    "checkedAt": "2026-11-16T13:12:03.563Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Sam FM",
-    "url": "http://edge.mixlr.com/channel/kijwr",
-    "country": "YE",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "arabic",
-    "favicon": null,
-    "homepage": "https://samyemen.fm/",
-    "stationUuid": "ca359617-6b25-4df0-83ba-5b3793386377",
-    "checkedAt": "2026-11-16T13:12:03.564Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
+    "homepage": null,
+    "stationUuid": "6b527198-4c4e-42bd-aa1b-56d538e504d7",
+    "checkedAt": "2026-11-17T13:33:02.685Z",
+    "status": 500,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 500"
   },
   {
     "name": "Sayun Radio",
@@ -45,7 +30,7 @@
     "favicon": null,
     "homepage": "https://seiyunradio.com/",
     "stationUuid": "33f27950-2bce-4add-984d-b4be49e0f9de",
-    "checkedAt": "2026-11-16T13:12:03.643Z",
+    "checkedAt": "2026-11-17T13:33:02.867Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -62,7 +47,7 @@
     "favicon": "https://radiodaralhdeth.wordpress.com/wp-content/uploads/2025/11/logo.png",
     "homepage": "https://daralhdeth.com/",
     "stationUuid": "cff841cd-2f5e-45da-a503-3983693cff49",
-    "checkedAt": "2026-11-16T13:12:03.941Z",
+    "checkedAt": "2026-11-17T13:33:03.003Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -82,7 +67,7 @@
     "favicon": "https://radiodaralhdeth.wordpress.com/wp-content/uploads/2026/02/img-20260216-wa0000.jpg",
     "homepage": "https://radio2.daralhdeth.com/",
     "stationUuid": "d821eda6-f7af-44f4-90a4-d37f9a969a86",
-    "checkedAt": "2026-11-16T13:12:04.017Z",
+    "checkedAt": "2026-11-17T13:33:03.127Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"

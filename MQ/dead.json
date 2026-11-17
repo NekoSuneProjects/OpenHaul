@@ -1,5 +1,39 @@
 [
   {
+    "name": "NRJ martinique",
+    "url": "https://streaming.nrjaudio.fm/ouquwgyoeo8p",
+    "country": "MQ",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://nrjantilles.com/",
+    "stationUuid": "2840715c-383c-4414-b2f6-6ae83f5082f5",
+    "checkedAt": "2026-11-17T12:51:50.105Z",
+    "status": 403,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Radio Mojito",
+    "url": "https://fmcpmediatest.ice.infomaniak.ch/fmcp-128.mp3",
+    "country": "MQ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://radio-pub.be/Radio%20Mojito/CK%20Mojito.png",
+    "homepage": "https://www.ckradio.fr/",
+    "stationUuid": "27cc994b-d521-4a69-9ec0-112d42c557c8",
+    "checkedAt": "2026-11-17T12:51:50.330Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
     "name": "Super Radio",
     "url": "http://str81.streamakaci.com:9160/",
     "country": "MQ",
@@ -11,7 +45,7 @@
     "favicon": "http://super-radio.radio-site.com/upload/5b25e37f31f524.12118265.ico",
     "homepage": "http://www.cayali.fr/",
     "stationUuid": "2c449451-d215-11e9-a861-52543be04c81",
-    "checkedAt": "2026-11-16T12:29:27.012Z",
+    "checkedAt": "2026-11-17T12:51:50.591Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

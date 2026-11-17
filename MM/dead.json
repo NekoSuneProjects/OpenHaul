@@ -1,19 +1,43 @@
 [
   {
-    "name": "Abdulbasit Abdulsamad",
-    "url": "https://radio.mp3islam.com/listen/abdulbasit/radio.mp3",
+    "name": "DWG Radio Bumese",
+    "url": "http://server32349.streamplus.de/;?type=http&#038;nocache=227",
     "country": "MM",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 64,
-    "language": "arabic",
-    "favicon": "null",
-    "homepage": "https://mp3islam.com/",
-    "stationUuid": "304be4fa-5391-4b0c-b12f-2d395bd9d845",
-    "checkedAt": "2026-11-16T12:29:18.162Z",
-    "status": null,
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "burmese",
+    "favicon": "https://www.streamplus.de/img/favico.ico",
+    "homepage": "https://www.streamplus.de/",
+    "stationUuid": "84cb575d-42bb-42e0-bed7-b1190bb9a8b6",
+    "checkedAt": "2026-11-17T12:51:41.508Z",
+    "status": 503,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Cherry FM",
+    "url": "https://cherry.akiyaresearch.com:444/stream/89/",
+    "country": "MM",
+    "type": "music pop",
+    "tags": [
+      "music pop",
+      "music variety",
+      "variety"
+    ],
+    "codec": "MP3",
+    "bitrate": 48,
+    "language": "burmese",
+    "favicon": null,
+    "homepage": "http://www.cherryfmmym.com/",
+    "stationUuid": "b5218804-957c-4f0f-a1fd-969e8343994b",
+    "checkedAt": "2026-11-17T12:51:41.514Z",
+    "status": 500,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 500"
   }
 ]
