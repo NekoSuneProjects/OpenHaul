@@ -13,7 +13,7 @@
     "favicon": null,
     "homepage": "https://zeno.fm/player/radio-misaniya",
     "stationUuid": "d92ed16b-538b-41c5-b22c-4adc548524d6",
-    "checkedAt": "2026-11-17T12:47:56.468Z",
+    "checkedAt": "2026-11-18T12:42:10.051Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -32,7 +32,7 @@
     "favicon": "https://radio.iranseda.ir/ImagesDynamic?c=radio-quran&s=c&cp=14041216",
     "homepage": "https://radio.iranseda.ir/",
     "stationUuid": "b1a5dd76-aa50-4f57-bfe4-8375018a3ac5",
-    "checkedAt": "2026-11-17T12:47:57.419Z",
+    "checkedAt": "2026-11-18T12:42:11.527Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -49,7 +49,7 @@
     "favicon": null,
     "homepage": "https://barbarianhrre.xyz/",
     "stationUuid": "afb7f00d-d149-47f5-b18e-bf4235462324",
-    "checkedAt": "2026-11-17T12:47:57.555Z",
+    "checkedAt": "2026-11-18T12:42:12.017Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -66,9 +66,26 @@
     "favicon": null,
     "homepage": "https://shows.acast.com/sobhe-harrooz",
     "stationUuid": "6cc83df6-0607-422f-8b53-7a215cc80525",
-    "checkedAt": "2026-11-17T12:47:57.763Z",
+    "checkedAt": "2026-11-18T12:42:12.228Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "uploadkon",
+    "url": "https://uploadkon.ir/uploads/eb9812_26Highrise-grab-diva.mp3",
+    "country": "IR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://uploadkon.ir/",
+    "stationUuid": "2903ee19-f222-43d0-8681-feac7dbea026",
+    "checkedAt": "2026-11-18T12:42:12.953Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   }
 ]

@@ -1,5 +1,27 @@
 [
   {
+    "name": "Alseraj Radio Islam",
+    "url": "https://eu4.fastcast4u.com/proxy/aabdul00?mp=/1",
+    "country": "IQ",
+    "type": "alseraj",
+    "tags": [
+      "alseraj",
+      "iraq",
+      "islam",
+      "islamic"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": null,
+    "homepage": "https://www.alserajradio.com/",
+    "stationUuid": "894f73d0-647d-461b-845c-95d8e14a1e32",
+    "checkedAt": "2026-11-18T12:39:31.458Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
     "name": "Waar Radio Official Stream",
     "url": "https://c2.radioboss.fm:18564/stream",
     "country": "IQ",
@@ -14,7 +36,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/d/d2/WAAR_TV_HD.png",
     "homepage": "https://waarmedia.com/en/WAAR_Radio/",
     "stationUuid": "f236ce08-8acd-4190-8133-799e5ab02afe",
-    "checkedAt": "2026-11-17T12:45:30.117Z",
+    "checkedAt": "2026-11-18T12:39:32.414Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -36,7 +58,7 @@
     "favicon": null,
     "homepage": "https://www.waarmedia.com/live-radio",
     "stationUuid": "82dfb2fd-4c20-4cf3-b023-26e32ae38b55",
-    "checkedAt": "2026-11-17T12:45:30.309Z",
+    "checkedAt": "2026-11-18T12:39:32.417Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -57,10 +79,63 @@
     "favicon": "https://commons.wikimedia.org/wiki/File:Rudaw_Media_Network.jpg",
     "homepage": "https://www.rudaw.net/english",
     "stationUuid": "98e58b0a-e3e0-4833-b585-418c7cd7e204",
-    "checkedAt": "2026-11-17T12:45:30.336Z",
+    "checkedAt": "2026-11-18T12:39:32.423Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Ankawa",
+    "url": "http://178.32.146.187/proxy/radioankawa?mp=/1/",
+    "country": "IQ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic.",
+    "favicon": null,
+    "homepage": "http://178.32.146.187/proxy/radioankawa?mp=/1/",
+    "stationUuid": "02094829-49c1-4cc5-b357-5e05f968e58a",
+    "checkedAt": "2026-11-18T12:39:32.518Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Radio Ashur  راديو أشور ܦܪܵܣ ܩܵܠܵܐ ܕܐܵܫܘܿܪ",
+    "url": "https://eu7.fastcast4u.com/proxy/radioashur?mp=/1",
+    "country": "IQ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://zowaa.org/ashur-radio/",
+    "homepage": "https://radioashur.goodbarber.app/",
+    "stationUuid": "93a0d452-a064-4ddb-b0f2-eec75693acfb",
+    "checkedAt": "2026-11-18T12:39:32.524Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Kurdistan 24",
+    "url": "https://audio-edge-3mayu.fra.h.radiomast.io/04b1ce4c-24f2-4172-b756-065832ef78bf",
+    "country": "IQ",
+    "type": "news",
+    "tags": [
+      "news"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "kurdish.",
+    "favicon": null,
+    "homepage": "https://www.kurdistan24.net/ar/",
+    "stationUuid": "abf148ba-cb50-4d30-a0da-ee68620019aa",
+    "checkedAt": "2026-11-18T12:39:34.755Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio Duhok FM",
@@ -76,7 +151,7 @@
     "favicon": null,
     "homepage": "https://www.radioduhok.com/",
     "stationUuid": "b8ab13a0-938d-4600-92bc-44d2a85b13ae",
-    "checkedAt": "2026-11-17T12:45:31.111Z",
+    "checkedAt": "2026-11-18T12:39:36.562Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

@@ -13,7 +13,7 @@
     "favicon": "https://ticktock.radio/static/assets/img/apple-icon-120x120.png",
     "homepage": "https://ticktock.radio/",
     "stationUuid": "ab909bf6-16f9-4066-b000-9b0b1bb5cd9c",
-    "checkedAt": "2026-11-17T12:34:20.074Z",
+    "checkedAt": "2026-11-18T12:27:10.539Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -36,10 +36,10 @@
     "favicon": null,
     "homepage": "https://vombafm.fi/",
     "stationUuid": "77a2ea2c-ae79-48bf-998a-0be1752563e9",
-    "checkedAt": "2026-11-17T12:34:20.075Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-18T12:27:10.541Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Keygen FM",
@@ -57,7 +57,7 @@
     "favicon": null,
     "homepage": "https://keygen-fm.kodatek.app/",
     "stationUuid": "cff46df0-7b0a-4393-b69f-3dd9b50945c4",
-    "checkedAt": "2026-11-17T12:34:20.076Z",
+    "checkedAt": "2026-11-18T12:27:10.555Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -74,7 +74,7 @@
     "favicon": "https://www.radionova.fi/templates/radionova/images/favicon-96x96.png",
     "homepage": "https://www.radionova.fi/",
     "stationUuid": "54909526-ae7c-11e8-aa67-52543be04c81",
-    "checkedAt": "2026-11-17T12:34:20.083Z",
+    "checkedAt": "2026-11-18T12:27:10.655Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -91,7 +91,7 @@
     "favicon": "https://images.cdn.yle.fi/f_auto,w_48,h_48,dpr_4.0/v1496664710/yle-areena-app.png",
     "homepage": "https://areena.yle.fi/audio/ohjelmat/57-3gO4bl7J6?_c=yle-radio-suomi-lappeenranta",
     "stationUuid": "da91e191-4e17-4373-a900-fb3a0121d4ab",
-    "checkedAt": "2026-11-17T12:34:20.429Z",
+    "checkedAt": "2026-11-18T12:27:11.213Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -108,7 +108,7 @@
     "favicon": "https://www.hiresaudio.online/wp-content/uploads/2026/04/POP-fm.jpg",
     "homepage": "https://www.popfm.fi/",
     "stationUuid": "1e3867bb-ca81-4d7e-92ba-bd207bccfac6",
-    "checkedAt": "2026-11-17T12:34:20.431Z",
+    "checkedAt": "2026-11-18T12:27:11.218Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -125,7 +125,31 @@
     "favicon": null,
     "homepage": "https://www.radionatale.com/",
     "stationUuid": "0f87e9af-461c-4399-93b6-3f626ffd8ecd",
-    "checkedAt": "2026-11-17T12:34:20.504Z",
+    "checkedAt": "2026-11-18T12:27:11.248Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "NinjaBox 24/7",
+    "url": "https://djuplink.com/ninjabox.mp3",
+    "country": "FI",
+    "type": "chill",
+    "tags": [
+      "chill",
+      "deep house",
+      "drum & bass",
+      "dubtechno",
+      "electronic",
+      "neurofunk"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://www.savustamo.fi/wp-content/uploads/2025/12/cropped-0_c1bc9_14464e10_L-1590724515-300x300.jpg",
+    "homepage": "https://www.savustamo.fi/",
+    "stationUuid": "a19530b7-3549-4a93-bc7b-022a1e1cb2ff",
+    "checkedAt": "2026-11-18T12:27:13.156Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -146,7 +170,7 @@
     "favicon": "https://cdn-elements.radiostreamlive.com/v1/images/favicon.ico",
     "homepage": "https://www.radionatale.com/",
     "stationUuid": "7b647375-d629-11e8-a54a-52543be04c81",
-    "checkedAt": "2026-11-17T12:34:22.367Z",
+    "checkedAt": "2026-11-18T12:27:13.428Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -174,7 +198,7 @@
     "favicon": null,
     "homepage": "https://radio.unexplained.agency/",
     "stationUuid": "5f2b61c0-1663-4b82-8523-f747b91b89a1",
-    "checkedAt": "2026-11-17T12:34:22.556Z",
+    "checkedAt": "2026-11-18T12:27:13.719Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -194,7 +218,7 @@
     "favicon": "https://images.cdn.yle.fi/image/upload/f_auto,c_fill,ar_1:1,w_384,q_auto/v1718639453/yle-klassinen_square",
     "homepage": "https://yle.fi/",
     "stationUuid": "9848f5bd-0f75-4e6d-a2bd-fcdb551adbdd",
-    "checkedAt": "2026-11-17T12:34:22.621Z",
+    "checkedAt": "2026-11-18T12:27:13.815Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -216,7 +240,7 @@
     "favicon": null,
     "homepage": "https://www.mokkiradio.fi/",
     "stationUuid": "8f872b57-54f3-477f-b5d2-7ccd0e27af5f",
-    "checkedAt": "2026-11-17T12:34:22.823Z",
+    "checkedAt": "2026-11-18T12:27:14.009Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -238,7 +262,7 @@
     "favicon": null,
     "homepage": "https://radiohiekka.fi/",
     "stationUuid": "c35f9644-4bc3-4a8e-bba7-9dda9be9645e",
-    "checkedAt": "2026-11-17T12:34:22.827Z",
+    "checkedAt": "2026-11-18T12:27:14.022Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -259,7 +283,7 @@
     "favicon": null,
     "homepage": "https://radiosoho.fi/",
     "stationUuid": "f3fcac89-0f90-4534-90af-0a1d9fae1624",
-    "checkedAt": "2026-11-17T12:34:22.853Z",
+    "checkedAt": "2026-11-18T12:27:14.050Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -280,7 +304,7 @@
     "favicon": "https://images.cdn.yle.fi/image/upload/f_auto,c_fill,ar_1:1,w_384,q_auto/v1718639453/yle-radio-1_square",
     "homepage": "https://yle.fi/",
     "stationUuid": "ac04007e-11f6-4f08-90a1-d5045a69410d",
-    "checkedAt": "2026-11-17T12:34:22.980Z",
+    "checkedAt": "2026-11-18T12:27:14.119Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -304,7 +328,7 @@
     "favicon": null,
     "homepage": "https://yle.fi/sapmi",
     "stationUuid": "dd020de4-e098-40be-8c83-a853396dda9a",
-    "checkedAt": "2026-11-17T12:34:23.004Z",
+    "checkedAt": "2026-11-18T12:27:14.126Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -326,7 +350,7 @@
     "favicon": "https://images.cdn.yle.fi/image/upload/f_auto,c_fill,ar_1:1,w_384,q_auto/v1718639453/yle-x3m_square",
     "homepage": "https://yle.fi/",
     "stationUuid": "0ac6572e-848c-4099-8bc9-3e768c0e7a87",
-    "checkedAt": "2026-11-17T12:34:23.024Z",
+    "checkedAt": "2026-11-18T12:27:14.165Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -348,7 +372,7 @@
     "favicon": "https://images.cdn.yle.fi/f_auto,w_48,h_48,dpr_4.0/v1496664710/yle-areena-app.png",
     "homepage": "https://areena.yle.fi/audio/ohjelmat/ylex",
     "stationUuid": "1f9f88c2-f9a3-4554-bee2-0afcf2483aa3",
-    "checkedAt": "2026-11-17T12:34:23.131Z",
+    "checkedAt": "2026-11-18T12:27:14.572Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -367,7 +391,7 @@
     "favicon": null,
     "homepage": "https://stream.muhennos.xyz/public/radiowo",
     "stationUuid": "4783bd93-7bb3-4671-8adb-2801e66ead5f",
-    "checkedAt": "2026-11-17T12:34:23.754Z",
+    "checkedAt": "2026-11-18T12:27:15.132Z",
     "status": 441,
     "contentType": null,
     "lastFailure": "HTTP 441"
@@ -390,7 +414,7 @@
     "favicon": "https://radionova.fi/templates/radionova/images/favicon.ico",
     "homepage": "https://radionova.fi/",
     "stationUuid": "aab6a396-57b6-46e4-9c9d-3e1b1e81b2c1",
-    "checkedAt": "2026-11-17T12:34:23.773Z",
+    "checkedAt": "2026-11-18T12:27:15.213Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -409,7 +433,7 @@
     "favicon": null,
     "homepage": "https://www.radiopooki.fi/",
     "stationUuid": "184face6-0916-11e9-a80b-52543be04c81",
-    "checkedAt": "2026-11-17T12:34:23.935Z",
+    "checkedAt": "2026-11-18T12:27:15.314Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -431,7 +455,7 @@
     "favicon": null,
     "homepage": "https://kuhanfm.fi/",
     "stationUuid": "c1549485-0cf6-40ef-bc2a-3ad619e28a85",
-    "checkedAt": "2026-11-17T12:34:24.384Z",
+    "checkedAt": "2026-11-18T12:27:15.996Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -448,7 +472,7 @@
     "favicon": null,
     "homepage": "https://www.iskelma.fi/",
     "stationUuid": "451e4f89-5318-4995-b3ab-b10610874f6b",
-    "checkedAt": "2026-11-17T12:34:25.576Z",
+    "checkedAt": "2026-11-18T12:27:16.777Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -465,7 +489,7 @@
     "favicon": null,
     "homepage": "https://nrj.fi/",
     "stationUuid": "31694e29-ec53-41c7-84eb-165d40739574",
-    "checkedAt": "2026-11-17T12:34:25.931Z",
+    "checkedAt": "2026-11-18T12:27:17.205Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -482,27 +506,10 @@
     "favicon": "https://www.popfm.fi/uploads/stations/a12df260-69dd-4fb1-b482-8632697f79e8-w150.png",
     "homepage": "https://www.popfm.fi/",
     "stationUuid": "bc644e9f-7e53-4918-9b9f-f035b5fa4c16",
-    "checkedAt": "2026-11-17T12:34:25.980Z",
+    "checkedAt": "2026-11-18T12:27:17.213Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Radio Helsinki 98,5 Mhz",
-    "url": "https://tunein-ondemand.cdnstream1.com/multi_bump_sonic_pre_pre.mp3?aw_0_1st.playerid=LogitechSqueeze&aw_0_1st.skey=1794879663&aw_0_1st.abtest=&partnerId=LogitechSqueeze&aw_0_1st.stationId=s97243&aw_0_1st.premium=false&source=TuneIn&aw_0_req.gdpr=true&aw_0_1st.platform=tunein&aw_0_1st.genre_id=g22&aw_0_1st.class=music&aw_0_1st.ads_partner_alias=ce.LogitechSqueezebox&aw_0_azn.planguage=en%2cfi&aw_0_1st.is_ondemand=false&aw_0_1st.topicId=na&aw_0_1st.bandId=2&delivery=1",
-    "country": "FI",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 0,
-    "language": "finnish",
-    "favicon": null,
-    "homepage": "https://www.radiohelsinki.fi/",
-    "stationUuid": "cfb85c6c-76b4-11ea-b1cf-52543be04c81",
-    "checkedAt": "2026-11-17T12:34:26.673Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio nova",
@@ -516,7 +523,7 @@
     "favicon": null,
     "homepage": "https://www.radionova.fi/",
     "stationUuid": "6ddfea21-ae7c-11e8-aa67-52543be04c81",
-    "checkedAt": "2026-11-17T12:34:26.879Z",
+    "checkedAt": "2026-11-18T12:27:18.080Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -533,7 +540,7 @@
     "favicon": "https://www.radionova.fi/templates/radionova/images/favicon-96x96.png",
     "homepage": "https://www.radionova.fi/",
     "stationUuid": "cae0fb22-8935-11e8-aa66-52543be04c81",
-    "checkedAt": "2026-11-17T12:34:27.026Z",
+    "checkedAt": "2026-11-18T12:27:18.132Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -550,7 +557,7 @@
     "favicon": "https://www.radiopooki.fi/templates/radiopooki/images/favicon-96x96.png",
     "homepage": "https://www.radiopooki.fi/",
     "stationUuid": "3a1f4391-13bb-408a-9762-ee8b756e1d96",
-    "checkedAt": "2026-11-17T12:34:27.221Z",
+    "checkedAt": "2026-11-18T12:27:18.151Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -567,7 +574,7 @@
     "favicon": null,
     "homepage": "https://www.radiosuomirock.fi/",
     "stationUuid": "af0a88c3-8936-11e8-aa66-52543be04c81",
-    "checkedAt": "2026-11-17T12:34:27.942Z",
+    "checkedAt": "2026-11-18T12:27:18.679Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -584,7 +591,7 @@
     "favicon": null,
     "homepage": "https://wappuradio.fi/",
     "stationUuid": "88fddbac-a489-4c30-9d71-f639d05ba843",
-    "checkedAt": "2026-11-17T12:34:28.117Z",
+    "checkedAt": "2026-11-18T12:27:18.778Z",
     "status": 401,
     "contentType": "text/html",
     "lastFailure": "HTTP 401"
@@ -601,7 +608,7 @@
     "favicon": null,
     "homepage": "https://www.rattoradio.fi/",
     "stationUuid": "449a2d6e-9c81-447f-a4e0-8de82963f117",
-    "checkedAt": "2026-11-17T12:34:28.203Z",
+    "checkedAt": "2026-11-18T12:27:18.894Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -618,7 +625,7 @@
     "favicon": "https://www.tranceportfm.com/tranceportweblogo.png",
     "homepage": "https://www.tranceportfm.com/",
     "stationUuid": "8b24c4d7-2d16-47c1-8411-7103f1f75c97",
-    "checkedAt": "2026-11-17T12:34:28.685Z",
+    "checkedAt": "2026-11-18T12:27:19.252Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -639,7 +646,7 @@
     "favicon": "https://images.cdn.yle.fi/image/upload/f_auto,c_fill,ar_1:1,w_384,q_auto/v1718639453/ylex_square",
     "homepage": "https://yle.fi/",
     "stationUuid": "dc975029-d89e-4536-8a7d-e0033c3a6b14",
-    "checkedAt": "2026-11-17T12:34:28.917Z",
+    "checkedAt": "2026-11-18T12:27:19.300Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -661,10 +668,10 @@
     "favicon": "https://www.mtvuutiset.fi/favicon.ico",
     "homepage": "https://mtvuutiset.fi/",
     "stationUuid": "beea9118-0432-494c-b67b-b5dfbc39cabe",
-    "checkedAt": "2026-11-17T12:34:28.971Z",
-    "status": 404,
-    "contentType": null,
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-18T12:27:19.324Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Yle Puhe",
@@ -683,7 +690,7 @@
     "favicon": "https://images.cdn.yle.fi/image/upload/f_auto,c_fill,ar_1:1,w_384,q_auto/yle-puhe_square",
     "homepage": "https://yle.fi/aihe/yle-puhe",
     "stationUuid": "677da540-b4e1-4575-8c7d-e3034e70407b",
-    "checkedAt": "2026-11-17T12:34:29.023Z",
+    "checkedAt": "2026-11-18T12:27:19.382Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -703,7 +710,7 @@
     "favicon": "https://images.cdn.yle.fi/image/upload/f_auto,c_fill,ar_1:1,w_256,q_auto/v1718639453/radio-vega-huvudstadsregionen",
     "homepage": "https://yle.fi/",
     "stationUuid": "0b9675c0-6107-4729-98dc-951581f53f3e",
-    "checkedAt": "2026-11-17T12:34:29.103Z",
+    "checkedAt": "2026-11-18T12:27:19.398Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -720,7 +727,7 @@
     "favicon": null,
     "homepage": "https://wappuradio.fi/",
     "stationUuid": "ca51857b-e77e-4113-9c5a-325099e63574",
-    "checkedAt": "2026-11-17T12:34:29.855Z",
+    "checkedAt": "2026-11-18T12:27:19.977Z",
     "status": 401,
     "contentType": "text/html",
     "lastFailure": "HTTP 401"
@@ -737,7 +744,7 @@
     "favicon": "https://kotoradiolpr.fi/koto-radio-lpr-logo.png",
     "homepage": "https://kotoradiolpr.fi/",
     "stationUuid": "6c87bfc5-910a-4d8c-87e0-bd5223622d88",
-    "checkedAt": "2026-11-17T12:34:29.996Z",
+    "checkedAt": "2026-11-18T12:27:20.043Z",
     "status": 401,
     "contentType": "text/html",
     "lastFailure": "HTTP 401"
@@ -756,7 +763,7 @@
     "favicon": "https://radioplay.fi/tesla/static/favicons/radioplay-fi/apple-touch-icon.png",
     "homepage": "https://radioplay.fi/nrj/",
     "stationUuid": "ac6dc287-20f4-4e8d-8748-ec0691acadd3",
-    "checkedAt": "2026-11-17T12:34:30.166Z",
+    "checkedAt": "2026-11-18T12:27:20.113Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -775,7 +782,7 @@
     "favicon": "https://www.popfm.fi/uploads/mediabank/dbd8b0c4-5184-459e-912b-661ab845b3ba.png",
     "homepage": "https://www.popfm.fi/pop/home",
     "stationUuid": "08becb2b-f5fc-4f22-8a69-ff0ec3cfe264",
-    "checkedAt": "2026-11-17T12:34:30.254Z",
+    "checkedAt": "2026-11-18T12:27:20.145Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -794,7 +801,7 @@
     "favicon": null,
     "homepage": "https://radionova.fi/",
     "stationUuid": "6152c69d-0fa1-493e-ae8b-fafb0f58988d",
-    "checkedAt": "2026-11-17T12:34:30.518Z",
+    "checkedAt": "2026-11-18T12:27:20.384Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -813,7 +820,7 @@
     "favicon": "https://www.radionova.fi/files/meta_images/radionova-fb-cover.png",
     "homepage": "https://radioplay.fi/radio-nova/",
     "stationUuid": "348c186a-e554-4376-950c-12c78027050d",
-    "checkedAt": "2026-11-17T12:34:30.855Z",
+    "checkedAt": "2026-11-18T12:27:20.925Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -830,7 +837,7 @@
     "favicon": "https://images.cdn.yle.fi/image/upload/f_auto,c_fill,ar_1:1,w_128,q_auto/v1730971077/yle-radio-suomi-helsinki_square",
     "homepage": "https://areena.yle.fi/podcastit/ohjelmat/57-3gO4bl7J6",
     "stationUuid": "727c4b71-c6ae-475a-beb1-e811f236a155",
-    "checkedAt": "2026-11-17T12:34:31.761Z",
+    "checkedAt": "2026-11-18T12:27:21.719Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -847,7 +854,7 @@
     "favicon": "https://arenan.yle.fi/favicon.ico",
     "homepage": "https://www.radioplayer.fi/kanavat/yle-vega-aboland",
     "stationUuid": "3da40f8d-95a8-4ae6-80a3-6a1ebfbe3bfe",
-    "checkedAt": "2026-11-17T12:34:31.781Z",
+    "checkedAt": "2026-11-18T12:27:21.745Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -866,7 +873,7 @@
     "favicon": "https://images.cdn.yle.fi/image/upload/f_auto,c_fill,ar_1:1,w_384,q_auto/v1730971077/yle-radio-suomi-kemi_square",
     "homepage": "https://yle.fi/",
     "stationUuid": "b0cef042-fee9-48a3-b84e-6305fe446e11",
-    "checkedAt": "2026-11-17T12:34:31.790Z",
+    "checkedAt": "2026-11-18T12:27:21.753Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"

@@ -16,10 +16,32 @@
     "favicon": null,
     "homepage": "https://www.crtv.cm/radio/crtv237webradio",
     "stationUuid": "82fa893b-a893-452f-95dd-eeb5c2fa726d",
-    "checkedAt": "2026-11-17T12:16:03.082Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
+    "checkedAt": "2026-11-18T12:07:55.526Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Vie Nouvelle",
+    "url": "https://lafrequencedevie.ice.infomaniak.ch/lafrequencedevie-64.mp3",
+    "country": "CM",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel",
+      "religious",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://radiovienouvelle.com/",
+    "stationUuid": "b4e1a053-e139-4e21-b11e-ccc3b31fd87a",
+    "checkedAt": "2026-11-18T12:07:56.437Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Equinoxe Radio",
@@ -35,7 +57,7 @@
     "favicon": null,
     "homepage": "http://www.radioequinoxe.com/",
     "stationUuid": "332f6491-d62d-48a4-b44a-fa8020896949",
-    "checkedAt": "2026-11-17T12:16:04.487Z",
+    "checkedAt": "2026-11-18T12:07:56.921Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -56,7 +78,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "04ca502e-2841-4568-a378-3df4fcbada2b",
-    "checkedAt": "2026-11-17T12:16:04.547Z",
+    "checkedAt": "2026-11-18T12:07:57.047Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -76,7 +98,7 @@
     "favicon": "https://radioenlignefrance.com/storage/radios/6885/8855/conversions/DkvJakmCUOOuVMaiESwrtRtXbTOkl6-metaQ1JUVi1SYWRpby5qcGc=--lg.webp",
     "homepage": "https://www.crtv.cm/",
     "stationUuid": "964b07c5-d89d-4b37-b5f1-dfddbac876c5",
-    "checkedAt": "2026-11-17T12:16:04.747Z",
+    "checkedAt": "2026-11-18T12:07:57.185Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -96,7 +118,7 @@
     "favicon": null,
     "homepage": "https://crtv.cm/",
     "stationUuid": "14f6e67f-a6bd-4829-b6d0-08550a53ec17",
-    "checkedAt": "2026-11-17T12:16:04.818Z",
+    "checkedAt": "2026-11-18T12:07:57.235Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -117,7 +139,7 @@
     "favicon": null,
     "homepage": "https://dir.rcast.net/players/244422",
     "stationUuid": "50e84985-0372-4270-a16b-053aac9ecbbf",
-    "checkedAt": "2026-11-17T12:16:04.905Z",
+    "checkedAt": "2026-11-18T12:07:57.364Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -137,7 +159,7 @@
     "favicon": null,
     "homepage": "https://skyfmcameroon.com/",
     "stationUuid": "0c8b8cd4-0b04-442b-8fe5-dda559a31903",
-    "checkedAt": "2026-11-17T12:16:05.402Z",
+    "checkedAt": "2026-11-18T12:07:57.774Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -157,7 +179,7 @@
     "favicon": null,
     "homepage": "https://crtv.cm/radio/suellaba-fm",
     "stationUuid": "20cd420b-3af1-451a-9d79-5c0c3ae13f67",
-    "checkedAt": "2026-11-17T12:16:05.419Z",
+    "checkedAt": "2026-11-18T12:07:57.814Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"

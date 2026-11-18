@@ -11,7 +11,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://lovefm.com.mx/",
     "stationUuid": "d02c9870-3580-4f3d-8ab1-9366335a712d",
-    "checkedAt": "2026-11-17T12:40:29.071Z",
+    "checkedAt": "2026-11-18T12:34:20.012Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -28,7 +28,7 @@
     "favicon": "https://i0.wp.com/astroradiogt.com/wp-content/uploads/2021/08/cropped-cropped-Banner-1.jpg?fit=180%2C180&ssl=1",
     "homepage": "https://astroradiogt.com/",
     "stationUuid": "7e163da0-4b78-4f0f-ad3c-162f55bba2b4",
-    "checkedAt": "2026-11-17T12:40:29.284Z",
+    "checkedAt": "2026-11-18T12:34:20.173Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -54,35 +54,10 @@
     "favicon": "https://statics-v3.streema.com/static/img/radios/profile_background_default_380.abf7abe7e86a.jpg",
     "homepage": "https://www.medios.gt/elcomandante",
     "stationUuid": "4f20bac8-09d8-4a2d-bb1f-bdd9a25826a4",
-    "checkedAt": "2026-11-17T12:40:29.906Z",
+    "checkedAt": "2026-11-18T12:34:20.949Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio 107 Exito - 107.1 FM",
-    "url": "http://play10.tikast.com:8159/stream",
-    "country": "GT",
-    "type": "banda",
-    "tags": [
-      "banda",
-      "grupera",
-      "music",
-      "música variada",
-      "norteño",
-      "reggaeton",
-      "regional mexican"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": "spanish",
-    "favicon": "https://cdn.onlineradiobox.com/img/l/3/27023.v6.png",
-    "homepage": "https://www.facebook.com/107.1exito",
-    "stationUuid": "e9fafede-ff87-4595-b513-3ef8b828741e",
-    "checkedAt": "2026-11-17T12:40:30.069Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Central 91.9 FM",
@@ -101,7 +76,7 @@
     "favicon": "https://laradiodepaz919.com/images/logo.png",
     "homepage": "https://laradiodepaz919.com/",
     "stationUuid": "a01028c9-02ef-41ee-ab7f-53e632e14a00",
-    "checkedAt": "2026-11-17T12:40:30.399Z",
+    "checkedAt": "2026-11-18T12:34:21.555Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -125,10 +100,34 @@
     "favicon": "https://radio.com.gt/uploads/img/stereo-gerardi.jpg",
     "homepage": "https://www.facebook.com/EstereoGerardi",
     "stationUuid": "f954089f-6159-4f22-bcdb-4fb07d7bc62d",
-    "checkedAt": "2026-11-17T12:40:31.376Z",
+    "checkedAt": "2026-11-18T12:34:22.738Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Emisoras Unidas 91.1 FM",
+    "url": "https://stream.zeno.fm/0zashcvc9zquv",
+    "country": "GT",
+    "type": "deportes",
+    "tags": [
+      "deportes",
+      "entretenimiento",
+      "information",
+      "noticias",
+      "radio hablada",
+      "variety"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://emisorasunidas.com/",
+    "stationUuid": "d489f3ef-782c-43e9-9165-9d9863db7de8",
+    "checkedAt": "2026-11-18T12:34:26.962Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "ARCA RADIO HD",
@@ -142,7 +141,7 @@
     "favicon": null,
     "homepage": "https://arcaradiohd.com/radioplayer/index.html",
     "stationUuid": "37749565-26fc-491c-981e-1e8434bb2fb1",
-    "checkedAt": "2026-11-17T12:40:32.745Z",
+    "checkedAt": "2026-11-18T12:34:28.032Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -159,7 +158,7 @@
     "favicon": "https://metropolisantigua.com/wp-content/uploads/2025/11/cropped-logo-3-192x192.png",
     "homepage": "https://metropolisantigua.com/",
     "stationUuid": "e6d7a104-c09d-42d6-985d-9da6c70c1d8b",
-    "checkedAt": "2026-11-17T12:40:33.699Z",
+    "checkedAt": "2026-11-18T12:34:28.814Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

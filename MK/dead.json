@@ -17,7 +17,7 @@
     "favicon": "null",
     "homepage": "http://radiomreza.com/",
     "stationUuid": "5fb27345-eee8-4165-959a-ae838cbcf842",
-    "checkedAt": "2026-11-17T12:51:41.500Z",
+    "checkedAt": "2026-11-18T12:46:10.837Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -34,7 +34,7 @@
     "favicon": null,
     "homepage": "https://radiovalandovo.mk/",
     "stationUuid": "57be3500-cfd6-4aed-a196-b51ae6d1e418",
-    "checkedAt": "2026-11-17T12:51:41.502Z",
+    "checkedAt": "2026-11-18T12:46:10.841Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -51,7 +51,7 @@
     "favicon": null,
     "homepage": "https://play.radiobubamara.mk/res/img/bubamara-logo.svg",
     "stationUuid": "eee5572c-fe8c-4635-9ed8-180df14d2911",
-    "checkedAt": "2026-11-17T12:51:41.503Z",
+    "checkedAt": "2026-11-18T12:46:10.843Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -74,10 +74,32 @@
     "favicon": "null",
     "homepage": "http://radiomreza.com/",
     "stationUuid": "011fa4eb-5864-4c09-a68c-470bbdb51cd2",
-    "checkedAt": "2026-11-17T12:51:41.787Z",
+    "checkedAt": "2026-11-18T12:46:11.118Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Metropolis Radio Network",
+    "url": "https://eu4.fastcast4u.com/proxy/metradio?mp=/1",
+    "country": "MK",
+    "type": "club",
+    "tags": [
+      "club",
+      "electronic",
+      "pop",
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "macedonian",
+    "favicon": null,
+    "homepage": "http://www.metropolisradio.com.mk/",
+    "stationUuid": "434f2c63-da2d-4a48-85e9-f7c927122f4d",
+    "checkedAt": "2026-11-18T12:46:11.125Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Club Radio - Skopje, Mcedonia",
@@ -94,33 +116,10 @@
     "favicon": "https://clubradio.mk/wp-content/uploads/2025/03/Screenshot_3.png",
     "homepage": "https://clubradio.mk/",
     "stationUuid": "50d71107-d951-46d9-9266-669c1f86d12c",
-    "checkedAt": "2026-11-17T12:51:41.815Z",
+    "checkedAt": "2026-11-18T12:46:11.133Z",
     "status": 410,
     "contentType": "text/html",
     "lastFailure": "HTTP 410"
-  },
-  {
-    "name": "Play Radio",
-    "url": "https://live.playfm.mk:8046/live",
-    "country": "MK",
-    "type": "dance",
-    "tags": [
-      "dance",
-      "pop",
-      "retro",
-      "smooth jazz",
-      "smooth lounge"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "macedonian",
-    "favicon": null,
-    "homepage": "https://www.playfm.mk/",
-    "stationUuid": "1c38ff89-a0e1-4d2c-a1b9-b0e24868f6ff",
-    "checkedAt": "2026-11-17T12:51:41.823Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Super Radio - Skopje, Macedonia",
@@ -139,7 +138,7 @@
     "favicon": "null",
     "homepage": "http://radiomreza.mk/",
     "stationUuid": "1a7e09d8-6d1c-446e-8c63-40e41dd5db04",
-    "checkedAt": "2026-11-17T12:51:41.878Z",
+    "checkedAt": "2026-11-18T12:46:11.210Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -161,10 +160,50 @@
     "favicon": "null",
     "homepage": "http://radiomreza.com/",
     "stationUuid": "92a44f00-fca8-4ee8-a6ff-af1a35c099ce",
-    "checkedAt": "2026-11-17T12:51:42.203Z",
+    "checkedAt": "2026-11-18T12:46:11.538Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "STIL RADIO",
+    "url": "https://eu4.fastcast4u.com/proxy/stilradiomk?mp=/1",
+    "country": "MK",
+    "type": "folk",
+    "tags": [
+      "folk"
+    ],
+    "codec": "AAC+",
+    "bitrate": 320,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://stilradio.com/",
+    "stationUuid": "f95f2aed-b4b7-4a17-84d9-422614720fac",
+    "checkedAt": "2026-11-18T12:46:11.550Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Stil Radio Live Macedonia",
+    "url": "https://eu4.fastcast4u.com/proxy/stilradiomk?mp=/1",
+    "country": "MK",
+    "type": "macedonian",
+    "tags": [
+      "macedonian",
+      "serbian",
+      "turbo folk"
+    ],
+    "codec": "AAC+",
+    "bitrate": 320,
+    "language": "macedonian",
+    "favicon": "https://stilradio.com/wp-content/uploads/2022/01/STIL-RADIO-TRANSPARENT-170x170.png",
+    "homepage": "https://stilradio.com/",
+    "stationUuid": "7317f14e-6e43-4b8a-a4b1-b430a0ac0399",
+    "checkedAt": "2026-11-18T12:46:11.836Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Club Radio Macedonia",
@@ -178,7 +217,7 @@
     "favicon": null,
     "homepage": "https://clubradio.mk/",
     "stationUuid": "971191b3-f8f6-4c67-b41a-0333bc0b0106",
-    "checkedAt": "2026-11-17T12:51:42.676Z",
+    "checkedAt": "2026-11-18T12:46:12.313Z",
     "status": 410,
     "contentType": "text/html",
     "lastFailure": "HTTP 410"
@@ -195,10 +234,10 @@
     "favicon": null,
     "homepage": "https://www.maestrofm.md/",
     "stationUuid": "ea329ea5-42c8-4834-b9e6-94c5d4a9c250",
-    "checkedAt": "2026-11-17T12:51:42.831Z",
-    "status": 503,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 503"
+    "checkedAt": "2026-11-18T12:46:12.634Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "RADIOBAR",
@@ -212,7 +251,7 @@
     "favicon": null,
     "homepage": "https://radiobar-on.com/",
     "stationUuid": "38cf18ba-9831-460c-9483-7118ce84d7a8",
-    "checkedAt": "2026-11-17T12:51:43.210Z",
+    "checkedAt": "2026-11-18T12:46:13.335Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -229,7 +268,7 @@
     "favicon": null,
     "homepage": "https://live.mkdstream.com/listen/lakos/stream",
     "stationUuid": "0a2944be-8325-485f-8562-09cb46b41cc4",
-    "checkedAt": "2026-11-17T12:51:43.351Z",
+    "checkedAt": "2026-11-18T12:46:13.524Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -248,7 +287,7 @@
     "favicon": null,
     "homepage": "https://ekspresradio.com.mk/index.html",
     "stationUuid": "7fa6ba8e-839e-49be-b80e-bd0ce9f44e04",
-    "checkedAt": "2026-11-17T12:51:43.559Z",
+    "checkedAt": "2026-11-18T12:46:13.819Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
