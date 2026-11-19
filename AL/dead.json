@@ -11,7 +11,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/",
     "stationUuid": "694b32bf-8463-493b-86c5-1e7c818f1b59",
-    "checkedAt": "2026-11-18T11:52:50.633Z",
+    "checkedAt": "2026-11-19T11:50:51.883Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -34,31 +34,71 @@
     "favicon": "https://radio.nestnews.al/assets/nest-logo.png",
     "homepage": "https://radio.nestnews.al/",
     "stationUuid": "f9a5c912-b3e0-4c11-92c2-fd8b136543d3",
-    "checkedAt": "2026-11-18T11:52:51.173Z",
+    "checkedAt": "2026-11-19T11:50:53.133Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "Extravaganza Radio - Sexy Secrets Records",
-    "url": "https://pstnet5.shoutcastnet.com:50374/stream",
+    "name": ".القرآن",
+    "url": "https://backup.qurango.net/radio/ahmad_khader_altarabulsi",
     "country": "AL",
-    "type": "dance",
+    "type": "classical",
     "tags": [
-      "dance",
-      "house",
-      "remix"
+      "classical"
     ],
     "codec": "MP3",
-    "bitrate": 0,
-    "language": "english",
+    "bitrate": 128,
+    "language": null,
     "favicon": null,
-    "homepage": "https://extravaganza-radio.com/",
-    "stationUuid": "9fb0abb6-a53d-43e7-ae61-34b79bb1e258",
-    "checkedAt": "2026-11-18T11:52:52.969Z",
+    "homepage": null,
+    "stationUuid": "7d65c355-a932-4279-bfec-57d5eacecd3c",
+    "checkedAt": "2026-11-19T11:50:54.841Z",
+    "status": 500,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 500"
+  },
+  {
+    "name": "Radio Klea",
+    "url": "http://uk21freenew.listen2myradio.com:23300/;",
+    "country": "AL",
+    "type": "ethnic",
+    "tags": [
+      "ethnic",
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "albanian",
+    "favicon": null,
+    "homepage": "https://radioklea.radio12345.com/",
+    "stationUuid": "face265e-8a7c-44ba-9bc8-e38452c86a3c",
+    "checkedAt": "2026-11-19T11:50:55.806Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio Rainca",
+    "url": "https://radiocast.ch:8000/stream",
+    "country": "AL",
+    "type": "folk",
+    "tags": [
+      "folk",
+      "pop",
+      "top 40"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "albanian",
+    "favicon": null,
+    "homepage": "https://www.radiorainca.com/",
+    "stationUuid": "583302ac-b867-4cd1-9536-9a50843f7285",
+    "checkedAt": "2026-11-19T11:50:56.687Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Intradio",
@@ -75,7 +115,7 @@
     "favicon": null,
     "homepage": "https://intradio.live/",
     "stationUuid": "bbe507a3-14d6-400f-9b3f-8420266bcb9e",
-    "checkedAt": "2026-11-18T11:52:54.458Z",
+    "checkedAt": "2026-11-19T11:50:57.492Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -95,7 +135,7 @@
     "favicon": null,
     "homepage": "https://www.oranews.tv/",
     "stationUuid": "c2caf164-c2bf-4eac-a719-ce6bd6cf25cb",
-    "checkedAt": "2026-11-18T11:52:55.265Z",
+    "checkedAt": "2026-11-19T11:50:59.201Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -112,7 +152,7 @@
     "favicon": null,
     "homepage": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio075/chunklist.m3u8",
     "stationUuid": "e439aa52-203a-4f83-a8e4-995d5c90f554",
-    "checkedAt": "2026-11-18T11:52:55.661Z",
+    "checkedAt": "2026-11-19T11:51:00.066Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

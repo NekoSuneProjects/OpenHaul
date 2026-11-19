@@ -11,7 +11,7 @@
     "favicon": "https://foxxradio.com/upload/hk/1620700276.jpg.webp",
     "homepage": "https://www.facebook.com/881903com/",
     "stationUuid": "4c1ca3b1-28c9-47db-93b7-de2053232009",
-    "checkedAt": "2026-11-18T12:37:10.370Z",
+    "checkedAt": "2026-11-19T12:39:54.579Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -28,39 +28,27 @@
     "favicon": "https://www.apple-fm.net/images/apple200text.png",
     "homepage": "https://www.apple-fm.net/",
     "stationUuid": "afaf4fe0-dedf-4226-ab59-85b82fe007c2",
-    "checkedAt": "2026-11-18T12:37:10.464Z",
+    "checkedAt": "2026-11-19T12:39:54.896Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "大嶼山廣播電台 RADIO LANTAU",
-    "url": "https://radio.dripfeed.net/listen/radiolantau/radio.mp3",
+    "name": "華語 HITS",
+    "url": "https://das-edge14-live365-dal02.cdnstream.com/a57743_2",
     "country": "HK",
-    "type": "alternative rock",
-    "tags": [
-      "alternative rock",
-      "classic rock",
-      "funk",
-      "instrumental",
-      "internet radio",
-      "jazz",
-      "music",
-      "power pop",
-      "punk",
-      "soul",
-      "surf"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": "https://liveonlineradio.net/wp-content/uploads/2017/08/Radio-Lantau.jpg",
-    "homepage": "https://radiolantau.com/",
-    "stationUuid": "93b7ad6f-abdc-4a24-a947-f87dec018269",
-    "checkedAt": "2026-11-18T12:37:10.678Z",
-    "status": 416,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 416"
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 320,
+    "language": null,
+    "favicon": "https://new.brg-radio.com/wp-content/themes/brg-wp/img/logo.png",
+    "homepage": "https://new.brg-radio.com/",
+    "stationUuid": "c6c450a9-84cc-4592-a27a-412879c15878",
+    "checkedAt": "2026-11-19T12:39:55.194Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "珠海資訊廣播",
@@ -74,10 +62,29 @@
     "favicon": "http://pic.qingting.fm/2022/1231/20221231114640.png",
     "homepage": "https://www.hizh.cn/",
     "stationUuid": "9073a5eb-5a43-45a3-9c18-33bb5b4dab9c",
-    "checkedAt": "2026-11-18T12:37:14.659Z",
+    "checkedAt": "2026-11-19T12:40:00.170Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Bridge Radio - 华语 HITS",
+    "url": "https://das-edge11-live365-dal03.cdnstream.com/a57743",
+    "country": "HK",
+    "type": "music",
+    "tags": [
+      "music"
+    ],
+    "codec": "MP3",
+    "bitrate": 320,
+    "language": "cantonese,english",
+    "favicon": "https://new.brg-radio.com/wp-content/uploads/2022/10/cropped-65-1.png",
+    "homepage": "https://new.brg-radio.com/",
+    "stationUuid": "256bf7e2-283c-4b8a-9eb2-aade40445fdc",
+    "checkedAt": "2026-11-19T12:40:00.705Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "商業電台豁達864",
@@ -93,7 +100,7 @@
     "favicon": "https://foxxradio.com/upload/hk/1620698984.jpg.webp",
     "homepage": "https://www.881903.com/",
     "stationUuid": "cad4969e-cf50-4c96-8348-60e4c288ff61",
-    "checkedAt": "2026-11-18T12:37:15.222Z",
+    "checkedAt": "2026-11-19T12:40:00.970Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -112,7 +119,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5b253a02-28ed-48a7-a972-2aef5b114036",
-    "checkedAt": "2026-11-18T12:37:15.670Z",
+    "checkedAt": "2026-11-19T12:40:01.384Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -131,7 +138,7 @@
     "favicon": null,
     "homepage": "http://www.apple-fm.net/",
     "stationUuid": "c5a87eaf-c961-11e9-8502-52543be04c81",
-    "checkedAt": "2026-11-18T12:37:16.095Z",
+    "checkedAt": "2026-11-19T12:40:02.415Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -150,7 +157,7 @@
     "favicon": "https://foxxradio.com/upload/hk/1620700109.jpg.webp",
     "homepage": "https://www.my903.com/903openbox",
     "stationUuid": "b72e497b-d2c1-436f-8508-2048a1b28e84",
-    "checkedAt": "2026-11-18T12:37:16.097Z",
+    "checkedAt": "2026-11-19T12:40:02.513Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -169,7 +176,7 @@
     "favicon": "https://pic.qtfm.cn/2024/0410/20240410025046.jpeg",
     "homepage": "https://www.qtfm.cn/radios/20500021",
     "stationUuid": "8c56edc7-6e44-4143-aeb5-51fe9a00dfe4",
-    "checkedAt": "2026-11-18T12:37:16.137Z",
+    "checkedAt": "2026-11-19T12:40:02.515Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -186,7 +193,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "a6a2441d-4d74-4b9f-ba61-89564fba0982",
-    "checkedAt": "2026-11-18T12:37:16.182Z",
+    "checkedAt": "2026-11-19T12:40:02.581Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -203,7 +210,7 @@
     "favicon": null,
     "homepage": "https://www.cnr.cn/",
     "stationUuid": "a41c628e-3961-43d2-9aec-91521d00788b",
-    "checkedAt": "2026-11-18T12:37:17.016Z",
+    "checkedAt": "2026-11-19T12:40:03.739Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -222,7 +229,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "392ab5e8-c91a-4b27-9792-cae5fb712ebe",
-    "checkedAt": "2026-11-18T12:37:18.510Z",
+    "checkedAt": "2026-11-19T12:40:04.559Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -241,7 +248,7 @@
     "favicon": "null",
     "homepage": "https://fm995.ddns.net/hls1/fm995.m3u8",
     "stationUuid": "4dcf7151-3427-43bc-9ef1-24e3704ac0f2",
-    "checkedAt": "2026-11-18T12:37:18.549Z",
+    "checkedAt": "2026-11-19T12:40:04.658Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

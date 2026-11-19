@@ -1,5 +1,26 @@
 [
   {
+    "name": "iHeart 2000s Radio",
+    "url": "https://n23b-e2.revma.ihrhls.com/zc6850/hls.m3u8?rj-ttl=5&rj-tok=AAABoAtx4zgAWafLS3OZolBX9Q",
+    "country": "UM",
+    "type": "2000s",
+    "tags": [
+      "2000s",
+      "hits",
+      "pop"
+    ],
+    "codec": "AAC",
+    "bitrate": 24,
+    "language": "english",
+    "favicon": "https://i.iheart.com/v3/re/assets.streams/6884213a07fd7649591e3d10",
+    "homepage": "https://www.iheart.com/",
+    "stationUuid": "e257491f-83d7-43c4-a34e-b89005709034",
+    "checkedAt": "2026-11-19T13:14:40.545Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
     "name": "Fun 104",
     "url": "https://prod-52-91-27-46.amperwave.net/townsquare-kfnlfmmp3-ibc3?session-id=526240798c02759a1fdc495c2f40c299",
     "country": "UM",
@@ -15,27 +36,73 @@
     "favicon": "https://townsquare.media/site/720/files/2021/09/attachment-256.png",
     "homepage": "https://fun1043.com/",
     "stationUuid": "abb7cd7e-31e8-41da-8dc1-6d80c8e86cd9",
-    "checkedAt": "2026-11-18T13:34:08.316Z",
+    "checkedAt": "2026-11-19T13:14:40.547Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "Abdulbasit Abdulsamad",
-    "url": "https://radio.mp3islam.com/listen/abdulbasit/radio.mp3",
+    "name": "iHeart 70s Radio",
+    "url": "https://n2cb-e2.revma.ihrhls.com/zc6843/hls.m3u8?rj-ttl=5&rj-tok=AAABoAubRgEAC7zvsAIPlRf8Ag",
     "country": "UM",
-    "type": "AAC",
-    "tags": [],
+    "type": "70s",
+    "tags": [
+      "70s",
+      "hits",
+      "pop"
+    ],
     "codec": "AAC",
-    "bitrate": 64,
-    "language": "arabic",
-    "favicon": "null",
-    "homepage": "https://mp3islam.com/",
-    "stationUuid": "d27dce3b-da5f-4ff3-9eab-29baab99471d",
-    "checkedAt": "2026-11-18T13:34:11.746Z",
+    "bitrate": 24,
+    "language": "english",
+    "favicon": "https://i.iheart.com/v3/re/assets.streams/6884224207fd7649591e3d1f",
+    "homepage": "https://www.iheart.com/",
+    "stationUuid": "0765fd0f-4c7c-4def-9031-801c744b0b94",
+    "checkedAt": "2026-11-19T13:14:40.550Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "iHeart 80s Radio",
+    "url": "https://n22b-e2.revma.ihrhls.com/zc5060/hls.m3u8?rj-ttl=5&rj-tok=AAABoAvF0cgA9IKCFYKaKbyoGA",
+    "country": "UM",
+    "type": "80s",
+    "tags": [
+      "80s",
+      "hits",
+      "pop"
+    ],
+    "codec": "AAC",
+    "bitrate": 24,
+    "language": "english",
+    "favicon": "https://i.iheart.com/v3/re/assets.streams/6884220b07fd7649591e3d1b",
+    "homepage": "https://www.iheart.com/",
+    "stationUuid": "6dda60a1-bb63-4d4b-8d14-b840d95a9921",
+    "checkedAt": "2026-11-19T13:14:40.555Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "iHeart 90s Radio",
+    "url": "https://n17b-e2.revma.ihrhls.com/zc6834/hls.m3u8?rj-ttl=5&rj-tok=AAABoAvTY-IA1MznGDOHc3T55A",
+    "country": "UM",
+    "type": "90s",
+    "tags": [
+      "90s",
+      "hits",
+      "pop"
+    ],
+    "codec": "AAC",
+    "bitrate": 24,
+    "language": "english",
+    "favicon": "https://i.iheart.com/v3/re/assets.streams/688421c507fd7649591e3d17",
+    "homepage": "https://www.iheart.com/",
+    "stationUuid": "f7771571-2b87-4f0e-bcea-c21d96cf79ee",
+    "checkedAt": "2026-11-19T13:14:40.557Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Halloween Radio Oldies",
@@ -49,27 +116,10 @@
     "favicon": "https://www.halloweenradio.net/images/channel_oldies.png",
     "homepage": "https://www.halloweenradio.net/",
     "stationUuid": "8bef196a-a788-4295-8960-bae49ee23f17",
-    "checkedAt": "2026-11-18T13:34:13.237Z",
+    "checkedAt": "2026-11-19T13:14:40.712Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "93.7 KHJ Oldies",
-    "url": "https://ice26.securenetsystems.net/KKHJHD2",
-    "country": "UM",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 56,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.southseasbroadcasting.com/kkhjhd2/",
-    "stationUuid": "8d79497f-6f50-486a-bacd-97bf47cb7e65",
-    "checkedAt": "2026-11-18T13:34:13.325Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Classical KDFC",
@@ -83,57 +133,10 @@
     "favicon": null,
     "homepage": "https://www.kdfc.com/",
     "stationUuid": "b6b7d5c9-1c3b-4d7f-ac88-d6b82327fab7",
-    "checkedAt": "2026-11-18T13:34:14.917Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "X Transmission FM",
-    "url": "http://custom-azura1.my-control-panel.com/listen/x_transmission_fm/radio.mp3",
-    "country": "UM",
-    "type": "alternative",
-    "tags": [
-      "alternative",
-      "black metal",
-      "death metal",
-      "doom metal",
-      "goth",
-      "industrial",
-      "rock"
-    ],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": null,
-    "favicon": null,
-    "homepage": "http://xtransmissionfm.com/",
-    "stationUuid": "21d284f0-00ce-4f38-8afd-854fd0c877e1",
-    "checkedAt": "2026-11-18T13:34:16.930Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Rockin' the Suburbs Radio",
-    "url": "https://streaming.radio.co/sca22d43b1/listen",
-    "country": "UM",
-    "type": "alternative rock",
-    "tags": [
-      "alternative rock",
-      "eclectic",
-      "indie rock",
-      "rock"
-    ],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": "english",
-    "favicon": "https://i0.wp.com/www.suburbspod.com/wp-content/uploads/2022/01/rts-radio-web_thumb.jpg",
-    "homepage": "https://www.suburbspod.com/radio/",
-    "stationUuid": "a0742466-5326-4b22-99f7-b1cef79f542b",
-    "checkedAt": "2026-11-18T13:34:17.610Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "checkedAt": "2026-11-19T13:14:40.748Z",
+    "status": 404,
+    "contentType": "text/html; charset=ISO-8859-1",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "940 Gospel Radio",
@@ -151,10 +154,10 @@
     "favicon": "https://www.940gospelradio.com/",
     "homepage": "http://www.940gospelradio.com/",
     "stationUuid": "523b1c58-b410-40b4-b3a6-ef9345cfb9b0",
-    "checkedAt": "2026-11-18T13:34:19.355Z",
+    "checkedAt": "2026-11-19T13:14:40.955Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Dps Soul",
@@ -173,10 +176,10 @@
     "favicon": null,
     "homepage": "http://dpssoul.com/",
     "stationUuid": "850d5eef-5d9f-43d2-861e-c4c02d377807",
-    "checkedAt": "2026-11-18T13:34:20.953Z",
-    "status": null,
+    "checkedAt": "2026-11-19T13:14:40.973Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "92 KQRS",
@@ -193,30 +196,10 @@
     "favicon": "https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3759/files/2024/12/kqrs-fm.png",
     "homepage": "https://www.92kqrs.com/",
     "stationUuid": "5c40fa7a-0cd5-4957-bae2-2e99778c1e5e",
-    "checkedAt": "2026-11-18T13:34:21.438Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "KRPR 89.9 FM",
-    "url": "https://ice23.securenetsystems.net/KRPR",
-    "country": "UM",
-    "type": "classic rock",
-    "tags": [
-      "classic rock",
-      "rock"
-    ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "english",
-    "favicon": "https://krpr.org/wp-content/uploads/elementor/thumbs/KRPR899_7_FB-ozojv790vzlns0zrotdrewg5439ynvkxkep1y5t5vk.jpg",
-    "homepage": "https://krpr.org/",
-    "stationUuid": "2a7e65cc-5315-4a54-a02e-49572e917e86",
-    "checkedAt": "2026-11-18T13:34:21.553Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "checkedAt": "2026-11-19T13:14:41.029Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Laser 101.7",
@@ -233,10 +216,10 @@
     "favicon": "https://i.iheart.com/v3/re/assets.brands/641a20a13c8c9a1eed30d60f?ops=gravity(%22center%22),contain(0,200)&quality=80",
     "homepage": "https://laser1017.iheart.com/",
     "stationUuid": "c5325297-046b-436b-a942-99cdb7d326e4",
-    "checkedAt": "2026-11-18T13:34:21.634Z",
+    "checkedAt": "2026-11-19T13:14:41.137Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "WTMB 94.5 FM",
@@ -253,27 +236,7 @@
     "favicon": null,
     "homepage": "http://www.classicrockwtmb.com/",
     "stationUuid": "10e3e11c-e10c-4347-851a-357ac2d95e96",
-    "checkedAt": "2026-11-18T13:34:52.632Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Workout Time",
-    "url": "https://stream-175.surfernetwork.com/60pg6mi67hytv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiI2MHBnNm1pNjdoeXR2IiwiaG9zdCI6InN0cmVhbS0xNzUuc3VyZmVybmV0d29yay5jb20iLCJydHRsIjo1LCJqdGkiOiJrX0dzOEU3Q1JKU0piU2NoZFYwY0NBIiwiaWF0IjoxNzg2OTIwNTgzLCJleHAiOjE3ODY5MjA2NDN9.EVpOGXMTOtGNydRMlQzIUO8rfhG5KYRyBSNaF6kU46s",
-    "country": "UM",
-    "type": "electronic dance music",
-    "tags": [
-      "electronic dance music",
-      "workout"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": "https://images.zeno.fm/YXeTLa2e7erckTN9hbes5qKpEgFrFTqNJ7gmwdAEa3g/rs:fill:304:304/q:75/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvNmRhMTUwYjgtNTkwYS00ODU5LWExZmMtY2NhMGRlZDM2NzM2L2ltYWdlLz91PTE3MDEyODA4ODUwMDA",
-    "homepage": "https://workouttime.mdn.live/radio-landing/workouttime/",
-    "stationUuid": "2a9e6aa2-20bc-4037-bd30-9990d88bd4aa",
-    "checkedAt": "2026-11-18T13:34:52.651Z",
+    "checkedAt": "2026-11-19T13:14:41.176Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -290,7 +253,7 @@
     "favicon": "https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3283/files/2024/06/logo-93x-white-1.png",
     "homepage": "https://www.93x.com/",
     "stationUuid": "5fbcc60c-0b24-457a-a547-72f4d9ac1ef7",
-    "checkedAt": "2026-11-18T13:34:52.660Z",
+    "checkedAt": "2026-11-19T13:14:41.766Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -307,10 +270,10 @@
     "favicon": null,
     "homepage": "https://mxtrfm.webstarts.com/",
     "stationUuid": "d553a594-90df-4395-bf13-b01d6e997d08",
-    "checkedAt": "2026-11-18T13:34:52.715Z",
-    "status": null,
+    "checkedAt": "2026-11-19T13:14:42.467Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "The Ganja Comic Radio",
@@ -324,7 +287,7 @@
     "favicon": null,
     "homepage": "https://www.blackmetalinkcomics.com/",
     "stationUuid": "2daa0cf9-3f3f-411a-a24f-f1b0a2788ae1",
-    "checkedAt": "2026-11-18T13:34:59.448Z",
+    "checkedAt": "2026-11-19T13:14:42.974Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -343,7 +306,7 @@
     "favicon": "https://radioimg.audacy.com/aud-opsconsole-media-images-prod-prod/WRVA100-1762375549116.jpg",
     "homepage": "https://www.audacy.com/newsradiowrva",
     "stationUuid": "2cb84997-0eaf-4ec3-9bba-83d6e8df98e6",
-    "checkedAt": "2026-11-18T13:34:59.540Z",
+    "checkedAt": "2026-11-19T13:14:43.179Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -362,7 +325,7 @@
     "favicon": "https://townsquare.media/site/717/files/2019/11/logo.png",
     "homepage": "https://kroc.com/",
     "stationUuid": "aefb32ae-2817-4383-be33-e2ab49d1af6a",
-    "checkedAt": "2026-11-18T13:34:59.834Z",
+    "checkedAt": "2026-11-19T13:14:43.189Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -382,7 +345,7 @@
     "favicon": "https://townsquare.media/site/715/files/2021/09/attachment-256.png",
     "homepage": "https://y105fm.com/",
     "stationUuid": "17b41582-88f7-47eb-a5d5-95150b5f3148",
-    "checkedAt": "2026-11-18T13:35:00.110Z",
+    "checkedAt": "2026-11-19T13:14:43.202Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -401,29 +364,10 @@
     "favicon": "https://media-cdn.socastsrm.com/wordpress/wp-content/blogs.dir/3283/files/2024/06/logo-93x-white-1.png",
     "homepage": "https://www.93x.com/",
     "stationUuid": "f24d6939-8837-4960-9c1b-7310a00e6b7b",
-    "checkedAt": "2026-11-18T13:35:00.835Z",
+    "checkedAt": "2026-11-19T13:14:43.346Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
-  },
-  {
-    "name": "Minnesota Music Channel",
-    "url": "https://stream-01.aiir.com/vtrrdk83knmuv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJ2dHJyZGs4M2tubXV2IiwiaG9zdCI6InN0cmVhbS0wMS5haWlyLmNvbSIsInJ0dGwiOjUsImp0aSI6ImRZQjlQQXZ4VHZhMjc3Y1ZCMVpGSFEiLCJpYXQiOjE3ODY5MTUyNTMsImV4cCI6MTc4NjkxNTMxM30.1fezl3hfb1bfcJKpN-0Zzh_X-bYb78PDSir0Se7f2oo",
-    "country": "UM",
-    "type": "the station focuses entirely on music tied to minnesota's history and culture",
-    "tags": [
-      "the station focuses entirely on music tied to minnesota's history and culture"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": "https://mmo.aiircdn.com/1620/66ce09d8549fa.jpg",
-    "homepage": "https://mankato.mnsu.edu/kmsu-radio/mn-music-channel2/",
-    "stationUuid": "527c3b06-9786-4f33-8f90-33f2379c8e68",
-    "checkedAt": "2026-11-18T13:35:00.910Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "WLFC 88.3 - Univ. of Findlay North Baltimore,  OH",
@@ -439,7 +383,7 @@
     "favicon": null,
     "homepage": "https://www.wlfc883.com/",
     "stationUuid": "72e169e2-0b6d-4e58-9670-fc196fed85d1",
-    "checkedAt": "2026-11-18T13:35:01.536Z",
+    "checkedAt": "2026-11-19T13:14:43.666Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"

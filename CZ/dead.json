@@ -17,7 +17,7 @@
     "favicon": null,
     "homepage": "http://www.nonstopradio.cz/",
     "stationUuid": "9815961b-c3f7-4fca-b911-bd4ee63c2dfe",
-    "checkedAt": "2026-11-18T12:16:32.838Z",
+    "checkedAt": "2026-11-19T12:16:10.600Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -43,7 +43,7 @@
     "favicon": "https://dancefloor365.com/logo.jpg",
     "homepage": "https://www.dancefloor365.com/",
     "stationUuid": "cd595e69-76cf-4381-bb7d-5f2ff55f2291",
-    "checkedAt": "2026-11-18T12:16:32.843Z",
+    "checkedAt": "2026-11-19T12:16:10.601Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -73,7 +73,7 @@
     "favicon": null,
     "homepage": "https://radiomusiccz.framer.website/",
     "stationUuid": "09654a34-b6e0-4a4d-bad6-d35219a2e313",
-    "checkedAt": "2026-11-18T12:16:32.852Z",
+    "checkedAt": "2026-11-19T12:16:10.628Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -99,7 +99,7 @@
     "favicon": "https://radiopunctum.cz/favicon/android-chrome-512x512.png",
     "homepage": "https://radiopunctum.cz/",
     "stationUuid": "5192677e-a070-4b94-b570-d93f1103ca19",
-    "checkedAt": "2026-11-18T12:16:35.862Z",
+    "checkedAt": "2026-11-19T12:16:13.623Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -120,7 +120,7 @@
     "favicon": "https://radia.cz/static/favicon.ico",
     "homepage": "http://www.abradio.cz/",
     "stationUuid": "960cd948-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-18T12:16:36.150Z",
+    "checkedAt": "2026-11-19T12:16:14.135Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -140,10 +140,30 @@
     "favicon": "https://radia.cz",
     "homepage": "https://rockovyradio.cz/",
     "stationUuid": "0f0e53cc-c776-49ac-ac93-4866540cb47f",
-    "checkedAt": "2026-11-18T12:16:36.614Z",
+    "checkedAt": "2026-11-19T12:16:14.807Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Calimeroclub Radio",
+    "url": "http://live.topradio.cz:8000/calimero192",
+    "country": "CZ",
+    "type": "club",
+    "tags": [
+      "club",
+      "dance"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "czech",
+    "favicon": "https://www.calimeroclub.eu/img/picture/192/logo-calimero.jpg",
+    "homepage": "https://www.calimeroclub.eu/",
+    "stationUuid": "b13ea46f-9a4e-4a42-a16f-0c5e3da82657",
+    "checkedAt": "2026-11-19T12:16:14.966Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Stanice Hvězda",
@@ -159,7 +179,7 @@
     "favicon": "https://hvezda.info/favicon/favicon-32x32.png",
     "homepage": "https://hvezda.info/",
     "stationUuid": "977b7ba4-0822-4472-b470-81ba06807aba",
-    "checkedAt": "2026-11-18T12:16:37.536Z",
+    "checkedAt": "2026-11-19T12:16:15.554Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -178,7 +198,7 @@
     "favicon": "http://api.play.cz/static/radio_logo/t200/radiodechovka.png",
     "homepage": "http://www.radiodechovka.cz/",
     "stationUuid": "961d4f6c-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-18T12:16:37.610Z",
+    "checkedAt": "2026-11-19T12:16:15.581Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -197,7 +217,7 @@
     "favicon": null,
     "homepage": "https://radia.cz/seznam-radii",
     "stationUuid": "d82146be-974e-47d8-85fb-935985e44482",
-    "checkedAt": "2026-11-18T12:16:37.722Z",
+    "checkedAt": "2026-11-19T12:16:15.789Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -218,7 +238,7 @@
     "favicon": "https://radia.cz/favicon.ico",
     "homepage": "https://radia.cz/radio-fajn-radio-fresh-playlist",
     "stationUuid": "5d37c750-97ad-4305-9c0b-9a6a6cb02100",
-    "checkedAt": "2026-11-18T12:16:37.733Z",
+    "checkedAt": "2026-11-19T12:16:15.831Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -240,7 +260,7 @@
     "favicon": "https://radiocolor.cz/image/color_logo500x500.jpg",
     "homepage": "https://radiocolor.cz/",
     "stationUuid": "17e20c76-e993-45fb-88f4-6efdef17cc28",
-    "checkedAt": "2026-11-18T12:16:38.311Z",
+    "checkedAt": "2026-11-19T12:16:16.469Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -260,7 +280,7 @@
     "favicon": "https://freerave.cz/imgz/favicon32.png",
     "homepage": "https://freerave.cz/",
     "stationUuid": "613525ac-8afa-4e94-beec-ae5cf6c7034e",
-    "checkedAt": "2026-11-18T12:16:38.441Z",
+    "checkedAt": "2026-11-19T12:16:16.702Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -283,7 +303,7 @@
     "favicon": "http://www.oiktv.cz/wp-content/uploads/2017/04/logo-header.png",
     "homepage": "https://www.oiktv.cz/",
     "stationUuid": "f94d6ffa-4eaf-41ac-9d17-9db568814d7b",
-    "checkedAt": "2026-11-18T12:16:38.918Z",
+    "checkedAt": "2026-11-19T12:16:17.385Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -300,7 +320,7 @@
     "favicon": null,
     "homepage": "http://blueradio.cz/",
     "stationUuid": "c18b8935-33b9-41f5-b675-ed952668f877",
-    "checkedAt": "2026-11-18T12:16:39.062Z",
+    "checkedAt": "2026-11-19T12:16:17.521Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -317,7 +337,7 @@
     "favicon": "https://mytuner.global.ssl.fastly.net/media/tvos_radios/4pn6k2gnfueh.jpg",
     "homepage": "http://www.ceskyimpuls.cz/",
     "stationUuid": "40c7fb8f-287f-11e8-91bf-52543be04c81",
-    "checkedAt": "2026-11-18T12:16:39.172Z",
+    "checkedAt": "2026-11-19T12:16:17.566Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -334,7 +354,24 @@
     "favicon": "https://1gr.cz/o/impuls/ceskyimpuls/hlava2.jpg",
     "homepage": "https://www.ceskyimpuls.cz/",
     "stationUuid": "a3c8b03b-0139-4067-a677-79392598f242",
-    "checkedAt": "2026-11-18T12:16:39.215Z",
+    "checkedAt": "2026-11-19T12:16:17.608Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Crazy Rádio",
+    "url": "http://live.topradio.cz:8000/crazy128",
+    "country": "CZ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "czech",
+    "favicon": "https://www.crazyradio.cz/templates/dd_club_39/favicon.ico",
+    "homepage": "https://www.crazyradio.cz/",
+    "stationUuid": "ab08ad62-1c48-41f9-ab09-3a87edb1486f",
+    "checkedAt": "2026-11-19T12:16:17.835Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -351,7 +388,7 @@
     "favicon": "http://crazyradio.cz/images/logoGIF.gif",
     "homepage": "http://crazyradio.cz/",
     "stationUuid": "4f6c6980-ecb1-439b-95f8-cf74abfc60e6",
-    "checkedAt": "2026-11-18T12:16:39.416Z",
+    "checkedAt": "2026-11-19T12:16:17.852Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -368,7 +405,7 @@
     "favicon": "http://www.decennialgothica.com/apple-touch-icon.png",
     "homepage": "http://www.decennialgothica.com/",
     "stationUuid": "f92326ed-2b37-49f3-a6ff-8fe611dc3e23",
-    "checkedAt": "2026-11-18T12:16:39.440Z",
+    "checkedAt": "2026-11-19T12:16:17.886Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -385,7 +422,7 @@
     "favicon": null,
     "homepage": "http://flashradio.cz/",
     "stationUuid": "06c53709-7964-4650-8809-1266932e3fb6",
-    "checkedAt": "2026-11-18T12:16:39.618Z",
+    "checkedAt": "2026-11-19T12:16:18.126Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -402,7 +439,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "7b65aafa-6b87-4164-866a-01234cc6e27d",
-    "checkedAt": "2026-11-18T12:16:39.669Z",
+    "checkedAt": "2026-11-19T12:16:18.226Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -419,7 +456,7 @@
     "favicon": null,
     "homepage": "https://www.impuls.cz/",
     "stationUuid": "bc5b6165-a6da-42a8-a676-8e1f42eb23fc",
-    "checkedAt": "2026-11-18T12:16:40.171Z",
+    "checkedAt": "2026-11-19T12:16:18.912Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -436,7 +473,7 @@
     "favicon": "https://1gr.cz/u/favicon/apple-touch-icon/impuls.png",
     "homepage": "https://www.impuls.cz/",
     "stationUuid": "738686d7-63c4-4965-b7ef-32c01651e076",
-    "checkedAt": "2026-11-18T12:16:40.196Z",
+    "checkedAt": "2026-11-19T12:16:18.956Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -453,7 +490,7 @@
     "favicon": "https://1gr.cz/u/favicon/apple-touch-icon/impuls.png",
     "homepage": "https://www.impuls.cz/",
     "stationUuid": "c45e34f4-d927-11e9-a861-52543be04c81",
-    "checkedAt": "2026-11-18T12:16:40.238Z",
+    "checkedAt": "2026-11-19T12:16:19.000Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -470,7 +507,7 @@
     "favicon": "https://radia.cz/favicon.ico",
     "homepage": "https://radia.cz/radio-depeche-mode-playlist",
     "stationUuid": "94567573-8777-473b-8ab0-09487d84ebef",
-    "checkedAt": "2026-11-18T12:16:40.470Z",
+    "checkedAt": "2026-11-19T12:16:19.357Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -487,7 +524,7 @@
     "favicon": "https://radio4u.cz/wp-content/uploads/2020/12/cropped-logo_radio4u_v11-2.png",
     "homepage": "https://radio4u.cz/",
     "stationUuid": "6fbf70f4-d9b2-4550-a4ca-120e13c91c75",
-    "checkedAt": "2026-11-18T12:16:40.481Z",
+    "checkedAt": "2026-11-19T12:16:19.367Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -504,7 +541,7 @@
     "favicon": null,
     "homepage": "https://radio4u.cz/",
     "stationUuid": "9d254d7c-0274-49d1-adc7-90d0047f83d6",
-    "checkedAt": "2026-11-18T12:16:40.499Z",
+    "checkedAt": "2026-11-19T12:16:19.397Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -521,7 +558,7 @@
     "favicon": "http://www.radiodechovka.cz/wp-content/uploads/2022/04/cropped-logo_dechovka_samotne_do_3_cm_rgb.-3-768x255.jpg",
     "homepage": "http://www.radiodechovka.cz/",
     "stationUuid": "fd23d4ea-4bc3-4398-aa71-050cee899d1e",
-    "checkedAt": "2026-11-18T12:16:40.869Z",
+    "checkedAt": "2026-11-19T12:16:19.802Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -538,7 +575,7 @@
     "favicon": "https://radia.cz/media/images/0001/01/thumb_246_images_w200.png",
     "homepage": "http://www.abradio.cz/radio/22/radio-depeche-mode/",
     "stationUuid": "961d4a91-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-18T12:16:40.883Z",
+    "checkedAt": "2026-11-19T12:16:19.846Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -555,7 +592,7 @@
     "favicon": "http://www.radiootava.cz/player/final_logo-web.png",
     "homepage": "https://www.radiootava.cz/",
     "stationUuid": "65beccff-268e-401e-8dda-d8147a398c5a",
-    "checkedAt": "2026-11-18T12:16:41.127Z",
+    "checkedAt": "2026-11-19T12:16:20.197Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -572,7 +609,7 @@
     "favicon": "https://radiopunctum.cz/favicon/apple-touch-icon.png",
     "homepage": "https://radiopunctum.cz/",
     "stationUuid": "b99a11c6-7681-4a79-a340-f7581a1940bc",
-    "checkedAt": "2026-11-18T12:16:41.222Z",
+    "checkedAt": "2026-11-19T12:16:20.361Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -589,7 +626,7 @@
     "favicon": null,
     "homepage": "http://radio-exkluzive.hys.cz/",
     "stationUuid": "a141b8f3-8515-4a7d-b711-7b165f4b967b",
-    "checkedAt": "2026-11-18T12:16:41.425Z",
+    "checkedAt": "2026-11-19T12:16:20.520Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -606,7 +643,7 @@
     "favicon": "http://www.rockzone.cz/favicon.ico",
     "homepage": "http://www.rockzone.cz/",
     "stationUuid": "c7571cbe-b514-11e9-acb2-52543be04c81",
-    "checkedAt": "2026-11-18T12:16:41.523Z",
+    "checkedAt": "2026-11-19T12:16:20.635Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -623,7 +660,7 @@
     "favicon": null,
     "homepage": "https://hvezda.info/",
     "stationUuid": "3f4770f8-6f5b-44f6-a606-0ce5de461411",
-    "checkedAt": "2026-11-18T12:16:41.737Z",
+    "checkedAt": "2026-11-19T12:16:20.914Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -642,7 +679,7 @@
     "favicon": null,
     "homepage": "http://sazava.heyradio.cz/",
     "stationUuid": "5f8ff326-922f-445d-a544-7e73d946da55",
-    "checkedAt": "2026-11-18T12:16:43.017Z",
+    "checkedAt": "2026-11-19T12:16:22.693Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -659,7 +696,7 @@
     "favicon": null,
     "homepage": "https://rockovyradio.cz/",
     "stationUuid": "49a1c4ee-69a4-42d8-bb44-06621aa7fc67",
-    "checkedAt": "2026-11-18T12:16:43.157Z",
+    "checkedAt": "2026-11-19T12:16:22.859Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -678,7 +715,7 @@
     "favicon": null,
     "homepage": "http://www.radioapplaus.com/",
     "stationUuid": "938a5577-f0ad-47d1-a256-498e5f857a05",
-    "checkedAt": "2026-11-18T12:16:43.763Z",
+    "checkedAt": "2026-11-19T12:16:23.343Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -697,7 +734,7 @@
     "favicon": null,
     "homepage": "https://radio4u.cz/",
     "stationUuid": "fcb5cbcf-e658-427c-82f7-a673d765dadb",
-    "checkedAt": "2026-11-18T12:16:44.479Z",
+    "checkedAt": "2026-11-19T12:16:24.332Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -717,7 +754,7 @@
     "favicon": null,
     "homepage": "https://http//www.radiodixie.cz/",
     "stationUuid": "331ab90c-d68c-4b02-affa-a3bfe824dd87",
-    "checkedAt": "2026-11-18T12:16:44.536Z",
+    "checkedAt": "2026-11-19T12:16:24.386Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -736,7 +773,7 @@
     "favicon": null,
     "homepage": "https://www.rockzone.cz/",
     "stationUuid": "c4ea5162-ed42-47cd-8648-382832620f45",
-    "checkedAt": "2026-11-18T12:16:44.718Z",
+    "checkedAt": "2026-11-19T12:16:24.612Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"

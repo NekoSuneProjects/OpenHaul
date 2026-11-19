@@ -11,7 +11,7 @@
     "favicon": "https://latvijasradio.lsm.lv/public/assets/userfiles/logo/LR1-logo-RGB-square.png",
     "homepage": "https://lr1.lsm.lv/lv/lr1/",
     "stationUuid": "3401278e-9dac-45fe-aabf-9178b65fcd64",
-    "checkedAt": "2026-11-18T12:45:38.906Z",
+    "checkedAt": "2026-11-19T12:49:03.061Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -28,7 +28,7 @@
     "favicon": "https://latvijasradio.lsm.lv/public/assets/userfiles/logo/LR3-logo-RGB-square.png",
     "homepage": "https://klasika.lsm.lv/lv/lr3/",
     "stationUuid": "7c488516-a286-4309-bdbf-fa49af85220e",
-    "checkedAt": "2026-11-18T12:45:39.147Z",
+    "checkedAt": "2026-11-19T12:49:03.450Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -55,10 +55,29 @@
     "favicon": null,
     "homepage": "http://www.naba.lv/",
     "stationUuid": "9609d503-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-18T12:45:41.610Z",
+    "checkedAt": "2026-11-19T12:49:06.398Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "KurmisLV",
+    "url": "http://www.kurmislv.info:8000/live-kurmislv-hq.mp3",
+    "country": "LV",
+    "type": "christian",
+    "tags": [
+      "christian"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "english",
+    "favicon": "https://www.kurmislv.info/templates/kubrik/images/logo.png",
+    "homepage": "https://www.kurmislv.info/",
+    "stationUuid": "a129090f-42c7-434a-af43-91999cf32527",
+    "checkedAt": "2026-11-19T12:49:07.097Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Latvijas Radio 3 - Klasika",
@@ -76,7 +95,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZRsZ-GV51S6hs4kQcT_QaM1BKdoGfqAomjATuY0XgZQ444zqfiw",
     "homepage": "http://klasika.lsm.lv/lv/lr3/",
     "stationUuid": "962cc9c5-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-18T12:45:44.421Z",
+    "checkedAt": "2026-11-19T12:49:08.032Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -97,7 +116,7 @@
     "favicon": null,
     "homepage": "https://www.ehr.fm/online-radio/fitness",
     "stationUuid": "89832063-5184-4490-8487-2f0c03bfdc6e",
-    "checkedAt": "2026-11-18T12:45:44.917Z",
+    "checkedAt": "2026-11-19T12:49:11.184Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -117,7 +136,7 @@
     "favicon": "https://indie.nordichilloutradio.com/wp-content/themes/indie-chillout-main/media/apple-touch-icon.png",
     "homepage": "https://indie.nordichilloutradio.com/",
     "stationUuid": "50c2a5f5-0abc-488f-add9-6c3374f7b0b6",
-    "checkedAt": "2026-11-18T12:45:51.112Z",
+    "checkedAt": "2026-11-19T12:49:17.043Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -139,7 +158,7 @@
     "favicon": "http://lr1.lsm.lv/favicon/lr1-favicon-180x180.png",
     "homepage": "http://lr1.lsm.lv/lv/lr1/",
     "stationUuid": "962cd16b-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-18T12:45:51.612Z",
+    "checkedAt": "2026-11-19T12:49:17.575Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -160,7 +179,7 @@
     "favicon": "http://lr2.lsm.lv/favicon/lr2-favicon-180x180.png",
     "homepage": "http://lr2.lsm.lv/lv/lr2/",
     "stationUuid": "962cd570-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-18T12:45:51.707Z",
+    "checkedAt": "2026-11-19T12:49:17.639Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -180,7 +199,7 @@
     "favicon": "http://lr4.lsm.lv/favicon/lr4-favicon-180x180.png",
     "homepage": "http://lr4.lsm.lv/lv/lr4/",
     "stationUuid": "962ce060-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-18T12:45:51.820Z",
+    "checkedAt": "2026-11-19T12:49:17.771Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -197,7 +216,7 @@
     "favicon": null,
     "homepage": "https://pieci.lv//lv/lr5/",
     "stationUuid": "2d916da8-1d21-44a8-b1cb-2457216714ad",
-    "checkedAt": "2026-11-18T12:45:52.351Z",
+    "checkedAt": "2026-11-19T12:49:18.407Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -214,7 +233,7 @@
     "favicon": "http://lr1mp1.latvijasradio.lv:8012/",
     "homepage": "http://lr1mp1.latvijasradio.lv:8012/",
     "stationUuid": "a7f8f2b4-956b-43b5-acad-5f8cb97a2beb",
-    "checkedAt": "2026-11-18T12:45:52.509Z",
+    "checkedAt": "2026-11-19T12:49:18.501Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -231,7 +250,7 @@
     "favicon": "http://lr2mp1.latvijasradio.lv:8002/",
     "homepage": "http://lr2mp1.latvijasradio.lv:8002/",
     "stationUuid": "1dfc5caa-eca5-4446-8a99-929d9639ed6f",
-    "checkedAt": "2026-11-18T12:45:52.519Z",
+    "checkedAt": "2026-11-19T12:49:18.543Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -248,7 +267,7 @@
     "favicon": "http://lr4mp1.latvijasradio.lv:8020/",
     "homepage": "http://lr4mp1.latvijasradio.lv:8020/",
     "stationUuid": "7d09bca3-4141-48d0-9f81-7510499f8b2e",
-    "checkedAt": "2026-11-18T12:45:52.523Z",
+    "checkedAt": "2026-11-19T12:49:18.605Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -265,7 +284,7 @@
     "favicon": "https://pik.lv/wp-content/uploads/2019/03/cropped-fav_pik-180x180.jpg",
     "homepage": "https://pik.lv/",
     "stationUuid": "c604cca3-5d67-43d3-acd6-0fbabe86b358",
-    "checkedAt": "2026-11-18T12:45:52.706Z",
+    "checkedAt": "2026-11-19T12:49:18.711Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -284,7 +303,7 @@
     "favicon": "https://lr5.lsm.lv/public/assets/design/pieci/logo.svg",
     "homepage": "https://pieci.lv/",
     "stationUuid": "99e555df-712e-4991-9184-b12d6f7347ed",
-    "checkedAt": "2026-11-18T12:45:54.754Z",
+    "checkedAt": "2026-11-19T12:49:20.877Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -303,7 +322,7 @@
     "favicon": "https://pik.lv/wp-content/uploads/2019/03/cropped-fav_pik-180x180.jpg",
     "homepage": "https://pik.lv/",
     "stationUuid": "7a4567af-530b-41c0-a93f-416ac1dbb111",
-    "checkedAt": "2026-11-18T12:45:56.857Z",
+    "checkedAt": "2026-11-19T12:49:22.421Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
