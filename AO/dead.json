@@ -11,7 +11,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/",
     "stationUuid": "02d17e43-6573-48c1-8408-b00fc7c247cc",
-    "checkedAt": "2026-11-19T11:51:06.056Z",
+    "checkedAt": "2026-11-20T11:51:04.131Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -28,7 +28,7 @@
     "favicon": "https://pcradio.app/images/stations/61b09c9d4e570.jpg",
     "homepage": "https://pcradio.app/radio/rna-canal-a",
     "stationUuid": "45eeeaad-acc1-4704-b2b7-0c454a38c3c1",
-    "checkedAt": "2026-11-19T11:51:06.069Z",
+    "checkedAt": "2026-11-20T11:51:04.134Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -49,7 +49,7 @@
     "favicon": "https://minhawebradio.com/contents/14886/cover/xm126892c1bc31f36300a057381855f3ab_14886_1750685385.png",
     "homepage": "https://radiojihenda.com/",
     "stationUuid": "682715df-58c2-4765-b888-204307736498",
-    "checkedAt": "2026-11-19T11:51:06.082Z",
+    "checkedAt": "2026-11-20T11:51:04.137Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -69,31 +69,10 @@
     "favicon": null,
     "homepage": "https://www.trsradioonline.ao/",
     "stationUuid": "f834de28-9f73-41be-976b-90720cfbab3d",
-    "checkedAt": "2026-11-19T11:51:08.693Z",
+    "checkedAt": "2026-11-20T11:51:05.839Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "RÁDIO NXT FM 98.7",
-    "url": "https://stream-179.surfernetwork.com/wnez02wihrevv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJ3bmV6MDJ3aWhyZXZ2IiwiaG9zdCI6InN0cmVhbS0xNzkuc3VyZmVybmV0d29yay5jb20iLCJydHRsIjo1LCJqdGkiOiJkMjF0NGk4Q1JxZXdwa2wwN0JIMVJ3IiwiaWF0IjoxNzk0NzE3OTYxLCJleHAiOjE3OTQ3MTgwMjF9.eVkRuWd6hA2-ZUAA9WX8A5NtTVhSJRpJLPbaHmUOQg4",
-    "country": "AO",
-    "type": "latin",
-    "tags": [
-      "latin",
-      "news",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "portuguese",
-    "favicon": null,
-    "homepage": "https://radionxtfm.ao/",
-    "stationUuid": "b7418dd1-3b11-42df-8283-0c9f3ce0780d",
-    "checkedAt": "2026-11-19T11:51:08.804Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
   },
   {
     "name": "Rádio Mais",
@@ -107,7 +86,7 @@
     "favicon": null,
     "homepage": "https://www.radiomais.ao/",
     "stationUuid": "142e1b71-b56b-4a9c-b08f-55703b611390",
-    "checkedAt": "2026-11-19T11:51:08.876Z",
+    "checkedAt": "2026-11-20T11:51:06.019Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -124,7 +103,7 @@
     "favicon": null,
     "homepage": "https://radiomfmangola.com/",
     "stationUuid": "5be023eb-7209-4ab0-8d69-27e356aad314",
-    "checkedAt": "2026-11-19T11:51:08.947Z",
+    "checkedAt": "2026-11-20T11:51:06.066Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -144,10 +123,31 @@
     "favicon": "https://sites.google.com/view/radiobairrodeangola",
     "homepage": "https://sites.google.com/view/radiobairrodeangola",
     "stationUuid": "88a9d0f2-7ef5-4119-ae96-d87c2f6f9469",
-    "checkedAt": "2026-11-19T11:51:09.209Z",
+    "checkedAt": "2026-11-20T11:51:06.315Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Rádio Cuquema",
+    "url": "https://radios2.justweb.pt:8034/stream",
+    "country": "AO",
+    "type": "news",
+    "tags": [
+      "news",
+      "pop",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "portuguese",
+    "favicon": null,
+    "homepage": "https://play.google.com/store/apps/details?id=justweb.radio.cuquema",
+    "stationUuid": "6795d0a7-4dbd-40bf-b793-39c8f8f822b2",
+    "checkedAt": "2026-11-20T11:51:06.731Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Rádio Morena Comercial",
@@ -164,30 +164,10 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "c9deca68-d5f1-476a-b8e9-d66f5911599d",
-    "checkedAt": "2026-11-19T11:51:10.803Z",
+    "checkedAt": "2026-11-20T11:51:07.448Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "Rádio Namibe",
-    "url": "https://paineldj6.com.br:20118/stream",
-    "country": "AO",
-    "type": "news",
-    "tags": [
-      "news",
-      "talk"
-    ],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": "portuguese",
-    "favicon": null,
-    "homepage": "https://rna.ao/rna.ao/radiochanels/radio-namibe/",
-    "stationUuid": "153a5ca3-3425-45de-a0c3-09a5fafc50c4",
-    "checkedAt": "2026-11-19T11:51:11.046Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Bairro de Angola",
@@ -203,7 +183,7 @@
     "favicon": "https://postimg.cc/5HR8nS0W",
     "homepage": "https://player.xradios.com.br/player-home-page/6794",
     "stationUuid": "8762cad0-5b45-4685-9c09-68de818a3ec1",
-    "checkedAt": "2026-11-19T11:51:12.391Z",
+    "checkedAt": "2026-11-20T11:51:08.568Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

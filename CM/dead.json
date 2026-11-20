@@ -1,5 +1,90 @@
 [
   {
+    "name": "Radio Balafon",
+    "url": "https://broadcasting-channels.com:9043/listen.mp3",
+    "country": "CM",
+    "type": "african",
+    "tags": [
+      "african",
+      "douala",
+      "music"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "french",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "1103e825-45bf-4952-a1f0-41bd0096eb9b",
+    "checkedAt": "2026-11-20T12:05:49.254Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "CHRISTRADIO Yaoundé",
+    "url": "https://stream-285.surfernetwork.com/gtb3znv0h2zuv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJndGIzem52MGgyenV2IiwiaG9zdCI6InN0cmVhbS0yODUuc3VyZmVybmV0d29yay5jb20iLCJydHRsIjo1LCJqdGkiOiJtdzlVdnROYVI0cUo5NmdWOWszcHVnIiwiaWF0IjoxNzk0NzY1ODIzLCJleHAiOjE3OTQ3NjU4ODN9.tU8YNo6UFe1J8efx7dsSmz62O3mJgN0nOxVs-ooNJTw",
+    "country": "CM",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "religious",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://christradio.mdn.live/",
+    "stationUuid": "af01c6a1-a1a7-46cf-97ea-15883ef6d669",
+    "checkedAt": "2026-11-20T12:05:50.073Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Radio Maria Cameroun",
+    "url": "https://dreamsiteradiocp7.com/proxy/rmcameroon?mp=/stream",
+    "country": "CM",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "religious",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 80,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://www.radiomaria.cm/",
+    "stationUuid": "84c5eac4-ae71-4fed-9772-1b0fca58b112",
+    "checkedAt": "2026-11-20T12:05:50.681Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio Vie Nouvelle",
+    "url": "https://lafrequencedevie.ice.infomaniak.ch/lafrequencedevie-64.mp3",
+    "country": "CM",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "gospel",
+      "religious",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://radiovienouvelle.com/",
+    "stationUuid": "b4e1a053-e139-4e21-b11e-ccc3b31fd87a",
+    "checkedAt": "2026-11-20T12:05:50.934Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
     "name": "Equinoxe Radio",
     "url": "https://listen.radioking.com/radio/39218/stream/76118",
     "country": "CM",
@@ -13,7 +98,7 @@
     "favicon": null,
     "homepage": "http://www.radioequinoxe.com/",
     "stationUuid": "332f6491-d62d-48a4-b44a-fa8020896949",
-    "checkedAt": "2026-11-19T12:08:25.802Z",
+    "checkedAt": "2026-11-20T12:05:51.430Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -34,7 +119,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "04ca502e-2841-4568-a378-3df4fcbada2b",
-    "checkedAt": "2026-11-19T12:08:25.950Z",
+    "checkedAt": "2026-11-20T12:05:51.519Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -54,7 +139,7 @@
     "favicon": "https://radioenlignefrance.com/storage/radios/6885/8855/conversions/DkvJakmCUOOuVMaiESwrtRtXbTOkl6-metaQ1JUVi1SYWRpby5qcGc=--lg.webp",
     "homepage": "https://www.crtv.cm/",
     "stationUuid": "964b07c5-d89d-4b37-b5f1-dfddbac876c5",
-    "checkedAt": "2026-11-19T12:08:26.290Z",
+    "checkedAt": "2026-11-20T12:05:51.846Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -74,7 +159,7 @@
     "favicon": null,
     "homepage": "https://crtv.cm/",
     "stationUuid": "14f6e67f-a6bd-4829-b6d0-08550a53ec17",
-    "checkedAt": "2026-11-19T12:08:26.642Z",
+    "checkedAt": "2026-11-20T12:05:51.928Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -95,30 +180,10 @@
     "favicon": null,
     "homepage": "https://dir.rcast.net/players/244422",
     "stationUuid": "50e84985-0372-4270-a16b-053aac9ecbbf",
-    "checkedAt": "2026-11-19T12:08:26.796Z",
+    "checkedAt": "2026-11-20T12:05:51.951Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
-  },
-  {
-    "name": "For You Radio",
-    "url": "https://rstream.az-multimedia.com:7269/stream",
-    "country": "CM",
-    "type": "news",
-    "tags": [
-      "news",
-      "talk"
-    ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "french",
-    "favicon": null,
-    "homepage": "https://foryoumedia-africa.com/",
-    "stationUuid": "ad5f9c49-3342-4b52-987c-f025543a723c",
-    "checkedAt": "2026-11-19T12:08:26.904Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Sky FM Nguti",
@@ -135,7 +200,7 @@
     "favicon": null,
     "homepage": "https://skyfmcameroon.com/",
     "stationUuid": "0c8b8cd4-0b04-442b-8fe5-dda559a31903",
-    "checkedAt": "2026-11-19T12:08:27.812Z",
+    "checkedAt": "2026-11-20T12:05:52.834Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -155,7 +220,7 @@
     "favicon": null,
     "homepage": "https://crtv.cm/radio/suellaba-fm",
     "stationUuid": "20cd420b-3af1-451a-9d79-5c0c3ae13f67",
-    "checkedAt": "2026-11-19T12:08:27.824Z",
+    "checkedAt": "2026-11-20T12:05:52.970Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"

@@ -1,5 +1,26 @@
 [
   {
+    "name": "NTN Radio 89.1 Georgetown",
+    "url": "http://auds1.intacs.com/ntnradio",
+    "country": "GY",
+    "type": "bollywood",
+    "tags": [
+      "bollywood",
+      "georgetown",
+      "south asian music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://ntntv-radio.com/",
+    "stationUuid": "96486b05-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-20T12:35:18.816Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
     "name": "97.5 FM MAAD",
     "url": "https://streaming.broadcastradio.com/brutal",
     "country": "GY",
@@ -11,7 +32,7 @@
     "favicon": "https://www.maad97.com/favicon.ico",
     "homepage": "https://www.maad97.com/",
     "stationUuid": "d62a9816-aea5-40c9-b109-a538c57d693a",
-    "checkedAt": "2026-11-19T12:39:51.004Z",
+    "checkedAt": "2026-11-20T12:35:18.818Z",
     "status": 404,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 404"

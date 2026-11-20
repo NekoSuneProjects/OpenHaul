@@ -1,39 +1,5 @@
 [
   {
-    "name": "Live FM",
-    "url": "https://stream.aiir.com/dbv0rxpwp6ytv",
-    "country": "BH",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 320,
-    "language": "bangla,english,hindi,kannada,malayalam,tamil,telugu,urdu/punjabi/seraiki",
-    "favicon": null,
-    "homepage": "https://www.livefm.bh/",
-    "stationUuid": "104dc6c9-bfe7-464b-bf4f-e485a921c109",
-    "checkedAt": "2026-11-19T12:00:24.592Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "Live FM",
-    "url": "https://stream.aiir.com/dbv0rxpwp6ytv",
-    "country": "BH",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 320,
-    "language": "bangla,english,hindi,kannada,malayalam,punjabi,tamil,telugu,urdu",
-    "favicon": null,
-    "homepage": "https://www.livefm.bh/",
-    "stationUuid": "09cf6598-9899-4ff3-bb90-25bd517b7375",
-    "checkedAt": "2026-11-19T12:00:24.602Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
     "name": "Panorama FM",
     "url": "https://shls-panoramafm-prod-dub.shahid.net/out/v1/66262e420d824475aaae794dc2d69f14/index.m3u8",
     "country": "BH",
@@ -45,7 +11,7 @@
     "favicon": "https://www.mbc.net/apple-touch-icon.png",
     "homepage": "https://www.mbc.net/channels",
     "stationUuid": "17bae22b-590b-4ce1-8bee-4a1c66277a60",
-    "checkedAt": "2026-11-19T12:00:24.606Z",
+    "checkedAt": "2026-11-20T11:58:39.023Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -62,9 +28,28 @@
     "favicon": null,
     "homepage": "https://www.mia.gov.bh/media-center/radio-bahrain-102-3/?lang=en",
     "stationUuid": "96498d97-63cc-472d-b1b2-16af81082d8b",
-    "checkedAt": "2026-11-19T12:00:24.609Z",
+    "checkedAt": "2026-11-20T11:58:39.024Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": ".القرآن",
+    "url": "https://backup.qurango.net/radio/ahmad_khader_altarabulsi",
+    "country": "BH",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "3c8f72ed-5e58-4b9e-bf78-28a2bf4ae4b3",
+    "checkedAt": "2026-11-20T11:58:39.803Z",
+    "status": 500,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 500"
   }
 ]

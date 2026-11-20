@@ -11,73 +11,10 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/",
     "stationUuid": "694b32bf-8463-493b-86c5-1e7c818f1b59",
-    "checkedAt": "2026-11-19T11:50:51.883Z",
+    "checkedAt": "2026-11-20T11:50:53.425Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
-  },
-  {
-    "name": "Nest Radio",
-    "url": "https://radio.nestnews.al/listen/nest-radio/radio.mp3",
-    "country": "AL",
-    "type": "albanian",
-    "tags": [
-      "albanian",
-      "dance",
-      "hits",
-      "international",
-      "pop"
-    ],
-    "codec": "MP3",
-    "bitrate": 192,
-    "language": "albanian",
-    "favicon": "https://radio.nestnews.al/assets/nest-logo.png",
-    "homepage": "https://radio.nestnews.al/",
-    "stationUuid": "f9a5c912-b3e0-4c11-92c2-fd8b136543d3",
-    "checkedAt": "2026-11-19T11:50:53.133Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": ".القرآن",
-    "url": "https://backup.qurango.net/radio/ahmad_khader_altarabulsi",
-    "country": "AL",
-    "type": "classical",
-    "tags": [
-      "classical"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "7d65c355-a932-4279-bfec-57d5eacecd3c",
-    "checkedAt": "2026-11-19T11:50:54.841Z",
-    "status": 500,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 500"
-  },
-  {
-    "name": "Radio Klea",
-    "url": "http://uk21freenew.listen2myradio.com:23300/;",
-    "country": "AL",
-    "type": "ethnic",
-    "tags": [
-      "ethnic",
-      "news",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "albanian",
-    "favicon": null,
-    "homepage": "https://radioklea.radio12345.com/",
-    "stationUuid": "face265e-8a7c-44ba-9bc8-e38452c86a3c",
-    "checkedAt": "2026-11-19T11:50:55.806Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Rainca",
@@ -95,10 +32,48 @@
     "favicon": null,
     "homepage": "https://www.radiorainca.com/",
     "stationUuid": "583302ac-b867-4cd1-9536-9a50843f7285",
-    "checkedAt": "2026-11-19T11:50:56.687Z",
+    "checkedAt": "2026-11-20T11:50:55.740Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Shqip Folklor",
+    "url": "https://live.radio-zemra.eu/folklor",
+    "country": "AL",
+    "type": "folk",
+    "tags": [
+      "folk"
+    ],
+    "codec": "MP3",
+    "bitrate": 112,
+    "language": "albanian",
+    "favicon": null,
+    "homepage": "https://radio-shqip.com/",
+    "stationUuid": "6bb5cffe-59ab-41e4-b57d-0dfadbb28a08",
+    "checkedAt": "2026-11-20T11:50:55.772Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Radio Zemra",
+    "url": "https://live.radio-zemra.eu/stream",
+    "country": "AL",
+    "type": "folk",
+    "tags": [
+      "folk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "albanian",
+    "favicon": null,
+    "homepage": "https://zemra.com/",
+    "stationUuid": "f64e4652-e4a3-4efa-9bc0-0b5885c47e0e",
+    "checkedAt": "2026-11-20T11:50:56.015Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Intradio",
@@ -115,7 +90,7 @@
     "favicon": null,
     "homepage": "https://intradio.live/",
     "stationUuid": "bbe507a3-14d6-400f-9b3f-8420266bcb9e",
-    "checkedAt": "2026-11-19T11:50:57.492Z",
+    "checkedAt": "2026-11-20T11:50:56.208Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -135,7 +110,7 @@
     "favicon": null,
     "homepage": "https://www.oranews.tv/",
     "stationUuid": "c2caf164-c2bf-4eac-a719-ce6bd6cf25cb",
-    "checkedAt": "2026-11-19T11:50:59.201Z",
+    "checkedAt": "2026-11-20T11:50:57.318Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -152,7 +127,7 @@
     "favicon": null,
     "homepage": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio075/chunklist.m3u8",
     "stationUuid": "e439aa52-203a-4f83-a8e4-995d5c90f554",
-    "checkedAt": "2026-11-19T11:51:00.066Z",
+    "checkedAt": "2026-11-20T11:50:58.014Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

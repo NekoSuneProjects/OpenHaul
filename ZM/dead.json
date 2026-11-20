@@ -17,7 +17,7 @@
     "favicon": null,
     "homepage": "https://flavaradioandtv.com/",
     "stationUuid": "7f5bc9bf-6987-4644-aed2-c64c6e20805b",
-    "checkedAt": "2026-11-19T13:33:18.584Z",
+    "checkedAt": "2026-11-20T13:56:06.125Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -38,7 +38,7 @@
     "favicon": null,
     "homepage": "https://kasamaradio.com/",
     "stationUuid": "9a4b7c3f-f637-46e8-b915-2c755e475fd1",
-    "checkedAt": "2026-11-19T13:33:18.586Z",
+    "checkedAt": "2026-11-20T13:56:06.130Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -59,10 +59,31 @@
     "favicon": null,
     "homepage": "https://kfmmansa.radio12345.com/",
     "stationUuid": "581d323f-0fe1-4aae-8cb8-f26815897284",
-    "checkedAt": "2026-11-19T13:33:19.148Z",
+    "checkedAt": "2026-11-20T13:56:07.469Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Chimwemwe 91.7 FM",
+    "url": "https://s19.myradiostream.com:18688/listen.mp3",
+    "country": "ZM",
+    "type": "christian",
+    "tags": [
+      "christian",
+      "religious",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "575cf8e9-9443-4162-bc6c-887b35157757",
+    "checkedAt": "2026-11-20T13:56:08.241Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "RCZ Foston Radio",
@@ -80,30 +101,27 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "87559094-0e45-49ad-ba5b-7b6cd2f7917c",
-    "checkedAt": "2026-11-19T13:33:20.040Z",
+    "checkedAt": "2026-11-20T13:56:08.466Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Choma Maanu Radio Station",
-    "url": "https://s26.myradiostream.com:22860/listen.mp3/;",
+    "name": "Radio Christian Voice",
+    "url": "https://streaming.shoutcast.com/rcv",
     "country": "ZM",
-    "type": "news",
-    "tags": [
-      "news",
-      "talk"
-    ],
+    "type": "MP3",
+    "tags": [],
     "codec": "MP3",
-    "bitrate": 96,
-    "language": "english",
+    "bitrate": 128,
+    "language": null,
     "favicon": null,
-    "homepage": "https://choma-maanu-radio-station.mdn.live/",
-    "stationUuid": "fc0a82e8-02fa-4dc2-a4ba-56e8e30f4213",
-    "checkedAt": "2026-11-19T13:33:21.250Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
+    "homepage": "https://rcv.co.zm/",
+    "stationUuid": "17cc440f-ff0a-45f0-b19d-26d8c874a3d8",
+    "checkedAt": "2026-11-20T13:56:10.432Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Smooth 90.1fm",
@@ -122,7 +140,7 @@
     "favicon": null,
     "homepage": "https://www.smoothfmzambia.org/",
     "stationUuid": "0dbbbaa1-fd10-4f09-a960-958438a5f34d",
-    "checkedAt": "2026-11-19T13:33:22.259Z",
+    "checkedAt": "2026-11-20T13:56:12.039Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

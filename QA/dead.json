@@ -1,5 +1,63 @@
 [
   {
+    "name": "Al Jazeera Arabic",
+    "url": "https://live-hls-web-aja-gcp.thehlive.com/VOICE-AJA/index.m3u8",
+    "country": "QA",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 105,
+    "language": null,
+    "favicon": "https://www.aljazeera.net/wp-content/uploads/2025/05/arabic-live-1747222223.jpg",
+    "homepage": "https://www.aljazeera.net/video/live",
+    "stationUuid": "a93d497f-74d9-43b9-bb61-fe376ebe240e",
+    "checkedAt": "2026-11-20T13:09:24.719Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Al Jazeera English (Audio)",
+    "url": "https://live-hls-web-aje-gcp.thehlive.com/VOICE-AJE/index.m3u8",
+    "country": "QA",
+    "type": "aljazeera",
+    "tags": [
+      "aljazeera",
+      "tv audio"
+    ],
+    "codec": "AAC+",
+    "bitrate": 105,
+    "language": "english",
+    "favicon": "https://www.aljazeera.com/favicon_aje.ico",
+    "homepage": "https://www.aljazeera.com/audio/live",
+    "stationUuid": "f518d918-8700-460f-89f4-de27b6cc8dce",
+    "checkedAt": "2026-11-20T13:09:24.725Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Aljazeera Arabic",
+    "url": "https://live-hls-web-aja.getaj.net/AJA/index.m3u8",
+    "country": "QA",
+    "type": "aljazeera",
+    "tags": [
+      "aljazeera",
+      "الجزيرة",
+      "قناة الجزيرة"
+    ],
+    "codec": "AAC,H.264",
+    "bitrate": 6324,
+    "language": "arabic",
+    "favicon": "https://www.aljazeera.net/favicon.ico",
+    "homepage": "https://www.aljazeera.net/",
+    "stationUuid": "e2011342-2b07-40b7-a64d-af695146085b",
+    "checkedAt": "2026-11-20T13:09:24.727Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
     "name": "Habaib",
     "url": "https://lit-cast.com/proxy/habaiebfm/stream",
     "country": "QA",
@@ -15,10 +73,77 @@
     "favicon": null,
     "homepage": "https://habaieb.fm/",
     "stationUuid": "ce227a1d-1b71-4231-9e6b-c66635a428e1",
-    "checkedAt": "2026-11-19T13:05:06.094Z",
+    "checkedAt": "2026-11-20T13:09:24.728Z",
     "status": 500,
     "contentType": "text/html",
     "lastFailure": "HTTP 500"
+  },
+  {
+    "name": "Al Jazeera English (Live)",
+    "url": "https://live-hls-web-aje-gcp.thehlive.com/AJE/index.m3u8",
+    "country": "QA",
+    "type": "breaking news",
+    "tags": [
+      "breaking news",
+      "live",
+      "news",
+      "world",
+      "world news"
+    ],
+    "codec": "AAC,H.264",
+    "bitrate": 6741,
+    "language": "english",
+    "favicon": "https://yt3.googleusercontent.com/XsTga3Nsfc1E6ZgC6HfHfzTG_3zhuZleOnsKxSK2aILMjwkkIm-0vdALFaU-yt0Lw07iLtbSifk=s900-c-k-c0x00ffffff-no-rj",
+    "homepage": "https://www.aljazeera.com/",
+    "stationUuid": "ada3cd11-4035-41b2-899a-45eee0cf8756",
+    "checkedAt": "2026-11-20T13:09:24.730Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Al Jazeera - English",
+    "url": "https://live-hls-audio-web-aje.getaj.net/VOICE-AJE/01.m3u8",
+    "country": "QA",
+    "type": "business news",
+    "tags": [
+      "business news",
+      "cultural news",
+      "documentaries",
+      "international news",
+      "news",
+      "news and talk",
+      "sports news"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "english",
+    "favicon": "https://www.aljazeera.com/wp-content/uploads/2025/05/english-live-1747222410.png?resize=270%2C270&quality=80",
+    "homepage": "https://www.aljazeera.com/audio/live/",
+    "stationUuid": "a6bc8a3b-67bf-4042-9af8-f7bad29f0734",
+    "checkedAt": "2026-11-20T13:09:24.924Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "aljazeera",
+    "url": "https://live-hls-web-aja.getaj.net/AJA/index.m3u8",
+    "country": "QA",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "AAC,H.264",
+    "bitrate": 6324,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "5d9e440c-d634-4473-b56c-8f505ed33302",
+    "checkedAt": "2026-11-20T13:09:25.620Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "إذاعة طريق السلف",
@@ -34,10 +159,131 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "01d6bde1-e8cb-47f9-b8de-998ceace088d",
-    "checkedAt": "2026-11-19T13:05:06.412Z",
+    "checkedAt": "2026-11-20T13:09:25.630Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "اذاعة القرآن الكريم",
+    "url": "http://stream.radiojar.com/0tpy1h0kxtzuv",
+    "country": "QA",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "1d6d58c1-a042-4cfb-b449-bee2ee85b3c3",
+    "checkedAt": "2026-11-20T13:09:25.942Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "تفسير بن عثيمين رحمه الله",
+    "url": "https://qurango.net/radio/tafseer",
+    "country": "QA",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "f35d0956-6b7b-4c42-bdb5-e9ef1daf8c3d",
+    "checkedAt": "2026-11-20T13:09:39.638Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Al Jazzera News Audio Hub Live English 20260312",
+    "url": "https://live-hls-web-aje-gcp.thehlive.com/VOICE-AJE/index.m3u8",
+    "country": "QA",
+    "type": "current affairs",
+    "tags": [
+      "current affairs",
+      "middle east",
+      "news"
+    ],
+    "codec": "AAC",
+    "bitrate": 99,
+    "language": null,
+    "favicon": "https://www.aljazeera.com/wp-content/uploads/2025/05/english-live-1747222410.png",
+    "homepage": "https://www.aljazeera.com/audio/live/",
+    "stationUuid": "3317140d-ab2c-4863-8592-76a78bb384e9",
+    "checkedAt": "2026-11-20T13:09:48.047Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Al Jazeera - Arabic",
+    "url": "http://live-hls-audio-web-aja.getaj.net/VOICE-AJA/index.m3u8",
+    "country": "QA",
+    "type": "documentaries",
+    "tags": [
+      "documentaries",
+      "news",
+      "speech",
+      "talk"
+    ],
+    "codec": "AAC",
+    "bitrate": 99,
+    "language": "arabic",
+    "favicon": "https://www.aljazeera.net/favicon.ico",
+    "homepage": "https://www.aljazeera.net/",
+    "stationUuid": "43023b6f-5695-4108-8892-07d22e9b1181",
+    "checkedAt": "2026-11-20T13:09:48.247Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Al Jazeera - Arabic",
+    "url": "http://live-hls-audio-web-aja.getaj.net/VOICE-AJA/index.m3u8",
+    "country": "QA",
+    "type": "news",
+    "tags": [
+      "news",
+      "news talk",
+      "talk"
+    ],
+    "codec": "AAC",
+    "bitrate": 99,
+    "language": null,
+    "favicon": "http://i.ibb.co/ngQWtpY/Al-Jazeera-Arabic.png",
+    "homepage": "http://www.aljazeera.net/",
+    "stationUuid": "e4046469-8cef-4ffd-a95d-528e57e4641b",
+    "checkedAt": "2026-11-20T13:09:52.256Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "الجزيرة صوت",
+    "url": "https://live-hls-audio-web-aja.getaj.net/VOICE-AJA/01.m3u8",
+    "country": "QA",
+    "type": "news",
+    "tags": [
+      "news"
+    ],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://upload.wikimedia.org/wikipedia/ar/thumb/7/71/Aljazeera.svg/1200px-Aljazeera.svg.png",
+    "homepage": null,
+    "stationUuid": "edc133eb-0736-4056-a955-2f02fdc8c0e2",
+    "checkedAt": "2026-11-20T13:09:52.430Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Qabayan Radio 94.3 FM",
@@ -53,9 +299,26 @@
     "favicon": "https://static.wixstatic.com/media/418af1_49879588b7204884b90d4994f7f25d3e%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/418af1_49879588b7204884b90d4994f7f25d3e%7Emv2.png",
     "homepage": "https://www.qabayanfm.com/",
     "stationUuid": "f7e70d6f-029a-46a2-adc6-abe64eba2dd5",
-    "checkedAt": "2026-11-19T13:05:07.200Z",
+    "checkedAt": "2026-11-20T13:09:52.520Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "قناة الجزيرة",
+    "url": "https://live-hls-web-aja.getaj.net/AJA/06.m3u8",
+    "country": "QA",
+    "type": "UNKNOWN",
+    "tags": [],
+    "codec": "UNKNOWN",
+    "bitrate": 0,
+    "language": "arabic",
+    "favicon": "https://www.aljazeera.net/favicon.ico",
+    "homepage": "https://www.aljazeera.net/",
+    "stationUuid": "244cf1a8-52d8-4e26-bf23-821a21129bbf",
+    "checkedAt": "2026-11-20T13:09:52.619Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   }
 ]

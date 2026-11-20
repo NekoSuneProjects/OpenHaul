@@ -1,25 +1,70 @@
 [
   {
-    "name": "Suðurland FM",
-    "url": "https://ice-11.spilarinn.is/xsudurlandfm",
+    "name": "Trolli FM 103.7 Siglufjordu",
+    "url": "http://live.trolli.is:8200/;",
     "country": "IS",
-    "type": "country",
+    "type": "adult contemporary",
     "tags": [
-      "country",
-      "pop",
-      "rock",
-      "varied"
+      "adult contemporary",
+      "siglufjordu",
+      "top 40"
     ],
     "codec": "MP3",
-    "bitrate": 0,
+    "bitrate": 256,
     "language": "icelandic",
-    "favicon": "https://www.sudurlandfm.is/wp-content/uploads/2016/05/logo_blue-3.png",
-    "homepage": "https://www.sudurlandfm.is/",
-    "stationUuid": "625512ba-218e-49b5-a676-efc76c5871c7",
-    "checkedAt": "2026-11-19T12:45:18.059Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "favicon": "http://spilarinn.is/uploads/1486999431932.png",
+    "homepage": "http://fm.trolli.is/",
+    "stationUuid": "9624075b-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-20T12:40:11.056Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Estuary FM",
+    "url": "https://89-126-248-183.sslip.io:9443/estuary",
+    "country": "IS",
+    "type": "ambient",
+    "tags": [
+      "ambient",
+      "experimental",
+      "field recordings",
+      "independent",
+      "spoken word"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://riveratdusk.neocities.org/estuary",
+    "stationUuid": "86b4a6b3-9676-42ca-9dad-5e7e5af97fda",
+    "checkedAt": "2026-11-20T12:40:11.113Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "RADIO AKI ASGEIRSSON : Tonlist / Music by Aki Asgeirsson",
+    "url": "https://kast.aki.is/radio",
+    "country": "IS",
+    "type": "composer",
+    "tags": [
+      "composer",
+      "contemporary",
+      "experimental",
+      "iceland",
+      "new music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://aki.is/radio/",
+    "stationUuid": "86590d5f-5e43-49a7-a774-d9f34d47e49f",
+    "checkedAt": "2026-11-20T12:40:11.391Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Cathedral 13",
@@ -33,7 +78,7 @@
     "favicon": "http://cathedral13.com/wp-content/uploads/2017/10/c13logo13-170x170.png",
     "homepage": "http://cathedral13.com/#!",
     "stationUuid": "efc88f87-3dfa-4478-9c8f-fa0148804328",
-    "checkedAt": "2026-11-19T12:45:18.383Z",
+    "checkedAt": "2026-11-20T12:40:13.123Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
