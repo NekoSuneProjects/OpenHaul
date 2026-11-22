@@ -17,7 +17,7 @@
     "favicon": null,
     "homepage": "https://streetoneradiotz.blogspot.com/",
     "stationUuid": "71c1fb57-34bf-4501-a2db-730ff9bf3a90",
-    "checkedAt": "2026-11-20T13:36:53.929Z",
+    "checkedAt": "2026-11-22T12:55:43.874Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -39,10 +39,27 @@
     "favicon": "https://www.dropbox.com/scl/fi/x7vljyzk9rkibiwmq1364/IMG-20261018-WA8046.jpg",
     "homepage": "https://makiemaxinstaller.blogspot.com/",
     "stationUuid": "bdc5ea78-cd94-4408-884e-34fd64647dcc",
-    "checkedAt": "2026-11-20T13:36:53.945Z",
+    "checkedAt": "2026-11-22T12:55:43.879Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Nehestrat FM",
+    "url": "https://eu8.fastcast4u.com/proxy/nehestratfm?mp=/1",
+    "country": "TZ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": null,
+    "favicon": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPhLsuhT-haWZX7AcmFstsEjrSDfHZO6Xtaumqr1dWUPP72YsMnBPm8S1XPS3g5y_F1y5eEGcvU-T5DaugcQ8erYUiY1J-oyl6QeQLiF7CT-X1Z6nst7qeQ66Kgs0ZGzv0QqX1hc35V4XFQv3Xza5s2S3phz4rNzMMKX4xek1y5SaTbRLopqsyGTIf1lE/s1254/63262.png",
+    "homepage": "https://www.nehestrat.com/",
+    "stationUuid": "84370cb1-5024-4282-99d6-d1518554f9b2",
+    "checkedAt": "2026-11-22T12:55:44.565Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Radio Ngamia",
@@ -56,9 +73,26 @@
     "favicon": "http://radiongamia.com/favicon.ico",
     "homepage": "http://radiongamia.com/",
     "stationUuid": "22772c9d-86fd-4825-b98d-3883c48e31ad",
-    "checkedAt": "2026-11-20T13:36:55.628Z",
+    "checkedAt": "2026-11-22T12:55:44.942Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio One Stereo",
+    "url": "https://radioonetanzania.radioca.st/stream",
+    "country": "TZ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.radio1.co.tz/",
+    "stationUuid": "a8051d12-4186-4b72-8345-5a8091499a5b",
+    "checkedAt": "2026-11-22T12:55:45.036Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   }
 ]

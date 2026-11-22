@@ -13,7 +13,7 @@
     "favicon": null,
     "homepage": "http://www.chillout-zone.weebly.com/",
     "stationUuid": "9eba90af-2db9-4803-af1b-508656254c43",
-    "checkedAt": "2026-11-20T12:12:53.373Z",
+    "checkedAt": "2026-11-22T12:02:33.284Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -32,7 +32,7 @@
     "favicon": null,
     "homepage": "https://ccnnetwork.cn/",
     "stationUuid": "0b42d20d-3351-4005-82bb-21a0de5b1233",
-    "checkedAt": "2026-11-20T12:12:53.770Z",
+    "checkedAt": "2026-11-22T12:02:33.418Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -46,35 +46,15 @@
       "culture"
     ],
     "codec": "AAC,H.264",
-    "bitrate": 1291,
+    "bitrate": 881,
     "language": "chinese",
     "favicon": "https://ccnnetwork.cn/wp-content/uploads/2021/07/newccnlogo2021.png",
     "homepage": "https://ccnnetwork.cn/",
     "stationUuid": "76b72808-097a-4777-91db-6641628e2c34",
-    "checkedAt": "2026-11-20T12:12:58.029Z",
+    "checkedAt": "2026-11-22T12:02:33.822Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Barking Cats",
-    "url": "https://barkingcats.live/radiochannel/barking-cats/",
-    "country": "CY",
-    "type": "electronic",
-    "tags": [
-      "electronic",
-      "underground electronic"
-    ],
-    "codec": null,
-    "bitrate": 0,
-    "language": "cypriot greek,english",
-    "favicon": "https://barkingcats.live/wp-content/uploads/2021/01/logo-circle.png",
-    "homepage": "https://barkingcats.live/",
-    "stationUuid": "8093bd6e-ec50-4779-b480-0f2062c4c5a1",
-    "checkedAt": "2026-11-20T12:12:58.033Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Politis 107.6 FM",
@@ -88,7 +68,7 @@
     "favicon": "https://politis.com.cy/images/favicon/favicon-32x32.png",
     "homepage": "https://politis.com.cy/radio",
     "stationUuid": "53cfef35-635f-4c9d-a125-8f627981628e",
-    "checkedAt": "2026-11-20T12:12:59.502Z",
+    "checkedAt": "2026-11-22T12:02:35.052Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -107,9 +87,9 @@
     "favicon": "http://radio.cloudcy.org:8000/favicon.ico",
     "homepage": "http://radio.cloudcy.org:8000/rock",
     "stationUuid": "53ad2fb8-e9b9-4bdf-a065-4e90b53dcb25",
-    "checkedAt": "2026-11-20T12:13:00.398Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "checkedAt": "2026-11-22T12:02:35.986Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   }
 ]

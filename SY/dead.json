@@ -11,10 +11,10 @@
     "favicon": "https://damasradio.fm/wp-content/uploads/2026/01/logo-dark-withdate.svg",
     "homepage": "https://damasradio.fm/",
     "stationUuid": "3f461ee0-dfbb-4ea8-8e56-b32d84fd65fc",
-    "checkedAt": "2026-11-20T13:34:24.740Z",
-    "status": null,
+    "checkedAt": "2026-11-22T12:53:21.838Z",
+    "status": 404,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Syria TV - راديو تلفزيون سوريا",
@@ -28,7 +28,7 @@
     "favicon": "https://cdn-profiles.tunein.com/s350400/images/logod.png",
     "homepage": "https://www.syria.tv/",
     "stationUuid": "03d0db42-b62b-4cf6-9b5e-dd2ef47cd073",
-    "checkedAt": "2026-11-20T13:34:24.744Z",
+    "checkedAt": "2026-11-22T12:53:21.869Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -45,10 +45,27 @@
     "favicon": "https://www.rozana.fm/assets/images/header-logo.svg",
     "homepage": "https://www.rozana.fm/",
     "stationUuid": "b4a51e34-f827-4acd-8b89-5b0ea266afed",
-    "checkedAt": "2026-11-20T13:34:26.023Z",
+    "checkedAt": "2026-11-22T12:53:23.784Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Rayan FM",
+    "url": "https://broadcast.shoutstream.co.uk:8078/stream",
+    "country": "SY",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": "https://rayanfm.net/logo.webp",
+    "homepage": "https://rayanfm.net/",
+    "stationUuid": "becb9c74-b124-4c1f-a0dc-ad91ae395978",
+    "checkedAt": "2026-11-22T12:53:23.973Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Sham FM",
@@ -62,7 +79,7 @@
     "favicon": "https://sham.fm/favicon.ico",
     "homepage": "https://sham.fm/ar/index.html",
     "stationUuid": "24ed48da-4715-4bf9-b3fe-e14f8697cdb8",
-    "checkedAt": "2026-11-20T13:34:26.361Z",
+    "checkedAt": "2026-11-22T12:53:24.386Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -79,7 +96,7 @@
     "favicon": "https://versionfm.com/images/logo2.png",
     "homepage": "https://versionfm.com/",
     "stationUuid": "be569ab8-8fac-4125-a04c-e4ebba12360c",
-    "checkedAt": "2026-11-20T13:34:26.522Z",
+    "checkedAt": "2026-11-22T12:53:24.596Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

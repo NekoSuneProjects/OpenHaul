@@ -17,7 +17,7 @@
     "favicon": "https://wolfmusicradio.com/img/favicon.png",
     "homepage": "https://wolfmusicradio.com/",
     "stationUuid": "72e8ae22-3366-4123-b8ba-05ec6d4f6c5d",
-    "checkedAt": "2026-11-20T13:36:54.261Z",
+    "checkedAt": "2026-11-22T12:55:44.073Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -40,7 +40,7 @@
     "favicon": "https://i0.wp.com/i-x.live/wp-content/uploads/2020/02/cropped-i-x-logo-1.png?fit=32%2C32&ssl=1",
     "homepage": "https://i-x.live/",
     "stationUuid": "65a3fc40-5eea-4fce-9e57-f77a050d8873",
-    "checkedAt": "2026-11-20T13:36:55.623Z",
+    "checkedAt": "2026-11-22T12:55:45.073Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -64,7 +64,7 @@
     "favicon": "https://hutsul.radio.fm/favicon.ico",
     "homepage": "https://hutsul.radio.fm/",
     "stationUuid": "f8752550-7d50-4f6e-a7c0-652a7b908625",
-    "checkedAt": "2026-11-20T13:36:56.920Z",
+    "checkedAt": "2026-11-22T12:55:45.845Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -86,10 +86,36 @@
     "favicon": "https://gonivo.com.ua/images/favicon.webp",
     "homepage": "https://gonivo.com.ua/",
     "stationUuid": "d006d344-f2eb-4df1-a6b4-f9f343161d41",
-    "checkedAt": "2026-11-20T13:36:56.928Z",
+    "checkedAt": "2026-11-22T12:55:45.983Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Радіо Перше",
+    "url": "https://live.radio1.com.ua/liveradio64",
+    "country": "UA",
+    "type": "64 kbit/s",
+    "tags": [
+      "64 kbit/s",
+      "aac",
+      "https",
+      "lviv",
+      "music",
+      "news",
+      "podcasts",
+      "regional radio"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": "ukranian",
+    "favicon": "https://radio1.com.ua/favicon-32x32.png",
+    "homepage": "https://radio1.com.ua/",
+    "stationUuid": "dbe80a28-9b80-4bff-928c-6d9d02fc67da",
+    "checkedAt": "2026-11-22T12:55:46.766Z",
+    "status": 403,
+    "contentType": "text/html; charset=UTF-8",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Radio ROKS Hard'n'Heavy [Rest]",
@@ -114,7 +140,7 @@
     "favicon": null,
     "homepage": "https://plivka.online/",
     "stationUuid": "5209ec8b-e803-4152-8ba9-56816180710a",
-    "checkedAt": "2026-11-20T13:36:58.068Z",
+    "checkedAt": "2026-11-22T12:55:46.920Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -138,7 +164,7 @@
     "favicon": "https://www.pulzusfm.eu/sites/all/themes/ino/ino_sub/favicon.ico",
     "homepage": "https://www.pulzusfm.eu/ua",
     "stationUuid": "31a3aae7-9bc4-4c5f-9519-64793223133c",
-    "checkedAt": "2026-11-20T13:36:58.450Z",
+    "checkedAt": "2026-11-22T12:55:47.244Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -163,47 +189,7 @@
     "favicon": null,
     "homepage": "https://www.volynnews.com/",
     "stationUuid": "f66d5629-3513-472d-8748-c720019ead29",
-    "checkedAt": "2026-11-20T13:36:58.635Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Радіо РАІ",
-    "url": "https://radio.rai.ua:9000/rai",
-    "country": "UA",
-    "type": "aac",
-    "tags": [
-      "aac",
-      "https",
-      "music",
-      "regional news",
-      "regional radio"
-    ],
-    "codec": "MP3",
-    "bitrate": 320,
-    "language": "ukranian",
-    "favicon": "https://rai.ua/wp-content/uploads/2021/03/cropped-favkarai2-32x32.png",
-    "homepage": "https://rai.ua/",
-    "stationUuid": "321ebdf3-45a2-44a7-aa12-180b4f7429c3",
-    "checkedAt": "2026-11-20T13:36:58.642Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Sun FM",
-    "url": "https://stream.sunfmua.com/live",
-    "country": "UA",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 64,
-    "language": null,
-    "favicon": "https://cdn.onlineradio.box.com/img/1/9/79689.v32.png",
-    "homepage": "https://www.sunfm.ua/",
-    "stationUuid": "97115fc5-552f-42e2-9298-362dbff78596",
-    "checkedAt": "2026-11-20T13:36:58.924Z",
+    "checkedAt": "2026-11-22T12:55:47.311Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -220,7 +206,7 @@
     "favicon": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicq7VMlMqV7nu2t0SQY8jJ6WIXTNtUD_75HQOV0oLZOVbCq7xe7IHVnwbEcD_DhBgK8YOibP4h_ka7ksdNBVlQSubODcZn97ERrEaaVDe9jpaW7mBMtgOgeVay2FmLjBub-Hsvg2RTxIhl/s72-c/slide3.jpg",
     "homepage": "https://www.fressfm.com/?m=1",
     "stationUuid": "f299b31d-73b0-4e2c-a299-6bff35a6f247",
-    "checkedAt": "2026-11-20T13:36:59.521Z",
+    "checkedAt": "2026-11-22T12:55:48.223Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -239,10 +225,35 @@
     "favicon": null,
     "homepage": "http://www.tvoeradio.com/",
     "stationUuid": "440d2a15-e99b-11e8-a471-52543be04c81",
-    "checkedAt": "2026-11-20T13:36:59.966Z",
+    "checkedAt": "2026-11-22T12:55:48.756Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "RadiumFM Lviv",
+    "url": "https://stream.radiumfm.com/lviv",
+    "country": "UA",
+    "type": "ai generated",
+    "tags": [
+      "ai generated",
+      "jazz",
+      "news",
+      "retro",
+      "rhythm and blues",
+      "soul",
+      "swing"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://radiumfm.com/icon-512.png",
+    "homepage": "https://radiumfm.com/lviv",
+    "stationUuid": "bb0fb246-622e-4f4c-84be-00b0f9a0e7cb",
+    "checkedAt": "2026-11-22T12:55:48.814Z",
+    "status": 410,
+    "contentType": null,
+    "lastFailure": "HTTP 410"
   },
   {
     "name": "Champion Radio",
@@ -258,10 +269,30 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "2326c5fc-5f02-4f3c-94e9-ce67b8f39108",
-    "checkedAt": "2026-11-20T13:37:00.938Z",
+    "checkedAt": "2026-11-22T12:55:49.439Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Europa Plus",
+    "url": "https://s5.radioforge.com:7908/live?n=77357",
+    "country": "UA",
+    "type": "dance",
+    "tags": [
+      "dance",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 224,
+    "language": "ukrainian",
+    "favicon": "https://europaplus.kiev.ua/europa-box/2020/10/cropped-EP_Logo_final-180x180.png",
+    "homepage": "https://europaplus.kiev.ua/",
+    "stationUuid": "d0050edc-29b5-4b7e-83fb-c4584c54b811",
+    "checkedAt": "2026-11-22T12:55:51.238Z",
+    "status": 503,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "RECORD DANCE RADIO",
@@ -277,7 +308,7 @@
     "favicon": "https://www.radiorecord.com.ua/wp-content/uploads/2026/06/logo_new_black_300x300.jpg",
     "homepage": "https://www.radiorecord.com.ua/",
     "stationUuid": "ab6a8224-e997-4029-8670-d8d4119fb30a",
-    "checkedAt": "2026-11-20T13:37:04.224Z",
+    "checkedAt": "2026-11-22T12:55:53.810Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -296,7 +327,7 @@
     "favicon": "https://www.radiorecord.com.ua/wp-content/uploads/2026/06/logo_new_black_300x300.jpg",
     "homepage": "https://www.radiorecord.com.ua/",
     "stationUuid": "39ed0087-f917-48f9-9cd1-df161ea14b6b",
-    "checkedAt": "2026-11-20T13:37:04.443Z",
+    "checkedAt": "2026-11-22T12:55:53.851Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -315,7 +346,7 @@
     "favicon": null,
     "homepage": "http://xradio.in.ua/",
     "stationUuid": "4e172256-486d-4e56-b431-d7a6ecd3506e",
-    "checkedAt": "2026-11-20T13:37:05.628Z",
+    "checkedAt": "2026-11-22T12:55:55.371Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -337,7 +368,7 @@
     "favicon": null,
     "homepage": "https://plivka.online/",
     "stationUuid": "5ecaa853-c6e5-401b-9faa-b029ea857581",
-    "checkedAt": "2026-11-20T13:37:06.245Z",
+    "checkedAt": "2026-11-22T12:55:56.112Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -356,7 +387,7 @@
     "favicon": null,
     "homepage": "http://prmstrm.1.fm:8000/deephouse",
     "stationUuid": "bc3929af-9f60-4f2c-a4bb-5c31209f7737",
-    "checkedAt": "2026-11-20T13:37:06.447Z",
+    "checkedAt": "2026-11-22T12:55:56.301Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -378,7 +409,7 @@
     "favicon": null,
     "homepage": "http://www.newday.org.ua/",
     "stationUuid": "058ab793-086e-4ef1-9950-ec5d4b050376",
-    "checkedAt": "2026-11-20T13:37:06.768Z",
+    "checkedAt": "2026-11-22T12:55:56.529Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -400,7 +431,7 @@
     "favicon": null,
     "homepage": "https://boguslav.media/",
     "stationUuid": "97825a4f-74d1-4bb2-b27d-3523e4a76586",
-    "checkedAt": "2026-11-20T13:37:07.265Z",
+    "checkedAt": "2026-11-22T12:55:57.160Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -424,7 +455,7 @@
     "favicon": "null",
     "homepage": "https://nordbess-news.cv.ua/",
     "stationUuid": "31049d60-9b47-444b-a8b0-6712339d606c",
-    "checkedAt": "2026-11-20T13:37:09.534Z",
+    "checkedAt": "2026-11-22T12:55:59.344Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -445,28 +476,7 @@
     "favicon": "https://dobreff.com/images/radio/favicon.svg",
     "homepage": "https://radio.dobreff.com/",
     "stationUuid": "b946515e-942d-4844-9828-2006d74a0964",
-    "checkedAt": "2026-11-20T13:37:10.227Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Жидачів FM",
-    "url": "https://complex.in.ua/zhudachiv",
-    "country": "UA",
-    "type": "local radio",
-    "tags": [
-      "local radio",
-      "music",
-      "news"
-    ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "ukrainian",
-    "favicon": null,
-    "homepage": "https://www.facebook.com/radio.zhydachiv/",
-    "stationUuid": "12c25025-f962-48dc-b7af-714a3853a98b",
-    "checkedAt": "2026-11-20T13:37:10.959Z",
+    "checkedAt": "2026-11-22T12:56:00.011Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -483,7 +493,7 @@
     "favicon": "https://freshrock.net/favicon.ico",
     "homepage": "https://freshrock.net/page/main",
     "stationUuid": "9fdafa4d-71ca-4c69-8b1d-1db802988e9f",
-    "checkedAt": "2026-11-20T13:37:12.227Z",
+    "checkedAt": "2026-11-22T12:56:02.412Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -500,10 +510,10 @@
     "favicon": "https://radio-hooligan.com/favicon.png",
     "homepage": "https://radio-hooligan.com/",
     "stationUuid": "52b9f9bf-91c2-454a-9193-a0089d67aa03",
-    "checkedAt": "2026-11-20T13:37:13.932Z",
+    "checkedAt": "2026-11-22T12:56:04.069Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Vatan Sedasi FM",
@@ -517,7 +527,7 @@
     "favicon": "http://vatan.fm/wp-content/uploads/2022/03/cropped-favicon_new-180x180.png",
     "homepage": "http://vatan.fm/",
     "stationUuid": "1aa78e30-b65d-40b2-acf2-28d9e566615b",
-    "checkedAt": "2026-11-20T13:37:14.574Z",
+    "checkedAt": "2026-11-22T12:56:04.625Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -534,7 +544,7 @@
     "favicon": null,
     "homepage": "https://xradio.in.ua/",
     "stationUuid": "f5f7cad7-e13f-4428-b3ff-51196e4816c8",
-    "checkedAt": "2026-11-20T13:37:14.770Z",
+    "checkedAt": "2026-11-22T12:56:05.024Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -551,7 +561,7 @@
     "favicon": null,
     "homepage": "https://xradio.in.ua/",
     "stationUuid": "482d0a90-ac75-4e5e-baf3-e9d82eefeccd",
-    "checkedAt": "2026-11-20T13:37:14.866Z",
+    "checkedAt": "2026-11-22T12:56:05.042Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -568,9 +578,26 @@
     "favicon": null,
     "homepage": "https://zolochiv.fm/",
     "stationUuid": "75a708f0-409b-47a6-8808-722434b21b57",
-    "checkedAt": "2026-11-20T13:37:15.274Z",
+    "checkedAt": "2026-11-22T12:56:05.509Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Канал Благодаті",
+    "url": "http://noasrv.caster.fm:10001/live",
+    "country": "UA",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "ukrainian",
+    "favicon": "https://www.kanalblagodati.org/favicon.ico",
+    "homepage": "https://www.kanalblagodati.org/",
+    "stationUuid": "c3da81fa-aea8-11e9-88f4-52543be04c81",
+    "checkedAt": "2026-11-22T12:56:05.594Z",
+    "status": 404,
+    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
@@ -585,7 +612,24 @@
     "favicon": null,
     "homepage": "https://espreso.tv/",
     "stationUuid": "15071367-b807-458f-b6f7-cd042f307c39",
-    "checkedAt": "2026-11-20T13:37:17.158Z",
+    "checkedAt": "2026-11-22T12:56:07.589Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Momingmy radio",
+    "url": "http://momingmy.tk:8880/music.ogg",
+    "country": "UA",
+    "type": "OGG",
+    "tags": [],
+    "codec": "OGG",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://momingmy.tk/assets/images/elicicon-96x96.png",
+    "homepage": "https://momingmy.tk/",
+    "stationUuid": "c3233dde-80bf-4b1b-8543-cf11dda4ab6b",
+    "checkedAt": "2026-11-22T12:56:07.631Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -602,29 +646,10 @@
     "favicon": null,
     "homepage": "https://ukr.radio/",
     "stationUuid": "6d6dd1ef-3972-43ab-abf4-a19a569a27f7",
-    "checkedAt": "2026-11-20T13:37:17.225Z",
+    "checkedAt": "2026-11-22T12:56:07.751Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "1] Авторадіо",
-    "url": "https://cast.mediaonline.net.ua/avtoradio",
-    "country": "UA",
-    "type": "pop",
-    "tags": [
-      "pop"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://avtoradio.ua/images/logo.png",
-    "homepage": "https://avtoradio.ua/",
-    "stationUuid": "9a4c6adc-d939-4086-9913-88739513caf2",
-    "checkedAt": "2026-11-20T13:37:17.288Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
   },
   {
     "name": "pro_Volochysk",
@@ -640,7 +665,7 @@
     "favicon": "https://volochysk.com.ua/wp-content/uploads/2026/06/ChatGPT-Image-21-%D1%87%D0%B5%D1%80%D0%B2.-2026-%D1%80.-23_16_16-1024x1024.png",
     "homepage": "https://volochysk.com.ua/radio",
     "stationUuid": "1162d0f5-fb2c-451f-b812-c3db0ed8b9ab",
-    "checkedAt": "2026-11-20T13:37:18.807Z",
+    "checkedAt": "2026-11-22T12:56:10.575Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -659,7 +684,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "f9c5585d-1dee-45a0-a29f-9ad8533890e1",
-    "checkedAt": "2026-11-20T13:37:20.067Z",
+    "checkedAt": "2026-11-22T12:56:11.989Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -678,7 +703,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "e512fec3-600e-43ec-bb18-324183064b77",
-    "checkedAt": "2026-11-20T13:37:20.268Z",
+    "checkedAt": "2026-11-22T12:56:11.996Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -697,7 +722,7 @@
     "favicon": "null",
     "homepage": "https://radiokotelva.github.io/",
     "stationUuid": "30d960b8-ae1d-48bd-ae13-6498fe0add74",
-    "checkedAt": "2026-11-20T13:37:21.621Z",
+    "checkedAt": "2026-11-22T12:56:12.553Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

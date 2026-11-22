@@ -17,10 +17,51 @@
     "favicon": null,
     "homepage": "https://retrohits.se/",
     "stationUuid": "b934e685-1878-4d33-bd0b-ba42134322a8",
-    "checkedAt": "2026-11-20T13:33:20.564Z",
+    "checkedAt": "2026-11-22T12:52:17.642Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "BozRadio",
+    "url": "http://streaming.live365.com/a80252",
+    "country": "SE",
+    "type": "1960s",
+    "tags": [
+      "1960s",
+      "1970s",
+      "1980s",
+      "best music"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://bozradio.com/",
+    "stationUuid": "38e8cb32-9efa-11e9-a787-52543be04c81",
+    "checkedAt": "2026-11-22T12:52:17.676Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Vinylgodis",
+    "url": "https://fwd.autopo.st/runedervall",
+    "country": "SE",
+    "type": "1970s",
+    "tags": [
+      "1970s"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "swedish",
+    "favicon": "https://play-lh.googleusercontent.com/sjJ6efGC0YpjeT2ehVnVuIewLsEyf2SmqGTWr-wIxc12Ch4rJYBtxJnsedvVNLHTkDYYL8pxvoEgtT6vWm5btYo",
+    "homepage": "https://vinylgodis.se/?#",
+    "stationUuid": "b66bf5c5-1630-4d4c-9e7b-5017ca9594cc",
+    "checkedAt": "2026-11-22T12:52:17.677Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Decades",
@@ -40,7 +81,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "a615437b-ff32-4da2-904e-8390f7ed1052",
-    "checkedAt": "2026-11-20T13:33:20.820Z",
+    "checkedAt": "2026-11-22T12:52:18.120Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -63,7 +104,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "8eb64d77-0fc9-43b0-9bd6-ad3209152a4c",
-    "checkedAt": "2026-11-20T13:33:21.030Z",
+    "checkedAt": "2026-11-22T12:52:18.307Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -82,7 +123,7 @@
     "favicon": null,
     "homepage": "https://www.radiogodis.se/",
     "stationUuid": "754681f3-08c0-4242-9cd0-d873d2ec9da0",
-    "checkedAt": "2026-11-20T13:33:21.228Z",
+    "checkedAt": "2026-11-22T12:52:18.601Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -104,7 +145,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "95048711-523b-45d6-bed8-a8d4b0ab7666",
-    "checkedAt": "2026-11-20T13:33:21.263Z",
+    "checkedAt": "2026-11-22T12:52:18.742Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -126,7 +167,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "7bc5f4f0-7103-4a14-bd86-eaed014a24db",
-    "checkedAt": "2026-11-20T13:33:21.325Z",
+    "checkedAt": "2026-11-22T12:52:18.790Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -148,7 +189,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "7317cab6-cef3-44f2-a8ae-9fdee72559cc",
-    "checkedAt": "2026-11-20T13:33:21.347Z",
+    "checkedAt": "2026-11-22T12:52:18.829Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -165,7 +206,7 @@
     "favicon": null,
     "homepage": "https://dansbandsradio.se/",
     "stationUuid": "4f0772f4-926d-4d51-8571-ebea69c1839f",
-    "checkedAt": "2026-11-20T13:33:21.567Z",
+    "checkedAt": "2026-11-22T12:52:18.958Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -182,7 +223,7 @@
     "favicon": null,
     "homepage": "https://radioskovde.se/",
     "stationUuid": "bb4855dc-2835-4974-958b-1a3ca10ddadc",
-    "checkedAt": "2026-11-20T13:33:21.925Z",
+    "checkedAt": "2026-11-22T12:52:19.282Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -199,7 +240,7 @@
     "favicon": "https://cdn.webrad.io/images/brand/icon_192x192.png",
     "homepage": "https://radio.org.se/gold-vaxjo/",
     "stationUuid": "26a82946-f454-40ca-90ea-314578fea22e",
-    "checkedAt": "2026-11-20T13:33:22.215Z",
+    "checkedAt": "2026-11-22T12:52:19.775Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -220,7 +261,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "0e575083-8721-446d-a95e-7cbee4acad84",
-    "checkedAt": "2026-11-20T13:33:22.517Z",
+    "checkedAt": "2026-11-22T12:52:20.045Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -241,7 +282,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "03130c0f-bf62-4fda-bb6a-c99781b28475",
-    "checkedAt": "2026-11-20T13:33:22.532Z",
+    "checkedAt": "2026-11-22T12:52:20.063Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -263,7 +304,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "36ec31f7-2b42-4a8f-b73b-dda7b666d8c0",
-    "checkedAt": "2026-11-20T13:33:22.714Z",
+    "checkedAt": "2026-11-22T12:52:20.101Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -285,7 +326,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "ec0d3919-415f-4c63-9958-0da384b69ab4",
-    "checkedAt": "2026-11-20T13:33:22.741Z",
+    "checkedAt": "2026-11-22T12:52:20.139Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -307,7 +348,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "ffc8d7d5-7244-4738-bfee-22fcf0340edf",
-    "checkedAt": "2026-11-20T13:33:22.842Z",
+    "checkedAt": "2026-11-22T12:52:20.300Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -329,7 +370,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "cd9cad10-788f-44ee-9e35-00a05efe2271",
-    "checkedAt": "2026-11-20T13:33:22.850Z",
+    "checkedAt": "2026-11-22T12:52:20.318Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -350,7 +391,7 @@
     "favicon": "https://hls.aweradio.app/stations/radiolista/avatar-256.png",
     "homepage": "https://aweradio.app/@radiolista",
     "stationUuid": "53fec9c0-f9f3-4ab6-ab0b-4908868d4f47",
-    "checkedAt": "2026-11-20T13:33:22.870Z",
+    "checkedAt": "2026-11-22T12:52:20.338Z",
     "status": 404,
     "contentType": "text/plain",
     "lastFailure": "HTTP 404"
@@ -372,7 +413,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "2808c734-6166-4cda-9bbd-d4e05c0c4c32",
-    "checkedAt": "2026-11-20T13:33:22.913Z",
+    "checkedAt": "2026-11-22T12:52:20.352Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -393,7 +434,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "681d2589-e135-46bd-a11a-272d8d13e8f8",
-    "checkedAt": "2026-11-20T13:33:22.935Z",
+    "checkedAt": "2026-11-22T12:52:20.376Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -413,7 +454,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "53ef6c63-7b27-4245-bf7c-420b16f5538a",
-    "checkedAt": "2026-11-20T13:33:22.963Z",
+    "checkedAt": "2026-11-22T12:52:20.385Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -434,7 +475,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "d906e09f-49da-469e-9937-5f5273fc9006",
-    "checkedAt": "2026-11-20T13:33:23.025Z",
+    "checkedAt": "2026-11-22T12:52:20.426Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -455,7 +496,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "cc00eccd-eda8-4901-8e1f-4c2f3e1fcb53",
-    "checkedAt": "2026-11-20T13:33:23.043Z",
+    "checkedAt": "2026-11-22T12:52:20.480Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -475,7 +516,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "a03d0d90-73ec-451d-bb7e-b698f9b3698e",
-    "checkedAt": "2026-11-20T13:33:23.046Z",
+    "checkedAt": "2026-11-22T12:52:20.504Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -496,7 +537,7 @@
     "favicon": "https://is4-ssl.mzstatic.com/image/thumb/Podcasts125/v4/b3/bd/2f/b3bd2f22-db36-34f1-1d43-4bb2b9b6e721/mza_1742503346299473318.jpg/1200x1200bb-75.jpg",
     "homepage": "https://www.slayradio.org/",
     "stationUuid": "f65bbc32-439d-447a-aba4-d83c144cdad3",
-    "checkedAt": "2026-11-20T13:33:23.156Z",
+    "checkedAt": "2026-11-22T12:52:20.627Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -518,7 +559,7 @@
     "favicon": null,
     "homepage": "https://madmix.se/radio/saoirse-waves",
     "stationUuid": "d271f2e0-6c6f-4446-a580-642928b9cd88",
-    "checkedAt": "2026-11-20T13:33:23.269Z",
+    "checkedAt": "2026-11-22T12:52:20.813Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -540,7 +581,7 @@
     "favicon": "https://hls.aweradio.app/stations/radiolista/avatar-256.png",
     "homepage": "https://aweradio.app/@radiolista",
     "stationUuid": "12c4987d-17e2-4ccb-b082-731f0b8268ac",
-    "checkedAt": "2026-11-20T13:33:23.467Z",
+    "checkedAt": "2026-11-22T12:52:20.891Z",
     "status": 404,
     "contentType": "text/plain",
     "lastFailure": "HTTP 404"
@@ -561,7 +602,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "a536d6ff-fe7e-41c4-ac95-378effaee0f6",
-    "checkedAt": "2026-11-20T13:33:23.536Z",
+    "checkedAt": "2026-11-22T12:52:20.982Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -584,7 +625,7 @@
     "favicon": "http://www.narradio.se/logo_205.gif",
     "homepage": "http://www.narradio.se/",
     "stationUuid": "20aee753-cef5-11e8-a54a-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:23.733Z",
+    "checkedAt": "2026-11-22T12:52:21.011Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -606,7 +647,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "19ea3079-8757-467a-befb-0db17b50d1be",
-    "checkedAt": "2026-11-20T13:33:23.737Z",
+    "checkedAt": "2026-11-22T12:52:21.188Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -629,7 +670,7 @@
     "favicon": null,
     "homepage": "https://madmix.se/radio/redhawks-nation",
     "stationUuid": "78152c41-67ae-420f-8b83-1dfa693ef652",
-    "checkedAt": "2026-11-20T13:33:23.818Z",
+    "checkedAt": "2026-11-22T12:52:21.220Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -650,7 +691,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "9d1b673a-7a6b-4e0a-82b6-e0edfabfcb28",
-    "checkedAt": "2026-11-20T13:33:23.853Z",
+    "checkedAt": "2026-11-22T12:52:21.238Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -669,7 +710,7 @@
     "favicon": null,
     "homepage": "http://www.rockklassiker.se/",
     "stationUuid": "9642ad8b-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:23.860Z",
+    "checkedAt": "2026-11-22T12:52:21.251Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -690,7 +731,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "7a275e1c-6730-4048-a064-a7cb3c9dabb8",
-    "checkedAt": "2026-11-20T13:33:23.954Z",
+    "checkedAt": "2026-11-22T12:52:21.330Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -711,7 +752,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "202d6d31-699e-476d-b392-99e238704df8",
-    "checkedAt": "2026-11-20T13:33:23.969Z",
+    "checkedAt": "2026-11-22T12:52:21.342Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -732,7 +773,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "f897dd08-9a1a-4dd9-9430-a6665ecf835a",
-    "checkedAt": "2026-11-20T13:33:24.070Z",
+    "checkedAt": "2026-11-22T12:52:21.393Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -752,7 +793,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p2.png",
     "homepage": "https://sverigesradio.se/p2",
     "stationUuid": "3b7a51fa-88af-4d6f-9489-6f57ae737b1a",
-    "checkedAt": "2026-11-20T13:33:24.157Z",
+    "checkedAt": "2026-11-22T12:52:21.609Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -774,7 +815,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "734e8191-c34d-4b78-98fc-0a69dafd323e",
-    "checkedAt": "2026-11-20T13:33:24.339Z",
+    "checkedAt": "2026-11-22T12:52:21.723Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -796,7 +837,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "70a1dbfb-486b-4f90-b385-eb5837005fec",
-    "checkedAt": "2026-11-20T13:33:24.350Z",
+    "checkedAt": "2026-11-22T12:52:21.736Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -818,7 +859,7 @@
     "favicon": null,
     "homepage": "https://madmix.se/radio/kwtf-88-8-stoopid",
     "stationUuid": "e24fbf0b-a56f-4cec-9557-8300458efcc6",
-    "checkedAt": "2026-11-20T13:33:24.364Z",
+    "checkedAt": "2026-11-22T12:52:21.772Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -840,7 +881,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "3ac50a5a-2445-4a9c-8e35-75c3529f5242",
-    "checkedAt": "2026-11-20T13:33:24.961Z",
+    "checkedAt": "2026-11-22T12:52:22.335Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -862,7 +903,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "6b3dc713-d0a0-4f02-bfb2-756f293ec0cb",
-    "checkedAt": "2026-11-20T13:33:25.337Z",
+    "checkedAt": "2026-11-22T12:52:22.577Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -882,7 +923,7 @@
     "favicon": null,
     "homepage": "https://www.sr.se/",
     "stationUuid": "2f02c316-7d2b-4247-9e51-c75e248c012c",
-    "checkedAt": "2026-11-20T13:33:25.356Z",
+    "checkedAt": "2026-11-22T12:52:22.653Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -903,7 +944,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "f81a5aa3-d7b5-4c12-85fa-436d081efc73",
-    "checkedAt": "2026-11-20T13:33:25.466Z",
+    "checkedAt": "2026-11-22T12:52:22.755Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -925,7 +966,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "b6886275-1d73-4e71-86ce-483175bd2a80",
-    "checkedAt": "2026-11-20T13:33:25.512Z",
+    "checkedAt": "2026-11-22T12:52:22.830Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -947,7 +988,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "f75454ef-f163-49c7-b80b-cc707b382f09",
-    "checkedAt": "2026-11-20T13:33:25.519Z",
+    "checkedAt": "2026-11-22T12:52:22.836Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -969,7 +1010,7 @@
     "favicon": null,
     "homepage": "https://madmix.se/radio/slacker82alpha",
     "stationUuid": "56311642-e348-4438-afe9-873a187132d6",
-    "checkedAt": "2026-11-20T13:33:25.532Z",
+    "checkedAt": "2026-11-22T12:52:22.942Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -991,7 +1032,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "2ba48445-fb13-4167-9db8-3f2b4254461b",
-    "checkedAt": "2026-11-20T13:33:25.635Z",
+    "checkedAt": "2026-11-22T12:52:23.018Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1019,7 +1060,7 @@
     "favicon": "https://dansbandsradio.se/images/dbr2.png",
     "homepage": "https://dansbandsradio.se/",
     "stationUuid": "52bee974-ac8a-45ef-aea1-adb87c88f83e",
-    "checkedAt": "2026-11-20T13:33:25.643Z",
+    "checkedAt": "2026-11-22T12:52:23.058Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1047,7 +1088,7 @@
     "favicon": "https://dansbandsradio.se/images/dbr2.png",
     "homepage": "https://dansbandsradio.se/",
     "stationUuid": "93b730ce-4e0c-4601-84de-b1af38edac24",
-    "checkedAt": "2026-11-20T13:33:25.713Z",
+    "checkedAt": "2026-11-22T12:52:23.080Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1069,7 +1110,7 @@
     "favicon": null,
     "homepage": "https://madmix.se/radio/dedication-radio",
     "stationUuid": "80eab0ec-21b5-48fe-a4bc-30d5f993b77e",
-    "checkedAt": "2026-11-20T13:33:25.815Z",
+    "checkedAt": "2026-11-22T12:52:23.171Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1091,7 +1132,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "9c97c1ea-73e3-4013-8b47-13a5936c764b",
-    "checkedAt": "2026-11-20T13:33:26.116Z",
+    "checkedAt": "2026-11-22T12:52:23.299Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1113,7 +1154,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "2d411ff6-99f8-4cf3-895f-2bbd3ee672ce",
-    "checkedAt": "2026-11-20T13:33:26.713Z",
+    "checkedAt": "2026-11-22T12:52:24.050Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1132,7 +1173,7 @@
     "favicon": null,
     "homepage": "https://slay.radio/s",
     "stationUuid": "641fb7fd-6e73-4e62-b64f-2353fe96a5be",
-    "checkedAt": "2026-11-20T13:33:26.944Z",
+    "checkedAt": "2026-11-22T12:52:24.089Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1152,7 +1193,7 @@
     "favicon": null,
     "homepage": "https://eternalmix.boomdevi.duckdns.org/public/hari_ramas_eternal_mix",
     "stationUuid": "e0fd9b05-f7f9-47ca-9d77-6f79dfcf006a",
-    "checkedAt": "2026-11-20T13:33:27.233Z",
+    "checkedAt": "2026-11-22T12:52:24.430Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1173,7 +1214,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "53dac0bd-de56-447a-a42c-9f841af15e2e",
-    "checkedAt": "2026-11-20T13:33:27.347Z",
+    "checkedAt": "2026-11-22T12:52:24.567Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1193,7 +1234,7 @@
     "favicon": null,
     "homepage": "https://sverigesradio.se/dingata",
     "stationUuid": "5003028b-5943-4cea-820b-5b8a4a8fa9b6",
-    "checkedAt": "2026-11-20T13:33:27.383Z",
+    "checkedAt": "2026-11-22T12:52:24.576Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1214,7 +1255,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "3560701c-22a9-4955-a667-fc979b066863",
-    "checkedAt": "2026-11-20T13:33:27.438Z",
+    "checkedAt": "2026-11-22T12:52:24.582Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1236,7 +1277,7 @@
     "favicon": null,
     "homepage": "https://madmix.se/radio/bakerman-radio",
     "stationUuid": "0ec29ca7-a458-4f36-96e3-0f0436b5554c",
-    "checkedAt": "2026-11-20T13:33:27.513Z",
+    "checkedAt": "2026-11-22T12:52:24.591Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1259,7 +1300,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "34dddabf-0a1e-437d-8801-075e05201844",
-    "checkedAt": "2026-11-20T13:33:27.523Z",
+    "checkedAt": "2026-11-22T12:52:24.619Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1280,7 +1321,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "5cc4f5dc-9693-46c2-91cc-e2f8eb0f215d",
-    "checkedAt": "2026-11-20T13:33:27.539Z",
+    "checkedAt": "2026-11-22T12:52:24.626Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1301,7 +1342,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "d4f59b07-4926-478e-8270-6257aa6dc93e",
-    "checkedAt": "2026-11-20T13:33:27.545Z",
+    "checkedAt": "2026-11-22T12:52:24.640Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1322,7 +1363,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "97c34f30-8378-4c76-824c-9e950f008db1",
-    "checkedAt": "2026-11-20T13:33:27.566Z",
+    "checkedAt": "2026-11-22T12:52:24.679Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1343,7 +1384,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "1ce736f3-5944-46b9-8143-81b54625b367",
-    "checkedAt": "2026-11-20T13:33:27.578Z",
+    "checkedAt": "2026-11-22T12:52:24.723Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1363,7 +1404,7 @@
     "favicon": "https://static-cdn.sr.se/images/160/b1ef2ca2-b8a4-4885-8bc6-8ee9aea97e2d.jpg?preset=100x100",
     "homepage": "https://sverigesradio.se/orebro",
     "stationUuid": "121367cf-f23c-4aef-a99e-f6608763a3c7",
-    "checkedAt": "2026-11-20T13:33:27.756Z",
+    "checkedAt": "2026-11-22T12:52:24.976Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1383,7 +1424,7 @@
     "favicon": "https://static-cdn.sr.se/images/160/b1ef2ca2-b8a4-4885-8bc6-8ee9aea97e2d.jpg?preset=100x100",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "c51dbaad-5f7a-4027-8600-7b7c620023d8",
-    "checkedAt": "2026-11-20T13:33:27.897Z",
+    "checkedAt": "2026-11-22T12:52:25.052Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1403,7 +1444,7 @@
     "favicon": "https://static-cdn.sr.se/images/160/b1ef2ca2-b8a4-4885-8bc6-8ee9aea97e2d.jpg?preset=100x100",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "10398e96-9329-4763-aada-543d35b56832",
-    "checkedAt": "2026-11-20T13:33:27.922Z",
+    "checkedAt": "2026-11-22T12:52:25.062Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1423,7 +1464,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p4.png",
     "homepage": "https://www.sverigesradio.se/gavleborg",
     "stationUuid": "6f295dab-138c-45a5-b06f-d81e4643d05e",
-    "checkedAt": "2026-11-20T13:33:27.926Z",
+    "checkedAt": "2026-11-22T12:52:25.085Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1443,7 +1484,7 @@
     "favicon": "https://sverigesradio.se/p4",
     "homepage": "https://sverigesradio.se/g%C3%B6teborg",
     "stationUuid": "33663b50-cb33-4a5d-83cc-7ffaa776def5",
-    "checkedAt": "2026-11-20T13:33:27.929Z",
+    "checkedAt": "2026-11-22T12:52:25.109Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1463,7 +1504,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p4.png",
     "homepage": "https://sverigesradio.se/p4goteborg",
     "stationUuid": "87da5b20-53e4-483f-92fe-96a28c8c8b18",
-    "checkedAt": "2026-11-20T13:33:27.935Z",
+    "checkedAt": "2026-11-22T12:52:25.152Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1483,7 +1524,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p4.png",
     "homepage": "https://sverigesradio.se/gotland",
     "stationUuid": "2d109f2c-222b-4c48-82be-787e5d695662",
-    "checkedAt": "2026-11-20T13:33:27.937Z",
+    "checkedAt": "2026-11-22T12:52:25.163Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1503,7 +1544,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p4.png",
     "homepage": "https://www.sverigesradio/jonkoping",
     "stationUuid": "eb44f44b-f3c9-4e6e-a440-91c045b0fe80",
-    "checkedAt": "2026-11-20T13:33:27.941Z",
+    "checkedAt": "2026-11-22T12:52:25.176Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1523,7 +1564,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p4.png",
     "homepage": "https://sverigesradio.se/skaraborg",
     "stationUuid": "eb7aca36-7206-4367-823f-71c1dd7e104f",
-    "checkedAt": "2026-11-20T13:33:27.943Z",
+    "checkedAt": "2026-11-22T12:52:25.206Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1543,7 +1584,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p4.png",
     "homepage": "https://www.sverigesradio/stockholm",
     "stationUuid": "543db188-7d24-417e-aa1f-2fe942ccf88e",
-    "checkedAt": "2026-11-20T13:33:27.948Z",
+    "checkedAt": "2026-11-22T12:52:25.213Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1562,7 +1603,7 @@
     "favicon": "https://sverigesradio.se/stockholm",
     "homepage": "https://sverigesradio.se/stockholm",
     "stationUuid": "5d88511c-5369-4092-b027-22b9678d4073",
-    "checkedAt": "2026-11-20T13:33:27.958Z",
+    "checkedAt": "2026-11-22T12:52:25.216Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1582,7 +1623,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p4.png",
     "homepage": "https://sverigesradio.se/uppland",
     "stationUuid": "9e158282-94f5-4577-a551-58bcca2d9602",
-    "checkedAt": "2026-11-20T13:33:27.961Z",
+    "checkedAt": "2026-11-22T12:52:25.239Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1602,7 +1643,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p4.png",
     "homepage": "https://www.sr.se/",
     "stationUuid": "296c9a72-28ad-48f5-85ac-af6eb47acc46",
-    "checkedAt": "2026-11-20T13:33:27.965Z",
+    "checkedAt": "2026-11-22T12:52:25.241Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1619,7 +1660,7 @@
     "favicon": "https://hitzfm.nu/wp-content/uploads/2022/08/nedladdning-4-170x168.jpeg",
     "homepage": "https://hitzfm.nu/#",
     "stationUuid": "d66b22ac-0743-41e5-99d6-affdb54d74c0",
-    "checkedAt": "2026-11-20T13:33:28.573Z",
+    "checkedAt": "2026-11-22T12:52:25.782Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1636,7 +1677,7 @@
     "favicon": null,
     "homepage": "http://www.mixmegapol.se/",
     "stationUuid": "96342772-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:28.783Z",
+    "checkedAt": "2026-11-22T12:52:25.824Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1653,7 +1694,7 @@
     "favicon": "https://radioplay.se/tesla/static/favicons/radioplay-se/favicon.ico",
     "homepage": "https://radioplay.se/mixmegapolgoteborg/",
     "stationUuid": "3e5a08bf-57fc-420a-a543-2f7c6f7b6a06",
-    "checkedAt": "2026-11-20T13:33:28.848Z",
+    "checkedAt": "2026-11-22T12:52:25.873Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1670,7 +1711,7 @@
     "favicon": null,
     "homepage": "http://www.mixmegapol.se/",
     "stationUuid": "faa6e568-c9a4-4d7c-bea0-939cb069ec75",
-    "checkedAt": "2026-11-20T13:33:28.959Z",
+    "checkedAt": "2026-11-22T12:52:25.897Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1687,7 +1728,7 @@
     "favicon": "https://static-cdn.sr.se/images/160/b1ef2ca2-b8a4-4885-8bc6-8ee9aea97e2d.jpg?preset=100x100",
     "homepage": "https://sverigesradio.se/dalarna",
     "stationUuid": "f0f48ba7-b88c-471d-9153-f7a648f70653",
-    "checkedAt": "2026-11-20T13:33:29.332Z",
+    "checkedAt": "2026-11-22T12:52:26.311Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1704,7 +1745,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/norrbotten",
     "stationUuid": "7edf2ac6-c6a3-4283-aad8-1b8cfa39fe81",
-    "checkedAt": "2026-11-20T13:33:29.339Z",
+    "checkedAt": "2026-11-22T12:52:26.348Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1721,10 +1762,27 @@
     "favicon": "https://static-cdn.sr.se/images/160/b1ef2ca2-b8a4-4885-8bc6-8ee9aea97e2d.jpg?preset=100x100",
     "homepage": "https://sverigesradio.se/ostergotland",
     "stationUuid": "a6fb6ae2-b821-4902-8dce-5a77fbe27488",
-    "checkedAt": "2026-11-20T13:33:29.343Z",
+    "checkedAt": "2026-11-22T12:52:26.366Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Power Street",
+    "url": "https://wr07-ice.stream.khz.se/wr07_mp3",
+    "country": "SE",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.viaplayradio.se/powerstreet/",
+    "stationUuid": "4b804728-3074-4697-bd39-ffa6111542e6",
+    "checkedAt": "2026-11-22T12:52:26.568Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio 88 Partille",
@@ -1738,7 +1796,7 @@
     "favicon": "http://www.radio88partille.se/favicon.ico",
     "homepage": "http://www.radio88partille.se/",
     "stationUuid": "964a6fa3-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:29.619Z",
+    "checkedAt": "2026-11-22T12:52:26.660Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1755,7 +1813,7 @@
     "favicon": null,
     "homepage": "https://retrohits.se/en/",
     "stationUuid": "888b3eb1-7766-48bb-b002-ea99e3a8becf",
-    "checkedAt": "2026-11-20T13:33:30.220Z",
+    "checkedAt": "2026-11-22T12:52:27.281Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1772,7 +1830,7 @@
     "favicon": "https://scenesat.com/static/img/ssr_logo_288.png",
     "homepage": "http://scenesat.com/",
     "stationUuid": "949f9dd3-36d0-48c3-9f4f-670b43b4c46b",
-    "checkedAt": "2026-11-20T13:33:30.474Z",
+    "checkedAt": "2026-11-22T12:52:27.629Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1789,7 +1847,7 @@
     "favicon": "https://static-cdn.sr.se/images/3633/3481962_1152_1152.jpg?preset=100x100",
     "homepage": "https://sverigesradio.se/p2",
     "stationUuid": "38ecf77e-b929-458c-ad32-564dcab453c9",
-    "checkedAt": "2026-11-20T13:33:30.618Z",
+    "checkedAt": "2026-11-22T12:52:28.100Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1806,7 +1864,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-p4.png",
     "homepage": "https://sverigesradio.se/jonkoping",
     "stationUuid": "25a9a10c-7de5-4f5e-8989-e128c3f4b94e",
-    "checkedAt": "2026-11-20T13:33:30.623Z",
+    "checkedAt": "2026-11-22T12:52:28.103Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1823,7 +1881,7 @@
     "favicon": "https://sverigesradio.se/dist/favicon-32x32.png",
     "homepage": "https://sverigesradio.se/kronoberg",
     "stationUuid": "7800c880-6618-49ac-a6f8-5cac3498fe04",
-    "checkedAt": "2026-11-20T13:33:30.646Z",
+    "checkedAt": "2026-11-22T12:52:28.142Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1840,7 +1898,7 @@
     "favicon": "https://www.radioplay.se/tesla/static/favicons/radioplay-se/apple-touch-icon.png",
     "homepage": "https://www.radioplay.se/svensk-pop",
     "stationUuid": "9624489a-9323-11e8-a767-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:31.221Z",
+    "checkedAt": "2026-11-22T12:52:28.564Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1857,7 +1915,7 @@
     "favicon": "https://static-cdn.sr.se/images/78/3f969001-3c0d-46c0-a3a6-30b44ef999c0.jpg",
     "homepage": "https://sverigesradio.se/jamtland",
     "stationUuid": "850aedd1-5099-4553-81cc-7f24704cb3e7",
-    "checkedAt": "2026-11-20T13:33:31.328Z",
+    "checkedAt": "2026-11-22T12:52:28.628Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1874,7 +1932,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "8fbba0c6-2fe5-11ea-aa0c-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:31.420Z",
+    "checkedAt": "2026-11-22T12:52:28.780Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1891,7 +1949,7 @@
     "favicon": "https://static-cdn.sr.se/images/97/3818050a-3ef6-4210-a7ca-849f7549a04e.jpg?preset=100x100",
     "homepage": "https://sverigesradio.se/sjuharad",
     "stationUuid": "dc8c2061-1ea8-434e-b523-2742ae6fb96c",
-    "checkedAt": "2026-11-20T13:33:31.635Z",
+    "checkedAt": "2026-11-22T12:52:29.012Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1908,7 +1966,7 @@
     "favicon": "https://assets.planetradio.co.uk/img/ConfigStraplineImageUrl/458.svg?ver=1589463934",
     "homepage": "https://radioplay.se/vinylfm/",
     "stationUuid": "f522cf8a-9513-4975-974e-4335aac37cf3",
-    "checkedAt": "2026-11-20T13:33:31.756Z",
+    "checkedAt": "2026-11-22T12:52:29.316Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1925,7 +1983,7 @@
     "favicon": null,
     "homepage": "http://radio.grillkol.net:8007/grillkol",
     "stationUuid": "0be83de2-bec1-4733-95e9-ef1cce7c50a1",
-    "checkedAt": "2026-11-20T13:33:32.081Z",
+    "checkedAt": "2026-11-22T12:52:29.758Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1942,7 +2000,7 @@
     "favicon": null,
     "homepage": "http://radio.grillkol.net:8007/kakaook",
     "stationUuid": "f51b9105-19af-44fb-a794-bc22c3a4af85",
-    "checkedAt": "2026-11-20T13:33:32.159Z",
+    "checkedAt": "2026-11-22T12:52:29.863Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1959,7 +2017,7 @@
     "favicon": "https://www.radiorivendell.com/site-content/themes/rivendell-2k21/dist/images/logotype-radio-rivendell--horizontal--gold.png",
     "homepage": "https://www.radiorivendell.com/",
     "stationUuid": "9197541c-ca21-4500-b962-21863b0926cb",
-    "checkedAt": "2026-11-20T13:33:32.270Z",
+    "checkedAt": "2026-11-22T12:52:29.991Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1978,7 +2036,7 @@
     "favicon": null,
     "homepage": "http://www.retrofm.se/",
     "stationUuid": "8b00bcfc-4d94-11ea-b877-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:32.428Z",
+    "checkedAt": "2026-11-22T12:52:30.204Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1999,7 +2057,7 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "39ff7fae-311d-4430-8a9a-51f9f2d59dcd",
-    "checkedAt": "2026-11-20T13:33:33.115Z",
+    "checkedAt": "2026-11-22T12:52:31.028Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2019,7 +2077,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960c58b3-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.335Z",
+    "checkedAt": "2026-11-22T12:52:34.392Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2039,7 +2097,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960c59d6-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.347Z",
+    "checkedAt": "2026-11-22T12:52:34.406Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2059,7 +2117,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960cf063-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.351Z",
+    "checkedAt": "2026-11-22T12:52:34.420Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2079,7 +2137,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960c69e6-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.365Z",
+    "checkedAt": "2026-11-22T12:52:34.432Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2099,7 +2157,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960c84bf-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.370Z",
+    "checkedAt": "2026-11-22T12:52:34.461Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2119,7 +2177,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960c91b0-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.413Z",
+    "checkedAt": "2026-11-22T12:52:34.492Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2139,7 +2197,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960cf120-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.424Z",
+    "checkedAt": "2026-11-22T12:52:34.530Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2159,7 +2217,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960cf1df-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.428Z",
+    "checkedAt": "2026-11-22T12:52:34.569Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2179,7 +2237,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960c6bc6-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.431Z",
+    "checkedAt": "2026-11-22T12:52:34.597Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2199,7 +2257,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960cf2a0-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.433Z",
+    "checkedAt": "2026-11-22T12:52:34.632Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2219,7 +2277,7 @@
     "favicon": "https://sverigesradio.se/dist/images/apple-touch-icon-default.png",
     "homepage": "https://sverigesradio.se/",
     "stationUuid": "960c90aa-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:35.435Z",
+    "checkedAt": "2026-11-22T12:52:34.635Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2241,10 +2299,29 @@
     "favicon": "https://madmix.se/images/logo.jpg",
     "homepage": "https://madmix.se/",
     "stationUuid": "e99600f6-2f3b-4aee-af44-00c723cd0a91",
-    "checkedAt": "2026-11-20T13:33:35.561Z",
+    "checkedAt": "2026-11-22T12:52:37.690Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Bandit ÍRock",
+    "url": "https://fm02-ice.stream.khz.se/fm02_mp3",
+    "country": "SE",
+    "type": "rock",
+    "tags": [
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "swedish",
+    "favicon": "https://www.ilikeradio.se/banditrock/wp-content/themes/ilikeradio/favicon.png",
+    "homepage": "https://www.ilikeradio.se/banditrock/",
+    "stationUuid": "22567e75-4c10-4dde-9c51-5940b128f6cb",
+    "checkedAt": "2026-11-22T12:52:37.729Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio Payam",
@@ -2260,7 +2337,7 @@
     "favicon": "https://radiopayam.se/wp-content/uploads/2019/05/cropped-logo512x512.png",
     "homepage": "https://radiopayam.se/",
     "stationUuid": "2bf56592-ba2c-4f13-a2a2-f7b672f9302a",
-    "checkedAt": "2026-11-20T13:33:36.519Z",
+    "checkedAt": "2026-11-22T12:52:38.459Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2279,7 +2356,7 @@
     "favicon": null,
     "homepage": "http://www.nrj.se/",
     "stationUuid": "96414222-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:33:36.523Z",
+    "checkedAt": "2026-11-22T12:52:38.472Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

@@ -11,7 +11,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/radios/love-veracruz-1037-fm/",
     "stationUuid": "c4e6ce5e-c2a2-4979-99fb-9f81a98c3d06",
-    "checkedAt": "2026-11-20T13:04:39.232Z",
+    "checkedAt": "2026-11-22T12:44:45.733Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -34,7 +34,7 @@
     "favicon": null,
     "homepage": "http://echo355.com/",
     "stationUuid": "9d28e755-6a29-4b59-a93c-3cc5a2abddca",
-    "checkedAt": "2026-11-20T13:04:42.345Z",
+    "checkedAt": "2026-11-22T12:44:46.950Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -59,7 +59,7 @@
     "favicon": "https://highrise-bot-builder.replit.app/favicon.svg",
     "homepage": "https://highrise-bot-builder.replit.app/",
     "stationUuid": "61f30f9e-d4dd-466b-a1c0-f55b451007f8",
-    "checkedAt": "2026-11-20T13:04:43.145Z",
+    "checkedAt": "2026-11-22T12:44:47.743Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -81,10 +81,27 @@
     "favicon": "http://www.wrtu.pr/favicon.ico",
     "homepage": "http://www.wrtu.pr/",
     "stationUuid": "96267f26-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-20T13:04:44.653Z",
+    "checkedAt": "2026-11-22T12:44:48.845Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Caribe Clásico",
+    "url": "https://das-edge12-live365-dal02.cdnstream.com/a59816",
+    "country": "PR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://caribeclasico.org/#contacto",
+    "stationUuid": "47a260d4-cb41-4a1a-8146-24b9b3d71fd5",
+    "checkedAt": "2026-11-22T12:44:49.151Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "PR - Radio Universidad UPR Rio Piedras",
@@ -98,7 +115,7 @@
     "favicon": "https://wrtu.uprrp.edu/wp-content/uploads/2025/01/cropped-WRTU-LOGO_350x90.png",
     "homepage": "https://wrtu.uprrp.edu/",
     "stationUuid": "ad911f6a-1b9e-4ca2-924b-b74a49043e82",
-    "checkedAt": "2026-11-20T13:04:45.858Z",
+    "checkedAt": "2026-11-22T12:44:50.033Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -115,7 +132,7 @@
     "favicon": null,
     "homepage": "https://www.salseoradio.com/",
     "stationUuid": "323d1135-fb57-4c1d-93c9-34be4d011223",
-    "checkedAt": "2026-11-20T13:04:46.622Z",
+    "checkedAt": "2026-11-22T12:44:51.150Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -134,7 +151,7 @@
     "favicon": "https://bloximages.chicago2.vip.townnews.com/wkaq580.com/content/tncms/custom/image/9732c65a-a5bb-11ee-8102-67d137cd6b72.png?resize=400%2C167",
     "homepage": "https://www.wkaq580.com/",
     "stationUuid": "b95692d0-9b6f-4810-b6e6-395bbe6a5d0b",
-    "checkedAt": "2026-11-20T13:04:47.149Z",
+    "checkedAt": "2026-11-22T12:44:51.821Z",
     "status": 500,
     "contentType": null,
     "lastFailure": "HTTP 500"
@@ -151,7 +168,7 @@
     "favicon": null,
     "homepage": "https://www.wapa.tv/",
     "stationUuid": "36ef3359-df7d-4b2c-b732-0c5a050089f4",
-    "checkedAt": "2026-11-20T13:04:47.955Z",
+    "checkedAt": "2026-11-22T12:44:52.321Z",
     "status": 403,
     "contentType": "application/xml",
     "lastFailure": "HTTP 403"
