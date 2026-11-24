@@ -11,7 +11,7 @@
     "favicon": null,
     "homepage": "https://mytuner-radio.com/radio/bachwezi-radio-488187/",
     "stationUuid": "f104917d-5b1d-4d0e-b63c-7778b3c62f17",
-    "checkedAt": "2026-11-22T12:52:03.295Z",
+    "checkedAt": "2026-11-24T15:15:07.339Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -28,7 +28,7 @@
     "favicon": null,
     "homepage": "https://mytuner-radio.com/radio/bachwezi-radio-488187/",
     "stationUuid": "b531b79e-f104-4d42-8707-a14a50f57378",
-    "checkedAt": "2026-11-22T12:52:03.295Z",
+    "checkedAt": "2026-11-24T15:15:07.340Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -45,7 +45,7 @@
     "favicon": null,
     "homepage": "https://www.socialcreator.com/gendananigiheradio",
     "stationUuid": "37acb127-cb1f-44ce-b8bf-76c3d938d470",
-    "checkedAt": "2026-11-22T12:52:03.296Z",
+    "checkedAt": "2026-11-24T15:15:07.341Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -62,10 +62,30 @@
     "favicon": null,
     "homepage": "https://www.socialcreator.com/gendananigiheradio",
     "stationUuid": "854e6b05-d91f-4f55-920d-5714a878fbbc",
-    "checkedAt": "2026-11-22T12:52:03.296Z",
+    "checkedAt": "2026-11-24T15:15:07.344Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Magic FM",
+    "url": "http://listen.rba.co.rw:8080/",
+    "country": "RW",
+    "type": "dance",
+    "tags": [
+      "dance",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 112,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://rba.co.rw/radio/7/Magic-Fm",
+    "stationUuid": "f2f65d44-2101-4742-9c93-314f124dedbf",
+    "checkedAt": "2026-11-24T15:15:07.348Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio 1",
@@ -83,10 +103,44 @@
     "favicon": null,
     "homepage": "http://tv1.rw/",
     "stationUuid": "1dc3ae71-b19a-46bc-8ad5-54d6defda867",
-    "checkedAt": "2026-11-22T12:52:03.588Z",
+    "checkedAt": "2026-11-24T15:15:07.465Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "90.7 Magic FM",
+    "url": "http://listen.rba.co.rw:8080/;",
+    "country": "RW",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 112,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://listen.rba.co.rw/radios/radiomagic.html",
+    "stationUuid": "e21f6651-f2e0-4fe6-8e45-2cf63b7e5c96",
+    "checkedAt": "2026-11-24T15:15:07.546Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "90.7 Magic FM",
+    "url": "http://listen.rba.co.rw:8080/;",
+    "country": "RW",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 160,
+    "language": null,
+    "favicon": "http://listen.rba.co.rw/radios/logos/radiomagic.PNG",
+    "homepage": "http://listen.rba.co.rw/radios/radiomagic.html",
+    "stationUuid": "78602731-7afd-4e17-b418-b38f2f222add",
+    "checkedAt": "2026-11-24T15:15:07.550Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Travel Radio Live",
@@ -100,7 +154,7 @@
     "favicon": "https://travelradio.live/wp-content/uploads/2021/10/cropped-travel-radio-logo-original-1-192x192.png",
     "homepage": "https://travelradio.live/",
     "stationUuid": "c3fc59e5-c064-44a4-be84-e414e4b3343e",
-    "checkedAt": "2026-11-22T12:52:04.007Z",
+    "checkedAt": "2026-11-24T15:15:08.110Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

@@ -1,5 +1,56 @@
 [
   {
+    "name": "Delta 101.7",
+    "url": "https://radiodelta.fm/mp3",
+    "country": "LB",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://radiodelta.fm/",
+    "stationUuid": "13a35633-bd74-4349-ab1a-915a4c5e5a63",
+    "checkedAt": "2026-11-24T14:52:21.166Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Delta Lebanon",
+    "url": "http://radiodelta.fm/live",
+    "country": "LB",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": null,
+    "homepage": "http://radiodelta.fm/",
+    "stationUuid": "7cd7f061-5011-4cfa-96d9-7fe2eaae8093",
+    "checkedAt": "2026-11-24T14:52:21.323Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Radio Delta Lebanon",
+    "url": "https://radiodelta.fm/mp3",
+    "country": "LB",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://radiodelta.fm/images/Delta-2019.png",
+    "homepage": "https://radiodelta.fm/home.html",
+    "stationUuid": "205e8dd4-ce6c-4bb7-9d63-6a658337f5cb",
+    "checkedAt": "2026-11-24T14:52:21.338Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
     "name": "Matrix FM 103.5 Lebanon",
     "url": "https://play.matrixfmlebanon.com:8003/;stream.mp3",
     "country": "LB",
@@ -15,10 +66,10 @@
     "favicon": "https://matrixfmlebanon.com/assets/img/icns/apple-touch-icon-180x180.png",
     "homepage": "https://matrixfmlebanon.com/",
     "stationUuid": "862001c7-1ff4-4573-b936-40f634d8be45",
-    "checkedAt": "2026-11-22T12:31:36.505Z",
+    "checkedAt": "2026-11-24T14:52:22.894Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Click FM Lebanon",
@@ -41,7 +92,7 @@
     "favicon": null,
     "homepage": "https://clickfm.net/",
     "stationUuid": "2c076f29-e122-4f09-a853-f99b294a3569",
-    "checkedAt": "2026-11-22T12:31:37.558Z",
+    "checkedAt": "2026-11-24T14:52:23.752Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -60,10 +111,27 @@
     "favicon": "https://www.voiceofvan.net/backend/uploads/setting/1723180428.png",
     "homepage": "https://www.voiceofvan.net/",
     "stationUuid": "cee5d76c-dc30-4446-b4b4-db1512bbad2f",
-    "checkedAt": "2026-11-22T12:31:37.727Z",
+    "checkedAt": "2026-11-24T14:52:24.099Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Maestro FM 90.9",
+    "url": "https://cast5.my-control-panel.com/proxy/tripoli1/stream",
+    "country": "LB",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": "https://www.google.com/s2/favicons?domain=maestrofm.live&sz=256",
+    "homepage": "https://maestrofm.live/",
+    "stationUuid": "d8061b6c-ec99-43c4-9b22-38fb3713fe61",
+    "checkedAt": "2026-11-24T14:52:29.301Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Voice of Van",
@@ -77,7 +145,7 @@
     "favicon": "https://www.voiceofvan.net/backend/uploads/setting/1723180428.png",
     "homepage": "https://www.voiceofvan.net/",
     "stationUuid": "797a3f43-9ff0-4173-8071-6f3f21e664ed",
-    "checkedAt": "2026-11-22T12:31:41.814Z",
+    "checkedAt": "2026-11-24T14:52:29.590Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -94,7 +162,7 @@
     "favicon": null,
     "homepage": "https://sawtelwifak.com/",
     "stationUuid": "5a6f9ddf-6ad5-4eec-bc91-dcce53927f40",
-    "checkedAt": "2026-11-22T12:31:42.284Z",
+    "checkedAt": "2026-11-24T14:52:30.027Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -113,7 +181,7 @@
     "favicon": "https://aghaniaghani.com/images/logo.png",
     "homepage": "https://aghaniaghani.com/",
     "stationUuid": "3f2c9689-bfb2-479c-9ecf-b0e80a360d6f",
-    "checkedAt": "2026-11-22T12:31:42.894Z",
+    "checkedAt": "2026-11-24T14:52:30.422Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -132,7 +200,7 @@
     "favicon": "https://www.mtv.com.lb/images/header/mfm-logo.svg",
     "homepage": "https://www.mtv.com.lb/ar/mfm/live",
     "stationUuid": "124da4f3-080e-411e-b3d3-7fddbe83d014",
-    "checkedAt": "2026-11-22T12:31:42.939Z",
+    "checkedAt": "2026-11-24T14:52:30.439Z",
     "status": 404,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 404"

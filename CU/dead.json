@@ -1,34 +1,5 @@
 [
   {
-    "name": "96.7 Radio Rebelde FM",
-    "url": "https://theonestopradio.com/stream?url=https://icecast.teveo.cu/zrXXWK9F",
-    "country": "CU",
-    "type": "107.9 fm",
-    "tags": [
-      "107.9 fm",
-      "96.7 fm",
-      "cuba",
-      "emisora de la revolucion",
-      "informacion",
-      "la habana",
-      "news",
-      "noticias",
-      "public radio",
-      "radio rebelde",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "spanish",
-    "favicon": "https://static2.mytuner.mobi/media/tvos_radios/911/radio-rebelde-fm.fc8adab1.png",
-    "homepage": "https://radiorebelde.cu/",
-    "stationUuid": "fe653321-02bc-47ed-9102-f50e1abc5479",
-    "checkedAt": "2026-11-22T12:02:23.775Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
     "name": "Prensa Latina - Agencia Informativa Latinoamericana",
     "url": "https://cdn4.onstream.audio:9267/stream?download=false",
     "country": "CU",
@@ -50,7 +21,7 @@
     "favicon": null,
     "homepage": "https://www.prensa-latina.cu/",
     "stationUuid": "6a4e16db-a938-4288-afc5-d5779e4ae035",
-    "checkedAt": "2026-11-22T12:02:25.419Z",
+    "checkedAt": "2026-11-24T14:19:59.835Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -71,7 +42,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://lovefm.com.mx/",
     "stationUuid": "05d02562-984f-4e89-b3d7-e0e973558efd",
-    "checkedAt": "2026-11-22T12:02:25.520Z",
+    "checkedAt": "2026-11-24T14:20:00.011Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -98,7 +69,7 @@
     "favicon": "https://ugc.production.linktr.ee/efcde3a6-71f8-41c9-8fe3-7199a7b2eede_394859921-851239673370933-4041308667218843423-n.jpeg",
     "homepage": "https://linktr.ee/radiomariadelacaridad",
     "stationUuid": "5bc4a928-a2d0-452f-901d-54ba623fe79a",
-    "checkedAt": "2026-11-22T12:02:25.580Z",
+    "checkedAt": "2026-11-24T14:20:00.426Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -120,7 +91,7 @@
     "favicon": "https://ugc.production.linktr.ee/efcde3a6-71f8-41c9-8fe3-7199a7b2eede_394859921-851239673370933-4041308667218843423-n.jpeg",
     "homepage": "https://linktr.ee/radiomariadelacaridad",
     "stationUuid": "7dbade96-ea02-4fde-a0ee-c81054fedd59",
-    "checkedAt": "2026-11-22T12:02:25.657Z",
+    "checkedAt": "2026-11-24T14:20:01.580Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -139,7 +110,7 @@
     "favicon": null,
     "homepage": "https://radio.prensa-latina.cu/",
     "stationUuid": "80b438a6-537d-468f-b365-1e376289247b",
-    "checkedAt": "2026-11-22T12:02:25.710Z",
+    "checkedAt": "2026-11-24T14:20:01.594Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -158,9 +129,28 @@
     "favicon": "https://webradiodirectory.com/wp-content/uploads/2021/01/cd00bda24d4353292012e2846aedd1b1.jpg",
     "homepage": "https://radiosdecuba.com/cubania/",
     "stationUuid": "b6154a79-7eca-476c-ab74-1d96b5d4c456",
-    "checkedAt": "2026-11-22T12:02:25.772Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-24T14:20:01.762Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "CMBF – Radio Musical Nacional",
+    "url": "https://securestreams7.autopo.st/?uri=https://icecast.teveo.cu/Nbtz7HT3",
+    "country": "CU",
+    "type": "cuban music",
+    "tags": [
+      "cuban music"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "spanish",
+    "favicon": "https://beta.uyl.me/lab/img.php?image=5538_cmbf-radio-musical-de-cuba.b4b9f620_4emg.png",
+    "homepage": "https://www.cmbfradio.cu/",
+    "stationUuid": "995d2b4f-bf51-45df-89bf-9a50be55f3d5",
+    "checkedAt": "2026-11-24T14:20:02.039Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   }
 ]

@@ -23,7 +23,7 @@
     "favicon": "https://masmusica.lanacion.com.ar/assets/img/favicon.png",
     "homepage": "https://masmusica.lanacion.com.ar/",
     "stationUuid": "0c78d81a-0118-49bc-bb5d-2109c031305d",
-    "checkedAt": "2026-11-22T11:38:08.274Z",
+    "checkedAt": "2026-11-24T13:54:04.161Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -74,7 +74,7 @@
     "favicon": null,
     "homepage": "https://turadioeninternet.com.ar/GXRADIO/",
     "stationUuid": "5d3d2496-93f7-4c52-a176-b1cbd6b7e9ff",
-    "checkedAt": "2026-11-22T11:38:08.279Z",
+    "checkedAt": "2026-11-24T13:54:04.165Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -127,7 +127,7 @@
     "favicon": null,
     "homepage": "https://turadioeninternet.com.ar/GXRADIO/",
     "stationUuid": "b1344ad1-4572-4c76-b5bc-2188412524e6",
-    "checkedAt": "2026-11-22T11:38:08.284Z",
+    "checkedAt": "2026-11-24T13:54:04.170Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -153,7 +153,7 @@
     "favicon": "https://www.auraradio.com/wp-content/uploads/2023/11/LOGO-NEW-aura-129x129.png",
     "homepage": "https://www.auraradio.com/",
     "stationUuid": "18b5eb9f-3b97-4e22-96ef-d68aa4a2eb68",
-    "checkedAt": "2026-11-22T11:38:09.073Z",
+    "checkedAt": "2026-11-24T13:54:05.564Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -178,7 +178,7 @@
     "favicon": "https://www.classique.com.ar/adjuntos/300/classiq/logo-2023.png",
     "homepage": "https://www.classique.com.ar/",
     "stationUuid": "73a9d959-bed2-4a78-907c-19132bb93fb6",
-    "checkedAt": "2026-11-22T11:38:09.129Z",
+    "checkedAt": "2026-11-24T13:54:05.765Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -200,7 +200,7 @@
     "favicon": "https://8d0fe61ea7.clvaw-cdnwnd.com/4236ba3f283b2950f3dda49f4abda914/200000003-8e9278e928/450/eeeeeeeeeeeeeee.webp?ph=8d0fe61ea7",
     "homepage": "https://www.fmalas106.com/",
     "stationUuid": "a0de4ec4-65a8-4379-a47f-65306fff8051",
-    "checkedAt": "2026-11-22T11:38:09.848Z",
+    "checkedAt": "2026-11-24T13:54:06.444Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -224,7 +224,7 @@
     "favicon": "http://www.fmcentenario935.com.ar/img/portada.jpg",
     "homepage": "http://www.fmcentenario935.com.ar/",
     "stationUuid": "a0f51d9a-85ff-4527-a95d-0b8c13981d45",
-    "checkedAt": "2026-11-22T11:38:10.077Z",
+    "checkedAt": "2026-11-24T13:54:06.893Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -248,30 +248,55 @@
     "favicon": "https://fmcondor.com.ar/img/logo.png",
     "homepage": "https://fmcondor.com.ar/",
     "stationUuid": "0ef1f543-fdae-403c-8576-be8e04340230",
-    "checkedAt": "2026-11-22T11:38:10.312Z",
+    "checkedAt": "2026-11-24T13:54:07.170Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "FM Cielo 88.7",
-    "url": "https://server6.hostradios.com:7108/stream",
+    "name": "FM de la Costa 90.5",
+    "url": "https://streaming1.locucionar.com/proxy/delacosta905?mp=/stream",
     "country": "AR",
-    "type": "80s",
+    "type": "2000s",
     "tags": [
+      "2000s",
+      "80s",
+      "90s",
+      "adult contemporary",
+      "classic hits",
+      "entretenimiento",
+      "music"
+    ],
+    "codec": "AAC+",
+    "bitrate": 32,
+    "language": "spanish",
+    "favicon": "https://streaminglocucionar.com/portal/images/logos/delacosta905.png",
+    "homepage": "https://www.fmdelacosta905.com.ar/",
+    "stationUuid": "4c3726ad-90f6-4d7d-b13b-58024b30da74",
+    "checkedAt": "2026-11-24T13:54:07.376Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Estacion X 93.5 FM",
+    "url": "https://streaming6.locucionar.com:24060/stream",
+    "country": "AR",
+    "type": "70s",
+    "tags": [
+      "70s",
       "80s",
       "90s",
       "classic hits",
-      "music",
       "oldies"
     ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "spanish",
-    "favicon": "https://web.archive.org/web/20230331002502im_/https://fmcielo.net/wp-content/uploads/2022/06/logo-DEMO.png",
-    "homepage": "https://www.facebook.com/people/FM-Cielo-887-Mhz/100063595420315/",
-    "stationUuid": "274f83b7-1aa6-45a4-b28d-3140b2e257e3",
-    "checkedAt": "2026-11-22T11:38:12.708Z",
+    "codec": "AAC",
+    "bitrate": 32,
+    "language": "english",
+    "favicon": "https://www.estacionx.com.ar/img/logofullX.png",
+    "homepage": "https://www.estacionx.com.ar/",
+    "stationUuid": "d5673926-4a57-4b79-9e8d-ddd0393ea39e",
+    "checkedAt": "2026-11-24T13:54:07.994Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -291,33 +316,10 @@
     "favicon": null,
     "homepage": "https://masmusica.lanacion.com.ar/",
     "stationUuid": "c80c632d-b43b-4be9-b312-e7d2ff37ece6",
-    "checkedAt": "2026-11-22T11:38:12.792Z",
+    "checkedAt": "2026-11-24T13:54:09.844Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Radio Alas 101.7",
-    "url": "http://server.laradio.online:8741/live",
-    "country": "AR",
-    "type": "80s",
-    "tags": [
-      "80s",
-      "90s",
-      "hits",
-      "love songs",
-      "music"
-    ],
-    "codec": "AAC",
-    "bitrate": 64,
-    "language": "spanish",
-    "favicon": "https://static.mytuner.mobi/media/tvos_radios/527/radio-alas-1017-fm.d53fdb50.png",
-    "homepage": "https://www.facebook.com/alas1017/",
-    "stationUuid": "ac5dc2f4-3467-4207-813e-0b896fc5bd1e",
-    "checkedAt": "2026-11-22T11:38:13.000Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "107.9 El Observador",
@@ -331,7 +333,7 @@
     "favicon": null,
     "homepage": "https://elobservador1079.com.ar/",
     "stationUuid": "3bd666a2-4c5d-4aa8-ace9-74465eebe578",
-    "checkedAt": "2026-11-22T11:38:14.813Z",
+    "checkedAt": "2026-11-24T13:54:11.804Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -348,7 +350,7 @@
     "favicon": null,
     "homepage": "https://elobservador1079.com.ar/",
     "stationUuid": "a1bcbc89-fc40-4503-910d-0d538175857c",
-    "checkedAt": "2026-11-22T11:38:15.299Z",
+    "checkedAt": "2026-11-24T13:54:12.471Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -365,7 +367,7 @@
     "favicon": "https://elobservador1079.com.ar/wp-content/uploads/2023/07/cropped-favicom-web-el-ob-180x180.png",
     "homepage": "https://elobservador1079.com.ar/",
     "stationUuid": "bf6a7145-8baa-447e-b312-5bfa3b1aff98",
-    "checkedAt": "2026-11-22T11:38:15.341Z",
+    "checkedAt": "2026-11-24T13:54:12.647Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -382,7 +384,7 @@
     "favicon": "https://amcumbre.com/favicon.ico",
     "homepage": "https://amcumbre.com/",
     "stationUuid": "ca580b43-41d2-4a17-8814-d4c63a714623",
-    "checkedAt": "2026-11-22T11:38:15.886Z",
+    "checkedAt": "2026-11-24T13:54:13.132Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -399,7 +401,7 @@
     "favicon": null,
     "homepage": "https://blufm.com/",
     "stationUuid": "219ceb49-2860-442b-9ec1-6faa41f41678",
-    "checkedAt": "2026-11-22T11:38:16.531Z",
+    "checkedAt": "2026-11-24T13:54:14.003Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -416,7 +418,7 @@
     "favicon": "https://fmdelta903.com/favicon.ico",
     "homepage": "https://fmdelta903.com/",
     "stationUuid": "c3efcd60-1a73-418b-b006-93e26e460d90",
-    "checkedAt": "2026-11-22T11:38:16.648Z",
+    "checkedAt": "2026-11-24T13:54:14.021Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -433,7 +435,7 @@
     "favicon": "https://radioarg.net/storage/radios/24537/67809/conversions/Fq7C3WDzlN9SM0UuxUVf3XRWrJUgkK-metaZWwtb2JzZXJ2YWRvci0xMDc5LnBuZw==--lg.webp",
     "homepage": "https://radioarg.net/el-observador-1079",
     "stationUuid": "3fd69ecf-c1c2-45aa-8315-5002b5ef16fa",
-    "checkedAt": "2026-11-22T11:38:16.693Z",
+    "checkedAt": "2026-11-24T13:54:14.132Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -450,7 +452,7 @@
     "favicon": "null",
     "homepage": "http://fmalas106.com/",
     "stationUuid": "7a557cfa-0de9-4e09-a2ee-58f82979fc1e",
-    "checkedAt": "2026-11-22T11:38:17.079Z",
+    "checkedAt": "2026-11-24T13:54:14.743Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -467,7 +469,7 @@
     "favicon": "null",
     "homepage": "http://fmalas106.com/",
     "stationUuid": "cfb1d1f7-922e-472f-a3fb-a4a8538cdd0d",
-    "checkedAt": "2026-11-22T11:38:17.103Z",
+    "checkedAt": "2026-11-24T13:54:15.054Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -484,7 +486,7 @@
     "favicon": "https://radioarg.net/storage/radios/19590/47766/conversions/L4GC6XYDHsrfuNYQKdLGusCewsiRqk-metaYWx3YXlzLnBuZw==--lg.webp",
     "homepage": "https://radioarg.net/fm-always-927",
     "stationUuid": "b4a197c4-e7bb-4320-a6b2-e4741a6703e7",
-    "checkedAt": "2026-11-22T11:38:17.157Z",
+    "checkedAt": "2026-11-24T13:54:15.100Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -501,7 +503,7 @@
     "favicon": "https://radioarg.net/storage/radios/8029/10151/conversions/fm-de-la-calle-lg.webp",
     "homepage": "https://radioarg.net/fm-de-la-calle",
     "stationUuid": "ff50d0ca-ac28-4966-b239-27add3647e13",
-    "checkedAt": "2026-11-22T11:38:17.507Z",
+    "checkedAt": "2026-11-24T13:54:15.393Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -518,10 +520,27 @@
     "favicon": "https://radioarg.net/storage/radios/7871/9993/conversions/fm-estudio-2-1059-lg.webp",
     "homepage": "https://radioarg.net/fm-estudio-2",
     "stationUuid": "9e719dab-4c45-45d9-8d53-25d803ad9fc7",
-    "checkedAt": "2026-11-22T11:38:17.524Z",
+    "checkedAt": "2026-11-24T13:54:15.528Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "FM Tiempo 95.5 MHz",
+    "url": "https://streaming2.locucionar.com/proxy/fmtiempo?mp=/stream",
+    "country": "AR",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 32,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://www.fmtiempo955rt.com.ar/index.html",
+    "stationUuid": "5e9f4e9a-e7f3-4fcc-9fc2-c5d320792ca6",
+    "checkedAt": "2026-11-24T13:54:16.360Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "K2 MUSICA 98.7",
@@ -535,7 +554,7 @@
     "favicon": "https://radioarg.net/storage/radios/23193/63819/conversions/dKXxK8SFLxMTaFJArB7oB37TmbZkuI-metaazItbXVzaWNhLTk4Ny5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/k2-musica-987",
     "stationUuid": "b96cc188-cbee-490e-a146-8319e43eea9a",
-    "checkedAt": "2026-11-22T11:38:18.731Z",
+    "checkedAt": "2026-11-24T13:54:16.964Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -552,7 +571,7 @@
     "favicon": "https://radioarg.net/storage/radios/26828/80209/conversions/VzwNWqWOCf7ulYa38zLdPZXBrdXaCK-metaWDFPVFJudEhSc0I3eGlqd0Nxa1F0RVM3T09yMjVZLW1ldGFiR0V0TVRBd0xXWnZjbTF2YzJFdFptMHRPVGd4TG5CdVp3PT0tLWxnLndlYnA=--lg.webp",
     "homepage": "https://radioarg.net/la-100-formosa",
     "stationUuid": "082a9f6b-1b66-4df5-9034-829695eb1e53",
-    "checkedAt": "2026-11-22T11:38:19.083Z",
+    "checkedAt": "2026-11-24T13:54:17.214Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -569,7 +588,7 @@
     "favicon": "https://radioarg.net/storage/radios/26820/80168/conversions/hlj1yc80T3bHXFfVJuUEAeU5atR3vG-metaU2NyZWVuc2hvdF84Mi5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/la-100-necochea",
     "stationUuid": "25198dc3-1ecb-443b-a7d6-51c99a216e1a",
-    "checkedAt": "2026-11-22T11:38:19.160Z",
+    "checkedAt": "2026-11-24T13:54:17.402Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -586,7 +605,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/",
     "stationUuid": "367cb342-9e0d-4351-862d-7f16a7b0494f",
-    "checkedAt": "2026-11-22T11:38:19.388Z",
+    "checkedAt": "2026-11-24T13:54:17.997Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -603,7 +622,7 @@
     "favicon": "https://radioarg.net/storage/radios/7732/9854/conversions/play-fm-1033-lg.webp",
     "homepage": "https://radioarg.net/play-fm",
     "stationUuid": "f915ba47-e768-4965-a518-af380dddef56",
-    "checkedAt": "2026-11-22T11:38:19.751Z",
+    "checkedAt": "2026-11-24T13:54:18.515Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -620,7 +639,7 @@
     "favicon": "https://radioarg.net/storage/radios/7809/9931/conversions/pop-lg.webp",
     "homepage": "https://radioarg.net/pop-1015-fm-bariloche",
     "stationUuid": "d6b8aa95-6c9f-4425-a432-5641b04c9550",
-    "checkedAt": "2026-11-22T11:38:19.882Z",
+    "checkedAt": "2026-11-24T13:54:18.819Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -637,7 +656,7 @@
     "favicon": "https://radioarg.net/storage/radios/21480/58146/conversions/s26hPYnuOpgq6nL2XUtPwFg9C1XU5p-metaZGVsLXN1ci05NzEtZm0ucG5n--lg.webp",
     "homepage": "https://radioarg.net/del-sur-971-fm",
     "stationUuid": "96c23f9a-ca6b-451c-a6d8-98419124f700",
-    "checkedAt": "2026-11-22T11:38:21.338Z",
+    "checkedAt": "2026-11-24T13:54:20.531Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -654,7 +673,7 @@
     "favicon": "https://radioarg.net/storage/radios/7717/9839/conversions/vinas-lg.webp",
     "homepage": "https://radioarg.net/vinas",
     "stationUuid": "83210531-8089-49de-940c-aaa6bcf224e7",
-    "checkedAt": "2026-11-22T11:38:21.750Z",
+    "checkedAt": "2026-11-24T13:54:21.358Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -671,7 +690,7 @@
     "favicon": "https://radioarg.net/storage/radios/7927/10049/conversions/isla-del-cerrito-1063-lg.webp",
     "homepage": "https://radioarg.net/isla-del-cerrito",
     "stationUuid": "f4c9085d-f3b6-47df-b94a-f02fc70db476",
-    "checkedAt": "2026-11-22T11:38:21.824Z",
+    "checkedAt": "2026-11-24T13:54:21.516Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -688,10 +707,27 @@
     "favicon": "https://radioarg.net/storage/radios/27361/82794/conversions/bLf6QG6v5mPXE1Lnek849q8nMEfp56-metabGEtcmVkLW5lY29jaGVhLmpwZw==--lg.webp",
     "homepage": "https://radioarg.net/la-red-necochea",
     "stationUuid": "ac399b67-799b-41b8-b488-ce1a95b67b0f",
-    "checkedAt": "2026-11-22T11:38:22.189Z",
+    "checkedAt": "2026-11-24T13:54:21.963Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Mitre Jujuy 106.3 FM",
+    "url": "https://5cd577a3dd8ec.streamlock.net/radiomitre/live_2/playlist.m3u8",
+    "country": "AR",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 101,
+    "language": null,
+    "favicon": "https://radioarg.net/storage/radios/27401/83457/conversions/YBnrPE5M9WLailKm0dpfF2GUbJHd32-metabWl0cmUtc2FuLXNhbHZhZG9yLWRlLWp1anV5LndlYnA=--lg.webp",
+    "homepage": "https://radioarg.net/mitre-san-salvador-de-jujuy",
+    "stationUuid": "a33e3859-662d-4e73-bbea-ac3e2d6c9f3b",
+    "checkedAt": "2026-11-24T13:54:22.252Z",
+    "status": 403,
+    "contentType": null,
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Radio Rivadavia Necochea 97.3 FM",
@@ -705,7 +741,7 @@
     "favicon": "https://radioarg.net/storage/radios/27362/82824/conversions/aDjpLHUUD7lH0mLVLVmvRnIwIyeod2-metacml2YWRhdmlhLW5lY29jaGVhLTk3My1mbS5qcGc=--lg.webp",
     "homepage": "https://radioarg.net/rivadavia-necochea-973-fm",
     "stationUuid": "39624781-412e-44dc-80b0-35d8f1f7e40e",
-    "checkedAt": "2026-11-22T11:38:23.639Z",
+    "checkedAt": "2026-11-24T13:54:23.445Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -722,7 +758,7 @@
     "favicon": "https://radioarg.net/storage/radios/7719/9841/conversions/681-lg.webp",
     "homepage": "https://radioarg.net/radio-simphony",
     "stationUuid": "80641f7f-88de-4612-aa0a-04f6d15e4cc5",
-    "checkedAt": "2026-11-22T11:38:23.760Z",
+    "checkedAt": "2026-11-24T13:54:23.509Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -739,7 +775,7 @@
     "favicon": "https://radioarg.net/storage/radios/7658/9780/conversions/Stylo-lg.webp",
     "homepage": "https://radioarg.net/stylo",
     "stationUuid": "ada6b1b9-2123-4d2d-9546-268f4d869d18",
-    "checkedAt": "2026-11-22T11:38:23.831Z",
+    "checkedAt": "2026-11-24T13:54:23.598Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -756,7 +792,7 @@
     "favicon": null,
     "homepage": "https://radio.unr.edu.ar/",
     "stationUuid": "07499cb0-b91e-4150-a085-26e5039c3033",
-    "checkedAt": "2026-11-22T11:38:23.978Z",
+    "checkedAt": "2026-11-24T13:54:23.825Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -773,7 +809,7 @@
     "favicon": null,
     "homepage": "https://radio.unr.edu.ar/",
     "stationUuid": "bb1b8dab-23ec-47b9-bc5e-1b8055ef64f7",
-    "checkedAt": "2026-11-22T11:38:24.151Z",
+    "checkedAt": "2026-11-24T13:54:23.953Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -790,7 +826,7 @@
     "favicon": "https://radio.unr.edu.ar/wp-content/uploads/2022/06/Radio-Online.png",
     "homepage": "https://radio.unr.edu.ar/",
     "stationUuid": "af3e7d23-07d4-4037-9869-f78acdce1fcb",
-    "checkedAt": "2026-11-22T11:38:24.244Z",
+    "checkedAt": "2026-11-24T13:54:24.204Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -807,7 +843,7 @@
     "favicon": null,
     "homepage": "https://undinamo.com/",
     "stationUuid": "765d5d9a-cf89-484a-b420-fdc68195230b",
-    "checkedAt": "2026-11-22T11:38:25.146Z",
+    "checkedAt": "2026-11-24T13:54:25.849Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -824,7 +860,7 @@
     "favicon": "https://radioarg.net/storage/radios/27360/82776/conversions/PMZblyeYJzWZZ7ZvrP3iGvV9rlT9cj-metadXJiYW5hLXBsYXktMTAzMS5qcGc=--lg.webp",
     "homepage": "https://radioarg.net/urbana-play-1031",
     "stationUuid": "4d122309-a580-4d67-87b5-c6b02178af7d",
-    "checkedAt": "2026-11-22T11:38:25.322Z",
+    "checkedAt": "2026-11-24T13:54:25.884Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -841,27 +877,10 @@
     "favicon": "https://radioarg.net/storage/radios/8178/10300/conversions/cnn-argentina-am-950-lg.webp",
     "homepage": "https://radioarg.net/cnn-argentina",
     "stationUuid": "6164c104-b817-4527-9a0b-449be32961bb",
-    "checkedAt": "2026-11-22T11:38:26.577Z",
+    "checkedAt": "2026-11-24T13:54:27.342Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "CNN Radio Salta 94.7 FM",
-    "url": "https://streaming.radiosenlinea.com.ar:10585/stream",
-    "country": "AR",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 112,
-    "language": null,
-    "favicon": "https://admin.auto-messenger.ru/storage/city_radio/10924/75430/conversions/uyVXuSBKvkp3jjFoGZlNY4m0FAvkDH-meta0JHQtdC3INC90LDQt9Cy0LDQvdC40Y8gKDEpLmpmaWY=--lg.webp",
-    "homepage": "https://radioarg.net/cnn-argentina-salta",
-    "stationUuid": "3f2e4dd7-21c3-416d-9f85-b53d30d49b1e",
-    "checkedAt": "2026-11-22T11:38:26.759Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Comunidad Fan",
@@ -875,7 +894,7 @@
     "favicon": "https://radioarg.net/storage/radios/8087/10209/conversions/comunidad-fan-lg.webp",
     "homepage": "https://radioarg.net/comunidad-fan",
     "stationUuid": "651ebc5a-f010-4e03-8663-73bcbdfb3e99",
-    "checkedAt": "2026-11-22T11:38:26.784Z",
+    "checkedAt": "2026-11-24T13:54:27.541Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -892,27 +911,10 @@
     "favicon": "https://elcafedelmundo.com/wp-content/uploads/2023/11/cropped-u2rjBusl_400x400-192x192.jpg",
     "homepage": "https://elcafedelmundo.com/",
     "stationUuid": "698dfebc-b99b-4f34-b5aa-2fb27979b2f1",
-    "checkedAt": "2026-11-22T11:38:27.095Z",
+    "checkedAt": "2026-11-24T13:54:28.348Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Fm Avellaneda 95.7",
-    "url": "https://streaming01.shockmedia.com.ar:10940/stream?icy=http",
-    "country": "AR",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 32,
-    "language": null,
-    "favicon": "https://radioarg.net/storage/radios/26530/78337/conversions/rBP0TVhEsGy0GjKMQ2RhD3XBYtllzU-metaU2NyZWVuc2hvdF81Ni5wbmc=--lg.webp",
-    "homepage": "https://radioarg.net/fm-avellaneda-957",
-    "stationUuid": "3b052775-1d1b-4b4a-b1fe-f0b3e53a83ca",
-    "checkedAt": "2026-11-22T11:38:27.678Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "FM La Ruta 95.7",
@@ -926,44 +928,10 @@
     "favicon": "https://radioarg.net/storage/radios/7956/10078/conversions/la-ruta-fm-957-lg.webp",
     "homepage": "https://radioarg.net/la-ruta-fm",
     "stationUuid": "c9f814ec-0bf6-4878-a256-eca66ae02ca0",
-    "checkedAt": "2026-11-22T11:38:28.780Z",
+    "checkedAt": "2026-11-24T13:54:30.437Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "FM Santa Rosa 100.9",
-    "url": "https://radiosar.com:10982/stream",
-    "country": "AR",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": null,
-    "favicon": "https://radioarg.net/storage/radios/26525/78330/conversions/5y9xqLDSnUeimdW9Q4fzpUW4w8pXiq-metaU2NyZWVuc2hvdF81NS5wbmc=--lg.webp",
-    "homepage": "https://radioarg.net/fm-santa-rosa-1009",
-    "stationUuid": "20516637-4cdb-4c60-94b5-0eed09fa299d",
-    "checkedAt": "2026-11-22T11:38:29.205Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Fm Visión 101.9 FM",
-    "url": "https://sslstream.online:7106/",
-    "country": "AR",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 32,
-    "language": null,
-    "favicon": "https://radioarg.net/storage/radios/7716/9838/conversions/fm-vision-1019-fm-lg.webp",
-    "homepage": "https://radioarg.net/fm-vision-1019-fm",
-    "stationUuid": "74e60d13-7aae-4cb0-80d5-401c9cf2c255",
-    "checkedAt": "2026-11-22T11:38:30.070Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Frecuencia Zero 92.5 FM",
@@ -977,7 +945,7 @@
     "favicon": "https://radioarg.net/storage/radios/7907/10029/conversions/frecuencia-zero-fm-lg.webp",
     "homepage": "https://radioarg.net/frecuencia-zero-fm",
     "stationUuid": "de361b77-5586-4e0d-9510-ca0d8212e54d",
-    "checkedAt": "2026-11-22T11:38:31.046Z",
+    "checkedAt": "2026-11-24T13:54:32.820Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -994,7 +962,7 @@
     "favicon": "https://radioarg.net/storage/radios/7917/10039/conversions/genesis-fm-1025-lg.webp",
     "homepage": "https://radioarg.net/genesis-fm-1025",
     "stationUuid": "58915514-4d6b-48fe-9e08-58ef6d373dd6",
-    "checkedAt": "2026-11-22T11:38:31.226Z",
+    "checkedAt": "2026-11-24T13:54:32.842Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1011,7 +979,7 @@
     "favicon": null,
     "homepage": "https://turadioeninternet.com.ar/GXRADIO/",
     "stationUuid": "e59f6a16-ed7a-43f2-a273-33555ff4224b",
-    "checkedAt": "2026-11-22T11:38:31.847Z",
+    "checkedAt": "2026-11-24T13:54:33.091Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1028,7 +996,7 @@
     "favicon": null,
     "homepage": "http://www.rckfm.com/",
     "stationUuid": "c47acb9d-196b-11ea-a620-52543be04c81",
-    "checkedAt": "2026-11-22T11:38:34.154Z",
+    "checkedAt": "2026-11-24T13:54:35.330Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1045,7 +1013,7 @@
     "favicon": "https://radioarg.net/storage/radios/7968/10090/conversions/radio-libertad-991-lg.webp",
     "homepage": "https://radioarg.net/libertad-digital",
     "stationUuid": "f708cfe5-0169-476b-84e6-7a2f71076896",
-    "checkedAt": "2026-11-22T11:38:34.212Z",
+    "checkedAt": "2026-11-24T13:54:35.519Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1062,7 +1030,7 @@
     "favicon": "https://irp.cdn-website.com/70181fda/site_favicon_16_1740152349929.ico",
     "homepage": "https://lola.fm/",
     "stationUuid": "5659c0b5-9ec2-415c-834c-05f29b350d5d",
-    "checkedAt": "2026-11-22T11:38:34.346Z",
+    "checkedAt": "2026-11-24T13:54:35.639Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -1079,7 +1047,7 @@
     "favicon": "https://radios2.com/favicon.ico",
     "homepage": "https://radios2.com/radio-lv11",
     "stationUuid": "db23011d-b4df-482f-8110-f976a0ac75ed",
-    "checkedAt": "2026-11-22T11:38:34.527Z",
+    "checkedAt": "2026-11-24T13:54:36.362Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1096,7 +1064,7 @@
     "favicon": null,
     "homepage": "https://www.radios-argentinas.com/",
     "stationUuid": "e7e78f55-8383-4086-8c7a-03a63a962f46",
-    "checkedAt": "2026-11-22T11:38:34.890Z",
+    "checkedAt": "2026-11-24T13:54:36.486Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1113,7 +1081,7 @@
     "favicon": "https://marcoskappes.com.ar/favicon.ico",
     "homepage": "https://marcoskappes.com.ar/",
     "stationUuid": "cae4ae52-65fc-4153-9368-0547adaf8b2d",
-    "checkedAt": "2026-11-22T11:38:35.056Z",
+    "checkedAt": "2026-11-24T13:54:36.655Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1130,7 +1098,7 @@
     "favicon": "https://radioarg.net/storage/radios/7821/9943/conversions/orfeo-fm-985-lg.webp",
     "homepage": "https://radioarg.net/orfeo-fm-985",
     "stationUuid": "bb65c89b-b789-4685-91e0-7aeed0bc08be",
-    "checkedAt": "2026-11-22T11:38:36.060Z",
+    "checkedAt": "2026-11-24T13:54:38.155Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1147,7 +1115,7 @@
     "favicon": "https://radioarg.net/storage/radios/27448/83849/conversions/hdLa8YCVGLXwpj7CHR40tdDZowBd95-metacmFkaW8tMTAtcm9zYXJpby53ZWJw--lg.webp",
     "homepage": "https://radioarg.net/radio-10-rosario",
     "stationUuid": "c38979a0-1eb5-4ad7-a0e9-c929c24cb150",
-    "checkedAt": "2026-11-22T11:38:36.958Z",
+    "checkedAt": "2026-11-24T13:54:39.340Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1164,27 +1132,27 @@
     "favicon": "https://radioarg.net/storage/radios/7882/10004/conversions/ciudad-995-fm-lg.webp",
     "homepage": "https://radioarg.net/ciudad-995-fm",
     "stationUuid": "7217b748-37b4-4477-82ee-bf8cc2f5b553",
-    "checkedAt": "2026-11-22T11:38:42.054Z",
+    "checkedAt": "2026-11-24T13:54:41.503Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
   },
   {
-    "name": "Radio Del Puerto 92.1. Barranqueras Chaco. Version 2",
-    "url": "https://streaming.escuchanosonline.com:7106/stream",
+    "name": "Radio Folclorisimo AM 1410",
+    "url": "https://streamlky.alsolnet.com/radiofolclorisimohd",
     "country": "AR",
     "type": "AAC+",
     "tags": [],
     "codec": "AAC+",
     "bitrate": 32,
     "language": null,
-    "favicon": null,
-    "homepage": "https://fmdelpuerto.com/",
-    "stationUuid": "3a8dfdec-7bdc-4de9-84eb-bc37557d1e9f",
-    "checkedAt": "2026-11-22T11:38:42.909Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
+    "favicon": "https://radioarg.net/storage/radios/7905/10027/conversions/radio-folclorisimo-am-1410-lg.webp",
+    "homepage": "https://radioarg.net/radio-folclorisimo",
+    "stationUuid": "ac6d6f9a-b6cb-44d9-a5cc-3108143fa933",
+    "checkedAt": "2026-11-24T13:54:43.436Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Infinita Mendoza 98.5 FM",
@@ -1198,7 +1166,7 @@
     "favicon": "https://radioarg.net/storage/radios/7765/79044/conversions/qZRAc8oxwsRWt4SlTVMNvwZphkbR79-metaMjQwNTc1MTM2XzU4ODE5MTI5MTE4Nzk2MzdfMjg1NjU4NzMyODY1NjQxNDgyMV9uLmpwZw==--lg.webp",
     "homepage": "https://radioarg.net/radio-infinita",
     "stationUuid": "248ffc5a-9eae-41b0-b33d-fdc5f61f008e",
-    "checkedAt": "2026-11-22T11:38:44.874Z",
+    "checkedAt": "2026-11-24T13:54:43.985Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -1215,7 +1183,7 @@
     "favicon": "https://radionatagala.com/favicon.ico",
     "homepage": "https://radionatagala.com/",
     "stationUuid": "6ae98193-6f40-499f-bd50-873a3e50b872",
-    "checkedAt": "2026-11-22T11:38:46.915Z",
+    "checkedAt": "2026-11-24T13:54:45.523Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1232,27 +1200,10 @@
     "favicon": "https://radioarg.net/storage/radios/7651/9773/conversions/sophia-lg.webp",
     "homepage": "https://radioarg.net/sophia",
     "stationUuid": "03fc1281-4693-4e68-b717-790403183b6b",
-    "checkedAt": "2026-11-22T11:38:48.861Z",
+    "checkedAt": "2026-11-24T13:54:47.953Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Radio Sur 90.1 FM",
-    "url": "https://streaming.dainusradio.com:9848/stream?icy=http",
-    "country": "AR",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": null,
-    "favicon": "https://radioarg.net/storage/radios/7722/9844/conversions/685-lg.webp",
-    "homepage": "https://radioarg.net/radio-sur",
-    "stationUuid": "d30194e2-b28c-4826-b815-86134d0b553e",
-    "checkedAt": "2026-11-22T11:38:49.053Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Top 105.9",
@@ -1266,7 +1217,7 @@
     "favicon": "https://radioarg.net/storage/radios/7724/66457/conversions/PCsOOkWWDjz6SMamxRflokpiHYslnd-metadG9wMTA1OS5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/top",
     "stationUuid": "9f635f9c-aa91-408c-9504-914667fed9cf",
-    "checkedAt": "2026-11-22T11:38:49.282Z",
+    "checkedAt": "2026-11-24T13:54:48.528Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1283,7 +1234,7 @@
     "favicon": "https://radioarg.net/storage/radios/21437/57923/conversions/XzF6JIZhkbIojRJrPz38K2NdSFxnBG-metacmFkaW8tdXJiYW5hLnBuZw==--lg.webp",
     "homepage": "https://radioarg.net/radio-urbana",
     "stationUuid": "7781b879-a1b4-4d7f-9d1a-c4b744a5d858",
-    "checkedAt": "2026-11-22T11:38:49.559Z",
+    "checkedAt": "2026-11-24T13:54:48.721Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1300,7 +1251,7 @@
     "favicon": null,
     "homepage": "http://www.radiovosfm.com.ar/new/mobile/inicio.html",
     "stationUuid": "6df4a89e-e110-404b-ab8d-fd758f021352",
-    "checkedAt": "2026-11-22T11:38:50.204Z",
+    "checkedAt": "2026-11-24T13:54:49.020Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1317,7 +1268,7 @@
     "favicon": "https://www.revueltoderadio.com/favicon.ico",
     "homepage": "https://www.revueltoderadio.com/",
     "stationUuid": "1789d536-dde1-4eef-b05f-db251a42d6ff",
-    "checkedAt": "2026-11-22T11:38:50.671Z",
+    "checkedAt": "2026-11-24T13:54:49.443Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1334,7 +1285,7 @@
     "favicon": null,
     "homepage": "https://am530somosradio.com/",
     "stationUuid": "0d24740e-2f73-4f4e-8b89-674d9e1e4ec5",
-    "checkedAt": "2026-11-22T11:38:51.057Z",
+    "checkedAt": "2026-11-24T13:54:49.772Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1351,7 +1302,7 @@
     "favicon": null,
     "homepage": "https://am530somosradio.com/",
     "stationUuid": "561acce4-87b2-4b46-b875-cff0237e69df",
-    "checkedAt": "2026-11-22T11:38:51.064Z",
+    "checkedAt": "2026-11-24T13:54:49.925Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1368,7 +1319,7 @@
     "favicon": null,
     "homepage": "https://www.fm891.com.ar/",
     "stationUuid": "9a46e8d5-8130-4084-b5ef-6c13b6b23ea2",
-    "checkedAt": "2026-11-22T11:38:51.219Z",
+    "checkedAt": "2026-11-24T13:54:50.055Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -1385,7 +1336,7 @@
     "favicon": null,
     "homepage": "https://www.fm891.com.ar/",
     "stationUuid": "3fc33d55-53ae-4432-9b18-f1434d693415",
-    "checkedAt": "2026-11-22T11:38:51.351Z",
+    "checkedAt": "2026-11-24T13:54:50.148Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -1402,34 +1353,27 @@
     "favicon": null,
     "homepage": "https://urbanaplayfm.com/",
     "stationUuid": "78ae7b0c-cd9f-42d5-847d-6a41b578bb97",
-    "checkedAt": "2026-11-22T11:38:51.530Z",
+    "checkedAt": "2026-11-24T13:54:50.402Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "FM La Patriada",
-    "url": "https://server.laradio.online/proxy/fm_la_patriada?mp=/stream",
+    "name": "Vorterix Bahía Blanca 99.1 FM",
+    "url": "https://masservidor.net:7192/stream",
     "country": "AR",
-    "type": "actualidad",
-    "tags": [
-      "actualidad",
-      "musica",
-      "noticias locales",
-      "política",
-      "reports",
-      "rock"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "spanish",
-    "favicon": null,
-    "homepage": "https://www.fmlapatriada.com.ar/",
-    "stationUuid": "6db9f2b2-e091-4b91-b354-77cef266784c",
-    "checkedAt": "2026-11-22T11:38:52.527Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 72,
+    "language": null,
+    "favicon": "https://admin.auto-messenger.ru/storage/city_radio/10858/23636/conversions/6ZL7qqD1a5Xc6arWDUOIuWelovd5yh-metadm9ydGVyaXgtYmFoaWEucG5n--lg.webp",
+    "homepage": "https://radioarg.net/vorterix-bahia-blanca",
+    "stationUuid": "0c719946-caf8-4a89-80c5-f7d932ebb7ec",
+    "checkedAt": "2026-11-24T13:54:50.526Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio AM 750 Objetivos, pero no imparciales",
@@ -1450,7 +1394,7 @@
     "favicon": "https://es.wikipedia.org/wiki/Radio_AM_750#/media/Archivo:AM_750_logo.svg",
     "homepage": "https://www.pagina12.com.ar/am750/radio-en-vivo",
     "stationUuid": "c7ce8af3-777f-4a50-ae1e-e5904ad73ae9",
-    "checkedAt": "2026-11-22T11:38:52.772Z",
+    "checkedAt": "2026-11-24T13:54:51.856Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1470,7 +1414,7 @@
     "favicon": "https://cloudfront-arc.cienradios.com/ar/favicons/favicon-16x16.png",
     "homepage": "https://ar.cienradios.com/",
     "stationUuid": "ed3cb761-32e0-4075-877a-6a34c3a1a2a6",
-    "checkedAt": "2026-11-22T11:38:53.085Z",
+    "checkedAt": "2026-11-24T13:54:51.981Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1491,10 +1435,33 @@
     "favicon": "https://delbosqueradio.com.ar/imagenes/banner.png",
     "homepage": "https://delbosqueradio.com.ar/",
     "stationUuid": "10de7195-d447-4a44-8b76-d64cfffb7914",
-    "checkedAt": "2026-11-22T11:38:53.158Z",
+    "checkedAt": "2026-11-24T13:54:52.199Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "FM Anta 96.1",
+    "url": "https://stream.radioinfo.ar/p/8092/stream",
+    "country": "AR",
+    "type": "adult contemporary",
+    "tags": [
+      "adult contemporary",
+      "deportes",
+      "entretenimiento",
+      "musica romantica",
+      "música en español"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "spanish",
+    "favicon": "https://radioinfo.ar/archivos/clientes_logos/16235499488.jpg",
+    "homepage": "https://fmanta.com.ar/",
+    "stationUuid": "67ef6bcf-e79b-4a38-920c-0f9b56d0af5f",
+    "checkedAt": "2026-11-24T13:54:52.437Z",
+    "status": 502,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "FM Ayer 98.1",
@@ -1515,7 +1482,7 @@
     "favicon": "https://www.fmayer.net.ar/media/logo.png",
     "homepage": "https://www.fmayer.net.ar/",
     "stationUuid": "b14a421c-47c8-462e-95e0-72a891325fcb",
-    "checkedAt": "2026-11-22T11:38:53.456Z",
+    "checkedAt": "2026-11-24T13:54:52.565Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1536,7 +1503,7 @@
     "favicon": null,
     "homepage": "http://www.fmcarilo.com.ar/",
     "stationUuid": "2f0afe96-567b-40f3-b409-d28434d05130",
-    "checkedAt": "2026-11-22T11:38:53.533Z",
+    "checkedAt": "2026-11-24T13:54:52.607Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1555,7 +1522,7 @@
     "favicon": null,
     "homepage": "https://radiookbariloche.com/",
     "stationUuid": "7690c5d9-77f3-4fb6-b08b-89f0f2b794c3",
-    "checkedAt": "2026-11-22T11:38:53.958Z",
+    "checkedAt": "2026-11-24T13:54:53.091Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1574,7 +1541,7 @@
     "favicon": null,
     "homepage": "https://radiooksalta.com/",
     "stationUuid": "4e568787-9dd9-4dfb-be01-2e2d80e2b318",
-    "checkedAt": "2026-11-22T11:38:54.083Z",
+    "checkedAt": "2026-11-24T13:54:53.120Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -1595,7 +1562,7 @@
     "favicon": null,
     "homepage": "http://www.radiouniversofm.com.ar/",
     "stationUuid": "83a3c225-0722-4582-9dbd-103f6e10be35",
-    "checkedAt": "2026-11-22T11:38:54.340Z",
+    "checkedAt": "2026-11-24T13:54:53.468Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1617,7 +1584,7 @@
     "favicon": null,
     "homepage": "https://www.wanradio.com/",
     "stationUuid": "f4199f88-977a-4670-8747-94940ec2c728",
-    "checkedAt": "2026-11-22T11:38:54.576Z",
+    "checkedAt": "2026-11-24T13:54:53.825Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1636,10 +1603,10 @@
     "favicon": null,
     "homepage": "https://www.liveatc.net/",
     "stationUuid": "488e8398-d2a8-46d3-906c-d8e2320fee87",
-    "checkedAt": "2026-11-22T11:38:54.718Z",
+    "checkedAt": "2026-11-24T13:54:53.992Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "RadioTV AN24",
@@ -1659,7 +1626,7 @@
     "favicon": null,
     "homepage": "https://www.radioan24.com.ar/",
     "stationUuid": "e1d4b2f3-7c8c-4ceb-9d5b-3057e9a9b0fe",
-    "checkedAt": "2026-11-22T11:38:54.765Z",
+    "checkedAt": "2026-11-24T13:54:54.070Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1681,7 +1648,7 @@
     "favicon": "https://i0.wp.com/www.antena-libre.com.ar/wp-content/uploads/2019/05/cropped-web2019-isolog-lite.jpg?w=888&ssl=1",
     "homepage": "https://www.antena-libre.com.ar/",
     "stationUuid": "aa65f6f6-f27e-4f58-9628-3c577fabc511",
-    "checkedAt": "2026-11-22T11:38:54.899Z",
+    "checkedAt": "2026-11-24T13:54:54.342Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -1705,7 +1672,7 @@
     "favicon": "https://exporadio.net/wp-content/uploads/2023/10/logo-v3-1080x512-1-311x147.png",
     "homepage": "https://exporadio.net/",
     "stationUuid": "58f9364b-f797-4294-b0a8-336a5551f542",
-    "checkedAt": "2026-11-22T11:38:55.060Z",
+    "checkedAt": "2026-11-24T13:54:54.637Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1726,7 +1693,7 @@
     "favicon": "https://fmfribuay.org.ar/wp-content/uploads/2025/07/img_logo-FM-Fribuay.png",
     "homepage": "https://fmfribuay.org.ar/",
     "stationUuid": "88ea61f5-6725-4d91-a3ea-2bb488c71590",
-    "checkedAt": "2026-11-22T11:38:55.214Z",
+    "checkedAt": "2026-11-24T13:54:54.753Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1748,7 +1715,7 @@
     "favicon": "https://estacionk2.com/wp-content/uploads/2024/01/K2-ACTITUD-2.png",
     "homepage": "https://estacionk2.com/",
     "stationUuid": "c514f0b7-4e27-4879-9a14-30b62d4ef06f",
-    "checkedAt": "2026-11-22T11:38:55.282Z",
+    "checkedAt": "2026-11-24T13:54:54.826Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -1771,32 +1738,10 @@
     "favicon": "https://www.estacionprodan.com.ar/",
     "homepage": "https://www.estacionprodan.com.ar/",
     "stationUuid": "345901b2-897c-4903-a493-87a19caaf56a",
-    "checkedAt": "2026-11-22T11:38:55.443Z",
+    "checkedAt": "2026-11-24T13:54:55.257Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Radio nacional AM 870",
-    "url": "http://sa.mp3.icecast.magma.edge-access.net:7200/sc_rad1",
-    "country": "AR",
-    "type": "am",
-    "tags": [
-      "am",
-      "argentina",
-      "cultura",
-      "noticias"
-    ],
-    "codec": "MP3",
-    "bitrate": 75,
-    "language": "spanish",
-    "favicon": "https://upload.wikimedia.org/wikipedia/commons/0/00/Nacional_AM_870_2016.png",
-    "homepage": "http://www.radionacional.com.ar/",
-    "stationUuid": "a226ec5a-830a-11e9-aa30-52543be04c81",
-    "checkedAt": "2026-11-22T11:38:55.798Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "la conquista del pan",
@@ -1816,10 +1761,30 @@
     "favicon": null,
     "homepage": "https://radiolaconquistadelpan.blogspot.com/",
     "stationUuid": "158e6a48-d1f0-4952-9d78-cd6e0afaa21d",
-    "checkedAt": "2026-11-22T11:38:55.899Z",
+    "checkedAt": "2026-11-24T13:54:56.472Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "HoloNet",
+    "url": "https://stream.zeno.fm/68veqm945bhvv",
+    "country": "AR",
+    "type": "anime",
+    "tags": [
+      "anime",
+      "series"
+    ],
+    "codec": "MP3",
+    "bitrate": 160,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://zeno.fm/radio/holonet/",
+    "stationUuid": "f2def555-126c-4b57-b788-2102617c0356",
+    "checkedAt": "2026-11-24T13:54:56.484Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Cadena Alegría - Córdoba",
@@ -1839,7 +1804,7 @@
     "favicon": "https://escuchanosonline.com/clientes/img/logos/1695f158deccdabf9764db6b965a10df.jpg",
     "homepage": "https://www.cadenaalegria.com.ar/",
     "stationUuid": "0d7a9a6b-6cdc-4fde-a5e6-ef23be6e3a13",
-    "checkedAt": "2026-11-22T11:38:56.410Z",
+    "checkedAt": "2026-11-24T13:54:56.854Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1861,57 +1826,10 @@
     "favicon": null,
     "homepage": "https://fmdelta903.com/",
     "stationUuid": "fa281876-6f6f-49fa-bf8e-fcd132508fa4",
-    "checkedAt": "2026-11-22T11:38:56.483Z",
+    "checkedAt": "2026-11-24T13:54:56.906Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "FM Laser 98.5 - General Pico",
-    "url": "https://streamconex.com:8076/stream/",
-    "country": "AR",
-    "type": "argentina",
-    "tags": [
-      "argentina",
-      "general pico",
-      "la pampa",
-      "radios pampeanas"
-    ],
-    "codec": "MP3",
-    "bitrate": 48,
-    "language": "español argentina,spanish",
-    "favicon": null,
-    "homepage": "https://www.fmlaser.com.ar/",
-    "stationUuid": "eff66d04-4e04-4a4c-b07d-68e2f15aea51",
-    "checkedAt": "2026-11-22T11:38:56.520Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "LRA1 Radio Nacional Argentina",
-    "url": "https://sa.mp3.icecast.magma.edge-access.net/sc_rad1",
-    "country": "AR",
-    "type": "argentina",
-    "tags": [
-      "argentina",
-      "buenos aires",
-      "ciudad de buenos aires",
-      "news",
-      "public radio",
-      "radio pública",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 75,
-    "language": "spanish",
-    "favicon": null,
-    "homepage": "https://www.radionacional.com.ar/",
-    "stationUuid": "3934d9f0-7694-4896-bf11-fb19395c7c49",
-    "checkedAt": "2026-11-22T11:38:56.861Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "LU6 Radio Atlántica",
@@ -1929,7 +1847,7 @@
     "favicon": "https://static-media.streema.com/media/cache/26/ad/26ad816a0daf81487869c88e85cd5412.jpg",
     "homepage": "http://www.lu6.com.ar/",
     "stationUuid": "1964f23f-b686-11e8-aaf2-52543be04c81",
-    "checkedAt": "2026-11-22T11:38:57.068Z",
+    "checkedAt": "2026-11-24T13:54:57.424Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1951,7 +1869,7 @@
     "favicon": "https://www.radiocentro.com.ar/img/logo.png",
     "homepage": "https://www.radiocentro.com.ar/",
     "stationUuid": "62ad7794-845c-42d8-b4a8-2907b752ed7e",
-    "checkedAt": "2026-11-22T11:38:57.383Z",
+    "checkedAt": "2026-11-24T13:54:57.881Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1973,7 +1891,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/1/128341.v1.png",
     "homepage": "https://www.elhacedoriglesia.com.ar/radionline/",
     "stationUuid": "0a4ef382-56a6-4dca-a5af-262b9bd952fa",
-    "checkedAt": "2026-11-22T11:38:59.232Z",
+    "checkedAt": "2026-11-24T13:54:59.781Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1996,31 +1914,10 @@
     "favicon": "https://zenoimages.s3.us-west-001.backblazeb2.com/3d70f63c-5d98-4af5-b5ec-0654fc896e9f/cards/d8fe54c4-3ab8-4e97-b90a-8238d5a16287",
     "homepage": "https://zeno.fm/radio/fm-cristo-rey/",
     "stationUuid": "daf36a59-865c-4d4e-85a5-628aa0abfa3b",
-    "checkedAt": "2026-11-22T11:38:59.330Z",
+    "checkedAt": "2026-11-24T13:54:59.876Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Radio Nacional Folklorica 98.7",
-    "url": "http://sa.mp3.icecast.magma.edge-access.net:7200/sc_rad38",
-    "country": "AR",
-    "type": "buenos aires",
-    "tags": [
-      "buenos aires",
-      "folk",
-      "public radio"
-    ],
-    "codec": "MP3",
-    "bitrate": 160,
-    "language": "spanish",
-    "favicon": null,
-    "homepage": "http://www.nacionalfolklorica.com.ar/",
-    "stationUuid": "961a458f-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-22T11:39:00.180Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio 21 FM 90.1 - Caleta Olivia",
@@ -2036,7 +1933,7 @@
     "favicon": null,
     "homepage": "http://www.radio21.com.ar/web/",
     "stationUuid": "c944707d-d98c-4922-b4e0-b2fe04eb6dd2",
-    "checkedAt": "2026-11-22T11:39:00.313Z",
+    "checkedAt": "2026-11-24T13:55:00.867Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -2056,7 +1953,7 @@
     "favicon": null,
     "homepage": "https://radiomaria.org.ar/rm-joven/",
     "stationUuid": "c39f2286-7dc7-4814-b82f-e66685718904",
-    "checkedAt": "2026-11-22T11:39:00.477Z",
+    "checkedAt": "2026-11-24T13:55:01.093Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2082,7 +1979,7 @@
     "favicon": "https://radiobeat97.com.ar/beat/wp-content/uploads/2021/09/cropped-logo-beat-2021b-1-180x180.png",
     "homepage": "http://www.radiobeat97.com.ar/beat/",
     "stationUuid": "7944c5d0-bb74-43ac-ae72-5c27e303e45b",
-    "checkedAt": "2026-11-22T11:39:00.488Z",
+    "checkedAt": "2026-11-24T13:55:01.170Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2102,7 +1999,7 @@
     "favicon": "https://cloudfront-arc.cienradios.com/ar/favicons/favicon-16x16.png",
     "homepage": "https://ar.cienradios.com/",
     "stationUuid": "6c38d901-7d4d-4a4e-bce9-d2436936bd30",
-    "checkedAt": "2026-11-22T11:39:01.103Z",
+    "checkedAt": "2026-11-24T13:55:01.872Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -2122,29 +2019,10 @@
     "favicon": null,
     "homepage": "https://binauralrockradio.com.ar/",
     "stationUuid": "0541521b-2628-4b51-8685-2e4884a9363f",
-    "checkedAt": "2026-11-22T11:39:02.520Z",
+    "checkedAt": "2026-11-24T13:55:03.599Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Sur FM 90.1",
-    "url": "https://streaming.dainusradio.com:9848/;",
-    "country": "AR",
-    "type": "community radio",
-    "tags": [
-      "community radio"
-    ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "español argentina",
-    "favicon": "https://radiosur901.com.ar/wp-content/uploads/2025/01/cropped-Logo-Radio-Sur-1-65x63.jpg",
-    "homepage": "https://radiosur901.com.ar/",
-    "stationUuid": "31834c0b-3fd8-4749-8f5f-673520420c40",
-    "checkedAt": "2026-11-22T11:39:04.663Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "antena libre 89.1 argentina universidad conahue",
@@ -2162,7 +2040,7 @@
     "favicon": "null",
     "homepage": "https://www.antena-libre.com.ar/radioenvivo",
     "stationUuid": "61af0dc5-231f-4a47-8046-1c5d3d7581b8",
-    "checkedAt": "2026-11-22T11:39:04.737Z",
+    "checkedAt": "2026-11-24T13:55:06.265Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2181,7 +2059,7 @@
     "favicon": null,
     "homepage": "https://radioresidencias.com.ar/",
     "stationUuid": "68204de6-94d5-43e7-9f6f-a6993140f362",
-    "checkedAt": "2026-11-22T11:39:04.863Z",
+    "checkedAt": "2026-11-24T13:55:06.514Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2200,10 +2078,31 @@
     "favicon": "https://comunicacionsocial.org.ar/wp-content/themes/comunicacionsocial-theme/assets/images/logo-fm-en-transito.png.webp",
     "homepage": "https://comunicacionsocial.org.ar/",
     "stationUuid": "a9cb9c06-6b6b-499a-8b04-545c34eda12e",
-    "checkedAt": "2026-11-22T11:39:04.927Z",
+    "checkedAt": "2026-11-24T13:55:06.660Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "radio indecente",
+    "url": "http://indecentes.duckdns.org:8000/live",
+    "country": "AR",
+    "type": "crossover",
+    "tags": [
+      "crossover",
+      "cumbia",
+      "cumbia argentina"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://legendary-games.net/",
+    "stationUuid": "c0002411-bafa-481a-a801-3d2aecd7ec76",
+    "checkedAt": "2026-11-24T13:55:07.194Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Big FM 91.9 Rosario",
@@ -2223,7 +2122,7 @@
     "favicon": "https://pbs.twimg.com/profile_images/1513948254387511304/sfLvg11j_400x400.jpg",
     "homepage": "https://bigradio.com.ar/",
     "stationUuid": "2bc53ea6-d382-4d68-bbea-9b07c5ec0c6c",
-    "checkedAt": "2026-11-22T11:39:05.566Z",
+    "checkedAt": "2026-11-24T13:55:07.353Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2245,7 +2144,7 @@
     "favicon": "https://www.fmalejandro1041.com.ar/images/banner_webderadios.png",
     "homepage": "https://www.fmalejandro1041.com.ar/",
     "stationUuid": "c82edc11-8401-4c19-a5fc-934155766d4a",
-    "checkedAt": "2026-11-22T11:39:05.594Z",
+    "checkedAt": "2026-11-24T13:55:07.419Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2267,79 +2166,10 @@
     "favicon": "https://www.solumedia.com.ar/radios/7119/1.jpg",
     "homepage": "https://www.fmdale.com.ar/",
     "stationUuid": "c47971bc-6af4-41de-a3c8-f925bc7f331d",
-    "checkedAt": "2026-11-22T11:39:05.812Z",
+    "checkedAt": "2026-11-24T13:55:07.540Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "FM Santa María 106.1",
-    "url": "https://radios.solumedia.com:6464/stream?icy=http",
-    "country": "AR",
-    "type": "cuarteto",
-    "tags": [
-      "cuarteto",
-      "cumbia",
-      "music"
-    ],
-    "codec": "AAC+",
-    "bitrate": 24,
-    "language": "spanish",
-    "favicon": "https://fmsantamaria106.com.ar/img/logo.png",
-    "homepage": "https://fmsantamaria106.com.ar/",
-    "stationUuid": "659a02e6-8d60-4f83-8549-8f09eacfdd1f",
-    "checkedAt": "2026-11-22T11:39:06.225Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Evolution FM 101.9",
-    "url": "https://radios.solumedia.com:6140/stream",
-    "country": "AR",
-    "type": "cumbia",
-    "tags": [
-      "cumbia",
-      "hits",
-      "pop",
-      "reggaeton",
-      "top 40",
-      "urbano"
-    ],
-    "codec": "AAC+",
-    "bitrate": 96,
-    "language": "spanish",
-    "favicon": "https://evolutionfm.com.ar/img/logo.png",
-    "homepage": "https://evolutionfm.com.ar/",
-    "stationUuid": "0aa8205f-390f-4da0-b0c2-dde131505a3c",
-    "checkedAt": "2026-11-22T11:39:06.993Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "FM ABRIL Radio 90.9",
-    "url": "https://server.laradio.online/proxy/abdel_ortega?mp=/stream",
-    "country": "AR",
-    "type": "cumbia",
-    "tags": [
-      "cumbia",
-      "hits",
-      "latino",
-      "música en español",
-      "popular",
-      "reggaeton"
-    ],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": "spanish",
-    "favicon": "https://fmabril.com.ar/assets/img/logo.png",
-    "homepage": "https://fmabril.com.ar/",
-    "stationUuid": "50265997-24e1-48f2-aaff-2f518d4cc685",
-    "checkedAt": "2026-11-22T11:39:07.390Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "FM Directa 98.3",
@@ -2359,7 +2189,7 @@
     "favicon": null,
     "homepage": "https://fmdirecta.com.ar/",
     "stationUuid": "0a3e0009-2308-43e5-8bba-aece761a3b51",
-    "checkedAt": "2026-11-22T11:39:07.692Z",
+    "checkedAt": "2026-11-24T13:55:09.491Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2380,7 +2210,7 @@
     "favicon": "https://radioarias.com/data/files/x2022logoedit.png.pagespeed.ic.sA8zxVORXE.png",
     "homepage": "https://radioarias.com/",
     "stationUuid": "1f48d358-7abd-4d10-93e4-836f2ea2e7b4",
-    "checkedAt": "2026-11-22T11:39:07.832Z",
+    "checkedAt": "2026-11-24T13:55:09.650Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -2399,7 +2229,7 @@
     "favicon": "https://img.youtube.com/vi/y8yslejzewy/hqdefault.jpg",
     "homepage": "http://www.tropibox.com.ar/",
     "stationUuid": "c884f987-6269-11ea-be63-52543be04c81",
-    "checkedAt": "2026-11-22T11:39:07.917Z",
+    "checkedAt": "2026-11-24T13:55:09.759Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2424,7 +2254,7 @@
     "favicon": "https://www.fmcadenaenergy.com.ar/images/logoenergypng.png",
     "homepage": "https://www.fmcadenaenergy.com.ar/",
     "stationUuid": "1c7950c9-e8e9-4aa4-88c0-2cfc71fcd7c1",
-    "checkedAt": "2026-11-22T11:39:07.994Z",
+    "checkedAt": "2026-11-24T13:55:09.885Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2443,7 +2273,7 @@
     "favicon": null,
     "homepage": "http://enjoyradio.com.ar/",
     "stationUuid": "f1f11a51-89b4-49e9-94a2-6ef4cefe71fc",
-    "checkedAt": "2026-11-22T11:39:08.074Z",
+    "checkedAt": "2026-11-24T13:55:10.032Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2462,7 +2292,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "6e5631b6-f519-48fd-8004-bbf016e3c1b7",
-    "checkedAt": "2026-11-22T11:39:08.659Z",
+    "checkedAt": "2026-11-24T13:55:10.435Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2487,7 +2317,7 @@
     "favicon": "https://www.lamontana.com.ar/images/custom/logo-header.jpg?_v=33",
     "homepage": "https://www.lamontana.com.ar/",
     "stationUuid": "dba7d83b-48dc-40e0-9aee-b0ca8e96c04e",
-    "checkedAt": "2026-11-22T11:39:09.375Z",
+    "checkedAt": "2026-11-24T13:55:11.348Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2510,7 +2340,7 @@
     "favicon": "https://canal12web.com/wp-content/uploads/2022/03/logo.png",
     "homepage": "https://canal12web.com/radios/",
     "stationUuid": "c221853a-969e-44c7-8957-2add20e22d80",
-    "checkedAt": "2026-11-22T11:39:09.602Z",
+    "checkedAt": "2026-11-24T13:55:11.656Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -2533,7 +2363,7 @@
     "favicon": "https://canal12web.com/wp-content/uploads/2022/03/logo.png",
     "homepage": "https://canal12web.com/radios/",
     "stationUuid": "df171afc-c7a3-4ac3-a3d8-e40422636f0d",
-    "checkedAt": "2026-11-22T11:39:09.736Z",
+    "checkedAt": "2026-11-24T13:55:11.703Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2558,7 +2388,7 @@
     "favicon": "https://www.laradio1029.com.ar/wp-content/uploads/2019/12/radio.gif",
     "homepage": "https://www.laradio1029.com.ar/radio-en-vivo/",
     "stationUuid": "d0e763d7-d72b-48d3-9347-8631f15297a1",
-    "checkedAt": "2026-11-22T11:39:09.761Z",
+    "checkedAt": "2026-11-24T13:55:11.818Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2581,10 +2411,10 @@
     "favicon": "https://nuevosairesfm.com.ar/wp-content/uploads/2023/07/cropped-logo22-1-180x180.png",
     "homepage": "http://nuevosairesfm.com.ar/",
     "stationUuid": "e6500945-1763-11ea-a620-52543be04c81",
-    "checkedAt": "2026-11-22T11:39:09.823Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-24T13:55:11.849Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Radio 2",
@@ -2605,7 +2435,7 @@
     "favicon": "https://radio2.com.ar/apple-icon-120x120.png",
     "homepage": "https://radio2.com.ar/",
     "stationUuid": "a8cefe0a-0dfa-11e9-a80b-52543be04c81",
-    "checkedAt": "2026-11-22T11:39:10.675Z",
+    "checkedAt": "2026-11-24T13:55:12.947Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -2624,7 +2454,7 @@
     "favicon": null,
     "homepage": "https://julianoduerme.neocities.org/",
     "stationUuid": "ad1920d5-e4b7-478b-b174-7279e0850721",
-    "checkedAt": "2026-11-22T11:39:10.693Z",
+    "checkedAt": "2026-11-24T13:55:13.198Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2643,10 +2473,10 @@
     "favicon": "https://www.wix.com/favicon.ico",
     "homepage": "https://supervisormartinor.wixsite.com/edutecnicasalta/edut%C3%A9cnica-radio",
     "stationUuid": "30e60af8-fc77-43a1-8182-6a249b6f68a2",
-    "checkedAt": "2026-11-22T11:39:10.735Z",
-    "status": null,
+    "checkedAt": "2026-11-24T13:55:13.213Z",
+    "status": 503,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "89.5 La 100",
@@ -2667,7 +2497,7 @@
     "favicon": "https://www.agusticomunicacion.com/images/logos-radios/LA100.png",
     "homepage": "https://www.agusticomunicacion.com/",
     "stationUuid": "e5cfff76-a420-4c6d-8260-cdd9ce340243",
-    "checkedAt": "2026-11-22T11:39:11.411Z",
+    "checkedAt": "2026-11-24T13:55:13.954Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2690,7 +2520,7 @@
     "favicon": "https://amcumbre.com/wp-content/uploads/2024/01/AM-CUMBRE.jpg",
     "homepage": "https://amcumbre.com/",
     "stationUuid": "c46cbd29-f900-43c0-95e8-6201f5904892",
-    "checkedAt": "2026-11-22T11:39:11.900Z",
+    "checkedAt": "2026-11-24T13:55:14.562Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -2713,7 +2543,7 @@
     "favicon": "https://diamantefm.com.ar/wp-content/uploads/2022/03/cropped-DIAMANTE-1-38.jpg.webp",
     "homepage": "https://diamantefm.com.ar/",
     "stationUuid": "4735378e-6d68-464c-aae2-db6a4c80ab0b",
-    "checkedAt": "2026-11-22T11:39:12.223Z",
+    "checkedAt": "2026-11-24T13:55:15.209Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2736,7 +2566,7 @@
     "favicon": "https://www.fmvida.com.ar/img/nuevo_logo_fm_vida_2.png",
     "homepage": "https://www.fmvida.com.ar/",
     "stationUuid": "a9ab1a20-58dd-400e-b6af-1b80d2bf5e89",
-    "checkedAt": "2026-11-22T11:39:12.604Z",
+    "checkedAt": "2026-11-24T13:55:15.508Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2760,32 +2590,10 @@
     "favicon": "https://i.ibb.co/qM0P6jbN/2026-04-22-21-40-17-crear-un-favicon-para-una-radio-online-llamada-sabbath-es-la-primera-radio-con.jpg",
     "homepage": "https://sabbath.com.ar/",
     "stationUuid": "471132cd-574f-4721-9718-1ee7264b7f78",
-    "checkedAt": "2026-11-22T11:39:14.185Z",
+    "checkedAt": "2026-11-24T13:55:17.439Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "Radionauta",
-    "url": "https://stream.codigosur.org/radionauta.mp3",
-    "country": "AR",
-    "type": "feminista",
-    "tags": [
-      "feminista",
-      "latinoamérica",
-      "radio comunitaria",
-      "trabajo colectivo"
-    ],
-    "codec": "MP3",
-    "bitrate": 112,
-    "language": "spanish",
-    "favicon": "https://radionauta.com.ar/wp-content/uploads/2023/05/cropped-logo-radionauta2-01-32x32.png",
-    "homepage": "https://radionauta.com.ar/",
-    "stationUuid": "02998392-8877-44f8-93d8-088a6072f76b",
-    "checkedAt": "2026-11-22T11:39:14.529Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio AM 750 Objetivos, pero no imparciales",
@@ -2799,7 +2607,7 @@
     "favicon": "https://www.pagina12.com.ar/pf/resources/favicon-v3.ico?d=117",
     "homepage": "https://www.pagina12.com.ar/am750/radio-en-vivo/",
     "stationUuid": "38083fab-04b7-4f0a-a7eb-fec572c0eba6",
-    "checkedAt": "2026-11-22T11:39:14.755Z",
+    "checkedAt": "2026-11-24T13:55:17.831Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -2821,7 +2629,7 @@
     "favicon": "https://zeno.fm/_ipx/f_webp&q_100&fit_cover&s_160x160/https://images.zeno.fm/D_1hPQzUksztt5JJzzrcE7LTQz3qL2Hgve3nfWygwTs/rs:fill:256:256/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJQ1FrYjJWMGdrTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJRHc1ZGU1NVFvTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTY3MjMyNDU4NTAwMA.webp",
     "homepage": "https://zeno.fm/radio/fm-del-pueblo-100-7/",
     "stationUuid": "0a02ca9f-1f68-41e8-92c2-f83de19b0ced",
-    "checkedAt": "2026-11-22T11:39:15.694Z",
+    "checkedAt": "2026-11-24T13:55:18.355Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2843,29 +2651,10 @@
     "favicon": "https://radio3caseros.com.ar/img/logo_1683910851.png",
     "homepage": "https://radio3caseros.com.ar/",
     "stationUuid": "189f14d9-a22d-417e-bc61-e4a5a31014b9",
-    "checkedAt": "2026-11-22T11:39:15.732Z",
+    "checkedAt": "2026-11-24T13:55:18.627Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Nacional Folklórica FM 98.7",
-    "url": "https://sa.mp3.icecast.magma.edge-access.net/sc_rad38",
-    "country": "AR",
-    "type": "folklore",
-    "tags": [
-      "folklore"
-    ],
-    "codec": "MP3",
-    "bitrate": 160,
-    "language": "español argentina",
-    "favicon": "https://www.radionacional.com.ar/reproductor/images/Logo_Folklorica.png",
-    "homepage": "https://www.radionacional.com.ar/nacional-folklorica-1/",
-    "stationUuid": "f69ab4ec-a04c-4e80-9ceb-3d9e448b3df7",
-    "checkedAt": "2026-11-22T11:39:15.996Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "FM Arroyos 103.3",
@@ -2882,7 +2671,7 @@
     "favicon": "https://www.fmarroyos.com.ar/wp-content/uploads/2023/10/cropped-FMARROYOS.png",
     "homepage": "https://www.fmarroyos.com.ar/",
     "stationUuid": "933614c1-d340-431b-a7d1-b3157c0e9ab0",
-    "checkedAt": "2026-11-22T11:39:16.585Z",
+    "checkedAt": "2026-11-24T13:55:19.774Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2905,7 +2694,7 @@
     "favicon": null,
     "homepage": "https://www.ungs.edu.ar/fmlauni/radio",
     "stationUuid": "968fb5e6-0228-4793-87e2-16be1dea6258",
-    "checkedAt": "2026-11-22T11:39:16.744Z",
+    "checkedAt": "2026-11-24T13:55:19.923Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2926,7 +2715,7 @@
     "favicon": "https://malvafm.com/img/icono_1656044844.png",
     "homepage": "https://malvafm.com/",
     "stationUuid": "c0bfe255-5e7d-41dc-a4ca-fe89d1329978",
-    "checkedAt": "2026-11-22T11:39:16.864Z",
+    "checkedAt": "2026-11-24T13:55:20.042Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -2947,56 +2736,10 @@
     "favicon": "https://cloudfront-arc.cienradios.com/ar/favicons/favicon-16x16.png",
     "homepage": "https://ar.cienradios.com/",
     "stationUuid": "74fa6998-8a0a-4350-b048-477ebc92cb98",
-    "checkedAt": "2026-11-22T11:39:17.121Z",
+    "checkedAt": "2026-11-24T13:55:20.285Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
-  },
-  {
-    "name": "FM 10 97.3",
-    "url": "https://streaming1.locucionar.com/proxy/fm10?mp=/stream",
-    "country": "AR",
-    "type": "hits",
-    "tags": [
-      "hits",
-      "música en español e inglés",
-      "rock",
-      "rock en español",
-      "rock nacional"
-    ],
-    "codec": "AAC",
-    "bitrate": 32,
-    "language": "spanish",
-    "favicon": "https://streaminglocucionar.com/portal/images/logos/fm10.png",
-    "homepage": "https://streaminglocucionar.com/portal/?p=14475",
-    "stationUuid": "bb7e006e-65ca-4e62-97f0-c68cde5a8098",
-    "checkedAt": "2026-11-22T11:39:18.041Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "FM ANGEL 94.3",
-    "url": "https://server.laradio.online/proxy/fmangel?mp=/stream&1726491295158",
-    "country": "AR",
-    "type": "hits",
-    "tags": [
-      "hits",
-      "latino",
-      "música en español",
-      "pop",
-      "various"
-    ],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": "spanish",
-    "favicon": "http://www.fmangel.com.ar/img/bt-home.png",
-    "homepage": "http://www.fmangel.com.ar/",
-    "stationUuid": "5690e73f-50a9-4ae6-a5fc-b2ad8254365e",
-    "checkedAt": "2026-11-22T11:39:18.048Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Cienradios - Pop",
@@ -3012,7 +2755,7 @@
     "favicon": "https://cloudfront-arc.cienradios.com/ar/favicons/favicon-16x16.png",
     "homepage": "https://ar.cienradios.com/",
     "stationUuid": "76502fbf-fecc-48d5-9b57-4b44ff84353a",
-    "checkedAt": "2026-11-22T11:39:19.035Z",
+    "checkedAt": "2026-11-24T13:55:22.492Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3032,7 +2775,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/club-de-lectura-radio-online/",
     "stationUuid": "22c21477-5a0c-4d78-b953-87364991b11d",
-    "checkedAt": "2026-11-22T11:39:20.477Z",
+    "checkedAt": "2026-11-24T13:55:24.066Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3051,7 +2794,7 @@
     "favicon": "https://static.wixstatic.com/media/a439a4_f4401807cd0c446581af4c7ec799c806%7emv2.png/v1/fill/w_180%2ch_180%2clg_1%2cusm_0.66_1.00_0.01/a439a4_f4401807cd0c446581af4c7ec799c806%7emv2.png",
     "homepage": "https://www.nqponline.com/",
     "stationUuid": "406d4c06-2cd3-47ee-a737-a305a0834085",
-    "checkedAt": "2026-11-22T11:39:20.802Z",
+    "checkedAt": "2026-11-24T13:55:24.742Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3072,7 +2815,7 @@
     "favicon": null,
     "homepage": "http://okfmarroyito.com/",
     "stationUuid": "efdae2a5-4ec0-11e8-a4d1-52543be04c81",
-    "checkedAt": "2026-11-22T11:39:21.834Z",
+    "checkedAt": "2026-11-24T13:55:26.044Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3092,7 +2835,7 @@
     "favicon": null,
     "homepage": "http://www.latina101.com.ar/",
     "stationUuid": "9619ac3d-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-22T11:39:21.910Z",
+    "checkedAt": "2026-11-24T13:55:26.123Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3112,7 +2855,7 @@
     "favicon": "https://led.fm/templates/ja_magz_ii/favicon.ico",
     "homepage": "https://led.fm/",
     "stationUuid": "a037ded2-91a0-4afb-8020-5110bbc8c4be",
-    "checkedAt": "2026-11-22T11:39:21.964Z",
+    "checkedAt": "2026-11-24T13:55:26.323Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3131,7 +2874,7 @@
     "favicon": null,
     "homepage": "https://radiolu6.com/",
     "stationUuid": "6b92e7e9-6e27-4baf-ad21-e0e191d9d3cf",
-    "checkedAt": "2026-11-22T11:39:22.592Z",
+    "checkedAt": "2026-11-24T13:55:27.086Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3153,7 +2896,7 @@
     "favicon": "https://transmedia.unam.edu.ar/templates/yootheme/cache/42/logo_transmedia_home-4274af76.webp",
     "homepage": "https://transmedia.unam.edu.ar/",
     "stationUuid": "a1b0e15b-ac97-4ea0-a2bc-b92c13202398",
-    "checkedAt": "2026-11-22T11:39:22.722Z",
+    "checkedAt": "2026-11-24T13:55:27.194Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3170,27 +2913,10 @@
     "favicon": "https://radioarg.net/storage/radios/7805/9927/conversions/aire-libre-fm-963-lg.webp",
     "homepage": "https://radioarg.net/aire-libre",
     "stationUuid": "483d040f-b159-4e3f-8c1c-c0fe42309669",
-    "checkedAt": "2026-11-22T11:39:23.119Z",
+    "checkedAt": "2026-11-24T13:55:27.664Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Cadena de los Andes Cholila 96.1 FM",
-    "url": "https://sonic.host-live.com:10860/;type=mp3",
-    "country": "AR",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": null,
-    "favicon": "https://radioarg.net/storage/radios/8088/10210/conversions/cadena-de-los-andes-961-lg.webp",
-    "homepage": "https://radioarg.net/cadena-de-los-andes",
-    "stationUuid": "df410b09-d3ca-4fac-92d3-70f7b68e6840",
-    "checkedAt": "2026-11-22T11:39:25.346Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Dorado FM 98.3",
@@ -3204,27 +2930,10 @@
     "favicon": "https://www.wix.com/favicon.ico",
     "homepage": "https://www.doradofm.com/",
     "stationUuid": "ae3e16d6-21f0-4aac-80d3-3c3f646d220d",
-    "checkedAt": "2026-11-22T11:39:27.375Z",
+    "checkedAt": "2026-11-24T13:55:32.971Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Eco Radio 92.3 FM",
-    "url": "https://https.nvradios.com/radio/9392/radio.mp3",
-    "country": "AR",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://radioarg.net/storage/radios/22289/61543/conversions/NGFiqiPpvFh1cVtgIifDkPLaZdxGoU-metaZWNvLXJhZGlvLTkyMy1mbS5qcGc=--lg.webp",
-    "homepage": "https://radioarg.net/eco-radio-923-fm",
-    "stationUuid": "20238f0b-d463-4c20-aa21-68e9674184c4",
-    "checkedAt": "2026-11-22T11:39:27.569Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Fenix FM Latino",
@@ -3238,7 +2947,7 @@
     "favicon": "https://fenixfmlatino.radio12345.com/users.img/3435162/13/7/44770342533217.thumb.png",
     "homepage": "https://santinohdp.github.io/Radio/fenix-fm-latino.html",
     "stationUuid": "d1cdad9c-d30e-45a5-883e-942c54092b04",
-    "checkedAt": "2026-11-22T11:39:28.799Z",
+    "checkedAt": "2026-11-24T13:55:34.539Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3255,7 +2964,7 @@
     "favicon": "https://fenixfmlatino.radio12345.com/users.img/3435162/13/7/44770342533217.thumb.png",
     "homepage": "https://santinohdp.github.io/Radio/fenix-fm-latino.html",
     "stationUuid": "58a4d96c-58cf-46ed-b05b-e4453132df17",
-    "checkedAt": "2026-11-22T11:39:28.816Z",
+    "checkedAt": "2026-11-24T13:55:34.555Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3272,27 +2981,10 @@
     "favicon": "https://fenixfmlatino.radio12345.com/users.img/3435162/13/7/44770342533217.thumb.png",
     "homepage": "https://santinohdp.github.io/Radio/fenix-fm-latino.html",
     "stationUuid": "7cab5f11-08f4-4608-ad74-82ef586f433b",
-    "checkedAt": "2026-11-22T11:39:28.831Z",
+    "checkedAt": "2026-11-24T13:55:34.574Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "FM HORIZONTE 106.3",
-    "url": "https://streaming01.shockmedia.com.ar:10517/stream?icy=http",
-    "country": "AR",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://radioarg.net/storage/radios/21463/58099/conversions/NJnxxmmZyZgHmzc8gegC0zaNMCBtg8-metaZm0taG9yaXpvbnRlLTEwNjMuanBn--lg.webp",
-    "homepage": "https://radioarg.net/fm-horizonte-1063",
-    "stationUuid": "aed366e4-6b3a-4a52-be75-ba4fc3677240",
-    "checkedAt": "2026-11-22T11:39:30.525Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "FM La Tribu 88.5 Buenos Aires",
@@ -3306,61 +2998,10 @@
     "favicon": null,
     "homepage": "http://www.fmlatribu.com.ar/",
     "stationUuid": "de61cb7e-41ae-45d0-b436-6c54899c2749",
-    "checkedAt": "2026-11-22T11:39:30.835Z",
+    "checkedAt": "2026-11-24T13:55:39.544Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "FM Laser",
-    "url": "https://streamconex.com:8076/stream/",
-    "country": "AR",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 48,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://www.fmlaser.com.ar/index.html",
-    "stationUuid": "47a3fc13-fb76-4f74-9421-a286bf61f11d",
-    "checkedAt": "2026-11-22T11:39:30.966Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "FM Libre 103.9 - Lima",
-    "url": "https://edge02.radiohdvivo.com/librelima",
-    "country": "AR",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": "https://www.fmlibre.com/2022/img/fml-anniversary.png",
-    "homepage": "https://www.fmlibre.com/",
-    "stationUuid": "db3572ba-7b91-4dad-b895-20324ef48dec",
-    "checkedAt": "2026-11-22T11:39:31.104Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "FM Lider 98.1",
-    "url": "https://streaming01.shockmedia.com.ar:10749/stream?icy=http",
-    "country": "AR",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 40,
-    "language": "español argentina",
-    "favicon": null,
-    "homepage": "https://www.fmliderbonino.esenvivo.com.ar/",
-    "stationUuid": "bd0bce32-df79-419a-87d0-9dc340d7fc30",
-    "checkedAt": "2026-11-22T11:39:31.218Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "FM Omega 96.3 - Zarate",
@@ -3374,7 +3015,7 @@
     "favicon": "https://radioomega.com.ar/wp-content/uploads/2024/04/cropped-logoomega2019.fw_-1dddddddddddddddddddddd.png",
     "homepage": "https://radioomega.com.ar/",
     "stationUuid": "73fea0b5-2de1-4837-8aa1-9cee1db1b27b",
-    "checkedAt": "2026-11-22T11:39:31.351Z",
+    "checkedAt": "2026-11-24T13:55:40.090Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3391,10 +3032,27 @@
     "favicon": "https://radioarg.net/storage/radios/8193/10315/conversions/fm-pasion-1027-lg.webp",
     "homepage": "https://radioarg.net/fm-pasion-1027",
     "stationUuid": "f686da6d-c05a-49a6-9eb7-7a5d8d4447bf",
-    "checkedAt": "2026-11-22T11:39:31.476Z",
+    "checkedAt": "2026-11-24T13:55:40.118Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "FM Sur 88.9 Quilmes",
+    "url": "http://sonic.host-live.com:8258/stream",
+    "country": "AR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://fmsur889.com.ar/static/custom/logo.png?t=2024-10-25+03%3A00%3A25.061633",
+    "homepage": "https://fmsur889.com.ar/",
+    "stationUuid": "f7dcf3d7-21c4-40a2-a0e0-bd8b34d3e2a9",
+    "checkedAt": "2026-11-24T13:55:40.520Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Infobae FM 97.1",
@@ -3408,7 +3066,7 @@
     "favicon": "https://www.infobae.com/pf/resources/favicon/android-chrome-512x512.png?d=4065",
     "homepage": "https://www.infobae.com/radio-fm-97-1/",
     "stationUuid": "5a67362c-f53e-404e-8f11-d18b0729cd39",
-    "checkedAt": "2026-11-22T11:39:33.146Z",
+    "checkedAt": "2026-11-24T13:55:42.124Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3425,10 +3083,10 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "ca7e1a13-522d-4812-9944-bb99ff9b684f",
-    "checkedAt": "2026-11-22T11:39:34.690Z",
+    "checkedAt": "2026-11-24T13:55:43.473Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Lentos de Todos Los Tiempos",
@@ -3442,7 +3100,7 @@
     "favicon": "https://radioarg.net/storage/radios/27227/81686/conversions/z2W0EkOTILQyvV82DLGTzAMsJguzn3-metabGVudG9zLWRlLXRvZG9zLWxvcy10aWVtcG9zLnBuZw==--lg.webp",
     "homepage": "https://radioarg.net/lentos-de-todos-los-tiempos",
     "stationUuid": "6611507d-5736-43cb-b5b3-1c431ed60152",
-    "checkedAt": "2026-11-22T11:39:34.858Z",
+    "checkedAt": "2026-11-24T13:55:43.573Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3459,7 +3117,7 @@
     "favicon": "https://radioarg.net/storage/radios/19597/47773/conversions/mviZvFhd77ec1r6cnvyTw2BF6ZMok9-metabGlkZXJmbTk1Ny5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/lider-fm-957",
     "stationUuid": "99eff0fb-b6e1-4771-9df0-ce60be435257",
-    "checkedAt": "2026-11-22T11:39:34.868Z",
+    "checkedAt": "2026-11-24T13:55:43.606Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -3476,7 +3134,7 @@
     "favicon": "https://admin.auto-messenger.ru/storage/city_radio/10609/24240/conversions/8MhcGzHukgV6YJnmLcA8YLJx2EDvnr-metabmFjaW9uYWwtc2FudG8tdG9tZS5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/nacional-santo-tome",
     "stationUuid": "4c10a0cc-b43f-45da-a21e-665abca1be06",
-    "checkedAt": "2026-11-22T11:39:35.174Z",
+    "checkedAt": "2026-11-24T13:55:43.894Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3493,7 +3151,24 @@
     "favicon": "https://admin.auto-messenger.ru/storage/city_radio/10647/24057/conversions/QNplJZ2IOYEhQcnIL3yBG3eXLNNLXR-metabmFjaW9uYWwtcmVzaXN0ZW5jaWEuanBn--lg.webp",
     "homepage": "https://radioarg.net/nacional-resistencia",
     "stationUuid": "f262a00b-2b7b-4f27-bf19-ba308a1e2125",
-    "checkedAt": "2026-11-22T11:39:36.935Z",
+    "checkedAt": "2026-11-24T13:55:45.647Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "LRA 55 Radio Nacional Alto Rio Senguer",
+    "url": "https://sa.mp3.icecast.magma.edge-access.net/sc_rad55",
+    "country": "AR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 160,
+    "language": null,
+    "favicon": "https://admin.auto-messenger.ru/storage/city_radio/10687/24059/conversions/BxnVlZuOx1idkHSK6F0XQvTWXkAhE1-metabmFjaW9uYWwtcmlvLXNlbmd1ZXIucG5n--lg.webp",
+    "homepage": "https://radioarg.net/nacional-rio-senguer",
+    "stationUuid": "f1de62f1-9243-46ae-8635-d0edc6f4b096",
+    "checkedAt": "2026-11-24T13:55:46.863Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3510,7 +3185,7 @@
     "favicon": "https://admin.auto-messenger.ru/storage/city_radio/10686/24055/conversions/hvJbr2D2ESUp870TR4GdCPa3awtxT6-metabmFjaW9uYWwtcGVyaXRvLW1vcmVuby1hbTg2MC5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/nacional-perito-moreno",
     "stationUuid": "87f18271-5cf7-4ce7-ae88-5d69ca15628a",
-    "checkedAt": "2026-11-22T11:39:38.112Z",
+    "checkedAt": "2026-11-24T13:55:46.886Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3527,7 +3202,7 @@
     "favicon": "https://radioarg.net/storage/radios/19416/75809/conversions/w5u2Kmz0IOGwuBMn3R6N7U2JXtPw3g-metaNDE3MTgyNTcwXzk0NzYyMzY1MDIyMzcwMl8xNTExMjU1NDQ3Mjk1NDcyOTI1X24uanBn--lg.webp",
     "homepage": "https://radioarg.net/lt23-regional",
     "stationUuid": "365cc5c2-fb33-4cec-8911-42c1f3ec7fca",
-    "checkedAt": "2026-11-22T11:39:39.082Z",
+    "checkedAt": "2026-11-24T13:55:47.604Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3544,7 +3219,7 @@
     "favicon": "https://admin.auto-messenger.ru/storage/city_radio/10683/24224/conversions/m2b60B7RdlIV6sptXYhtyUnfnFeRAL-metabmFjaW9uYWwtc2FuLXJhZmFlbC5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/nacional-san-rafael",
     "stationUuid": "6e9050f5-2c32-4df9-aef5-2ad88031f9b7",
-    "checkedAt": "2026-11-22T11:39:39.791Z",
+    "checkedAt": "2026-11-24T13:55:48.361Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3561,7 +3236,7 @@
     "favicon": "https://www.mangialsonic.com.ar/logo.png",
     "homepage": "https://www.mangialsonic.com.ar/",
     "stationUuid": "a07b9844-7c73-4e77-809e-1c378e73df8e",
-    "checkedAt": "2026-11-22T11:39:40.246Z",
+    "checkedAt": "2026-11-24T13:55:48.672Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3578,7 +3253,7 @@
     "favicon": "https://radioarg.net/storage/radios/23602/64901/conversions/ZvEIHkaqgazfudEbjN0NvZ0GUxD1R8-metacGFyYWlzby1mbS05NjEuanBn--lg.webp",
     "homepage": "https://radioarg.net/paraiso-fm-961",
     "stationUuid": "aedb1a75-6d2c-473c-aa36-8d4f9f571c20",
-    "checkedAt": "2026-11-22T11:39:42.071Z",
+    "checkedAt": "2026-11-24T13:55:50.525Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3595,7 +3270,7 @@
     "favicon": "https://radioarg.net/storage/radios/8036/62771/conversions/JsYpdlWWb2CvnUw1n2jGUKNXTKQXF6-metacjc3MC1jb29wZXJhdGl2YS5qcGc=--lg.webp",
     "homepage": "https://radioarg.net/cooperativa",
     "stationUuid": "5f1999f2-d4a6-46cc-921d-8b074de1861e",
-    "checkedAt": "2026-11-22T11:39:42.441Z",
+    "checkedAt": "2026-11-24T13:55:50.797Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3612,7 +3287,7 @@
     "favicon": "https://radioarg.net/storage/radios/24383/67228/conversions/0b1fvrEcT968tOwMOUf1OabJtUXhAd-metacmFkaW8ycnV0YS5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/radio-ruta-2",
     "stationUuid": "58a3c43e-73d5-4752-bba6-b17e61e94ff3",
-    "checkedAt": "2026-11-22T11:39:42.472Z",
+    "checkedAt": "2026-11-24T13:55:50.811Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -3629,7 +3304,7 @@
     "favicon": "https://radioarg.net/storage/radios/7803/77890/conversions/F5jWmioSrk7ik63zgSePCFIBLF8CQX-metaU2NyZWVuc2hvdF8zNS5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/radio-37",
     "stationUuid": "69c236a3-854e-40cc-886c-641a6c90f66d",
-    "checkedAt": "2026-11-22T11:39:42.693Z",
+    "checkedAt": "2026-11-24T13:55:51.068Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3646,7 +3321,7 @@
     "favicon": "https://radiopiuke.org.ar/wp-content/uploads/2021/09/cropped-icono-06-180x180.png",
     "homepage": "https://radiopiuke.org.ar/",
     "stationUuid": "e9d26ebf-28b3-44a2-9504-cc2b4cc8ca1f",
-    "checkedAt": "2026-11-22T11:39:43.167Z",
+    "checkedAt": "2026-11-24T13:55:51.413Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3663,7 +3338,7 @@
     "favicon": "https://cdn.webrad.io/images/brand/icon_192x192.png",
     "homepage": "https://radioarg.com/radio-concierto-96-5-fm/",
     "stationUuid": "3c3e5b2b-a189-4d93-a1e5-9d41b3943a87",
-    "checkedAt": "2026-11-22T11:39:43.869Z",
+    "checkedAt": "2026-11-24T13:55:52.300Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3680,10 +3355,27 @@
     "favicon": null,
     "homepage": "https://www.fmradioconcierto.com.ar/",
     "stationUuid": "4f744a3b-70f4-4429-9f67-ef4ff163a4a9",
-    "checkedAt": "2026-11-22T11:39:43.891Z",
+    "checkedAt": "2026-11-24T13:55:52.306Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio De la Azotea",
+    "url": "http://149.202.235.235:8164/;stream/1",
+    "country": "AR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "e",
+    "favicon": null,
+    "homepage": "http://www.radiodelaazotea.com.ar/",
+    "stationUuid": "1f0035af-7deb-4165-89d6-ac87d0587cec",
+    "checkedAt": "2026-11-24T13:55:52.867Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Difusora FM",
@@ -3697,7 +3389,7 @@
     "favicon": "https://radioarg.net/storage/radios/8014/10136/conversions/difusora-lg.webp",
     "homepage": "https://radioarg.net/difusora",
     "stationUuid": "ef46c360-618d-45bc-b7c7-0952453c32ae",
-    "checkedAt": "2026-11-22T11:39:44.794Z",
+    "checkedAt": "2026-11-24T13:55:53.578Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3714,7 +3406,7 @@
     "favicon": "https://radioarg.net/storage/radios/7638/9760/conversions/radio-el-palomar-875-lg.webp",
     "homepage": "https://radioarg.net/radio-el-palomar",
     "stationUuid": "cead5e78-459c-4ed7-a01c-dd48ef542f70",
-    "checkedAt": "2026-11-22T11:39:45.060Z",
+    "checkedAt": "2026-11-24T13:55:54.163Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3731,7 +3423,7 @@
     "favicon": null,
     "homepage": "https://fmgualamba.com.ar/",
     "stationUuid": "a04591d4-9594-47bb-9f87-2a5afbf963f4",
-    "checkedAt": "2026-11-22T11:39:45.541Z",
+    "checkedAt": "2026-11-24T13:55:54.651Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -3748,44 +3440,10 @@
     "favicon": "https://radioarg.net/storage/radios/8137/10259/conversions/fm-nueva-era-1025-lg.webp",
     "homepage": "https://radioarg.net/fm-nueva-era-1025",
     "stationUuid": "c4aedfa8-735f-4e1f-9543-9beedfcd8d24",
-    "checkedAt": "2026-11-22T11:39:45.548Z",
+    "checkedAt": "2026-11-24T13:55:54.761Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Forobardo",
-    "url": "https://radiofb.vdmr.top/stream",
-    "country": "AR",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://forobardo.tk/vlad/new-radio-widget.html#",
-    "stationUuid": "66a4f625-7cf6-48ad-93c4-ca4cb78ca458",
-    "checkedAt": "2026-11-22T11:39:45.694Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Radio M Humahuaca",
-    "url": "https://streaming.radiosenlinea.com.ar:10677/stream//stream",
-    "country": "AR",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 32,
-    "language": null,
-    "favicon": "https://radioarg.net/storage/radios/7830/9952/conversions/radio-m-humahuaca-1055-lg.webp",
-    "homepage": "https://radioarg.net/radio-m-humahuaca",
-    "stationUuid": "d5edc978-a144-4f8f-8d66-eefec96ec3f2",
-    "checkedAt": "2026-11-22T11:39:47.059Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Mocoví AM 800",
@@ -3799,7 +3457,7 @@
     "favicon": "https://radioarg.net/storage/radios/7835/9957/conversions/mocovi-am-800-lg.webp",
     "homepage": "https://radioarg.net/mocovi",
     "stationUuid": "ec47ed30-bff2-4e92-90c9-b43bc228aa5a",
-    "checkedAt": "2026-11-22T11:39:47.792Z",
+    "checkedAt": "2026-11-24T13:55:57.248Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -3816,7 +3474,7 @@
     "favicon": "https://radioarg.net/storage/radios/8137/10259/conversions/fm-nueva-era-1025-lg.webp",
     "homepage": "https://radioarg.net/fm-nueva-era-1025-presidencia-roque-saenz-pena",
     "stationUuid": "f4dc0474-58ff-475b-a83f-26e8045c58ae",
-    "checkedAt": "2026-11-22T11:39:48.208Z",
+    "checkedAt": "2026-11-24T13:55:57.737Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3833,7 +3491,7 @@
     "favicon": "https://radioarg.net/storage/radios/27342/82492/conversions/jpBY7MfhiQ35Lk89aHzZqZaiu7ifJ4-metacml2YWRhdmlhLWdlbmVyYWwtcGljby53ZWJw--lg.webp",
     "homepage": "https://radioarg.net/rivadavia-general-pico",
     "stationUuid": "9bf9d37b-dee5-4089-8dd8-cfa39e6cd51d",
-    "checkedAt": "2026-11-22T11:39:49.140Z",
+    "checkedAt": "2026-11-24T13:55:58.571Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3850,7 +3508,7 @@
     "favicon": "https://radioarg.net/storage/radios/27432/83738/conversions/vmqUWOVbNhmEeUVz4wJok9PD5tjrQT-metacml2YWRhdmlhLXZpbGxhLW1lcmNlZGVzLndlYnA=--lg.webp",
     "homepage": "https://radioarg.net/rivadavia-villa-mercedes",
     "stationUuid": "44a0ad6b-7c08-4e17-b173-f1a8ef037a67",
-    "checkedAt": "2026-11-22T11:39:49.297Z",
+    "checkedAt": "2026-11-24T13:55:58.689Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3867,7 +3525,7 @@
     "favicon": "https://radioarg.net/storage/radios/7682/9804/conversions/salta-840-am-lg.webp",
     "homepage": "https://radioarg.net/salta-840-am",
     "stationUuid": "88f4b055-17a9-49db-aa93-1f9cee0bcb18",
-    "checkedAt": "2026-11-22T11:39:49.425Z",
+    "checkedAt": "2026-11-24T13:55:58.697Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -3884,7 +3542,7 @@
     "favicon": "https://www.radiosudaca.org/wp-content/uploads/2024/03/Radio-Sudaca-150x150.jpg",
     "homepage": "https://www.radiosudaca.org/",
     "stationUuid": "c51a08bb-f6ee-4905-ab25-bfc12972c2f7",
-    "checkedAt": "2026-11-22T11:39:49.603Z",
+    "checkedAt": "2026-11-24T13:55:58.952Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3901,7 +3559,7 @@
     "favicon": "https://radio.unla.edu.ar/wp-content/uploads/2024/06/radio-85.png",
     "homepage": "https://radio.unla.edu.ar/",
     "stationUuid": "a7b81d2f-273a-42a2-9245-fcfdcf254509",
-    "checkedAt": "2026-11-22T11:39:50.032Z",
+    "checkedAt": "2026-11-24T13:55:59.393Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3918,7 +3576,7 @@
     "favicon": "https://radiofonica.com/radio-players/radio-en-vivo.png",
     "homepage": "https://radiofonica.com/",
     "stationUuid": "8c675a91-e659-4da4-97eb-9414980d5ac9",
-    "checkedAt": "2026-11-22T11:39:50.598Z",
+    "checkedAt": "2026-11-24T13:56:00.047Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3935,7 +3593,7 @@
     "favicon": null,
     "homepage": "https://www.fmradiovision.com.ar/",
     "stationUuid": "77cd091c-572a-47f8-886a-08b8804f3663",
-    "checkedAt": "2026-11-22T11:39:50.617Z",
+    "checkedAt": "2026-11-24T13:56:00.147Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -3952,7 +3610,7 @@
     "favicon": "https://radioarg.net/storage/radios/7707/9829/conversions/radiovision-995-fm-lg.webp",
     "homepage": "https://radioarg.net/radiovision-995-fm",
     "stationUuid": "e2dc9a35-6956-4b13-a9b0-7e74f0ccd03f",
-    "checkedAt": "2026-11-22T11:39:50.701Z",
+    "checkedAt": "2026-11-24T13:56:00.211Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -3969,7 +3627,7 @@
     "favicon": "https://www.radiosudaca.org/wp-content/uploads/2024/03/Radio-Sudaca-150x150.jpg",
     "homepage": "https://www.radiosudaca.org/",
     "stationUuid": "f692ceef-0df3-416f-b988-bfbc08f9ab47",
-    "checkedAt": "2026-11-22T11:39:52.394Z",
+    "checkedAt": "2026-11-24T13:56:02.133Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3986,7 +3644,7 @@
     "favicon": null,
     "homepage": "http://www.teaydeportea.edu.ar/radioonline/",
     "stationUuid": "6021f20c-17a1-11e9-a80b-52543be04c81",
-    "checkedAt": "2026-11-22T11:39:52.444Z",
+    "checkedAt": "2026-11-24T13:56:02.411Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4007,7 +3665,7 @@
     "favicon": "https://fmdelta903.com/favicon.ico",
     "homepage": "https://fmdelta903.com/",
     "stationUuid": "9f3522e8-0d21-4cbc-b24a-f3fab7ae9920",
-    "checkedAt": "2026-11-22T11:39:52.874Z",
+    "checkedAt": "2026-11-24T13:56:03.070Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -4027,7 +3685,7 @@
     "favicon": "https://www.planetmusic.fm/favicon-16x16.png",
     "homepage": "https://www.planetmusic.fm/",
     "stationUuid": "97b88384-4647-4ec9-bcb6-012ffae4d00e",
-    "checkedAt": "2026-11-22T11:39:53.291Z",
+    "checkedAt": "2026-11-24T13:56:03.545Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4047,7 +3705,7 @@
     "favicon": null,
     "homepage": "https://radiocaput.com/",
     "stationUuid": "94eab365-5d84-11e9-a622-52543be04c81",
-    "checkedAt": "2026-11-22T11:39:53.371Z",
+    "checkedAt": "2026-11-24T13:56:03.789Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4068,7 +3726,7 @@
     "favicon": null,
     "homepage": "https://universidadcalf.com/",
     "stationUuid": "629321b6-4bce-480f-9069-670392b32443",
-    "checkedAt": "2026-11-22T11:39:53.981Z",
+    "checkedAt": "2026-11-24T13:56:04.749Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4089,7 +3747,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/logo/8/86898.v4.png",
     "homepage": "https://www.radioorion.com.ar/",
     "stationUuid": "83d74a89-0d69-48b6-a1ef-cbf2e4c968e9",
-    "checkedAt": "2026-11-22T11:39:55.464Z",
+    "checkedAt": "2026-11-24T13:56:06.112Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4108,7 +3766,7 @@
     "favicon": null,
     "homepage": "https://www.rionegro.com.ar/radio/",
     "stationUuid": "54a7be1a-3b79-4f82-ad0f-0ff09326f344",
-    "checkedAt": "2026-11-22T11:39:55.785Z",
+    "checkedAt": "2026-11-24T13:56:06.459Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4127,7 +3785,7 @@
     "favicon": "http://fmazultolhuin.com.ar/img/logo-web.png",
     "homepage": "http://fmazultolhuin.com.ar/",
     "stationUuid": "2321d539-24f9-46ff-a659-36057ae40982",
-    "checkedAt": "2026-11-22T11:39:56.199Z",
+    "checkedAt": "2026-11-24T13:56:06.865Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4146,7 +3804,7 @@
     "favicon": "https://streaminglocucionar.com/portal/images/icono.png",
     "homepage": "https://www.streaminglocucionar.com.ar/portal/?p=21734",
     "stationUuid": "2baee119-02a0-40b7-a956-30480452d798",
-    "checkedAt": "2026-11-22T11:39:56.525Z",
+    "checkedAt": "2026-11-24T13:56:07.264Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -4165,7 +3823,7 @@
     "favicon": "http://lu6.com.ar/favicon.ico",
     "homepage": "http://lu6.com.ar/",
     "stationUuid": "58a07867-20a8-4100-a263-da42008e3c3d",
-    "checkedAt": "2026-11-22T11:39:56.641Z",
+    "checkedAt": "2026-11-24T13:56:07.377Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4184,26 +3842,7 @@
     "favicon": "http://fmpatagoniamadryn.com.ar/favicon.ico",
     "homepage": "http://fmpatagoniamadryn.com.ar/web2/",
     "stationUuid": "4a6c057a-7a99-4cca-ab74-c4ab78010a82",
-    "checkedAt": "2026-11-22T11:39:56.966Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Provincia de Santa Cruz AM 830 khz Rio Gallegos",
-    "url": "https://transmision-lu14.santacruz.gob.ar/lu14.mp3",
-    "country": "AR",
-    "type": "news talk music",
-    "tags": [
-      "news talk music"
-    ],
-    "codec": "OGG",
-    "bitrate": 0,
-    "language": "spanish",
-    "favicon": null,
-    "homepage": "https://lu14.santacruz.gob.ar/",
-    "stationUuid": "21084ef3-0958-4591-9196-5868de99d406",
-    "checkedAt": "2026-11-22T11:39:57.067Z",
+    "checkedAt": "2026-11-24T13:56:07.731Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4222,7 +3861,7 @@
     "favicon": null,
     "homepage": "https://universidadcalf.com/",
     "stationUuid": "9a0ea296-ccd8-41fc-87da-a208623811fa",
-    "checkedAt": "2026-11-22T11:39:57.225Z",
+    "checkedAt": "2026-11-24T13:56:08.047Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -4241,7 +3880,7 @@
     "favicon": null,
     "homepage": "https://fmradiovision.com/",
     "stationUuid": "af383965-125b-4b1e-b5d1-078498347b09",
-    "checkedAt": "2026-11-22T11:39:57.334Z",
+    "checkedAt": "2026-11-24T13:56:08.195Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -4260,7 +3899,7 @@
     "favicon": "https://static.wixstatic.com/media/f78d17_0805e3a796fb4757925e75d8b53e017d.png/v1/fill/w_261,h_133,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/f78d17_0805e3a796fb4757925e75d8b53e017d.png",
     "homepage": "https://www.fm913.info/",
     "stationUuid": "417c7548-273c-4d6f-bbe6-5c1b2fdc4d61",
-    "checkedAt": "2026-11-22T11:39:57.625Z",
+    "checkedAt": "2026-11-24T13:56:08.585Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4279,7 +3918,7 @@
     "favicon": "https://radiodelmar.net/wp-content/themes/web_radiodelmar/assets/img/favicon-48x48.png",
     "homepage": "https://radiodelmar.net/",
     "stationUuid": "d0f51c0e-6b95-4c68-831d-490d4390a4b4",
-    "checkedAt": "2026-11-22T11:39:57.749Z",
+    "checkedAt": "2026-11-24T13:56:08.765Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -4296,27 +3935,10 @@
     "favicon": null,
     "homepage": "http://www.fmfenix.com.ar/",
     "stationUuid": "106d1ab5-a00b-4b0b-a25d-d133c6659b6d",
-    "checkedAt": "2026-11-22T11:39:58.381Z",
+    "checkedAt": "2026-11-24T13:56:09.367Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "LU14 Radio Provincia de Santa Cruz AM 830 khz",
-    "url": "https://transmision-lu14.santacruz.gob.ar/lu14.mp3",
-    "country": "AR",
-    "type": "OGG",
-    "tags": [],
-    "codec": "OGG",
-    "bitrate": 0,
-    "language": null,
-    "favicon": "https://lu14.santacruz.gob.ar/wp-content/uploads/2024/02/cropped-logo-horizontal-1-2048x515.png",
-    "homepage": "https://lu14.santacruz.gob.ar/",
-    "stationUuid": "d1b0080c-506b-49bc-bb25-9a302cbb3eb7",
-    "checkedAt": "2026-11-22T11:39:58.404Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Una Radio Muchas Voces",
@@ -4330,7 +3952,7 @@
     "favicon": null,
     "homepage": "https://unaradio.org.ar/",
     "stationUuid": "f0230c8e-e120-45f4-b6ca-43207c0f6385",
-    "checkedAt": "2026-11-22T11:39:58.667Z",
+    "checkedAt": "2026-11-24T13:56:09.966Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4347,7 +3969,7 @@
     "favicon": "https://imgsvr.radiocut.site/get/crop/center/200/200/radio_logos/1a/1c/1a1c34bb-fa46-42f4-b6e3-3018d647b6f8.png",
     "homepage": null,
     "stationUuid": "363b8710-c5a3-4ad0-a18a-8c626ab05733",
-    "checkedAt": "2026-11-22T11:39:59.284Z",
+    "checkedAt": "2026-11-24T13:56:10.693Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -4364,7 +3986,7 @@
     "favicon": "https://frecuencia97.com.ar/favicon.ico",
     "homepage": "https://frecuencia97.com.ar/",
     "stationUuid": "3b7e212a-14f9-4a3b-ab7d-e94ab86cec5a",
-    "checkedAt": "2026-11-22T11:39:59.749Z",
+    "checkedAt": "2026-11-24T13:56:11.768Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -4381,10 +4003,27 @@
     "favicon": null,
     "homepage": "https://player.los40.com.ar/",
     "stationUuid": "d018c0fc-eeb4-47cc-8063-2bff9f938c9f",
-    "checkedAt": "2026-11-22T11:39:59.911Z",
+    "checkedAt": "2026-11-24T13:56:11.904Z",
     "status": 404,
     "contentType": "text/html; charset=ISO-8859-1",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Los 40 argentina",
+    "url": "https://player.los40.com.ar/",
+    "country": "AR",
+    "type": "Other",
+    "tags": [],
+    "codec": null,
+    "bitrate": 0,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://player.los40.com.ar/",
+    "stationUuid": "a5102f08-9b5a-46a3-878b-d52f7452d1e8",
+    "checkedAt": "2026-11-24T13:56:11.923Z",
+    "status": 416,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 416"
   },
   {
     "name": "Radio A Aconquija 102.5",
@@ -4398,7 +4037,7 @@
     "favicon": null,
     "homepage": "https://radioaconquija.com.ar/",
     "stationUuid": "24e2840c-3f59-4d42-bd18-1165ff7f1839",
-    "checkedAt": "2026-11-22T11:40:00.205Z",
+    "checkedAt": "2026-11-24T13:56:12.193Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4415,7 +4054,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/124/radio-y-television-del-neuquen.eb65f0a9.png",
     "homepage": "https://www.radios-argentinas.org/radio-y-television-del-neuquen",
     "stationUuid": "95677ea1-bc6b-4a8f-82da-cf4a760e9bf8",
-    "checkedAt": "2026-11-22T11:40:00.474Z",
+    "checkedAt": "2026-11-24T13:56:12.436Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4435,29 +4074,10 @@
     "favicon": null,
     "homepage": "https://www.radiomega.fm/",
     "stationUuid": "f525a429-1406-4677-b34e-83fd928a914c",
-    "checkedAt": "2026-11-22T11:40:01.573Z",
+    "checkedAt": "2026-11-24T13:56:13.720Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Power 100.3",
-    "url": "https://live2.tensila.com/2-1-1.power-tv/hls/live/mystream.m3u8",
-    "country": "AR",
-    "type": "pop",
-    "tags": [
-      "pop"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "español argentina",
-    "favicon": null,
-    "homepage": "https://www.radiopower.com.ar/",
-    "stationUuid": "0ef1a766-7f8c-4b7a-8606-165f84c14886",
-    "checkedAt": "2026-11-22T11:40:01.720Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radiofonica 100.7",
@@ -4473,7 +4093,7 @@
     "favicon": null,
     "homepage": "https://radiofonica.com/",
     "stationUuid": "2e96a168-956e-416c-946e-3240897ef6de",
-    "checkedAt": "2026-11-22T11:40:01.797Z",
+    "checkedAt": "2026-11-24T13:56:14.255Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -4493,7 +4113,7 @@
     "favicon": null,
     "homepage": "https://retromusicsanjusto/",
     "stationUuid": "aac6e552-f6cc-4fb3-9208-fdc1fd3ca948",
-    "checkedAt": "2026-11-22T11:40:02.007Z",
+    "checkedAt": "2026-11-24T13:56:14.408Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4514,7 +4134,7 @@
     "favicon": null,
     "homepage": "http://www.si989.com/",
     "stationUuid": "4fc484cb-159c-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-22T11:40:02.022Z",
+    "checkedAt": "2026-11-24T13:56:14.458Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4534,29 +4154,10 @@
     "favicon": "https://fmdelta903.com/favicon.ico",
     "homepage": "https://fmdelta903.com/",
     "stationUuid": "a3451f14-05e8-45b2-a7f6-b3c20c2c90cb",
-    "checkedAt": "2026-11-22T11:40:02.133Z",
+    "checkedAt": "2026-11-24T13:56:14.603Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "La Ranchada 103.9 FM",
-    "url": "https://server.laradio.online/proxy/javier_diaz01?mp=/stream",
-    "country": "AR",
-    "type": "radio comunitaria",
-    "tags": [
-      "radio comunitaria"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "español argentina",
-    "favicon": "https://laranchada.com.ar/wp-content/uploads/2022/07/LaRanchada_Logo-Comercial-bco-1536x395.png",
-    "homepage": "https://laranchada.com.ar/",
-    "stationUuid": "a36ab8a7-73f4-4e65-901f-77a868206e1b",
-    "checkedAt": "2026-11-22T11:40:03.134Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Nacional Perito Moreno - LRA56 AM860",
@@ -4572,7 +4173,7 @@
     "favicon": null,
     "homepage": "http://www.radionacional.com.ar/category/santa-cruz/",
     "stationUuid": "dd6682d6-a261-11e9-a787-52543be04c81",
-    "checkedAt": "2026-11-22T11:40:03.629Z",
+    "checkedAt": "2026-11-24T13:56:16.233Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4592,7 +4193,7 @@
     "favicon": null,
     "homepage": "http://radio.web.unq.edu.ar/",
     "stationUuid": "f246a59a-22e0-4c7e-be3b-7d9bd6a369f7",
-    "checkedAt": "2026-11-22T11:40:03.669Z",
+    "checkedAt": "2026-11-24T13:56:16.506Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4611,7 +4212,7 @@
     "favicon": null,
     "homepage": "http://reproface.com.ar/fmtotalroca",
     "stationUuid": "a8b3ec12-583f-4f4a-b4f3-e1d82f0737f8",
-    "checkedAt": "2026-11-22T11:40:04.510Z",
+    "checkedAt": "2026-11-24T13:56:17.367Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4630,7 +4231,7 @@
     "favicon": null,
     "homepage": "https://derock951.com/",
     "stationUuid": "6fe5b6f0-96db-4f8f-b3fc-5911c251034e",
-    "checkedAt": "2026-11-22T11:40:04.875Z",
+    "checkedAt": "2026-11-24T13:56:17.652Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4649,10 +4250,29 @@
     "favicon": null,
     "homepage": "https://undinamo.com/",
     "stationUuid": "c96d6dd4-9414-4ffe-9183-e7700f5f672c",
-    "checkedAt": "2026-11-22T11:40:05.254Z",
+    "checkedAt": "2026-11-24T13:56:18.080Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "La Radio A 105.7",
+    "url": "https://masservidor.net:7180/;",
+    "country": "AR",
+    "type": "rock latino",
+    "tags": [
+      "rock latino"
+    ],
+    "codec": "AAC+",
+    "bitrate": 96,
+    "language": "español argentina",
+    "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp02sBeZ4jlbTGGP4IDhNeRl-Y2MLlORmiUw&s",
+    "homepage": "https://laradioa.com/",
+    "stationUuid": "41084b4e-ec96-4a68-bc4f-4e1214deabed",
+    "checkedAt": "2026-11-24T13:56:18.458Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "PRN 103.5 - Puro Rock Nacional",
@@ -4668,7 +4288,7 @@
     "favicon": "https://www.noticiasdebariloche.com.ar/wp-content/uploads/2026/09/prn-1035-logo.jpg",
     "homepage": "https://www.purorocknacional.com.ar/",
     "stationUuid": "11b3a020-0fb3-47ec-91c3-96d5acc08869",
-    "checkedAt": "2026-11-22T11:40:05.935Z",
+    "checkedAt": "2026-11-24T13:56:18.623Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4687,7 +4307,7 @@
     "favicon": "https://www.noticiasdebariloche.com.ar/wp-content/uploads/2026/09/prn-1035-logo.jpg",
     "homepage": "https://www.purorocknacional.com.ar/",
     "stationUuid": "ccb19396-4c44-49d6-95e8-9abac0d50f8b",
-    "checkedAt": "2026-11-22T11:40:06.088Z",
+    "checkedAt": "2026-11-24T13:56:18.717Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4706,7 +4326,7 @@
     "favicon": "https://cloudfront-arc.cienradios.com/ar/favicons/favicon-16x16.png",
     "homepage": "https://ar.cienradios.com/",
     "stationUuid": "7bc8469b-bd15-42f4-9622-9bec3445cde1",
-    "checkedAt": "2026-11-22T11:40:06.214Z",
+    "checkedAt": "2026-11-24T13:56:18.816Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -4725,7 +4345,7 @@
     "favicon": null,
     "homepage": "https://radio.unr.edu.ar/",
     "stationUuid": "c30e559c-03bd-448d-a1bb-bc572a833c01",
-    "checkedAt": "2026-11-22T11:40:06.877Z",
+    "checkedAt": "2026-11-24T13:56:19.439Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -4742,7 +4362,7 @@
     "favicon": "https://radioarg.net/storage/radios/7705/83622/conversions/xJ2NeY8UilGtyu5AdHTQc6NbLcf5t0-metadmlkYS1yb3NhcmlvLnBuZw==--lg.webp",
     "homepage": "https://radioarg.net/vida",
     "stationUuid": "0b0e1a42-ba1e-47c1-a41c-761ee7fde6f3",
-    "checkedAt": "2026-11-22T11:40:06.967Z",
+    "checkedAt": "2026-11-24T13:56:19.470Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -4759,7 +4379,7 @@
     "favicon": "https://radioarg.net/storage/radios/8189/10311/conversions/frecuencia-plus-931-lg.webp",
     "homepage": "https://radioarg.net/frecuencia-plus",
     "stationUuid": "7842bc3e-fa2f-4754-bb1d-81ac7c3a9a24",
-    "checkedAt": "2026-11-22T11:40:07.038Z",
+    "checkedAt": "2026-11-24T13:56:19.551Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -4776,7 +4396,7 @@
     "favicon": "https://www.latina101.com.ar/assets/LATINA_LOGO-DejT1LZw.png",
     "homepage": "https://www.latina101.com.ar/",
     "stationUuid": "ac784548-2762-4c85-a284-36dd5cec50be",
-    "checkedAt": "2026-11-22T11:40:07.192Z",
+    "checkedAt": "2026-11-24T13:56:19.792Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -4793,7 +4413,7 @@
     "favicon": "https://www.nuevotiempo.org/favicon.png",
     "homepage": "https://www.nuevotiempo.org/envivo/radio/",
     "stationUuid": "812c3011-87b5-4d28-85c8-1a9491dddcd1",
-    "checkedAt": "2026-11-22T11:40:07.472Z",
+    "checkedAt": "2026-11-24T13:56:20.377Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4810,7 +4430,7 @@
     "favicon": "https://radioarg.net/storage/radios/8057/79014/conversions/snTgayOM7RHuaW9HOhXn2fKIMuhI5R-metaMjc0NjczNjMwXzI2OTU3MTY1ODY2NDAzOV82Njk3ODY2NzY1Mzc0NTU0OTk1X24uanBn--lg.webp",
     "homepage": "https://radioarg.net/radio-berlin",
     "stationUuid": "a6cb679f-e407-4788-8a87-286b854202f8",
-    "checkedAt": "2026-11-22T11:40:07.828Z",
+    "checkedAt": "2026-11-24T13:56:20.775Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -4827,28 +4447,9 @@
     "favicon": "https://admin.auto-messenger.ru/storage/city_radio/10603/23637/conversions/Llvz0sDhW858oRWXeIpSoYKiSL4J6G-metadm9ydGVyaXgtbWFyLWRlbC1wbGF0YS5wbmc=--lg.webp",
     "homepage": "https://radioarg.net/vorterix-mar-del-plata",
     "stationUuid": "a264c9bb-fc99-4c0a-9a42-f3706458e60c",
-    "checkedAt": "2026-11-22T11:40:08.521Z",
+    "checkedAt": "2026-11-24T13:56:21.573Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Pop Life 107.7",
-    "url": "http://streaming1.locucionar.com:14835/stream/;stream/1",
-    "country": "AR",
-    "type": "world",
-    "tags": [
-      "world"
-    ],
-    "codec": "AAC+",
-    "bitrate": 32,
-    "language": null,
-    "favicon": "https://ss-static-01.esmsv.com/id/95379/galeriaimagenes/obtenerimagen/?id=73&tipoEscala=stretch&width=438&height=312",
-    "homepage": "http://www.fm107radio.com/#!/-inicio/",
-    "stationUuid": "ffb4076b-2563-48fa-8e3f-12e2fce507a6",
-    "checkedAt": "2026-11-22T11:40:08.977Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   }
 ]

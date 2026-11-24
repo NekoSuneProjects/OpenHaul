@@ -17,7 +17,7 @@
     "favicon": null,
     "homepage": "https://flavaradioandtv.com/",
     "stationUuid": "7f5bc9bf-6987-4644-aed2-c64c6e20805b",
-    "checkedAt": "2026-11-22T13:14:25.206Z",
+    "checkedAt": "2026-11-24T15:40:06.082Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -38,7 +38,7 @@
     "favicon": null,
     "homepage": "https://kasamaradio.com/",
     "stationUuid": "9a4b7c3f-f637-46e8-b915-2c755e475fd1",
-    "checkedAt": "2026-11-22T13:14:25.208Z",
+    "checkedAt": "2026-11-24T15:40:06.085Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -60,7 +60,7 @@
     "favicon": null,
     "homepage": "https://www.evelynhone.ac.zm/",
     "stationUuid": "b04b7980-5aec-4f2e-80ce-7e620a1e732b",
-    "checkedAt": "2026-11-22T13:14:25.684Z",
+    "checkedAt": "2026-11-24T15:40:06.860Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -81,7 +81,7 @@
     "favicon": null,
     "homepage": "https://kfmmansa.radio12345.com/",
     "stationUuid": "581d323f-0fe1-4aae-8cb8-f26815897284",
-    "checkedAt": "2026-11-22T13:14:25.813Z",
+    "checkedAt": "2026-11-24T15:40:06.952Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -102,7 +102,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "575cf8e9-9443-4162-bc6c-887b35157757",
-    "checkedAt": "2026-11-22T13:14:26.331Z",
+    "checkedAt": "2026-11-24T15:40:07.911Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -123,29 +123,10 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "87559094-0e45-49ad-ba5b-7b6cd2f7917c",
-    "checkedAt": "2026-11-22T13:14:26.557Z",
+    "checkedAt": "2026-11-24T15:40:08.054Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Gifts and Blessings Radio",
-    "url": "https://stream.zeno.fm/h575zb67schvv",
-    "country": "ZM",
-    "type": "gospel",
-    "tags": [
-      "gospel"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "558541ab-0279-4c48-886c-e2b6c4560e45",
-    "checkedAt": "2026-11-22T13:14:27.141Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
   },
   {
     "name": "Choma Maanu Radio Station",
@@ -162,79 +143,18 @@
     "favicon": null,
     "homepage": "https://choma-maanu-radio-station.mdn.live/",
     "stationUuid": "fc0a82e8-02fa-4dc2-a4ba-56e8e30f4213",
-    "checkedAt": "2026-11-22T13:14:28.242Z",
+    "checkedAt": "2026-11-24T15:40:10.170Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
   },
   {
-    "name": "Mafken FM",
-    "url": "https://listen.streamaudio.co/proxy/mafkenfm/stream",
+    "name": "Yours FM",
+    "url": "http://5.135.154.91:17362/stream",
     "country": "ZM",
     "type": "news",
     "tags": [
       "news",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": null,
-    "homepage": "https://mafken.fm/",
-    "stationUuid": "412db3e9-b3e0-49ff-a1f6-425ae047dc19",
-    "checkedAt": "2026-11-22T13:14:28.651Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Sky FM Zambia",
-    "url": "https://stream.zeno.fm/7s554b67schvv",
-    "country": "ZM",
-    "type": "news",
-    "tags": [
-      "news",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "4924e50c-2d24-4235-97bb-9677f6d50cfb",
-    "checkedAt": "2026-11-22T13:14:29.235Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "Smooth 90.1fm",
-    "url": "https://s25.myradiostream.com/15172/listen.mp3",
-    "country": "ZM",
-    "type": "news",
-    "tags": [
-      "news",
-      "pop",
-      "sports",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": null,
-    "homepage": "https://www.smoothfmzambia.org/",
-    "stationUuid": "0dbbbaa1-fd10-4f09-a960-958438a5f34d",
-    "checkedAt": "2026-11-22T13:14:29.312Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Bola radio",
-    "url": "http://s9.myradiostream.com:47470/listen.mp3",
-    "country": "ZM",
-    "type": "sports",
-    "tags": [
       "sports",
       "talk"
     ],
@@ -242,9 +162,9 @@
     "bitrate": 96,
     "language": "english",
     "favicon": null,
-    "homepage": "https://www.bolabet.co.zm/",
-    "stationUuid": "1221dedf-9ad6-446e-ae0a-1dcece45a301",
-    "checkedAt": "2026-11-22T13:14:30.062Z",
+    "homepage": "https://yoursfmradio.on-air.fm/",
+    "stationUuid": "53abdbff-3d19-4cff-9099-1426bbad265d",
+    "checkedAt": "2026-11-24T15:40:12.088Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"

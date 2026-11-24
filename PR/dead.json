@@ -11,10 +11,27 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/radios/love-veracruz-1037-fm/",
     "stationUuid": "c4e6ce5e-c2a2-4979-99fb-9f81a98c3d06",
-    "checkedAt": "2026-11-22T12:44:45.733Z",
+    "checkedAt": "2026-11-24T15:07:09.463Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
+  },
+  {
+    "name": "WABA",
+    "url": "https://stream.eleden.com/waba.aac/waba.aac.stream/playlist.m3u8",
+    "country": "PR",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 32,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://stream.eleden.com/waba.aac/waba.aac.stream/playlist.m3u8",
+    "stationUuid": "bb8c5610-480c-4f90-a9dc-6bb6092b6315",
+    "checkedAt": "2026-11-24T15:07:09.471Z",
+    "status": 404,
+    "contentType": null,
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Echo 355",
@@ -34,7 +51,29 @@
     "favicon": null,
     "homepage": "http://echo355.com/",
     "stationUuid": "9d28e755-6a29-4b59-a93c-3cc5a2abddca",
-    "checkedAt": "2026-11-22T12:44:46.950Z",
+    "checkedAt": "2026-11-24T15:07:10.141Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radio Casa Pueblo",
+    "url": "http://s1.voscast.com:9906/;stream1523840050300/1",
+    "country": "PR",
+    "type": "community news",
+    "tags": [
+      "community news",
+      "environment",
+      "spanish talk",
+      "variety"
+    ],
+    "codec": "MP3",
+    "bitrate": 48,
+    "language": "spanish",
+    "favicon": "https://cdn-radiotime-logos.tunein.com/s21779q.png",
+    "homepage": "http://casapueblo.org/",
+    "stationUuid": "508741c2-4111-11e8-b74d-52543be04c81",
+    "checkedAt": "2026-11-24T15:07:10.714Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -59,9 +98,31 @@
     "favicon": "https://highrise-bot-builder.replit.app/favicon.svg",
     "homepage": "https://highrise-bot-builder.replit.app/",
     "stationUuid": "61f30f9e-d4dd-466b-a1c0-f55b451007f8",
-    "checkedAt": "2026-11-22T12:44:47.743Z",
+    "checkedAt": "2026-11-24T15:07:10.899Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Amor 90.9",
+    "url": "https://stream.eleden.com:8360/amor909.aac",
+    "country": "PR",
+    "type": "latin pop",
+    "tags": [
+      "latin pop",
+      "latino",
+      "pop",
+      "spanish"
+    ],
+    "codec": "AAC",
+    "bitrate": 32,
+    "language": "spanish",
+    "favicon": "https://img1.wsimg.com/isteam/ip/9a9f59d3-eabd-4c6a-a9ec-755cd4d68af2/LOGO%20AMOR.png",
+    "homepage": "https://amoradiofm.com/",
+    "stationUuid": "09c1a573-41af-4d33-80aa-de9fe8fe7d1b",
+    "checkedAt": "2026-11-24T15:07:11.481Z",
+    "status": 404,
+    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
@@ -81,7 +142,7 @@
     "favicon": "http://www.wrtu.pr/favicon.ico",
     "homepage": "http://www.wrtu.pr/",
     "stationUuid": "96267f26-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-22T12:44:48.845Z",
+    "checkedAt": "2026-11-24T15:07:11.876Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -98,7 +159,7 @@
     "favicon": null,
     "homepage": "https://caribeclasico.org/#contacto",
     "stationUuid": "47a260d4-cb41-4a1a-8146-24b9b3d71fd5",
-    "checkedAt": "2026-11-22T12:44:49.151Z",
+    "checkedAt": "2026-11-24T15:07:12.253Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -115,7 +176,7 @@
     "favicon": "https://wrtu.uprrp.edu/wp-content/uploads/2025/01/cropped-WRTU-LOGO_350x90.png",
     "homepage": "https://wrtu.uprrp.edu/",
     "stationUuid": "ad911f6a-1b9e-4ca2-924b-b74a49043e82",
-    "checkedAt": "2026-11-22T12:44:50.033Z",
+    "checkedAt": "2026-11-24T15:07:12.893Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -132,10 +193,27 @@
     "favicon": null,
     "homepage": "https://www.salseoradio.com/",
     "stationUuid": "323d1135-fb57-4c1d-93c9-34be4d011223",
-    "checkedAt": "2026-11-22T12:44:51.150Z",
+    "checkedAt": "2026-11-24T15:07:13.843Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Vid 90",
+    "url": "http://s3.voscast.com:7720/;stream1726930102886/1",
+    "country": "PR",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "http://www.vid90.com/images/logo_vid_sm.png",
+    "homepage": "http://www.vid90.com/#",
+    "stationUuid": "259d2db5-ef18-4b5a-81b6-5c21332bf7ae",
+    "checkedAt": "2026-11-24T15:07:14.020Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "WKAQ 580",
@@ -151,7 +229,7 @@
     "favicon": "https://bloximages.chicago2.vip.townnews.com/wkaq580.com/content/tncms/custom/image/9732c65a-a5bb-11ee-8102-67d137cd6b72.png?resize=400%2C167",
     "homepage": "https://www.wkaq580.com/",
     "stationUuid": "b95692d0-9b6f-4810-b6e6-395bbe6a5d0b",
-    "checkedAt": "2026-11-22T12:44:51.821Z",
+    "checkedAt": "2026-11-24T15:07:14.476Z",
     "status": 500,
     "contentType": null,
     "lastFailure": "HTTP 500"
@@ -168,7 +246,7 @@
     "favicon": null,
     "homepage": "https://www.wapa.tv/",
     "stationUuid": "36ef3359-df7d-4b2c-b732-0c5a050089f4",
-    "checkedAt": "2026-11-22T12:44:52.321Z",
+    "checkedAt": "2026-11-24T15:07:14.932Z",
     "status": 403,
     "contentType": "application/xml",
     "lastFailure": "HTTP 403"

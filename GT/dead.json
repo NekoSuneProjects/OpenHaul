@@ -11,10 +11,27 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://lovefm.com.mx/",
     "stationUuid": "d02c9870-3580-4f3d-8ab1-9366335a712d",
-    "checkedAt": "2026-11-22T12:19:56.460Z",
+    "checkedAt": "2026-11-24T14:40:01.350Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
+  },
+  {
+    "name": "RADIO ESLA",
+    "url": "http://stream.zeno.fm/wdr15uyuezzuv",
+    "country": "GT",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "http://radio-esla.blogspot.com/",
+    "stationUuid": "8267a007-29f2-4714-a369-10051e59092a",
+    "checkedAt": "2026-11-24T14:40:01.377Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Astro Radio",
@@ -28,7 +45,7 @@
     "favicon": "https://i0.wp.com/astroradiogt.com/wp-content/uploads/2021/08/cropped-cropped-Banner-1.jpg?fit=180%2C180&ssl=1",
     "homepage": "https://astroradiogt.com/",
     "stationUuid": "7e163da0-4b78-4f0f-ad3c-162f55bba2b4",
-    "checkedAt": "2026-11-22T12:19:56.662Z",
+    "checkedAt": "2026-11-24T14:40:01.478Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -54,32 +71,10 @@
     "favicon": "https://statics-v3.streema.com/static/img/radios/profile_background_default_380.abf7abe7e86a.jpg",
     "homepage": "https://www.medios.gt/elcomandante",
     "stationUuid": "4f20bac8-09d8-4a2d-bb1f-bdd9a25826a4",
-    "checkedAt": "2026-11-22T12:19:57.726Z",
+    "checkedAt": "2026-11-24T14:40:02.745Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Central 91.9 FM",
-    "url": "http://live.myradioserver.net:7588/;",
-    "country": "GT",
-    "type": "bible",
-    "tags": [
-      "bible",
-      "evangelio",
-      "gospel",
-      "religious"
-    ],
-    "codec": "AAC+",
-    "bitrate": 32,
-    "language": "spanish",
-    "favicon": "https://laradiodepaz919.com/images/logo.png",
-    "homepage": "https://laradiodepaz919.com/",
-    "stationUuid": "a01028c9-02ef-41ee-ab7f-53e632e14a00",
-    "checkedAt": "2026-11-22T12:19:58.500Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "ARCA RADIO HD",
@@ -93,26 +88,9 @@
     "favicon": null,
     "homepage": "https://arcaradiohd.com/radioplayer/index.html",
     "stationUuid": "37749565-26fc-491c-981e-1e8434bb2fb1",
-    "checkedAt": "2026-11-22T12:20:02.140Z",
+    "checkedAt": "2026-11-24T14:40:06.166Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Metropolis Antigua",
-    "url": "https://polaris.hostingnica.net:7010/stream",
-    "country": "GT",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "spanish",
-    "favicon": "https://metropolisantigua.com/wp-content/uploads/2025/11/cropped-logo-3-192x192.png",
-    "homepage": "https://metropolisantigua.com/",
-    "stationUuid": "e6d7a104-c09d-42d6-985d-9da6c70c1d8b",
-    "checkedAt": "2026-11-22T12:20:04.482Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   }
 ]

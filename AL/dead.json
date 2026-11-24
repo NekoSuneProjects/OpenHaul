@@ -11,29 +11,31 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/",
     "stationUuid": "694b32bf-8463-493b-86c5-1e7c818f1b59",
-    "checkedAt": "2026-11-22T11:37:47.877Z",
+    "checkedAt": "2026-11-24T13:53:44.297Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
   },
   {
-    "name": ".القرآن",
-    "url": "https://backup.qurango.net/radio/ahmad_khader_altarabulsi",
+    "name": "Radio Klea",
+    "url": "http://uk21freenew.listen2myradio.com:23300/;",
     "country": "AL",
-    "type": "classical",
+    "type": "ethnic",
     "tags": [
-      "classical"
+      "ethnic",
+      "news",
+      "talk"
     ],
     "codec": "MP3",
     "bitrate": 128,
-    "language": null,
+    "language": "albanian",
     "favicon": null,
-    "homepage": null,
-    "stationUuid": "7d65c355-a932-4279-bfec-57d5eacecd3c",
-    "checkedAt": "2026-11-22T11:37:50.066Z",
-    "status": 500,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 500"
+    "homepage": "https://radioklea.radio12345.com/",
+    "stationUuid": "face265e-8a7c-44ba-9bc8-e38452c86a3c",
+    "checkedAt": "2026-11-24T13:53:46.919Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Intradio",
@@ -50,7 +52,7 @@
     "favicon": null,
     "homepage": "https://intradio.live/",
     "stationUuid": "bbe507a3-14d6-400f-9b3f-8420266bcb9e",
-    "checkedAt": "2026-11-22T11:37:51.777Z",
+    "checkedAt": "2026-11-24T13:53:47.867Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -70,7 +72,7 @@
     "favicon": null,
     "homepage": "https://www.oranews.tv/",
     "stationUuid": "c2caf164-c2bf-4eac-a719-ce6bd6cf25cb",
-    "checkedAt": "2026-11-22T11:37:52.725Z",
+    "checkedAt": "2026-11-24T13:53:48.831Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -87,7 +89,7 @@
     "favicon": null,
     "homepage": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio075/chunklist.m3u8",
     "stationUuid": "e439aa52-203a-4f83-a8e4-995d5c90f554",
-    "checkedAt": "2026-11-22T11:37:53.233Z",
+    "checkedAt": "2026-11-24T13:53:49.290Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
