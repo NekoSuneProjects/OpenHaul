@@ -1,5 +1,26 @@
 [
   {
+    "name": "Radio Aktual",
+    "url": "http://195.95.158.131:9080/",
+    "country": "SI",
+    "type": "dalmatia",
+    "tags": [
+      "dalmatia",
+      "ex-yu music",
+      "slovenian music"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "slovenian",
+    "favicon": "http://radioaktual.si/img/logo.png",
+    "homepage": "http://www.radioaktual.si/",
+    "stationUuid": "ddf8e7fa-42bb-11e9-aa55-52543be04c81",
+    "checkedAt": "2026-11-25T14:12:28.985Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
     "name": "Radio Generacija",
     "url": "https://a9.asurahosting.com/listen/radio_generacija/radio.mp3",
     "country": "SI",
@@ -14,10 +35,29 @@
     "favicon": "https://radiogeneracija.net/wp-content/uploads/2026/08/Radio-Generacija-logo.png",
     "homepage": "https://radiogeneracija.net/",
     "stationUuid": "6eeef6a2-ffcf-47d7-ac41-a9d4d9e57f25",
-    "checkedAt": "2026-11-24T15:16:13.798Z",
+    "checkedAt": "2026-11-25T14:12:29.201Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Radio Veseljak",
+    "url": "http://195.95.158.131:9060/",
+    "country": "SI",
+    "type": "folk",
+    "tags": [
+      "folk"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "slovenian",
+    "favicon": null,
+    "homepage": "http://veseljak.si/",
+    "stationUuid": "9611db09-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-25T14:12:29.396Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio Hit",
@@ -33,7 +73,7 @@
     "favicon": "https://media.radiohit.si/ico/hit/32.png",
     "homepage": "https://radiohit.si/",
     "stationUuid": "264447e7-3393-4cfb-b8d6-2c1479ad616c",
-    "checkedAt": "2026-11-24T15:16:14.230Z",
+    "checkedAt": "2026-11-25T14:12:29.457Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -54,7 +94,7 @@
     "favicon": "http://media.radiohit.si/ico/hit/32.png",
     "homepage": "http://radiohit.si/",
     "stationUuid": "06687a38-5345-49ce-af44-5e6dc4da8dd1",
-    "checkedAt": "2026-11-24T15:16:14.306Z",
+    "checkedAt": "2026-11-25T14:12:29.493Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -71,7 +111,7 @@
     "favicon": null,
     "homepage": "https://www.radiocelje.si/",
     "stationUuid": "9030dc2d-5d4a-4a9e-9323-22e4f163b0d2",
-    "checkedAt": "2026-11-24T15:16:18.773Z",
+    "checkedAt": "2026-11-25T14:12:30.246Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -88,7 +128,7 @@
     "favicon": null,
     "homepage": "https://www.radios.si/Onas",
     "stationUuid": "73f38131-f173-4859-a205-723f18ee2c8e",
-    "checkedAt": "2026-11-24T15:16:19.329Z",
+    "checkedAt": "2026-11-25T14:12:30.633Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -105,7 +145,7 @@
     "favicon": null,
     "homepage": "https://radiostudent.si/",
     "stationUuid": "61239352-ad9b-4431-b792-350fec2c90cb",
-    "checkedAt": "2026-11-24T15:16:19.749Z",
+    "checkedAt": "2026-11-25T14:12:30.931Z",
     "status": 418,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 418"
@@ -124,7 +164,7 @@
     "favicon": null,
     "homepage": "http://www.radiometeor.si/",
     "stationUuid": "174c6b4d-907f-4a8c-bdef-bac7c133810c",
-    "checkedAt": "2026-11-24T15:16:19.822Z",
+    "checkedAt": "2026-11-25T14:12:30.968Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -143,7 +183,7 @@
     "favicon": null,
     "homepage": "https://radiobob.si/",
     "stationUuid": "fafeac6a-8cf1-4f9d-8d04-c102560d6e6e",
-    "checkedAt": "2026-11-24T15:16:20.256Z",
+    "checkedAt": "2026-11-25T14:12:31.329Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -162,7 +202,7 @@
     "favicon": "https://media.radiobob.si/ico/32.png",
     "homepage": "https://radiobob.si/",
     "stationUuid": "1b1af914-d128-11e8-a54a-52543be04c81",
-    "checkedAt": "2026-11-24T15:16:20.296Z",
+    "checkedAt": "2026-11-25T14:12:31.334Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -179,7 +219,7 @@
     "favicon": null,
     "homepage": "http://www.gtv.si/",
     "stationUuid": "eb946c69-1a57-11e9-a80b-52543be04c81",
-    "checkedAt": "2026-11-24T15:16:20.560Z",
+    "checkedAt": "2026-11-25T14:12:31.508Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"

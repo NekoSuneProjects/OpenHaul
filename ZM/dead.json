@@ -17,7 +17,7 @@
     "favicon": null,
     "homepage": "https://flavaradioandtv.com/",
     "stationUuid": "7f5bc9bf-6987-4644-aed2-c64c6e20805b",
-    "checkedAt": "2026-11-24T15:40:06.082Z",
+    "checkedAt": "2026-11-25T14:32:56.148Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -38,7 +38,7 @@
     "favicon": null,
     "homepage": "https://kasamaradio.com/",
     "stationUuid": "9a4b7c3f-f637-46e8-b915-2c755e475fd1",
-    "checkedAt": "2026-11-24T15:40:06.085Z",
+    "checkedAt": "2026-11-25T14:32:56.149Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -60,7 +60,7 @@
     "favicon": null,
     "homepage": "https://www.evelynhone.ac.zm/",
     "stationUuid": "b04b7980-5aec-4f2e-80ce-7e620a1e732b",
-    "checkedAt": "2026-11-24T15:40:06.860Z",
+    "checkedAt": "2026-11-25T14:32:56.511Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -81,7 +81,7 @@
     "favicon": null,
     "homepage": "https://kfmmansa.radio12345.com/",
     "stationUuid": "581d323f-0fe1-4aae-8cb8-f26815897284",
-    "checkedAt": "2026-11-24T15:40:06.952Z",
+    "checkedAt": "2026-11-25T14:32:56.625Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -102,7 +102,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "575cf8e9-9443-4162-bc6c-887b35157757",
-    "checkedAt": "2026-11-24T15:40:07.911Z",
+    "checkedAt": "2026-11-25T14:32:57.222Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -123,14 +123,31 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "87559094-0e45-49ad-ba5b-7b6cd2f7917c",
-    "checkedAt": "2026-11-24T15:40:08.054Z",
+    "checkedAt": "2026-11-25T14:32:57.378Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Choma Maanu Radio Station",
-    "url": "https://s26.myradiostream.com:22860/listen.mp3/;",
+    "name": "Radio Christian Voice",
+    "url": "https://streaming.shoutcast.com/rcv",
+    "country": "ZM",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://rcv.co.zm/",
+    "stationUuid": "17cc440f-ff0a-45f0-b19d-26d8c874a3d8",
+    "checkedAt": "2026-11-25T14:32:58.441Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Byta FM",
+    "url": "https://s13.myradiostream.com/38946/listen.mp3",
     "country": "ZM",
     "type": "news",
     "tags": [
@@ -141,12 +158,12 @@
     "bitrate": 96,
     "language": "english",
     "favicon": null,
-    "homepage": "https://choma-maanu-radio-station.mdn.live/",
-    "stationUuid": "fc0a82e8-02fa-4dc2-a4ba-56e8e30f4213",
-    "checkedAt": "2026-11-24T15:40:10.170Z",
-    "status": 401,
+    "homepage": null,
+    "stationUuid": "6fa4b5a6-a1cf-4944-ad95-e766aca9745b",
+    "checkedAt": "2026-11-25T14:32:58.611Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 401"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Yours FM",
@@ -164,7 +181,7 @@
     "favicon": null,
     "homepage": "https://yoursfmradio.on-air.fm/",
     "stationUuid": "53abdbff-3d19-4cff-9099-1426bbad265d",
-    "checkedAt": "2026-11-24T15:40:12.088Z",
+    "checkedAt": "2026-11-25T14:32:59.886Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
