@@ -1,5 +1,22 @@
 [
   {
+    "name": "KTK TV",
+    "url": "http://89.218.30.37/ktklive/live.hq/playlist.m3u8",
+    "country": "KZ",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 3253,
+    "language": "kazakh",
+    "favicon": null,
+    "homepage": "http://www.ktk.kz/",
+    "stationUuid": "a47510c5-2d32-11e9-a35e-52543be04c81",
+    "checkedAt": "2026-11-26T13:33:50.356Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
     "name": "Astana Fm",
     "url": "https://icecast.vgtrk.cdnvideo.ru/vestifm_aac_64kbps",
     "country": "KZ",
@@ -11,7 +28,7 @@
     "favicon": null,
     "homepage": "https://astanafm.kz/",
     "stationUuid": "e5b9eb79-1569-4cda-b86d-605750ec707a",
-    "checkedAt": "2026-11-25T13:52:09.252Z",
+    "checkedAt": "2026-11-26T13:33:50.357Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -31,7 +48,7 @@
     "favicon": null,
     "homepage": "http://spacebeat.strangled.net/",
     "stationUuid": "af31308a-5407-4f53-9986-50b01b8ce933",
-    "checkedAt": "2026-11-25T13:52:09.254Z",
+    "checkedAt": "2026-11-26T13:33:50.358Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -50,10 +67,33 @@
     "favicon": "https://tihbus.droppages.com/sbr-logo.png",
     "homepage": "https://t.me/spacebeatradio",
     "stationUuid": "4a1a7199-a7ec-435d-9835-7387b4941750",
-    "checkedAt": "2026-11-25T13:52:10.223Z",
+    "checkedAt": "2026-11-26T13:33:51.111Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "((beu))",
+    "url": "https://stream.beufm.kz/beufm",
+    "country": "KZ",
+    "type": "etnic",
+    "tags": [
+      "etnic",
+      "kazakh music",
+      "kazakh pop",
+      "modern",
+      "pop"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "kazakh,russian",
+    "favicon": "https://beufm.kz/template/logo_white.png",
+    "homepage": "https://beufm.kz/",
+    "stationUuid": "8d19ab98-ff22-440c-af05-0b1669b8a2ba",
+    "checkedAt": "2026-11-26T13:33:51.225Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "The Holy Quran  by Sheikh Mahmoud Al-Husari",
@@ -69,7 +109,7 @@
     "favicon": "null",
     "homepage": "https://qurango.net/radio/mahmoud_khalil_alhussary_warsh",
     "stationUuid": "2bdfd9b3-e163-4276-a476-5153d8e6bc00",
-    "checkedAt": "2026-11-25T13:52:11.357Z",
+    "checkedAt": "2026-11-26T13:33:51.898Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -86,9 +126,46 @@
     "favicon": "https://loveradio.kz/img/touch-icon-ipad-pro.png",
     "homepage": "https://loveradio.kz/",
     "stationUuid": "75437893-9527-4de8-902e-c04f08af2dfc",
-    "checkedAt": "2026-11-25T13:52:11.833Z",
+    "checkedAt": "2026-11-26T13:33:52.479Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Народное радио",
+    "url": "http://178.88.167.62:8080/DALA_192",
+    "country": "KZ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "russian",
+    "favicon": null,
+    "homepage": "http://178.88.167.62:8080/DALA_192",
+    "stationUuid": "1fdb98e2-65dd-4cd5-85f1-99af94959fa0",
+    "checkedAt": "2026-11-26T13:33:52.594Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Народное Радио",
+    "url": "http://178.88.167.62:8080/DALA_192",
+    "country": "KZ",
+    "type": "pop",
+    "tags": [
+      "pop",
+      "russian music"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "russian",
+    "favicon": "https://static.tildacdn.com/tild6336-3866-4639-b664-353833373961/GIF.gif",
+    "homepage": "http://narodnoeradio.kz/",
+    "stationUuid": "ab723787-b6b8-4a03-8114-403ee4bd82c7",
+    "checkedAt": "2026-11-26T13:33:53.439Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   }
 ]

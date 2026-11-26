@@ -1,28 +1,25 @@
 [
   {
-    "name": "102.1 VIVE FM",
-    "url": "https://jfm1.hostingradio.ru:14536/rock80.mp3",
+    "name": "Radio ABC Stereo 100.1 FM",
+    "url": "https://streaming.rcs.com.sv/proxy/abc/stream",
     "country": "SV",
-    "type": "102.1 fm",
+    "type": "electronic",
     "tags": [
-      "102.1 fm",
-      "80s",
-      "clasicos",
-      "classic rock",
-      "rock",
-      "rock n' roll",
-      "vive fm"
+      "electronic",
+      "misc",
+      "pop",
+      "top 40"
     ],
     "codec": "MP3",
     "bitrate": 128,
-    "language": "english",
-    "favicon": "https://www.medios.gt/galeriausuarios/salvador/imagenesmessage/imagem100130220142956.jpg",
-    "homepage": "https://www.radioselsalvador.org/1021-vive-fm",
-    "stationUuid": "3ec57ad0-8733-4cda-bcd7-0359713a2b7c",
-    "checkedAt": "2026-11-25T14:12:55.615Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
+    "language": "san salvador",
+    "favicon": null,
+    "homepage": "https://radiocorporacionelsalvador.com/",
+    "stationUuid": "0dc41c42-b357-4f7d-9f9a-053c621a33a8",
+    "checkedAt": "2026-11-26T13:54:00.095Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "La Central 103.7 FM",
@@ -46,7 +43,7 @@
     "favicon": "https://cadenacentral.com/wp-content/uploads/2022/09/logo-original-300x161.png",
     "homepage": "https://lacentralfm.com/",
     "stationUuid": "8fb181d3-ed03-4425-829f-f780cb41d8d5",
-    "checkedAt": "2026-11-25T14:12:57.248Z",
+    "checkedAt": "2026-11-26T13:54:00.124Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -72,10 +69,27 @@
     "favicon": "https://www.mil80.com/wp-content/uploads/2022/08/logo-blanco-mil80.png",
     "homepage": "https://www.mil80.com/",
     "stationUuid": "88c9c355-9a63-4567-8634-124e46d14f19",
-    "checkedAt": "2026-11-25T14:12:57.289Z",
+    "checkedAt": "2026-11-26T13:54:00.170Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "ABC 100.1",
+    "url": "https://streaming.rcs.com.sv/proxy/abc/stream",
+    "country": "SV",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://cdn.instant.audio/images/logos/radios-com-sv/abc.png",
+    "homepage": "https://radiocorporacionelsalvador.com/",
+    "stationUuid": "411ec18e-d33c-4be6-a10d-656fcdc494ec",
+    "checkedAt": "2026-11-26T13:54:00.691Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Legislativa de El Salvador",
@@ -89,7 +103,7 @@
     "favicon": "https://www.asamblea.gob.sv/themes/asamblea/favicon.ico",
     "homepage": "https://www.asamblea.gob.sv/asamblea-social-media/radio-legislativa",
     "stationUuid": "93bc5ee4-9718-442f-8ce8-ad0f824c0c6a",
-    "checkedAt": "2026-11-25T14:12:58.476Z",
+    "checkedAt": "2026-11-26T13:54:01.578Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

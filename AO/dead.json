@@ -11,7 +11,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/",
     "stationUuid": "02d17e43-6573-48c1-8408-b00fc7c247cc",
-    "checkedAt": "2026-11-25T13:06:43.881Z",
+    "checkedAt": "2026-11-26T12:47:11.452Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -28,7 +28,7 @@
     "favicon": "https://pcradio.app/images/stations/61b09c9d4e570.jpg",
     "homepage": "https://pcradio.app/radio/rna-canal-a",
     "stationUuid": "45eeeaad-acc1-4704-b2b7-0c454a38c3c1",
-    "checkedAt": "2026-11-25T13:06:43.884Z",
+    "checkedAt": "2026-11-26T12:47:11.454Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -49,10 +49,37 @@
     "favicon": "https://minhawebradio.com/contents/14886/cover/xm126892c1bc31f36300a057381855f3ab_14886_1750685385.png",
     "homepage": "https://radiojihenda.com/",
     "stationUuid": "682715df-58c2-4765-b888-204307736498",
-    "checkedAt": "2026-11-25T13:06:43.886Z",
+    "checkedAt": "2026-11-26T12:47:11.457Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Rashi",
+    "url": "https://s2.free-shoutcast.com/stream/18214",
+    "country": "AO",
+    "type": "broken beat",
+    "tags": [
+      "broken beat",
+      "djaz",
+      "foklore",
+      "folk",
+      "muzică populară",
+      "pop",
+      "regional music",
+      "regional radio",
+      "rnb"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://imgur.com/totzCmb",
+    "homepage": "https://radiorashi.alle.bg/",
+    "stationUuid": "8ce91694-1fcd-4ead-baf3-51200af4e25c",
+    "checkedAt": "2026-11-26T12:47:11.657Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "TRS Rádio Online",
@@ -69,31 +96,10 @@
     "favicon": null,
     "homepage": "https://www.trsradioonline.ao/",
     "stationUuid": "f834de28-9f73-41be-976b-90720cfbab3d",
-    "checkedAt": "2026-11-25T13:06:45.209Z",
+    "checkedAt": "2026-11-26T12:47:12.855Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "RÁDIO NXT FM 98.7",
-    "url": "https://stream-179.surfernetwork.com/wnez02wihrevv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJ3bmV6MDJ3aWhyZXZ2IiwiaG9zdCI6InN0cmVhbS0xNzkuc3VyZmVybmV0d29yay5jb20iLCJydHRsIjo1LCJqdGkiOiJfc2dheHVyX1NxbUpnOWhHaEItSlhnIiwiaWF0IjoxNzk1NTgyMDQ5LCJleHAiOjE3OTU1ODIxMDl9.0at9NOaI4mYNyz_a-YdaMSbNHRcxVLjEuZ1AauwYyE4",
-    "country": "AO",
-    "type": "latin",
-    "tags": [
-      "latin",
-      "news",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "portuguese",
-    "favicon": null,
-    "homepage": "https://radionxtfm.ao/",
-    "stationUuid": "b7418dd1-3b11-42df-8283-0c9f3ce0780d",
-    "checkedAt": "2026-11-25T13:06:45.307Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
   },
   {
     "name": "Rádio Mais",
@@ -107,7 +113,7 @@
     "favicon": null,
     "homepage": "https://www.radiomais.ao/",
     "stationUuid": "142e1b71-b56b-4a9c-b08f-55703b611390",
-    "checkedAt": "2026-11-25T13:06:45.355Z",
+    "checkedAt": "2026-11-26T12:47:13.008Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -124,7 +130,7 @@
     "favicon": null,
     "homepage": "https://radiomfmangola.com/",
     "stationUuid": "5be023eb-7209-4ab0-8d69-27e356aad314",
-    "checkedAt": "2026-11-25T13:06:45.362Z",
+    "checkedAt": "2026-11-26T12:47:13.022Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -144,7 +150,7 @@
     "favicon": "https://sites.google.com/view/radiobairrodeangola",
     "homepage": "https://sites.google.com/view/radiobairrodeangola",
     "stationUuid": "88a9d0f2-7ef5-4119-ae96-d87c2f6f9469",
-    "checkedAt": "2026-11-25T13:06:45.621Z",
+    "checkedAt": "2026-11-26T12:47:13.268Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -164,10 +170,30 @@
     "favicon": null,
     "homepage": "https://platinafm.com/",
     "stationUuid": "d024beb9-4443-4a1a-8939-e0868f3f6100",
-    "checkedAt": "2026-11-25T13:06:45.683Z",
+    "checkedAt": "2026-11-26T12:47:13.414Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Rádio Lunda Sul",
+    "url": "https://paineldj6.com.br:20115/stream",
+    "country": "AO",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "portuguese",
+    "favicon": null,
+    "homepage": "https://rna.ao/rna.ao/radiochanels/radio-lunda-sul/",
+    "stationUuid": "c62a836d-07d4-466f-9361-f9ce9a43a50a",
+    "checkedAt": "2026-11-26T12:47:14.034Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Bairro de Angola",
@@ -183,7 +209,7 @@
     "favicon": "https://postimg.cc/5HR8nS0W",
     "homepage": "https://player.xradios.com.br/player-home-page/6794",
     "stationUuid": "8762cad0-5b45-4685-9c09-68de818a3ec1",
-    "checkedAt": "2026-11-25T13:06:47.665Z",
+    "checkedAt": "2026-11-26T12:47:15.467Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

@@ -11,7 +11,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://lovefm.com.mx/",
     "stationUuid": "d02c9870-3580-4f3d-8ab1-9366335a712d",
-    "checkedAt": "2026-11-25T13:43:00.157Z",
+    "checkedAt": "2026-11-26T13:24:27.697Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -28,7 +28,7 @@
     "favicon": "https://i0.wp.com/astroradiogt.com/wp-content/uploads/2021/08/cropped-cropped-Banner-1.jpg?fit=180%2C180&ssl=1",
     "homepage": "https://astroradiogt.com/",
     "stationUuid": "7e163da0-4b78-4f0f-ad3c-162f55bba2b4",
-    "checkedAt": "2026-11-25T13:43:00.448Z",
+    "checkedAt": "2026-11-26T13:24:27.821Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -54,10 +54,75 @@
     "favicon": "https://statics-v3.streema.com/static/img/radios/profile_background_default_380.abf7abe7e86a.jpg",
     "homepage": "https://www.medios.gt/elcomandante",
     "stationUuid": "4f20bac8-09d8-4a2d-bb1f-bdd9a25826a4",
-    "checkedAt": "2026-11-25T13:43:01.088Z",
+    "checkedAt": "2026-11-26T13:24:28.583Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Radio Central 91.9 FM",
+    "url": "http://live.myradioserver.net:7588/;",
+    "country": "GT",
+    "type": "bible",
+    "tags": [
+      "bible",
+      "evangelio",
+      "gospel",
+      "religious"
+    ],
+    "codec": "AAC+",
+    "bitrate": 32,
+    "language": "spanish",
+    "favicon": "https://laradiodepaz919.com/images/logo.png",
+    "homepage": "https://laradiodepaz919.com/",
+    "stationUuid": "a01028c9-02ef-41ee-ab7f-53e632e14a00",
+    "checkedAt": "2026-11-26T13:24:28.916Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "RADIO MARIA GUATEMALA",
+    "url": "http://dreamsiteradiocp.com:8072/stream",
+    "country": "GT",
+    "type": "catholic",
+    "tags": [
+      "catholic",
+      "religion"
+    ],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.radiomaria.org.gt/",
+    "stationUuid": "31c5257a-5a88-11e9-a622-52543be04c81",
+    "checkedAt": "2026-11-26T13:24:29.098Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "CARACOL RADIO 105.1 FM",
+    "url": "https://stream.zeno.fm/u844q3w08mwtv",
+    "country": "GT",
+    "type": "cristiana",
+    "tags": [
+      "cristiana",
+      "evangelio",
+      "gospel",
+      "radio comunitaria",
+      "religious"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": null,
+    "homepage": "https://caracolquiche.com/",
+    "stationUuid": "9f36c6ea-2a62-4a76-a4c7-8c69b99c7d1b",
+    "checkedAt": "2026-11-26T13:24:29.618Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "ARCA RADIO HD",
@@ -71,9 +136,26 @@
     "favicon": null,
     "homepage": "https://arcaradiohd.com/radioplayer/index.html",
     "stationUuid": "37749565-26fc-491c-981e-1e8434bb2fb1",
-    "checkedAt": "2026-11-25T13:43:03.349Z",
+    "checkedAt": "2026-11-26T13:24:30.998Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Metropolis Antigua",
+    "url": "https://polaris.hostingnica.net:7010/stream",
+    "country": "GT",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "spanish",
+    "favicon": "https://metropolisantigua.com/wp-content/uploads/2025/11/cropped-logo-3-192x192.png",
+    "homepage": "https://metropolisantigua.com/",
+    "stationUuid": "e6d7a104-c09d-42d6-985d-9da6c70c1d8b",
+    "checkedAt": "2026-11-26T13:24:31.750Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   }
 ]

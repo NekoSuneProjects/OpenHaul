@@ -15,7 +15,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/9/17299.v3.png",
     "homepage": "https://www.twr360.org/",
     "stationUuid": "24d57937-7c9a-4aa8-b3a8-3355f2b212a4",
-    "checkedAt": "2026-11-25T13:15:10.626Z",
+    "checkedAt": "2026-11-26T12:56:13.213Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -38,7 +38,7 @@
     "favicon": null,
     "homepage": "http://live99fm.com/",
     "stationUuid": "9633d4d6-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-25T13:15:10.628Z",
+    "checkedAt": "2026-11-26T12:56:13.216Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -59,10 +59,27 @@
     "favicon": "http://www.vozdibonaire.com/favicon.ico",
     "homepage": "http://www.vozdibonaire.com/",
     "stationUuid": "963330b8-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-25T13:15:10.628Z",
+    "checkedAt": "2026-11-26T12:56:13.216Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "RTV Purmerend",
+    "url": "http://stream.zxp.nl:8000/radiopurmerend_bb",
+    "country": "BQ",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "http://rtvpurmerend.nl/rtvpurmerend_nl/images/favicon/icon.ico",
+    "homepage": "http://rtvpurmerend.nl/",
+    "stationUuid": "ec72b9a1-6260-4671-8cf2-847292131b5f",
+    "checkedAt": "2026-11-26T12:56:13.257Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Carina FM",
@@ -78,7 +95,7 @@
     "favicon": "https://primary.jwwb.nl/public/i/v/j/temp-jootfimfdxnbjzbfgpbw/pek4yx/image-5.png",
     "homepage": "https://www.caribafm.nl/",
     "stationUuid": "400ba39e-e90a-407e-983b-a7f410b9cc90",
-    "checkedAt": "2026-11-25T13:15:11.055Z",
+    "checkedAt": "2026-11-26T12:56:13.318Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -97,7 +114,7 @@
     "favicon": null,
     "homepage": "https://www.capricespacesynth.com/",
     "stationUuid": "23abc80c-ae6b-4dab-8998-28e08cca4d54",
-    "checkedAt": "2026-11-25T13:15:11.519Z",
+    "checkedAt": "2026-11-26T12:56:13.853Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
