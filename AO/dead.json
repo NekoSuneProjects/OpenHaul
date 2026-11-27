@@ -11,7 +11,7 @@
     "favicon": "https://i.postimg.cc/pd2qpS5j/lovefm1037.jpg",
     "homepage": "https://maxplay.com.mx/",
     "stationUuid": "02d17e43-6573-48c1-8408-b00fc7c247cc",
-    "checkedAt": "2026-11-26T12:47:11.452Z",
+    "checkedAt": "2026-11-27T12:39:38.203Z",
     "status": 400,
     "contentType": "application/json; charset=utf-8",
     "lastFailure": "HTTP 400"
@@ -28,7 +28,7 @@
     "favicon": "https://pcradio.app/images/stations/61b09c9d4e570.jpg",
     "homepage": "https://pcradio.app/radio/rna-canal-a",
     "stationUuid": "45eeeaad-acc1-4704-b2b7-0c454a38c3c1",
-    "checkedAt": "2026-11-26T12:47:11.454Z",
+    "checkedAt": "2026-11-27T12:39:38.209Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -49,7 +49,7 @@
     "favicon": "https://minhawebradio.com/contents/14886/cover/xm126892c1bc31f36300a057381855f3ab_14886_1750685385.png",
     "homepage": "https://radiojihenda.com/",
     "stationUuid": "682715df-58c2-4765-b888-204307736498",
-    "checkedAt": "2026-11-26T12:47:11.457Z",
+    "checkedAt": "2026-11-27T12:39:38.215Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -76,7 +76,7 @@
     "favicon": "https://imgur.com/totzCmb",
     "homepage": "https://radiorashi.alle.bg/",
     "stationUuid": "8ce91694-1fcd-4ead-baf3-51200af4e25c",
-    "checkedAt": "2026-11-26T12:47:11.657Z",
+    "checkedAt": "2026-11-27T12:39:38.707Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -96,7 +96,7 @@
     "favicon": null,
     "homepage": "https://www.trsradioonline.ao/",
     "stationUuid": "f834de28-9f73-41be-976b-90720cfbab3d",
-    "checkedAt": "2026-11-26T12:47:12.855Z",
+    "checkedAt": "2026-11-27T12:39:40.159Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -113,7 +113,7 @@
     "favicon": null,
     "homepage": "https://www.radiomais.ao/",
     "stationUuid": "142e1b71-b56b-4a9c-b08f-55703b611390",
-    "checkedAt": "2026-11-26T12:47:13.008Z",
+    "checkedAt": "2026-11-27T12:39:40.322Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -130,7 +130,7 @@
     "favicon": null,
     "homepage": "https://radiomfmangola.com/",
     "stationUuid": "5be023eb-7209-4ab0-8d69-27e356aad314",
-    "checkedAt": "2026-11-26T12:47:13.022Z",
+    "checkedAt": "2026-11-27T12:39:40.408Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -150,30 +150,31 @@
     "favicon": "https://sites.google.com/view/radiobairrodeangola",
     "homepage": "https://sites.google.com/view/radiobairrodeangola",
     "stationUuid": "88a9d0f2-7ef5-4119-ae96-d87c2f6f9469",
-    "checkedAt": "2026-11-26T12:47:13.268Z",
+    "checkedAt": "2026-11-27T12:39:40.676Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
-    "name": "Platina FM",
-    "url": "https://stream.zeno.fm/bckqpsxrqv8uv",
+    "name": "Rádio Cuquema",
+    "url": "https://radios2.justweb.pt:8034/stream",
     "country": "AO",
     "type": "news",
     "tags": [
       "news",
+      "pop",
       "talk"
     ],
-    "codec": "AAC",
+    "codec": "MP3",
     "bitrate": 128,
     "language": "portuguese",
     "favicon": null,
-    "homepage": "https://platinafm.com/",
-    "stationUuid": "d024beb9-4443-4a1a-8939-e0868f3f6100",
-    "checkedAt": "2026-11-26T12:47:13.414Z",
-    "status": 503,
+    "homepage": "https://play.google.com/store/apps/details?id=justweb.radio.cuquema",
+    "stationUuid": "6795d0a7-4dbd-40bf-b793-39c8f8f822b2",
+    "checkedAt": "2026-11-27T12:39:41.012Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "HTTP 503"
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Rádio Lunda Sul",
@@ -190,7 +191,7 @@
     "favicon": null,
     "homepage": "https://rna.ao/rna.ao/radiochanels/radio-lunda-sul/",
     "stationUuid": "c62a836d-07d4-466f-9361-f9ce9a43a50a",
-    "checkedAt": "2026-11-26T12:47:14.034Z",
+    "checkedAt": "2026-11-27T12:39:41.470Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -209,7 +210,7 @@
     "favicon": "https://postimg.cc/5HR8nS0W",
     "homepage": "https://player.xradios.com.br/player-home-page/6794",
     "stationUuid": "8762cad0-5b45-4685-9c09-68de818a3ec1",
-    "checkedAt": "2026-11-26T12:47:15.467Z",
+    "checkedAt": "2026-11-27T12:39:42.764Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

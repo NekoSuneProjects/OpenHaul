@@ -11,7 +11,7 @@
     "favicon": "https://www.truefm.ph/assets/footerlogo-mobile.webp",
     "homepage": "https://www.truefm.ph/",
     "stationUuid": "114fe258-f71e-473d-8b7f-a0791b231add",
-    "checkedAt": "2026-11-26T13:45:20.861Z",
+    "checkedAt": "2026-11-27T13:46:50.196Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -28,7 +28,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TrueFM1059-logo.png/440px-TrueFM1059-logo.png",
     "homepage": "https://news.tv5.com.ph/",
     "stationUuid": "4400c3bb-a43f-4321-8aea-16d66d0c06e8",
-    "checkedAt": "2026-11-26T13:45:20.862Z",
+    "checkedAt": "2026-11-27T13:46:50.202Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -45,7 +45,7 @@
     "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/manila.png",
     "homepage": "https://radyoph.com/station/fm-radio-manila?autoplay=0",
     "stationUuid": "bb81f485-eace-4183-92b0-3fc5fd52b3aa",
-    "checkedAt": "2026-11-26T13:45:20.863Z",
+    "checkedAt": "2026-11-27T13:46:50.205Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -62,7 +62,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Radyo5truefmlogo.webp/440px-Radyo5truefmlogo.webp.png",
     "homepage": "http://news.tv5.com.ph/",
     "stationUuid": "71623064-347c-4e85-8136-148115d350f2",
-    "checkedAt": "2026-11-26T13:45:20.864Z",
+    "checkedAt": "2026-11-27T13:46:50.207Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -79,7 +79,7 @@
     "favicon": "https://xfmphilippines.com/wp-content/uploads/2024/02/cropped-XFM-Icon-300x300.png",
     "homepage": "https://xfmphilippines.com/roxas/",
     "stationUuid": "eed2ab4e-3741-4f70-90d8-cbbf731c98f9",
-    "checkedAt": "2026-11-26T13:45:20.865Z",
+    "checkedAt": "2026-11-27T13:46:50.208Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -96,7 +96,7 @@
     "favicon": "https://radyoph.com/logo.ico",
     "homepage": "https://radyoph.com/station/amc-radio",
     "stationUuid": "e14e3c1f-5fa4-4721-99e9-fe0024b5cc8a",
-    "checkedAt": "2026-11-26T13:45:20.922Z",
+    "checkedAt": "2026-11-27T13:46:50.358Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -113,10 +113,27 @@
     "favicon": "https://bioniconlineradio.com/wp-content/uploads/2026/01/bionic_logo.png",
     "homepage": "https://bioniconlineradio.com/",
     "stationUuid": "9b993759-dcd9-4f84-bfd1-837508b82f83",
-    "checkedAt": "2026-11-26T13:45:21.096Z",
+    "checkedAt": "2026-11-27T13:46:50.611Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Bombo Radyo Bacolod",
+    "url": "https://stream.zenolive.com/g2ak4fu78heuv",
+    "country": "PH",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://bomboradyo.com/wp-images/default-banner-bacolod.jpg",
+    "homepage": "https://bacolod.bomboradyo.com/",
+    "stationUuid": "3d9cf0d5-41a8-441f-bd5e-2ed47c0a0cda",
+    "checkedAt": "2026-11-27T13:46:50.618Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Bombo Radyo Baguio",
@@ -130,7 +147,7 @@
     "favicon": "https://bomboradyo.com/wp-images/baguio-default-banner.jpg",
     "homepage": "https://baguio.bomboradyo.com/",
     "stationUuid": "18774714-40aa-49ee-82a5-95e109037a63",
-    "checkedAt": "2026-11-26T13:45:21.265Z",
+    "checkedAt": "2026-11-27T13:46:50.638Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -147,7 +164,7 @@
     "favicon": "https://bomboradyo.com/wp-images/cdo-default-banner.jpg",
     "homepage": "https://cdo.bomboradyo.com/",
     "stationUuid": "2c92939c-ac4b-4b3f-b4b2-6c99457c52b0",
-    "checkedAt": "2026-11-26T13:45:21.371Z",
+    "checkedAt": "2026-11-27T13:46:50.737Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -164,7 +181,24 @@
     "favicon": "https://bomboradyo.com/wp-images/cauayan-default-banner.jpg",
     "homepage": "https://cauayan.bomboradyo.com/",
     "stationUuid": "32b834ba-6093-4d93-9e7d-02f234a27bea",
-    "checkedAt": "2026-11-26T13:45:21.430Z",
+    "checkedAt": "2026-11-27T13:46:50.813Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Bombo Radyo Cebu",
+    "url": "http://stream.zenolive.com/cc4d8bbnz9duv",
+    "country": "PH",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://bomboradyo.com/wp-images/cebu-default-banner.jpg",
+    "homepage": "https://cebu.bomboradyo.com/",
+    "stationUuid": "2591f92f-ca33-400a-a899-94208971778f",
+    "checkedAt": "2026-11-27T13:46:51.066Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -181,7 +215,7 @@
     "favicon": "https://bomboradyo.com/wp-images/gensan-default-banner.jpg",
     "homepage": "https://gensan.bomboradyo.com/",
     "stationUuid": "c436feea-f408-4d51-8170-14a3d8d869b4",
-    "checkedAt": "2026-11-26T13:45:21.723Z",
+    "checkedAt": "2026-11-27T13:46:51.192Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -198,7 +232,7 @@
     "favicon": null,
     "homepage": "https://koronadal.bomboradyo.com/",
     "stationUuid": "b9701efb-878a-4426-a5f5-4df052d7df5a",
-    "checkedAt": "2026-11-26T13:45:21.834Z",
+    "checkedAt": "2026-11-27T13:46:51.324Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -210,12 +244,12 @@
     "type": "AAC",
     "tags": [],
     "codec": "AAC",
-    "bitrate": 128,
+    "bitrate": 64,
     "language": null,
     "favicon": "https://www.bomboradyo.com/wp-images/la-union-default-banner.jpg",
     "homepage": "https://launion.bomboradyo.com/",
     "stationUuid": "b1c9647d-c627-4594-921c-52dc1ce87ee3",
-    "checkedAt": "2026-11-26T13:45:21.861Z",
+    "checkedAt": "2026-11-27T13:46:51.374Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -232,24 +266,7 @@
     "favicon": "https://img.bomboradyo.com/newscenter/2024/02/android-chrome-192x192-1.png",
     "homepage": "https://laoag.bomboradyo.com/",
     "stationUuid": "8c85c965-53e8-4243-8570-ef72e98d507d",
-    "checkedAt": "2026-11-26T13:45:22.122Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "Bombo Radyo Legazpi",
-    "url": "http://stream.zenolive.com/u0uugg5mz9duv",
-    "country": "PH",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 64,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://legazpi.bomboradyo.com/",
-    "stationUuid": "5ce1b00d-26e7-43d2-90c6-c8fd6805e29f",
-    "checkedAt": "2026-11-26T13:45:22.129Z",
+    "checkedAt": "2026-11-27T13:46:51.430Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -266,7 +283,7 @@
     "favicon": "https://bomboradyo.com/wp-images/naga-default-banner.jpg",
     "homepage": "https://naga.bomboradyo.com/",
     "stationUuid": "0bf8dc62-0943-46c3-8adc-bb845e4e975e",
-    "checkedAt": "2026-11-26T13:45:22.167Z",
+    "checkedAt": "2026-11-27T13:46:51.614Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -283,7 +300,24 @@
     "favicon": "https://img.bomboradyo.com/newscenter/2024/01/Bombo-Radyo-Default-Banner.jpg",
     "homepage": "https://tacloban.bomboradyo.com/",
     "stationUuid": "c9c7873f-b892-43e0-b9ce-77dc8acbfbb7",
-    "checkedAt": "2026-11-26T13:45:22.180Z",
+    "checkedAt": "2026-11-27T13:46:51.644Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Bombo Radyo Vigan",
+    "url": "http://stream.zenolive.com/wg8yn4cnz9duv",
+    "country": "PH",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://bomboradyo.com/wp-images/default-banner-vigan.jpg",
+    "homepage": "https://vigan.bomboradyo.com/",
+    "stationUuid": "df78ba9f-467d-403c-809d-c04677a920ca",
+    "checkedAt": "2026-11-27T13:46:51.736Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -300,7 +334,7 @@
     "favicon": "https://3.bp.blogspot.com/-f4NC6Q5ef70/WEDtjxI6dMI/AAAAAAAACvw/O1CfnIcbE3YtqYGpTLRPyzCZN1M34HIqwCLcB/s200/dyvl-bogo-2016-amfmph.jpg",
     "homepage": "https://www.amfmph.com/dyvlbogo",
     "stationUuid": "dfcb2695-34df-4ba2-a66b-75d44cd33d4c",
-    "checkedAt": "2026-11-26T13:45:22.266Z",
+    "checkedAt": "2026-11-27T13:46:51.748Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -317,7 +351,7 @@
     "favicon": "https://cdn.radio-addict.com/media/stream/effe0acc-88e2-4400-9f07-591c7e8e07c7_9C0C3C779D34BB248C82E3F547D4A6E3_images",
     "homepage": "https://www.facebook.com/share/14fMZC3AU4g/",
     "stationUuid": "c1fa6550-761c-48fe-867f-4fd271aab44c",
-    "checkedAt": "2026-11-26T13:45:22.430Z",
+    "checkedAt": "2026-11-27T13:46:51.876Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -334,7 +368,7 @@
     "favicon": "https://apk.radyoph.com/upload/1772169743_dxgpagusan.png",
     "homepage": "https://radyoph.com/station/dxgp",
     "stationUuid": "746dcf0b-114a-40fb-87d4-0888b66de54b",
-    "checkedAt": "2026-11-26T13:45:22.449Z",
+    "checkedAt": "2026-11-27T13:46:51.904Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -351,7 +385,7 @@
     "favicon": "https://3.bp.blogspot.com/-f4NC6Q5ef70/WEDtjxI6dMI/AAAAAAAACvw/O1CfnIcbE3YtqYGpTLRPyzCZN1M34HIqwCLcB/s200/dyvl-bogo-2016-amfmph.jpg",
     "homepage": "https://us1.amfmph.com:2199/start/dyvl/",
     "stationUuid": "ca608f68-cbca-4eed-b33c-16b59850c13d",
-    "checkedAt": "2026-11-26T13:45:22.538Z",
+    "checkedAt": "2026-11-27T13:46:52.053Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -368,7 +402,24 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/c/cc/DZMM_TeleRadyo.png?20250530000135",
     "homepage": "https://www.abs-cbn.com/",
     "stationUuid": "444d5772-45a5-4104-844b-ea47bc1e0e9e",
-    "checkedAt": "2026-11-26T13:45:22.611Z",
+    "checkedAt": "2026-11-27T13:46:52.146Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Extreme Online Radio",
+    "url": "https://stream.zeno.fm/s7vpxyv9gv8uv?t=1779627154371",
+    "country": "PH",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/HBBVcHQn9LERyNDHg3BckitvuRB7ciO7anf2uh0r-fc/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJQ1EwUHU5MFFzTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJQ3d5ckNLMkFrTW9nRUVlbVZ1YncvaW1hZ2UvP3U9MTcxMDcwOTU2ODAwMA.webp",
+    "homepage": "https://zeno.fm/radio/extreme-online-radio/",
+    "stationUuid": "00644b46-a37f-471e-a2a3-4d446241fc4c",
+    "checkedAt": "2026-11-27T13:46:52.430Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -385,7 +436,7 @@
     "favicon": "http://jexiefm.com/wp-content/uploads/2025/02/JexieFM4.png",
     "homepage": "http://jexiefm.com/",
     "stationUuid": "e0e26765-bc06-4d6e-bef3-bcc8d59e8871",
-    "checkedAt": "2026-11-26T13:45:23.650Z",
+    "checkedAt": "2026-11-27T13:46:53.210Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -402,7 +453,7 @@
     "favicon": "https://play-lh.googleusercontent.com/NRdZhS26PUEXfVgnR6ww1AdYJa2AQLL4KF8jSOjFsR2R4oii9Gi1s28sXRP2i9CacKlu=w480-h960-rw",
     "homepage": "https://us1.amfmph.com:2199/start/kingsradio/",
     "stationUuid": "80b5320c-a2d4-4765-8ee3-1d0ac91a3995",
-    "checkedAt": "2026-11-26T13:45:23.748Z",
+    "checkedAt": "2026-11-27T13:46:53.398Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -419,7 +470,7 @@
     "favicon": "https://play-lh.googleusercontent.com/NRdZhS26PUEXfVgnR6ww1AdYJa2AQLL4KF8jSOjFsR2R4oii9Gi1s28sXRP2i9CacKlu=w480-h960-rw",
     "homepage": "https://us1.amfmph.com:2199/start/kingsradio/",
     "stationUuid": "350b1913-2da1-48b8-8a8f-44a92f51329b",
-    "checkedAt": "2026-11-26T13:45:23.771Z",
+    "checkedAt": "2026-11-27T13:46:53.567Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -436,7 +487,7 @@
     "favicon": "https://assets-myxglobal.abs-cbn.com/wp-content/uploads/2022/07/MYX_New_Logo_Web1.png",
     "homepage": "https://myx.global/",
     "stationUuid": "4e385680-c8e5-4d27-92ba-c7b386c07e72",
-    "checkedAt": "2026-11-26T13:45:24.429Z",
+    "checkedAt": "2026-11-27T13:46:53.847Z",
     "status": 503,
     "contentType": "text/html",
     "lastFailure": "HTTP 503"
@@ -453,7 +504,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2025/12/phlite-2.png",
     "homepage": "https://xcite.radyoph.com:8000/phlite",
     "stationUuid": "dcd8b991-c697-45e2-85e9-ce2f60081f46",
-    "checkedAt": "2026-11-26T13:45:24.631Z",
+    "checkedAt": "2026-11-27T13:46:54.260Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -470,7 +521,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/034/infinite-radio-catarman.326ed272.jpg",
     "homepage": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.facebook.com/RadyoBanderaCatarman.Official/&ved=2ahUKEwjXjJuupZCTAxXzIkQIHZo2GmEQFnoECHcQAQ&usg=AOvVaw19M5coEI425CwSVl3qpfIZ",
     "stationUuid": "397ef410-63ce-4f1c-9ca3-967bd4733a6c",
-    "checkedAt": "2026-11-26T13:45:24.796Z",
+    "checkedAt": "2026-11-27T13:46:54.581Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -487,7 +538,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2025/12/RBN-DYMA-100.9-FM.png",
     "homepage": "https://www.facebook.com/RBN.DYMA100.9FM/",
     "stationUuid": "9dfa1a6e-229d-4836-b542-7700d2c74b48",
-    "checkedAt": "2026-11-26T13:45:25.210Z",
+    "checkedAt": "2026-11-27T13:46:54.941Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -504,7 +555,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TrueFM1059-logo.png/440px-TrueFM1059-logo.png",
     "homepage": "http://news.tv5.com.ph/",
     "stationUuid": "3e110a58-f654-48e4-b91c-8e124a0abbed",
-    "checkedAt": "2026-11-26T13:45:31.888Z",
+    "checkedAt": "2026-11-27T13:47:05.537Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -521,7 +572,7 @@
     "favicon": null,
     "homepage": "https://ca.azura.linkodev.ch/listen/remy_united_radio/radio.mp3",
     "stationUuid": "22865ae4-579b-4f35-b6fe-a21515cea051",
-    "checkedAt": "2026-11-26T13:45:31.929Z",
+    "checkedAt": "2026-11-27T13:47:05.613Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -538,10 +589,44 @@
     "favicon": null,
     "homepage": "https://www.facebook.com/gamayfm/",
     "stationUuid": "32a0765e-13a6-4090-b2d4-c6e48d73072b",
-    "checkedAt": "2026-11-26T13:45:31.943Z",
+    "checkedAt": "2026-11-27T13:47:05.674Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Star FM Baguio",
+    "url": "https://stream.zeno.fm/sa27v4d29heuv",
+    "country": "PH",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 96,
+    "language": null,
+    "favicon": "https://news.bomboradyo.com/wp-content/uploads/2024/08/star_baguo_square_logo-560x560.png",
+    "homepage": "https://news.bomboradyo.com/",
+    "stationUuid": "78cdf37b-9831-4427-969f-b96815fbaa1a",
+    "checkedAt": "2026-11-27T13:47:05.857Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "Star FM Baguio",
+    "url": "https://stream.zeno.fm/sa27v4d29heuv",
+    "country": "PH",
+    "type": "AAC",
+    "tags": [],
+    "codec": "AAC",
+    "bitrate": 96,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.bomboradyo.com/live-stream",
+    "stationUuid": "713f6efa-a9c3-4848-ab75-6f11f9cfddd3",
+    "checkedAt": "2026-11-27T13:47:05.964Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Star FM Cebu",
@@ -555,7 +640,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/a/ae/95.5_Star_FM_Cebu_logo.png",
     "homepage": "https://www.bomboradyo.com/starfm/star-fm-cebu",
     "stationUuid": "9722a03d-eaba-4d30-99a0-8c8ae6cb18bc",
-    "checkedAt": "2026-11-26T13:45:31.988Z",
+    "checkedAt": "2026-11-27T13:47:06.067Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -572,7 +657,7 @@
     "favicon": "https://cotabato.bomboradyo.com/wp-content/uploads/2024/07/Cotabato-Live-Streamx.jpg",
     "homepage": "https://cotabato.bomboradyo.com/",
     "stationUuid": "1dea5324-92d4-4a5c-b54b-40302826b6f0",
-    "checkedAt": "2026-11-26T13:45:32.134Z",
+    "checkedAt": "2026-11-27T13:47:06.125Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -589,7 +674,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/11/StarFMDagupan.png",
     "homepage": "https://www.bomboradyo.com/",
     "stationUuid": "b9c72990-c137-482a-85d5-4db098adccca",
-    "checkedAt": "2026-11-26T13:45:32.206Z",
+    "checkedAt": "2026-11-27T13:47:06.131Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -606,7 +691,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/a/a3/99.5_Star_FM_Iloilo.jpg",
     "homepage": "http://www.bomboradyo.com/",
     "stationUuid": "e640ffd0-d7c3-4078-86a0-7e11fbedf067",
-    "checkedAt": "2026-11-26T13:45:32.346Z",
+    "checkedAt": "2026-11-27T13:47:06.162Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -623,7 +708,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/11/StarFMRoxas.png",
     "homepage": "https://www.bomboradyo.com/",
     "stationUuid": "19c038a5-7fb5-4f86-8c1e-52104fd424c5",
-    "checkedAt": "2026-11-26T13:45:32.707Z",
+    "checkedAt": "2026-11-27T13:47:06.602Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -640,7 +725,7 @@
     "favicon": null,
     "homepage": "https://www.bomboradyo.com/",
     "stationUuid": "1404fd1e-f322-412b-bb8e-91b5ea00dc11",
-    "checkedAt": "2026-11-26T13:45:32.754Z",
+    "checkedAt": "2026-11-27T13:47:06.611Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -657,7 +742,7 @@
     "favicon": "https://pcmc.com.ph/wp-content/uploads/2024/10/Telereadyo.png",
     "homepage": "https://pcmc.com.ph/radyo-630-teleradyo-serbisyo/",
     "stationUuid": "6fc21eb4-512d-42e2-93ec-3848ffff4098",
-    "checkedAt": "2026-11-26T13:45:32.786Z",
+    "checkedAt": "2026-11-27T13:47:06.655Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -674,7 +759,7 @@
     "favicon": "https://apk.radyoph.com/upload/1699245142_xfmbukidnon.png",
     "homepage": "https://radyoph.com/station/xfmmalaybalay",
     "stationUuid": "003531db-62d7-4db6-8444-80b27f12a559",
-    "checkedAt": "2026-11-26T13:45:33.149Z",
+    "checkedAt": "2026-11-27T13:47:07.151Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -691,7 +776,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/12/xfmsanfrancisco.png",
     "homepage": "https://www.facebook.com/p/1065-XFM-Roxas-City-Capiz-61559220947967/",
     "stationUuid": "9df0ef2c-90ba-43a7-98e7-ae696cf29c74",
-    "checkedAt": "2026-11-26T13:45:33.186Z",
+    "checkedAt": "2026-11-27T13:47:07.160Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -708,7 +793,7 @@
     "favicon": "https://apk.radyoph.com/upload/1783912036_xfmbayugan2026.png",
     "homepage": "https://us1.amfmph.com:2199/start/xfmbayugan/",
     "stationUuid": "36c629c0-fb2a-407b-b615-a15505359296",
-    "checkedAt": "2026-11-26T13:45:33.211Z",
+    "checkedAt": "2026-11-27T13:47:07.173Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -725,7 +810,7 @@
     "favicon": null,
     "homepage": "https://www.imjinteractive.net/listen",
     "stationUuid": "f31f9687-cfe9-4eba-9341-9163f0e84a81",
-    "checkedAt": "2026-11-26T13:45:33.255Z",
+    "checkedAt": "2026-11-27T13:47:07.263Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -742,7 +827,7 @@
     "favicon": "https://xfm.imjinteractive.net/wp-content/uploads/2021/11/X-FM-2017-300x150.png",
     "homepage": "https://xfm.imjinteractive.net/",
     "stationUuid": "df4d0e98-aa0b-49f6-803f-7fba4f2b0bc0",
-    "checkedAt": "2026-11-26T13:45:33.293Z",
+    "checkedAt": "2026-11-27T13:47:07.287Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -759,7 +844,7 @@
     "favicon": "https://apk.radyoph.com/upload/1733371420_xfmsantiago.png",
     "homepage": "https://radyoph.com/station/xfm-santiago-city-isabela",
     "stationUuid": "049df8b7-1ed8-4b96-bc0d-92cad05a51fb",
-    "checkedAt": "2026-11-26T13:45:33.324Z",
+    "checkedAt": "2026-11-27T13:47:07.328Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -776,7 +861,7 @@
     "favicon": "https://www.amfmph.com/wp-content/uploads/reinard/retro-cebu-amfmph.png",
     "homepage": "https://www.amfmph.com/103-5-retro-cebu-13188.html",
     "stationUuid": "e8266f4e-a5b2-4773-b0ea-261a00e9517f",
-    "checkedAt": "2026-11-26T13:45:33.516Z",
+    "checkedAt": "2026-11-27T13:47:07.630Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -793,9 +878,26 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/1035RetroCebuLogo.jpg/400px-1035RetroCebuLogo.jpg",
     "homepage": "https://amfmph.com/radio/",
     "stationUuid": "c8920856-cb37-4920-8d3f-df82986b171c",
-    "checkedAt": "2026-11-26T13:45:33.527Z",
+    "checkedAt": "2026-11-27T13:47:07.665Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "106.3 KFive FM Bacolod",
+    "url": "http://209.126.124.126:8721/stream",
+    "country": "PH",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": null,
+    "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/click-fm-bacolod.png",
+    "homepage": "https://us1.amfmph.com:2199/start/klickfmbacolod/",
+    "stationUuid": "6286b1fb-9386-4a84-bae4-65cb8ac7aae2",
+    "checkedAt": "2026-11-27T13:47:07.720Z",
+    "status": 404,
+    "contentType": "text/html",
     "lastFailure": "HTTP 404"
   },
   {
@@ -810,7 +912,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/819DXUM_LOGO_BLACK.png/500px-819DXUM_LOGO_BLACK.png",
     "homepage": "http://fr1.amfmph.com:2199/start/dxumdavao/",
     "stationUuid": "e739efa0-02f9-4af0-add2-3182bb2b6e80",
-    "checkedAt": "2026-11-26T13:45:33.582Z",
+    "checkedAt": "2026-11-27T13:47:07.728Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -827,10 +929,27 @@
     "favicon": "https://911balitafmbohol.my.canva.site/91-1-balita-fm-bohol/images/8f3e74f67411f0d310bba570a5265758.jpg",
     "homepage": "https://911balitafmbohol.my.canva.site/91-1-balita-fm-bohol",
     "stationUuid": "2c514d3b-c6c7-4d41-a35b-1c4fa67ac178",
-    "checkedAt": "2026-11-26T13:45:33.601Z",
+    "checkedAt": "2026-11-27T13:47:07.738Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "94.5 K5 NEWS FM KALIBO",
+    "url": "http://209.126.124.126:8730/stream",
+    "country": "PH",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": null,
+    "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/sweet-fm-k5-logo-1.png",
+    "homepage": "https://us1.amfmph.com:2199/start/sweetfmkalibo/",
+    "stationUuid": "d6612b14-1ee1-4e57-8408-2688778e0c0b",
+    "checkedAt": "2026-11-27T13:47:07.801Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "BELL FM 106.3",
@@ -844,7 +963,7 @@
     "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/bell-fm.png",
     "homepage": "https://www.amfmph.com/dxca-bell-fm-106-3mhz-20238.html",
     "stationUuid": "935cf2c3-22e6-44d5-8833-76e2ce4af4f9",
-    "checkedAt": "2026-11-26T13:45:34.763Z",
+    "checkedAt": "2026-11-27T13:47:09.015Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -861,7 +980,7 @@
     "favicon": "https://apk.radyoph.com/upload/1716036264_caritas-fm-iloilo.png",
     "homepage": "https://www.facebook.com/AngDiosGugmaNetwork/",
     "stationUuid": "f22a47cd-fc3f-45ac-809b-66641cf10b9b",
-    "checkedAt": "2026-11-26T13:45:35.113Z",
+    "checkedAt": "2026-11-27T13:47:09.399Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -878,24 +997,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/DWPM_Radyo_Sais_Trenta.png/440px-DWPM_Radyo_Sais_Trenta.png",
     "homepage": "https://news.abs-cbn.com/",
     "stationUuid": "1486683f-9eb7-46e3-8e90-d569792c4369",
-    "checkedAt": "2026-11-26T13:45:35.911Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "DXRC Radyo Commando Mellow Touch Bukidnon",
-    "url": "http://209.126.124.126:8543/stream",
-    "country": "PH",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 48,
-    "language": null,
-    "favicon": "https://www.amfmph.com/wp-content/uploads/reinard/radyo-commando-bukidnon-amfmph.png",
-    "homepage": "https://www.amfmph.com/dxrc-radyo-commando-mellow-touch-bukidnon-17275.html",
-    "stationUuid": "27e0497e-3bc6-4a8c-9bb1-e2f7bb67ccfd",
-    "checkedAt": "2026-11-26T13:45:35.961Z",
+    "checkedAt": "2026-11-27T13:47:10.214Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -912,7 +1014,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/819DXUM_LOGO_BLACK.png/250px-819DXUM_LOGO_BLACK.png",
     "homepage": "https://www.amfmph.com/dxum-am-819-khz-18952.html",
     "stationUuid": "1f7a486f-94c6-4594-9e41-ee155bc91999",
-    "checkedAt": "2026-11-26T13:45:35.970Z",
+    "checkedAt": "2026-11-27T13:47:10.386Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -929,7 +1031,7 @@
     "favicon": "https://dzrh.com.ph/_next/image?url=%2Frhtv-logo.png&w=128&q=100",
     "homepage": "https://dzrh.com.ph/",
     "stationUuid": "1b516351-ae0b-4f45-98cd-7b22db167a37",
-    "checkedAt": "2026-11-26T13:45:36.213Z",
+    "checkedAt": "2026-11-27T13:47:10.663Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -946,7 +1048,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/FMRadio_Philippines.png/500px-FMRadio_Philippines.png",
     "homepage": "https://www.facebook.com/ZRadio967/",
     "stationUuid": "c60b36f0-b466-4254-9940-eb0d856065f2",
-    "checkedAt": "2026-11-26T13:45:36.239Z",
+    "checkedAt": "2026-11-27T13:47:10.684Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -963,7 +1065,7 @@
     "favicon": "https://apk.radyoph.com/upload/1770461726_FMRadio_davaocity.png",
     "homepage": "https://radyoph.com/station/fm-radio-davao-city",
     "stationUuid": "fe4a9034-a68a-43b8-8cc3-f89032037eb7",
-    "checkedAt": "2026-11-26T13:45:36.347Z",
+    "checkedAt": "2026-11-27T13:47:10.756Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -980,7 +1082,7 @@
     "favicon": "https://pcmc.com.ph/wp-content/uploads/2024/09/FM-Radio.png",
     "homepage": "https://m.facebook.com/FMRadioDavaoRegion/",
     "stationUuid": "f61d112a-9e72-4b24-ace8-ad8b0f9fc2a9",
-    "checkedAt": "2026-11-26T13:45:36.358Z",
+    "checkedAt": "2026-11-27T13:47:10.774Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -997,7 +1099,7 @@
     "favicon": "https://pcmc.com.ph/wp-content/uploads/2024/09/FM-Radio.png",
     "homepage": "https://pcmc.com.ph/fm-radio/",
     "stationUuid": "6a1b2178-40fe-4e7a-b3db-3fc6e38b269c",
-    "checkedAt": "2026-11-26T13:45:36.429Z",
+    "checkedAt": "2026-11-27T13:47:10.851Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1014,10 +1116,78 @@
     "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/dav-deoro.png",
     "homepage": "https://www.facebook.com/ZRadio967/",
     "stationUuid": "54b01983-957a-4eba-86ac-000c6ed56450",
-    "checkedAt": "2026-11-26T13:45:36.574Z",
+    "checkedAt": "2026-11-27T13:47:11.090Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "K5 News FM Cagayan de Oro",
+    "url": "http://209.126.124.126:8773/stream",
+    "country": "PH",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": null,
+    "favicon": "https://blogger.googleusercontent.com/img/a/AVvXsEhWw7uMDZ-X7pQ08cdHViWquhxKgpUNV5DeYFdjy_6pK6d4gJMDm0VZTV-wBWBh8Gl-1F-GRQ5WP2lkwms0WMlwB4-xEuIwEDRpzdgdQnFE_n13Zf4N5cF5SWAQtKsb1akmTpYYbPV8O8pDiAT3zMeLmckcGr2hBxMYgNlOIVod1x7ToDfAzm2qYHvWMR7K=s150",
+    "homepage": "https://us1.amfmph.com:2199/start/sweetfmcagayan/",
+    "stationUuid": "0e548e12-b5ef-4a39-8266-622d49f3fea8",
+    "checkedAt": "2026-11-27T13:47:12.037Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "K5 News FM Guihulngan",
+    "url": "http://209.126.124.126:8846/stream",
+    "country": "PH",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": null,
+    "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/sweet-fm-k5-logo-1.png",
+    "homepage": "https://www.amfmph.com/k5-news-fm-guihulngan-20067.html",
+    "stationUuid": "077cea65-5a8a-4f69-a9d5-bc147f40c920",
+    "checkedAt": "2026-11-27T13:47:12.289Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "K5 News FM San Carlos",
+    "url": "http://209.126.124.126:8590/stream",
+    "country": "PH",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": null,
+    "favicon": "https://blogger.googleusercontent.com/img/a/AVvXsEhWw7uMDZ-X7pQ08cdHViWquhxKgpUNV5DeYFdjy_6pK6d4gJMDm0VZTV-wBWBh8Gl-1F-GRQ5WP2lkwms0WMlwB4-xEuIwEDRpzdgdQnFE_n13Zf4N5cF5SWAQtKsb1akmTpYYbPV8O8pDiAT3zMeLmckcGr2hBxMYgNlOIVod1x7ToDfAzm2qYHvWMR7K=s150",
+    "homepage": "https://us1.amfmph.com:2199/start/sweetfmsancarlos/",
+    "stationUuid": "123fe1d4-63d3-4694-93e7-c176717a9279",
+    "checkedAt": "2026-11-27T13:47:12.444Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "K5 News FM Siaton",
+    "url": "http://209.126.124.126:8632/stream",
+    "country": "PH",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": null,
+    "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/sweet-fm-k5-logo.png",
+    "homepage": "https://www.facebook.com/p/K5-News-FM-945-Siaton-61575542729424/",
+    "stationUuid": "7128f21d-d0df-4687-8764-39e4690f3090",
+    "checkedAt": "2026-11-27T13:47:12.545Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Kaibigan Radio",
@@ -1031,10 +1201,27 @@
     "favicon": null,
     "homepage": "http://kaibiganradio.ph/player/",
     "stationUuid": "3daa181f-d375-4881-9d72-00b123ee550f",
-    "checkedAt": "2026-11-26T13:45:38.112Z",
+    "checkedAt": "2026-11-27T13:47:12.607Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "Klick FM 106.3 Bacolod",
+    "url": "http://209.126.124.126:8721/stream",
+    "country": "PH",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": null,
+    "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/click-fm-bacolod.png",
+    "homepage": "https://radyoph.com/station/klick-fm-1063-bacolod",
+    "stationUuid": "c6d44023-3b94-4cd0-b337-ac6edf548c6f",
+    "checkedAt": "2026-11-27T13:47:12.644Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Last Days Radio",
@@ -1048,7 +1235,7 @@
     "favicon": "https://www.amfmph.com/wp-content/uploads/reinard/the-last-days-gospel-radio-amfmph.png",
     "homepage": "https://www.amfmph.com/",
     "stationUuid": "1122b13c-fa87-44e3-877d-406f6f4c72b4",
-    "checkedAt": "2026-11-26T13:45:38.187Z",
+    "checkedAt": "2026-11-27T13:47:12.683Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1065,7 +1252,7 @@
     "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/station_logo.png?1719967501",
     "homepage": "https://www.amfmph.com/",
     "stationUuid": "464c2677-b18e-4ac5-8fe2-8fb1619ea4d0",
-    "checkedAt": "2026-11-26T13:45:38.207Z",
+    "checkedAt": "2026-11-27T13:47:12.759Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1082,24 +1269,7 @@
     "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/radyo-bagting-1.png",
     "homepage": "https://www.amfmph.com/dxbz-radyo-bagting-756khz-20232.html",
     "stationUuid": "e71314a0-a69f-4054-b7f5-5e8686238f99",
-    "checkedAt": "2026-11-26T13:45:38.620Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Radyo Primera",
-    "url": "https://us1.amfmph.com:8838/live",
-    "country": "PH",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": null,
-    "favicon": "https://cdn-profiles.tunein.com/s355190/images/logoq.jpg?t=639115667170000000",
-    "homepage": "https://tunein.com/radio/Radyo-Primera-941-s355190/",
-    "stationUuid": "36752abc-ed91-426d-a2e9-6104bff4699a",
-    "checkedAt": "2026-11-26T13:45:38.892Z",
+    "checkedAt": "2026-11-27T13:47:13.303Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1116,7 +1286,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Retrodavao.jpg/500px-Retrodavao.jpg",
     "homepage": "https://www.amfmph.com/retro-95-5-davao-15875.html",
     "stationUuid": "8670692d-4c24-46fa-adfe-74da21e11aad",
-    "checkedAt": "2026-11-26T13:45:39.316Z",
+    "checkedAt": "2026-11-27T13:47:14.050Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1133,7 +1303,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/12/solidmati-300x300.png",
     "homepage": "https://us1.amfmph.com:2199/start/solidfmmati/",
     "stationUuid": "ecf8f347-e8da-44b0-b150-ceb28d3bc86e",
-    "checkedAt": "2026-11-26T13:45:39.687Z",
+    "checkedAt": "2026-11-27T13:47:14.256Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1150,7 +1320,7 @@
     "favicon": "https://apk.radyoph.com/upload/1699413552_spiritcalapan.png",
     "homepage": "https://radyoph.com/station/spirit-fm-calapan-oriental-mindoro",
     "stationUuid": "f50ca473-d331-4bdb-a0b4-69e654dbf5ee",
-    "checkedAt": "2026-11-26T13:45:39.741Z",
+    "checkedAt": "2026-11-27T13:47:14.310Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1167,7 +1337,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/08/wildbutuan-1.png",
     "homepage": "http://de3.amfmph.com:2199/start/wildbutuan/",
     "stationUuid": "2780934a-dc01-4e58-8cc9-a6f260c79730",
-    "checkedAt": "2026-11-26T13:45:39.981Z",
+    "checkedAt": "2026-11-27T13:47:14.710Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1184,7 +1354,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/08/wildbutuan-1.png",
     "homepage": "http://fr1.amfmph.com:2199/start/wildbutuan/",
     "stationUuid": "c83f4b9c-5fb4-4830-bd80-f72fa27a1897",
-    "checkedAt": "2026-11-26T13:45:40.122Z",
+    "checkedAt": "2026-11-27T13:47:14.728Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1201,7 +1371,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/WildFMCDO2023Logo.jpg/500px-WildFMCDO2023Logo.jpg",
     "homepage": "https://radyoph.com/station/wild-fm-cagayan-de-or/",
     "stationUuid": "cf5b6956-f049-4be5-8c4c-b4ae8c579439",
-    "checkedAt": "2026-11-26T13:45:40.156Z",
+    "checkedAt": "2026-11-27T13:47:14.792Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1218,7 +1388,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/WildFMGenSan.jpg/440px-WildFMGenSan.jpg",
     "homepage": "http://de3.amfmph.com:2199/start/wildgensan/",
     "stationUuid": "e87c21c9-1c03-42b4-8dcb-e2347d9122d2",
-    "checkedAt": "2026-11-26T13:45:40.184Z",
+    "checkedAt": "2026-11-27T13:47:14.856Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1235,7 +1405,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/11/wildiligan-150x150.png",
     "homepage": "https://www.amfmph.com/wild-fm-iligan-dxil-103-1-mhz-11516.html",
     "stationUuid": "10382394-53b5-4bed-b138-4b6ee3015957",
-    "checkedAt": "2026-11-26T13:45:40.233Z",
+    "checkedAt": "2026-11-27T13:47:14.918Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1252,7 +1422,7 @@
     "favicon": "https://3.bp.blogspot.com/-TFC4N9nLUBo/Vu-L8BTF1hI/AAAAAAAACEI/HQe407-HzJIeLzIMJtbT1J06Zya532row/s200/wild-fm-iligan-103-1-amfmph.png",
     "homepage": "https://amfmph.com/radio/#11516",
     "stationUuid": "2d0db34c-ffb0-4e5e-90b1-b19f335430fe",
-    "checkedAt": "2026-11-26T13:45:40.252Z",
+    "checkedAt": "2026-11-27T13:47:14.940Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1269,7 +1439,7 @@
     "favicon": "https://apk.radyoph.com/upload/1731363538_wildvalencia.png",
     "homepage": "https://de3.amfmph.com:2199/start/wildvalencia/",
     "stationUuid": "067d6a8b-7bf6-4af2-9325-8fc54249a736",
-    "checkedAt": "2026-11-26T13:45:40.388Z",
+    "checkedAt": "2026-11-27T13:47:15.004Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1286,7 +1456,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/11/wildvalencia.png",
     "homepage": "http://fr1.amfmph.com:2199/start/wildvalencia/",
     "stationUuid": "46c888a0-2305-41de-b792-87ed3477a272",
-    "checkedAt": "2026-11-26T13:45:40.403Z",
+    "checkedAt": "2026-11-27T13:47:15.013Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1303,7 +1473,7 @@
     "favicon": "https://apk.radyoph.com/upload/1767771741_xfmroxascapiz.png",
     "homepage": "https://us1.amfmph.com:2199/start/xfmroxas/",
     "stationUuid": "e89944ec-516b-4056-85e0-caaddc0af441",
-    "checkedAt": "2026-11-26T13:45:40.419Z",
+    "checkedAt": "2026-11-27T13:47:15.070Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1320,7 +1490,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/a/ab/995XFMManila.jpg",
     "homepage": "https://web.facebook.com/XFM99.5MegaManilaOfficial/",
     "stationUuid": "d2e96173-085f-462d-9509-1df76da8d4fd",
-    "checkedAt": "2026-11-26T13:45:40.702Z",
+    "checkedAt": "2026-11-27T13:47:15.221Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1337,7 +1507,7 @@
     "favicon": "https://apk.radyoph.com/upload/1701238473_xfmzamboanga.png",
     "homepage": "https://us1.amfmph.com:2199/start/xfmzamboanga/",
     "stationUuid": "35acc453-c9c5-48cb-8aa6-7db41019c428",
-    "checkedAt": "2026-11-26T13:45:40.717Z",
+    "checkedAt": "2026-11-27T13:47:15.281Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1354,7 +1524,24 @@
     "favicon": "https://static.wikia.nocookie.net/signons-and-signoffs/images/9/94/99.5_XFM_Zamboanga.png/revision/latest/scale-to-width-down/180?cb=20240318012442",
     "homepage": "http://us1.amfmph.com:2199/start/xfmzamboanga/",
     "stationUuid": "9562fdf8-4338-4dbf-8144-427835f46014",
-    "checkedAt": "2026-11-26T13:45:40.726Z",
+    "checkedAt": "2026-11-27T13:47:15.306Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "XFM Cebu",
+    "url": "http://209.126.124.126:8748/stream",
+    "country": "PH",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/XFM_88.3_Cebu_Logo_2024.jpg/250px-XFM_88.3_Cebu_Logo_2024.jpg",
+    "homepage": "https://us1.amfmph.com:2199/start/xfmcebu/",
+    "stationUuid": "406994f5-745a-4582-8c31-f2871260f4db",
+    "checkedAt": "2026-11-27T13:47:15.329Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1371,7 +1558,7 @@
     "favicon": "https://apk.radyoph.com/upload/1701234033_XFM_Gensan.png",
     "homepage": "https://us1.amfmph.com:2199/start/xfmgensan/",
     "stationUuid": "63f21f2f-1b00-411b-aa6d-89a26d3d494b",
-    "checkedAt": "2026-11-26T13:45:41.046Z",
+    "checkedAt": "2026-11-27T13:47:15.560Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1388,7 +1575,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/a/af/XFMILOILO.png",
     "homepage": "https://us1.amfmph.com:2199/start/xfmiloilo",
     "stationUuid": "d5014288-41d7-4e75-9d44-835e41244830",
-    "checkedAt": "2026-11-26T13:45:41.075Z",
+    "checkedAt": "2026-11-27T13:47:15.565Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1405,7 +1592,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/a/af/XFMILOILO.png",
     "homepage": "https://www.amfmph.com/",
     "stationUuid": "f449e44e-dc52-4c38-b401-476567e15b35",
-    "checkedAt": "2026-11-26T13:45:41.077Z",
+    "checkedAt": "2026-11-27T13:47:15.579Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1422,7 +1609,7 @@
     "favicon": "https://xfm-sample.infinityfreeapp.com/wp-content/uploads/2025/10/cropped-Untitled-design-8-321x144.png",
     "homepage": "https://xfm-sample.infinityfreeapp.com/?i=2",
     "stationUuid": "468bea56-347d-42c8-9752-036d47e20462",
-    "checkedAt": "2026-11-26T13:45:41.187Z",
+    "checkedAt": "2026-11-27T13:47:15.791Z",
     "status": 521,
     "contentType": "text/plain; charset=UTF-8",
     "lastFailure": "HTTP 521"
@@ -1445,7 +1632,7 @@
     "favicon": "https://radioinsight.com/wp-content/uploads/2020/12/1055koolfm.png",
     "homepage": "https://zeno.fm/radio/tgon-koolfm/",
     "stationUuid": "d33a9580-40e6-4317-acd2-d80d44484512",
-    "checkedAt": "2026-11-26T13:45:41.433Z",
+    "checkedAt": "2026-11-27T13:47:16.055Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1466,7 +1653,7 @@
     "favicon": "https://lh3.googleusercontent.com/pw/AP1GczOHYg8uGJX_-p9_6rifyrFfNlRjsf_smtyHGp5LqzRWy0kzubJF9PZP8mIgyNuPekZGiKPD3gt_KxkbWi4qy97s4_45kD_LcneBUIOylC74IcFBUKq0OBSe-EgULPmUoGbILEj3W3WNiTdR2GSNOssn=w720-h720-s-no-gm?authuser=0.png",
     "homepage": "https://zeno.fm/radio/DWDU1055FM/",
     "stationUuid": "eb6b1caa-ab2a-48c8-a08d-fa7101d89bff",
-    "checkedAt": "2026-11-26T13:45:41.890Z",
+    "checkedAt": "2026-11-27T13:47:16.493Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1487,7 +1674,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2hQ-xwDmy8F0KdJobgNQmkM3Vkmu5Vh4_5aI-NcyqDg&s=10",
     "homepage": "https://tunein.com/radio/Radio-One-1055-s14234/",
     "stationUuid": "9469c8d7-5746-4da3-b2f4-ab634c4cd5ae",
-    "checkedAt": "2026-11-26T13:45:41.909Z",
+    "checkedAt": "2026-11-27T13:47:16.515Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1508,7 +1695,7 @@
     "favicon": "https://lh3.googleusercontent.com/pw/AP1GczOHYg8uGJX_-p9_6rifyrFfNlRjsf_smtyHGp5LqzRWy0kzubJF9PZP8mIgyNuPekZGiKPD3gt_KxkbWi4qy97s4_45kD_LcneBUIOylC74IcFBUKq0OBSe-EgULPmUoGbILEj3W3WNiTdR2GSNOssn=w720-h720-s-no-gm?authuser=0.png",
     "homepage": "https://zeno.fm/radio/DWDU1055FM/",
     "stationUuid": "07f38ee1-4ed1-4a8e-9bfe-f0a175a8c2d2",
-    "checkedAt": "2026-11-26T13:45:41.933Z",
+    "checkedAt": "2026-11-27T13:47:16.695Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1530,7 +1717,7 @@
     "favicon": "https://static.wikia.nocookie.net/russel/images/6/60/One_FM_Logo.png/revision/latest?cb=20230427150213",
     "homepage": "https://cignal.tv/article/2242/commercial-channel-line-up",
     "stationUuid": "071bbe2f-f32c-41d7-956d-f8ec635300ac",
-    "checkedAt": "2026-11-26T13:45:42.108Z",
+    "checkedAt": "2026-11-27T13:47:16.837Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1551,7 +1738,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/9/40449.v9.png",
     "homepage": "https://tunein.com/radio/Radio-One-1055-s14234/",
     "stationUuid": "0f673e7b-8b3c-41cb-aa74-fc2cbadfe567",
-    "checkedAt": "2026-11-26T13:45:42.239Z",
+    "checkedAt": "2026-11-27T13:47:16.884Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1574,7 +1761,7 @@
     "favicon": "https://assets.clrd.net/uploads/logos/radios/019ee2c7-3a47-7dea-8a43-de299a77084c/d5d586fe-d253-4042-975e-dd4d6e9238c7.webp",
     "homepage": "https://www.youtube.com/@smilenetworkph",
     "stationUuid": "84cea319-9e18-4b7d-b0ab-d0311daf785f",
-    "checkedAt": "2026-11-26T13:45:42.656Z",
+    "checkedAt": "2026-11-27T13:47:17.422Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1597,7 +1784,7 @@
     "favicon": "https://assets.clrd.net/uploads/logos/radios/019ee2c7-3a47-7dea-8a43-de299a77084c/d5d586fe-d253-4042-975e-dd4d6e9238c7.webp",
     "homepage": "https://www.youtube.com/@smilenetworkph",
     "stationUuid": "b23d07e5-9d4f-4f84-8000-0ce3ead69349",
-    "checkedAt": "2026-11-26T13:45:42.731Z",
+    "checkedAt": "2026-11-27T13:47:17.442Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1620,7 +1807,7 @@
     "favicon": "https://assets.clrd.net/uploads/logos/radios/019ee2c7-3a47-7dea-8a43-de299a77084c/d5d586fe-d253-4042-975e-dd4d6e9238c7.webp",
     "homepage": "https://www.youtube.com/@smilenetworkph",
     "stationUuid": "d1dd6c65-a1b0-4b7f-93a2-89f007726d72",
-    "checkedAt": "2026-11-26T13:45:42.778Z",
+    "checkedAt": "2026-11-27T13:47:17.452Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1643,7 +1830,7 @@
     "favicon": "https://assets.clrd.net/uploads/logos/radios/019ee2c7-3a47-7dea-8a43-de299a77084c/d5d586fe-d253-4042-975e-dd4d6e9238c7.webp",
     "homepage": "https://www.youtube.com/@smilenetworkph",
     "stationUuid": "224de782-c5ef-48e2-a1d5-f4dacf9ba135",
-    "checkedAt": "2026-11-26T13:45:42.797Z",
+    "checkedAt": "2026-11-27T13:47:17.522Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1666,7 +1853,7 @@
     "favicon": "https://assets.clrd.net/uploads/logos/radios/019ee2c7-3a47-7dea-8a43-de299a77084c/d5d586fe-d253-4042-975e-dd4d6e9238c7.webp",
     "homepage": "https://www.youtube.com/@smilenetworkph",
     "stationUuid": "39659f0d-1fe0-481b-a861-de8d943acb60",
-    "checkedAt": "2026-11-26T13:45:42.807Z",
+    "checkedAt": "2026-11-27T13:47:17.607Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1689,7 +1876,7 @@
     "favicon": "https://assets.clrd.net/uploads/logos/radios/019ee2c7-3a47-7dea-8a43-de299a77084c/d5d586fe-d253-4042-975e-dd4d6e9238c7.webp",
     "homepage": "https://www.youtube.com/@smilenetworkph",
     "stationUuid": "78b513da-f7d8-4b6e-a1be-8892b2237f31",
-    "checkedAt": "2026-11-26T13:45:42.809Z",
+    "checkedAt": "2026-11-27T13:47:17.617Z",
     "status": 404,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1713,7 +1900,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/314/tgon-koolfm.708ae752.png",
     "homepage": "https://www.facebook.com/tgonkoolfm",
     "stationUuid": "6d2efbe0-9409-4ec5-a794-aca562d353b5",
-    "checkedAt": "2026-11-26T13:45:43.104Z",
+    "checkedAt": "2026-11-27T13:47:18.113Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1734,7 +1921,7 @@
     "favicon": "https://static.wikia.nocookie.net/logopedia/images/b/b4/UFM_105.5_logo.png/revision/latest?cb=20250315052255",
     "homepage": "https://en.wikipedia.org/wiki/DWDU#:~:text=DWDU%20(105.5%20FM)%20was%20a,affiliate%20company%20of%20Converge%20ICT.",
     "stationUuid": "ffce2874-e3ec-48cd-9867-36278ffc6ebd",
-    "checkedAt": "2026-11-26T13:45:43.438Z",
+    "checkedAt": "2026-11-27T13:47:18.404Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1755,7 +1942,7 @@
     "favicon": null,
     "homepage": "https://xfmnaga.impnlee.com/",
     "stationUuid": "4c1d5b20-13a2-4dd2-b31d-6238dad232b0",
-    "checkedAt": "2026-11-26T13:45:45.332Z",
+    "checkedAt": "2026-11-27T13:47:20.586Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -1774,7 +1961,7 @@
     "favicon": "https://i2.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Naga.png?w=696&ssl=1",
     "homepage": null,
     "stationUuid": "5eaab036-b8eb-4d13-a2a8-5da84b1cd263",
-    "checkedAt": "2026-11-26T13:45:45.400Z",
+    "checkedAt": "2026-11-27T13:47:20.721Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1793,34 +1980,9 @@
     "favicon": "https://pcmc.com.ph/wp-content/uploads/2024/09/6-2.png",
     "homepage": "https://pcmc.com.ph/prtv-philippines/",
     "stationUuid": "a2a837ec-af01-4684-af5b-1ae6f4422d00",
-    "checkedAt": "2026-11-26T13:45:45.566Z",
+    "checkedAt": "2026-11-27T13:47:20.912Z",
     "status": 404,
     "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "95.1 iFM Iloilo",
-    "url": "https://livestream.rmn.ph/ifmiloilo",
-    "country": "PH",
-    "type": "contemporary",
-    "tags": [
-      "contemporary",
-      "drama",
-      "middle of the road",
-      "music",
-      "news",
-      "opm",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": null,
-    "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Iloilo.png?w=592&ssl=1",
-    "homepage": "https://rmn.ph/ifm951iloilo/",
-    "stationUuid": "9b7a494a-6c2c-433c-be1e-ece071d516d9",
-    "checkedAt": "2026-11-26T13:45:45.712Z",
-    "status": 404,
-    "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
@@ -1840,7 +2002,7 @@
     "favicon": "https://cdn.discordapp.com/attachments/1108355296591622255/1509220121774653551/DZEX_PFP.png?ex=6a186244&is=6a1710c4&hm=69f81bf12c501262075c3c3b66db3142d041365953820abfab33ef1aa419acd9&",
     "homepage": "https://www.youtube.com/@DZEX1026AM",
     "stationUuid": "853c9105-2220-48ff-a125-9bc61733ccd9",
-    "checkedAt": "2026-11-26T13:45:45.966Z",
+    "checkedAt": "2026-11-27T13:47:21.340Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1859,7 +2021,7 @@
     "favicon": "https://dxbh.net/awr-logo.png",
     "homepage": "https://dxbh.net/",
     "stationUuid": "611e0fb7-ec3d-4f83-9782-35292bdf4d6d",
-    "checkedAt": "2026-11-26T13:45:47.775Z",
+    "checkedAt": "2026-11-27T13:47:23.403Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1878,7 +2040,7 @@
     "favicon": "https://www.theanchor.app/icons/icon-512x512.png",
     "homepage": "https://www.theanchor.app/#/",
     "stationUuid": "c62182b6-5fa0-463f-b983-4a1720f53730",
-    "checkedAt": "2026-11-26T13:45:47.787Z",
+    "checkedAt": "2026-11-27T13:47:23.414Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1899,7 +2061,7 @@
     "favicon": "https://static.wikia.nocookie.net/russel/images/6/60/One_FM_Logo.png/revision/latest?cb=20230427150213",
     "homepage": "https://cignal.tv/channels",
     "stationUuid": "38a2bed5-9bbe-4f7f-8d53-c4f3deecfcf1",
-    "checkedAt": "2026-11-26T13:45:47.840Z",
+    "checkedAt": "2026-11-27T13:47:23.617Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1920,7 +2082,7 @@
     "favicon": "https://static.wikia.nocookie.net/josharkenlogo/images/a/af/One_TV_Logo.png/revision/latest?cb=20231207104335",
     "homepage": "https://www.cignal.tv/",
     "stationUuid": "9ccef6d4-0d5a-4ea2-b9c3-4f3b2f4ddbb7",
-    "checkedAt": "2026-11-26T13:45:48.277Z",
+    "checkedAt": "2026-11-27T13:47:23.912Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -1942,10 +2104,50 @@
     "favicon": "https://2.bp.blogspot.com/_yY_Enb_xs0k/TIAkNrwhG_I/AAAAAAAAAK0/pCslE0HVOMk/s200/atlantis.JPG",
     "homepage": "https://www.facebook.com/atlantisradioph",
     "stationUuid": "ae0223ee-7513-4992-9de7-0ea996f92ade",
-    "checkedAt": "2026-11-26T13:45:48.468Z",
+    "checkedAt": "2026-11-27T13:47:24.130Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "MYX P-POP",
+    "url": "http://das-edge11-live365-dal03.cdnstream.com/a63316",
+    "country": "PH",
+    "type": "internet radio",
+    "tags": [
+      "internet radio",
+      "opm"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://myx.global/myx-p-pop-radio/",
+    "stationUuid": "7501b252-5e8d-4569-b659-eaf054fb7f81",
+    "checkedAt": "2026-11-27T13:47:24.358Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "MYX P-POP Radio",
+    "url": "http://ais-edge50-live365-dal02.cdnstream.com/a63316",
+    "country": "PH",
+    "type": "internet radio",
+    "tags": [
+      "internet radio",
+      "opm hits"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "filipino",
+    "favicon": "https://assets.myx.global/wp-content/uploads/2022/09/PPOP-Radio-Logo-2.png",
+    "homepage": "https://myx.global/myx-p-pop-radio/",
+    "stationUuid": "ce2d9e79-12ad-43e0-9a25-d7b1d6783cee",
+    "checkedAt": "2026-11-27T13:47:24.458Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radyong Sira!",
@@ -1963,10 +2165,30 @@
     "favicon": "https://i.ibb.co/HDdjX4r3/RS-Logo.png",
     "homepage": "https://radyongsira.ltg.network/",
     "stationUuid": "6c847f86-4c4e-4924-ae36-50ce9b719ebc",
-    "checkedAt": "2026-11-26T13:45:49.262Z",
+    "checkedAt": "2026-11-27T13:47:25.005Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "101.9 Hallypop Radio - DWAP",
+    "url": "http://ais-edge50-live365-dal02.cdnstream.com/a63316",
+    "country": "PH",
+    "type": "kpop",
+    "tags": [
+      "kpop",
+      "opm"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english,korean",
+    "favicon": "https://upload.wikimedia.org/wikipedia/commons/f/fb/GMA_Hallypop_logo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "homepage": "https://m.youtube.com/@JungoPinoy",
+    "stationUuid": "4bb8c0ee-7e48-4e20-8966-c57a12ffb0bd",
+    "checkedAt": "2026-11-27T13:47:25.040Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "102.9 South Radio News FM",
@@ -1980,7 +2202,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/southradio1029/",
     "stationUuid": "a2831066-2eea-490c-a763-6a00c826d5f4",
-    "checkedAt": "2026-11-26T13:45:49.625Z",
+    "checkedAt": "2026-11-27T13:47:25.618Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1997,7 +2219,7 @@
     "favicon": "https://www.wgbfm.online/wgbfmlogo.png",
     "homepage": "https://www.pbnbicol.com/",
     "stationUuid": "4dda8153-a3a5-458f-a545-c13ff106b4d1",
-    "checkedAt": "2026-11-26T13:45:50.061Z",
+    "checkedAt": "2026-11-27T13:47:26.082Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2014,7 +2236,7 @@
     "favicon": "https://apk.radyoph.com/upload/1772957285_DZXO.png",
     "homepage": "http://www.bigsoundfm.com:2199/start/dzxotoa/",
     "stationUuid": "f6525035-f1c6-471f-9d2b-a702a310b3d6",
-    "checkedAt": "2026-11-26T13:45:50.179Z",
+    "checkedAt": "2026-11-27T13:47:26.386Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2031,10 +2253,27 @@
     "favicon": "https://www.dwiz882am.com/wp-content/uploads/2025/12/dwiz-logo.png",
     "homepage": "http://www.dwiz882am.com/",
     "stationUuid": "619b2800-8042-484b-b9b7-24351326047b",
-    "checkedAt": "2026-11-26T13:45:50.410Z",
+    "checkedAt": "2026-11-27T13:47:26.586Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "90.7 Radyo Oragon Legazpi",
+    "url": "http://streamnavs.net:8181/live",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://static-media.streema.com/media/cache/11/49/1149a6f8dc1fbc097cd0ea137891d131.jpg",
+    "homepage": "https://www.facebook.com/p/Radyo-Oragon-907-News-Fm-100084331060993/",
+    "stationUuid": "a520fa1d-ec10-4f66-b16e-631bb701f784",
+    "checkedAt": "2026-11-27T13:47:26.810Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "93.5 City Radio",
@@ -2048,7 +2287,7 @@
     "favicon": "https://935cityradio.com/image_proxy.php?type=radio&url=https%3A%2F%2Fazura.typicalmedia.net%2Fstatic%2Fuploads%2Fdzyfyourradio%2Falbum_art.1771215256.jpg",
     "homepage": "https://935cityradio.com/",
     "stationUuid": "9c6a3f8d-ae48-411d-b91b-af959573ce06",
-    "checkedAt": "2026-11-26T13:45:50.674Z",
+    "checkedAt": "2026-11-27T13:47:27.201Z",
     "status": 503,
     "contentType": "text/html",
     "lastFailure": "HTTP 503"
@@ -2065,7 +2304,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/amp/radio/93-7-radyo-serbato-san-francisco-agusan-del-sur/",
     "stationUuid": "7f80982c-2438-4a64-afb5-87dd5360932c",
-    "checkedAt": "2026-11-26T13:45:50.733Z",
+    "checkedAt": "2026-11-27T13:47:27.217Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2082,7 +2321,7 @@
     "favicon": "https://rmn.ph/wp-content/uploads/2025/12/rmnnetworks-272x90-1.png",
     "homepage": "https://rmn.ph/radio/",
     "stationUuid": "fb4eee2c-17bf-42d0-aa28-2d08ac1ceeb2",
-    "checkedAt": "2026-11-26T13:45:50.886Z",
+    "checkedAt": "2026-11-27T13:47:27.495Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2099,7 +2338,7 @@
     "favicon": "https://play-lh.googleusercontent.com/w8NSGO0bSeITBESD2saREU1QeN64O4-fJPbfb6dtiui92gXu8ZrxZMmUYGvFQ-SNDA=s150-rw",
     "homepage": "https://zeno.fm/radio/radyoserbatoclaver/",
     "stationUuid": "bb166f01-79a9-4e39-a3ae-e965124eb584",
-    "checkedAt": "2026-11-26T13:45:50.983Z",
+    "checkedAt": "2026-11-27T13:47:27.732Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2116,7 +2355,7 @@
     "favicon": "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2FPIk8c-n2w-bCtR76YHuaGngy_qQGLpKZZz3nhX5l1RM%2Frs%3Afit%3A240%3A240%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYWd4emZucGxibTh0YzNSaGRITnlNZ3NTQ2tGMWRHaERiR2xsYm5RWWdJREE0SXFlMWdrTUN4SU9VM1JoZEdsdmJsQnliMlpwYkdVWWdJRHc0TkhOa2dvTW9nRUVlbVZ1YncvaW1hZ2UvP3Jlc2l6ZT0yNDB4MjQwJnVwZGF0ZWQ9MTY0MjAxNjI1MDAwMA.webp&w=640&q=75",
     "homepage": "https://zeno.fm/amp/radio/99-7-radyo-serbato-cabadbaran-agusan-del-norte/",
     "stationUuid": "3da0b42c-a66f-4523-8ece-1d8ed9022723",
-    "checkedAt": "2026-11-26T13:45:51.080Z",
+    "checkedAt": "2026-11-27T13:47:27.843Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2133,10 +2372,44 @@
     "favicon": "https://www.radyonatin.com/img/lib/000/005/801/2.png",
     "homepage": "https://aksyonradyo.mbcmediagroup.com/#aboutUs",
     "stationUuid": "282c8b9f-99ce-4d04-ab8d-f695e0b6727a",
-    "checkedAt": "2026-11-26T13:45:51.197Z",
+    "checkedAt": "2026-11-27T13:47:27.988Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Aksyon Radyo Davao",
+    "url": "http://5.9.13.39:8140/stream",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": null,
+    "favicon": "https://upload.wikimedia.org/wikipedia/en/6/69/DXGO_logo_2021.jpg",
+    "homepage": "https://aksyonradyo.mbcmediagroup.com/?station=aksyon-radyo-davao",
+    "stationUuid": "ea8be925-4c92-4b72-aa7e-0139a7ef4cbd",
+    "checkedAt": "2026-11-27T13:47:28.411Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Aksyon Radyo Iloilo",
+    "url": "http://148.251.43.149:8213/stream",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": null,
+    "favicon": "https://aksyonradyoiloilo.com.ph/wp-content/uploads/2025/10/AksyonRadyoLogo512x512.png",
+    "homepage": "https://aksyonradyo.mbcmediagroup.com/?station=aksyon-radyo-iloilo#top",
+    "stationUuid": "d25579bc-048a-46c5-bcc5-b7dcc50c412c",
+    "checkedAt": "2026-11-27T13:47:28.426Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Aksyon Radyo Pangasinan",
@@ -2150,7 +2423,7 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/YYH3FBRQrd.jpg",
     "homepage": "https://aksyonradyo.mbcmediagroup.com/",
     "stationUuid": "5a020c18-771a-4eef-b999-105a996705b1",
-    "checkedAt": "2026-11-26T13:45:51.574Z",
+    "checkedAt": "2026-11-27T13:47:28.642Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2167,7 +2440,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Barangay_FM_101.5_Naga_logo_2025.jpg/500px-Barangay_FM_101.5_Naga_logo_2025.jpg",
     "homepage": "http://www.gmanetwork.com/",
     "stationUuid": "2718e99c-e4ee-40d7-8d52-a52f8c318497",
-    "checkedAt": "2026-11-26T13:45:52.466Z",
+    "checkedAt": "2026-11-27T13:47:29.875Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2184,7 +2457,7 @@
     "favicon": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Barangay_LS_CDO.jpg/500px-Barangay_LS_CDO.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "86423678-5ba0-4ed1-9653-22f08021dd4f",
-    "checkedAt": "2026-11-26T13:45:52.486Z",
+    "checkedAt": "2026-11-27T13:47:29.927Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2201,7 +2474,7 @@
     "favicon": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Barangay_LS_CDO.jpg/500px-Barangay_LS_CDO.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "96069da9-aea7-4a6f-81be-26d28da73942",
-    "checkedAt": "2026-11-26T13:45:52.524Z",
+    "checkedAt": "2026-11-27T13:47:29.933Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2218,7 +2491,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Barangay_LS_101.5_2026_Logo.webp/500px-Barangay_LS_101.5_2026_Logo.webp.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "a46ff252-fa08-4bb9-a3a8-378181c5b079",
-    "checkedAt": "2026-11-26T13:45:52.531Z",
+    "checkedAt": "2026-11-27T13:47:29.983Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2235,7 +2508,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Barangay_LS_101.5_2026_Logo.webp/500px-Barangay_LS_101.5_2026_Logo.webp.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "homepage": "http://www.gmanetwork.com/",
     "stationUuid": "e3be1ecb-6246-4ccf-8063-75e722245f79",
-    "checkedAt": "2026-11-26T13:45:52.543Z",
+    "checkedAt": "2026-11-27T13:47:30.008Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2252,7 +2525,7 @@
     "favicon": "https://static.wikia.nocookie.net/gmanetwork/images/e/e1/Barangay_FM_101.5.png/revision/latest/thumbnail/width/720/height/900?cb=20250721143001",
     "homepage": "http://www.gmanetwork.com/",
     "stationUuid": "f2dd2553-9572-4b20-b617-c1b8751225f5",
-    "checkedAt": "2026-11-26T13:45:52.563Z",
+    "checkedAt": "2026-11-27T13:47:30.105Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2269,7 +2542,7 @@
     "favicon": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Barangay_LS_Davao.jpg/500px-Barangay_LS_Davao.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "aa9e6e4f-742e-4a48-a405-78d0b1a3f66c",
-    "checkedAt": "2026-11-26T13:45:52.590Z",
+    "checkedAt": "2026-11-27T13:47:30.134Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2286,7 +2559,7 @@
     "favicon": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Barangay_LS_Bacolod.jpg/500px-Barangay_LS_Bacolod.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "b7f01f19-885f-438b-99a5-5d51f14250ec",
-    "checkedAt": "2026-11-26T13:45:52.590Z",
+    "checkedAt": "2026-11-27T13:47:30.139Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2303,7 +2576,7 @@
     "favicon": "https://static.wikia.nocookie.net/gmanetwork/images/6/68/Barangay_LS_89.3.png/revision/latest/scale-to-width/360?cb=20260913012028",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "697a3f9f-14f9-4837-85a2-9d360553cc35",
-    "checkedAt": "2026-11-26T13:45:52.603Z",
+    "checkedAt": "2026-11-27T13:47:30.159Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2320,7 +2593,7 @@
     "favicon": "https://static.wikia.nocookie.net/logopedia/images/1/1d/Barangay_FM_Tuguegarao.png/revision/latest/scale-to-width-down/250?cb=20240705055422",
     "homepage": "http://www.gmanetwork.com/",
     "stationUuid": "8d1db3f0-655e-4463-b9e1-44a553962088",
-    "checkedAt": "2026-11-26T13:45:52.632Z",
+    "checkedAt": "2026-11-27T13:47:30.198Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2337,7 +2610,7 @@
     "favicon": "https://static.wikia.nocookie.net/tvradioschedules/images/f/f5/Barangay_FM_91.1_%E2%80%93_Lucena.png/revision/latest?cb=20260622005302",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "3cfdac3b-c5fe-4c83-9a54-af5bb56e4770",
-    "checkedAt": "2026-11-26T13:45:52.633Z",
+    "checkedAt": "2026-11-27T13:47:30.212Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2354,7 +2627,7 @@
     "favicon": "https://static.wikia.nocookie.net/tvradioschedules/images/f/f5/Barangay_FM_91.1_%E2%80%93_Lucena.png/revision/latest?cb=20260622005302",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "e84f6f72-5b6d-4aed-b873-f30e1ee83164",
-    "checkedAt": "2026-11-26T13:45:52.651Z",
+    "checkedAt": "2026-11-27T13:47:30.231Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2371,7 +2644,7 @@
     "favicon": "https://i.scdn.co/image/ab67656300005f1f09ecfea94c087cffc34b2fde",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "b5d8f53f-275b-4f9f-be63-715ff8e5ed08",
-    "checkedAt": "2026-11-26T13:45:52.672Z",
+    "checkedAt": "2026-11-27T13:47:30.288Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2388,7 +2661,7 @@
     "favicon": "https://static.wikia.nocookie.net/tvradioschedules/images/1/14/Barangay_LS_93.5_%E2%80%93_Dagupan.png/revision/latest?cb=20260622002557",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "7606c4f4-47cb-40f0-afc0-6405dab87261",
-    "checkedAt": "2026-11-26T13:45:52.677Z",
+    "checkedAt": "2026-11-27T13:47:30.297Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2405,7 +2678,7 @@
     "favicon": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Barangay_LS_Palawan.jpg/500px-Barangay_LS_Palawan.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "d28e481b-1498-4d7d-ab0e-8fce5fd02915",
-    "checkedAt": "2026-11-26T13:45:52.682Z",
+    "checkedAt": "2026-11-27T13:47:30.304Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2422,7 +2695,7 @@
     "favicon": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Barangay_LS_Cebu.jpg/500px-Barangay_LS_Cebu.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "homepage": "http://www.gmanetwork.com/",
     "stationUuid": "86c4a261-0f7d-4694-bc9c-f578940564bd",
-    "checkedAt": "2026-11-26T13:45:52.692Z",
+    "checkedAt": "2026-11-27T13:47:30.346Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2439,7 +2712,7 @@
     "favicon": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Barangay_LS_Cebu.jpg/500px-Barangay_LS_Cebu.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
     "homepage": "http://www.gmanetwork.com/",
     "stationUuid": "699776d1-2945-473b-bb31-69a9e5e8fd27",
-    "checkedAt": "2026-11-26T13:45:52.696Z",
+    "checkedAt": "2026-11-27T13:47:30.351Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2456,7 +2729,7 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2021/12/BiG-SOUND-FM.webp",
     "homepage": "https://www.vanguardradionetwork.com/mainmenu.php",
     "stationUuid": "f5d23bb7-c68c-4876-9adc-2b87bbbf6e1d",
-    "checkedAt": "2026-11-26T13:45:52.811Z",
+    "checkedAt": "2026-11-27T13:47:30.504Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2473,7 +2746,7 @@
     "favicon": "https://img.bomboradyo.com/cauayan/2024/01/Bombo-Radyo-Default-Banner.jpg",
     "homepage": "https://kalibo.bomboradyo.com/",
     "stationUuid": "cae4433a-f208-469c-8a98-2bffade2a58d",
-    "checkedAt": "2026-11-26T13:45:52.986Z",
+    "checkedAt": "2026-11-27T13:47:30.728Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -2490,7 +2763,7 @@
     "favicon": "https://bomboradyo.com/wp-images/Bombo-Radyo-Default-Banner.jpg",
     "homepage": "https://kalibo.bomboradyo.com/",
     "stationUuid": "bd9143d8-7e62-43f4-8d93-b5f1b1e0cbf9",
-    "checkedAt": "2026-11-26T13:45:53.014Z",
+    "checkedAt": "2026-11-27T13:47:30.730Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -2507,7 +2780,7 @@
     "favicon": "https://www.bomboradyo.com/wp-images/tuguegarao-default-banner.jpg",
     "homepage": "https://tuguegarao.bomboradyo.com/",
     "stationUuid": "4b50db1d-d1e5-4376-9bca-7df77857dda4",
-    "checkedAt": "2026-11-26T13:45:53.298Z",
+    "checkedAt": "2026-11-27T13:47:30.822Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -2524,7 +2797,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/category/local-news/visayas/antique/",
     "stationUuid": "291cbe5a-6fd9-4e6e-a626-b4f3f58dc63c",
-    "checkedAt": "2026-11-26T13:45:53.383Z",
+    "checkedAt": "2026-11-27T13:47:31.214Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2541,7 +2814,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-bacolod/",
     "stationUuid": "e6a8df29-d9f3-4c2a-9ecc-8f8439e98712",
-    "checkedAt": "2026-11-26T13:45:53.416Z",
+    "checkedAt": "2026-11-27T13:47:31.328Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2558,7 +2831,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-batangas/",
     "stationUuid": "d67509b9-9b30-42e0-928b-9fdf637e0449",
-    "checkedAt": "2026-11-26T13:45:53.454Z",
+    "checkedAt": "2026-11-27T13:47:31.648Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2575,7 +2848,7 @@
     "favicon": "https://brigadanews.ph/fmstreamv2/assets/stationLogo/null.jpg",
     "homepage": "https://www.brigadanews.ph/",
     "stationUuid": "aefdbffb-ccbc-45bd-92fb-47dfee4ae5e1",
-    "checkedAt": "2026-11-26T13:45:53.501Z",
+    "checkedAt": "2026-11-27T13:47:31.682Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2592,7 +2865,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-bogo/",
     "stationUuid": "3bd28c9d-1c55-40f0-a4e1-d8a12c89e23c",
-    "checkedAt": "2026-11-26T13:45:53.503Z",
+    "checkedAt": "2026-11-27T13:47:31.687Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2609,7 +2882,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-butuan/",
     "stationUuid": "7e139984-99d0-45b1-b6ca-8c901abc52cc",
-    "checkedAt": "2026-11-26T13:45:53.508Z",
+    "checkedAt": "2026-11-27T13:47:31.761Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2626,7 +2899,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-cagayan-de-oro/",
     "stationUuid": "9f18a94a-32f5-48d8-9bca-7b5d5a11492a",
-    "checkedAt": "2026-11-26T13:45:53.571Z",
+    "checkedAt": "2026-11-27T13:47:31.819Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2643,7 +2916,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-cauayan/",
     "stationUuid": "f2599dc7-a58c-47f5-a02a-abbcb20c7838",
-    "checkedAt": "2026-11-26T13:45:53.676Z",
+    "checkedAt": "2026-11-27T13:47:31.879Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2660,7 +2933,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-cebu/",
     "stationUuid": "defbe6d3-730f-4c55-be49-11bc8598c064",
-    "checkedAt": "2026-11-26T13:45:53.735Z",
+    "checkedAt": "2026-11-27T13:47:31.957Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2677,7 +2950,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-cotabato/",
     "stationUuid": "fa600eb0-4e84-4686-b28d-6e64efaf1243",
-    "checkedAt": "2026-11-26T13:45:53.807Z",
+    "checkedAt": "2026-11-27T13:47:31.979Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2694,7 +2967,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-davao/",
     "stationUuid": "2c5ad08f-9e6b-4788-8771-15156d82fe0c",
-    "checkedAt": "2026-11-26T13:45:53.913Z",
+    "checkedAt": "2026-11-27T13:47:32.160Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2711,7 +2984,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/category/local-news/mindanao/dipolog",
     "stationUuid": "40586167-6eb7-4d1f-a89d-597ced21d656",
-    "checkedAt": "2026-11-26T13:45:53.960Z",
+    "checkedAt": "2026-11-27T13:47:32.186Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2728,7 +3001,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/",
     "stationUuid": "19ecee98-679e-4a42-a644-4e86fc76130b",
-    "checkedAt": "2026-11-26T13:45:53.965Z",
+    "checkedAt": "2026-11-27T13:47:32.196Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2745,7 +3018,7 @@
     "favicon": "https://i0.wp.com/brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png?resize=150%2C150&ssl=1",
     "homepage": "https://www.brigadanews.ph/bnfm-iligan/",
     "stationUuid": "d30243b3-decb-4921-a38c-e3300e135c26",
-    "checkedAt": "2026-11-26T13:45:54.020Z",
+    "checkedAt": "2026-11-27T13:47:32.324Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2762,7 +3035,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-kalibo/",
     "stationUuid": "778b54ae-4ee0-4e38-af10-0e19e2f8a006",
-    "checkedAt": "2026-11-26T13:45:54.077Z",
+    "checkedAt": "2026-11-27T13:47:32.427Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2779,7 +3052,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-koronadal/",
     "stationUuid": "c3264e62-69fa-462a-a03e-503bbf04ef0e",
-    "checkedAt": "2026-11-26T13:45:54.140Z",
+    "checkedAt": "2026-11-27T13:47:32.442Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2796,7 +3069,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-legazpi/",
     "stationUuid": "fc159e15-0130-4cc5-8821-bec2c5fbe769",
-    "checkedAt": "2026-11-26T13:45:54.259Z",
+    "checkedAt": "2026-11-27T13:47:32.552Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2813,7 +3086,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-lucena/",
     "stationUuid": "a2acaa01-59b6-4326-8c4c-591abec82884",
-    "checkedAt": "2026-11-26T13:45:54.292Z",
+    "checkedAt": "2026-11-27T13:47:32.618Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2830,7 +3103,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-lucena/",
     "stationUuid": "a5f720cc-020f-49db-8ffe-dc742aee609c",
-    "checkedAt": "2026-11-26T13:45:54.317Z",
+    "checkedAt": "2026-11-27T13:47:32.655Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2847,7 +3120,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/",
     "stationUuid": "eb5bfaf0-1d51-41dc-a9d4-3a450ba75749",
-    "checkedAt": "2026-11-26T13:45:54.325Z",
+    "checkedAt": "2026-11-27T13:47:32.705Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2864,7 +3137,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-naga/",
     "stationUuid": "94e1f743-9035-4c18-8e9c-1488ef2baf4c",
-    "checkedAt": "2026-11-26T13:45:54.399Z",
+    "checkedAt": "2026-11-27T13:47:32.815Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2881,7 +3154,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-olongapo/",
     "stationUuid": "61f23e11-ef00-41c9-92d7-a6fcfd709643",
-    "checkedAt": "2026-11-26T13:45:54.449Z",
+    "checkedAt": "2026-11-27T13:47:32.870Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2898,7 +3171,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-oroqueta/",
     "stationUuid": "680fd30a-30e2-4f87-858e-4bd6d9a1fa79",
-    "checkedAt": "2026-11-26T13:45:54.509Z",
+    "checkedAt": "2026-11-27T13:47:32.947Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2915,7 +3188,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-pagadian/",
     "stationUuid": "d3d8a2ae-30a1-4aa4-89dc-2191b37dda65",
-    "checkedAt": "2026-11-26T13:45:54.554Z",
+    "checkedAt": "2026-11-27T13:47:32.995Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2932,7 +3205,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-palawan/",
     "stationUuid": "794f9067-bb81-48e2-86e0-23139d1cf41f",
-    "checkedAt": "2026-11-26T13:45:54.595Z",
+    "checkedAt": "2026-11-27T13:47:33.013Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2949,7 +3222,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/",
     "stationUuid": "20f98947-c344-46d6-985b-dde85e9684d6",
-    "checkedAt": "2026-11-26T13:45:54.620Z",
+    "checkedAt": "2026-11-27T13:47:33.105Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2966,7 +3239,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/",
     "stationUuid": "f054a4cd-523b-4402-b745-6e5f16c0f1a0",
-    "checkedAt": "2026-11-26T13:45:54.657Z",
+    "checkedAt": "2026-11-27T13:47:33.194Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -2983,7 +3256,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-sorsogon/",
     "stationUuid": "6a1d9ea3-b9d1-4e28-96d4-c0b3f8fec40f",
-    "checkedAt": "2026-11-26T13:45:54.677Z",
+    "checkedAt": "2026-11-27T13:47:33.318Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -3000,7 +3273,7 @@
     "favicon": null,
     "homepage": "https://www.brigadanews.ph/",
     "stationUuid": "1a7e1b5e-caed-49ab-b4cb-4f5f0448f07b",
-    "checkedAt": "2026-11-26T13:45:54.721Z",
+    "checkedAt": "2026-11-27T13:47:33.324Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3017,7 +3290,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/category/local-news/visayas/tacloban/",
     "stationUuid": "480799ea-fc5a-478e-8485-89b6ce8f7dc6",
-    "checkedAt": "2026-11-26T13:45:54.727Z",
+    "checkedAt": "2026-11-27T13:47:33.334Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -3034,7 +3307,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://brigadanews.ph/",
     "stationUuid": "8c43606b-d984-4299-a941-da2ec78d97f6",
-    "checkedAt": "2026-11-26T13:45:54.767Z",
+    "checkedAt": "2026-11-27T13:47:33.343Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -3051,7 +3324,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-toledo/",
     "stationUuid": "915ea3a0-219b-47f2-95d5-9bbafddac38c",
-    "checkedAt": "2026-11-26T13:45:54.797Z",
+    "checkedAt": "2026-11-27T13:47:33.430Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -3068,7 +3341,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-trento/",
     "stationUuid": "037c33ec-0afa-4fa5-aecf-1aea53d2365f",
-    "checkedAt": "2026-11-26T13:45:54.849Z",
+    "checkedAt": "2026-11-27T13:47:33.488Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -3085,7 +3358,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/",
     "stationUuid": "09eaab09-2116-4a84-8ec2-0fa032870159",
-    "checkedAt": "2026-11-26T13:45:54.864Z",
+    "checkedAt": "2026-11-27T13:47:33.493Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -3102,7 +3375,7 @@
     "favicon": "https://brigada-news-ph.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2025/07/11223747/cropped-Untitled-design-1-2.png",
     "homepage": "https://www.brigadanews.ph/bnfm-zamboanga/",
     "stationUuid": "55dabb37-1941-402b-821a-e18590da5711",
-    "checkedAt": "2026-11-26T13:45:54.921Z",
+    "checkedAt": "2026-11-27T13:47:33.511Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -3119,7 +3392,7 @@
     "favicon": null,
     "homepage": "https://dway.febc.ph/",
     "stationUuid": "613f4b46-f430-4a9f-9d56-90d0e968ac38",
-    "checkedAt": "2026-11-26T13:45:54.971Z",
+    "checkedAt": "2026-11-27T13:47:33.630Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3136,7 +3409,7 @@
     "favicon": "https://i.typicalmedia.net/cityradio/GALAXY-CITY-RADIO-TP.png",
     "homepage": "https://www.935cityradio.com/",
     "stationUuid": "1387ea1a-927d-4949-a790-2f617b789960",
-    "checkedAt": "2026-11-26T13:45:55.034Z",
+    "checkedAt": "2026-11-27T13:47:33.668Z",
     "status": 503,
     "contentType": "text/html",
     "lastFailure": "HTTP 503"
@@ -3153,7 +3426,7 @@
     "favicon": "https://www.brightfm.ph/apple-touch-icon.png",
     "homepage": "https://www.brightfm.ph/",
     "stationUuid": "68c6f533-e495-4766-bd6f-aa4c1a6a2974",
-    "checkedAt": "2026-11-26T13:45:55.134Z",
+    "checkedAt": "2026-11-27T13:47:33.774Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3170,7 +3443,7 @@
     "favicon": "https://radyopangasinan.xo.je/placeholder/april%2011-2026/caramat.jpg",
     "homepage": "https://radyopangasinan.xo.je/?i=1",
     "stationUuid": "10624133-ba31-42b8-a874-5c366d5cfe99",
-    "checkedAt": "2026-11-26T13:45:55.303Z",
+    "checkedAt": "2026-11-27T13:47:33.937Z",
     "status": 404,
     "contentType": "audio/mpeg",
     "lastFailure": "HTTP 404"
@@ -3187,7 +3460,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Naga.png?w=696&ssl=1",
     "homepage": "https://thermnnetworks.ph/",
     "stationUuid": "3f9c5353-8d8d-41c3-bc1d-f42c62044031",
-    "checkedAt": "2026-11-26T13:45:55.455Z",
+    "checkedAt": "2026-11-27T13:47:34.154Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3204,7 +3477,7 @@
     "favicon": "https://1.bp.blogspot.com/-Vd7221XBsQU/UUgPPEGgQTI/AAAAAAAAA-s/qiItHAdjWRU/s200/dytr-bohol-amfmph.png",
     "homepage": "https://dytr1116.weebly.com/",
     "stationUuid": "b0fc19a8-8272-41c1-bdc6-ddf75756e922",
-    "checkedAt": "2026-11-26T13:45:55.616Z",
+    "checkedAt": "2026-11-27T13:47:34.385Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3221,7 +3494,7 @@
     "favicon": null,
     "homepage": "http://www.dytrbohol.com/",
     "stationUuid": "8eb82cd7-5573-456d-b889-39356fa577eb",
-    "checkedAt": "2026-11-26T13:45:55.622Z",
+    "checkedAt": "2026-11-27T13:47:34.413Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -3238,7 +3511,7 @@
     "favicon": "https://www.pbnbicol.com/images/dzgb-logo.png",
     "homepage": "https://www.pbnbicol.com/index",
     "stationUuid": "f3c8d212-f02e-4888-8810-82c66226b5c2",
-    "checkedAt": "2026-11-26T13:45:55.715Z",
+    "checkedAt": "2026-11-27T13:47:34.490Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -3255,7 +3528,7 @@
     "favicon": "https://www.pbnbicol.com/images/dzgb-logo.png",
     "homepage": "https://www.pbnbicol.com/",
     "stationUuid": "fceee36a-b77a-4026-a534-0dc225cd85dc",
-    "checkedAt": "2026-11-26T13:45:55.720Z",
+    "checkedAt": "2026-11-27T13:47:34.508Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -3272,7 +3545,24 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/DZRH_new_logo.svg/500px-DZRH_new_logo.svg.png",
     "homepage": "http://www.dzrh.com.ph/",
     "stationUuid": "99137627-4bcd-4a16-a9a4-56d656de14be",
-    "checkedAt": "2026-11-26T13:45:55.890Z",
+    "checkedAt": "2026-11-27T13:47:34.701Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Easy Rock Bacolod",
+    "url": "http://142.132.158.102:8679/stream",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.easyrock.com.ph/radio?station=105.5-easy-rock-bacolod",
+    "stationUuid": "b0a01614-f53b-4b20-bcbf-abe47c935a7c",
+    "checkedAt": "2026-11-27T13:47:34.952Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3289,7 +3579,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/d/d7/EnergyCebu.png",
     "homepage": "https://m.facebook.com/94.7EnergyFM/",
     "stationUuid": "b26af64a-9a52-438d-a9a4-a6bc9471fadc",
-    "checkedAt": "2026-11-26T13:45:56.420Z",
+    "checkedAt": "2026-11-27T13:47:35.426Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3306,10 +3596,27 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/d/d7/EnergyCebu.png",
     "homepage": "https://www.amfmph.com/energy-fm-cebu-dykt-94-7-mhz-1500.html/",
     "stationUuid": "1fe06bcc-9ffd-44e8-832d-212496f3a720",
-    "checkedAt": "2026-11-26T13:45:56.422Z",
+    "checkedAt": "2026-11-27T13:47:35.443Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Energy FM Davao",
+    "url": "https://s1.free-shoutcast.com/stream/18178",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://energyfmph.com/wp-content/uploads/2026/09/EnergyFM_Davao.webp",
+    "homepage": "https://energyfmph.com/station/energy-fm-davao/",
+    "stationUuid": "09a9f165-b696-4a50-94a1-d570cb511642",
+    "checkedAt": "2026-11-27T13:47:35.477Z",
+    "status": 502,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 502"
   },
   {
     "name": "Energy FM Dipolog",
@@ -3323,7 +3630,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2025/03/energyfmdipolog.png",
     "homepage": "https://radyoph.com/station/energy-fm-dipolog/",
     "stationUuid": "2f3613c1-5f3d-4b9d-a657-491158da7da7",
-    "checkedAt": "2026-11-26T13:45:56.490Z",
+    "checkedAt": "2026-11-27T13:47:35.498Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -3340,7 +3647,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Energy_FM_logo.png/330px-Energy_FM_logo.png",
     "homepage": "http://ph-icecast.eradioportal.com:8000/energyfm_manila",
     "stationUuid": "b3cddc48-acbb-44e9-987c-de80be2102bd",
-    "checkedAt": "2026-11-26T13:45:56.513Z",
+    "checkedAt": "2026-11-27T13:47:35.570Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3357,7 +3664,7 @@
     "favicon": "https://eradioportal.com/wp-content/uploads/2013/03/Energy-FM-Manila-Logo-2014-720x340.png",
     "homepage": "https://eradioportal.com/luzon-fm-stations/energy-fm-manila-106-7/index.html",
     "stationUuid": "8b7c7973-41e1-46ee-b5a4-1cf4d3591db9",
-    "checkedAt": "2026-11-26T13:45:56.515Z",
+    "checkedAt": "2026-11-27T13:47:35.762Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3374,7 +3681,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/6/85416.v5.png",
     "homepage": "https://www.exotica.radio/",
     "stationUuid": "6ccd5308-fb99-484a-be57-13702783c51b",
-    "checkedAt": "2026-11-26T13:45:56.722Z",
+    "checkedAt": "2026-11-27T13:47:35.992Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3391,7 +3698,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/6/85416.v5.png",
     "homepage": "https://www.exotica.radio/",
     "stationUuid": "73df1141-a214-4421-8908-8ae353b55381",
-    "checkedAt": "2026-11-26T13:45:56.734Z",
+    "checkedAt": "2026-11-27T13:47:36.004Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3408,7 +3715,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/6/85416.v5.png",
     "homepage": "https://www.exotica.radio/",
     "stationUuid": "d2cd5690-1dc6-4f9c-ba5b-1be068b358ec",
-    "checkedAt": "2026-11-26T13:45:56.794Z",
+    "checkedAt": "2026-11-27T13:47:36.128Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3425,7 +3732,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/6/85416.v5.png",
     "homepage": "https://www.exotica.radio/",
     "stationUuid": "7cccb39e-a86e-415c-b141-cd299d6020f3",
-    "checkedAt": "2026-11-26T13:45:56.800Z",
+    "checkedAt": "2026-11-27T13:47:36.133Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3442,7 +3749,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/6/85416.v5.png",
     "homepage": "https://www.exotica.radio/",
     "stationUuid": "ba1d5407-9b50-468e-859f-21a18e048a47",
-    "checkedAt": "2026-11-26T13:45:56.813Z",
+    "checkedAt": "2026-11-27T13:47:36.213Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3459,7 +3766,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/6/85416.v5.png",
     "homepage": "https://www.exotica.radio/",
     "stationUuid": "bada3fe0-d02f-48d3-bd03-4f8280221976",
-    "checkedAt": "2026-11-26T13:45:56.822Z",
+    "checkedAt": "2026-11-27T13:47:36.216Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3476,7 +3783,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/6/85416.v5.png",
     "homepage": "https://www.exotica.radio/",
     "stationUuid": "44fdf41a-9af2-40cc-8ce9-d9bbd48b4eee",
-    "checkedAt": "2026-11-26T13:45:56.826Z",
+    "checkedAt": "2026-11-27T13:47:36.243Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3493,10 +3800,44 @@
     "favicon": "https://cdn.instant.audio/images/logos/radio-org-ph/fia.png",
     "homepage": "http://fiaradio.org/",
     "stationUuid": "b96a6097-75e1-4898-bba7-bbd10f5fe4d4",
-    "checkedAt": "2026-11-26T13:45:56.899Z",
+    "checkedAt": "2026-11-27T13:47:36.637Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "FM Radio Camiguin",
+    "url": "http://148.72.153.65:9204/stream",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://www.amfmph.com/wp-content/uploads/amfmph/fmr-camiguin.png?1742473478",
+    "homepage": "https://us2.amfmph.com:2199/start/fmrcamiguin/",
+    "stationUuid": "e0512ccb-a80f-4446-ad25-5014fb526fbc",
+    "checkedAt": "2026-11-27T13:47:36.650Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "FMR Camiguin",
+    "url": "http://148.72.153.65:9204/stream",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://pcmc.com.ph/wp-content/uploads/2024/09/FMRADIO-LOGO-1-e1727730141490-768x662.png",
+    "homepage": "https://pcmc.com.ph/favoritemusicradio/",
+    "stationUuid": "5f2b32ba-0c3c-415c-bbf5-2c543a5cfea8",
+    "checkedAt": "2026-11-27T13:47:36.909Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Glitchy Radio",
@@ -3510,7 +3851,7 @@
     "favicon": "https://ca.azura.linkodev.ch/static/uploads/browser_icon/192.1768133326.png",
     "homepage": "https://ca.azura.linkodev.ch/public/glitchy_radio",
     "stationUuid": "dd41710f-3627-47c4-84fb-d857869420c9",
-    "checkedAt": "2026-11-26T13:45:57.193Z",
+    "checkedAt": "2026-11-27T13:47:36.976Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3527,7 +3868,7 @@
     "favicon": "https://cdn-radiotime-logos.tunein.com/s111307q.png",
     "homepage": "http://www.shoutcast.com/",
     "stationUuid": "6ad94a75-689d-4647-af56-edfe417f1c70",
-    "checkedAt": "2026-11-26T13:45:57.365Z",
+    "checkedAt": "2026-11-27T13:47:37.171Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3544,10 +3885,10 @@
     "favicon": null,
     "homepage": "https://yp.casterclub.com/station-detail.php?id=5622",
     "stationUuid": "7a73f0c0-5d60-4d4f-a213-2e79d3a655de",
-    "checkedAt": "2026-11-26T13:45:57.401Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "checkedAt": "2026-11-27T13:47:37.193Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "iFM Bacolod",
@@ -3561,10 +3902,27 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Bacolod.png?w=592&ssl=1",
     "homepage": "https://rmn.ph/ifm943bacolod/",
     "stationUuid": "50381dbb-75b9-452a-b449-f184c8be325d",
-    "checkedAt": "2026-11-26T13:45:57.861Z",
+    "checkedAt": "2026-11-27T13:47:37.823Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "iFM Baguio",
+    "url": "http://livestream.rmn.ph:8000/ifmbaguio",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": null,
+    "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/Station-iFM-Baguioresized1.png?w=592&ssl=1",
+    "homepage": "https://rmn.ph/ifm1039baguio/",
+    "stationUuid": "7e1fab6f-0e57-4014-9deb-971fc7a6ba20",
+    "checkedAt": "2026-11-27T13:47:37.897Z",
+    "status": 404,
+    "contentType": "text/xml; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "iFM Cagayan de Oro",
@@ -3578,7 +3936,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-CDO.png?w=592&ssl=1",
     "homepage": "http://rmn.ph/ifm991cdo",
     "stationUuid": "71ebab9a-ce19-4f2a-822d-473449e3d682",
-    "checkedAt": "2026-11-26T13:45:57.896Z",
+    "checkedAt": "2026-11-27T13:47:37.966Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3595,7 +3953,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Cebu.png?w=593&ssl=1",
     "homepage": "http://rmn.ph/ifm939cebu",
     "stationUuid": "ee072d0c-2212-4e7f-943a-c2b65695e4c7",
-    "checkedAt": "2026-11-26T13:45:58.388Z",
+    "checkedAt": "2026-11-27T13:47:38.366Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3612,7 +3970,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Cebu.png?w=592&ssl=1",
     "homepage": "https://thermnnetworks.com/",
     "stationUuid": "0901c456-bf39-4da0-8921-8fdafd21df2a",
-    "checkedAt": "2026-11-26T13:45:58.464Z",
+    "checkedAt": "2026-11-27T13:47:38.412Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3629,7 +3987,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Dagupan.png?w=696&ssl=1",
     "homepage": "https://rmn.ph/ifm1047dagupan/",
     "stationUuid": "fac10c4c-ba19-41ac-8599-75966e1181f1",
-    "checkedAt": "2026-11-26T13:45:58.508Z",
+    "checkedAt": "2026-11-27T13:47:38.513Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3646,7 +4004,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Zamboanga.png?w=592&ssl=1",
     "homepage": "https://rmn.ph/ifm963zamboanga/",
     "stationUuid": "6d75ee6a-477e-4bea-82d1-773531800792",
-    "checkedAt": "2026-11-26T13:45:59.129Z",
+    "checkedAt": "2026-11-27T13:47:39.191Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3663,7 +4021,7 @@
     "favicon": "https://ircalbayog.com/wp-content/uploads/2024/11/Calbayog-City-92.1-768x432.png",
     "homepage": "https://ircalbayog.com/",
     "stationUuid": "a49607e5-923b-4f61-aa10-7ae8ef4e1fa4",
-    "checkedAt": "2026-11-26T13:45:59.542Z",
+    "checkedAt": "2026-11-27T13:47:39.427Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3680,7 +4038,7 @@
     "favicon": "https://ircalbayog.com/wp-content/uploads/2024/11/Calbayog-City-92.1-768x432.png",
     "homepage": "https://ircalbayog.com/",
     "stationUuid": "911006e7-2ff3-40c8-851e-d5d121041849",
-    "checkedAt": "2026-11-26T13:45:59.568Z",
+    "checkedAt": "2026-11-27T13:47:39.471Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3697,27 +4055,10 @@
     "favicon": "https://apk.radyoph.com/upload/1746664166_infiniteradiovillaba.png",
     "homepage": "https://radyoph.com/station/infinite-radio-villaba-leyte",
     "stationUuid": "ced53060-6d06-48ad-ac7d-29748d5c1e44",
-    "checkedAt": "2026-11-26T13:45:59.698Z",
+    "checkedAt": "2026-11-27T13:47:39.741Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "James Spider Kaka WebFM Internet Radio",
-    "url": "http://136.243.44.41:8033/stream",
-    "country": "PH",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 80,
-    "language": null,
-    "favicon": "https://webfm100.com/wp-content/uploads/2022/07/logo-1000-768x470-1.png",
-    "homepage": "https://webfm100.com/",
-    "stationUuid": "40ca1756-d3f3-4d29-9a73-980b5375f10e",
-    "checkedAt": "2026-11-26T13:45:59.989Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Like Radio 104.7 Bais City",
@@ -3731,24 +4072,58 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/712/like-radio-1047-bais-city.9bf33809.png",
     "homepage": "https://likeradio1047.weebly.com/",
     "stationUuid": "868aff7e-bcca-4db5-8390-9996cce5523c",
-    "checkedAt": "2026-11-26T13:46:00.911Z",
+    "checkedAt": "2026-11-27T13:47:40.726Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
   },
   {
-    "name": "Lite Rock Manila",
-    "url": "http://us1.streamingpulse.com:7544/stream",
+    "name": "Love Radio Bacolod",
+    "url": "http://loveradiobacolod.radioca.st:8088/stream",
     "country": "PH",
     "type": "MP3",
     "tags": [],
     "codec": "MP3",
-    "bitrate": 320,
+    "bitrate": 64,
+    "language": "filipino",
+    "favicon": "https://www.loveradio.com.ph/apple-touch-icon.png",
+    "homepage": "https://www.loveradio.com.ph/bacolod/",
+    "stationUuid": "ece6cfbc-aa87-4b1b-9af5-7d2a6d983133",
+    "checkedAt": "2026-11-27T13:47:40.900Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Love Radio Bacolod",
+    "url": "http://148.251.43.149:8088/stream",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 64,
     "language": null,
-    "favicon": "https://static2.mytuner.mobi/media/tvos_radios/499/rxs-radio.1973dc17.png",
-    "homepage": "https://www.facebook.com/literockmanila",
-    "stationUuid": "f8205d9b-18b4-4a26-b93b-924cb4f0d3d5",
-    "checkedAt": "2026-11-26T13:46:01.007Z",
+    "favicon": "https://static.loveradio.com.ph/stations/2023/8/4QYeE9Kp2ZPGT6UyDndjS.webp",
+    "homepage": "https://www.loveradio.com.ph/radio?station=91.9-love-radio-bacolod",
+    "stationUuid": "be01ad6d-28ec-4fea-8127-c67740fa3dd4",
+    "checkedAt": "2026-11-27T13:47:40.936Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Love Radio Bacolod",
+    "url": "http://148.251.43.149:8088/stream",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://api.loveradio.com.ph/v1/media/display?bucket=static.loveradio.com.ph&key=stations/2023/8/4QYeE9Kp2ZPGT6UyDndjS.webp",
+    "homepage": "http://www.loveradio.com.ph/",
+    "stationUuid": "0c181cab-1728-46a5-b8b6-a6079d9818bb",
+    "checkedAt": "2026-11-27T13:47:40.967Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3765,95 +4140,10 @@
     "favicon": "https://www.loveradio.com.ph/apple-touch-icon.png",
     "homepage": "https://www.loveradio.com.ph/radio?station=100.1-love-radio-kalibo",
     "stationUuid": "f80384d5-919d-4211-9a3a-5961d261ffa1",
-    "checkedAt": "2026-11-26T13:46:01.506Z",
-    "status": null,
+    "checkedAt": "2026-11-27T13:47:41.324Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Love Radio Santiago",
-    "url": "http://lovesantiago.radioca.st:8832/stream",
-    "country": "PH",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": "tagalog",
-    "favicon": null,
-    "homepage": "https://www.loveradio.com.ph/santiago",
-    "stationUuid": "218dc017-0fab-4548-adeb-83f6935c1a15",
-    "checkedAt": "2026-11-26T13:46:02.126Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Love Radio Santiago",
-    "url": "http://lovesantiago.radioca.st:8832/stream",
-    "country": "PH",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "f6937fa3-65b3-4411-b715-132bd060cc9a",
-    "checkedAt": "2026-11-26T13:46:02.146Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Love Radio Santiago",
-    "url": "http://148.251.43.149:8832/stream",
-    "country": "PH",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": null,
-    "favicon": "https://api.loveradio.com.ph/v1/media/display?bucket=static.loveradio.com.ph&key=stations/2023/8/i_GUwvmqugYXNTfyACK4m.webp",
-    "homepage": "https://www.loveradio.com.ph/radio?station=94.5-love-radio-santiago",
-    "stationUuid": "b7c9b573-b74b-49de-a726-fab5827bb10d",
-    "checkedAt": "2026-11-26T13:46:02.149Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Love Radio Santiago",
-    "url": "http://lovesantiago.radioca.st:8832/stream",
-    "country": "PH",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": null,
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "1dfb2bc8-093f-40b3-8462-cc7aa48e9236",
-    "checkedAt": "2026-11-26T13:46:02.167Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Love Radio Santiago (M3U)",
-    "url": "https://lovesantiago.radioca.st/stream.m3u",
-    "country": "PH",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 64,
-    "language": null,
-    "favicon": "https://www.loveradio.com.ph/apple-touch-icon.png",
-    "homepage": "https://www.loveradio.com.ph/santiago",
-    "stationUuid": "f949d4ba-9d48-40dd-8574-1edeac20dbd2",
-    "checkedAt": "2026-11-26T13:46:02.169Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Love Radio Zamboanga",
@@ -3867,10 +4157,10 @@
     "favicon": "https://www.loveradio.com.ph/apple-touch-icon.png",
     "homepage": "https://www.loveradio.com.ph/zamboanga/",
     "stationUuid": "719eb90d-3ba5-432f-82f6-48810b5896bc",
-    "checkedAt": "2026-11-26T13:46:02.354Z",
-    "status": null,
+    "checkedAt": "2026-11-27T13:47:42.216Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Love Radio Zamboanga",
@@ -3884,10 +4174,10 @@
     "favicon": "https://api.loveradio.com.ph/v1/media/display?bucket=static.loveradio.com.ph&key=stations/2023/8/4w6nCnehG6KaKbnqPsKHc.webp",
     "homepage": "https://www.loveradio.com.ph/radio?station=97.9-love-radio-zamboanga",
     "stationUuid": "bbc67cfb-bd25-48a6-aba9-25f19820d00f",
-    "checkedAt": "2026-11-26T13:46:02.382Z",
-    "status": null,
+    "checkedAt": "2026-11-27T13:47:42.239Z",
+    "status": 401,
     "contentType": null,
-    "lastFailure": "fetch failed"
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Maiku 99.5 FM",
@@ -3901,7 +4191,7 @@
     "favicon": "https://maiku99fm.devcoderz.site/a207ca49-bb41-4339-af59-dd29959185de.png",
     "homepage": "https://maiku99fm.devcoderz.site/",
     "stationUuid": "376e7531-31cb-4cba-a0f5-524130a07d75",
-    "checkedAt": "2026-11-26T13:46:03.007Z",
+    "checkedAt": "2026-11-27T13:47:42.774Z",
     "status": 530,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 530"
@@ -3918,7 +4208,7 @@
     "favicon": "https://manilasoundradio.com/images/msr-pwa-192.png",
     "homepage": "https://manilasoundradio.com/msr-app.html",
     "stationUuid": "ec759065-e17e-48aa-8d71-e276187ba8d6",
-    "checkedAt": "2026-11-26T13:46:03.011Z",
+    "checkedAt": "2026-11-27T13:47:42.788Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3935,7 +4225,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/779/manila-wave-radio.bcdfccf4.jpg",
     "homepage": "https://manilawaveradio.weebly.com/",
     "stationUuid": "71f63706-ebf9-48b1-aaa7-54226fb453dd",
-    "checkedAt": "2026-11-26T13:46:03.074Z",
+    "checkedAt": "2026-11-27T13:47:42.806Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3952,7 +4242,7 @@
     "favicon": null,
     "homepage": "http://facebook.com/PrimaxCebuDYKIfm/",
     "stationUuid": "c9df0ca9-35b0-4ee4-b4ff-56b125854811",
-    "checkedAt": "2026-11-26T13:46:03.258Z",
+    "checkedAt": "2026-11-27T13:47:43.067Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3969,7 +4259,7 @@
     "favicon": "https://iradioph.com/wp-content/uploads/2020/02/MEMORIES.png",
     "homepage": "https://iradioph.com/",
     "stationUuid": "6633c775-4963-449b-ba5a-4cf919cac95f",
-    "checkedAt": "2026-11-26T13:46:03.306Z",
+    "checkedAt": "2026-11-27T13:47:43.117Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3986,7 +4276,7 @@
     "favicon": null,
     "homepage": "http://memoriesfm.iradioph.com/",
     "stationUuid": "94cd97e1-6e00-4007-8b24-204dfd2f16b8",
-    "checkedAt": "2026-11-26T13:46:03.385Z",
+    "checkedAt": "2026-11-27T13:47:43.125Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4003,7 +4293,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/07/MemoriesCebu.png",
     "homepage": "https://radyoph.com/station/memories-fm-cebu/",
     "stationUuid": "aaa9c996-f06e-4237-a66c-4db36c522795",
-    "checkedAt": "2026-11-26T13:46:03.397Z",
+    "checkedAt": "2026-11-27T13:47:43.139Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4020,7 +4310,7 @@
     "favicon": "http://rmms.duckdns.org/assets/images/okfmdaet.jpg",
     "homepage": "http://rmms.duckdns.org/",
     "stationUuid": "a2b3850d-3059-4210-aa11-7b11232a566a",
-    "checkedAt": "2026-11-26T13:46:06.974Z",
+    "checkedAt": "2026-11-27T13:47:46.079Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4037,7 +4327,7 @@
     "favicon": "https://www.pbnbicol.com/images/ok-fm-legazpi-logo.png",
     "homepage": "https://www.pbnbicol.com/#",
     "stationUuid": "6705a31c-a2b6-4ee0-b621-1403f8d04226",
-    "checkedAt": "2026-11-26T13:46:07.175Z",
+    "checkedAt": "2026-11-27T13:47:46.314Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4054,7 +4344,7 @@
     "favicon": "https://www.pbnbicol.com/images/ok-fm-legazpi-logo.png",
     "homepage": "https://www.pbnbicol.com/index",
     "stationUuid": "590f85b4-4a26-4662-88c9-c11820afd262",
-    "checkedAt": "2026-11-26T13:46:07.286Z",
+    "checkedAt": "2026-11-27T13:47:46.621Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4071,7 +4361,7 @@
     "favicon": "https://www.pbnbicol.com/images/favicon.png",
     "homepage": "https://www.pbnbicol.com/#",
     "stationUuid": "c4ac69bb-bcf6-46b1-9be6-f3eae1bd115d",
-    "checkedAt": "2026-11-26T13:46:07.422Z",
+    "checkedAt": "2026-11-27T13:47:46.696Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4088,7 +4378,7 @@
     "favicon": "https://www.pbnbicol.com/images/ok-fm-naga-logo.png",
     "homepage": "https://www.pbnbicol.com/index",
     "stationUuid": "c91a58f7-5d34-40d6-95ae-a84b691f9a8d",
-    "checkedAt": "2026-11-26T13:46:07.575Z",
+    "checkedAt": "2026-11-27T13:47:46.805Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4105,7 +4395,7 @@
     "favicon": "https://cdn.broadtekmedia.com/img/20260223_090839_99bc13c6_699c1917cae69.webp",
     "homepage": "https://getradio.ph/",
     "stationUuid": "8111f4c9-a71a-4a26-8ade-fe702a0fc302",
-    "checkedAt": "2026-11-26T13:46:07.678Z",
+    "checkedAt": "2026-11-27T13:47:46.815Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4122,7 +4412,7 @@
     "favicon": "https://apk.radyoph.com/upload/1794862319_onefmbaler.png",
     "homepage": "https://www.facebook.com/dwbv993.onefm/",
     "stationUuid": "6f6155f2-a7d0-4492-ada9-b4b385f0939c",
-    "checkedAt": "2026-11-26T13:46:08.143Z",
+    "checkedAt": "2026-11-27T13:47:47.196Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4139,7 +4429,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/4pa2myhht8hp.png",
     "homepage": "https://dwbv993baler.radio12345.com/",
     "stationUuid": "c58fd806-5da3-42e9-86e3-1841281ff786",
-    "checkedAt": "2026-11-26T13:46:08.177Z",
+    "checkedAt": "2026-11-27T13:47:47.246Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4156,7 +4446,7 @@
     "favicon": "https://apk.radyoph.com/upload/1771926246_onefmlegazpi.png",
     "homepage": "https://radyoph.com/station/one-fm-legazpi",
     "stationUuid": "c3ee4844-60b6-4e5c-b139-a545b4d629df",
-    "checkedAt": "2026-11-26T13:46:08.223Z",
+    "checkedAt": "2026-11-27T13:47:47.309Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4173,7 +4463,7 @@
     "favicon": "https://apk.radyoph.com/upload/1771660316_onefmlucena.png",
     "homepage": "https://radyoph.com/station/98-3-one-fm-lucena",
     "stationUuid": "6cdb9bb1-7bd7-468b-a02d-fe2594cb8338",
-    "checkedAt": "2026-11-26T13:46:08.248Z",
+    "checkedAt": "2026-11-27T13:47:47.668Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4190,7 +4480,7 @@
     "favicon": "https://apk.radyoph.com/upload/1741929440_onefmpalawan.png",
     "homepage": "https://radyoph.com/station/951-one-fm-puerto-princesa-city-palawan",
     "stationUuid": "2a1b2e12-1a26-4d69-b6bc-4f9270f7f68c",
-    "checkedAt": "2026-11-26T13:46:08.380Z",
+    "checkedAt": "2026-11-27T13:47:47.674Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4207,7 +4497,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/4pa2myhht8hp.png",
     "homepage": "https://www.facebook.com/dwxt961.onefm/",
     "stationUuid": "0336f45b-aeb0-4103-8bf2-4caf24fb8f73",
-    "checkedAt": "2026-11-26T13:46:08.583Z",
+    "checkedAt": "2026-11-27T13:47:47.871Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4224,7 +4514,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2025/03/OneRadioDaet.png",
     "homepage": "https://radyoph.com/station/one-radio-daet/",
     "stationUuid": "6dcaa8ad-a6f2-4738-a255-6957305c4dff",
-    "checkedAt": "2026-11-26T13:46:08.959Z",
+    "checkedAt": "2026-11-27T13:47:48.315Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4241,7 +4531,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2025/03/OneRadioDaet.png",
     "homepage": "https://radyoph.com/station/one-radio-daet/",
     "stationUuid": "be166395-4fe9-4aa9-80c5-634ebbeb8009",
-    "checkedAt": "2026-11-26T13:46:09.155Z",
+    "checkedAt": "2026-11-27T13:47:48.534Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4258,10 +4548,27 @@
     "favicon": "https://1.bp.blogspot.com/_yY_Enb_xs0k/TGKtl8HlBQI/AAAAAAAAAEU/IL1gHv1HXlI/s200/one-radio.jpg",
     "homepage": "https://www.facebook.com/oneradionewsonline/",
     "stationUuid": "74597ddb-889b-4478-aebf-afae425879bb",
-    "checkedAt": "2026-11-26T13:46:09.362Z",
+    "checkedAt": "2026-11-27T13:47:48.756Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Pinoy power radio media",
+    "url": "https://streaming.live365.com/a67821",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://pinoypowermedia.com/",
+    "stationUuid": "c4aa14e7-f5e0-423f-9543-860293656f2a",
+    "checkedAt": "2026-11-27T13:47:49.563Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "R597",
@@ -4275,7 +4582,7 @@
     "favicon": "https://radio597.weebly.com/uploads/1/3/9/8/139847559/1_orig.png",
     "homepage": "https://radio597.weebly.com/",
     "stationUuid": "9ec6d411-b1cc-479f-bd29-8b592ce08620",
-    "checkedAt": "2026-11-26T13:46:11.306Z",
+    "checkedAt": "2026-11-27T13:47:51.142Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4292,7 +4599,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/144/radio-wesleyan-897-fm.a334f92d.jpg",
     "homepage": "https://www.facebook.com/dwupfm",
     "stationUuid": "a9cd4c35-4e21-48c9-b02d-03ad4e717c9f",
-    "checkedAt": "2026-11-26T13:46:11.387Z",
+    "checkedAt": "2026-11-27T13:47:51.324Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4309,7 +4616,7 @@
     "favicon": "https://zeno.fm/apple-icon-120x120.png",
     "homepage": "https://zeno.fm/amp/radio/radyo-boholano-fm-online/",
     "stationUuid": "9576b5b8-9da0-4b4e-8f67-217d00732c0b",
-    "checkedAt": "2026-11-26T13:46:11.662Z",
+    "checkedAt": "2026-11-27T13:47:51.599Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4326,7 +4633,7 @@
     "favicon": "https://static.mytuner.mobi/media/tvos_radios/922/radyo-kalibasib.5520d807.png",
     "homepage": "https://www.facebook.com/RadyoKalibasib/",
     "stationUuid": "7743455f-d35f-4a47-ae88-279ad426b2d5",
-    "checkedAt": "2026-11-26T13:46:11.717Z",
+    "checkedAt": "2026-11-27T13:47:51.701Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -4343,7 +4650,7 @@
     "favicon": "https://apk.radyoph.com/upload/1795159028_radyopilipinocebu.png",
     "homepage": "https://radyoph.com/station/dyrb",
     "stationUuid": "a21ee30f-ebd8-4b11-a64c-2a88a1545e6d",
-    "checkedAt": "2026-11-26T13:46:13.474Z",
+    "checkedAt": "2026-11-27T13:47:53.064Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4360,7 +4667,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/8/86/RadyoPilipino_logo.png",
     "homepage": "http://www.radyopilipino.com/",
     "stationUuid": "3c56ee25-3187-4f30-bbe7-3a90e8a7f5fb",
-    "checkedAt": "2026-11-26T13:46:13.519Z",
+    "checkedAt": "2026-11-27T13:47:53.124Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4377,7 +4684,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/8/86/RadyoPilipino_logo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
     "homepage": "http://www.radyopilipino.com/",
     "stationUuid": "3816b95b-38ef-47c0-b9a9-a1e2c7f47903",
-    "checkedAt": "2026-11-26T13:46:13.764Z",
+    "checkedAt": "2026-11-27T13:47:53.549Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4394,7 +4701,7 @@
     "favicon": "https://apk.radyoph.com/upload/1795159504_radyopilipinotarlac.png",
     "homepage": "https://radyoph.com/station/dztc",
     "stationUuid": "879186d9-3b5f-4b75-9425-7ada67c29f3f",
-    "checkedAt": "2026-11-26T13:46:13.805Z",
+    "checkedAt": "2026-11-27T13:47:53.586Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4411,7 +4718,7 @@
     "favicon": "https://zeno.fm/favicon.ico",
     "homepage": "https://zeno.fm/radio/radyo-serbato-dinagat-island-avpk/",
     "stationUuid": "efb5b86d-855e-4ba7-ad4b-31d6a82b27d5",
-    "checkedAt": "2026-11-26T13:46:13.849Z",
+    "checkedAt": "2026-11-27T13:47:53.617Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4428,10 +4735,27 @@
     "favicon": null,
     "homepage": "https://urtmedia.com/radyo-serbato-butuan/",
     "stationUuid": "40d054e9-13d0-40bb-bf2e-ba3c1e3c1401",
-    "checkedAt": "2026-11-26T13:46:13.947Z",
+    "checkedAt": "2026-11-27T13:47:53.648Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Radyo Veritas 846",
+    "url": "http://icecast.eradioportal.com:8000/radyo-veritas-846",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://www.veritasph.net/",
+    "stationUuid": "da36fef7-b8a9-4a6c-8db2-9eab415c612b",
+    "checkedAt": "2026-11-27T13:47:54.040Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radyong Sira!",
@@ -4445,7 +4769,7 @@
     "favicon": null,
     "homepage": "https://onlineradiobox.com/ph/radyongsira",
     "stationUuid": "999f6ba9-aba8-4b34-8ef7-bddd2f2924e3",
-    "checkedAt": "2026-11-26T13:46:15.192Z",
+    "checkedAt": "2026-11-27T13:47:54.254Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4462,7 +4786,7 @@
     "favicon": "https://rainbow-fm.com/websitepic/rainbowlogo.png",
     "homepage": "https://rainbow-fm.com/index.php",
     "stationUuid": "af5b699d-d321-4c24-8791-dddf9d8600e7",
-    "checkedAt": "2026-11-26T13:46:15.208Z",
+    "checkedAt": "2026-11-27T13:47:54.288Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4479,7 +4803,7 @@
     "favicon": "https://cdn-profiles.tunein.com/s355489/images/logoq.png?t=639122040340000000",
     "homepage": "https://rhythm101.devcoderz.site/",
     "stationUuid": "0b60dca0-e9dc-4dc2-8d57-25def66414e6",
-    "checkedAt": "2026-11-26T13:46:15.214Z",
+    "checkedAt": "2026-11-27T13:47:54.329Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4496,7 +4820,7 @@
     "favicon": "https://apk.radyoph.com/upload/1793760522_rmncotabato.png",
     "homepage": "https://thermnnetworks.ph/stations/cotabato/",
     "stationUuid": "35543ce1-8cfd-4ace-8526-a568e90f728a",
-    "checkedAt": "2026-11-26T13:46:15.244Z",
+    "checkedAt": "2026-11-27T13:47:54.486Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4513,7 +4837,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/08/CDO.png?w=400&ssl=1",
     "homepage": "https://rmn.ph/dxcc828cdo/",
     "stationUuid": "d780b8a6-bd93-42b9-b878-2dc1dbecba4b",
-    "checkedAt": "2026-11-26T13:46:15.616Z",
+    "checkedAt": "2026-11-27T13:47:54.722Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4530,7 +4854,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/08/Dipolog.png?w=400&ssl=1",
     "homepage": "http://rmn.ph/dxdr981dipolog",
     "stationUuid": "9b4bd95f-ff5a-43de-9abf-db18c520f29e",
-    "checkedAt": "2026-11-26T13:46:15.841Z",
+    "checkedAt": "2026-11-27T13:47:54.983Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4547,7 +4871,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/08/pagadian.png?w=400&ssl=1",
     "homepage": "https://rmn.ph/dxpr603pagadian/",
     "stationUuid": "8f074c0e-6015-401d-b0b0-c217eda36413",
-    "checkedAt": "2026-11-26T13:46:16.018Z",
+    "checkedAt": "2026-11-27T13:47:55.193Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4564,7 +4888,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/08/roxas.png?w=400&ssl=1",
     "homepage": "https://rmn.ph/dyvr657roxas/",
     "stationUuid": "6cdeeca8-6408-4f4d-83a8-cb4db77018ae",
-    "checkedAt": "2026-11-26T13:46:16.207Z",
+    "checkedAt": "2026-11-27T13:47:55.410Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4581,7 +4905,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/08/roxas.png?w=400&ssl=1",
     "homepage": "http://rmn.ph/dyvr657roxas",
     "stationUuid": "ca3f56c7-f5c4-4511-9c21-d56536a74bac",
-    "checkedAt": "2026-11-26T13:46:16.224Z",
+    "checkedAt": "2026-11-27T13:47:55.670Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4598,7 +4922,7 @@
     "favicon": "https://zeno.fm/_next/image/?url=https%3A%2F%2Fimages.zeno.fm%2F8o2rE_AgTkvR5oZ3-QH8GdvsroJ9DxBbdRUW6aFdVRk%2Frs%3Afit%3A268%3A268%2Fg%3Ace%3A0%3A0%2FaHR0cHM6Ly9zdHJlYW0tdG9vbHMuemVub21lZGlhLmNvbS9jb250ZW50L3N0YXRpb25zL2Y3ZmE4NjEwLTc5MzAtNDQ3OC04MWY5LWQ1NWM5YjBhZjRhMi9pbWFnZS8_dXBkYXRlZD0xNjk5MzY4MTgzMDAw.webp&w=640&q=75",
     "homepage": "https://zeno.fm/radio/rp-fm-99-9/",
     "stationUuid": "aa02265c-e6c9-4d95-840a-464bb4aa92fa",
-    "checkedAt": "2026-11-26T13:46:16.289Z",
+    "checkedAt": "2026-11-27T13:47:55.875Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4615,7 +4939,41 @@
     "favicon": "https://tunein.rpnradio.com/images/banners/cdo_b.png",
     "homepage": "https://rpnradio.com/dxko-cdo/",
     "stationUuid": "8112bdf3-068e-4565-b502-b483b8f0887a",
-    "checkedAt": "2026-11-26T13:46:16.456Z",
+    "checkedAt": "2026-11-27T13:47:56.146Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "RPN DYKB Bacolod",
+    "url": "http://88.198.70.25:8251/stream",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": null,
+    "favicon": "https://tunein.rpnradio.com/images/banners/bacolod_b.png",
+    "homepage": "https://rpnradio.com/dykb-bacolod",
+    "stationUuid": "be65518c-9608-462a-ab35-a1a2784c34f3",
+    "checkedAt": "2026-11-27T13:47:58.831Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "RPN DZBS Baguio",
+    "url": "http://88.198.70.25:8169/stream",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://tunein.rpnradio.com/images/banners/baguio_b.png",
+    "homepage": "https://rpnradio.com/dzbs-baguio",
+    "stationUuid": "48521d15-2063-4248-88a0-0ddd2c1e573e",
+    "checkedAt": "2026-11-27T13:47:59.011Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -4632,7 +4990,7 @@
     "favicon": "https://raw.githubusercontent.com/machetebot/zharlzzz/refs/heads/main/RTG.jpg",
     "homepage": "https://rtg-fullscreen.blogspot.com/",
     "stationUuid": "a2f6bd50-a451-466e-8a05-d92da13bfbe1",
-    "checkedAt": "2026-11-26T13:46:16.808Z",
+    "checkedAt": "2026-11-27T13:47:59.221Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -4649,7 +5007,7 @@
     "favicon": "https://rw951.fm/wp-content/uploads/2021/12/cropped-RW951_Logo-1-768x94.png",
     "homepage": "https://rw951.fm/",
     "stationUuid": "cfc41143-90bc-4210-b375-73aab69c95ae",
-    "checkedAt": "2026-11-26T13:46:16.845Z",
+    "checkedAt": "2026-11-27T13:47:59.334Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4666,7 +5024,7 @@
     "favicon": "https://i.imgur.com/GwcaSJ2.jpeg",
     "homepage": "https://sdtvnetwork.weebly.com/",
     "stationUuid": "4744aed8-16c2-400e-8a09-78e608962c10",
-    "checkedAt": "2026-11-26T13:46:16.857Z",
+    "checkedAt": "2026-11-27T13:47:59.427Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4683,7 +5041,7 @@
     "favicon": "https://apk.radyoph.com/upload/1772112776_spiritlegaspi.png",
     "homepage": "https://radyoph.com/station/spirit-fm-legazpi",
     "stationUuid": "df20f8a5-5c1f-4796-958f-66e5ae5c3cb6",
-    "checkedAt": "2026-11-26T13:46:17.239Z",
+    "checkedAt": "2026-11-27T13:48:00.250Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4700,7 +5058,7 @@
     "favicon": "https://www.spiritfmmasbate.com/assets/img/logo.png",
     "homepage": "https://www.spiritfmmasbate.com/",
     "stationUuid": "c0f645bc-0e0c-401c-8007-513eb514596b",
-    "checkedAt": "2026-11-26T13:46:17.384Z",
+    "checkedAt": "2026-11-27T13:48:00.253Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4717,10 +5075,10 @@
     "favicon": "https://www.spiritfmmasbate.com/assets/img/logo.png",
     "homepage": "https://www.spiritfmmasbate.com/index.html",
     "stationUuid": "ed3bf882-b7b6-43d2-a551-9849bf298520",
-    "checkedAt": "2026-11-26T13:46:17.444Z",
-    "status": 502,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 502"
+    "checkedAt": "2026-11-27T13:48:00.324Z",
+    "status": 404,
+    "contentType": null,
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Star FM Bacolod",
@@ -4734,7 +5092,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/11/StarFMBacolod.png",
     "homepage": "https://www.bomboradyo.com/",
     "stationUuid": "4827f1ed-2f55-40e4-b8ea-421e4a97cf91",
-    "checkedAt": "2026-11-26T13:46:17.583Z",
+    "checkedAt": "2026-11-27T13:48:00.398Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4751,7 +5109,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/11/StarFMDavao.png",
     "homepage": "https://www.bomboradyo.com/",
     "stationUuid": "071b8f65-806e-458c-90a0-ca2f53416423",
-    "checkedAt": "2026-11-26T13:46:17.591Z",
+    "checkedAt": "2026-11-27T13:48:00.546Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4768,7 +5126,7 @@
     "favicon": "https://radyoph.com/wp-content/uploads/2024/11/StarFMDipolog.png",
     "homepage": "https://www.bomboradyo.com/",
     "stationUuid": "d1c63cde-a981-4fb9-b8a3-e9c6a0c2b9a7",
-    "checkedAt": "2026-11-26T13:46:17.635Z",
+    "checkedAt": "2026-11-27T13:48:00.554Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4785,7 +5143,7 @@
     "favicon": "https://1.bp.blogspot.com/-UW1Wq9-oUH4/V0kFTg_KTjI/AAAAAAAACMY/cvbner3jQ88E6fgYXo6jXTG4uxRsbf7SACLcB/s200/star-fm-dipolog-amfmph.png",
     "homepage": "https://www.bomboradyo.com/",
     "stationUuid": "276fc6fd-dc03-477e-a525-0336138b064b",
-    "checkedAt": "2026-11-26T13:46:17.648Z",
+    "checkedAt": "2026-11-27T13:48:00.598Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -4802,7 +5160,7 @@
     "favicon": "https://895subicbay.radio12345.com/users.img/3177534/1645366590/icon_thumb_80_1645366590.jpg",
     "homepage": "https://www.mysubicbay.com.ph/895subicbay",
     "stationUuid": "f7ea6887-931c-423d-a96f-c4b26797fce5",
-    "checkedAt": "2026-11-26T13:46:17.671Z",
+    "checkedAt": "2026-11-27T13:48:00.633Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4819,7 +5177,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/f/fe/DYSS_999_Cebu_Logo.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled",
     "homepage": "https://www.gmanetwork.com/radio/",
     "stationUuid": "d9281d24-4d6f-44ec-8f2b-3fff1ac167a4",
-    "checkedAt": "2026-11-26T13:46:17.710Z",
+    "checkedAt": "2026-11-27T13:48:00.672Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4836,10 +5194,27 @@
     "favicon": "https://tambayan1039.alwaysdata.net/images/logo.png",
     "homepage": "https://tambayan1039.alwaysdata.net/home.html",
     "stationUuid": "a0e644e1-4323-4a97-b14e-45e9d0c1aecd",
-    "checkedAt": "2026-11-26T13:46:17.753Z",
+    "checkedAt": "2026-11-27T13:48:00.721Z",
     "status": 502,
     "contentType": "audio/mpeg",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "Unbox Radio",
+    "url": "https://stream.zeno.fm/2m8rqpd37p8uv",
+    "country": "PH",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": null,
+    "favicon": "https://cdn-profiles.tunein.com/s345126/images/logoq.png?t=639052030310000000",
+    "homepage": "https://www.jackonline.ph/",
+    "stationUuid": "85988b49-a028-45fd-91e1-be8e94e6cb5c",
+    "checkedAt": "2026-11-27T13:48:01.250Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "V-Hive Radio Philippines",
@@ -4853,7 +5228,7 @@
     "favicon": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvLYbExujuxTCQ8vwCiPw9JuImO1BY7XhzzJD7QUKJuOO3iqFfUH-X84arYkHCQiP5RSg4-AEhd3N7iKlR-LA4vF5sQe2f5JaKt9RqUXaBCBnM3Yb4nOvuhqnpcxtFX025asXtLa35jzfw/s1600/new+v-hive+radio+logo1.png",
     "homepage": "http://www.vhiveradioph.com/",
     "stationUuid": "89977e56-b2f1-4608-86da-b22b944a321d",
-    "checkedAt": "2026-11-26T13:46:18.297Z",
+    "checkedAt": "2026-11-27T13:48:01.266Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4870,7 +5245,7 @@
     "favicon": "https://vibe1055fmbohol.com/main/wp-content/uploads/2025/10/cropped-Primary-Logo-Seafoam@2x.png",
     "homepage": "https://vibe1055fmbohol.com/main/",
     "stationUuid": "974edd5a-7d56-4af4-9c2c-9e1857a2327a",
-    "checkedAt": "2026-11-26T13:46:18.301Z",
+    "checkedAt": "2026-11-27T13:48:01.325Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4887,7 +5262,7 @@
     "favicon": "http://vibe1055fm.com/wp-content/uploads/2026/04/cropped-VibeLogo.jpg",
     "homepage": "http://vibe1055fm.com/",
     "stationUuid": "4e08fd74-416d-486d-a971-745009dd8529",
-    "checkedAt": "2026-11-26T13:46:18.322Z",
+    "checkedAt": "2026-11-27T13:48:01.352Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4904,7 +5279,7 @@
     "favicon": "https://cdn.onlineradiobox.com/img/l/1/23371.v7.png",
     "homepage": "https://www.amfmph.com/",
     "stationUuid": "3f173658-8288-4f7f-a6ae-9fd975e46434",
-    "checkedAt": "2026-11-26T13:46:18.398Z",
+    "checkedAt": "2026-11-27T13:48:01.365Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -4921,7 +5296,7 @@
     "favicon": "https://winradioph.net/favicon.ico",
     "homepage": "https://winradioph.net/win-stations/iloilo/",
     "stationUuid": "1c9dc8fa-1a8d-41fe-964c-42a3b94ef9f2",
-    "checkedAt": "2026-11-26T13:46:18.774Z",
+    "checkedAt": "2026-11-27T13:48:01.769Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -4938,7 +5313,7 @@
     "favicon": null,
     "homepage": "https://xfm.imjinteractive.net/",
     "stationUuid": "cc1881cf-1a51-4ec4-9f65-c96517d5339b",
-    "checkedAt": "2026-11-26T13:46:19.036Z",
+    "checkedAt": "2026-11-27T13:48:02.047Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4959,7 +5334,7 @@
     "favicon": "https://lh3.googleusercontent.com/pw/AP1GczNUqgBmAJZUxn8HnCZL7hVSZZ5etrIIgyYaV3vC8HdRmMNlen1nOBlcZj3CJ6VCDWAIFt-I_FXAq6X8gDjzwrJDxEREvUo2_JDyedS3468Pwl1zr6Ry4yC66L23cn9NrxrL3W7uF_mUMeElv1N4Sq_H=w720-h720-s-no-gm?authuser=0.png",
     "homepage": "https://www.facebook.com/share/18zk3X71eM/",
     "stationUuid": "16fd12e7-3ef8-40e9-b0c6-aac55dea088e",
-    "checkedAt": "2026-11-26T13:46:20.112Z",
+    "checkedAt": "2026-11-27T13:48:03.277Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4979,7 +5354,7 @@
     "favicon": "https://lh3.googleusercontent.com/pw/AP1GczNUqgBmAJZUxn8HnCZL7hVSZZ5etrIIgyYaV3vC8HdRmMNlen1nOBlcZj3CJ6VCDWAIFt-I_FXAq6X8gDjzwrJDxEREvUo2_JDyedS3468Pwl1zr6Ry4yC66L23cn9NrxrL3W7uF_mUMeElv1N4Sq_H=w720-h720-s-no-gm?authuser=0.png",
     "homepage": "https://www.facebook.com/share/18zk3X71eM/",
     "stationUuid": "998099aa-0e05-43d2-99d8-1d3335c5158f",
-    "checkedAt": "2026-11-26T13:46:20.135Z",
+    "checkedAt": "2026-11-27T13:48:03.303Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -4999,7 +5374,7 @@
     "favicon": "https://lh3.googleusercontent.com/pw/AP1GczMJ8Kk1Lx6oDQgoPnLPJsDUoIMrVLSPPlTMxrvDvRSk2CvDB309QRzvSNYY1eYaB-0yPdLCgEFqDoxXYwzhisGkL3S76EyWGbpfVZM3OczXhhZ5bXQOBMyUs-X5JnTn86kh_H8rtiI5qhBao8t9nZSM=w720-h720-s-no-gm?authuser=0.png",
     "homepage": "https://www.facebook.com/share/18zk3X71eM/",
     "stationUuid": "21bc05a3-afc2-4369-8a5a-62d63cf1b85a",
-    "checkedAt": "2026-11-26T13:46:20.151Z",
+    "checkedAt": "2026-11-27T13:48:03.324Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5020,7 +5395,7 @@
     "favicon": "https://static.wikia.nocookie.net/signons-and-signoffs/images/f/fa/721782534_122179229780860063_897438137127611464_n.jpg/revision/latest/scale-to-width-down/280?cb=20260617224437",
     "homepage": "https://www.facebook.com/share/18utoauoza/",
     "stationUuid": "8da20226-5e1c-4421-960d-a07435b7fdbe",
-    "checkedAt": "2026-11-26T13:46:20.171Z",
+    "checkedAt": "2026-11-27T13:48:03.343Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -5040,7 +5415,7 @@
     "favicon": "https://static.wikia.nocookie.net/signons-and-signoffs/images/f/fa/721782534_122179229780860063_897438137127611464_n.jpg/revision/latest/scale-to-width-down/280?cb=20260617224437",
     "homepage": "https://www.facebook.com/share/14gj3fx2Ye4/",
     "stationUuid": "4583786a-8826-414a-8bc2-a23bc522675f",
-    "checkedAt": "2026-11-26T13:46:20.438Z",
+    "checkedAt": "2026-11-27T13:48:03.449Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5061,7 +5436,7 @@
     "favicon": "https://zeno.fm/_ipx/_/https://images.zeno.fm/_8rdrNjt4a2zgZ8NTIi84MbSx977e7FhVQf7E0dgShc/rs:fill:288:288/g:ce:0:0/aHR0cHM6Ly9wcm94eS56ZW5vLmZtL2NvbnRlbnQvc3RhdGlvbnMvYjVmMWYzYmYtMzA0MS00OWI5LWI1OWUtYTUwNzg5Y2M5Zjc2L2ltYWdlLz91PTE3NzI5NjA1NzkwMDA.webp",
     "homepage": "https://zeno.fm/radio/DWCD879FM/",
     "stationUuid": "92f3a744-d3c4-4831-946c-5935eadbecf7",
-    "checkedAt": "2026-11-26T13:46:20.457Z",
+    "checkedAt": "2026-11-27T13:48:03.645Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -5081,7 +5456,7 @@
     "favicon": "https://lh3.googleusercontent.com/pw/AP1GczPtoJEmAD7AQOfysChDHTNmrW0b37S5lRdgjT6_W1z2aqvzv-y4oeT2dQwmqrXXw1YMO3tbIpwuhhX4pgVDK25FEmx021GXpqw159xDIPDg0l3GkaK7YP9_9LR-ZNXWhSFoSoYXYgDz-kOajZQu08Eb=w720-h720-s-no-gm?authuser=0",
     "homepage": "https://www.facebook.com/share/18airSoGp2/",
     "stationUuid": "9591530b-95ba-470e-af82-e0e16420810a",
-    "checkedAt": "2026-11-26T13:46:20.496Z",
+    "checkedAt": "2026-11-27T13:48:03.683Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -5100,30 +5475,10 @@
     "favicon": "https://bisayaonlineradio.weeblysite.com/uploads/b/efbb6230-7674-11eb-b61b-37812833a594/BISAYA%20ONLINE%20RADIO%201.png",
     "homepage": "https://bisayaonlineradio.weeblysite.com/",
     "stationUuid": "87f8fe36-5157-463f-ab7c-2b6e739f5248",
-    "checkedAt": "2026-11-26T13:46:20.973Z",
+    "checkedAt": "2026-11-27T13:48:04.131Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "DWNX 91.1 RMN Naga",
-    "url": "https://livestream.rmn.ph/dwnxnaga",
-    "country": "PH",
-    "type": "music",
-    "tags": [
-      "music",
-      "news"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": null,
-    "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Naga.png?w=696&ssl=1",
-    "homepage": "https://rmn.ph/DWNX911Naga/",
-    "stationUuid": "e408b2a3-507f-45fc-82e7-4e981e240849",
-    "checkedAt": "2026-11-26T13:46:21.084Z",
-    "status": 404,
-    "contentType": "text/xml; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "DXMY 90.9 RMN Cotabato",
@@ -5140,7 +5495,7 @@
     "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/08/cotabato.png?w=400&ssl=1",
     "homepage": "https://rmn.ph/dxmy729cotabato/",
     "stationUuid": "1b6b9c14-613d-46f7-be68-d0aaccba5cd1",
-    "checkedAt": "2026-11-26T13:46:21.223Z",
+    "checkedAt": "2026-11-27T13:48:04.340Z",
     "status": 404,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -5160,7 +5515,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkQznmdSrUD0t2BBHzdJhzg5aPb5TomL7Tgn33O1xPzw&s",
     "homepage": "https://newslinecl.com/",
     "stationUuid": "6290ecb4-0901-4d6a-961c-17da93a51e23",
-    "checkedAt": "2026-11-26T13:46:21.881Z",
+    "checkedAt": "2026-11-27T13:48:05.051Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -5182,10 +5537,30 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2C3_Pmxk-dKdVuRekDYM8t-9b-KG7cx2mJnT00Psy80tAPmVba8TKnpY&s=10",
     "homepage": "https://newslinecl.com/",
     "stationUuid": "085c0580-f44e-4ec2-95c7-6a665d4b75ca",
-    "checkedAt": "2026-11-26T13:46:22.107Z",
+    "checkedAt": "2026-11-27T13:48:05.251Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Star FM 94.5 La Union",
+    "url": "https://stream-144.zeno.fm/sa27v4d29heuv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiJzYTI3djRkMjloZXV2IiwiaG9zdCI6InN0cmVhbS0xNDQuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IjAzWkd2TktFVFk2ZDBYMjlQQk9WVUEiLCJpYXQiOjE3MzkxNDI4MjEsImV4cCI6MTczOTE0Mjg4MX0.k1L24899hTkQMsVjbACkzzfi8EpFurlfG1OJlkXpJiA",
+    "country": "PH",
+    "type": "music",
+    "tags": [
+      "music",
+      "news"
+    ],
+    "codec": "AAC",
+    "bitrate": 96,
+    "language": "english,ilocano",
+    "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3fce2TK6jt01JVhZsymURZPb-CzGlveIF4zJKVatMeTVfB7wY0S6lalwO&s=10",
+    "homepage": "https://news.bomboradyo.com/live-stream/",
+    "stationUuid": "073068ad-a0d8-46df-800e-8bd8b38469bd",
+    "checkedAt": "2026-11-27T13:48:05.354Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
     "name": "Star FM 95.5 Cebu",
@@ -5202,7 +5577,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkmJbMGly1Bat3iKoG3oxBckfAntnOFUH4X5wFwsCe9laDEYCkVWJ5UA&s=10",
     "homepage": "https://news.bomboradyo.com/live-stream/",
     "stationUuid": "b5704b74-2f3f-480c-8487-65796290eadc",
-    "checkedAt": "2026-11-26T13:46:22.365Z",
+    "checkedAt": "2026-11-27T13:48:05.515Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -5223,7 +5598,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeGut__AIA9RnYqC-lEyAIyNWc9-i684E__o0B3IF0rw&s=10",
     "homepage": "https://www.surfmusic.de/radio-station/xfm-92-3-fm,11445.html",
     "stationUuid": "433aeb0a-4b6c-4640-b2fd-4de41b051257",
-    "checkedAt": "2026-11-26T13:46:22.641Z",
+    "checkedAt": "2026-11-27T13:48:05.840Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5242,7 +5617,7 @@
     "favicon": "https://static.wikia.nocookie.net/tv5network/images/4/4e/TV5_HD.svg/revision/latest/scale-to-width/360?cb=20230424120548",
     "homepage": "https://news.tv5.com.ph/",
     "stationUuid": "dc20ee23-200a-4542-9241-c190c86cfc79",
-    "checkedAt": "2026-11-26T13:46:22.686Z",
+    "checkedAt": "2026-11-27T13:48:05.908Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -5262,7 +5637,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZANiJ2V8f83gic6GT5m_Lyk3Vs2lCM8iZA&usqp=CAU",
     "homepage": "https://www.cignal.tv/",
     "stationUuid": "700fa0a4-351d-4399-b00c-fdd6640f1546",
-    "checkedAt": "2026-11-26T13:46:22.711Z",
+    "checkedAt": "2026-11-27T13:48:05.945Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -5282,7 +5657,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZANiJ2V8f83gic6GT5m_Lyk3Vs2lCM8iZA&usqp=CAU",
     "homepage": "https://www.cignal.tv/",
     "stationUuid": "80b561a7-81eb-4c8b-be88-61e5a786cace",
-    "checkedAt": "2026-11-26T13:46:22.730Z",
+    "checkedAt": "2026-11-27T13:48:05.997Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -5301,7 +5676,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiJMtIqG3p6SMW2FpEJYx5pduIH-3p77U3zZ9W07yLhI8Th19FcNNtCbE&s=10",
     "homepage": "https://www.rpnradio.com/",
     "stationUuid": "869ac440-fa63-4ef4-8ded-0bf24dba32d6",
-    "checkedAt": "2026-11-26T13:46:22.784Z",
+    "checkedAt": "2026-11-27T13:48:06.068Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -5320,7 +5695,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiJMtIqG3p6SMW2FpEJYx5pduIH-3p77U3zZ9W07yLhI8Th19FcNNtCbE&s=10",
     "homepage": "https://www.rpnradio.com/",
     "stationUuid": "8848d5b1-0e01-40d7-b190-96b3d3177e80",
-    "checkedAt": "2026-11-26T13:46:22.797Z",
+    "checkedAt": "2026-11-27T13:48:06.079Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -5339,7 +5714,7 @@
     "favicon": null,
     "homepage": "https://www.rpnradio.com/",
     "stationUuid": "525e2fd5-6d23-46c2-8f0d-975cab5df2d4",
-    "checkedAt": "2026-11-26T13:46:22.801Z",
+    "checkedAt": "2026-11-27T13:48:06.094Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -5358,7 +5733,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZANiJ2V8f83gic6GT5m_Lyk3Vs2lCM8iZA&usqp=CAU",
     "homepage": "https://www.cignal.tv/",
     "stationUuid": "c3657526-d194-48a8-ad44-da12195778e6",
-    "checkedAt": "2026-11-26T13:46:22.924Z",
+    "checkedAt": "2026-11-27T13:48:06.204Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
@@ -5378,7 +5753,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/4/47/FMRadio_Philippines.png",
     "homepage": "https://www.facebook.com/FMRadioPhils?mibextid=ZbWKwL",
     "stationUuid": "fd73e894-65da-479a-8461-f1d92392ffd6",
-    "checkedAt": "2026-11-26T13:46:22.944Z",
+    "checkedAt": "2026-11-27T13:48:06.214Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -5395,7 +5770,7 @@
     "favicon": "https://pbs.gov.ph/wp-content/uploads/2018/03/station-fm2.png",
     "homepage": "https://pbs.gov.ph/",
     "stationUuid": "6067d6d4-4a1a-4661-97e1-41cbe1e6a232",
-    "checkedAt": "2026-11-26T13:46:23.510Z",
+    "checkedAt": "2026-11-27T13:48:06.876Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5412,14 +5787,14 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/DWWW_Logo_2018.png/500px-DWWW_Logo_2018.png",
     "homepage": "http://www.774dwww.ph/",
     "stationUuid": "eb87b19c-6147-4d56-8b27-b43881308758",
-    "checkedAt": "2026-11-26T13:46:23.525Z",
+    "checkedAt": "2026-11-27T13:48:06.897Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Channel [V] Radio 101.9 DWDB-FM",
-    "url": "https://listen.radioking.com/radio/453221/stream/508076",
+    "name": "99.5 Campus FM",
+    "url": "https://streaming.live365.com/a06369",
     "country": "PH",
     "type": "opm",
     "tags": [
@@ -5430,13 +5805,34 @@
     "codec": "MP3",
     "bitrate": 128,
     "language": "english",
-    "favicon": "https://upload.wikimedia.org/wikipedia/en/3/34/ChannelV_PH_Logo.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
-    "homepage": "https://en.wikipedia.org/wiki/Channel_V_Philippines",
-    "stationUuid": "f6760204-12c7-4e80-b5e1-644725611486",
-    "checkedAt": "2026-11-26T13:46:23.981Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeD_MW0RtGBoy96CyJHBjsWfsbT5zstSqwiOKJuU73Nw&s=10",
+    "homepage": "https://web.archive.org/web/20100726072226/http://eradioportal.com/index.php?p=2&aid=1&sid=82&tid=3",
+    "stationUuid": "f865eac7-56f3-471a-98ba-a3cb2f9c6222",
+    "checkedAt": "2026-11-27T13:48:07.163Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "K-Lite 101.9 FM Manila",
+    "url": "https://streaming.live365.com/a06369",
+    "country": "PH",
+    "type": "opm",
+    "tags": [
+      "opm",
+      "pop",
+      "top 40"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5gRrv6bNrdMDjgw1SMGRDDwf2YvaZNtuGwi5mP6wUqsUqhYrI_5U5rara&s=10",
+    "homepage": "https://www.facebook.com/share/1Aivbayoah/",
+    "stationUuid": "a3a9c71b-a878-40ee-9481-eb1ac38af84c",
+    "checkedAt": "2026-11-27T13:48:07.742Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "MOR Cebu 97.1 - DYLS",
@@ -5454,31 +5850,10 @@
     "favicon": "https://cdn.radio-addict.com/media/stream/80295f96-e69a-456d-8d60-2b1af984855c_CB99A02A641A4F626680B9AC5347D1A6_330px-DYLS_MORCebu_2018.png",
     "homepage": "https://www.facebook.com/MOREntVisayas/",
     "stationUuid": "48aacf7b-dc0a-441e-bcc0-9af5c11a2534",
-    "checkedAt": "2026-11-26T13:46:24.259Z",
+    "checkedAt": "2026-11-27T13:48:07.780Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Radio Disney Philippines 96.7 FM",
-    "url": "https://listen.radioking.com/radio/453221/stream/508076",
-    "country": "PH",
-    "type": "opm",
-    "tags": [
-      "opm",
-      "pop",
-      "top 40"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": "https://static.wikia.nocookie.net/dreamlogos/images/5/51/DWBG_Radio_Disney_PH_2011.png/revision/latest/scale-to-width-down/1200?cb=20210216233623",
-    "homepage": "https://www.radiodisney.com/",
-    "stationUuid": "34e31c78-ff16-4c2e-93f4-d8cfbc6153c0",
-    "checkedAt": "2026-11-26T13:46:24.340Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "Barangay LS 893 Tuguegarao",
@@ -5492,27 +5867,10 @@
     "favicon": "https://static.wikia.nocookie.net/signons-and-signoffs/images/4/42/Barangay_LS_893.png/revision/latest/scale-to-width-down/180?cb=20260812230925",
     "homepage": "http://www.gmanetwork.com/",
     "stationUuid": "c6a69d05-a94b-4a0b-a5d6-37b41f7d38d1",
-    "checkedAt": "2026-11-26T13:46:24.617Z",
+    "checkedAt": "2026-11-27T13:48:08.088Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "DWNX RMN 91.1 Naga",
-    "url": "https://livestream.rmn.ph/dwnxnaga",
-    "country": "PH",
-    "type": "Other",
-    "tags": [],
-    "codec": null,
-    "bitrate": 0,
-    "language": null,
-    "favicon": "https://i0.wp.com/rmn.ph/wp-content/uploads/2019/07/2019-iFM-Naga.png?w=696&ssl=1",
-    "homepage": "https://rmn.ph/DWNX911Naga/",
-    "stationUuid": "31da41d4-3fbe-4438-a87f-719eaa7f8588",
-    "checkedAt": "2026-11-26T13:46:24.618Z",
-    "status": 404,
-    "contentType": "text/xml; charset=utf-8",
-    "lastFailure": "HTTP 404"
   },
   {
     "name": "DWXI",
@@ -5526,7 +5884,7 @@
     "favicon": "https://www.deltabroadcastingsystem.com/wp-content/themes/delta2/images/logo.svg",
     "homepage": "https://www.deltabroadcastingsystem.com/online-radio/",
     "stationUuid": "d82627c6-ed6a-4b58-ae6d-40f5a0620474",
-    "checkedAt": "2026-11-26T13:46:24.640Z",
+    "checkedAt": "2026-11-27T13:48:08.140Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5543,7 +5901,7 @@
     "favicon": "https://rw951.fm/assets/cropped-NewBanner-N4FrOaF8.jpg",
     "homepage": "https://rw951.fm/",
     "stationUuid": "3ff2db86-e7c1-4fa2-a1a8-022aec4c78c3",
-    "checkedAt": "2026-11-26T13:46:24.850Z",
+    "checkedAt": "2026-11-27T13:48:08.521Z",
     "status": 401,
     "contentType": "text/xml; charset=utf-8",
     "lastFailure": "HTTP 401"
@@ -5560,66 +5918,48 @@
     "favicon": null,
     "homepage": "https://www.wish1075.com/",
     "stationUuid": "4b3036b5-1341-4029-a4a7-7b455f0a51dc",
-    "checkedAt": "2026-11-26T13:46:25.153Z",
+    "checkedAt": "2026-11-27T13:48:08.730Z",
     "status": 418,
     "contentType": null,
     "lastFailure": "HTTP 418"
   },
   {
-    "name": "Radio Disney Philippines - Cebu FM 87.5",
-    "url": "https://listen.radioking.com/radio/453221/stream/508076",
+    "name": "Unbox Radio",
+    "url": "https://stream.zeno.fm/2m8rqpd37p8uv",
     "country": "PH",
     "type": "pop",
     "tags": [
-      "pop"
+      "pop",
+      "top40"
     ],
     "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": "https://www.radiodisney.com/favicon",
-    "homepage": "https://www.radiodisney.com/",
-    "stationUuid": "afbd641d-9caf-465b-ae1d-de591bd28bd3",
-    "checkedAt": "2026-11-26T13:46:25.475Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "bitrate": 0,
+    "language": "english,tagalog",
+    "favicon": "https://www.facebook.com/photo/?fbid=1318435596993151&set=a.450017807168272",
+    "homepage": "https://www.jackonline.ph/",
+    "stationUuid": "22feddcb-7390-4b82-8807-4dc78fcf5223",
+    "checkedAt": "2026-11-27T13:48:09.392Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
   },
   {
-    "name": "Radio Disney Philippines - Cebu FM 87.5",
-    "url": "https://listen.radioking.com/radio/453221/stream/508076",
+    "name": "91.9 Bright FM",
+    "url": "http://icecast.eradioportal.com:8000/radyo-veritas-846",
     "country": "PH",
-    "type": "pop",
+    "type": "religious",
     "tags": [
-      "pop"
+      "religious"
     ],
     "codec": "MP3",
     "bitrate": 128,
-    "language": "english",
-    "favicon": "https://www.radiodisney.com/favicon",
-    "homepage": "https://www.radiodisney.com/",
-    "stationUuid": "2024bfb1-9eb9-493c-9e0d-9a4c7917cf59",
-    "checkedAt": "2026-11-26T13:46:25.500Z",
+    "language": "filipino,kapampangan",
+    "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcYIRxwqEmyBGxu_hU9W3smYuBzN7OI1cV7EwNz3k6HADRjDqYZ3kCZ1Fc&s=10",
+    "homepage": "https://en.m.wikipedia.org/wiki/DWBL-FM",
+    "stationUuid": "3231b2cc-0d45-478a-a08a-53c2d3a03470",
+    "checkedAt": "2026-11-27T13:48:09.596Z",
     "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "Radio Disney Philippines - Davao FM 105.9",
-    "url": "https://listen.radioking.com/radio/453221/stream/508076",
-    "country": "PH",
-    "type": "pop",
-    "tags": [
-      "pop"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": "https://www.radiodisney.com/favicon",
-    "homepage": "https://www.radiodisney.com/",
-    "stationUuid": "10ec32c9-5d35-41ee-9917-001514f8c787",
-    "checkedAt": "2026-11-26T13:46:25.516Z",
-    "status": 404,
-    "contentType": "text/html",
+    "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
   },
   {
@@ -5637,46 +5977,10 @@
     "favicon": "https://logos.fandom.com/wiki/DWLA?file=Blazin_105.9.jpg",
     "homepage": "https://www.facebook.com/blazin105?mibextid=ZbWKwL",
     "stationUuid": "beb1710b-9020-451d-acf8-bbdfa8b0fffe",
-    "checkedAt": "2026-11-26T13:46:26.012Z",
+    "checkedAt": "2026-11-27T13:48:09.771Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
-  },
-  {
-    "name": "CCTN 47 Cebu",
-    "url": "http://122.55.252.134:8443/live/bba5b536faeacb9b56a3239f1ee8e3b3/1.m3u8",
-    "country": "PH",
-    "type": "tv",
-    "tags": [
-      "tv"
-    ],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": "cebuano,filipino",
-    "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/CCTN_Cebu_logo.png/220px-CCTN_Cebu_logo.png",
-    "homepage": "http://cctn47.com/cctn/",
-    "stationUuid": "4cdf3fc3-5bd7-46b8-b1c1-9d15bc64b603",
-    "checkedAt": "2026-11-26T13:46:26.137Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
-    "name": "CCTN TV 47 Cebu",
-    "url": "http://122.55.252.134:8443/live/bba5b536faeacb9b56a3239f1ee8e3b3/1.m3u8",
-    "country": "PH",
-    "type": "UNKNOWN",
-    "tags": [],
-    "codec": "UNKNOWN",
-    "bitrate": 0,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://cctn47.com/cctn/?page_id=2",
-    "stationUuid": "8a972504-83a3-408b-9004-5c06e6d96c52",
-    "checkedAt": "2026-11-26T13:46:26.184Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "107.1 Radyo Kontra Weeaboo",
@@ -5692,7 +5996,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFycJpzQrPDA7WWz95SAKVyu8RE2fhf7mRIyDYP6bpBw&s=10",
     "homepage": "https://kontrawibu.caster.fm/",
     "stationUuid": "625e5f23-222f-4439-b8e8-f354e3919ba2",
-    "checkedAt": "2026-11-26T13:46:26.311Z",
+    "checkedAt": "2026-11-27T13:48:10.105Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -5711,7 +6015,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSELtbBaOSLI61jsoo63IkYX48bN5jttVf2OZaax4iqnw&s",
     "homepage": "https://afngo.net/afneurope/Aviano/radio/Gravity",
     "stationUuid": "66e7c6f1-b514-4548-8b19-29b0bd06410b",
-    "checkedAt": "2026-11-26T13:46:26.330Z",
+    "checkedAt": "2026-11-27T13:48:10.131Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -5730,7 +6034,7 @@
     "favicon": "https://cdn.radio-addict.com/media/stream/effe0acc-88e2-4400-9f07-591c7e8e07c7_9C0C3C779D34BB248C82E3F547D4A6E3_images",
     "homepage": "https://www.facebook.com/share/14fMZC3AU4g/",
     "stationUuid": "134c331f-969f-486a-8fc8-fb15d6fe5fa4",
-    "checkedAt": "2026-11-26T13:46:26.627Z",
+    "checkedAt": "2026-11-27T13:48:10.161Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

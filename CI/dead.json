@@ -1,25 +1,5 @@
 [
   {
-    "name": "Life radio Côte d’Ivoire",
-    "url": "https://cast4.asurahosting.com/proxy/life/stream",
-    "country": "CI",
-    "type": "african pop",
-    "tags": [
-      "african pop",
-      "afropop"
-    ],
-    "codec": "MP3",
-    "bitrate": 320,
-    "language": "french",
-    "favicon": null,
-    "homepage": "https://liferadio.ci/",
-    "stationUuid": "739f485a-e8a2-4fcc-9fad-65ab509125cf",
-    "checkedAt": "2026-11-26T13:02:27.919Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
-  },
-  {
     "name": "Radio Chandelier",
     "url": "http://serveur3.wanastream.com:10500/;",
     "country": "CI",
@@ -35,7 +15,7 @@
     "favicon": null,
     "homepage": "http://www.radiochandelier.ci/",
     "stationUuid": "7e19bf7b-c09c-48f7-81b3-f52a1ee9c27a",
-    "checkedAt": "2026-11-26T13:02:28.791Z",
+    "checkedAt": "2026-11-27T12:56:17.595Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -56,31 +36,10 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "5f281e6c-ee26-4fdd-a9ad-72a61c89975e",
-    "checkedAt": "2026-11-26T13:02:29.793Z",
+    "checkedAt": "2026-11-27T12:56:18.126Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "Radio khadim",
-    "url": "https://stream2.rcast.net/73857",
-    "country": "CI",
-    "type": "islamic",
-    "tags": [
-      "islamic",
-      "religious",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 96,
-    "language": "french",
-    "favicon": null,
-    "homepage": null,
-    "stationUuid": "7745199d-c12b-465f-8de8-5d93fb7b32e8",
-    "checkedAt": "2026-11-26T13:02:30.575Z",
-    "status": 403,
-    "contentType": "text/plain; charset=utf-8",
-    "lastFailure": "HTTP 403"
   },
   {
     "name": "Radio Santé CI",
@@ -97,7 +56,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "4618aed1-340e-42e1-8932-8317dcedc777",
-    "checkedAt": "2026-11-26T13:02:31.397Z",
+    "checkedAt": "2026-11-27T12:56:19.857Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"

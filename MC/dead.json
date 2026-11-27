@@ -1,5 +1,45 @@
 [
   {
+    "name": "Yellow Party",
+    "url": "https://yellowradio.ice.infomaniak.ch/yellow02.aac",
+    "country": "MC",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://yellow.radio/radiochannel/yellow-party/",
+    "stationUuid": "ed0a3d3d-7d7b-4ac6-85e0-ee7f524bf8e2",
+    "checkedAt": "2026-11-27T13:34:45.013Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Yellow Party",
+    "url": "https://yellowradio.ice.infomaniak.ch/yellow02.aac",
+    "country": "MC",
+    "type": "dance",
+    "tags": [
+      "dance",
+      "deep",
+      "deep house",
+      "house",
+      "soulfull"
+    ],
+    "codec": "AAC+",
+    "bitrate": 128,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://yellow.radio/radiochannel/yellow-party/",
+    "stationUuid": "26f9775d-ff1c-4ea7-9613-341739edd3a5",
+    "checkedAt": "2026-11-27T13:34:45.017Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
     "name": "Riviera Radio",
     "url": "http://rivieraradio.ice.infomaniak.ch/rivieraradio-high.mp3",
     "country": "MC",
@@ -11,7 +51,7 @@
     "favicon": "https://rivieraradio.mc/assets/img/logo.png",
     "homepage": "https://rivieraradio.mc/",
     "stationUuid": "ba8055de-3d0d-4657-858f-fb3a339f6e17",
-    "checkedAt": "2026-11-26T13:34:57.266Z",
+    "checkedAt": "2026-11-27T13:34:45.667Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
