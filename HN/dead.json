@@ -18,7 +18,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240417_102647045.jpg?alt=media&token=e9afe8f7-5120-4cbb-832a-a1a2654eef3b",
     "homepage": "https://radioglobohonduras.com/",
     "stationUuid": "72bce72a-7ba2-49e5-8fbc-59aa1cdcbc08",
-    "checkedAt": "2026-11-27T13:25:35.783Z",
+    "checkedAt": "2026-11-28T12:42:54.695Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -42,7 +42,7 @@
     "favicon": "https://sites.google.com/view/stereo-cafe-hnhttps://lh4.googleusercontent.com/WP_P7Ymm7P_b-ob4v62Ye4yKkMG7iokPd38zLENnbxg-C0V6eKVjVIX3XKFotisA55nEUynEHEn3QSAywCJk5_c=w16383",
     "homepage": "https://sites.google.com/view/stereo-cafe-hn",
     "stationUuid": "f9978545-4082-4c8b-b8ba-ce630dfb8642",
-    "checkedAt": "2026-11-27T13:25:37.657Z",
+    "checkedAt": "2026-11-28T12:42:55.871Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -67,10 +67,10 @@
     "favicon": "https://soygarifuna.com/assets/img/favicon.svg",
     "homepage": "https://soygarifuna.com/radio",
     "stationUuid": "8936e42d-8438-470f-8366-f641c4e0bc36",
-    "checkedAt": "2026-11-27T13:25:38.361Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-28T12:42:56.724Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Radio Radical HN",
@@ -92,7 +92,7 @@
     "favicon": "https://stationselect.com/images/logos/1723762240.jpeg",
     "homepage": "https://radioradicalhn.wixsite.com/radio",
     "stationUuid": "75651957-9536-4416-bb99-3ac1572bf117",
-    "checkedAt": "2026-11-27T13:25:39.069Z",
+    "checkedAt": "2026-11-28T12:42:57.095Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -116,7 +116,7 @@
     "favicon": "https://firebasestorage.googleapis.com/v0/b/radiogalaxy-580f4.appspot.com/o/images%2FIMG_20240614_160930828.jpg?alt=media&token=042674ca-24e7-46ed-83b0-42d177518a55",
     "homepage": "https://radioradicalhn.wix.com/radio",
     "stationUuid": "b4cffb45-f973-45e2-b338-6ce19ae1fb28",
-    "checkedAt": "2026-11-27T13:25:39.103Z",
+    "checkedAt": "2026-11-28T12:42:57.107Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -133,10 +133,10 @@
     "favicon": "https://images.squarespace-cdn.com/content/v1/5fd57ba467ebfc29b0938c90/1610329153763-DUDSB19ZPOCLOD1IN4CD/REDESIGN+MOBILE+LOGO.jpg?format=1500w",
     "homepage": "https://www.bluewaveradio.live/",
     "stationUuid": "b6788b86-2836-41d7-84d9-343cb3e53ea2",
-    "checkedAt": "2026-11-27T13:25:39.206Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-28T12:42:57.250Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Soy Garifuna Radio",
@@ -150,10 +150,10 @@
     "favicon": "https://soygarifuna.com/assets/img/favicon.svg",
     "homepage": "https://soygarifuna.com/radio",
     "stationUuid": "6a2a1804-fb11-4d95-a369-26b283057609",
-    "checkedAt": "2026-11-27T13:25:39.527Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-28T12:42:57.830Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Stereo Luz",
@@ -167,7 +167,47 @@
     "favicon": "null",
     "homepage": "https://estereoluz.com/",
     "stationUuid": "82acf123-e29f-4ce7-ac0f-c0a95e3e32eb",
-    "checkedAt": "2026-11-27T13:25:39.661Z",
+    "checkedAt": "2026-11-28T12:42:57.896Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Stereo Dimensión - La 96",
+    "url": "https://rr5100.globalhost1.com:7328/stream",
+    "country": "HN",
+    "type": "música",
+    "tags": [
+      "música",
+      "urbana"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "español - latinoamerica",
+    "favicon": null,
+    "homepage": "https://crh.hn/",
+    "stationUuid": "18259b0a-0d0f-444c-b76b-55dbb7254dbc",
+    "checkedAt": "2026-11-28T12:42:58.133Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "Stereo Dimensión - La 96",
+    "url": "https://rr5100.globalhost1.com:7328/stream",
+    "country": "HN",
+    "type": "música",
+    "tags": [
+      "música",
+      "urbana"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "español - latinoamerica",
+    "favicon": "https://crh.hn/wp-content/uploads/2023/08/cropped-cropped-cropped-logo-crh-180x180.png",
+    "homepage": "https://crh.hn/",
+    "stationUuid": "02f71899-4f63-4768-8d79-36da4556251c",
+    "checkedAt": "2026-11-28T12:42:58.234Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -186,7 +226,7 @@
     "favicon": "https://zeno.fm/player/radio-templaria-online",
     "homepage": "https://zeno.fm/player/radio-templaria-online",
     "stationUuid": "3ebad864-466c-4e46-a8e4-25e6a00a56cd",
-    "checkedAt": "2026-11-27T13:25:40.983Z",
+    "checkedAt": "2026-11-28T12:42:58.932Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"

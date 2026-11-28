@@ -16,10 +16,30 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "32cf0f3d-65db-4fa9-8fbb-4cb2efe4fbb9",
-    "checkedAt": "2026-11-27T12:57:05.382Z",
+    "checkedAt": "2026-11-28T12:16:06.317Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "CamerHits",
+    "url": "https://camerhits.com/icecast/stream",
+    "country": "CM",
+    "type": "african music",
+    "tags": [
+      "african music",
+      "afro beat"
+    ],
+    "codec": "MP3",
+    "bitrate": 0,
+    "language": "french",
+    "favicon": null,
+    "homepage": "https://camerhits.com/",
+    "stationUuid": "6e30c825-3416-49c9-bd33-d45a89fe0c61",
+    "checkedAt": "2026-11-28T12:16:06.326Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Equinoxe Radio",
@@ -35,7 +55,7 @@
     "favicon": null,
     "homepage": "http://www.radioequinoxe.com/",
     "stationUuid": "332f6491-d62d-48a4-b44a-fa8020896949",
-    "checkedAt": "2026-11-27T12:57:07.925Z",
+    "checkedAt": "2026-11-28T12:16:08.829Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -56,7 +76,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "04ca502e-2841-4568-a378-3df4fcbada2b",
-    "checkedAt": "2026-11-27T12:57:07.937Z",
+    "checkedAt": "2026-11-28T12:16:08.934Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -76,7 +96,7 @@
     "favicon": "https://radioenlignefrance.com/storage/radios/6885/8855/conversions/DkvJakmCUOOuVMaiESwrtRtXbTOkl6-metaQ1JUVi1SYWRpby5qcGc=--lg.webp",
     "homepage": "https://www.crtv.cm/",
     "stationUuid": "964b07c5-d89d-4b37-b5f1-dfddbac876c5",
-    "checkedAt": "2026-11-27T12:57:08.293Z",
+    "checkedAt": "2026-11-28T12:16:09.138Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -96,10 +116,10 @@
     "favicon": null,
     "homepage": "https://crtv.cm/",
     "stationUuid": "14f6e67f-a6bd-4829-b6d0-08550a53ec17",
-    "checkedAt": "2026-11-27T12:57:08.403Z",
-    "status": 503,
+    "checkedAt": "2026-11-28T12:16:09.222Z",
+    "status": null,
     "contentType": null,
-    "lastFailure": "HTTP 503"
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Dream FM",
@@ -117,7 +137,7 @@
     "favicon": null,
     "homepage": "https://dir.rcast.net/players/244422",
     "stationUuid": "50e84985-0372-4270-a16b-053aac9ecbbf",
-    "checkedAt": "2026-11-27T12:57:08.548Z",
+    "checkedAt": "2026-11-28T12:16:09.294Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -137,7 +157,7 @@
     "favicon": null,
     "homepage": "https://skyfmcameroon.com/",
     "stationUuid": "0c8b8cd4-0b04-442b-8fe5-dda559a31903",
-    "checkedAt": "2026-11-27T12:57:09.190Z",
+    "checkedAt": "2026-11-28T12:16:09.940Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -157,7 +177,7 @@
     "favicon": null,
     "homepage": "https://crtv.cm/radio/suellaba-fm",
     "stationUuid": "20cd420b-3af1-451a-9d79-5c0c3ae13f67",
-    "checkedAt": "2026-11-27T12:57:09.253Z",
+    "checkedAt": "2026-11-28T12:16:10.001Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"

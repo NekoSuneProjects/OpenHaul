@@ -1,22 +1,5 @@
 [
   {
-    "name": "Radio O'zbegim Taronasi",
-    "url": "https://fm101.uz:9943/fm101_low.aac",
-    "country": "UZ",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 128,
-    "language": "uzbek،russian",
-    "favicon": null,
-    "homepage": "https://fm101.uz/",
-    "stationUuid": "8d542c3e-a374-41a0-8daf-b7eb342fba53",
-    "checkedAt": "2026-11-27T14:16:30.197Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
-  },
-  {
     "name": "Islom.uz",
     "url": "https://radio.islom.uz/islomuz",
     "country": "UZ",
@@ -30,7 +13,7 @@
     "favicon": "null",
     "homepage": "https://islom.uz/",
     "stationUuid": "0f685f2b-32d5-4858-a05a-e3fa664dc992",
-    "checkedAt": "2026-11-27T14:16:30.203Z",
+    "checkedAt": "2026-11-28T13:32:34.589Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -49,7 +32,7 @@
     "favicon": "null",
     "homepage": "https://qurango.net/radio/mahmoud_khalil_alhussary_warsh",
     "stationUuid": "11b819f9-44e5-48a5-a79b-a7eb2d5d7fdb",
-    "checkedAt": "2026-11-27T14:16:30.416Z",
+    "checkedAt": "2026-11-28T13:32:34.754Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -66,9 +49,32 @@
     "favicon": "https://rytmabad.radio/favicon.png",
     "homepage": "https://rytmabad.radio/",
     "stationUuid": "8e993264-2845-464f-bab3-e6b1a6aa9ea7",
-    "checkedAt": "2026-11-27T14:16:30.610Z",
+    "checkedAt": "2026-11-28T13:32:35.562Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "Mars FM Uzbekistan",
+    "url": "https://marsfm.uz/stream.php",
+    "country": "UZ",
+    "type": "music",
+    "tags": [
+      "music",
+      "online radio",
+      "pop",
+      "uzbek",
+      "uzbekistan"
+    ],
+    "codec": "MP3",
+    "bitrate": 192,
+    "language": "uzbek",
+    "favicon": "https://marsfm.uz/storage/covers/689eefb109b71c.jpg",
+    "homepage": "https://marsfm.uz/",
+    "stationUuid": "5f23a96a-afda-40b4-881f-fef95d0328e5",
+    "checkedAt": "2026-11-28T13:32:35.584Z",
+    "status": 503,
+    "contentType": "text/plain; charset=utf-8",
+    "lastFailure": "HTTP 503"
   }
 ]

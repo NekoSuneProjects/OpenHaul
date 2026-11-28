@@ -15,7 +15,7 @@
     "favicon": "https://matrixfmlebanon.com/assets/img/icns/apple-touch-icon-180x180.png",
     "homepage": "https://matrixfmlebanon.com/",
     "stationUuid": "862001c7-1ff4-4573-b936-40f634d8be45",
-    "checkedAt": "2026-11-27T13:33:53.999Z",
+    "checkedAt": "2026-11-28T12:50:26.652Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -41,7 +41,7 @@
     "favicon": null,
     "homepage": "https://clickfm.net/",
     "stationUuid": "2c076f29-e122-4f09-a853-f99b294a3569",
-    "checkedAt": "2026-11-27T13:33:54.544Z",
+    "checkedAt": "2026-11-28T12:50:27.349Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -60,27 +60,29 @@
     "favicon": "https://www.voiceofvan.net/backend/uploads/setting/1723180428.png",
     "homepage": "https://www.voiceofvan.net/",
     "stationUuid": "cee5d76c-dc30-4446-b4b4-db1512bbad2f",
-    "checkedAt": "2026-11-27T13:33:54.748Z",
+    "checkedAt": "2026-11-28T12:50:27.433Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Maestro FM 90.9",
-    "url": "https://cast5.my-control-panel.com/proxy/tripoli1/stream",
+    "name": "BeLight FM 104.1",
+    "url": "https://cast4.my-control-panel.com/proxy/radiode1/stream",
     "country": "LB",
-    "type": "MP3",
-    "tags": [],
+    "type": "christian",
+    "tags": [
+      "christian"
+    ],
     "codec": "MP3",
     "bitrate": 128,
     "language": "arabic",
-    "favicon": "https://www.google.com/s2/favicons?domain=maestrofm.live&sz=256",
-    "homepage": "https://maestrofm.live/",
-    "stationUuid": "d8061b6c-ec99-43c4-9b22-38fb3713fe61",
-    "checkedAt": "2026-11-27T13:33:58.439Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "favicon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0d/6f/01/0d6f0155-d824-6b35-70c3-edaf765cb8f9/AppIcon-0-0-1x_U007emarketing-0-11-0-0-85-220.png/1024x1024bb.jpg",
+    "homepage": "https://belight.fm/",
+    "stationUuid": "24a69c54-7237-4573-9669-e907f7b51ff1",
+    "checkedAt": "2026-11-28T12:50:27.797Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Voice of Van",
@@ -94,10 +96,27 @@
     "favicon": "https://www.voiceofvan.net/backend/uploads/setting/1723180428.png",
     "homepage": "https://www.voiceofvan.net/",
     "stationUuid": "797a3f43-9ff0-4173-8071-6f3f21e664ed",
-    "checkedAt": "2026-11-27T13:33:58.680Z",
+    "checkedAt": "2026-11-28T12:50:30.750Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Sawt Al Farah 104.3 FM",
+    "url": "https://l3.itworkscdn.net/itwaudio/9036/stream",
+    "country": "LB",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": "https://graph.facebook.com/sawtalfarah/picture?width=1024&height=1024",
+    "homepage": "https://sawtalfarah.com/",
+    "stationUuid": "c4a64f1f-b77d-47b2-8187-f472a52669c3",
+    "checkedAt": "2026-11-28T12:50:31.051Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Sawt El Wifak",
@@ -111,10 +130,10 @@
     "favicon": null,
     "homepage": "https://sawtelwifak.com/",
     "stationUuid": "5a6f9ddf-6ad5-4eec-bc91-dcce53927f40",
-    "checkedAt": "2026-11-27T13:33:59.099Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-28T12:50:31.207Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
     "name": "Aghani Aghani TV",
@@ -130,7 +149,7 @@
     "favicon": "https://aghaniaghani.com/images/logo.png",
     "homepage": "https://aghaniaghani.com/",
     "stationUuid": "3f2c9689-bfb2-479c-9ecf-b0e80a360d6f",
-    "checkedAt": "2026-11-27T13:33:59.662Z",
+    "checkedAt": "2026-11-28T12:50:31.689Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"

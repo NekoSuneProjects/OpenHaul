@@ -1,27 +1,5 @@
 [
   {
-    "name": "Radio ABC Stereo 100.1 FM",
-    "url": "https://streaming.rcs.com.sv/proxy/abc/stream",
-    "country": "SV",
-    "type": "electronic",
-    "tags": [
-      "electronic",
-      "misc",
-      "pop",
-      "top 40"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "san salvador",
-    "favicon": null,
-    "homepage": "https://radiocorporacionelsalvador.com/",
-    "stationUuid": "0dc41c42-b357-4f7d-9f9a-053c621a33a8",
-    "checkedAt": "2026-11-27T13:56:55.966Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
-  },
-  {
     "name": "La Central 103.7 FM",
     "url": "https://radio.videct.com/8176/stream",
     "country": "SV",
@@ -43,7 +21,7 @@
     "favicon": "https://cadenacentral.com/wp-content/uploads/2022/09/logo-original-300x161.png",
     "homepage": "https://lacentralfm.com/",
     "stationUuid": "8fb181d3-ed03-4425-829f-f780cb41d8d5",
-    "checkedAt": "2026-11-27T13:56:56.116Z",
+    "checkedAt": "2026-11-28T13:12:33.951Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -69,27 +47,27 @@
     "favicon": "https://www.mil80.com/wp-content/uploads/2022/08/logo-blanco-mil80.png",
     "homepage": "https://www.mil80.com/",
     "stationUuid": "88c9c355-9a63-4567-8634-124e46d14f19",
-    "checkedAt": "2026-11-27T13:56:56.204Z",
+    "checkedAt": "2026-11-28T13:12:34.018Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "ABC 100.1",
-    "url": "https://streaming.rcs.com.sv/proxy/abc/stream",
+    "name": "Plenitud Radio",
+    "url": "https://ssl.rockhost.com/proxy/plenitud?mp=/mp3_64",
     "country": "SV",
     "type": "MP3",
     "tags": [],
     "codec": "MP3",
-    "bitrate": 128,
+    "bitrate": 64,
     "language": null,
-    "favicon": "https://cdn.instant.audio/images/logos/radios-com-sv/abc.png",
-    "homepage": "https://radiocorporacionelsalvador.com/",
-    "stationUuid": "411ec18e-d33c-4be6-a10d-656fcdc494ec",
-    "checkedAt": "2026-11-27T13:56:56.900Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "favicon": "https://radio.elim.org.sv/plenitud/tmp/images/default.png",
+    "homepage": "https://radio.elim.org.sv/plenitud/",
+    "stationUuid": "a9f2b5ba-6c40-4821-9e61-87b9698f3487",
+    "checkedAt": "2026-11-28T13:12:34.791Z",
+    "status": 401,
+    "contentType": null,
+    "lastFailure": "HTTP 401"
   },
   {
     "name": "Radio Legislativa de El Salvador",
@@ -103,7 +81,7 @@
     "favicon": "https://www.asamblea.gob.sv/themes/asamblea/favicon.ico",
     "homepage": "https://www.asamblea.gob.sv/asamblea-social-media/radio-legislativa",
     "stationUuid": "93bc5ee4-9718-442f-8ce8-ad0f824c0c6a",
-    "checkedAt": "2026-11-27T13:56:57.938Z",
+    "checkedAt": "2026-11-28T13:12:35.604Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"

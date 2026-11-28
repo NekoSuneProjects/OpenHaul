@@ -11,49 +11,31 @@
     "favicon": "https://nthambiradio.exclusivemw.live/",
     "homepage": "https://nthambiradio.exclusivemw.live/",
     "stationUuid": "57f5f581-69a3-41f6-bebe-b6382d2a18fe",
-    "checkedAt": "2026-11-27T13:35:18.826Z",
+    "checkedAt": "2026-11-28T12:51:55.730Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
   },
   {
-    "name": "Timveni Radio",
-    "url": "https://play.streamafrica.net/timveni",
+    "name": "LBS Radio (Love Beyond Status Radio)",
+    "url": "https://lbsradio-dexterity.radioca.st/stream",
     "country": "MW",
-    "type": "AAC+",
-    "tags": [],
-    "codec": "AAC+",
-    "bitrate": 64,
-    "language": null,
-    "favicon": "https://static2.mytuner.mobi/media/tvos_radios/b3f7kdxwudw4.png",
-    "homepage": "https://mytuner-radio.com/radio/timveni-500583/",
-    "stationUuid": "0b59210b-3248-47d6-83c5-9fa919c0c655",
-    "checkedAt": "2026-11-27T13:35:18.830Z",
-    "status": 502,
-    "contentType": null,
-    "lastFailure": "HTTP 502"
-  },
-  {
-    "name": "Timveni Online",
-    "url": "https://strw3.openstream.co/495",
-    "country": "MW",
-    "type": "children",
+    "type": "adult contemporary",
     "tags": [
-      "children",
+      "adult contemporary",
       "news",
-      "sports",
       "talk"
     ],
-    "codec": "AAC+",
-    "bitrate": 64,
+    "codec": "MP3",
+    "bitrate": 128,
     "language": "chichewa",
     "favicon": null,
-    "homepage": "https://timveni.org.mw/",
-    "stationUuid": "a0989bf3-823f-4409-bbcd-2b36f4f0a8c8",
-    "checkedAt": "2026-11-27T13:35:19.352Z",
-    "status": 502,
-    "contentType": null,
-    "lastFailure": "HTTP 502"
+    "homepage": null,
+    "stationUuid": "fa41c642-dfde-430c-b5eb-da803d5afd07",
+    "checkedAt": "2026-11-28T12:51:55.736Z",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Nkhoma Synod Radio",
@@ -71,7 +53,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "ec8b44a1-2fdb-4664-a986-b567ba9c7d18",
-    "checkedAt": "2026-11-27T13:35:19.744Z",
+    "checkedAt": "2026-11-28T12:51:56.552Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -92,7 +74,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "bb4735b4-9e5e-41ce-8e4b-d8a477ea4c63",
-    "checkedAt": "2026-11-27T13:35:19.751Z",
+    "checkedAt": "2026-11-28T12:51:56.648Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -114,7 +96,7 @@
     "favicon": null,
     "homepage": "https://tuntufyefm.com/",
     "stationUuid": "9bdb2efa-d6e5-4728-9190-e67e96e780c1",
-    "checkedAt": "2026-11-27T13:35:20.103Z",
+    "checkedAt": "2026-11-28T12:51:56.717Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -135,7 +117,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "de97fdca-66c6-482e-8761-d22383ca1a6e",
-    "checkedAt": "2026-11-27T13:35:20.256Z",
+    "checkedAt": "2026-11-28T12:51:56.837Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -155,31 +137,10 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "d67bd854-c35d-42f5-861f-6588ac8fcb95",
-    "checkedAt": "2026-11-27T13:35:21.933Z",
+    "checkedAt": "2026-11-28T12:51:58.652Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "Story Club FM",
-    "url": "https://stream.zeno.fm/pmsyym60maauv",
-    "country": "MW",
-    "type": "news",
-    "tags": [
-      "news",
-      "sports",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "english",
-    "favicon": null,
-    "homepage": "https://www.storyclubfm.com/",
-    "stationUuid": "66c9f684-260b-4426-89f1-c7465dd54726",
-    "checkedAt": "2026-11-27T13:35:22.098Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "UWALA Radio",
@@ -196,31 +157,10 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "39007a42-9bff-44c6-830d-d20e9e08d43d",
-    "checkedAt": "2026-11-27T13:35:22.189Z",
+    "checkedAt": "2026-11-28T12:51:58.871Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "We Can Media Online Radio",
-    "url": "https://stream.zeno.fm/sg6x5m9nviltv",
-    "country": "MW",
-    "type": "news",
-    "tags": [
-      "news",
-      "sports",
-      "talk"
-    ],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": "chichewa",
-    "favicon": null,
-    "homepage": "https://zeno.fm/radio/we-can-media-online-radio/",
-    "stationUuid": "62e53beb-462c-45b5-8616-373273aad9db",
-    "checkedAt": "2026-11-27T13:35:22.198Z",
-    "status": 401,
-    "contentType": null,
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Khoza Radio",
@@ -236,7 +176,7 @@
     "favicon": null,
     "homepage": "https://kalumw.com/lunkhunkhu2/",
     "stationUuid": "7cf8a6c1-0a43-4e8c-8141-333c442bae4b",
-    "checkedAt": "2026-11-27T13:35:22.293Z",
+    "checkedAt": "2026-11-28T12:51:59.003Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"

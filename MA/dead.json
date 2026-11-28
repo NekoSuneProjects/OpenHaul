@@ -11,7 +11,7 @@
     "favicon": "https://xglite.blogspot.com",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "68ddcca4-fa29-49e0-97a1-182edd18f44a",
-    "checkedAt": "2026-11-27T13:34:26.387Z",
+    "checkedAt": "2026-11-28T12:51:01.668Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -33,10 +33,31 @@
     "favicon": "https://radiolive.ma/icons/MEDINAFM.png",
     "homepage": "https://radiolive.ma/station/medina-fm",
     "stationUuid": "0502df2d-a93e-4d8a-8547-ae9d341a1128",
-    "checkedAt": "2026-11-27T13:34:26.758Z",
+    "checkedAt": "2026-11-28T12:51:02.403Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Medina FM Andalou (128 kbps)",
+    "url": "https://medinaandalou.ice.infomaniak.ch/medinaandalou-128.mp3",
+    "country": "MA",
+    "type": "al-ala",
+    "tags": [
+      "al-ala",
+      "malhoun",
+      "morocco"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": "https://api.medinafm.ma/uploads/fbd01c81-1f43-4f10-8682-19738ca43aec-w320.webp",
+    "homepage": "https://medinafm.ma/",
+    "stationUuid": "3194ab53-148e-482c-b392-6b33ad40d9b1",
+    "checkedAt": "2026-11-28T12:51:02.583Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "© XGlite™® XGlite Radio FM Web Station",
@@ -52,7 +73,7 @@
     "favicon": "https://drive.google.com/file/d/1UCRLXymEBsuwoJVLF1VSsptvA_spPUeN/view?usp=drivesdk",
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "00d94344-7f60-4f5d-9aee-dd917276c98d",
-    "checkedAt": "2026-11-27T13:34:26.943Z",
+    "checkedAt": "2026-11-28T12:51:02.642Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -73,33 +94,31 @@
     "favicon": null,
     "homepage": "https://xglite.listen2myradio.com/",
     "stationUuid": "4797d484-176c-4c96-949b-243fb0b0dccd",
-    "checkedAt": "2026-11-27T13:34:26.953Z",
+    "checkedAt": "2026-11-28T12:51:02.730Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
   },
   {
-    "name": "Kabana Rooftop Marrakech",
-    "url": "https://stream.vibe-stream.com/kabana-rooftop-marrakech.mp3",
+    "name": "Medina FM Nachat (128 kbps)",
+    "url": "https://medinanachat.ice.infomaniak.ch/medinanachat-128.mp3",
     "country": "MA",
-    "type": "arabic grooves",
+    "type": "chaabi",
     "tags": [
-      "arabic grooves",
-      "disco",
-      "electronic",
-      "house",
-      "live music"
+      "chaabi",
+      "moroccan",
+      "pop"
     ],
     "codec": "MP3",
-    "bitrate": 0,
-    "language": null,
-    "favicon": "https://stream.vibe-stream.com/vibestream-logo.png",
-    "homepage": "https://www.vibe-stream.com/venue?id=kabana-rooftop-marrakech",
-    "stationUuid": "79ed8ddf-5e4d-4f4b-92e9-51dfbf899241",
-    "checkedAt": "2026-11-27T13:34:27.276Z",
-    "status": 404,
-    "contentType": "text/html; charset=utf-8",
-    "lastFailure": "HTTP 404"
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": "https://api.medinafm.ma/uploads/43a70411-46cc-40c7-b4bb-7fcb41ce70ea-w320.webp",
+    "homepage": "https://medinafm.ma/",
+    "stationUuid": "8ada979f-dc6b-49ca-9dc9-bd3377c99aac",
+    "checkedAt": "2026-11-28T12:51:03.500Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
   },
   {
     "name": "Medi1 Tarab",
@@ -115,7 +134,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/fr/c/ca/Medi_1_TV_logo.png",
     "homepage": "http://www.medi1.com/",
     "stationUuid": "baae5280-6e91-421b-bc15-7ace366768e0",
-    "checkedAt": "2026-11-27T13:34:27.797Z",
+    "checkedAt": "2026-11-28T12:51:03.552Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -134,7 +153,7 @@
     "favicon": "https://www.medi1.com/favicon.ico",
     "homepage": "https://www.medi1.com/fr/webradio/Classique",
     "stationUuid": "4c6f8571-6e70-42d5-a4a6-669003ad1cee",
-    "checkedAt": "2026-11-27T13:34:28.358Z",
+    "checkedAt": "2026-11-28T12:51:04.054Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -153,7 +172,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "e300baf5-e1e2-4ba8-b4ff-6d029d5a0a99",
-    "checkedAt": "2026-11-27T13:34:28.383Z",
+    "checkedAt": "2026-11-28T12:51:04.072Z",
     "status": 503,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 503"
@@ -172,7 +191,7 @@
     "favicon": null,
     "homepage": "https://stream.zeno.fm/ezxx195gq2zuv",
     "stationUuid": "653dea16-ffe4-4db9-8744-427bb37d83ee",
-    "checkedAt": "2026-11-27T13:34:28.822Z",
+    "checkedAt": "2026-11-28T12:51:04.527Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -194,7 +213,7 @@
     "favicon": "https://api.medinafm.ma/uploads/0a75b43e-0a49-418a-9ca5-b3bcc3428d27-w320.webp",
     "homepage": "https://medinafm.ma/",
     "stationUuid": "91ec0c03-f58c-4e42-a034-067a22f867d3",
-    "checkedAt": "2026-11-27T13:34:29.319Z",
+    "checkedAt": "2026-11-28T12:51:05.156Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -213,7 +232,7 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/8#",
     "stationUuid": "93c1a1a6-5571-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-27T13:34:29.968Z",
+    "checkedAt": "2026-11-28T12:51:06.027Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -237,7 +256,51 @@
     "favicon": null,
     "homepage": "https://aswatalweb.com/",
     "stationUuid": "1c1de83b-2d27-4ae2-920c-98a56df016b6",
-    "checkedAt": "2026-11-27T13:34:30.014Z",
+    "checkedAt": "2026-11-28T12:51:06.132Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Medina FM Nostalgie (128 kbps)",
+    "url": "https://medinanachat.ice.infomaniak.ch/medinanachat-128.mp3",
+    "country": "MA",
+    "type": "morocco",
+    "tags": [
+      "morocco",
+      "oldies",
+      "pop",
+      "retro",
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": "https://api.medinafm.ma/uploads/335c74c0-5b0a-4136-8945-cb7a6c4b4424-w320.webp",
+    "homepage": "https://medinafm.ma/",
+    "stationUuid": "7f8f3ce0-4780-4557-ba61-2df564ef3f75",
+    "checkedAt": "2026-11-28T12:51:06.421Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "fetch failed"
+  },
+  {
+    "name": "Medina FM Tarab (128 kbps)",
+    "url": "https://medinatarab.ice.infomaniak.ch/medinatarab-128.mp3",
+    "country": "MA",
+    "type": "morocco",
+    "tags": [
+      "morocco",
+      "nostalgic",
+      "tarab music"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "arabic",
+    "favicon": "https://api.medinafm.ma/uploads/f0b5829f-c5ed-4acc-a775-d921ecd2edc7-w320.webp",
+    "homepage": "https://medinafm.ma/",
+    "stationUuid": "9e88f54e-7a06-4225-a01e-9644a48d8499",
+    "checkedAt": "2026-11-28T12:51:06.548Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -254,7 +317,7 @@
     "favicon": null,
     "homepage": "https://www.medi1.com/webradio/2#",
     "stationUuid": "96ccc468-1a6f-11e8-a334-52543be04c81",
-    "checkedAt": "2026-11-27T13:34:30.838Z",
+    "checkedAt": "2026-11-28T12:51:07.050Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -271,7 +334,7 @@
     "favicon": null,
     "homepage": "http://www.medi1.com/webradio/3#",
     "stationUuid": "7c1bdaa1-56a8-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-27T13:34:30.872Z",
+    "checkedAt": "2026-11-28T12:51:07.287Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -288,7 +351,7 @@
     "favicon": "https://snrtlive.ma/sites/default/files/2024-02/logo-snrtnews2_2.png",
     "homepage": "https://snrtlive.ma/ar/alidaa-alwatania",
     "stationUuid": "4d8de7d2-1fc1-4f70-974c-12100d0fd68c",
-    "checkedAt": "2026-11-27T13:34:31.958Z",
+    "checkedAt": "2026-11-28T12:51:08.348Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"

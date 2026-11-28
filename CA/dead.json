@@ -18,10 +18,34 @@
     "favicon": "https://riverwood-radio.online/logo.png",
     "homepage": "https://riverwood-radio.online/",
     "stationUuid": "dbd16432-a8ba-4c90-aaec-63941ce50eee",
-    "checkedAt": "2026-11-27T12:53:34.165Z",
+    "checkedAt": "2026-11-28T12:12:32.061Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "CJSS \"Boom 101.9\" Cornwall, ON",
+    "url": "http://live.leanstream.co/CJSSFM-MP3",
+    "country": "CA",
+    "type": "70s",
+    "tags": [
+      "70s",
+      "80s",
+      "90s",
+      "classic hits",
+      "commercial",
+      "cornwall"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://boom1019.com/wp-content/uploads/sites/8/2018/02/cropped-boom101_512x512.png?w=180",
+    "homepage": "http://www.boom1019.com/",
+    "stationUuid": "96216366-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:12:35.903Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "SFM",
@@ -42,7 +66,7 @@
     "favicon": "https://edfm.nl/SFM00.png",
     "homepage": "https://streemlion.com/",
     "stationUuid": "cd4d298b-92f2-4e69-b267-e1ee2366f7e8",
-    "checkedAt": "2026-11-27T12:53:37.972Z",
+    "checkedAt": "2026-11-28T12:12:36.547Z",
     "status": 403,
     "contentType": "text/plain; charset=utf-8",
     "lastFailure": "HTTP 403"
@@ -66,7 +90,7 @@
     "favicon": "https://img1.wsimg.com/isteam/ip/9d29ea06-52d6-4da1-9c9f-84b8db103726/favicon/c28c8ed0-d3d5-438d-93f3-7fd8015bdd0b/e1d32447-b76f-4870-a3c5-908c87f43492.png/:/rs=w:24,h:24,m",
     "homepage": "https://canaryradio.ca/",
     "stationUuid": "b545e20b-56bf-4a38-8bc3-690a4183a8e9",
-    "checkedAt": "2026-11-27T12:53:38.865Z",
+    "checkedAt": "2026-11-28T12:12:37.369Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -85,54 +109,31 @@
     "favicon": "https://atomic-fm.netlify.app/og.png",
     "homepage": "https://atomic-fm.netlify.app/",
     "stationUuid": "ed400355-581e-4eac-a4b5-e89d859e2954",
-    "checkedAt": "2026-11-27T12:53:40.308Z",
+    "checkedAt": "2026-11-28T12:12:38.734Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "93 Radio — Learn: Tech",
-    "url": "https://93problems.com/api/radio/learn-tech/stream.aac",
+    "name": "93 Radio — Learn: Security & Compliance",
+    "url": "https://93problems.com/api/radio/learn-security/stream.aac",
     "country": "CA",
     "type": "93 radio",
     "tags": [
       "93 radio",
+      "compliance",
+      "cybersecurity",
       "educational",
       "music",
-      "programming",
-      "study",
-      "technology"
+      "study"
     ],
     "codec": "AAC",
     "bitrate": 128,
     "language": "english",
-    "favicon": "https://93problems.com/radio/logos/learn-tech-300.png",
-    "homepage": "https://93problems.com/radio#learn-tech",
-    "stationUuid": "57763e6d-041b-4660-b4a1-e8466cf350cb",
-    "checkedAt": "2026-11-27T12:53:40.456Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
-  },
-  {
-    "name": "93 Radio — Nachrichten (Deutsch)",
-    "url": "https://93problems.com/api/radio/news-de/stream.aac",
-    "country": "CA",
-    "type": "93 radio",
-    "tags": [
-      "93 radio",
-      "educational",
-      "music",
-      "nachrichten",
-      "news"
-    ],
-    "codec": "AAC",
-    "bitrate": 128,
-    "language": "german",
-    "favicon": "https://93problems.com/radio/logos/news-de-300.png",
-    "homepage": "https://93problems.com/radio#news-de",
-    "stationUuid": "ccd582b9-f34b-46fe-ab79-d7fb64d9d21c",
-    "checkedAt": "2026-11-27T12:53:40.597Z",
+    "favicon": "https://93problems.com/radio/logos/learn-security-300.png",
+    "homepage": "https://93problems.com/radio#learn-security",
+    "stationUuid": "c0dc861c-ceb3-4152-b110-fddaf36156a4",
+    "checkedAt": "2026-11-28T12:12:38.770Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -155,7 +156,7 @@
     "favicon": "https://93problems.com/radio/logos/news-en-300.png",
     "homepage": "https://93problems.com/radio#news-en",
     "stationUuid": "dea19492-c305-4943-ba0c-ed51542911da",
-    "checkedAt": "2026-11-27T12:53:40.894Z",
+    "checkedAt": "2026-11-28T12:12:39.123Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -178,7 +179,7 @@
     "favicon": "https://93problems.com/radio/logos/news-es-300.png",
     "homepage": "https://93problems.com/radio#news-es",
     "stationUuid": "c6717c2e-6d75-4bcc-bc56-70b1c2bff068",
-    "checkedAt": "2026-11-27T12:53:40.952Z",
+    "checkedAt": "2026-11-28T12:12:39.204Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -201,14 +202,14 @@
     "favicon": "https://93problems.com/radio/logos/news-pt-300.png",
     "homepage": "https://93problems.com/radio#news-pt",
     "stationUuid": "8fef3943-9592-4eae-b6c2-4ba108196cf0",
-    "checkedAt": "2026-11-27T12:53:41.000Z",
+    "checkedAt": "2026-11-28T12:12:39.224Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
   },
   {
-    "name": "93 Radio — Новини (Українська)",
-    "url": "https://93problems.com/api/radio/news-uk/stream.aac",
+    "name": "93 Radio — Новости (Русский)",
+    "url": "https://93problems.com/api/radio/news-ru/stream.aac",
     "country": "CA",
     "type": "93 radio",
     "tags": [
@@ -216,15 +217,38 @@
       "educational",
       "music",
       "news",
-      "новини"
+      "новости"
     ],
     "codec": null,
     "bitrate": 0,
-    "language": "ukrainian",
-    "favicon": "https://93problems.com/radio/logos/news-uk-300.png",
-    "homepage": "https://93problems.com/radio#news-uk",
-    "stationUuid": "59d2ccc4-6d02-4d60-adf1-1770c1aeb7d4",
-    "checkedAt": "2026-11-27T12:53:41.106Z",
+    "language": "russian",
+    "favicon": "https://93problems.com/radio/logos/news-ru-300.png",
+    "homepage": "https://93problems.com/radio#news-ru",
+    "stationUuid": "c029ad2d-8e51-408e-8430-e49e4600d5ce",
+    "checkedAt": "2026-11-28T12:12:39.476Z",
+    "status": 503,
+    "contentType": null,
+    "lastFailure": "HTTP 503"
+  },
+  {
+    "name": "93 Radio — ニュース (日本語)",
+    "url": "https://93problems.com/api/radio/news-ja/stream.aac",
+    "country": "CA",
+    "type": "93 radio",
+    "tags": [
+      "93 radio",
+      "educational",
+      "music",
+      "news",
+      "ニュース"
+    ],
+    "codec": "AAC",
+    "bitrate": 128,
+    "language": "japanese",
+    "favicon": "https://93problems.com/radio/logos/news-ja-300.png",
+    "homepage": "https://93problems.com/radio#news-ja",
+    "stationUuid": "d111eee1-bc28-4821-a6ec-724e0f6732dc",
+    "checkedAt": "2026-11-28T12:12:39.556Z",
     "status": 503,
     "contentType": null,
     "lastFailure": "HTTP 503"
@@ -241,44 +265,10 @@
     "favicon": "https://www.blvd.fm/img/logoBLVD.png",
     "homepage": "https://www.blvd.fm/",
     "stationUuid": "6a0f5eff-b77e-4d35-a038-37ff522473bb",
-    "checkedAt": "2026-11-27T12:53:41.586Z",
+    "checkedAt": "2026-11-28T12:12:39.834Z",
     "status": 404,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 404"
-  },
-  {
-    "name": "CFRC 101.9fm - Queen's University, Kingston, ON",
-    "url": "https://audio.cfrc.ca/stream",
-    "country": "CA",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://cfrc.ca/",
-    "stationUuid": "c0f70edf-19f3-4993-9258-954656c2746e",
-    "checkedAt": "2026-11-27T12:53:41.997Z",
-    "status": 401,
-    "contentType": "text/html; charset=UTF-8",
-    "lastFailure": "HTTP 401"
-  },
-  {
-    "name": "CFRC 101.9fm - Queen's University, Kingston, ON",
-    "url": "https://audio.cfrc.ca/stream",
-    "country": "CA",
-    "type": "AAC",
-    "tags": [],
-    "codec": "AAC",
-    "bitrate": 192,
-    "language": null,
-    "favicon": "https://cfrc.ca/images/cfrc_logo_hiq_mobile.png",
-    "homepage": "https://cfrc.ca/",
-    "stationUuid": "2db2222e-866d-4ee4-9d43-2af9e5b89db7",
-    "checkedAt": "2026-11-27T12:53:42.022Z",
-    "status": 401,
-    "contentType": "text/html; charset=UTF-8",
-    "lastFailure": "HTTP 401"
   },
   {
     "name": "Reggae Classics Mix",
@@ -292,7 +282,7 @@
     "favicon": null,
     "homepage": "https://www.jamminvibeznetwork.ca/",
     "stationUuid": "e1a93ae8-934b-49df-a564-8966cbc27844",
-    "checkedAt": "2026-11-27T12:53:45.068Z",
+    "checkedAt": "2026-11-28T12:12:43.484Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -309,10 +299,27 @@
     "favicon": null,
     "homepage": "http://xrm.fm/",
     "stationUuid": "f6f61183-380a-41b2-bfdf-ccfffb3d099a",
-    "checkedAt": "2026-11-27T12:53:45.453Z",
+    "checkedAt": "2026-11-28T12:12:43.976Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "107.5 Dave FM",
+    "url": "http://live.leanstream.co/CJDVFM",
+    "country": "CA",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 57,
+    "language": null,
+    "favicon": null,
+    "homepage": "https://1075daverocks.com/",
+    "stationUuid": "cdf0a0b3-7ea9-4bda-9e72-489ff3765e15",
+    "checkedAt": "2026-11-28T12:12:44.208Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "88.7 The Ghoat",
@@ -326,7 +333,7 @@
     "favicon": null,
     "homepage": "https://theghoat.ca/",
     "stationUuid": "3b97dc04-bb7d-4184-8047-c4d009d4be95",
-    "checkedAt": "2026-11-27T12:53:46.121Z",
+    "checkedAt": "2026-11-28T12:12:44.483Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -343,7 +350,7 @@
     "favicon": null,
     "homepage": "https://theghoat.ca/",
     "stationUuid": "788b4e4e-6ccb-43a4-a290-a8e970ed5383",
-    "checkedAt": "2026-11-27T12:53:46.213Z",
+    "checkedAt": "2026-11-28T12:12:44.694Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -360,7 +367,7 @@
     "favicon": "https://kitchener.citynews.ca/wp-content/themes/citynews-2023/src/images/favicon.ico",
     "homepage": "https://kitchener.citynews.ca/",
     "stationUuid": "61e7160f-6a62-4888-9315-15458934c875",
-    "checkedAt": "2026-11-27T12:53:50.027Z",
+    "checkedAt": "2026-11-28T12:12:48.303Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -377,7 +384,7 @@
     "favicon": "http://radioadminassets.rogersdigitalmedia.com/uploads/CityNews_957_Vertical_Secondary_RGB.png",
     "homepage": "https://halifax.citynews.ca/",
     "stationUuid": "7893b26d-11d0-4b72-959e-633f72c473c5",
-    "checkedAt": "2026-11-27T12:53:50.142Z",
+    "checkedAt": "2026-11-28T12:12:48.375Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -394,10 +401,27 @@
     "favicon": "https://vancouver.citynews.ca/wp-content/blogs.dir/sites/9/2023/04/20/Listen-Live-1130.png",
     "homepage": "https://vancouver.citynews.ca/",
     "stationUuid": "22466337-94b4-41ff-bba6-0493fe2f395a",
-    "checkedAt": "2026-11-27T12:53:50.410Z",
+    "checkedAt": "2026-11-28T12:12:48.600Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "CKNW",
+    "url": "http://live.leanstream.co/CKNWAM",
+    "country": "CA",
+    "type": "AAC+",
+    "tags": [],
+    "codec": "AAC+",
+    "bitrate": 57,
+    "language": null,
+    "favicon": "https://globalnews.ca/wp-content/themes/shaw-globalnews/_img/pwa/news_square-144.png",
+    "homepage": "http://www.cknw.com/",
+    "stationUuid": "a1345629-1ac5-4336-b79f-b0a943c2a428",
+    "checkedAt": "2026-11-28T12:12:51.595Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Radio Italia Canada",
@@ -411,7 +435,7 @@
     "favicon": "https://cdn.radiostreamlive.com/v1/logos/radioitaliacanada.png",
     "homepage": "https://www.radioitaliacanada.com/",
     "stationUuid": "435fed02-9e7e-40d8-8efd-091142207a0e",
-    "checkedAt": "2026-11-27T12:53:57.446Z",
+    "checkedAt": "2026-11-28T12:12:54.954Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -428,7 +452,7 @@
     "favicon": null,
     "homepage": "https://streemlion.com/",
     "stationUuid": "175ba22f-d8a1-4253-b81f-2a11260a8c50",
-    "checkedAt": "2026-11-27T12:53:58.194Z",
+    "checkedAt": "2026-11-28T12:12:55.739Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -445,7 +469,7 @@
     "favicon": "https://www.theroadandtheradio.com/wp-content/uploads/2020/06/a_rr_top-banner-1.png",
     "homepage": "https://www.theroadandtheradio.com/",
     "stationUuid": "1b2b524d-f850-414f-8a8d-cb95671670fa",
-    "checkedAt": "2026-11-27T12:53:58.519Z",
+    "checkedAt": "2026-11-28T12:12:56.361Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -462,10 +486,52 @@
     "favicon": "https://chatbot.chekkit.io/api/webchat/avatar-image/ec0c91273043fd108eb2c6ff60062ca6fKpSkDxmeB4Mg49rz282QSoSuKg1UOnhM27M8jJhQI8=",
     "homepage": "https://z1035.com/",
     "stationUuid": "4042d7f0-928c-4a2b-9854-ebedee0eec30",
-    "checkedAt": "2026-11-27T12:53:59.041Z",
+    "checkedAt": "2026-11-28T12:12:56.601Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "CFPL-FM 95.9 \"FM96\" London, ON",
+    "url": "http://live.leanstream.co/CFPLFM-MP3",
+    "country": "CA",
+    "type": "active rock",
+    "tags": [
+      "active rock",
+      "commercial",
+      "london"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://fm96.com/wp-content/uploads/sites/10/2018/02/cropped-fm96_512x51211.png?w=180",
+    "homepage": "http://www.fm96.com/",
+    "stationUuid": "9620f1c0-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:12:57.656Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CJKR 97.5 \"Power 97\" Winnipeg, MB",
+    "url": "http://live.leanstream.co/CJKRFM-MP3",
+    "country": "CA",
+    "type": "active rock",
+    "tags": [
+      "active rock",
+      "commercial",
+      "winnipeg"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://power97.com/wp-content/uploads/sites/18/2018/05/cropped-power97_512x512.png?w=180",
+    "homepage": "http://www.power97.com/",
+    "stationUuid": "961364d9-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:12:58.602Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "96.5 The Breeze",
@@ -481,31 +547,78 @@
     "favicon": null,
     "homepage": "https://965thebreeze.com/",
     "stationUuid": "c7efed1a-2d75-4997-b10e-f1bf78342143",
-    "checkedAt": "2026-11-27T12:54:02.063Z",
+    "checkedAt": "2026-11-28T12:12:59.550Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "CKOA 89.7 \"The Coast\"  Glace Bay, NS",
-    "url": "http://198.100.145.187:15204/;",
+    "name": "CHOK 1070 & 103.9 Sarnia, ON",
+    "url": "http://live.leanstream.co/CHOKAM",
     "country": "CA",
     "type": "adult contemporary",
     "tags": [
       "adult contemporary",
-      "community radio",
-      "glace bay"
+      "commercial",
+      "information",
+      "news",
+      "port huron",
+      "sarnia",
+      "sport"
+    ],
+    "codec": "AAC+",
+    "bitrate": 47,
+    "language": "english",
+    "favicon": "http://chok.com/favicon.ico",
+    "homepage": "http://chok.com/",
+    "stationUuid": "9621cc60-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:01.148Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CJGV \"Peggy @ 99.1\" Winnipeg, MB",
+    "url": "http://live.leanstream.co/CJGVFM-MP3",
+    "country": "CA",
+    "type": "adult contemporary",
+    "tags": [
+      "adult contemporary",
+      "commercial",
+      "winnipeg"
     ],
     "codec": "MP3",
     "bitrate": 128,
     "language": "english",
-    "favicon": "http://coastalradio.ca/favicon.ico",
-    "homepage": "http://coastalradio.ca/",
-    "stationUuid": "e74de31d-671e-11e9-af37-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:07.070Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
+    "favicon": "https://peggy991.com/wp-content/uploads/sites/23/2018/05/cropped-peggy_512x512.png?w=180",
+    "homepage": "http://www.peggy991.com/",
+    "stationUuid": "9621af82-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:05.878Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKCB 95.1 \"The Peak\" Collingwood, ON",
+    "url": "http://live.leanstream.co/CKCBFM-MP3",
+    "country": "CA",
+    "type": "adult contemporary",
+    "tags": [
+      "adult contemporary",
+      "collingwood",
+      "commercial",
+      "georgian bay"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://thepeakfm.com/wp-content/uploads/sites/9/2018/03/cropped-thepeak_512x512.png?w=180",
+    "homepage": "http://www.thepeakfm.com/",
+    "stationUuid": "96220253-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:06.853Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "ENERGIE 98.9 Quebec",
@@ -524,7 +637,7 @@
     "favicon": "https://www.radio.net/175/chik.png",
     "homepage": "https://www.radioenergie.ca/quebec",
     "stationUuid": "01f6948f-dd44-4f82-a28a-4f9eedfe27cd",
-    "checkedAt": "2026-11-27T12:54:07.501Z",
+    "checkedAt": "2026-11-28T12:13:07.684Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -546,9 +659,30 @@
     "favicon": "https://www.radio.net/175/chik.png",
     "homepage": "https://www.radioenergie.ca/quebec",
     "stationUuid": "987db88d-c510-483e-b1b8-7193ad6fe953",
-    "checkedAt": "2026-11-27T12:54:07.516Z",
+    "checkedAt": "2026-11-28T12:13:07.690Z",
     "status": 403,
     "contentType": null,
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKNG \"Fresh Radio 92.5\" Edmonton, AB",
+    "url": "http://live.leanstream.co/CKNGFM-MP3",
+    "country": "CA",
+    "type": "adult hits",
+    "tags": [
+      "adult hits",
+      "commercial",
+      "edmonton"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.925freshradio.ca/",
+    "stationUuid": "96214bd0-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:09.192Z",
+    "status": 403,
+    "contentType": "text/html",
     "lastFailure": "HTTP 403"
   },
   {
@@ -565,7 +699,7 @@
     "favicon": null,
     "homepage": "http://www.virgin.ca/",
     "stationUuid": "3334e3ee-38dc-4d5c-ae84-b75eac1c2d52",
-    "checkedAt": "2026-11-27T12:54:09.460Z",
+    "checkedAt": "2026-11-28T12:13:09.353Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -588,7 +722,7 @@
     "favicon": "https://files.catbox.moe/r5yc9a.png",
     "homepage": "https://www.mix97fm.ca/",
     "stationUuid": "034f7bb9-cf06-4dad-b9ae-2e48d7cff8d9",
-    "checkedAt": "2026-11-27T12:54:10.047Z",
+    "checkedAt": "2026-11-28T12:13:09.621Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -613,7 +747,7 @@
     "favicon": "https://radiointernet.ca/wp-content/themes/radiointernet-v2221/assets/images/favicon/apple-touch-icon.png",
     "homepage": "https://radiointernet.ca/",
     "stationUuid": "173c574d-13bd-4b86-8fcd-f5f4d739c254",
-    "checkedAt": "2026-11-27T12:54:10.310Z",
+    "checkedAt": "2026-11-28T12:13:10.020Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -638,7 +772,7 @@
     "favicon": "https://image.live365.com/download/6a06af68-0d05-4613-b849-6fe8902add94.png/400/image.webp",
     "homepage": "https://www.birchstreetradio.com/",
     "stationUuid": "ee460a88-af6e-4445-94b3-1d48acad5274",
-    "checkedAt": "2026-11-27T12:54:10.725Z",
+    "checkedAt": "2026-11-28T12:13:10.448Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -665,7 +799,7 @@
     "favicon": "https://radiocomet.com/wp-content/uploads/2026/10/Radio-Comet-Logo-Text.jpg",
     "homepage": "https://radiocomet.com/",
     "stationUuid": "032c8e76-437f-4b50-9973-6c1f5662762e",
-    "checkedAt": "2026-11-27T12:54:11.904Z",
+    "checkedAt": "2026-11-28T12:13:11.448Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -688,10 +822,31 @@
     "favicon": null,
     "homepage": "https://tripletail.blueberry.coffee/",
     "stationUuid": "c7330135-c1a4-47af-be78-cf2ef1333a68",
-    "checkedAt": "2026-11-27T12:54:12.130Z",
+    "checkedAt": "2026-11-28T12:13:11.537Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "CFOX 99.3 Vancouver, BC",
+    "url": "http://live.leanstream.co/CFOXFM-MP3",
+    "country": "CA",
+    "type": "alternative rock",
+    "tags": [
+      "alternative rock",
+      "commercial",
+      "vancouver"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://cfox.com/wp-content/uploads/sites/24/2018/01/cropped-fm-logos_512x512_cfox.png?w=180",
+    "homepage": "http://www.cfox.com/",
+    "stationUuid": "96217747-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:12.052Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Estuary FM (recorded programmes, not 24/7)",
@@ -711,10 +866,10 @@
     "favicon": "https://riveratdusk.neocities.org/logo.png",
     "homepage": "https://riveratdusk.neocities.org/estuary",
     "stationUuid": "86b4a6b3-9676-42ca-9dad-5e7e5af97fda",
-    "checkedAt": "2026-11-27T12:54:13.657Z",
+    "checkedAt": "2026-11-28T12:13:12.921Z",
     "status": null,
     "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "lastFailure": "fetch failed"
   },
   {
     "name": "psoup.art brown noise",
@@ -735,7 +890,7 @@
     "favicon": "https://psoup.art/favicon.ico",
     "homepage": "https://psoup.art/machine/?utm_source=radio-browser",
     "stationUuid": "b30754c1-48f7-44a8-be1c-401de492f4a7",
-    "checkedAt": "2026-11-27T12:54:14.170Z",
+    "checkedAt": "2026-11-28T12:13:13.185Z",
     "status": 502,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 502"
@@ -756,7 +911,7 @@
     "favicon": null,
     "homepage": "http://www.folkdupradio.com/",
     "stationUuid": "8954dc29-188b-4f0c-812e-113db7588d9a",
-    "checkedAt": "2026-11-27T12:54:14.428Z",
+    "checkedAt": "2026-11-28T12:13:13.314Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -776,7 +931,7 @@
     "favicon": null,
     "homepage": "http://cftafm.com/site/",
     "stationUuid": "961b7a33-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:14.752Z",
+    "checkedAt": "2026-11-28T12:13:13.489Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -796,7 +951,7 @@
     "favicon": "https://apolloonlinemedia.com/wp-content/uploads/2026/08/778517693_941946058938255_3780205730403680737_n.jpg",
     "homepage": "http://colemac1.wixsite.com/kool96internetradio",
     "stationUuid": "754ec37e-1e2d-4db6-acc6-8b42a6508754",
-    "checkedAt": "2026-11-27T12:54:15.219Z",
+    "checkedAt": "2026-11-28T12:13:13.751Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -834,7 +989,7 @@
     "favicon": "https://static.wixstatic.com/media/f361b3_f977feb1ff14484cb53e8bf0fbff1801~mv2.jpg",
     "homepage": "https://100-greatest-network.torontocast.stream/",
     "stationUuid": "3795035a-41ee-4387-b134-ccc271bcf772",
-    "checkedAt": "2026-11-27T12:54:16.290Z",
+    "checkedAt": "2026-11-28T12:13:14.835Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -854,7 +1009,7 @@
     "favicon": "https://radiosuitenetwork.torontocast.stream/favicon.ico",
     "homepage": "https://radiosuitenetwork.torontocast.stream/love-moments-radio/",
     "stationUuid": "16373acf-2f7a-4124-9a9c-e0f2fb6e859f",
-    "checkedAt": "2026-11-27T12:54:16.353Z",
+    "checkedAt": "2026-11-28T12:13:14.904Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -890,10 +1045,74 @@
     "favicon": "https://static.wixstatic.com/media/f361b3_f977feb1ff14484cb53e8bf0fbff1801~mv2.jpg",
     "homepage": "https://100-greatest-network.torontocast.stream/",
     "stationUuid": "89b63085-db05-4c2b-86a4-ee2f17ed2018",
-    "checkedAt": "2026-11-27T12:54:16.576Z",
+    "checkedAt": "2026-11-28T12:13:15.176Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "CHAY 93.1 \"Fresh Radio\" Barrie, ON",
+    "url": "http://live.leanstream.co/CHAYFM-MP3",
+    "country": "CA",
+    "type": "barrie",
+    "tags": [
+      "barrie",
+      "commercial",
+      "hot adult contemporary"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://931freshradio.ca/wp-content/uploads/sites/25/2018/02/cropped-fresh_f_512x512.png?w=180",
+    "homepage": "http://www.931freshradio.ca/",
+    "stationUuid": "9621c2a8-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:15.506Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CIQB \"Big 101.1\" Barrie, ON",
+    "url": "http://live.leanstream.co/CIQBFM-MP3",
+    "country": "CA",
+    "type": "barrie",
+    "tags": [
+      "barrie",
+      "classic rock",
+      "commercial"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://1011bigfm.com/wp-content/uploads/sites/16/2018/02/cropped-big1011-logo-512x512.png?w=180",
+    "homepage": "http://www.1011bigfm.com/",
+    "stationUuid": "9620f040-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:15.566Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CIGL 97.1 \"MIX 97\" Belleville, ON",
+    "url": "http://live.leanstream.co/CIGLFM-MP3",
+    "country": "CA",
+    "type": "belleville",
+    "tags": [
+      "belleville",
+      "commercial",
+      "hot adult contemporary",
+      "quinte"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.mix97.com/",
+    "stationUuid": "96212c33-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:16.168Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "CJLX 91.3 \"91X\" Loyalist College - Belleville, ON",
@@ -911,10 +1130,33 @@
     "favicon": null,
     "homepage": "http://91x.fm/",
     "stationUuid": "962017af-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:17.819Z",
+    "checkedAt": "2026-11-28T12:13:16.233Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "CJTN 107.1 \"Rock 107\" Trenton, ON",
+    "url": "http://live.leanstream.co/CJTNFM-MP3",
+    "country": "CA",
+    "type": "belleville",
+    "tags": [
+      "belleville",
+      "classic rock",
+      "commercial",
+      "quinte",
+      "trenton"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.rock107.ca/",
+    "stationUuid": "962210bd-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:16.306Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Zoomer Radio (CFZM AM 740 / 96.7 FM)",
@@ -936,7 +1178,7 @@
     "favicon": "https://www.zoomerradio.ca/a87f2ca4683f924e053065867a6c6731.jpg",
     "homepage": "https://www.zoomerradio.ca/",
     "stationUuid": "930eb078-9676-47ce-8b09-bc4edfaf6778",
-    "checkedAt": "2026-11-27T12:54:18.621Z",
+    "checkedAt": "2026-11-28T12:13:16.749Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -960,7 +1202,7 @@
     "favicon": "https://www.mlbstatic.com/team-logos/435.svg",
     "homepage": "https://www.mlb.com/milb/vancouver/",
     "stationUuid": "9d98ca8e-c35a-4705-b5ae-0aa77c4f9c2b",
-    "checkedAt": "2026-11-27T12:54:19.686Z",
+    "checkedAt": "2026-11-28T12:13:17.532Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -982,7 +1224,7 @@
     "favicon": "http://www.dylanradio.com/ico/dylanradio128.png",
     "homepage": "http://www.dylanradio.com/",
     "stationUuid": "9622d4e4-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:22.752Z",
+    "checkedAt": "2026-11-28T12:13:20.329Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1002,7 +1244,7 @@
     "favicon": null,
     "homepage": "https://bpmsports.ca/",
     "stationUuid": "14233fa9-59d6-4e49-bb75-b38b0d417a0b",
-    "checkedAt": "2026-11-27T12:54:23.391Z",
+    "checkedAt": "2026-11-28T12:13:21.118Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1022,10 +1264,157 @@
     "favicon": "https://bpmsports.ca/wp-content/themes/bpmsports-pro/img/91,9.svg",
     "homepage": "https://bpmsports.ca/",
     "stationUuid": "f56bbbdd-9331-4796-89fe-41c51c6aa01c",
-    "checkedAt": "2026-11-27T12:54:23.423Z",
-    "status": 404,
+    "checkedAt": "2026-11-28T12:13:21.143Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "CJXY 107.9 \"Y108\" Burlington, ON",
+    "url": "http://live.leanstream.co/CJXYFM-MP3",
+    "country": "CA",
+    "type": "burlington",
+    "tags": [
+      "burlington",
+      "commercial",
+      "hamilton",
+      "mainstream rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://y108.ca/wp-content/uploads/sites/6/2020/09/cropped-y108_512x512_v1-2.png?w=180",
+    "homepage": "http://www.y108.ca/",
+    "stationUuid": "9621ff29-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:22.024Z",
+    "status": 403,
     "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CFGQ 107.3 \"Q107\" Calgary, AB",
+    "url": "http://live.leanstream.co/CFGQFM-MP3",
+    "country": "CA",
+    "type": "calgary",
+    "tags": [
+      "calgary",
+      "classic hits",
+      "classic rock",
+      "commercial"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.q107fm.ca/",
+    "stationUuid": "9620bcea-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:22.720Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKRY 105.1 \"Country 105\" Calgary, AB",
+    "url": "http://live.leanstream.co/CKRYFM-MP3",
+    "country": "CA",
+    "type": "calgary",
+    "tags": [
+      "calgary",
+      "commercial",
+      "country"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://country105.com/wp-content/uploads/sites/29/2018/01/cropped-fm-logos_512x512_countr105.png?w=180",
+    "homepage": "http://www.country105.com/",
+    "stationUuid": "9622b1eb-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:23.486Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CJSW 90.9 University of Calgary, AB (MP3 Stream)",
+    "url": "http://stream.cjsw.com/cjsw.mp3",
+    "country": "CA",
+    "type": "campus radio",
+    "tags": [
+      "campus radio",
+      "student radio",
+      "university radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/CJSW-FM.svg/220px-CJSW-FM.svg.png",
+    "homepage": "https://cjsw.com/",
+    "stationUuid": "347679e8-87e2-4c79-86bb-73116dc16a0d",
+    "checkedAt": "2026-11-28T12:13:24.751Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKDJ \"AIR-AM 1700\" Algonquin College-Ottawa, ON",
+    "url": "https://live.leanstream.co/AIR1700",
+    "country": "CA",
+    "type": "campus radio",
+    "tags": [
+      "campus radio",
+      "contemporary hits",
+      "student radio"
+    ],
+    "codec": "AAC+",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://www.algonquinair.com/",
+    "stationUuid": "0ca9eecd-dfbb-4e91-ac0e-72691b222071",
+    "checkedAt": "2026-11-28T12:13:25.045Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKDJ-FM 107.9 Algonquin College, Ottawa, ON (AAC Stream)",
+    "url": "https://live.leanstream.co/CKDJFM",
+    "country": "CA",
+    "type": "campus radio",
+    "tags": [
+      "campus radio",
+      "student radio"
+    ],
+    "codec": "AAC+",
+    "bitrate": 56,
+    "language": "english",
+    "favicon": "https://upload.wikimedia.org/wikipedia/commons/1/1d/CKDJ1079Logo.jpg",
+    "homepage": "https://www.ckdj.net/",
+    "stationUuid": "4e09a30f-f907-4634-b9c5-5d65c37eab35",
+    "checkedAt": "2026-11-28T12:13:25.165Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKDJ-FM 107.9 Algonquin College, Ottawa, ON (MP3 Stream)",
+    "url": "https://live.leanstream.co/CKDJFM-MP3",
+    "country": "CA",
+    "type": "campus radio",
+    "tags": [
+      "campus radio",
+      "student radio"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "https://www.ckdj.net/",
+    "stationUuid": "72e0f56f-853b-482d-b9eb-1813a8266918",
+    "checkedAt": "2026-11-28T12:13:25.199Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "CFQR 600",
@@ -1045,7 +1434,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/5/57/CFQR_600_logo.png",
     "homepage": "https://cfqr600.com/",
     "stationUuid": "7bff7f20-e5e4-46bc-a4b7-6b5868bbcdaa",
-    "checkedAt": "2026-11-27T12:54:27.523Z",
+    "checkedAt": "2026-11-28T12:13:25.951Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1067,10 +1456,10 @@
     "favicon": null,
     "homepage": "https://liveonlineradio.net/es/addicted-2-oldies-music",
     "stationUuid": "5263a80d-4569-474a-9590-ae5fbf8fe919",
-    "checkedAt": "2026-11-27T12:54:28.007Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "The operation was aborted due to timeout"
+    "checkedAt": "2026-11-28T12:13:26.499Z",
+    "status": 404,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "CFIM 92.7 Cap-Aux-Meules, QC",
@@ -1087,7 +1476,7 @@
     "favicon": "https://cfim.ca/wp-content/uploads/2017/04/favicon.png",
     "homepage": "http://www.cfim.ca/",
     "stationUuid": "962035b1-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:28.354Z",
+    "checkedAt": "2026-11-28T12:13:26.709Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1107,7 +1496,7 @@
     "favicon": "https://www.jamz403.com/uploads/1/1/9/3/119384173/jamz403-draft-1-01-01_6.png",
     "homepage": "https://www.jamz403.com/",
     "stationUuid": "6e48be78-6c48-420d-9190-a7efad7bff6a",
-    "checkedAt": "2026-11-27T12:54:28.597Z",
+    "checkedAt": "2026-11-28T12:13:26.961Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1130,10 +1519,52 @@
     "favicon": "https://liveonlineradio.net/wp-content/uploads/2017/02/Forest-Green-Radio-100x47.jpg",
     "homepage": "http://www.forestgreenradio.ca/",
     "stationUuid": "4abe67bd-cd14-418e-88c3-284f1ef8c487",
-    "checkedAt": "2026-11-27T12:54:29.457Z",
+    "checkedAt": "2026-11-28T12:13:27.683Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "CHLQ 93.1 \"Q93\" Charlottetown, PE",
+    "url": "http://mbsradio.leanstream.co/CHLQFM-MP3",
+    "country": "CA",
+    "type": "charlottetown",
+    "tags": [
+      "charlottetown",
+      "classic rock",
+      "commercial"
+    ],
+    "codec": "MP3",
+    "bitrate": 64,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://q93.fm/",
+    "stationUuid": "963c3660-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:28.003Z",
+    "status": 502,
+    "contentType": null,
+    "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "CFCO \"Country 92.9 & 630\" - Chatham, ON",
+    "url": "http://live.leanstream.co/CFCOFM",
+    "country": "CA",
+    "type": "chatham",
+    "tags": [
+      "chatham",
+      "commercial",
+      "country"
+    ],
+    "codec": "AAC+",
+    "bitrate": 47,
+    "language": "english",
+    "favicon": "http://country929.com/favicon.ico",
+    "homepage": "http://country929.com/",
+    "stationUuid": "9621f399-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:28.190Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "#100 BEST IBIZA DEEP HOUSE",
@@ -1168,7 +1599,7 @@
     "favicon": "https://static.wixstatic.com/media/f361b3_cf8747dc2b804de09c56359c324dd1f5~mv2.jpg",
     "homepage": "https://zeno.fm/radio/100-best-ibiza-deep-house-/",
     "stationUuid": "64d74c72-025e-4cea-8a32-906812691731",
-    "checkedAt": "2026-11-27T12:54:30.403Z",
+    "checkedAt": "2026-11-28T12:13:28.489Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1194,7 +1625,7 @@
     "favicon": "https://radio.serrebiradio.com/static/uploads/logo.png",
     "homepage": "https://serrebiradio.com/",
     "stationUuid": "67059f58-9ce8-43bd-a0e2-9f304017508d",
-    "checkedAt": "2026-11-27T12:54:31.382Z",
+    "checkedAt": "2026-11-28T12:13:29.417Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1216,7 +1647,7 @@
     "favicon": "https://i.imgur.com/Nt3hlNv.png",
     "homepage": "https://harvesters.fm/",
     "stationUuid": "e4db9326-7f4f-4d52-a792-bc70fa95af6a",
-    "checkedAt": "2026-11-27T12:54:32.784Z",
+    "checkedAt": "2026-11-28T12:13:30.598Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1236,7 +1667,7 @@
     "favicon": "https://assets.godcaster.fm/image_321_1766079914.png",
     "homepage": "https://www.inspire.fm/",
     "stationUuid": "fccdf1da-21c1-46cf-aabf-d28934b0b965",
-    "checkedAt": "2026-11-27T12:54:34.285Z",
+    "checkedAt": "2026-11-28T12:13:31.877Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -1255,7 +1686,7 @@
     "favicon": "https://i.ibb.co/LP19k2L/images.png",
     "homepage": "https://christmas-crooners.com/",
     "stationUuid": "3aaa685e-3d96-468a-8275-b1af715c1330",
-    "checkedAt": "2026-11-27T12:54:34.619Z",
+    "checkedAt": "2026-11-28T12:13:31.987Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1275,7 +1706,7 @@
     "favicon": "https://i.ibb.co/X5X3TYP/logo.png",
     "homepage": "https://www.xmasmelody.com/",
     "stationUuid": "a4c2329a-a408-4071-b6e8-571eaeea25ec",
-    "checkedAt": "2026-11-27T12:54:34.693Z",
+    "checkedAt": "2026-11-28T12:13:32.098Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1297,7 +1728,7 @@
     "favicon": null,
     "homepage": "http://www.cinemix.us/",
     "stationUuid": "fd48d941-5a7f-11e8-b0ce-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:36.007Z",
+    "checkedAt": "2026-11-28T12:13:32.861Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1317,7 +1748,7 @@
     "favicon": "https://d3nqdsuv3agd2n.cloudfront.net/eyJidWNrZXQiOiJzdWJtaXRodWIiLCJrZXkiOiJpbWFnZXMvb3JpZ2luYWwvU0h2cDJpYzU4YTltNTI5dTkvbmV3LWlzdnYxLWNvbG9ycy0xNTg5MjI2NDcwNDY3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6IjUwMCIsImhlaWdodCI6IjUwMCIsImZpdCI6ImNvbnRhaW4ifX19",
     "homepage": "https://www.illsoundvibe.com/",
     "stationUuid": "ac77128b-ad60-4d8a-ab6e-97297324e578",
-    "checkedAt": "2026-11-27T12:54:36.251Z",
+    "checkedAt": "2026-11-28T12:13:33.543Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1337,10 +1768,50 @@
     "favicon": null,
     "homepage": "https://cfqr600.com/",
     "stationUuid": "4510efc3-6eb8-4365-9ca2-1eb191a964cd",
-    "checkedAt": "2026-11-27T12:54:37.365Z",
+    "checkedAt": "2026-11-28T12:13:34.649Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "CIBU-FM \"Cool 94.5\"  Wingham, ON (AAC Stream)",
+    "url": "http://live.leanstream.co/CIBUFM",
+    "country": "CA",
+    "type": "classic hits",
+    "tags": [
+      "classic hits",
+      "new format rebranding"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": "english",
+    "favicon": "https://wingham.coolradio.ca/img/cibufm/cibufm.svg",
+    "homepage": "https://wingham.coolradio.ca/",
+    "stationUuid": "c5879879-c301-4c33-a793-589a084e9912",
+    "checkedAt": "2026-11-28T12:13:36.477Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CIBU-FM \"Cool 94.5\" Wingham, ON (MP3 Stream)",
+    "url": "http://live.leanstream.co/CIBUFM-MP3",
+    "country": "CA",
+    "type": "classic hits",
+    "tags": [
+      "classic hits",
+      "new format rebranding"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": "https://wingham.coolradio.ca/img/cibufm/cibufm.svg",
+    "homepage": "https://wingham.coolradio.ca/",
+    "stationUuid": "656e5e82-9454-4648-b7ad-e8aff5fa02fb",
+    "checkedAt": "2026-11-28T12:13:36.517Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Retro Pop Hits 70s 80s 90s",
@@ -1356,7 +1827,7 @@
     "favicon": null,
     "homepage": "https://directory.shoutcast.com/",
     "stationUuid": "3da20042-f76f-4fd4-a0ef-2edb7d0cb4b1",
-    "checkedAt": "2026-11-27T12:54:42.694Z",
+    "checkedAt": "2026-11-28T12:13:39.671Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1377,10 +1848,54 @@
     "favicon": "https://www.3313.ca/favicon.png",
     "homepage": "https://www.3313.ca/",
     "stationUuid": "2b62c04f-05cf-4254-9ba5-da6e11329de0",
-    "checkedAt": "2026-11-27T12:54:43.315Z",
+    "checkedAt": "2026-11-28T12:13:40.258Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "CFMI 101.1 \"Rock 101\" New Westminster, BC",
+    "url": "http://live.leanstream.co/CFMIFM-MP3",
+    "country": "CA",
+    "type": "classic rock",
+    "tags": [
+      "classic rock",
+      "commercial",
+      "new westminster",
+      "vancouver"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://rock101.com/wp-content/uploads/sites/22/2018/01/cropped-fm-logos_512x512_rock101.png?w=180",
+    "homepage": "http://www.rock101.com/",
+    "stationUuid": "96212e65-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:40.367Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CFMK \"Big 96.3\" Kingston, ON",
+    "url": "http://live.leanstream.co/CFMKFM-MP3",
+    "country": "CA",
+    "type": "classic rock",
+    "tags": [
+      "classic rock",
+      "commercial",
+      "hits",
+      "kingston"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://963bigfm.com/wp-content/uploads/sites/3/2018/02/cropped-big963_512x512.png?w=180",
+    "homepage": "http://www.963bigfm.com/",
+    "stationUuid": "9609965b-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:40.450Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Chom 97.7 Spirit of rock",
@@ -1396,7 +1911,7 @@
     "favicon": null,
     "homepage": "http://www.chom.com/",
     "stationUuid": "008972f0-eb54-4018-8eab-757ed6a60126",
-    "checkedAt": "2026-11-27T12:54:43.761Z",
+    "checkedAt": "2026-11-28T12:13:40.589Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -1416,7 +1931,48 @@
     "favicon": "https://d6vbkv8rsyksv.cloudfront.net/prod/logos/cjay-92/logo.svg",
     "homepage": "https://www.cjay92.com/",
     "stationUuid": "be367e86-9987-488c-b857-583238054f3c",
-    "checkedAt": "2026-11-27T12:54:44.191Z",
+    "checkedAt": "2026-11-28T12:13:40.861Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKLO \"Classic Rock 98.1 FM\" London, ON",
+    "url": "http://live.leanstream.co/CKLOFM",
+    "country": "CA",
+    "type": "classic rock",
+    "tags": [
+      "classic rock",
+      "rebranding"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": "english",
+    "favicon": "https://upload.wikimedia.org/wikipedia/commons/a/ad/CKLO_London_Wiki_2019.png",
+    "homepage": "https://www.classicrock981.com/",
+    "stationUuid": "2324adb4-186c-4698-abf1-7103776a7137",
+    "checkedAt": "2026-11-28T12:13:41.523Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKLO \"Free 98.1\" London, ON",
+    "url": "http://live.leanstream.co/CKLOFM",
+    "country": "CA",
+    "type": "classic rock",
+    "tags": [
+      "classic rock",
+      "commercial",
+      "london"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://free981.com/",
+    "stationUuid": "960e5645-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:41.533Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1435,7 +1991,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "bb6fd5e1-d0e4-4bb8-ba34-e3411685b6dd",
-    "checkedAt": "2026-11-27T12:54:47.380Z",
+    "checkedAt": "2026-11-28T12:13:44.223Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1454,7 +2010,7 @@
     "favicon": "http://www.radioclassique.ca/upload/design/5d1cc4fcaad749.59987287.png",
     "homepage": "http://www.radioclassique.ca/",
     "stationUuid": "67e27262-337b-43ca-b501-91f19c43310c",
-    "checkedAt": "2026-11-27T12:54:47.391Z",
+    "checkedAt": "2026-11-28T12:13:44.295Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1473,7 +2029,7 @@
     "favicon": "http://www.radioclassique.ca/upload/design/5d1cc4fcaad749.59987287.png",
     "homepage": "http://www.radioclassique.ca/",
     "stationUuid": "f76b8625-7cc5-4fe3-ba11-de80c6563d6a",
-    "checkedAt": "2026-11-27T12:54:47.404Z",
+    "checkedAt": "2026-11-28T12:13:44.323Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1492,7 +2048,7 @@
     "favicon": "http://www.radioclassique.ca/upload/design/5d1cc4fcaad749.59987287.png",
     "homepage": "http://www.radioclassique.ca/",
     "stationUuid": "5f651c17-5579-4a6a-b5ff-90a663dab4bd",
-    "checkedAt": "2026-11-27T12:54:47.508Z",
+    "checkedAt": "2026-11-28T12:13:44.339Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1511,10 +2067,29 @@
     "favicon": "http://www.radioclassique.ca/upload/design/5d1cc4fcaad749.59987287.png",
     "homepage": "http://www.radioclassique.ca/",
     "stationUuid": "4dcb69d2-1b10-4831-9d4f-363133b9b022",
-    "checkedAt": "2026-11-27T12:54:47.575Z",
+    "checkedAt": "2026-11-28T12:13:44.345Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
+  },
+  {
+    "name": "Maiqly Maher",
+    "url": "https://backup.qurango.net/radio/maher",
+    "country": "CA",
+    "type": "classical",
+    "tags": [
+      "classical"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": null,
+    "homepage": null,
+    "stationUuid": "3e30cc0e-ffa8-470a-a234-cd1236c0c7a4",
+    "checkedAt": "2026-11-28T12:13:44.676Z",
+    "status": 500,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 500"
   },
   {
     "name": "New Classical FM",
@@ -1530,7 +2105,7 @@
     "favicon": null,
     "homepage": "https://classicalfm.ca/",
     "stationUuid": "23ec9d2e-0f3c-447b-8fd6-59ff96b89813",
-    "checkedAt": "2026-11-27T12:54:47.883Z",
+    "checkedAt": "2026-11-28T12:13:44.766Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1551,7 +2126,7 @@
     "favicon": "https://www.radioclassique.ca/upload/5d7f91e07dcae6.18591349.ico",
     "homepage": "https://www.radioclassique.ca/",
     "stationUuid": "265a40b6-8e96-4102-8ea7-26d162f970ca",
-    "checkedAt": "2026-11-27T12:54:48.053Z",
+    "checkedAt": "2026-11-28T12:13:44.894Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -1586,7 +2161,7 @@
     "favicon": "https://static.wixstatic.com/media/f361b3_cf8747dc2b804de09c56359c324dd1f5~mv2.jpg",
     "homepage": "https://zeno.fm/radio/100-best-ibiza-deep-house-/",
     "stationUuid": "7cecc2a0-6167-49fa-aad5-abcfec674430",
-    "checkedAt": "2026-11-27T12:54:48.472Z",
+    "checkedAt": "2026-11-28T12:13:45.481Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -1610,7 +2185,7 @@
     "favicon": "https://image.live365.com/download/b5ea21d3-84d7-4701-a227-ef73d6cc437d.png/400/image.webp",
     "homepage": "https://youtube.com/@dirkmackmusic",
     "stationUuid": "fbff9826-5453-412b-a6cb-b1b1bdcf554a",
-    "checkedAt": "2026-11-27T12:54:48.587Z",
+    "checkedAt": "2026-11-28T12:13:45.524Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -1630,10 +2205,30 @@
     "favicon": "http://www.cignfm.ca/favicon.ico",
     "homepage": "http://www.cignfm.ca/",
     "stationUuid": "96194714-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:48.776Z",
+    "checkedAt": "2026-11-28T12:13:45.630Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "CKDJ 107.9 Algonquin College, Ottawa",
+    "url": "http://live.leanstream.co/CKDJFM-MP3?tunein",
+    "country": "CA",
+    "type": "college radio",
+    "tags": [
+      "college radio",
+      "ottawa"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.ckdj.net/",
+    "stationUuid": "9618998a-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:46.559Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "CRNC The Heat",
@@ -1650,10 +2245,206 @@
     "favicon": null,
     "homepage": "http://broadcasting.niagaracollege.ca/content/Radio/CRNCTheHeat.aspx",
     "stationUuid": "962cf641-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:49.963Z",
+    "checkedAt": "2026-11-28T12:13:46.831Z",
     "status": 400,
     "contentType": "text/html",
     "lastFailure": "HTTP 400"
+  },
+  {
+    "name": "CFHK 103.1 \"Fresh Radio\" St. Thomas, ON",
+    "url": "http://live.leanstream.co/CFHKFM-MP3?args=web_02",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "mix",
+      "st. thomas",
+      "top 40"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://1031freshradio.ca/wp-content/uploads/sites/20/2018/02/cropped-fresh_f_512x512.png?w=180",
+    "homepage": "http://www.1031freshradio.ca/",
+    "stationUuid": "9616961c-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:47.269Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CFLG 104.5 \"Fresh Radio\" Cornwall, ON",
+    "url": "http://live.leanstream.co/CFLGFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "cornwall",
+      "hot adult contemporary"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://1045freshradio.ca/wp-content/uploads/sites/11/2018/02/cropped-fresh1045_512x512.png?w=180",
+    "homepage": "http://www.1045freshradio.ca/",
+    "stationUuid": "961c0217-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:47.377Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CFNY 102.1 \"The Edge\" Toronto, ON (MP3)",
+    "url": "http://live.leanstream.co/CFNYFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "modern rock",
+      "toronto"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://edge.ca/wp-content/uploads/sites/5/2017/12/cropped-fm-logos_512x512_edge.png?w=180",
+    "homepage": "http://www.edge.ca/",
+    "stationUuid": "96213ce2-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:47.910Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CHYR \"MIX 96.7\" Leamington, ON",
+    "url": "http://live.leanstream.co/CHYRFM",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "hot adult contemporary",
+      "leamington",
+      "windsor"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": "english",
+    "favicon": "http://mix967.ca/favicon.ico",
+    "homepage": "http://mix967.ca/",
+    "stationUuid": "9621347f-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:49.613Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CIMJ 106.1 \"Magic 106\" Guelph, ON",
+    "url": "http://live.leanstream.co/CIMJFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "guelph",
+      "hot adult contemporary"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://magic106.com/wp-content/uploads/sites/7/2018/02/cropped-magic_512x512.png?w=180",
+    "homepage": "http://www.magic106.com/",
+    "stationUuid": "9621effa-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:49.778Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CING 95.3 \"Fresh Radio\" Hamilton, ON",
+    "url": "http://live.leanstream.co/CINGFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "hamilton",
+      "hot adult contemporary"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.953freshradio.ca/",
+    "stationUuid": "961f7f2a-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:50.003Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CISN \"Country 103.9\" Edmonton, AB",
+    "url": "http://live.leanstream.co/CISNFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "country",
+      "edmonton"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://cisnfm.com/wp-content/uploads/sites/30/2018/01/cropped-fm-logos_512x512_cisn.png?w=180",
+    "homepage": "http://www.cisnfm.com/",
+    "stationUuid": "9622ab26-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:50.189Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CJBQ 800 Belleville, ON",
+    "url": "http://live.leanstream.co/CJBQAM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "country",
+      "information",
+      "local news",
+      "news",
+      "oldies",
+      "quinte"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": null,
+    "homepage": "http://www.cjbq.com/",
+    "stationUuid": "9622130c-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:50.460Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CJDV 107.5 \"Dave Rocks\" Kitchener, ON",
+    "url": "http://live.leanstream.co/CJDVFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "kitchener",
+      "mainstream rock",
+      "waterloo"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://1075daverocks.com/wp-content/uploads/sites/17/2018/02/cropped-dave_512x512.png?w=180",
+    "homepage": "http://www.1075daverocks.com/",
+    "stationUuid": "9621f7bc-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:50.726Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "CKBL 92.9 \"The Bull\" Saskatoon, SK",
@@ -1671,7 +2462,73 @@
     "favicon": null,
     "homepage": "http://www.929thebullrocks.com/",
     "stationUuid": "962237a2-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:54.985Z",
+    "checkedAt": "2026-11-28T12:13:51.648Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKBT 91.5 \"The Beat\" Kitchener, ON",
+    "url": "http://live.leanstream.co/CKBTFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "contemporary hits",
+      "kitchener",
+      "top 40",
+      "waterloo"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://915thebeat.com/wp-content/uploads/sites/2/2018/02/cropped-thebeat_512x512.png?w=180",
+    "homepage": "http://www.915thebeat.com/",
+    "stationUuid": "9621bbde-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:51.742Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKDK 103.9 \"Country 104\" Woodstock, ON",
+    "url": "http://live.leanstream.co/CKDKFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "country",
+      "london",
+      "woodstock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://country104.com/wp-content/uploads/sites/14/2018/01/country104-small-placeholder.png?w=180",
+    "homepage": "http://www.country104.com/",
+    "stationUuid": "96217384-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:51.931Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKNX-FM 101.7 \"The One\" Wingham, ON",
+    "url": "http://live.leanstream.co/CKNXFM",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "hot adult contemporary",
+      "wingham"
+    ],
+    "codec": "AAC+",
+    "bitrate": 48,
+    "language": "english",
+    "favicon": "http://1017theone.ca/favicon.ico",
+    "homepage": "http://1017theone.ca/",
+    "stationUuid": "9622048a-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:52.223Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1693,7 +2550,49 @@
     "favicon": "https://jumpradio.ca/wp-content/uploads/sites/15/2019/09/cropped-jump2019_512x512_v1.png?w=180",
     "homepage": "http://www.jumpradio.ca/",
     "stationUuid": "9622018a-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:55.796Z",
+    "checkedAt": "2026-11-28T12:13:52.410Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKRU 100.5 \"Fresh Radio\" Peterborough, ON",
+    "url": "http://live.leanstream.co/CKRUFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "hot adult contemporary",
+      "peterborough"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://1005freshradio.ca/wp-content/uploads/sites/26/2018/02/cropped-fresh_f_512x512.png?w=180",
+    "homepage": "http://www.1005freshradio.ca/",
+    "stationUuid": "961e2b56-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:52.455Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CKWF 101.5 \"The Wolf\" Peterborough",
+    "url": "http://live.leanstream.co/CKWFFM-MP3",
+    "country": "CA",
+    "type": "commercial",
+    "tags": [
+      "commercial",
+      "peterborough",
+      "rock"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://thewolf.ca/wp-content/uploads/sites/21/2021/06/wolf2021_512x512_v2.png?w=180",
+    "homepage": "http://www.thewolf.ca/",
+    "stationUuid": "96162afe-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:13:52.912Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1713,7 +2612,7 @@
     "favicon": "https://d4mt18vwj73wk.cloudfront.net/stationImage/2024-04-02T22:30:36Z-1024x1024.jpeg",
     "homepage": "https://bside.radio/",
     "stationUuid": "8ef5c517-0ff4-4fd1-b411-202a5451bccd",
-    "checkedAt": "2026-11-27T12:54:56.648Z",
+    "checkedAt": "2026-11-28T12:13:53.251Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1734,7 +2633,7 @@
     "favicon": "https://cfnj.net/wp-content/uploads/2020/10/cropped-favicon-cfnj-180x180.png",
     "homepage": "http://cfnj.net/",
     "stationUuid": "962094d4-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:56.688Z",
+    "checkedAt": "2026-11-28T12:13:53.271Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1753,7 +2652,7 @@
     "favicon": null,
     "homepage": "https://www.cfbsradio.ca/",
     "stationUuid": "7227432b-753c-4ff1-9269-c76084bec985",
-    "checkedAt": "2026-11-27T12:54:57.462Z",
+    "checkedAt": "2026-11-28T12:13:53.938Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1772,31 +2671,10 @@
     "favicon": "https://www.radio-acton.com/wp-content/uploads/2020/11/cropped-radio-acton-103-7-180x180.png",
     "homepage": "http://www.radio-acton.com/1037/",
     "stationUuid": "960a990b-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:57.568Z",
+    "checkedAt": "2026-11-28T12:13:54.060Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "CFUV 101.9 University of Victoria, BC",
-    "url": "http://cfuv.streamon.fm:8000/CFUV-64k.aac",
-    "country": "CA",
-    "type": "community radio",
-    "tags": [
-      "community radio",
-      "university radio",
-      "victoria"
-    ],
-    "codec": "AAC",
-    "bitrate": 96,
-    "language": "english",
-    "favicon": null,
-    "homepage": "http://cfuv.uvic.ca/cms/",
-    "stationUuid": "9619dcac-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:57.960Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
   },
   {
     "name": "CHGA 97.3 Maniwaki, QC",
@@ -1812,7 +2690,7 @@
     "favicon": "https://www.chga.fm/app/themes/webit/assets/img/logo__app.png",
     "homepage": "http://www.chga.fm/",
     "stationUuid": "961bc33b-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:58.304Z",
+    "checkedAt": "2026-11-28T12:13:54.815Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1832,7 +2710,7 @@
     "favicon": "https://chipfm.com/wp-content/uploads/2022/05/cropped-chip-favicon-1-180x180.png",
     "homepage": "http://www.chipfm.com/",
     "stationUuid": "961afdea-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:58.379Z",
+    "checkedAt": "2026-11-28T12:13:54.915Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1853,7 +2731,7 @@
     "favicon": "https://chuo.fm/wp-content/uploads/2025/02/cropped-cropped-chuologo_colour-1024x1024-1-removebg-preview-180x180.png",
     "homepage": "https://chuo.fm/",
     "stationUuid": "d1ab9390-99e0-4e04-87d9-9d20a7967d87",
-    "checkedAt": "2026-11-27T12:54:58.812Z",
+    "checkedAt": "2026-11-28T12:13:55.227Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1873,31 +2751,10 @@
     "favicon": null,
     "homepage": "http://www.ciut.fm/",
     "stationUuid": "96182301-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:59.552Z",
+    "checkedAt": "2026-11-28T12:13:55.904Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "CJNC 97.9 Norway House, MB",
-    "url": "https://ais-sa1.streamon.fm/7036_24k.aac/playlist.m3u8",
-    "country": "CA",
-    "type": "community radio",
-    "tags": [
-      "community radio",
-      "indigenous",
-      "norway house"
-    ],
-    "codec": "AAC",
-    "bitrate": 96,
-    "language": "english",
-    "favicon": "https://www.facebook.com/favicon.ico",
-    "homepage": "https://www.facebook.com/NHCJNC97fm/",
-    "stationUuid": "dbdfe075-67d5-11e9-af37-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:59.832Z",
-    "status": 503,
-    "contentType": null,
-    "lastFailure": "HTTP 503"
   },
   {
     "name": "CJRG 94.5 Radio-Gaspesie, Gaspe, QC",
@@ -1914,7 +2771,7 @@
     "favicon": null,
     "homepage": "http://radiogaspesie.ca/",
     "stationUuid": "96163370-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:54:59.905Z",
+    "checkedAt": "2026-11-28T12:13:56.303Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -1934,7 +2791,7 @@
     "favicon": "https://static.wixstatic.com/media/1a119b_f590bb9c89e543c0820a224faf51b81c~mv2.jpg",
     "homepage": "https://www.cjroradio.com/",
     "stationUuid": "6a4eea29-5178-4b3a-ba69-03905c53e5b6",
-    "checkedAt": "2026-11-27T12:54:59.992Z",
+    "checkedAt": "2026-11-28T12:13:56.415Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -1953,10 +2810,113 @@
     "favicon": "https://muskokaradio.com/apple-icon-120x120.png",
     "homepage": "https://muskokaradio.com/",
     "stationUuid": "e29e510f-1efe-40cb-8e6f-3c8bfd17fbab",
-    "checkedAt": "2026-11-27T12:55:00.204Z",
+    "checkedAt": "2026-11-28T12:13:56.719Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "CFGQ 107.3 \"QR Calgary 107 & 770\" Calgary, AB",
+    "url": "http://live.leanstream.co/CFGQFM-MP3",
+    "country": "CA",
+    "type": "corus media",
+    "tags": [
+      "corus media",
+      "global news",
+      "news talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/1/11/CHQR_770_2023.svg/250px-CHQR_770_2023.svg.png",
+    "homepage": "https://qrcalgary.com/",
+    "stationUuid": "d76373f7-9f8d-4cbd-ad96-a7caf480e9f4",
+    "checkedAt": "2026-11-28T12:13:59.534Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CING-FM \"Energy 95.3\" Hamilton, ON (AAC Stream)",
+    "url": "http://live.leanstream.co/CINGFM",
+    "country": "CA",
+    "type": "corus media",
+    "tags": [
+      "corus media",
+      "hot adult contemporary",
+      "rebranded new format"
+    ],
+    "codec": "AAC+",
+    "bitrate": 57,
+    "language": "english",
+    "favicon": "https://energy953radio.ca/wp-content/uploads/sites/4/2019/03/cropped-energy_512x512_v1.png?w=180",
+    "homepage": "https://energy953radio.ca/",
+    "stationUuid": "78d56c99-ebe5-425b-923c-3dba1149f389",
+    "checkedAt": "2026-11-28T12:13:59.547Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CING-FM \"Energy 95.3\" Hamilton, ON (MP3 Stream)",
+    "url": "http://live.leanstream.co/CINGFM-MP3",
+    "country": "CA",
+    "type": "corus media",
+    "tags": [
+      "corus media",
+      "hot adult contemporary",
+      "rebranded new format"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Energy953_CING-FM_2019.png/250px-Energy953_CING-FM_2019.png",
+    "homepage": "https://energy953radio.ca/",
+    "stationUuid": "0b63b14d-0ee2-4811-a410-e2d0785f7ad3",
+    "checkedAt": "2026-11-28T12:13:59.590Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CHOK 103.9 FM & 1070 AM  \"Country CHOK\" Sarnia, ON  (AAC Stream)",
+    "url": "http://live.leanstream.co/CHOKAM",
+    "country": "CA",
+    "type": "country",
+    "tags": [
+      "country",
+      "new format"
+    ],
+    "codec": "AAC+",
+    "bitrate": 47,
+    "language": "english",
+    "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/CHOK_103.9_Country_logo.png/150px-CHOK_103.9_Country_logo.png",
+    "homepage": "https://www.chok.com/",
+    "stationUuid": "757ffa9e-7711-4b97-a1d0-c0aae630521b",
+    "checkedAt": "2026-11-28T12:14:01.571Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
+  },
+  {
+    "name": "CHOK 103.9 FM & 1070 AM  \"Country CHOK\" Sarnia, ON  (MP3 Stream)",
+    "url": "http://live.leanstream.co/CHOKAM-MP3",
+    "country": "CA",
+    "type": "country",
+    "tags": [
+      "country",
+      "new format"
+    ],
+    "codec": "MP3",
+    "bitrate": 96,
+    "language": "english",
+    "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/CHOK_103.9_Country_logo.png/150px-CHOK_103.9_Country_logo.png",
+    "homepage": "https://www.chok.com/",
+    "stationUuid": "b5da18c1-a9f2-4624-8c23-f3f9eff36e83",
+    "checkedAt": "2026-11-28T12:14:01.623Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "CKFU-FM 100.1 \"Moose FM\" Fort St. John, BC",
@@ -1972,7 +2932,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/CKFU_100.1FtStJohn_logo.png/220px-CKFU_100.1FtStJohn_logo.png",
     "homepage": "https://moosefm.ca/",
     "stationUuid": "0572a07d-74a3-4497-b592-5817a3e0067b",
-    "checkedAt": "2026-11-27T12:55:07.863Z",
+    "checkedAt": "2026-11-28T12:14:04.066Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -1991,7 +2951,7 @@
     "favicon": "https://www.cochranenow.com/assets/cochrane/apple-icon-120x120-6dda98b749d5a38d2a952959a88a7ef7a8f49728c35e0fbd1033df1b4dfdb8e8.png",
     "homepage": "https://www.cochranenow.com/",
     "stationUuid": "9b7b8653-f4ce-4f44-a54f-f9d7818bad1a",
-    "checkedAt": "2026-11-27T12:55:08.915Z",
+    "checkedAt": "2026-11-28T12:14:05.155Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2012,7 +2972,7 @@
     "favicon": "https://drive.google.com/file/d/13EvaMh-BpK862KPfoMYRFOCQXliXwnU8/view?usp=share_link",
     "homepage": "https://lightningcountry.com/",
     "stationUuid": "01f1edfa-ec19-4521-9051-0b3ece53c3e3",
-    "checkedAt": "2026-11-27T12:55:09.768Z",
+    "checkedAt": "2026-11-28T12:14:05.813Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2033,7 +2993,7 @@
     "favicon": null,
     "homepage": "https://beatsradio.ca/",
     "stationUuid": "9717bbf2-b2de-4fe3-a5e2-0358649365fe",
-    "checkedAt": "2026-11-27T12:55:09.782Z",
+    "checkedAt": "2026-11-28T12:14:05.859Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2059,7 +3019,7 @@
     "favicon": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,fit=crop/nt0Q9Mgudk0w9b29/title-Abo2ZcbKlDluZSuu.png",
     "homepage": "https://lpgradio.com/",
     "stationUuid": "f9b99ef4-25e9-4d37-ad3f-274308751132",
-    "checkedAt": "2026-11-27T12:55:10.467Z",
+    "checkedAt": "2026-11-28T12:14:06.572Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2082,7 +3042,7 @@
     "favicon": "https://img.freepik.com/premium-psd/vinyl-record-isolated-white-background-png_1034016-13491.jpg",
     "homepage": "http://24.87.64.59:8000/status.xsl",
     "stationUuid": "3dd6c5a0-47e1-4c96-baf2-7223de3c56cd",
-    "checkedAt": "2026-11-27T12:55:10.940Z",
+    "checkedAt": "2026-11-28T12:14:07.088Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2102,7 +3062,7 @@
     "favicon": "https://www.steinbachonline.com/assets/steinbach/apple-icon-120x120-6767276e47057473b84ed93a19287bbfb4e07d804c11e3f550ec628ac6aa7159.png",
     "homepage": "https://www.steinbachonline.com/am1250",
     "stationUuid": "8a7d71f3-8675-4d04-b8c7-234bca82d866",
-    "checkedAt": "2026-11-27T12:55:11.172Z",
+    "checkedAt": "2026-11-28T12:14:07.226Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2123,7 +3083,7 @@
     "favicon": null,
     "homepage": "https://alfreds-radio.alxtheprogrammer.chatgpt.site/",
     "stationUuid": "c8d7b6b1-e738-43fb-94d6-def4eac89a31",
-    "checkedAt": "2026-11-27T12:55:11.321Z",
+    "checkedAt": "2026-11-28T12:14:07.371Z",
     "status": 410,
     "contentType": "application/json",
     "lastFailure": "HTTP 410"
@@ -2142,7 +3102,7 @@
     "favicon": null,
     "homepage": "https://beatsradio.ca/",
     "stationUuid": "71bb5475-1805-4ab3-bd21-f990400f27d7",
-    "checkedAt": "2026-11-27T12:55:11.848Z",
+    "checkedAt": "2026-11-28T12:14:07.888Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2161,7 +3121,7 @@
     "favicon": "https://www.fgcast.com/wp-content/uploads/2024/03/cropped-FGCast_Logo_SiteLogo_background.png",
     "homepage": "https://radio.fgcast.com/",
     "stationUuid": "f3e803e7-63ed-47ca-8b87-c19d99394193",
-    "checkedAt": "2026-11-27T12:55:18.079Z",
+    "checkedAt": "2026-11-28T12:14:13.420Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2180,7 +3140,7 @@
     "favicon": "https://www.fgcast.com/wp-content/uploads/2024/03/cropped-FGCast_Logo_SiteLogo_background.png",
     "homepage": "https://radio.fgcast.com/",
     "stationUuid": "c744b894-2744-44a7-afbf-ec6b915ff454",
-    "checkedAt": "2026-11-27T12:55:18.134Z",
+    "checkedAt": "2026-11-28T12:14:13.515Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2199,7 +3159,7 @@
     "favicon": "https://www.fgcast.com/wp-content/uploads/2024/03/cropped-FGCast_Logo_SiteLogo_background.png",
     "homepage": "https://radio.fgcast.com/",
     "stationUuid": "5b7bddb3-d077-40c4-af97-eba0dc161ecb",
-    "checkedAt": "2026-11-27T12:55:18.147Z",
+    "checkedAt": "2026-11-28T12:14:13.550Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2219,7 +3179,7 @@
     "favicon": null,
     "homepage": "https://vocm.com/",
     "stationUuid": "99c2564b-fbdf-4d03-9d14-30fb318e170b",
-    "checkedAt": "2026-11-27T12:55:18.231Z",
+    "checkedAt": "2026-11-28T12:14:13.555Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2239,7 +3199,7 @@
     "favicon": null,
     "homepage": "https://vocm.com/",
     "stationUuid": "e804638f-c105-46e4-8723-1cc3145d9ca3",
-    "checkedAt": "2026-11-27T12:55:18.607Z",
+    "checkedAt": "2026-11-28T12:14:13.857Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2261,7 +3221,7 @@
     "favicon": null,
     "homepage": "https://www.themixtaperadio.ca/",
     "stationUuid": "4fe81cab-f94e-411e-838b-a5d5cc0b0787",
-    "checkedAt": "2026-11-27T12:55:19.741Z",
+    "checkedAt": "2026-11-28T12:14:15.100Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2281,7 +3241,7 @@
     "favicon": "https://i.imgur.com/C43ZApv.png",
     "homepage": "https://oldies.halloweenradio.net/",
     "stationUuid": "3acd889d-802f-4ee7-acdf-3ac25328c11b",
-    "checkedAt": "2026-11-27T12:55:20.516Z",
+    "checkedAt": "2026-11-28T12:14:15.719Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2300,10 +3260,30 @@
     "favicon": "https://www.discoverestevan.com/assets/estevan/apple-icon-120x120-f8f5ffce46fde2a81bc7d12d2d7b2f7c9b9e4b90b20d1b1e4a52d8695bd675d4.png",
     "homepage": "https://www.discoverestevan.com/sun102",
     "stationUuid": "ab7b7d8a-dc8f-47df-933c-ae286548bff6",
-    "checkedAt": "2026-11-27T12:55:22.126Z",
+    "checkedAt": "2026-11-28T12:14:17.045Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "CKWS 104.3 \"Fresh Radio\" Kingston, ON",
+    "url": "http://live.leanstream.co/CKWSFM?args=web_01",
+    "country": "CA",
+    "type": "hot adult contemporary",
+    "tags": [
+      "hot adult contemporary",
+      "kingston"
+    ],
+    "codec": "AAC+",
+    "bitrate": 57,
+    "language": "english",
+    "favicon": "https://1043freshradio.ca/wp-content/uploads/sites/13/2018/02/cropped-fresh_f_512x512.png?w=180",
+    "homepage": "http://www.1043freshradio.ca/",
+    "stationUuid": "96220a11-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:14:19.376Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "J-Idols Project Radio",
@@ -2325,7 +3305,7 @@
     "favicon": "https://prosamcloudcore.blob.core.windows.net/stationlogos/83605-NewLogo3i2.png",
     "homepage": "https://www.j-popprojectradio.com/",
     "stationUuid": "8a5914fd-5ec7-44a9-bace-f4bc68de775c",
-    "checkedAt": "2026-11-27T12:55:24.925Z",
+    "checkedAt": "2026-11-28T12:14:19.661Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2345,10 +3325,30 @@
     "favicon": null,
     "homepage": "https://nuxalkradio.com/",
     "stationUuid": "f8f1dd31-2218-4676-89c0-f5303fbb97c5",
-    "checkedAt": "2026-11-27T12:55:25.275Z",
+    "checkedAt": "2026-11-28T12:14:19.963Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "加拿大中文电台FM88.9",
+    "url": "https://5b2959fe11444.streamlock.net/radio/fm889.stream/playlist.m3u8",
+    "country": "CA",
+    "type": "information",
+    "tags": [
+      "information",
+      "music"
+    ],
+    "codec": "AAC",
+    "bitrate": 50,
+    "language": "chinese",
+    "favicon": "https://zuiai.tv/zb_users/upload/2025/3/2025032080056921.jpg",
+    "homepage": "https://www.am1430.com/splash.php",
+    "stationUuid": "91f020ef-6aed-4a7f-a50f-18be42eb33f2",
+    "checkedAt": "2026-11-28T12:14:20.350Z",
+    "status": 404,
+    "contentType": null,
+    "lastFailure": "HTTP 404"
   },
   {
     "name": "Radio Italia Canada",
@@ -2366,7 +3366,7 @@
     "favicon": "https://cdn-elements.radiostreamlive.com/v1/images/favicon.ico",
     "homepage": "http://www.radioitaliacanada.com/",
     "stationUuid": "9628e1e8-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:55:26.581Z",
+    "checkedAt": "2026-11-28T12:14:21.175Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2386,7 +3386,7 @@
     "favicon": null,
     "homepage": "https://asiadreamradio.torontocast.stream/stations/en/index.html",
     "stationUuid": "9642c326-1073-48cc-ab7d-070ac21b2f75",
-    "checkedAt": "2026-11-27T12:55:26.723Z",
+    "checkedAt": "2026-11-28T12:14:21.508Z",
     "status": 404,
     "contentType": "text/html; charset=iso-8859-1",
     "lastFailure": "HTTP 404"
@@ -2408,7 +3408,7 @@
     "favicon": null,
     "homepage": "https://www.shoutcastnet.com/",
     "stationUuid": "f0006991-7940-4055-b93d-1bf6d8906cc9",
-    "checkedAt": "2026-11-27T12:55:27.222Z",
+    "checkedAt": "2026-11-28T12:14:21.964Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2427,10 +3427,32 @@
     "favicon": "https://static.wixstatic.com/media/2f97ed_435f0f87b6c447c8839a2e4ffbf59d1d~mv2.png/v1/fill/w_202,h_119,al_c,lg_1,q_85,enc_avif,quality_auto/image_2026-09-11_173757385.png",
     "homepage": "http://colemac1.wixsite.com/kool96internetradio",
     "stationUuid": "cd080c4d-3b87-4a0a-b3f3-724ed7dabcf4",
-    "checkedAt": "2026-11-27T12:55:27.598Z",
+    "checkedAt": "2026-11-28T12:14:22.305Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "CFPL-AM 980 London, ON",
+    "url": "http://live.leanstream.co/CFPLAM-MP3",
+    "country": "CA",
+    "type": "london",
+    "tags": [
+      "london",
+      "news",
+      "sport",
+      "talk"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://globalnews.ca/wp-content/themes/shaw-globalnews/_img/pwa/news_square-144.png",
+    "homepage": "http://www.am980.ca/",
+    "stationUuid": "9620f0fe-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:14:23.734Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "CIBL Montreal",
@@ -2446,7 +3468,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "8a0ca2ea-3043-4d01-b74e-db7efb6dbb49",
-    "checkedAt": "2026-11-27T12:55:33.501Z",
+    "checkedAt": "2026-11-28T12:14:25.814Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2466,7 +3488,7 @@
     "favicon": "https://media.bpmsports.ca/2023/08/cropped-android-chrome-512x512-1-180x180.png",
     "homepage": "https://919sport.ca/",
     "stationUuid": "964e7a2b-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:55:33.703Z",
+    "checkedAt": "2026-11-28T12:14:26.025Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2483,7 +3505,7 @@
     "favicon": null,
     "homepage": "http://canada1.reliastream.com:8011/stream",
     "stationUuid": "1a4da093-9f8a-4e92-b4ce-b63412308202",
-    "checkedAt": "2026-11-27T12:55:35.408Z",
+    "checkedAt": "2026-11-28T12:14:27.665Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2500,7 +3522,7 @@
     "favicon": null,
     "homepage": "https://altarsandatmosphere.com/",
     "stationUuid": "ef79a2a3-cc7d-455d-9384-27c3c590827a",
-    "checkedAt": "2026-11-27T12:55:35.518Z",
+    "checkedAt": "2026-11-28T12:14:27.849Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2517,7 +3539,7 @@
     "favicon": "https://media.live365.com/download/2483f575-609c-4901-962c-337022c03f09.png",
     "homepage": "https://player.live365.com/AlternativeRockVarietyMEGASHUFFLE",
     "stationUuid": "1b856f2c-379f-4a5e-b511-e5174dc69df5",
-    "checkedAt": "2026-11-27T12:55:35.599Z",
+    "checkedAt": "2026-11-28T12:14:27.861Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -2534,7 +3556,7 @@
     "favicon": "https://atlanticbayradio.ca/favicon.ico",
     "homepage": "https://atlanticbayradio.ca/",
     "stationUuid": "2e83ab91-5c7b-4c2f-ab87-dd1b784ac1d3",
-    "checkedAt": "2026-11-27T12:55:35.854Z",
+    "checkedAt": "2026-11-28T12:14:28.137Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2551,27 +3573,27 @@
     "favicon": "https://media.bpmsports.ca/2023/05/BPM_Sports_logo_main.svg",
     "homepage": "https://bpmsports.ca/",
     "stationUuid": "4b3578d5-32a7-4225-b7ca-22780f61781a",
-    "checkedAt": "2026-11-27T12:55:36.093Z",
-    "status": 404,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 404"
+    "checkedAt": "2026-11-28T12:14:28.478Z",
+    "status": null,
+    "contentType": null,
+    "lastFailure": "The operation was aborted due to timeout"
   },
   {
-    "name": "Calm Radio - Tibet",
-    "url": "https://streams.calmradio.com:6528/stream",
+    "name": "CFMI Rock 101.1 Vancouver",
+    "url": "http://live.leanstream.co/CFMIFM-MP3",
     "country": "CA",
     "type": "MP3",
     "tags": [],
     "codec": "MP3",
     "bitrate": 128,
     "language": null,
-    "favicon": "https://calmradio.com/templates/calmradio/favicons/apple-touch-icon.png",
-    "homepage": "https://calmradio.com/",
-    "stationUuid": "252e32d0-106d-4a77-833c-5d9393a1cc49",
-    "checkedAt": "2026-11-27T12:55:36.516Z",
-    "status": null,
-    "contentType": null,
-    "lastFailure": "fetch failed"
+    "favicon": "https://rock101.com/wp-content/uploads/sites/22/2018/01/cropped-fm-logos_512x512_rock101.png?w=180",
+    "homepage": "http://www.rock101.com/",
+    "stationUuid": "b8b3601f-6576-4c36-a75e-b70e3082afb3",
+    "checkedAt": "2026-11-28T12:14:29.327Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "CHOU 89.1 Community Radio Ottawa",
@@ -2585,7 +3607,7 @@
     "favicon": "https://chuo.fm/wp-content/uploads/2025/02/cropped-cropped-chuologo_colour-1024x1024-1-removebg-preview-180x180.png",
     "homepage": "https://chuo.fm/",
     "stationUuid": "3ddcdd47-5840-4b4e-b88c-ca52291d3e20",
-    "checkedAt": "2026-11-27T12:55:37.911Z",
+    "checkedAt": "2026-11-28T12:14:30.398Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2602,7 +3624,7 @@
     "favicon": "https://chyz.ca/wp-content/themes/chyz/assets/img/favicon/apple-touch-icon.png",
     "homepage": "https://chyz.ca/",
     "stationUuid": "1ba50866-6cab-4f81-85d3-f1de7418fc7a",
-    "checkedAt": "2026-11-27T12:55:38.327Z",
+    "checkedAt": "2026-11-28T12:14:30.876Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2619,7 +3641,7 @@
     "favicon": null,
     "homepage": "https://www.smithersradio.com/",
     "stationUuid": "47a3cead-9390-49b6-97fa-a6167b226c7a",
-    "checkedAt": "2026-11-27T12:55:38.375Z",
+    "checkedAt": "2026-11-28T12:14:30.899Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -2636,7 +3658,7 @@
     "favicon": "https://www.cjnu.ca/wp-content/uploads/2015/04/cropped-favicon-192x192.png",
     "homepage": "https://www.cjnu.ca/",
     "stationUuid": "308b8099-1876-4088-8465-bde6c10a8c28",
-    "checkedAt": "2026-11-27T12:55:38.834Z",
+    "checkedAt": "2026-11-28T12:14:31.536Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2653,7 +3675,7 @@
     "favicon": "null",
     "homepage": "https://www.ckrl.qc.ca/",
     "stationUuid": "bd459810-3f85-4407-b99d-f9228169be78",
-    "checkedAt": "2026-11-27T12:55:39.009Z",
+    "checkedAt": "2026-11-28T12:14:31.659Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2670,7 +3692,7 @@
     "favicon": "https://countryradio.musicbox4friends.com/favicon.ico",
     "homepage": "https://countryradio.musicbox4friends.com/",
     "stationUuid": "4481723d-2101-4b87-8c42-fbc13463ffc6",
-    "checkedAt": "2026-11-27T12:55:39.768Z",
+    "checkedAt": "2026-11-28T12:14:32.788Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2687,10 +3709,27 @@
     "favicon": null,
     "homepage": "https://countryradio.musicbox4friends.com/",
     "stationUuid": "e02bf35d-d30d-4310-9f64-30626fc046fb",
-    "checkedAt": "2026-11-27T12:55:39.905Z",
+    "checkedAt": "2026-11-28T12:14:32.868Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
+  },
+  {
+    "name": "FM96",
+    "url": "https://live.leanstream.co/CFPLFM-MP3",
+    "country": "CA",
+    "type": "MP3",
+    "tags": [],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": null,
+    "favicon": "https://fm96.com/wp-%0Acontent/uploads/sites/10/2021/09/%20fm96-header_380x1701.png",
+    "homepage": "https://fm96.com/",
+    "stationUuid": "5fe20dec-c43c-4a25-8f5f-f108204d6041",
+    "checkedAt": "2026-11-28T12:14:33.997Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Hair Band Radio",
@@ -2704,7 +3743,7 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/eaknkj8g5znt.jpg",
     "homepage": "https://metalshoprocks.torontocast.stream/listen-hair-band-radio/",
     "stationUuid": "e0295c93-67a8-4ac1-a367-8898c91df97a",
-    "checkedAt": "2026-11-27T12:55:41.742Z",
+    "checkedAt": "2026-11-28T12:14:34.544Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2721,7 +3760,7 @@
     "favicon": null,
     "homepage": "https://metalshoprocks.torontocast.stream/listen-hair-band-radio/",
     "stationUuid": "c4069ab4-9f76-4e2a-b991-0d5b81cd4579",
-    "checkedAt": "2026-11-27T12:55:41.752Z",
+    "checkedAt": "2026-11-28T12:14:34.594Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2738,7 +3777,7 @@
     "favicon": null,
     "homepage": "https://streaming.live365.com/a84523",
     "stationUuid": "bbc69b2d-c1e5-47f2-b629-0227ca5555a1",
-    "checkedAt": "2026-11-27T12:55:41.788Z",
+    "checkedAt": "2026-11-28T12:14:34.801Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2755,7 +3794,7 @@
     "favicon": null,
     "homepage": "https://hyperion.fm/",
     "stationUuid": "251333eb-7190-40f5-b406-8aee950908cf",
-    "checkedAt": "2026-11-27T12:55:41.945Z",
+    "checkedAt": "2026-11-28T12:14:34.996Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -2772,7 +3811,7 @@
     "favicon": null,
     "homepage": "https://hyperion.fm/",
     "stationUuid": "d0f75b05-f85c-4a6a-8920-bbaecf1c9b3c",
-    "checkedAt": "2026-11-27T12:55:42.331Z",
+    "checkedAt": "2026-11-28T12:14:35.278Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2789,7 +3828,7 @@
     "favicon": null,
     "homepage": "https://irishradio.ca/",
     "stationUuid": "cea7b406-f523-4b1c-9739-c85d8e25a255",
-    "checkedAt": "2026-11-27T12:55:42.539Z",
+    "checkedAt": "2026-11-28T12:14:35.448Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2806,7 +3845,7 @@
     "favicon": null,
     "homepage": "https://quincy.torontocast.com/",
     "stationUuid": "e6abc3fe-e422-44d5-9f63-6e107bf3e8ac",
-    "checkedAt": "2026-11-27T12:55:44.933Z",
+    "checkedAt": "2026-11-28T12:14:37.574Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2823,7 +3862,7 @@
     "favicon": "https://static2.mytuner.mobi/media/tvos_radios/hzzf6srryewc.png",
     "homepage": "https://metalshoprocks.torontocast.stream/listen-metal-shop/",
     "stationUuid": "ba65b1bb-3a20-48bb-9cee-7d627491e35a",
-    "checkedAt": "2026-11-27T12:55:44.965Z",
+    "checkedAt": "2026-11-28T12:14:37.619Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2840,7 +3879,7 @@
     "favicon": null,
     "homepage": "https://nrzfm1.nrzfmgroup.com/",
     "stationUuid": "d93102aa-baad-4037-b601-f398b44e1312",
-    "checkedAt": "2026-11-27T12:55:45.473Z",
+    "checkedAt": "2026-11-28T12:14:38.340Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2857,7 +3896,7 @@
     "favicon": "https://www.radioclassique.ca/upload/players/5e3c73634ad240.25659406.png",
     "homepage": "https://www.radioclassique.ca/",
     "stationUuid": "20e82658-9064-4f68-9225-291955cc5be3",
-    "checkedAt": "2026-11-27T12:55:45.761Z",
+    "checkedAt": "2026-11-28T12:14:38.768Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2874,7 +3913,7 @@
     "favicon": "https://mmo.aiircdn.com/593/618af1cea6049.png",
     "homepage": "https://www.revolutionradio.com/",
     "stationUuid": "e38a0ef4-21a4-477d-9ed4-2f7c54a2e18d",
-    "checkedAt": "2026-11-27T12:55:46.834Z",
+    "checkedAt": "2026-11-28T12:14:39.854Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
@@ -2891,7 +3930,7 @@
     "favicon": "https://riverwood-radio.online/logo.png",
     "homepage": "https://riverwood-radio.online/",
     "stationUuid": "7f14599a-8e79-4e71-bad1-743696b57988",
-    "checkedAt": "2026-11-27T12:55:47.140Z",
+    "checkedAt": "2026-11-28T12:14:40.126Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2908,7 +3947,7 @@
     "favicon": "https://silentwave.onrender.com/static/favicon.ico",
     "homepage": "https://silentwave.onrender.com/",
     "stationUuid": "528cd8ba-b52b-4130-989c-10d510337d0a",
-    "checkedAt": "2026-11-27T12:55:48.126Z",
+    "checkedAt": "2026-11-28T12:14:41.150Z",
     "status": 404,
     "contentType": "text/html",
     "lastFailure": "HTTP 404"
@@ -2925,7 +3964,7 @@
     "favicon": "https://www.slowradio.com/img/social/slowradio.jpg",
     "homepage": "https://en.slowradio.com/",
     "stationUuid": "dec9196a-6170-4d08-9d9a-da63281e226a",
-    "checkedAt": "2026-11-27T12:55:48.267Z",
+    "checkedAt": "2026-11-28T12:14:41.189Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -2942,7 +3981,7 @@
     "favicon": "https://static-media.streema.com/media/cache/b3/82/b3824cc597f63e09fcb2dc819fe8adde.jpg",
     "homepage": "http://57yearsofsoulmusicradio.com/",
     "stationUuid": "064c853b-5c75-4d1a-b3a0-4274f70a0b45",
-    "checkedAt": "2026-11-27T12:55:48.602Z",
+    "checkedAt": "2026-11-28T12:14:41.604Z",
     "status": 401,
     "contentType": null,
     "lastFailure": "HTTP 401"
@@ -2959,7 +3998,7 @@
     "favicon": null,
     "homepage": "https://theborderline.ca/",
     "stationUuid": "b8754b8a-1018-4309-86a7-4beb22e1abe9",
-    "checkedAt": "2026-11-27T12:55:49.253Z",
+    "checkedAt": "2026-11-28T12:14:42.332Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2976,7 +4015,7 @@
     "favicon": "https://theborderline.ca/wp-content/uploads/2020/08/theBORDERLINE-Radio-Soopetit.png",
     "homepage": "https://theborderline.ca/",
     "stationUuid": "b9132ba0-43a1-431e-867e-05ff59fffbf1",
-    "checkedAt": "2026-11-27T12:55:49.550Z",
+    "checkedAt": "2026-11-28T12:14:42.614Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -2993,7 +4032,7 @@
     "favicon": "https://media.live365.com/download/14190ee9-23b8-4946-9ef8-60208015df10.png",
     "homepage": "https://player.live365.com/TheEDMMegashuffle",
     "stationUuid": "0b006883-9448-41e6-976d-a1c8c50f8178",
-    "checkedAt": "2026-11-27T12:55:49.760Z",
+    "checkedAt": "2026-11-28T12:14:42.626Z",
     "status": 404,
     "contentType": "text/html; charset=utf-8",
     "lastFailure": "HTTP 404"
@@ -3010,27 +4049,10 @@
     "favicon": null,
     "homepage": "https://lynxradionetwork.com/",
     "stationUuid": "3592ea81-fbbe-4640-9fe4-4215ae6259cd",
-    "checkedAt": "2026-11-27T12:55:49.840Z",
+    "checkedAt": "2026-11-28T12:14:42.661Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "VotV Community Broadcaster",
-    "url": "https://radio.votvbroadcast.com/votv.mp3",
-    "country": "CA",
-    "type": "MP3",
-    "tags": [],
-    "codec": "MP3",
-    "bitrate": 128,
-    "language": null,
-    "favicon": null,
-    "homepage": "https://votvbroadcast.com/",
-    "stationUuid": "49857e26-5f58-4a5c-83aa-27c8c108d817",
-    "checkedAt": "2026-11-27T12:55:51.297Z",
-    "status": 502,
-    "contentType": "text/html; charset=UTF-8",
-    "lastFailure": "HTTP 502"
   },
   {
     "name": "CINA-FM 102.3 \"Radio CINA\" Windsor, ON",
@@ -3046,7 +4068,7 @@
     "favicon": null,
     "homepage": "https://radiocina.com/",
     "stationUuid": "7f5617e2-bd70-493e-9fcb-eb1a596a95de",
-    "checkedAt": "2026-11-27T12:55:52.378Z",
+    "checkedAt": "2026-11-28T12:14:45.337Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3065,7 +4087,7 @@
     "favicon": null,
     "homepage": "https://cmr24.net/",
     "stationUuid": "7074da83-945c-4ac0-b8dd-a763678bab84",
-    "checkedAt": "2026-11-27T12:55:53.017Z",
+    "checkedAt": "2026-11-28T12:14:46.017Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3086,7 +4108,7 @@
     "favicon": null,
     "homepage": "http://www.am1470.com/home_c.php",
     "stationUuid": "7cd90466-6a01-11e9-af37-52543be04c81",
-    "checkedAt": "2026-11-27T12:55:53.049Z",
+    "checkedAt": "2026-11-28T12:14:46.063Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3107,7 +4129,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Fairchild_Radio_AM1470_Logo.svg/220px-Fairchild_Radio_AM1470_Logo.svg.png",
     "homepage": "http://www.am1470.com/english/",
     "stationUuid": "dfef8a31-b08c-42ec-b724-16290e214087",
-    "checkedAt": "2026-11-27T12:55:53.083Z",
+    "checkedAt": "2026-11-28T12:14:46.071Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
@@ -3128,7 +4150,7 @@
     "favicon": "https://cfnj.net/wp-content/uploads/2020/10/cropped-favicon-cfnj-180x180.png",
     "homepage": "http://www.cfnj.net/",
     "stationUuid": "962d5f17-0601-11e8-ae97-52543be04c81",
-    "checkedAt": "2026-11-27T12:55:53.634Z",
+    "checkedAt": "2026-11-28T12:14:46.415Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3147,10 +4169,32 @@
     "favicon": "https://www.radioclassique.ca/upload/5d7f91e07dcae6.18591349.ico",
     "homepage": "https://www.radioclassique.ca/",
     "stationUuid": "4cf0c172-5202-4dc8-a19c-e3492a0022c8",
-    "checkedAt": "2026-11-27T12:55:54.154Z",
+    "checkedAt": "2026-11-28T12:14:47.139Z",
     "status": 404,
     "contentType": null,
     "lastFailure": "HTTP 404"
+  },
+  {
+    "name": "CKNW 980 New Westminster, BC",
+    "url": "http://live.leanstream.co/CKNWAM",
+    "country": "CA",
+    "type": "new westminster",
+    "tags": [
+      "new westminster",
+      "news",
+      "talk",
+      "vancouver"
+    ],
+    "codec": "AAC+",
+    "bitrate": 57,
+    "language": "english",
+    "favicon": "https://globalnews.ca/wp-content/themes/shaw-globalnews/_img/pwa/news_square-144.png",
+    "homepage": "http://www.cknw.com/",
+    "stationUuid": "961c66b2-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:14:48.453Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "840 CFSX",
@@ -3168,10 +4212,31 @@
     "favicon": null,
     "homepage": "https://vocm.com/",
     "stationUuid": "e0b88ac7-2ec9-4caa-ab8e-69333ca2b2f6",
-    "checkedAt": "2026-11-27T12:55:56.223Z",
+    "checkedAt": "2026-11-28T12:14:48.568Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
+  },
+  {
+    "name": "CJOB 680 Winnipeg, MB",
+    "url": "http://live.leanstream.co/CJOBAM-MP3",
+    "country": "CA",
+    "type": "news",
+    "tags": [
+      "news",
+      "talk",
+      "winnipeg"
+    ],
+    "codec": "MP3",
+    "bitrate": 128,
+    "language": "english",
+    "favicon": "https://globalnews.ca/wp-content/themes/shaw-globalnews/_img/pwa/news_square-144.png",
+    "homepage": "http://www.cjob.com/",
+    "stationUuid": "961def4f-0601-11e8-ae97-52543be04c81",
+    "checkedAt": "2026-11-28T12:14:49.307Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "CFQR 600 AM",
@@ -3188,10 +4253,29 @@
     "favicon": null,
     "homepage": "https://none.com/",
     "stationUuid": "117dab3c-3e9e-431e-b9f0-1f73202ba9f5",
-    "checkedAt": "2026-11-27T12:55:57.833Z",
+    "checkedAt": "2026-11-28T12:14:50.265Z",
     "status": 502,
     "contentType": "text/html",
     "lastFailure": "HTTP 502"
+  },
+  {
+    "name": "CHED 630 \"Global News Radio\" Edmonton, AB",
+    "url": "http://live.leanstream.co/CHEDAM",
+    "country": "CA",
+    "type": "news talk",
+    "tags": [
+      "news talk"
+    ],
+    "codec": "AAC+",
+    "bitrate": 57,
+    "language": "english",
+    "favicon": "https://globalnews.ca/wp-content/themes/shaw-globalnews/assets/dist/images/logo-black.svg",
+    "homepage": "https://globalnews.ca/radio/630ched/",
+    "stationUuid": "73be8818-caaf-42a9-b7e3-66275ffa460a",
+    "checkedAt": "2026-11-28T12:14:50.565Z",
+    "status": 403,
+    "contentType": "text/html",
+    "lastFailure": "HTTP 403"
   },
   {
     "name": "Classic Oldies Mix",
@@ -3205,7 +4289,7 @@
     "favicon": "https://static.wixstatic.com/media/35392d_c0a318a60f574c479f819ac4a3dfcb6a~mv2.png/v1/fill/w_295,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Jammin%20Vibez%202025_edited_edited_edited.png",
     "homepage": "https://www.jamminvibeznetwork.ca/Jammin%20Vibez%202025_edited_edited_edited.png",
     "stationUuid": "ac10c346-8ed4-4e26-abb9-2fe1cf241123",
-    "checkedAt": "2026-11-27T12:55:58.097Z",
+    "checkedAt": "2026-11-28T12:14:50.721Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3222,7 +4306,7 @@
     "favicon": "https://static.wixstatic.com/media/35392d_c0a318a60f574c479f819ac4a3dfcb6a~mv2.png/v1/fill/w_304,h_136,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Jammin%20Vibez%202025_edited_edited_edited.png",
     "homepage": "https://www.jamminvibeznetwork.ca/live-radio",
     "stationUuid": "bcd7bec5-1833-40de-9777-c5bb744ab8fa",
-    "checkedAt": "2026-11-27T12:55:58.140Z",
+    "checkedAt": "2026-11-28T12:14:50.730Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3241,7 +4325,7 @@
     "favicon": "https://riverwood-radio.online/logo.png",
     "homepage": "https://riverwood-radio.online/",
     "stationUuid": "7c7a7005-6d4d-491d-8e1e-126a48a22c48",
-    "checkedAt": "2026-11-27T12:55:59.230Z",
+    "checkedAt": "2026-11-28T12:14:51.873Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3258,7 +4342,7 @@
     "favicon": "https://i.iheart.com/v3/surl/aHR0cHM6Ly9pLmloZWFydC5jb20vdjMvcmUvYXNzZXRzLnN0cmVhbXMvNjdmOTMxYmFkNDNlYTQ1MWFmYTBjNDUx?cacheable=true&ops=ratio%281%2C1%29%2Cscale%28166%2C0%29&sn=eGtleWJhc2UyMDIxMTExMDq22WlIT8FIZmhMhYNN3R0vKiXbZQuOf8SZFivgMvONYw%3D%3D&surrogate=1cOXl179JY-syhxYSCX6Q1ukM8fpR64K-EYmLHpSOU-LjcYRMyWuL17fUmb3tjq91_rFpaaOllQMOQzf_h01a4kCDmAb5DrTb7ltRXsqFCdxp80k8ybzypQfSBlYyyaTACcXN5wsuigWEybY4QbYf_exBF6ddFrt-3fOAZ5N2bdzMEk-KC1BTAOz55CxhdBwxj5sOE9nSQC_mm3W",
     "homepage": "https://www.iheart.com/",
     "stationUuid": "7bd92252-1900-49af-b5ce-0b5dc0687a67",
-    "checkedAt": "2026-11-27T12:55:59.363Z",
+    "checkedAt": "2026-11-28T12:14:52.062Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3275,7 +4359,7 @@
     "favicon": null,
     "homepage": "https://www.virginradio.ca/toronto/",
     "stationUuid": "630f8e79-1ac0-46bd-9309-58cc2e3bc2a6",
-    "checkedAt": "2026-11-27T12:55:59.431Z",
+    "checkedAt": "2026-11-28T12:14:52.123Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -3292,7 +4376,7 @@
     "favicon": null,
     "homepage": "https://cbc.ca/",
     "stationUuid": "e7762c02-3889-42a1-8363-e84c6c313a8d",
-    "checkedAt": "2026-11-27T12:55:59.666Z",
+    "checkedAt": "2026-11-28T12:14:52.366Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3309,7 +4393,7 @@
     "favicon": null,
     "homepage": "https://www.chum1045.com/",
     "stationUuid": "c6fa0b44-d316-437c-9a27-1f69d224ba74",
-    "checkedAt": "2026-11-27T12:55:59.979Z",
+    "checkedAt": "2026-11-28T12:14:52.653Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -3326,7 +4410,7 @@
     "favicon": null,
     "homepage": "https://www.chum1045.com/",
     "stationUuid": "5de36de5-0eae-4d36-812e-e223033dff45",
-    "checkedAt": "2026-11-27T12:56:00.045Z",
+    "checkedAt": "2026-11-28T12:14:52.698Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -3343,7 +4427,7 @@
     "favicon": null,
     "homepage": "https://www.radioenergie.ca/montreal/",
     "stationUuid": "a37e38c8-ab5f-4036-a3d2-2d6d5bd8c88c",
-    "checkedAt": "2026-11-27T12:56:00.275Z",
+    "checkedAt": "2026-11-28T12:14:52.997Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3360,7 +4444,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "468e0311-245c-418b-b21c-d6b8b0c823ae",
-    "checkedAt": "2026-11-27T12:56:00.292Z",
+    "checkedAt": "2026-11-28T12:14:53.004Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3377,7 +4461,7 @@
     "favicon": null,
     "homepage": "https://chimplabx.com/",
     "stationUuid": "6c80fa92-0e92-4426-8186-a3f66594b3f7",
-    "checkedAt": "2026-11-27T12:56:00.665Z",
+    "checkedAt": "2026-11-28T12:14:53.344Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3394,7 +4478,7 @@
     "favicon": null,
     "homepage": "https://www.rougefm.ca/mauricie/",
     "stationUuid": "4ca52b52-7720-4f9d-a7c9-13c433d8cc9a",
-    "checkedAt": "2026-11-27T12:56:00.924Z",
+    "checkedAt": "2026-11-28T12:14:53.584Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3411,7 +4495,7 @@
     "favicon": null,
     "homepage": "https://www.rougefm.ca/montreal/",
     "stationUuid": "dbdc69e0-db08-4cf9-849a-8bba0fc549e1",
-    "checkedAt": "2026-11-27T12:56:00.944Z",
+    "checkedAt": "2026-11-28T12:14:53.607Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3428,27 +4512,10 @@
     "favicon": null,
     "homepage": "http://piaware.localdomain/",
     "stationUuid": "7e848392-16a2-40a4-b253-a5e5910a3cc8",
-    "checkedAt": "2026-11-27T12:56:00.959Z",
+    "checkedAt": "2026-11-28T12:14:53.620Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
-  },
-  {
-    "name": "TSN 690 Montreal",
-    "url": "https://www.iheart.com/live/tsn-690-7450/now-playing",
-    "country": "CA",
-    "type": "Other",
-    "tags": [],
-    "codec": null,
-    "bitrate": 0,
-    "language": null,
-    "favicon": "https://www.iheart.com/public/assets/favicon.ico",
-    "homepage": "https://www.iheart.com/live/tsn-690-7450",
-    "stationUuid": "4758873a-167a-43b8-a3ef-566bedb29dc4",
-    "checkedAt": "2026-11-27T12:56:01.029Z",
-    "status": 403,
-    "contentType": "text/html",
-    "lastFailure": "HTTP 403"
   },
   {
     "name": "CFLS92",
@@ -3465,7 +4532,7 @@
     "favicon": "https://cfls92.com/wp-content/uploads/2020/04/cropped-cfls_logo-32x32.png",
     "homepage": "https://cfls92.com/",
     "stationUuid": "bd762e66-871a-4a94-be87-cd86f72e50b4",
-    "checkedAt": "2026-11-27T12:56:01.044Z",
+    "checkedAt": "2026-11-28T12:14:53.834Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3484,7 +4551,7 @@
     "favicon": null,
     "homepage": null,
     "stationUuid": "ee1aa6f0-4f8f-49bd-857c-a218b8700e6b",
-    "checkedAt": "2026-11-27T12:56:01.631Z",
+    "checkedAt": "2026-11-28T12:14:54.750Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -3503,7 +4570,7 @@
     "favicon": null,
     "homepage": "https://am1320.com/",
     "stationUuid": "33f5d3e5-3d55-4026-94b4-a74bf62ad13c",
-    "checkedAt": "2026-11-27T12:56:03.045Z",
+    "checkedAt": "2026-11-28T12:14:55.859Z",
     "status": 403,
     "contentType": "text/html; charset=UTF-8",
     "lastFailure": "HTTP 403"
@@ -3522,7 +4589,7 @@
     "favicon": "null",
     "homepage": "http://www.ckrl.qc.ca/",
     "stationUuid": "0270611c-8d2d-4888-aff9-c52d1a4c167e",
-    "checkedAt": "2026-11-27T12:56:03.262Z",
+    "checkedAt": "2026-11-28T12:14:56.207Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3541,7 +4608,7 @@
     "favicon": "https://cfim.ca/wp-content/uploads/2017/04/favicon.png",
     "homepage": "https://cfim.ca/",
     "stationUuid": "c9ec1a8c-0e64-4e8b-969c-982c59905b43",
-    "checkedAt": "2026-11-27T12:56:03.362Z",
+    "checkedAt": "2026-11-28T12:14:56.218Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3560,7 +4627,7 @@
     "favicon": null,
     "homepage": "https://ciaufm.ca/",
     "stationUuid": "a68c5a77-214b-4df1-b7e0-850159f18f6c",
-    "checkedAt": "2026-11-27T12:56:03.392Z",
+    "checkedAt": "2026-11-28T12:14:56.330Z",
     "status": null,
     "contentType": null,
     "lastFailure": "The operation was aborted due to timeout"
@@ -3579,7 +4646,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CIBL_101%2C5_logo.png/220px-CIBL_101%2C5_logo.png",
     "homepage": "https://www.cibl1015.ca/",
     "stationUuid": "932a45ba-30b6-4f2a-9d54-3e13f007636d",
-    "checkedAt": "2026-11-27T12:56:03.430Z",
+    "checkedAt": "2026-11-28T12:14:56.342Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3598,7 +4665,7 @@
     "favicon": null,
     "homepage": "https://radioanticosti.com/",
     "stationUuid": "672fc701-545b-4fa1-a848-914df91b4b17",
-    "checkedAt": "2026-11-27T12:56:03.536Z",
+    "checkedAt": "2026-11-28T12:14:56.499Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3617,7 +4684,7 @@
     "favicon": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Z103.5_Logo_April_2021.png",
     "homepage": "https://z1035.com/",
     "stationUuid": "1ccb37e2-3500-4501-94d3-2d1f657e06db",
-    "checkedAt": "2026-11-27T12:56:05.209Z",
+    "checkedAt": "2026-11-28T12:14:57.912Z",
     "status": 502,
     "contentType": null,
     "lastFailure": "HTTP 502"
@@ -3636,7 +4703,7 @@
     "favicon": null,
     "homepage": "https://www.chom.com/",
     "stationUuid": "f3b0a546-5fb5-4da6-8e78-ea744846fa90",
-    "checkedAt": "2026-11-27T12:56:05.637Z",
+    "checkedAt": "2026-11-28T12:14:58.315Z",
     "status": 403,
     "contentType": null,
     "lastFailure": "HTTP 403"
@@ -3656,7 +4723,7 @@
     "favicon": null,
     "homepage": "https://www.fm93.com/",
     "stationUuid": "eaf2674e-13f9-4835-9e55-6f8044b46c67",
-    "checkedAt": "2026-11-27T12:56:06.100Z",
+    "checkedAt": "2026-11-28T12:14:58.631Z",
     "status": 410,
     "contentType": "text/html",
     "lastFailure": "HTTP 410"
@@ -3675,7 +4742,7 @@
     "favicon": null,
     "homepage": "https://springsteenradio.com/",
     "stationUuid": "afca8d67-d27e-4203-a030-8cd871fcf640",
-    "checkedAt": "2026-11-27T12:56:06.648Z",
+    "checkedAt": "2026-11-28T12:14:59.087Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3694,7 +4761,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRmIjGIby4nsW5a3JHXyCouoxm1UTwMQHLjuM94Ho26UHmG6riQ1PsiV4&s=10",
     "homepage": "http://www.dylanradio.com/mobile/",
     "stationUuid": "832e2f4a-bfb0-45df-9155-45381f47693a",
-    "checkedAt": "2026-11-27T12:56:07.682Z",
+    "checkedAt": "2026-11-28T12:15:00.381Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3713,7 +4780,7 @@
     "favicon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRmIjGIby4nsW5a3JHXyCouoxm1UTwMQHLjuM94Ho26UHmG6riQ1PsiV4&s=10",
     "homepage": "http://www.dylanradio.com/stream/",
     "stationUuid": "fd956356-6cba-47f2-9b3f-54b5969f8b15",
-    "checkedAt": "2026-11-27T12:56:07.752Z",
+    "checkedAt": "2026-11-28T12:15:00.391Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3732,7 +4799,7 @@
     "favicon": "https://media.bpmsports.ca/2023/08/cropped-android-chrome-512x512-1-180x180.png",
     "homepage": "http://www.bpmsports.ca/",
     "stationUuid": "2b379e0f-2db6-49b5-ab06-c90dce68e162",
-    "checkedAt": "2026-11-27T12:56:09.291Z",
+    "checkedAt": "2026-11-28T12:15:01.642Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3751,7 +4818,7 @@
     "favicon": "https://static.themebuilder.aws.arc.pub/bellmediainc/1741638442172.svg",
     "homepage": "https://www.tsn.ca/radio/montreal-690/",
     "stationUuid": "e0719232-41dd-4c3b-bb1f-9bcf7f6d7758",
-    "checkedAt": "2026-11-27T12:56:10.054Z",
+    "checkedAt": "2026-11-28T12:15:02.230Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3770,7 +4837,7 @@
     "favicon": "null",
     "homepage": "http://www.ckrl.qc.ca/",
     "stationUuid": "96f7c331-5f22-4c25-8456-6e8037ff67c1",
-    "checkedAt": "2026-11-27T12:56:10.511Z",
+    "checkedAt": "2026-11-28T12:15:04.331Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3789,7 +4856,7 @@
     "favicon": "https://techno.fm/images/logos/logo_80px.png",
     "homepage": "https://techno.fm/radio",
     "stationUuid": "590a2463-4587-4ebf-b4fb-fe9cf68b92ef",
-    "checkedAt": "2026-11-27T12:56:11.350Z",
+    "checkedAt": "2026-11-28T12:15:06.348Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3809,7 +4876,7 @@
     "favicon": "https://www.virginradio.ca/favicon.ico",
     "homepage": "https://www.virginradio.ca/vancouver.html",
     "stationUuid": "08711a3d-c5e5-44d4-8460-78d4d475aab8",
-    "checkedAt": "2026-11-27T12:56:11.370Z",
+    "checkedAt": "2026-11-28T12:15:06.409Z",
     "status": 403,
     "contentType": "text/html",
     "lastFailure": "HTTP 403"
@@ -3828,7 +4895,7 @@
     "favicon": null,
     "homepage": "https://www.radiosouvenirsfm.com/",
     "stationUuid": "1bf12c86-9541-4aca-bd65-407b494ee3cd",
-    "checkedAt": "2026-11-27T12:56:13.472Z",
+    "checkedAt": "2026-11-28T12:15:08.561Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
@@ -3847,7 +4914,7 @@
     "favicon": "https://www.musicbox4friends.com/wp-content/uploads/2020/01/cropped-musicbox2-1-180x180.png",
     "homepage": "https://www.musicbox4friends.com/",
     "stationUuid": "98c6f012-ffb6-4575-b090-0957e6b188b0",
-    "checkedAt": "2026-11-27T12:56:13.541Z",
+    "checkedAt": "2026-11-28T12:15:08.637Z",
     "status": null,
     "contentType": null,
     "lastFailure": "fetch failed"
